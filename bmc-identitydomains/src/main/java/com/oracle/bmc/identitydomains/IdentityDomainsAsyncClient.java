@@ -6473,7 +6473,7 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "IdentityDomains",
                         "ListIdentityPropagationTrusts",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrusts/ListIdentityPropagationTrusts")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/ListIdentityPropagationTrusts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIdentityPropagationTrustsRequest::builder)
                 .basePath("")

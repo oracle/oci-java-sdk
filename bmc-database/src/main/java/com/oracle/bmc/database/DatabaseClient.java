@@ -13038,6 +13038,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public RescheduleManagedDbSoftwareUpdateResponse rescheduleManagedDbSoftwareUpdate(
+            RescheduleManagedDbSoftwareUpdateRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+
+        return clientCall(request, RescheduleManagedDbSoftwareUpdateResponse::builder)
+                .logger(LOG, "rescheduleManagedDbSoftwareUpdate")
+                .serviceDetails(
+                        "Database",
+                        "RescheduleManagedDbSoftwareUpdate",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RescheduleManagedDbSoftwareUpdate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RescheduleManagedDbSoftwareUpdateRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("rescheduleManagedDbSoftwareUpdate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        RescheduleManagedDbSoftwareUpdateResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RescheduleManagedDbSoftwareUpdateResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RescheduleManagedDbSoftwareUpdateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", RescheduleManagedDbSoftwareUpdateResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public ResizeVmClusterNetworkResponse resizeVmClusterNetwork(
             ResizeVmClusterNetworkRequest request) {
 

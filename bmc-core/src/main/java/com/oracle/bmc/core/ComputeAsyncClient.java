@@ -33,7 +33,9 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(ComputeClient.class.getName())
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
+                    .endpointServiceName("iaas")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -105,12 +107,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, AcceptShieldedIntegrityPolicyResponse::builder)
                 .logger(LOG, "acceptShieldedIntegrityPolicy")
                 .serviceDetails(
                         "Compute",
                         "AcceptShieldedIntegrityPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/AcceptShieldedIntegrityPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AcceptShieldedIntegrityPolicyRequest::builder)
                 .basePath("/20160918")
@@ -141,12 +147,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+        requiredParametersMap.put("shapeName", request.getShapeName());
+
         return clientCall(request, AddImageShapeCompatibilityEntryResponse::builder)
                 .logger(LOG, "addImageShapeCompatibilityEntry")
                 .serviceDetails(
                         "Compute",
                         "AddImageShapeCompatibilityEntry",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/AddImageShapeCompatibilityEntry")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(AddImageShapeCompatibilityEntryRequest::builder)
                 .basePath("/20160918")
@@ -175,12 +186,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostId", request.getComputeHostId());
+
         return clientCall(request, ApplyHostConfigurationResponse::builder)
                 .logger(LOG, "applyHostConfiguration")
                 .serviceDetails(
                         "Compute",
                         "ApplyHostConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ApplyHostConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ApplyHostConfigurationRequest::builder)
                 .basePath("/20160918")
@@ -215,12 +230,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Objects.requireNonNull(
                 request.getAttachBootVolumeDetails(), "attachBootVolumeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, AttachBootVolumeResponse::builder)
                 .logger(LOG, "attachBootVolume")
                 .serviceDetails(
                         "Compute",
                         "AttachBootVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/AttachBootVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachBootVolumeRequest::builder)
                 .basePath("/20160918")
@@ -251,12 +269,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getAttachComputeHostGroupHostDetails(),
                 "attachComputeHostGroupHostDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostId", request.getComputeHostId());
+
         return clientCall(request, AttachComputeHostGroupHostResponse::builder)
                 .logger(LOG, "attachComputeHostGroupHost")
                 .serviceDetails(
                         "Compute",
                         "AttachComputeHostGroupHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/AttachComputeHostGroupHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachComputeHostGroupHostRequest::builder)
                 .basePath("/20160918")
@@ -291,12 +313,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getAttachVnicDetails(), "attachVnicDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, AttachVnicResponse::builder)
                 .logger(LOG, "attachVnic")
                 .serviceDetails(
                         "Compute",
                         "AttachVnic",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/AttachVnic")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachVnicRequest::builder)
                 .basePath("/20160918")
@@ -320,12 +345,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getAttachVolumeDetails(), "attachVolumeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, AttachVolumeResponse::builder)
                 .logger(LOG, "attachVolume")
                 .serviceDetails(
                         "Compute",
                         "AttachVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/AttachVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachVolumeRequest::builder)
                 .basePath("/20160918")
@@ -339,6 +367,8 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString("etag", AttachVolumeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", AttachVolumeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AttachVolumeResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -352,12 +382,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCaptureConsoleHistoryDetails(),
                 "captureConsoleHistoryDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CaptureConsoleHistoryResponse::builder)
                 .logger(LOG, "captureConsoleHistory")
                 .serviceDetails(
                         "Compute",
                         "CaptureConsoleHistory",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/CaptureConsoleHistory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CaptureConsoleHistoryRequest::builder)
                 .basePath("/20160918")
@@ -389,12 +422,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeCapacityReservationCompartmentDetails(),
                 "changeComputeCapacityReservationCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("capacityReservationId", request.getCapacityReservationId());
+
         return clientCall(request, ChangeComputeCapacityReservationCompartmentResponse::builder)
                 .logger(LOG, "changeComputeCapacityReservationCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeCapacityReservationCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ChangeComputeCapacityReservationCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeCapacityReservationCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -433,12 +470,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeCapacityTopologyCompartmentDetails(),
                 "changeComputeCapacityTopologyCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeCapacityTopologyId", request.getComputeCapacityTopologyId());
+
         return clientCall(request, ChangeComputeCapacityTopologyCompartmentResponse::builder)
                 .logger(LOG, "changeComputeCapacityTopologyCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeCapacityTopologyCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ChangeComputeCapacityTopologyCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeCapacityTopologyCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -474,12 +516,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeClusterCompartmentDetails(),
                 "changeComputeClusterCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeClusterId", request.getComputeClusterId());
+
         return clientCall(request, ChangeComputeClusterCompartmentResponse::builder)
                 .logger(LOG, "changeComputeClusterCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeClusterCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ChangeComputeClusterCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeClusterCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -514,12 +560,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeGpuMemoryClusterCompartmentDetails(),
                 "changeComputeGpuMemoryClusterCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId());
+
         return clientCall(request, ChangeComputeGpuMemoryClusterCompartmentResponse::builder)
                 .logger(LOG, "changeComputeGpuMemoryClusterCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeGpuMemoryClusterCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ChangeComputeGpuMemoryClusterCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeGpuMemoryClusterCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -554,12 +605,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeGpuMemoryFabricCompartmentDetails(),
                 "changeComputeGpuMemoryFabricCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryFabricId", request.getComputeGpuMemoryFabricId());
+
         return clientCall(request, ChangeComputeGpuMemoryFabricCompartmentResponse::builder)
                 .logger(LOG, "changeComputeGpuMemoryFabricCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeGpuMemoryFabricCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ChangeComputeGpuMemoryFabricCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeGpuMemoryFabricCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -592,12 +648,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeHostCompartmentDetails(),
                 "changeComputeHostCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostId", request.getComputeHostId());
+
         return clientCall(request, ChangeComputeHostCompartmentResponse::builder)
                 .logger(LOG, "changeComputeHostCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeHostCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ChangeComputeHostCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeHostCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -633,12 +693,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeHostGroupCompartmentDetails(),
                 "changeComputeHostGroupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostGroupId", request.getComputeHostGroupId());
+
         return clientCall(request, ChangeComputeHostGroupCompartmentResponse::builder)
                 .logger(LOG, "changeComputeHostGroupCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeHostGroupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ChangeComputeHostGroupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeHostGroupCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -676,12 +740,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeComputeImageCapabilitySchemaCompartmentDetails(),
                 "changeComputeImageCapabilitySchemaCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeImageCapabilitySchemaId", request.getComputeImageCapabilitySchemaId());
+
         return clientCall(request, ChangeComputeImageCapabilitySchemaCompartmentResponse::builder)
                 .logger(LOG, "changeComputeImageCapabilitySchemaCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeComputeImageCapabilitySchemaCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/ChangeComputeImageCapabilitySchemaCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeComputeImageCapabilitySchemaCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -714,12 +783,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeDedicatedVmHostCompartmentDetails(),
                 "changeDedicatedVmHostCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedVmHostId", request.getDedicatedVmHostId());
+
         return clientCall(request, ChangeDedicatedVmHostCompartmentResponse::builder)
                 .logger(LOG, "changeDedicatedVmHostCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeDedicatedVmHostCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/ChangeDedicatedVmHostCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDedicatedVmHostCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -755,12 +828,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeImageCompartmentDetails(),
                 "changeImageCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+
         return clientCall(request, ChangeImageCompartmentResponse::builder)
                 .logger(LOG, "changeImageCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeImageCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ChangeImageCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeImageCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -791,12 +868,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getChangeInstanceCompartmentDetails(),
                 "changeInstanceCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, ChangeInstanceCompartmentResponse::builder)
                 .logger(LOG, "changeInstanceCompartment")
                 .serviceDetails(
                         "Compute",
                         "ChangeInstanceCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ChangeInstanceCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeInstanceCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -827,12 +908,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostId", request.getComputeHostId());
+
         return clientCall(request, CheckHostConfigurationResponse::builder)
                 .logger(LOG, "checkHostConfiguration")
                 .serviceDetails(
                         "Compute",
                         "CheckHostConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/CheckHostConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CheckHostConfigurationRequest::builder)
                 .basePath("/20160918")
@@ -867,12 +952,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateAppCatalogSubscriptionDetails(),
                 "createAppCatalogSubscriptionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateAppCatalogSubscriptionResponse::builder)
                 .logger(LOG, "createAppCatalogSubscription")
                 .serviceDetails(
                         "Compute",
                         "CreateAppCatalogSubscription",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscription/CreateAppCatalogSubscription")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateAppCatalogSubscriptionRequest::builder)
                 .basePath("/20160918")
@@ -903,12 +991,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateComputeCapacityReportDetails(),
                 "createComputeCapacityReportDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateComputeCapacityReportResponse::builder)
                 .logger(LOG, "createComputeCapacityReport")
                 .serviceDetails(
                         "Compute",
                         "CreateComputeCapacityReport",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReport/CreateComputeCapacityReport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateComputeCapacityReportRequest::builder)
                 .basePath("/20160918")
@@ -937,9 +1028,12 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateComputeCapacityReservationDetails(),
                 "createComputeCapacityReservationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateComputeCapacityReservationResponse::builder)
                 .logger(LOG, "createComputeCapacityReservation")
                 .serviceDetails("Compute", "CreateComputeCapacityReservation", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateComputeCapacityReservationRequest::builder)
                 .basePath("/20160918")
@@ -977,9 +1071,12 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateComputeCapacityTopologyDetails(),
                 "createComputeCapacityTopologyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateComputeCapacityTopologyResponse::builder)
                 .logger(LOG, "createComputeCapacityTopology")
                 .serviceDetails("Compute", "CreateComputeCapacityTopology", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateComputeCapacityTopologyRequest::builder)
                 .basePath("/20160918")
@@ -1014,12 +1111,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateComputeClusterDetails(),
                 "createComputeClusterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateComputeClusterResponse::builder)
                 .logger(LOG, "createComputeCluster")
                 .serviceDetails(
                         "Compute",
                         "CreateComputeCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/CreateComputeCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateComputeClusterRequest::builder)
                 .basePath("/20160918")
@@ -1049,12 +1149,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateComputeGpuMemoryClusterDetails(),
                 "createComputeGpuMemoryClusterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateComputeGpuMemoryClusterResponse::builder)
                 .logger(LOG, "createComputeGpuMemoryCluster")
                 .serviceDetails(
                         "Compute",
                         "CreateComputeGpuMemoryCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/CreateComputeGpuMemoryCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateComputeGpuMemoryClusterRequest::builder)
                 .basePath("/20160918")
@@ -1087,12 +1190,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateComputeHostGroupDetails(),
                 "createComputeHostGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateComputeHostGroupResponse::builder)
                 .logger(LOG, "createComputeHostGroup")
                 .serviceDetails(
                         "Compute",
                         "CreateComputeHostGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/CreateComputeHostGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateComputeHostGroupRequest::builder)
                 .basePath("/20160918")
@@ -1127,12 +1233,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateComputeImageCapabilitySchemaDetails(),
                 "createComputeImageCapabilitySchemaDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateComputeImageCapabilitySchemaResponse::builder)
                 .logger(LOG, "createComputeImageCapabilitySchema")
                 .serviceDetails(
                         "Compute",
                         "CreateComputeImageCapabilitySchema",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/CreateComputeImageCapabilitySchema")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateComputeImageCapabilitySchemaRequest::builder)
                 .basePath("/20160918")
@@ -1162,12 +1271,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateDedicatedVmHostDetails(),
                 "createDedicatedVmHostDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateDedicatedVmHostResponse::builder)
                 .logger(LOG, "createDedicatedVmHost")
                 .serviceDetails(
                         "Compute",
                         "CreateDedicatedVmHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/CreateDedicatedVmHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDedicatedVmHostRequest::builder)
                 .basePath("/20160918")
@@ -1195,12 +1307,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCreateImageDetails(), "createImageDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateImageResponse::builder)
                 .logger(LOG, "createImage")
                 .serviceDetails(
                         "Compute",
                         "CreateImage",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/CreateImage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateImageRequest::builder)
                 .basePath("/20160918")
@@ -1230,12 +1345,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getCreateInstanceConsoleConnectionDetails(),
                 "createInstanceConsoleConnectionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateInstanceConsoleConnectionResponse::builder)
                 .logger(LOG, "createInstanceConsoleConnection")
                 .serviceDetails(
                         "Compute",
                         "CreateInstanceConsoleConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/CreateInstanceConsoleConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateInstanceConsoleConnectionRequest::builder)
                 .basePath("/20160918")
@@ -1268,9 +1386,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Objects.requireNonNull(request.getResourceVersion(), "resourceVersion is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("listingId", request.getListingId());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("resourceVersion", request.getResourceVersion());
+
         return clientCall(request, DeleteAppCatalogSubscriptionResponse::builder)
                 .logger(LOG, "deleteAppCatalogSubscription")
                 .serviceDetails("Compute", "DeleteAppCatalogSubscription", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAppCatalogSubscriptionRequest::builder)
                 .basePath("/20160918")
@@ -1297,12 +1421,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(
                 request.getCapacityReservationId(), "capacityReservationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("capacityReservationId", request.getCapacityReservationId());
+
         return clientCall(request, DeleteComputeCapacityReservationResponse::builder)
                 .logger(LOG, "deleteComputeCapacityReservation")
                 .serviceDetails(
                         "Compute",
                         "DeleteComputeCapacityReservation",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/DeleteComputeCapacityReservation")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteComputeCapacityReservationRequest::builder)
                 .basePath("/20160918")
@@ -1333,12 +1461,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeCapacityTopologyId(),
                 "computeCapacityTopologyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeCapacityTopologyId", request.getComputeCapacityTopologyId());
+
         return clientCall(request, DeleteComputeCapacityTopologyResponse::builder)
                 .logger(LOG, "deleteComputeCapacityTopology")
                 .serviceDetails(
                         "Compute",
                         "DeleteComputeCapacityTopology",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/DeleteComputeCapacityTopology")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteComputeCapacityTopologyRequest::builder)
                 .basePath("/20160918")
@@ -1365,12 +1498,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeClusterId", request.getComputeClusterId());
+
         return clientCall(request, DeleteComputeClusterResponse::builder)
                 .logger(LOG, "deleteComputeCluster")
                 .serviceDetails(
                         "Compute",
                         "DeleteComputeCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/DeleteComputeCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteComputeClusterRequest::builder)
                 .basePath("/20160918")
@@ -1397,12 +1534,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeGpuMemoryClusterId(),
                 "computeGpuMemoryClusterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId());
+
         return clientCall(request, DeleteComputeGpuMemoryClusterResponse::builder)
                 .logger(LOG, "deleteComputeGpuMemoryCluster")
                 .serviceDetails(
                         "Compute",
                         "DeleteComputeGpuMemoryCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/DeleteComputeGpuMemoryCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteComputeGpuMemoryClusterRequest::builder)
                 .basePath("/20160918")
@@ -1429,12 +1571,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostGroupId", request.getComputeHostGroupId());
+
         return clientCall(request, DeleteComputeHostGroupResponse::builder)
                 .logger(LOG, "deleteComputeHostGroup")
                 .serviceDetails(
                         "Compute",
                         "DeleteComputeHostGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/DeleteComputeHostGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteComputeHostGroupRequest::builder)
                 .basePath("/20160918")
@@ -1461,12 +1607,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeImageCapabilitySchemaId(),
                 "computeImageCapabilitySchemaId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeImageCapabilitySchemaId", request.getComputeImageCapabilitySchemaId());
+
         return clientCall(request, DeleteComputeImageCapabilitySchemaResponse::builder)
                 .logger(LOG, "deleteComputeImageCapabilitySchema")
                 .serviceDetails(
                         "Compute",
                         "DeleteComputeImageCapabilitySchema",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/DeleteComputeImageCapabilitySchema")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteComputeImageCapabilitySchemaRequest::builder)
                 .basePath("/20160918")
@@ -1491,12 +1642,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getInstanceConsoleHistoryId(),
                 "instanceConsoleHistoryId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceConsoleHistoryId", request.getInstanceConsoleHistoryId());
+
         return clientCall(request, DeleteConsoleHistoryResponse::builder)
                 .logger(LOG, "deleteConsoleHistory")
                 .serviceDetails(
                         "Compute",
                         "DeleteConsoleHistory",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/DeleteConsoleHistory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteConsoleHistoryRequest::builder)
                 .basePath("/20160918")
@@ -1518,12 +1674,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedVmHostId", request.getDedicatedVmHostId());
+
         return clientCall(request, DeleteDedicatedVmHostResponse::builder)
                 .logger(LOG, "deleteDedicatedVmHost")
                 .serviceDetails(
                         "Compute",
                         "DeleteDedicatedVmHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/DeleteDedicatedVmHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDedicatedVmHostRequest::builder)
                 .basePath("/20160918")
@@ -1547,9 +1707,13 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+
         return clientCall(request, DeleteImageResponse::builder)
                 .logger(LOG, "deleteImage")
                 .serviceDetails("Compute", "DeleteImage", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteImageRequest::builder)
                 .basePath("/20160918")
@@ -1575,12 +1739,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getInstanceConsoleConnectionId(),
                 "instanceConsoleConnectionId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceConsoleConnectionId", request.getInstanceConsoleConnectionId());
+
         return clientCall(request, DeleteInstanceConsoleConnectionResponse::builder)
                 .logger(LOG, "deleteInstanceConsoleConnection")
                 .serviceDetails(
                         "Compute",
                         "DeleteInstanceConsoleConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/DeleteInstanceConsoleConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteInstanceConsoleConnectionRequest::builder)
                 .basePath("/20160918")
@@ -1604,9 +1773,13 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(
                 request.getBootVolumeAttachmentId(), "bootVolumeAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeAttachmentId", request.getBootVolumeAttachmentId());
+
         return clientCall(request, DetachBootVolumeResponse::builder)
                 .logger(LOG, "detachBootVolume")
                 .serviceDetails("Compute", "DetachBootVolume", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DetachBootVolumeRequest::builder)
                 .basePath("/20160918")
@@ -1633,12 +1806,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getDetachComputeHostGroupHostDetails(),
                 "detachComputeHostGroupHostDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostId", request.getComputeHostId());
+
         return clientCall(request, DetachComputeHostGroupHostResponse::builder)
                 .logger(LOG, "detachComputeHostGroupHost")
                 .serviceDetails(
                         "Compute",
                         "DetachComputeHostGroupHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/DetachComputeHostGroupHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachComputeHostGroupHostRequest::builder)
                 .basePath("/20160918")
@@ -1667,12 +1844,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getVnicAttachmentId(), "vnicAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vnicAttachmentId", request.getVnicAttachmentId());
+
         return clientCall(request, DetachVnicResponse::builder)
                 .logger(LOG, "detachVnic")
                 .serviceDetails(
                         "Compute",
                         "DetachVnic",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/DetachVnic")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DetachVnicRequest::builder)
                 .basePath("/20160918")
@@ -1693,12 +1874,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getVolumeAttachmentId(), "volumeAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeAttachmentId", request.getVolumeAttachmentId());
+
         return clientCall(request, DetachVolumeResponse::builder)
                 .logger(LOG, "detachVolume")
                 .serviceDetails(
                         "Compute",
                         "DetachVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/DetachVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DetachVolumeRequest::builder)
                 .basePath("/20160918")
@@ -1708,6 +1893,8 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DetachVolumeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DetachVolumeResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -1720,12 +1907,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Objects.requireNonNull(request.getExportImageDetails(), "exportImageDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+
         return clientCall(request, ExportImageResponse::builder)
                 .logger(LOG, "exportImage")
                 .serviceDetails(
                         "Compute",
                         "ExportImage",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ExportImage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ExportImageRequest::builder)
                 .basePath("/20160918")
@@ -1756,12 +1947,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("listingId", request.getListingId());
+
         return clientCall(request, GetAppCatalogListingResponse::builder)
                 .logger(LOG, "getAppCatalogListing")
                 .serviceDetails(
                         "Compute",
                         "GetAppCatalogListing",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListing/GetAppCatalogListing")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAppCatalogListingRequest::builder)
                 .basePath("/20160918")
@@ -1790,12 +1985,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getResourceVersion(), "resourceVersion must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("listingId", request.getListingId());
+        requiredParametersMap.put("resourceVersion", request.getResourceVersion());
+
         return clientCall(request, GetAppCatalogListingAgreementsResponse::builder)
                 .logger(LOG, "getAppCatalogListingAgreements")
                 .serviceDetails(
                         "Compute",
                         "GetAppCatalogListingAgreements",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAppCatalogListingAgreementsRequest::builder)
                 .basePath("/20160918")
@@ -1830,12 +2030,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getResourceVersion(), "resourceVersion must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("listingId", request.getListingId());
+        requiredParametersMap.put("resourceVersion", request.getResourceVersion());
+
         return clientCall(request, GetAppCatalogListingResourceVersionResponse::builder)
                 .logger(LOG, "getAppCatalogListingResourceVersion")
                 .serviceDetails(
                         "Compute",
                         "GetAppCatalogListingResourceVersion",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAppCatalogListingResourceVersionRequest::builder)
                 .basePath("/20160918")
@@ -1866,12 +2071,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(
                 request.getBootVolumeAttachmentId(), "bootVolumeAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeAttachmentId", request.getBootVolumeAttachmentId());
+
         return clientCall(request, GetBootVolumeAttachmentResponse::builder)
                 .logger(LOG, "getBootVolumeAttachment")
                 .serviceDetails(
                         "Compute",
                         "GetBootVolumeAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/GetBootVolumeAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBootVolumeAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -1899,12 +2108,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(
                 request.getCapacityReservationId(), "capacityReservationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("capacityReservationId", request.getCapacityReservationId());
+
         return clientCall(request, GetComputeCapacityReservationResponse::builder)
                 .logger(LOG, "getComputeCapacityReservation")
                 .serviceDetails(
                         "Compute",
                         "GetComputeCapacityReservation",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/GetComputeCapacityReservation")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeCapacityReservationRequest::builder)
                 .basePath("/20160918")
@@ -1936,12 +2149,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeCapacityTopologyId(),
                 "computeCapacityTopologyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeCapacityTopologyId", request.getComputeCapacityTopologyId());
+
         return clientCall(request, GetComputeCapacityTopologyResponse::builder)
                 .logger(LOG, "getComputeCapacityTopology")
                 .serviceDetails(
                         "Compute",
                         "GetComputeCapacityTopology",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/GetComputeCapacityTopology")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeCapacityTopologyRequest::builder)
                 .basePath("/20160918")
@@ -1968,12 +2186,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getComputeClusterId(), "computeClusterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeClusterId", request.getComputeClusterId());
+
         return clientCall(request, GetComputeClusterResponse::builder)
                 .logger(LOG, "getComputeCluster")
                 .serviceDetails(
                         "Compute",
                         "GetComputeCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/GetComputeCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeClusterRequest::builder)
                 .basePath("/20160918")
@@ -2003,12 +2225,18 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeGlobalImageCapabilitySchemaId(),
                 "computeGlobalImageCapabilitySchemaId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGlobalImageCapabilitySchemaId",
+                request.getComputeGlobalImageCapabilitySchemaId());
+
         return clientCall(request, GetComputeGlobalImageCapabilitySchemaResponse::builder)
                 .logger(LOG, "getComputeGlobalImageCapabilitySchema")
                 .serviceDetails(
                         "Compute",
                         "GetComputeGlobalImageCapabilitySchema",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchema/GetComputeGlobalImageCapabilitySchema")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeGlobalImageCapabilitySchemaRequest::builder)
                 .basePath("/20160918")
@@ -2044,12 +2272,21 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeGlobalImageCapabilitySchemaVersionName(),
                 "computeGlobalImageCapabilitySchemaVersionName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGlobalImageCapabilitySchemaId",
+                request.getComputeGlobalImageCapabilitySchemaId());
+        requiredParametersMap.put(
+                "computeGlobalImageCapabilitySchemaVersionName",
+                request.getComputeGlobalImageCapabilitySchemaVersionName());
+
         return clientCall(request, GetComputeGlobalImageCapabilitySchemaVersionResponse::builder)
                 .logger(LOG, "getComputeGlobalImageCapabilitySchemaVersion")
                 .serviceDetails(
                         "Compute",
                         "GetComputeGlobalImageCapabilitySchemaVersion",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersion/GetComputeGlobalImageCapabilitySchemaVersion")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeGlobalImageCapabilitySchemaVersionRequest::builder)
                 .basePath("/20160918")
@@ -2083,12 +2320,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeGpuMemoryClusterId(),
                 "computeGpuMemoryClusterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId());
+
         return clientCall(request, GetComputeGpuMemoryClusterResponse::builder)
                 .logger(LOG, "getComputeGpuMemoryCluster")
                 .serviceDetails(
                         "Compute",
                         "GetComputeGpuMemoryCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/GetComputeGpuMemoryCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeGpuMemoryClusterRequest::builder)
                 .basePath("/20160918")
@@ -2117,12 +2359,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeGpuMemoryFabricId(),
                 "computeGpuMemoryFabricId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryFabricId", request.getComputeGpuMemoryFabricId());
+
         return clientCall(request, GetComputeGpuMemoryFabricResponse::builder)
                 .logger(LOG, "getComputeGpuMemoryFabric")
                 .serviceDetails(
                         "Compute",
                         "GetComputeGpuMemoryFabric",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/GetComputeGpuMemoryFabric")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeGpuMemoryFabricRequest::builder)
                 .basePath("/20160918")
@@ -2148,12 +2395,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getComputeHostId(), "computeHostId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostId", request.getComputeHostId());
+
         return clientCall(request, GetComputeHostResponse::builder)
                 .logger(LOG, "getComputeHost")
                 .serviceDetails(
                         "Compute",
                         "GetComputeHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/GetComputeHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeHostRequest::builder)
                 .basePath("/20160918")
@@ -2179,12 +2430,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getComputeHostGroupId(), "computeHostGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostGroupId", request.getComputeHostGroupId());
+
         return clientCall(request, GetComputeHostGroupResponse::builder)
                 .logger(LOG, "getComputeHostGroup")
                 .serviceDetails(
                         "Compute",
                         "GetComputeHostGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/GetComputeHostGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeHostGroupRequest::builder)
                 .basePath("/20160918")
@@ -2214,12 +2469,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeImageCapabilitySchemaId(),
                 "computeImageCapabilitySchemaId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeImageCapabilitySchemaId", request.getComputeImageCapabilitySchemaId());
+
         return clientCall(request, GetComputeImageCapabilitySchemaResponse::builder)
                 .logger(LOG, "getComputeImageCapabilitySchema")
                 .serviceDetails(
                         "Compute",
                         "GetComputeImageCapabilitySchema",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/GetComputeImageCapabilitySchema")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComputeImageCapabilitySchemaRequest::builder)
                 .basePath("/20160918")
@@ -2250,12 +2510,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getInstanceConsoleHistoryId(),
                 "instanceConsoleHistoryId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceConsoleHistoryId", request.getInstanceConsoleHistoryId());
+
         return clientCall(request, GetConsoleHistoryResponse::builder)
                 .logger(LOG, "getConsoleHistory")
                 .serviceDetails(
                         "Compute",
                         "GetConsoleHistory",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConsoleHistoryRequest::builder)
                 .basePath("/20160918")
@@ -2282,12 +2547,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getInstanceConsoleHistoryId(),
                 "instanceConsoleHistoryId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceConsoleHistoryId", request.getInstanceConsoleHistoryId());
+
         return clientCall(request, GetConsoleHistoryContentResponse::builder)
                 .logger(LOG, "getConsoleHistoryContent")
                 .serviceDetails(
                         "Compute",
                         "GetConsoleHistoryContent",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistoryContent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConsoleHistoryContentRequest::builder)
                 .basePath("/20160918")
@@ -2315,12 +2585,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedVmHostId", request.getDedicatedVmHostId());
+
         return clientCall(request, GetDedicatedVmHostResponse::builder)
                 .logger(LOG, "getDedicatedVmHost")
                 .serviceDetails(
                         "Compute",
                         "GetDedicatedVmHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/GetDedicatedVmHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDedicatedVmHostRequest::builder)
                 .basePath("/20160918")
@@ -2346,12 +2620,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getFirmwareBundleId(), "firmwareBundleId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("firmwareBundleId", request.getFirmwareBundleId());
+
         return clientCall(request, GetFirmwareBundleResponse::builder)
                 .logger(LOG, "getFirmwareBundle")
                 .serviceDetails(
                         "Compute",
                         "GetFirmwareBundle",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FirmwareBundle/GetFirmwareBundle")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFirmwareBundleRequest::builder)
                 .basePath("/20160918")
@@ -2375,12 +2653,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+
         return clientCall(request, GetImageResponse::builder)
                 .logger(LOG, "getImage")
                 .serviceDetails(
                         "Compute",
                         "GetImage",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/GetImage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetImageRequest::builder)
                 .basePath("/20160918")
@@ -2407,12 +2689,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+        requiredParametersMap.put("shapeName", request.getShapeName());
+
         return clientCall(request, GetImageShapeCompatibilityEntryResponse::builder)
                 .logger(LOG, "getImageShapeCompatibilityEntry")
                 .serviceDetails(
                         "Compute",
                         "GetImageShapeCompatibilityEntry",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/GetImageShapeCompatibilityEntry")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetImageShapeCompatibilityEntryRequest::builder)
                 .basePath("/20160918")
@@ -2440,12 +2727,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, GetInstanceResponse::builder)
                 .logger(LOG, "getInstance")
                 .serviceDetails(
                         "Compute",
                         "GetInstance",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/GetInstance")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceRequest::builder)
                 .basePath("/20160918")
@@ -2474,12 +2765,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getInstanceConsoleConnectionId(),
                 "instanceConsoleConnectionId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceConsoleConnectionId", request.getInstanceConsoleConnectionId());
+
         return clientCall(request, GetInstanceConsoleConnectionResponse::builder)
                 .logger(LOG, "getInstanceConsoleConnection")
                 .serviceDetails(
                         "Compute",
                         "GetInstanceConsoleConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/GetInstanceConsoleConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceConsoleConnectionRequest::builder)
                 .basePath("/20160918")
@@ -2508,12 +2804,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getInstanceMaintenanceEventId(),
                 "instanceMaintenanceEventId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceMaintenanceEventId", request.getInstanceMaintenanceEventId());
+
         return clientCall(request, GetInstanceMaintenanceEventResponse::builder)
                 .logger(LOG, "getInstanceMaintenanceEvent")
                 .serviceDetails(
                         "Compute",
                         "GetInstanceMaintenanceEvent",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/GetInstanceMaintenanceEvent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceMaintenanceEventRequest::builder)
                 .basePath("/20160918")
@@ -2542,12 +2843,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, GetInstanceMaintenanceRebootResponse::builder)
                 .logger(LOG, "getInstanceMaintenanceReboot")
                 .serviceDetails(
                         "Compute",
                         "GetInstanceMaintenanceReboot",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceReboot/GetInstanceMaintenanceReboot")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceMaintenanceRebootRequest::builder)
                 .basePath("/20160918")
@@ -2574,12 +2879,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, GetMeasuredBootReportResponse::builder)
                 .logger(LOG, "getMeasuredBootReport")
                 .serviceDetails(
                         "Compute",
                         "GetMeasuredBootReport",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/GetMeasuredBootReport")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMeasuredBootReportRequest::builder)
                 .basePath("/20160918")
@@ -2606,12 +2915,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getVnicAttachmentId(), "vnicAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vnicAttachmentId", request.getVnicAttachmentId());
+
         return clientCall(request, GetVnicAttachmentResponse::builder)
                 .logger(LOG, "getVnicAttachment")
                 .serviceDetails(
                         "Compute",
                         "GetVnicAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/GetVnicAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVnicAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -2636,12 +2949,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getVolumeAttachmentId(), "volumeAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeAttachmentId", request.getVolumeAttachmentId());
+
         return clientCall(request, GetVolumeAttachmentResponse::builder)
                 .logger(LOG, "getVolumeAttachment")
                 .serviceDetails(
                         "Compute",
                         "GetVolumeAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/GetVolumeAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -2668,12 +2985,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, GetWindowsInstanceInitialCredentialsResponse::builder)
                 .logger(LOG, "getWindowsInstanceInitialCredentials")
                 .serviceDetails(
                         "Compute",
                         "GetWindowsInstanceInitialCredentials",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceCredentials/GetWindowsInstanceInitialCredentials")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWindowsInstanceInitialCredentialsRequest::builder)
                 .basePath("/20160918")
@@ -2700,12 +3021,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
         Objects.requireNonNull(request.getAction(), "action is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+        requiredParametersMap.put("action", request.getAction());
+
         return clientCall(request, InstanceActionResponse::builder)
                 .logger(LOG, "instanceAction")
                 .serviceDetails(
                         "Compute",
                         "InstanceAction",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/InstanceAction")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstanceActionRequest::builder)
                 .basePath("/20160918")
@@ -2734,12 +3060,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Objects.requireNonNull(
                 request.getLaunchInstanceDetails(), "launchInstanceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, LaunchInstanceResponse::builder)
                 .logger(LOG, "launchInstance")
                 .serviceDetails(
                         "Compute",
                         "LaunchInstance",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstance")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(LaunchInstanceRequest::builder)
                 .basePath("/20160918")
@@ -2769,12 +3098,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("listingId", request.getListingId());
+
         return clientCall(request, ListAppCatalogListingResourceVersionsResponse::builder)
                 .logger(LOG, "listAppCatalogListingResourceVersions")
                 .serviceDetails(
                         "Compute",
                         "ListAppCatalogListingResourceVersions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionSummary/ListAppCatalogListingResourceVersions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAppCatalogListingResourceVersionsRequest::builder)
                 .basePath("/20160918")
@@ -2804,12 +3137,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListAppCatalogListingsResponse::builder)
                 .logger(LOG, "listAppCatalogListings")
                 .serviceDetails(
                         "Compute",
                         "ListAppCatalogListings",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingSummary/ListAppCatalogListings")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAppCatalogListingsRequest::builder)
                 .basePath("/20160918")
@@ -2841,12 +3177,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListAppCatalogSubscriptionsResponse::builder)
                 .logger(LOG, "listAppCatalogSubscriptions")
                 .serviceDetails(
                         "Compute",
                         "ListAppCatalogSubscriptions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscriptionSummary/ListAppCatalogSubscriptions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAppCatalogSubscriptionsRequest::builder)
                 .basePath("/20160918")
@@ -2878,12 +3218,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListBootVolumeAttachmentsResponse::builder)
                 .logger(LOG, "listBootVolumeAttachments")
                 .serviceDetails(
                         "Compute",
                         "ListBootVolumeAttachments",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/ListBootVolumeAttachments")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBootVolumeAttachmentsRequest::builder)
                 .basePath("/20160918")
@@ -2915,12 +3260,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeCapacityReservationInstanceShapesResponse::builder)
                 .logger(LOG, "listComputeCapacityReservationInstanceShapes")
                 .serviceDetails(
                         "Compute",
                         "ListComputeCapacityReservationInstanceShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservationInstanceShapeSummary/ListComputeCapacityReservationInstanceShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeCapacityReservationInstanceShapesRequest::builder)
                 .basePath("/20160918")
@@ -2959,12 +3308,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(
                 request.getCapacityReservationId(), "capacityReservationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("capacityReservationId", request.getCapacityReservationId());
+
         return clientCall(request, ListComputeCapacityReservationInstancesResponse::builder)
                 .logger(LOG, "listComputeCapacityReservationInstances")
                 .serviceDetails(
                         "Compute",
                         "ListComputeCapacityReservationInstances",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CapacityReservationInstanceSummary/ListComputeCapacityReservationInstances")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeCapacityReservationInstancesRequest::builder)
                 .basePath("/20160918")
@@ -3001,12 +3354,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeCapacityReservationsResponse::builder)
                 .logger(LOG, "listComputeCapacityReservations")
                 .serviceDetails(
                         "Compute",
                         "ListComputeCapacityReservations",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ListComputeCapacityReservations")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeCapacityReservationsRequest::builder)
                 .basePath("/20160918")
@@ -3043,12 +3400,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeCapacityTopologiesResponse::builder)
                 .logger(LOG, "listComputeCapacityTopologies")
                 .serviceDetails(
                         "Compute",
                         "ListComputeCapacityTopologies",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ListComputeCapacityTopologies")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeCapacityTopologiesRequest::builder)
                 .basePath("/20160918")
@@ -3087,6 +3448,10 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeCapacityTopologyId(),
                 "computeCapacityTopologyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeCapacityTopologyId", request.getComputeCapacityTopologyId());
+
         return clientCall(
                         request, ListComputeCapacityTopologyComputeBareMetalHostsResponse::builder)
                 .logger(LOG, "listComputeCapacityTopologyComputeBareMetalHosts")
@@ -3094,6 +3459,7 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                         "Compute",
                         "ListComputeCapacityTopologyComputeBareMetalHosts",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeBareMetalHost/ListComputeCapacityTopologyComputeBareMetalHosts")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeCapacityTopologyComputeBareMetalHostsRequest::builder)
                 .basePath("/20160918")
@@ -3139,12 +3505,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeCapacityTopologyId(),
                 "computeCapacityTopologyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeCapacityTopologyId", request.getComputeCapacityTopologyId());
+
         return clientCall(request, ListComputeCapacityTopologyComputeHpcIslandsResponse::builder)
                 .logger(LOG, "listComputeCapacityTopologyComputeHpcIslands")
                 .serviceDetails(
                         "Compute",
                         "ListComputeCapacityTopologyComputeHpcIslands",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHpcIsland/ListComputeCapacityTopologyComputeHpcIslands")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeCapacityTopologyComputeHpcIslandsRequest::builder)
                 .basePath("/20160918")
@@ -3185,12 +3556,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeCapacityTopologyId(),
                 "computeCapacityTopologyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeCapacityTopologyId", request.getComputeCapacityTopologyId());
+
         return clientCall(request, ListComputeCapacityTopologyComputeNetworkBlocksResponse::builder)
                 .logger(LOG, "listComputeCapacityTopologyComputeNetworkBlocks")
                 .serviceDetails(
                         "Compute",
                         "ListComputeCapacityTopologyComputeNetworkBlocks",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeNetworkBlock/ListComputeCapacityTopologyComputeNetworkBlocks")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeCapacityTopologyComputeNetworkBlocksRequest::builder)
                 .basePath("/20160918")
@@ -3229,12 +3605,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeClustersResponse::builder)
                 .logger(LOG, "listComputeClusters")
                 .serviceDetails(
                         "Compute",
                         "ListComputeClusters",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/ListComputeClusters")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeClustersRequest::builder)
                 .basePath("/20160918")
@@ -3271,12 +3651,18 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeGlobalImageCapabilitySchemaId(),
                 "computeGlobalImageCapabilitySchemaId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGlobalImageCapabilitySchemaId",
+                request.getComputeGlobalImageCapabilitySchemaId());
+
         return clientCall(request, ListComputeGlobalImageCapabilitySchemaVersionsResponse::builder)
                 .logger(LOG, "listComputeGlobalImageCapabilitySchemaVersions")
                 .serviceDetails(
                         "Compute",
                         "ListComputeGlobalImageCapabilitySchemaVersions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersionSummary/ListComputeGlobalImageCapabilitySchemaVersions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeGlobalImageCapabilitySchemaVersionsRequest::builder)
                 .basePath("/20160918")
@@ -3312,12 +3698,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                                     ListComputeGlobalImageCapabilitySchemasResponse>
                             handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListComputeGlobalImageCapabilitySchemasResponse::builder)
                 .logger(LOG, "listComputeGlobalImageCapabilitySchemas")
                 .serviceDetails(
                         "Compute",
                         "ListComputeGlobalImageCapabilitySchemas",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaSummary/ListComputeGlobalImageCapabilitySchemas")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeGlobalImageCapabilitySchemasRequest::builder)
                 .basePath("/20160918")
@@ -3354,12 +3743,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getComputeGpuMemoryClusterId(),
                 "computeGpuMemoryClusterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId());
+
         return clientCall(request, ListComputeGpuMemoryClusterInstancesResponse::builder)
                 .logger(LOG, "listComputeGpuMemoryClusterInstances")
                 .serviceDetails(
                         "Compute",
                         "ListComputeGpuMemoryClusterInstances",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterInstanceSummary/ListComputeGpuMemoryClusterInstances")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeGpuMemoryClusterInstancesRequest::builder)
                 .basePath("/20160918")
@@ -3397,18 +3791,23 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeGpuMemoryClustersResponse::builder)
                 .logger(LOG, "listComputeGpuMemoryClusters")
                 .serviceDetails(
                         "Compute",
                         "ListComputeGpuMemoryClusters",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ListComputeGpuMemoryClusters")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeGpuMemoryClustersRequest::builder)
                 .basePath("/20160918")
                 .appendPathParam("computeGpuMemoryClusters")
                 .appendQueryParam(
                         "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId())
+                .appendQueryParam("computeGpuMemoryFabricId", request.getComputeGpuMemoryFabricId())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -3443,12 +3842,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeGpuMemoryFabricsResponse::builder)
                 .logger(LOG, "listComputeGpuMemoryFabrics")
                 .serviceDetails(
                         "Compute",
                         "ListComputeGpuMemoryFabrics",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/ListComputeGpuMemoryFabrics")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeGpuMemoryFabricsRequest::builder)
                 .basePath("/20160918")
@@ -3489,12 +3892,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeHostGroupsResponse::builder)
                 .logger(LOG, "listComputeHostGroups")
                 .serviceDetails(
                         "Compute",
                         "ListComputeHostGroups",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/ListComputeHostGroups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeHostGroupsRequest::builder)
                 .basePath("/20160918")
@@ -3522,12 +3929,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListComputeHostsResponse::builder)
                 .logger(LOG, "listComputeHosts")
                 .serviceDetails(
                         "Compute",
                         "ListComputeHosts",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/ListComputeHosts")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeHostsRequest::builder)
                 .basePath("/20160918")
@@ -3566,12 +3977,15 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                                     ListComputeImageCapabilitySchemasResponse>
                             handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListComputeImageCapabilitySchemasResponse::builder)
                 .logger(LOG, "listComputeImageCapabilitySchemas")
                 .serviceDetails(
                         "Compute",
                         "ListComputeImageCapabilitySchemas",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchemaSummary/ListComputeImageCapabilitySchemas")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListComputeImageCapabilitySchemasRequest::builder)
                 .basePath("/20160918")
@@ -3604,12 +4018,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListConsoleHistoriesResponse::builder)
                 .logger(LOG, "listConsoleHistories")
                 .serviceDetails(
                         "Compute",
                         "ListConsoleHistories",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/ListConsoleHistories")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListConsoleHistoriesRequest::builder)
                 .basePath("/20160918")
@@ -3643,12 +4061,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListDedicatedVmHostInstanceShapesResponse::builder)
                 .logger(LOG, "listDedicatedVmHostInstanceShapes")
                 .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHostInstanceShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceShapeSummary/ListDedicatedVmHostInstanceShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedVmHostInstanceShapesRequest::builder)
                 .basePath("/20160918")
@@ -3684,12 +4106,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("dedicatedVmHostId", request.getDedicatedVmHostId());
+
         return clientCall(request, ListDedicatedVmHostInstancesResponse::builder)
                 .logger(LOG, "listDedicatedVmHostInstances")
                 .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHostInstances",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceSummary/ListDedicatedVmHostInstances")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedVmHostInstancesRequest::builder)
                 .basePath("/20160918")
@@ -3725,12 +4152,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListDedicatedVmHostShapesResponse::builder)
                 .logger(LOG, "listDedicatedVmHostShapes")
                 .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHostShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedVmHostShapesRequest::builder)
                 .basePath("/20160918")
@@ -3760,12 +4191,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListDedicatedVmHostsResponse::builder)
                 .logger(LOG, "listDedicatedVmHosts")
                 .serviceDetails(
                         "Compute",
                         "ListDedicatedVmHosts",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostSummary/ListDedicatedVmHosts")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDedicatedVmHostsRequest::builder)
                 .basePath("/20160918")
@@ -3810,12 +4245,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getPlatform(), "platform is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("platform", request.getPlatform());
+
         return clientCall(request, ListFirmwareBundlesResponse::builder)
                 .logger(LOG, "listFirmwareBundles")
                 .serviceDetails(
                         "Compute",
                         "ListFirmwareBundles",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FirmwareBundlesCollection/ListFirmwareBundles")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFirmwareBundlesRequest::builder)
                 .basePath("/20160918")
@@ -3849,12 +4288,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+
         return clientCall(request, ListImageShapeCompatibilityEntriesResponse::builder)
                 .logger(LOG, "listImageShapeCompatibilityEntries")
                 .serviceDetails(
                         "Compute",
                         "ListImageShapeCompatibilityEntries",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/ListImageShapeCompatibilityEntries")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListImageShapeCompatibilityEntriesRequest::builder)
                 .basePath("/20160918")
@@ -3884,12 +4327,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListImagesResponse::builder)
                 .logger(LOG, "listImages")
                 .serviceDetails(
                         "Compute",
                         "ListImages",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ListImages")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListImagesRequest::builder)
                 .basePath("/20160918")
@@ -3924,12 +4371,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListInstanceConsoleConnectionsResponse::builder)
                 .logger(LOG, "listInstanceConsoleConnections")
                 .serviceDetails(
                         "Compute",
                         "ListInstanceConsoleConnections",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/ListInstanceConsoleConnections")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceConsoleConnectionsRequest::builder)
                 .basePath("/20160918")
@@ -3960,12 +4411,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, ListInstanceDevicesResponse::builder)
                 .logger(LOG, "listInstanceDevices")
                 .serviceDetails(
                         "Compute",
                         "ListInstanceDevices",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Device/ListInstanceDevices")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceDevicesRequest::builder)
                 .basePath("/20160918")
@@ -4000,12 +4455,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListInstanceMaintenanceEventsResponse::builder)
                 .logger(LOG, "listInstanceMaintenanceEvents")
                 .serviceDetails(
                         "Compute",
                         "ListInstanceMaintenanceEvents",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEventSummary/ListInstanceMaintenanceEvents")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceMaintenanceEventsRequest::builder)
                 .basePath("/20160918")
@@ -4045,12 +4504,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListInstancesResponse::builder)
                 .logger(LOG, "listInstances")
                 .serviceDetails(
                         "Compute",
                         "ListInstances",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstancesRequest::builder)
                 .basePath("/20160918")
@@ -4083,12 +4546,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListShapesResponse::builder)
                 .logger(LOG, "listShapes")
                 .serviceDetails(
                         "Compute",
                         "ListShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Shape/ListShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListShapesRequest::builder)
                 .basePath("/20160918")
@@ -4117,12 +4584,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVnicAttachmentsResponse::builder)
                 .logger(LOG, "listVnicAttachments")
                 .serviceDetails(
                         "Compute",
                         "ListVnicAttachments",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/ListVnicAttachments")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVnicAttachmentsRequest::builder)
                 .basePath("/20160918")
@@ -4152,12 +4623,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVolumeAttachmentsResponse::builder)
                 .logger(LOG, "listVolumeAttachments")
                 .serviceDetails(
                         "Compute",
                         "ListVolumeAttachments",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/ListVolumeAttachments")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVolumeAttachmentsRequest::builder)
                 .basePath("/20160918")
@@ -4192,12 +4667,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+        requiredParametersMap.put("shapeName", request.getShapeName());
+
         return clientCall(request, RemoveImageShapeCompatibilityEntryResponse::builder)
                 .logger(LOG, "removeImageShapeCompatibilityEntry")
                 .serviceDetails(
                         "Compute",
                         "RemoveImageShapeCompatibilityEntry",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/RemoveImageShapeCompatibilityEntry")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(RemoveImageShapeCompatibilityEntryRequest::builder)
                 .basePath("/20160918")
@@ -4221,9 +4701,13 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, TerminateInstanceResponse::builder)
                 .logger(LOG, "terminateInstance")
                 .serviceDetails("Compute", "TerminateInstance", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(TerminateInstanceRequest::builder)
                 .basePath("/20160918")
@@ -4238,6 +4722,8 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", TerminateInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", TerminateInstanceResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -4256,12 +4742,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateComputeCapacityReservationDetails(),
                 "updateComputeCapacityReservationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("capacityReservationId", request.getCapacityReservationId());
+
         return clientCall(request, UpdateComputeCapacityReservationResponse::builder)
                 .logger(LOG, "updateComputeCapacityReservation")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeCapacityReservation",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/UpdateComputeCapacityReservation")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeCapacityReservationRequest::builder)
                 .basePath("/20160918")
@@ -4296,12 +4786,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateComputeCapacityTopologyDetails(),
                 "updateComputeCapacityTopologyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeCapacityTopologyId", request.getComputeCapacityTopologyId());
+
         return clientCall(request, UpdateComputeCapacityTopologyResponse::builder)
                 .logger(LOG, "updateComputeCapacityTopology")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeCapacityTopology",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/UpdateComputeCapacityTopology")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeCapacityTopologyRequest::builder)
                 .basePath("/20160918")
@@ -4332,12 +4827,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateComputeClusterDetails(),
                 "updateComputeClusterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeClusterId", request.getComputeClusterId());
+
         return clientCall(request, UpdateComputeClusterResponse::builder)
                 .logger(LOG, "updateComputeCluster")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCluster/UpdateComputeCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeClusterRequest::builder)
                 .basePath("/20160918")
@@ -4373,12 +4872,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateComputeGpuMemoryClusterDetails(),
                 "updateComputeGpuMemoryClusterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryClusterId", request.getComputeGpuMemoryClusterId());
+
         return clientCall(request, UpdateComputeGpuMemoryClusterResponse::builder)
                 .logger(LOG, "updateComputeGpuMemoryCluster")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeGpuMemoryCluster",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/UpdateComputeGpuMemoryCluster")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeGpuMemoryClusterRequest::builder)
                 .basePath("/20160918")
@@ -4419,12 +4923,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateComputeGpuMemoryFabricDetails(),
                 "updateComputeGpuMemoryFabricDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeGpuMemoryFabricId", request.getComputeGpuMemoryFabricId());
+
         return clientCall(request, UpdateComputeGpuMemoryFabricResponse::builder)
                 .logger(LOG, "updateComputeGpuMemoryFabric")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeGpuMemoryFabric",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryFabric/UpdateComputeGpuMemoryFabric")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeGpuMemoryFabricRequest::builder)
                 .basePath("/20160918")
@@ -4457,12 +4966,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Objects.requireNonNull(
                 request.getUpdateComputeHostDetails(), "updateComputeHostDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostId", request.getComputeHostId());
+
         return clientCall(request, UpdateComputeHostResponse::builder)
                 .logger(LOG, "updateComputeHost")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHost/UpdateComputeHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeHostRequest::builder)
                 .basePath("/20160918")
@@ -4493,12 +5006,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateComputeHostGroupDetails(),
                 "updateComputeHostGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("computeHostGroupId", request.getComputeHostGroupId());
+
         return clientCall(request, UpdateComputeHostGroupResponse::builder)
                 .logger(LOG, "updateComputeHostGroup")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeHostGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHostGroup/UpdateComputeHostGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeHostGroupRequest::builder)
                 .basePath("/20160918")
@@ -4539,12 +5056,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateComputeImageCapabilitySchemaDetails(),
                 "updateComputeImageCapabilitySchemaDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "computeImageCapabilitySchemaId", request.getComputeImageCapabilitySchemaId());
+
         return clientCall(request, UpdateComputeImageCapabilitySchemaResponse::builder)
                 .logger(LOG, "updateComputeImageCapabilitySchema")
                 .serviceDetails(
                         "Compute",
                         "UpdateComputeImageCapabilitySchema",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/UpdateComputeImageCapabilitySchema")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateComputeImageCapabilitySchemaRequest::builder)
                 .basePath("/20160918")
@@ -4579,12 +5101,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateConsoleHistoryDetails(),
                 "updateConsoleHistoryDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceConsoleHistoryId", request.getInstanceConsoleHistoryId());
+
         return clientCall(request, UpdateConsoleHistoryResponse::builder)
                 .logger(LOG, "updateConsoleHistory")
                 .serviceDetails(
                         "Compute",
                         "UpdateConsoleHistory",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/UpdateConsoleHistory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateConsoleHistoryRequest::builder)
                 .basePath("/20160918")
@@ -4614,12 +5141,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateDedicatedVmHostDetails(),
                 "updateDedicatedVmHostDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dedicatedVmHostId", request.getDedicatedVmHostId());
+
         return clientCall(request, UpdateDedicatedVmHostResponse::builder)
                 .logger(LOG, "updateDedicatedVmHost")
                 .serviceDetails(
                         "Compute",
                         "UpdateDedicatedVmHost",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/UpdateDedicatedVmHost")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDedicatedVmHostRequest::builder)
                 .basePath("/20160918")
@@ -4648,12 +5179,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Objects.requireNonNull(request.getUpdateImageDetails(), "updateImageDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+
         return clientCall(request, UpdateImageResponse::builder)
                 .logger(LOG, "updateImage")
                 .serviceDetails(
                         "Compute",
                         "UpdateImage",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/UpdateImage")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateImageRequest::builder)
                 .basePath("/20160918")
@@ -4682,12 +5217,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
         Objects.requireNonNull(
                 request.getUpdateInstanceDetails(), "updateInstanceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, UpdateInstanceResponse::builder)
                 .logger(LOG, "updateInstance")
                 .serviceDetails(
                         "Compute",
                         "UpdateInstance",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/UpdateInstance")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInstanceRequest::builder)
                 .basePath("/20160918")
@@ -4724,12 +5263,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateInstanceConsoleConnectionDetails(),
                 "updateInstanceConsoleConnectionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceConsoleConnectionId", request.getInstanceConsoleConnectionId());
+
         return clientCall(request, UpdateInstanceConsoleConnectionResponse::builder)
                 .logger(LOG, "updateInstanceConsoleConnection")
                 .serviceDetails(
                         "Compute",
                         "UpdateInstanceConsoleConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/UpdateInstanceConsoleConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInstanceConsoleConnectionRequest::builder)
                 .basePath("/20160918")
@@ -4766,12 +5310,17 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateInstanceMaintenanceEventDetails(),
                 "updateInstanceMaintenanceEventDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "instanceMaintenanceEventId", request.getInstanceMaintenanceEventId());
+
         return clientCall(request, UpdateInstanceMaintenanceEventResponse::builder)
                 .logger(LOG, "updateInstanceMaintenanceEvent")
                 .serviceDetails(
                         "Compute",
                         "UpdateInstanceMaintenanceEvent",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/UpdateInstanceMaintenanceEvent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInstanceMaintenanceEventRequest::builder)
                 .basePath("/20160918")
@@ -4803,12 +5352,16 @@ public class ComputeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 request.getUpdateVolumeAttachmentDetails(),
                 "updateVolumeAttachmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeAttachmentId", request.getVolumeAttachmentId());
+
         return clientCall(request, UpdateVolumeAttachmentResponse::builder)
                 .logger(LOG, "updateVolumeAttachment")
                 .serviceDetails(
                         "Compute",
                         "UpdateVolumeAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/UpdateVolumeAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVolumeAttachmentRequest::builder)
                 .basePath("/20160918")

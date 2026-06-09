@@ -43,7 +43,8 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "vnicId",
         "ipState",
         "lifetime",
-        "routeTableId"
+        "routeTableId",
+        "hostname"
     })
     public Ipv6(
             String compartmentId,
@@ -59,7 +60,8 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             String vnicId,
             IpState ipState,
             Lifetime lifetime,
-            String routeTableId) {
+            String routeTableId,
+            String hostname) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -75,6 +77,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.ipState = ipState;
         this.lifetime = lifetime;
         this.routeTableId = routeTableId;
+        this.hostname = hostname;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -356,6 +359,21 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
+        /** The hostname associated with the IPv6 address. Only the hostname label, not the FQDN. */
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
+
+        /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         * @param hostname the value to set
+         * @return this builder
+         */
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -376,7 +394,8 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.vnicId,
                             this.ipState,
                             this.lifetime,
-                            this.routeTableId);
+                            this.routeTableId,
+                            this.hostname);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -426,6 +445,9 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
             }
             return this;
         }
@@ -831,6 +853,19 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return routeTableId;
     }
 
+    /** The hostname associated with the IPv6 address. Only the hostname label, not the FQDN. */
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    private final String hostname;
+
+    /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     * @return the value
+     */
+    public String getHostname() {
+        return hostname;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -860,6 +895,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", ipState=").append(String.valueOf(this.ipState));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(")");
         return sb.toString();
     }
@@ -888,6 +924,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.ipState, other.ipState)
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.hostname, other.hostname)
                 && super.equals(other);
     }
 
@@ -915,6 +952,7 @@ public final class Ipv6 extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
         result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

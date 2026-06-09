@@ -29,7 +29,8 @@ public final class BulkUpdateIpv6sItem
         "freeformTags",
         "ipv6Id",
         "lifetime",
-        "routeTableId"
+        "routeTableId",
+        "hostname"
     })
     public BulkUpdateIpv6sItem(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -37,7 +38,8 @@ public final class BulkUpdateIpv6sItem
             java.util.Map<String, String> freeformTags,
             String ipv6Id,
             Lifetime lifetime,
-            String routeTableId) {
+            String routeTableId,
+            String hostname) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -45,6 +47,7 @@ public final class BulkUpdateIpv6sItem
         this.ipv6Id = ipv6Id;
         this.lifetime = lifetime;
         this.routeTableId = routeTableId;
+        this.hostname = hostname;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -174,6 +177,21 @@ public final class BulkUpdateIpv6sItem
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
+        /** The hostname associated with the IPv6 address. Only the hostname label, not the FQDN. */
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
+
+        /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         * @param hostname the value to set
+         * @return this builder
+         */
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -186,7 +204,8 @@ public final class BulkUpdateIpv6sItem
                             this.freeformTags,
                             this.ipv6Id,
                             this.lifetime,
-                            this.routeTableId);
+                            this.routeTableId,
+                            this.hostname);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -212,6 +231,9 @@ public final class BulkUpdateIpv6sItem
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
             }
             return this;
         }
@@ -371,6 +393,19 @@ public final class BulkUpdateIpv6sItem
         return routeTableId;
     }
 
+    /** The hostname associated with the IPv6 address. Only the hostname label, not the FQDN. */
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    private final String hostname;
+
+    /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     * @return the value
+     */
+    public String getHostname() {
+        return hostname;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -392,6 +427,7 @@ public final class BulkUpdateIpv6sItem
         sb.append(", ipv6Id=").append(String.valueOf(this.ipv6Id));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(")");
         return sb.toString();
     }
@@ -412,6 +448,7 @@ public final class BulkUpdateIpv6sItem
                 && java.util.Objects.equals(this.ipv6Id, other.ipv6Id)
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.hostname, other.hostname)
                 && super.equals(other);
     }
 
@@ -425,6 +462,7 @@ public final class BulkUpdateIpv6sItem
         result = (result * PRIME) + (this.ipv6Id == null ? 43 : this.ipv6Id.hashCode());
         result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

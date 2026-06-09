@@ -436,6 +436,38 @@ public class KafkaClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetAddonResponse getAddon(GetAddonRequest request) {
+
+        Validate.notBlank(request.getKafkaClusterId(), "kafkaClusterId must not be blank");
+
+        Validate.notBlank(request.getAddonName(), "addonName must not be blank");
+
+        return clientCall(request, GetAddonResponse::builder)
+                .logger(LOG, "getAddon")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "GetAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterAddon/GetAddon")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAddonRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("kafkaClusters")
+                .appendPathParam(request.getKafkaClusterId())
+                .appendPathParam("addons")
+                .appendPathParam(request.getAddonName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.managedkafka.model.KafkaClusterAddon.class,
+                        GetAddonResponse.Builder::kafkaClusterAddon)
+                .handleResponseHeaderString("etag", GetAddonResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAddonResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetKafkaClusterResponse getKafkaCluster(GetKafkaClusterRequest request) {
 
         Validate.notBlank(request.getKafkaClusterId(), "kafkaClusterId must not be blank");
@@ -554,6 +586,109 @@ public class KafkaClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public InstallAddonResponse installAddon(InstallAddonRequest request) {
+        Objects.requireNonNull(request.getInstallAddonDetails(), "installAddonDetails is required");
+
+        Validate.notBlank(request.getKafkaClusterId(), "kafkaClusterId must not be blank");
+
+        return clientCall(request, InstallAddonResponse::builder)
+                .logger(LOG, "installAddon")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "InstallAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/InstallAddon")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallAddonRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("kafkaClusters")
+                .appendPathParam(request.getKafkaClusterId())
+                .appendPathParam("addons")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.managedkafka.model.KafkaClusterAddon.class,
+                        InstallAddonResponse.Builder::kafkaClusterAddon)
+                .handleResponseHeaderString("etag", InstallAddonResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", InstallAddonResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", InstallAddonResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListAddonOptionsResponse listAddonOptions(ListAddonOptionsRequest request) {
+
+        return clientCall(request, ListAddonOptionsResponse::builder)
+                .logger(LOG, "listAddonOptions")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListAddonOptions",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/AddonOptionCollection/ListAddonOptions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddonOptionsRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("addonOptions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.managedkafka.model.AddonOptionCollection.class,
+                        ListAddonOptionsResponse.Builder::addonOptionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAddonOptionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddonOptionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListAddonsResponse listAddons(ListAddonsRequest request) {
+
+        Validate.notBlank(request.getKafkaClusterId(), "kafkaClusterId must not be blank");
+
+        return clientCall(request, ListAddonsResponse::builder)
+                .logger(LOG, "listAddons")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "ListAddons",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ListAddons")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddonsRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("kafkaClusters")
+                .appendPathParam(request.getKafkaClusterId())
+                .appendPathParam("addons")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.managedkafka.model.AddonCollection.class,
+                        ListAddonsResponse.Builder::addonCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAddonsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddonsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -797,6 +932,72 @@ public class KafkaClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public UninstallAddonResponse uninstallAddon(UninstallAddonRequest request) {
+
+        Validate.notBlank(request.getKafkaClusterId(), "kafkaClusterId must not be blank");
+
+        Validate.notBlank(request.getAddonName(), "addonName must not be blank");
+
+        return clientCall(request, UninstallAddonResponse::builder)
+                .logger(LOG, "uninstallAddon")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "UninstallAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/UninstallAddon")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(UninstallAddonRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("kafkaClusters")
+                .appendPathParam(request.getKafkaClusterId())
+                .appendPathParam("addons")
+                .appendPathParam(request.getAddonName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", UninstallAddonResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateAddonResponse updateAddon(UpdateAddonRequest request) {
+        Objects.requireNonNull(request.getUpdateAddonDetails(), "updateAddonDetails is required");
+
+        Validate.notBlank(request.getKafkaClusterId(), "kafkaClusterId must not be blank");
+
+        Validate.notBlank(request.getAddonName(), "addonName must not be blank");
+
+        return clientCall(request, UpdateAddonResponse::builder)
+                .logger(LOG, "updateAddon")
+                .serviceDetails(
+                        "KafkaCluster",
+                        "UpdateAddon",
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/UpdateAddon")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAddonRequest::builder)
+                .basePath("/20240901")
+                .appendPathParam("kafkaClusters")
+                .appendPathParam(request.getKafkaClusterId())
+                .appendPathParam("addons")
+                .appendPathParam(request.getAddonName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.managedkafka.model.KafkaClusterAddon.class,
+                        UpdateAddonResponse.Builder::kafkaClusterAddon)
+                .handleResponseHeaderString("etag", UpdateAddonResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAddonResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAddonResponse.Builder::opcRequestId)
                 .callSync();
     }
 

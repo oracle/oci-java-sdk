@@ -232,6 +232,20 @@ public interface KafkaClusterAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about a KafkaClusterAddon.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAddonResponse> getAddon(
+            GetAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse> handler);
+
+    /**
      * Gets information about a KafkaCluster.
      *
      * @param request The request object containing the details to send
@@ -293,6 +307,50 @@ public interface KafkaClusterAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * Installs a KafkaClusterAddon.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallAddonResponse> installAddon(
+            InstallAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<InstallAddonRequest, InstallAddonResponse>
+                    handler);
+
+    /**
+     * Gets a list of supported KafkaClusterAddons.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddonOptionsResponse> listAddonOptions(
+            ListAddonOptionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAddonOptionsRequest, ListAddonOptionsResponse>
+                    handler);
+
+    /**
+     * Gets a list of KafkaClusterAddons.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddonsResponse> listAddons(
+            ListAddonsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAddonsRequest, ListAddonsResponse> handler);
 
     /**
      * Gets a list of KafkaClusterConfig Versions.
@@ -405,6 +463,35 @@ public interface KafkaClusterAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Uninstalls a KafkaClusterAddon in a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UninstallAddonResponse> uninstallAddon(
+            UninstallAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UninstallAddonRequest, UninstallAddonResponse>
+                    handler);
+
+    /**
+     * Installs updates on the existing KafkaClusterAddon.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAddonResponse> updateAddon(
+            UpdateAddonRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse> handler);
 
     /**
      * Updates a KafkaCluster.

@@ -52,7 +52,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
         "definedTags",
         "systemTags",
         "databaseSoftwareImageId",
-        "isUnifiedAuditingEnabled"
+        "isUnifiedAuditingEnabled",
+        "homeType"
     })
     public DbHomeSummary(
             String id,
@@ -72,7 +73,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String databaseSoftwareImageId,
-            Boolean isUnifiedAuditingEnabled) {
+            Boolean isUnifiedAuditingEnabled,
+            HomeType homeType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -92,6 +94,7 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
         this.systemTags = systemTags;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+        this.homeType = homeType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -417,6 +420,21 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("isUnifiedAuditingEnabled");
             return this;
         }
+        /** Represents database home will be managed by oracle or customer */
+        @com.fasterxml.jackson.annotation.JsonProperty("homeType")
+        private HomeType homeType;
+
+        /**
+         * Represents database home will be managed by oracle or customer
+         *
+         * @param homeType the value to set
+         * @return this builder
+         */
+        public Builder homeType(HomeType homeType) {
+            this.homeType = homeType;
+            this.__explicitlySet__.add("homeType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -441,7 +459,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.definedTags,
                             this.systemTags,
                             this.databaseSoftwareImageId,
-                            this.isUnifiedAuditingEnabled);
+                            this.isUnifiedAuditingEnabled,
+                            this.homeType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -503,6 +522,9 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
                 this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("homeType")) {
+                this.homeType(model.getHomeType());
             }
             return this;
         }
@@ -851,6 +873,65 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
         return isUnifiedAuditingEnabled;
     }
 
+    /** Represents database home will be managed by oracle or customer */
+    public enum HomeType implements com.oracle.bmc.http.internal.BmcEnum {
+        OracleManaged("ORACLE_MANAGED"),
+        CustomerManaged("CUSTOMER_MANAGED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HomeType.class);
+
+        private final String value;
+        private static java.util.Map<String, HomeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (HomeType v : HomeType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        HomeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static HomeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'HomeType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Represents database home will be managed by oracle or customer */
+    @com.fasterxml.jackson.annotation.JsonProperty("homeType")
+    private final HomeType homeType;
+
+    /**
+     * Represents database home will be managed by oracle or customer
+     *
+     * @return the value
+     */
+    public HomeType getHomeType() {
+        return homeType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -887,6 +968,7 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", isUnifiedAuditingEnabled=")
                 .append(String.valueOf(this.isUnifiedAuditingEnabled));
+        sb.append(", homeType=").append(String.valueOf(this.homeType));
         sb.append(")");
         return sb.toString();
     }
@@ -922,6 +1004,7 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(
                         this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
+                && java.util.Objects.equals(this.homeType, other.homeType)
                 && super.equals(other);
     }
 
@@ -969,6 +1052,7 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
                         + (this.isUnifiedAuditingEnabled == null
                                 ? 43
                                 : this.isUnifiedAuditingEnabled.hashCode());
+        result = (result * PRIME) + (this.homeType == null ? 43 : this.homeType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

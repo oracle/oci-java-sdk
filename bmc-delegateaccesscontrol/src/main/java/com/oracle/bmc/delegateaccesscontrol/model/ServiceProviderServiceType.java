@@ -9,6 +9,7 @@ package com.oracle.bmc.delegateaccesscontrol.model;
 public enum ServiceProviderServiceType implements com.oracle.bmc.http.internal.BmcEnum {
     Troubleshooting("TROUBLESHOOTING"),
     AssistedPatching("ASSISTED_PATCHING"),
+    ManagedSoftwareUpdates("MANAGED_SOFTWARE_UPDATES"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

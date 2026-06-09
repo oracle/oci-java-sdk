@@ -33,7 +33,9 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(VirtualNetworkClient.class.getName())
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
+                    .endpointServiceName("iaas")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -138,12 +140,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getAddDrgRouteDistributionStatementsDetails(),
                 "addDrgRouteDistributionStatementsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteDistributionId", request.getDrgRouteDistributionId());
+
         return clientCall(request, AddDrgRouteDistributionStatementsResponse::builder)
                 .logger(LOG, "addDrgRouteDistributionStatements")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddDrgRouteDistributionStatements",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDrgRouteDistributionStatementsRequest::builder)
                 .basePath("/20160918")
@@ -173,12 +179,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getAddDrgRouteRulesDetails(), "addDrgRouteRulesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, AddDrgRouteRulesResponse::builder)
                 .logger(LOG, "addDrgRouteRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddDrgRouteRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDrgRouteRulesRequest::builder)
                 .basePath("/20160918")
@@ -208,12 +218,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getAddIpv4SubnetCidrDetails(), "addIpv4SubnetCidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, AddIpv4SubnetCidrResponse::builder)
                 .logger(LOG, "addIpv4SubnetCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddIpv4SubnetCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv4SubnetCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddIpv4SubnetCidrRequest::builder)
                 .basePath("/20160918")
@@ -244,12 +258,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getAddSubnetIpv6CidrDetails(), "addSubnetIpv6CidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, AddIpv6SubnetCidrResponse::builder)
                 .logger(LOG, "addIpv6SubnetCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddIpv6SubnetCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddIpv6SubnetCidrRequest::builder)
                 .basePath("/20160918")
@@ -279,12 +297,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, AddIpv6VcnCidrResponse::builder)
                 .logger(LOG, "addIpv6VcnCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddIpv6VcnCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddIpv6VcnCidrRequest::builder)
                 .basePath("/20160918")
@@ -319,12 +341,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getAddNetworkSecurityGroupSecurityRulesDetails(),
                 "addNetworkSecurityGroupSecurityRulesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, AddNetworkSecurityGroupSecurityRulesResponse::builder)
                 .logger(LOG, "addNetworkSecurityGroupSecurityRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddNetworkSecurityGroupSecurityRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddNetworkSecurityGroupSecurityRulesRequest::builder)
                 .basePath("/20160918")
@@ -356,12 +382,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getAddPublicIpPoolCapacityDetails(),
                 "addPublicIpPoolCapacityDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpPoolId", request.getPublicIpPoolId());
+
         return clientCall(request, AddPublicIpPoolCapacityResponse::builder)
                 .logger(LOG, "addPublicIpPoolCapacity")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddPublicIpPoolCapacity",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddPublicIpPoolCapacityRequest::builder)
                 .basePath("/20160918")
@@ -391,12 +421,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
         Objects.requireNonNull(request.getAddVcnCidrDetails(), "addVcnCidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, AddVcnCidrResponse::builder)
                 .logger(LOG, "addVcnCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AddVcnCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddVcnCidrRequest::builder)
                 .basePath("/20160918")
@@ -425,12 +459,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, AdvertiseByoipRangeResponse::builder)
                 .logger(LOG, "advertiseByoipRange")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AdvertiseByoipRange",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AdvertiseByoipRangeRequest::builder)
                 .basePath("/20160918")
@@ -456,12 +494,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getAttachServiceDetails(), "attachServiceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceGatewayId", request.getServiceGatewayId());
+
         return clientCall(request, AttachServiceIdResponse::builder)
                 .logger(LOG, "attachServiceId")
                 .serviceDetails(
                         "VirtualNetwork",
                         "AttachServiceId",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachServiceIdRequest::builder)
                 .basePath("/20160918")
@@ -494,12 +536,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getBulkAddVirtualCircuitPublicPrefixesDetails(),
                 "bulkAddVirtualCircuitPublicPrefixesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, BulkAddVirtualCircuitPublicPrefixesResponse::builder)
                 .logger(LOG, "bulkAddVirtualCircuitPublicPrefixes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkAddVirtualCircuitPublicPrefixes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkAddVirtualCircuitPublicPrefixesRequest::builder)
                 .basePath("/20160918")
@@ -521,12 +567,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getBulkCreateIpv6sDetails(), "bulkCreateIpv6sDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkCreateIpv6sResponse::builder)
                 .logger(LOG, "bulkCreateIpv6s")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkCreateIpv6s",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkCreateIpv6s")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkCreateIpv6sRequest::builder)
                 .basePath("/20160918")
@@ -554,12 +603,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getBulkCreatePrivateIpsDetails(),
                 "bulkCreatePrivateIpsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkCreatePrivateIpsResponse::builder)
                 .logger(LOG, "bulkCreatePrivateIps")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkCreatePrivateIps",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkCreatePrivateIps")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkCreatePrivateIpsRequest::builder)
                 .basePath("/20160918")
@@ -587,12 +639,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getBulkDeleteIpv6sDetails(), "bulkDeleteIpv6sDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkDeleteIpv6sResponse::builder)
                 .logger(LOG, "bulkDeleteIpv6s")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkDeleteIpv6s",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkDeleteIpv6s")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkDeleteIpv6sRequest::builder)
                 .basePath("/20160918")
@@ -620,12 +675,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getBulkDeletePrivateIpsDetails(),
                 "bulkDeletePrivateIpsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkDeletePrivateIpsResponse::builder)
                 .logger(LOG, "bulkDeletePrivateIps")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkDeletePrivateIps",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkDeletePrivateIps")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkDeletePrivateIpsRequest::builder)
                 .basePath("/20160918")
@@ -658,12 +716,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
                 "bulkDeleteVirtualCircuitPublicPrefixesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, BulkDeleteVirtualCircuitPublicPrefixesResponse::builder)
                 .logger(LOG, "bulkDeleteVirtualCircuitPublicPrefixes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkDeleteVirtualCircuitPublicPrefixes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkDeleteVirtualCircuitPublicPrefixesRequest::builder)
                 .basePath("/20160918")
@@ -685,12 +747,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getBulkDetachIpv6sDetails(), "bulkDetachIpv6sDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkDetachIpv6sResponse::builder)
                 .logger(LOG, "bulkDetachIpv6s")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkDetachIpv6s",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkDetachIpv6s")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkDetachIpv6sRequest::builder)
                 .basePath("/20160918")
@@ -718,12 +783,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getBulkDetachPrivateIpsDetails(),
                 "bulkDetachPrivateIpsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkDetachPrivateIpsResponse::builder)
                 .logger(LOG, "bulkDetachPrivateIps")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkDetachPrivateIps",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkDetachPrivateIps")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkDetachPrivateIpsRequest::builder)
                 .basePath("/20160918")
@@ -751,12 +819,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getBulkUpdateIpv6sDetails(), "bulkUpdateIpv6sDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkUpdateIpv6sResponse::builder)
                 .logger(LOG, "bulkUpdateIpv6s")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkUpdateIpv6s",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/BulkUpdateIpv6s")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkUpdateIpv6sRequest::builder)
                 .basePath("/20160918")
@@ -784,12 +855,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getBulkUpdatePrivateIpsDetails(),
                 "bulkUpdatePrivateIpsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, BulkUpdatePrivateIpsResponse::builder)
                 .logger(LOG, "bulkUpdatePrivateIps")
                 .serviceDetails(
                         "VirtualNetwork",
                         "BulkUpdatePrivateIps",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/BulkUpdatePrivateIps")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkUpdatePrivateIpsRequest::builder)
                 .basePath("/20160918")
@@ -820,12 +894,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeByoasnCompartmentDetails(),
                 "changeByoasnCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoasnId", request.getByoasnId());
+
         return clientCall(request, ChangeByoasnCompartmentResponse::builder)
                 .logger(LOG, "changeByoasnCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeByoasnCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ChangeByoasnCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeByoasnCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -857,12 +935,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeByoipRangeCompartmentDetails(),
                 "changeByoipRangeCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, ChangeByoipRangeCompartmentResponse::builder)
                 .logger(LOG, "changeByoipRangeCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeByoipRangeCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeByoipRangeCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -893,12 +975,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeCaptureFilterCompartmentDetails(),
                 "changeCaptureFilterCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("captureFilterId", request.getCaptureFilterId());
+
         return clientCall(request, ChangeCaptureFilterCompartmentResponse::builder)
                 .logger(LOG, "changeCaptureFilterCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCaptureFilterCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ChangeCaptureFilterCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeCaptureFilterCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -934,12 +1020,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeCpeCompartmentDetails(),
                 "changeCpeCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("cpeId", request.getCpeId());
+
         return clientCall(request, ChangeCpeCompartmentResponse::builder)
                 .logger(LOG, "changeCpeCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCpeCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeCpeCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -971,12 +1061,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeCrossConnectCompartmentDetails(),
                 "changeCrossConnectCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectId", request.getCrossConnectId());
+
         return clientCall(request, ChangeCrossConnectCompartmentResponse::builder)
                 .logger(LOG, "changeCrossConnectCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCrossConnectCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeCrossConnectCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1011,12 +1105,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeCrossConnectGroupCompartmentDetails(),
                 "changeCrossConnectGroupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectGroupId", request.getCrossConnectGroupId());
+
         return clientCall(request, ChangeCrossConnectGroupCompartmentResponse::builder)
                 .logger(LOG, "changeCrossConnectGroupCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCrossConnectGroupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeCrossConnectGroupCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1050,12 +1148,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeDhcpOptionsCompartmentDetails(),
                 "changeDhcpOptionsCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dhcpId", request.getDhcpId());
+
         return clientCall(request, ChangeDhcpOptionsCompartmentResponse::builder)
                 .logger(LOG, "changeDhcpOptionsCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeDhcpOptionsCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDhcpOptionsCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1087,12 +1189,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeDrgCompartmentDetails(),
                 "changeDrgCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, ChangeDrgCompartmentResponse::builder)
                 .logger(LOG, "changeDrgCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeDrgCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDrgCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1127,12 +1233,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeIPSecConnectionCompartmentDetails(),
                 "changeIPSecConnectionCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, ChangeIPSecConnectionCompartmentResponse::builder)
                 .logger(LOG, "changeIPSecConnectionCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeIPSecConnectionCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeIPSecConnectionCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1166,12 +1276,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeInternetGatewayCompartmentDetails(),
                 "changeInternetGatewayCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("igId", request.getIgId());
+
         return clientCall(request, ChangeInternetGatewayCompartmentResponse::builder)
                 .logger(LOG, "changeInternetGatewayCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeInternetGatewayCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeInternetGatewayCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1206,12 +1320,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeLocalPeeringGatewayCompartmentDetails(),
                 "changeLocalPeeringGatewayCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("localPeeringGatewayId", request.getLocalPeeringGatewayId());
+
         return clientCall(request, ChangeLocalPeeringGatewayCompartmentResponse::builder)
                 .logger(LOG, "changeLocalPeeringGatewayCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeLocalPeeringGatewayCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeLocalPeeringGatewayCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1245,12 +1363,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeNatGatewayCompartmentDetails(),
                 "changeNatGatewayCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("natGatewayId", request.getNatGatewayId());
+
         return clientCall(request, ChangeNatGatewayCompartmentResponse::builder)
                 .logger(LOG, "changeNatGatewayCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeNatGatewayCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeNatGatewayCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1284,12 +1406,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeNetworkSecurityGroupCompartmentDetails(),
                 "changeNetworkSecurityGroupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, ChangeNetworkSecurityGroupCompartmentResponse::builder)
                 .logger(LOG, "changeNetworkSecurityGroupCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeNetworkSecurityGroupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeNetworkSecurityGroupCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1321,12 +1447,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangePublicIpCompartmentDetails(),
                 "changePublicIpCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpId", request.getPublicIpId());
+
         return clientCall(request, ChangePublicIpCompartmentResponse::builder)
                 .logger(LOG, "changePublicIpCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangePublicIpCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangePublicIpCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1358,12 +1488,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangePublicIpPoolCompartmentDetails(),
                 "changePublicIpPoolCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpPoolId", request.getPublicIpPoolId());
+
         return clientCall(request, ChangePublicIpPoolCompartmentResponse::builder)
                 .logger(LOG, "changePublicIpPoolCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangePublicIpPoolCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangePublicIpPoolCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1397,12 +1531,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeRemotePeeringConnectionCompartmentDetails(),
                 "changeRemotePeeringConnectionCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "remotePeeringConnectionId", request.getRemotePeeringConnectionId());
+
         return clientCall(request, ChangeRemotePeeringConnectionCompartmentResponse::builder)
                 .logger(LOG, "changeRemotePeeringConnectionCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeRemotePeeringConnectionCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeRemotePeeringConnectionCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1436,12 +1575,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeRouteTableCompartmentDetails(),
                 "changeRouteTableCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("rtId", request.getRtId());
+
         return clientCall(request, ChangeRouteTableCompartmentResponse::builder)
                 .logger(LOG, "changeRouteTableCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeRouteTableCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeRouteTableCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1474,12 +1617,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeSecurityListCompartmentDetails(),
                 "changeSecurityListCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("securityListId", request.getSecurityListId());
+
         return clientCall(request, ChangeSecurityListCompartmentResponse::builder)
                 .logger(LOG, "changeSecurityListCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeSecurityListCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSecurityListCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1513,12 +1660,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeServiceGatewayCompartmentDetails(),
                 "changeServiceGatewayCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceGatewayId", request.getServiceGatewayId());
+
         return clientCall(request, ChangeServiceGatewayCompartmentResponse::builder)
                 .logger(LOG, "changeServiceGatewayCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeServiceGatewayCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeServiceGatewayCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1550,12 +1701,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeSubnetCompartmentDetails(),
                 "changeSubnetCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, ChangeSubnetCompartmentResponse::builder)
                 .logger(LOG, "changeSubnetCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeSubnetCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSubnetCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1588,12 +1743,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeVcnCompartmentDetails(),
                 "changeVcnCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, ChangeVcnCompartmentResponse::builder)
                 .logger(LOG, "changeVcnCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVcnCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVcnCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1628,12 +1787,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeVirtualCircuitCompartmentDetails(),
                 "changeVirtualCircuitCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, ChangeVirtualCircuitCompartmentResponse::builder)
                 .logger(LOG, "changeVirtualCircuitCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVirtualCircuitCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVirtualCircuitCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1665,12 +1828,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeVlanCompartmentDetails(),
                 "changeVlanCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vlanId", request.getVlanId());
+
         return clientCall(request, ChangeVlanCompartmentResponse::builder)
                 .logger(LOG, "changeVlanCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVlanCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVlanCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1703,12 +1870,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getChangeVtapCompartmentDetails(),
                 "changeVtapCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vtapId", request.getVtapId());
+
         return clientCall(request, ChangeVtapCompartmentResponse::builder)
                 .logger(LOG, "changeVtapCompartment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVtapCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ChangeVtapCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVtapCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -1745,12 +1916,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getConnectLocalPeeringGatewaysDetails(),
                 "connectLocalPeeringGatewaysDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("localPeeringGatewayId", request.getLocalPeeringGatewayId());
+
         return clientCall(request, ConnectLocalPeeringGatewaysResponse::builder)
                 .logger(LOG, "connectLocalPeeringGateways")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ConnectLocalPeeringGateways",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConnectLocalPeeringGatewaysRequest::builder)
                 .basePath("/20160918")
@@ -1781,12 +1956,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getConnectRemotePeeringConnectionsDetails(),
                 "connectRemotePeeringConnectionsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "remotePeeringConnectionId", request.getRemotePeeringConnectionId());
+
         return clientCall(request, ConnectRemotePeeringConnectionsResponse::builder)
                 .logger(LOG, "connectRemotePeeringConnections")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ConnectRemotePeeringConnections",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConnectRemotePeeringConnectionsRequest::builder)
                 .basePath("/20160918")
@@ -1809,12 +1989,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateByoasnDetails(), "createByoasnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateByoasnResponse::builder)
                 .logger(LOG, "createByoasn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateByoasn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/CreateByoasn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateByoasnRequest::builder)
                 .basePath("/20160918")
@@ -1841,12 +2024,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateByoipRangeDetails(), "createByoipRangeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateByoipRangeResponse::builder)
                 .logger(LOG, "createByoipRange")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateByoipRange",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateByoipRangeRequest::builder)
                 .basePath("/20160918")
@@ -1873,12 +2059,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateCaptureFilterDetails(), "createCaptureFilterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateCaptureFilterResponse::builder)
                 .logger(LOG, "createCaptureFilter")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateCaptureFilter",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/CreateCaptureFilter")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCaptureFilterRequest::builder)
                 .basePath("/20160918")
@@ -1903,12 +2092,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateCpeDetails(), "createCpeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateCpeResponse::builder)
                 .logger(LOG, "createCpe")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateCpe",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCpeRequest::builder)
                 .basePath("/20160918")
@@ -1932,12 +2124,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateCrossConnectDetails(), "createCrossConnectDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateCrossConnectResponse::builder)
                 .logger(LOG, "createCrossConnect")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateCrossConnect",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCrossConnectRequest::builder)
                 .basePath("/20160918")
@@ -1964,12 +2159,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateCrossConnectGroupDetails(),
                 "createCrossConnectGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateCrossConnectGroupResponse::builder)
                 .logger(LOG, "createCrossConnectGroup")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateCrossConnectGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCrossConnectGroupRequest::builder)
                 .basePath("/20160918")
@@ -1994,12 +2192,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateDhcpDetails(), "createDhcpDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateDhcpOptionsResponse::builder)
                 .logger(LOG, "createDhcpOptions")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateDhcpOptions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDhcpOptionsRequest::builder)
                 .basePath("/20160918")
@@ -2023,12 +2224,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateDrgDetails(), "createDrgDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateDrgResponse::builder)
                 .logger(LOG, "createDrg")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrg",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrgRequest::builder)
                 .basePath("/20160918")
@@ -2052,12 +2256,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateDrgAttachmentDetails(), "createDrgAttachmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateDrgAttachmentResponse::builder)
                 .logger(LOG, "createDrgAttachment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrgAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -2086,12 +2293,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateDrgRouteDistributionDetails(),
                 "createDrgRouteDistributionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateDrgRouteDistributionResponse::builder)
                 .logger(LOG, "createDrgRouteDistribution")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgRouteDistribution",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrgRouteDistributionRequest::builder)
                 .basePath("/20160918")
@@ -2118,12 +2328,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateDrgRouteTableDetails(), "createDrgRouteTableDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateDrgRouteTableResponse::builder)
                 .logger(LOG, "createDrgRouteTable")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgRouteTable",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrgRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -2150,12 +2363,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateIPSecConnectionDetails(),
                 "createIPSecConnectionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateIPSecConnectionResponse::builder)
                 .logger(LOG, "createIPSecConnection")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateIPSecConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateIPSecConnectionRequest::builder)
                 .basePath("/20160918")
@@ -2182,12 +2398,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateInternetGatewayDetails(),
                 "createInternetGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateInternetGatewayResponse::builder)
                 .logger(LOG, "createInternetGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateInternetGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateInternetGatewayRequest::builder)
                 .basePath("/20160918")
@@ -2211,12 +2430,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateIpv6Details(), "createIpv6Details is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateIpv6Response::builder)
                 .logger(LOG, "createIpv6")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateIpv6",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateIpv6Request::builder)
                 .basePath("/20160918")
@@ -2242,12 +2464,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateLocalPeeringGatewayDetails(),
                 "createLocalPeeringGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateLocalPeeringGatewayResponse::builder)
                 .logger(LOG, "createLocalPeeringGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateLocalPeeringGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateLocalPeeringGatewayRequest::builder)
                 .basePath("/20160918")
@@ -2273,12 +2498,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateNatGatewayDetails(), "createNatGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateNatGatewayResponse::builder)
                 .logger(LOG, "createNatGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateNatGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateNatGatewayRequest::builder)
                 .basePath("/20160918")
@@ -2307,12 +2535,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateNetworkSecurityGroupDetails(),
                 "createNetworkSecurityGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateNetworkSecurityGroupResponse::builder)
                 .logger(LOG, "createNetworkSecurityGroup")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateNetworkSecurityGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateNetworkSecurityGroupRequest::builder)
                 .basePath("/20160918")
@@ -2339,12 +2570,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreatePrivateIpDetails(), "createPrivateIpDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreatePrivateIpResponse::builder)
                 .logger(LOG, "createPrivateIp")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreatePrivateIp",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePrivateIpRequest::builder)
                 .basePath("/20160918")
@@ -2370,12 +2604,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreatePublicIpDetails(), "createPublicIpDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreatePublicIpResponse::builder)
                 .logger(LOG, "createPublicIp")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreatePublicIp",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePublicIpRequest::builder)
                 .basePath("/20160918")
@@ -2401,12 +2638,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreatePublicIpPoolDetails(), "createPublicIpPoolDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreatePublicIpPoolResponse::builder)
                 .logger(LOG, "createPublicIpPool")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreatePublicIpPool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePublicIpPoolRequest::builder)
                 .basePath("/20160918")
@@ -2436,12 +2676,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateRemotePeeringConnectionDetails(),
                 "createRemotePeeringConnectionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateRemotePeeringConnectionResponse::builder)
                 .logger(LOG, "createRemotePeeringConnection")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateRemotePeeringConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRemotePeeringConnectionRequest::builder)
                 .basePath("/20160918")
@@ -2469,12 +2712,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateRouteTableDetails(), "createRouteTableDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateRouteTableResponse::builder)
                 .logger(LOG, "createRouteTable")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateRouteTable",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -2500,12 +2746,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getCreateSecurityListDetails(), "createSecurityListDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateSecurityListResponse::builder)
                 .logger(LOG, "createSecurityList")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateSecurityList",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSecurityListRequest::builder)
                 .basePath("/20160918")
@@ -2532,12 +2781,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateServiceGatewayDetails(),
                 "createServiceGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateServiceGatewayResponse::builder)
                 .logger(LOG, "createServiceGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateServiceGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateServiceGatewayRequest::builder)
                 .basePath("/20160918")
@@ -2560,12 +2812,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateSubnetDetails(), "createSubnetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateSubnetResponse::builder)
                 .logger(LOG, "createSubnet")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateSubnet",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSubnetRequest::builder)
                 .basePath("/20160918")
@@ -2589,12 +2844,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateVcnDetails(), "createVcnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVcnResponse::builder)
                 .logger(LOG, "createVcn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateVcn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVcnRequest::builder)
                 .basePath("/20160918")
@@ -2619,12 +2877,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getCreateVirtualCircuitDetails(),
                 "createVirtualCircuitDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVirtualCircuitResponse::builder)
                 .logger(LOG, "createVirtualCircuit")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateVirtualCircuit",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVirtualCircuitRequest::builder)
                 .basePath("/20160918")
@@ -2648,12 +2909,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateVlanDetails(), "createVlanDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVlanResponse::builder)
                 .logger(LOG, "createVlan")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateVlan",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVlanRequest::builder)
                 .basePath("/20160918")
@@ -2676,12 +2940,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCreateVtapDetails(), "createVtapDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVtapResponse::builder)
                 .logger(LOG, "createVtap")
                 .serviceDetails(
                         "VirtualNetwork",
                         "CreateVtap",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/CreateVtap")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVtapRequest::builder)
                 .basePath("/20160918")
@@ -2705,12 +2972,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoasnId", request.getByoasnId());
+
         return clientCall(request, DeleteByoasnResponse::builder)
                 .logger(LOG, "deleteByoasn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteByoasn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/DeleteByoasn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteByoasnRequest::builder)
                 .basePath("/20160918")
@@ -2733,12 +3004,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, DeleteByoipRangeResponse::builder)
                 .logger(LOG, "deleteByoipRange")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteByoipRange",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteByoipRangeRequest::builder)
                 .basePath("/20160918")
@@ -2763,12 +3038,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("captureFilterId", request.getCaptureFilterId());
+
         return clientCall(request, DeleteCaptureFilterResponse::builder)
                 .logger(LOG, "deleteCaptureFilter")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteCaptureFilter",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/DeleteCaptureFilter")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCaptureFilterRequest::builder)
                 .basePath("/20160918")
@@ -2790,9 +3069,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("cpeId", request.getCpeId());
+
         return clientCall(request, DeleteCpeResponse::builder)
                 .logger(LOG, "deleteCpe")
                 .serviceDetails("VirtualNetwork", "DeleteCpe", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCpeRequest::builder)
                 .basePath("/20160918")
@@ -2814,9 +3097,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectId", request.getCrossConnectId());
+
         return clientCall(request, DeleteCrossConnectResponse::builder)
                 .logger(LOG, "deleteCrossConnect")
                 .serviceDetails("VirtualNetwork", "DeleteCrossConnect", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCrossConnectRequest::builder)
                 .basePath("/20160918")
@@ -2839,9 +3126,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectGroupId", request.getCrossConnectGroupId());
+
         return clientCall(request, DeleteCrossConnectGroupResponse::builder)
                 .logger(LOG, "deleteCrossConnectGroup")
                 .serviceDetails("VirtualNetwork", "DeleteCrossConnectGroup", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCrossConnectGroupRequest::builder)
                 .basePath("/20160918")
@@ -2863,9 +3154,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dhcpId", request.getDhcpId());
+
         return clientCall(request, DeleteDhcpOptionsResponse::builder)
                 .logger(LOG, "deleteDhcpOptions")
                 .serviceDetails("VirtualNetwork", "DeleteDhcpOptions", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDhcpOptionsRequest::builder)
                 .basePath("/20160918")
@@ -2886,9 +3181,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, DeleteDrgResponse::builder)
                 .logger(LOG, "deleteDrg")
                 .serviceDetails("VirtualNetwork", "DeleteDrg", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrgRequest::builder)
                 .basePath("/20160918")
@@ -2910,9 +3209,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgAttachmentId", request.getDrgAttachmentId());
+
         return clientCall(request, DeleteDrgAttachmentResponse::builder)
                 .logger(LOG, "deleteDrgAttachment")
                 .serviceDetails("VirtualNetwork", "DeleteDrgAttachment", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrgAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -2937,12 +3240,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteDistributionId", request.getDrgRouteDistributionId());
+
         return clientCall(request, DeleteDrgRouteDistributionResponse::builder)
                 .logger(LOG, "deleteDrgRouteDistribution")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteDrgRouteDistribution",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrgRouteDistributionRequest::builder)
                 .basePath("/20160918")
@@ -2964,12 +3271,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, DeleteDrgRouteTableResponse::builder)
                 .logger(LOG, "deleteDrgRouteTable")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteDrgRouteTable",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrgRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -2991,9 +3302,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, DeleteIPSecConnectionResponse::builder)
                 .logger(LOG, "deleteIPSecConnection")
                 .serviceDetails("VirtualNetwork", "DeleteIPSecConnection", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIPSecConnectionRequest::builder)
                 .basePath("/20160918")
@@ -3015,9 +3330,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIgId(), "igId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("igId", request.getIgId());
+
         return clientCall(request, DeleteInternetGatewayResponse::builder)
                 .logger(LOG, "deleteInternetGateway")
                 .serviceDetails("VirtualNetwork", "DeleteInternetGateway", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteInternetGatewayRequest::builder)
                 .basePath("/20160918")
@@ -3038,9 +3357,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipv6Id", request.getIpv6Id());
+
         return clientCall(request, DeleteIpv6Response::builder)
                 .logger(LOG, "deleteIpv6")
                 .serviceDetails("VirtualNetwork", "DeleteIpv6", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteIpv6Request::builder)
                 .basePath("/20160918")
@@ -3064,9 +3387,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("localPeeringGatewayId", request.getLocalPeeringGatewayId());
+
         return clientCall(request, DeleteLocalPeeringGatewayResponse::builder)
                 .logger(LOG, "deleteLocalPeeringGateway")
                 .serviceDetails("VirtualNetwork", "DeleteLocalPeeringGateway", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteLocalPeeringGatewayRequest::builder)
                 .basePath("/20160918")
@@ -3088,9 +3415,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("natGatewayId", request.getNatGatewayId());
+
         return clientCall(request, DeleteNatGatewayResponse::builder)
                 .logger(LOG, "deleteNatGateway")
                 .serviceDetails("VirtualNetwork", "DeleteNatGateway", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteNatGatewayRequest::builder)
                 .basePath("/20160918")
@@ -3115,12 +3446,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, DeleteNetworkSecurityGroupResponse::builder)
                 .logger(LOG, "deleteNetworkSecurityGroup")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteNetworkSecurityGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteNetworkSecurityGroupRequest::builder)
                 .basePath("/20160918")
@@ -3142,9 +3477,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("privateIpId", request.getPrivateIpId());
+
         return clientCall(request, DeletePrivateIpResponse::builder)
                 .logger(LOG, "deletePrivateIp")
                 .serviceDetails("VirtualNetwork", "DeletePrivateIp", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePrivateIpRequest::builder)
                 .basePath("/20160918")
@@ -3166,9 +3505,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpId", request.getPublicIpId());
+
         return clientCall(request, DeletePublicIpResponse::builder)
                 .logger(LOG, "deletePublicIp")
                 .serviceDetails("VirtualNetwork", "DeletePublicIp", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePublicIpRequest::builder)
                 .basePath("/20160918")
@@ -3190,12 +3533,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpPoolId", request.getPublicIpPoolId());
+
         return clientCall(request, DeletePublicIpPoolResponse::builder)
                 .logger(LOG, "deletePublicIpPool")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeletePublicIpPool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePublicIpPoolRequest::builder)
                 .basePath("/20160918")
@@ -3222,9 +3569,14 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getRemotePeeringConnectionId(),
                 "remotePeeringConnectionId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "remotePeeringConnectionId", request.getRemotePeeringConnectionId());
+
         return clientCall(request, DeleteRemotePeeringConnectionResponse::builder)
                 .logger(LOG, "deleteRemotePeeringConnection")
                 .serviceDetails("VirtualNetwork", "DeleteRemotePeeringConnection", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRemotePeeringConnectionRequest::builder)
                 .basePath("/20160918")
@@ -3247,9 +3599,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getRtId(), "rtId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("rtId", request.getRtId());
+
         return clientCall(request, DeleteRouteTableResponse::builder)
                 .logger(LOG, "deleteRouteTable")
                 .serviceDetails("VirtualNetwork", "DeleteRouteTable", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -3271,9 +3627,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("securityListId", request.getSecurityListId());
+
         return clientCall(request, DeleteSecurityListResponse::builder)
                 .logger(LOG, "deleteSecurityList")
                 .serviceDetails("VirtualNetwork", "DeleteSecurityList", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSecurityListRequest::builder)
                 .basePath("/20160918")
@@ -3295,9 +3655,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceGatewayId", request.getServiceGatewayId());
+
         return clientCall(request, DeleteServiceGatewayResponse::builder)
                 .logger(LOG, "deleteServiceGateway")
                 .serviceDetails("VirtualNetwork", "DeleteServiceGateway", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteServiceGatewayRequest::builder)
                 .basePath("/20160918")
@@ -3318,9 +3682,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, DeleteSubnetResponse::builder)
                 .logger(LOG, "deleteSubnet")
                 .serviceDetails("VirtualNetwork", "DeleteSubnet", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSubnetRequest::builder)
                 .basePath("/20160918")
@@ -3341,9 +3709,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, DeleteVcnResponse::builder)
                 .logger(LOG, "deleteVcn")
                 .serviceDetails("VirtualNetwork", "DeleteVcn", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVcnRequest::builder)
                 .basePath("/20160918")
@@ -3365,9 +3737,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, DeleteVirtualCircuitResponse::builder)
                 .logger(LOG, "deleteVirtualCircuit")
                 .serviceDetails("VirtualNetwork", "DeleteVirtualCircuit", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVirtualCircuitRequest::builder)
                 .basePath("/20160918")
@@ -3388,12 +3764,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vlanId", request.getVlanId());
+
         return clientCall(request, DeleteVlanResponse::builder)
                 .logger(LOG, "deleteVlan")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteVlan",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVlanRequest::builder)
                 .basePath("/20160918")
@@ -3415,12 +3795,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vtapId", request.getVtapId());
+
         return clientCall(request, DeleteVtapResponse::builder)
                 .logger(LOG, "deleteVtap")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DeleteVtap",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/DeleteVtap")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVtapRequest::builder)
                 .basePath("/20160918")
@@ -3447,12 +3831,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getDetachServiceDetails(), "detachServiceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceGatewayId", request.getServiceGatewayId());
+
         return clientCall(request, DetachServiceIdResponse::builder)
                 .logger(LOG, "detachServiceId")
                 .serviceDetails(
                         "VirtualNetwork",
                         "DetachServiceId",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachServiceIdRequest::builder)
                 .basePath("/20160918")
@@ -3480,12 +3868,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, GetAllDrgAttachmentsResponse::builder)
                 .logger(LOG, "getAllDrgAttachments")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetAllDrgAttachments",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GetAllDrgAttachmentsRequest::builder)
                 .basePath("/20160918")
@@ -3518,12 +3910,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                                     GetAllowedIkeIPSecParametersResponse>
                             handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GetAllowedIkeIPSecParametersResponse::builder)
                 .logger(LOG, "getAllowedIkeIPSecParameters")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetAllowedIkeIPSecParameters",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAllowedIkeIPSecParametersRequest::builder)
                 .basePath("/20160918")
@@ -3547,12 +3942,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoasnId", request.getByoasnId());
+
         return clientCall(request, GetByoasnResponse::builder)
                 .logger(LOG, "getByoasn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetByoasn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/GetByoasn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetByoasnRequest::builder)
                 .basePath("/20160918")
@@ -3576,12 +3975,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, GetByoipRangeResponse::builder)
                 .logger(LOG, "getByoipRange")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetByoipRange",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetByoipRangeRequest::builder)
                 .basePath("/20160918")
@@ -3607,12 +4010,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("captureFilterId", request.getCaptureFilterId());
+
         return clientCall(request, GetCaptureFilterResponse::builder)
                 .logger(LOG, "getCaptureFilter")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCaptureFilter",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/GetCaptureFilter")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCaptureFilterRequest::builder)
                 .basePath("/20160918")
@@ -3636,12 +4043,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("cpeId", request.getCpeId());
+
         return clientCall(request, GetCpeResponse::builder)
                 .logger(LOG, "getCpe")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCpe",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCpeRequest::builder)
                 .basePath("/20160918")
@@ -3663,12 +4074,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("cpeId", request.getCpeId());
+
         return clientCall(request, GetCpeDeviceConfigContentResponse::builder)
                 .logger(LOG, "getCpeDeviceConfigContent")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCpeDeviceConfigContent",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCpeDeviceConfigContentRequest::builder)
                 .basePath("/20160918")
@@ -3694,12 +4109,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCpeDeviceShapeId(), "cpeDeviceShapeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("cpeDeviceShapeId", request.getCpeDeviceShapeId());
+
         return clientCall(request, GetCpeDeviceShapeResponse::builder)
                 .logger(LOG, "getCpeDeviceShape")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCpeDeviceShape",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCpeDeviceShapeRequest::builder)
                 .basePath("/20160918")
@@ -3724,12 +4143,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectId", request.getCrossConnectId());
+
         return clientCall(request, GetCrossConnectResponse::builder)
                 .logger(LOG, "getCrossConnect")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnect",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCrossConnectRequest::builder)
                 .basePath("/20160918")
@@ -3755,12 +4178,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectGroupId", request.getCrossConnectGroupId());
+
         return clientCall(request, GetCrossConnectGroupResponse::builder)
                 .logger(LOG, "getCrossConnectGroup")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCrossConnectGroupRequest::builder)
                 .basePath("/20160918")
@@ -3787,12 +4214,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectId", request.getCrossConnectId());
+
         return clientCall(request, GetCrossConnectLetterOfAuthorityResponse::builder)
                 .logger(LOG, "getCrossConnectLetterOfAuthority")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectLetterOfAuthority",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCrossConnectLetterOfAuthorityRequest::builder)
                 .basePath("/20160918")
@@ -3818,12 +4249,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectId", request.getCrossConnectId());
+
         return clientCall(request, GetCrossConnectStatusResponse::builder)
                 .logger(LOG, "getCrossConnectStatus")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectStatus",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCrossConnectStatusRequest::builder)
                 .basePath("/20160918")
@@ -3848,12 +4283,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dhcpId", request.getDhcpId());
+
         return clientCall(request, GetDhcpOptionsResponse::builder)
                 .logger(LOG, "getDhcpOptions")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetDhcpOptions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDhcpOptionsRequest::builder)
                 .basePath("/20160918")
@@ -3876,12 +4315,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, GetDrgResponse::builder)
                 .logger(LOG, "getDrg")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetDrg",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrgRequest::builder)
                 .basePath("/20160918")
@@ -3903,12 +4346,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgAttachmentId", request.getDrgAttachmentId());
+
         return clientCall(request, GetDrgAttachmentResponse::builder)
                 .logger(LOG, "getDrgAttachment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrgAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -3933,12 +4380,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, GetDrgRedundancyStatusResponse::builder)
                 .logger(LOG, "getDrgRedundancyStatus")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRedundancyStatus",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrgRedundancyStatusRequest::builder)
                 .basePath("/20160918")
@@ -3965,12 +4416,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteDistributionId", request.getDrgRouteDistributionId());
+
         return clientCall(request, GetDrgRouteDistributionResponse::builder)
                 .logger(LOG, "getDrgRouteDistribution")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRouteDistribution",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrgRouteDistributionRequest::builder)
                 .basePath("/20160918")
@@ -3995,12 +4450,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, GetDrgRouteTableResponse::builder)
                 .logger(LOG, "getDrgRouteTable")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRouteTable",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrgRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -4027,12 +4486,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("providerServiceId", request.getProviderServiceId());
+
         return clientCall(request, GetFastConnectProviderServiceResponse::builder)
                 .logger(LOG, "getFastConnectProviderService")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetFastConnectProviderService",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFastConnectProviderServiceRequest::builder)
                 .basePath("/20160918")
@@ -4062,12 +4525,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getProviderServiceKeyName(), "providerServiceKeyName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("providerServiceId", request.getProviderServiceId());
+        requiredParametersMap.put("providerServiceKeyName", request.getProviderServiceKeyName());
+
         return clientCall(request, GetFastConnectProviderServiceKeyResponse::builder)
                 .logger(LOG, "getFastConnectProviderServiceKey")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetFastConnectProviderServiceKey",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFastConnectProviderServiceKeyRequest::builder)
                 .basePath("/20160918")
@@ -4095,12 +4563,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, GetIPSecConnectionResponse::builder)
                 .logger(LOG, "getIPSecConnection")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIPSecConnectionRequest::builder)
                 .basePath("/20160918")
@@ -4127,12 +4599,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, GetIPSecConnectionDeviceConfigResponse::builder)
                 .logger(LOG, "getIPSecConnectionDeviceConfig")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionDeviceConfig",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIPSecConnectionDeviceConfigRequest::builder)
                 .basePath("/20160918")
@@ -4162,12 +4638,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, GetIPSecConnectionDeviceStatusResponse::builder)
                 .logger(LOG, "getIPSecConnectionDeviceStatus")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionDeviceStatus",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIPSecConnectionDeviceStatusRequest::builder)
                 .basePath("/20160918")
@@ -4197,12 +4677,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, GetIPSecConnectionTunnelResponse::builder)
                 .logger(LOG, "getIPSecConnectionTunnel")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnel",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIPSecConnectionTunnelRequest::builder)
                 .basePath("/20160918")
@@ -4233,12 +4718,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, GetIPSecConnectionTunnelErrorResponse::builder)
                 .logger(LOG, "getIPSecConnectionTunnelError")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnelError",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIPSecConnectionTunnelErrorRequest::builder)
                 .basePath("/20160918")
@@ -4271,12 +4761,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, GetIPSecConnectionTunnelSharedSecretResponse::builder)
                 .logger(LOG, "getIPSecConnectionTunnelSharedSecret")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnelSharedSecret",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIPSecConnectionTunnelSharedSecretRequest::builder)
                 .basePath("/20160918")
@@ -4307,12 +4802,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIgId(), "igId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("igId", request.getIgId());
+
         return clientCall(request, GetInternetGatewayResponse::builder)
                 .logger(LOG, "getInternetGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetInternetGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInternetGatewayRequest::builder)
                 .basePath("/20160918")
@@ -4339,12 +4838,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, GetIpsecCpeDeviceConfigContentResponse::builder)
                 .logger(LOG, "getIpsecCpeDeviceConfigContent")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIpsecCpeDeviceConfigContent",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIpsecCpeDeviceConfigContentRequest::builder)
                 .basePath("/20160918")
@@ -4369,12 +4872,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipv6Id", request.getIpv6Id());
+
         return clientCall(request, GetIpv6Response::builder)
                 .logger(LOG, "getIpv6")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetIpv6",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetIpv6Request::builder)
                 .basePath("/20160918")
@@ -4398,12 +4905,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("localPeeringGatewayId", request.getLocalPeeringGatewayId());
+
         return clientCall(request, GetLocalPeeringGatewayResponse::builder)
                 .logger(LOG, "getLocalPeeringGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetLocalPeeringGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetLocalPeeringGatewayRequest::builder)
                 .basePath("/20160918")
@@ -4427,12 +4938,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("natGatewayId", request.getNatGatewayId());
+
         return clientCall(request, GetNatGatewayResponse::builder)
                 .logger(LOG, "getNatGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetNatGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNatGatewayRequest::builder)
                 .basePath("/20160918")
@@ -4458,12 +4973,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, GetNetworkSecurityGroupResponse::builder)
                 .logger(LOG, "getNetworkSecurityGroup")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetNetworkSecurityGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNetworkSecurityGroupRequest::builder)
                 .basePath("/20160918")
@@ -4487,12 +5006,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, GetNetworkingTopologyResponse::builder)
                 .logger(LOG, "getNetworkingTopology")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetNetworkingTopology",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNetworkingTopologyRequest::builder)
                 .basePath("/20160918")
@@ -4521,12 +5044,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("privateIpId", request.getPrivateIpId());
+
         return clientCall(request, GetPrivateIpResponse::builder)
                 .logger(LOG, "getPrivateIp")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetPrivateIp",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPrivateIpRequest::builder)
                 .basePath("/20160918")
@@ -4550,12 +5077,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpId", request.getPublicIpId());
+
         return clientCall(request, GetPublicIpResponse::builder)
                 .logger(LOG, "getPublicIp")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIp",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPublicIpRequest::builder)
                 .basePath("/20160918")
@@ -4581,12 +5112,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getGetPublicIpByIpAddressDetails(),
                 "getPublicIpByIpAddressDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GetPublicIpByIpAddressResponse::builder)
                 .logger(LOG, "getPublicIpByIpAddress")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpByIpAddress",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GetPublicIpByIpAddressRequest::builder)
                 .basePath("/20160918")
@@ -4614,12 +5148,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getGetPublicIpByPrivateIpIdDetails(),
                 "getPublicIpByPrivateIpIdDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, GetPublicIpByPrivateIpIdResponse::builder)
                 .logger(LOG, "getPublicIpByPrivateIpId")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpByPrivateIpId",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GetPublicIpByPrivateIpIdRequest::builder)
                 .basePath("/20160918")
@@ -4646,12 +5183,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpPoolId", request.getPublicIpPoolId());
+
         return clientCall(request, GetPublicIpPoolResponse::builder)
                 .logger(LOG, "getPublicIpPool")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpPool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPublicIpPoolRequest::builder)
                 .basePath("/20160918")
@@ -4681,12 +5222,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getRemotePeeringConnectionId(),
                 "remotePeeringConnectionId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "remotePeeringConnectionId", request.getRemotePeeringConnectionId());
+
         return clientCall(request, GetRemotePeeringConnectionResponse::builder)
                 .logger(LOG, "getRemotePeeringConnection")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetRemotePeeringConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRemotePeeringConnectionRequest::builder)
                 .basePath("/20160918")
@@ -4712,12 +5258,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDataRequestId(), "dataRequestId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dataRequestId", request.getDataRequestId());
+
         return clientCall(request, GetResourceIpInventoryResponse::builder)
                 .logger(LOG, "getResourceIpInventory")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetResourceIpInventory",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/GetResourceIpInventory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetResourceIpInventoryRequest::builder)
                 .basePath("/20160918")
@@ -4747,12 +5297,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getRtId(), "rtId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("rtId", request.getRtId());
+
         return clientCall(request, GetRouteTableResponse::builder)
                 .logger(LOG, "getRouteTable")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetRouteTable",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -4777,12 +5331,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("securityListId", request.getSecurityListId());
+
         return clientCall(request, GetSecurityListResponse::builder)
                 .logger(LOG, "getSecurityList")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetSecurityList",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSecurityListRequest::builder)
                 .basePath("/20160918")
@@ -4806,12 +5364,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getServiceId(), "serviceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceId", request.getServiceId());
+
         return clientCall(request, GetServiceResponse::builder)
                 .logger(LOG, "getService")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetService",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetServiceRequest::builder)
                 .basePath("/20160918")
@@ -4836,12 +5398,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceGatewayId", request.getServiceGatewayId());
+
         return clientCall(request, GetServiceGatewayResponse::builder)
                 .logger(LOG, "getServiceGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetServiceGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetServiceGatewayRequest::builder)
                 .basePath("/20160918")
@@ -4865,12 +5431,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, GetSubnetResponse::builder)
                 .logger(LOG, "getSubnet")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnet",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubnetRequest::builder)
                 .basePath("/20160918")
@@ -4894,12 +5464,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, GetSubnetCidrUtilizationResponse::builder)
                 .logger(LOG, "getSubnetCidrUtilization")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnetCidrUtilization",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCidrUtilizationCollection/GetSubnetCidrUtilization")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubnetCidrUtilizationRequest::builder)
                 .basePath("/20160918")
@@ -4930,12 +5504,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, GetSubnetIpInventoryResponse::builder)
                 .logger(LOG, "getSubnetIpInventory")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnetIpInventory",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventorySubnetResourceCollection/GetSubnetIpInventory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubnetIpInventoryRequest::builder)
                 .basePath("/20160918")
@@ -4963,12 +5541,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Objects.requireNonNull(request.getSubnetId(), "subnetId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, GetSubnetTopologyResponse::builder)
                 .logger(LOG, "getSubnetTopology")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnetTopology",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSubnetTopologyRequest::builder)
                 .basePath("/20160918")
@@ -5001,12 +5584,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, GetTunnelCpeDeviceConfigResponse::builder)
                 .logger(LOG, "getTunnelCpeDeviceConfig")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetTunnelCpeDeviceConfig",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTunnelCpeDeviceConfigRequest::builder)
                 .basePath("/20160918")
@@ -5039,12 +5627,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, GetTunnelCpeDeviceConfigContentResponse::builder)
                 .logger(LOG, "getTunnelCpeDeviceConfigContent")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetTunnelCpeDeviceConfigContent",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTunnelCpeDeviceConfigContentRequest::builder)
                 .basePath("/20160918")
@@ -5074,12 +5667,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, GetUpgradeStatusResponse::builder)
                 .logger(LOG, "getUpgradeStatus")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetUpgradeStatus",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetUpgradeStatusRequest::builder)
                 .basePath("/20160918")
@@ -5104,12 +5701,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, GetVcnResponse::builder)
                 .logger(LOG, "getVcn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVcn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVcnRequest::builder)
                 .basePath("/20160918")
@@ -5133,12 +5734,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, GetVcnDnsResolverAssociationResponse::builder)
                 .logger(LOG, "getVcnDnsResolverAssociation")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVcnDnsResolverAssociation",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVcnDnsResolverAssociationRequest::builder)
                 .basePath("/20160918")
@@ -5168,12 +5773,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getGetVcnOverlapDetails(), "getVcnOverlapDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, GetVcnOverlapResponse::builder)
                 .logger(LOG, "getVcnOverlap")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVcnOverlap",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryVcnOverlapCollection/GetVcnOverlap")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GetVcnOverlapRequest::builder)
                 .basePath("/20160918")
@@ -5214,12 +5823,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Objects.requireNonNull(request.getVcnId(), "vcnId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, GetVcnTopologyResponse::builder)
                 .logger(LOG, "getVcnTopology")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVcnTopology",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVcnTopologyRequest::builder)
                 .basePath("/20160918")
@@ -5250,12 +5864,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, GetVirtualCircuitResponse::builder)
                 .logger(LOG, "getVirtualCircuit")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVirtualCircuit",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVirtualCircuitRequest::builder)
                 .basePath("/20160918")
@@ -5278,12 +5896,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vlanId", request.getVlanId());
+
         return clientCall(request, GetVlanResponse::builder)
                 .logger(LOG, "getVlan")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVlan",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVlanRequest::builder)
                 .basePath("/20160918")
@@ -5304,12 +5926,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVnicId(), "vnicId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vnicId", request.getVnicId());
+
         return clientCall(request, GetVnicResponse::builder)
                 .logger(LOG, "getVnic")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVnic",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVnicRequest::builder)
                 .basePath("/20160918")
@@ -5329,12 +5955,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vtapId", request.getVtapId());
+
         return clientCall(request, GetVtapResponse::builder)
                 .logger(LOG, "getVtap")
                 .serviceDetails(
                         "VirtualNetwork",
                         "GetVtap",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/GetVtap")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVtapRequest::builder)
                 .basePath("/20160918")
@@ -5357,12 +5987,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipv6Id", request.getIpv6Id());
+
         return clientCall(request, Ipv6VnicDetachResponse::builder)
                 .logger(LOG, "ipv6VnicDetach")
                 .serviceDetails(
                         "VirtualNetwork",
                         "Ipv6VnicDetach",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/Ipv6VnicDetach")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(Ipv6VnicDetachRequest::builder)
                 .basePath("/20160918")
@@ -5391,12 +6025,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                                     ListAllowedPeerRegionsForRemotePeeringResponse>
                             handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListAllowedPeerRegionsForRemotePeeringResponse::builder)
                 .logger(LOG, "listAllowedPeerRegionsForRemotePeering")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListAllowedPeerRegionsForRemotePeering",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAllowedPeerRegionsForRemotePeeringRequest::builder)
                 .basePath("/20160918")
@@ -5418,12 +6055,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListByoasnsResponse::builder)
                 .logger(LOG, "listByoasns")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListByoasns",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ListByoasns")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListByoasnsRequest::builder)
                 .basePath("/20160918")
@@ -5456,12 +6097,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, ListByoipAllocatedRangesResponse::builder)
                 .logger(LOG, "listByoipAllocatedRanges")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListByoipAllocatedRanges",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListByoipAllocatedRangesRequest::builder)
                 .basePath("/20160918")
@@ -5490,12 +6135,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListByoipRangesResponse::builder)
                 .logger(LOG, "listByoipRanges")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListByoipRanges",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListByoipRangesRequest::builder)
                 .basePath("/20160918")
@@ -5527,12 +6176,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListCaptureFiltersResponse::builder)
                 .logger(LOG, "listCaptureFilters")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCaptureFilters",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ListCaptureFilters")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCaptureFiltersRequest::builder)
                 .basePath("/20160918")
@@ -5564,12 +6217,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                             ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListCpeDeviceShapesResponse::builder)
                 .logger(LOG, "listCpeDeviceShapes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCpeDeviceShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCpeDeviceShapesRequest::builder)
                 .basePath("/20160918")
@@ -5595,12 +6251,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListCpesResponse::builder)
                 .logger(LOG, "listCpes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCpes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCpesRequest::builder)
                 .basePath("/20160918")
@@ -5625,12 +6285,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListCrossConnectGroupsResponse::builder)
                 .logger(LOG, "listCrossConnectGroups")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectGroups",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCrossConnectGroupsRequest::builder)
                 .basePath("/20160918")
@@ -5661,12 +6325,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListCrossConnectLocationsResponse::builder)
                 .logger(LOG, "listCrossConnectLocations")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectLocations",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCrossConnectLocationsRequest::builder)
                 .basePath("/20160918")
@@ -5694,12 +6362,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, ListCrossConnectMappingsResponse::builder)
                 .logger(LOG, "listCrossConnectMappings")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectMappings",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCrossConnectMappingsRequest::builder)
                 .basePath("/20160918")
@@ -5725,12 +6397,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListCrossConnectsResponse::builder)
                 .logger(LOG, "listCrossConnects")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnects",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCrossConnectsRequest::builder)
                 .basePath("/20160918")
@@ -5764,12 +6440,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListCrossconnectPortSpeedShapesResponse::builder)
                 .logger(LOG, "listCrossconnectPortSpeedShapes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossconnectPortSpeedShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCrossconnectPortSpeedShapesRequest::builder)
                 .basePath("/20160918")
@@ -5798,12 +6478,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListDhcpOptionsResponse::builder)
                 .logger(LOG, "listDhcpOptions")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListDhcpOptions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDhcpOptionsRequest::builder)
                 .basePath("/20160918")
@@ -5835,12 +6519,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListDrgAttachmentsResponse::builder)
                 .logger(LOG, "listDrgAttachments")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgAttachments",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrgAttachmentsRequest::builder)
                 .basePath("/20160918")
@@ -5880,12 +6568,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteDistributionId", request.getDrgRouteDistributionId());
+
         return clientCall(request, ListDrgRouteDistributionStatementsResponse::builder)
                 .logger(LOG, "listDrgRouteDistributionStatements")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteDistributionStatements",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrgRouteDistributionStatementsRequest::builder)
                 .basePath("/20160918")
@@ -5917,12 +6609,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getDrgId(), "drgId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, ListDrgRouteDistributionsResponse::builder)
                 .logger(LOG, "listDrgRouteDistributions")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteDistributions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrgRouteDistributionsRequest::builder)
                 .basePath("/20160918")
@@ -5954,12 +6650,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, ListDrgRouteRulesResponse::builder)
                 .logger(LOG, "listDrgRouteRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrgRouteRulesRequest::builder)
                 .basePath("/20160918")
@@ -5988,12 +6688,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getDrgId(), "drgId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, ListDrgRouteTablesResponse::builder)
                 .logger(LOG, "listDrgRouteTables")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteTables",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrgRouteTablesRequest::builder)
                 .basePath("/20160918")
@@ -6025,12 +6729,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListDrgsResponse::builder)
                 .logger(LOG, "listDrgs")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgs",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrgsRequest::builder)
                 .basePath("/20160918")
@@ -6057,12 +6765,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListFastConnectProviderServicesResponse::builder)
                 .logger(LOG, "listFastConnectProviderServices")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListFastConnectProviderServices",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFastConnectProviderServicesRequest::builder)
                 .basePath("/20160918")
@@ -6094,6 +6806,9 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("providerServiceId", request.getProviderServiceId());
+
         return clientCall(
                         request,
                         ListFastConnectProviderVirtualCircuitBandwidthShapesResponse::builder)
@@ -6102,6 +6817,7 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                         "VirtualNetwork",
                         "ListFastConnectProviderVirtualCircuitBandwidthShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(
                         ListFastConnectProviderVirtualCircuitBandwidthShapesRequest::builder)
@@ -6139,12 +6855,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, ListIPSecConnectionTunnelRoutesResponse::builder)
                 .logger(LOG, "listIPSecConnectionTunnelRoutes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnelRoutes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIPSecConnectionTunnelRoutesRequest::builder)
                 .basePath("/20160918")
@@ -6185,12 +6906,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, ListIPSecConnectionTunnelSecurityAssociationsResponse::builder)
                 .logger(LOG, "listIPSecConnectionTunnelSecurityAssociations")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnelSecurityAssociations",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIPSecConnectionTunnelSecurityAssociationsRequest::builder)
                 .basePath("/20160918")
@@ -6229,12 +6955,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, ListIPSecConnectionTunnelsResponse::builder)
                 .logger(LOG, "listIPSecConnectionTunnels")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnels",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIPSecConnectionTunnelsRequest::builder)
                 .basePath("/20160918")
@@ -6262,12 +6992,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListIPSecConnectionsResponse::builder)
                 .logger(LOG, "listIPSecConnections")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnections",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIPSecConnectionsRequest::builder)
                 .basePath("/20160918")
@@ -6296,12 +7030,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListInternetGatewaysResponse::builder)
                 .logger(LOG, "listInternetGateways")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListInternetGateways",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInternetGatewaysRequest::builder)
                 .basePath("/20160918")
@@ -6334,12 +7072,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getListIpInventoryDetails(), "listIpInventoryDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListIpInventoryResponse::builder)
                 .logger(LOG, "listIpInventory")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListIpInventory",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/ListIpInventory")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ListIpInventoryRequest::builder)
                 .basePath("/20160918")
@@ -6375,12 +7116,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
             final com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListIpv6sResponse::builder)
                 .logger(LOG, "listIpv6s")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListIpv6s",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListIpv6sRequest::builder)
                 .basePath("/20160918")
@@ -6410,12 +7154,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListLocalPeeringGatewaysResponse::builder)
                 .logger(LOG, "listLocalPeeringGateways")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListLocalPeeringGateways",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListLocalPeeringGatewaysRequest::builder)
                 .basePath("/20160918")
@@ -6443,12 +7191,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListNatGatewaysResponse::builder)
                 .logger(LOG, "listNatGateways")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListNatGateways",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNatGatewaysRequest::builder)
                 .basePath("/20160918")
@@ -6484,12 +7236,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, ListNetworkSecurityGroupSecurityRulesResponse::builder)
                 .logger(LOG, "listNetworkSecurityGroupSecurityRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroupSecurityRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNetworkSecurityGroupSecurityRulesRequest::builder)
                 .basePath("/20160918")
@@ -6526,12 +7282,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(
                 request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, ListNetworkSecurityGroupVnicsResponse::builder)
                 .logger(LOG, "listNetworkSecurityGroupVnics")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroupVnics",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNetworkSecurityGroupVnicsRequest::builder)
                 .basePath("/20160918")
@@ -6561,12 +7321,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                             ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListNetworkSecurityGroupsResponse::builder)
                 .logger(LOG, "listNetworkSecurityGroups")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroups",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNetworkSecurityGroupsRequest::builder)
                 .basePath("/20160918")
@@ -6598,12 +7361,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                             ListPrivateIpsRequest, ListPrivateIpsResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListPrivateIpsResponse::builder)
                 .logger(LOG, "listPrivateIps")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListPrivateIps",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPrivateIpsRequest::builder)
                 .basePath("/20160918")
@@ -6635,12 +7401,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListPublicIpPoolsResponse::builder)
                 .logger(LOG, "listPublicIpPools")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListPublicIpPools",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPublicIpPoolsRequest::builder)
                 .basePath("/20160918")
@@ -6673,12 +7443,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("scope", request.getScope());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListPublicIpsResponse::builder)
                 .logger(LOG, "listPublicIps")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListPublicIps",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPublicIpsRequest::builder)
                 .basePath("/20160918")
@@ -6711,12 +7486,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListRemotePeeringConnectionsResponse::builder)
                 .logger(LOG, "listRemotePeeringConnections")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListRemotePeeringConnections",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRemotePeeringConnectionsRequest::builder)
                 .basePath("/20160918")
@@ -6745,12 +7524,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListRouteTablesResponse::builder)
                 .logger(LOG, "listRouteTables")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListRouteTables",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRouteTablesRequest::builder)
                 .basePath("/20160918")
@@ -6782,12 +7565,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListSecurityListsResponse::builder)
                 .logger(LOG, "listSecurityLists")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListSecurityLists",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityListsRequest::builder)
                 .basePath("/20160918")
@@ -6819,12 +7606,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListServiceGatewaysResponse::builder)
                 .logger(LOG, "listServiceGateways")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListServiceGateways",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListServiceGatewaysRequest::builder)
                 .basePath("/20160918")
@@ -6853,12 +7644,15 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
             final com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListServicesResponse::builder)
                 .logger(LOG, "listServices")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListServices",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListServicesRequest::builder)
                 .basePath("/20160918")
@@ -6883,12 +7677,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListSubnetsResponse::builder)
                 .logger(LOG, "listSubnets")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListSubnets",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSubnetsRequest::builder)
                 .basePath("/20160918")
@@ -6918,12 +7716,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVcnsResponse::builder)
                 .logger(LOG, "listVcns")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListVcns",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVcnsRequest::builder)
                 .basePath("/20160918")
@@ -6955,12 +7757,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, ListVirtualCircuitAssociatedTunnelsResponse::builder)
                 .logger(LOG, "listVirtualCircuitAssociatedTunnels")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuitAssociatedTunnels",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitAssociatedTunnelDetails/ListVirtualCircuitAssociatedTunnels")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualCircuitAssociatedTunnelsRequest::builder)
                 .basePath("/20160918")
@@ -6994,12 +7800,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVirtualCircuitBandwidthShapesResponse::builder)
                 .logger(LOG, "listVirtualCircuitBandwidthShapes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuitBandwidthShapes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualCircuitBandwidthShapesRequest::builder)
                 .basePath("/20160918")
@@ -7031,12 +7841,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, ListVirtualCircuitPublicPrefixesResponse::builder)
                 .logger(LOG, "listVirtualCircuitPublicPrefixes")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuitPublicPrefixes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualCircuitPublicPrefixesRequest::builder)
                 .basePath("/20160918")
@@ -7062,12 +7876,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVirtualCircuitsResponse::builder)
                 .logger(LOG, "listVirtualCircuits")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuits",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualCircuitsRequest::builder)
                 .basePath("/20160918")
@@ -7097,12 +7915,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVlansResponse::builder)
                 .logger(LOG, "listVlans")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListVlans",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVlansRequest::builder)
                 .basePath("/20160918")
@@ -7132,12 +7954,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVtapsResponse::builder)
                 .logger(LOG, "listVtaps")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListVtaps",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ListVtaps")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVtapsRequest::builder)
                 .basePath("/20160918")
@@ -7176,12 +8002,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getModifyIpv4SubnetCidrDetails(),
                 "modifyIpv4SubnetCidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, ModifyIpv4SubnetCidrResponse::builder)
                 .logger(LOG, "modifyIpv4SubnetCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ModifyIpv4SubnetCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ModifyIpv4SubnetCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ModifyIpv4SubnetCidrRequest::builder)
                 .basePath("/20160918")
@@ -7212,12 +8042,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getModifyVcnCidrDetails(), "modifyVcnCidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, ModifyVcnCidrResponse::builder)
                 .logger(LOG, "modifyVcnCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ModifyVcnCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ModifyVcnCidrRequest::builder)
                 .basePath("/20160918")
@@ -7246,12 +8080,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
         Objects.requireNonNull(request.getPatchSubnetDetails(), "patchSubnetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, PatchSubnetResponse::builder)
                 .logger(LOG, "patchSubnet")
                 .serviceDetails(
                         "VirtualNetwork",
                         "PatchSubnet",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/PatchSubnet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchSubnetRequest::builder)
                 .basePath("/20160918")
@@ -7278,12 +8116,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
         Objects.requireNonNull(request.getPatchVcnDetails(), "patchVcnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, PatchVcnResponse::builder)
                 .logger(LOG, "patchVcn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "PatchVcn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/PatchVcn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchVcnRequest::builder)
                 .basePath("/20160918")
@@ -7310,12 +8152,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("privateIpId", request.getPrivateIpId());
+
         return clientCall(request, PrivateIpVnicDetachResponse::builder)
                 .logger(LOG, "privateIpVnicDetach")
                 .serviceDetails(
                         "VirtualNetwork",
                         "PrivateIpVnicDetach",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/PrivateIpVnicDetach")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PrivateIpVnicDetachRequest::builder)
                 .basePath("/20160918")
@@ -7351,12 +8197,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getRemoveDrgRouteDistributionStatementsDetails(),
                 "removeDrgRouteDistributionStatementsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteDistributionId", request.getDrgRouteDistributionId());
+
         return clientCall(request, RemoveDrgRouteDistributionStatementsResponse::builder)
                 .logger(LOG, "removeDrgRouteDistributionStatements")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveDrgRouteDistributionStatements",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDrgRouteDistributionStatementsRequest::builder)
                 .basePath("/20160918")
@@ -7383,12 +8233,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getRemoveDrgRouteRulesDetails(), "removeDrgRouteRulesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, RemoveDrgRouteRulesResponse::builder)
                 .logger(LOG, "removeDrgRouteRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveDrgRouteRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDrgRouteRulesRequest::builder)
                 .basePath("/20160918")
@@ -7414,12 +8268,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgAttachmentId", request.getDrgAttachmentId());
+
         return clientCall(request, RemoveExportDrgRouteDistributionResponse::builder)
                 .logger(LOG, "removeExportDrgRouteDistribution")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveExportDrgRouteDistribution",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveExportDrgRouteDistributionRequest::builder)
                 .basePath("/20160918")
@@ -7452,12 +8310,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, RemoveImportDrgRouteDistributionResponse::builder)
                 .logger(LOG, "removeImportDrgRouteDistribution")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveImportDrgRouteDistribution",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveImportDrgRouteDistributionRequest::builder)
                 .basePath("/20160918")
@@ -7491,12 +8353,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getRemoveIpv4SubnetCidrDetails(),
                 "removeIpv4SubnetCidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, RemoveIpv4SubnetCidrResponse::builder)
                 .logger(LOG, "removeIpv4SubnetCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveIpv4SubnetCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv4SubnetCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveIpv4SubnetCidrRequest::builder)
                 .basePath("/20160918")
@@ -7529,12 +8395,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getRemoveSubnetIpv6CidrDetails(),
                 "removeSubnetIpv6CidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, RemoveIpv6SubnetCidrResponse::builder)
                 .logger(LOG, "removeIpv6SubnetCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveIpv6SubnetCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveIpv6SubnetCidrRequest::builder)
                 .basePath("/20160918")
@@ -7565,12 +8435,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, RemoveIpv6VcnCidrResponse::builder)
                 .logger(LOG, "removeIpv6VcnCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveIpv6VcnCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveIpv6VcnCidrRequest::builder)
                 .basePath("/20160918")
@@ -7606,12 +8480,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getRemoveNetworkSecurityGroupSecurityRulesDetails(),
                 "removeNetworkSecurityGroupSecurityRulesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, RemoveNetworkSecurityGroupSecurityRulesResponse::builder)
                 .logger(LOG, "removeNetworkSecurityGroupSecurityRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveNetworkSecurityGroupSecurityRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveNetworkSecurityGroupSecurityRulesRequest::builder)
                 .basePath("/20160918")
@@ -7641,12 +8519,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getRemovePublicIpPoolCapacityDetails(),
                 "removePublicIpPoolCapacityDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpPoolId", request.getPublicIpPoolId());
+
         return clientCall(request, RemovePublicIpPoolCapacityResponse::builder)
                 .logger(LOG, "removePublicIpPoolCapacity")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemovePublicIpPoolCapacity",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemovePublicIpPoolCapacityRequest::builder)
                 .basePath("/20160918")
@@ -7678,12 +8560,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getRemoveVcnCidrDetails(), "removeVcnCidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, RemoveVcnCidrResponse::builder)
                 .logger(LOG, "removeVcnCidr")
                 .serviceDetails(
                         "VirtualNetwork",
                         "RemoveVcnCidr",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveVcnCidrRequest::builder)
                 .basePath("/20160918")
@@ -7712,12 +8598,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
         Objects.requireNonNull(request.getSetOriginAsnDetails(), "setOriginAsnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, SetOriginAsnResponse::builder)
                 .logger(LOG, "setOriginAsn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "SetOriginAsn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/SetOriginAsn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SetOriginAsnRequest::builder)
                 .basePath("/20160918")
@@ -7747,12 +8637,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, SetOriginAsnToOracleResponse::builder)
                 .logger(LOG, "setOriginAsnToOracle")
                 .serviceDetails(
                         "VirtualNetwork",
                         "SetOriginAsnToOracle",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/SetOriginAsnToOracle")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SetOriginAsnToOracleRequest::builder)
                 .basePath("/20160918")
@@ -7778,12 +8672,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
         Objects.requireNonNull(request.getUpdateByoasnDetails(), "updateByoasnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoasnId", request.getByoasnId());
+
         return clientCall(request, UpdateByoasnResponse::builder)
                 .logger(LOG, "updateByoasn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateByoasn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/UpdateByoasn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateByoasnRequest::builder)
                 .basePath("/20160918")
@@ -7813,12 +8711,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateByoipRangeDetails(), "updateByoipRangeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, UpdateByoipRangeResponse::builder)
                 .logger(LOG, "updateByoipRange")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateByoipRange",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateByoipRangeRequest::builder)
                 .basePath("/20160918")
@@ -7848,12 +8750,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateCaptureFilterDetails(), "updateCaptureFilterDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("captureFilterId", request.getCaptureFilterId());
+
         return clientCall(request, UpdateCaptureFilterResponse::builder)
                 .logger(LOG, "updateCaptureFilter")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCaptureFilter",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/UpdateCaptureFilter")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCaptureFilterRequest::builder)
                 .basePath("/20160918")
@@ -7881,12 +8787,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
         Objects.requireNonNull(request.getUpdateCpeDetails(), "updateCpeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("cpeId", request.getCpeId());
+
         return clientCall(request, UpdateCpeResponse::builder)
                 .logger(LOG, "updateCpe")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCpe",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCpeRequest::builder)
                 .basePath("/20160918")
@@ -7913,12 +8823,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateCrossConnectDetails(), "updateCrossConnectDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectId", request.getCrossConnectId());
+
         return clientCall(request, UpdateCrossConnectResponse::builder)
                 .logger(LOG, "updateCrossConnect")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCrossConnect",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCrossConnectRequest::builder)
                 .basePath("/20160918")
@@ -7949,12 +8863,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateCrossConnectGroupDetails(),
                 "updateCrossConnectGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectGroupId", request.getCrossConnectGroupId());
+
         return clientCall(request, UpdateCrossConnectGroupResponse::builder)
                 .logger(LOG, "updateCrossConnectGroup")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCrossConnectGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCrossConnectGroupRequest::builder)
                 .basePath("/20160918")
@@ -7982,12 +8900,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
         Objects.requireNonNull(request.getUpdateDhcpDetails(), "updateDhcpDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("dhcpId", request.getDhcpId());
+
         return clientCall(request, UpdateDhcpOptionsResponse::builder)
                 .logger(LOG, "updateDhcpOptions")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDhcpOptions",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDhcpOptionsRequest::builder)
                 .basePath("/20160918")
@@ -8014,12 +8936,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
         Objects.requireNonNull(request.getUpdateDrgDetails(), "updateDrgDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, UpdateDrgResponse::builder)
                 .logger(LOG, "updateDrg")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrg",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrgRequest::builder)
                 .basePath("/20160918")
@@ -8046,12 +8972,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateDrgAttachmentDetails(), "updateDrgAttachmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgAttachmentId", request.getDrgAttachmentId());
+
         return clientCall(request, UpdateDrgAttachmentResponse::builder)
                 .logger(LOG, "updateDrgAttachment")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrgAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -8084,12 +9014,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateDrgRouteDistributionDetails(),
                 "updateDrgRouteDistributionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteDistributionId", request.getDrgRouteDistributionId());
+
         return clientCall(request, UpdateDrgRouteDistributionResponse::builder)
                 .logger(LOG, "updateDrgRouteDistribution")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteDistribution",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrgRouteDistributionRequest::builder)
                 .basePath("/20160918")
@@ -8123,12 +9057,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateDrgRouteDistributionStatementsDetails(),
                 "updateDrgRouteDistributionStatementsDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteDistributionId", request.getDrgRouteDistributionId());
+
         return clientCall(request, UpdateDrgRouteDistributionStatementsResponse::builder)
                 .logger(LOG, "updateDrgRouteDistributionStatements")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteDistributionStatements",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateDrgRouteDistributionStatementsRequest::builder)
                 .basePath("/20160918")
@@ -8158,12 +9096,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateDrgRouteRulesDetails(), "updateDrgRouteRulesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, UpdateDrgRouteRulesResponse::builder)
                 .logger(LOG, "updateDrgRouteRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateDrgRouteRulesRequest::builder)
                 .basePath("/20160918")
@@ -8192,12 +9134,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateDrgRouteTableDetails(), "updateDrgRouteTableDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgRouteTableId", request.getDrgRouteTableId());
+
         return clientCall(request, UpdateDrgRouteTableResponse::builder)
                 .logger(LOG, "updateDrgRouteTable")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteTable",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrgRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -8227,12 +9173,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateIPSecConnectionDetails(),
                 "updateIPSecConnectionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+
         return clientCall(request, UpdateIPSecConnectionResponse::builder)
                 .logger(LOG, "updateIPSecConnection")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIPSecConnectionRequest::builder)
                 .basePath("/20160918")
@@ -8266,12 +9216,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateIPSecConnectionTunnelDetails(),
                 "updateIPSecConnectionTunnelDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, UpdateIPSecConnectionTunnelResponse::builder)
                 .logger(LOG, "updateIPSecConnectionTunnel")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnectionTunnel",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIPSecConnectionTunnelRequest::builder)
                 .basePath("/20160918")
@@ -8309,12 +9264,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateIPSecConnectionTunnelSharedSecretDetails(),
                 "updateIPSecConnectionTunnelSharedSecretDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, UpdateIPSecConnectionTunnelSharedSecretResponse::builder)
                 .logger(LOG, "updateIPSecConnectionTunnelSharedSecret")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnectionTunnelSharedSecret",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIPSecConnectionTunnelSharedSecretRequest::builder)
                 .basePath("/20160918")
@@ -8350,12 +9310,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateInternetGatewayDetails(),
                 "updateInternetGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("igId", request.getIgId());
+
         return clientCall(request, UpdateInternetGatewayResponse::builder)
                 .logger(LOG, "updateInternetGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateInternetGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInternetGatewayRequest::builder)
                 .basePath("/20160918")
@@ -8382,12 +9346,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
         Objects.requireNonNull(request.getUpdateIpv6Details(), "updateIpv6Details is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipv6Id", request.getIpv6Id());
+
         return clientCall(request, UpdateIpv6Response::builder)
                 .logger(LOG, "updateIpv6")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIpv6",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateIpv6Request::builder)
                 .basePath("/20160918")
@@ -8417,12 +9385,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateLocalPeeringGatewayDetails(),
                 "updateLocalPeeringGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("localPeeringGatewayId", request.getLocalPeeringGatewayId());
+
         return clientCall(request, UpdateLocalPeeringGatewayResponse::builder)
                 .logger(LOG, "updateLocalPeeringGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateLocalPeeringGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateLocalPeeringGatewayRequest::builder)
                 .basePath("/20160918")
@@ -8451,12 +9423,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateNatGatewayDetails(), "updateNatGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("natGatewayId", request.getNatGatewayId());
+
         return clientCall(request, UpdateNatGatewayResponse::builder)
                 .logger(LOG, "updateNatGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNatGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateNatGatewayRequest::builder)
                 .basePath("/20160918")
@@ -8489,12 +9465,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateNetworkSecurityGroupDetails(),
                 "updateNetworkSecurityGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, UpdateNetworkSecurityGroupResponse::builder)
                 .logger(LOG, "updateNetworkSecurityGroup")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNetworkSecurityGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateNetworkSecurityGroupRequest::builder)
                 .basePath("/20160918")
@@ -8528,12 +9508,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateNetworkSecurityGroupSecurityRulesDetails(),
                 "updateNetworkSecurityGroupSecurityRulesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("networkSecurityGroupId", request.getNetworkSecurityGroupId());
+
         return clientCall(request, UpdateNetworkSecurityGroupSecurityRulesResponse::builder)
                 .logger(LOG, "updateNetworkSecurityGroupSecurityRules")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNetworkSecurityGroupSecurityRules",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateNetworkSecurityGroupSecurityRulesRequest::builder)
                 .basePath("/20160918")
@@ -8564,12 +9548,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdatePrivateIpDetails(), "updatePrivateIpDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("privateIpId", request.getPrivateIpId());
+
         return clientCall(request, UpdatePrivateIpResponse::builder)
                 .logger(LOG, "updatePrivateIp")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePrivateIp",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePrivateIpRequest::builder)
                 .basePath("/20160918")
@@ -8598,12 +9586,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdatePublicIpDetails(), "updatePublicIpDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpId", request.getPublicIpId());
+
         return clientCall(request, UpdatePublicIpResponse::builder)
                 .logger(LOG, "updatePublicIp")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePublicIp",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePublicIpRequest::builder)
                 .basePath("/20160918")
@@ -8632,12 +9624,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdatePublicIpPoolDetails(), "updatePublicIpPoolDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("publicIpPoolId", request.getPublicIpPoolId());
+
         return clientCall(request, UpdatePublicIpPoolResponse::builder)
                 .logger(LOG, "updatePublicIpPool")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePublicIpPool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePublicIpPoolRequest::builder)
                 .basePath("/20160918")
@@ -8672,12 +9668,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateRemotePeeringConnectionDetails(),
                 "updateRemotePeeringConnectionDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put(
+                "remotePeeringConnectionId", request.getRemotePeeringConnectionId());
+
         return clientCall(request, UpdateRemotePeeringConnectionResponse::builder)
                 .logger(LOG, "updateRemotePeeringConnection")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateRemotePeeringConnection",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRemotePeeringConnectionRequest::builder)
                 .basePath("/20160918")
@@ -8708,12 +9709,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateRouteTableDetails(), "updateRouteTableDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("rtId", request.getRtId());
+
         return clientCall(request, UpdateRouteTableResponse::builder)
                 .logger(LOG, "updateRouteTable")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateRouteTable",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRouteTableRequest::builder)
                 .basePath("/20160918")
@@ -8742,12 +9747,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Objects.requireNonNull(
                 request.getUpdateSecurityListDetails(), "updateSecurityListDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("securityListId", request.getSecurityListId());
+
         return clientCall(request, UpdateSecurityListResponse::builder)
                 .logger(LOG, "updateSecurityList")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateSecurityList",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSecurityListRequest::builder)
                 .basePath("/20160918")
@@ -8777,12 +9786,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateServiceGatewayDetails(),
                 "updateServiceGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceGatewayId", request.getServiceGatewayId());
+
         return clientCall(request, UpdateServiceGatewayResponse::builder)
                 .logger(LOG, "updateServiceGateway")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateServiceGateway",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateServiceGatewayRequest::builder)
                 .basePath("/20160918")
@@ -8809,12 +9822,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
         Objects.requireNonNull(request.getUpdateSubnetDetails(), "updateSubnetDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+
         return clientCall(request, UpdateSubnetResponse::builder)
                 .logger(LOG, "updateSubnet")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateSubnet",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSubnetRequest::builder)
                 .basePath("/20160918")
@@ -8848,12 +9865,17 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateTunnelCpeDeviceConfigDetails(),
                 "updateTunnelCpeDeviceConfigDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipscId", request.getIpscId());
+        requiredParametersMap.put("tunnelId", request.getTunnelId());
+
         return clientCall(request, UpdateTunnelCpeDeviceConfigResponse::builder)
                 .logger(LOG, "updateTunnelCpeDeviceConfig")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateTunnelCpeDeviceConfig",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateTunnelCpeDeviceConfigRequest::builder)
                 .basePath("/20160918")
@@ -8886,12 +9908,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
         Objects.requireNonNull(request.getUpdateVcnDetails(), "updateVcnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+
         return clientCall(request, UpdateVcnResponse::builder)
                 .logger(LOG, "updateVcn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVcn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVcnRequest::builder)
                 .basePath("/20160918")
@@ -8919,12 +9945,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 request.getUpdateVirtualCircuitDetails(),
                 "updateVirtualCircuitDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+
         return clientCall(request, UpdateVirtualCircuitResponse::builder)
                 .logger(LOG, "updateVirtualCircuit")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVirtualCircuit",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVirtualCircuitRequest::builder)
                 .basePath("/20160918")
@@ -8951,12 +9981,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
         Objects.requireNonNull(request.getUpdateVlanDetails(), "updateVlanDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vlanId", request.getVlanId());
+
         return clientCall(request, UpdateVlanResponse::builder)
                 .logger(LOG, "updateVlan")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVlan",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVlanRequest::builder)
                 .basePath("/20160918")
@@ -8982,12 +10016,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getVnicId(), "vnicId must not be blank");
         Objects.requireNonNull(request.getUpdateVnicDetails(), "updateVnicDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vnicId", request.getVnicId());
+
         return clientCall(request, UpdateVnicResponse::builder)
                 .logger(LOG, "updateVnic")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVnic",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVnicRequest::builder)
                 .basePath("/20160918")
@@ -9012,9 +10050,13 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
         Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
         Objects.requireNonNull(request.getUpdateVtapDetails(), "updateVtapDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vtapId", request.getVtapId());
+
         return clientCall(request, UpdateVtapResponse::builder)
                 .logger(LOG, "updateVtap")
                 .serviceDetails("VirtualNetwork", "UpdateVtap", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVtapRequest::builder)
                 .basePath("/20160918")
@@ -9041,12 +10083,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgId", request.getDrgId());
+
         return clientCall(request, UpgradeDrgResponse::builder)
                 .logger(LOG, "upgradeDrg")
                 .serviceDetails(
                         "VirtualNetwork",
                         "UpgradeDrg",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpgradeDrgRequest::builder)
                 .basePath("/20160918")
@@ -9073,12 +10119,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoasnId(), "byoasnId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoasnId", request.getByoasnId());
+
         return clientCall(request, ValidateByoasnResponse::builder)
                 .logger(LOG, "validateByoasn")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ValidateByoasn",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ValidateByoasn")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateByoasnRequest::builder)
                 .basePath("/20160918")
@@ -9106,12 +10156,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, ValidateByoipRangeResponse::builder)
                 .logger(LOG, "validateByoipRange")
                 .serviceDetails(
                         "VirtualNetwork",
                         "ValidateByoipRange",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateByoipRangeRequest::builder)
                 .basePath("/20160918")
@@ -9137,12 +10191,16 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
 
         Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("byoipRangeId", request.getByoipRangeId());
+
         return clientCall(request, WithdrawByoipRangeResponse::builder)
                 .logger(LOG, "withdrawByoipRange")
                 .serviceDetails(
                         "VirtualNetwork",
                         "WithdrawByoipRange",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(WithdrawByoipRangeRequest::builder)
                 .basePath("/20160918")

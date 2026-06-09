@@ -31,6 +31,7 @@ public final class ComputeGpuMemoryFabric
         "computeLocalBlockId",
         "lifecycleState",
         "fabricHealth",
+        "computeGpuMemoryClusters",
         "additionalData",
         "healthyHostCount",
         "availableHostCount",
@@ -56,6 +57,7 @@ public final class ComputeGpuMemoryFabric
             String computeLocalBlockId,
             LifecycleState lifecycleState,
             FabricHealth fabricHealth,
+            java.util.List<String> computeGpuMemoryClusters,
             java.util.Map<String, Object> additionalData,
             Long healthyHostCount,
             Long availableHostCount,
@@ -80,6 +82,7 @@ public final class ComputeGpuMemoryFabric
         this.computeLocalBlockId = computeLocalBlockId;
         this.lifecycleState = lifecycleState;
         this.fabricHealth = fabricHealth;
+        this.computeGpuMemoryClusters = computeGpuMemoryClusters;
         this.additionalData = additionalData;
         this.healthyHostCount = healthyHostCount;
         this.availableHostCount = availableHostCount;
@@ -223,6 +226,21 @@ public final class ComputeGpuMemoryFabric
         public Builder fabricHealth(FabricHealth fabricHealth) {
             this.fabricHealth = fabricHealth;
             this.__explicitlySet__.add("fabricHealth");
+            return this;
+        }
+        /** List of GPU memory clusters within this GPU memory fabric. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeGpuMemoryClusters")
+        private java.util.List<String> computeGpuMemoryClusters;
+
+        /**
+         * List of GPU memory clusters within this GPU memory fabric.
+         *
+         * @param computeGpuMemoryClusters the value to set
+         * @return this builder
+         */
+        public Builder computeGpuMemoryClusters(java.util.List<String> computeGpuMemoryClusters) {
+            this.computeGpuMemoryClusters = computeGpuMemoryClusters;
+            this.__explicitlySet__.add("computeGpuMemoryClusters");
             return this;
         }
         /**
@@ -527,6 +545,7 @@ public final class ComputeGpuMemoryFabric
                             this.computeLocalBlockId,
                             this.lifecycleState,
                             this.fabricHealth,
+                            this.computeGpuMemoryClusters,
                             this.additionalData,
                             this.healthyHostCount,
                             this.availableHostCount,
@@ -571,6 +590,9 @@ public final class ComputeGpuMemoryFabric
             }
             if (model.wasPropertyExplicitlySet("fabricHealth")) {
                 this.fabricHealth(model.getFabricHealth());
+            }
+            if (model.wasPropertyExplicitlySet("computeGpuMemoryClusters")) {
+                this.computeGpuMemoryClusters(model.getComputeGpuMemoryClusters());
             }
             if (model.wasPropertyExplicitlySet("additionalData")) {
                 this.additionalData(model.getAdditionalData());
@@ -837,6 +859,19 @@ public final class ComputeGpuMemoryFabric
      */
     public FabricHealth getFabricHealth() {
         return fabricHealth;
+    }
+
+    /** List of GPU memory clusters within this GPU memory fabric. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeGpuMemoryClusters")
+    private final java.util.List<String> computeGpuMemoryClusters;
+
+    /**
+     * List of GPU memory clusters within this GPU memory fabric.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getComputeGpuMemoryClusters() {
+        return computeGpuMemoryClusters;
     }
 
     /**
@@ -1158,6 +1193,8 @@ public final class ComputeGpuMemoryFabric
         sb.append(", computeLocalBlockId=").append(String.valueOf(this.computeLocalBlockId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", fabricHealth=").append(String.valueOf(this.fabricHealth));
+        sb.append(", computeGpuMemoryClusters=")
+                .append(String.valueOf(this.computeGpuMemoryClusters));
         sb.append(", additionalData=").append(String.valueOf(this.additionalData));
         sb.append(", healthyHostCount=").append(String.valueOf(this.healthyHostCount));
         sb.append(", availableHostCount=").append(String.valueOf(this.availableHostCount));
@@ -1197,6 +1234,8 @@ public final class ComputeGpuMemoryFabric
                 && java.util.Objects.equals(this.computeLocalBlockId, other.computeLocalBlockId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.fabricHealth, other.fabricHealth)
+                && java.util.Objects.equals(
+                        this.computeGpuMemoryClusters, other.computeGpuMemoryClusters)
                 && java.util.Objects.equals(this.additionalData, other.additionalData)
                 && java.util.Objects.equals(this.healthyHostCount, other.healthyHostCount)
                 && java.util.Objects.equals(this.availableHostCount, other.availableHostCount)
@@ -1246,6 +1285,11 @@ public final class ComputeGpuMemoryFabric
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.fabricHealth == null ? 43 : this.fabricHealth.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeGpuMemoryClusters == null
+                                ? 43
+                                : this.computeGpuMemoryClusters.hashCode());
         result =
                 (result * PRIME)
                         + (this.additionalData == null ? 43 : this.additionalData.hashCode());

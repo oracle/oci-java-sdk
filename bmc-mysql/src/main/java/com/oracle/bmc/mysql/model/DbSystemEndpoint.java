@@ -26,6 +26,7 @@ public final class DbSystemEndpoint
     @java.beans.ConstructorProperties({
         "hostname",
         "ipAddress",
+        "ipAddressVersion",
         "port",
         "portX",
         "modes",
@@ -37,6 +38,7 @@ public final class DbSystemEndpoint
     public DbSystemEndpoint(
             String hostname,
             String ipAddress,
+            IpAddressVersion ipAddressVersion,
             Integer port,
             Integer portX,
             java.util.List<Modes> modes,
@@ -47,6 +49,7 @@ public final class DbSystemEndpoint
         super();
         this.hostname = hostname;
         this.ipAddress = ipAddress;
+        this.ipAddressVersion = ipAddressVersion;
         this.port = port;
         this.portX = portX;
         this.modes = modes;
@@ -86,6 +89,21 @@ public final class DbSystemEndpoint
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+        /** The internet protocol (IP) version of the IP address. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddressVersion")
+        private IpAddressVersion ipAddressVersion;
+
+        /**
+         * The internet protocol (IP) version of the IP address.
+         *
+         * @param ipAddressVersion the value to set
+         * @return this builder
+         */
+        public Builder ipAddressVersion(IpAddressVersion ipAddressVersion) {
+            this.ipAddressVersion = ipAddressVersion;
+            this.__explicitlySet__.add("ipAddressVersion");
             return this;
         }
         /** The port the MySQL instance listens on. */
@@ -206,6 +224,7 @@ public final class DbSystemEndpoint
                     new DbSystemEndpoint(
                             this.hostname,
                             this.ipAddress,
+                            this.ipAddressVersion,
                             this.port,
                             this.portX,
                             this.modes,
@@ -226,6 +245,9 @@ public final class DbSystemEndpoint
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddressVersion")) {
+                this.ipAddressVersion(model.getIpAddressVersion());
             }
             if (model.wasPropertyExplicitlySet("port")) {
                 this.port(model.getPort());
@@ -285,6 +307,65 @@ public final class DbSystemEndpoint
      */
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /** The internet protocol (IP) version of the IP address. */
+    public enum IpAddressVersion implements com.oracle.bmc.http.internal.BmcEnum {
+        Ipv4("IPV4"),
+        Ipv6("IPV6"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IpAddressVersion.class);
+
+        private final String value;
+        private static java.util.Map<String, IpAddressVersion> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpAddressVersion v : IpAddressVersion.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpAddressVersion(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpAddressVersion create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpAddressVersion', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The internet protocol (IP) version of the IP address. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddressVersion")
+    private final IpAddressVersion ipAddressVersion;
+
+    /**
+     * The internet protocol (IP) version of the IP address.
+     *
+     * @return the value
+     */
+    public IpAddressVersion getIpAddressVersion() {
+        return ipAddressVersion;
     }
 
     /** The port the MySQL instance listens on. */
@@ -541,6 +622,7 @@ public final class DbSystemEndpoint
         sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", ipAddressVersion=").append(String.valueOf(this.ipAddressVersion));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
         sb.append(", modes=").append(String.valueOf(this.modes));
@@ -564,6 +646,7 @@ public final class DbSystemEndpoint
         DbSystemEndpoint other = (DbSystemEndpoint) o;
         return java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.ipAddressVersion, other.ipAddressVersion)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
                 && java.util.Objects.equals(this.modes, other.modes)
@@ -580,6 +663,9 @@ public final class DbSystemEndpoint
         int result = 1;
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipAddressVersion == null ? 43 : this.ipAddressVersion.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
         result = (result * PRIME) + (this.modes == null ? 43 : this.modes.hashCode());

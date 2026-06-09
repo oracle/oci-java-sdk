@@ -9,6 +9,7 @@ package com.oracle.bmc.delegateaccesscontrol.model;
 public enum DelegationControlResourceType implements com.oracle.bmc.http.internal.BmcEnum {
     Vmcluster("VMCLUSTER"),
     Cloudvmcluster("CLOUDVMCLUSTER"),
+    Exadbvmcluster("EXADBVMCLUSTER"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

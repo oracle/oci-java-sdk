@@ -33,7 +33,9 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(BlockstorageClient.class.getName())
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
+                    .endpointServiceName("iaas")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -108,12 +110,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getChangeBootVolumeBackupCompartmentDetails(),
                 "changeBootVolumeBackupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeBackupId", request.getBootVolumeBackupId());
+
         return clientCall(request, ChangeBootVolumeBackupCompartmentResponse::builder)
                 .logger(LOG, "changeBootVolumeBackupCompartment")
                 .serviceDetails(
                         "Blockstorage",
                         "ChangeBootVolumeBackupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ChangeBootVolumeBackupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeBootVolumeBackupCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -146,12 +152,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getChangeBootVolumeCompartmentDetails(),
                 "changeBootVolumeCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeId", request.getBootVolumeId());
+
         return clientCall(request, ChangeBootVolumeCompartmentResponse::builder)
                 .logger(LOG, "changeBootVolumeCompartment")
                 .serviceDetails(
                         "Blockstorage",
                         "ChangeBootVolumeCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ChangeBootVolumeCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeBootVolumeCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -183,12 +193,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getChangeVolumeBackupCompartmentDetails(),
                 "changeVolumeBackupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeBackupId", request.getVolumeBackupId());
+
         return clientCall(request, ChangeVolumeBackupCompartmentResponse::builder)
                 .logger(LOG, "changeVolumeBackupCompartment")
                 .serviceDetails(
                         "Blockstorage",
                         "ChangeVolumeBackupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ChangeVolumeBackupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVolumeBackupCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -219,12 +233,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getChangeVolumeCompartmentDetails(),
                 "changeVolumeCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeId", request.getVolumeId());
+
         return clientCall(request, ChangeVolumeCompartmentResponse::builder)
                 .logger(LOG, "changeVolumeCompartment")
                 .serviceDetails(
                         "Blockstorage",
                         "ChangeVolumeCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ChangeVolumeCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVolumeCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -256,12 +274,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getChangeVolumeGroupBackupCompartmentDetails(),
                 "changeVolumeGroupBackupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupBackupId", request.getVolumeGroupBackupId());
+
         return clientCall(request, ChangeVolumeGroupBackupCompartmentResponse::builder)
                 .logger(LOG, "changeVolumeGroupBackupCompartment")
                 .serviceDetails(
                         "Blockstorage",
                         "ChangeVolumeGroupBackupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ChangeVolumeGroupBackupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVolumeGroupBackupCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -294,12 +316,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getChangeVolumeGroupCompartmentDetails(),
                 "changeVolumeGroupCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupId", request.getVolumeGroupId());
+
         return clientCall(request, ChangeVolumeGroupCompartmentResponse::builder)
                 .logger(LOG, "changeVolumeGroupCompartment")
                 .serviceDetails(
                         "Blockstorage",
                         "ChangeVolumeGroupCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ChangeVolumeGroupCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeVolumeGroupCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -330,12 +356,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCopyBootVolumeBackupDetails(),
                 "copyBootVolumeBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeBackupId", request.getBootVolumeBackupId());
+
         return clientCall(request, CopyBootVolumeBackupResponse::builder)
                 .logger(LOG, "copyBootVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "CopyBootVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CopyBootVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CopyBootVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -374,12 +404,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getCopyVolumeBackupDetails(), "copyVolumeBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeBackupId", request.getVolumeBackupId());
+
         return clientCall(request, CopyVolumeBackupResponse::builder)
                 .logger(LOG, "copyVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "CopyVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CopyVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CopyVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -418,12 +452,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCopyVolumeGroupBackupDetails(),
                 "copyVolumeGroupBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupBackupId", request.getVolumeGroupBackupId());
+
         return clientCall(request, CopyVolumeGroupBackupResponse::builder)
                 .logger(LOG, "copyVolumeGroupBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "CopyVolumeGroupBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CopyVolumeGroupBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CopyVolumeGroupBackupRequest::builder)
                 .basePath("/20160918")
@@ -453,12 +491,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getCreateBootVolumeDetails(), "createBootVolumeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateBootVolumeResponse::builder)
                 .logger(LOG, "createBootVolume")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateBootVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/CreateBootVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBootVolumeRequest::builder)
                 .basePath("/20160918")
@@ -485,12 +526,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCreateBootVolumeBackupDetails(),
                 "createBootVolumeBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateBootVolumeBackupResponse::builder)
                 .logger(LOG, "createBootVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateBootVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CreateBootVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBootVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -514,12 +558,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCreateVolumeDetails(), "createVolumeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVolumeResponse::builder)
                 .logger(LOG, "createVolume")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/CreateVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVolumeRequest::builder)
                 .basePath("/20160918")
@@ -545,12 +592,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getCreateVolumeBackupDetails(), "createVolumeBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVolumeBackupResponse::builder)
                 .logger(LOG, "createVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CreateVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -577,12 +627,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCreateVolumeBackupPolicyDetails(),
                 "createVolumeBackupPolicyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVolumeBackupPolicyResponse::builder)
                 .logger(LOG, "createVolumeBackupPolicy")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateVolumeBackupPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/CreateVolumeBackupPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVolumeBackupPolicyRequest::builder)
                 .basePath("/20160918")
@@ -612,12 +665,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCreateVolumeBackupPolicyAssignmentDetails(),
                 "createVolumeBackupPolicyAssignmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVolumeBackupPolicyAssignmentResponse::builder)
                 .logger(LOG, "createVolumeBackupPolicyAssignment")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateVolumeBackupPolicyAssignment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/CreateVolumeBackupPolicyAssignment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVolumeBackupPolicyAssignmentRequest::builder)
                 .basePath("/20160918")
@@ -645,12 +701,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getCreateVolumeGroupDetails(), "createVolumeGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVolumeGroupResponse::builder)
                 .logger(LOG, "createVolumeGroup")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateVolumeGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/CreateVolumeGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVolumeGroupRequest::builder)
                 .basePath("/20160918")
@@ -677,12 +736,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getCreateVolumeGroupBackupDetails(),
                 "createVolumeGroupBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateVolumeGroupBackupResponse::builder)
                 .logger(LOG, "createVolumeGroupBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "CreateVolumeGroupBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CreateVolumeGroupBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVolumeGroupBackupRequest::builder)
                 .basePath("/20160918")
@@ -708,9 +770,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeId", request.getBootVolumeId());
+
         return clientCall(request, DeleteBootVolumeResponse::builder)
                 .logger(LOG, "deleteBootVolume")
                 .serviceDetails("Blockstorage", "DeleteBootVolume", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteBootVolumeRequest::builder)
                 .basePath("/20160918")
@@ -732,9 +798,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getBootVolumeBackupId(), "bootVolumeBackupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeBackupId", request.getBootVolumeBackupId());
+
         return clientCall(request, DeleteBootVolumeBackupResponse::builder)
                 .logger(LOG, "deleteBootVolumeBackup")
                 .serviceDetails("Blockstorage", "DeleteBootVolumeBackup", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteBootVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -756,9 +826,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeId", request.getBootVolumeId());
+
         return clientCall(request, DeleteBootVolumeKmsKeyResponse::builder)
                 .logger(LOG, "deleteBootVolumeKmsKey")
                 .serviceDetails("Blockstorage", "DeleteBootVolumeKmsKey", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteBootVolumeKmsKeyRequest::builder)
                 .basePath("/20160918")
@@ -780,9 +854,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeId", request.getVolumeId());
+
         return clientCall(request, DeleteVolumeResponse::builder)
                 .logger(LOG, "deleteVolume")
                 .serviceDetails("Blockstorage", "DeleteVolume", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVolumeRequest::builder)
                 .basePath("/20160918")
@@ -804,9 +882,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeBackupId(), "volumeBackupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeBackupId", request.getVolumeBackupId());
+
         return clientCall(request, DeleteVolumeBackupResponse::builder)
                 .logger(LOG, "deleteVolumeBackup")
                 .serviceDetails("Blockstorage", "DeleteVolumeBackup", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -828,9 +910,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("policyId", request.getPolicyId());
+
         return clientCall(request, DeleteVolumeBackupPolicyResponse::builder)
                 .logger(LOG, "deleteVolumeBackupPolicy")
                 .serviceDetails("Blockstorage", "DeleteVolumeBackupPolicy", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVolumeBackupPolicyRequest::builder)
                 .basePath("/20160918")
@@ -855,9 +941,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getPolicyAssignmentId(), "policyAssignmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("policyAssignmentId", request.getPolicyAssignmentId());
+
         return clientCall(request, DeleteVolumeBackupPolicyAssignmentResponse::builder)
                 .logger(LOG, "deleteVolumeBackupPolicyAssignment")
                 .serviceDetails("Blockstorage", "DeleteVolumeBackupPolicyAssignment", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVolumeBackupPolicyAssignmentRequest::builder)
                 .basePath("/20160918")
@@ -880,9 +970,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeGroupId(), "volumeGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupId", request.getVolumeGroupId());
+
         return clientCall(request, DeleteVolumeGroupResponse::builder)
                 .logger(LOG, "deleteVolumeGroup")
                 .serviceDetails("Blockstorage", "DeleteVolumeGroup", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVolumeGroupRequest::builder)
                 .basePath("/20160918")
@@ -905,9 +999,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getVolumeGroupBackupId(), "volumeGroupBackupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupBackupId", request.getVolumeGroupBackupId());
+
         return clientCall(request, DeleteVolumeGroupBackupResponse::builder)
                 .logger(LOG, "deleteVolumeGroupBackup")
                 .serviceDetails("Blockstorage", "DeleteVolumeGroupBackup", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVolumeGroupBackupRequest::builder)
                 .basePath("/20160918")
@@ -929,9 +1027,13 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeId", request.getVolumeId());
+
         return clientCall(request, DeleteVolumeKmsKeyResponse::builder)
                 .logger(LOG, "deleteVolumeKmsKey")
                 .serviceDetails("Blockstorage", "DeleteVolumeKmsKey", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVolumeKmsKeyRequest::builder)
                 .basePath("/20160918")
@@ -955,12 +1057,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getBlockVolumeReplicaId(), "blockVolumeReplicaId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("blockVolumeReplicaId", request.getBlockVolumeReplicaId());
+
         return clientCall(request, GetBlockVolumeReplicaResponse::builder)
                 .logger(LOG, "getBlockVolumeReplica")
                 .serviceDetails(
                         "Blockstorage",
                         "GetBlockVolumeReplica",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/GetBlockVolumeReplica")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBlockVolumeReplicaRequest::builder)
                 .basePath("/20160918")
@@ -984,12 +1090,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeId", request.getBootVolumeId());
+
         return clientCall(request, GetBootVolumeResponse::builder)
                 .logger(LOG, "getBootVolume")
                 .serviceDetails(
                         "Blockstorage",
                         "GetBootVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/GetBootVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBootVolumeRequest::builder)
                 .basePath("/20160918")
@@ -1014,12 +1124,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getBootVolumeBackupId(), "bootVolumeBackupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeBackupId", request.getBootVolumeBackupId());
+
         return clientCall(request, GetBootVolumeBackupResponse::builder)
                 .logger(LOG, "getBootVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "GetBootVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/GetBootVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBootVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -1044,12 +1158,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeId", request.getBootVolumeId());
+
         return clientCall(request, GetBootVolumeKmsKeyResponse::builder)
                 .logger(LOG, "getBootVolumeKmsKey")
                 .serviceDetails(
                         "Blockstorage",
                         "GetBootVolumeKmsKey",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/GetBootVolumeKmsKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBootVolumeKmsKeyRequest::builder)
                 .basePath("/20160918")
@@ -1077,12 +1195,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getBootVolumeReplicaId(), "bootVolumeReplicaId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeReplicaId", request.getBootVolumeReplicaId());
+
         return clientCall(request, GetBootVolumeReplicaResponse::builder)
                 .logger(LOG, "getBootVolumeReplica")
                 .serviceDetails(
                         "Blockstorage",
                         "GetBootVolumeReplica",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/GetBootVolumeReplica")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetBootVolumeReplicaRequest::builder)
                 .basePath("/20160918")
@@ -1106,12 +1228,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeId", request.getVolumeId());
+
         return clientCall(request, GetVolumeResponse::builder)
                 .logger(LOG, "getVolume")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/GetVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeRequest::builder)
                 .basePath("/20160918")
@@ -1135,12 +1261,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeBackupId(), "volumeBackupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeBackupId", request.getVolumeBackupId());
+
         return clientCall(request, GetVolumeBackupResponse::builder)
                 .logger(LOG, "getVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/GetVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -1165,12 +1295,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("policyId", request.getPolicyId());
+
         return clientCall(request, GetVolumeBackupPolicyResponse::builder)
                 .logger(LOG, "getVolumeBackupPolicy")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeBackupPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/GetVolumeBackupPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeBackupPolicyRequest::builder)
                 .basePath("/20160918")
@@ -1196,12 +1330,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                             handler) {
         Objects.requireNonNull(request.getAssetId(), "assetId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("assetId", request.getAssetId());
+
         return clientCall(request, GetVolumeBackupPolicyAssetAssignmentResponse::builder)
                 .logger(LOG, "getVolumeBackupPolicyAssetAssignment")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeBackupPolicyAssetAssignment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssetAssignment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeBackupPolicyAssetAssignmentRequest::builder)
                 .basePath("/20160918")
@@ -1233,12 +1371,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getPolicyAssignmentId(), "policyAssignmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("policyAssignmentId", request.getPolicyAssignmentId());
+
         return clientCall(request, GetVolumeBackupPolicyAssignmentResponse::builder)
                 .logger(LOG, "getVolumeBackupPolicyAssignment")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeBackupPolicyAssignment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssignment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeBackupPolicyAssignmentRequest::builder)
                 .basePath("/20160918")
@@ -1266,12 +1408,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeGroupId(), "volumeGroupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupId", request.getVolumeGroupId());
+
         return clientCall(request, GetVolumeGroupResponse::builder)
                 .logger(LOG, "getVolumeGroup")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/GetVolumeGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeGroupRequest::builder)
                 .basePath("/20160918")
@@ -1297,12 +1443,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getVolumeGroupBackupId(), "volumeGroupBackupId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupBackupId", request.getVolumeGroupBackupId());
+
         return clientCall(request, GetVolumeGroupBackupResponse::builder)
                 .logger(LOG, "getVolumeGroupBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeGroupBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/GetVolumeGroupBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeGroupBackupRequest::builder)
                 .basePath("/20160918")
@@ -1328,12 +1478,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(
                 request.getVolumeGroupReplicaId(), "volumeGroupReplicaId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupReplicaId", request.getVolumeGroupReplicaId());
+
         return clientCall(request, GetVolumeGroupReplicaResponse::builder)
                 .logger(LOG, "getVolumeGroupReplica")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeGroupReplica",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/GetVolumeGroupReplica")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeGroupReplicaRequest::builder)
                 .basePath("/20160918")
@@ -1358,12 +1512,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeId", request.getVolumeId());
+
         return clientCall(request, GetVolumeKmsKeyResponse::builder)
                 .logger(LOG, "getVolumeKmsKey")
                 .serviceDetails(
                         "Blockstorage",
                         "GetVolumeKmsKey",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/GetVolumeKmsKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVolumeKmsKeyRequest::builder)
                 .basePath("/20160918")
@@ -1388,12 +1546,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                             ListBlockVolumeReplicasRequest, ListBlockVolumeReplicasResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListBlockVolumeReplicasResponse::builder)
                 .logger(LOG, "listBlockVolumeReplicas")
                 .serviceDetails(
                         "Blockstorage",
                         "ListBlockVolumeReplicas",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/ListBlockVolumeReplicas")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBlockVolumeReplicasRequest::builder)
                 .basePath("/20160918")
@@ -1426,12 +1587,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListBootVolumeBackupsResponse::builder)
                 .logger(LOG, "listBootVolumeBackups")
                 .serviceDetails(
                         "Blockstorage",
                         "ListBootVolumeBackups",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ListBootVolumeBackups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBootVolumeBackupsRequest::builder)
                 .basePath("/20160918")
@@ -1463,12 +1628,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                             ListBootVolumeReplicasRequest, ListBootVolumeReplicasResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListBootVolumeReplicasResponse::builder)
                 .logger(LOG, "listBootVolumeReplicas")
                 .serviceDetails(
                         "Blockstorage",
                         "ListBootVolumeReplicas",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/ListBootVolumeReplicas")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBootVolumeReplicasRequest::builder)
                 .basePath("/20160918")
@@ -1500,12 +1668,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                             ListBootVolumesRequest, ListBootVolumesResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListBootVolumesResponse::builder)
                 .logger(LOG, "listBootVolumes")
                 .serviceDetails(
                         "Blockstorage",
                         "ListBootVolumes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ListBootVolumes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBootVolumesRequest::builder)
                 .basePath("/20160918")
@@ -1533,12 +1704,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                             ListVolumeBackupPoliciesRequest, ListVolumeBackupPoliciesResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListVolumeBackupPoliciesResponse::builder)
                 .logger(LOG, "listVolumeBackupPolicies")
                 .serviceDetails(
                         "Blockstorage",
                         "ListVolumeBackupPolicies",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/ListVolumeBackupPolicies")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVolumeBackupPoliciesRequest::builder)
                 .basePath("/20160918")
@@ -1565,12 +1739,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVolumeBackupsResponse::builder)
                 .logger(LOG, "listVolumeBackups")
                 .serviceDetails(
                         "Blockstorage",
                         "ListVolumeBackups",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ListVolumeBackups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVolumeBackupsRequest::builder)
                 .basePath("/20160918")
@@ -1603,12 +1781,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVolumeGroupBackupsResponse::builder)
                 .logger(LOG, "listVolumeGroupBackups")
                 .serviceDetails(
                         "Blockstorage",
                         "ListVolumeGroupBackups",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ListVolumeGroupBackups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVolumeGroupBackupsRequest::builder)
                 .basePath("/20160918")
@@ -1641,12 +1823,17 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
 
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVolumeGroupReplicasResponse::builder)
                 .logger(LOG, "listVolumeGroupReplicas")
                 .serviceDetails(
                         "Blockstorage",
                         "ListVolumeGroupReplicas",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/ListVolumeGroupReplicas")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVolumeGroupReplicasRequest::builder)
                 .basePath("/20160918")
@@ -1678,12 +1865,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListVolumeGroupsResponse::builder)
                 .logger(LOG, "listVolumeGroups")
                 .serviceDetails(
                         "Blockstorage",
                         "ListVolumeGroups",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ListVolumeGroups")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVolumeGroupsRequest::builder)
                 .basePath("/20160918")
@@ -1713,12 +1904,15 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             final com.oracle.bmc.responses.AsyncHandler<ListVolumesRequest, ListVolumesResponse>
                     handler) {
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, ListVolumesResponse::builder)
                 .logger(LOG, "listVolumes")
                 .serviceDetails(
                         "Blockstorage",
                         "ListVolumes",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVolumesRequest::builder)
                 .basePath("/20160918")
@@ -1754,12 +1948,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getUpdateBootVolumeDetails(), "updateBootVolumeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeId", request.getBootVolumeId());
+
         return clientCall(request, UpdateBootVolumeResponse::builder)
                 .logger(LOG, "updateBootVolume")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateBootVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/UpdateBootVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateBootVolumeRequest::builder)
                 .basePath("/20160918")
@@ -1789,12 +1987,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getUpdateBootVolumeBackupDetails(),
                 "updateBootVolumeBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeBackupId", request.getBootVolumeBackupId());
+
         return clientCall(request, UpdateBootVolumeBackupResponse::builder)
                 .logger(LOG, "updateBootVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateBootVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/UpdateBootVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateBootVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -1822,12 +2024,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getUpdateBootVolumeKmsKeyDetails(),
                 "updateBootVolumeKmsKeyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("bootVolumeId", request.getBootVolumeId());
+
         return clientCall(request, UpdateBootVolumeKmsKeyResponse::builder)
                 .logger(LOG, "updateBootVolumeKmsKey")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateBootVolumeKmsKey",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/UpdateBootVolumeKmsKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateBootVolumeKmsKeyRequest::builder)
                 .basePath("/20160918")
@@ -1855,12 +2061,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
         Objects.requireNonNull(request.getUpdateVolumeDetails(), "updateVolumeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeId", request.getVolumeId());
+
         return clientCall(request, UpdateVolumeResponse::builder)
                 .logger(LOG, "updateVolume")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateVolume",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/UpdateVolume")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVolumeRequest::builder)
                 .basePath("/20160918")
@@ -1889,12 +2099,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getUpdateVolumeBackupDetails(), "updateVolumeBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeBackupId", request.getVolumeBackupId());
+
         return clientCall(request, UpdateVolumeBackupResponse::builder)
                 .logger(LOG, "updateVolumeBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateVolumeBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/UpdateVolumeBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVolumeBackupRequest::builder)
                 .basePath("/20160918")
@@ -1922,12 +2136,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getUpdateVolumeBackupPolicyDetails(),
                 "updateVolumeBackupPolicyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("policyId", request.getPolicyId());
+
         return clientCall(request, UpdateVolumeBackupPolicyResponse::builder)
                 .logger(LOG, "updateVolumeBackupPolicy")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateVolumeBackupPolicy",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/UpdateVolumeBackupPolicy")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVolumeBackupPolicyRequest::builder)
                 .basePath("/20160918")
@@ -1958,12 +2176,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getUpdateVolumeGroupDetails(), "updateVolumeGroupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupId", request.getVolumeGroupId());
+
         return clientCall(request, UpdateVolumeGroupResponse::builder)
                 .logger(LOG, "updateVolumeGroup")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateVolumeGroup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/UpdateVolumeGroup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVolumeGroupRequest::builder)
                 .basePath("/20160918")
@@ -1995,12 +2217,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 request.getUpdateVolumeGroupBackupDetails(),
                 "updateVolumeGroupBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeGroupBackupId", request.getVolumeGroupBackupId());
+
         return clientCall(request, UpdateVolumeGroupBackupResponse::builder)
                 .logger(LOG, "updateVolumeGroupBackup")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateVolumeGroupBackup",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/UpdateVolumeGroupBackup")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVolumeGroupBackupRequest::builder)
                 .basePath("/20160918")
@@ -2027,12 +2253,16 @@ public class BlockstorageAsyncClient extends com.oracle.bmc.http.internal.BaseAs
         Objects.requireNonNull(
                 request.getUpdateVolumeKmsKeyDetails(), "updateVolumeKmsKeyDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeId", request.getVolumeId());
+
         return clientCall(request, UpdateVolumeKmsKeyResponse::builder)
                 .logger(LOG, "updateVolumeKmsKey")
                 .serviceDetails(
                         "Blockstorage",
                         "UpdateVolumeKmsKey",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/UpdateVolumeKmsKey")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVolumeKmsKeyRequest::builder)
                 .basePath("/20160918")

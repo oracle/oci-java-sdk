@@ -49,14 +49,16 @@ public final class LicensingConfig
         }
         /**
          * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g.
-         * metered $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+         * metered $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license. * {@code
+         * PARTNER_PROVIDED} - Partner provided license.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private LicenseType licenseType;
 
         /**
          * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g.
-         * metered $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+         * metered $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license. * {@code
+         * PARTNER_PROVIDED} - Partner provided license.
          *
          * @param licenseType the value to set
          * @return this builder
@@ -176,11 +178,13 @@ public final class LicensingConfig
 
     /**
      * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g. metered
-     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license. * {@code
+     * PARTNER_PROVIDED} - Partner provided license.
      */
     public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
         OciProvided("OCI_PROVIDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
+        PartnerProvided("PARTNER_PROVIDED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -225,14 +229,16 @@ public final class LicensingConfig
     };
     /**
      * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g. metered
-     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license. * {@code
+     * PARTNER_PROVIDED} - Partner provided license.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final LicenseType licenseType;
 
     /**
      * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g. metered
-     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license. * {@code
+     * PARTNER_PROVIDED} - Partner provided license.
      *
      * @return the value
      */
