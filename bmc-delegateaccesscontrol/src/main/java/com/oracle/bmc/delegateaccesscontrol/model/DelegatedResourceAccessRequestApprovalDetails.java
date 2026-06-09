@@ -29,7 +29,8 @@ public final class DelegatedResourceAccessRequestApprovalDetails
         "approvalType",
         "approverComment",
         "approverId",
-        "approverAdditionalMessage"
+        "approverAdditionalMessage",
+        "timeOfAction"
     })
     public DelegatedResourceAccessRequestApprovalDetails(
             ApprovalAction approvalAction,
@@ -37,7 +38,8 @@ public final class DelegatedResourceAccessRequestApprovalDetails
             ApprovalType approvalType,
             String approverComment,
             String approverId,
-            String approverAdditionalMessage) {
+            String approverAdditionalMessage,
+            java.util.Date timeOfAction) {
         super();
         this.approvalAction = approvalAction;
         this.timeApprovedForAccess = timeApprovedForAccess;
@@ -45,6 +47,7 @@ public final class DelegatedResourceAccessRequestApprovalDetails
         this.approverComment = approverComment;
         this.approverId = approverId;
         this.approverAdditionalMessage = approverAdditionalMessage;
+        this.timeOfAction = timeOfAction;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -145,6 +148,27 @@ public final class DelegatedResourceAccessRequestApprovalDetails
             this.__explicitlySet__.add("approverAdditionalMessage");
             return this;
         }
+        /**
+         * Time when the access request was approved or rejected by the customer in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
+         * '2020-05-22T21:10:29.600Z'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfAction")
+        private java.util.Date timeOfAction;
+
+        /**
+         * Time when the access request was approved or rejected by the customer in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g.
+         * '2020-05-22T21:10:29.600Z'.
+         *
+         * @param timeOfAction the value to set
+         * @return this builder
+         */
+        public Builder timeOfAction(java.util.Date timeOfAction) {
+            this.timeOfAction = timeOfAction;
+            this.__explicitlySet__.add("timeOfAction");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -157,7 +181,8 @@ public final class DelegatedResourceAccessRequestApprovalDetails
                             this.approvalType,
                             this.approverComment,
                             this.approverId,
-                            this.approverAdditionalMessage);
+                            this.approverAdditionalMessage,
+                            this.timeOfAction);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -183,6 +208,9 @@ public final class DelegatedResourceAccessRequestApprovalDetails
             }
             if (model.wasPropertyExplicitlySet("approverAdditionalMessage")) {
                 this.approverAdditionalMessage(model.getApproverAdditionalMessage());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfAction")) {
+                this.timeOfAction(model.getTimeOfAction());
             }
             return this;
         }
@@ -371,6 +399,23 @@ public final class DelegatedResourceAccessRequestApprovalDetails
         return approverAdditionalMessage;
     }
 
+    /**
+     * Time when the access request was approved or rejected by the customer in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfAction")
+    private final java.util.Date timeOfAction;
+
+    /**
+     * Time when the access request was approved or rejected by the customer in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOfAction() {
+        return timeOfAction;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -393,6 +438,7 @@ public final class DelegatedResourceAccessRequestApprovalDetails
         sb.append(", approverId=").append(String.valueOf(this.approverId));
         sb.append(", approverAdditionalMessage=")
                 .append(String.valueOf(this.approverAdditionalMessage));
+        sb.append(", timeOfAction=").append(String.valueOf(this.timeOfAction));
         sb.append(")");
         return sb.toString();
     }
@@ -415,6 +461,7 @@ public final class DelegatedResourceAccessRequestApprovalDetails
                 && java.util.Objects.equals(this.approverId, other.approverId)
                 && java.util.Objects.equals(
                         this.approverAdditionalMessage, other.approverAdditionalMessage)
+                && java.util.Objects.equals(this.timeOfAction, other.timeOfAction)
                 && super.equals(other);
     }
 
@@ -440,6 +487,7 @@ public final class DelegatedResourceAccessRequestApprovalDetails
                         + (this.approverAdditionalMessage == null
                                 ? 43
                                 : this.approverAdditionalMessage.hashCode());
+        result = (result * PRIME) + (this.timeOfAction == null ? 43 : this.timeOfAction.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

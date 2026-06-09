@@ -48,6 +48,13 @@ public class ListComputeGpuMemoryClustersRequest
     public String getComputeGpuMemoryClusterId() {
         return computeGpuMemoryClusterId;
     }
+    /** A filter to return only the listings that matches the given GPU memory fabric id. */
+    private String computeGpuMemoryFabricId;
+
+    /** A filter to return only the listings that matches the given GPU memory fabric id. */
+    public String getComputeGpuMemoryFabricId() {
+        return computeGpuMemoryFabricId;
+    }
     /**
      * The name of the availability domain.
      *
@@ -296,6 +303,20 @@ public class ListComputeGpuMemoryClustersRequest
             return this;
         }
 
+        /** A filter to return only the listings that matches the given GPU memory fabric id. */
+        private String computeGpuMemoryFabricId = null;
+
+        /**
+         * A filter to return only the listings that matches the given GPU memory fabric id.
+         *
+         * @param computeGpuMemoryFabricId the value to set
+         * @return this builder instance
+         */
+        public Builder computeGpuMemoryFabricId(String computeGpuMemoryFabricId) {
+            this.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
+            return this;
+        }
+
         /**
          * The name of the availability domain.
          *
@@ -479,6 +500,7 @@ public class ListComputeGpuMemoryClustersRequest
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             computeGpuMemoryClusterId(o.getComputeGpuMemoryClusterId());
+            computeGpuMemoryFabricId(o.getComputeGpuMemoryFabricId());
             availabilityDomain(o.getAvailabilityDomain());
             displayName(o.getDisplayName());
             computeClusterId(o.getComputeClusterId());
@@ -523,6 +545,7 @@ public class ListComputeGpuMemoryClustersRequest
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
             request.computeGpuMemoryClusterId = computeGpuMemoryClusterId;
+            request.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
             request.availabilityDomain = availabilityDomain;
             request.displayName = displayName;
             request.computeClusterId = computeClusterId;
@@ -532,8 +555,8 @@ public class ListComputeGpuMemoryClustersRequest
             request.limit = limit;
             return request;
             // new ListComputeGpuMemoryClustersRequest(compartmentId, opcRequestId,
-            // computeGpuMemoryClusterId, availabilityDomain, displayName, computeClusterId, page,
-            // sortBy, sortOrder, limit);
+            // computeGpuMemoryClusterId, computeGpuMemoryFabricId, availabilityDomain, displayName,
+            // computeClusterId, page, sortBy, sortOrder, limit);
         }
     }
 
@@ -547,6 +570,7 @@ public class ListComputeGpuMemoryClustersRequest
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
                 .computeGpuMemoryClusterId(computeGpuMemoryClusterId)
+                .computeGpuMemoryFabricId(computeGpuMemoryFabricId)
                 .availabilityDomain(availabilityDomain)
                 .displayName(displayName)
                 .computeClusterId(computeClusterId)
@@ -574,6 +598,8 @@ public class ListComputeGpuMemoryClustersRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",computeGpuMemoryClusterId=")
                 .append(String.valueOf(this.computeGpuMemoryClusterId));
+        sb.append(",computeGpuMemoryFabricId=")
+                .append(String.valueOf(this.computeGpuMemoryFabricId));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",computeClusterId=").append(String.valueOf(this.computeClusterId));
@@ -600,6 +626,8 @@ public class ListComputeGpuMemoryClustersRequest
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
                         this.computeGpuMemoryClusterId, other.computeGpuMemoryClusterId)
+                && java.util.Objects.equals(
+                        this.computeGpuMemoryFabricId, other.computeGpuMemoryFabricId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
@@ -622,6 +650,11 @@ public class ListComputeGpuMemoryClustersRequest
                         + (this.computeGpuMemoryClusterId == null
                                 ? 43
                                 : this.computeGpuMemoryClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeGpuMemoryFabricId == null
+                                ? 43
+                                : this.computeGpuMemoryFabricId.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null

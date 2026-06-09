@@ -27,6 +27,8 @@ public final class ComputeGpuMemoryClusterSummary
         "id",
         "compartmentId",
         "availabilityDomain",
+        "gpuMemoryFabricId",
+        "size",
         "lifecycleState",
         "timeCreated",
         "definedTags",
@@ -38,6 +40,8 @@ public final class ComputeGpuMemoryClusterSummary
             String id,
             String compartmentId,
             String availabilityDomain,
+            String gpuMemoryFabricId,
+            Long size,
             ComputeGpuMemoryCluster.LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -48,6 +52,8 @@ public final class ComputeGpuMemoryClusterSummary
         this.id = id;
         this.compartmentId = compartmentId;
         this.availabilityDomain = availabilityDomain;
+        this.gpuMemoryFabricId = gpuMemoryFabricId;
+        this.size = size;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.definedTags = definedTags;
@@ -115,6 +121,44 @@ public final class ComputeGpuMemoryClusterSummary
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * GPU memory fabric.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryFabricId")
+        private String gpuMemoryFabricId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * GPU memory fabric.
+         *
+         * @param gpuMemoryFabricId the value to set
+         * @return this builder
+         */
+        public Builder gpuMemoryFabricId(String gpuMemoryFabricId) {
+            this.gpuMemoryFabricId = gpuMemoryFabricId;
+            this.__explicitlySet__.add("gpuMemoryFabricId");
+            return this;
+        }
+        /**
+         * The size represents the total number of instances in the GPU Memory Cluster, including
+         * both running instances and those still in the process of launching.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Long size;
+
+        /**
+         * The size represents the total number of instances in the GPU Memory Cluster, including
+         * both running instances and those still in the process of launching.
+         *
+         * @param size the value to set
+         * @return this builder
+         */
+        public Builder size(Long size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
             return this;
         }
         /** The current state of the compute GPU Memory Cluster. */
@@ -254,6 +298,8 @@ public final class ComputeGpuMemoryClusterSummary
                             this.id,
                             this.compartmentId,
                             this.availabilityDomain,
+                            this.gpuMemoryFabricId,
+                            this.size,
                             this.lifecycleState,
                             this.timeCreated,
                             this.definedTags,
@@ -276,6 +322,12 @@ public final class ComputeGpuMemoryClusterSummary
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("gpuMemoryFabricId")) {
+                this.gpuMemoryFabricId(model.getGpuMemoryFabricId());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -359,6 +411,40 @@ public final class ComputeGpuMemoryClusterSummary
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU
+     * memory fabric.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("gpuMemoryFabricId")
+    private final String gpuMemoryFabricId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU
+     * memory fabric.
+     *
+     * @return the value
+     */
+    public String getGpuMemoryFabricId() {
+        return gpuMemoryFabricId;
+    }
+
+    /**
+     * The size represents the total number of instances in the GPU Memory Cluster, including both
+     * running instances and those still in the process of launching.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("size")
+    private final Long size;
+
+    /**
+     * The size represents the total number of instances in the GPU Memory Cluster, including both
+     * running instances and those still in the process of launching.
+     *
+     * @return the value
+     */
+    public Long getSize() {
+        return size;
     }
 
     /** The current state of the compute GPU Memory Cluster. */
@@ -493,6 +579,8 @@ public final class ComputeGpuMemoryClusterSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", gpuMemoryFabricId=").append(String.valueOf(this.gpuMemoryFabricId));
+        sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -516,6 +604,8 @@ public final class ComputeGpuMemoryClusterSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.gpuMemoryFabricId, other.gpuMemoryFabricId)
+                && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -538,6 +628,10 @@ public final class ComputeGpuMemoryClusterSummary
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.gpuMemoryFabricId == null ? 43 : this.gpuMemoryFabricId.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

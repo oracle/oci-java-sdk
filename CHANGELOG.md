@@ -3,6 +3,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.89.1 - 2026-06-09
+### Added 
+- Support for B200 shapes in dedicated AI clusters in the Generative AI service 
+- Support for Oracle Managed Database Software Updates in the Database service 
+- Support for Oracle-managed and customer-managed database home types in the Database service 
+- Support for specifying VM cluster IDs when creating databases in the Database service 
+- Support for Oracle Managed Software Updates delegation controls in the Delegate Access Control service 
+- Support for Exadata Database VM clusters in delegation controls in the Delegate Access Control service 
+- Support for database IDs in delegated resource access requests in the Delegate Access Control service 
+- Support for approval action timestamps and SSH access indicators in the Delegate Access Control service 
+- Support for public connectivity add-ons in the OCI Streaming with Apache Kafka service 
+- Support for Kafka cluster add-ons in the OCI Streaming with Apache Kafka service 
+- Support for GPU memory fabric IDs and size details in GPU memory cluster summaries, filtering GPU memory clusters by GPU memory fabric, associated GPU memory cluster IDs in GPU memory fabric resources, and partner-provided OS licenses when launching and updating instances in the Compute service 
+- Support for work request and waiters when attaching volumes, detaching volumes, and terminating instances in the Compute service 
+- Support for single-stack IPv6 in the Virtual Cloud Network service 
+- Support for hostnames on IPv6 addresses during create, update, and bulk operations in the Virtual Cloud Network service 
+- Support for IPv6 addresses on DB systems, read endpoints, read replicas, and snapshots in the MySQL HeatWave service 
+- Support for IPv6 selection in replication channels on dual-stack DB systems in the MySQL HeatWave service 
+- Support for X509 identity propagation trusts and CA certificate chains in the Identity Domains service 
+- Support for resource subject type, impersonating resources, claim validations, and claim propagation in identity propagation trusts in the Identity Domains service
+
 ## 3.89.0 - 2026-06-02
 ### Added 
 - Support for Zero Trust Packet Routing (ZPR) security attributes for private endpoints in the Operations Insights service 

@@ -26,29 +26,35 @@ public final class ServiceProviderActionSummary
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
+        "compartmentId",
         "name",
         "customerDisplayName",
         "component",
         "resourceType",
+        "isSshAccessAllowed",
         "serviceProviderServiceTypes",
         "lifecycleState",
         "description"
     })
     public ServiceProviderActionSummary(
             String id,
+            String compartmentId,
             String name,
             String customerDisplayName,
             String component,
             DelegationControlResourceType resourceType,
+            Boolean isSshAccessAllowed,
             java.util.List<ServiceProviderServiceType> serviceProviderServiceTypes,
             ServiceProviderAction.LifecycleState lifecycleState,
             String description) {
         super();
         this.id = id;
+        this.compartmentId = compartmentId;
         this.name = name;
         this.customerDisplayName = customerDisplayName;
         this.component = component;
         this.resourceType = resourceType;
+        this.isSshAccessAllowed = isSshAccessAllowed;
         this.serviceProviderServiceTypes = serviceProviderServiceTypes;
         this.lifecycleState = lifecycleState;
         this.description = description;
@@ -69,6 +75,21 @@ public final class ServiceProviderActionSummary
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /** The OCID of the compartment that contains the Service Provider Action. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The OCID of the compartment that contains the Service Provider Action.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /** Name of the Service Provider Action. */
@@ -129,6 +150,21 @@ public final class ServiceProviderActionSummary
         public Builder resourceType(DelegationControlResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /** Indicates whether the service provider action allows SSH access. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSshAccessAllowed")
+        private Boolean isSshAccessAllowed;
+
+        /**
+         * Indicates whether the service provider action allows SSH access.
+         *
+         * @param isSshAccessAllowed the value to set
+         * @return this builder
+         */
+        public Builder isSshAccessAllowed(Boolean isSshAccessAllowed) {
+            this.isSshAccessAllowed = isSshAccessAllowed;
+            this.__explicitlySet__.add("isSshAccessAllowed");
             return this;
         }
         /**
@@ -195,10 +231,12 @@ public final class ServiceProviderActionSummary
             ServiceProviderActionSummary model =
                     new ServiceProviderActionSummary(
                             this.id,
+                            this.compartmentId,
                             this.name,
                             this.customerDisplayName,
                             this.component,
                             this.resourceType,
+                            this.isSshAccessAllowed,
                             this.serviceProviderServiceTypes,
                             this.lifecycleState,
                             this.description);
@@ -213,6 +251,9 @@ public final class ServiceProviderActionSummary
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
             }
@@ -224,6 +265,9 @@ public final class ServiceProviderActionSummary
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("isSshAccessAllowed")) {
+                this.isSshAccessAllowed(model.getIsSshAccessAllowed());
             }
             if (model.wasPropertyExplicitlySet("serviceProviderServiceTypes")) {
                 this.serviceProviderServiceTypes(model.getServiceProviderServiceTypes());
@@ -258,6 +302,19 @@ public final class ServiceProviderActionSummary
      */
     public String getId() {
         return id;
+    }
+
+    /** The OCID of the compartment that contains the Service Provider Action. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The OCID of the compartment that contains the Service Provider Action.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /** Name of the Service Provider Action. */
@@ -310,6 +367,19 @@ public final class ServiceProviderActionSummary
      */
     public DelegationControlResourceType getResourceType() {
         return resourceType;
+    }
+
+    /** Indicates whether the service provider action allows SSH access. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSshAccessAllowed")
+    private final Boolean isSshAccessAllowed;
+
+    /**
+     * Indicates whether the service provider action allows SSH access.
+     *
+     * @return the value
+     */
+    public Boolean getIsSshAccessAllowed() {
+        return isSshAccessAllowed;
     }
 
     /**
@@ -375,10 +445,12 @@ public final class ServiceProviderActionSummary
         sb.append("ServiceProviderActionSummary(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", customerDisplayName=").append(String.valueOf(this.customerDisplayName));
         sb.append(", component=").append(String.valueOf(this.component));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", isSshAccessAllowed=").append(String.valueOf(this.isSshAccessAllowed));
         sb.append(", serviceProviderServiceTypes=")
                 .append(String.valueOf(this.serviceProviderServiceTypes));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -398,10 +470,12 @@ public final class ServiceProviderActionSummary
 
         ServiceProviderActionSummary other = (ServiceProviderActionSummary) o;
         return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.customerDisplayName, other.customerDisplayName)
                 && java.util.Objects.equals(this.component, other.component)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.isSshAccessAllowed, other.isSshAccessAllowed)
                 && java.util.Objects.equals(
                         this.serviceProviderServiceTypes, other.serviceProviderServiceTypes)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -414,6 +488,9 @@ public final class ServiceProviderActionSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result =
                 (result * PRIME)
@@ -422,6 +499,11 @@ public final class ServiceProviderActionSummary
                                 : this.customerDisplayName.hashCode());
         result = (result * PRIME) + (this.component == null ? 43 : this.component.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSshAccessAllowed == null
+                                ? 43
+                                : this.isSshAccessAllowed.hashCode());
         result =
                 (result * PRIME)
                         + (this.serviceProviderServiceTypes == null

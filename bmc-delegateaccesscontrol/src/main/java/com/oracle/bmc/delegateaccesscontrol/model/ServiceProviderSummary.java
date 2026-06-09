@@ -86,12 +86,12 @@ public final class ServiceProviderSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment that contains the Delegation Control. */
+        /** The OCID of the compartment that contains the Service Provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the Delegation Control.
+         * The OCID of the compartment that contains the Service Provider.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -404,12 +404,12 @@ public final class ServiceProviderSummary
         return id;
     }
 
-    /** The OCID of the compartment that contains the Delegation Control. */
+    /** The OCID of the compartment that contains the Service Provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the Delegation Control.
+     * The OCID of the compartment that contains the Service Provider.
      *
      * @return the value
      */

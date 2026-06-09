@@ -33,7 +33,9 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(ComputeManagementClient.class.getName())
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
+                    .endpointServiceName("iaas")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -109,9 +111,13 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getAttachInstancePoolInstanceDetails(),
                 "attachInstancePoolInstanceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, AttachInstancePoolInstanceResponse::builder)
                 .logger(LOG, "attachInstancePoolInstance")
                 .serviceDetails("ComputeManagement", "AttachInstancePoolInstance", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachInstancePoolInstanceRequest::builder)
                 .basePath("/20160918")
@@ -147,12 +153,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getAttachLoadBalancerDetails(), "attachLoadBalancerDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, AttachLoadBalancerResponse::builder)
                 .logger(LOG, "attachLoadBalancer")
                 .serviceDetails(
                         "ComputeManagement",
                         "AttachLoadBalancer",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/AttachLoadBalancer")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AttachLoadBalancerRequest::builder)
                 .basePath("/20160918")
@@ -187,12 +197,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getChangeClusterNetworkCompartmentDetails(),
                 "changeClusterNetworkCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("clusterNetworkId", request.getClusterNetworkId());
+
         return clientCall(request, ChangeClusterNetworkCompartmentResponse::builder)
                 .logger(LOG, "changeClusterNetworkCompartment")
                 .serviceDetails(
                         "ComputeManagement",
                         "ChangeClusterNetworkCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ChangeClusterNetworkCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeClusterNetworkCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -228,12 +242,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getChangeInstanceConfigurationCompartmentDetails(),
                 "changeInstanceConfigurationCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceConfigurationId", request.getInstanceConfigurationId());
+
         return clientCall(request, ChangeInstanceConfigurationCompartmentResponse::builder)
                 .logger(LOG, "changeInstanceConfigurationCompartment")
                 .serviceDetails(
                         "ComputeManagement",
                         "ChangeInstanceConfigurationCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/ChangeInstanceConfigurationCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeInstanceConfigurationCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -268,12 +286,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getChangeInstancePoolCompartmentDetails(),
                 "changeInstancePoolCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, ChangeInstancePoolCompartmentResponse::builder)
                 .logger(LOG, "changeInstancePoolCompartment")
                 .serviceDetails(
                         "ComputeManagement",
                         "ChangeInstancePoolCompartment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ChangeInstancePoolCompartment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeInstancePoolCompartmentRequest::builder)
                 .basePath("/20160918")
@@ -304,12 +326,15 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getCreateClusterNetworkDetails(),
                 "createClusterNetworkDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateClusterNetworkResponse::builder)
                 .logger(LOG, "createClusterNetwork")
                 .serviceDetails(
                         "ComputeManagement",
                         "CreateClusterNetwork",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/CreateClusterNetwork")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateClusterNetworkRequest::builder)
                 .basePath("/20160918")
@@ -341,12 +366,15 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getCreateInstanceConfiguration(),
                 "createInstanceConfiguration is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateInstanceConfigurationResponse::builder)
                 .logger(LOG, "createInstanceConfiguration")
                 .serviceDetails(
                         "ComputeManagement",
                         "CreateInstanceConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateInstanceConfigurationRequest::builder)
                 .basePath("/20160918")
@@ -373,12 +401,15 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getCreateInstancePoolDetails(), "createInstancePoolDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateInstancePoolResponse::builder)
                 .logger(LOG, "createInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "CreateInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/CreateInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -407,9 +438,13 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Validate.notBlank(
                 request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceConfigurationId", request.getInstanceConfigurationId());
+
         return clientCall(request, DeleteInstanceConfigurationResponse::builder)
                 .logger(LOG, "deleteInstanceConfiguration")
                 .serviceDetails("ComputeManagement", "DeleteInstanceConfiguration", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteInstanceConfigurationRequest::builder)
                 .basePath("/20160918")
@@ -436,12 +471,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getDetachInstancePoolInstanceDetails(),
                 "detachInstancePoolInstanceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, DetachInstancePoolInstanceResponse::builder)
                 .logger(LOG, "detachInstancePoolInstance")
                 .serviceDetails(
                         "ComputeManagement",
                         "DetachInstancePoolInstance",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/DetachInstancePoolInstance")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachInstancePoolInstanceRequest::builder)
                 .basePath("/20160918")
@@ -471,12 +510,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getDetachLoadBalancerDetails(), "detachLoadBalancerDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, DetachLoadBalancerResponse::builder)
                 .logger(LOG, "detachLoadBalancer")
                 .serviceDetails(
                         "ComputeManagement",
                         "DetachLoadBalancer",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/DetachLoadBalancer")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DetachLoadBalancerRequest::builder)
                 .basePath("/20160918")
@@ -506,12 +549,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("clusterNetworkId", request.getClusterNetworkId());
+
         return clientCall(request, GetClusterNetworkResponse::builder)
                 .logger(LOG, "getClusterNetwork")
                 .serviceDetails(
                         "ComputeManagement",
                         "GetClusterNetwork",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/GetClusterNetwork")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetClusterNetworkRequest::builder)
                 .basePath("/20160918")
@@ -537,12 +584,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Validate.notBlank(
                 request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceConfigurationId", request.getInstanceConfigurationId());
+
         return clientCall(request, GetInstanceConfigurationResponse::builder)
                 .logger(LOG, "getInstanceConfiguration")
                 .serviceDetails(
                         "ComputeManagement",
                         "GetInstanceConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/GetInstanceConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceConfigurationRequest::builder)
                 .basePath("/20160918")
@@ -567,12 +618,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, GetInstancePoolResponse::builder)
                 .logger(LOG, "getInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "GetInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/GetInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -599,12 +654,17 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, GetInstancePoolInstanceResponse::builder)
                 .logger(LOG, "getInstancePoolInstance")
                 .serviceDetails(
                         "ComputeManagement",
                         "GetInstancePoolInstance",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/GetInstancePoolInstance")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstancePoolInstanceRequest::builder)
                 .basePath("/20160918")
@@ -637,12 +697,19 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getInstancePoolLoadBalancerAttachmentId(),
                 "instancePoolLoadBalancerAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+        requiredParametersMap.put(
+                "instancePoolLoadBalancerAttachmentId",
+                request.getInstancePoolLoadBalancerAttachmentId());
+
         return clientCall(request, GetInstancePoolLoadBalancerAttachmentResponse::builder)
                 .logger(LOG, "getInstancePoolLoadBalancerAttachment")
                 .serviceDetails(
                         "ComputeManagement",
                         "GetInstancePoolLoadBalancerAttachment",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolLoadBalancerAttachment/GetInstancePoolLoadBalancerAttachment")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstancePoolLoadBalancerAttachmentRequest::builder)
                 .basePath("/20160918")
@@ -675,12 +742,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getInstanceConfiguration(), "instanceConfiguration is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceConfigurationId", request.getInstanceConfigurationId());
+
         return clientCall(request, LaunchInstanceConfigurationResponse::builder)
                 .logger(LOG, "launchInstanceConfiguration")
                 .serviceDetails(
                         "ComputeManagement",
                         "LaunchInstanceConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstanceConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(LaunchInstanceConfigurationRequest::builder)
                 .basePath("/20160918")
@@ -717,12 +788,17 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("clusterNetworkId", request.getClusterNetworkId());
+
         return clientCall(request, ListClusterNetworkInstancesResponse::builder)
                 .logger(LOG, "listClusterNetworkInstances")
                 .serviceDetails(
                         "ComputeManagement",
                         "ListClusterNetworkInstances",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworkInstances")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListClusterNetworkInstancesRequest::builder)
                 .basePath("/20160918")
@@ -754,12 +830,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListClusterNetworksResponse::builder)
                 .logger(LOG, "listClusterNetworks")
                 .serviceDetails(
                         "ComputeManagement",
                         "ListClusterNetworks",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworks")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListClusterNetworksRequest::builder)
                 .basePath("/20160918")
@@ -792,12 +872,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                             handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListInstanceConfigurationsResponse::builder)
                 .logger(LOG, "listInstanceConfigurations")
                 .serviceDetails(
                         "ComputeManagement",
                         "ListInstanceConfigurations",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfigurationSummary/ListInstanceConfigurations")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceConfigurationsRequest::builder)
                 .basePath("/20160918")
@@ -828,12 +912,17 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, ListInstancePoolInstancesResponse::builder)
                 .logger(LOG, "listInstancePoolInstances")
                 .serviceDetails(
                         "ComputeManagement",
                         "ListInstancePoolInstances",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceSummary/ListInstancePoolInstances")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstancePoolInstancesRequest::builder)
                 .basePath("/20160918")
@@ -865,12 +954,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                     handler) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListInstancePoolsResponse::builder)
                 .logger(LOG, "listInstancePools")
                 .serviceDetails(
                         "ComputeManagement",
                         "ListInstancePools",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolSummary/ListInstancePools")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstancePoolsRequest::builder)
                 .basePath("/20160918")
@@ -902,12 +995,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, ResetInstancePoolResponse::builder)
                 .logger(LOG, "resetInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "ResetInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ResetInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResetInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -936,12 +1033,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, SoftresetInstancePoolResponse::builder)
                 .logger(LOG, "softresetInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "SoftresetInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftresetInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SoftresetInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -970,12 +1071,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, SoftstopInstancePoolResponse::builder)
                 .logger(LOG, "softstopInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "SoftstopInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftstopInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SoftstopInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -1004,12 +1109,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, StartInstancePoolResponse::builder)
                 .logger(LOG, "startInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "StartInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StartInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -1038,12 +1147,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, StopInstancePoolResponse::builder)
                 .logger(LOG, "stopInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "StopInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StopInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -1072,12 +1185,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("clusterNetworkId", request.getClusterNetworkId());
+
         return clientCall(request, TerminateClusterNetworkResponse::builder)
                 .logger(LOG, "terminateClusterNetwork")
                 .serviceDetails(
                         "ComputeManagement",
                         "TerminateClusterNetwork",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/TerminateClusterNetwork")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(TerminateClusterNetworkRequest::builder)
                 .basePath("/20160918")
@@ -1102,9 +1219,13 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
 
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, TerminateInstancePoolResponse::builder)
                 .logger(LOG, "terminateInstancePool")
                 .serviceDetails("ComputeManagement", "TerminateInstancePool", "")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(TerminateInstancePoolRequest::builder)
                 .basePath("/20160918")
@@ -1131,12 +1252,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getTerminationProceedInstancePoolInstanceDetails(),
                 "terminationProceedInstancePoolInstanceDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, TerminationProceedInstancePoolInstanceResponse::builder)
                 .logger(LOG, "terminationProceedInstancePoolInstance")
                 .serviceDetails(
                         "ComputeManagement",
                         "TerminationProceedInstancePoolInstance",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/TerminationProceedInstancePoolInstance")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(TerminationProceedInstancePoolInstanceRequest::builder)
                 .basePath("/20160918")
@@ -1165,12 +1290,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getUpdateClusterNetworkDetails(),
                 "updateClusterNetworkDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("clusterNetworkId", request.getClusterNetworkId());
+
         return clientCall(request, UpdateClusterNetworkResponse::builder)
                 .logger(LOG, "updateClusterNetwork")
                 .serviceDetails(
                         "ComputeManagement",
                         "UpdateClusterNetwork",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/UpdateClusterNetwork")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateClusterNetworkRequest::builder)
                 .basePath("/20160918")
@@ -1204,12 +1333,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                 request.getUpdateInstanceConfigurationDetails(),
                 "updateInstanceConfigurationDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceConfigurationId", request.getInstanceConfigurationId());
+
         return clientCall(request, UpdateInstanceConfigurationResponse::builder)
                 .logger(LOG, "updateInstanceConfiguration")
                 .serviceDetails(
                         "ComputeManagement",
                         "UpdateInstanceConfiguration",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/UpdateInstanceConfiguration")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInstanceConfigurationRequest::builder)
                 .basePath("/20160918")
@@ -1240,12 +1373,16 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
         Objects.requireNonNull(
                 request.getUpdateInstancePoolDetails(), "updateInstancePoolDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
         return clientCall(request, UpdateInstancePoolResponse::builder)
                 .logger(LOG, "updateInstancePool")
                 .serviceDetails(
                         "ComputeManagement",
                         "UpdateInstancePool",
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/UpdateInstancePool")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInstancePoolRequest::builder)
                 .basePath("/20160918")

@@ -958,6 +958,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.mysql.model.DbSystemEndpoint$IpAddressVersion",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.mysql.model.DbSystemEndpoint$Modes",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
@@ -1390,6 +1396,20 @@
     "name": "com.oracle.bmc.mysql.model.InnoDbShutdownMode",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.mysql.model.Ipv6AddressIpv6SubnetCidrPairDetails",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.mysql.model.Ipv6AddressIpv6SubnetCidrPairDetails$Builder",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true,
+    "allDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },

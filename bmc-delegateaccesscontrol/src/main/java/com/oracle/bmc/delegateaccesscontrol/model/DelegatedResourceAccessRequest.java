@@ -53,6 +53,7 @@ public final class DelegatedResourceAccessRequest
         "requesterType",
         "requestedActionNames",
         "databaseNameList",
+        "databaseIdList",
         "providedServiceTypes",
         "delegationSubscriptionIds",
         "severity",
@@ -89,6 +90,7 @@ public final class DelegatedResourceAccessRequest
             DelegatedResourceAccessRequesterType requesterType,
             java.util.List<String> requestedActionNames,
             java.util.List<String> databaseNameList,
+            java.util.List<String> databaseIdList,
             java.util.List<ServiceProviderServiceType> providedServiceTypes,
             java.util.List<String> delegationSubscriptionIds,
             DelegatedResourceAccessRequestSeverity severity,
@@ -124,6 +126,7 @@ public final class DelegatedResourceAccessRequest
         this.requesterType = requesterType;
         this.requestedActionNames = requestedActionNames;
         this.databaseNameList = databaseNameList;
+        this.databaseIdList = databaseIdList;
         this.providedServiceTypes = providedServiceTypes;
         this.delegationSubscriptionIds = delegationSubscriptionIds;
         this.severity = severity;
@@ -357,14 +360,14 @@ public final class DelegatedResourceAccessRequest
         }
         /**
          * List of Database unique names for which access is requested. This parameter is required
-         * for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+         * when database access in needed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseNameList")
         private java.util.List<String> databaseNameList;
 
         /**
          * List of Database unique names for which access is requested. This parameter is required
-         * for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+         * when database access in needed.
          *
          * @param databaseNameList the value to set
          * @return this builder
@@ -372,6 +375,25 @@ public final class DelegatedResourceAccessRequest
         public Builder databaseNameList(java.util.List<String> databaseNameList) {
             this.databaseNameList = databaseNameList;
             this.__explicitlySet__.add("databaseNameList");
+            return this;
+        }
+        /**
+         * List of Database ID for which access is requested. This parameter is required when
+         * database access is needed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseIdList")
+        private java.util.List<String> databaseIdList;
+
+        /**
+         * List of Database ID for which access is requested. This parameter is required when
+         * database access is needed.
+         *
+         * @param databaseIdList the value to set
+         * @return this builder
+         */
+        public Builder databaseIdList(java.util.List<String> databaseIdList) {
+            this.databaseIdList = databaseIdList;
+            this.__explicitlySet__.add("databaseIdList");
             return this;
         }
         /** List of Service Provider Service Types being provided by the support operator user. */
@@ -773,6 +795,7 @@ public final class DelegatedResourceAccessRequest
                             this.requesterType,
                             this.requestedActionNames,
                             this.databaseNameList,
+                            this.databaseIdList,
                             this.providedServiceTypes,
                             this.delegationSubscriptionIds,
                             this.severity,
@@ -840,6 +863,9 @@ public final class DelegatedResourceAccessRequest
             }
             if (model.wasPropertyExplicitlySet("databaseNameList")) {
                 this.databaseNameList(model.getDatabaseNameList());
+            }
+            if (model.wasPropertyExplicitlySet("databaseIdList")) {
+                this.databaseIdList(model.getDatabaseIdList());
             }
             if (model.wasPropertyExplicitlySet("providedServiceTypes")) {
                 this.providedServiceTypes(model.getProvidedServiceTypes());
@@ -1100,20 +1126,37 @@ public final class DelegatedResourceAccessRequest
     }
 
     /**
-     * List of Database unique names for which access is requested. This parameter is required for
-     * DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+     * List of Database unique names for which access is requested. This parameter is required when
+     * database access in needed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseNameList")
     private final java.util.List<String> databaseNameList;
 
     /**
-     * List of Database unique names for which access is requested. This parameter is required for
-     * DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+     * List of Database unique names for which access is requested. This parameter is required when
+     * database access in needed.
      *
      * @return the value
      */
     public java.util.List<String> getDatabaseNameList() {
         return databaseNameList;
+    }
+
+    /**
+     * List of Database ID for which access is requested. This parameter is required when database
+     * access is needed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseIdList")
+    private final java.util.List<String> databaseIdList;
+
+    /**
+     * List of Database ID for which access is requested. This parameter is required when database
+     * access is needed.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getDatabaseIdList() {
+        return databaseIdList;
     }
 
     /** List of Service Provider Service Types being provided by the support operator user. */
@@ -1523,6 +1566,7 @@ public final class DelegatedResourceAccessRequest
         sb.append(", requesterType=").append(String.valueOf(this.requesterType));
         sb.append(", requestedActionNames=").append(String.valueOf(this.requestedActionNames));
         sb.append(", databaseNameList=").append(String.valueOf(this.databaseNameList));
+        sb.append(", databaseIdList=").append(String.valueOf(this.databaseIdList));
         sb.append(", providedServiceTypes=").append(String.valueOf(this.providedServiceTypes));
         sb.append(", delegationSubscriptionIds=")
                 .append(String.valueOf(this.delegationSubscriptionIds));
@@ -1572,6 +1616,7 @@ public final class DelegatedResourceAccessRequest
                 && java.util.Objects.equals(this.requesterType, other.requesterType)
                 && java.util.Objects.equals(this.requestedActionNames, other.requestedActionNames)
                 && java.util.Objects.equals(this.databaseNameList, other.databaseNameList)
+                && java.util.Objects.equals(this.databaseIdList, other.databaseIdList)
                 && java.util.Objects.equals(this.providedServiceTypes, other.providedServiceTypes)
                 && java.util.Objects.equals(
                         this.delegationSubscriptionIds, other.delegationSubscriptionIds)
@@ -1632,6 +1677,9 @@ public final class DelegatedResourceAccessRequest
         result =
                 (result * PRIME)
                         + (this.databaseNameList == null ? 43 : this.databaseNameList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseIdList == null ? 43 : this.databaseIdList.hashCode());
         result =
                 (result * PRIME)
                         + (this.providedServiceTypes == null

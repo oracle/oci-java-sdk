@@ -53,6 +53,10 @@ public final class IdentityPropagationTrust
         "oauthClients",
         "allowImpersonation",
         "clockSkewSeconds",
+        "impersonatingResource",
+        "claimValidations",
+        "claimPropagations",
+        "cACertChain",
         "impersonationServiceUsers",
         "keytab"
     })
@@ -86,6 +90,10 @@ public final class IdentityPropagationTrust
             java.util.List<String> oauthClients,
             Boolean allowImpersonation,
             Integer clockSkewSeconds,
+            String impersonatingResource,
+            java.util.List<IdentityPropagationTrustClaimValidations> claimValidations,
+            java.util.List<String> claimPropagations,
+            IdentityPropagationTrustCaCertChain cACertChain,
             java.util.List<IdentityPropagationTrustImpersonationServiceUsers>
                     impersonationServiceUsers,
             IdentityPropagationTrustKeytab keytab) {
@@ -119,6 +127,10 @@ public final class IdentityPropagationTrust
         this.oauthClients = oauthClients;
         this.allowImpersonation = allowImpersonation;
         this.clockSkewSeconds = clockSkewSeconds;
+        this.impersonatingResource = impersonatingResource;
+        this.claimValidations = claimValidations;
+        this.claimPropagations = claimPropagations;
+        this.cACertChain = cACertChain;
         this.impersonationServiceUsers = impersonationServiceUsers;
         this.keytab = keytab;
     }
@@ -836,6 +848,101 @@ public final class IdentityPropagationTrust
             return this;
         }
         /**
+         * Defines the external workload that acts as impersonating resource principal.
+         *
+         * <p>*Added In:** 2509172316
+         *
+         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
+         * mutability: readWrite - returned: default - uniqueness: none - caseExact: true -
+         * idcsSearchable: false
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("impersonatingResource")
+        private String impersonatingResource;
+
+        /**
+         * Defines the external workload that acts as impersonating resource principal.
+         *
+         * <p>*Added In:** 2509172316
+         *
+         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
+         * mutability: readWrite - returned: default - uniqueness: none - caseExact: true -
+         * idcsSearchable: false
+         *
+         * @param impersonatingResource the value to set
+         * @return this builder
+         */
+        public Builder impersonatingResource(String impersonatingResource) {
+            this.impersonatingResource = impersonatingResource;
+            this.__explicitlySet__.add("impersonatingResource");
+            return this;
+        }
+        /**
+         * A list of claim validations
+         *
+         * <p>*Added In:** 2509172316
+         *
+         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
+         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
+         * complex - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("claimValidations")
+        private java.util.List<IdentityPropagationTrustClaimValidations> claimValidations;
+
+        /**
+         * A list of claim validations
+         *
+         * <p>*Added In:** 2509172316
+         *
+         * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false -
+         * multiValued: true - mutability: readWrite - required: false - returned: default - type:
+         * complex - uniqueness: none
+         *
+         * @param claimValidations the value to set
+         * @return this builder
+         */
+        public Builder claimValidations(
+                java.util.List<IdentityPropagationTrustClaimValidations> claimValidations) {
+            this.claimValidations = claimValidations;
+            this.__explicitlySet__.add("claimValidations");
+            return this;
+        }
+        /**
+         * A list of claims to propagate in RPST
+         *
+         * <p>*Added In:** 2509172316
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
+         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("claimPropagations")
+        private java.util.List<String> claimPropagations;
+
+        /**
+         * A list of claims to propagate in RPST
+         *
+         * <p>*Added In:** 2509172316
+         *
+         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
+         * readWrite - required: false - returned: default - type: string - uniqueness: none
+         *
+         * @param claimPropagations the value to set
+         * @return this builder
+         */
+        public Builder claimPropagations(java.util.List<String> claimPropagations) {
+            this.claimPropagations = claimPropagations;
+            this.__explicitlySet__.add("claimPropagations");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("CACertChain")
+        private IdentityPropagationTrustCaCertChain cACertChain;
+
+        public Builder cACertChain(IdentityPropagationTrustCaCertChain cACertChain) {
+            this.cACertChain = cACertChain;
+            this.__explicitlySet__.add("cACertChain");
+            return this;
+        }
+        /**
          * The Impersonating Principal.
          *
          * <p>*SCIM++ Properties:** - idcsCompositeKey: [rule, value] - idcsSearchable: false -
@@ -908,6 +1015,10 @@ public final class IdentityPropagationTrust
                             this.oauthClients,
                             this.allowImpersonation,
                             this.clockSkewSeconds,
+                            this.impersonatingResource,
+                            this.claimValidations,
+                            this.claimPropagations,
+                            this.cACertChain,
                             this.impersonationServiceUsers,
                             this.keytab);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -1004,6 +1115,18 @@ public final class IdentityPropagationTrust
             }
             if (model.wasPropertyExplicitlySet("clockSkewSeconds")) {
                 this.clockSkewSeconds(model.getClockSkewSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("impersonatingResource")) {
+                this.impersonatingResource(model.getImpersonatingResource());
+            }
+            if (model.wasPropertyExplicitlySet("claimValidations")) {
+                this.claimValidations(model.getClaimValidations());
+            }
+            if (model.wasPropertyExplicitlySet("claimPropagations")) {
+                this.claimPropagations(model.getClaimPropagations());
+            }
+            if (model.wasPropertyExplicitlySet("cACertChain")) {
+                this.cACertChain(model.getCACertChain());
             }
             if (model.wasPropertyExplicitlySet("impersonationServiceUsers")) {
                 this.impersonationServiceUsers(model.getImpersonationServiceUsers());
@@ -1343,6 +1466,7 @@ public final class IdentityPropagationTrust
         Saml("SAML"),
         Spnego("SPNEGO"),
         Aws("AWS"),
+        X509("X509"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1504,6 +1628,7 @@ public final class IdentityPropagationTrust
     public enum SubjectType implements com.oracle.bmc.http.internal.BmcEnum {
         User("User"),
         App("App"),
+        Resource("Resource"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1752,6 +1877,90 @@ public final class IdentityPropagationTrust
     }
 
     /**
+     * Defines the external workload that acts as impersonating resource principal.
+     *
+     * <p>*Added In:** 2509172316
+     *
+     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - mutability:
+     * readWrite - returned: default - uniqueness: none - caseExact: true - idcsSearchable: false
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("impersonatingResource")
+    private final String impersonatingResource;
+
+    /**
+     * Defines the external workload that acts as impersonating resource principal.
+     *
+     * <p>*Added In:** 2509172316
+     *
+     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - mutability:
+     * readWrite - returned: default - uniqueness: none - caseExact: true - idcsSearchable: false
+     *
+     * @return the value
+     */
+    public String getImpersonatingResource() {
+        return impersonatingResource;
+    }
+
+    /**
+     * A list of claim validations
+     *
+     * <p>*Added In:** 2509172316
+     *
+     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
+     * true - mutability: readWrite - required: false - returned: default - type: complex -
+     * uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("claimValidations")
+    private final java.util.List<IdentityPropagationTrustClaimValidations> claimValidations;
+
+    /**
+     * A list of claim validations
+     *
+     * <p>*Added In:** 2509172316
+     *
+     * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: false - multiValued:
+     * true - mutability: readWrite - required: false - returned: default - type: complex -
+     * uniqueness: none
+     *
+     * @return the value
+     */
+    public java.util.List<IdentityPropagationTrustClaimValidations> getClaimValidations() {
+        return claimValidations;
+    }
+
+    /**
+     * A list of claims to propagate in RPST
+     *
+     * <p>*Added In:** 2509172316
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
+     * - required: false - returned: default - type: string - uniqueness: none
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("claimPropagations")
+    private final java.util.List<String> claimPropagations;
+
+    /**
+     * A list of claims to propagate in RPST
+     *
+     * <p>*Added In:** 2509172316
+     *
+     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readWrite
+     * - required: false - returned: default - type: string - uniqueness: none
+     *
+     * @return the value
+     */
+    public java.util.List<String> getClaimPropagations() {
+        return claimPropagations;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("CACertChain")
+    private final IdentityPropagationTrustCaCertChain cACertChain;
+
+    public IdentityPropagationTrustCaCertChain getCACertChain() {
+        return cACertChain;
+    }
+
+    /**
      * The Impersonating Principal.
      *
      * <p>*SCIM++ Properties:** - idcsCompositeKey: [rule, value] - idcsSearchable: false -
@@ -1830,6 +2039,10 @@ public final class IdentityPropagationTrust
         sb.append(", oauthClients=").append(String.valueOf(this.oauthClients));
         sb.append(", allowImpersonation=").append(String.valueOf(this.allowImpersonation));
         sb.append(", clockSkewSeconds=").append(String.valueOf(this.clockSkewSeconds));
+        sb.append(", impersonatingResource=").append(String.valueOf(this.impersonatingResource));
+        sb.append(", claimValidations=").append(String.valueOf(this.claimValidations));
+        sb.append(", claimPropagations=").append(String.valueOf(this.claimPropagations));
+        sb.append(", cACertChain=").append(String.valueOf(this.cACertChain));
         sb.append(", impersonationServiceUsers=")
                 .append(String.valueOf(this.impersonationServiceUsers));
         sb.append(", keytab=").append(String.valueOf(this.keytab));
@@ -1879,6 +2092,10 @@ public final class IdentityPropagationTrust
                 && java.util.Objects.equals(this.oauthClients, other.oauthClients)
                 && java.util.Objects.equals(this.allowImpersonation, other.allowImpersonation)
                 && java.util.Objects.equals(this.clockSkewSeconds, other.clockSkewSeconds)
+                && java.util.Objects.equals(this.impersonatingResource, other.impersonatingResource)
+                && java.util.Objects.equals(this.claimValidations, other.claimValidations)
+                && java.util.Objects.equals(this.claimPropagations, other.claimPropagations)
+                && java.util.Objects.equals(this.cACertChain, other.cACertChain)
                 && java.util.Objects.equals(
                         this.impersonationServiceUsers, other.impersonationServiceUsers)
                 && java.util.Objects.equals(this.keytab, other.keytab)
@@ -1956,6 +2173,18 @@ public final class IdentityPropagationTrust
         result =
                 (result * PRIME)
                         + (this.clockSkewSeconds == null ? 43 : this.clockSkewSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.impersonatingResource == null
+                                ? 43
+                                : this.impersonatingResource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.claimValidations == null ? 43 : this.claimValidations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.claimPropagations == null ? 43 : this.claimPropagations.hashCode());
+        result = (result * PRIME) + (this.cACertChain == null ? 43 : this.cACertChain.hashCode());
         result =
                 (result * PRIME)
                         + (this.impersonationServiceUsers == null

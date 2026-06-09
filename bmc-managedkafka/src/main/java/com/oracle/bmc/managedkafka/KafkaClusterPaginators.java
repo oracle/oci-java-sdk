@@ -43,6 +43,236 @@ public class KafkaClusterPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAddonOptions operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddonOptionsResponse> listAddonOptionsResponseIterator(
+            final ListAddonOptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddonOptionsRequest.Builder, ListAddonOptionsRequest, ListAddonOptionsResponse>(
+                new java.util.function.Supplier<ListAddonOptionsRequest.Builder>() {
+                    @Override
+                    public ListAddonOptionsRequest.Builder get() {
+                        return ListAddonOptionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonOptionsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonOptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonOptionsRequest.Builder>,
+                        ListAddonOptionsRequest>() {
+                    @Override
+                    public ListAddonOptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonOptionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonOptionsRequest, ListAddonOptionsResponse>() {
+                    @Override
+                    public ListAddonOptionsResponse apply(ListAddonOptionsRequest request) {
+                        return client.listAddonOptions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.managedkafka.model.AddonOptionSummary} objects contained in responses from the
+     * listAddonOptions operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.managedkafka.model.AddonOptionSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.managedkafka.model.AddonOptionSummary>
+            listAddonOptionsRecordIterator(final ListAddonOptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddonOptionsRequest.Builder,
+                ListAddonOptionsRequest,
+                ListAddonOptionsResponse,
+                com.oracle.bmc.managedkafka.model.AddonOptionSummary>(
+                new java.util.function.Supplier<ListAddonOptionsRequest.Builder>() {
+                    @Override
+                    public ListAddonOptionsRequest.Builder get() {
+                        return ListAddonOptionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonOptionsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonOptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonOptionsRequest.Builder>,
+                        ListAddonOptionsRequest>() {
+                    @Override
+                    public ListAddonOptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonOptionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonOptionsRequest, ListAddonOptionsResponse>() {
+                    @Override
+                    public ListAddonOptionsResponse apply(ListAddonOptionsRequest request) {
+                        return client.listAddonOptions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonOptionsResponse,
+                        java.util.List<com.oracle.bmc.managedkafka.model.AddonOptionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.managedkafka.model.AddonOptionSummary>
+                            apply(ListAddonOptionsResponse response) {
+                        return response.getAddonOptionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAddons
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAddonsResponse> listAddonsResponseIterator(
+            final ListAddonsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddonsRequest.Builder, ListAddonsRequest, ListAddonsResponse>(
+                new java.util.function.Supplier<ListAddonsRequest.Builder>() {
+                    @Override
+                    public ListAddonsRequest.Builder get() {
+                        return ListAddonsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonsRequest.Builder>,
+                        ListAddonsRequest>() {
+                    @Override
+                    public ListAddonsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAddonsRequest, ListAddonsResponse>() {
+                    @Override
+                    public ListAddonsResponse apply(ListAddonsRequest request) {
+                        return client.listAddons(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.managedkafka.model.AddonSummary} objects contained in responses from the
+     * listAddons operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.managedkafka.model.AddonSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.managedkafka.model.AddonSummary> listAddonsRecordIterator(
+            final ListAddonsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddonsRequest.Builder,
+                ListAddonsRequest,
+                ListAddonsResponse,
+                com.oracle.bmc.managedkafka.model.AddonSummary>(
+                new java.util.function.Supplier<ListAddonsRequest.Builder>() {
+                    @Override
+                    public ListAddonsRequest.Builder get() {
+                        return ListAddonsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAddonsResponse, String>() {
+                    @Override
+                    public String apply(ListAddonsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddonsRequest.Builder>,
+                        ListAddonsRequest>() {
+                    @Override
+                    public ListAddonsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddonsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListAddonsRequest, ListAddonsResponse>() {
+                    @Override
+                    public ListAddonsResponse apply(ListAddonsRequest request) {
+                        return client.listAddons(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAddonsResponse,
+                        java.util.List<com.oracle.bmc.managedkafka.model.AddonSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.managedkafka.model.AddonSummary> apply(
+                            ListAddonsResponse response) {
+                        return response.getAddonCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listKafkaClusterConfigVersions operation. This iterable will fetch more data from the server
      * as needed.
      *

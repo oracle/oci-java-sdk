@@ -69,6 +69,16 @@ public interface ComputeAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Determines whether dual stack endpoint should be used or not. Set
+     * dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack
+     * endpoint template. Default value is "false"
+     *
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint
+     *     template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
+
+    /**
      * Accept the changes to the PCR values in the measured boot report.
      *
      * @param request The request object containing the details to send

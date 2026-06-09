@@ -35,6 +35,7 @@ public final class UpdateDatabaseDetails
             DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
             PatchOptions patchOptions) {
         super();
         this.dbBackupConfig = dbBackupConfig;
@@ -47,6 +48,7 @@ public final class UpdateDatabaseDetails
         this.storageSizeDetails = storageSizeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.patchOptions = patchOptions;
     }
 
@@ -61,6 +63,7 @@ public final class UpdateDatabaseDetails
         "storageSizeDetails",
         "freeformTags",
         "definedTags",
+        "managedSoftwareUpdateDetails",
         "patchOptions"
     })
     public UpdateDatabaseDetails(
@@ -72,6 +75,7 @@ public final class UpdateDatabaseDetails
             DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
             PatchOptions patchOptions) {
         super();
         this.dbBackupConfig = dbBackupConfig;
@@ -82,6 +86,7 @@ public final class UpdateDatabaseDetails
         this.storageSizeDetails = storageSizeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.patchOptions = patchOptions;
     }
 
@@ -256,6 +261,16 @@ public final class UpdateDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+        private ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+        public Builder managedSoftwareUpdateDetails(
+                ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails) {
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            this.__explicitlySet__.add("managedSoftwareUpdateDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("patchOptions")
         private PatchOptions patchOptions;
 
@@ -279,6 +294,7 @@ public final class UpdateDatabaseDetails
                             this.storageSizeDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.managedSoftwareUpdateDetails,
                             this.patchOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -311,6 +327,9 @@ public final class UpdateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("managedSoftwareUpdateDetails")) {
+                this.managedSoftwareUpdateDetails(model.getManagedSoftwareUpdateDetails());
             }
             if (model.wasPropertyExplicitlySet("patchOptions")) {
                 this.patchOptions(model.getPatchOptions());
@@ -500,6 +519,13 @@ public final class UpdateDatabaseDetails
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+    private final ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+    public ManagedSoftwareUpdateInputDetails getManagedSoftwareUpdateDetails() {
+        return managedSoftwareUpdateDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("patchOptions")
     private final PatchOptions patchOptions;
 
@@ -530,6 +556,8 @@ public final class UpdateDatabaseDetails
         sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", managedSoftwareUpdateDetails=")
+                .append(String.valueOf(this.managedSoftwareUpdateDetails));
         sb.append(", patchOptions=").append(String.valueOf(this.patchOptions));
         sb.append(")");
         return sb.toString();
@@ -553,6 +581,8 @@ public final class UpdateDatabaseDetails
                 && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
                 && java.util.Objects.equals(this.patchOptions, other.patchOptions)
                 && super.equals(other);
     }
@@ -585,6 +615,11 @@ public final class UpdateDatabaseDetails
                                 : this.storageSizeDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedSoftwareUpdateDetails == null
+                                ? 43
+                                : this.managedSoftwareUpdateDetails.hashCode());
         result = (result * PRIME) + (this.patchOptions == null ? 43 : this.patchOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -31,10 +31,16 @@ public final class SchemaItem extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** Specifies the name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        /**
+         * Specifies the name.
+         *
+         * @param name the value to set
+         * @return this builder
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -70,9 +76,15 @@ public final class SchemaItem extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
+    /** Specifies the name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
+    /**
+     * Specifies the name.
+     *
+     * @return the value
+     */
     public String getName() {
         return name;
     }
