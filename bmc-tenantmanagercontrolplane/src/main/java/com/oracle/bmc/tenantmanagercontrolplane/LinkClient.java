@@ -174,6 +174,36 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
     }
 
     @Override
+    public GetLinkWithTenancyNamesResponse getLinkWithTenancyNames(
+            GetLinkWithTenancyNamesRequest request) {
+
+        Validate.notBlank(request.getLinkId(), "linkId must not be blank");
+
+        return clientCall(request, GetLinkWithTenancyNamesResponse::builder)
+                .logger(LOG, "getLinkWithTenancyNames")
+                .serviceDetails(
+                        "Link",
+                        "GetLinkWithTenancyNames",
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/LinkWithTenancyNames/GetLinkWithTenancyNames")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLinkWithTenancyNamesRequest::builder)
+                .basePath("/20230401")
+                .appendPathParam("links")
+                .appendPathParam(request.getLinkId())
+                .appendPathParam("tenancyNames")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.tenantmanagercontrolplane.model.LinkWithTenancyNames.class,
+                        GetLinkWithTenancyNamesResponse.Builder::linkWithTenancyNames)
+                .handleResponseHeaderString("etag", GetLinkWithTenancyNamesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLinkWithTenancyNamesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListLinksResponse listLinks(ListLinksRequest request) {
 
         return clientCall(request, ListLinksResponse::builder)
@@ -188,6 +218,7 @@ public class LinkClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .appendPathParam("links")
                 .appendQueryParam("parentTenancyId", request.getParentTenancyId())
                 .appendQueryParam("childTenancyId", request.getChildTenancyId())
+                .appendQueryParam("feature", request.getFeature())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())

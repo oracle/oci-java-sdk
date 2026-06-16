@@ -28,7 +28,8 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "lifecycleState",
         "timeCreated",
         "timeUpdated",
-        "timeTerminated"
+        "timeTerminated",
+        "feature"
     })
     public Link(
             String id,
@@ -37,7 +38,8 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            java.util.Date timeTerminated) {
+            java.util.Date timeTerminated,
+            String feature) {
         super();
         this.id = id;
         this.parentTenancyId = parentTenancyId;
@@ -46,6 +48,7 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeTerminated = timeTerminated;
+        this.feature = feature;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -155,6 +158,21 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("timeTerminated");
             return this;
         }
+        /** The feature associated with this link. Default value is CORE. */
+        @com.fasterxml.jackson.annotation.JsonProperty("feature")
+        private String feature;
+
+        /**
+         * The feature associated with this link. Default value is CORE.
+         *
+         * @param feature the value to set
+         * @return this builder
+         */
+        public Builder feature(String feature) {
+            this.feature = feature;
+            this.__explicitlySet__.add("feature");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -168,7 +186,8 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.lifecycleState,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.timeTerminated);
+                            this.timeTerminated,
+                            this.feature);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -197,6 +216,9 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("timeTerminated")) {
                 this.timeTerminated(model.getTimeTerminated());
+            }
+            if (model.wasPropertyExplicitlySet("feature")) {
+                this.feature(model.getFeature());
             }
             return this;
         }
@@ -302,6 +324,19 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return timeTerminated;
     }
 
+    /** The feature associated with this link. Default value is CORE. */
+    @com.fasterxml.jackson.annotation.JsonProperty("feature")
+    private final String feature;
+
+    /**
+     * The feature associated with this link. Default value is CORE.
+     *
+     * @return the value
+     */
+    public String getFeature() {
+        return feature;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -324,6 +359,7 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeTerminated=").append(String.valueOf(this.timeTerminated));
+        sb.append(", feature=").append(String.valueOf(this.feature));
         sb.append(")");
         return sb.toString();
     }
@@ -345,6 +381,7 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeTerminated, other.timeTerminated)
+                && java.util.Objects.equals(this.feature, other.feature)
                 && super.equals(other);
     }
 
@@ -367,6 +404,7 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.timeTerminated == null ? 43 : this.timeTerminated.hashCode());
+        result = (result * PRIME) + (this.feature == null ? 43 : this.feature.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

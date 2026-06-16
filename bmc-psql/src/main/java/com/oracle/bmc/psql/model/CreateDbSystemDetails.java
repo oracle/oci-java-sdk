@@ -40,6 +40,8 @@ public final class CreateDbSystemDetails
         "networkDetails",
         "managementPolicy",
         "source",
+        "replicationConfig",
+        "odspInsightDetails",
         "freeformTags",
         "definedTags"
     })
@@ -60,6 +62,8 @@ public final class CreateDbSystemDetails
             NetworkDetails networkDetails,
             ManagementPolicyDetails managementPolicy,
             SourceDetails source,
+            CreateReplicationConfigDetails replicationConfig,
+            OdspInsightDetails odspInsightDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -79,6 +83,8 @@ public final class CreateDbSystemDetails
         this.networkDetails = networkDetails;
         this.managementPolicy = managementPolicy;
         this.source = source;
+        this.replicationConfig = replicationConfig;
+        this.odspInsightDetails = odspInsightDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -315,6 +321,24 @@ public final class CreateDbSystemDetails
             this.__explicitlySet__.add("source");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+        private CreateReplicationConfigDetails replicationConfig;
+
+        public Builder replicationConfig(CreateReplicationConfigDetails replicationConfig) {
+            this.replicationConfig = replicationConfig;
+            this.__explicitlySet__.add("replicationConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("odspInsightDetails")
+        private OdspInsightDetails odspInsightDetails;
+
+        public Builder odspInsightDetails(OdspInsightDetails odspInsightDetails) {
+            this.odspInsightDetails = odspInsightDetails;
+            this.__explicitlySet__.add("odspInsightDetails");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -377,6 +401,8 @@ public final class CreateDbSystemDetails
                             this.networkDetails,
                             this.managementPolicy,
                             this.source,
+                            this.replicationConfig,
+                            this.odspInsightDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -434,6 +460,12 @@ public final class CreateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("source")) {
                 this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("replicationConfig")) {
+                this.replicationConfig(model.getReplicationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("odspInsightDetails")) {
+                this.odspInsightDetails(model.getOdspInsightDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -652,6 +684,20 @@ public final class CreateDbSystemDetails
         return source;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+    private final CreateReplicationConfigDetails replicationConfig;
+
+    public CreateReplicationConfigDetails getReplicationConfig() {
+        return replicationConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("odspInsightDetails")
+    private final OdspInsightDetails odspInsightDetails;
+
+    public OdspInsightDetails getOdspInsightDetails() {
+        return odspInsightDetails;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -718,6 +764,8 @@ public final class CreateDbSystemDetails
         sb.append(", networkDetails=").append(String.valueOf(this.networkDetails));
         sb.append(", managementPolicy=").append(String.valueOf(this.managementPolicy));
         sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", replicationConfig=").append(String.valueOf(this.replicationConfig));
+        sb.append(", odspInsightDetails=").append(String.valueOf(this.odspInsightDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -751,6 +799,8 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.networkDetails, other.networkDetails)
                 && java.util.Objects.equals(this.managementPolicy, other.managementPolicy)
                 && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.replicationConfig, other.replicationConfig)
+                && java.util.Objects.equals(this.odspInsightDetails, other.odspInsightDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -794,6 +844,14 @@ public final class CreateDbSystemDetails
                 (result * PRIME)
                         + (this.managementPolicy == null ? 43 : this.managementPolicy.hashCode());
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationConfig == null ? 43 : this.replicationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.odspInsightDetails == null
+                                ? 43
+                                : this.odspInsightDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

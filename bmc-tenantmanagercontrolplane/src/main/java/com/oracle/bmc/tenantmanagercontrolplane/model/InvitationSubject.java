@@ -9,6 +9,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
 public enum InvitationSubject implements com.oracle.bmc.http.internal.BmcEnum {
     Link("LINK"),
     Governance("GOVERNANCE"),
+    ExtendedFeatures("EXTENDED_FEATURES"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

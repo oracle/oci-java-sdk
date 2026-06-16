@@ -30,7 +30,8 @@ public final class CreateChildTenancyDetails
         "adminEmail",
         "policyName",
         "governanceStatus",
-        "subscriptionId"
+        "subscriptionId",
+        "features"
     })
     public CreateChildTenancyDetails(
             String compartmentId,
@@ -39,7 +40,8 @@ public final class CreateChildTenancyDetails
             String adminEmail,
             String policyName,
             GovernanceStatus governanceStatus,
-            String subscriptionId) {
+            String subscriptionId,
+            java.util.List<String> features) {
         super();
         this.compartmentId = compartmentId;
         this.tenancyName = tenancyName;
@@ -48,6 +50,7 @@ public final class CreateChildTenancyDetails
         this.policyName = policyName;
         this.governanceStatus = governanceStatus;
         this.subscriptionId = subscriptionId;
+        this.features = features;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -165,6 +168,25 @@ public final class CreateChildTenancyDetails
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
+        /**
+         * List of features that the child and parent tenancies will have links for. Link with
+         * feature CORE will always be created.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("features")
+        private java.util.List<String> features;
+
+        /**
+         * List of features that the child and parent tenancies will have links for. Link with
+         * feature CORE will always be created.
+         *
+         * @param features the value to set
+         * @return this builder
+         */
+        public Builder features(java.util.List<String> features) {
+            this.features = features;
+            this.__explicitlySet__.add("features");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -178,7 +200,8 @@ public final class CreateChildTenancyDetails
                             this.adminEmail,
                             this.policyName,
                             this.governanceStatus,
-                            this.subscriptionId);
+                            this.subscriptionId,
+                            this.features);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -207,6 +230,9 @@ public final class CreateChildTenancyDetails
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("features")) {
+                this.features(model.getFeatures());
             }
             return this;
         }
@@ -320,6 +346,23 @@ public final class CreateChildTenancyDetails
         return subscriptionId;
     }
 
+    /**
+     * List of features that the child and parent tenancies will have links for. Link with feature
+     * CORE will always be created.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("features")
+    private final java.util.List<String> features;
+
+    /**
+     * List of features that the child and parent tenancies will have links for. Link with feature
+     * CORE will always be created.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -342,6 +385,7 @@ public final class CreateChildTenancyDetails
         sb.append(", policyName=").append(String.valueOf(this.policyName));
         sb.append(", governanceStatus=").append(String.valueOf(this.governanceStatus));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", features=").append(String.valueOf(this.features));
         sb.append(")");
         return sb.toString();
     }
@@ -363,6 +407,7 @@ public final class CreateChildTenancyDetails
                 && java.util.Objects.equals(this.policyName, other.policyName)
                 && java.util.Objects.equals(this.governanceStatus, other.governanceStatus)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.features, other.features)
                 && super.equals(other);
     }
 
@@ -383,6 +428,7 @@ public final class CreateChildTenancyDetails
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

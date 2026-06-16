@@ -1837,7 +1837,8 @@ public interface Database extends AutoCloseable {
 
     /**
      * Performs one of the following power actions on the specified DB node: - start - power on -
-     * stop - power off gracefully - softreset - ACPI shutdown and power on - reset - power off and
+     * stop - power off gracefully - forcestop - power off forcefully - forcereset - ACPI shutdown
+     * and power on forcefully - softreset - ACPI shutdown and power on - reset - power off and
      * power on
      *
      * <p>*Note:** Stopping a node affects billing differently, depending on the type of DB system:
@@ -6724,6 +6725,40 @@ public interface Database extends AutoCloseable {
      */
     RestartAutonomousDatabaseResponse restartAutonomousDatabase(
             RestartAutonomousDatabaseRequest request);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousVmClusterOrdsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RestartAutonomousVmClusterOrds API.
+     */
+    RestartAutonomousVmClusterOrdsResponse restartAutonomousVmClusterOrds(
+            RestartAutonomousVmClusterOrdsRequest request);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for a cloud Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartCloudAutonomousVmClusterOrdsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RestartCloudAutonomousVmClusterOrds API.
+     */
+    RestartCloudAutonomousVmClusterOrdsResponse restartCloudAutonomousVmClusterOrds(
+            RestartCloudAutonomousVmClusterOrdsRequest request);
 
     /**
      * Restores an Autonomous AI Database based on the provided request parameters.

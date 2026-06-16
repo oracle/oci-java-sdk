@@ -34,6 +34,7 @@ public final class SenderInvitation
         "timeCreated",
         "timeUpdated",
         "recipientEmailAddress",
+        "invitationFeatures",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -50,6 +51,7 @@ public final class SenderInvitation
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String recipientEmailAddress,
+            java.util.List<InvitationFeature> invitationFeatures,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -65,6 +67,7 @@ public final class SenderInvitation
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.recipientEmailAddress = recipientEmailAddress;
+        this.invitationFeatures = invitationFeatures;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -240,6 +243,25 @@ public final class SenderInvitation
             return this;
         }
         /**
+         * List of features that the invitation is being sent for. Each feature would create one
+         * link, of that type.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("invitationFeatures")
+        private java.util.List<InvitationFeature> invitationFeatures;
+
+        /**
+         * List of features that the invitation is being sent for. Each feature would create one
+         * link, of that type.
+         *
+         * @param invitationFeatures the value to set
+         * @return this builder
+         */
+        public Builder invitationFeatures(java.util.List<InvitationFeature> invitationFeatures) {
+            this.invitationFeatures = invitationFeatures;
+            this.__explicitlySet__.add("invitationFeatures");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -315,6 +337,7 @@ public final class SenderInvitation
                             this.timeCreated,
                             this.timeUpdated,
                             this.recipientEmailAddress,
+                            this.invitationFeatures,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -358,6 +381,9 @@ public final class SenderInvitation
             }
             if (model.wasPropertyExplicitlySet("recipientEmailAddress")) {
                 this.recipientEmailAddress(model.getRecipientEmailAddress());
+            }
+            if (model.wasPropertyExplicitlySet("invitationFeatures")) {
+                this.invitationFeatures(model.getInvitationFeatures());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -525,6 +551,23 @@ public final class SenderInvitation
     }
 
     /**
+     * List of features that the invitation is being sent for. Each feature would create one link,
+     * of that type.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("invitationFeatures")
+    private final java.util.List<InvitationFeature> invitationFeatures;
+
+    /**
+     * List of features that the invitation is being sent for. Each feature would create one link,
+     * of that type.
+     *
+     * @return the value
+     */
+    public java.util.List<InvitationFeature> getInvitationFeatures() {
+        return invitationFeatures;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -601,6 +644,7 @@ public final class SenderInvitation
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", recipientEmailAddress=").append(String.valueOf(this.recipientEmailAddress));
+        sb.append(", invitationFeatures=").append(String.valueOf(this.invitationFeatures));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -629,6 +673,7 @@ public final class SenderInvitation
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.recipientEmailAddress, other.recipientEmailAddress)
+                && java.util.Objects.equals(this.invitationFeatures, other.invitationFeatures)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -666,6 +711,11 @@ public final class SenderInvitation
                         + (this.recipientEmailAddress == null
                                 ? 43
                                 : this.recipientEmailAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.invitationFeatures == null
+                                ? 43
+                                : this.invitationFeatures.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -12,6 +12,7 @@ public enum SenderInvitationStatus implements com.oracle.bmc.http.internal.BmcEn
     Accepted("ACCEPTED"),
     Expired("EXPIRED"),
     Failed("FAILED"),
+    NotApplicable("NOT_APPLICABLE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

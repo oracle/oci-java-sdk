@@ -32,6 +32,7 @@ public final class AccessRequestSummary
         "resourceName",
         "subResourceList",
         "resourceType",
+        "actionRequestsList",
         "lifecycleState",
         "lifecycleDetails",
         "timeOfCreation",
@@ -54,6 +55,7 @@ public final class AccessRequestSummary
             String resourceName,
             java.util.List<String> subResourceList,
             ResourceTypes resourceType,
+            java.util.List<String> actionRequestsList,
             AccessRequestLifecycleStates lifecycleState,
             String lifecycleDetails,
             java.util.Date timeOfCreation,
@@ -75,6 +77,7 @@ public final class AccessRequestSummary
         this.resourceName = resourceName;
         this.subResourceList = subResourceList;
         this.resourceType = resourceType;
+        this.actionRequestsList = actionRequestsList;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeOfCreation = timeOfCreation;
@@ -213,6 +216,21 @@ public final class AccessRequestSummary
         public Builder resourceType(ResourceTypes resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /** List of operator actions for which approval is sought by the operator user. */
+        @com.fasterxml.jackson.annotation.JsonProperty("actionRequestsList")
+        private java.util.List<String> actionRequestsList;
+
+        /**
+         * List of operator actions for which approval is sought by the operator user.
+         *
+         * @param actionRequestsList the value to set
+         * @return this builder
+         */
+        public Builder actionRequestsList(java.util.List<String> actionRequestsList) {
+            this.actionRequestsList = actionRequestsList;
+            this.__explicitlySet__.add("actionRequestsList");
             return this;
         }
         /** The current state of the AccessRequest. */
@@ -439,6 +457,7 @@ public final class AccessRequestSummary
                             this.resourceName,
                             this.subResourceList,
                             this.resourceType,
+                            this.actionRequestsList,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeOfCreation,
@@ -482,6 +501,9 @@ public final class AccessRequestSummary
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("actionRequestsList")) {
+                this.actionRequestsList(model.getActionRequestsList());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -638,6 +660,19 @@ public final class AccessRequestSummary
      */
     public ResourceTypes getResourceType() {
         return resourceType;
+    }
+
+    /** List of operator actions for which approval is sought by the operator user. */
+    @com.fasterxml.jackson.annotation.JsonProperty("actionRequestsList")
+    private final java.util.List<String> actionRequestsList;
+
+    /**
+     * List of operator actions for which approval is sought by the operator user.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getActionRequestsList() {
+        return actionRequestsList;
     }
 
     /** The current state of the AccessRequest. */
@@ -847,6 +882,7 @@ public final class AccessRequestSummary
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", subResourceList=").append(String.valueOf(this.subResourceList));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", actionRequestsList=").append(String.valueOf(this.actionRequestsList));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
@@ -882,6 +918,7 @@ public final class AccessRequestSummary
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.subResourceList, other.subResourceList)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.actionRequestsList, other.actionRequestsList)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
@@ -918,6 +955,11 @@ public final class AccessRequestSummary
                 (result * PRIME)
                         + (this.subResourceList == null ? 43 : this.subResourceList.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actionRequestsList == null
+                                ? 43
+                                : this.actionRequestsList.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

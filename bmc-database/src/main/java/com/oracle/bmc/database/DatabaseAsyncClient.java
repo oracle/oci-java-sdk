@@ -14708,6 +14708,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
                         RestartAutonomousContainerDatabaseResponse.Builder
@@ -14750,6 +14751,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         RestartAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -14759,6 +14761,83 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RestartAutonomousDatabaseResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestartAutonomousVmClusterOrdsResponse>
+            restartAutonomousVmClusterOrds(
+                    RestartAutonomousVmClusterOrdsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RestartAutonomousVmClusterOrdsRequest,
+                                    RestartAutonomousVmClusterOrdsResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, RestartAutonomousVmClusterOrdsResponse::builder)
+                .logger(LOG, "restartAutonomousVmClusterOrds")
+                .serviceDetails(
+                        "Database",
+                        "RestartAutonomousVmClusterOrds",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RestartAutonomousVmClusterOrds")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestartAutonomousVmClusterOrdsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("restartOrds")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RestartAutonomousVmClusterOrdsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RestartAutonomousVmClusterOrdsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestartCloudAutonomousVmClusterOrdsResponse>
+            restartCloudAutonomousVmClusterOrds(
+                    RestartCloudAutonomousVmClusterOrdsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RestartCloudAutonomousVmClusterOrdsRequest,
+                                    RestartCloudAutonomousVmClusterOrdsResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+
+        return clientCall(request, RestartCloudAutonomousVmClusterOrdsResponse::builder)
+                .logger(LOG, "restartCloudAutonomousVmClusterOrds")
+                .serviceDetails(
+                        "Database",
+                        "RestartCloudAutonomousVmClusterOrds",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RestartCloudAutonomousVmClusterOrds")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestartCloudAutonomousVmClusterOrdsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("restartOrds")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RestartCloudAutonomousVmClusterOrdsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RestartCloudAutonomousVmClusterOrdsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -15583,6 +15662,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         StopAutonomousDatabaseResponse.Builder::autonomousDatabase)

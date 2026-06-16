@@ -13174,6 +13174,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousContainerDatabase.class,
                         RestartAutonomousContainerDatabaseResponse.Builder
@@ -13213,6 +13214,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         RestartAutonomousDatabaseResponse.Builder::autonomousDatabase)
@@ -13222,6 +13224,73 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RestartAutonomousDatabaseResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RestartAutonomousVmClusterOrdsResponse restartAutonomousVmClusterOrds(
+            RestartAutonomousVmClusterOrdsRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, RestartAutonomousVmClusterOrdsResponse::builder)
+                .logger(LOG, "restartAutonomousVmClusterOrds")
+                .serviceDetails(
+                        "Database",
+                        "RestartAutonomousVmClusterOrds",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RestartAutonomousVmClusterOrds")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestartAutonomousVmClusterOrdsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("restartOrds")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RestartAutonomousVmClusterOrdsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RestartAutonomousVmClusterOrdsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RestartCloudAutonomousVmClusterOrdsResponse restartCloudAutonomousVmClusterOrds(
+            RestartCloudAutonomousVmClusterOrdsRequest request) {
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+
+        return clientCall(request, RestartCloudAutonomousVmClusterOrdsResponse::builder)
+                .logger(LOG, "restartCloudAutonomousVmClusterOrds")
+                .serviceDetails(
+                        "Database",
+                        "RestartCloudAutonomousVmClusterOrds",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RestartCloudAutonomousVmClusterOrds")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestartCloudAutonomousVmClusterOrdsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("restartOrds")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RestartCloudAutonomousVmClusterOrdsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RestartCloudAutonomousVmClusterOrdsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -13962,6 +14031,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .hasBody()
                 .handleBody(
                         com.oracle.bmc.database.model.AutonomousDatabase.class,
                         StopAutonomousDatabaseResponse.Builder::autonomousDatabase)

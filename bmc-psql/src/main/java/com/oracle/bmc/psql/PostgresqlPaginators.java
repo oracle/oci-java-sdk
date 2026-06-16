@@ -274,6 +274,124 @@ public class PostgresqlPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDbSystemReplicas operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDbSystemReplicasResponse> listDbSystemReplicasResponseIterator(
+            final ListDbSystemReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDbSystemReplicasRequest.Builder,
+                ListDbSystemReplicasRequest,
+                ListDbSystemReplicasResponse>(
+                new java.util.function.Supplier<ListDbSystemReplicasRequest.Builder>() {
+                    @Override
+                    public ListDbSystemReplicasRequest.Builder get() {
+                        return ListDbSystemReplicasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDbSystemReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListDbSystemReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbSystemReplicasRequest.Builder>,
+                        ListDbSystemReplicasRequest>() {
+                    @Override
+                    public ListDbSystemReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbSystemReplicasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDbSystemReplicasRequest, ListDbSystemReplicasResponse>() {
+                    @Override
+                    public ListDbSystemReplicasResponse apply(ListDbSystemReplicasRequest request) {
+                        return client.listDbSystemReplicas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.psql.model.DbSystemReplicaSummary} objects contained in responses from the
+     * listDbSystemReplicas operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.psql.model.DbSystemReplicaSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.psql.model.DbSystemReplicaSummary>
+            listDbSystemReplicasRecordIterator(final ListDbSystemReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDbSystemReplicasRequest.Builder,
+                ListDbSystemReplicasRequest,
+                ListDbSystemReplicasResponse,
+                com.oracle.bmc.psql.model.DbSystemReplicaSummary>(
+                new java.util.function.Supplier<ListDbSystemReplicasRequest.Builder>() {
+                    @Override
+                    public ListDbSystemReplicasRequest.Builder get() {
+                        return ListDbSystemReplicasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDbSystemReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListDbSystemReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbSystemReplicasRequest.Builder>,
+                        ListDbSystemReplicasRequest>() {
+                    @Override
+                    public ListDbSystemReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbSystemReplicasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDbSystemReplicasRequest, ListDbSystemReplicasResponse>() {
+                    @Override
+                    public ListDbSystemReplicasResponse apply(ListDbSystemReplicasRequest request) {
+                        return client.listDbSystemReplicas(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDbSystemReplicasResponse,
+                        java.util.List<com.oracle.bmc.psql.model.DbSystemReplicaSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.psql.model.DbSystemReplicaSummary> apply(
+                            ListDbSystemReplicasResponse response) {
+                        return response.getDbSystemReplicaCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDbSystems
      * operation. This iterable will fetch more data from the server as needed.
      *
@@ -506,6 +624,128 @@ public class PostgresqlPaginators {
                     public java.util.List<com.oracle.bmc.psql.model.DefaultConfigurationSummary>
                             apply(ListDefaultConfigurationsResponse response) {
                         return response.getDefaultConfigurationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listInsightCapabilities operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListInsightCapabilitiesResponse> listInsightCapabilitiesResponseIterator(
+            final ListInsightCapabilitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListInsightCapabilitiesRequest.Builder,
+                ListInsightCapabilitiesRequest,
+                ListInsightCapabilitiesResponse>(
+                new java.util.function.Supplier<ListInsightCapabilitiesRequest.Builder>() {
+                    @Override
+                    public ListInsightCapabilitiesRequest.Builder get() {
+                        return ListInsightCapabilitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInsightCapabilitiesResponse, String>() {
+                    @Override
+                    public String apply(ListInsightCapabilitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInsightCapabilitiesRequest.Builder>,
+                        ListInsightCapabilitiesRequest>() {
+                    @Override
+                    public ListInsightCapabilitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInsightCapabilitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInsightCapabilitiesRequest, ListInsightCapabilitiesResponse>() {
+                    @Override
+                    public ListInsightCapabilitiesResponse apply(
+                            ListInsightCapabilitiesRequest request) {
+                        return client.listInsightCapabilities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.psql.model.InsightCapabilitySummary} objects contained in responses from the
+     * listInsightCapabilities operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.psql.model.InsightCapabilitySummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.psql.model.InsightCapabilitySummary>
+            listInsightCapabilitiesRecordIterator(final ListInsightCapabilitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListInsightCapabilitiesRequest.Builder,
+                ListInsightCapabilitiesRequest,
+                ListInsightCapabilitiesResponse,
+                com.oracle.bmc.psql.model.InsightCapabilitySummary>(
+                new java.util.function.Supplier<ListInsightCapabilitiesRequest.Builder>() {
+                    @Override
+                    public ListInsightCapabilitiesRequest.Builder get() {
+                        return ListInsightCapabilitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInsightCapabilitiesResponse, String>() {
+                    @Override
+                    public String apply(ListInsightCapabilitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInsightCapabilitiesRequest.Builder>,
+                        ListInsightCapabilitiesRequest>() {
+                    @Override
+                    public ListInsightCapabilitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInsightCapabilitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInsightCapabilitiesRequest, ListInsightCapabilitiesResponse>() {
+                    @Override
+                    public ListInsightCapabilitiesResponse apply(
+                            ListInsightCapabilitiesRequest request) {
+                        return client.listInsightCapabilities(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListInsightCapabilitiesResponse,
+                        java.util.List<com.oracle.bmc.psql.model.InsightCapabilitySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.psql.model.InsightCapabilitySummary> apply(
+                            ListInsightCapabilitiesResponse response) {
+                        return response.getInsightCapabilityCollection().getItems();
                     }
                 });
     }

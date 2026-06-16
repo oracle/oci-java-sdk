@@ -107,7 +107,10 @@ public class OperatorActionsAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetOperatorActionResponse::builder)
                 .logger(LOG, "getOperatorAction")
-                .serviceDetails("OperatorActions", "GetOperatorAction", "")
+                .serviceDetails(
+                        "OperatorActions",
+                        "GetOperatorAction",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperatorActionRequest::builder)
                 .basePath("/20200630")
@@ -133,7 +136,10 @@ public class OperatorActionsAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListOperatorActionsResponse::builder)
                 .logger(LOG, "listOperatorActions")
-                .serviceDetails("OperatorActions", "ListOperatorActions", "")
+                .serviceDetails(
+                        "OperatorActions",
+                        "ListOperatorActions",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperatorActionsRequest::builder)
                 .basePath("/20200630")

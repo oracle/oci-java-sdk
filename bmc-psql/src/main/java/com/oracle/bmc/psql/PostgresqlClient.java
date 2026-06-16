@@ -261,6 +261,76 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public ChangeRoleToReplicaResponse changeRoleToReplica(ChangeRoleToReplicaRequest request) {
+        Objects.requireNonNull(
+                request.getChangeRoleToReplicaDetails(), "changeRoleToReplicaDetails is required");
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, ChangeRoleToReplicaResponse::builder)
+                .logger(LOG, "changeRoleToReplica")
+                .serviceDetails(
+                        "Postgresql",
+                        "ChangeRoleToReplica",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ChangeRoleToReplica")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRoleToReplicaRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("changeRoleToReplica")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeRoleToReplicaResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeRoleToReplicaResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeRoleToStandaloneResponse changeRoleToStandalone(
+            ChangeRoleToStandaloneRequest request) {
+        Objects.requireNonNull(
+                request.getChangeRoleToStandaloneDetails(),
+                "changeRoleToStandaloneDetails is required");
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, ChangeRoleToStandaloneResponse::builder)
+                .logger(LOG, "changeRoleToStandalone")
+                .serviceDetails(
+                        "Postgresql",
+                        "ChangeRoleToStandalone",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ChangeRoleToStandalone")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRoleToStandaloneRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("changeRoleToStandalone")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeRoleToStandaloneResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeRoleToStandaloneResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateBackupResponse createBackup(CreateBackupRequest request) {
         Objects.requireNonNull(request.getCreateBackupDetails(), "createBackupDetails is required");
 
@@ -740,6 +810,38 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public ListDbSystemReplicasResponse listDbSystemReplicas(ListDbSystemReplicasRequest request) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, ListDbSystemReplicasResponse::builder)
+                .logger(LOG, "listDbSystemReplicas")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListDbSystemReplicas",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystemReplicaCollection/ListDbSystemReplicas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDbSystemReplicasRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("replicas")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.psql.model.DbSystemReplicaCollection.class,
+                        ListDbSystemReplicasResponse.Builder::dbSystemReplicaCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDbSystemReplicasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDbSystemReplicasResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request) {
 
         return clientCall(request, ListDbSystemsResponse::builder)
@@ -760,6 +862,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("systemRole", request.getSystemRole())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -808,6 +911,35 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-request-id", ListDefaultConfigurationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDefaultConfigurationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListInsightCapabilitiesResponse listInsightCapabilities(
+            ListInsightCapabilitiesRequest request) {
+
+        return clientCall(request, ListInsightCapabilitiesResponse::builder)
+                .logger(LOG, "listInsightCapabilities")
+                .serviceDetails(
+                        "Postgresql",
+                        "ListInsightCapabilities",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/InsightCapabilitySummary/ListInsightCapabilities")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInsightCapabilitiesRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("insightCapabilities")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.psql.model.InsightCapabilityCollection.class,
+                        ListInsightCapabilitiesResponse.Builder::insightCapabilityCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInsightCapabilitiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInsightCapabilitiesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1078,6 +1210,101 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                         "opc-work-request-id", RestoreDbSystemResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RestoreDbSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StartDbSystemResponse startDbSystem(StartDbSystemRequest request) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getStartDbSystemDetails(), "startDbSystemDetails is required");
+
+        return clientCall(request, StartDbSystemResponse::builder)
+                .logger(LOG, "startDbSystem")
+                .serviceDetails(
+                        "Postgresql",
+                        "StartDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/StartDbSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartDbSystemRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartDbSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartDbSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopDbSystemResponse stopDbSystem(StopDbSystemRequest request) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, StopDbSystemResponse::builder)
+                .logger(LOG, "stopDbSystem")
+                .serviceDetails(
+                        "Postgresql",
+                        "StopDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/StopDbSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopDbSystemRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopDbSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopDbSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SwitchOverResponse switchOver(SwitchOverRequest request) {
+        Objects.requireNonNull(request.getSwitchOverDetails(), "switchOverDetails is required");
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, SwitchOverResponse::builder)
+                .logger(LOG, "switchOver")
+                .serviceDetails(
+                        "Postgresql",
+                        "SwitchOver",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/SwitchOver")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchOverRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SwitchOverResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwitchOverResponse.Builder::opcRequestId)
                 .callSync();
     }
 

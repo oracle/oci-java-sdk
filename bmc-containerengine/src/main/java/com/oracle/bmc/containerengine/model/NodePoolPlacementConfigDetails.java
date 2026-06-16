@@ -27,6 +27,7 @@ public final class NodePoolPlacementConfigDetails
         "availabilityDomain",
         "subnetId",
         "capacityReservationId",
+        "hostGroupId",
         "preemptibleNodeConfig",
         "faultDomains"
     })
@@ -34,12 +35,14 @@ public final class NodePoolPlacementConfigDetails
             String availabilityDomain,
             String subnetId,
             String capacityReservationId,
+            String hostGroupId,
             PreemptibleNodeConfigDetails preemptibleNodeConfig,
             java.util.List<String> faultDomains) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.subnetId = subnetId;
         this.capacityReservationId = capacityReservationId;
+        this.hostGroupId = hostGroupId;
         this.preemptibleNodeConfig = preemptibleNodeConfig;
         this.faultDomains = faultDomains;
     }
@@ -91,6 +94,21 @@ public final class NodePoolPlacementConfigDetails
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
+        /** The OCID of the Host Group to be associated with the worker node instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("hostGroupId")
+        private String hostGroupId;
+
+        /**
+         * The OCID of the Host Group to be associated with the worker node instance.
+         *
+         * @param hostGroupId the value to set
+         * @return this builder
+         */
+        public Builder hostGroupId(String hostGroupId) {
+            this.hostGroupId = hostGroupId;
+            this.__explicitlySet__.add("hostGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("preemptibleNodeConfig")
         private PreemptibleNodeConfigDetails preemptibleNodeConfig;
@@ -125,6 +143,7 @@ public final class NodePoolPlacementConfigDetails
                             this.availabilityDomain,
                             this.subnetId,
                             this.capacityReservationId,
+                            this.hostGroupId,
                             this.preemptibleNodeConfig,
                             this.faultDomains);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -143,6 +162,9 @@ public final class NodePoolPlacementConfigDetails
             }
             if (model.wasPropertyExplicitlySet("capacityReservationId")) {
                 this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("hostGroupId")) {
+                this.hostGroupId(model.getHostGroupId());
             }
             if (model.wasPropertyExplicitlySet("preemptibleNodeConfig")) {
                 this.preemptibleNodeConfig(model.getPreemptibleNodeConfig());
@@ -202,6 +224,19 @@ public final class NodePoolPlacementConfigDetails
         return capacityReservationId;
     }
 
+    /** The OCID of the Host Group to be associated with the worker node instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("hostGroupId")
+    private final String hostGroupId;
+
+    /**
+     * The OCID of the Host Group to be associated with the worker node instance.
+     *
+     * @return the value
+     */
+    public String getHostGroupId() {
+        return hostGroupId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("preemptibleNodeConfig")
     private final PreemptibleNodeConfigDetails preemptibleNodeConfig;
 
@@ -240,6 +275,7 @@ public final class NodePoolPlacementConfigDetails
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", hostGroupId=").append(String.valueOf(this.hostGroupId));
         sb.append(", preemptibleNodeConfig=").append(String.valueOf(this.preemptibleNodeConfig));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(")");
@@ -259,6 +295,7 @@ public final class NodePoolPlacementConfigDetails
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(this.hostGroupId, other.hostGroupId)
                 && java.util.Objects.equals(this.preemptibleNodeConfig, other.preemptibleNodeConfig)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && super.equals(other);
@@ -279,6 +316,7 @@ public final class NodePoolPlacementConfigDetails
                         + (this.capacityReservationId == null
                                 ? 43
                                 : this.capacityReservationId.hashCode());
+        result = (result * PRIME) + (this.hostGroupId == null ? 43 : this.hostGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.preemptibleNodeConfig == null

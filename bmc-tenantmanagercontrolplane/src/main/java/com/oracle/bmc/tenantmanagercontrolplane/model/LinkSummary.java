@@ -29,7 +29,8 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
         "timeCreated",
         "timeUpdated",
         "timeTerminated",
-        "systemTags"
+        "systemTags",
+        "feature"
     })
     public LinkSummary(
             String id,
@@ -39,7 +40,8 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeTerminated,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            String feature) {
         super();
         this.id = id;
         this.parentTenancyId = parentTenancyId;
@@ -49,6 +51,7 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
         this.timeUpdated = timeUpdated;
         this.timeTerminated = timeTerminated;
         this.systemTags = systemTags;
+        this.feature = feature;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -177,6 +180,21 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** The feature associated with this link. Default value is CORE. */
+        @com.fasterxml.jackson.annotation.JsonProperty("feature")
+        private String feature;
+
+        /**
+         * The feature associated with this link. Default value is CORE.
+         *
+         * @param feature the value to set
+         * @return this builder
+         */
+        public Builder feature(String feature) {
+            this.feature = feature;
+            this.__explicitlySet__.add("feature");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -191,7 +209,8 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeTerminated,
-                            this.systemTags);
+                            this.systemTags,
+                            this.feature);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -223,6 +242,9 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("feature")) {
+                this.feature(model.getFeature());
             }
             return this;
         }
@@ -345,6 +367,19 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
         return systemTags;
     }
 
+    /** The feature associated with this link. Default value is CORE. */
+    @com.fasterxml.jackson.annotation.JsonProperty("feature")
+    private final String feature;
+
+    /**
+     * The feature associated with this link. Default value is CORE.
+     *
+     * @return the value
+     */
+    public String getFeature() {
+        return feature;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -368,6 +403,7 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeTerminated=").append(String.valueOf(this.timeTerminated));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", feature=").append(String.valueOf(this.feature));
         sb.append(")");
         return sb.toString();
     }
@@ -390,6 +426,7 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeTerminated, other.timeTerminated)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.feature, other.feature)
                 && super.equals(other);
     }
 
@@ -413,6 +450,7 @@ public final class LinkSummary extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.timeTerminated == null ? 43 : this.timeTerminated.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.feature == null ? 43 : this.feature.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

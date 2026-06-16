@@ -31,12 +31,24 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {
+        this(builder, authenticationDetailsProvider, true);
+    }
+
+    ConfigClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
                 CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         this.paginators = new ConfigPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "ConfigClient", "getDataFile"));
+        }
     }
 
     /**
@@ -54,6 +66,8 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ConfigClient> {
+        private boolean isStreamWarningEnabled = true;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "apmconfig";
@@ -61,6 +75,17 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
         }
 
         /**
@@ -73,7 +98,7 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new ConfigClient(this, authenticationDetailsProvider);
+            return new ConfigClient(this, authenticationDetailsProvider, isStreamWarningEnabled);
         }
     }
 
@@ -184,6 +209,39 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public DeleteDataFileResponse deleteDataFile(DeleteDataFileRequest request) {
+
+        Validate.notBlank(request.getDataFileName(), "dataFileName must not be blank");
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getApmType(), "apmType is required");
+
+        return clientCall(request, DeleteDataFileResponse::builder)
+                .logger(LOG, "deleteDataFile")
+                .serviceDetails(
+                        "Config",
+                        "DeleteDataFile",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/DeleteDataFile")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDataFileRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("dataFiles")
+                .appendPathParam(request.getDataFileName())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("apmType", request.getApmType())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDataFileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id", DeleteDataFileResponse.Builder::opcClientRequestId)
+                .callSync();
+    }
+
+    @Override
     public ExportConfigurationResponse exportConfiguration(ExportConfigurationRequest request) {
         Objects.requireNonNull(
                 request.getExportConfigurationDetails(), "exportConfigurationDetails is required");
@@ -247,6 +305,54 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public GetDataFileResponse getDataFile(GetDataFileRequest request) {
+
+        Validate.notBlank(request.getDataFileName(), "dataFileName must not be blank");
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getApmType(), "apmType is required");
+
+        return clientCall(request, GetDataFileResponse::builder)
+                .logger(LOG, "getDataFile")
+                .serviceDetails(
+                        "Config",
+                        "GetDataFile",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/GetDataFile")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataFileRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("dataFiles")
+                .appendPathParam(request.getDataFileName())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("apmType", request.getApmType())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(java.io.InputStream.class, GetDataFileResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", GetDataFileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDataFileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id", GetDataFileResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "content-type", GetDataFileResponse.Builder::contentType)
+                .handleResponseHeaderLong(
+                        "content-length", GetDataFileResponse.Builder::contentLength)
+                .handleResponseHeaderString("content-md5", GetDataFileResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "content-encoding", GetDataFileResponse.Builder::contentEncoding)
+                .handleResponseHeaderString(
+                        "content-language", GetDataFileResponse.Builder::contentLanguage)
+                .handleResponseHeaderString(
+                        "content-disposition", GetDataFileResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", GetDataFileResponse.Builder::lastModified)
+                .handleResponseHeaderString("metadata", GetDataFileResponse.Builder::metadata)
+                .callSync();
+    }
+
+    @Override
     public GetMatchAgentsWithAttributeKeyResponse getMatchAgentsWithAttributeKey(
             GetMatchAgentsWithAttributeKeyRequest request) {
         Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
@@ -274,6 +380,53 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetMatchAgentsWithAttributeKeyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public HeadDataFileResponse headDataFile(HeadDataFileRequest request) {
+
+        Validate.notBlank(request.getDataFileName(), "dataFileName must not be blank");
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getApmType(), "apmType is required");
+
+        return clientCall(request, HeadDataFileResponse::builder)
+                .logger(LOG, "headDataFile")
+                .serviceDetails(
+                        "Config",
+                        "HeadDataFile",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/HeadDataFile")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadDataFileRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("dataFiles")
+                .appendPathParam(request.getDataFileName())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("apmType", request.getApmType())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString("etag", HeadDataFileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", HeadDataFileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id", HeadDataFileResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "content-type", HeadDataFileResponse.Builder::contentType)
+                .handleResponseHeaderLong(
+                        "content-length", HeadDataFileResponse.Builder::contentLength)
+                .handleResponseHeaderString("content-md5", HeadDataFileResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "content-encoding", HeadDataFileResponse.Builder::contentEncoding)
+                .handleResponseHeaderString(
+                        "content-language", HeadDataFileResponse.Builder::contentLanguage)
+                .handleResponseHeaderString(
+                        "content-disposition", HeadDataFileResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", HeadDataFileResponse.Builder::lastModified)
+                .handleResponseHeaderString("metadata", HeadDataFileResponse.Builder::metadata)
                 .callSync();
     }
 
@@ -360,6 +513,92 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-request-id", ListConfigsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConfigsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListDataFilesResponse listDataFiles(ListDataFilesRequest request) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        return clientCall(request, ListDataFilesResponse::builder)
+                .logger(LOG, "listDataFiles")
+                .serviceDetails(
+                        "Config",
+                        "ListDataFiles",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFileSummaryCollection/ListDataFiles")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataFilesRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("dataFiles")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("apmType", request.getApmType())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("timeLastModifiedBefore", request.getTimeLastModifiedBefore())
+                .appendQueryParam("timeLastModifiedAfter", request.getTimeLastModifiedAfter())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("metadata", request.getMetadata())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.DataFileSummaryCollection.class,
+                        ListDataFilesResponse.Builder::dataFileSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-client-request-id", ListDataFilesResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDataFilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDataFilesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public PutDataFileResponse putDataFile(PutDataFileRequest request) {
+        Objects.requireNonNull(request.getPutDataFileBody(), "putDataFileBody is required");
+
+        Validate.notBlank(request.getDataFileName(), "dataFileName must not be blank");
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getApmType(), "apmType is required");
+
+        return clientCall(request, PutDataFileResponse::builder)
+                .logger(LOG, "putDataFile")
+                .serviceDetails(
+                        "Config",
+                        "PutDataFile",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/PutDataFile")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutDataFileRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20210201")
+                .appendPathParam("dataFiles")
+                .appendPathParam(request.getDataFileName())
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("apmType", request.getApmType())
+                .accept("application/json")
+                .appendHeader("Content-MD5", request.getContentMD5())
+                .appendHeader("Content-Type", request.getContentType())
+                .appendHeader("Content-Language", request.getContentLanguage())
+                .appendHeader("Content-Encoding", request.getContentEncoding())
+                .appendHeader("Content-Disposition", request.getContentDisposition())
+                .appendHeader("metadata", request.getMetadata())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString("etag", PutDataFileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutDataFileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-client-request-id", PutDataFileResponse.Builder::opcClientRequestId)
+                .handleResponseHeaderString("content-md5", PutDataFileResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", PutDataFileResponse.Builder::lastModified)
                 .callSync();
     }
 

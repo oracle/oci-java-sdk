@@ -154,4 +154,118 @@ public class ConfigPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDataFiles
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDataFilesResponse> listDataFilesResponseIterator(
+            final ListDataFilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataFilesRequest.Builder, ListDataFilesRequest, ListDataFilesResponse>(
+                new java.util.function.Supplier<ListDataFilesRequest.Builder>() {
+                    @Override
+                    public ListDataFilesRequest.Builder get() {
+                        return ListDataFilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDataFilesResponse, String>() {
+                    @Override
+                    public String apply(ListDataFilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataFilesRequest.Builder>,
+                        ListDataFilesRequest>() {
+                    @Override
+                    public ListDataFilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataFilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDataFilesRequest, ListDataFilesResponse>() {
+                    @Override
+                    public ListDataFilesResponse apply(ListDataFilesRequest request) {
+                        return client.listDataFiles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.apmconfig.model.DataFileSummary} objects contained in responses from the
+     * listDataFiles operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.apmconfig.model.DataFileSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.apmconfig.model.DataFileSummary> listDataFilesRecordIterator(
+            final ListDataFilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataFilesRequest.Builder,
+                ListDataFilesRequest,
+                ListDataFilesResponse,
+                com.oracle.bmc.apmconfig.model.DataFileSummary>(
+                new java.util.function.Supplier<ListDataFilesRequest.Builder>() {
+                    @Override
+                    public ListDataFilesRequest.Builder get() {
+                        return ListDataFilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDataFilesResponse, String>() {
+                    @Override
+                    public String apply(ListDataFilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataFilesRequest.Builder>,
+                        ListDataFilesRequest>() {
+                    @Override
+                    public ListDataFilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataFilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDataFilesRequest, ListDataFilesResponse>() {
+                    @Override
+                    public ListDataFilesResponse apply(ListDataFilesRequest request) {
+                        return client.listDataFiles(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataFilesResponse,
+                        java.util.List<com.oracle.bmc.apmconfig.model.DataFileSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.apmconfig.model.DataFileSummary> apply(
+                            ListDataFilesResponse response) {
+                        return response.getDataFileSummaryCollection().getItems();
+                    }
+                });
+    }
 }

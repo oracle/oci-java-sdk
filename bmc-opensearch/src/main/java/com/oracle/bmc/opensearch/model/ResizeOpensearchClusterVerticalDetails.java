@@ -40,6 +40,9 @@ public final class ResizeOpensearchClusterVerticalDetails
         "searchNodeHostOcpuCount",
         "searchNodeHostMemoryGB",
         "searchNodeStorageGB",
+        "coordinatorNodeHostShape",
+        "coordinatorNodeHostOcpuCount",
+        "coordinatorNodeHostMemoryGB",
         "mlNodeHostShape",
         "mlNodeHostOcpuCount",
         "mlNodeHostMemoryGB",
@@ -62,6 +65,9 @@ public final class ResizeOpensearchClusterVerticalDetails
             Integer searchNodeHostOcpuCount,
             Integer searchNodeHostMemoryGB,
             Integer searchNodeStorageGB,
+            String coordinatorNodeHostShape,
+            Integer coordinatorNodeHostOcpuCount,
+            Integer coordinatorNodeHostMemoryGB,
             String mlNodeHostShape,
             Integer mlNodeHostOcpuCount,
             Integer mlNodeHostMemoryGB,
@@ -83,6 +89,9 @@ public final class ResizeOpensearchClusterVerticalDetails
         this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
         this.searchNodeHostMemoryGB = searchNodeHostMemoryGB;
         this.searchNodeStorageGB = searchNodeStorageGB;
+        this.coordinatorNodeHostShape = coordinatorNodeHostShape;
+        this.coordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+        this.coordinatorNodeHostMemoryGB = coordinatorNodeHostMemoryGB;
         this.mlNodeHostShape = mlNodeHostShape;
         this.mlNodeHostOcpuCount = mlNodeHostOcpuCount;
         this.mlNodeHostMemoryGB = mlNodeHostMemoryGB;
@@ -305,6 +314,51 @@ public final class ResizeOpensearchClusterVerticalDetails
             this.__explicitlySet__.add("searchNodeStorageGB");
             return this;
         }
+        /** The node shape for the cluster's coordinator nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostShape")
+        private String coordinatorNodeHostShape;
+
+        /**
+         * The node shape for the cluster's coordinator nodes.
+         *
+         * @param coordinatorNodeHostShape the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeHostShape(String coordinatorNodeHostShape) {
+            this.coordinatorNodeHostShape = coordinatorNodeHostShape;
+            this.__explicitlySet__.add("coordinatorNodeHostShape");
+            return this;
+        }
+        /** The number of OCPUs configured for the cluster's coordinator nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostOcpuCount")
+        private Integer coordinatorNodeHostOcpuCount;
+
+        /**
+         * The number of OCPUs configured for the cluster's coordinator nodes.
+         *
+         * @param coordinatorNodeHostOcpuCount the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeHostOcpuCount(Integer coordinatorNodeHostOcpuCount) {
+            this.coordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+            this.__explicitlySet__.add("coordinatorNodeHostOcpuCount");
+            return this;
+        }
+        /** The amount of memory in GB, for the cluster's coordinator nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostMemoryGB")
+        private Integer coordinatorNodeHostMemoryGB;
+
+        /**
+         * The amount of memory in GB, for the cluster's coordinator nodes.
+         *
+         * @param coordinatorNodeHostMemoryGB the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeHostMemoryGB(Integer coordinatorNodeHostMemoryGB) {
+            this.coordinatorNodeHostMemoryGB = coordinatorNodeHostMemoryGB;
+            this.__explicitlySet__.add("coordinatorNodeHostMemoryGB");
+            return this;
+        }
         /** The node shape for the cluster's ML nodes. */
         @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
         private String mlNodeHostShape;
@@ -425,6 +479,9 @@ public final class ResizeOpensearchClusterVerticalDetails
                             this.searchNodeHostOcpuCount,
                             this.searchNodeHostMemoryGB,
                             this.searchNodeStorageGB,
+                            this.coordinatorNodeHostShape,
+                            this.coordinatorNodeHostOcpuCount,
+                            this.coordinatorNodeHostMemoryGB,
                             this.mlNodeHostShape,
                             this.mlNodeHostOcpuCount,
                             this.mlNodeHostMemoryGB,
@@ -480,6 +537,15 @@ public final class ResizeOpensearchClusterVerticalDetails
             }
             if (model.wasPropertyExplicitlySet("searchNodeStorageGB")) {
                 this.searchNodeStorageGB(model.getSearchNodeStorageGB());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeHostShape")) {
+                this.coordinatorNodeHostShape(model.getCoordinatorNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeHostOcpuCount")) {
+                this.coordinatorNodeHostOcpuCount(model.getCoordinatorNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeHostMemoryGB")) {
+                this.coordinatorNodeHostMemoryGB(model.getCoordinatorNodeHostMemoryGB());
             }
             if (model.wasPropertyExplicitlySet("mlNodeHostShape")) {
                 this.mlNodeHostShape(model.getMlNodeHostShape());
@@ -694,6 +760,45 @@ public final class ResizeOpensearchClusterVerticalDetails
         return searchNodeStorageGB;
     }
 
+    /** The node shape for the cluster's coordinator nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostShape")
+    private final String coordinatorNodeHostShape;
+
+    /**
+     * The node shape for the cluster's coordinator nodes.
+     *
+     * @return the value
+     */
+    public String getCoordinatorNodeHostShape() {
+        return coordinatorNodeHostShape;
+    }
+
+    /** The number of OCPUs configured for the cluster's coordinator nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostOcpuCount")
+    private final Integer coordinatorNodeHostOcpuCount;
+
+    /**
+     * The number of OCPUs configured for the cluster's coordinator nodes.
+     *
+     * @return the value
+     */
+    public Integer getCoordinatorNodeHostOcpuCount() {
+        return coordinatorNodeHostOcpuCount;
+    }
+
+    /** The amount of memory in GB, for the cluster's coordinator nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostMemoryGB")
+    private final Integer coordinatorNodeHostMemoryGB;
+
+    /**
+     * The amount of memory in GB, for the cluster's coordinator nodes.
+     *
+     * @return the value
+     */
+    public Integer getCoordinatorNodeHostMemoryGB() {
+        return coordinatorNodeHostMemoryGB;
+    }
+
     /** The node shape for the cluster's ML nodes. */
     @com.fasterxml.jackson.annotation.JsonProperty("mlNodeHostShape")
     private final String mlNodeHostShape;
@@ -813,6 +918,12 @@ public final class ResizeOpensearchClusterVerticalDetails
                 .append(String.valueOf(this.searchNodeHostOcpuCount));
         sb.append(", searchNodeHostMemoryGB=").append(String.valueOf(this.searchNodeHostMemoryGB));
         sb.append(", searchNodeStorageGB=").append(String.valueOf(this.searchNodeStorageGB));
+        sb.append(", coordinatorNodeHostShape=")
+                .append(String.valueOf(this.coordinatorNodeHostShape));
+        sb.append(", coordinatorNodeHostOcpuCount=")
+                .append(String.valueOf(this.coordinatorNodeHostOcpuCount));
+        sb.append(", coordinatorNodeHostMemoryGB=")
+                .append(String.valueOf(this.coordinatorNodeHostMemoryGB));
         sb.append(", mlNodeHostShape=").append(String.valueOf(this.mlNodeHostShape));
         sb.append(", mlNodeHostOcpuCount=").append(String.valueOf(this.mlNodeHostOcpuCount));
         sb.append(", mlNodeHostMemoryGB=").append(String.valueOf(this.mlNodeHostMemoryGB));
@@ -853,6 +964,12 @@ public final class ResizeOpensearchClusterVerticalDetails
                 && java.util.Objects.equals(
                         this.searchNodeHostMemoryGB, other.searchNodeHostMemoryGB)
                 && java.util.Objects.equals(this.searchNodeStorageGB, other.searchNodeStorageGB)
+                && java.util.Objects.equals(
+                        this.coordinatorNodeHostShape, other.coordinatorNodeHostShape)
+                && java.util.Objects.equals(
+                        this.coordinatorNodeHostOcpuCount, other.coordinatorNodeHostOcpuCount)
+                && java.util.Objects.equals(
+                        this.coordinatorNodeHostMemoryGB, other.coordinatorNodeHostMemoryGB)
                 && java.util.Objects.equals(this.mlNodeHostShape, other.mlNodeHostShape)
                 && java.util.Objects.equals(this.mlNodeHostOcpuCount, other.mlNodeHostOcpuCount)
                 && java.util.Objects.equals(this.mlNodeHostMemoryGB, other.mlNodeHostMemoryGB)
@@ -932,6 +1049,21 @@ public final class ResizeOpensearchClusterVerticalDetails
                         + (this.searchNodeStorageGB == null
                                 ? 43
                                 : this.searchNodeStorageGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeHostShape == null
+                                ? 43
+                                : this.coordinatorNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeHostOcpuCount == null
+                                ? 43
+                                : this.coordinatorNodeHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeHostMemoryGB == null
+                                ? 43
+                                : this.coordinatorNodeHostMemoryGB.hashCode());
         result =
                 (result * PRIME)
                         + (this.mlNodeHostShape == null ? 43 : this.mlNodeHostShape.hashCode());

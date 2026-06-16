@@ -41,6 +41,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         "vnic2Id",
         "backupVnic2Id",
         "lifecycleState",
+        "availableActions",
         "hostname",
         "faultDomain",
         "timeCreated",
@@ -74,6 +75,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             String vnic2Id,
             String backupVnic2Id,
             LifecycleState lifecycleState,
+            java.util.List<AvailableActions> availableActions,
             String hostname,
             String faultDomain,
             java.util.Date timeCreated,
@@ -106,6 +108,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         this.vnic2Id = vnic2Id;
         this.backupVnic2Id = backupVnic2Id;
         this.lifecycleState = lifecycleState;
+        this.availableActions = availableActions;
         this.hostname = hostname;
         this.faultDomain = faultDomain;
         this.timeCreated = timeCreated;
@@ -377,6 +380,25 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Actions that can be performed on the database node, depending on its current lifecycle
+         * state.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
+        private java.util.List<AvailableActions> availableActions;
+
+        /**
+         * Actions that can be performed on the database node, depending on its current lifecycle
+         * state.
+         *
+         * @param availableActions the value to set
+         * @return this builder
+         */
+        public Builder availableActions(java.util.List<AvailableActions> availableActions) {
+            this.availableActions = availableActions;
+            this.__explicitlySet__.add("availableActions");
             return this;
         }
         /** The host name for the database node. */
@@ -744,6 +766,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.vnic2Id,
                             this.backupVnic2Id,
                             this.lifecycleState,
+                            this.availableActions,
                             this.hostname,
                             this.faultDomain,
                             this.timeCreated,
@@ -804,6 +827,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("availableActions")) {
+                this.availableActions(model.getAvailableActions());
             }
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
@@ -1156,6 +1182,71 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /** */
+    public enum AvailableActions implements com.oracle.bmc.http.internal.BmcEnum {
+        Stop("STOP"),
+        Forcestop("FORCESTOP"),
+        Forcereset("FORCERESET"),
+        Start("START"),
+        Softreset("SOFTRESET"),
+        Reset("RESET"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AvailableActions.class);
+
+        private final String value;
+        private static java.util.Map<String, AvailableActions> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AvailableActions v : AvailableActions.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AvailableActions(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AvailableActions create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AvailableActions', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Actions that can be performed on the database node, depending on its current lifecycle state.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
+    private final java.util.List<AvailableActions> availableActions;
+
+    /**
+     * Actions that can be performed on the database node, depending on its current lifecycle state.
+     *
+     * @return the value
+     */
+    public java.util.List<AvailableActions> getAvailableActions() {
+        return availableActions;
     }
 
     /** The host name for the database node. */
@@ -1587,6 +1678,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", vnic2Id=").append(String.valueOf(this.vnic2Id));
         sb.append(", backupVnic2Id=").append(String.valueOf(this.backupVnic2Id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", availableActions=").append(String.valueOf(this.availableActions));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1636,6 +1728,7 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.vnic2Id, other.vnic2Id)
                 && java.util.Objects.equals(this.backupVnic2Id, other.backupVnic2Id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.availableActions, other.availableActions)
                 && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1683,6 +1776,9 @@ public final class DbNodeSummary extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableActions == null ? 43 : this.availableActions.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());

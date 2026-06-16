@@ -132,6 +132,39 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Changes a standalone database system's role to warm-standby replica, converting it into a
+     * replica database system that replicates data from the specified primary database system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRoleToReplicaResponse> changeRoleToReplica(
+            ChangeRoleToReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRoleToReplicaRequest, ChangeRoleToReplicaResponse>
+                    handler);
+
+    /**
+     * Convert a replica database system into a standalone database system.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRoleToStandaloneResponse> changeRoleToStandalone(
+            ChangeRoleToStandaloneRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRoleToStandaloneRequest, ChangeRoleToStandaloneResponse>
+                    handler);
+
+    /**
      * Creates a new backup.
      *
      * @param request The request object containing the details to send
@@ -375,6 +408,22 @@ public interface PostgresqlAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of replica database systems.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbSystemReplicasResponse> listDbSystemReplicas(
+            ListDbSystemReplicasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDbSystemReplicasRequest, ListDbSystemReplicasResponse>
+                    handler);
+
+    /**
      * Returns a list of database systems.
      *
      * @param request The request object containing the details to send
@@ -403,6 +452,25 @@ public interface PostgresqlAsync extends AutoCloseable {
             ListDefaultConfigurationsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDefaultConfigurationsRequest, ListDefaultConfigurationsResponse>
+                    handler);
+
+    /**
+     * Returns the supported insight types and their capabilities. This API allows clients to
+     * discover: - Supported insight types - Supported insight data types for each insight type -
+     * Filters, sorting, pagination, limits, and data contracts required to use the unified insights
+     * API.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInsightCapabilitiesResponse> listInsightCapabilities(
+            ListInsightCapabilitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListInsightCapabilitiesRequest, ListInsightCapabilitiesResponse>
                     handler);
 
     /**
@@ -527,6 +595,51 @@ public interface PostgresqlAsync extends AutoCloseable {
             RestoreDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<RestoreDbSystemRequest, RestoreDbSystemResponse>
                     handler);
+
+    /**
+     * Start the DB System.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StartDbSystemResponse> startDbSystem(
+            StartDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
+                    handler);
+
+    /**
+     * Stop the DB System.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StopDbSystemResponse> stopDbSystem(
+            StopDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
+                    handler);
+
+    /**
+     * Switchover the roles between a primary database system and its replica, making the replica
+     * the new primary and the original primary become its replica.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchOverResponse> switchOver(
+            SwitchOverRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SwitchOverRequest, SwitchOverResponse> handler);
 
     /**
      * Updates the backup.
