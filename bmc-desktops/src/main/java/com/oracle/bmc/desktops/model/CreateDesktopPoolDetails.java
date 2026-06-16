@@ -49,6 +49,7 @@ public final class CreateDesktopPoolDetails
         "definedTags",
         "nsgIds",
         "privateAccessDetails",
+        "securityAttributes",
         "bootVolumeSizeInGBs"
     })
     public CreateDesktopPoolDetails(
@@ -77,6 +78,7 @@ public final class CreateDesktopPoolDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<String> nsgIds,
             CreateDesktopPoolPrivateAccessDetails privateAccessDetails,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             Integer bootVolumeSizeInGBs) {
         super();
         this.compartmentId = compartmentId;
@@ -104,6 +106,7 @@ public final class CreateDesktopPoolDetails
         this.definedTags = definedTags;
         this.nsgIds = nsgIds;
         this.privateAccessDetails = privateAccessDetails;
+        this.securityAttributes = securityAttributes;
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
     }
 
@@ -469,6 +472,36 @@ public final class CreateDesktopPoolDetails
             this.__explicitlySet__.add("privateAccessDetails");
             return this;
         }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The size in GBs of the boot volume for the desktop pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
         private Integer bootVolumeSizeInGBs;
@@ -516,6 +549,7 @@ public final class CreateDesktopPoolDetails
                             this.definedTags,
                             this.nsgIds,
                             this.privateAccessDetails,
+                            this.securityAttributes,
                             this.bootVolumeSizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -599,6 +633,9 @@ public final class CreateDesktopPoolDetails
             }
             if (model.wasPropertyExplicitlySet("privateAccessDetails")) {
                 this.privateAccessDetails(model.getPrivateAccessDetails());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("bootVolumeSizeInGBs")) {
                 this.bootVolumeSizeInGBs(model.getBootVolumeSizeInGBs());
@@ -957,6 +994,33 @@ public final class CreateDesktopPoolDetails
         return privateAccessDetails;
     }
 
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     /** The size in GBs of the boot volume for the desktop pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
     private final Integer bootVolumeSizeInGBs;
@@ -1011,6 +1075,7 @@ public final class CreateDesktopPoolDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", privateAccessDetails=").append(String.valueOf(this.privateAccessDetails));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(")");
         return sb.toString();
@@ -1052,6 +1117,7 @@ public final class CreateDesktopPoolDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.privateAccessDetails, other.privateAccessDetails)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && super.equals(other);
     }
@@ -1131,6 +1197,11 @@ public final class CreateDesktopPoolDetails
                         + (this.privateAccessDetails == null
                                 ? 43
                                 : this.privateAccessDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.bootVolumeSizeInGBs == null

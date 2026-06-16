@@ -32,6 +32,7 @@ public final class DesktopPoolSummary
         "activeDesktops",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "contactDetails",
         "compartmentId",
         "timeCreated"
@@ -44,6 +45,7 @@ public final class DesktopPoolSummary
             Integer activeDesktops,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String contactDetails,
             String compartmentId,
             java.util.Date timeCreated) {
@@ -55,6 +57,7 @@ public final class DesktopPoolSummary
         this.activeDesktops = activeDesktops;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.contactDetails = contactDetails;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
@@ -185,6 +188,36 @@ public final class DesktopPoolSummary
             return this;
         }
         /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Contact information of the desktop pool administrator. Avoid entering confidential
          * information.
          */
@@ -247,6 +280,7 @@ public final class DesktopPoolSummary
                             this.activeDesktops,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.contactDetails,
                             this.compartmentId,
                             this.timeCreated);
@@ -278,6 +312,9 @@ public final class DesktopPoolSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("contactDetails")) {
                 this.contactDetails(model.getContactDetails());
@@ -409,6 +446,33 @@ public final class DesktopPoolSummary
     }
 
     /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Contact information of the desktop pool administrator. Avoid entering confidential
      * information.
      */
@@ -473,6 +537,7 @@ public final class DesktopPoolSummary
         sb.append(", activeDesktops=").append(String.valueOf(this.activeDesktops));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", contactDetails=").append(String.valueOf(this.contactDetails));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -497,6 +562,7 @@ public final class DesktopPoolSummary
                 && java.util.Objects.equals(this.activeDesktops, other.activeDesktops)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.contactDetails, other.contactDetails)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -518,6 +584,11 @@ public final class DesktopPoolSummary
                         + (this.activeDesktops == null ? 43 : this.activeDesktops.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.contactDetails == null ? 43 : this.contactDetails.hashCode());

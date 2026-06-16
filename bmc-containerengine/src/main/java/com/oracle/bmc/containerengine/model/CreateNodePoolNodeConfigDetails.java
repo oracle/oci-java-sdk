@@ -28,6 +28,7 @@ public final class CreateNodePoolNodeConfigDetails
         "nsgIds",
         "kmsKeyId",
         "isPvEncryptionInTransitEnabled",
+        "computeClusterId",
         "freeformTags",
         "definedTags",
         "placementConfigs",
@@ -38,6 +39,7 @@ public final class CreateNodePoolNodeConfigDetails
             java.util.List<String> nsgIds,
             String kmsKeyId,
             Boolean isPvEncryptionInTransitEnabled,
+            String computeClusterId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<NodePoolPlacementConfigDetails> placementConfigs,
@@ -47,6 +49,7 @@ public final class CreateNodePoolNodeConfigDetails
         this.nsgIds = nsgIds;
         this.kmsKeyId = kmsKeyId;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.computeClusterId = computeClusterId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.placementConfigs = placementConfigs;
@@ -121,6 +124,21 @@ public final class CreateNodePoolNodeConfigDetails
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+        /** The OCID of the Compute Cluster to be associated with the worker node instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+        private String computeClusterId;
+
+        /**
+         * The OCID of the Compute Cluster to be associated with the worker node instance.
+         *
+         * @param computeClusterId the value to set
+         * @return this builder
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = computeClusterId;
+            this.__explicitlySet__.add("computeClusterId");
             return this;
         }
         /**
@@ -225,6 +243,7 @@ public final class CreateNodePoolNodeConfigDetails
                             this.nsgIds,
                             this.kmsKeyId,
                             this.isPvEncryptionInTransitEnabled,
+                            this.computeClusterId,
                             this.freeformTags,
                             this.definedTags,
                             this.placementConfigs,
@@ -248,6 +267,9 @@ public final class CreateNodePoolNodeConfigDetails
             }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("computeClusterId")) {
+                this.computeClusterId(model.getComputeClusterId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -332,6 +354,19 @@ public final class CreateNodePoolNodeConfigDetails
      */
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
+    }
+
+    /** The OCID of the Compute Cluster to be associated with the worker node instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+    private final String computeClusterId;
+
+    /**
+     * The OCID of the Compute Cluster to be associated with the worker node instance.
+     *
+     * @return the value
+     */
+    public String getComputeClusterId() {
+        return computeClusterId;
     }
 
     /**
@@ -432,6 +467,7 @@ public final class CreateNodePoolNodeConfigDetails
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", placementConfigs=").append(String.valueOf(this.placementConfigs));
@@ -456,6 +492,7 @@ public final class CreateNodePoolNodeConfigDetails
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.placementConfigs, other.placementConfigs)
@@ -476,6 +513,9 @@ public final class CreateNodePoolNodeConfigDetails
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

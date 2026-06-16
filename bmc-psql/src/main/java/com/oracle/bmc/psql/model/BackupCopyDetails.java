@@ -64,12 +64,12 @@ public final class BackupCopyDetails
             this.__explicitlySet__.add("retentionPeriod");
             return this;
         }
-        /** List of region names of the remote region */
+        /** List of region names of the remote regions */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * List of region names of the remote region
+         * List of region names of the remote regions
          *
          * @param regions the value to set
          * @return this builder
@@ -142,12 +142,12 @@ public final class BackupCopyDetails
         return retentionPeriod;
     }
 
-    /** List of region names of the remote region */
+    /** List of region names of the remote regions */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * List of region names of the remote region
+     * List of region names of the remote regions
      *
      * @return the value
      */

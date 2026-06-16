@@ -134,7 +134,10 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ChangeOperatorControlCompartmentResponse::builder)
                 .logger(LOG, "changeOperatorControlCompartment")
-                .serviceDetails("OperatorControl", "ChangeOperatorControlCompartment", "")
+                .serviceDetails(
+                        "OperatorControl",
+                        "ChangeOperatorControlCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOperatorControlCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -163,7 +166,10 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, CreateOperatorControlResponse::builder)
                 .logger(LOG, "createOperatorControl")
-                .serviceDetails("OperatorControl", "CreateOperatorControl", "")
+                .serviceDetails(
+                        "OperatorControl",
+                        "CreateOperatorControl",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOperatorControlRequest::builder)
                 .basePath("/20200630")
@@ -190,7 +196,10 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, DeleteOperatorControlResponse::builder)
                 .logger(LOG, "deleteOperatorControl")
-                .serviceDetails("OperatorControl", "DeleteOperatorControl", "")
+                .serviceDetails(
+                        "OperatorControl",
+                        "DeleteOperatorControl",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOperatorControlRequest::builder)
                 .basePath("/20200630")
@@ -213,7 +222,10 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, GetOperatorControlResponse::builder)
                 .logger(LOG, "getOperatorControl")
-                .serviceDetails("OperatorControl", "GetOperatorControl", "")
+                .serviceDetails(
+                        "OperatorControl",
+                        "GetOperatorControl",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperatorControlRequest::builder)
                 .basePath("/20200630")
@@ -237,7 +249,10 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, ListOperatorControlsResponse::builder)
                 .logger(LOG, "listOperatorControls")
-                .serviceDetails("OperatorControl", "ListOperatorControls", "")
+                .serviceDetails(
+                        "OperatorControl",
+                        "ListOperatorControls",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperatorControlsRequest::builder)
                 .basePath("/20200630")
@@ -274,7 +289,10 @@ public class OperatorControlClient extends com.oracle.bmc.http.internal.BaseSync
 
         return clientCall(request, UpdateOperatorControlResponse::builder)
                 .logger(LOG, "updateOperatorControl")
-                .serviceDetails("OperatorControl", "UpdateOperatorControl", "")
+                .serviceDetails(
+                        "OperatorControl",
+                        "UpdateOperatorControl",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOperatorControlRequest::builder)
                 .basePath("/20200630")

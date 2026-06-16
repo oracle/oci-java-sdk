@@ -27,6 +27,7 @@ public final class CreateApmDomainDetails
         "displayName",
         "description",
         "compartmentId",
+        "logGroupId",
         "freeformTags",
         "definedTags",
         "isFreeTier"
@@ -35,6 +36,7 @@ public final class CreateApmDomainDetails
             String displayName,
             String description,
             String compartmentId,
+            String logGroupId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isFreeTier) {
@@ -42,6 +44,7 @@ public final class CreateApmDomainDetails
         this.displayName = displayName;
         this.description = description;
         this.compartmentId = compartmentId;
+        this.logGroupId = logGroupId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isFreeTier = isFreeTier;
@@ -92,6 +95,25 @@ public final class CreateApmDomainDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The OCID of the Log Analytics log group to which the data uploaded to this APM domain
+         * will be mapped to.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * The OCID of the Log Analytics log group to which the data uploaded to this APM domain
+         * will be mapped to.
+         *
+         * @param logGroupId the value to set
+         * @return this builder
+         */
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
             return this;
         }
         /**
@@ -158,6 +180,7 @@ public final class CreateApmDomainDetails
                             this.displayName,
                             this.description,
                             this.compartmentId,
+                            this.logGroupId,
                             this.freeformTags,
                             this.definedTags,
                             this.isFreeTier);
@@ -177,6 +200,9 @@ public final class CreateApmDomainDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -237,6 +263,23 @@ public final class CreateApmDomainDetails
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be
+     * mapped to.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be
+     * mapped to.
+     *
+     * @return the value
+     */
+    public String getLogGroupId() {
+        return logGroupId;
     }
 
     /**
@@ -304,6 +347,7 @@ public final class CreateApmDomainDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
@@ -324,6 +368,7 @@ public final class CreateApmDomainDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
@@ -339,6 +384,7 @@ public final class CreateApmDomainDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());

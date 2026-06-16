@@ -30,6 +30,7 @@ public final class UpdateOperatorControlDetails
         "approverGroupsList",
         "preApprovedOpActionList",
         "isFullyPreApproved",
+        "notificationTopicId",
         "emailIdList",
         "numberOfApprovers",
         "systemMessage",
@@ -43,6 +44,7 @@ public final class UpdateOperatorControlDetails
             java.util.List<String> approverGroupsList,
             java.util.List<String> preApprovedOpActionList,
             Boolean isFullyPreApproved,
+            String notificationTopicId,
             java.util.List<String> emailIdList,
             Integer numberOfApprovers,
             String systemMessage,
@@ -55,6 +57,7 @@ public final class UpdateOperatorControlDetails
         this.approverGroupsList = approverGroupsList;
         this.preApprovedOpActionList = preApprovedOpActionList;
         this.isFullyPreApproved = isFullyPreApproved;
+        this.notificationTopicId = notificationTopicId;
         this.emailIdList = emailIdList;
         this.numberOfApprovers = numberOfApprovers;
         this.systemMessage = systemMessage;
@@ -172,6 +175,25 @@ public final class UpdateOperatorControlDetails
             this.__explicitlySet__.add("isFullyPreApproved");
             return this;
         }
+        /**
+         * The OCID of the OCI Notification topic to publish messages related to this operator
+         * control.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+        private String notificationTopicId;
+
+        /**
+         * The OCID of the OCI Notification topic to publish messages related to this operator
+         * control.
+         *
+         * @param notificationTopicId the value to set
+         * @return this builder
+         */
+        public Builder notificationTopicId(String notificationTopicId) {
+            this.notificationTopicId = notificationTopicId;
+            this.__explicitlySet__.add("notificationTopicId");
+            return this;
+        }
         /** List of emailId. */
         @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
         private java.util.List<String> emailIdList;
@@ -269,6 +291,7 @@ public final class UpdateOperatorControlDetails
                             this.approverGroupsList,
                             this.preApprovedOpActionList,
                             this.isFullyPreApproved,
+                            this.notificationTopicId,
                             this.emailIdList,
                             this.numberOfApprovers,
                             this.systemMessage,
@@ -299,6 +322,9 @@ public final class UpdateOperatorControlDetails
             }
             if (model.wasPropertyExplicitlySet("isFullyPreApproved")) {
                 this.isFullyPreApproved(model.getIsFullyPreApproved());
+            }
+            if (model.wasPropertyExplicitlySet("notificationTopicId")) {
+                this.notificationTopicId(model.getNotificationTopicId());
             }
             if (model.wasPropertyExplicitlySet("emailIdList")) {
                 this.emailIdList(model.getEmailIdList());
@@ -424,6 +450,21 @@ public final class UpdateOperatorControlDetails
         return isFullyPreApproved;
     }
 
+    /**
+     * The OCID of the OCI Notification topic to publish messages related to this operator control.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+    private final String notificationTopicId;
+
+    /**
+     * The OCID of the OCI Notification topic to publish messages related to this operator control.
+     *
+     * @return the value
+     */
+    public String getNotificationTopicId() {
+        return notificationTopicId;
+    }
+
     /** List of emailId. */
     @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
     private final java.util.List<String> emailIdList;
@@ -519,6 +560,7 @@ public final class UpdateOperatorControlDetails
         sb.append(", preApprovedOpActionList=")
                 .append(String.valueOf(this.preApprovedOpActionList));
         sb.append(", isFullyPreApproved=").append(String.valueOf(this.isFullyPreApproved));
+        sb.append(", notificationTopicId=").append(String.valueOf(this.notificationTopicId));
         sb.append(", emailIdList=").append(String.valueOf(this.emailIdList));
         sb.append(", numberOfApprovers=").append(String.valueOf(this.numberOfApprovers));
         sb.append(", systemMessage=").append(String.valueOf(this.systemMessage));
@@ -545,6 +587,7 @@ public final class UpdateOperatorControlDetails
                 && java.util.Objects.equals(
                         this.preApprovedOpActionList, other.preApprovedOpActionList)
                 && java.util.Objects.equals(this.isFullyPreApproved, other.isFullyPreApproved)
+                && java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
                 && java.util.Objects.equals(this.emailIdList, other.emailIdList)
                 && java.util.Objects.equals(this.numberOfApprovers, other.numberOfApprovers)
                 && java.util.Objects.equals(this.systemMessage, other.systemMessage)
@@ -581,6 +624,11 @@ public final class UpdateOperatorControlDetails
                         + (this.isFullyPreApproved == null
                                 ? 43
                                 : this.isFullyPreApproved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTopicId == null
+                                ? 43
+                                : this.notificationTopicId.hashCode());
         result = (result * PRIME) + (this.emailIdList == null ? 43 : this.emailIdList.hashCode());
         result =
                 (result * PRIME)

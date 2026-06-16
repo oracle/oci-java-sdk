@@ -26,6 +26,9 @@ package com.oracle.bmc.psql.model;
             value = BackupSourceDetails.class,
             name = "BACKUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PrimaryDbSystemSourceDetails.class,
+            name = "DB_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = NoneSourceDetails.class,
             name = "NONE")
 })
@@ -82,6 +85,7 @@ public class SourceDetails extends com.oracle.bmc.http.client.internal.Explicitl
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Backup("BACKUP"),
         None("NONE"),
+        DbSystem("DB_SYSTEM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

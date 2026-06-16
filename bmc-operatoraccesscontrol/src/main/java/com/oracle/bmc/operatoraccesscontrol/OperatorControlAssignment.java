@@ -12,8 +12,6 @@ import com.oracle.bmc.operatoraccesscontrol.responses.*;
  * operator can perform on your Exadata Cloud@Customer infrastructure. Using logging service, you
  * can view a near real-time audit report of all actions performed by an Oracle operator.
  *
- * <p>Use the table of contents and search tool to explore the OperatorAccessControl API.
- *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */

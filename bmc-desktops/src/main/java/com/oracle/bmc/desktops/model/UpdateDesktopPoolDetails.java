@@ -37,6 +37,9 @@ public final class UpdateDesktopPoolDetails
         "definedTags",
         "sessionLifecycleActions",
         "image",
+        "networkConfiguration",
+        "privateAccessDetails",
+        "securityAttributes",
         "bootVolumeSizeInGBs"
     })
     public UpdateDesktopPoolDetails(
@@ -53,6 +56,9 @@ public final class UpdateDesktopPoolDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             UpdateDesktopPoolDesktopSessionLifecycleActions sessionLifecycleActions,
             UpdateDesktopImage image,
+            UpdateDesktopNetworkConfiguration networkConfiguration,
+            UpdateDesktopPoolPrivateAccessDetails privateAccessDetails,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             Integer bootVolumeSizeInGBs) {
         super();
         this.displayName = displayName;
@@ -68,6 +74,9 @@ public final class UpdateDesktopPoolDetails
         this.definedTags = definedTags;
         this.sessionLifecycleActions = sessionLifecycleActions;
         this.image = image;
+        this.networkConfiguration = networkConfiguration;
+        this.privateAccessDetails = privateAccessDetails;
+        this.securityAttributes = securityAttributes;
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
     }
 
@@ -270,6 +279,56 @@ public final class UpdateDesktopPoolDetails
             this.__explicitlySet__.add("image");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+        private UpdateDesktopNetworkConfiguration networkConfiguration;
+
+        public Builder networkConfiguration(
+                UpdateDesktopNetworkConfiguration networkConfiguration) {
+            this.networkConfiguration = networkConfiguration;
+            this.__explicitlySet__.add("networkConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateAccessDetails")
+        private UpdateDesktopPoolPrivateAccessDetails privateAccessDetails;
+
+        public Builder privateAccessDetails(
+                UpdateDesktopPoolPrivateAccessDetails privateAccessDetails) {
+            this.privateAccessDetails = privateAccessDetails;
+            this.__explicitlySet__.add("privateAccessDetails");
+            return this;
+        }
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security
+         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The size in GBs of the boot volume for the desktop pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
         private Integer bootVolumeSizeInGBs;
@@ -305,6 +364,9 @@ public final class UpdateDesktopPoolDetails
                             this.definedTags,
                             this.sessionLifecycleActions,
                             this.image,
+                            this.networkConfiguration,
+                            this.privateAccessDetails,
+                            this.securityAttributes,
                             this.bootVolumeSizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -352,6 +414,15 @@ public final class UpdateDesktopPoolDetails
             }
             if (model.wasPropertyExplicitlySet("image")) {
                 this.image(model.getImage());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfiguration")) {
+                this.networkConfiguration(model.getNetworkConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("privateAccessDetails")) {
+                this.privateAccessDetails(model.getPrivateAccessDetails());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("bootVolumeSizeInGBs")) {
                 this.bootVolumeSizeInGBs(model.getBootVolumeSizeInGBs());
@@ -538,6 +609,47 @@ public final class UpdateDesktopPoolDetails
         return image;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+    private final UpdateDesktopNetworkConfiguration networkConfiguration;
+
+    public UpdateDesktopNetworkConfiguration getNetworkConfiguration() {
+        return networkConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("privateAccessDetails")
+    private final UpdateDesktopPoolPrivateAccessDetails privateAccessDetails;
+
+    public UpdateDesktopPoolPrivateAccessDetails getPrivateAccessDetails() {
+        return privateAccessDetails;
+    }
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security
+     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * for this resource. Each attribute can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
+     * policy to control access to ZPR-supported resources.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     /** The size in GBs of the boot volume for the desktop pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
     private final Integer bootVolumeSizeInGBs;
@@ -580,6 +692,9 @@ public final class UpdateDesktopPoolDetails
         sb.append(", sessionLifecycleActions=")
                 .append(String.valueOf(this.sessionLifecycleActions));
         sb.append(", image=").append(String.valueOf(this.image));
+        sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
+        sb.append(", privateAccessDetails=").append(String.valueOf(this.privateAccessDetails));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(")");
         return sb.toString();
@@ -609,6 +724,9 @@ public final class UpdateDesktopPoolDetails
                 && java.util.Objects.equals(
                         this.sessionLifecycleActions, other.sessionLifecycleActions)
                 && java.util.Objects.equals(this.image, other.image)
+                && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
+                && java.util.Objects.equals(this.privateAccessDetails, other.privateAccessDetails)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && super.equals(other);
     }
@@ -646,6 +764,21 @@ public final class UpdateDesktopPoolDetails
                                 ? 43
                                 : this.sessionLifecycleActions.hashCode());
         result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkConfiguration == null
+                                ? 43
+                                : this.networkConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateAccessDetails == null
+                                ? 43
+                                : this.privateAccessDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.bootVolumeSizeInGBs == null

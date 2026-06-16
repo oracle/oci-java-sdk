@@ -2,10 +2,10 @@
  * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.opensearch.model;
+package com.oracle.bmc.psql.model;
 
 /**
- * Customer logging configuration <br>
+ * The information required to change a primary database system's role to replica. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,43 +15,44 @@ package com.oracle.bmc.opensearch.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomerLoggingDetails.Builder.class)
+        builder = ChangeRoleToReplicaDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CustomerLoggingDetails
+public final class ChangeRoleToReplicaDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"logRetentionDays"})
-    public CustomerLoggingDetails(Integer logRetentionDays) {
+    @java.beans.ConstructorProperties({"primaryDbSystemId"})
+    public ChangeRoleToReplicaDetails(String primaryDbSystemId) {
         super();
-        this.logRetentionDays = logRetentionDays;
+        this.primaryDbSystemId = primaryDbSystemId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** the age of an index after which the index will get deleted by ISM policy */
-        @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDays")
-        private Integer logRetentionDays;
+        /** The [OCID] of the primary database system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryDbSystemId")
+        private String primaryDbSystemId;
 
         /**
-         * the age of an index after which the index will get deleted by ISM policy
+         * The [OCID] of the primary database system.
          *
-         * @param logRetentionDays the value to set
+         * @param primaryDbSystemId the value to set
          * @return this builder
          */
-        public Builder logRetentionDays(Integer logRetentionDays) {
-            this.logRetentionDays = logRetentionDays;
-            this.__explicitlySet__.add("logRetentionDays");
+        public Builder primaryDbSystemId(String primaryDbSystemId) {
+            this.primaryDbSystemId = primaryDbSystemId;
+            this.__explicitlySet__.add("primaryDbSystemId");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CustomerLoggingDetails build() {
-            CustomerLoggingDetails model = new CustomerLoggingDetails(this.logRetentionDays);
+        public ChangeRoleToReplicaDetails build() {
+            ChangeRoleToReplicaDetails model =
+                    new ChangeRoleToReplicaDetails(this.primaryDbSystemId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -59,9 +60,9 @@ public final class CustomerLoggingDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CustomerLoggingDetails model) {
-            if (model.wasPropertyExplicitlySet("logRetentionDays")) {
-                this.logRetentionDays(model.getLogRetentionDays());
+        public Builder copy(ChangeRoleToReplicaDetails model) {
+            if (model.wasPropertyExplicitlySet("primaryDbSystemId")) {
+                this.primaryDbSystemId(model.getPrimaryDbSystemId());
             }
             return this;
         }
@@ -76,17 +77,17 @@ public final class CustomerLoggingDetails
         return new Builder().copy(this);
     }
 
-    /** the age of an index after which the index will get deleted by ISM policy */
-    @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDays")
-    private final Integer logRetentionDays;
+    /** The [OCID] of the primary database system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryDbSystemId")
+    private final String primaryDbSystemId;
 
     /**
-     * the age of an index after which the index will get deleted by ISM policy
+     * The [OCID] of the primary database system.
      *
      * @return the value
      */
-    public Integer getLogRetentionDays() {
-        return logRetentionDays;
+    public String getPrimaryDbSystemId() {
+        return primaryDbSystemId;
     }
 
     @Override
@@ -102,9 +103,9 @@ public final class CustomerLoggingDetails
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("CustomerLoggingDetails(");
+        sb.append("ChangeRoleToReplicaDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("logRetentionDays=").append(String.valueOf(this.logRetentionDays));
+        sb.append("primaryDbSystemId=").append(String.valueOf(this.primaryDbSystemId));
         sb.append(")");
         return sb.toString();
     }
@@ -114,12 +115,12 @@ public final class CustomerLoggingDetails
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CustomerLoggingDetails)) {
+        if (!(o instanceof ChangeRoleToReplicaDetails)) {
             return false;
         }
 
-        CustomerLoggingDetails other = (CustomerLoggingDetails) o;
-        return java.util.Objects.equals(this.logRetentionDays, other.logRetentionDays)
+        ChangeRoleToReplicaDetails other = (ChangeRoleToReplicaDetails) o;
+        return java.util.Objects.equals(this.primaryDbSystemId, other.primaryDbSystemId)
                 && super.equals(other);
     }
 
@@ -129,7 +130,7 @@ public final class CustomerLoggingDetails
         int result = 1;
         result =
                 (result * PRIME)
-                        + (this.logRetentionDays == null ? 43 : this.logRetentionDays.hashCode());
+                        + (this.primaryDbSystemId == null ? 43 : this.primaryDbSystemId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

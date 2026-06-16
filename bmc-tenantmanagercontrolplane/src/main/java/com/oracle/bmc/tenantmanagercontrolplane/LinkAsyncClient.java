@@ -153,6 +153,38 @@ public class LinkAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
     }
 
     @Override
+    public java.util.concurrent.Future<GetLinkWithTenancyNamesResponse> getLinkWithTenancyNames(
+            GetLinkWithTenancyNamesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetLinkWithTenancyNamesRequest, GetLinkWithTenancyNamesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getLinkId(), "linkId must not be blank");
+
+        return clientCall(request, GetLinkWithTenancyNamesResponse::builder)
+                .logger(LOG, "getLinkWithTenancyNames")
+                .serviceDetails(
+                        "Link",
+                        "GetLinkWithTenancyNames",
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/LinkWithTenancyNames/GetLinkWithTenancyNames")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLinkWithTenancyNamesRequest::builder)
+                .basePath("/20230401")
+                .appendPathParam("links")
+                .appendPathParam(request.getLinkId())
+                .appendPathParam("tenancyNames")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.tenantmanagercontrolplane.model.LinkWithTenancyNames.class,
+                        GetLinkWithTenancyNamesResponse.Builder::linkWithTenancyNames)
+                .handleResponseHeaderString("etag", GetLinkWithTenancyNamesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLinkWithTenancyNamesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLinksResponse> listLinks(
             ListLinksRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListLinksRequest, ListLinksResponse>
@@ -170,6 +202,7 @@ public class LinkAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
                 .appendPathParam("links")
                 .appendQueryParam("parentTenancyId", request.getParentTenancyId())
                 .appendQueryParam("childTenancyId", request.getChildTenancyId())
+                .appendQueryParam("feature", request.getFeature())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("limit", request.getLimit())

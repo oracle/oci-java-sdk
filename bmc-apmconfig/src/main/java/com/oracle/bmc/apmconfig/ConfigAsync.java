@@ -110,6 +110,21 @@ public interface ConfigAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes the data file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDataFileResponse> deleteDataFile(
+            DeleteDataFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDataFileRequest, DeleteDataFileResponse>
+                    handler);
+
+    /**
      * Exports configurations for the whole domain by domainId.
      *
      * @param request The request object containing the details to send
@@ -140,6 +155,20 @@ public interface ConfigAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handler);
 
     /**
+     * Retrieves the Data file with the specified name and type.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDataFileResponse> getDataFile(
+            GetDataFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDataFileRequest, GetDataFileResponse> handler);
+
+    /**
      * The domain-wide agents matching attribute key.
      *
      * @param request The request object containing the details to send
@@ -156,6 +185,21 @@ public interface ConfigAsync extends AutoCloseable {
                                     GetMatchAgentsWithAttributeKeyRequest,
                                     GetMatchAgentsWithAttributeKeyResponse>
                             handler);
+
+    /**
+     * Returns metadata about the datafile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<HeadDataFileResponse> headDataFile(
+            HeadDataFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<HeadDataFileRequest, HeadDataFileResponse>
+                    handler);
 
     /**
      * Import configurations Item(s) with its dependencies into a destination domain.
@@ -186,6 +230,35 @@ public interface ConfigAsync extends AutoCloseable {
     java.util.concurrent.Future<ListConfigsResponse> listConfigs(
             ListConfigsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse> handler);
+
+    /**
+     * Fetches a list of Data files using some parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataFilesResponse> listDataFiles(
+            ListDataFilesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDataFilesRequest, ListDataFilesResponse>
+                    handler);
+
+    /**
+     * Creates a new data file or replaces an existing one with the same name and type.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PutDataFileResponse> putDataFile(
+            PutDataFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutDataFileRequest, PutDataFileResponse> handler);
 
     /**
      * Returns all metrics associated with the specified namespace.

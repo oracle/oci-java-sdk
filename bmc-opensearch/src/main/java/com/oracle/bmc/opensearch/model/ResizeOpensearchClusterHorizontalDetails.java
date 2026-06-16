@@ -30,6 +30,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
         "dataNodeCount",
         "opendashboardNodeCount",
         "searchNodeCount",
+        "coordinatorNodeCount",
         "mlNodeCount",
         "freeformTags",
         "definedTags"
@@ -39,6 +40,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
             Integer dataNodeCount,
             Integer opendashboardNodeCount,
             Integer searchNodeCount,
+            Integer coordinatorNodeCount,
             Integer mlNodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -47,6 +49,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
         this.dataNodeCount = dataNodeCount;
         this.opendashboardNodeCount = opendashboardNodeCount;
         this.searchNodeCount = searchNodeCount;
+        this.coordinatorNodeCount = coordinatorNodeCount;
         this.mlNodeCount = mlNodeCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -114,6 +117,21 @@ public final class ResizeOpensearchClusterHorizontalDetails
             this.__explicitlySet__.add("searchNodeCount");
             return this;
         }
+        /** The number of coordinator nodes configured for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeCount")
+        private Integer coordinatorNodeCount;
+
+        /**
+         * The number of coordinator nodes configured for the cluster.
+         *
+         * @param coordinatorNodeCount the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeCount(Integer coordinatorNodeCount) {
+            this.coordinatorNodeCount = coordinatorNodeCount;
+            this.__explicitlySet__.add("coordinatorNodeCount");
+            return this;
+        }
         /** The number of ML nodes configured for the cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("mlNodeCount")
         private Integer mlNodeCount;
@@ -179,6 +197,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
                             this.dataNodeCount,
                             this.opendashboardNodeCount,
                             this.searchNodeCount,
+                            this.coordinatorNodeCount,
                             this.mlNodeCount,
                             this.freeformTags,
                             this.definedTags);
@@ -201,6 +220,9 @@ public final class ResizeOpensearchClusterHorizontalDetails
             }
             if (model.wasPropertyExplicitlySet("searchNodeCount")) {
                 this.searchNodeCount(model.getSearchNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeCount")) {
+                this.coordinatorNodeCount(model.getCoordinatorNodeCount());
             }
             if (model.wasPropertyExplicitlySet("mlNodeCount")) {
                 this.mlNodeCount(model.getMlNodeCount());
@@ -276,6 +298,19 @@ public final class ResizeOpensearchClusterHorizontalDetails
         return searchNodeCount;
     }
 
+    /** The number of coordinator nodes configured for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeCount")
+    private final Integer coordinatorNodeCount;
+
+    /**
+     * The number of coordinator nodes configured for the cluster.
+     *
+     * @return the value
+     */
+    public Integer getCoordinatorNodeCount() {
+        return coordinatorNodeCount;
+    }
+
     /** The number of ML nodes configured for the cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("mlNodeCount")
     private final Integer mlNodeCount;
@@ -342,6 +377,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
         sb.append(", dataNodeCount=").append(String.valueOf(this.dataNodeCount));
         sb.append(", opendashboardNodeCount=").append(String.valueOf(this.opendashboardNodeCount));
         sb.append(", searchNodeCount=").append(String.valueOf(this.searchNodeCount));
+        sb.append(", coordinatorNodeCount=").append(String.valueOf(this.coordinatorNodeCount));
         sb.append(", mlNodeCount=").append(String.valueOf(this.mlNodeCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -365,6 +401,7 @@ public final class ResizeOpensearchClusterHorizontalDetails
                 && java.util.Objects.equals(
                         this.opendashboardNodeCount, other.opendashboardNodeCount)
                 && java.util.Objects.equals(this.searchNodeCount, other.searchNodeCount)
+                && java.util.Objects.equals(this.coordinatorNodeCount, other.coordinatorNodeCount)
                 && java.util.Objects.equals(this.mlNodeCount, other.mlNodeCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -389,6 +426,11 @@ public final class ResizeOpensearchClusterHorizontalDetails
         result =
                 (result * PRIME)
                         + (this.searchNodeCount == null ? 43 : this.searchNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeCount == null
+                                ? 43
+                                : this.coordinatorNodeCount.hashCode());
         result = (result * PRIME) + (this.mlNodeCount == null ? 43 : this.mlNodeCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

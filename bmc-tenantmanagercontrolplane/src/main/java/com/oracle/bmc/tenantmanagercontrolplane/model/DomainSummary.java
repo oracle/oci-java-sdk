@@ -25,6 +25,7 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
         "id",
         "domainName",
         "ownerId",
+        "compartmentId",
         "lifecycleState",
         "status",
         "txtRecord",
@@ -38,6 +39,7 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
             String id,
             String domainName,
             String ownerId,
+            String compartmentId,
             Domain.LifecycleState lifecycleState,
             Domain.Status status,
             String txtRecord,
@@ -50,6 +52,7 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
         this.id = id;
         this.domainName = domainName;
         this.ownerId = ownerId;
+        this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
         this.status = status;
         this.txtRecord = txtRecord;
@@ -105,6 +108,21 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
         public Builder ownerId(String ownerId) {
             this.ownerId = ownerId;
             this.__explicitlySet__.add("ownerId");
+            return this;
+        }
+        /** The OCID of the tenancy that has started the registration process for this domain. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The OCID of the tenancy that has started the registration process for this domain.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /** The lifecycle state of the domain. */
@@ -254,6 +272,7 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.id,
                             this.domainName,
                             this.ownerId,
+                            this.compartmentId,
                             this.lifecycleState,
                             this.status,
                             this.txtRecord,
@@ -278,6 +297,9 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("ownerId")) {
                 this.ownerId(model.getOwnerId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -353,6 +375,19 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getOwnerId() {
         return ownerId;
+    }
+
+    /** The OCID of the tenancy that has started the registration process for this domain. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The OCID of the tenancy that has started the registration process for this domain.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /** The lifecycle state of the domain. */
@@ -489,6 +524,7 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", domainName=").append(String.valueOf(this.domainName));
         sb.append(", ownerId=").append(String.valueOf(this.ownerId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", txtRecord=").append(String.valueOf(this.txtRecord));
@@ -514,6 +550,7 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.domainName, other.domainName)
                 && java.util.Objects.equals(this.ownerId, other.ownerId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.txtRecord, other.txtRecord)
@@ -532,6 +569,9 @@ public final class DomainSummary extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.domainName == null ? 43 : this.domainName.hashCode());
         result = (result * PRIME) + (this.ownerId == null ? 43 : this.ownerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

@@ -32,7 +32,10 @@ public final class UpdateDbSystemDetails
         "dbConfigurationParams",
         "managementPolicy",
         "storageDetails",
+        "replicationConfig",
         "networkDetails",
+        "kerberosAuthDetails",
+        "odspInsightDetails",
         "freeformTags",
         "definedTags"
     })
@@ -45,7 +48,10 @@ public final class UpdateDbSystemDetails
             UpdateDbConfigParams dbConfigurationParams,
             ManagementPolicyDetails managementPolicy,
             UpdateStorageDetailsParams storageDetails,
+            UpdateReplicationConfigDetails replicationConfig,
             UpdateNetworkDetails networkDetails,
+            KerberosAuthDetails kerberosAuthDetails,
+            OdspInsightDetails odspInsightDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -57,7 +63,10 @@ public final class UpdateDbSystemDetails
         this.dbConfigurationParams = dbConfigurationParams;
         this.managementPolicy = managementPolicy;
         this.storageDetails = storageDetails;
+        this.replicationConfig = replicationConfig;
         this.networkDetails = networkDetails;
+        this.kerberosAuthDetails = kerberosAuthDetails;
+        this.odspInsightDetails = odspInsightDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -173,12 +182,39 @@ public final class UpdateDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+        private UpdateReplicationConfigDetails replicationConfig;
+
+        public Builder replicationConfig(UpdateReplicationConfigDetails replicationConfig) {
+            this.replicationConfig = replicationConfig;
+            this.__explicitlySet__.add("replicationConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("networkDetails")
         private UpdateNetworkDetails networkDetails;
 
         public Builder networkDetails(UpdateNetworkDetails networkDetails) {
             this.networkDetails = networkDetails;
             this.__explicitlySet__.add("networkDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kerberosAuthDetails")
+        private KerberosAuthDetails kerberosAuthDetails;
+
+        public Builder kerberosAuthDetails(KerberosAuthDetails kerberosAuthDetails) {
+            this.kerberosAuthDetails = kerberosAuthDetails;
+            this.__explicitlySet__.add("kerberosAuthDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("odspInsightDetails")
+        private OdspInsightDetails odspInsightDetails;
+
+        public Builder odspInsightDetails(OdspInsightDetails odspInsightDetails) {
+            this.odspInsightDetails = odspInsightDetails;
+            this.__explicitlySet__.add("odspInsightDetails");
             return this;
         }
         /**
@@ -235,7 +271,10 @@ public final class UpdateDbSystemDetails
                             this.dbConfigurationParams,
                             this.managementPolicy,
                             this.storageDetails,
+                            this.replicationConfig,
                             this.networkDetails,
+                            this.kerberosAuthDetails,
+                            this.odspInsightDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -270,8 +309,17 @@ public final class UpdateDbSystemDetails
             if (model.wasPropertyExplicitlySet("storageDetails")) {
                 this.storageDetails(model.getStorageDetails());
             }
+            if (model.wasPropertyExplicitlySet("replicationConfig")) {
+                this.replicationConfig(model.getReplicationConfig());
+            }
             if (model.wasPropertyExplicitlySet("networkDetails")) {
                 this.networkDetails(model.getNetworkDetails());
+            }
+            if (model.wasPropertyExplicitlySet("kerberosAuthDetails")) {
+                this.kerberosAuthDetails(model.getKerberosAuthDetails());
+            }
+            if (model.wasPropertyExplicitlySet("odspInsightDetails")) {
+                this.odspInsightDetails(model.getOdspInsightDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -382,11 +430,32 @@ public final class UpdateDbSystemDetails
         return storageDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+    private final UpdateReplicationConfigDetails replicationConfig;
+
+    public UpdateReplicationConfigDetails getReplicationConfig() {
+        return replicationConfig;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("networkDetails")
     private final UpdateNetworkDetails networkDetails;
 
     public UpdateNetworkDetails getNetworkDetails() {
         return networkDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("kerberosAuthDetails")
+    private final KerberosAuthDetails kerberosAuthDetails;
+
+    public KerberosAuthDetails getKerberosAuthDetails() {
+        return kerberosAuthDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("odspInsightDetails")
+    private final OdspInsightDetails odspInsightDetails;
+
+    public OdspInsightDetails getOdspInsightDetails() {
+        return odspInsightDetails;
     }
 
     /**
@@ -447,7 +516,10 @@ public final class UpdateDbSystemDetails
         sb.append(", dbConfigurationParams=").append(String.valueOf(this.dbConfigurationParams));
         sb.append(", managementPolicy=").append(String.valueOf(this.managementPolicy));
         sb.append(", storageDetails=").append(String.valueOf(this.storageDetails));
+        sb.append(", replicationConfig=").append(String.valueOf(this.replicationConfig));
         sb.append(", networkDetails=").append(String.valueOf(this.networkDetails));
+        sb.append(", kerberosAuthDetails=").append(String.valueOf(this.kerberosAuthDetails));
+        sb.append(", odspInsightDetails=").append(String.valueOf(this.odspInsightDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -473,7 +545,10 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.dbConfigurationParams, other.dbConfigurationParams)
                 && java.util.Objects.equals(this.managementPolicy, other.managementPolicy)
                 && java.util.Objects.equals(this.storageDetails, other.storageDetails)
+                && java.util.Objects.equals(this.replicationConfig, other.replicationConfig)
                 && java.util.Objects.equals(this.networkDetails, other.networkDetails)
+                && java.util.Objects.equals(this.kerberosAuthDetails, other.kerberosAuthDetails)
+                && java.util.Objects.equals(this.odspInsightDetails, other.odspInsightDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -507,7 +582,20 @@ public final class UpdateDbSystemDetails
                         + (this.storageDetails == null ? 43 : this.storageDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.replicationConfig == null ? 43 : this.replicationConfig.hashCode());
+        result =
+                (result * PRIME)
                         + (this.networkDetails == null ? 43 : this.networkDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kerberosAuthDetails == null
+                                ? 43
+                                : this.kerberosAuthDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.odspInsightDetails == null
+                                ? 43
+                                : this.odspInsightDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

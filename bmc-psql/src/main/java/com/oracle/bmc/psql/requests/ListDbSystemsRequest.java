@@ -124,6 +124,19 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public SortBy getSortBy() {
         return sortBy;
     }
+    /**
+     * A filter to return only DbSystem resources if their {@code systemRole} matches the given
+     * value.
+     */
+    private com.oracle.bmc.psql.model.DbSystem.SystemRole systemRole;
+
+    /**
+     * A filter to return only DbSystem resources if their {@code systemRole} matches the given
+     * value.
+     */
+    public com.oracle.bmc.psql.model.DbSystem.SystemRole getSystemRole() {
+        return systemRole;
+    }
     /** The client request ID for tracing. */
     private String opcRequestId;
 
@@ -263,6 +276,24 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /**
+         * A filter to return only DbSystem resources if their {@code systemRole} matches the given
+         * value.
+         */
+        private com.oracle.bmc.psql.model.DbSystem.SystemRole systemRole = null;
+
+        /**
+         * A filter to return only DbSystem resources if their {@code systemRole} matches the given
+         * value.
+         *
+         * @param systemRole the value to set
+         * @return this builder instance
+         */
+        public Builder systemRole(com.oracle.bmc.psql.model.DbSystem.SystemRole systemRole) {
+            this.systemRole = systemRole;
+            return this;
+        }
+
         /** The client request ID for tracing. */
         private String opcRequestId = null;
 
@@ -315,6 +346,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            systemRole(o.getSystemRole());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -358,10 +390,11 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.systemRole = systemRole;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListDbSystemsRequest(compartmentId, lifecycleState, displayName, id, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // sortOrder, sortBy, systemRole, opcRequestId);
         }
     }
 
@@ -380,6 +413,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .systemRole(systemRole)
                 .opcRequestId(opcRequestId);
     }
 
@@ -405,6 +439,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",systemRole=").append(String.valueOf(this.systemRole));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -429,6 +464,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.systemRole, other.systemRole)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -448,6 +484,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.systemRole == null ? 43 : this.systemRole.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

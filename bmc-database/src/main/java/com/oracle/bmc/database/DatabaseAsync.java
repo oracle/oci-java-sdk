@@ -1869,7 +1869,8 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Performs one of the following power actions on the specified DB node: - start - power on -
-     * stop - power off gracefully - softreset - ACPI shutdown and power on - reset - power off and
+     * stop - power off gracefully - forcestop - power off forcefully - forcereset - ACPI shutdown
+     * and power on forcefully - softreset - ACPI shutdown and power on - reset - power off and
      * power on
      *
      * <p>*Note:** Stopping a node affects billing differently, depending on the type of DB system:
@@ -6804,6 +6805,42 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RestartAutonomousDatabaseRequest, RestartAutonomousDatabaseResponse>
                     handler);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RestartAutonomousVmClusterOrdsResponse>
+            restartAutonomousVmClusterOrds(
+                    RestartAutonomousVmClusterOrdsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RestartAutonomousVmClusterOrdsRequest,
+                                    RestartAutonomousVmClusterOrdsResponse>
+                            handler);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for a cloud Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RestartCloudAutonomousVmClusterOrdsResponse>
+            restartCloudAutonomousVmClusterOrds(
+                    RestartCloudAutonomousVmClusterOrdsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RestartCloudAutonomousVmClusterOrdsRequest,
+                                    RestartCloudAutonomousVmClusterOrdsResponse>
+                            handler);
 
     /**
      * Restores an Autonomous AI Database based on the provided request parameters.

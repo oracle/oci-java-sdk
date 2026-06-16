@@ -136,6 +136,39 @@ public interface Postgresql extends AutoCloseable {
             ChangeDbSystemCompartmentRequest request);
 
     /**
+     * Changes a standalone database system's role to warm-standby replica, converting it into a
+     * replica database system that replicates data from the specified primary database system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeRoleToReplicaExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoleToReplica
+     *     API.
+     */
+    ChangeRoleToReplicaResponse changeRoleToReplica(ChangeRoleToReplicaRequest request);
+
+    /**
+     * Convert a replica database system into a standalone database system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ChangeRoleToStandaloneExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeRoleToStandalone API.
+     */
+    ChangeRoleToStandaloneResponse changeRoleToStandalone(ChangeRoleToStandaloneRequest request);
+
+    /**
      * Creates a new backup.
      *
      * @param request The request object containing the details to send
@@ -384,6 +417,22 @@ public interface Postgresql extends AutoCloseable {
     ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request);
 
     /**
+     * Returns a list of replica database systems.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListDbSystemReplicasExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDbSystemReplicas API.
+     */
+    ListDbSystemReplicasResponse listDbSystemReplicas(ListDbSystemReplicasRequest request);
+
+    /**
      * Returns a list of database systems.
      *
      * @param request The request object containing the details to send
@@ -414,6 +463,25 @@ public interface Postgresql extends AutoCloseable {
      */
     ListDefaultConfigurationsResponse listDefaultConfigurations(
             ListDefaultConfigurationsRequest request);
+
+    /**
+     * Returns the supported insight types and their capabilities. This API allows clients to
+     * discover: - Supported insight types - Supported insight data types for each insight type -
+     * Filters, sorting, pagination, limits, and data contracts required to use the unified insights
+     * API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/ListInsightCapabilitiesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListInsightCapabilities API.
+     */
+    ListInsightCapabilitiesResponse listInsightCapabilities(ListInsightCapabilitiesRequest request);
 
     /**
      * Returns the list of shapes allowed in the region.
@@ -541,6 +609,52 @@ public interface Postgresql extends AutoCloseable {
      *     API.
      */
     RestoreDbSystemResponse restoreDbSystem(RestoreDbSystemRequest request);
+
+    /**
+     * Start the DB System.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/StartDbSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartDbSystem API.
+     */
+    StartDbSystemResponse startDbSystem(StartDbSystemRequest request);
+
+    /**
+     * Stop the DB System.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/StopDbSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDbSystem API.
+     */
+    StopDbSystemResponse stopDbSystem(StopDbSystemRequest request);
+
+    /**
+     * Switchover the roles between a primary database system and its replica, making the replica
+     * the new primary and the original primary become its replica.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/SwitchOverExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchOver API.
+     */
+    SwitchOverResponse switchOver(SwitchOverRequest request);
 
     /**
      * Updates the backup.

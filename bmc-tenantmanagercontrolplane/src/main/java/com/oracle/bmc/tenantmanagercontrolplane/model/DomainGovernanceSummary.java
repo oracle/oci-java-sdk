@@ -26,6 +26,7 @@ public final class DomainGovernanceSummary
     @java.beans.ConstructorProperties({
         "id",
         "ownerId",
+        "compartmentId",
         "domainId",
         "lifecycleState",
         "isGovernanceEnabled",
@@ -41,6 +42,7 @@ public final class DomainGovernanceSummary
     public DomainGovernanceSummary(
             String id,
             String ownerId,
+            String compartmentId,
             String domainId,
             DomainGovernance.LifecycleState lifecycleState,
             Boolean isGovernanceEnabled,
@@ -55,6 +57,7 @@ public final class DomainGovernanceSummary
         super();
         this.id = id;
         this.ownerId = ownerId;
+        this.compartmentId = compartmentId;
         this.domainId = domainId;
         this.lifecycleState = lifecycleState;
         this.isGovernanceEnabled = isGovernanceEnabled;
@@ -98,6 +101,21 @@ public final class DomainGovernanceSummary
         public Builder ownerId(String ownerId) {
             this.ownerId = ownerId;
             this.__explicitlySet__.add("ownerId");
+            return this;
+        }
+        /** The OCID of the tenancy that has started the registration process for this domain. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The OCID of the tenancy that has started the registration process for this domain.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /** The OCID of the domain associated with this domain governance entity. */
@@ -299,6 +317,7 @@ public final class DomainGovernanceSummary
                     new DomainGovernanceSummary(
                             this.id,
                             this.ownerId,
+                            this.compartmentId,
                             this.domainId,
                             this.lifecycleState,
                             this.isGovernanceEnabled,
@@ -323,6 +342,9 @@ public final class DomainGovernanceSummary
             }
             if (model.wasPropertyExplicitlySet("ownerId")) {
                 this.ownerId(model.getOwnerId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("domainId")) {
                 this.domainId(model.getDomainId());
@@ -394,6 +416,19 @@ public final class DomainGovernanceSummary
      */
     public String getOwnerId() {
         return ownerId;
+    }
+
+    /** The OCID of the tenancy that has started the registration process for this domain. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The OCID of the tenancy that has started the registration process for this domain.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /** The OCID of the domain associated with this domain governance entity. */
@@ -580,6 +615,7 @@ public final class DomainGovernanceSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", ownerId=").append(String.valueOf(this.ownerId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", domainId=").append(String.valueOf(this.domainId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", isGovernanceEnabled=").append(String.valueOf(this.isGovernanceEnabled));
@@ -607,6 +643,7 @@ public final class DomainGovernanceSummary
         DomainGovernanceSummary other = (DomainGovernanceSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ownerId, other.ownerId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.domainId, other.domainId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.isGovernanceEnabled, other.isGovernanceEnabled)
@@ -627,6 +664,9 @@ public final class DomainGovernanceSummary
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.ownerId == null ? 43 : this.ownerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
         result =
                 (result * PRIME)

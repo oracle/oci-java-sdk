@@ -50,6 +50,11 @@ public final class CreateOpensearchClusterDetails
         "searchNodeHostOcpuCount",
         "searchNodeHostMemoryGB",
         "searchNodeStorageGB",
+        "coordinatorNodeCount",
+        "coordinatorNodeHostType",
+        "coordinatorNodeHostShape",
+        "coordinatorNodeHostOcpuCount",
+        "coordinatorNodeHostMemoryGB",
         "mlNodeCount",
         "mlNodeHostType",
         "mlNodeHostShape",
@@ -104,6 +109,11 @@ public final class CreateOpensearchClusterDetails
             Integer searchNodeHostOcpuCount,
             Integer searchNodeHostMemoryGB,
             Integer searchNodeStorageGB,
+            Integer coordinatorNodeCount,
+            CoordinatorNodeHostType coordinatorNodeHostType,
+            String coordinatorNodeHostShape,
+            Integer coordinatorNodeHostOcpuCount,
+            Integer coordinatorNodeHostMemoryGB,
             Integer mlNodeCount,
             MlNodeHostType mlNodeHostType,
             String mlNodeHostShape,
@@ -157,6 +167,11 @@ public final class CreateOpensearchClusterDetails
         this.searchNodeHostOcpuCount = searchNodeHostOcpuCount;
         this.searchNodeHostMemoryGB = searchNodeHostMemoryGB;
         this.searchNodeStorageGB = searchNodeStorageGB;
+        this.coordinatorNodeCount = coordinatorNodeCount;
+        this.coordinatorNodeHostType = coordinatorNodeHostType;
+        this.coordinatorNodeHostShape = coordinatorNodeHostShape;
+        this.coordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+        this.coordinatorNodeHostMemoryGB = coordinatorNodeHostMemoryGB;
         this.mlNodeCount = mlNodeCount;
         this.mlNodeHostType = mlNodeHostType;
         this.mlNodeHostShape = mlNodeHostShape;
@@ -579,6 +594,81 @@ public final class CreateOpensearchClusterDetails
             this.__explicitlySet__.add("searchNodeStorageGB");
             return this;
         }
+        /** The number of coordinator nodes configured for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeCount")
+        private Integer coordinatorNodeCount;
+
+        /**
+         * The number of coordinator nodes configured for the cluster.
+         *
+         * @param coordinatorNodeCount the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeCount(Integer coordinatorNodeCount) {
+            this.coordinatorNodeCount = coordinatorNodeCount;
+            this.__explicitlySet__.add("coordinatorNodeCount");
+            return this;
+        }
+        /** The instance type for the cluster's coordinator nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostType")
+        private CoordinatorNodeHostType coordinatorNodeHostType;
+
+        /**
+         * The instance type for the cluster's coordinator nodes.
+         *
+         * @param coordinatorNodeHostType the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeHostType(CoordinatorNodeHostType coordinatorNodeHostType) {
+            this.coordinatorNodeHostType = coordinatorNodeHostType;
+            this.__explicitlySet__.add("coordinatorNodeHostType");
+            return this;
+        }
+        /** The node shape for the cluster's coordinator nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostShape")
+        private String coordinatorNodeHostShape;
+
+        /**
+         * The node shape for the cluster's coordinator nodes.
+         *
+         * @param coordinatorNodeHostShape the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeHostShape(String coordinatorNodeHostShape) {
+            this.coordinatorNodeHostShape = coordinatorNodeHostShape;
+            this.__explicitlySet__.add("coordinatorNodeHostShape");
+            return this;
+        }
+        /** The number of OCPUs configured for the cluster's coordinator nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostOcpuCount")
+        private Integer coordinatorNodeHostOcpuCount;
+
+        /**
+         * The number of OCPUs configured for the cluster's coordinator nodes.
+         *
+         * @param coordinatorNodeHostOcpuCount the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeHostOcpuCount(Integer coordinatorNodeHostOcpuCount) {
+            this.coordinatorNodeHostOcpuCount = coordinatorNodeHostOcpuCount;
+            this.__explicitlySet__.add("coordinatorNodeHostOcpuCount");
+            return this;
+        }
+        /** The amount of memory in GB, for the cluster's coordinator nodes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostMemoryGB")
+        private Integer coordinatorNodeHostMemoryGB;
+
+        /**
+         * The amount of memory in GB, for the cluster's coordinator nodes.
+         *
+         * @param coordinatorNodeHostMemoryGB the value to set
+         * @return this builder
+         */
+        public Builder coordinatorNodeHostMemoryGB(Integer coordinatorNodeHostMemoryGB) {
+            this.coordinatorNodeHostMemoryGB = coordinatorNodeHostMemoryGB;
+            this.__explicitlySet__.add("coordinatorNodeHostMemoryGB");
+            return this;
+        }
         /** The number of ML nodes configured for the cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("mlNodeCount")
         private Integer mlNodeCount;
@@ -993,6 +1083,11 @@ public final class CreateOpensearchClusterDetails
                             this.searchNodeHostOcpuCount,
                             this.searchNodeHostMemoryGB,
                             this.searchNodeStorageGB,
+                            this.coordinatorNodeCount,
+                            this.coordinatorNodeHostType,
+                            this.coordinatorNodeHostShape,
+                            this.coordinatorNodeHostOcpuCount,
+                            this.coordinatorNodeHostMemoryGB,
                             this.mlNodeCount,
                             this.mlNodeHostType,
                             this.mlNodeHostShape,
@@ -1104,6 +1199,21 @@ public final class CreateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("searchNodeStorageGB")) {
                 this.searchNodeStorageGB(model.getSearchNodeStorageGB());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeCount")) {
+                this.coordinatorNodeCount(model.getCoordinatorNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeHostType")) {
+                this.coordinatorNodeHostType(model.getCoordinatorNodeHostType());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeHostShape")) {
+                this.coordinatorNodeHostShape(model.getCoordinatorNodeHostShape());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeHostOcpuCount")) {
+                this.coordinatorNodeHostOcpuCount(model.getCoordinatorNodeHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("coordinatorNodeHostMemoryGB")) {
+                this.coordinatorNodeHostMemoryGB(model.getCoordinatorNodeHostMemoryGB());
             }
             if (model.wasPropertyExplicitlySet("mlNodeCount")) {
                 this.mlNodeCount(model.getMlNodeCount());
@@ -1535,6 +1645,71 @@ public final class CreateOpensearchClusterDetails
         return searchNodeStorageGB;
     }
 
+    /** The number of coordinator nodes configured for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeCount")
+    private final Integer coordinatorNodeCount;
+
+    /**
+     * The number of coordinator nodes configured for the cluster.
+     *
+     * @return the value
+     */
+    public Integer getCoordinatorNodeCount() {
+        return coordinatorNodeCount;
+    }
+
+    /** The instance type for the cluster's coordinator nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostType")
+    private final CoordinatorNodeHostType coordinatorNodeHostType;
+
+    /**
+     * The instance type for the cluster's coordinator nodes.
+     *
+     * @return the value
+     */
+    public CoordinatorNodeHostType getCoordinatorNodeHostType() {
+        return coordinatorNodeHostType;
+    }
+
+    /** The node shape for the cluster's coordinator nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostShape")
+    private final String coordinatorNodeHostShape;
+
+    /**
+     * The node shape for the cluster's coordinator nodes.
+     *
+     * @return the value
+     */
+    public String getCoordinatorNodeHostShape() {
+        return coordinatorNodeHostShape;
+    }
+
+    /** The number of OCPUs configured for the cluster's coordinator nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostOcpuCount")
+    private final Integer coordinatorNodeHostOcpuCount;
+
+    /**
+     * The number of OCPUs configured for the cluster's coordinator nodes.
+     *
+     * @return the value
+     */
+    public Integer getCoordinatorNodeHostOcpuCount() {
+        return coordinatorNodeHostOcpuCount;
+    }
+
+    /** The amount of memory in GB, for the cluster's coordinator nodes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("coordinatorNodeHostMemoryGB")
+    private final Integer coordinatorNodeHostMemoryGB;
+
+    /**
+     * The amount of memory in GB, for the cluster's coordinator nodes.
+     *
+     * @return the value
+     */
+    public Integer getCoordinatorNodeHostMemoryGB() {
+        return coordinatorNodeHostMemoryGB;
+    }
+
     /** The number of ML nodes configured for the cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("mlNodeCount")
     private final Integer mlNodeCount;
@@ -1907,6 +2082,15 @@ public final class CreateOpensearchClusterDetails
                 .append(String.valueOf(this.searchNodeHostOcpuCount));
         sb.append(", searchNodeHostMemoryGB=").append(String.valueOf(this.searchNodeHostMemoryGB));
         sb.append(", searchNodeStorageGB=").append(String.valueOf(this.searchNodeStorageGB));
+        sb.append(", coordinatorNodeCount=").append(String.valueOf(this.coordinatorNodeCount));
+        sb.append(", coordinatorNodeHostType=")
+                .append(String.valueOf(this.coordinatorNodeHostType));
+        sb.append(", coordinatorNodeHostShape=")
+                .append(String.valueOf(this.coordinatorNodeHostShape));
+        sb.append(", coordinatorNodeHostOcpuCount=")
+                .append(String.valueOf(this.coordinatorNodeHostOcpuCount));
+        sb.append(", coordinatorNodeHostMemoryGB=")
+                .append(String.valueOf(this.coordinatorNodeHostMemoryGB));
         sb.append(", mlNodeCount=").append(String.valueOf(this.mlNodeCount));
         sb.append(", mlNodeHostType=").append(String.valueOf(this.mlNodeHostType));
         sb.append(", mlNodeHostShape=").append(String.valueOf(this.mlNodeHostShape));
@@ -1985,6 +2169,15 @@ public final class CreateOpensearchClusterDetails
                 && java.util.Objects.equals(
                         this.searchNodeHostMemoryGB, other.searchNodeHostMemoryGB)
                 && java.util.Objects.equals(this.searchNodeStorageGB, other.searchNodeStorageGB)
+                && java.util.Objects.equals(this.coordinatorNodeCount, other.coordinatorNodeCount)
+                && java.util.Objects.equals(
+                        this.coordinatorNodeHostType, other.coordinatorNodeHostType)
+                && java.util.Objects.equals(
+                        this.coordinatorNodeHostShape, other.coordinatorNodeHostShape)
+                && java.util.Objects.equals(
+                        this.coordinatorNodeHostOcpuCount, other.coordinatorNodeHostOcpuCount)
+                && java.util.Objects.equals(
+                        this.coordinatorNodeHostMemoryGB, other.coordinatorNodeHostMemoryGB)
                 && java.util.Objects.equals(this.mlNodeCount, other.mlNodeCount)
                 && java.util.Objects.equals(this.mlNodeHostType, other.mlNodeHostType)
                 && java.util.Objects.equals(this.mlNodeHostShape, other.mlNodeHostShape)
@@ -2132,6 +2325,31 @@ public final class CreateOpensearchClusterDetails
                         + (this.searchNodeStorageGB == null
                                 ? 43
                                 : this.searchNodeStorageGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeCount == null
+                                ? 43
+                                : this.coordinatorNodeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeHostType == null
+                                ? 43
+                                : this.coordinatorNodeHostType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeHostShape == null
+                                ? 43
+                                : this.coordinatorNodeHostShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeHostOcpuCount == null
+                                ? 43
+                                : this.coordinatorNodeHostOcpuCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.coordinatorNodeHostMemoryGB == null
+                                ? 43
+                                : this.coordinatorNodeHostMemoryGB.hashCode());
         result = (result * PRIME) + (this.mlNodeCount == null ? 43 : this.mlNodeCount.hashCode());
         result =
                 (result * PRIME)
