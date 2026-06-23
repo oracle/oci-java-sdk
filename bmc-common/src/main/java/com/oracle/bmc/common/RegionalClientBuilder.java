@@ -6,7 +6,7 @@ package com.oracle.bmc.common;
 
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Service;
-import com.oracle.bmc.internal.Alloy;
+import com.oracle.bmc.internal.DeveloperToolConfiguration;
 import org.slf4j.Logger;
 
 import java.util.Locale;
@@ -35,11 +35,12 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
      * @return this builder
      */
     public B region(com.oracle.bmc.Region region) {
-        if (Alloy.shouldUseOnlyAlloyRegions()) {
+        if (DeveloperToolConfiguration.shouldUseOnlyDeveloperToolConfigurationRegions()) {
             try {
                 com.oracle.bmc.Region.valueOf(region.getRegionId());
             } catch (IllegalArgumentException e) {
-                Alloy.throwUnknownAlloyRegionIfAppropriate(region.getRegionId(), e);
+                DeveloperToolConfiguration.throwUnknownDevToolConfigRegionIfAppropriate(
+                        region.getRegionId(), e);
             }
         }
         this.region = region;
@@ -58,7 +59,7 @@ public abstract class RegionalClientBuilder<B extends RegionalClientBuilder, C>
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             return region(region);
         } catch (IllegalArgumentException e) {
-            Alloy.throwUnknownAlloyRegionIfAppropriate(regionId, e);
+            DeveloperToolConfiguration.throwUnknownDevToolConfigRegionIfAppropriate(regionId, e);
             LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
             String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(service, regionId);
             return endpoint(endpoint);

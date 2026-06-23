@@ -5,7 +5,7 @@
 package com.oracle.bmc;
 
 import com.oracle.bmc.helper.EnvironmentVariablesHelper;
-import com.oracle.bmc.internal.Alloy;
+import com.oracle.bmc.internal.DeveloperToolConfiguration;
 import com.oracle.bmc.util.internal.FileUtils;
 import org.junit.*;
 
@@ -18,16 +18,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 
-public class AlloyConfigTest {
+public class DeveloperToolConfigTest {
 
     @Before
     public void setup() {
-        Region.resetAlloyConfiguration();
+        Region.resetDeveloperToolConfiguration();
     }
 
     @Test
-    public void testAlloyConfigFile_regionExists() {
-        File file = new File(FileUtils.expandUserHome("~/.oci/alloy-config.json"));
+    public void testDeveloperToolConfigFile_regionExists() {
+        File file = new File(FileUtils.expandUserHome("~/.oci/developer-tool-configuration.json"));
         if (file.exists()) {
             Region region = Region.fromRegionCodeOrId("phx");
             Region US_PHOENIX_1 =
@@ -37,29 +37,31 @@ public class AlloyConfigTest {
     }
 
     @Test
-    public void testAlloyConfigFile_regionDoesNotExists() {
+    public void testDeveloperToolConfigFile_regionDoesNotExists() {
         try {
-            File file = new File(FileUtils.expandUserHome("~/.oci/alloy-config.json"));
+            File file =
+                    new File(FileUtils.expandUserHome("~/.oci/developer-tool-configuration.json"));
             if (file.exists()) {
                 Region.fromRegionCodeOrId("unknown");
             }
         } catch (Exception e) {
             assertEquals("IllegalArgumentException", e.getClass().getSimpleName());
             assertEquals(
-                    "Unknown regionId unknown, region information not defined in Alloy configuration.",
+                    "Unknown regionId unknown, region information not defined in DeveloperToolConfiguration configuration.",
                     e.getMessage());
         }
     }
 
     @Test
-    public void testAlloyConfigUsingEnvVar_regionExists() throws Exception {
+    public void testDeveloperToolConfigUsingEnvVar_regionExists() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
 
         Region region = Region.fromRegionCodeOrId("phx");
-        Alloy.resetAlloyRegionCoexistStatus();
+        DeveloperToolConfiguration.resetAllowOnlyDevToolConfigRegionsStatus();
         Region US_PHOENIX_1 =
                 register(
                         "us-phx-1",
@@ -70,20 +72,22 @@ public class AlloyConfigTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAlloyConfigUsingEnvVar_regionDoesNotExists() throws Exception {
+    public void testDeveloperToolConfigUsingEnvVar_regionDoesNotExists() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
 
         Region.fromRegionCodeOrId("unknown");
     }
 
     @Test
-    public void testAlloyConfigUsingEnvVar_RegisterNewRegion() throws Exception {
+    public void testDeveloperToolConfigUsingEnvVar_RegisterNewRegion() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
 
         assertEquals("phx", Region.fromRegionCodeOrId("phx").getRegionCode());
@@ -96,13 +100,14 @@ public class AlloyConfigTest {
     }
 
     @Test
-    public void testAlloyConfigEnvVar_withoutRegionCoexist() throws Exception {
+    public void testDeveloperToolConfigEnvVar_withoutRegionCoexist() throws Exception {
 
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
-        Alloy.resetAlloyRegionCoexistStatus();
+        DeveloperToolConfiguration.resetAllowOnlyDevToolConfigRegionsStatus();
         assertTrue(Region.isServiceEnabled("objectstorage"));
         assertEquals("phx", Region.fromRegionCodeOrId("phx").getRegionCode());
         assertFalse(
@@ -112,16 +117,17 @@ public class AlloyConfigTest {
     }
 
     @Test
-    public void testAlloyConfigEnvVar_withRegionCoexistEnvVar() throws Exception {
+    public void testDeveloperToolConfigEnvVar_withRegionCoexistEnvVar() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
-        newEnvMap.put("OCI_ALLOY_REGION_COEXIST", "true");
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
+        newEnvMap.put("OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS", "true");
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         assertTrue(Region.isServiceEnabled("objectstorage"));
         assertEquals("phx", Region.fromRegionCodeOrId("phx").getRegionCode());
-        Alloy.resetAlloyRegionCoexistStatus();
-        assertTrue(Alloy.isAlloyRegionCoexistEnabled());
+        DeveloperToolConfiguration.resetAllowOnlyDevToolConfigRegionsStatus();
+        assertTrue(DeveloperToolConfiguration.isDevToolConfigRegionCoexistEnabled());
         assertTrue(
                 Arrays.stream(Region.values())
                         .anyMatch(region -> region.equals(Region.US_CHICAGO_1)));
@@ -129,15 +135,16 @@ public class AlloyConfigTest {
     }
 
     @Test
-    public void testAlloyConfigEnvVar_withRegionCoexistConfigFile() throws Exception {
+    public void testDeveloperToolConfigEnvVar_withRegionCoexistConfigFile() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config-with-coexist.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration-with-coexist.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         assertTrue(Region.isServiceEnabled("objectstorage"));
         assertEquals("phx", Region.fromRegionCodeOrId("phx").getRegionCode());
-        Alloy.resetAlloyRegionCoexistStatus();
-        assertTrue(Alloy.isAlloyRegionCoexistEnabled());
+        DeveloperToolConfiguration.resetAllowOnlyDevToolConfigRegionsStatus();
+        assertTrue(DeveloperToolConfiguration.isDevToolConfigRegionCoexistEnabled());
         assertTrue(
                 Arrays.stream(Region.values())
                         .anyMatch(region -> region.equals(Region.US_CHICAGO_1)));

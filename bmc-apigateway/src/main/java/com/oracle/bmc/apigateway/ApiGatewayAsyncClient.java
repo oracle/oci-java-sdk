@@ -79,7 +79,8 @@ public class ApiGatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "apigateway";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -1025,6 +1026,9 @@ public class ApiGatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apigateway.model.Sdk.class, UpdateSdkResponse.Builder::sdk)
+                .handleResponseHeaderString("etag", UpdateSdkResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSdkResponse.Builder::opcRequestId)
                 .callAsync(handler);

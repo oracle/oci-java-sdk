@@ -26,5 +26,6 @@
         "objectstorage",
         "testservice"
     ],
-    "alloyProvider": "test"
+    "developerToolConfigurationProvider": "test",
+    "allowOnlyDeveloperToolConfigurationRegions": "True"
 }

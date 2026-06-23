@@ -24,6 +24,7 @@ public final class AutonomousDatabase
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "externalLocationZone",
         "id",
         "compartmentId",
         "subscriptionId",
@@ -155,6 +156,7 @@ public final class AutonomousDatabase
         "disasterRecoveryRegionType",
         "timeDisasterRecoveryRoleChanged",
         "remoteDisasterRecoveryConfiguration",
+        "accessTypes",
         "netServicesArchitecture",
         "availabilityDomain",
         "clusterPlacementGroupId",
@@ -164,6 +166,7 @@ public final class AutonomousDatabase
         "localAdgResourcePoolLeaderId"
     })
     public AutonomousDatabase(
+            String externalLocationZone,
             String id,
             String compartmentId,
             String subscriptionId,
@@ -295,6 +298,7 @@ public final class AutonomousDatabase
             DisasterRecoveryRegionType disasterRecoveryRegionType,
             java.util.Date timeDisasterRecoveryRoleChanged,
             DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
+            java.util.List<String> accessTypes,
             NetServicesArchitecture netServicesArchitecture,
             String availabilityDomain,
             String clusterPlacementGroupId,
@@ -303,6 +307,7 @@ public final class AutonomousDatabase
             java.util.Map<String, String> additionalAttributes,
             String localAdgResourcePoolLeaderId) {
         super();
+        this.externalLocationZone = externalLocationZone;
         this.id = id;
         this.compartmentId = compartmentId;
         this.subscriptionId = subscriptionId;
@@ -434,6 +439,7 @@ public final class AutonomousDatabase
         this.disasterRecoveryRegionType = disasterRecoveryRegionType;
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
         this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
+        this.accessTypes = accessTypes;
         this.netServicesArchitecture = netServicesArchitecture;
         this.availabilityDomain = availabilityDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
@@ -445,6 +451,25 @@ public final class AutonomousDatabase
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The external logical zone where the Autonomous AI Database Serverless instance is located
+         * (Intended for multicloud use).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalLocationZone")
+        private String externalLocationZone;
+
+        /**
+         * The external logical zone where the Autonomous AI Database Serverless instance is located
+         * (Intended for multicloud use).
+         *
+         * @param externalLocationZone the value to set
+         * @return this builder
+         */
+        public Builder externalLocationZone(String externalLocationZone) {
+            this.externalLocationZone = externalLocationZone;
+            this.__explicitlySet__.add("externalLocationZone");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Autonomous AI Database.
@@ -3229,6 +3254,21 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("remoteDisasterRecoveryConfiguration");
             return this;
         }
+        /** List of access types for an Autonomous AI Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("accessTypes")
+        private java.util.List<String> accessTypes;
+
+        /**
+         * List of access types for an Autonomous AI Database.
+         *
+         * @param accessTypes the value to set
+         * @return this builder
+         */
+        public Builder accessTypes(java.util.List<String> accessTypes) {
+            this.accessTypes = accessTypes;
+            this.__explicitlySet__.add("accessTypes");
+            return this;
+        }
         /**
          * Enabling SHARED server architecture enables a database server to allow many client
          * processes to share very few server processes, thereby increasing the number of supported
@@ -3367,6 +3407,7 @@ public final class AutonomousDatabase
         public AutonomousDatabase build() {
             AutonomousDatabase model =
                     new AutonomousDatabase(
+                            this.externalLocationZone,
                             this.id,
                             this.compartmentId,
                             this.subscriptionId,
@@ -3498,6 +3539,7 @@ public final class AutonomousDatabase
                             this.disasterRecoveryRegionType,
                             this.timeDisasterRecoveryRoleChanged,
                             this.remoteDisasterRecoveryConfiguration,
+                            this.accessTypes,
                             this.netServicesArchitecture,
                             this.availabilityDomain,
                             this.clusterPlacementGroupId,
@@ -3513,6 +3555,9 @@ public final class AutonomousDatabase
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousDatabase model) {
+            if (model.wasPropertyExplicitlySet("externalLocationZone")) {
+                this.externalLocationZone(model.getExternalLocationZone());
+            }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
@@ -3914,6 +3959,9 @@ public final class AutonomousDatabase
                 this.remoteDisasterRecoveryConfiguration(
                         model.getRemoteDisasterRecoveryConfiguration());
             }
+            if (model.wasPropertyExplicitlySet("accessTypes")) {
+                this.accessTypes(model.getAccessTypes());
+            }
             if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
                 this.netServicesArchitecture(model.getNetServicesArchitecture());
             }
@@ -3946,6 +3994,23 @@ public final class AutonomousDatabase
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The external logical zone where the Autonomous AI Database Serverless instance is located
+     * (Intended for multicloud use).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalLocationZone")
+    private final String externalLocationZone;
+
+    /**
+     * The external logical zone where the Autonomous AI Database Serverless instance is located
+     * (Intended for multicloud use).
+     *
+     * @return the value
+     */
+    public String getExternalLocationZone() {
+        return externalLocationZone;
     }
 
     /**
@@ -7307,6 +7372,19 @@ public final class AutonomousDatabase
         return remoteDisasterRecoveryConfiguration;
     }
 
+    /** List of access types for an Autonomous AI Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("accessTypes")
+    private final java.util.List<String> accessTypes;
+
+    /**
+     * List of access types for an Autonomous AI Database.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getAccessTypes() {
+        return accessTypes;
+    }
+
     /**
      * Enabling SHARED server architecture enables a database server to allow many client processes
      * to share very few server processes, thereby increasing the number of supported users.
@@ -7532,7 +7610,8 @@ public final class AutonomousDatabase
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabase(");
         sb.append("super=").append(super.toString());
-        sb.append("id=").append(String.valueOf(this.id));
+        sb.append("externalLocationZone=").append(String.valueOf(this.externalLocationZone));
+        sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -7707,6 +7786,7 @@ public final class AutonomousDatabase
                 .append(String.valueOf(this.timeDisasterRecoveryRoleChanged));
         sb.append(", remoteDisasterRecoveryConfiguration=")
                 .append(String.valueOf(this.remoteDisasterRecoveryConfiguration));
+        sb.append(", accessTypes=").append(String.valueOf(this.accessTypes));
         sb.append(", netServicesArchitecture=")
                 .append(String.valueOf(this.netServicesArchitecture));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
@@ -7731,7 +7811,8 @@ public final class AutonomousDatabase
         }
 
         AutonomousDatabase other = (AutonomousDatabase) o;
-        return java.util.Objects.equals(this.id, other.id)
+        return java.util.Objects.equals(this.externalLocationZone, other.externalLocationZone)
+                && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -7919,6 +8000,7 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(
                         this.remoteDisasterRecoveryConfiguration,
                         other.remoteDisasterRecoveryConfiguration)
+                && java.util.Objects.equals(this.accessTypes, other.accessTypes)
                 && java.util.Objects.equals(
                         this.netServicesArchitecture, other.netServicesArchitecture)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
@@ -7936,6 +8018,11 @@ public final class AutonomousDatabase
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.externalLocationZone == null
+                                ? 43
+                                : this.externalLocationZone.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)
@@ -8409,6 +8496,7 @@ public final class AutonomousDatabase
                         + (this.remoteDisasterRecoveryConfiguration == null
                                 ? 43
                                 : this.remoteDisasterRecoveryConfiguration.hashCode());
+        result = (result * PRIME) + (this.accessTypes == null ? 43 : this.accessTypes.hashCode());
         result =
                 (result * PRIME)
                         + (this.netServicesArchitecture == null

@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc;
 
-import com.oracle.bmc.internal.Alloy;
+import com.oracle.bmc.internal.DeveloperToolConfiguration;
 import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.NameUtils;
 import jakarta.annotation.Nonnull;
@@ -24,7 +24,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public final class Realm implements Serializable, Comparable<Realm> {
     // LinkedHashMap to ensure stable ordering of registered realms
     private static final Map<String, Realm> KNOWN_REALMS = new LinkedHashMap<>();
-    private static final Map<String, Realm> ALLOY_REALMS = new LinkedHashMap<>();
+    private static final Map<String, Realm> DEVELOPER_TOOL_CONFIG_REALMS = new LinkedHashMap<>();
     private static final Map<String, Realm> ALL_REALMS = new LinkedHashMap<>();
 
     private static final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
@@ -62,7 +62,9 @@ public final class Realm implements Serializable, Comparable<Realm> {
     }
 
     private Realm(
-            @Nonnull String realmId, @Nonnull String secondLevelDomain, boolean isAlloyRealm) {
+            @Nonnull String realmId,
+            @Nonnull String secondLevelDomain,
+            boolean isDeveloperToolConfigurationRealm) {
         if (realmId == null) {
             throw new java.lang.NullPointerException("realmId is marked non-null but is null");
         }
@@ -76,8 +78,8 @@ public final class Realm implements Serializable, Comparable<Realm> {
         try {
             // The field name is named after the regionId, but follows enum naming convention.
             // For backwards compatibility, we keep track of the enum-named field.
-            if (isAlloyRealm) {
-                ALLOY_REALMS.put(NameUtils.canonicalizeForEnumTypes(realmId), this);
+            if (isDeveloperToolConfigurationRealm) {
+                DEVELOPER_TOOL_CONFIG_REALMS.put(NameUtils.canonicalizeForEnumTypes(realmId), this);
             } else {
                 KNOWN_REALMS.put(NameUtils.canonicalizeForEnumTypes(realmId), this);
             }
@@ -115,9 +117,11 @@ public final class Realm implements Serializable, Comparable<Realm> {
     public static Realm[] values() {
         readLock.lock();
         try {
-            if (Alloy.doesAlloyConfigExist()) {
-                if (Alloy.shouldUseOnlyAlloyRegions()) {
-                    return ALLOY_REALMS.values().toArray(new Realm[ALLOY_REALMS.size()]);
+            if (DeveloperToolConfiguration.doesDeveloperToolConfigurationExist()) {
+                if (DeveloperToolConfiguration.shouldUseOnlyDeveloperToolConfigurationRegions()) {
+                    return DEVELOPER_TOOL_CONFIG_REALMS
+                            .values()
+                            .toArray(new Realm[DEVELOPER_TOOL_CONFIG_REALMS.size()]);
                 }
                 return ALL_REALMS.values().toArray(new Realm[ALL_REALMS.size()]);
             }
@@ -142,11 +146,11 @@ public final class Realm implements Serializable, Comparable<Realm> {
         readLock.lock();
         try {
             Optional<Realm> maybeRealm;
-            if (Alloy.doesAlloyConfigExist()) {
-                maybeRealm = Optional.ofNullable(ALLOY_REALMS.get(name));
+            if (DeveloperToolConfiguration.doesDeveloperToolConfigurationExist()) {
+                maybeRealm = Optional.ofNullable(DEVELOPER_TOOL_CONFIG_REALMS.get(name));
                 if (maybeRealm.isPresent()) {
                     return maybeRealm.get();
-                } else if (!Alloy.isAlloyRegionCoexistEnabled()) {
+                } else if (!DeveloperToolConfiguration.isDevToolConfigRegionCoexistEnabled()) {
                     throw new IllegalArgumentException("Unknown realm " + name);
                 }
             }
@@ -176,11 +180,13 @@ public final class Realm implements Serializable, Comparable<Realm> {
      *
      * @param realmId The realm id.
      * @param secondLevelDomain The second level domain of the realm.
-     * @param isAlloyRealm 'true' if realm is from alloy configuration.
+     * @param isDeveloperToolConfigurationRealm 'true' if realm is from DeveloperToolConfiguration.
      * @return The registered Realm (or existing one if found).
      */
     public static Realm register(
-            @Nonnull String realmId, @Nonnull String secondLevelDomain, boolean isAlloyRealm) {
+            @Nonnull String realmId,
+            @Nonnull String secondLevelDomain,
+            boolean isDeveloperToolConfigurationRealm) {
         if (realmId == null) {
             throw new java.lang.NullPointerException("realmId is marked non-null but is null");
         }
@@ -205,7 +211,7 @@ public final class Realm implements Serializable, Comparable<Realm> {
                     return realm;
                 }
             }
-            return new Realm(realmId, secondLevelDomain, isAlloyRealm);
+            return new Realm(realmId, secondLevelDomain, isDeveloperToolConfigurationRealm);
         } finally {
             writeLock.unlock();
         }
@@ -247,7 +253,7 @@ public final class Realm implements Serializable, Comparable<Realm> {
 
     @InternalSdk
     @VisibleForTesting
-    protected static void clearAlloyRealms() {
+    protected static void clearDeveloperToolConfigurationRealms() {
 
         writeLock.lock();
         try {
@@ -255,9 +261,9 @@ public final class Realm implements Serializable, Comparable<Realm> {
                     .keySet()
                     .removeIf(
                             key ->
-                                    (ALLOY_REALMS.containsKey(key)
+                                    (DEVELOPER_TOOL_CONFIG_REALMS.containsKey(key)
                                             && !KNOWN_REALMS.containsKey(key)));
-            ALLOY_REALMS.clear();
+            DEVELOPER_TOOL_CONFIG_REALMS.clear();
         } finally {
             writeLock.unlock();
         }

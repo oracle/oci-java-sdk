@@ -79,7 +79,8 @@ public class DnsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "dns";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

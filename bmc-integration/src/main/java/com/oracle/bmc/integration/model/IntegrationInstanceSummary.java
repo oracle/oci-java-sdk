@@ -51,7 +51,8 @@ public final class IntegrationInstanceSummary
         "privateEndpointOutboundConnection",
         "isDisasterRecoveryEnabled",
         "dataRetentionPeriod",
-        "logGroupId"
+        "logGroupId",
+        "processAutomationLogGroupId"
     })
     public IntegrationInstanceSummary(
             String id,
@@ -81,7 +82,8 @@ public final class IntegrationInstanceSummary
             OutboundConnection privateEndpointOutboundConnection,
             Boolean isDisasterRecoveryEnabled,
             DataRetentionPeriod dataRetentionPeriod,
-            String logGroupId) {
+            String logGroupId,
+            String processAutomationLogGroupId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -111,6 +113,7 @@ public final class IntegrationInstanceSummary
         this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
         this.dataRetentionPeriod = dataRetentionPeriod;
         this.logGroupId = logGroupId;
+        this.processAutomationLogGroupId = processAutomationLogGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -555,6 +558,25 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
+        /**
+         * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to
+         * integration instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("processAutomationLogGroupId")
+        private String processAutomationLogGroupId;
+
+        /**
+         * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to
+         * integration instance.
+         *
+         * @param processAutomationLogGroupId the value to set
+         * @return this builder
+         */
+        public Builder processAutomationLogGroupId(String processAutomationLogGroupId) {
+            this.processAutomationLogGroupId = processAutomationLogGroupId;
+            this.__explicitlySet__.add("processAutomationLogGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -589,7 +611,8 @@ public final class IntegrationInstanceSummary
                             this.privateEndpointOutboundConnection,
                             this.isDisasterRecoveryEnabled,
                             this.dataRetentionPeriod,
-                            this.logGroupId);
+                            this.logGroupId,
+                            this.processAutomationLogGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -682,6 +705,9 @@ public final class IntegrationInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("logGroupId")) {
                 this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("processAutomationLogGroupId")) {
+                this.processAutomationLogGroupId(model.getProcessAutomationLogGroupId());
             }
             return this;
         }
@@ -1314,6 +1340,23 @@ public final class IntegrationInstanceSummary
         return logGroupId;
     }
 
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration
+     * instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("processAutomationLogGroupId")
+    private final String processAutomationLogGroupId;
+
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration
+     * instance.
+     *
+     * @return the value
+     */
+    public String getProcessAutomationLogGroupId() {
+        return processAutomationLogGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1361,6 +1404,8 @@ public final class IntegrationInstanceSummary
                 .append(String.valueOf(this.isDisasterRecoveryEnabled));
         sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", processAutomationLogGroupId=")
+                .append(String.valueOf(this.processAutomationLogGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1410,6 +1455,8 @@ public final class IntegrationInstanceSummary
                         this.isDisasterRecoveryEnabled, other.isDisasterRecoveryEnabled)
                 && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
                 && java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(
+                        this.processAutomationLogGroupId, other.processAutomationLogGroupId)
                 && super.equals(other);
     }
 
@@ -1495,6 +1542,11 @@ public final class IntegrationInstanceSummary
                                 ? 43
                                 : this.dataRetentionPeriod.hashCode());
         result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.processAutomationLogGroupId == null
+                                ? 43
+                                : this.processAutomationLogGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

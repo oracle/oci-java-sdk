@@ -26,6 +26,5 @@
         "objectstorage",
         "testservice"
     ],
-    "alloyProvider": "test",
-    "ociRegionCoexist": "True"
+    "developerToolConfigurationProvider": "test"
 }

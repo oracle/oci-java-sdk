@@ -34,9 +34,27 @@ package com.oracle.bmc.dns.model;
 public class UpdateResolverEndpointDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected UpdateResolverEndpointDetails() {
+    @java.beans.ConstructorProperties({"freeformTags", "definedTags"})
+    protected UpdateResolverEndpointDetails(
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
     }
 
     @Override
@@ -54,6 +72,8 @@ public class UpdateResolverEndpointDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateResolverEndpointDetails(");
         sb.append("super=").append(super.toString());
+        sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -68,13 +88,17 @@ public class UpdateResolverEndpointDetails
         }
 
         UpdateResolverEndpointDetails other = (UpdateResolverEndpointDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

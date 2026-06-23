@@ -30,6 +30,24 @@ package com.oracle.bmc.dns.model;
 public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
         /**
          * An array of network security group OCIDs for the resolver endpoint. These must be part of
          * the VCN that the resolver endpoint is a part of.
@@ -50,12 +68,26 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateResolverVnicEndpointDetails build() {
             UpdateResolverVnicEndpointDetails model =
-                    new UpdateResolverVnicEndpointDetails(this.nsgIds);
+                    new UpdateResolverVnicEndpointDetails(
+                            this.freeformTags,
+                            this.definedTags,
+                            this.nsgIds,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -64,8 +96,17 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateResolverVnicEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -81,9 +122,14 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
     }
 
     @Deprecated
-    public UpdateResolverVnicEndpointDetails(java.util.List<String> nsgIds) {
-        super();
+    public UpdateResolverVnicEndpointDetails(
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+        super(freeformTags, definedTags);
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
     }
 
     /**
@@ -103,6 +149,13 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
         return nsgIds;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -119,6 +172,7 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
         sb.append("UpdateResolverVnicEndpointDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -133,7 +187,9 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
         }
 
         UpdateResolverVnicEndpointDetails other = (UpdateResolverVnicEndpointDetails) o;
-        return java.util.Objects.equals(this.nsgIds, other.nsgIds) && super.equals(other);
+        return java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && super.equals(other);
     }
 
     @Override
@@ -141,6 +197,11 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         return result;
     }
 }

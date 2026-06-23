@@ -80,7 +80,8 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "costad";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -130,7 +131,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, CreateCostAlertSubscriptionResponse::builder)
                 .logger(LOG, "createCostAlertSubscription")
-                .serviceDetails("CostAd", "CreateCostAlertSubscription", "")
+                .serviceDetails(
+                        "CostAd",
+                        "CreateCostAlertSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/CreateCostAlertSubscription")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCostAlertSubscriptionRequest::builder)
                 .basePath("/20190111")
@@ -159,7 +163,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, CreateCostAnomalyMonitorResponse::builder)
                 .logger(LOG, "createCostAnomalyMonitor")
-                .serviceDetails("CostAd", "CreateCostAnomalyMonitor", "")
+                .serviceDetails(
+                        "CostAd",
+                        "CreateCostAnomalyMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/CreateCostAnomalyMonitor")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCostAnomalyMonitorRequest::builder)
                 .basePath("/20190111")
@@ -187,7 +194,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, DeleteCostAlertSubscriptionResponse::builder)
                 .logger(LOG, "deleteCostAlertSubscription")
-                .serviceDetails("CostAd", "DeleteCostAlertSubscription", "")
+                .serviceDetails(
+                        "CostAd",
+                        "DeleteCostAlertSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/DeleteCostAlertSubscription")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCostAlertSubscriptionRequest::builder)
                 .basePath("/20190111")
@@ -211,7 +221,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, DeleteCostAnomalyMonitorResponse::builder)
                 .logger(LOG, "deleteCostAnomalyMonitor")
-                .serviceDetails("CostAd", "DeleteCostAnomalyMonitor", "")
+                .serviceDetails(
+                        "CostAd",
+                        "DeleteCostAnomalyMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/DeleteCostAnomalyMonitor")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCostAnomalyMonitorRequest::builder)
                 .basePath("/20190111")
@@ -235,7 +248,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, DisableCostAnomalyMonitorResponse::builder)
                 .logger(LOG, "disableCostAnomalyMonitor")
-                .serviceDetails("CostAd", "DisableCostAnomalyMonitor", "")
+                .serviceDetails(
+                        "CostAd",
+                        "DisableCostAnomalyMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/DisableCostAnomalyMonitor")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableCostAnomalyMonitorRequest::builder)
                 .basePath("/20190111")
@@ -266,7 +282,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, EnableCostAnomalyMonitorResponse::builder)
                 .logger(LOG, "enableCostAnomalyMonitor")
-                .serviceDetails("CostAd", "EnableCostAnomalyMonitor", "")
+                .serviceDetails(
+                        "CostAd",
+                        "EnableCostAnomalyMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/EnableCostAnomalyMonitor")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableCostAnomalyMonitorRequest::builder)
                 .basePath("/20190111")
@@ -297,7 +316,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, GetCostAlertSubscriptionResponse::builder)
                 .logger(LOG, "getCostAlertSubscription")
-                .serviceDetails("CostAd", "GetCostAlertSubscription", "")
+                .serviceDetails(
+                        "CostAd",
+                        "GetCostAlertSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/GetCostAlertSubscription")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCostAlertSubscriptionRequest::builder)
                 .basePath("/20190111")
@@ -322,7 +344,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, GetCostAnomalyEventResponse::builder)
                 .logger(LOG, "getCostAnomalyEvent")
-                .serviceDetails("CostAd", "GetCostAnomalyEvent", "")
+                .serviceDetails(
+                        "CostAd",
+                        "GetCostAnomalyEvent",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/GetCostAnomalyEvent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCostAnomalyEventRequest::builder)
                 .basePath("/20190111")
@@ -349,7 +374,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, GetCostAnomalyMonitorResponse::builder)
                 .logger(LOG, "getCostAnomalyMonitor")
-                .serviceDetails("CostAd", "GetCostAnomalyMonitor", "")
+                .serviceDetails(
+                        "CostAd",
+                        "GetCostAnomalyMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/GetCostAnomalyMonitor")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCostAnomalyMonitorRequest::builder)
                 .basePath("/20190111")
@@ -374,7 +402,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, ListCostAlertSubscriptionsResponse::builder)
                 .logger(LOG, "listCostAlertSubscriptions")
-                .serviceDetails("CostAd", "ListCostAlertSubscriptions", "")
+                .serviceDetails(
+                        "CostAd",
+                        "ListCostAlertSubscriptions",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscriptionCollection/ListCostAlertSubscriptions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCostAlertSubscriptionsRequest::builder)
                 .basePath("/20190111")
@@ -406,7 +437,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, ListCostAnomalyEventsResponse::builder)
                 .logger(LOG, "listCostAnomalyEvents")
-                .serviceDetails("CostAd", "ListCostAnomalyEvents", "")
+                .serviceDetails(
+                        "CostAd",
+                        "ListCostAnomalyEvents",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEventCollection/ListCostAnomalyEvents")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCostAnomalyEventsRequest::builder)
                 .basePath("/20190111")
@@ -451,7 +485,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, ListCostAnomalyMonitorsResponse::builder)
                 .logger(LOG, "listCostAnomalyMonitors")
-                .serviceDetails("CostAd", "ListCostAnomalyMonitors", "")
+                .serviceDetails(
+                        "CostAd",
+                        "ListCostAnomalyMonitors",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitorCollection/ListCostAnomalyMonitors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCostAnomalyMonitorsRequest::builder)
                 .basePath("/20190111")
@@ -491,7 +528,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, SummarizeCostAnomalyEventAnalyticsResponse::builder)
                 .logger(LOG, "summarizeCostAnomalyEventAnalytics")
-                .serviceDetails("CostAd", "SummarizeCostAnomalyEventAnalytics", "")
+                .serviceDetails(
+                        "CostAd",
+                        "SummarizeCostAnomalyEventAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/SummarizeCostAnomalyEventAnalytics")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeCostAnomalyEventAnalyticsRequest::builder)
                 .basePath("/20190111")
@@ -544,7 +584,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, UpdateCostAlertSubscriptionResponse::builder)
                 .logger(LOG, "updateCostAlertSubscription")
-                .serviceDetails("CostAd", "UpdateCostAlertSubscription", "")
+                .serviceDetails(
+                        "CostAd",
+                        "UpdateCostAlertSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/UpdateCostAlertSubscription")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCostAlertSubscriptionRequest::builder)
                 .basePath("/20190111")
@@ -576,7 +619,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, UpdateCostAnomalyEventResponse::builder)
                 .logger(LOG, "updateCostAnomalyEvent")
-                .serviceDetails("CostAd", "UpdateCostAnomalyEvent", "")
+                .serviceDetails(
+                        "CostAd",
+                        "UpdateCostAnomalyEvent",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/UpdateCostAnomalyEvent")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCostAnomalyEventRequest::builder)
                 .basePath("/20190111")
@@ -608,7 +654,10 @@ public class CostAdClient extends com.oracle.bmc.http.internal.BaseSyncClient im
 
         return clientCall(request, UpdateCostAnomalyMonitorResponse::builder)
                 .logger(LOG, "updateCostAnomalyMonitor")
-                .serviceDetails("CostAd", "UpdateCostAnomalyMonitor", "")
+                .serviceDetails(
+                        "CostAd",
+                        "UpdateCostAnomalyMonitor",
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/UpdateCostAnomalyMonitor")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCostAnomalyMonitorRequest::builder)
                 .basePath("/20190111")

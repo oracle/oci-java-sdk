@@ -33,7 +33,8 @@ public final class UpdateVirtualNodePoolDetails
         "podConfiguration",
         "freeformTags",
         "definedTags",
-        "virtualNodeTags"
+        "virtualNodeTags",
+        "virtualNodePoolCyclingDetails"
     })
     public UpdateVirtualNodePoolDetails(
             String displayName,
@@ -45,7 +46,8 @@ public final class UpdateVirtualNodePoolDetails
             PodConfiguration podConfiguration,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            VirtualNodeTags virtualNodeTags) {
+            VirtualNodeTags virtualNodeTags,
+            VirtualNodePoolCyclingDetails virtualNodePoolCyclingDetails) {
         super();
         this.displayName = displayName;
         this.initialVirtualNodeLabels = initialVirtualNodeLabels;
@@ -57,6 +59,7 @@ public final class UpdateVirtualNodePoolDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.virtualNodeTags = virtualNodeTags;
+        this.virtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -243,6 +246,16 @@ public final class UpdateVirtualNodePoolDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("virtualNodePoolCyclingDetails")
+        private VirtualNodePoolCyclingDetails virtualNodePoolCyclingDetails;
+
+        public Builder virtualNodePoolCyclingDetails(
+                VirtualNodePoolCyclingDetails virtualNodePoolCyclingDetails) {
+            this.virtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
+            this.__explicitlySet__.add("virtualNodePoolCyclingDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -258,7 +271,8 @@ public final class UpdateVirtualNodePoolDetails
                             this.podConfiguration,
                             this.freeformTags,
                             this.definedTags,
-                            this.virtualNodeTags);
+                            this.virtualNodeTags,
+                            this.virtualNodePoolCyclingDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -296,6 +310,9 @@ public final class UpdateVirtualNodePoolDetails
             }
             if (model.wasPropertyExplicitlySet("virtualNodeTags")) {
                 this.virtualNodeTags(model.getVirtualNodeTags());
+            }
+            if (model.wasPropertyExplicitlySet("virtualNodePoolCyclingDetails")) {
+                this.virtualNodePoolCyclingDetails(model.getVirtualNodePoolCyclingDetails());
             }
             return this;
         }
@@ -466,6 +483,13 @@ public final class UpdateVirtualNodePoolDetails
         return virtualNodeTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualNodePoolCyclingDetails")
+    private final VirtualNodePoolCyclingDetails virtualNodePoolCyclingDetails;
+
+    public VirtualNodePoolCyclingDetails getVirtualNodePoolCyclingDetails() {
+        return virtualNodePoolCyclingDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -493,6 +517,8 @@ public final class UpdateVirtualNodePoolDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", virtualNodeTags=").append(String.valueOf(this.virtualNodeTags));
+        sb.append(", virtualNodePoolCyclingDetails=")
+                .append(String.valueOf(this.virtualNodePoolCyclingDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -519,6 +545,8 @@ public final class UpdateVirtualNodePoolDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.virtualNodeTags, other.virtualNodeTags)
+                && java.util.Objects.equals(
+                        this.virtualNodePoolCyclingDetails, other.virtualNodePoolCyclingDetails)
                 && super.equals(other);
     }
 
@@ -548,6 +576,11 @@ public final class UpdateVirtualNodePoolDetails
         result =
                 (result * PRIME)
                         + (this.virtualNodeTags == null ? 43 : this.virtualNodeTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualNodePoolCyclingDetails == null
+                                ? 43
+                                : this.virtualNodePoolCyclingDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

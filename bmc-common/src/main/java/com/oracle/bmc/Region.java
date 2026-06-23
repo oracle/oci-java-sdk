@@ -12,9 +12,9 @@ import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.client.StandardHttpProviderCapability;
 import com.oracle.bmc.http.internal.SyncFutureWaiter;
-import com.oracle.bmc.internal.Alloy;
+import com.oracle.bmc.internal.DeveloperToolConfiguration;
 import com.oracle.bmc.internal.EndpointBuilder;
-import com.oracle.bmc.model.RegionAlloySchema;
+import com.oracle.bmc.model.RegionDeveloperToolConfigurationSchema;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.VisibleForTesting;
@@ -69,17 +69,17 @@ public final class Region implements Serializable, Comparable<Region> {
     // The regions-config file path location
     private static final String REGIONS_CONFIG_FILE_PATH = "~/.oci/regions-config.json";
 
-    // alloyProvider name from alloy-config.json
-    private static volatile String OCI_ALLOY_CONFIG_PROVIDER;
+    // developerToolConfigurationProvider name from developer-tool-configuration.json
+    private static volatile String OCI_DEVELOPER_TOOL_CONFIG_PROVIDER;
 
-    // Default Oci alloy region coexist
-    private static volatile boolean IS_ALLOY_REGION_COEXIST_ENABLED = false;
+    // Default allow only DeveloperToolConfiguration Regions
+    private static volatile boolean IS_DEVELOPER_TOOL_CONFIG_REGION_COEXIST_ENABLED = false;
 
     // LinkedHashMap to ensure stable ordering of registered regions
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
-    // LinkedHashMap to ensure stable ordering of registered Alloy regions
-    private static final Map<String, Region> ALLOY_REGIONS = new LinkedHashMap<>();
+    // LinkedHashMap to ensure stable ordering of registered DeveloperToolConfiguration regions
+    private static final Map<String, Region> DEVELOPER_TOOL_CONFIG_REGIONS = new LinkedHashMap<>();
 
     // LinkedHashMap to ensure stable ordering of the registered regions
     private static final Map<String, Region> ALL_REGIONS = new LinkedHashMap<>();
@@ -87,7 +87,7 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Region.class);
     private static volatile boolean hasUsedEnvVar = false;
     private static volatile boolean hasUsedConfigFile = false;
-    private static volatile boolean hasUsedAlloyConfigFile = false;
+    private static volatile boolean hasUsedDeveloperToolConfiFile = false;
     private static final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
     private static final Lock readLock = lock.readLock();
     private static final Lock writeLock = lock.writeLock();
@@ -266,7 +266,7 @@ public final class Region implements Serializable, Comparable<Region> {
             @Nonnull String regionId,
             @Nonnull Optional<String> regionCode,
             @Nonnull Realm realm,
-            boolean isAlloyRegion) {
+            boolean isDeveloperToolConfigurationRegion) {
         if (regionId == null) {
             throw new java.lang.NullPointerException("regionId is marked non-null but is null");
         }
@@ -284,8 +284,9 @@ public final class Region implements Serializable, Comparable<Region> {
         try {
             // The field name is named after the regionId, but follows enum naming convention.
             // For backwards compatibility, we keep track of the enum-named field.
-            if (isAlloyRegion) {
-                ALLOY_REGIONS.put(NameUtils.canonicalizeForEnumTypes(regionId), this);
+            if (isDeveloperToolConfigurationRegion) {
+                DEVELOPER_TOOL_CONFIG_REGIONS.put(
+                        NameUtils.canonicalizeForEnumTypes(regionId), this);
             } else {
                 KNOWN_REGIONS.put(NameUtils.canonicalizeForEnumTypes(regionId), this);
             }
@@ -409,10 +410,12 @@ public final class Region implements Serializable, Comparable<Region> {
         registerAllRegions();
         readLock.lock();
         try {
-            if (Alloy.doesAlloyConfigExist()) {
+            if (DeveloperToolConfiguration.doesDeveloperToolConfigurationExist()) {
                 // Recheck state because another thread might have acquired lock.
-                if (Alloy.shouldUseOnlyAlloyRegions()) {
-                    return ALLOY_REGIONS.values().toArray(new Region[ALLOY_REGIONS.size()]);
+                if (DeveloperToolConfiguration.shouldUseOnlyDeveloperToolConfigurationRegions()) {
+                    return DEVELOPER_TOOL_CONFIG_REGIONS
+                            .values()
+                            .toArray(new Region[DEVELOPER_TOOL_CONFIG_REGIONS.size()]);
                 }
                 return ALL_REGIONS.values().toArray(new Region[ALL_REGIONS.size()]);
             }
@@ -587,14 +590,15 @@ public final class Region implements Serializable, Comparable<Region> {
      * @param realm The realm of the new region.
      * @param regionCode The 3-letter region code returned by the instance metadata service as the
      *     'region' value, if it differs from regionId. This is only needed for very early regions.
-     * @param isAlloyRegion 'true' if region is from alloy configuration.
+     * @param isDeveloperToolConfigurationRegion 'true' if region is from
+     *     DeveloperToolConfiguration.
      * @return The registered region (or existing one if found).
      */
     public static Region register(
             @Nonnull String regionId,
             @Nonnull final Realm realm,
             String regionCode,
-            boolean isAlloyRegion) {
+            boolean isDeveloperToolConfigurationRegion) {
         if (regionId == null) {
             throw new java.lang.NullPointerException("regionId is marked non-null but is null");
         }
@@ -610,7 +614,7 @@ public final class Region implements Serializable, Comparable<Region> {
         Region region;
         readLock.lock();
         try {
-            region = getRegion(regionId, realm, isAlloyRegion);
+            region = getRegion(regionId, realm, isDeveloperToolConfigurationRegion);
             if (region != null) {
                 return region;
             }
@@ -620,7 +624,7 @@ public final class Region implements Serializable, Comparable<Region> {
         writeLock.lock();
         try {
             // Recheck if the region exists because another thread might have acquired lock.
-            region = getRegion(regionId, realm, isAlloyRegion);
+            region = getRegion(regionId, realm, isDeveloperToolConfigurationRegion);
             if (region != null) {
                 return region;
             }
@@ -630,18 +634,23 @@ public final class Region implements Serializable, Comparable<Region> {
                     regionCode = null;
                 }
             }
-            return new Region(regionId, Optional.ofNullable(regionCode), realm, isAlloyRegion);
+            return new Region(
+                    regionId,
+                    Optional.ofNullable(regionCode),
+                    realm,
+                    isDeveloperToolConfigurationRegion);
         } finally {
             writeLock.unlock();
         }
     }
 
-    private static Region getRegion(String regionId, Realm realm, boolean isAlloyRegion) {
+    private static Region getRegion(
+            String regionId, Realm realm, boolean isDeveloperToolConfigurationRegion) {
         Region region;
         readLock.lock();
         try {
-            if (isAlloyRegion) {
-                region = getRegionFromMap(ALLOY_REGIONS, regionId, realm);
+            if (isDeveloperToolConfigurationRegion) {
+                region = getRegionFromMap(DEVELOPER_TOOL_CONFIG_REGIONS, regionId, realm);
             } else {
                 region = getRegionFromMap(KNOWN_REGIONS, regionId, realm);
             }
@@ -684,11 +693,11 @@ public final class Region implements Serializable, Comparable<Region> {
         }
     }
 
-    private static java.util.Optional<Region> maybeFromAlloyRegionCodeOrIdWithoutRegistering(
-            String regionCodeOrId) {
+    private static java.util.Optional<Region>
+            maybeFromDevToolConfigRegionCodeOrIdWithoutRegistering(String regionCodeOrId) {
         readLock.lock();
         try {
-            return ALLOY_REGIONS.values().stream()
+            return DEVELOPER_TOOL_CONFIG_REGIONS.values().stream()
                     .filter(
                             r ->
                                     r.getRegionCode().equalsIgnoreCase(regionCodeOrId)
@@ -702,13 +711,14 @@ public final class Region implements Serializable, Comparable<Region> {
     /** Register all regions and sets status */
     private static void registerAllRegions() {
 
-        if (Alloy.doesAlloyConfigExist()) {
-            if (!hasUsedAlloyConfigFile) {
-                readAlloyRegionConfigFile();
+        if (DeveloperToolConfiguration.doesDeveloperToolConfigurationExist()) {
+            if (!hasUsedDeveloperToolConfiFile) {
+                readDeveloperToolConfigurationFile();
             }
-            // Return with only the registered alloy regions if OCI_ALLOY_REGION_COEXIST is not set
+            // Return with only the registered DeveloperToolConfiguration regions if
+            // OCI_ALLOW_ONLY_DEVELOPER_TOOL_CONFIGURATION_REGIONS is not set
             // to true
-            if (!Alloy.isAlloyRegionCoexistEnabled()) {
+            if (!DeveloperToolConfiguration.isDevToolConfigRegionCoexistEnabled()) {
                 return;
             }
         }
@@ -730,24 +740,25 @@ public final class Region implements Serializable, Comparable<Region> {
         }
 
         Optional<Region> maybeRegion;
-        if (Alloy.doesAlloyConfigExist()) {
-            if (!hasUsedAlloyConfigFile) {
-                readAlloyRegionConfigFile(); // registers Alloy region and sets
+        if (DeveloperToolConfiguration.doesDeveloperToolConfigurationExist()) {
+            if (!hasUsedDeveloperToolConfiFile) {
+                readDeveloperToolConfigurationFile(); // registers DeveloperToolConfiguration region
+                // and sets
             }
-            maybeRegion = maybeFromAlloyRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            maybeRegion = maybeFromDevToolConfigRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
                 return maybeRegion;
-            } else if (!Alloy.isAlloyRegionCoexistEnabled()) {
+            } else if (!DeveloperToolConfiguration.isDevToolConfigRegionCoexistEnabled()) {
                 LOG.error(
-                        "The region '{}' you're targeting is not declared in the '{}' Alloy configuration file. Please check if this is the correct region you're targeting or contact the '{}' cloud provider for help. If you want to target both OCI regions and '{}' regions, please set the OCI_PLC_REGION_COEXIST env var to true.",
+                        "The region '{}' you're targeting is not declared in the '{}' DeveloperToolConfiguration configuration file. Please check if this is the correct region you're targeting or contact the '{}' cloud provider for help. If you want to target both OCI regions and '{}' regions, please set the OCI_PLC_REGION_COEXIST env var to true.",
                         regionCodeOrId,
-                        Alloy.getAlloyConfigFilePath(),
-                        OCI_ALLOY_CONFIG_PROVIDER,
-                        OCI_ALLOY_CONFIG_PROVIDER);
+                        DeveloperToolConfiguration.getDeveloperToolConfigurationFilePath(),
+                        OCI_DEVELOPER_TOOL_CONFIG_PROVIDER,
+                        OCI_DEVELOPER_TOOL_CONFIG_PROVIDER);
                 throw new IllegalArgumentException(
                         "Unknown regionId "
                                 + regionCodeOrId
-                                + ", region information not defined in Alloy configuration.");
+                                + ", region information not defined in DeveloperToolConfiguration configuration.");
             }
         }
 
@@ -865,23 +876,26 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Registers region, sets hasUsedAlloyConfigFile status to true and stores the alloy enabled
-     * services to OCI_SDK_ENABLED_SERVICES_SET.
+     * Registers region, sets hasUsedDeveloperToolConfiFile status to true and stores the
+     * DeveloperToolConfiguration enabled services to OCI_SDK_ENABLED_SERVICES_SET.
      */
-    private static void readAlloyRegionConfigFile() {
-        hasUsedAlloyConfigFile = true;
+    private static void readDeveloperToolConfigurationFile() {
+        hasUsedDeveloperToolConfiFile = true;
 
         try {
-            String content = getContentFromConfigFile(Alloy.getAlloyConfigFilePath());
+            String content =
+                    getContentFromConfigFile(
+                            DeveloperToolConfiguration.getDeveloperToolConfigurationFilePath());
 
             if (content == null || content.isEmpty()) {
                 return;
             }
 
-            RegionAlloySchema regionAlloySchema =
-                    JsonConverter.jsonBlobToObject(content, RegionAlloySchema.class);
+            RegionDeveloperToolConfigurationSchema regionDeveloperToolConfigurationSchema =
+                    JsonConverter.jsonBlobToObject(
+                            content, RegionDeveloperToolConfigurationSchema.class);
 
-            List<RegionSchema> regionSchemas = regionAlloySchema.getRegions();
+            List<RegionSchema> regionSchemas = regionDeveloperToolConfigurationSchema.getRegions();
 
             if (regionSchemas != null && regionSchemas.size() != 0) {
                 for (RegionSchema regionSchema : regionSchemas) {
@@ -898,22 +912,30 @@ public final class Region implements Serializable, Comparable<Region> {
                     }
                 }
             }
-            if (regionAlloySchema.getProvider() != null) {
-                OCI_ALLOY_CONFIG_PROVIDER = regionAlloySchema.getProvider();
+            if (regionDeveloperToolConfigurationSchema.getProvider() != null) {
+                OCI_DEVELOPER_TOOL_CONFIG_PROVIDER =
+                        regionDeveloperToolConfigurationSchema.getProvider();
             }
-            if (regionAlloySchema.getOciRegionCoexist() != null) {
-                IS_ALLOY_REGION_COEXIST_ENABLED =
+            if (regionDeveloperToolConfigurationSchema
+                            .getAllowOnlyDeveloperToolConfigurationRegions()
+                    != null) {
+                IS_DEVELOPER_TOOL_CONFIG_REGION_COEXIST_ENABLED =
                         StringUtils.equalsIgnoreCase(
-                                regionAlloySchema.getOciRegionCoexist(), "true");
+                                regionDeveloperToolConfigurationSchema
+                                        .getAllowOnlyDeveloperToolConfigurationRegions(),
+                                "true");
                 LOG.info(
-                        "ociRegionCoexist is set to '{}' in the Alloy configuration file {}",
-                        IS_ALLOY_REGION_COEXIST_ENABLED,
-                        Paths.get(FileUtils.expandUserHome(Alloy.getAlloyConfigFilePath())));
+                        "ociRegionCoexist is set to '{}' in the DeveloperToolConfiguration configuration file {}",
+                        IS_DEVELOPER_TOOL_CONFIG_REGION_COEXIST_ENABLED,
+                        Paths.get(
+                                FileUtils.expandUserHome(
+                                        DeveloperToolConfiguration
+                                                .getDeveloperToolConfigurationFilePath())));
             }
             writeLock.lock();
             try {
                 OCI_SDK_ENABLED_SERVICES_SET.addAll(
-                        regionAlloySchema.getServices().stream()
+                        regionDeveloperToolConfigurationSchema.getServices().stream()
                                 .map(str -> str.toLowerCase())
                                 .map(str -> str.replaceAll("[^a-z]", ""))
                                 .collect(Collectors.toSet()));
@@ -923,8 +945,11 @@ public final class Region implements Serializable, Comparable<Region> {
 
         } catch (Exception e) {
             LOG.warn(
-                    "Exception in reading or parsing {} to fetch config from the Alloy configuration file ",
-                    Paths.get(FileUtils.expandUserHome(Alloy.getAlloyConfigFilePath())),
+                    "Exception in reading or parsing {} to fetch config from the DeveloperToolConfiguration configuration file ",
+                    Paths.get(
+                            FileUtils.expandUserHome(
+                                    DeveloperToolConfiguration
+                                            .getDeveloperToolConfigurationFilePath())),
                     e);
         }
     }
@@ -1032,8 +1057,8 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * If Alloy config exists, read the config and check if service is enabled. If Alloy config
-     * doesn't exist, return true.
+     * If DeveloperToolConfiguration config exists, read the config and check if service is enabled.
+     * If DeveloperToolConfiguration config doesn't exist, return true.
      *
      * @param serviceName
      * @return true if service is enabled or else false.
@@ -1041,10 +1066,10 @@ public final class Region implements Serializable, Comparable<Region> {
     public static boolean isServiceEnabled(String serviceName) {
         writeLock.lock();
         try {
-            if (!hasUsedAlloyConfigFile
-                    && Alloy.doesAlloyConfigExist()
+            if (!hasUsedDeveloperToolConfiFile
+                    && DeveloperToolConfiguration.doesDeveloperToolConfigurationExist()
                     && OCI_SDK_ENABLED_SERVICES_SET.isEmpty()) {
-                readAlloyRegionConfigFile();
+                readDeveloperToolConfigurationFile();
             }
 
             if (OCI_SDK_ENABLED_SERVICES_SET.isEmpty()) {
@@ -1059,22 +1084,22 @@ public final class Region implements Serializable, Comparable<Region> {
 
     @InternalSdk
     @VisibleForTesting
-    static void resetAlloyConfiguration() {
+    static void resetDeveloperToolConfiguration() {
         writeLock.lock();
         try {
             ALL_REGIONS
                     .keySet()
                     .removeIf(
                             key ->
-                                    (ALLOY_REGIONS.containsKey(key)
+                                    (DEVELOPER_TOOL_CONFIG_REGIONS.containsKey(key)
                                             && !KNOWN_REGIONS.containsKey(key)));
-            ALLOY_REGIONS.clear();
-            Realm.clearAlloyRealms();
-            hasUsedAlloyConfigFile = false;
+            DEVELOPER_TOOL_CONFIG_REGIONS.clear();
+            Realm.clearDeveloperToolConfigurationRealms();
+            hasUsedDeveloperToolConfiFile = false;
             OCI_SDK_ENABLED_SERVICES_SET.clear();
             hasUsedEnvVar = false;
-            IS_ALLOY_REGION_COEXIST_ENABLED = false;
-            Alloy.resetAlloyRegionCoexistStatus();
+            IS_DEVELOPER_TOOL_CONFIG_REGION_COEXIST_ENABLED = false;
+            DeveloperToolConfiguration.resetAllowOnlyDevToolConfigRegionsStatus();
         } finally {
             writeLock.unlock();
         }
@@ -1213,8 +1238,8 @@ public final class Region implements Serializable, Comparable<Region> {
         return this.realm;
     }
 
-    /** Return the Alloy region coexist status. */
-    public static boolean isAlloyRegionCoexistEnabled() {
-        return IS_ALLOY_REGION_COEXIST_ENABLED;
+    /** Return the DeveloperToolConfiguration region coexist status. */
+    public static boolean isDeveloperToolConfigCoexistEnabled() {
+        return IS_DEVELOPER_TOOL_CONFIG_REGION_COEXIST_ENABLED;
     }
 }

@@ -13,7 +13,8 @@ import com.oracle.bmc.integration.model.*;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 public class RemoveLogAnalyticsLogGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails> {
 
     /** Unique Integration Instance identifier. */
     private String integrationInstanceId;
@@ -21,6 +22,21 @@ public class RemoveLogAnalyticsLogGroupRequest
     /** Unique Integration Instance identifier. */
     public String getIntegrationInstanceId() {
         return integrationInstanceId;
+    }
+    /**
+     * Details to remove Log Group for given integration instance or Process Automation attached to
+     * integration instance.
+     */
+    private com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails
+            removeLogAnalyticsLogGroupDetails;
+
+    /**
+     * Details to remove Log Group for given integration instance or Process Automation attached to
+     * integration instance.
+     */
+    public com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails
+            getRemoveLogAnalyticsLogGroupDetails() {
+        return removeLogAnalyticsLogGroupDetails;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
@@ -66,9 +82,21 @@ public class RemoveLogAnalyticsLogGroupRequest
         return opcRetryToken;
     }
 
+    /**
+     * Alternative accessor for the body parameter.
+     *
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails getBody$() {
+        return removeLogAnalyticsLogGroupDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveLogAnalyticsLogGroupRequest, java.lang.Void> {
+                    RemoveLogAnalyticsLogGroupRequest,
+                    com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
@@ -83,6 +111,27 @@ public class RemoveLogAnalyticsLogGroupRequest
          */
         public Builder integrationInstanceId(String integrationInstanceId) {
             this.integrationInstanceId = integrationInstanceId;
+            return this;
+        }
+
+        /**
+         * Details to remove Log Group for given integration instance or Process Automation attached
+         * to integration instance.
+         */
+        private com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails
+                removeLogAnalyticsLogGroupDetails = null;
+
+        /**
+         * Details to remove Log Group for given integration instance or Process Automation attached
+         * to integration instance.
+         *
+         * @param removeLogAnalyticsLogGroupDetails the value to set
+         * @return this builder instance
+         */
+        public Builder removeLogAnalyticsLogGroupDetails(
+                com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails
+                        removeLogAnalyticsLogGroupDetails) {
+            this.removeLogAnalyticsLogGroupDetails = removeLogAnalyticsLogGroupDetails;
             return this;
         }
 
@@ -177,6 +226,7 @@ public class RemoveLogAnalyticsLogGroupRequest
          */
         public Builder copy(RemoveLogAnalyticsLogGroupRequest o) {
             integrationInstanceId(o.getIntegrationInstanceId());
+            removeLogAnalyticsLogGroupDetails(o.getRemoveLogAnalyticsLogGroupDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
@@ -204,6 +254,19 @@ public class RemoveLogAnalyticsLogGroupRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         *
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.integration.model.RemoveLogAnalyticsLogGroupDetails body) {
+            removeLogAnalyticsLogGroupDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RemoveLogAnalyticsLogGroupRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
@@ -215,12 +278,13 @@ public class RemoveLogAnalyticsLogGroupRequest
         public RemoveLogAnalyticsLogGroupRequest buildWithoutInvocationCallback() {
             RemoveLogAnalyticsLogGroupRequest request = new RemoveLogAnalyticsLogGroupRequest();
             request.integrationInstanceId = integrationInstanceId;
+            request.removeLogAnalyticsLogGroupDetails = removeLogAnalyticsLogGroupDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new RemoveLogAnalyticsLogGroupRequest(integrationInstanceId, ifMatch, opcRequestId,
-            // opcRetryToken);
+            // new RemoveLogAnalyticsLogGroupRequest(integrationInstanceId,
+            // removeLogAnalyticsLogGroupDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
@@ -232,6 +296,7 @@ public class RemoveLogAnalyticsLogGroupRequest
     public Builder toBuilder() {
         return new Builder()
                 .integrationInstanceId(integrationInstanceId)
+                .removeLogAnalyticsLogGroupDetails(removeLogAnalyticsLogGroupDetails)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken);
@@ -252,6 +317,8 @@ public class RemoveLogAnalyticsLogGroupRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",integrationInstanceId=").append(String.valueOf(this.integrationInstanceId));
+        sb.append(",removeLogAnalyticsLogGroupDetails=")
+                .append(String.valueOf(this.removeLogAnalyticsLogGroupDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
@@ -271,6 +338,9 @@ public class RemoveLogAnalyticsLogGroupRequest
         RemoveLogAnalyticsLogGroupRequest other = (RemoveLogAnalyticsLogGroupRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.integrationInstanceId, other.integrationInstanceId)
+                && java.util.Objects.equals(
+                        this.removeLogAnalyticsLogGroupDetails,
+                        other.removeLogAnalyticsLogGroupDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
@@ -285,6 +355,11 @@ public class RemoveLogAnalyticsLogGroupRequest
                         + (this.integrationInstanceId == null
                                 ? 43
                                 : this.integrationInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.removeLogAnalyticsLogGroupDetails == null
+                                ? 43
+                                : this.removeLogAnalyticsLogGroupDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =

@@ -786,6 +786,7 @@ public final class SteeringPolicySummary
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Creating("CREATING"),
+        Updating("UPDATING"),
         Deleted("DELETED"),
         Deleting("DELETING"),
 

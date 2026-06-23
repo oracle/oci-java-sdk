@@ -32,7 +32,8 @@ public final class AutonomousDatabaseStandbySummary
         "timeMaintenanceBegin",
         "timeMaintenanceEnd",
         "maintenanceTargetComponent",
-        "availabilityDomain"
+        "availabilityDomain",
+        "externalLocationZone"
     })
     public AutonomousDatabaseStandbySummary(
             Integer lagTimeInSeconds,
@@ -43,7 +44,8 @@ public final class AutonomousDatabaseStandbySummary
             java.util.Date timeMaintenanceBegin,
             java.util.Date timeMaintenanceEnd,
             String maintenanceTargetComponent,
-            String availabilityDomain) {
+            String availabilityDomain,
+            String externalLocationZone) {
         super();
         this.lagTimeInSeconds = lagTimeInSeconds;
         this.lifecycleState = lifecycleState;
@@ -54,6 +56,7 @@ public final class AutonomousDatabaseStandbySummary
         this.timeMaintenanceEnd = timeMaintenanceEnd;
         this.maintenanceTargetComponent = maintenanceTargetComponent;
         this.availabilityDomain = availabilityDomain;
+        this.externalLocationZone = externalLocationZone;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -212,6 +215,25 @@ public final class AutonomousDatabaseStandbySummary
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
+        /**
+         * The external logical zone where the local Autonomous Data Guard is located (Intended for
+         * multicloud use).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("externalLocationZone")
+        private String externalLocationZone;
+
+        /**
+         * The external logical zone where the local Autonomous Data Guard is located (Intended for
+         * multicloud use).
+         *
+         * @param externalLocationZone the value to set
+         * @return this builder
+         */
+        public Builder externalLocationZone(String externalLocationZone) {
+            this.externalLocationZone = externalLocationZone;
+            this.__explicitlySet__.add("externalLocationZone");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -227,7 +249,8 @@ public final class AutonomousDatabaseStandbySummary
                             this.timeMaintenanceBegin,
                             this.timeMaintenanceEnd,
                             this.maintenanceTargetComponent,
-                            this.availabilityDomain);
+                            this.availabilityDomain,
+                            this.externalLocationZone);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -262,6 +285,9 @@ public final class AutonomousDatabaseStandbySummary
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("externalLocationZone")) {
+                this.externalLocationZone(model.getExternalLocationZone());
             }
             return this;
         }
@@ -477,6 +503,23 @@ public final class AutonomousDatabaseStandbySummary
         return availabilityDomain;
     }
 
+    /**
+     * The external logical zone where the local Autonomous Data Guard is located (Intended for
+     * multicloud use).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("externalLocationZone")
+    private final String externalLocationZone;
+
+    /**
+     * The external logical zone where the local Autonomous Data Guard is located (Intended for
+     * multicloud use).
+     *
+     * @return the value
+     */
+    public String getExternalLocationZone() {
+        return externalLocationZone;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -504,6 +547,7 @@ public final class AutonomousDatabaseStandbySummary
         sb.append(", maintenanceTargetComponent=")
                 .append(String.valueOf(this.maintenanceTargetComponent));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", externalLocationZone=").append(String.valueOf(this.externalLocationZone));
         sb.append(")");
         return sb.toString();
     }
@@ -530,6 +574,7 @@ public final class AutonomousDatabaseStandbySummary
                 && java.util.Objects.equals(
                         this.maintenanceTargetComponent, other.maintenanceTargetComponent)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.externalLocationZone, other.externalLocationZone)
                 && super.equals(other);
     }
 
@@ -576,6 +621,11 @@ public final class AutonomousDatabaseStandbySummary
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalLocationZone == null
+                                ? 43
+                                : this.externalLocationZone.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

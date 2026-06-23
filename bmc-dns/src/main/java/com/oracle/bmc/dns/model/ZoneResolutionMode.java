@@ -7,13 +7,22 @@ package com.oracle.bmc.dns.model;
 /**
  * The resolution mode of a zone defines behavior related to how query responses can be handled.
  *
- * <p>Static - This is the default behavior. Transparent - Continue resolution if, and only if, the
- * response is NXDOMAIN for any domain or NODATA at the apex. Only supported for private zones.
- * RTypeTransparent - Continue resolution if, and only if, the response is NXDOMAIN or NODATA. Only
- * supported for private zones.
+ * <p>- Static: This is the default behavior. If a private zone covers a query name, an NXDOMAIN is
+ * returned if the query name isn't present in the zone. A NoData response is returned if the name
+ * is present but there is no data for the specific query type requested. - Transparent: If the
+ * queried domain is covered by the zone, but the domain doesn't exist in the zone or the queried
+ * domain matches the zone name but no records of the queried type exist, continue to the next
+ * evaluation for the resolver following the normal sequence for checking query resolution. This
+ * effectively bypasses NXDOMAIN responses at all domains and NoData responses specifically at the
+ * apex. - RTypeTransparent: If the queried domain is covered by the zone, but the queried domain
+ * doesn't exist in the zone or the queried domain exists in the zone but not for the requested
+ * record type, continue to the next evaluation for the resolver following the normal sequence for
+ * checking query resolution. This effectively bypasses NXDOMAIN and NoData responses at all
+ * domains.
  *
- * <p>For private DNS, continue resolution means moving on to the next evaluation for the resolver
- * following the normal sequence for checking query resolution.
+ * <p>See [Private DNS Zone
+ * Transparency](https://docs.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution)
+ * for examples.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public enum ZoneResolutionMode implements com.oracle.bmc.http.internal.BmcEnum {

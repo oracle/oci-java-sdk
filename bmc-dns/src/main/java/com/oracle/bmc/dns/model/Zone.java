@@ -231,14 +231,18 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * The resolution mode of a zone defines behavior related to how query responses can be
-         * handled.
+         * handled. See [Private DNS Zone
+         * Transparency](https://docs.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution)
+         * for more information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("resolutionMode")
         private ZoneResolutionMode resolutionMode;
 
         /**
          * The resolution mode of a zone defines behavior related to how query responses can be
-         * handled.
+         * handled. See [Private DNS Zone
+         * Transparency](https://docs.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution)
+         * for more information.
          *
          * @param resolutionMode the value to set
          * @return this builder
@@ -803,12 +807,18 @@ public final class Zone extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * See [Private DNS Zone
+     * Transparency](https://docs.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution)
+     * for more information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("resolutionMode")
     private final ZoneResolutionMode resolutionMode;
 
     /**
      * The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * See [Private DNS Zone
+     * Transparency](https://docs.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution)
+     * for more information.
      *
      * @return the value
      */

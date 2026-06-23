@@ -81,7 +81,8 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "databasetoolsruntime";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -134,7 +135,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("DatabaseToolsRuntime", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20230222")
@@ -163,7 +167,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, CreateCredentialResponse::builder)
                 .logger(LOG, "createCredential")
-                .serviceDetails("DatabaseToolsRuntime", "CreateCredential", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "CreateCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/CreateCredential")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCredentialRequest::builder)
                 .basePath("/20230222")
@@ -203,7 +210,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, CreateCredentialExecuteGranteeResponse::builder)
                 .logger(LOG, "createCredentialExecuteGrantee")
-                .serviceDetails("DatabaseToolsRuntime", "CreateCredentialExecuteGrantee", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "CreateCredentialExecuteGrantee",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/CreateCredentialExecuteGrantee")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCredentialExecuteGranteeRequest::builder)
                 .basePath("/20230222")
@@ -247,7 +257,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, CreateCredentialPublicSynonymResponse::builder)
                 .logger(LOG, "createCredentialPublicSynonym")
-                .serviceDetails("DatabaseToolsRuntime", "CreateCredentialPublicSynonym", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "CreateCredentialPublicSynonym",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/CreateCredentialPublicSynonym")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCredentialPublicSynonymRequest::builder)
                 .basePath("/20230222")
@@ -292,7 +305,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "CreateDatabaseToolsDatabaseApiGatewayConfigPool",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/CreateDatabaseToolsDatabaseApiGatewayConfigPool")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDatabaseToolsDatabaseApiGatewayConfigPoolRequest::builder)
                 .basePath("/20230222")
@@ -347,7 +360,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "CreateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/CreateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(
                         CreateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecRequest::builder)
@@ -407,7 +420,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "CreateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/CreateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(
                         CreateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecRequest::builder)
@@ -456,7 +469,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, DeleteCredentialResponse::builder)
                 .logger(LOG, "deleteCredential")
-                .serviceDetails("DatabaseToolsRuntime", "DeleteCredential", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "DeleteCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/DeleteCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCredentialRequest::builder)
                 .basePath("/20230222")
@@ -491,7 +507,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, DeleteCredentialExecuteGranteeResponse::builder)
                 .logger(LOG, "deleteCredentialExecuteGrantee")
-                .serviceDetails("DatabaseToolsRuntime", "DeleteCredentialExecuteGrantee", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "DeleteCredentialExecuteGrantee",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/DeleteCredentialExecuteGrantee")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCredentialExecuteGranteeRequest::builder)
                 .basePath("/20230222")
@@ -529,7 +548,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, DeleteCredentialPublicSynonymResponse::builder)
                 .logger(LOG, "deleteCredentialPublicSynonym")
-                .serviceDetails("DatabaseToolsRuntime", "DeleteCredentialPublicSynonym", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "DeleteCredentialPublicSynonym",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/DeleteCredentialPublicSynonym")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCredentialPublicSynonymRequest::builder)
                 .basePath("/20230222")
@@ -568,7 +590,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "DeleteDatabaseToolsDatabaseApiGatewayConfigPool",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPool")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsDatabaseApiGatewayConfigPoolRequest::builder)
                 .basePath("/20230222")
@@ -611,7 +633,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "DeleteDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(
                         DeleteDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecRequest::builder)
@@ -657,7 +679,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "DeleteDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(
                         DeleteDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecRequest::builder)
@@ -696,7 +718,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ExecuteSqlDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "executeSqlDatabaseToolsConnection")
-                .serviceDetails("DatabaseToolsRuntime", "ExecuteSqlDatabaseToolsConnection", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ExecuteSqlDatabaseToolsConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/ExecuteSqlDatabaseToolsConnection")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ExecuteSqlDatabaseToolsConnectionRequest::builder)
                 .basePath("/20230222")
@@ -734,7 +759,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetCredentialResponse::builder)
                 .logger(LOG, "getCredential")
-                .serviceDetails("DatabaseToolsRuntime", "GetCredential", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "GetCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/GetCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCredentialRequest::builder)
                 .basePath("/20230222")
@@ -772,7 +800,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetCredentialExecuteGranteeResponse::builder)
                 .logger(LOG, "getCredentialExecuteGrantee")
-                .serviceDetails("DatabaseToolsRuntime", "GetCredentialExecuteGrantee", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "GetCredentialExecuteGrantee",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/GetCredentialExecuteGrantee")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCredentialExecuteGranteeRequest::builder)
                 .basePath("/20230222")
@@ -812,7 +843,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetCredentialPublicSynonymResponse::builder)
                 .logger(LOG, "getCredentialPublicSynonym")
-                .serviceDetails("DatabaseToolsRuntime", "GetCredentialPublicSynonym", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "GetCredentialPublicSynonym",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/GetCredentialPublicSynonym")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCredentialPublicSynonymRequest::builder)
                 .basePath("/20230222")
@@ -851,7 +885,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigContent",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/GetDatabaseToolsDatabaseApiGatewayConfigContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsDatabaseApiGatewayConfigContentRequest::builder)
                 .basePath("/20230222")
@@ -896,7 +930,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigGlobal",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigGlobal/GetDatabaseToolsDatabaseApiGatewayConfigGlobal")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsDatabaseApiGatewayConfigGlobalRequest::builder)
                 .basePath("/20230222")
@@ -940,7 +974,9 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
         return clientCall(request, GetDatabaseToolsDatabaseApiGatewayConfigPoolResponse::builder)
                 .logger(LOG, "getDatabaseToolsDatabaseApiGatewayConfigPool")
                 .serviceDetails(
-                        "DatabaseToolsRuntime", "GetDatabaseToolsDatabaseApiGatewayConfigPool", "")
+                        "DatabaseToolsRuntime",
+                        "GetDatabaseToolsDatabaseApiGatewayConfigPool",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/GetDatabaseToolsDatabaseApiGatewayConfigPool")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsDatabaseApiGatewayConfigPoolRequest::builder)
                 .basePath("/20230222")
@@ -988,7 +1024,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/GetDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecRequest::builder)
                 .basePath("/20230222")
@@ -1041,7 +1077,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/GetDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(
                         GetDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecRequest::builder)
@@ -1087,7 +1123,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetPropertySetResponse::builder)
                 .logger(LOG, "getPropertySet")
-                .serviceDetails("DatabaseToolsRuntime", "GetPropertySet", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "GetPropertySet",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/PropertySet/GetPropertySet")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPropertySetRequest::builder)
                 .basePath("/20230222")
@@ -1123,7 +1162,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetUserCredentialResponse::builder)
                 .logger(LOG, "getUserCredential")
-                .serviceDetails("DatabaseToolsRuntime", "GetUserCredential", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "GetUserCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/UserCredential/GetUserCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetUserCredentialRequest::builder)
                 .basePath("/20230222")
@@ -1155,7 +1197,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("DatabaseToolsRuntime", "GetWorkRequest", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20230222")
@@ -1191,7 +1236,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListCredentialExecuteGranteesResponse::builder)
                 .logger(LOG, "listCredentialExecuteGrantees")
-                .serviceDetails("DatabaseToolsRuntime", "ListCredentialExecuteGrantees", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ListCredentialExecuteGrantees",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGranteeCollection/ListCredentialExecuteGrantees")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCredentialExecuteGranteesRequest::builder)
                 .basePath("/20230222")
@@ -1236,7 +1284,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListCredentialPublicSynonymsResponse::builder)
                 .logger(LOG, "listCredentialPublicSynonyms")
-                .serviceDetails("DatabaseToolsRuntime", "ListCredentialPublicSynonyms", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ListCredentialPublicSynonyms",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonymCollection/ListCredentialPublicSynonyms")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCredentialPublicSynonymsRequest::builder)
                 .basePath("/20230222")
@@ -1277,7 +1328,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListCredentialsResponse::builder)
                 .logger(LOG, "listCredentials")
-                .serviceDetails("DatabaseToolsRuntime", "ListCredentials", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ListCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialCollection/ListCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCredentialsRequest::builder)
                 .basePath("/20230222")
@@ -1318,7 +1372,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummary/ListDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(
                         ListDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesRequest::builder)
@@ -1366,7 +1420,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(
                         ListDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsRequest::builder)
@@ -1422,7 +1476,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(
                         ListDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsRequest::builder)
@@ -1474,7 +1528,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigPools",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPools")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsDatabaseApiGatewayConfigPoolsRequest::builder)
                 .basePath("/20230222")
@@ -1518,7 +1572,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListUserCredentialsResponse::builder)
                 .logger(LOG, "listUserCredentials")
-                .serviceDetails("DatabaseToolsRuntime", "ListUserCredentials", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ListUserCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/UserCredentialCollection/ListUserCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUserCredentialsRequest::builder)
                 .basePath("/20230222")
@@ -1554,7 +1611,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("DatabaseToolsRuntime", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20230222")
@@ -1588,7 +1648,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("DatabaseToolsRuntime", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20230222")
@@ -1622,7 +1685,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("DatabaseToolsRuntime", "ListWorkRequests", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20230222")
@@ -1671,7 +1737,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, UpdateCredentialResponse::builder)
                 .logger(LOG, "updateCredential")
-                .serviceDetails("DatabaseToolsRuntime", "UpdateCredential", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "UpdateCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/UpdateCredential")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCredentialRequest::builder)
                 .basePath("/20230222")
@@ -1715,7 +1784,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigGlobal",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigGlobal/UpdateDatabaseToolsDatabaseApiGatewayConfigGlobal")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsDatabaseApiGatewayConfigGlobalRequest::builder)
                 .basePath("/20230222")
@@ -1765,7 +1834,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigPool",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/UpdateDatabaseToolsDatabaseApiGatewayConfigPool")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsDatabaseApiGatewayConfigPoolRequest::builder)
                 .basePath("/20230222")
@@ -1820,7 +1889,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/UpdateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(
                         UpdateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecRequest::builder)
@@ -1879,7 +1948,7 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/UpdateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(
                         UpdateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecRequest::builder)
@@ -1928,7 +1997,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, UpdatePropertySetResponse::builder)
                 .logger(LOG, "updatePropertySet")
-                .serviceDetails("DatabaseToolsRuntime", "UpdatePropertySet", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "UpdatePropertySet",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/PropertySet/UpdatePropertySet")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePropertySetRequest::builder)
                 .basePath("/20230222")
@@ -1966,7 +2038,10 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ValidateDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "validateDatabaseToolsConnection")
-                .serviceDetails("DatabaseToolsRuntime", "ValidateDatabaseToolsConnection", "")
+                .serviceDetails(
+                        "DatabaseToolsRuntime",
+                        "ValidateDatabaseToolsConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/ValidateDatabaseToolsConnection")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDatabaseToolsConnectionRequest::builder)
                 .basePath("/20230222")
@@ -2007,7 +2082,9 @@ public class DatabaseToolsRuntimeAsyncClient extends com.oracle.bmc.http.interna
         return clientCall(request, ValidateDatabaseToolsIdentityCredentialResponse::builder)
                 .logger(LOG, "validateDatabaseToolsIdentityCredential")
                 .serviceDetails(
-                        "DatabaseToolsRuntime", "ValidateDatabaseToolsIdentityCredential", "")
+                        "DatabaseToolsRuntime",
+                        "ValidateDatabaseToolsIdentityCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDatabaseToolsIdentityCredentialRequest::builder)
                 .basePath("/20230222")

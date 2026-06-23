@@ -81,7 +81,8 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "databasetools";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -134,7 +135,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsConnectionLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsConnectionLock")
-                .serviceDetails("DatabaseTools", "AddDatabaseToolsConnectionLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsConnectionLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsConnectionLockRequest::builder)
                 .basePath("/20201005")
@@ -170,7 +174,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsDatabaseApiGatewayConfigLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsDatabaseApiGatewayConfigLock")
-                .serviceDetails("DatabaseTools", "AddDatabaseToolsDatabaseApiGatewayConfigLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsDatabaseApiGatewayConfigLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/AddDatabaseToolsDatabaseApiGatewayConfigLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsDatabaseApiGatewayConfigLockRequest::builder)
                 .basePath("/20201005")
@@ -206,7 +213,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsIdentityLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsIdentityLock")
-                .serviceDetails("DatabaseTools", "AddDatabaseToolsIdentityLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsIdentityLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/AddDatabaseToolsIdentityLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsIdentityLockRequest::builder)
                 .basePath("/20201005")
@@ -241,7 +251,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsMcpServerLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsMcpServerLock")
-                .serviceDetails("DatabaseTools", "AddDatabaseToolsMcpServerLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsMcpServerLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/AddDatabaseToolsMcpServerLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsMcpServerLockRequest::builder)
                 .basePath("/20201005")
@@ -276,7 +289,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsMcpToolsetLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsMcpToolsetLock")
-                .serviceDetails("DatabaseTools", "AddDatabaseToolsMcpToolsetLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsMcpToolsetLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/AddDatabaseToolsMcpToolsetLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsMcpToolsetLockRequest::builder)
                 .basePath("/20201005")
@@ -311,7 +327,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsPrivateEndpointLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsPrivateEndpointLock")
-                .serviceDetails("DatabaseTools", "AddDatabaseToolsPrivateEndpointLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsPrivateEndpointLockRequest::builder)
                 .basePath("/20201005")
@@ -347,7 +366,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, AddDatabaseToolsSqlReportLockResponse::builder)
                 .logger(LOG, "addDatabaseToolsSqlReportLock")
-                .serviceDetails("DatabaseTools", "AddDatabaseToolsSqlReportLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "AddDatabaseToolsSqlReportLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/AddDatabaseToolsSqlReportLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDatabaseToolsSqlReportLockRequest::builder)
                 .basePath("/20201005")
@@ -380,7 +402,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, CascadingDeleteDatabaseToolsMcpServerResponse::builder)
                 .logger(LOG, "cascadingDeleteDatabaseToolsMcpServer")
-                .serviceDetails("DatabaseTools", "CascadingDeleteDatabaseToolsMcpServer", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "CascadingDeleteDatabaseToolsMcpServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/CascadingDeleteDatabaseToolsMcpServer")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CascadingDeleteDatabaseToolsMcpServerRequest::builder)
                 .basePath("/20201005")
@@ -414,7 +439,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeDatabaseToolsConnectionCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsConnectionCompartment")
-                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsConnectionCompartment", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsConnectionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsConnectionCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -455,7 +483,7 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .serviceDetails(
                         "DatabaseTools",
                         "ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(
                         ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentRequest::builder)
@@ -488,7 +516,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeDatabaseToolsIdentityCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsIdentityCompartment")
-                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsIdentityCompartment", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsIdentityCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ChangeDatabaseToolsIdentityCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsIdentityCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -523,7 +554,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeDatabaseToolsMcpServerCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsMcpServerCompartment")
-                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsMcpServerCompartment", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsMcpServerCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/ChangeDatabaseToolsMcpServerCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsMcpServerCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -559,7 +593,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeDatabaseToolsMcpToolsetCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsMcpToolsetCompartment")
-                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsMcpToolsetCompartment", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsMcpToolsetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/ChangeDatabaseToolsMcpToolsetCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsMcpToolsetCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -593,7 +630,9 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
         return clientCall(request, ChangeDatabaseToolsPrivateEndpointCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsPrivateEndpointCompartment")
                 .serviceDetails(
-                        "DatabaseTools", "ChangeDatabaseToolsPrivateEndpointCompartment", "")
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsPrivateEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsPrivateEndpointCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -629,7 +668,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ChangeDatabaseToolsSqlReportCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseToolsSqlReportCompartment")
-                .serviceDetails("DatabaseTools", "ChangeDatabaseToolsSqlReportCompartment", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ChangeDatabaseToolsSqlReportCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/ChangeDatabaseToolsSqlReportCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseToolsSqlReportCompartmentRequest::builder)
                 .basePath("/20201005")
@@ -693,7 +735,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, CreateDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
                 .logger(LOG, "createDatabaseToolsDatabaseApiGatewayConfig")
-                .serviceDetails("DatabaseTools", "CreateDatabaseToolsDatabaseApiGatewayConfig", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsDatabaseApiGatewayConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/CreateDatabaseToolsDatabaseApiGatewayConfig")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
                 .basePath("/20201005")
@@ -868,7 +913,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, CreateDatabaseToolsSqlReportResponse::builder)
                 .logger(LOG, "createDatabaseToolsSqlReport")
-                .serviceDetails("DatabaseTools", "CreateDatabaseToolsSqlReport", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "CreateDatabaseToolsSqlReport",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/CreateDatabaseToolsSqlReport")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDatabaseToolsSqlReportRequest::builder)
                 .basePath("/20201005")
@@ -904,7 +952,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsConnection")
-                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsConnection", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -934,7 +985,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsDatabaseApiGatewayConfig")
-                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsDatabaseApiGatewayConfig", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsDatabaseApiGatewayConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfig")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
                 .basePath("/20201005")
@@ -959,7 +1013,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsIdentityResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsIdentity")
-                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsIdentity", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsIdentity",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/DeleteDatabaseToolsIdentity")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsIdentityRequest::builder)
                 .basePath("/20201005")
@@ -987,7 +1044,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsMcpServerResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsMcpServer")
-                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsMcpServer", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsMcpServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/DeleteDatabaseToolsMcpServer")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsMcpServerRequest::builder)
                 .basePath("/20201005")
@@ -1016,7 +1076,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsMcpToolsetResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsMcpToolset")
-                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsMcpToolset", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsMcpToolset",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/DeleteDatabaseToolsMcpToolset")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsMcpToolsetRequest::builder)
                 .basePath("/20201005")
@@ -1045,7 +1108,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsPrivateEndpointResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsPrivateEndpoint")
-                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsPrivateEndpoint", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsPrivateEndpointRequest::builder)
                 .basePath("/20201005")
@@ -1074,7 +1140,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, DeleteDatabaseToolsSqlReportResponse::builder)
                 .logger(LOG, "deleteDatabaseToolsSqlReport")
-                .serviceDetails("DatabaseTools", "DeleteDatabaseToolsSqlReport", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "DeleteDatabaseToolsSqlReport",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/DeleteDatabaseToolsSqlReport")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseToolsSqlReportRequest::builder)
                 .basePath("/20201005")
@@ -1100,7 +1169,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "getDatabaseToolsConnection")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsConnection", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -1130,7 +1202,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
                 .logger(LOG, "getDatabaseToolsDatabaseApiGatewayConfig")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsDatabaseApiGatewayConfig", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsDatabaseApiGatewayConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/GetDatabaseToolsDatabaseApiGatewayConfig")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
                 .basePath("/20201005")
@@ -1162,7 +1237,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsEndpointServiceResponse::builder)
                 .logger(LOG, "getDatabaseToolsEndpointService")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsEndpointService", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsEndpointService",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsEndpointServiceRequest::builder)
                 .basePath("/20201005")
@@ -1192,7 +1270,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsIdentityResponse::builder)
                 .logger(LOG, "getDatabaseToolsIdentity")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsIdentity", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsIdentity",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/GetDatabaseToolsIdentity")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsIdentityRequest::builder)
                 .basePath("/20201005")
@@ -1220,7 +1301,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsMcpServerResponse::builder)
                 .logger(LOG, "getDatabaseToolsMcpServer")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsMcpServer", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsMcpServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/GetDatabaseToolsMcpServer")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsMcpServerRequest::builder)
                 .basePath("/20201005")
@@ -1248,7 +1332,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsMcpToolsetResponse::builder)
                 .logger(LOG, "getDatabaseToolsMcpToolset")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsMcpToolset", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsMcpToolset",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/GetDatabaseToolsMcpToolset")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsMcpToolsetRequest::builder)
                 .basePath("/20201005")
@@ -1277,7 +1364,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsPrivateEndpointResponse::builder)
                 .logger(LOG, "getDatabaseToolsPrivateEndpoint")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsPrivateEndpoint", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsPrivateEndpointRequest::builder)
                 .basePath("/20201005")
@@ -1308,7 +1398,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetDatabaseToolsSqlReportResponse::builder)
                 .logger(LOG, "getDatabaseToolsSqlReport")
-                .serviceDetails("DatabaseTools", "GetDatabaseToolsSqlReport", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetDatabaseToolsSqlReport",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/GetDatabaseToolsSqlReport")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseToolsSqlReportRequest::builder)
                 .basePath("/20201005")
@@ -1333,7 +1426,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("DatabaseTools", "GetWorkRequest", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20201005")
@@ -1359,7 +1455,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsConnectionsResponse::builder)
                 .logger(LOG, "listDatabaseToolsConnections")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsConnections", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsConnections",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsConnectionsRequest::builder)
                 .basePath("/20201005")
@@ -1408,7 +1507,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsDatabaseApiGatewayConfigsResponse::builder)
                 .logger(LOG, "listDatabaseToolsDatabaseApiGatewayConfigs")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsDatabaseApiGatewayConfigs", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsDatabaseApiGatewayConfigs",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsDatabaseApiGatewayConfigsRequest::builder)
                 .basePath("/20201005")
@@ -1448,7 +1550,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsEndpointServicesResponse::builder)
                 .logger(LOG, "listDatabaseToolsEndpointServices")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsEndpointServices", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsEndpointServices",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsEndpointServicesRequest::builder)
                 .basePath("/20201005")
@@ -1485,7 +1590,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsIdentitiesResponse::builder)
                 .logger(LOG, "listDatabaseToolsIdentities")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsIdentities", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsIdentities",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ListDatabaseToolsIdentities")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsIdentitiesRequest::builder)
                 .basePath("/20201005")
@@ -1524,7 +1632,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsMcpServersResponse::builder)
                 .logger(LOG, "listDatabaseToolsMcpServers")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsMcpServers", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsMcpServers",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/ListDatabaseToolsMcpServers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsMcpServersRequest::builder)
                 .basePath("/20201005")
@@ -1565,7 +1676,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsMcpToolsetVersionsResponse::builder)
                 .logger(LOG, "listDatabaseToolsMcpToolsetVersions")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsMcpToolsetVersions", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsMcpToolsetVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolsetVersionCollection/ListDatabaseToolsMcpToolsetVersions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsMcpToolsetVersionsRequest::builder)
                 .basePath("/20201005")
@@ -1597,7 +1711,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsMcpToolsetsResponse::builder)
                 .logger(LOG, "listDatabaseToolsMcpToolsets")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsMcpToolsets", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsMcpToolsets",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/ListDatabaseToolsMcpToolsets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsMcpToolsetsRequest::builder)
                 .basePath("/20201005")
@@ -1636,7 +1753,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsPrivateEndpointsResponse::builder)
                 .logger(LOG, "listDatabaseToolsPrivateEndpoints")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsPrivateEndpoints", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsPrivateEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsPrivateEndpointsRequest::builder)
                 .basePath("/20201005")
@@ -1674,7 +1794,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListDatabaseToolsSqlReportsResponse::builder)
                 .logger(LOG, "listDatabaseToolsSqlReports")
-                .serviceDetails("DatabaseTools", "ListDatabaseToolsSqlReports", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListDatabaseToolsSqlReports",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/ListDatabaseToolsSqlReports")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseToolsSqlReportsRequest::builder)
                 .basePath("/20201005")
@@ -1712,7 +1835,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("DatabaseTools", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20201005")
@@ -1743,7 +1869,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("DatabaseTools", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20201005")
@@ -1773,7 +1902,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("DatabaseTools", "ListWorkRequests", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20201005")
@@ -1809,7 +1941,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RefreshDatabaseToolsIdentityCredentialResponse::builder)
                 .logger(LOG, "refreshDatabaseToolsIdentityCredential")
-                .serviceDetails("DatabaseTools", "RefreshDatabaseToolsIdentityCredential", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RefreshDatabaseToolsIdentityCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RefreshDatabaseToolsIdentityCredential")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RefreshDatabaseToolsIdentityCredentialRequest::builder)
                 .basePath("/20201005")
@@ -1842,7 +1977,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsConnectionLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsConnectionLock")
-                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsConnectionLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsConnectionLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsConnectionLockRequest::builder)
                 .basePath("/20201005")
@@ -1879,7 +2017,9 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
         return clientCall(request, RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsDatabaseApiGatewayConfigLock")
                 .serviceDetails(
-                        "DatabaseTools", "RemoveDatabaseToolsDatabaseApiGatewayConfigLock", "")
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsDatabaseApiGatewayConfigLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/RemoveDatabaseToolsDatabaseApiGatewayConfigLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsDatabaseApiGatewayConfigLockRequest::builder)
                 .basePath("/20201005")
@@ -1917,7 +2057,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsIdentityLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsIdentityLock")
-                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsIdentityLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsIdentityLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RemoveDatabaseToolsIdentityLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsIdentityLockRequest::builder)
                 .basePath("/20201005")
@@ -1952,7 +2095,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsMcpServerLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsMcpServerLock")
-                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsMcpServerLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsMcpServerLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/RemoveDatabaseToolsMcpServerLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsMcpServerLockRequest::builder)
                 .basePath("/20201005")
@@ -1987,7 +2133,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsMcpToolsetLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsMcpToolsetLock")
-                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsMcpToolsetLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsMcpToolsetLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/RemoveDatabaseToolsMcpToolsetLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsMcpToolsetLockRequest::builder)
                 .basePath("/20201005")
@@ -2022,7 +2171,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsPrivateEndpointLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsPrivateEndpointLock")
-                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsPrivateEndpointLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsPrivateEndpointLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsPrivateEndpointLockRequest::builder)
                 .basePath("/20201005")
@@ -2058,7 +2210,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, RemoveDatabaseToolsSqlReportLockResponse::builder)
                 .logger(LOG, "removeDatabaseToolsSqlReportLock")
-                .serviceDetails("DatabaseTools", "RemoveDatabaseToolsSqlReportLock", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "RemoveDatabaseToolsSqlReportLock",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/RemoveDatabaseToolsSqlReportLock")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveDatabaseToolsSqlReportLockRequest::builder)
                 .basePath("/20201005")
@@ -2094,7 +2249,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "updateDatabaseToolsConnection")
-                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsConnection", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -2128,7 +2286,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsDatabaseApiGatewayConfigResponse::builder)
                 .logger(LOG, "updateDatabaseToolsDatabaseApiGatewayConfig")
-                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsDatabaseApiGatewayConfig", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsDatabaseApiGatewayConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/UpdateDatabaseToolsDatabaseApiGatewayConfig")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsDatabaseApiGatewayConfigRequest::builder)
                 .basePath("/20201005")
@@ -2164,7 +2325,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsIdentityResponse::builder)
                 .logger(LOG, "updateDatabaseToolsIdentity")
-                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsIdentity", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsIdentity",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/UpdateDatabaseToolsIdentity")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsIdentityRequest::builder)
                 .basePath("/20201005")
@@ -2196,7 +2360,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsMcpServerResponse::builder)
                 .logger(LOG, "updateDatabaseToolsMcpServer")
-                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsMcpServer", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsMcpServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/UpdateDatabaseToolsMcpServer")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsMcpServerRequest::builder)
                 .basePath("/20201005")
@@ -2229,7 +2396,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsMcpToolsetResponse::builder)
                 .logger(LOG, "updateDatabaseToolsMcpToolset")
-                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsMcpToolset", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsMcpToolset",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/UpdateDatabaseToolsMcpToolset")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsMcpToolsetRequest::builder)
                 .basePath("/20201005")
@@ -2262,7 +2432,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsPrivateEndpointResponse::builder)
                 .logger(LOG, "updateDatabaseToolsPrivateEndpoint")
-                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsPrivateEndpoint", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsPrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsPrivateEndpointRequest::builder)
                 .basePath("/20201005")
@@ -2295,7 +2468,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, UpdateDatabaseToolsSqlReportResponse::builder)
                 .logger(LOG, "updateDatabaseToolsSqlReport")
-                .serviceDetails("DatabaseTools", "UpdateDatabaseToolsSqlReport", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "UpdateDatabaseToolsSqlReport",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/UpdateDatabaseToolsSqlReport")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseToolsSqlReportRequest::builder)
                 .basePath("/20201005")
@@ -2330,7 +2506,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ValidateDatabaseToolsConnectionResponse::builder)
                 .logger(LOG, "validateDatabaseToolsConnection")
-                .serviceDetails("DatabaseTools", "ValidateDatabaseToolsConnection", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ValidateDatabaseToolsConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDatabaseToolsConnectionRequest::builder)
                 .basePath("/20201005")
@@ -2365,7 +2544,10 @@ public class DatabaseToolsClient extends com.oracle.bmc.http.internal.BaseSyncCl
 
         return clientCall(request, ValidateDatabaseToolsIdentityCredentialResponse::builder)
                 .logger(LOG, "validateDatabaseToolsIdentityCredential")
-                .serviceDetails("DatabaseTools", "ValidateDatabaseToolsIdentityCredential", "")
+                .serviceDetails(
+                        "DatabaseTools",
+                        "ValidateDatabaseToolsIdentityCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDatabaseToolsIdentityCredentialRequest::builder)
                 .basePath("/20201005")
