@@ -95,7 +95,8 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "dns";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -511,6 +512,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(com.oracle.bmc.dns.model.Zone.class, CreateZoneResponse.Builder::zone)
                 .handleResponseHeaderString("ETag", CreateZoneResponse.Builder::eTag)
@@ -548,6 +550,7 @@ public class DnsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBinaryRequestBody()
                 .hasBody()
                 .handleBody(

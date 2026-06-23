@@ -429,6 +429,7 @@ public final class CreateScheduleDetails
     public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         StartResource("START_RESOURCE"),
         StopResource("STOP_RESOURCE"),
+        BackupResource("BACKUP_RESOURCE"),
         ;
 
         private final String value;

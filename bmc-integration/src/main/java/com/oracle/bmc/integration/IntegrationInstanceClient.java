@@ -82,7 +82,8 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "integration";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -760,6 +761,7 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .operationUsesDefaultRetries()
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RemoveLogAnalyticsLogGroupResponse.Builder::opcWorkRequestId)

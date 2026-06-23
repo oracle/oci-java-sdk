@@ -65,7 +65,8 @@ public class ScheduleAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "resourcescheduler";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -378,6 +379,7 @@ public class ScheduleAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("schedules")
                 .appendPathParam("resourceTypes")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("actionType", request.getActionType())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")

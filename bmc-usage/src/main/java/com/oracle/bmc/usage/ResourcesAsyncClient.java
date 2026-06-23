@@ -64,7 +64,8 @@ public class ResourcesAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "usage";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

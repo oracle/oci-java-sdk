@@ -65,7 +65,8 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "integration";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -794,6 +795,7 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RemoveLogAnalyticsLogGroupResponse.Builder::opcWorkRequestId)

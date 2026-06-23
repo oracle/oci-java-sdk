@@ -66,7 +66,7 @@ public class RegionTest {
                 "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
-        Region.resetAlloyConfiguration();
+        Region.resetDeveloperToolConfiguration();
     }
 
     @Before

@@ -6,26 +6,31 @@ package com.oracle.bmc.model;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
-public class RegionAlloySchema {
+public class RegionDeveloperToolConfigurationSchema {
 
     private final List<RegionSchema> regions;
-    private final String alloyProvider;
+    private final String developerToolConfigurationProvider;
     private final Set<String> services;
-    private final String ociRegionCoexist;
+    private final String allowOnlyDeveloperToolConfigurationRegions;
 
-    @java.beans.ConstructorProperties({"regions", "alloyProvider", "services", "ociRegionCoexist"})
-    public RegionAlloySchema(
+    @java.beans.ConstructorProperties({
+        "regions",
+        "developerToolConfigurationProvider",
+        "services",
+        "allowOnlyDeveloperToolConfigurationRegions"
+    })
+    public RegionDeveloperToolConfigurationSchema(
             final List<RegionSchema> regions,
-            final String alloyProvider,
+            final String developerToolConfigurationProvider,
             final Set<String> services,
-            final String ociRegionCoexist) {
+            final String allowOnlyDeveloperToolConfigurationRegions) {
         this.regions = Collections.unmodifiableList(regions);
-        this.alloyProvider = alloyProvider;
+        this.developerToolConfigurationProvider = developerToolConfigurationProvider;
         this.services = Collections.unmodifiableSet(services);
-        this.ociRegionCoexist = ociRegionCoexist;
+        this.allowOnlyDeveloperToolConfigurationRegions =
+                allowOnlyDeveloperToolConfigurationRegions;
     }
 
     public List<RegionSchema> getRegions() {
@@ -33,15 +38,15 @@ public class RegionAlloySchema {
     }
 
     public String getProvider() {
-        return alloyProvider;
+        return developerToolConfigurationProvider;
     }
 
     public Set<String> getServices() {
         return services;
     }
 
-    public String getOciRegionCoexist() {
-        return ociRegionCoexist;
+    public String getAllowOnlyDeveloperToolConfigurationRegions() {
+        return allowOnlyDeveloperToolConfigurationRegions;
     }
 
     @java.lang.Override
@@ -54,8 +59,13 @@ public class RegionAlloySchema {
         result = result * PRIME + ($provider == null ? 43 : $provider.hashCode());
         final java.lang.Object $services = this.getServices();
         result = result * PRIME + ($services == null ? 43 : $services.hashCode());
-        final java.lang.Object $ociRegionCoexist = this.getOciRegionCoexist();
-        result = result * PRIME + ($ociRegionCoexist == null ? 43 : $ociRegionCoexist.hashCode());
+        final java.lang.Object $allowOnlyDeveloperToolConfigurationRegions =
+                this.getAllowOnlyDeveloperToolConfigurationRegions();
+        result =
+                result * PRIME
+                        + ($allowOnlyDeveloperToolConfigurationRegions == null
+                                ? 43
+                                : $allowOnlyDeveloperToolConfigurationRegions.hashCode());
         return result;
     }
 
@@ -63,27 +73,29 @@ public class RegionAlloySchema {
     public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RegionAlloySchema that = (RegionAlloySchema) o;
+        RegionDeveloperToolConfigurationSchema that = (RegionDeveloperToolConfigurationSchema) o;
         return regions.equals(that.regions)
-                && alloyProvider.equals(that.alloyProvider)
+                && developerToolConfigurationProvider.equals(
+                        that.developerToolConfigurationProvider)
                 && services.equals(that.services)
-                && ociRegionCoexist.equals(that.ociRegionCoexist);
+                && allowOnlyDeveloperToolConfigurationRegions.equals(
+                        that.allowOnlyDeveloperToolConfigurationRegions);
     }
 
     @java.lang.Override
     public String toString() {
-        return "RegionAlloySchema{"
+        return "RegionDeveloperToolConfigurationSchema{"
                 + "regions = '"
                 + regions
                 + '\''
-                + ",alloyProvider = '"
-                + alloyProvider
+                + ",developerToolConfigurationProvider = '"
+                + developerToolConfigurationProvider
                 + '\''
                 + ",services = '"
                 + services
                 + '\''
-                + ",ociRegionCoexist = '"
-                + ociRegionCoexist
+                + ",allowOnlyDeveloperToolConfigurationRegions = '"
+                + allowOnlyDeveloperToolConfigurationRegions
                 + '\''
                 + "}";
     }

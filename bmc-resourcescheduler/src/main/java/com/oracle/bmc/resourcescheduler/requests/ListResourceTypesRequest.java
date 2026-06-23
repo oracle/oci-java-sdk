@@ -26,6 +26,13 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
     public String getCompartmentId() {
         return compartmentId;
     }
+    /** This describes the Action Type */
+    private String actionType;
+
+    /** This describes the Action Type */
+    public String getActionType() {
+        return actionType;
+    }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
      * paginated "List" call. For important details about how pagination works, see [List
@@ -93,6 +100,20 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /** This describes the Action Type */
+        private String actionType = null;
+
+        /**
+         * This describes the Action Type
+         *
+         * @param actionType the value to set
+         * @return this builder instance
+         */
+        public Builder actionType(String actionType) {
+            this.actionType = actionType;
             return this;
         }
 
@@ -187,6 +208,7 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(ListResourceTypesRequest o) {
             compartmentId(o.getCompartmentId());
+            actionType(o.getActionType());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -225,11 +247,12 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
         public ListResourceTypesRequest buildWithoutInvocationCallback() {
             ListResourceTypesRequest request = new ListResourceTypesRequest();
             request.compartmentId = compartmentId;
+            request.actionType = actionType;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResourceTypesRequest(compartmentId, limit, page, opcRequestId);
+            // new ListResourceTypesRequest(compartmentId, actionType, limit, page, opcRequestId);
         }
     }
 
@@ -241,6 +264,7 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .actionType(actionType)
                 .limit(limit)
                 .page(page)
                 .opcRequestId(opcRequestId);
@@ -261,6 +285,7 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",actionType=").append(String.valueOf(this.actionType));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -280,6 +305,7 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
         ListResourceTypesRequest other = (ListResourceTypesRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.actionType, other.actionType)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -292,6 +318,7 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

@@ -76,6 +76,24 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resolverId")
+        private String resolverId;
+
+        public Builder resolverId(String resolverId) {
+            this.resolverId = resolverId;
+            this.__explicitlySet__.add("resolverId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -120,6 +138,25 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
             this.__explicitlySet__.add("self");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
         /** The OCID of a subnet. Must be part of the VCN that the resolver is attached to. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
@@ -155,6 +192,54 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint resource that this resolver endpoint corresponds to.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("peId")
+        private String peId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint resource that this resolver endpoint corresponds to.
+         *
+         * @param peId the value to set
+         * @return this builder
+         */
+        public Builder peId(String peId) {
+            this.peId = peId;
+            this.__explicitlySet__.add("peId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC resource that this resolver endpoint corresponds to.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
+        private String vnicId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VNIC resource that this resolver endpoint corresponds to.
+         *
+         * @param vnicId the value to set
+         * @return this builder
+         */
+        public Builder vnicId(String vnicId) {
+            this.vnicId = vnicId;
+            this.__explicitlySet__.add("vnicId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -166,13 +251,20 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
                             this.isForwarding,
                             this.isListening,
                             this.listeningAddress,
+                            this.id,
+                            this.resolverId,
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
                             this.self,
+                            this.freeformTags,
+                            this.definedTags,
                             this.subnetId,
-                            this.nsgIds);
+                            this.nsgIds,
+                            this.securityAttributes,
+                            this.peId,
+                            this.vnicId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -196,6 +288,12 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
             if (model.wasPropertyExplicitlySet("listeningAddress")) {
                 this.listeningAddress(model.getListeningAddress());
             }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("resolverId")) {
+                this.resolverId(model.getResolverId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -211,11 +309,26 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
             if (model.wasPropertyExplicitlySet("self")) {
                 this.self(model.getSelf());
             }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("peId")) {
+                this.peId(model.getPeId());
+            }
+            if (model.wasPropertyExplicitlySet("vnicId")) {
+                this.vnicId(model.getVnicId());
             }
             return this;
         }
@@ -237,26 +350,40 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
             Boolean isForwarding,
             Boolean isListening,
             String listeningAddress,
+            String id,
+            String resolverId,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String self,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String subnetId,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            String peId,
+            String vnicId) {
         super(
                 name,
                 forwardingAddress,
                 isForwarding,
                 isListening,
                 listeningAddress,
+                id,
+                resolverId,
                 compartmentId,
                 timeCreated,
                 timeUpdated,
                 lifecycleState,
-                self);
+                self,
+                freeformTags,
+                definedTags);
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
+        this.peId = peId;
+        this.vnicId = vnicId;
     }
 
     /** The OCID of a subnet. Must be part of the VCN that the resolver is attached to. */
@@ -289,6 +416,47 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
         return nsgIds;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint resource that this resolver endpoint corresponds to.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("peId")
+    private final String peId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint resource that this resolver endpoint corresponds to.
+     *
+     * @return the value
+     */
+    public String getPeId() {
+        return peId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * resource that this resolver endpoint corresponds to.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
+    private final String vnicId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC
+     * resource that this resolver endpoint corresponds to.
+     *
+     * @return the value
+     */
+    public String getVnicId() {
+        return vnicId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -306,6 +474,9 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", peId=").append(String.valueOf(this.peId));
+        sb.append(", vnicId=").append(String.valueOf(this.vnicId));
         sb.append(")");
         return sb.toString();
     }
@@ -322,6 +493,9 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
         ResolverVnicEndpoint other = (ResolverVnicEndpoint) o;
         return java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.peId, other.peId)
+                && java.util.Objects.equals(this.vnicId, other.vnicId)
                 && super.equals(other);
     }
 
@@ -331,6 +505,13 @@ public final class ResolverVnicEndpoint extends ResolverEndpoint {
         int result = super.hashCode();
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result = (result * PRIME) + (this.peId == null ? 43 : this.peId.hashCode());
+        result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         return result;
     }
 }

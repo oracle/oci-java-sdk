@@ -81,7 +81,8 @@ public class UsagePlansClient extends com.oracle.bmc.http.internal.BaseSyncClien
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "apigateway";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
+            com.oracle.bmc.internal.DeveloperToolConfiguration
+                    .throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);

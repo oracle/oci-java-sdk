@@ -24,10 +24,11 @@ package com.oracle.bmc.integration.model;
 public final class AddLogAnalyticsLogGroupDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"logGroupId"})
-    public AddLogAnalyticsLogGroupDetails(String logGroupId) {
+    @java.beans.ConstructorProperties({"logGroupId", "attachmentType"})
+    public AddLogAnalyticsLogGroupDetails(String logGroupId, AttachmentType attachmentType) {
         super();
         this.logGroupId = logGroupId;
+        this.attachmentType = attachmentType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,13 +48,28 @@ public final class AddLogAnalyticsLogGroupDetails
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
+        /** Type of attachment. Supported at this include PROCESS_AUTOMATION */
+        @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
+        private AttachmentType attachmentType;
+
+        /**
+         * Type of attachment. Supported at this include PROCESS_AUTOMATION
+         *
+         * @param attachmentType the value to set
+         * @return this builder
+         */
+        public Builder attachmentType(AttachmentType attachmentType) {
+            this.attachmentType = attachmentType;
+            this.__explicitlySet__.add("attachmentType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddLogAnalyticsLogGroupDetails build() {
             AddLogAnalyticsLogGroupDetails model =
-                    new AddLogAnalyticsLogGroupDetails(this.logGroupId);
+                    new AddLogAnalyticsLogGroupDetails(this.logGroupId, this.attachmentType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -64,6 +80,9 @@ public final class AddLogAnalyticsLogGroupDetails
         public Builder copy(AddLogAnalyticsLogGroupDetails model) {
             if (model.wasPropertyExplicitlySet("logGroupId")) {
                 this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("attachmentType")) {
+                this.attachmentType(model.getAttachmentType());
             }
             return this;
         }
@@ -91,6 +110,51 @@ public final class AddLogAnalyticsLogGroupDetails
         return logGroupId;
     }
 
+    /** Type of attachment. Supported at this include PROCESS_AUTOMATION */
+    public enum AttachmentType implements com.oracle.bmc.http.internal.BmcEnum {
+        ProcessAutomation("PROCESS_AUTOMATION"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AttachmentType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AttachmentType v : AttachmentType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AttachmentType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AttachmentType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AttachmentType: " + key);
+        }
+    };
+    /** Type of attachment. Supported at this include PROCESS_AUTOMATION */
+    @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
+    private final AttachmentType attachmentType;
+
+    /**
+     * Type of attachment. Supported at this include PROCESS_AUTOMATION
+     *
+     * @return the value
+     */
+    public AttachmentType getAttachmentType() {
+        return attachmentType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -107,6 +171,7 @@ public final class AddLogAnalyticsLogGroupDetails
         sb.append("AddLogAnalyticsLogGroupDetails(");
         sb.append("super=").append(super.toString());
         sb.append("logGroupId=").append(String.valueOf(this.logGroupId));
+        sb.append(", attachmentType=").append(String.valueOf(this.attachmentType));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +186,9 @@ public final class AddLogAnalyticsLogGroupDetails
         }
 
         AddLogAnalyticsLogGroupDetails other = (AddLogAnalyticsLogGroupDetails) o;
-        return java.util.Objects.equals(this.logGroupId, other.logGroupId) && super.equals(other);
+        return java.util.Objects.equals(this.logGroupId, other.logGroupId)
+                && java.util.Objects.equals(this.attachmentType, other.attachmentType)
+                && super.equals(other);
     }
 
     @Override
@@ -129,6 +196,9 @@ public final class AddLogAnalyticsLogGroupDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attachmentType == null ? 43 : this.attachmentType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -290,6 +290,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         AddLogAnalyticsLogGroup("ADD_LOG_ANALYTICS_LOG_GROUP"),
         DeleteLogAnalyticsLogGroup("DELETE_LOG_ANALYTICS_LOG_GROUP"),
         ConvertInstance("CONVERT_INSTANCE"),
+        AddOpaLogAnalyticsLogGroup("ADD_OPA_LOG_ANALYTICS_LOG_GROUP"),
+        DeleteOpaLogAnalyticsLogGroup("DELETE_OPA_LOG_ANALYTICS_LOG_GROUP"),
         BeginMigration("BEGIN_MIGRATION"),
         CompleteMigration("COMPLETE_MIGRATION"),
         RollbackMigration("ROLLBACK_MIGRATION"),

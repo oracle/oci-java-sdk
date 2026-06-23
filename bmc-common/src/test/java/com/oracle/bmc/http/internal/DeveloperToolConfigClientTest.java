@@ -4,9 +4,8 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.oracle.bmc.AlloyConfigTest;
+import com.oracle.bmc.DeveloperToolConfigTest;
 import com.oracle.bmc.Region;
-import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.common.InternalBuilderAccess;
@@ -15,6 +14,7 @@ import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.internal.DeveloperToolConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +36,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({HttpProvider.class, InternalBuilderAccess.class})
-public class AlloyClientTest extends AlloyConfigTest {
+public class DeveloperToolConfigClientTest extends DeveloperToolConfigTest {
 
     private static class TestBaseClient extends BaseClient {
         /** Service instance for ObjectStorage. */
@@ -64,14 +64,13 @@ public class AlloyClientTest extends AlloyConfigTest {
 
         public static class Builder
                 extends com.oracle.bmc.common.RegionalClientBuilder<
-                        Builder, AlloyClientTest.TestBaseClient> {
+                        Builder, DeveloperToolConfigClientTest.TestBaseClient> {
             private java.util.concurrent.ExecutorService executorService;
 
             private Builder(com.oracle.bmc.Service service) {
                 super(service);
                 final String packageName = "testservice";
-                com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(
-                        packageName);
+                DeveloperToolConfiguration.throwDisabledServiceExceptionIfAppropriate(packageName);
                 requestSignerFactory =
                         new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                                 SigningStrategy.STANDARD);
@@ -94,10 +93,10 @@ public class AlloyClientTest extends AlloyConfigTest {
              * @param authenticationDetailsProvider authentication details provider
              * @return the client
              */
-            public AlloyClientTest.TestBaseClient build(
+            public DeveloperToolConfigClientTest.TestBaseClient build(
                     @jakarta.annotation.Nonnull
                             AbstractAuthenticationDetailsProvider authenticationDetailsProvider) {
-                return new AlloyClientTest.TestBaseClient(
+                return new DeveloperToolConfigClientTest.TestBaseClient(
                         this, authenticationDetailsProvider, executorService);
             }
         }
@@ -142,49 +141,53 @@ public class AlloyClientTest extends AlloyConfigTest {
     }
 
     @Test
-    public void testAlloyConfigClientCall_disabledService() {
+    public void testDeveloperToolConfigClientCall_disabledService() {
         try {
             TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
         } catch (Exception e) {
             assertEquals("IllegalArgumentException", e.getClass().getSimpleName());
             assertEquals(
-                    "The Alloy configuration disabled service 'testservice'. This behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config.json file configured the service you're targeting or contact the cloud provider on the availability of this service",
+                    "The DeveloperToolConfiguration configuration disabled service 'testservice'. This behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local developer-tool-configuration.json file configured the service you're targeting or contact the cloud provider on the availability of this service",
                     e.getMessage());
         }
     }
 
     @Test
-    public void testAlloyConfigClientCall_enabledService() throws Exception {
+    public void testDeveloperToolConfigClientCall_enabledService() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
         assertTrue(Region.isServiceEnabled("testservice"));
     }
 
     @Test
-    public void testAlloyConfigClientCall_unknownRegion() {
+    public void testDeveloperToolConfigClientCall_unknownRegion() {
         try {
             Map<String, String> newEnvMap = new HashMap<>();
-            String alloyFile = "src/test/resources/alloy-config.json";
-            newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+            String developerToolConfigurationFile =
+                    "src/test/resources/developer-tool-configuration.json";
+            newEnvMap.put(
+                    "OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
             EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
             TestBaseClient client =
                     TestBaseClient.builder().region("unknown").build(mockAuthProvider);
         } catch (Exception e) {
             assertEquals("IllegalArgumentException", e.getClass().getSimpleName());
             assertEquals(
-                    "Unknown regionId unknown, region information not defined in Alloy configuration.",
+                    "Unknown regionId unknown, region information not defined in DeveloperToolConfiguration configuration.",
                     e.getMessage());
         }
     }
 
     @Test
-    public void testAlloyConfigClientCall_knownRegion() throws Exception {
+    public void testDeveloperToolConfigClientCall_knownRegion() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         TestBaseClient client = TestBaseClient.builder().region("us-phx-1").build(mockAuthProvider);
         assertTrue(Region.isServiceEnabled("testservice"));
@@ -194,27 +197,30 @@ public class AlloyClientTest extends AlloyConfigTest {
     }
 
     @Test
-    public void testAlloyConfigClientCall_unknownOC1Region() {
+    public void testDeveloperToolConfigClientCall_unknownOC1Region() {
         try {
             Map<String, String> newEnvMap = new HashMap<>();
-            String alloyFile = "src/test/resources/alloy-config.json";
-            newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+            String developerToolConfigurationFile =
+                    "src/test/resources/developer-tool-configuration.json";
+            newEnvMap.put(
+                    "OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
             EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
             TestBaseClient client =
                     TestBaseClient.builder().region(Region.US_PHOENIX_1).build(mockAuthProvider);
         } catch (Exception e) {
             assertEquals("IllegalArgumentException", e.getClass().getSimpleName());
             assertEquals(
-                    "Unknown regionId us-phoenix-1, region information not defined in Alloy configuration.",
+                    "Unknown regionId us-phoenix-1, region information not defined in DeveloperToolConfiguration configuration.",
                     e.getMessage());
         }
     }
 
     @Test
-    public void testAlloyConfigClientCall_knownOC1Region() throws Exception {
+    public void testDeveloperToolConfigClientCall_knownOC1Region() throws Exception {
         Map<String, String> newEnvMap = new HashMap<>();
-        String alloyFile = "src/test/resources/alloy-config.json";
-        newEnvMap.put("OCI_ALLOY_CONFIG_FILE_PATH", alloyFile);
+        String developerToolConfigurationFile =
+                "src/test/resources/developer-tool-configuration.json";
+        newEnvMap.put("OCI_DEVELOPER_TOOL_CONFIGURATION_FILE_PATH", developerToolConfigurationFile);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         TestBaseClient client =
                 TestBaseClient.builder().region(Region.US_ASHBURN_1).build(mockAuthProvider);

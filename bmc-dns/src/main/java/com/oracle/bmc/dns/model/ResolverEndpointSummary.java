@@ -40,11 +40,15 @@ public class ResolverEndpointSummary
         "isForwarding",
         "isListening",
         "listeningAddress",
+        "id",
+        "resolverId",
         "compartmentId",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "self"
+        "self",
+        "freeformTags",
+        "definedTags"
     })
     protected ResolverEndpointSummary(
             String name,
@@ -52,22 +56,30 @@ public class ResolverEndpointSummary
             Boolean isForwarding,
             Boolean isListening,
             String listeningAddress,
+            String id,
+            String resolverId,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String self) {
+            String self,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.name = name;
         this.forwardingAddress = forwardingAddress;
         this.isForwarding = isForwarding;
         this.isListening = isListening;
         this.listeningAddress = listeningAddress;
+        this.id = id;
+        this.resolverId = resolverId;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.self = self;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     /** The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver. */
@@ -143,6 +155,32 @@ public class ResolverEndpointSummary
      */
     public String getListeningAddress() {
         return listeningAddress;
+    }
+
+    /** The OCID of the resolver endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    private final String id;
+
+    /**
+     * The OCID of the resolver endpoint.
+     *
+     * @return the value
+     */
+    public String getId() {
+        return id;
+    }
+
+    /** The OCID of the resolver. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resolverId")
+    private final String resolverId;
+
+    /**
+     * The OCID of the resolver.
+     *
+     * @return the value
+     */
+    public String getResolverId() {
+        return resolverId;
     }
 
     /**
@@ -280,6 +318,20 @@ public class ResolverEndpointSummary
         return self;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -300,11 +352,15 @@ public class ResolverEndpointSummary
         sb.append(", isForwarding=").append(String.valueOf(this.isForwarding));
         sb.append(", isListening=").append(String.valueOf(this.isListening));
         sb.append(", listeningAddress=").append(String.valueOf(this.listeningAddress));
+        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", resolverId=").append(String.valueOf(this.resolverId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", self=").append(String.valueOf(this.self));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -324,11 +380,15 @@ public class ResolverEndpointSummary
                 && java.util.Objects.equals(this.isForwarding, other.isForwarding)
                 && java.util.Objects.equals(this.isListening, other.isListening)
                 && java.util.Objects.equals(this.listeningAddress, other.listeningAddress)
+                && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.resolverId, other.resolverId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.self, other.self)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -345,6 +405,8 @@ public class ResolverEndpointSummary
         result =
                 (result * PRIME)
                         + (this.listeningAddress == null ? 43 : this.listeningAddress.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.resolverId == null ? 43 : this.resolverId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -354,6 +416,8 @@ public class ResolverEndpointSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

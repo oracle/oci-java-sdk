@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.auth;
 
-import com.oracle.bmc.internal.Alloy;
+import com.oracle.bmc.internal.DeveloperToolConfiguration;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 import com.oracle.bmc.Realm;
@@ -106,7 +106,8 @@ public class ConfigFileAuthenticationDetailsProvider
             try {
                 region = Region.fromRegionId(regionId);
             } catch (IllegalArgumentException e) {
-                Alloy.throwUnknownAlloyRegionIfAppropriate(regionId, e);
+                DeveloperToolConfiguration.throwUnknownDevToolConfigRegionIfAppropriate(
+                        regionId, e);
                 LOG.warn(
                         "Found regionId '{}' in config file or OCI_REGION env variable, but not supported by this version of the SDK."
                                 + CONFIG_FILE_DEBUG_INFORMATION_LOG,

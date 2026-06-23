@@ -35,6 +35,9 @@ package com.oracle.bmc.apigateway.model;
             value = StockResponseBackend.class,
             name = "STOCK_RESPONSE_BACKEND"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OAuth2LoginBackend.class,
+            name = "OAUTH2_LOGIN_BACKEND"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DynamicRoutingBackend.class,
             name = "DYNAMIC_ROUTING_BACKEND")
 })
@@ -95,6 +98,7 @@ public class ApiSpecificationRouteBackend
         StockResponseBackend("STOCK_RESPONSE_BACKEND"),
         DynamicRoutingBackend("DYNAMIC_ROUTING_BACKEND"),
         Oauth2LogoutBackend("OAUTH2_LOGOUT_BACKEND"),
+        Oauth2LoginBackend("OAUTH2_LOGIN_BACKEND"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

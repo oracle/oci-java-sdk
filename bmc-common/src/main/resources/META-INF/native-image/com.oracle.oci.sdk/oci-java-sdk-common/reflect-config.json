@@ -55,7 +55,7 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.model.RegionAlloySchema",
+    "name": "com.oracle.bmc.model.RegionDeveloperToolConfigurationSchema",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
