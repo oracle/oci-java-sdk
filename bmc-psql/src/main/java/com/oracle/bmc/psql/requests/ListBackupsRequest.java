@@ -164,6 +164,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** A filter to return only backups whose backupSourceType matches the given backupSourceType */
+    private String backupSourceType;
+
+    /** A filter to return only backups whose backupSourceType matches the given backupSourceType */
+    public String getBackupSourceType() {
+        return backupSourceType;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -361,6 +368,22 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * A filter to return only backups whose backupSourceType matches the given backupSourceType
+         */
+        private String backupSourceType = null;
+
+        /**
+         * A filter to return only backups whose backupSourceType matches the given backupSourceType
+         *
+         * @param backupSourceType the value to set
+         * @return this builder instance
+         */
+        public Builder backupSourceType(String backupSourceType) {
+            this.backupSourceType = backupSourceType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -402,6 +425,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            backupSourceType(o.getBackupSourceType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -448,9 +472,11 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.backupSourceType = backupSourceType;
             return request;
             // new ListBackupsRequest(compartmentId, timeStarted, timeEnded, lifecycleState,
-            // displayName, backupId, id, limit, page, sortOrder, sortBy, opcRequestId);
+            // displayName, backupId, id, limit, page, sortOrder, sortBy, opcRequestId,
+            // backupSourceType);
         }
     }
 
@@ -472,7 +498,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .backupSourceType(backupSourceType);
     }
 
     /**
@@ -501,6 +528,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",backupSourceType=").append(String.valueOf(this.backupSourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -527,7 +555,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.backupSourceType, other.backupSourceType);
     }
 
     @Override
@@ -550,6 +579,9 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSourceType == null ? 43 : this.backupSourceType.hashCode());
         return result;
     }
 }

@@ -9,17 +9,21 @@ import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.http.client.Options;
 import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyPair;
@@ -27,6 +31,7 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;
 
@@ -34,12 +39,15 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
 import static com.github.tomakehurst.wiremock.stubbing.Scenario.STARTED;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 public class X509FederationClientTest {
 
     private X509FederationClient clientUnderTest;
     private X509FederationClient.X509FederationRequest federationRequest;
+    private boolean originalSyncRequestsAsyncCoreThreadTimeoutEnabled;
 
     @Rule
     public WireMockRule mockService =
@@ -48,6 +56,9 @@ public class X509FederationClientTest {
 
     @Before
     public void setUp() throws IOException {
+        originalSyncRequestsAsyncCoreThreadTimeoutEnabled =
+                Options.isSyncRequestsAsyncCoreThreadTimeoutEnabled();
+
         SessionKeySupplier sessionKeySupplier =
                 new SessionKeySupplier() {
                     @Override
@@ -116,6 +127,12 @@ public class X509FederationClientTest {
                         "DEFAULT_FINGERPRINT");
     }
 
+    @After
+    public void tearDown() throws Exception {
+        setSyncRequestsAsyncCoreThreadTimeoutEnabled(
+                originalSyncRequestsAsyncCoreThreadTimeoutEnabled);
+    }
+
     @Test
     public void testX509ClientRetriesWithFailure() {
         stubFor(post(urlEqualTo("/v1/x509")).willReturn(WireMock.serverError()));
@@ -172,6 +189,44 @@ public class X509FederationClientTest {
     }
 
     @Test
+    public void constructorConfiguresAsyncCoreThreadTimeoutFromOptions() throws Exception {
+        setSyncRequestsAsyncCoreThreadTimeoutEnabled(true);
+
+        X509FederationClient federationClient =
+                new X509FederationClient(
+                        "http://localhost:" + mockService.port(),
+                        "tenantId",
+                        mock(X509CertificateSupplier.class),
+                        mock(SessionKeySupplier.class),
+                        Collections.emptySet(),
+                        mock(ClientConfigurator.class),
+                        Collections.emptyList(),
+                        CircuitBreakerUtils.getDefaultAuthClientCircuitBreakerConfiguration());
+
+        Object httpClient = getFieldValue(federationClient, "httpClient");
+        Object jerseyClient = getFieldValue(httpClient, "client");
+        Method getConfiguration = jerseyClient.getClass().getMethod("getConfiguration");
+        Object configuration = getConfiguration.invoke(jerseyClient);
+        Method getInstances = configuration.getClass().getMethod("getInstances");
+        Collection<?> instances = (Collection<?>) getInstances.invoke(configuration);
+
+        Object executorProvider =
+                instances.stream()
+                        .filter(
+                                instance ->
+                                        instance.getClass()
+                                                .getName()
+                                                .endsWith("DaemonClientAsyncExecutorProvider"))
+                        .findFirst()
+                        .orElse(null);
+
+        assertNotNull("DaemonClientAsyncExecutorProvider was not registered", executorProvider);
+        assertTrue(
+                "DaemonClientAsyncExecutorProvider should allow core thread timeout",
+                (Boolean) getFieldValue(executorProvider, "allowCoreThreadTimeOut"));
+    }
+
+    @Test
     public void jacksonCanDeserializeSecurityToken() throws IOException {
         final String strToken = "{\"token\" : \"abcdef\"}";
         // this line will fail on original code if Jackson is not at exactly the right version
@@ -188,5 +243,27 @@ public class X509FederationClientTest {
                 serializer
                         .readValue(serializer.writeValueAsString(secToken), secToken.getClass())
                         .getToken());
+    }
+
+    private static void setSyncRequestsAsyncCoreThreadTimeoutEnabled(boolean enabled)
+            throws Exception {
+        Field field =
+                Options.class.getDeclaredField("SYNC_REQUESTS_ASYNC_CORE_THREAD_TIMEOUT_ENABLED");
+        field.setAccessible(true);
+        field.setBoolean(null, enabled);
+    }
+
+    private static Object getFieldValue(Object object, String fieldName) throws Exception {
+        Class<?> type = object.getClass();
+        while (type != null) {
+            try {
+                Field field = type.getDeclaredField(fieldName);
+                field.setAccessible(true);
+                return field.get(object);
+            } catch (NoSuchFieldException e) {
+                type = type.getSuperclass();
+            }
+        }
+        throw new NoSuchFieldException(fieldName);
     }
 }

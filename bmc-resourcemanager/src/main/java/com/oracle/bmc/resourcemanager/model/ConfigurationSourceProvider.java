@@ -32,11 +32,11 @@ package com.oracle.bmc.resourcemanager.model;
             value = GitlabAccessTokenConfigurationSourceProvider.class,
             name = "GITLAB_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BitbucketServerAccessTokenConfigurationSourceProvider.class,
-            name = "BITBUCKET_SERVER_ACCESS_TOKEN"),
+            value = BitbucketCloudEmailApiTokenConfigurationSourceProvider.class,
+            name = "BITBUCKET_CLOUD_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BitbucketCloudUsernameAppPasswordConfigurationSourceProvider.class,
-            name = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD")
+            value = BitbucketServerAccessTokenConfigurationSourceProvider.class,
+            name = "BITBUCKET_SERVER_ACCESS_TOKEN")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -52,6 +52,8 @@ public class ConfigurationSourceProvider
         "lifecycleState",
         "privateServerConfigDetails",
         "username",
+        "email",
+        "isMigrationRequired",
         "secretId",
         "freeformTags",
         "definedTags",
@@ -66,6 +68,8 @@ public class ConfigurationSourceProvider
             LifecycleState lifecycleState,
             PrivateServerConfigDetails privateServerConfigDetails,
             String username,
+            String email,
+            Boolean isMigrationRequired,
             String secretId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -79,6 +83,8 @@ public class ConfigurationSourceProvider
         this.lifecycleState = lifecycleState;
         this.privateServerConfigDetails = privateServerConfigDetails;
         this.username = username;
+        this.email = email;
+        this.isMigrationRequired = isMigrationRequired;
         this.secretId = secretId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -254,6 +260,36 @@ public class ConfigurationSourceProvider
         return username;
     }
 
+    /** Atlassian account email used for Bitbucket Cloud API token authentication. */
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    private final String email;
+
+    /**
+     * Atlassian account email used for Bitbucket Cloud API token authentication.
+     *
+     * @return the value
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Indicates whether this configuration source provider uses legacy Bitbucket Cloud
+     * username/app-password credentials and must be migrated.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMigrationRequired")
+    private final Boolean isMigrationRequired;
+
+    /**
+     * Indicates whether this configuration source provider uses legacy Bitbucket Cloud
+     * username/app-password credentials and must be migrated.
+     *
+     * @return the value
+     */
+    public Boolean getIsMigrationRequired() {
+        return isMigrationRequired;
+    }
+
     /** Secret ocid which is used to authorize the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
@@ -356,6 +392,8 @@ public class ConfigurationSourceProvider
         sb.append(", privateServerConfigDetails=")
                 .append(String.valueOf(this.privateServerConfigDetails));
         sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", email=").append(String.valueOf(this.email));
+        sb.append(", isMigrationRequired=").append(String.valueOf(this.isMigrationRequired));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -383,6 +421,8 @@ public class ConfigurationSourceProvider
                 && java.util.Objects.equals(
                         this.privateServerConfigDetails, other.privateServerConfigDetails)
                 && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.email, other.email)
+                && java.util.Objects.equals(this.isMigrationRequired, other.isMigrationRequired)
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -410,6 +450,12 @@ public class ConfigurationSourceProvider
                                 ? 43
                                 : this.privateServerConfigDetails.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMigrationRequired == null
+                                ? 43
+                                : this.isMigrationRequired.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
@@ -419,13 +465,13 @@ public class ConfigurationSourceProvider
     }
 
     /**
-     * The type of configuration source provider. The {@code BITBUCKET_CLOUD_USERNAME_APPPASSWORD}
-     * type corresponds to Bitbucket Cloud. The {@code BITBUCKET_SERVER_ACCESS_TOKEN} type
-     * corresponds to Bitbucket Server. The {@code GITLAB_ACCESS_TOKEN} type corresponds to GitLab.
-     * The {@code GITHUB_ACCESS_TOKEN} type corresponds to GitHub.
+     * The type of configuration source provider. The {@code BITBUCKET_CLOUD_ACCESS_TOKEN} type
+     * corresponds to Bitbucket Cloud. The {@code BITBUCKET_SERVER_ACCESS_TOKEN} type corresponds to
+     * Bitbucket Server. The {@code GITLAB_ACCESS_TOKEN} type corresponds to GitLab. The {@code
+     * GITHUB_ACCESS_TOKEN} type corresponds to GitHub.
      */
     public enum ConfigSourceProviderType implements com.oracle.bmc.http.internal.BmcEnum {
-        BitbucketCloudUsernameApppassword("BITBUCKET_CLOUD_USERNAME_APPPASSWORD"),
+        BitbucketCloudAccessToken("BITBUCKET_CLOUD_ACCESS_TOKEN"),
         BitbucketServerAccessToken("BITBUCKET_SERVER_ACCESS_TOKEN"),
         GitlabAccessToken("GITLAB_ACCESS_TOKEN"),
         GithubAccessToken("GITHUB_ACCESS_TOKEN"),

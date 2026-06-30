@@ -139,28 +139,28 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudUsernameAppPasswordConfigurationSourceProvider",
+    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudEmailApiTokenConfigurationSourceProvider",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "queryAllDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudUsernameAppPasswordConfigurationSourceProvider$Builder",
+    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudEmailApiTokenConfigurationSourceProvider$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary",
+    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "queryAllDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary$Builder",
+    "name": "com.oracle.bmc.resourcemanager.model.BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -415,14 +415,14 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails",
+    "name": "com.oracle.bmc.resourcemanager.model.CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "queryAllDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails$Builder",
+    "name": "com.oracle.bmc.resourcemanager.model.CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true
@@ -1486,14 +1486,14 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails",
+    "name": "com.oracle.bmc.resourcemanager.model.UpdateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "queryAllDeclaredConstructors": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.resourcemanager.model.UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails$Builder",
+    "name": "com.oracle.bmc.resourcemanager.model.UpdateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails$Builder",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
     "allDeclaredConstructors": true

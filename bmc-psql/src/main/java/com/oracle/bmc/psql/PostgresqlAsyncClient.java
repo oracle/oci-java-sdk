@@ -694,6 +694,38 @@ public class PostgresqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetPitrDetailsResponse> getPitrDetails(
+            GetPitrDetailsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPitrDetailsRequest, GetPitrDetailsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, GetPitrDetailsResponse::builder)
+                .logger(LOG, "getPitrDetails")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetPitrDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/PitrDetails/GetPitrDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPitrDetailsRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("pitrDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.psql.model.PitrDetails.class,
+                        GetPitrDetailsResponse.Builder::pitrDetails)
+                .handleResponseHeaderString("etag", GetPitrDetailsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPitrDetailsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPrimaryDbInstanceResponse> getPrimaryDbInstance(
             GetPrimaryDbInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -785,6 +817,7 @@ public class PostgresqlAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("backupSourceType", request.getBackupSourceType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

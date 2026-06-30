@@ -36,6 +36,7 @@ public final class UpdateBucketDetails
         "freeformTags",
         "definedTags",
         "kmsKeyId",
+        "isBucketKeyEnabled",
         "versioning",
         "autoTiering",
         "bucketScope"
@@ -50,6 +51,7 @@ public final class UpdateBucketDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String kmsKeyId,
+            Boolean isBucketKeyEnabled,
             Versioning versioning,
             Bucket.AutoTiering autoTiering,
             Bucket.BucketScope bucketScope) {
@@ -63,6 +65,7 @@ public final class UpdateBucketDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
+        this.isBucketKeyEnabled = isBucketKeyEnabled;
         this.versioning = versioning;
         this.autoTiering = autoTiering;
         this.bucketScope = bucketScope;
@@ -261,6 +264,29 @@ public final class UpdateBucketDetails
             return this;
         }
         /**
+         * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys
+         * with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This
+         * reduces calls to OCI Vault Key Management Service (KMS). Existing objects are not
+         * affected.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isBucketKeyEnabled")
+        private Boolean isBucketKeyEnabled;
+
+        /**
+         * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys
+         * with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This
+         * reduces calls to OCI Vault Key Management Service (KMS). Existing objects are not
+         * affected.
+         *
+         * @param isBucketKeyEnabled the value to set
+         * @return this builder
+         */
+        public Builder isBucketKeyEnabled(Boolean isBucketKeyEnabled) {
+            this.isBucketKeyEnabled = isBucketKeyEnabled;
+            this.__explicitlySet__.add("isBucketKeyEnabled");
+            return this;
+        }
+        /**
          * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of
          * the same object can be kept in the bucket. When the object is overwritten or deleted,
          * previous versions will still be available. When versioning is {@code Suspended}, the
@@ -355,6 +381,7 @@ public final class UpdateBucketDetails
                             this.freeformTags,
                             this.definedTags,
                             this.kmsKeyId,
+                            this.isBucketKeyEnabled,
                             this.versioning,
                             this.autoTiering,
                             this.bucketScope);
@@ -392,6 +419,9 @@ public final class UpdateBucketDetails
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("isBucketKeyEnabled")) {
+                this.isBucketKeyEnabled(model.getIsBucketKeyEnabled());
             }
             if (model.wasPropertyExplicitlySet("versioning")) {
                 this.versioning(model.getVersioning());
@@ -624,6 +654,25 @@ public final class UpdateBucketDetails
     }
 
     /**
+     * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with
+     * server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls
+     * to OCI Vault Key Management Service (KMS). Existing objects are not affected.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isBucketKeyEnabled")
+    private final Boolean isBucketKeyEnabled;
+
+    /**
+     * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with
+     * server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls
+     * to OCI Vault Key Management Service (KMS). Existing objects are not affected.
+     *
+     * @return the value
+     */
+    public Boolean getIsBucketKeyEnabled() {
+        return isBucketKeyEnabled;
+    }
+
+    /**
      * The versioning status on the bucket. If in state {@code Enabled}, multiple versions of the
      * same object can be kept in the bucket. When the object is overwritten or deleted, previous
      * versions will still be available. When versioning is {@code Suspended}, the previous versions
@@ -757,6 +806,7 @@ public final class UpdateBucketDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", isBucketKeyEnabled=").append(String.valueOf(this.isBucketKeyEnabled));
         sb.append(", versioning=").append(String.valueOf(this.versioning));
         sb.append(", autoTiering=").append(String.valueOf(this.autoTiering));
         sb.append(", bucketScope=").append(String.valueOf(this.bucketScope));
@@ -783,6 +833,7 @@ public final class UpdateBucketDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.isBucketKeyEnabled, other.isBucketKeyEnabled)
                 && java.util.Objects.equals(this.versioning, other.versioning)
                 && java.util.Objects.equals(this.autoTiering, other.autoTiering)
                 && java.util.Objects.equals(this.bucketScope, other.bucketScope)
@@ -810,6 +861,11 @@ public final class UpdateBucketDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBucketKeyEnabled == null
+                                ? 43
+                                : this.isBucketKeyEnabled.hashCode());
         result = (result * PRIME) + (this.versioning == null ? 43 : this.versioning.hashCode());
         result = (result * PRIME) + (this.autoTiering == null ? 43 : this.autoTiering.hashCode());
         result = (result * PRIME) + (this.bucketScope == null ? 43 : this.bucketScope.hashCode());

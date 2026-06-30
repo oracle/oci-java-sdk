@@ -633,6 +633,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Scheduled("SCHEDULED"),
         Manual("MANUAL"),
+        Pitr("PITR"),
         Copied("COPIED"),
 
         /**
