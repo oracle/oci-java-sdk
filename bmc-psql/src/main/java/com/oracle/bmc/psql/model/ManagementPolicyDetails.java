@@ -23,11 +23,13 @@ package com.oracle.bmc.psql.model;
 public final class ManagementPolicyDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"maintenanceWindowStart", "backupPolicy"})
-    public ManagementPolicyDetails(String maintenanceWindowStart, BackupPolicy backupPolicy) {
+    @java.beans.ConstructorProperties({"maintenanceWindowStart", "backupPolicy", "pitrPolicy"})
+    public ManagementPolicyDetails(
+            String maintenanceWindowStart, BackupPolicy backupPolicy, PitrPolicy pitrPolicy) {
         super();
         this.maintenanceWindowStart = maintenanceWindowStart;
         this.backupPolicy = backupPolicy;
+        this.pitrPolicy = pitrPolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -69,12 +71,22 @@ public final class ManagementPolicyDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pitrPolicy")
+        private PitrPolicy pitrPolicy;
+
+        public Builder pitrPolicy(PitrPolicy pitrPolicy) {
+            this.pitrPolicy = pitrPolicy;
+            this.__explicitlySet__.add("pitrPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementPolicyDetails build() {
             ManagementPolicyDetails model =
-                    new ManagementPolicyDetails(this.maintenanceWindowStart, this.backupPolicy);
+                    new ManagementPolicyDetails(
+                            this.maintenanceWindowStart, this.backupPolicy, this.pitrPolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -88,6 +100,9 @@ public final class ManagementPolicyDetails
             }
             if (model.wasPropertyExplicitlySet("backupPolicy")) {
                 this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("pitrPolicy")) {
+                this.pitrPolicy(model.getPitrPolicy());
             }
             return this;
         }
@@ -132,6 +147,13 @@ public final class ManagementPolicyDetails
         return backupPolicy;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("pitrPolicy")
+    private final PitrPolicy pitrPolicy;
+
+    public PitrPolicy getPitrPolicy() {
+        return pitrPolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -149,6 +171,7 @@ public final class ManagementPolicyDetails
         sb.append("super=").append(super.toString());
         sb.append("maintenanceWindowStart=").append(String.valueOf(this.maintenanceWindowStart));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", pitrPolicy=").append(String.valueOf(this.pitrPolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -165,6 +188,7 @@ public final class ManagementPolicyDetails
         ManagementPolicyDetails other = (ManagementPolicyDetails) o;
         return java.util.Objects.equals(this.maintenanceWindowStart, other.maintenanceWindowStart)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(this.pitrPolicy, other.pitrPolicy)
                 && super.equals(other);
     }
 
@@ -178,6 +202,7 @@ public final class ManagementPolicyDetails
                                 ? 43
                                 : this.maintenanceWindowStart.hashCode());
         result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result = (result * PRIME) + (this.pitrPolicy == null ? 43 : this.pitrPolicy.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

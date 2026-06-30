@@ -1139,6 +1139,8 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-content-sha384", GetObjectResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString(
                         "opc-multipart-sha384", GetObjectResponse.Builder::opcMultipartSha384)
+                .handleResponseHeaderBoolean(
+                        "opc-bucket-key-enabled", GetObjectResponse.Builder::opcBucketKeyEnabled)
                 .handleResponseHeaderString("content-type", GetObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", GetObjectResponse.Builder::contentLanguage)
@@ -1520,6 +1522,8 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                         "opc-content-sha384", HeadObjectResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString(
                         "opc-multipart-sha384", HeadObjectResponse.Builder::opcMultipartSha384)
+                .handleResponseHeaderBoolean(
+                        "opc-bucket-key-enabled", HeadObjectResponse.Builder::opcBucketKeyEnabled)
                 .handleResponseHeaderString("content-type", HeadObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", HeadObjectResponse.Builder::contentLanguage)
@@ -2315,6 +2319,7 @@ public class ObjectStorageClient extends com.oracle.bmc.http.internal.BaseSyncCl
                 .appendPathParam(request.getBucketName())
                 .appendPathParam("actions")
                 .appendPathParam("reencrypt")
+                .appendQueryParam("isReencryptBucketKeyOnly", request.getIsReencryptBucketKeyOnly())
                 .accept("application/json")
                 .appendHeader("opc-client-request-id", request.getOpcClientRequestId())
                 .operationUsesDefaultRetries()

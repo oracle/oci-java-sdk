@@ -103,6 +103,24 @@ public final class GitlabAccessTokenConfigurationSourceProvider
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
+
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isMigrationRequired")
+        private Boolean isMigrationRequired;
+
+        public Builder isMigrationRequired(Boolean isMigrationRequired) {
+            this.isMigrationRequired = isMigrationRequired;
+            this.__explicitlySet__.add("isMigrationRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
@@ -169,6 +187,8 @@ public final class GitlabAccessTokenConfigurationSourceProvider
                             this.lifecycleState,
                             this.privateServerConfigDetails,
                             this.username,
+                            this.email,
+                            this.isMigrationRequired,
                             this.secretId,
                             this.freeformTags,
                             this.definedTags,
@@ -205,6 +225,12 @@ public final class GitlabAccessTokenConfigurationSourceProvider
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            if (model.wasPropertyExplicitlySet("isMigrationRequired")) {
+                this.isMigrationRequired(model.getIsMigrationRequired());
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
@@ -244,6 +270,8 @@ public final class GitlabAccessTokenConfigurationSourceProvider
             LifecycleState lifecycleState,
             PrivateServerConfigDetails privateServerConfigDetails,
             String username,
+            String email,
+            Boolean isMigrationRequired,
             String secretId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -258,6 +286,8 @@ public final class GitlabAccessTokenConfigurationSourceProvider
                 lifecycleState,
                 privateServerConfigDetails,
                 username,
+                email,
+                isMigrationRequired,
                 secretId,
                 freeformTags,
                 definedTags,

@@ -26,11 +26,11 @@ package com.oracle.bmc.resourcemanager.model;
             value = GitlabAccessTokenConfigurationSourceProviderSummary.class,
             name = "GITLAB_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.class,
-            name = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = BitbucketServerAccessTokenConfigurationSourceProviderSummary.class,
             name = "BITBUCKET_SERVER_ACCESS_TOKEN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.class,
+            name = "BITBUCKET_CLOUD_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GithubAccessTokenConfigurationSourceProviderSummary.class,
             name = "GITHUB_ACCESS_TOKEN")
@@ -48,6 +48,7 @@ public class ConfigurationSourceProviderSummary
         "timeCreated",
         "lifecycleState",
         "privateServerConfigDetails",
+        "isMigrationRequired",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -60,6 +61,7 @@ public class ConfigurationSourceProviderSummary
             java.util.Date timeCreated,
             ConfigurationSourceProvider.LifecycleState lifecycleState,
             PrivateServerConfigDetails privateServerConfigDetails,
+            Boolean isMigrationRequired,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -71,6 +73,7 @@ public class ConfigurationSourceProviderSummary
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.privateServerConfigDetails = privateServerConfigDetails;
+        this.isMigrationRequired = isMigrationRequired;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -184,6 +187,23 @@ public class ConfigurationSourceProviderSummary
     }
 
     /**
+     * Indicates whether this configuration source provider uses legacy Bitbucket Cloud
+     * username/app-password credentials and must be migrated.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMigrationRequired")
+    private final Boolean isMigrationRequired;
+
+    /**
+     * Indicates whether this configuration source provider uses legacy Bitbucket Cloud
+     * username/app-password credentials and must be migrated.
+     *
+     * @return the value
+     */
+    public Boolean getIsMigrationRequired() {
+        return isMigrationRequired;
+    }
+
+    /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
@@ -271,6 +291,7 @@ public class ConfigurationSourceProviderSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", privateServerConfigDetails=")
                 .append(String.valueOf(this.privateServerConfigDetails));
+        sb.append(", isMigrationRequired=").append(String.valueOf(this.isMigrationRequired));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -296,6 +317,7 @@ public class ConfigurationSourceProviderSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(
                         this.privateServerConfigDetails, other.privateServerConfigDetails)
+                && java.util.Objects.equals(this.isMigrationRequired, other.isMigrationRequired)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -321,6 +343,11 @@ public class ConfigurationSourceProviderSummary
                         + (this.privateServerConfigDetails == null
                                 ? 43
                                 : this.privateServerConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMigrationRequired == null
+                                ? 43
+                                : this.isMigrationRequired.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

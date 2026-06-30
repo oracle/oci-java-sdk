@@ -6,8 +6,9 @@ package com.oracle.bmc.resourcemanager.model;
 
 /**
  * Creation details for a configuration source provider of the type {@code
- * BITBUCKET_CLOUD_USERNAME_appPASSWORD}. This type corresponds to a configuration source provider
- * in Bitbucket that is authenticated with a username and app password. <br>
+ * BITBUCKET_CLOUD_ACCESS_TOKEN}. This type corresponds to a configuration source provider in
+ * Bitbucket Cloud that is authenticated with Atlassian account email and API token. Legacy
+ * username/app-password create request shapes are no longer supported. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -19,16 +20,14 @@ package com.oracle.bmc.resourcemanager.model;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder =
-                CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails.Builder
-                        .class)
+        builder = CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
         property = "configSourceProviderType")
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails
+public final class CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails
         extends CreateConfigurationSourceProviderDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -102,19 +101,19 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
             this.__explicitlySet__.add("apiEndpoint");
             return this;
         }
-        /** The username for the user of the Bitbucket cloud repository. */
-        @com.fasterxml.jackson.annotation.JsonProperty("username")
-        private String username;
+        /** Atlassian account email used for Bitbucket Cloud API token authentication. */
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
 
         /**
-         * The username for the user of the Bitbucket cloud repository.
+         * Atlassian account email used for Bitbucket Cloud API token authentication.
          *
-         * @param username the value to set
+         * @param email the value to set
          * @return this builder
          */
-        public Builder username(String username) {
-            this.username = username;
-            this.__explicitlySet__.add("username");
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
             return this;
         }
         /** The secret ocid which is used to authorize the user. */
@@ -136,9 +135,9 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails build() {
-            CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails model =
-                    new CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails(
+        public CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails build() {
+            CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails model =
+                    new CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails(
                             this.compartmentId,
                             this.displayName,
                             this.description,
@@ -146,7 +145,7 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
                             this.freeformTags,
                             this.definedTags,
                             this.apiEndpoint,
-                            this.username,
+                            this.email,
                             this.secretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -156,7 +155,7 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(
-                CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails model) {
+                CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails model) {
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -178,8 +177,8 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
             if (model.wasPropertyExplicitlySet("apiEndpoint")) {
                 this.apiEndpoint(model.getApiEndpoint());
             }
-            if (model.wasPropertyExplicitlySet("username")) {
-                this.username(model.getUsername());
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
             }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
@@ -198,7 +197,7 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
     }
 
     @Deprecated
-    public CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails(
+    public CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails(
             String compartmentId,
             String displayName,
             String description,
@@ -206,7 +205,7 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String apiEndpoint,
-            String username,
+            String email,
             String secretId) {
         super(
                 compartmentId,
@@ -216,7 +215,7 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
                 freeformTags,
                 definedTags);
         this.apiEndpoint = apiEndpoint;
-        this.username = username;
+        this.email = email;
         this.secretId = secretId;
     }
 
@@ -233,17 +232,17 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
         return apiEndpoint;
     }
 
-    /** The username for the user of the Bitbucket cloud repository. */
-    @com.fasterxml.jackson.annotation.JsonProperty("username")
-    private final String username;
+    /** Atlassian account email used for Bitbucket Cloud API token authentication. */
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    private final String email;
 
     /**
-     * The username for the user of the Bitbucket cloud repository.
+     * Atlassian account email used for Bitbucket Cloud API token authentication.
      *
      * @return the value
      */
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
     /** The secret ocid which is used to authorize the user. */
@@ -272,10 +271,10 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails(");
+        sb.append("CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", apiEndpoint=").append(String.valueOf(this.apiEndpoint));
-        sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", email=").append(String.valueOf(this.email));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(")");
         return sb.toString();
@@ -286,16 +285,14 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
         if (this == o) {
             return true;
         }
-        if (!(o
-                instanceof
-                CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails)) {
+        if (!(o instanceof CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails)) {
             return false;
         }
 
-        CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails other =
-                (CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails) o;
+        CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails other =
+                (CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails) o;
         return java.util.Objects.equals(this.apiEndpoint, other.apiEndpoint)
-                && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.email, other.email)
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && super.equals(other);
     }
@@ -305,7 +302,7 @@ public final class CreateBitbucketCloudUsernameAppPasswordConfigurationSourcePro
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.apiEndpoint == null ? 43 : this.apiEndpoint.hashCode());
-        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         return result;
     }

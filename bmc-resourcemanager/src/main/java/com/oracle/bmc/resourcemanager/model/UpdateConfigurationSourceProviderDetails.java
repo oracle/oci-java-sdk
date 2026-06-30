@@ -23,14 +23,14 @@ package com.oracle.bmc.resourcemanager.model;
         defaultImpl = UpdateConfigurationSourceProviderDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails.class,
-            name = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails.class,
             name = "BITBUCKET_SERVER_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateGitlabAccessTokenConfigurationSourceProviderDetails.class,
             name = "GITLAB_ACCESS_TOKEN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails.class,
+            name = "BITBUCKET_CLOUD_ACCESS_TOKEN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateGithubAccessTokenConfigurationSourceProviderDetails.class,
             name = "GITHUB_ACCESS_TOKEN")

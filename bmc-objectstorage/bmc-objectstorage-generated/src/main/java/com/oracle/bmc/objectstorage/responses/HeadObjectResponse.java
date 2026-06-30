@@ -212,6 +212,18 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcMultipartSha384;
     }
 
+    /** True if bucket key was enabled and used to encrypt the object during upload or reencrypt. */
+    private Boolean opcBucketKeyEnabled;
+
+    /**
+     * True if bucket key was enabled and used to encrypt the object during upload or reencrypt.
+     *
+     * @return the value
+     */
+    public Boolean getOpcBucketKeyEnabled() {
+        return opcBucketKeyEnabled;
+    }
+
     /**
      * Content-Type header, as described in [RFC
      * 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
@@ -393,6 +405,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         "opcMultipartSha256",
         "opcContentSha384",
         "opcMultipartSha384",
+        "opcBucketKeyEnabled",
         "contentType",
         "contentLanguage",
         "contentEncoding",
@@ -420,6 +433,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             String opcMultipartSha256,
             String opcContentSha384,
             String opcMultipartSha384,
+            Boolean opcBucketKeyEnabled,
             String contentType,
             String contentLanguage,
             String contentEncoding,
@@ -444,6 +458,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         this.opcMultipartSha256 = opcMultipartSha256;
         this.opcContentSha384 = opcContentSha384;
         this.opcMultipartSha384 = opcMultipartSha384;
+        this.opcBucketKeyEnabled = opcBucketKeyEnabled;
         this.contentType = contentType;
         this.contentLanguage = contentLanguage;
         this.contentEncoding = contentEncoding;
@@ -708,6 +723,22 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
+         * True if bucket key was enabled and used to encrypt the object during upload or reencrypt.
+         */
+        private Boolean opcBucketKeyEnabled;
+
+        /**
+         * True if bucket key was enabled and used to encrypt the object during upload or reencrypt.
+         *
+         * @param opcBucketKeyEnabled the value to set
+         * @return this builder
+         */
+        public Builder opcBucketKeyEnabled(Boolean opcBucketKeyEnabled) {
+            this.opcBucketKeyEnabled = opcBucketKeyEnabled;
+            return this;
+        }
+
+        /**
          * Content-Type header, as described in [RFC
          * 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
          */
@@ -917,6 +948,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             opcMultipartSha256(o.getOpcMultipartSha256());
             opcContentSha384(o.getOpcContentSha384());
             opcMultipartSha384(o.getOpcMultipartSha384());
+            opcBucketKeyEnabled(o.getOpcBucketKeyEnabled());
             contentType(o.getContentType());
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
@@ -954,6 +986,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
                     opcMultipartSha256,
                     opcContentSha384,
                     opcMultipartSha384,
+                    opcBucketKeyEnabled,
                     contentType,
                     contentLanguage,
                     contentEncoding,
@@ -994,6 +1027,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append(",opcMultipartSha256=").append(String.valueOf(opcMultipartSha256));
         sb.append(",opcContentSha384=").append(String.valueOf(opcContentSha384));
         sb.append(",opcMultipartSha384=").append(String.valueOf(opcMultipartSha384));
+        sb.append(",opcBucketKeyEnabled=").append(String.valueOf(opcBucketKeyEnabled));
         sb.append(",contentType=").append(String.valueOf(contentType));
         sb.append(",contentLanguage=").append(String.valueOf(contentLanguage));
         sb.append(",contentEncoding=").append(String.valueOf(contentEncoding));
@@ -1032,6 +1066,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
                 && java.util.Objects.equals(this.opcMultipartSha256, other.opcMultipartSha256)
                 && java.util.Objects.equals(this.opcContentSha384, other.opcContentSha384)
                 && java.util.Objects.equals(this.opcMultipartSha384, other.opcMultipartSha384)
+                && java.util.Objects.equals(this.opcBucketKeyEnabled, other.opcBucketKeyEnabled)
                 && java.util.Objects.equals(this.contentType, other.contentType)
                 && java.util.Objects.equals(this.contentLanguage, other.contentLanguage)
                 && java.util.Objects.equals(this.contentEncoding, other.contentEncoding)
@@ -1083,6 +1118,11 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
                         + (this.opcMultipartSha384 == null
                                 ? 43
                                 : this.opcMultipartSha384.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcBucketKeyEnabled == null
+                                ? 43
+                                : this.opcBucketKeyEnabled.hashCode());
         result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
         result =
                 (result * PRIME)

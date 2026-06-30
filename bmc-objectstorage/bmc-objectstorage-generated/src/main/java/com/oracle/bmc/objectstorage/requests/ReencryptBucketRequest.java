@@ -33,6 +33,17 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
     public String getBucketName() {
         return bucketName;
     }
+    /**
+     * If true, reencrypt only the intermediate bucket keys and skip everything else in the bucket.
+     */
+    private Boolean isReencryptBucketKeyOnly;
+
+    /**
+     * If true, reencrypt only the intermediate bucket keys and skip everything else in the bucket.
+     */
+    public Boolean getIsReencryptBucketKeyOnly() {
+        return isReencryptBucketKeyOnly;
+    }
     /** The client request ID for tracing. */
     private String opcClientRequestId;
 
@@ -76,6 +87,24 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
          */
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
+            return this;
+        }
+
+        /**
+         * If true, reencrypt only the intermediate bucket keys and skip everything else in the
+         * bucket.
+         */
+        private Boolean isReencryptBucketKeyOnly = null;
+
+        /**
+         * If true, reencrypt only the intermediate bucket keys and skip everything else in the
+         * bucket.
+         *
+         * @param isReencryptBucketKeyOnly the value to set
+         * @return this builder instance
+         */
+        public Builder isReencryptBucketKeyOnly(Boolean isReencryptBucketKeyOnly) {
+            this.isReencryptBucketKeyOnly = isReencryptBucketKeyOnly;
             return this;
         }
 
@@ -125,6 +154,7 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
         public Builder copy(ReencryptBucketRequest o) {
             namespaceName(o.getNamespaceName());
             bucketName(o.getBucketName());
+            isReencryptBucketKeyOnly(o.getIsReencryptBucketKeyOnly());
             opcClientRequestId(o.getOpcClientRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -162,9 +192,11 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
             ReencryptBucketRequest request = new ReencryptBucketRequest();
             request.namespaceName = namespaceName;
             request.bucketName = bucketName;
+            request.isReencryptBucketKeyOnly = isReencryptBucketKeyOnly;
             request.opcClientRequestId = opcClientRequestId;
             return request;
-            // new ReencryptBucketRequest(namespaceName, bucketName, opcClientRequestId);
+            // new ReencryptBucketRequest(namespaceName, bucketName, isReencryptBucketKeyOnly,
+            // opcClientRequestId);
         }
     }
 
@@ -177,6 +209,7 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
         return new Builder()
                 .namespaceName(namespaceName)
                 .bucketName(bucketName)
+                .isReencryptBucketKeyOnly(isReencryptBucketKeyOnly)
                 .opcClientRequestId(opcClientRequestId);
     }
 
@@ -196,6 +229,8 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append("super=").append(super.toString());
         sb.append(",namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(",bucketName=").append(String.valueOf(this.bucketName));
+        sb.append(",isReencryptBucketKeyOnly=")
+                .append(String.valueOf(this.isReencryptBucketKeyOnly));
         sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
         sb.append(")");
         return sb.toString();
@@ -214,6 +249,8 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
         return super.equals(o)
                 && java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.bucketName, other.bucketName)
+                && java.util.Objects.equals(
+                        this.isReencryptBucketKeyOnly, other.isReencryptBucketKeyOnly)
                 && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId);
     }
 
@@ -225,6 +262,11 @@ public class ReencryptBucketRequest extends com.oracle.bmc.requests.BmcRequest<j
                 (result * PRIME)
                         + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
         result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReencryptBucketKeyOnly == null
+                                ? 43
+                                : this.isReencryptBucketKeyOnly.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcClientRequestId == null

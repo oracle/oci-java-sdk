@@ -75,15 +75,50 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
             return this;
         }
         /**
-         * when true and timeStart is null, system generate a random start time between now and now
-         * + interval; isRandomStartTime can be true if timeStart is null.
+         * Maximum number of minutes after timeStart that the scheduler may use to randomly select
+         * the first execution time. This value is considered only when isRandomStartTime is true.
+         * This value applies only to the initial execution; subsequent executions remain
+         * deterministic based on the resolved first trigger time. If timeStart is null, the service
+         * resolves the effective start time using the current time. The initial jitter window is
+         * then applied once to that resolved start time to determine the first execution time. If
+         * not provided and isRandomStartTime is true, the service defaults the jitter window to
+         * half of the configured interval duration. The value must not exceed the configured
+         * interval duration.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("initialJitterInMinutes")
+        private Integer initialJitterInMinutes;
+
+        /**
+         * Maximum number of minutes after timeStart that the scheduler may use to randomly select
+         * the first execution time. This value is considered only when isRandomStartTime is true.
+         * This value applies only to the initial execution; subsequent executions remain
+         * deterministic based on the resolved first trigger time. If timeStart is null, the service
+         * resolves the effective start time using the current time. The initial jitter window is
+         * then applied once to that resolved start time to determine the first execution time. If
+         * not provided and isRandomStartTime is true, the service defaults the jitter window to
+         * half of the configured interval duration. The value must not exceed the configured
+         * interval duration.
+         *
+         * @param initialJitterInMinutes the value to set
+         * @return this builder
+         */
+        public Builder initialJitterInMinutes(Integer initialJitterInMinutes) {
+            this.initialJitterInMinutes = initialJitterInMinutes;
+            this.__explicitlySet__.add("initialJitterInMinutes");
+            return this;
+        }
+        /**
+         * when true, system generates a randomized first start time between timeStart and timeStart
+         * + initialJitterInMinutes. if timeStart is null, the current time is used as the base
+         * start time.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRandomStartTime")
         private Boolean isRandomStartTime;
 
         /**
-         * when true and timeStart is null, system generate a random start time between now and now
-         * + interval; isRandomStartTime can be true if timeStart is null.
+         * when true, system generates a randomized first start time between timeStart and timeStart
+         * + initialJitterInMinutes. if timeStart is null, the current time is used as the base
+         * start time.
          *
          * @param isRandomStartTime the value to set
          * @return this builder
@@ -104,6 +139,7 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
                             this.timeEnd,
                             this.frequency,
                             this.interval,
+                            this.initialJitterInMinutes,
                             this.isRandomStartTime);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -124,6 +160,9 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
             }
             if (model.wasPropertyExplicitlySet("interval")) {
                 this.interval(model.getInterval());
+            }
+            if (model.wasPropertyExplicitlySet("initialJitterInMinutes")) {
+                this.initialJitterInMinutes(model.getInitialJitterInMinutes());
             }
             if (model.wasPropertyExplicitlySet("isRandomStartTime")) {
                 this.isRandomStartTime(model.getIsRandomStartTime());
@@ -147,10 +186,12 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
             java.util.Date timeEnd,
             Frequency frequency,
             Integer interval,
+            Integer initialJitterInMinutes,
             Boolean isRandomStartTime) {
         super(timeStart, timeEnd);
         this.frequency = frequency;
         this.interval = interval;
+        this.initialJitterInMinutes = initialJitterInMinutes;
         this.isRandomStartTime = isRandomStartTime;
     }
 
@@ -227,15 +268,46 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
     }
 
     /**
-     * when true and timeStart is null, system generate a random start time between now and now +
-     * interval; isRandomStartTime can be true if timeStart is null.
+     * Maximum number of minutes after timeStart that the scheduler may use to randomly select the
+     * first execution time. This value is considered only when isRandomStartTime is true. This
+     * value applies only to the initial execution; subsequent executions remain deterministic based
+     * on the resolved first trigger time. If timeStart is null, the service resolves the effective
+     * start time using the current time. The initial jitter window is then applied once to that
+     * resolved start time to determine the first execution time. If not provided and
+     * isRandomStartTime is true, the service defaults the jitter window to half of the configured
+     * interval duration. The value must not exceed the configured interval duration.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("initialJitterInMinutes")
+    private final Integer initialJitterInMinutes;
+
+    /**
+     * Maximum number of minutes after timeStart that the scheduler may use to randomly select the
+     * first execution time. This value is considered only when isRandomStartTime is true. This
+     * value applies only to the initial execution; subsequent executions remain deterministic based
+     * on the resolved first trigger time. If timeStart is null, the service resolves the effective
+     * start time using the current time. The initial jitter window is then applied once to that
+     * resolved start time to determine the first execution time. If not provided and
+     * isRandomStartTime is true, the service defaults the jitter window to half of the configured
+     * interval duration. The value must not exceed the configured interval duration.
+     *
+     * @return the value
+     */
+    public Integer getInitialJitterInMinutes() {
+        return initialJitterInMinutes;
+    }
+
+    /**
+     * when true, system generates a randomized first start time between timeStart and timeStart +
+     * initialJitterInMinutes. if timeStart is null, the current time is used as the base start
+     * time.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isRandomStartTime")
     private final Boolean isRandomStartTime;
 
     /**
-     * when true and timeStart is null, system generate a random start time between now and now +
-     * interval; isRandomStartTime can be true if timeStart is null.
+     * when true, system generates a randomized first start time between timeStart and timeStart +
+     * initialJitterInMinutes. if timeStart is null, the current time is used as the base start
+     * time.
      *
      * @return the value
      */
@@ -260,6 +332,7 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", frequency=").append(String.valueOf(this.frequency));
         sb.append(", interval=").append(String.valueOf(this.interval));
+        sb.append(", initialJitterInMinutes=").append(String.valueOf(this.initialJitterInMinutes));
         sb.append(", isRandomStartTime=").append(String.valueOf(this.isRandomStartTime));
         sb.append(")");
         return sb.toString();
@@ -277,6 +350,8 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
         ScheduleIntervalTrigger other = (ScheduleIntervalTrigger) o;
         return java.util.Objects.equals(this.frequency, other.frequency)
                 && java.util.Objects.equals(this.interval, other.interval)
+                && java.util.Objects.equals(
+                        this.initialJitterInMinutes, other.initialJitterInMinutes)
                 && java.util.Objects.equals(this.isRandomStartTime, other.isRandomStartTime)
                 && super.equals(other);
     }
@@ -287,6 +362,11 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
         int result = super.hashCode();
         result = (result * PRIME) + (this.frequency == null ? 43 : this.frequency.hashCode());
         result = (result * PRIME) + (this.interval == null ? 43 : this.interval.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialJitterInMinutes == null
+                                ? 43
+                                : this.initialJitterInMinutes.hashCode());
         result =
                 (result * PRIME)
                         + (this.isRandomStartTime == null ? 43 : this.isRandomStartTime.hashCode());

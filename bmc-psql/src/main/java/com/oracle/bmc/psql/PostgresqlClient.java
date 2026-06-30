@@ -676,6 +676,35 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public GetPitrDetailsResponse getPitrDetails(GetPitrDetailsRequest request) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+
+        return clientCall(request, GetPitrDetailsResponse::builder)
+                .logger(LOG, "getPitrDetails")
+                .serviceDetails(
+                        "Postgresql",
+                        "GetPitrDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/PitrDetails/GetPitrDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPitrDetailsRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("pitrDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.psql.model.PitrDetails.class,
+                        GetPitrDetailsResponse.Builder::pitrDetails)
+                .handleResponseHeaderString("etag", GetPitrDetailsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPitrDetailsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetPrimaryDbInstanceResponse getPrimaryDbInstance(GetPrimaryDbInstanceRequest request) {
 
         Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
@@ -758,6 +787,7 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("backupSourceType", request.getBackupSourceType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

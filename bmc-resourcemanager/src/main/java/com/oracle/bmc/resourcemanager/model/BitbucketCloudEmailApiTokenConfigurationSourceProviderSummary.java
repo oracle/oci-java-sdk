@@ -5,9 +5,9 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The properties that define a configuration source provider of the type {@code
- * BITBUCKET_CLOUD_USERNAME_APPPASSWORD}. This type corresponds to a configuration source provider
- * in Bitbucket cloud that is authenticated with a username and app password. <br>
+ * Summary information for a configuration source provider of the type {@code
+ * BITBUCKET_CLOUD_ACCESS_TOKEN}. This type corresponds to a configuration source provider in
+ * Bitbucket Cloud that is authenticated with Atlassian account email and API token. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -19,15 +19,15 @@ package com.oracle.bmc.resourcemanager.model;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BitbucketCloudUsernameAppPasswordConfigurationSourceProvider.Builder.class)
+        builder = BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
         property = "configSourceProviderType")
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
-        extends ConfigurationSourceProvider {
+public final class BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary
+        extends ConfigurationSourceProviderSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -76,9 +76,9 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private ConfigurationSourceProvider.LifecycleState lifecycleState;
 
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(ConfigurationSourceProvider.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -94,21 +94,12 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("username")
-        private String username;
+        @com.fasterxml.jackson.annotation.JsonProperty("isMigrationRequired")
+        private Boolean isMigrationRequired;
 
-        public Builder username(String username) {
-            this.username = username;
-            this.__explicitlySet__.add("username");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("secretId")
-        private String secretId;
-
-        public Builder secretId(String secretId) {
-            this.secretId = secretId;
-            this.__explicitlySet__.add("secretId");
+        public Builder isMigrationRequired(Boolean isMigrationRequired) {
+            this.isMigrationRequired = isMigrationRequired;
+            this.__explicitlySet__.add("isMigrationRequired");
             return this;
         }
 
@@ -158,9 +149,9 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public BitbucketCloudUsernameAppPasswordConfigurationSourceProvider build() {
-            BitbucketCloudUsernameAppPasswordConfigurationSourceProvider model =
-                    new BitbucketCloudUsernameAppPasswordConfigurationSourceProvider(
+        public BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary build() {
+            BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary model =
+                    new BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary(
                             this.id,
                             this.compartmentId,
                             this.displayName,
@@ -168,8 +159,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
                             this.timeCreated,
                             this.lifecycleState,
                             this.privateServerConfigDetails,
-                            this.username,
-                            this.secretId,
+                            this.isMigrationRequired,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -181,7 +171,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BitbucketCloudUsernameAppPasswordConfigurationSourceProvider model) {
+        public Builder copy(BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary model) {
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
@@ -203,11 +193,8 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
             if (model.wasPropertyExplicitlySet("privateServerConfigDetails")) {
                 this.privateServerConfigDetails(model.getPrivateServerConfigDetails());
             }
-            if (model.wasPropertyExplicitlySet("username")) {
-                this.username(model.getUsername());
-            }
-            if (model.wasPropertyExplicitlySet("secretId")) {
-                this.secretId(model.getSecretId());
+            if (model.wasPropertyExplicitlySet("isMigrationRequired")) {
+                this.isMigrationRequired(model.getIsMigrationRequired());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -235,16 +222,15 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
     }
 
     @Deprecated
-    public BitbucketCloudUsernameAppPasswordConfigurationSourceProvider(
+    public BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary(
             String id,
             String compartmentId,
             String displayName,
             String description,
             java.util.Date timeCreated,
-            LifecycleState lifecycleState,
+            ConfigurationSourceProvider.LifecycleState lifecycleState,
             PrivateServerConfigDetails privateServerConfigDetails,
-            String username,
-            String secretId,
+            Boolean isMigrationRequired,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -257,8 +243,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
                 timeCreated,
                 lifecycleState,
                 privateServerConfigDetails,
-                username,
-                secretId,
+                isMigrationRequired,
                 freeformTags,
                 definedTags,
                 systemTags);
@@ -291,7 +276,7 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("BitbucketCloudUsernameAppPasswordConfigurationSourceProvider(");
+        sb.append("BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", apiEndpoint=").append(String.valueOf(this.apiEndpoint));
         sb.append(")");
@@ -303,12 +288,12 @@ public final class BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
         if (this == o) {
             return true;
         }
-        if (!(o instanceof BitbucketCloudUsernameAppPasswordConfigurationSourceProvider)) {
+        if (!(o instanceof BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary)) {
             return false;
         }
 
-        BitbucketCloudUsernameAppPasswordConfigurationSourceProvider other =
-                (BitbucketCloudUsernameAppPasswordConfigurationSourceProvider) o;
+        BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary other =
+                (BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary) o;
         return java.util.Objects.equals(this.apiEndpoint, other.apiEndpoint) && super.equals(other);
     }
 
