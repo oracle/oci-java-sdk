@@ -67,6 +67,42 @@ public class BaseClientTest {
         client.close();
     }
 
+    @Test
+    public void testSetEndpointRejectsInvalidEndpointScheme() {
+        assertEndpointRejected("file://objectstorage.us-phoenix-1.oci.customer-oci.com");
+    }
+
+    @Test
+    public void testSetEndpointRejectsEndpointWithUserInfo() {
+        assertEndpointRejected("https://foo@objectstorage.us-phoenix-1.oci.customer-oci.com");
+    }
+
+    @Test
+    public void testSetEndpointRejectsEndpointWithPath() {
+        assertEndpointRejected("https://objectstorage.us-phoenix-1.oci.customer-oci.com/foo");
+    }
+
+    @Test
+    public void testSetEndpointRejectsEndpointWithQuery() {
+        assertEndpointRejected("https://objectstorage.us-phoenix-1.oci.customer-oci.com?foo=bar");
+    }
+
+    @Test
+    public void testSetEndpointRejectsEndpointWithFragment() {
+        assertEndpointRejected("https://objectstorage.us-phoenix-1.oci.customer-oci.com#foo");
+    }
+
+    private void assertEndpointRejected(String endpoint) {
+        TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
+        try {
+            client.setEndpoint(endpoint);
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("host is invalid"));
+            return;
+        }
+        throw new AssertionError("Expected endpoint to be rejected: " + endpoint);
+    }
+
     private static class TestBaseClient extends BaseClient {
         /** Service instance for ObjectStorage. */
         public static final com.oracle.bmc.Service SERVICE =

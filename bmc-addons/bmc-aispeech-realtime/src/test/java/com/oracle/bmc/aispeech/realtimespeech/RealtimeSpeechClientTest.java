@@ -409,6 +409,33 @@ public class RealtimeSpeechClientTest {
     }
 
     @Test
+    public void testOpenNormalizesResampleableEncoding()
+            throws IOException, RealtimeSpeechConnectException, ExecutionException,
+                    InterruptedException, TimeoutException {
+        Mockito.doReturn(true).when(mockWebsocketClient).isStarted();
+
+        Future<Session> futureMock = mock(Future.class);
+        when(mockWebsocketClient.connect(any(), any(), any())).thenReturn(futureMock);
+        doReturn(mockSession).when(futureMock).get(eq(10), eq(TimeUnit.SECONDS));
+
+        final RealtimeParameters realtimeParameters =
+                RealtimeParameters.builder().encoding("audio/raw;rate=48000").build();
+
+        realtimeSpeechClient.open("wss://test-endpoint.com", realtimeParameters);
+
+        ArgumentCaptor<URI> uriArgumentCaptor = ArgumentCaptor.forClass(URI.class);
+        ArgumentCaptor<ClientUpgradeRequest> upgradeRequestArgCaptor =
+                ArgumentCaptor.forClass(ClientUpgradeRequest.class);
+        Mockito.verify(mockWebsocketClient, times(1))
+                .connect(any(), uriArgumentCaptor.capture(), upgradeRequestArgCaptor.capture());
+
+        final String expectedURIString =
+                "wss://test-endpoint.com/ws/transcribe/stream?encoding=audio%2Fraw%3Brate%3D16000";
+
+        Assert.assertEquals(expectedURIString, uriArgumentCaptor.getValue().toString());
+    }
+
+    @Test
     public void testOnOpenWithSingleParameters()
             throws IOException, RealtimeSpeechConnectException, InvocationTargetException,
                     NoSuchMethodException, IllegalAccessException, ExecutionException,

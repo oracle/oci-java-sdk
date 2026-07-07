@@ -18,6 +18,7 @@ import com.oracle.bmc.aispeech.model.RealtimeMessageResult;
 import com.oracle.bmc.aispeech.model.RealtimeMessageSendFinalResult;
 import com.oracle.bmc.aispeech.model.RealtimeParameters;
 import com.oracle.bmc.aispeech.model.RealtimeParameters.Punctuation;
+import com.oracle.bmc.aispeech.realtimespeech.internal.AudioResamplingSupport;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.signing.DefaultRequestSigner;
 import com.oracle.bmc.http.signing.RequestSigner;
@@ -42,6 +43,7 @@ import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -62,6 +64,10 @@ public class RealtimeSpeechClient {
     private BasicAuthenticationDetailsProvider authenticationDetailsProvider;
     private URI destUri;
     private Boolean isClosureClientInitiated = false;
+    private AudioResamplingSupport.AudioEncodingSettings audioEncodingSettings =
+            AudioResamplingSupport.AudioEncodingSettings.defaultSettings();
+    private Integer defaultSourceSampleRate;
+    private AudioResamplingSupport.StreamingAudioResampler streamingAudioResampler;
 
     private Status status;
 
@@ -76,7 +82,7 @@ public class RealtimeSpeechClient {
     private final ObjectMapper objectMapper =
             JacksonSerializer.getDefaultObjectMapper().copy().setFilterProvider(filters);
 
-    private static final String shoudIgnoreInvalidCustomizationsParamString =
+    private static final String shouldIgnoreInvalidCustomizationsParamString =
             "shouldIgnoreInvalidCustomizations";
     private static final String isAckEnabledParamString = "isAckEnabled";
     private static final String encodingParamString = "encoding";
@@ -281,6 +287,12 @@ public class RealtimeSpeechClient {
             throws RealtimeSpeechConnectException {
         try {
             status = Status.CONNECTING;
+            final EncodingNormalizationResult encodingNormalizationResult =
+                    normalizeEncodingForService(parameters.getEncoding());
+            final String effectiveEncoding = encodingNormalizationResult.normalizedEncoding;
+            this.defaultSourceSampleRate = encodingNormalizationResult.defaultSourceSampleRate;
+            this.audioEncodingSettings = AudioResamplingSupport.parseEncoding(effectiveEncoding);
+            this.streamingAudioResampler = null;
 
             final String customizationsJson =
                     objectMapper.writeValueAsString(parameters.getCustomizations());
@@ -293,14 +305,13 @@ public class RealtimeSpeechClient {
                         isAckEnabledParamString, parameters.getIsAckEnabled().toString());
             }
 
-            if (parameters.getEncoding() != null && !parameters.getEncoding().isEmpty()) {
-                queryParameterStringBuilder.addParameter(
-                        encodingParamString, parameters.getEncoding());
+            if (effectiveEncoding != null && !effectiveEncoding.isEmpty()) {
+                queryParameterStringBuilder.addParameter(encodingParamString, effectiveEncoding);
             }
 
             if (parameters.getShouldIgnoreInvalidCustomizations() != null) {
                 queryParameterStringBuilder.addParameter(
-                        shoudIgnoreInvalidCustomizationsParamString,
+                        shouldIgnoreInvalidCustomizationsParamString,
                         parameters.getShouldIgnoreInvalidCustomizations().toString());
             }
 
@@ -355,7 +366,7 @@ public class RealtimeSpeechClient {
             LOG.info("Connecting to {} \n", destUri);
 
             final ClientUpgradeRequest request = new ClientUpgradeRequest();
-            LOG.debug("Content-Type: {}", parameters.getEncoding());
+            LOG.debug("Content-Type: {}", effectiveEncoding);
 
             if (!webSocketClient.isStarted()) {
                 LOG.info("Client not started, starting it now");
@@ -387,7 +398,7 @@ public class RealtimeSpeechClient {
     /**
      * Sends the audio data of bytes to remote.
      *
-     * @param audioBytes represeting the audio data
+     * @param audioBytes representing the audio data
      * @throws RealtimeSpeechConnectException If there are errors while sending audio data
      */
     public void sendAudioData(byte[] audioBytes) throws RealtimeSpeechConnectException {
@@ -398,7 +409,31 @@ public class RealtimeSpeechClient {
         } else {
             try {
                 if (this.status.equals(Status.CONNECTED)) {
-                    this.session.getRemote().sendBytes(ByteBuffer.wrap(audioBytes));
+                    final int effectiveSourceSampleRate =
+                            defaultSourceSampleRate == null
+                                    ? audioEncodingSettings.getSampleRate()
+                                    : defaultSourceSampleRate;
+                    final long resamplingStartNanos = System.nanoTime();
+                    final byte[] normalizedAudioBytes =
+                            normalizeAudioForStreaming(audioBytes, effectiveSourceSampleRate);
+                    final long resamplingNanos = System.nanoTime() - resamplingStartNanos;
+                    final long sendStartNanos = System.nanoTime();
+                    this.session.getRemote().sendBytes(ByteBuffer.wrap(normalizedAudioBytes));
+                    final long sendNanos = System.nanoTime() - sendStartNanos;
+                    if (listener != null) {
+                        listener.onAudioChunkProcessed(
+                                AudioChunkProcessingDetails.builder()
+                                        .sourceSampleRate(effectiveSourceSampleRate)
+                                        .targetSampleRate(audioEncodingSettings.getSampleRate())
+                                        .inputBytes(audioBytes.length)
+                                        .outputBytes(normalizedAudioBytes.length)
+                                        .resampled(
+                                                effectiveSourceSampleRate
+                                                        != audioEncodingSettings.getSampleRate())
+                                        .resamplingNanos(resamplingNanos)
+                                        .sendNanos(sendNanos)
+                                        .build());
+                    }
 
                 } else {
                     this.status = Status.ERROR;
@@ -420,6 +455,7 @@ public class RealtimeSpeechClient {
 
         try {
             if (this.session != null) {
+                flushPendingResampledAudio();
                 LOG.info(
                         "Here are the sessions shared by the client: {}",
                         webSocketClient.getOpenSessions().stream().count());
@@ -432,6 +468,8 @@ public class RealtimeSpeechClient {
 
         this.isConnected = false;
         this.authenticationDetailsProvider = null;
+        this.streamingAudioResampler = null;
+        this.defaultSourceSampleRate = null;
     }
 
     private void sendCreds(String compartmentId) {
@@ -476,6 +514,7 @@ public class RealtimeSpeechClient {
      */
     public void requestFinalResult() {
         try {
+            flushPendingResampledAudio();
             String message =
                     objectMapper.writeValueAsString(
                             RealtimeMessageSendFinalResult.builder().build());
@@ -495,6 +534,79 @@ public class RealtimeSpeechClient {
 
     public Status getStatus() {
         return status;
+    }
+
+    private byte[] normalizeAudioForStreaming(byte[] audioBytes, Integer sourceSampleRate) {
+        if (sourceSampleRate == null
+                || sourceSampleRate.intValue() == audioEncodingSettings.getSampleRate()) {
+            return audioBytes;
+        }
+
+        AudioResamplingSupport.validateStreamingRequest(
+                sourceSampleRate.intValue(), audioEncodingSettings);
+
+        if (streamingAudioResampler == null) {
+            streamingAudioResampler =
+                    AudioResamplingSupport.createStreamingResampler(
+                            sourceSampleRate.intValue(), audioEncodingSettings);
+        }
+
+        return streamingAudioResampler.process(audioBytes);
+    }
+
+    private EncodingNormalizationResult normalizeEncodingForService(String requestedEncoding) {
+        final AudioResamplingSupport.AudioEncodingSettings requestedSettings =
+                AudioResamplingSupport.parseEncoding(requestedEncoding);
+        final int requestedSampleRate = requestedSettings.getSampleRate();
+
+        if (requestedEncoding == null || requestedEncoding.trim().isEmpty()) {
+            return new EncodingNormalizationResult(requestedEncoding, null);
+        }
+
+        if (AudioResamplingSupport.isServiceSupportedSampleRate(requestedSampleRate)) {
+            return new EncodingNormalizationResult(requestedEncoding, null);
+        }
+
+        final Optional<Integer> serviceTargetSampleRate =
+                AudioResamplingSupport.resolveServiceTargetSampleRate(requestedSampleRate);
+        final boolean canAutoNormalize =
+                serviceTargetSampleRate.isPresent()
+                        && AudioResamplingSupport.isAutoResamplingCompatible(requestedSettings);
+        if (!canAutoNormalize) {
+            return new EncodingNormalizationResult(requestedEncoding, null);
+        }
+
+        return new EncodingNormalizationResult(
+                AudioResamplingSupport.rewriteEncodingSampleRate(
+                        requestedEncoding, serviceTargetSampleRate.get().intValue()),
+                requestedSampleRate);
+    }
+
+    private void flushPendingResampledAudio() {
+        if (streamingAudioResampler == null || session == null) {
+            return;
+        }
+
+        try {
+            final byte[] flushedAudioBytes = streamingAudioResampler.flush();
+            if (flushedAudioBytes.length > 0) {
+                session.getRemote().sendBytes(ByteBuffer.wrap(flushedAudioBytes));
+            }
+        } catch (IOException e) {
+            LOG.error("Could not flush resampled audio before finalization", e);
+            this.status = Status.ERROR;
+        }
+    }
+
+    private static final class EncodingNormalizationResult {
+        private final String normalizedEncoding;
+        private final Integer defaultSourceSampleRate;
+
+        private EncodingNormalizationResult(
+                String normalizedEncoding, Integer defaultSourceSampleRate) {
+            this.normalizedEncoding = normalizedEncoding;
+            this.defaultSourceSampleRate = defaultSourceSampleRate;
+        }
     }
 
     public static enum Status {

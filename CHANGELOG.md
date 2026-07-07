@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.91.1 - 2026-06-07
+### Added 
+- Support for DAC hardware shapes for self-hosted models in the Generative AI service
+
 ## 3.91.0 - 2026-06-30
 ### Added 
 - Support for Bitbucket Cloud email and API token configuration source providers in the Resource Manager service 

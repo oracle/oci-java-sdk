@@ -23,6 +23,7 @@ public enum ParameterizedEndpointUtil {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ParameterizedEndpointUtil.class);
     private static final Pattern PLACEHOLDER_PATTERN = Pattern.compile("\\{(.*?)\\}");
+    private static final Pattern HOST_COMPONENT_PATTERN = Pattern.compile("[A-Za-z0-9_.-]+");
 
     /**
      * Regex to detect options defined in the endpoint template. It checks for the following
@@ -138,6 +139,7 @@ public enum ParameterizedEndpointUtil {
                                 paramName);
                         continue;
                     }
+                    validateHostComponent(paramName, (String) paramValue);
                     updatedEndpointBuilder.append(paramValue);
                     if (appendDot) {
                         updatedEndpointBuilder.append('.');
@@ -149,7 +151,6 @@ public enum ParameterizedEndpointUtil {
                 }
             }
         }
-
         // append part after last match
         updatedEndpointBuilder.append(endpoint.substring(afterLastMatch));
 
@@ -180,5 +181,25 @@ public enum ParameterizedEndpointUtil {
      */
     public String removeAllParametersFromEndpoint(String updatedEndpoint) {
         return updatedEndpoint.replaceAll("\\{.*?\\}", "");
+    }
+
+    /**
+     * Validates that a parameter value can be safely substituted into a host component.
+     *
+     * <p>The value is restricted to characters that cannot introduce URL structure such as path,
+     * query, fragment, user-info, port, or percent-encoded delimiter syntax.
+     *
+     * @param paramName parameter name used for the exception message
+     * @param paramValue parameter value to validate
+     * @throws IllegalArgumentException if {@code paramValue} contains characters that are unsafe in
+     *     a host component
+     */
+    private void validateHostComponent(String paramName, String paramValue) {
+        if (!HOST_COMPONENT_PATTERN.matcher(paramValue).matches()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Endpoint parameter '%s' contains characters that are not valid in a host component",
+                            paramName));
+        }
     }
 }
