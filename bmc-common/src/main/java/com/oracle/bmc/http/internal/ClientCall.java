@@ -873,67 +873,91 @@ public final class ClientCall<
                                         logger.warn("Unable to read response body", e);
                                         return "Cannot read response body!";
                                     });
-            return thenCompose(
-                    responseBody,
-                    s ->
-                            failedFuture(
-                                    responseErrorExceptionFactory.createRuntimeException(
-                                            status,
-                                            "Unknown",
-                                            String.format(
-                                                    "Unexpected Content-Type: %s instead of %s. Response body: %s",
-                                                    contentType, APPLICATION_JSON_TYPE, s),
-                                            opcRequestId,
-                                            buildServiceDetails())));
-        }
-
-        return response.body(this.responseErrorExceptionFactory.getResponseErrorModelType())
-                .handle(
-                        (ecm, t) -> {
-                            if (t != null) {
-                                // failed to parse body
-                                CompletionStage<String> msgFuture =
-                                        response.textBody()
-                                                .thenApply(
-                                                        s -> "Unable to parse error response: " + s)
-                                                .exceptionally(
-                                                        e -> "Unable to parse error response.");
-                                return thenCompose(
-                                        msgFuture,
-                                        msg ->
-                                                ClientCall.<T>failedFuture(
-                                                        responseErrorExceptionFactory
-                                                                .createRuntimeException(
-                                                                        status,
-                                                                        "Unknown",
-                                                                        msg,
-                                                                        opcRequestId,
-                                                                        (Throwable) t,
-                                                                        buildServiceDetails())));
-                            } else {
-                                if (ecm == null) {
-                                    String defaultMessage =
-                                            ResponseHelper.DEFAULT_ERROR_MESSAGES.getOrDefault(
-                                                    status,
-                                                    "Detailed exception information not available");
-                                    return ClientCall.<T>failedFuture(
+            CompletionStage<T> failure =
+                    thenCompose(
+                            responseBody,
+                            s ->
+                                    failedFuture(
                                             responseErrorExceptionFactory.createRuntimeException(
                                                     status,
                                                     "Unknown",
-                                                    defaultMessage,
+                                                    String.format(
+                                                            "Unexpected Content-Type: %s instead of %s. Response body: %s",
+                                                            contentType, APPLICATION_JSON_TYPE, s),
                                                     opcRequestId,
-                                                    buildServiceDetails()));
-                                } else {
-                                    return ClientCall.<T>failedFuture(
-                                            responseErrorExceptionFactory.createRuntimeException(
-                                                    status,
-                                                    opcRequestId,
-                                                    ecm,
-                                                    buildServiceDetails()));
-                                }
-                            }
-                        })
-                .thenCompose(Function.identity());
+                                                    buildServiceDetails())));
+            return closeResponseOnCompletion(failure, response);
+        }
+
+        CompletionStage<T> failure =
+                response.body(this.responseErrorExceptionFactory.getResponseErrorModelType())
+                        .handle(
+                                (ecm, t) -> {
+                                    if (t != null) {
+                                        // failed to parse body
+                                        CompletionStage<String> msgFuture =
+                                                response.textBody()
+                                                        .thenApply(
+                                                                s ->
+                                                                        "Unable to parse error response: "
+                                                                                + s)
+                                                        .exceptionally(
+                                                                e ->
+                                                                        "Unable to parse error response.");
+                                        return thenCompose(
+                                                msgFuture,
+                                                msg ->
+                                                        ClientCall.<T>failedFuture(
+                                                                responseErrorExceptionFactory
+                                                                        .createRuntimeException(
+                                                                                status,
+                                                                                "Unknown",
+                                                                                msg,
+                                                                                opcRequestId,
+                                                                                (Throwable) t,
+                                                                                buildServiceDetails())));
+                                    } else {
+                                        if (ecm == null) {
+                                            String defaultMessage =
+                                                    ResponseHelper.DEFAULT_ERROR_MESSAGES
+                                                            .getOrDefault(
+                                                                    status,
+                                                                    "Detailed exception information not available");
+                                            return ClientCall.<T>failedFuture(
+                                                    responseErrorExceptionFactory
+                                                            .createRuntimeException(
+                                                                    status,
+                                                                    "Unknown",
+                                                                    defaultMessage,
+                                                                    opcRequestId,
+                                                                    buildServiceDetails()));
+                                        } else {
+                                            return ClientCall.<T>failedFuture(
+                                                    responseErrorExceptionFactory
+                                                            .createRuntimeException(
+                                                                    status,
+                                                                    opcRequestId,
+                                                                    ecm,
+                                                                    buildServiceDetails()));
+                                        }
+                                    }
+                                })
+                        .thenCompose(Function.identity());
+        return closeResponseOnCompletion(failure, response);
+    }
+
+    private <T> CompletionStage<T> closeResponseOnCompletion(
+            CompletionStage<T> stage, HttpResponse response) {
+        return stage.whenComplete(
+                (ignored, throwable) -> {
+                    try {
+                        response.close();
+                    } catch (Exception e) {
+                        if (logger != null) {
+                            logger.debug("Unable to close error response", e);
+                        }
+                    }
+                });
     }
 
     public Future<RESP> callAsync(AsyncHandler<REQ, RESP> handler) {

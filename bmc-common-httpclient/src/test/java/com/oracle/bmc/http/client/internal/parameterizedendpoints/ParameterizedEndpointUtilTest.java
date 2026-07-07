@@ -8,13 +8,16 @@ import org.junit.Test;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class ParameterizedEndpointUtilTest {
+    private static final Set<Character> ALLOWED_HOST_PARAMETER_CHARACTERS = allowedHostCharacters();
 
     @Test
     public void testIsEndpointParameterized() {
@@ -75,6 +78,59 @@ public class ParameterizedEndpointUtilTest {
                 expected,
                 ParameterizedEndpointUtil.INSTANCE.getEndpointWithPopulatedServiceParameters(
                         endpoint, requiredParametersMap, Collections.emptyMap()));
+    }
+
+    @Test
+    public void testGetEndpointWithPopulatedServiceParameters_ValidHostParameterCharacters() {
+        assertHostParameterAccepted(
+                "namespace_name", "https://namespace_name.objectstorage.example.com");
+        assertHostParameterAccepted(
+                "namespace-name", "https://namespace-name.objectstorage.example.com");
+        assertHostParameterAccepted(
+                "namespace.name", "https://namespace.name.objectstorage.example.com");
+    }
+
+    @Test
+    public void testGetEndpointWithPopulatedServiceParameters_AllAsciiHostParameterCharacters() {
+        for (char ch = 0; ch < 128; ch++) {
+            if (isAllowedHostParameterCharacter(ch)) {
+                assertHostParameterAccepted(
+                        "namespace" + ch + "name",
+                        "https://namespace" + ch + "name.objectstorage.example.com");
+            } else {
+                assertHostParameterRejected("namespace" + ch + "name", "ASCII " + (int) ch);
+            }
+        }
+    }
+
+    @Test
+    public void testGetEndpointWithPopulatedServiceParameters_InvalidHostParameterCharacters() {
+        assertHostParameterRejected("my-namespace/objectstorage");
+        assertHostParameterRejected("my-namespace?query");
+        assertHostParameterRejected("my-namespace#fragment");
+        assertHostParameterRejected("user@my-namespace");
+        assertHostParameterRejected("my-namespace:443");
+        assertHostParameterRejected("my-namespace%2eexample");
+        assertHostParameterRejected("my namespace");
+        assertHostParameterRejected("");
+    }
+
+    @Test
+    public void
+            testGetEndpointWithPopulatedServiceParameters_RejectsUnsafeObjectStorageNamespace() {
+        String endpoint =
+                "https://{namespaceName+Dot}objectstorage.us-phoenix-1.oci.customer-oci.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("namespaceName", "namespace/objectstorage");
+
+        try {
+            ParameterizedEndpointUtil.INSTANCE.getEndpointWithPopulatedServiceParameters(
+                    endpoint, requiredParametersMap, Collections.emptyMap());
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("namespaceName"));
+            return;
+        }
+        throw new AssertionError("Expected unsafe Object Storage namespace to be rejected");
     }
 
     @Test
@@ -155,5 +211,54 @@ public class ParameterizedEndpointUtilTest {
                 "https://testservice.region.oci.secondLevelDomain.com",
                 ParameterizedEndpointUtil.INSTANCE.getEndpointWithPopulatedServiceParameters(
                         ENDPOINT_WITH_DUAL_STACK_OPTION, requiredParametersMap, optionsMap));
+    }
+
+    private void assertHostParameterRejected(String namespaceName) {
+        assertHostParameterRejected(namespaceName, namespaceName);
+    }
+
+    private void assertHostParameterRejected(String namespaceName, String description) {
+        String endpoint = "https://{namespaceName+Dot}objectstorage.example.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("namespaceName", namespaceName);
+        try {
+            ParameterizedEndpointUtil.INSTANCE.getEndpointWithPopulatedServiceParameters(
+                    endpoint, requiredParametersMap, Collections.emptyMap());
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("namespaceName"));
+            return;
+        }
+        throw new AssertionError("Expected host parameter to be rejected: " + description);
+    }
+
+    private void assertHostParameterAccepted(String namespaceName, String expectedEndpoint) {
+        String endpoint = "https://{namespaceName+Dot}objectstorage.example.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("namespaceName", namespaceName);
+        assertEquals(
+                expectedEndpoint,
+                ParameterizedEndpointUtil.INSTANCE.getEndpointWithPopulatedServiceParameters(
+                        endpoint, requiredParametersMap, Collections.emptyMap()));
+    }
+
+    private boolean isAllowedHostParameterCharacter(char ch) {
+        return ALLOWED_HOST_PARAMETER_CHARACTERS.contains(ch);
+    }
+
+    private static Set<Character> allowedHostCharacters() {
+        Set<Character> allowedCharacters = new HashSet<>();
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            allowedCharacters.add(ch);
+        }
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            allowedCharacters.add(ch);
+        }
+        for (char ch = '0'; ch <= '9'; ch++) {
+            allowedCharacters.add(ch);
+        }
+        allowedCharacters.add('_');
+        allowedCharacters.add('-');
+        allowedCharacters.add('.');
+        return Collections.unmodifiableSet(allowedCharacters);
     }
 }

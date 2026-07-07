@@ -107,6 +107,7 @@ public class ClientCallTest {
             assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
             assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
         }
+        verify(mockResponse).close();
     }
 
     public static class TestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -532,6 +533,7 @@ public class ClientCallTest {
                 assertEquals("Unknown", e.getServiceCode());
                 assertTrue(e.getMessage().contains(OPC_REQUEST_ID));
             }
+            verify(mockResponse).close();
         }
 
         @Test
@@ -555,6 +557,7 @@ public class ClientCallTest {
                 assertTrue(e.getMessage().contains(OPC_REQUEST_ID));
                 assertTrue(e.getMessage().contains("Unexpected Content-Type: text/html"));
             }
+            verify(mockResponse).close();
         }
 
         @Test
@@ -591,6 +594,7 @@ public class ClientCallTest {
                 assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
                 assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
             }
+            verify(mockResponse).close();
         }
 
         @Test
@@ -626,6 +630,7 @@ public class ClientCallTest {
                 assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
                 assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
             }
+            verify(mockResponse).close();
         }
 
         @Test
@@ -656,6 +661,7 @@ public class ClientCallTest {
                 assertEquals(OPC_REQUEST_ID, e.opcRequestId);
                 assertNotNull(e.serviceDetails);
             }
+            verify(mockResponse).close();
         }
 
         @Test
@@ -688,6 +694,34 @@ public class ClientCallTest {
                 assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
                 assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
             }
+            verify(mockResponse).close();
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_UnparseableJsonResponseClosesResponse() {
+            CompletableFuture<ResponseHelper.ErrorCodeAndMessage> parseFailure =
+                    new CompletableFuture<>();
+            parseFailure.completeExceptionally(new RuntimeException("Unable to parse"));
+            when(mockResponse.body(ResponseHelper.ErrorCodeAndMessage.class))
+                    .thenReturn(parseFailure);
+            when(mockResponse.textBody()).thenReturn(CompletableFuture.completedFuture("not-json"));
+
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn(JSON_MEDIA_TYPE);
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        .callSync();
+                fail("Expected to throw");
+            } catch (BmcException e) {
+                // expected
+                assertEquals(BAD_GATEWAY_STATUS, e.getStatusCode());
+                assertEquals(OPC_REQUEST_ID, e.getOpcRequestId());
+                assertEquals("Unknown", e.getServiceCode());
+                assertTrue(e.getMessage().contains("Unable to parse error response"));
+            }
+            verify(mockResponse).close();
         }
 
         @Test
@@ -720,6 +754,7 @@ public class ClientCallTest {
                 assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
                 assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
             }
+            verify(mockResponse).close();
         }
 
         @Test

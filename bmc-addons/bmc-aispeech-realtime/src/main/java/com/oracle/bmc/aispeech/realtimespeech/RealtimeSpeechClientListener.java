@@ -9,8 +9,8 @@ import com.oracle.bmc.aispeech.model.RealtimeMessageAckAudio;
 import com.oracle.bmc.aispeech.model.RealtimeMessageResult;
 
 /**
- * This is the RealtimeSpeechClientListner Interface. This is meant to be extended so that users can
- * determine the behavior of the client.
+ * This is the RealtimeSpeechClientListener Interface. This is meant to be extended so that users
+ * can determine the behavior of the client.
  */
 public interface RealtimeSpeechClientListener {
 
@@ -38,7 +38,7 @@ public interface RealtimeSpeechClientListener {
     void onResult(RealtimeMessageResult result);
 
     /**
-     * An error occured in the realtime speech client.
+     * An error occurred in the realtime speech client.
      *
      * @param error
      */
@@ -53,4 +53,12 @@ public interface RealtimeSpeechClientListener {
      * @param connectMessage
      */
     void onConnectMessage(RealtimeMessageConnect connectMessage);
+
+    /**
+     * Audio bytes were prepared and sent to the realtime speech service. Implement this optional
+     * callback to inspect client-side audio processing metrics such as resampling time.
+     *
+     * @param processingDetails details about the processed audio chunk
+     */
+    default void onAudioChunkProcessed(AudioChunkProcessingDetails processingDetails) {}
 }
