@@ -42,7 +42,7 @@ public final class HostedApplicationSummary
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            HostedApplication.LifecycleState lifecycleState,
+            HostedApplicationBase.LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -159,23 +159,17 @@ public final class HostedApplicationSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the hosted application.
-         *
-         * <p>Allowed values are: - CREATING - ACTIVE - UPDATING - DELETING - DELETED - FAILED
-         */
+        /** The current state of the hosted application. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private HostedApplication.LifecycleState lifecycleState;
+        private HostedApplicationBase.LifecycleState lifecycleState;
 
         /**
          * The current state of the hosted application.
          *
-         * <p>Allowed values are: - CREATING - ACTIVE - UPDATING - DELETING - DELETED - FAILED
-         *
          * @param lifecycleState the value to set
          * @return this builder
          */
-        public Builder lifecycleState(HostedApplication.LifecycleState lifecycleState) {
+        public Builder lifecycleState(HostedApplicationBase.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -402,22 +396,16 @@ public final class HostedApplicationSummary
         return timeUpdated;
     }
 
-    /**
-     * The current state of the hosted application.
-     *
-     * <p>Allowed values are: - CREATING - ACTIVE - UPDATING - DELETING - DELETED - FAILED
-     */
+    /** The current state of the hosted application. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final HostedApplication.LifecycleState lifecycleState;
+    private final HostedApplicationBase.LifecycleState lifecycleState;
 
     /**
      * The current state of the hosted application.
      *
-     * <p>Allowed values are: - CREATING - ACTIVE - UPDATING - DELETING - DELETED - FAILED
-     *
      * @return the value
      */
-    public HostedApplication.LifecycleState getLifecycleState() {
+    public HostedApplicationBase.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 

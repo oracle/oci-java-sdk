@@ -54,6 +54,15 @@ public final class SingleDockerArtifact extends Artifact {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isVulnerabilityScanRequired")
+        private Boolean isVulnerabilityScanRequired;
+
+        public Builder isVulnerabilityScanRequired(Boolean isVulnerabilityScanRequired) {
+            this.isVulnerabilityScanRequired = isVulnerabilityScanRequired;
+            this.__explicitlySet__.add("isVulnerabilityScanRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -102,6 +111,7 @@ public final class SingleDockerArtifact extends Artifact {
                             this.id,
                             this.timeCreated,
                             this.hostedDeploymentId,
+                            this.isVulnerabilityScanRequired,
                             this.status,
                             this.containerUri,
                             this.tag);
@@ -121,6 +131,9 @@ public final class SingleDockerArtifact extends Artifact {
             }
             if (model.wasPropertyExplicitlySet("hostedDeploymentId")) {
                 this.hostedDeploymentId(model.getHostedDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("isVulnerabilityScanRequired")) {
+                this.isVulnerabilityScanRequired(model.getIsVulnerabilityScanRequired());
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
@@ -149,10 +162,11 @@ public final class SingleDockerArtifact extends Artifact {
             String id,
             java.util.Date timeCreated,
             String hostedDeploymentId,
+            Boolean isVulnerabilityScanRequired,
             Status status,
             String containerUri,
             String tag) {
-        super(id, timeCreated, hostedDeploymentId, status);
+        super(id, timeCreated, hostedDeploymentId, isVulnerabilityScanRequired, status);
         this.containerUri = containerUri;
         this.tag = tag;
     }

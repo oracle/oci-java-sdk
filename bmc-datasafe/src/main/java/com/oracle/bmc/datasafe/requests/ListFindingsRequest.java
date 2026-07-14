@@ -142,6 +142,61 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getCategory() {
         return category;
     }
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use
+     * containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+     */
+    private java.util.List<ContainsOracleDefinedSeverity> containsOracleDefinedSeverity;
+
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use
+     * containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+     */
+    public enum ContainsOracleDefinedSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+        High("HIGH"),
+        Medium("MEDIUM"),
+        Low("LOW"),
+        Evaluate("EVALUATE"),
+        Advisory("ADVISORY"),
+        Pass("PASS"),
+        Deferred("DEFERRED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ContainsOracleDefinedSeverity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ContainsOracleDefinedSeverity v : ContainsOracleDefinedSeverity.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ContainsOracleDefinedSeverity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ContainsOracleDefinedSeverity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ContainsOracleDefinedSeverity: " + key);
+        }
+    };
+
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use
+     * containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+     */
+    public java.util.List<ContainsOracleDefinedSeverity> getContainsOracleDefinedSeverity() {
+        return containsOracleDefinedSeverity;
+    }
     /** A filter to return only the findings that match the specified lifecycle states. */
     private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState;
 
@@ -599,6 +654,37 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /**
+         * A filter to return only findings that match the specified risk level(s). Use
+         * containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+         */
+        private java.util.List<ContainsOracleDefinedSeverity> containsOracleDefinedSeverity = null;
+
+        /**
+         * A filter to return only findings that match the specified risk level(s). Use
+         * containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+         *
+         * @param containsOracleDefinedSeverity the value to set
+         * @return this builder instance
+         */
+        public Builder containsOracleDefinedSeverity(
+                java.util.List<ContainsOracleDefinedSeverity> containsOracleDefinedSeverity) {
+            this.containsOracleDefinedSeverity = containsOracleDefinedSeverity;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only findings that match the specified risk level(s).
+         * Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk
+         * levels.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder containsOracleDefinedSeverity(ContainsOracleDefinedSeverity singularValue) {
+            return this.containsOracleDefinedSeverity(java.util.Arrays.asList(singularValue));
+        }
+
         /** A filter to return only the findings that match the specified lifecycle states. */
         private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState = null;
 
@@ -954,6 +1040,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             severity(o.getSeverity());
             containsSeverity(o.getContainsSeverity());
             category(o.getCategory());
+            containsOracleDefinedSeverity(o.getContainsOracleDefinedSeverity());
             lifecycleState(o.getLifecycleState());
             references(o.getReferences());
             containsReferences(o.getContainsReferences());
@@ -1009,6 +1096,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.severity = severity;
             request.containsSeverity = containsSeverity;
             request.category = category;
+            request.containsOracleDefinedSeverity = containsOracleDefinedSeverity;
             request.lifecycleState = lifecycleState;
             request.references = references;
             request.containsReferences = containsReferences;
@@ -1026,9 +1114,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.findingKey = findingKey;
             return request;
             // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity,
-            // containsSeverity, category, lifecycleState, references, containsReferences, limit,
-            // page, compartmentId, compartmentIdInSubtree, accessLevel, targetId, targetIds,
-            // scimQuery, field, sortBy, sortOrder, findingKey);
+            // containsSeverity, category, containsOracleDefinedSeverity, lifecycleState,
+            // references, containsReferences, limit, page, compartmentId, compartmentIdInSubtree,
+            // accessLevel, targetId, targetIds, scimQuery, field, sortBy, sortOrder, findingKey);
         }
     }
 
@@ -1045,6 +1133,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .severity(severity)
                 .containsSeverity(containsSeverity)
                 .category(category)
+                .containsOracleDefinedSeverity(containsOracleDefinedSeverity)
                 .lifecycleState(lifecycleState)
                 .references(references)
                 .containsReferences(containsReferences)
@@ -1082,6 +1171,8 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",severity=").append(String.valueOf(this.severity));
         sb.append(",containsSeverity=").append(String.valueOf(this.containsSeverity));
         sb.append(",category=").append(String.valueOf(this.category));
+        sb.append(",containsOracleDefinedSeverity=")
+                .append(String.valueOf(this.containsOracleDefinedSeverity));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",references=").append(String.valueOf(this.references));
         sb.append(",containsReferences=").append(String.valueOf(this.containsReferences));
@@ -1118,6 +1209,8 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.containsSeverity, other.containsSeverity)
                 && java.util.Objects.equals(this.category, other.category)
+                && java.util.Objects.equals(
+                        this.containsOracleDefinedSeverity, other.containsOracleDefinedSeverity)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.references, other.references)
                 && java.util.Objects.equals(this.containsReferences, other.containsReferences)
@@ -1152,6 +1245,11 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 (result * PRIME)
                         + (this.containsSeverity == null ? 43 : this.containsSeverity.hashCode());
         result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containsOracleDefinedSeverity == null
+                                ? 43
+                                : this.containsOracleDefinedSeverity.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

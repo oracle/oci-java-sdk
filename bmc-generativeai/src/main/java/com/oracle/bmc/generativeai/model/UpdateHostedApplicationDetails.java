@@ -24,27 +24,27 @@ public final class UpdateHostedApplicationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "inboundAuthConfig",
         "displayName",
         "description",
         "scalingConfig",
-        "inboundAuthConfig",
         "environmentVariables",
         "freeformTags",
         "definedTags"
     })
     public UpdateHostedApplicationDetails(
+            InboundAuthConfig inboundAuthConfig,
             String displayName,
             String description,
             ScalingConfig scalingConfig,
-            InboundAuthConfig inboundAuthConfig,
             java.util.List<EnvironmentVariable> environmentVariables,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.inboundAuthConfig = inboundAuthConfig;
         this.displayName = displayName;
         this.description = description;
         this.scalingConfig = scalingConfig;
-        this.inboundAuthConfig = inboundAuthConfig;
         this.environmentVariables = environmentVariables;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -52,6 +52,15 @@ public final class UpdateHostedApplicationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
+        private InboundAuthConfig inboundAuthConfig;
+
+        public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
+            this.inboundAuthConfig = inboundAuthConfig;
+            this.__explicitlySet__.add("inboundAuthConfig");
+            return this;
+        }
         /** A user-friendly name. Does not have to be unique, and it's changeable. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
@@ -89,15 +98,6 @@ public final class UpdateHostedApplicationDetails
         public Builder scalingConfig(ScalingConfig scalingConfig) {
             this.scalingConfig = scalingConfig;
             this.__explicitlySet__.add("scalingConfig");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
-        private InboundAuthConfig inboundAuthConfig;
-
-        public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
-            this.inboundAuthConfig = inboundAuthConfig;
-            this.__explicitlySet__.add("inboundAuthConfig");
             return this;
         }
         /**
@@ -178,10 +178,10 @@ public final class UpdateHostedApplicationDetails
         public UpdateHostedApplicationDetails build() {
             UpdateHostedApplicationDetails model =
                     new UpdateHostedApplicationDetails(
+                            this.inboundAuthConfig,
                             this.displayName,
                             this.description,
                             this.scalingConfig,
-                            this.inboundAuthConfig,
                             this.environmentVariables,
                             this.freeformTags,
                             this.definedTags);
@@ -193,6 +193,9 @@ public final class UpdateHostedApplicationDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateHostedApplicationDetails model) {
+            if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
+                this.inboundAuthConfig(model.getInboundAuthConfig());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -201,9 +204,6 @@ public final class UpdateHostedApplicationDetails
             }
             if (model.wasPropertyExplicitlySet("scalingConfig")) {
                 this.scalingConfig(model.getScalingConfig());
-            }
-            if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
-                this.inboundAuthConfig(model.getInboundAuthConfig());
             }
             if (model.wasPropertyExplicitlySet("environmentVariables")) {
                 this.environmentVariables(model.getEnvironmentVariables());
@@ -225,6 +225,13 @@ public final class UpdateHostedApplicationDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
+    private final InboundAuthConfig inboundAuthConfig;
+
+    public InboundAuthConfig getInboundAuthConfig() {
+        return inboundAuthConfig;
     }
 
     /** A user-friendly name. Does not have to be unique, and it's changeable. */
@@ -258,13 +265,6 @@ public final class UpdateHostedApplicationDetails
 
     public ScalingConfig getScalingConfig() {
         return scalingConfig;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
-    private final InboundAuthConfig inboundAuthConfig;
-
-    public InboundAuthConfig getInboundAuthConfig() {
-        return inboundAuthConfig;
     }
 
     /**
@@ -345,10 +345,10 @@ public final class UpdateHostedApplicationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateHostedApplicationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", scalingConfig=").append(String.valueOf(this.scalingConfig));
-        sb.append(", inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -366,10 +366,10 @@ public final class UpdateHostedApplicationDetails
         }
 
         UpdateHostedApplicationDetails other = (UpdateHostedApplicationDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.scalingConfig, other.scalingConfig)
-                && java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
                 && java.util.Objects.equals(this.environmentVariables, other.environmentVariables)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -380,14 +380,14 @@ public final class UpdateHostedApplicationDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)
                         + (this.scalingConfig == null ? 43 : this.scalingConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.environmentVariables == null

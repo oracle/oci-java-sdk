@@ -234,6 +234,26 @@ public interface GenerativeAiAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a hosted application into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeHostedApplicationIamCompartmentResponse>
+            changeHostedApplicationIamCompartment(
+                    ChangeHostedApplicationIamCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeHostedApplicationIamCompartmentRequest,
+                                    ChangeHostedApplicationIamCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a hosted application storage into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -409,6 +429,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
             CreateHostedApplicationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateHostedApplicationRequest, CreateHostedApplicationResponse>
+                    handler);
+
+    /**
+     * Creates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateHostedApplicationIamResponse> createHostedApplicationIam(
+            CreateHostedApplicationIamRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateHostedApplicationIamRequest, CreateHostedApplicationIamResponse>
                     handler);
 
     /**
@@ -654,6 +690,26 @@ public interface GenerativeAiAsync extends AutoCloseable {
      *     java.io.InputStream) may not be able to be read in both places as the underlying stream
      *     may only be consumed once.
      */
+    java.util.concurrent.Future<DeleteHostedApplicationIamResponse> deleteHostedApplicationIam(
+            DeleteHostedApplicationIamRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteHostedApplicationIamRequest, DeleteHostedApplicationIamResponse>
+                    handler);
+
+    /**
+     * Deletes a hosted application. You can only delete hosted application without attached
+     * resources. Before you delete a hosting hosted application, you must delete the endpoints
+     * associated to that application. Before you delete a fine-tuning hosted application, you must
+     * delete the custom model on that application. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
     java.util.concurrent.Future<DeleteHostedApplicationStorageResponse>
             deleteHostedApplicationStorage(
                     DeleteHostedApplicationStorageRequest request,
@@ -856,6 +912,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
             GetHostedApplicationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetHostedApplicationRequest, GetHostedApplicationResponse>
+                    handler);
+
+    /**
+     * Gets information about a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHostedApplicationIamResponse> getHostedApplicationIam(
+            GetHostedApplicationIamRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetHostedApplicationIamRequest, GetHostedApplicationIamResponse>
                     handler);
 
     /**
@@ -1115,6 +1187,23 @@ public interface GenerativeAiAsync extends AutoCloseable {
 
     /**
      * Lists the hosted applications in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListHostedApplicationsIamResponse> listHostedApplicationsIam(
+            ListHostedApplicationsIamRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListHostedApplicationsIamRequest, ListHostedApplicationsIamResponse>
+                    handler);
+
+    /**
+     * Lists the hosted applications in a specific compartment. Provide either applicationId or
+     * applicationIamId to filter by parent.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1416,6 +1505,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
             UpdateHostedApplicationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateHostedApplicationRequest, UpdateHostedApplicationResponse>
+                    handler);
+
+    /**
+     * Updates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateHostedApplicationIamResponse> updateHostedApplicationIam(
+            UpdateHostedApplicationIamRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHostedApplicationIamRequest, UpdateHostedApplicationIamResponse>
                     handler);
 
     /**

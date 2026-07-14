@@ -113,6 +113,7 @@ public class ListChecksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Title("title"),
         Category("category"),
+        Key("key"),
         ;
 
         private final String value;

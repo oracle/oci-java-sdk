@@ -324,6 +324,13 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public String getPage() {
         return page;
     }
+    /** A filter to return only resources that match the specified compartment OCID. */
+    private String compartmentId;
+
+    /** A filter to return only resources that match the specified compartment OCID. */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
     /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private SortOrder sortOrder;
 
@@ -863,6 +870,20 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
+        /** A filter to return only resources that match the specified compartment OCID. */
+        private String compartmentId = null;
+
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         *
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
         /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private SortOrder sortOrder = null;
 
@@ -1004,6 +1025,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             timePasswordExpiryGreaterThanOrEqualTo(o.getTimePasswordExpiryGreaterThanOrEqualTo());
             timePasswordExpiryLessThan(o.getTimePasswordExpiryLessThan());
             page(o.getPage());
+            compartmentId(o.getCompartmentId());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
@@ -1066,6 +1088,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.timePasswordExpiryGreaterThanOrEqualTo = timePasswordExpiryGreaterThanOrEqualTo;
             request.timePasswordExpiryLessThan = timePasswordExpiryLessThan;
             request.page = page;
+            request.compartmentId = compartmentId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
@@ -1077,8 +1100,8 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             // authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo,
             // timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan,
             // timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan,
-            // timePasswordExpiryGreaterThanOrEqualTo, timePasswordExpiryLessThan, page, sortOrder,
-            // sortBy, opcRequestId, schemaList, areAllSchemasAccessible);
+            // timePasswordExpiryGreaterThanOrEqualTo, timePasswordExpiryLessThan, page,
+            // compartmentId, sortOrder, sortBy, opcRequestId, schemaList, areAllSchemasAccessible);
         }
     }
 
@@ -1112,6 +1135,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .timePasswordExpiryGreaterThanOrEqualTo(timePasswordExpiryGreaterThanOrEqualTo)
                 .timePasswordExpiryLessThan(timePasswordExpiryLessThan)
                 .page(page)
+                .compartmentId(compartmentId)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
@@ -1161,6 +1185,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",timePasswordExpiryLessThan=")
                 .append(String.valueOf(this.timePasswordExpiryLessThan));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -1215,6 +1240,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 && java.util.Objects.equals(
                         this.timePasswordExpiryLessThan, other.timePasswordExpiryLessThan)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
@@ -1293,6 +1319,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                                 ? 43
                                 : this.timePasswordExpiryLessThan.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

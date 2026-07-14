@@ -32,7 +32,8 @@ public final class GenerateReportDetails
         "mimeType",
         "timeLessThan",
         "timeGreaterThan",
-        "rowLimit"
+        "rowLimit",
+        "isPaginationEnabled"
     })
     public GenerateReportDetails(
             String displayName,
@@ -43,7 +44,8 @@ public final class GenerateReportDetails
             MimeType mimeType,
             java.util.Date timeLessThan,
             java.util.Date timeGreaterThan,
-            Integer rowLimit) {
+            Integer rowLimit,
+            Boolean isPaginationEnabled) {
         super();
         this.displayName = displayName;
         this.targetIds = targetIds;
@@ -54,6 +56,7 @@ public final class GenerateReportDetails
         this.timeLessThan = timeLessThan;
         this.timeGreaterThan = timeGreaterThan;
         this.rowLimit = rowLimit;
+        this.isPaginationEnabled = isPaginationEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -197,6 +200,27 @@ public final class GenerateReportDetails
             this.__explicitlySet__.add("rowLimit");
             return this;
         }
+        /**
+         * Indicates if the reports being generated should be pagination enabled. If set to true,
+         * multiple reports can be generated and the details of next and previous report are present
+         * in Report. Values can either be 'true' or 'false'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPaginationEnabled")
+        private Boolean isPaginationEnabled;
+
+        /**
+         * Indicates if the reports being generated should be pagination enabled. If set to true,
+         * multiple reports can be generated and the details of next and previous report are present
+         * in Report. Values can either be 'true' or 'false'.
+         *
+         * @param isPaginationEnabled the value to set
+         * @return this builder
+         */
+        public Builder isPaginationEnabled(Boolean isPaginationEnabled) {
+            this.isPaginationEnabled = isPaginationEnabled;
+            this.__explicitlySet__.add("isPaginationEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -212,7 +236,8 @@ public final class GenerateReportDetails
                             this.mimeType,
                             this.timeLessThan,
                             this.timeGreaterThan,
-                            this.rowLimit);
+                            this.rowLimit,
+                            this.isPaginationEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -247,6 +272,9 @@ public final class GenerateReportDetails
             }
             if (model.wasPropertyExplicitlySet("rowLimit")) {
                 this.rowLimit(model.getRowLimit());
+            }
+            if (model.wasPropertyExplicitlySet("isPaginationEnabled")) {
+                this.isPaginationEnabled(model.getIsPaginationEnabled());
             }
             return this;
         }
@@ -416,6 +444,25 @@ public final class GenerateReportDetails
         return rowLimit;
     }
 
+    /**
+     * Indicates if the reports being generated should be pagination enabled. If set to true,
+     * multiple reports can be generated and the details of next and previous report are present in
+     * Report. Values can either be 'true' or 'false'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPaginationEnabled")
+    private final Boolean isPaginationEnabled;
+
+    /**
+     * Indicates if the reports being generated should be pagination enabled. If set to true,
+     * multiple reports can be generated and the details of next and previous report are present in
+     * Report. Values can either be 'true' or 'false'.
+     *
+     * @return the value
+     */
+    public Boolean getIsPaginationEnabled() {
+        return isPaginationEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -440,6 +487,7 @@ public final class GenerateReportDetails
         sb.append(", timeLessThan=").append(String.valueOf(this.timeLessThan));
         sb.append(", timeGreaterThan=").append(String.valueOf(this.timeGreaterThan));
         sb.append(", rowLimit=").append(String.valueOf(this.rowLimit));
+        sb.append(", isPaginationEnabled=").append(String.valueOf(this.isPaginationEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -463,6 +511,7 @@ public final class GenerateReportDetails
                 && java.util.Objects.equals(this.timeLessThan, other.timeLessThan)
                 && java.util.Objects.equals(this.timeGreaterThan, other.timeGreaterThan)
                 && java.util.Objects.equals(this.rowLimit, other.rowLimit)
+                && java.util.Objects.equals(this.isPaginationEnabled, other.isPaginationEnabled)
                 && super.equals(other);
     }
 
@@ -485,6 +534,11 @@ public final class GenerateReportDetails
                 (result * PRIME)
                         + (this.timeGreaterThan == null ? 43 : this.timeGreaterThan.hashCode());
         result = (result * PRIME) + (this.rowLimit == null ? 43 : this.rowLimit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPaginationEnabled == null
+                                ? 43
+                                : this.isPaginationEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

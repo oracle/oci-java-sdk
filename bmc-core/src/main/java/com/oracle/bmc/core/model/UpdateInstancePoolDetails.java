@@ -178,7 +178,8 @@ public final class UpdateInstancePoolDetails
             return this;
         }
         /**
-         * The number of instances that should be in the instance pool.
+         * The number of instances that should be in the instance pool. For a GMC-enabled resource
+         * pool, this is the number of GMC resources that should be in the pool.
          *
          * <p>To determine whether capacity is available for a specific shape before you resize an
          * instance pool, use the {@link
@@ -189,7 +190,8 @@ public final class UpdateInstancePoolDetails
         private Integer size;
 
         /**
-         * The number of instances that should be in the instance pool.
+         * The number of instances that should be in the instance pool. For a GMC-enabled resource
+         * pool, this is the number of GMC resources that should be in the pool.
          *
          * <p>To determine whether capacity is available for a specific shape before you resize an
          * instance pool, use the {@link
@@ -426,7 +428,8 @@ public final class UpdateInstancePoolDetails
     }
 
     /**
-     * The number of instances that should be in the instance pool.
+     * The number of instances that should be in the instance pool. For a GMC-enabled resource pool,
+     * this is the number of GMC resources that should be in the pool.
      *
      * <p>To determine whether capacity is available for a specific shape before you resize an
      * instance pool, use the {@link
@@ -437,7 +440,8 @@ public final class UpdateInstancePoolDetails
     private final Integer size;
 
     /**
-     * The number of instances that should be in the instance pool.
+     * The number of instances that should be in the instance pool. For a GMC-enabled resource pool,
+     * this is the number of GMC resources that should be in the pool.
      *
      * <p>To determine whether capacity is available for a specific shape before you resize an
      * instance pool, use the {@link

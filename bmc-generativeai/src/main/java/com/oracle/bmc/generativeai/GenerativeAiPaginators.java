@@ -905,6 +905,131 @@ public class GenerativeAiPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listHostedApplicationsIam operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListHostedApplicationsIamResponse> listHostedApplicationsIamResponseIterator(
+            final ListHostedApplicationsIamRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListHostedApplicationsIamRequest.Builder,
+                ListHostedApplicationsIamRequest,
+                ListHostedApplicationsIamResponse>(
+                new java.util.function.Supplier<ListHostedApplicationsIamRequest.Builder>() {
+                    @Override
+                    public ListHostedApplicationsIamRequest.Builder get() {
+                        return ListHostedApplicationsIamRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedApplicationsIamResponse, String>() {
+                    @Override
+                    public String apply(ListHostedApplicationsIamResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedApplicationsIamRequest.Builder>,
+                        ListHostedApplicationsIamRequest>() {
+                    @Override
+                    public ListHostedApplicationsIamRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedApplicationsIamRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationsIamRequest, ListHostedApplicationsIamResponse>() {
+                    @Override
+                    public ListHostedApplicationsIamResponse apply(
+                            ListHostedApplicationsIamRequest request) {
+                        return client.listHostedApplicationsIam(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.HostedApplicationSummary} objects contained in responses
+     * from the listHostedApplicationsIam operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.HostedApplicationSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.HostedApplicationSummary>
+            listHostedApplicationsIamRecordIterator(
+                    final ListHostedApplicationsIamRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListHostedApplicationsIamRequest.Builder,
+                ListHostedApplicationsIamRequest,
+                ListHostedApplicationsIamResponse,
+                com.oracle.bmc.generativeai.model.HostedApplicationSummary>(
+                new java.util.function.Supplier<ListHostedApplicationsIamRequest.Builder>() {
+                    @Override
+                    public ListHostedApplicationsIamRequest.Builder get() {
+                        return ListHostedApplicationsIamRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListHostedApplicationsIamResponse, String>() {
+                    @Override
+                    public String apply(ListHostedApplicationsIamResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostedApplicationsIamRequest.Builder>,
+                        ListHostedApplicationsIamRequest>() {
+                    @Override
+                    public ListHostedApplicationsIamRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostedApplicationsIamRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationsIamRequest, ListHostedApplicationsIamResponse>() {
+                    @Override
+                    public ListHostedApplicationsIamResponse apply(
+                            ListHostedApplicationsIamRequest request) {
+                        return client.listHostedApplicationsIam(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListHostedApplicationsIamResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model.HostedApplicationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.generativeai.model.HostedApplicationSummary>
+                            apply(ListHostedApplicationsIamResponse response) {
+                        return response.getHostedApplicationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listHostedDeployments operation. This iterable will fetch more data from the server as
      * needed.
      *

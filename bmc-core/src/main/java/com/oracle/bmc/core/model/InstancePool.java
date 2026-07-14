@@ -30,6 +30,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         "displayName",
         "freeformTags",
         "instanceConfigurationId",
+        "poolType",
         "lifecycleState",
         "placementConfigurations",
         "size",
@@ -47,6 +48,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             String displayName,
             java.util.Map<String, String> freeformTags,
             String instanceConfigurationId,
+            PoolType poolType,
             LifecycleState lifecycleState,
             java.util.List<InstancePoolPlacementConfiguration> placementConfigurations,
             Integer size,
@@ -63,6 +65,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.instanceConfigurationId = instanceConfigurationId;
+        this.poolType = poolType;
         this.lifecycleState = lifecycleState;
         this.placementConfigurations = placementConfigurations;
         this.size = size;
@@ -201,6 +204,21 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = instanceConfigurationId;
             this.__explicitlySet__.add("instanceConfigurationId");
+            return this;
+        }
+        /** The type of resources managed by the pool. */
+        @com.fasterxml.jackson.annotation.JsonProperty("poolType")
+        private PoolType poolType;
+
+        /**
+         * The type of resources managed by the pool.
+         *
+         * @param poolType the value to set
+         * @return this builder
+         */
+        public Builder poolType(PoolType poolType) {
+            this.poolType = poolType;
+            this.__explicitlySet__.add("poolType");
             return this;
         }
         /** The current state of the instance pool. */
@@ -364,6 +382,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                             this.displayName,
                             this.freeformTags,
                             this.instanceConfigurationId,
+                            this.poolType,
                             this.lifecycleState,
                             this.placementConfigurations,
                             this.size,
@@ -398,6 +417,9 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
                 this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("poolType")) {
+                this.poolType(model.getPoolType());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -551,6 +573,65 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
      */
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
+    }
+
+    /** The type of resources managed by the pool. */
+    public enum PoolType implements com.oracle.bmc.http.internal.BmcEnum {
+        Instance("INSTANCE"),
+        Gmc("GMC"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PoolType.class);
+
+        private final String value;
+        private static java.util.Map<String, PoolType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PoolType v : PoolType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PoolType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PoolType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PoolType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The type of resources managed by the pool. */
+    @com.fasterxml.jackson.annotation.JsonProperty("poolType")
+    private final PoolType poolType;
+
+    /**
+     * The type of resources managed by the pool.
+     *
+     * @return the value
+     */
+    public PoolType getPoolType() {
+        return poolType;
     }
 
     /** The current state of the instance pool. */
@@ -754,6 +835,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", poolType=").append(String.valueOf(this.poolType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", placementConfigurations=")
                 .append(String.valueOf(this.placementConfigurations));
@@ -787,6 +869,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(this.poolType, other.poolType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(
                         this.placementConfigurations, other.placementConfigurations)
@@ -818,6 +901,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                         + (this.instanceConfigurationId == null
                                 ? 43
                                 : this.instanceConfigurationId.hashCode());
+        result = (result * PRIME) + (this.poolType == null ? 43 : this.poolType.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

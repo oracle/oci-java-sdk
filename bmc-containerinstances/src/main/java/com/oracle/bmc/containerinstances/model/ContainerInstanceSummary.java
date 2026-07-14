@@ -41,7 +41,8 @@ public final class ContainerInstanceSummary
         "containerCount",
         "gracefulShutdownTimeoutInSeconds",
         "volumeCount",
-        "containerRestartPolicy"
+        "containerRestartPolicy",
+        "securityContext"
     })
     public ContainerInstanceSummary(
             String id,
@@ -61,7 +62,8 @@ public final class ContainerInstanceSummary
             Integer containerCount,
             Long gracefulShutdownTimeoutInSeconds,
             Integer volumeCount,
-            ContainerInstance.ContainerRestartPolicy containerRestartPolicy) {
+            ContainerInstance.ContainerRestartPolicy containerRestartPolicy,
+            ContainerInstanceSecurityContext securityContext) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -81,6 +83,7 @@ public final class ContainerInstanceSummary
         this.gracefulShutdownTimeoutInSeconds = gracefulShutdownTimeoutInSeconds;
         this.volumeCount = volumeCount;
         this.containerRestartPolicy = containerRestartPolicy;
+        this.securityContext = securityContext;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -382,6 +385,15 @@ public final class ContainerInstanceSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+        private ContainerInstanceSecurityContext securityContext;
+
+        public Builder securityContext(ContainerInstanceSecurityContext securityContext) {
+            this.securityContext = securityContext;
+            this.__explicitlySet__.add("securityContext");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -405,7 +417,8 @@ public final class ContainerInstanceSummary
                             this.containerCount,
                             this.gracefulShutdownTimeoutInSeconds,
                             this.volumeCount,
-                            this.containerRestartPolicy);
+                            this.containerRestartPolicy,
+                            this.securityContext);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -467,6 +480,9 @@ public final class ContainerInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("containerRestartPolicy")) {
                 this.containerRestartPolicy(model.getContainerRestartPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("securityContext")) {
+                this.securityContext(model.getSecurityContext());
             }
             return this;
         }
@@ -739,6 +755,13 @@ public final class ContainerInstanceSummary
         return containerRestartPolicy;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+    private final ContainerInstanceSecurityContext securityContext;
+
+    public ContainerInstanceSecurityContext getSecurityContext() {
+        return securityContext;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -773,6 +796,7 @@ public final class ContainerInstanceSummary
                 .append(String.valueOf(this.gracefulShutdownTimeoutInSeconds));
         sb.append(", volumeCount=").append(String.valueOf(this.volumeCount));
         sb.append(", containerRestartPolicy=").append(String.valueOf(this.containerRestartPolicy));
+        sb.append(", securityContext=").append(String.valueOf(this.securityContext));
         sb.append(")");
         return sb.toString();
     }
@@ -808,6 +832,7 @@ public final class ContainerInstanceSummary
                 && java.util.Objects.equals(this.volumeCount, other.volumeCount)
                 && java.util.Objects.equals(
                         this.containerRestartPolicy, other.containerRestartPolicy)
+                && java.util.Objects.equals(this.securityContext, other.securityContext)
                 && super.equals(other);
     }
 
@@ -853,6 +878,9 @@ public final class ContainerInstanceSummary
                         + (this.containerRestartPolicy == null
                                 ? 43
                                 : this.containerRestartPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityContext == null ? 43 : this.securityContext.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

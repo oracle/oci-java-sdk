@@ -9,6 +9,7 @@ package com.oracle.bmc.containerinstances.model;
 public enum ContainerVolumeType implements com.oracle.bmc.http.internal.BmcEnum {
     Emptydir("EMPTYDIR"),
     Configfile("CONFIGFILE"),
+    OciFssFileSystem("OCI_FSS_FILE_SYSTEM"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

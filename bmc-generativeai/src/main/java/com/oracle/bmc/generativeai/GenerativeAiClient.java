@@ -435,6 +435,45 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ChangeHostedApplicationIamCompartmentResponse changeHostedApplicationIamCompartment(
+            ChangeHostedApplicationIamCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationIamId(), "hostedApplicationIamId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeHostedApplicationCompartmentDetails(),
+                "changeHostedApplicationCompartmentDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationIamId", request.getHostedApplicationIamId());
+
+        return clientCall(request, ChangeHostedApplicationIamCompartmentResponse::builder)
+                .logger(LOG, "changeHostedApplicationIamCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeHostedApplicationIamCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/ChangeHostedApplicationIamCompartment")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeHostedApplicationIamCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationsIam")
+                .appendPathParam(request.getHostedApplicationIamId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeHostedApplicationIamCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeHostedApplicationStorageCompartmentResponse
             changeHostedApplicationStorageCompartment(
                     ChangeHostedApplicationStorageCompartmentRequest request) {
@@ -808,6 +847,44 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateHostedApplicationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateHostedApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateHostedApplicationIamResponse createHostedApplicationIam(
+            CreateHostedApplicationIamRequest request) {
+        Objects.requireNonNull(
+                request.getCreateHostedApplicationIamDetails(),
+                "createHostedApplicationIamDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
+        return clientCall(request, CreateHostedApplicationIamResponse::builder)
+                .logger(LOG, "createHostedApplicationIam")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateHostedApplicationIam",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/CreateHostedApplicationIam")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateHostedApplicationIamRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationsIam")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplicationIam.class,
+                        CreateHostedApplicationIamResponse.Builder::hostedApplicationIam)
+                .handleResponseHeaderString(
+                        "etag", CreateHostedApplicationIamResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateHostedApplicationIamResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateHostedApplicationIamResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1270,6 +1347,40 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DeleteHostedApplicationIamResponse deleteHostedApplicationIam(
+            DeleteHostedApplicationIamRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationIamId(), "hostedApplicationIamId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationIamId", request.getHostedApplicationIamId());
+
+        return clientCall(request, DeleteHostedApplicationIamResponse::builder)
+                .logger(LOG, "deleteHostedApplicationIam")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteHostedApplicationIam",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/DeleteHostedApplicationIam")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteHostedApplicationIamRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationsIam")
+                .appendPathParam(request.getHostedApplicationIamId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteHostedApplicationIamResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteHostedApplicationIamResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteHostedApplicationStorageResponse deleteHostedApplicationStorage(
             DeleteHostedApplicationStorageRequest request) {
 
@@ -1707,6 +1818,40 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", GetHostedApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetHostedApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetHostedApplicationIamResponse getHostedApplicationIam(
+            GetHostedApplicationIamRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationIamId(), "hostedApplicationIamId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationIamId", request.getHostedApplicationIamId());
+
+        return clientCall(request, GetHostedApplicationIamResponse::builder)
+                .logger(LOG, "getHostedApplicationIam")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetHostedApplicationIam",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/GetHostedApplicationIam")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHostedApplicationIamRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationsIam")
+                .appendPathParam(request.getHostedApplicationIamId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplicationIam.class,
+                        GetHostedApplicationIamResponse.Builder::hostedApplicationIam)
+                .handleResponseHeaderString("etag", GetHostedApplicationIamResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHostedApplicationIamResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2305,6 +2450,46 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListHostedApplicationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListHostedApplicationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListHostedApplicationsIamResponse listHostedApplicationsIam(
+            ListHostedApplicationsIamRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
+        return clientCall(request, ListHostedApplicationsIamResponse::builder)
+                .logger(LOG, "listHostedApplicationsIam")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListHostedApplicationsIam",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationCollection/ListHostedApplicationsIam")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListHostedApplicationsIamRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationsIam")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.HostedApplicationCollection.class,
+                        ListHostedApplicationsIamResponse.Builder::hostedApplicationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListHostedApplicationsIamResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListHostedApplicationsIamResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -3090,6 +3275,44 @@ public class GenerativeAiClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         UpdateHostedApplicationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateHostedApplicationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateHostedApplicationIamResponse updateHostedApplicationIam(
+            UpdateHostedApplicationIamRequest request) {
+
+        Validate.notBlank(
+                request.getHostedApplicationIamId(), "hostedApplicationIamId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateHostedApplicationIamDetails(),
+                "updateHostedApplicationIamDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("hostedApplicationIamId", request.getHostedApplicationIamId());
+
+        return clientCall(request, UpdateHostedApplicationIamResponse::builder)
+                .logger(LOG, "updateHostedApplicationIam")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateHostedApplicationIam",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/UpdateHostedApplicationIam")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateHostedApplicationIamRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("hostedApplicationsIam")
+                .appendPathParam(request.getHostedApplicationIamId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateHostedApplicationIamResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateHostedApplicationIamResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -32,6 +32,7 @@ public final class AiDataPlatformSummary
         "timeCreated",
         "timeUpdated",
         "aliasKey",
+        "aiFeatureStatus",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -47,6 +48,7 @@ public final class AiDataPlatformSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String aliasKey,
+            AiDataPlatform.AiFeatureStatus aiFeatureStatus,
             AiDataPlatform.LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -61,6 +63,7 @@ public final class AiDataPlatformSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.aliasKey = aliasKey;
+        this.aiFeatureStatus = aiFeatureStatus;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -218,6 +221,21 @@ public final class AiDataPlatformSummary
             this.__explicitlySet__.add("aliasKey");
             return this;
         }
+        /** The current aiFeatureStatus of the AiDataPlatform. */
+        @com.fasterxml.jackson.annotation.JsonProperty("aiFeatureStatus")
+        private AiDataPlatform.AiFeatureStatus aiFeatureStatus;
+
+        /**
+         * The current aiFeatureStatus of the AiDataPlatform.
+         *
+         * @param aiFeatureStatus the value to set
+         * @return this builder
+         */
+        public Builder aiFeatureStatus(AiDataPlatform.AiFeatureStatus aiFeatureStatus) {
+            this.aiFeatureStatus = aiFeatureStatus;
+            this.__explicitlySet__.add("aiFeatureStatus");
+            return this;
+        }
         /** The current state of the AiDataPlatform. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AiDataPlatform.LifecycleState lifecycleState;
@@ -341,6 +359,7 @@ public final class AiDataPlatformSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.aliasKey,
+                            this.aiFeatureStatus,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -377,6 +396,9 @@ public final class AiDataPlatformSummary
             }
             if (model.wasPropertyExplicitlySet("aliasKey")) {
                 this.aliasKey(model.getAliasKey());
+            }
+            if (model.wasPropertyExplicitlySet("aiFeatureStatus")) {
+                this.aiFeatureStatus(model.getAiFeatureStatus());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -538,6 +560,19 @@ public final class AiDataPlatformSummary
         return aliasKey;
     }
 
+    /** The current aiFeatureStatus of the AiDataPlatform. */
+    @com.fasterxml.jackson.annotation.JsonProperty("aiFeatureStatus")
+    private final AiDataPlatform.AiFeatureStatus aiFeatureStatus;
+
+    /**
+     * The current aiFeatureStatus of the AiDataPlatform.
+     *
+     * @return the value
+     */
+    public AiDataPlatform.AiFeatureStatus getAiFeatureStatus() {
+        return aiFeatureStatus;
+    }
+
     /** The current state of the AiDataPlatform. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AiDataPlatform.LifecycleState lifecycleState;
@@ -656,6 +691,7 @@ public final class AiDataPlatformSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", aliasKey=").append(String.valueOf(this.aliasKey));
+        sb.append(", aiFeatureStatus=").append(String.valueOf(this.aiFeatureStatus));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -683,6 +719,7 @@ public final class AiDataPlatformSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.aliasKey, other.aliasKey)
+                && java.util.Objects.equals(this.aiFeatureStatus, other.aiFeatureStatus)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -709,6 +746,9 @@ public final class AiDataPlatformSummary
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.aliasKey == null ? 43 : this.aliasKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aiFeatureStatus == null ? 43 : this.aiFeatureStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

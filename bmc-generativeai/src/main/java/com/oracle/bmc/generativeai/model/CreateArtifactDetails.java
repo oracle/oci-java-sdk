@@ -31,9 +31,27 @@ package com.oracle.bmc.generativeai.model;
 public class CreateArtifactDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected CreateArtifactDetails() {
+    @java.beans.ConstructorProperties({"isVulnerabilityScanRequired"})
+    protected CreateArtifactDetails(Boolean isVulnerabilityScanRequired) {
         super();
+        this.isVulnerabilityScanRequired = isVulnerabilityScanRequired;
+    }
+
+    /**
+     * Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this
+     * artifact before it can become active. When omitted, the value defaults to false.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isVulnerabilityScanRequired")
+    private final Boolean isVulnerabilityScanRequired;
+
+    /**
+     * Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this
+     * artifact before it can become active. When omitted, the value defaults to false.
+     *
+     * @return the value
+     */
+    public Boolean getIsVulnerabilityScanRequired() {
+        return isVulnerabilityScanRequired;
     }
 
     @Override
@@ -51,6 +69,8 @@ public class CreateArtifactDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateArtifactDetails(");
         sb.append("super=").append(super.toString());
+        sb.append("isVulnerabilityScanRequired=")
+                .append(String.valueOf(this.isVulnerabilityScanRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -65,13 +85,20 @@ public class CreateArtifactDetails
         }
 
         CreateArtifactDetails other = (CreateArtifactDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(
+                        this.isVulnerabilityScanRequired, other.isVulnerabilityScanRequired)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isVulnerabilityScanRequired == null
+                                ? 43
+                                : this.isVulnerabilityScanRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

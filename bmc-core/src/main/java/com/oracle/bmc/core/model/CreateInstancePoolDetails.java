@@ -5,7 +5,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to create an instance pool. <br>
+ * The data to create an instance pool. For a GMC-enabled resource pool, the referenced instance
+ * configuration must be a GMC configuration and the placement configuration must identify the
+ * availability domain and compute cluster for the pool. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -204,12 +206,16 @@ public final class CreateInstancePoolDetails
             this.__explicitlySet__.add("placementConfigurations");
             return this;
         }
-        /** The number of instances that should be in the instance pool. */
+        /**
+         * The number of instances that should be in the instance pool. For a GMC-enabled resource
+         * pool, this is the number of GMC resources that should be in the pool.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Integer size;
 
         /**
-         * The number of instances that should be in the instance pool.
+         * The number of instances that should be in the instance pool. For a GMC-enabled resource
+         * pool, this is the number of GMC resources that should be in the pool.
          *
          * @param size the value to set
          * @return this builder
@@ -482,12 +488,16 @@ public final class CreateInstancePoolDetails
         return placementConfigurations;
     }
 
-    /** The number of instances that should be in the instance pool. */
+    /**
+     * The number of instances that should be in the instance pool. For a GMC-enabled resource pool,
+     * this is the number of GMC resources that should be in the pool.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Integer size;
 
     /**
-     * The number of instances that should be in the instance pool.
+     * The number of instances that should be in the instance pool. For a GMC-enabled resource pool,
+     * this is the number of GMC resources that should be in the pool.
      *
      * @return the value
      */

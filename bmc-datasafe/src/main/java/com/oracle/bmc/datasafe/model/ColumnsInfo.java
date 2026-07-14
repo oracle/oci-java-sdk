@@ -217,6 +217,7 @@ public final class ColumnsInfo extends com.oracle.bmc.http.client.internal.Expli
     /** The type of the database object that contains the sensitive column. */
     public enum ObjectType implements com.oracle.bmc.http.internal.BmcEnum {
         Table("TABLE"),
+        EditioningView("EDITIONING_VIEW"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

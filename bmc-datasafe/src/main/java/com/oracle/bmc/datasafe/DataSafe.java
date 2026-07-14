@@ -1271,10 +1271,11 @@ public interface DataSafe extends AutoCloseable {
             CreateSdmMaskingPolicyDifferenceRequest request);
 
     /**
-     * Creates a new saved security assessment for one or multiple targets in a compartment. When
-     * this operation is performed, it will save the latest assessments in the specified
-     * compartment. If a schedule is passed, it will persist the latest assessments, at the defined
-     * date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Creates a new saved security assessment for a target database or target database group in a
+     * compartment. When this operation is performed, it will save the latest assessment in the
+     * specified compartment. If a schedule is passed, it will persist the latest assessment, at the
+     * defined date and time, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1515,10 +1516,10 @@ public interface DataSafe extends AutoCloseable {
             CreateUnifiedAuditPolicyRequest request);
 
     /**
-     * Creates a new saved user assessment for one or multiple targets in a compartment. It saves
-     * the latest assessments in the specified compartment. If a scheduled is passed in, this
-     * operation persists the latest assessments that exist at the defined date and time, in the
-     * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Creates a new saved user assessment for a target database or target database group in a
+     * compartment. It saves the latest assessment in the specified compartment. If a schedule is
+     * passed in, this operation persists the latest assessment that exists at the defined date and
+     * time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4017,7 +4018,9 @@ public interface DataSafe extends AutoCloseable {
      * Retrieves a list of all database view access entries in Data Safe.
      *
      * <p>The ListDatabaseViewAccessEntries operation returns only the database view access objects
-     * for the specified security policy report.
+     * for the specified security policy report. If targetId is specified, it must match the target
+     * associated with the securityPolicyReportId path parameter; otherwise, the request is
+     * rejected.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -5308,6 +5311,23 @@ public interface DataSafe extends AutoCloseable {
      */
     ListTargetAlertPolicyAssociationsResponse listTargetAlertPolicyAssociations(
             ListTargetAlertPolicyAssociationsRequest request);
+
+    /**
+     * Gets the details of target-alert policy association and its unassociated members by its ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTargetAlertPolicyUnassociatedMembersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListTargetAlertPolicyUnassociatedMembers API.
+     */
+    ListTargetAlertPolicyUnassociatedMembersResponse listTargetAlertPolicyUnassociatedMembers(
+            ListTargetAlertPolicyUnassociatedMembersRequest request);
 
     /**
      * Retrieves a list of target database groups according to the specified query parameters.

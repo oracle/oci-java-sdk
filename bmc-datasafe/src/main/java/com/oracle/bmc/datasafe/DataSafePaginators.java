@@ -10018,6 +10018,142 @@ public class DataSafePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listTargetAlertPolicyUnassociatedMembers operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListTargetAlertPolicyUnassociatedMembersResponse>
+            listTargetAlertPolicyUnassociatedMembersResponseIterator(
+                    final ListTargetAlertPolicyUnassociatedMembersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTargetAlertPolicyUnassociatedMembersRequest.Builder,
+                ListTargetAlertPolicyUnassociatedMembersRequest,
+                ListTargetAlertPolicyUnassociatedMembersResponse>(
+                new java.util.function.Supplier<
+                        ListTargetAlertPolicyUnassociatedMembersRequest.Builder>() {
+                    @Override
+                    public ListTargetAlertPolicyUnassociatedMembersRequest.Builder get() {
+                        return ListTargetAlertPolicyUnassociatedMembersRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTargetAlertPolicyUnassociatedMembersResponse, String>() {
+                    @Override
+                    public String apply(ListTargetAlertPolicyUnassociatedMembersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTargetAlertPolicyUnassociatedMembersRequest.Builder>,
+                        ListTargetAlertPolicyUnassociatedMembersRequest>() {
+                    @Override
+                    public ListTargetAlertPolicyUnassociatedMembersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTargetAlertPolicyUnassociatedMembersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTargetAlertPolicyUnassociatedMembersRequest,
+                        ListTargetAlertPolicyUnassociatedMembersResponse>() {
+                    @Override
+                    public ListTargetAlertPolicyUnassociatedMembersResponse apply(
+                            ListTargetAlertPolicyUnassociatedMembersRequest request) {
+                        return client.listTargetAlertPolicyUnassociatedMembers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.TargetAlertPolicyUnassociatedSummary} objects contained in
+     * responses from the listTargetAlertPolicyUnassociatedMembers operation. This iterable will
+     * fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.TargetAlertPolicyUnassociatedSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.TargetAlertPolicyUnassociatedSummary>
+            listTargetAlertPolicyUnassociatedMembersRecordIterator(
+                    final ListTargetAlertPolicyUnassociatedMembersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTargetAlertPolicyUnassociatedMembersRequest.Builder,
+                ListTargetAlertPolicyUnassociatedMembersRequest,
+                ListTargetAlertPolicyUnassociatedMembersResponse,
+                com.oracle.bmc.datasafe.model.TargetAlertPolicyUnassociatedSummary>(
+                new java.util.function.Supplier<
+                        ListTargetAlertPolicyUnassociatedMembersRequest.Builder>() {
+                    @Override
+                    public ListTargetAlertPolicyUnassociatedMembersRequest.Builder get() {
+                        return ListTargetAlertPolicyUnassociatedMembersRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTargetAlertPolicyUnassociatedMembersResponse, String>() {
+                    @Override
+                    public String apply(ListTargetAlertPolicyUnassociatedMembersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTargetAlertPolicyUnassociatedMembersRequest.Builder>,
+                        ListTargetAlertPolicyUnassociatedMembersRequest>() {
+                    @Override
+                    public ListTargetAlertPolicyUnassociatedMembersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTargetAlertPolicyUnassociatedMembersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTargetAlertPolicyUnassociatedMembersRequest,
+                        ListTargetAlertPolicyUnassociatedMembersResponse>() {
+                    @Override
+                    public ListTargetAlertPolicyUnassociatedMembersResponse apply(
+                            ListTargetAlertPolicyUnassociatedMembersRequest request) {
+                        return client.listTargetAlertPolicyUnassociatedMembers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTargetAlertPolicyUnassociatedMembersResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .TargetAlertPolicyUnassociatedSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .TargetAlertPolicyUnassociatedSummary>
+                            apply(ListTargetAlertPolicyUnassociatedMembersResponse response) {
+                        return response.getTargetAlertPolicyUnassociatedCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listTargetDatabaseGroups operation. This iterable will fetch more data from the server as
      * needed.
      *

@@ -165,6 +165,19 @@ public class ListTargetAlertPolicyAssociationsRequest
     public SortBy getSortBy() {
         return sortBy;
     }
+    /**
+     * A optional filter to return only resources that belong to the specified alert policy
+     * association type.
+     */
+    private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation.TargetType targetType;
+
+    /**
+     * A optional filter to return only resources that belong to the specified alert policy
+     * association type.
+     */
+    public com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation.TargetType getTargetType() {
+        return targetType;
+    }
     /** Unique identifier for the request. */
     private String opcRequestId;
 
@@ -437,6 +450,26 @@ public class ListTargetAlertPolicyAssociationsRequest
             return this;
         }
 
+        /**
+         * A optional filter to return only resources that belong to the specified alert policy
+         * association type.
+         */
+        private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation.TargetType targetType =
+                null;
+
+        /**
+         * A optional filter to return only resources that belong to the specified alert policy
+         * association type.
+         *
+         * @param targetType the value to set
+         * @return this builder instance
+         */
+        public Builder targetType(
+                com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation.TargetType targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
         /** Unique identifier for the request. */
         private String opcRequestId = null;
 
@@ -585,6 +618,7 @@ public class ListTargetAlertPolicyAssociationsRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            targetType(o.getTargetType());
             opcRequestId(o.getOpcRequestId());
             timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
             timeCreatedLessThan(o.getTimeCreatedLessThan());
@@ -636,6 +670,7 @@ public class ListTargetAlertPolicyAssociationsRequest
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.targetType = targetType;
             request.opcRequestId = opcRequestId;
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             request.timeCreatedLessThan = timeCreatedLessThan;
@@ -644,7 +679,7 @@ public class ListTargetAlertPolicyAssociationsRequest
             return request;
             // new ListTargetAlertPolicyAssociationsRequest(compartmentId,
             // targetAlertPolicyAssociationId, alertPolicyId, targetId, lifecycleState, limit, page,
-            // sortOrder, sortBy, opcRequestId, timeCreatedGreaterThanOrEqualTo,
+            // sortOrder, sortBy, targetType, opcRequestId, timeCreatedGreaterThanOrEqualTo,
             // timeCreatedLessThan, compartmentIdInSubtree, accessLevel);
         }
     }
@@ -665,6 +700,7 @@ public class ListTargetAlertPolicyAssociationsRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .targetType(targetType)
                 .opcRequestId(opcRequestId)
                 .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
                 .timeCreatedLessThan(timeCreatedLessThan)
@@ -696,6 +732,7 @@ public class ListTargetAlertPolicyAssociationsRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",targetType=").append(String.valueOf(this.targetType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",timeCreatedGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
@@ -728,6 +765,7 @@ public class ListTargetAlertPolicyAssociationsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
                         this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
@@ -760,6 +798,7 @@ public class ListTargetAlertPolicyAssociationsRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

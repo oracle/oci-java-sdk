@@ -33,9 +33,9 @@ public class LogHeadersFilter implements RequestInterceptor {
         LOG.debug("Sending '{}' request to '{}'", request.method(), request.uri());
         Map<String, List<String>> headers = request.headers();
         for (Entry<String, List<String>> entry : headers.entrySet()) {
-            List<String> value = entry.getValue();
+            List<String> value = HeaderUtils.sanitizeHeaderValues(entry.getKey(), entry.getValue());
             if (entry.getKey() != null && entry.getKey().equalsIgnoreCase("authorization")) {
-                value = maskValue(entry.getValue());
+                value = maskValue(value);
             }
             LOG.debug("Sending header '{}' with value '{}'", entry.getKey(), value);
         }

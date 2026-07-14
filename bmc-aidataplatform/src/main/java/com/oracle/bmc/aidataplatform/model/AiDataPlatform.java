@@ -40,6 +40,7 @@ public final class AiDataPlatform
         "aliasKey",
         "webSocketEndpoint",
         "lifecycleState",
+        "aiFeatureStatus",
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
@@ -56,6 +57,7 @@ public final class AiDataPlatform
             String aliasKey,
             String webSocketEndpoint,
             LifecycleState lifecycleState,
+            AiFeatureStatus aiFeatureStatus,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -71,6 +73,7 @@ public final class AiDataPlatform
         this.aliasKey = aliasKey;
         this.webSocketEndpoint = webSocketEndpoint;
         this.lifecycleState = lifecycleState;
+        this.aiFeatureStatus = aiFeatureStatus;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -257,6 +260,21 @@ public final class AiDataPlatform
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The current aiFeatureStatus of the AiDataPlatform. */
+        @com.fasterxml.jackson.annotation.JsonProperty("aiFeatureStatus")
+        private AiFeatureStatus aiFeatureStatus;
+
+        /**
+         * The current aiFeatureStatus of the AiDataPlatform.
+         *
+         * @param aiFeatureStatus the value to set
+         * @return this builder
+         */
+        public Builder aiFeatureStatus(AiFeatureStatus aiFeatureStatus) {
+            this.aiFeatureStatus = aiFeatureStatus;
+            this.__explicitlySet__.add("aiFeatureStatus");
+            return this;
+        }
         /**
          * A message that describes the current state of the AiDataPlatform in more detail. For
          * example, can be used to provide actionable information for a resource in the Failed
@@ -367,6 +385,7 @@ public final class AiDataPlatform
                             this.aliasKey,
                             this.webSocketEndpoint,
                             this.lifecycleState,
+                            this.aiFeatureStatus,
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -408,6 +427,9 @@ public final class AiDataPlatform
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("aiFeatureStatus")) {
+                this.aiFeatureStatus(model.getAiFeatureStatus());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -642,6 +664,67 @@ public final class AiDataPlatform
         return lifecycleState;
     }
 
+    /** The current aiFeatureStatus of the AiDataPlatform. */
+    public enum AiFeatureStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        Disabled("DISABLED"),
+        Enabling("ENABLING"),
+        Ready("READY"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AiFeatureStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, AiFeatureStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AiFeatureStatus v : AiFeatureStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AiFeatureStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AiFeatureStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AiFeatureStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The current aiFeatureStatus of the AiDataPlatform. */
+    @com.fasterxml.jackson.annotation.JsonProperty("aiFeatureStatus")
+    private final AiFeatureStatus aiFeatureStatus;
+
+    /**
+     * The current aiFeatureStatus of the AiDataPlatform.
+     *
+     * @return the value
+     */
+    public AiFeatureStatus getAiFeatureStatus() {
+        return aiFeatureStatus;
+    }
+
     /**
      * A message that describes the current state of the AiDataPlatform in more detail. For example,
      * can be used to provide actionable information for a resource in the Failed state.
@@ -749,6 +832,7 @@ public final class AiDataPlatform
         sb.append(", aliasKey=").append(String.valueOf(this.aliasKey));
         sb.append(", webSocketEndpoint=").append(String.valueOf(this.webSocketEndpoint));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", aiFeatureStatus=").append(String.valueOf(this.aiFeatureStatus));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -777,6 +861,7 @@ public final class AiDataPlatform
                 && java.util.Objects.equals(this.aliasKey, other.aliasKey)
                 && java.util.Objects.equals(this.webSocketEndpoint, other.webSocketEndpoint)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.aiFeatureStatus, other.aiFeatureStatus)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -808,6 +893,9 @@ public final class AiDataPlatform
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.aiFeatureStatus == null ? 43 : this.aiFeatureStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

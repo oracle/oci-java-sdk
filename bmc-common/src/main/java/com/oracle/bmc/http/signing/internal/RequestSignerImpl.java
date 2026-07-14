@@ -6,6 +6,7 @@ package com.oracle.bmc.http.signing.internal;
 
 import com.oracle.bmc.http.client.Serializer;
 import com.oracle.bmc.http.client.io.DuplicatableInputStream;
+import com.oracle.bmc.http.internal.HeaderUtils;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
@@ -290,7 +291,7 @@ public class RequestSignerImpl implements RequestSigner {
 
     private static String transformHeadersToJsonString(final Map<String, List<String>> headers) {
         try {
-            return Serializer.getDefault().writeValueAsString(headers);
+            return Serializer.getDefault().writeValueAsString(HeaderUtils.sanitizeHeaders(headers));
         } catch (IOException ex) {
             LOG.debug("Unable to serialize headers to JSON string", ex);
             return "UNABLE TO SERIALIZE";

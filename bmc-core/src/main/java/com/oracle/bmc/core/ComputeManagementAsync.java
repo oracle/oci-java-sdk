@@ -228,7 +228,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Creates an instance configuration. An instance configuration is a template that defines the
-     * settings to use when creating Compute instances.
+     * settings to use when creating Compute instances or GPU Memory Clusters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
