@@ -251,6 +251,39 @@ public class AiDataPlatformClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public EnableAiFeatureResponse enableAiFeature(EnableAiFeatureRequest request) {
+
+        Validate.notBlank(request.getAiDataPlatformId(), "aiDataPlatformId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableAiFeatureDetails(), "enableAiFeatureDetails is required");
+
+        return clientCall(request, EnableAiFeatureResponse::builder)
+                .logger(LOG, "enableAiFeature")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "EnableAiFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/EnableAiFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAiFeatureRequest::builder)
+                .basePath("/20240831")
+                .appendPathParam("aiDataPlatforms")
+                .appendPathParam(request.getAiDataPlatformId())
+                .appendPathParam("actions")
+                .appendPathParam("enableAiFeature")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableAiFeatureResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableAiFeatureResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetAiDataPlatformResponse getAiDataPlatform(GetAiDataPlatformRequest request) {
 
         Validate.notBlank(request.getAiDataPlatformId(), "aiDataPlatformId must not be blank");

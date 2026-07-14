@@ -4,7 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The current sub-state of the audit trail. */
+/**
+ * The current sub-state of the audit trail. The states RETRYING,IDLE,RECOVERING will be deprecated.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public enum AuditTrailStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Starting("STARTING"),

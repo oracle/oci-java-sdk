@@ -35,6 +35,7 @@ public final class TargetAlertPolicyAssociation
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "targetType",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -51,6 +52,7 @@ public final class TargetAlertPolicyAssociation
             java.util.Date timeUpdated,
             AlertPolicyLifecycleState lifecycleState,
             String lifecycleDetails,
+            TargetType targetType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -66,6 +68,7 @@ public final class TargetAlertPolicyAssociation
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.targetType = targetType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -133,12 +136,14 @@ public final class TargetAlertPolicyAssociation
             this.__explicitlySet__.add("policyId");
             return this;
         }
-        /** The OCID of the target on which alert policy is to be applied. */
+        /**
+         * The OCID of the target or target database group on which alert policy is to be applied.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the target on which alert policy is to be applied.
+         * The OCID of the target or target database group on which alert policy is to be applied.
          *
          * @param targetId the value to set
          * @return this builder
@@ -246,6 +251,21 @@ public final class TargetAlertPolicyAssociation
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** The resource type that is represented by the target alert policy association. */
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private TargetType targetType;
+
+        /**
+         * The resource type that is represented by the target alert policy association.
+         *
+         * @param targetType the value to set
+         * @return this builder
+         */
+        public Builder targetType(TargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -334,6 +354,7 @@ public final class TargetAlertPolicyAssociation
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.targetType,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -377,6 +398,9 @@ public final class TargetAlertPolicyAssociation
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -452,12 +476,12 @@ public final class TargetAlertPolicyAssociation
         return policyId;
     }
 
-    /** The OCID of the target on which alert policy is to be applied. */
+    /** The OCID of the target or target database group on which alert policy is to be applied. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the target on which alert policy is to be applied.
+     * The OCID of the target or target database group on which alert policy is to be applied.
      *
      * @return the value
      */
@@ -551,6 +575,65 @@ public final class TargetAlertPolicyAssociation
         return lifecycleDetails;
     }
 
+    /** The resource type that is represented by the target alert policy association. */
+    public enum TargetType implements com.oracle.bmc.http.internal.BmcEnum {
+        TargetDatabase("TARGET_DATABASE"),
+        TargetDatabaseGroup("TARGET_DATABASE_GROUP"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TargetType.class);
+
+        private final String value;
+        private static java.util.Map<String, TargetType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TargetType v : TargetType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TargetType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TargetType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TargetType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The resource type that is represented by the target alert policy association. */
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final TargetType targetType;
+
+    /**
+     * The resource type that is represented by the target alert policy association.
+     *
+     * @return the value
+     */
+    public TargetType getTargetType() {
+        return targetType;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -640,6 +723,7 @@ public final class TargetAlertPolicyAssociation
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -668,6 +752,7 @@ public final class TargetAlertPolicyAssociation
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -695,6 +780,7 @@ public final class TargetAlertPolicyAssociation
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -235,6 +235,25 @@ public interface GenerativeAi extends AutoCloseable {
             ChangeHostedApplicationCompartmentRequest request);
 
     /**
+     * Moves a hosted application into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeHostedApplicationIamCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeHostedApplicationIamCompartment API.
+     */
+    ChangeHostedApplicationIamCompartmentResponse changeHostedApplicationIamCompartment(
+            ChangeHostedApplicationIamCompartmentRequest request);
+
+    /**
      * Moves a hosted application storage into a different compartment within the same tenancy. For
      * information about moving resources between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -409,6 +428,23 @@ public interface GenerativeAi extends AutoCloseable {
      *     CreateHostedApplication API.
      */
     CreateHostedApplicationResponse createHostedApplication(CreateHostedApplicationRequest request);
+
+    /**
+     * Creates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateHostedApplicationIamExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateHostedApplicationIam API.
+     */
+    CreateHostedApplicationIamResponse createHostedApplicationIam(
+            CreateHostedApplicationIamRequest request);
 
     /**
      * Creates a hosted application storage.
@@ -654,6 +690,27 @@ public interface GenerativeAi extends AutoCloseable {
      *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteHostedApplicationIamExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteHostedApplicationIam API.
+     */
+    DeleteHostedApplicationIamResponse deleteHostedApplicationIam(
+            DeleteHostedApplicationIamRequest request);
+
+    /**
+     * Deletes a hosted application. You can only delete hosted application without attached
+     * resources. Before you delete a hosting hosted application, you must delete the endpoints
+     * associated to that application. Before you delete a fine-tuning hosted application, you must
+     * delete the custom model on that application. The delete action permanently deletes the
+     * cluster. This action can't be undone.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
      *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteHostedApplicationStorageExample.java.html"
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
      *     DeleteHostedApplicationStorage API.
@@ -858,6 +915,22 @@ public interface GenerativeAi extends AutoCloseable {
      *     GetHostedApplication API.
      */
     GetHostedApplicationResponse getHostedApplication(GetHostedApplicationRequest request);
+
+    /**
+     * Gets information about a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetHostedApplicationIamExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetHostedApplicationIam API.
+     */
+    GetHostedApplicationIamResponse getHostedApplicationIam(GetHostedApplicationIamRequest request);
 
     /**
      * Gets information about a hosted application storage.
@@ -1119,6 +1192,24 @@ public interface GenerativeAi extends AutoCloseable {
 
     /**
      * Lists the hosted applications in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListHostedApplicationsIamExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListHostedApplicationsIam API.
+     */
+    ListHostedApplicationsIamResponse listHostedApplicationsIam(
+            ListHostedApplicationsIamRequest request);
+
+    /**
+     * Lists the hosted applications in a specific compartment. Provide either applicationId or
+     * applicationIamId to filter by parent.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1424,6 +1515,23 @@ public interface GenerativeAi extends AutoCloseable {
      *     UpdateHostedApplication API.
      */
     UpdateHostedApplicationResponse updateHostedApplication(UpdateHostedApplicationRequest request);
+
+    /**
+     * Updates a hosted application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateHostedApplicationIamExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateHostedApplicationIam API.
+     */
+    UpdateHostedApplicationIamResponse updateHostedApplicationIam(
+            UpdateHostedApplicationIamRequest request);
 
     /**
      * Updates a hosted deployment.

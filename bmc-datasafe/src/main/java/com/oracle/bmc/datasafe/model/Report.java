@@ -35,6 +35,8 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         "type",
         "dataSource",
         "lifecycleDetails",
+        "previousReportId",
+        "nextReportId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -53,6 +55,8 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
             ReportType type,
             ReportDefinitionDataSource dataSource,
             String lifecycleDetails,
+            String previousReportId,
+            String nextReportId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -70,6 +74,8 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         this.type = type;
         this.dataSource = dataSource;
         this.lifecycleDetails = lifecycleDetails;
+        this.previousReportId = previousReportId;
+        this.nextReportId = nextReportId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -276,6 +282,36 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** The OCID of the previous report generated. */
+        @com.fasterxml.jackson.annotation.JsonProperty("previousReportId")
+        private String previousReportId;
+
+        /**
+         * The OCID of the previous report generated.
+         *
+         * @param previousReportId the value to set
+         * @return this builder
+         */
+        public Builder previousReportId(String previousReportId) {
+            this.previousReportId = previousReportId;
+            this.__explicitlySet__.add("previousReportId");
+            return this;
+        }
+        /** The OCID of the next report generated. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nextReportId")
+        private String nextReportId;
+
+        /**
+         * The OCID of the next report generated.
+         *
+         * @param nextReportId the value to set
+         * @return this builder
+         */
+        public Builder nextReportId(String nextReportId) {
+            this.nextReportId = nextReportId;
+            this.__explicitlySet__.add("nextReportId");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -366,6 +402,8 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
                             this.type,
                             this.dataSource,
                             this.lifecycleDetails,
+                            this.previousReportId,
+                            this.nextReportId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -415,6 +453,12 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("previousReportId")) {
+                this.previousReportId(model.getPreviousReportId());
+            }
+            if (model.wasPropertyExplicitlySet("nextReportId")) {
+                this.nextReportId(model.getNextReportId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -658,6 +702,32 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         return lifecycleDetails;
     }
 
+    /** The OCID of the previous report generated. */
+    @com.fasterxml.jackson.annotation.JsonProperty("previousReportId")
+    private final String previousReportId;
+
+    /**
+     * The OCID of the previous report generated.
+     *
+     * @return the value
+     */
+    public String getPreviousReportId() {
+        return previousReportId;
+    }
+
+    /** The OCID of the next report generated. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nextReportId")
+    private final String nextReportId;
+
+    /**
+     * The OCID of the next report generated.
+     *
+     * @return the value
+     */
+    public String getNextReportId() {
+        return nextReportId;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -749,6 +819,8 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", dataSource=").append(String.valueOf(this.dataSource));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", previousReportId=").append(String.valueOf(this.previousReportId));
+        sb.append(", nextReportId=").append(String.valueOf(this.nextReportId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -779,6 +851,8 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.dataSource, other.dataSource)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.previousReportId, other.previousReportId)
+                && java.util.Objects.equals(this.nextReportId, other.nextReportId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -814,6 +888,10 @@ public final class Report extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.previousReportId == null ? 43 : this.previousReportId.hashCode());
+        result = (result * PRIME) + (this.nextReportId == null ? 43 : this.nextReportId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

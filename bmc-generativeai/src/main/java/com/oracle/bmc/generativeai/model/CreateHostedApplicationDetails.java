@@ -24,11 +24,11 @@ public final class CreateHostedApplicationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "inboundAuthConfig",
         "displayName",
         "compartmentId",
         "description",
         "scalingConfig",
-        "inboundAuthConfig",
         "networkingConfig",
         "storageConfigs",
         "environmentVariables",
@@ -36,22 +36,22 @@ public final class CreateHostedApplicationDetails
         "definedTags"
     })
     public CreateHostedApplicationDetails(
+            InboundAuthConfig inboundAuthConfig,
             String displayName,
             String compartmentId,
             String description,
             ScalingConfig scalingConfig,
-            InboundAuthConfig inboundAuthConfig,
             NetworkingConfig networkingConfig,
             java.util.List<StorageConfig> storageConfigs,
             java.util.List<EnvironmentVariable> environmentVariables,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.inboundAuthConfig = inboundAuthConfig;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.description = description;
         this.scalingConfig = scalingConfig;
-        this.inboundAuthConfig = inboundAuthConfig;
         this.networkingConfig = networkingConfig;
         this.storageConfigs = storageConfigs;
         this.environmentVariables = environmentVariables;
@@ -61,6 +61,15 @@ public final class CreateHostedApplicationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
+        private InboundAuthConfig inboundAuthConfig;
+
+        public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
+            this.inboundAuthConfig = inboundAuthConfig;
+            this.__explicitlySet__.add("inboundAuthConfig");
+            return this;
+        }
         /**
          * The user-friendly display name for the Hosted Application. Does not need to be unique and
          * can be updated after creation.
@@ -117,15 +126,6 @@ public final class CreateHostedApplicationDetails
         public Builder scalingConfig(ScalingConfig scalingConfig) {
             this.scalingConfig = scalingConfig;
             this.__explicitlySet__.add("scalingConfig");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
-        private InboundAuthConfig inboundAuthConfig;
-
-        public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
-            this.inboundAuthConfig = inboundAuthConfig;
-            this.__explicitlySet__.add("inboundAuthConfig");
             return this;
         }
 
@@ -234,11 +234,11 @@ public final class CreateHostedApplicationDetails
         public CreateHostedApplicationDetails build() {
             CreateHostedApplicationDetails model =
                     new CreateHostedApplicationDetails(
+                            this.inboundAuthConfig,
                             this.displayName,
                             this.compartmentId,
                             this.description,
                             this.scalingConfig,
-                            this.inboundAuthConfig,
                             this.networkingConfig,
                             this.storageConfigs,
                             this.environmentVariables,
@@ -252,6 +252,9 @@ public final class CreateHostedApplicationDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateHostedApplicationDetails model) {
+            if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
+                this.inboundAuthConfig(model.getInboundAuthConfig());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -263,9 +266,6 @@ public final class CreateHostedApplicationDetails
             }
             if (model.wasPropertyExplicitlySet("scalingConfig")) {
                 this.scalingConfig(model.getScalingConfig());
-            }
-            if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
-                this.inboundAuthConfig(model.getInboundAuthConfig());
             }
             if (model.wasPropertyExplicitlySet("networkingConfig")) {
                 this.networkingConfig(model.getNetworkingConfig());
@@ -293,6 +293,13 @@ public final class CreateHostedApplicationDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
+    private final InboundAuthConfig inboundAuthConfig;
+
+    public InboundAuthConfig getInboundAuthConfig() {
+        return inboundAuthConfig;
     }
 
     /**
@@ -343,13 +350,6 @@ public final class CreateHostedApplicationDetails
 
     public ScalingConfig getScalingConfig() {
         return scalingConfig;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
-    private final InboundAuthConfig inboundAuthConfig;
-
-    public InboundAuthConfig getInboundAuthConfig() {
-        return inboundAuthConfig;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkingConfig")
@@ -454,11 +454,11 @@ public final class CreateHostedApplicationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateHostedApplicationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", scalingConfig=").append(String.valueOf(this.scalingConfig));
-        sb.append(", inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
         sb.append(", networkingConfig=").append(String.valueOf(this.networkingConfig));
         sb.append(", storageConfigs=").append(String.valueOf(this.storageConfigs));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
@@ -478,11 +478,11 @@ public final class CreateHostedApplicationDetails
         }
 
         CreateHostedApplicationDetails other = (CreateHostedApplicationDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.scalingConfig, other.scalingConfig)
-                && java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
                 && java.util.Objects.equals(this.networkingConfig, other.networkingConfig)
                 && java.util.Objects.equals(this.storageConfigs, other.storageConfigs)
                 && java.util.Objects.equals(this.environmentVariables, other.environmentVariables)
@@ -495,6 +495,9 @@ public final class CreateHostedApplicationDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -503,9 +506,6 @@ public final class CreateHostedApplicationDetails
         result =
                 (result * PRIME)
                         + (this.scalingConfig == null ? 43 : this.scalingConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkingConfig == null ? 43 : this.networkingConfig.hashCode());

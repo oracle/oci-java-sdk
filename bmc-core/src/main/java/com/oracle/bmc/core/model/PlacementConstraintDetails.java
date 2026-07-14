@@ -26,6 +26,9 @@ package com.oracle.bmc.core.model;
             value = HostGroupPlacementConstraintDetails.class,
             name = "HOST_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ComputeClusterPlacementConstraintDetails.class,
+            name = "COMPUTE_CLUSTER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ComputeBareMetalHostPlacementConstraintDetails.class,
             name = "COMPUTE_BARE_METAL_HOST")
 })

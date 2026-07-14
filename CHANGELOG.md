@@ -3,6 +3,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.92.0 - 2026-07-14
+### Added 
+- Support for the Oracle Data Infrastructure Cloud@Customer service 
+- Support for AI Agents features in the AI Data Platform service 
+- Support for Hosted Application IAM resources in the Generative AI service 
+- Support for File Storage Service (FSS) volumes in the Container Instances service 
+- Support for Linux file system group security contexts for volumes in the Container Instances service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Digital Assistant service 
+- Support for placement constraints on compute clusters in the Compute service 
+- Support for GPU memory cluster configurations in instance pools in the Compute service 
+- Support for target database groups in target alert policy associations in the Data Safe service 
+- Support for pagination when generating and scheduling reports in the Data Safe service 
+- Support for refreshing audit policies in the Data Safe service 
+- Support for single report generation for target database group security assessments in the Data Safe service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Data Safe service 
+- Support for IPv6 endpoints in the OS Management Hub service   
+
+### Breaking Changes 
+- The return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the model `com.oracle.bmc.generativeai.model.HostedApplicationSummary` in the Generative AI service 
+- The return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the request class `com.oracle.bmc.generativeai.requests.ListHostedApplicationsRequest` in the Generative AI service
+
 ## 3.91.1 - 2026-06-07
 ### Added 
 - Support for DAC hardware shapes for self-hosted models in the Generative AI service

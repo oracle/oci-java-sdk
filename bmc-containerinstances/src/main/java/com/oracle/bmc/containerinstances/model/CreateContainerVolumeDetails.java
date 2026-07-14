@@ -24,6 +24,9 @@ package com.oracle.bmc.containerinstances.model;
         defaultImpl = CreateContainerVolumeDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateContainerOciFssVolumeDetails.class,
+            name = "OCI_FSS_FILE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateContainerConfigFileVolumeDetails.class,
             name = "CONFIGFILE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

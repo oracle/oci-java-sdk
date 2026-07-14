@@ -28,20 +28,23 @@ public final class ScheduleReportDetails
         "schedule",
         "mimeType",
         "compartmentId",
-        "reportDetails"
+        "reportDetails",
+        "isPaginationEnabled"
     })
     public ScheduleReportDetails(
             String displayName,
             String schedule,
             MimeType mimeType,
             String compartmentId,
-            ReportDetails reportDetails) {
+            ReportDetails reportDetails,
+            Boolean isPaginationEnabled) {
         super();
         this.displayName = displayName;
         this.schedule = schedule;
         this.mimeType = mimeType;
         this.compartmentId = compartmentId;
         this.reportDetails = reportDetails;
+        this.isPaginationEnabled = isPaginationEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -141,6 +144,27 @@ public final class ScheduleReportDetails
             this.__explicitlySet__.add("reportDetails");
             return this;
         }
+        /**
+         * Indicates if the reports being generated should be paginated. If set to true, multiple
+         * reports can be generated and the details of next and previous report are present in
+         * Report. Values can either be 'true' or 'false'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPaginationEnabled")
+        private Boolean isPaginationEnabled;
+
+        /**
+         * Indicates if the reports being generated should be paginated. If set to true, multiple
+         * reports can be generated and the details of next and previous report are present in
+         * Report. Values can either be 'true' or 'false'.
+         *
+         * @param isPaginationEnabled the value to set
+         * @return this builder
+         */
+        public Builder isPaginationEnabled(Boolean isPaginationEnabled) {
+            this.isPaginationEnabled = isPaginationEnabled;
+            this.__explicitlySet__.add("isPaginationEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -152,7 +176,8 @@ public final class ScheduleReportDetails
                             this.schedule,
                             this.mimeType,
                             this.compartmentId,
-                            this.reportDetails);
+                            this.reportDetails,
+                            this.isPaginationEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -175,6 +200,9 @@ public final class ScheduleReportDetails
             }
             if (model.wasPropertyExplicitlySet("reportDetails")) {
                 this.reportDetails(model.getReportDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isPaginationEnabled")) {
+                this.isPaginationEnabled(model.getIsPaginationEnabled());
             }
             return this;
         }
@@ -306,6 +334,25 @@ public final class ScheduleReportDetails
         return reportDetails;
     }
 
+    /**
+     * Indicates if the reports being generated should be paginated. If set to true, multiple
+     * reports can be generated and the details of next and previous report are present in Report.
+     * Values can either be 'true' or 'false'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPaginationEnabled")
+    private final Boolean isPaginationEnabled;
+
+    /**
+     * Indicates if the reports being generated should be paginated. If set to true, multiple
+     * reports can be generated and the details of next and previous report are present in Report.
+     * Values can either be 'true' or 'false'.
+     *
+     * @return the value
+     */
+    public Boolean getIsPaginationEnabled() {
+        return isPaginationEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -326,6 +373,7 @@ public final class ScheduleReportDetails
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", reportDetails=").append(String.valueOf(this.reportDetails));
+        sb.append(", isPaginationEnabled=").append(String.valueOf(this.isPaginationEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -345,6 +393,7 @@ public final class ScheduleReportDetails
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.reportDetails, other.reportDetails)
+                && java.util.Objects.equals(this.isPaginationEnabled, other.isPaginationEnabled)
                 && super.equals(other);
     }
 
@@ -361,6 +410,11 @@ public final class ScheduleReportDetails
         result =
                 (result * PRIME)
                         + (this.reportDetails == null ? 43 : this.reportDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPaginationEnabled == null
+                                ? 43
+                                : this.isPaginationEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -32,6 +32,7 @@ public final class HostedApplication
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "inboundAuthConfig",
         "id",
         "displayName",
         "description",
@@ -42,7 +43,6 @@ public final class HostedApplication
         "lifecycleDetails",
         "scalingConfig",
         "storageConfigs",
-        "inboundAuthConfig",
         "networkingConfig",
         "environmentVariables",
         "freeformTags",
@@ -50,6 +50,7 @@ public final class HostedApplication
         "systemTags"
     })
     public HostedApplication(
+            InboundAuthConfig inboundAuthConfig,
             String id,
             String displayName,
             String description,
@@ -60,13 +61,13 @@ public final class HostedApplication
             String lifecycleDetails,
             ScalingConfig scalingConfig,
             java.util.List<StorageConfig> storageConfigs,
-            InboundAuthConfig inboundAuthConfig,
             NetworkingConfig networkingConfig,
             java.util.List<EnvironmentVariable> environmentVariables,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
+        this.inboundAuthConfig = inboundAuthConfig;
         this.id = id;
         this.displayName = displayName;
         this.description = description;
@@ -77,7 +78,6 @@ public final class HostedApplication
         this.lifecycleDetails = lifecycleDetails;
         this.scalingConfig = scalingConfig;
         this.storageConfigs = storageConfigs;
-        this.inboundAuthConfig = inboundAuthConfig;
         this.networkingConfig = networkingConfig;
         this.environmentVariables = environmentVariables;
         this.freeformTags = freeformTags;
@@ -87,6 +87,15 @@ public final class HostedApplication
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
+        private InboundAuthConfig inboundAuthConfig;
+
+        public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
+            this.inboundAuthConfig = inboundAuthConfig;
+            this.__explicitlySet__.add("inboundAuthConfig");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * hosted application.
@@ -248,15 +257,6 @@ public final class HostedApplication
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
-        private InboundAuthConfig inboundAuthConfig;
-
-        public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
-            this.inboundAuthConfig = inboundAuthConfig;
-            this.__explicitlySet__.add("inboundAuthConfig");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("networkingConfig")
         private NetworkingConfig networkingConfig;
 
@@ -364,6 +364,7 @@ public final class HostedApplication
         public HostedApplication build() {
             HostedApplication model =
                     new HostedApplication(
+                            this.inboundAuthConfig,
                             this.id,
                             this.displayName,
                             this.description,
@@ -374,7 +375,6 @@ public final class HostedApplication
                             this.lifecycleDetails,
                             this.scalingConfig,
                             this.storageConfigs,
-                            this.inboundAuthConfig,
                             this.networkingConfig,
                             this.environmentVariables,
                             this.freeformTags,
@@ -388,6 +388,9 @@ public final class HostedApplication
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(HostedApplication model) {
+            if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
+                this.inboundAuthConfig(model.getInboundAuthConfig());
+            }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
@@ -418,9 +421,6 @@ public final class HostedApplication
             if (model.wasPropertyExplicitlySet("storageConfigs")) {
                 this.storageConfigs(model.getStorageConfigs());
             }
-            if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
-                this.inboundAuthConfig(model.getInboundAuthConfig());
-            }
             if (model.wasPropertyExplicitlySet("networkingConfig")) {
                 this.networkingConfig(model.getNetworkingConfig());
             }
@@ -447,6 +447,13 @@ public final class HostedApplication
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
+    private final InboundAuthConfig inboundAuthConfig;
+
+    public InboundAuthConfig getInboundAuthConfig() {
+        return inboundAuthConfig;
     }
 
     /**
@@ -633,13 +640,6 @@ public final class HostedApplication
         return storageConfigs;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfig")
-    private final InboundAuthConfig inboundAuthConfig;
-
-    public InboundAuthConfig getInboundAuthConfig() {
-        return inboundAuthConfig;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("networkingConfig")
     private final NetworkingConfig networkingConfig;
 
@@ -744,7 +744,8 @@ public final class HostedApplication
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostedApplication(");
         sb.append("super=").append(super.toString());
-        sb.append("id=").append(String.valueOf(this.id));
+        sb.append("inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
+        sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -754,7 +755,6 @@ public final class HostedApplication
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", scalingConfig=").append(String.valueOf(this.scalingConfig));
         sb.append(", storageConfigs=").append(String.valueOf(this.storageConfigs));
-        sb.append(", inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
         sb.append(", networkingConfig=").append(String.valueOf(this.networkingConfig));
         sb.append(", environmentVariables=").append(String.valueOf(this.environmentVariables));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -774,7 +774,8 @@ public final class HostedApplication
         }
 
         HostedApplication other = (HostedApplication) o;
-        return java.util.Objects.equals(this.id, other.id)
+        return java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
+                && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -784,7 +785,6 @@ public final class HostedApplication
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.scalingConfig, other.scalingConfig)
                 && java.util.Objects.equals(this.storageConfigs, other.storageConfigs)
-                && java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
                 && java.util.Objects.equals(this.networkingConfig, other.networkingConfig)
                 && java.util.Objects.equals(this.environmentVariables, other.environmentVariables)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -797,6 +797,9 @@ public final class HostedApplication
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
@@ -817,9 +820,6 @@ public final class HostedApplication
         result =
                 (result * PRIME)
                         + (this.storageConfigs == null ? 43 : this.storageConfigs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkingConfig == null ? 43 : this.networkingConfig.hashCode());

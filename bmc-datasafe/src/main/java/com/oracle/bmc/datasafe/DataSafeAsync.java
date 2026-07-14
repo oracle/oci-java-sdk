@@ -1261,10 +1261,11 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new saved security assessment for one or multiple targets in a compartment. When
-     * this operation is performed, it will save the latest assessments in the specified
-     * compartment. If a schedule is passed, it will persist the latest assessments, at the defined
-     * date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Creates a new saved security assessment for a target database or target database group in a
+     * compartment. When this operation is performed, it will save the latest assessment in the
+     * specified compartment. If a schedule is passed, it will persist the latest assessment, at the
+     * defined date and time, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1500,10 +1501,10 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new saved user assessment for one or multiple targets in a compartment. It saves
-     * the latest assessments in the specified compartment. If a scheduled is passed in, this
-     * operation persists the latest assessments that exist at the defined date and time, in the
-     * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Creates a new saved user assessment for a target database or target database group in a
+     * compartment. It saves the latest assessment in the specified compartment. If a schedule is
+     * passed in, this operation persists the latest assessment that exists at the defined date and
+     * time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3972,7 +3973,9 @@ public interface DataSafeAsync extends AutoCloseable {
      * Retrieves a list of all database view access entries in Data Safe.
      *
      * <p>The ListDatabaseViewAccessEntries operation returns only the database view access objects
-     * for the specified security policy report.
+     * for the specified security policy report. If targetId is specified, it must match the target
+     * associated with the securityPolicyReportId path parameter; otherwise, the request is
+     * rejected.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -5260,6 +5263,24 @@ public interface DataSafeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListTargetAlertPolicyAssociationsRequest,
                                     ListTargetAlertPolicyAssociationsResponse>
+                            handler);
+
+    /**
+     * Gets the details of target-alert policy association and its unassociated members by its ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTargetAlertPolicyUnassociatedMembersResponse>
+            listTargetAlertPolicyUnassociatedMembers(
+                    ListTargetAlertPolicyUnassociatedMembersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListTargetAlertPolicyUnassociatedMembersRequest,
+                                    ListTargetAlertPolicyUnassociatedMembersResponse>
                             handler);
 
     /**

@@ -30,13 +30,24 @@ package com.oracle.bmc.generativeai.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public class Artifact extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "timeCreated", "hostedDeploymentId", "status"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "timeCreated",
+        "hostedDeploymentId",
+        "isVulnerabilityScanRequired",
+        "status"
+    })
     protected Artifact(
-            String id, java.util.Date timeCreated, String hostedDeploymentId, Status status) {
+            String id,
+            java.util.Date timeCreated,
+            String hostedDeploymentId,
+            Boolean isVulnerabilityScanRequired,
+            Status status) {
         super();
         this.id = id;
         this.timeCreated = timeCreated;
         this.hostedDeploymentId = hostedDeploymentId;
+        this.isVulnerabilityScanRequired = isVulnerabilityScanRequired;
         this.status = status;
     }
 
@@ -83,11 +94,31 @@ public class Artifact extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         return hostedDeploymentId;
     }
 
+    /**
+     * Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this
+     * artifact before it can become active. When not provided, the value defaults to false and the
+     * artifact is not blocked on a scan result.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isVulnerabilityScanRequired")
+    private final Boolean isVulnerabilityScanRequired;
+
+    /**
+     * Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this
+     * artifact before it can become active. When not provided, the value defaults to false and the
+     * artifact is not blocked on a scan result.
+     *
+     * @return the value
+     */
+    public Boolean getIsVulnerabilityScanRequired() {
+        return isVulnerabilityScanRequired;
+    }
+
     /** The current status of the artifact. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Updating("UPDATING"),
+        Failed("FAILED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -160,6 +191,8 @@ public class Artifact extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", hostedDeploymentId=").append(String.valueOf(this.hostedDeploymentId));
+        sb.append(", isVulnerabilityScanRequired=")
+                .append(String.valueOf(this.isVulnerabilityScanRequired));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
@@ -178,6 +211,8 @@ public class Artifact extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.hostedDeploymentId, other.hostedDeploymentId)
+                && java.util.Objects.equals(
+                        this.isVulnerabilityScanRequired, other.isVulnerabilityScanRequired)
                 && java.util.Objects.equals(this.status, other.status)
                 && super.equals(other);
     }
@@ -193,6 +228,11 @@ public class Artifact extends com.oracle.bmc.http.client.internal.ExplicitlySetB
                         + (this.hostedDeploymentId == null
                                 ? 43
                                 : this.hostedDeploymentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVulnerabilityScanRequired == null
+                                ? 43
+                                : this.isVulnerabilityScanRequired.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

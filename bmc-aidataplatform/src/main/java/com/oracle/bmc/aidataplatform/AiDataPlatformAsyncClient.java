@@ -237,6 +237,42 @@ public class AiDataPlatformAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<EnableAiFeatureResponse> enableAiFeature(
+            EnableAiFeatureRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableAiFeatureRequest, EnableAiFeatureResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAiDataPlatformId(), "aiDataPlatformId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableAiFeatureDetails(), "enableAiFeatureDetails is required");
+
+        return clientCall(request, EnableAiFeatureResponse::builder)
+                .logger(LOG, "enableAiFeature")
+                .serviceDetails(
+                        "AiDataPlatform",
+                        "EnableAiFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/EnableAiFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAiFeatureRequest::builder)
+                .basePath("/20240831")
+                .appendPathParam("aiDataPlatforms")
+                .appendPathParam(request.getAiDataPlatformId())
+                .appendPathParam("actions")
+                .appendPathParam("enableAiFeature")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EnableAiFeatureResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableAiFeatureResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAiDataPlatformResponse> getAiDataPlatform(
             GetAiDataPlatformRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

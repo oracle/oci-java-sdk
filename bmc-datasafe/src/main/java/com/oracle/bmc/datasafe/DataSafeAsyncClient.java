@@ -8569,6 +8569,10 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         request.getContainsSeverity(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("category", request.getCategory())
+                .appendListQueryParam(
+                        "containsOracleDefinedSeverity",
+                        request.getContainsOracleDefinedSeverity(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("references", request.getReferences())
                 .appendListQueryParam(
@@ -11320,6 +11324,7 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("targetType", request.getTargetType())
                 .appendQueryParam(
                         "timeCreatedGreaterThanOrEqualTo",
                         request.getTimeCreatedGreaterThanOrEqualTo())
@@ -11343,6 +11348,53 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         ListTargetAlertPolicyAssociationsResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTargetAlertPolicyUnassociatedMembersResponse>
+            listTargetAlertPolicyUnassociatedMembers(
+                    ListTargetAlertPolicyUnassociatedMembersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListTargetAlertPolicyUnassociatedMembersRequest,
+                                    ListTargetAlertPolicyUnassociatedMembersResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getTargetAlertPolicyAssociationId(),
+                "targetAlertPolicyAssociationId must not be blank");
+
+        return clientCall(request, ListTargetAlertPolicyUnassociatedMembersResponse::builder)
+                .logger(LOG, "listTargetAlertPolicyUnassociatedMembers")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListTargetAlertPolicyUnassociatedMembers",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/ListTargetAlertPolicyUnassociatedMembers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTargetAlertPolicyUnassociatedMembersRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetAlertPolicyAssociations")
+                .appendPathParam(request.getTargetAlertPolicyAssociationId())
+                .appendPathParam("unassociatedTargetMembers")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.TargetAlertPolicyUnassociatedCollection.class,
+                        ListTargetAlertPolicyUnassociatedMembersResponse.Builder
+                                ::targetAlertPolicyUnassociatedCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListTargetAlertPolicyUnassociatedMembersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListTargetAlertPolicyUnassociatedMembersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListTargetAlertPolicyUnassociatedMembersResponse.Builder::opcPrevPage)
                 .callAsync(handler);
     }
 
@@ -11886,6 +11938,7 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam(
                         "timePasswordExpiryLessThan", request.getTimePasswordExpiryLessThan())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendListQueryParam(

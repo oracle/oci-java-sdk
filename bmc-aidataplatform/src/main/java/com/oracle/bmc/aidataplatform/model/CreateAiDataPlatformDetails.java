@@ -23,9 +23,41 @@ package com.oracle.bmc.aidataplatform.model;
 public final class CreateAiDataPlatformDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
+    public CreateAiDataPlatformDetails(
+            String displayName,
+            String aiDataPlatformType,
+            Boolean isEnableAiFeature,
+            String vectorDbId,
+            String vectorDbAdminCred,
+            String vectorDbAdminSecretId,
+            String compartmentId,
+            String defaultWorkspaceName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+        super();
+        this.displayName = displayName;
+        this.aiDataPlatformType = aiDataPlatformType;
+        this.isEnableAiFeature = isEnableAiFeature;
+        this.vectorDbId = vectorDbId;
+        this.vectorDbAdminCred = vectorDbAdminCred != null ? vectorDbAdminCred.toCharArray() : null;
+        this.vectorDbAdminSecretId = vectorDbAdminSecretId;
+        this.compartmentId = compartmentId;
+        this.defaultWorkspaceName = defaultWorkspaceName;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.systemTags = systemTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
         "aiDataPlatformType",
+        "isEnableAiFeature",
+        "vectorDbId",
+        "vectorDbAdminCred",
+        "vectorDbAdminSecretId",
         "compartmentId",
         "defaultWorkspaceName",
         "freeformTags",
@@ -35,6 +67,10 @@ public final class CreateAiDataPlatformDetails
     public CreateAiDataPlatformDetails(
             String displayName,
             String aiDataPlatformType,
+            Boolean isEnableAiFeature,
+            String vectorDbId,
+            char[] vectorDbAdminCred,
+            String vectorDbAdminSecretId,
             String compartmentId,
             String defaultWorkspaceName,
             java.util.Map<String, String> freeformTags,
@@ -43,6 +79,10 @@ public final class CreateAiDataPlatformDetails
         super();
         this.displayName = displayName;
         this.aiDataPlatformType = aiDataPlatformType;
+        this.isEnableAiFeature = isEnableAiFeature;
+        this.vectorDbId = vectorDbId;
+        this.vectorDbAdminCred = vectorDbAdminCred;
+        this.vectorDbAdminSecretId = vectorDbAdminSecretId;
         this.compartmentId = compartmentId;
         this.defaultWorkspaceName = defaultWorkspaceName;
         this.freeformTags = freeformTags;
@@ -84,6 +124,81 @@ public final class CreateAiDataPlatformDetails
         public Builder aiDataPlatformType(String aiDataPlatformType) {
             this.aiDataPlatformType = aiDataPlatformType;
             this.__explicitlySet__.add("aiDataPlatformType");
+            return this;
+        }
+        /** The flag to enable/disable AiFeatures for the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnableAiFeature")
+        private Boolean isEnableAiFeature;
+
+        /**
+         * The flag to enable/disable AiFeatures for the instance.
+         *
+         * @param isEnableAiFeature the value to set
+         * @return this builder
+         */
+        public Builder isEnableAiFeature(Boolean isEnableAiFeature) {
+            this.isEnableAiFeature = isEnableAiFeature;
+            this.__explicitlySet__.add("isEnableAiFeature");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vector db Lakehouse 26ai.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vectorDbId")
+        private String vectorDbId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * vector db Lakehouse 26ai.
+         *
+         * @param vectorDbId the value to set
+         * @return this builder
+         */
+        public Builder vectorDbId(String vectorDbId) {
+            this.vectorDbId = vectorDbId;
+            this.__explicitlySet__.add("vectorDbId");
+            return this;
+        }
+        /** The Vector DB Lakehouse 26ai ADMIN user password. */
+        @com.fasterxml.jackson.annotation.JsonProperty("vectorDbAdminCred")
+        private char[] vectorDbAdminCred;
+
+        /**
+         * The Vector DB Lakehouse 26ai ADMIN user password.
+         *
+         * @param vectorDbAdminCred the value to set
+         * @return this builder
+         */
+        public Builder vectorDbAdminCred(char[] vectorDbAdminCred) {
+            this.vectorDbAdminCred = vectorDbAdminCred;
+            this.__explicitlySet__.add("vectorDbAdminCred");
+            return this;
+        }
+
+        public Builder vectorDbAdminCred(String vectorDbAdminCred) {
+            this.vectorDbAdminCred =
+                    vectorDbAdminCred != null ? vectorDbAdminCred.toCharArray() : null;
+            this.__explicitlySet__.add("vectorDbAdminCred");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret holding the vector db Lakehouse 26ai Admin user password.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vectorDbAdminSecretId")
+        private String vectorDbAdminSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret holding the vector db Lakehouse 26ai Admin user password.
+         *
+         * @param vectorDbAdminSecretId the value to set
+         * @return this builder
+         */
+        public Builder vectorDbAdminSecretId(String vectorDbAdminSecretId) {
+            this.vectorDbAdminSecretId = vectorDbAdminSecretId;
+            this.__explicitlySet__.add("vectorDbAdminSecretId");
             return this;
         }
         /**
@@ -201,6 +316,10 @@ public final class CreateAiDataPlatformDetails
                     new CreateAiDataPlatformDetails(
                             this.displayName,
                             this.aiDataPlatformType,
+                            this.isEnableAiFeature,
+                            this.vectorDbId,
+                            this.vectorDbAdminCred,
+                            this.vectorDbAdminSecretId,
                             this.compartmentId,
                             this.defaultWorkspaceName,
                             this.freeformTags,
@@ -219,6 +338,18 @@ public final class CreateAiDataPlatformDetails
             }
             if (model.wasPropertyExplicitlySet("aiDataPlatformType")) {
                 this.aiDataPlatformType(model.getAiDataPlatformType());
+            }
+            if (model.wasPropertyExplicitlySet("isEnableAiFeature")) {
+                this.isEnableAiFeature(model.getIsEnableAiFeature());
+            }
+            if (model.wasPropertyExplicitlySet("vectorDbId")) {
+                this.vectorDbId(model.getVectorDbId());
+            }
+            if (model.wasPropertyExplicitlySet("vectorDbAdminCred")) {
+                this.vectorDbAdminCred(model.getVectorDbAdminCred());
+            }
+            if (model.wasPropertyExplicitlySet("vectorDbAdminSecretId")) {
+                this.vectorDbAdminSecretId(model.getVectorDbAdminSecretId());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -276,6 +407,79 @@ public final class CreateAiDataPlatformDetails
      */
     public String getAiDataPlatformType() {
         return aiDataPlatformType;
+    }
+
+    /** The flag to enable/disable AiFeatures for the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnableAiFeature")
+    private final Boolean isEnableAiFeature;
+
+    /**
+     * The flag to enable/disable AiFeatures for the instance.
+     *
+     * @return the value
+     */
+    public Boolean getIsEnableAiFeature() {
+        return isEnableAiFeature;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vector db Lakehouse 26ai.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vectorDbId")
+    private final String vectorDbId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * vector db Lakehouse 26ai.
+     *
+     * @return the value
+     */
+    public String getVectorDbId() {
+        return vectorDbId;
+    }
+
+    /** The Vector DB Lakehouse 26ai ADMIN user password. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vectorDbAdminCred")
+    private final char[] vectorDbAdminCred;
+
+    /**
+     * The Vector DB Lakehouse 26ai ADMIN user password.
+     *
+     * @return the value
+     * @deprecated Use getVectorDbAdminCred__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getVectorDbAdminCred() {
+        return vectorDbAdminCred != null ? new String(vectorDbAdminCred) : null;
+    }
+
+    /**
+     * The Vector DB Lakehouse 26ai ADMIN user password.
+     *
+     * @return the value
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vectorDbAdminCred")
+    public char[] getVectorDbAdminCred__AsCharArray() {
+        return vectorDbAdminCred;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret holding the vector db Lakehouse 26ai Admin user password.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vectorDbAdminSecretId")
+    private final String vectorDbAdminSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret holding the vector db Lakehouse 26ai Admin user password.
+     *
+     * @return the value
+     */
+    public String getVectorDbAdminSecretId() {
+        return vectorDbAdminSecretId;
     }
 
     /**
@@ -390,6 +594,10 @@ public final class CreateAiDataPlatformDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", aiDataPlatformType=").append(String.valueOf(this.aiDataPlatformType));
+        sb.append(", isEnableAiFeature=").append(String.valueOf(this.isEnableAiFeature));
+        sb.append(", vectorDbId=").append(String.valueOf(this.vectorDbId));
+        sb.append(", vectorDbAdminCred=").append("<redacted>");
+        sb.append(", vectorDbAdminSecretId=").append(String.valueOf(this.vectorDbAdminSecretId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", defaultWorkspaceName=").append(String.valueOf(this.defaultWorkspaceName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -411,6 +619,10 @@ public final class CreateAiDataPlatformDetails
         CreateAiDataPlatformDetails other = (CreateAiDataPlatformDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.aiDataPlatformType, other.aiDataPlatformType)
+                && java.util.Objects.equals(this.isEnableAiFeature, other.isEnableAiFeature)
+                && java.util.Objects.equals(this.vectorDbId, other.vectorDbId)
+                && java.util.Objects.equals(this.vectorDbAdminCred, other.vectorDbAdminCred)
+                && java.util.Objects.equals(this.vectorDbAdminSecretId, other.vectorDbAdminSecretId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.defaultWorkspaceName, other.defaultWorkspaceName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -429,6 +641,18 @@ public final class CreateAiDataPlatformDetails
                         + (this.aiDataPlatformType == null
                                 ? 43
                                 : this.aiDataPlatformType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEnableAiFeature == null ? 43 : this.isEnableAiFeature.hashCode());
+        result = (result * PRIME) + (this.vectorDbId == null ? 43 : this.vectorDbId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vectorDbAdminCred == null ? 43 : this.vectorDbAdminCred.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vectorDbAdminSecretId == null
+                                ? 43
+                                : this.vectorDbAdminSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

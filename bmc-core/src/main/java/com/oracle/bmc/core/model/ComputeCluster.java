@@ -6,20 +6,13 @@ package com.oracle.bmc.core.model;
 
 /**
  * The data for creating a [compute
- * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute
- * cluster is an empty remote direct memory access (RDMA) network group
+ * cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
  *
- * <p>After the compute cluster is created, you can use the compute cluster's OCID with the {@link
- * #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the
- * compute cluster. The instances must be created in the same compartment and availability domain as
- * the cluster.
+ * <p>After the compute cluster is created, you can use the compute cluster's OCID to create
+ * Instance, GPU Memory Cluster or Instance Pool resources within the compute cluster. These
+ * resources must be created in the same compartment and availability domain as the cluster.
  *
- * <p>Use compute clusters when you want to manage instances in the cluster individually in the RDMA
- * network group.
- *
- * <p>For details about creating a cluster network that uses instance pools to manage groups of
- * identical instances, see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest)
- * createClusterNetworkDetails}. <br>
+ * <p>Use {@code COMPUTE_CLUSTER} type when using placementConstraintDetails. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -42,9 +35,11 @@ public final class ComputeCluster
         "displayName",
         "definedTags",
         "freeformTags",
+        "placementConstraintDetails",
         "id",
         "lifecycleState",
-        "timeCreated"
+        "timeCreated",
+        "timeUpdated"
     })
     public ComputeCluster(
             String availabilityDomain,
@@ -52,18 +47,22 @@ public final class ComputeCluster
             String displayName,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            PlacementConstraintDetails placementConstraintDetails,
             String id,
             LifecycleState lifecycleState,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.placementConstraintDetails = placementConstraintDetails;
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -178,6 +177,16 @@ public final class ComputeCluster
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * compute cluster.
@@ -235,6 +244,29 @@ public final class ComputeCluster
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * The date and time the compute cluster was updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the compute cluster was updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -247,9 +279,11 @@ public final class ComputeCluster
                             this.displayName,
                             this.definedTags,
                             this.freeformTags,
+                            this.placementConstraintDetails,
                             this.id,
                             this.lifecycleState,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -273,6 +307,9 @@ public final class ComputeCluster
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
+            }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
@@ -281,6 +318,9 @@ public final class ComputeCluster
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
             }
             return this;
         }
@@ -394,6 +434,13 @@ public final class ComputeCluster
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * compute cluster.
@@ -491,6 +538,27 @@ public final class ComputeCluster
         return timeCreated;
     }
 
+    /**
+     * The date and time the compute cluster was updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the compute cluster was updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -511,9 +579,12 @@ public final class ComputeCluster
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -533,9 +604,12 @@ public final class ComputeCluster
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
     }
 
@@ -554,11 +628,17 @@ public final class ComputeCluster
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

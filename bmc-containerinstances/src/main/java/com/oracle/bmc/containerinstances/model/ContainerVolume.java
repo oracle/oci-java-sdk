@@ -28,7 +28,10 @@ package com.oracle.bmc.containerinstances.model;
             name = "EMPTYDIR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ContainerConfigFileVolume.class,
-            name = "CONFIGFILE")
+            name = "CONFIGFILE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ContainerOciFssVolume.class,
+            name = "OCI_FSS_FILE_SYSTEM")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

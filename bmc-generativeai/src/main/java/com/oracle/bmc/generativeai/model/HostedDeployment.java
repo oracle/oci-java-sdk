@@ -175,14 +175,14 @@ public final class HostedDeployment
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * application.
+         * HostedApplication parent.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("hostedApplicationId")
         private String hostedApplicationId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * application.
+         * HostedApplication parent.
          *
          * @param hostedApplicationId the value to set
          * @return this builder
@@ -436,6 +436,7 @@ public final class HostedDeployment
     /** The current state of the hosted deployment. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
+        NeedsAttention("NEEDS_ATTENTION"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Updating("UPDATING"),
@@ -499,14 +500,14 @@ public final class HostedDeployment
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * application.
+     * HostedApplication parent.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("hostedApplicationId")
     private final String hostedApplicationId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * application.
+     * HostedApplication parent.
      *
      * @return the value
      */

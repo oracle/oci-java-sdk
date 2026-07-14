@@ -27,6 +27,14 @@ package com.oracle.bmc.generativeai.model;
 public final class CreateSingleDockerArtifactDetails extends CreateArtifactDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isVulnerabilityScanRequired")
+        private Boolean isVulnerabilityScanRequired;
+
+        public Builder isVulnerabilityScanRequired(Boolean isVulnerabilityScanRequired) {
+            this.isVulnerabilityScanRequired = isVulnerabilityScanRequired;
+            this.__explicitlySet__.add("isVulnerabilityScanRequired");
+            return this;
+        }
         /** image url. */
         @com.fasterxml.jackson.annotation.JsonProperty("containerUri")
         private String containerUri;
@@ -63,7 +71,8 @@ public final class CreateSingleDockerArtifactDetails extends CreateArtifactDetai
 
         public CreateSingleDockerArtifactDetails build() {
             CreateSingleDockerArtifactDetails model =
-                    new CreateSingleDockerArtifactDetails(this.containerUri, this.tag);
+                    new CreateSingleDockerArtifactDetails(
+                            this.isVulnerabilityScanRequired, this.containerUri, this.tag);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -72,6 +81,9 @@ public final class CreateSingleDockerArtifactDetails extends CreateArtifactDetai
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateSingleDockerArtifactDetails model) {
+            if (model.wasPropertyExplicitlySet("isVulnerabilityScanRequired")) {
+                this.isVulnerabilityScanRequired(model.getIsVulnerabilityScanRequired());
+            }
             if (model.wasPropertyExplicitlySet("containerUri")) {
                 this.containerUri(model.getContainerUri());
             }
@@ -92,8 +104,9 @@ public final class CreateSingleDockerArtifactDetails extends CreateArtifactDetai
     }
 
     @Deprecated
-    public CreateSingleDockerArtifactDetails(String containerUri, String tag) {
-        super();
+    public CreateSingleDockerArtifactDetails(
+            Boolean isVulnerabilityScanRequired, String containerUri, String tag) {
+        super(isVulnerabilityScanRequired);
         this.containerUri = containerUri;
         this.tag = tag;
     }
