@@ -5,9 +5,9 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * EARLY - Early update channel recommended for pre-production use. REGULAR - Regular update channel
- * recommended for production use. PHASE_1 - Reserved for future use. PHASE_2 - Reserved for future
- * use.
+ * EARLY - Early update cycle. Oracle delivers updates as soon as they're available. REGULAR -
+ * Regular update cycle. Oracle delivers updates a few weeks after completing the early update
+ * cycle. PHASE_1 - Reserved for future use. PHASE_2 - Reserved for future use.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum UpdateChannel implements com.oracle.bmc.http.internal.BmcEnum {

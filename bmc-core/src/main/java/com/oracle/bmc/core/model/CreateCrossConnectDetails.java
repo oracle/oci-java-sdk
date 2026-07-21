@@ -35,6 +35,9 @@ public final class CreateCrossConnectDetails
         "portSpeedShapeName",
         "customerReferenceName",
         "macsecProperties",
+        "isInterfaceHoldTimerEnabled",
+        "interfaceDownTimerValueInMilliseconds",
+        "isQosEnabled",
         "ociPhysicalDeviceName",
         "interfaceName"
     })
@@ -50,6 +53,9 @@ public final class CreateCrossConnectDetails
             String portSpeedShapeName,
             String customerReferenceName,
             CreateMacsecProperties macsecProperties,
+            Boolean isInterfaceHoldTimerEnabled,
+            Integer interfaceDownTimerValueInMilliseconds,
+            Boolean isQosEnabled,
             String ociPhysicalDeviceName,
             String interfaceName) {
         super();
@@ -64,6 +70,9 @@ public final class CreateCrossConnectDetails
         this.portSpeedShapeName = portSpeedShapeName;
         this.customerReferenceName = customerReferenceName;
         this.macsecProperties = macsecProperties;
+        this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+        this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+        this.isQosEnabled = isQosEnabled;
         this.ociPhysicalDeviceName = ociPhysicalDeviceName;
         this.interfaceName = interfaceName;
     }
@@ -306,6 +315,62 @@ public final class CreateCrossConnectDetails
             this.__explicitlySet__.add("macsecProperties");
             return this;
         }
+        /** The flag to enable or disable the down timer for the interface. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+        private Boolean isInterfaceHoldTimerEnabled;
+
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         *
+         * @param isInterfaceHoldTimerEnabled the value to set
+         * @return this builder
+         */
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            this.__explicitlySet__.add("isInterfaceHoldTimerEnabled");
+            return this;
+        }
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples
+         * of 500.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+        private Integer interfaceDownTimerValueInMilliseconds;
+
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples
+         * of 500.
+         *
+         * @param interfaceDownTimerValueInMilliseconds the value to set
+         * @return this builder
+         */
+        public Builder interfaceDownTimerValueInMilliseconds(
+                Integer interfaceDownTimerValueInMilliseconds) {
+            this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            this.__explicitlySet__.add("interfaceDownTimerValueInMilliseconds");
+            return this;
+        }
+        /**
+         * When true, restricts placement so cross-connects lands only on QoS-capable devices. When
+         * false (default), placement may use any supported device. If no QoS-capable devices are
+         * available in the selected location, the request fails.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isQosEnabled")
+        private Boolean isQosEnabled;
+
+        /**
+         * When true, restricts placement so cross-connects lands only on QoS-capable devices. When
+         * false (default), placement may use any supported device. If no QoS-capable devices are
+         * available in the selected location, the request fails.
+         *
+         * @param isQosEnabled the value to set
+         * @return this builder
+         */
+        public Builder isQosEnabled(Boolean isQosEnabled) {
+            this.isQosEnabled = isQosEnabled;
+            this.__explicitlySet__.add("isQosEnabled");
+            return this;
+        }
         /** The name of the FastConnect device where this cross-connect is installed. */
         @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
         private String ociPhysicalDeviceName;
@@ -354,6 +419,9 @@ public final class CreateCrossConnectDetails
                             this.portSpeedShapeName,
                             this.customerReferenceName,
                             this.macsecProperties,
+                            this.isInterfaceHoldTimerEnabled,
+                            this.interfaceDownTimerValueInMilliseconds,
+                            this.isQosEnabled,
                             this.ociPhysicalDeviceName,
                             this.interfaceName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -398,6 +466,16 @@ public final class CreateCrossConnectDetails
             }
             if (model.wasPropertyExplicitlySet("macsecProperties")) {
                 this.macsecProperties(model.getMacsecProperties());
+            }
+            if (model.wasPropertyExplicitlySet("isInterfaceHoldTimerEnabled")) {
+                this.isInterfaceHoldTimerEnabled(model.getIsInterfaceHoldTimerEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("interfaceDownTimerValueInMilliseconds")) {
+                this.interfaceDownTimerValueInMilliseconds(
+                        model.getInterfaceDownTimerValueInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("isQosEnabled")) {
+                this.isQosEnabled(model.getIsQosEnabled());
             }
             if (model.wasPropertyExplicitlySet("ociPhysicalDeviceName")) {
                 this.ociPhysicalDeviceName(model.getOciPhysicalDeviceName());
@@ -629,6 +707,55 @@ public final class CreateCrossConnectDetails
         return macsecProperties;
     }
 
+    /** The flag to enable or disable the down timer for the interface. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+    private final Boolean isInterfaceHoldTimerEnabled;
+
+    /**
+     * The flag to enable or disable the down timer for the interface.
+     *
+     * @return the value
+     */
+    public Boolean getIsInterfaceHoldTimerEnabled() {
+        return isInterfaceHoldTimerEnabled;
+    }
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of
+     * 500.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+    private final Integer interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of
+     * 500.
+     *
+     * @return the value
+     */
+    public Integer getInterfaceDownTimerValueInMilliseconds() {
+        return interfaceDownTimerValueInMilliseconds;
+    }
+
+    /**
+     * When true, restricts placement so cross-connects lands only on QoS-capable devices. When
+     * false (default), placement may use any supported device. If no QoS-capable devices are
+     * available in the selected location, the request fails.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isQosEnabled")
+    private final Boolean isQosEnabled;
+
+    /**
+     * When true, restricts placement so cross-connects lands only on QoS-capable devices. When
+     * false (default), placement may use any supported device. If no QoS-capable devices are
+     * available in the selected location, the request fails.
+     *
+     * @return the value
+     */
+    public Boolean getIsQosEnabled() {
+        return isQosEnabled;
+    }
+
     /** The name of the FastConnect device where this cross-connect is installed. */
     @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
     private final String ociPhysicalDeviceName;
@@ -683,6 +810,11 @@ public final class CreateCrossConnectDetails
         sb.append(", portSpeedShapeName=").append(String.valueOf(this.portSpeedShapeName));
         sb.append(", customerReferenceName=").append(String.valueOf(this.customerReferenceName));
         sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
+        sb.append(", isInterfaceHoldTimerEnabled=")
+                .append(String.valueOf(this.isInterfaceHoldTimerEnabled));
+        sb.append(", interfaceDownTimerValueInMilliseconds=")
+                .append(String.valueOf(this.interfaceDownTimerValueInMilliseconds));
+        sb.append(", isQosEnabled=").append(String.valueOf(this.isQosEnabled));
         sb.append(", ociPhysicalDeviceName=").append(String.valueOf(this.ociPhysicalDeviceName));
         sb.append(", interfaceName=").append(String.valueOf(this.interfaceName));
         sb.append(")");
@@ -714,6 +846,12 @@ public final class CreateCrossConnectDetails
                 && java.util.Objects.equals(this.portSpeedShapeName, other.portSpeedShapeName)
                 && java.util.Objects.equals(this.customerReferenceName, other.customerReferenceName)
                 && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
+                && java.util.Objects.equals(
+                        this.isInterfaceHoldTimerEnabled, other.isInterfaceHoldTimerEnabled)
+                && java.util.Objects.equals(
+                        this.interfaceDownTimerValueInMilliseconds,
+                        other.interfaceDownTimerValueInMilliseconds)
+                && java.util.Objects.equals(this.isQosEnabled, other.isQosEnabled)
                 && java.util.Objects.equals(this.ociPhysicalDeviceName, other.ociPhysicalDeviceName)
                 && java.util.Objects.equals(this.interfaceName, other.interfaceName)
                 && super.equals(other);
@@ -758,6 +896,17 @@ public final class CreateCrossConnectDetails
         result =
                 (result * PRIME)
                         + (this.macsecProperties == null ? 43 : this.macsecProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInterfaceHoldTimerEnabled == null
+                                ? 43
+                                : this.isInterfaceHoldTimerEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interfaceDownTimerValueInMilliseconds == null
+                                ? 43
+                                : this.interfaceDownTimerValueInMilliseconds.hashCode());
+        result = (result * PRIME) + (this.isQosEnabled == null ? 43 : this.isQosEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.ociPhysicalDeviceName == null

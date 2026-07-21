@@ -28,6 +28,19 @@ public class GetCrossConnectLetterOfAuthorityRequest
     public String getCrossConnectId() {
         return crossConnectId;
     }
+    /**
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     */
+    private String opcRequestId;
+
+    /**
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     */
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -50,6 +63,24 @@ public class GetCrossConnectLetterOfAuthorityRequest
          */
         public Builder crossConnectId(String crossConnectId) {
             this.crossConnectId = crossConnectId;
+            return this;
+        }
+
+        /**
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
+         */
+        private String opcRequestId = null;
+
+        /**
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder instance
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -84,6 +115,7 @@ public class GetCrossConnectLetterOfAuthorityRequest
          */
         public Builder copy(GetCrossConnectLetterOfAuthorityRequest o) {
             crossConnectId(o.getCrossConnectId());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -122,8 +154,9 @@ public class GetCrossConnectLetterOfAuthorityRequest
             GetCrossConnectLetterOfAuthorityRequest request =
                     new GetCrossConnectLetterOfAuthorityRequest();
             request.crossConnectId = crossConnectId;
+            request.opcRequestId = opcRequestId;
             return request;
-            // new GetCrossConnectLetterOfAuthorityRequest(crossConnectId);
+            // new GetCrossConnectLetterOfAuthorityRequest(crossConnectId, opcRequestId);
         }
     }
 
@@ -133,7 +166,7 @@ public class GetCrossConnectLetterOfAuthorityRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().crossConnectId(crossConnectId);
+        return new Builder().crossConnectId(crossConnectId).opcRequestId(opcRequestId);
     }
 
     /**
@@ -151,6 +184,7 @@ public class GetCrossConnectLetterOfAuthorityRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",crossConnectId=").append(String.valueOf(this.crossConnectId));
+        sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -166,7 +200,8 @@ public class GetCrossConnectLetterOfAuthorityRequest
 
         GetCrossConnectLetterOfAuthorityRequest other = (GetCrossConnectLetterOfAuthorityRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.crossConnectId, other.crossConnectId);
+                && java.util.Objects.equals(this.crossConnectId, other.crossConnectId)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
@@ -176,6 +211,7 @@ public class GetCrossConnectLetterOfAuthorityRequest
         result =
                 (result * PRIME)
                         + (this.crossConnectId == null ? 43 : this.crossConnectId.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }
 }

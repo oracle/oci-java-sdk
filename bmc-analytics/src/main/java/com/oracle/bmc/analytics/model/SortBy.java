@@ -5,8 +5,8 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * The field to sort by (one column only). Default sort order is ascending exception of {@code
- * timeCreated} column (descending).
+ * The field to sort by (one column only). Default sort order is ascending, except for the {@code
+ * timeCreated} column which is descending.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {

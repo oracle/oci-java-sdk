@@ -23,7 +23,10 @@ public enum ParameterizedEndpointUtil {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ParameterizedEndpointUtil.class);
     private static final Pattern PLACEHOLDER_PATTERN = Pattern.compile("\\{(.*?)\\}");
-    private static final Pattern HOST_COMPONENT_PATTERN = Pattern.compile("[A-Za-z0-9_.-]+");
+    private static final Pattern DOMAIN_SAFE_PARAMETER_PATTERN =
+            Pattern.compile(
+                    "[A-Z0-9_](?:[A-Z0-9_-]{0,61}[A-Z0-9_])?(?:\\.[A-Z0-9_](?:[A-Z0-9_-]{0,61}[A-Z0-9_])?)*",
+                    Pattern.CASE_INSENSITIVE);
 
     /**
      * Regex to detect options defined in the endpoint template. It checks for the following
@@ -139,7 +142,7 @@ public enum ParameterizedEndpointUtil {
                                 paramName);
                         continue;
                     }
-                    validateHostComponent(paramName, (String) paramValue);
+                    validateDomainSafeParameter(paramName, (String) paramValue);
                     updatedEndpointBuilder.append(paramValue);
                     if (appendDot) {
                         updatedEndpointBuilder.append('.');
@@ -194,8 +197,8 @@ public enum ParameterizedEndpointUtil {
      * @throws IllegalArgumentException if {@code paramValue} contains characters that are unsafe in
      *     a host component
      */
-    private void validateHostComponent(String paramName, String paramValue) {
-        if (!HOST_COMPONENT_PATTERN.matcher(paramValue).matches()) {
+    private void validateDomainSafeParameter(String paramName, String paramValue) {
+        if (!DOMAIN_SAFE_PARAMETER_PATTERN.matcher(paramValue).matches()) {
             throw new IllegalArgumentException(
                     String.format(
                             "Endpoint parameter '%s' contains characters that are not valid in a host component",

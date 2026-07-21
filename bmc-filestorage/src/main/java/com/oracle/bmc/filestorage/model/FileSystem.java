@@ -52,7 +52,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         "filesystemSnapshotPolicyId",
         "areQuotaRulesEnabled",
         "quotaEnforcementState",
-        "replicationSourceCount"
+        "replicationSourceCount",
+        "compartmentQuotaEnforcementState"
     })
     public FileSystem(
             String availabilityDomain,
@@ -78,7 +79,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             String filesystemSnapshotPolicyId,
             Boolean areQuotaRulesEnabled,
             QuotaEnforcementState quotaEnforcementState,
-            Integer replicationSourceCount) {
+            Integer replicationSourceCount,
+            CompartmentQuotaEnforcementState compartmentQuotaEnforcementState) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -104,6 +106,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         this.areQuotaRulesEnabled = areQuotaRulesEnabled;
         this.quotaEnforcementState = quotaEnforcementState;
         this.replicationSourceCount = replicationSourceCount;
+        this.compartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -565,6 +568,22 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("replicationSourceCount");
             return this;
         }
+        /** Displays the compartment-level quota enforcement state affecting this file system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentQuotaEnforcementState")
+        private CompartmentQuotaEnforcementState compartmentQuotaEnforcementState;
+
+        /**
+         * Displays the compartment-level quota enforcement state affecting this file system.
+         *
+         * @param compartmentQuotaEnforcementState the value to set
+         * @return this builder
+         */
+        public Builder compartmentQuotaEnforcementState(
+                CompartmentQuotaEnforcementState compartmentQuotaEnforcementState) {
+            this.compartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
+            this.__explicitlySet__.add("compartmentQuotaEnforcementState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -595,7 +614,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                             this.filesystemSnapshotPolicyId,
                             this.areQuotaRulesEnabled,
                             this.quotaEnforcementState,
-                            this.replicationSourceCount);
+                            this.replicationSourceCount,
+                            this.compartmentQuotaEnforcementState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -675,6 +695,9 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("replicationSourceCount")) {
                 this.replicationSourceCount(model.getReplicationSourceCount());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentQuotaEnforcementState")) {
+                this.compartmentQuotaEnforcementState(model.getCompartmentQuotaEnforcementState());
             }
             return this;
         }
@@ -1242,6 +1265,65 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         return replicationSourceCount;
     }
 
+    /** Displays the compartment-level quota enforcement state affecting this file system. */
+    public enum CompartmentQuotaEnforcementState implements com.oracle.bmc.http.internal.BmcEnum {
+        NotBlocked("NOT_BLOCKED"),
+        Blocked("BLOCKED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CompartmentQuotaEnforcementState.class);
+
+        private final String value;
+        private static java.util.Map<String, CompartmentQuotaEnforcementState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CompartmentQuotaEnforcementState v : CompartmentQuotaEnforcementState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CompartmentQuotaEnforcementState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CompartmentQuotaEnforcementState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CompartmentQuotaEnforcementState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Displays the compartment-level quota enforcement state affecting this file system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentQuotaEnforcementState")
+    private final CompartmentQuotaEnforcementState compartmentQuotaEnforcementState;
+
+    /**
+     * Displays the compartment-level quota enforcement state affecting this file system.
+     *
+     * @return the value
+     */
+    public CompartmentQuotaEnforcementState getCompartmentQuotaEnforcementState() {
+        return compartmentQuotaEnforcementState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1282,6 +1364,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", areQuotaRulesEnabled=").append(String.valueOf(this.areQuotaRulesEnabled));
         sb.append(", quotaEnforcementState=").append(String.valueOf(this.quotaEnforcementState));
         sb.append(", replicationSourceCount=").append(String.valueOf(this.replicationSourceCount));
+        sb.append(", compartmentQuotaEnforcementState=")
+                .append(String.valueOf(this.compartmentQuotaEnforcementState));
         sb.append(")");
         return sb.toString();
     }
@@ -1322,6 +1406,9 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.quotaEnforcementState, other.quotaEnforcementState)
                 && java.util.Objects.equals(
                         this.replicationSourceCount, other.replicationSourceCount)
+                && java.util.Objects.equals(
+                        this.compartmentQuotaEnforcementState,
+                        other.compartmentQuotaEnforcementState)
                 && super.equals(other);
     }
 
@@ -1389,6 +1476,11 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                         + (this.replicationSourceCount == null
                                 ? 43
                                 : this.replicationSourceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentQuotaEnforcementState == null
+                                ? 43
+                                : this.compartmentQuotaEnforcementState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

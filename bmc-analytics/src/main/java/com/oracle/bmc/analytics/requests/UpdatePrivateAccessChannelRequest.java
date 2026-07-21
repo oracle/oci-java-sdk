@@ -16,30 +16,30 @@ public class UpdatePrivateAccessChannelRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails> {
 
-    /** The unique identifier key of the Private Access Channel. */
+    /** The unique identifier key of the private access channel. */
     private String privateAccessChannelKey;
 
-    /** The unique identifier key of the Private Access Channel. */
+    /** The unique identifier key of the private access channel. */
     public String getPrivateAccessChannelKey() {
         return privateAccessChannelKey;
     }
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     private String analyticsInstanceId;
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
     /**
-     * Update the Private Access Channel with the given unique identifier key in the specified
-     * Analytics Instance.
+     * Update the private access channel with the given unique identifier key in the specified
+     * Analytics instance.
      */
     private com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails
             updatePrivateAccessChannelDetails;
 
     /**
-     * Update the Private Access Channel with the given unique identifier key in the specified
-     * Analytics Instance.
+     * Update the private access channel with the given unique identifier key in the specified
+     * Analytics instance.
      */
     public com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails
             getUpdatePrivateAccessChannelDetails() {
@@ -113,11 +113,11 @@ public class UpdatePrivateAccessChannelRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier key of the Private Access Channel. */
+        /** The unique identifier key of the private access channel. */
         private String privateAccessChannelKey = null;
 
         /**
-         * The unique identifier key of the Private Access Channel.
+         * The unique identifier key of the private access channel.
          *
          * @param privateAccessChannelKey the value to set
          * @return this builder instance
@@ -127,11 +127,11 @@ public class UpdatePrivateAccessChannelRequest
             return this;
         }
 
-        /** The OCID of the AnalyticsInstance. */
+        /** The OCID of the Analytics instance. */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -142,15 +142,15 @@ public class UpdatePrivateAccessChannelRequest
         }
 
         /**
-         * Update the Private Access Channel with the given unique identifier key in the specified
-         * Analytics Instance.
+         * Update the private access channel with the given unique identifier key in the specified
+         * Analytics instance.
          */
         private com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails
                 updatePrivateAccessChannelDetails = null;
 
         /**
-         * Update the Private Access Channel with the given unique identifier key in the specified
-         * Analytics Instance.
+         * Update the private access channel with the given unique identifier key in the specified
+         * Analytics instance.
          *
          * @param updatePrivateAccessChannelDetails the value to set
          * @return this builder instance

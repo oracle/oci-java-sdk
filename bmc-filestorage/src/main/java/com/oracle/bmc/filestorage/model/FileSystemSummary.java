@@ -42,7 +42,8 @@ public final class FileSystemSummary
         "isHydrated",
         "lifecycleDetails",
         "cloneAttachStatus",
-        "quotaEnforcementState"
+        "quotaEnforcementState",
+        "compartmentQuotaEnforcementState"
     })
     public FileSystemSummary(
             String availabilityDomain,
@@ -63,7 +64,8 @@ public final class FileSystemSummary
             Boolean isHydrated,
             String lifecycleDetails,
             CloneAttachStatus cloneAttachStatus,
-            QuotaEnforcementState quotaEnforcementState) {
+            QuotaEnforcementState quotaEnforcementState,
+            CompartmentQuotaEnforcementState compartmentQuotaEnforcementState) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -84,6 +86,7 @@ public final class FileSystemSummary
         this.lifecycleDetails = lifecycleDetails;
         this.cloneAttachStatus = cloneAttachStatus;
         this.quotaEnforcementState = quotaEnforcementState;
+        this.compartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -442,6 +445,22 @@ public final class FileSystemSummary
             this.__explicitlySet__.add("quotaEnforcementState");
             return this;
         }
+        /** Displays the compartment-level quota enforcement state affecting this file system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentQuotaEnforcementState")
+        private CompartmentQuotaEnforcementState compartmentQuotaEnforcementState;
+
+        /**
+         * Displays the compartment-level quota enforcement state affecting this file system.
+         *
+         * @param compartmentQuotaEnforcementState the value to set
+         * @return this builder
+         */
+        public Builder compartmentQuotaEnforcementState(
+                CompartmentQuotaEnforcementState compartmentQuotaEnforcementState) {
+            this.compartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
+            this.__explicitlySet__.add("compartmentQuotaEnforcementState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -467,7 +486,8 @@ public final class FileSystemSummary
                             this.isHydrated,
                             this.lifecycleDetails,
                             this.cloneAttachStatus,
-                            this.quotaEnforcementState);
+                            this.quotaEnforcementState,
+                            this.compartmentQuotaEnforcementState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -532,6 +552,9 @@ public final class FileSystemSummary
             }
             if (model.wasPropertyExplicitlySet("quotaEnforcementState")) {
                 this.quotaEnforcementState(model.getQuotaEnforcementState());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentQuotaEnforcementState")) {
+                this.compartmentQuotaEnforcementState(model.getCompartmentQuotaEnforcementState());
             }
             return this;
         }
@@ -1006,6 +1029,65 @@ public final class FileSystemSummary
         return quotaEnforcementState;
     }
 
+    /** Displays the compartment-level quota enforcement state affecting this file system. */
+    public enum CompartmentQuotaEnforcementState implements com.oracle.bmc.http.internal.BmcEnum {
+        NotBlocked("NOT_BLOCKED"),
+        Blocked("BLOCKED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CompartmentQuotaEnforcementState.class);
+
+        private final String value;
+        private static java.util.Map<String, CompartmentQuotaEnforcementState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CompartmentQuotaEnforcementState v : CompartmentQuotaEnforcementState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CompartmentQuotaEnforcementState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CompartmentQuotaEnforcementState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CompartmentQuotaEnforcementState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Displays the compartment-level quota enforcement state affecting this file system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentQuotaEnforcementState")
+    private final CompartmentQuotaEnforcementState compartmentQuotaEnforcementState;
+
+    /**
+     * Displays the compartment-level quota enforcement state affecting this file system.
+     *
+     * @return the value
+     */
+    public CompartmentQuotaEnforcementState getCompartmentQuotaEnforcementState() {
+        return compartmentQuotaEnforcementState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1040,6 +1122,8 @@ public final class FileSystemSummary
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
         sb.append(", quotaEnforcementState=").append(String.valueOf(this.quotaEnforcementState));
+        sb.append(", compartmentQuotaEnforcementState=")
+                .append(String.valueOf(this.compartmentQuotaEnforcementState));
         sb.append(")");
         return sb.toString();
     }
@@ -1074,6 +1158,9 @@ public final class FileSystemSummary
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
                 && java.util.Objects.equals(this.quotaEnforcementState, other.quotaEnforcementState)
+                && java.util.Objects.equals(
+                        this.compartmentQuotaEnforcementState,
+                        other.compartmentQuotaEnforcementState)
                 && super.equals(other);
     }
 
@@ -1124,6 +1211,11 @@ public final class FileSystemSummary
                         + (this.quotaEnforcementState == null
                                 ? 43
                                 : this.quotaEnforcementState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentQuotaEnforcementState == null
+                                ? 43
+                                : this.compartmentQuotaEnforcementState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

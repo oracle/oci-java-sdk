@@ -39,8 +39,6 @@ import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -337,8 +335,6 @@ abstract class BaseClient implements AutoCloseable {
                         unparameterizedEndpoint);
                 endpoint = unparameterizedEndpoint;
             }
-        } else {
-            validateEndpoint(endpoint);
         }
 
         logger.info("Setting endpoint to {}", endpoint);
@@ -379,41 +375,6 @@ abstract class BaseClient implements AutoCloseable {
                         ? userDefinedCircuitBreaker
                         : CircuitBreakerHelper.makeCircuitBreaker(
                                 httpClient, circuitBreakerConfiguration);
-    }
-
-    /**
-     * Validates a resolved endpoint before it is used as an HTTP client base URI.
-     *
-     * <p>Parameterized endpoint templates are validated after their host parameters are resolved by
-     * {@link ParameterizedEndpointUtil}.
-     *
-     * @param endpoint resolved endpoint
-     * @throws IllegalArgumentException if the endpoint scheme is not HTTP(S), or if the endpoint
-     *     contains user info, path, query, or fragment components
-     */
-    private void validateEndpoint(String endpoint) {
-        final URI endpointUri;
-        try {
-            endpointUri = new URI(endpoint);
-        } catch (URISyntaxException e) {
-            throw new IllegalArgumentException("host is invalid. " + endpoint, e);
-        }
-
-        String scheme = endpointUri.getScheme();
-        if (!"http".equalsIgnoreCase(scheme) && !"https".equalsIgnoreCase(scheme)) {
-            throw new IllegalArgumentException(
-                    "host is invalid. endpoint scheme must be http or https");
-        }
-
-        String path = endpointUri.getRawPath();
-        boolean hasPath = path != null && !path.isEmpty() && !"/".equals(path);
-        if (endpointUri.getRawUserInfo() != null
-                || hasPath
-                || endpointUri.getRawQuery() != null
-                || endpointUri.getRawFragment() != null) {
-            throw new IllegalArgumentException(
-                    "host is invalid. endpoint must not contain user info, path, query, or fragment");
-        }
     }
 
     private boolean isAsyncThreadPoolCoreThreadTimeoutEnabled() {

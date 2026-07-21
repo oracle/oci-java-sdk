@@ -16,11 +16,11 @@ public class CreateAnalyticsInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails> {
 
-    /** Analytics Instance details. */
+    /** Analytics instance details. */
     private com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails
             createAnalyticsInstanceDetails;
 
-    /** Analytics Instance details. */
+    /** Analytics instance details. */
     public com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails
             getCreateAnalyticsInstanceDetails() {
         return createAnalyticsInstanceDetails;
@@ -76,12 +76,12 @@ public class CreateAnalyticsInstanceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Analytics Instance details. */
+        /** Analytics instance details. */
         private com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails
                 createAnalyticsInstanceDetails = null;
 
         /**
-         * Analytics Instance details.
+         * Analytics instance details.
          *
          * @param createAnalyticsInstanceDetails the value to set
          * @return this builder instance

@@ -15,17 +15,17 @@ public class CreateVanityUrlRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.CreateVanityUrlDetails> {
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     private String analyticsInstanceId;
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
-    /** Vanity url details. */
+    /** Vanity URL details. */
     private com.oracle.bmc.analytics.model.CreateVanityUrlDetails createVanityUrlDetails;
 
-    /** Vanity url details. */
+    /** Vanity URL details. */
     public com.oracle.bmc.analytics.model.CreateVanityUrlDetails getCreateVanityUrlDetails() {
         return createVanityUrlDetails;
     }
@@ -79,11 +79,11 @@ public class CreateVanityUrlRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the AnalyticsInstance. */
+        /** The OCID of the Analytics instance. */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -93,11 +93,11 @@ public class CreateVanityUrlRequest
             return this;
         }
 
-        /** Vanity url details. */
+        /** Vanity URL details. */
         private com.oracle.bmc.analytics.model.CreateVanityUrlDetails createVanityUrlDetails = null;
 
         /**
-         * Vanity url details.
+         * Vanity URL details.
          *
          * @param createVanityUrlDetails the value to set
          * @return this builder instance

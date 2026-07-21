@@ -4232,9 +4232,12 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getCrossConnectId())
                 .appendPathParam("letterOfAuthority")
                 .accept("application/json, text/html")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
                         com.oracle.bmc.core.model.LetterOfAuthority.class,
                         GetCrossConnectLetterOfAuthorityResponse.Builder::letterOfAuthority)
+                .handleResponseHeaderString(
+                        "etag", GetCrossConnectLetterOfAuthorityResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetCrossConnectLetterOfAuthorityResponse.Builder::opcRequestId)
@@ -8888,6 +8891,51 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", UpdateCrossConnectGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateCrossConnectGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCrossConnectLetterOfAuthorityResponse>
+            updateCrossConnectLetterOfAuthority(
+                    UpdateCrossConnectLetterOfAuthorityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCrossConnectLetterOfAuthorityRequest,
+                                    UpdateCrossConnectLetterOfAuthorityResponse>
+                            handler) {
+
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCrossConnectLetterOfAuthorityDetails(),
+                "updateCrossConnectLetterOfAuthorityDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("crossConnectId", request.getCrossConnectId());
+
+        return clientCall(request, UpdateCrossConnectLetterOfAuthorityResponse::builder)
+                .logger(LOG, "updateCrossConnectLetterOfAuthority")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "UpdateCrossConnectLetterOfAuthority",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/UpdateCrossConnectLetterOfAuthority")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCrossConnectLetterOfAuthorityRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .appendPathParam("letterOfAuthority")
+                .accept("application/json, text/html")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.LetterOfAuthority.class,
+                        UpdateCrossConnectLetterOfAuthorityResponse.Builder::letterOfAuthority)
+                .handleResponseHeaderString(
+                        "etag", UpdateCrossConnectLetterOfAuthorityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateCrossConnectLetterOfAuthorityResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

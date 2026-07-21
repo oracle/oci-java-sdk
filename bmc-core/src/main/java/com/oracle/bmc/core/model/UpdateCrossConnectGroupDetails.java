@@ -28,20 +28,29 @@ public final class UpdateCrossConnectGroupDetails
         "displayName",
         "customerReferenceName",
         "freeformTags",
-        "macsecProperties"
+        "macsecProperties",
+        "minimumLinks",
+        "isInterfaceHoldTimerEnabled",
+        "interfaceDownTimerValueInMilliseconds"
     })
     public UpdateCrossConnectGroupDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             String customerReferenceName,
             java.util.Map<String, String> freeformTags,
-            UpdateMacsecProperties macsecProperties) {
+            UpdateMacsecProperties macsecProperties,
+            Integer minimumLinks,
+            Boolean isInterfaceHoldTimerEnabled,
+            Integer interfaceDownTimerValueInMilliseconds) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.customerReferenceName = customerReferenceName;
         this.freeformTags = freeformTags;
         this.macsecProperties = macsecProperties;
+        this.minimumLinks = minimumLinks;
+        this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+        this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -144,6 +153,62 @@ public final class UpdateCrossConnectGroupDetails
             this.__explicitlySet__.add("macsecProperties");
             return this;
         }
+        /**
+         * (Optional) Minimum number of active cross-connects required for the cross-connect group
+         * to be considered operational. If not specified, this value defaults to 1. Value must not
+         * exceed the total number of cross-connects in the cross-connect group.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumLinks")
+        private Integer minimumLinks;
+
+        /**
+         * (Optional) Minimum number of active cross-connects required for the cross-connect group
+         * to be considered operational. If not specified, this value defaults to 1. Value must not
+         * exceed the total number of cross-connects in the cross-connect group.
+         *
+         * @param minimumLinks the value to set
+         * @return this builder
+         */
+        public Builder minimumLinks(Integer minimumLinks) {
+            this.minimumLinks = minimumLinks;
+            this.__explicitlySet__.add("minimumLinks");
+            return this;
+        }
+        /** The flag to enable or disable the down timer for the interface. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+        private Boolean isInterfaceHoldTimerEnabled;
+
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         *
+         * @param isInterfaceHoldTimerEnabled the value to set
+         * @return this builder
+         */
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            this.__explicitlySet__.add("isInterfaceHoldTimerEnabled");
+            return this;
+        }
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples
+         * of 500.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+        private Integer interfaceDownTimerValueInMilliseconds;
+
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples
+         * of 500.
+         *
+         * @param interfaceDownTimerValueInMilliseconds the value to set
+         * @return this builder
+         */
+        public Builder interfaceDownTimerValueInMilliseconds(
+                Integer interfaceDownTimerValueInMilliseconds) {
+            this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            this.__explicitlySet__.add("interfaceDownTimerValueInMilliseconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -155,7 +220,10 @@ public final class UpdateCrossConnectGroupDetails
                             this.displayName,
                             this.customerReferenceName,
                             this.freeformTags,
-                            this.macsecProperties);
+                            this.macsecProperties,
+                            this.minimumLinks,
+                            this.isInterfaceHoldTimerEnabled,
+                            this.interfaceDownTimerValueInMilliseconds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -178,6 +246,16 @@ public final class UpdateCrossConnectGroupDetails
             }
             if (model.wasPropertyExplicitlySet("macsecProperties")) {
                 this.macsecProperties(model.getMacsecProperties());
+            }
+            if (model.wasPropertyExplicitlySet("minimumLinks")) {
+                this.minimumLinks(model.getMinimumLinks());
+            }
+            if (model.wasPropertyExplicitlySet("isInterfaceHoldTimerEnabled")) {
+                this.isInterfaceHoldTimerEnabled(model.getIsInterfaceHoldTimerEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("interfaceDownTimerValueInMilliseconds")) {
+                this.interfaceDownTimerValueInMilliseconds(
+                        model.getInterfaceDownTimerValueInMilliseconds());
             }
             return this;
         }
@@ -279,6 +357,55 @@ public final class UpdateCrossConnectGroupDetails
         return macsecProperties;
     }
 
+    /**
+     * (Optional) Minimum number of active cross-connects required for the cross-connect group to be
+     * considered operational. If not specified, this value defaults to 1. Value must not exceed the
+     * total number of cross-connects in the cross-connect group.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumLinks")
+    private final Integer minimumLinks;
+
+    /**
+     * (Optional) Minimum number of active cross-connects required for the cross-connect group to be
+     * considered operational. If not specified, this value defaults to 1. Value must not exceed the
+     * total number of cross-connects in the cross-connect group.
+     *
+     * @return the value
+     */
+    public Integer getMinimumLinks() {
+        return minimumLinks;
+    }
+
+    /** The flag to enable or disable the down timer for the interface. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+    private final Boolean isInterfaceHoldTimerEnabled;
+
+    /**
+     * The flag to enable or disable the down timer for the interface.
+     *
+     * @return the value
+     */
+    public Boolean getIsInterfaceHoldTimerEnabled() {
+        return isInterfaceHoldTimerEnabled;
+    }
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of
+     * 500.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+    private final Integer interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of
+     * 500.
+     *
+     * @return the value
+     */
+    public Integer getInterfaceDownTimerValueInMilliseconds() {
+        return interfaceDownTimerValueInMilliseconds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -299,6 +426,11 @@ public final class UpdateCrossConnectGroupDetails
         sb.append(", customerReferenceName=").append(String.valueOf(this.customerReferenceName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
+        sb.append(", minimumLinks=").append(String.valueOf(this.minimumLinks));
+        sb.append(", isInterfaceHoldTimerEnabled=")
+                .append(String.valueOf(this.isInterfaceHoldTimerEnabled));
+        sb.append(", interfaceDownTimerValueInMilliseconds=")
+                .append(String.valueOf(this.interfaceDownTimerValueInMilliseconds));
         sb.append(")");
         return sb.toString();
     }
@@ -318,6 +450,12 @@ public final class UpdateCrossConnectGroupDetails
                 && java.util.Objects.equals(this.customerReferenceName, other.customerReferenceName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
+                && java.util.Objects.equals(this.minimumLinks, other.minimumLinks)
+                && java.util.Objects.equals(
+                        this.isInterfaceHoldTimerEnabled, other.isInterfaceHoldTimerEnabled)
+                && java.util.Objects.equals(
+                        this.interfaceDownTimerValueInMilliseconds,
+                        other.interfaceDownTimerValueInMilliseconds)
                 && super.equals(other);
     }
 
@@ -336,6 +474,17 @@ public final class UpdateCrossConnectGroupDetails
         result =
                 (result * PRIME)
                         + (this.macsecProperties == null ? 43 : this.macsecProperties.hashCode());
+        result = (result * PRIME) + (this.minimumLinks == null ? 43 : this.minimumLinks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInterfaceHoldTimerEnabled == null
+                                ? 43
+                                : this.isInterfaceHoldTimerEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interfaceDownTimerValueInMilliseconds == null
+                                ? 43
+                                : this.interfaceDownTimerValueInMilliseconds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

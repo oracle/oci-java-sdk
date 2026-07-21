@@ -15,10 +15,10 @@ public class SetFeatureBundleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.SetFeatureBundleDetails> {
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     private String analyticsInstanceId;
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
@@ -97,11 +97,11 @@ public class SetFeatureBundleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the AnalyticsInstance. */
+        /** The OCID of the Analytics instance. */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance

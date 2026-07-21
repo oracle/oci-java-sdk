@@ -36,11 +36,11 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The number of seconds a client should wait before polling this endpoint again. */
+    /** The number of seconds a client waits before polling this endpoint again. */
     private Integer retryAfter;
 
     /**
-     * The number of seconds a client should wait before polling this endpoint again.
+     * The number of seconds a client waits before polling this endpoint again.
      *
      * @return the value
      */
@@ -132,11 +132,11 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The number of seconds a client should wait before polling this endpoint again. */
+        /** The number of seconds a client waits before polling this endpoint again. */
         private Integer retryAfter;
 
         /**
-         * The number of seconds a client should wait before polling this endpoint again.
+         * The number of seconds a client waits before polling this endpoint again.
          *
          * @param retryAfter the value to set
          * @return this builder

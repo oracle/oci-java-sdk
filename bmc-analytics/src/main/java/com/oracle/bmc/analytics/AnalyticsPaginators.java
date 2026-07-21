@@ -165,6 +165,127 @@ public class AnalyticsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listResourceGroups operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListResourceGroupsResponse> listResourceGroupsResponseIterator(
+            final ListResourceGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourceGroupsRequest.Builder,
+                ListResourceGroupsRequest,
+                ListResourceGroupsResponse>(
+                new java.util.function.Supplier<ListResourceGroupsRequest.Builder>() {
+                    @Override
+                    public ListResourceGroupsRequest.Builder get() {
+                        return ListResourceGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListResourceGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListResourceGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceGroupsRequest.Builder>,
+                        ListResourceGroupsRequest>() {
+                    @Override
+                    public ListResourceGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourceGroupsRequest, ListResourceGroupsResponse>() {
+                    @Override
+                    public ListResourceGroupsResponse apply(ListResourceGroupsRequest request) {
+                        return client.listResourceGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.analytics.model.InstanceResourceGroupSummary} objects contained in responses
+     * from the listResourceGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.analytics.model.InstanceResourceGroupSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.analytics.model.InstanceResourceGroupSummary>
+            listResourceGroupsRecordIterator(final ListResourceGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourceGroupsRequest.Builder,
+                ListResourceGroupsRequest,
+                ListResourceGroupsResponse,
+                com.oracle.bmc.analytics.model.InstanceResourceGroupSummary>(
+                new java.util.function.Supplier<ListResourceGroupsRequest.Builder>() {
+                    @Override
+                    public ListResourceGroupsRequest.Builder get() {
+                        return ListResourceGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListResourceGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListResourceGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceGroupsRequest.Builder>,
+                        ListResourceGroupsRequest>() {
+                    @Override
+                    public ListResourceGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourceGroupsRequest, ListResourceGroupsResponse>() {
+                    @Override
+                    public ListResourceGroupsResponse apply(ListResourceGroupsRequest request) {
+                        return client.listResourceGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourceGroupsResponse,
+                        java.util.List<
+                                com.oracle.bmc.analytics.model.InstanceResourceGroupSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.analytics.model.InstanceResourceGroupSummary>
+                            apply(ListResourceGroupsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

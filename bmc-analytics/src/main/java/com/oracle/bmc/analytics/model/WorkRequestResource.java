@@ -46,12 +46,12 @@ public final class WorkRequestResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The way in which this resource was affected by this work request. */
+        /** The way this resource was affected by this work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("actionResult")
         private WorkRequestActionResult actionResult;
 
         /**
-         * The way in which this resource was affected by this work request.
+         * The way this resource was affected by this work request.
          *
          * @param actionResult the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class WorkRequestResource
         return new Builder().copy(this);
     }
 
-    /** The way in which this resource was affected by this work request. */
+    /** The way this resource was affected by this work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("actionResult")
     private final WorkRequestActionResult actionResult;
 
     /**
-     * The way in which this resource was affected by this work request.
+     * The way this resource was affected by this work request.
      *
      * @return the value
      */

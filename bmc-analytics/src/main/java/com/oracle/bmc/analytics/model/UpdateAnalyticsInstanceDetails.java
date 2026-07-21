@@ -5,8 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Input payload to update an Analytics instance. Fields that are not provided will not be updated.
- * <br>
+ * Input payload to update an Analytics instance. Fields that aren't provided won't be updated. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -146,12 +145,12 @@ public final class UpdateAnalyticsInstanceDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** Analytics instance update channel. */
+        /** The Analytics instance update cycle. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
         private UpdateChannel updateChannel;
 
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          *
          * @param updateChannel the value to set
          * @return this builder
@@ -298,12 +297,12 @@ public final class UpdateAnalyticsInstanceDetails
         return freeformTags;
     }
 
-    /** Analytics instance update channel. */
+    /** The Analytics instance update cycle. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
     private final UpdateChannel updateChannel;
 
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      *
      * @return the value
      */

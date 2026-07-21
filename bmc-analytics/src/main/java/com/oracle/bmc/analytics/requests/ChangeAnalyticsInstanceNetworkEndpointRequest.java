@@ -16,18 +16,18 @@ public class ChangeAnalyticsInstanceNetworkEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails> {
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     private String analyticsInstanceId;
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
-    /** Input payload for changing an Analytics instance network endpoint. */
+    /** Input payload for changing a network endpoint for an Analytics instance. */
     private com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails
             changeAnalyticsInstanceNetworkEndpointDetails;
 
-    /** Input payload for changing an Analytics instance network endpoint. */
+    /** Input payload for changing a network endpoint for an Analytics instance. */
     public com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails
             getChangeAnalyticsInstanceNetworkEndpointDetails() {
         return changeAnalyticsInstanceNetworkEndpointDetails;
@@ -100,11 +100,11 @@ public class ChangeAnalyticsInstanceNetworkEndpointRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the AnalyticsInstance. */
+        /** The OCID of the Analytics instance. */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -114,12 +114,12 @@ public class ChangeAnalyticsInstanceNetworkEndpointRequest
             return this;
         }
 
-        /** Input payload for changing an Analytics instance network endpoint. */
+        /** Input payload for changing a network endpoint for an Analytics instance. */
         private com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails
                 changeAnalyticsInstanceNetworkEndpointDetails = null;
 
         /**
-         * Input payload for changing an Analytics instance network endpoint.
+         * Input payload for changing a network endpoint for an Analytics instance.
          *
          * @param changeAnalyticsInstanceNetworkEndpointDetails the value to set
          * @return this builder instance

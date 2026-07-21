@@ -39,7 +39,8 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         "definedTags",
         "systemTags",
         "expirationTime",
-        "filesystemSnapshotPolicyId"
+        "filesystemSnapshotPolicyId",
+        "exclusiveBytes"
     })
     public Snapshot(
             String fileSystemId,
@@ -59,7 +60,8 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date expirationTime,
-            String filesystemSnapshotPolicyId) {
+            String filesystemSnapshotPolicyId,
+            Long exclusiveBytes) {
         super();
         this.fileSystemId = fileSystemId;
         this.id = id;
@@ -79,6 +81,7 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         this.systemTags = systemTags;
         this.expirationTime = expirationTime;
         this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+        this.exclusiveBytes = exclusiveBytes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -434,6 +437,25 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("filesystemSnapshotPolicyId");
             return this;
         }
+        /**
+         * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon
+         * deletion.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("exclusiveBytes")
+        private Long exclusiveBytes;
+
+        /**
+         * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon
+         * deletion.
+         *
+         * @param exclusiveBytes the value to set
+         * @return this builder
+         */
+        public Builder exclusiveBytes(Long exclusiveBytes) {
+            this.exclusiveBytes = exclusiveBytes;
+            this.__explicitlySet__.add("exclusiveBytes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -458,7 +480,8 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
                             this.definedTags,
                             this.systemTags,
                             this.expirationTime,
-                            this.filesystemSnapshotPolicyId);
+                            this.filesystemSnapshotPolicyId,
+                            this.exclusiveBytes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -520,6 +543,9 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
                 this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("exclusiveBytes")) {
+                this.exclusiveBytes(model.getExclusiveBytes());
             }
             return this;
         }
@@ -939,6 +965,23 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         return filesystemSnapshotPolicyId;
     }
 
+    /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon
+     * deletion.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exclusiveBytes")
+    private final Long exclusiveBytes;
+
+    /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon
+     * deletion.
+     *
+     * @return the value
+     */
+    public Long getExclusiveBytes() {
+        return exclusiveBytes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -973,6 +1016,7 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
         sb.append(", filesystemSnapshotPolicyId=")
                 .append(String.valueOf(this.filesystemSnapshotPolicyId));
+        sb.append(", exclusiveBytes=").append(String.valueOf(this.exclusiveBytes));
         sb.append(")");
         return sb.toString();
     }
@@ -1006,6 +1050,7 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.expirationTime, other.expirationTime)
                 && java.util.Objects.equals(
                         this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
+                && java.util.Objects.equals(this.exclusiveBytes, other.exclusiveBytes)
                 && super.equals(other);
     }
 
@@ -1047,6 +1092,9 @@ public final class Snapshot extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.filesystemSnapshotPolicyId == null
                                 ? 43
                                 : this.filesystemSnapshotPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exclusiveBytes == null ? 43 : this.exclusiveBytes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

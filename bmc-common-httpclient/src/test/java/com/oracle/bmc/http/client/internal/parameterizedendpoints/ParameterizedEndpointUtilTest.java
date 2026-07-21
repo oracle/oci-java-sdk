@@ -113,6 +113,9 @@ public class ParameterizedEndpointUtilTest {
         assertHostParameterRejected("my-namespace%2eexample");
         assertHostParameterRejected("my namespace");
         assertHostParameterRejected("");
+        assertHostParameterRejected("-namespace");
+        assertHostParameterRejected("namespace-");
+        assertHostParameterRejected("namespace.-example");
     }
 
     @Test
