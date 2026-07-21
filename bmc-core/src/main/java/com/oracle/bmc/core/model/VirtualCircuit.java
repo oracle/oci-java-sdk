@@ -73,6 +73,7 @@ public final class VirtualCircuit
         "timeCreated",
         "type",
         "ipMtu",
+        "trafficMode",
         "virtualCircuitRedundancyMetadata"
     })
     public VirtualCircuit(
@@ -107,6 +108,7 @@ public final class VirtualCircuit
             java.util.Date timeCreated,
             Type type,
             VirtualCircuitIpMtu ipMtu,
+            TrafficMode trafficMode,
             VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata) {
         super();
         this.bandwidthShapeName = bandwidthShapeName;
@@ -140,6 +142,7 @@ public final class VirtualCircuit
         this.timeCreated = timeCreated;
         this.type = type;
         this.ipMtu = ipMtu;
+        this.trafficMode = trafficMode;
         this.virtualCircuitRedundancyMetadata = virtualCircuitRedundancyMetadata;
     }
 
@@ -746,6 +749,25 @@ public final class VirtualCircuit
             this.__explicitlySet__.add("ipMtu");
             return this;
         }
+        /**
+         * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is
+         * drained for the associated Virtual Circuit or not.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
+        private TrafficMode trafficMode;
+
+        /**
+         * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is
+         * drained for the associated Virtual Circuit or not.
+         *
+         * @param trafficMode the value to set
+         * @return this builder
+         */
+        public Builder trafficMode(TrafficMode trafficMode) {
+            this.trafficMode = trafficMode;
+            this.__explicitlySet__.add("trafficMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("virtualCircuitRedundancyMetadata")
         private VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata;
@@ -794,6 +816,7 @@ public final class VirtualCircuit
                             this.timeCreated,
                             this.type,
                             this.ipMtu,
+                            this.trafficMode,
                             this.virtualCircuitRedundancyMetadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -895,6 +918,9 @@ public final class VirtualCircuit
             }
             if (model.wasPropertyExplicitlySet("ipMtu")) {
                 this.ipMtu(model.getIpMtu());
+            }
+            if (model.wasPropertyExplicitlySet("trafficMode")) {
+                this.trafficMode(model.getTrafficMode());
             }
             if (model.wasPropertyExplicitlySet("virtualCircuitRedundancyMetadata")) {
                 this.virtualCircuitRedundancyMetadata(model.getVirtualCircuitRedundancyMetadata());
@@ -1885,6 +1911,72 @@ public final class VirtualCircuit
         return ipMtu;
     }
 
+    /**
+     * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is
+     * drained for the associated Virtual Circuit or not.
+     */
+    public enum TrafficMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Normal("NORMAL"),
+        Drain("DRAIN"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TrafficMode.class);
+
+        private final String value;
+        private static java.util.Map<String, TrafficMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TrafficMode v : TrafficMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TrafficMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TrafficMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TrafficMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is
+     * drained for the associated Virtual Circuit or not.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
+    private final TrafficMode trafficMode;
+
+    /**
+     * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is
+     * drained for the associated Virtual Circuit or not.
+     *
+     * @return the value
+     */
+    public TrafficMode getTrafficMode() {
+        return trafficMode;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("virtualCircuitRedundancyMetadata")
     private final VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata;
 
@@ -1938,6 +2030,7 @@ public final class VirtualCircuit
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", ipMtu=").append(String.valueOf(this.ipMtu));
+        sb.append(", trafficMode=").append(String.valueOf(this.trafficMode));
         sb.append(", virtualCircuitRedundancyMetadata=")
                 .append(String.valueOf(this.virtualCircuitRedundancyMetadata));
         sb.append(")");
@@ -1986,6 +2079,7 @@ public final class VirtualCircuit
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.ipMtu, other.ipMtu)
+                && java.util.Objects.equals(this.trafficMode, other.trafficMode)
                 && java.util.Objects.equals(
                         this.virtualCircuitRedundancyMetadata,
                         other.virtualCircuitRedundancyMetadata)
@@ -2071,6 +2165,7 @@ public final class VirtualCircuit
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.ipMtu == null ? 43 : this.ipMtu.hashCode());
+        result = (result * PRIME) + (this.trafficMode == null ? 43 : this.trafficMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.virtualCircuitRedundancyMetadata == null

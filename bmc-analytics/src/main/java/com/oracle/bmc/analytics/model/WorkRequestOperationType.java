@@ -21,6 +21,10 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     UpdatePrivateAccessChannel("UPDATE_PRIVATE_ACCESS_CHANNEL"),
     DeletePrivateAccessChannel("DELETE_PRIVATE_ACCESS_CHANNEL"),
     UpdateInstanceEncryptionKey("UPDATE_INSTANCE_ENCRYPTION_KEY"),
+    CreateResourceGroup("CREATE_RESOURCE_GROUP"),
+    UpdateResourceGroup("UPDATE_RESOURCE_GROUP"),
+    DeleteResourceGroup("DELETE_RESOURCE_GROUP"),
+    SetFeatureSet("SET_FEATURE_SET"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

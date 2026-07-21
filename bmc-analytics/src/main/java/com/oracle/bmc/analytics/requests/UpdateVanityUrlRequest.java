@@ -15,24 +15,24 @@ public class UpdateVanityUrlRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.UpdateVanityUrlDetails> {
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     private String analyticsInstanceId;
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
-    /** Specify unique identifier key of a vanity url to update or delete. */
+    /** Specify unique identifier key of a vanity URL to update or delete. */
     private String vanityUrlKey;
 
-    /** Specify unique identifier key of a vanity url to update or delete. */
+    /** Specify unique identifier key of a vanity URL to update or delete. */
     public String getVanityUrlKey() {
         return vanityUrlKey;
     }
-    /** Vanity url details to update (certificate). */
+    /** Vanity URL details to update (certificate). */
     private com.oracle.bmc.analytics.model.UpdateVanityUrlDetails updateVanityUrlDetails;
 
-    /** Vanity url details to update (certificate). */
+    /** Vanity URL details to update (certificate). */
     public com.oracle.bmc.analytics.model.UpdateVanityUrlDetails getUpdateVanityUrlDetails() {
         return updateVanityUrlDetails;
     }
@@ -103,11 +103,11 @@ public class UpdateVanityUrlRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the AnalyticsInstance. */
+        /** The OCID of the Analytics instance. */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -117,11 +117,11 @@ public class UpdateVanityUrlRequest
             return this;
         }
 
-        /** Specify unique identifier key of a vanity url to update or delete. */
+        /** Specify unique identifier key of a vanity URL to update or delete. */
         private String vanityUrlKey = null;
 
         /**
-         * Specify unique identifier key of a vanity url to update or delete.
+         * Specify unique identifier key of a vanity URL to update or delete.
          *
          * @param vanityUrlKey the value to set
          * @return this builder instance
@@ -131,11 +131,11 @@ public class UpdateVanityUrlRequest
             return this;
         }
 
-        /** Vanity url details to update (certificate). */
+        /** Vanity URL details to update (certificate). */
         private com.oracle.bmc.analytics.model.UpdateVanityUrlDetails updateVanityUrlDetails = null;
 
         /**
-         * Vanity url details to update (certificate).
+         * Vanity URL details to update (certificate).
          *
          * @param updateVanityUrlDetails the value to set
          * @return this builder instance

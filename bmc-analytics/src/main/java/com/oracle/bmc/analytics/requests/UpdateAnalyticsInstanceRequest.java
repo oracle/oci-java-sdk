@@ -16,21 +16,23 @@ public class UpdateAnalyticsInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails> {
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     private String analyticsInstanceId;
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
     /**
-     * The Analytics Instance fields to update. Fields that are not provided will not be updated.
+     * Update specified fields for an Analytics instance. Fields that aren't provided won't be
+     * updated.
      */
     private com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails
             updateAnalyticsInstanceDetails;
 
     /**
-     * The Analytics Instance fields to update. Fields that are not provided will not be updated.
+     * Update specified fields for an Analytics instance. Fields that aren't provided won't be
+     * updated.
      */
     public com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails
             getUpdateAnalyticsInstanceDetails() {
@@ -85,11 +87,11 @@ public class UpdateAnalyticsInstanceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the AnalyticsInstance. */
+        /** The OCID of the Analytics instance. */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -100,14 +102,14 @@ public class UpdateAnalyticsInstanceRequest
         }
 
         /**
-         * The Analytics Instance fields to update. Fields that are not provided will not be
+         * Update specified fields for an Analytics instance. Fields that aren't provided won't be
          * updated.
          */
         private com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails
                 updateAnalyticsInstanceDetails = null;
 
         /**
-         * The Analytics Instance fields to update. Fields that are not provided will not be
+         * Update specified fields for an Analytics instance. Fields that aren't provided won't be
          * updated.
          *
          * @param updateAnalyticsInstanceDetails the value to set

@@ -95,15 +95,17 @@ public final class AnalyticsInstanceSummary
             return this;
         }
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-         * changed.
+         * The name of the Analytics instance. This name must be unique in the tenancy and can't be
+         * changed. The name must start with a letter and can contain only letters, numbers and dash
+         * (-).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-         * changed.
+         * The name of the Analytics instance. This name must be unique in the tenancy and can't be
+         * changed. The name must start with a letter and can contain only letters, numbers and dash
+         * (-).
          *
          * @param name the value to set
          * @return this builder
@@ -143,12 +145,12 @@ public final class AnalyticsInstanceSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The current state of an instance. */
+        /** The current state of the Analytics instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AnalyticsInstanceLifecycleState lifecycleState;
 
         /**
-         * The current state of an instance.
+         * The current state of the Analytics instance.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -158,12 +160,16 @@ public final class AnalyticsInstanceSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Analytics feature set. */
+        /**
+         * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code
+         * ENTERPRISE_ANALYTICS} (Enterprise Edition).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
         private FeatureSet featureSet;
 
         /**
-         * Analytics feature set.
+         * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code
+         * ENTERPRISE_ANALYTICS} (Enterprise Edition).
          *
          * @param featureSet the value to set
          * @return this builder
@@ -221,12 +227,12 @@ public final class AnalyticsInstanceSummary
             this.__explicitlySet__.add("networkEndpointDetails");
             return this;
         }
-        /** URL of the Analytics service. */
+        /** URL of the Analytics instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
         /**
-         * URL of the Analytics service.
+         * URL of the Analytics instance.
          *
          * @param serviceUrl the value to set
          * @return this builder
@@ -307,7 +313,7 @@ public final class AnalyticsInstanceSummary
             return this;
         }
         /**
-         * The date and time the instance was created, in the format defined by RFC3339.
+         * The date and time the Analytics instance was created, in the format defined by RFC3339.
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          */
@@ -315,7 +321,7 @@ public final class AnalyticsInstanceSummary
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the instance was created, in the format defined by RFC3339.
+         * The date and time the Analytics instance was created, in the format defined by RFC3339.
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -328,15 +334,17 @@ public final class AnalyticsInstanceSummary
             return this;
         }
         /**
-         * The date and time the instance was last updated (in the format defined by RFC3339). This
-         * timestamp represents updates made through this API. External events do not influence it.
+         * The date and time the Analytics instance was last updated (in the format defined by
+         * RFC3339). This timestamp represents updates made through this API. External events don't
+         * affect it.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the instance was last updated (in the format defined by RFC3339). This
-         * timestamp represents updates made through this API. External events do not influence it.
+         * The date and time the Analytics instance was last updated (in the format defined by
+         * RFC3339). This timestamp represents updates made through this API. External events don't
+         * affect it.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -452,15 +460,17 @@ public final class AnalyticsInstanceSummary
     }
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-     * changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be
+     * changed. The name must start with a letter and can contain only letters, numbers and dash
+     * (-).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-     * changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be
+     * changed. The name must start with a letter and can contain only letters, numbers and dash
+     * (-).
      *
      * @return the value
      */
@@ -494,12 +504,12 @@ public final class AnalyticsInstanceSummary
         return compartmentId;
     }
 
-    /** The current state of an instance. */
+    /** The current state of the Analytics instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AnalyticsInstanceLifecycleState lifecycleState;
 
     /**
-     * The current state of an instance.
+     * The current state of the Analytics instance.
      *
      * @return the value
      */
@@ -507,12 +517,16 @@ public final class AnalyticsInstanceSummary
         return lifecycleState;
     }
 
-    /** Analytics feature set. */
+    /**
+     * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code
+     * ENTERPRISE_ANALYTICS} (Enterprise Edition).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
     private final FeatureSet featureSet;
 
     /**
-     * Analytics feature set.
+     * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code
+     * ENTERPRISE_ANALYTICS} (Enterprise Edition).
      *
      * @return the value
      */
@@ -560,12 +574,12 @@ public final class AnalyticsInstanceSummary
         return networkEndpointDetails;
     }
 
-    /** URL of the Analytics service. */
+    /** URL of the Analytics instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
     private final String serviceUrl;
 
     /**
-     * URL of the Analytics service.
+     * URL of the Analytics instance.
      *
      * @return the value
      */
@@ -637,7 +651,7 @@ public final class AnalyticsInstanceSummary
     }
 
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      */
@@ -645,7 +659,7 @@ public final class AnalyticsInstanceSummary
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -656,15 +670,15 @@ public final class AnalyticsInstanceSummary
     }
 
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339). This
-     * timestamp represents updates made through this API. External events do not influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+     * This timestamp represents updates made through this API. External events don't affect it.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339). This
-     * timestamp represents updates made through this API. External events do not influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+     * This timestamp represents updates made through this API. External events don't affect it.
      *
      * @return the value
      */

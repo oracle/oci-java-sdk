@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Private source Scan Hostname model. <br>
+ * Private source SCAN hostname model. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,14 +34,14 @@ public final class PrivateSourceScanHost
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Private Source Scan hostname. Ex: db01-scan.corp.example.com,
+         * Private source SCAN hostname. For example: db01-scan.corp.example.com,
          * prd-db01-scan.mycompany.com.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scanHostname")
         private String scanHostname;
 
         /**
-         * Private Source Scan hostname. Ex: db01-scan.corp.example.com,
+         * Private source SCAN hostname. For example: db01-scan.corp.example.com,
          * prd-db01-scan.mycompany.com.
          *
          * @param scanHostname the value to set
@@ -53,15 +53,15 @@ public final class PrivateSourceScanHost
             return this;
         }
         /**
-         * Private Source Scan host port. This is the source port where SCAN protocol will get
-         * connected (e.g. 1521).
+         * Private source SCAN host port. This is the source port where the SCAN protocol connects
+         * (for example, 1521).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scanPort")
         private Integer scanPort;
 
         /**
-         * Private Source Scan host port. This is the source port where SCAN protocol will get
-         * connected (e.g. 1521).
+         * Private source SCAN host port. This is the source port where the SCAN protocol connects
+         * (for example, 1521).
          *
          * @param scanPort the value to set
          * @return this builder
@@ -71,12 +71,12 @@ public final class PrivateSourceScanHost
             this.__explicitlySet__.add("scanPort");
             return this;
         }
-        /** Description of private source scan host zone. */
+        /** Description of private source SCAN host zone. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of private source scan host zone.
+         * Description of private source SCAN host zone.
          *
          * @param description the value to set
          * @return this builder
@@ -124,13 +124,15 @@ public final class PrivateSourceScanHost
     }
 
     /**
-     * Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+     * Private source SCAN hostname. For example: db01-scan.corp.example.com,
+     * prd-db01-scan.mycompany.com.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scanHostname")
     private final String scanHostname;
 
     /**
-     * Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+     * Private source SCAN hostname. For example: db01-scan.corp.example.com,
+     * prd-db01-scan.mycompany.com.
      *
      * @return the value
      */
@@ -139,15 +141,15 @@ public final class PrivateSourceScanHost
     }
 
     /**
-     * Private Source Scan host port. This is the source port where SCAN protocol will get connected
-     * (e.g. 1521).
+     * Private source SCAN host port. This is the source port where the SCAN protocol connects (for
+     * example, 1521).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scanPort")
     private final Integer scanPort;
 
     /**
-     * Private Source Scan host port. This is the source port where SCAN protocol will get connected
-     * (e.g. 1521).
+     * Private source SCAN host port. This is the source port where the SCAN protocol connects (for
+     * example, 1521).
      *
      * @return the value
      */
@@ -155,12 +157,12 @@ public final class PrivateSourceScanHost
         return scanPort;
     }
 
-    /** Description of private source scan host zone. */
+    /** Description of private source SCAN host zone. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of private source scan host zone.
+     * Description of private source SCAN host zone.
      *
      * @return the value
      */

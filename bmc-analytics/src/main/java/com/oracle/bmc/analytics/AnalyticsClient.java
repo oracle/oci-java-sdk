@@ -267,6 +267,47 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateResourceGroupResponse createResourceGroup(CreateResourceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateResourceGroupDetails(), "createResourceGroupDetails is required");
+
+        return clientCall(request, CreateResourceGroupResponse::builder)
+                .logger(LOG, "createResourceGroup")
+                .serviceDetails(
+                        "Analytics",
+                        "CreateResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreateResourceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateResourceGroupRequest::builder)
+                .basePath("/20190331")
+                .appendPathParam("analyticsInstances")
+                .appendPathParam(request.getAnalyticsInstanceId())
+                .appendPathParam("resourceGroups")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.analytics.model.InstanceResourceGroup.class,
+                        CreateResourceGroupResponse.Builder::instanceResourceGroup)
+                .handleResponseHeaderString("etag", CreateResourceGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateResourceGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateResourceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "child-resource-id", CreateResourceGroupResponse.Builder::childResourceId)
+                .handleResponseHeaderString(
+                        "location", CreateResourceGroupResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
     public CreateVanityUrlResponse createVanityUrl(CreateVanityUrlRequest request) {
 
         Validate.notBlank(
@@ -362,6 +403,44 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeletePrivateAccessChannelResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteResourceGroupResponse deleteResourceGroup(DeleteResourceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceResourceGroupId(),
+                "analyticsInstanceResourceGroupId must not be blank");
+
+        return clientCall(request, DeleteResourceGroupResponse::builder)
+                .logger(LOG, "deleteResourceGroup")
+                .serviceDetails(
+                        "Analytics",
+                        "DeleteResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteResourceGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteResourceGroupRequest::builder)
+                .basePath("/20190331")
+                .appendPathParam("analyticsInstances")
+                .appendPathParam(request.getAnalyticsInstanceId())
+                .appendPathParam("resourceGroups")
+                .appendPathParam(request.getAnalyticsInstanceResourceGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteResourceGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteResourceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "child-resource-id", DeleteResourceGroupResponse.Builder::childResourceId)
                 .callSync();
     }
 
@@ -487,6 +566,41 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetResourceGroupResponse getResourceGroup(GetResourceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceResourceGroupId(),
+                "analyticsInstanceResourceGroupId must not be blank");
+
+        return clientCall(request, GetResourceGroupResponse::builder)
+                .logger(LOG, "getResourceGroup")
+                .serviceDetails(
+                        "Analytics",
+                        "GetResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetResourceGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetResourceGroupRequest::builder)
+                .basePath("/20190331")
+                .appendPathParam("analyticsInstances")
+                .appendPathParam(request.getAnalyticsInstanceId())
+                .appendPathParam("resourceGroups")
+                .appendPathParam(request.getAnalyticsInstanceResourceGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.analytics.model.InstanceResourceGroup.class,
+                        GetResourceGroupResponse.Builder::instanceResourceGroup)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetResourceGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetResourceGroupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -550,6 +664,42 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListAnalyticsInstancesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListAnalyticsInstancesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListResourceGroupsResponse listResourceGroups(ListResourceGroupsRequest request) {
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
+
+        return clientCall(request, ListResourceGroupsResponse::builder)
+                .logger(LOG, "listResourceGroups")
+                .serviceDetails(
+                        "Analytics",
+                        "ListResourceGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ListResourceGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListResourceGroupsRequest::builder)
+                .basePath("/20190331")
+                .appendPathParam("analyticsInstances")
+                .appendPathParam(request.getAnalyticsInstanceId())
+                .appendPathParam("resourceGroups")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.analytics.model.InstanceResourceGroupSummary.class,
+                        ListResourceGroupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListResourceGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListResourceGroupsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -897,6 +1047,51 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdatePrivateAccessChannelResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateResourceGroupResponse updateResourceGroup(UpdateResourceGroupRequest request) {
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceResourceGroupId(),
+                "analyticsInstanceResourceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateResourceGroupDetails(), "updateResourceGroupDetails is required");
+
+        return clientCall(request, UpdateResourceGroupResponse::builder)
+                .logger(LOG, "updateResourceGroup")
+                .serviceDetails(
+                        "Analytics",
+                        "UpdateResourceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateResourceGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateResourceGroupRequest::builder)
+                .basePath("/20190331")
+                .appendPathParam("analyticsInstances")
+                .appendPathParam(request.getAnalyticsInstanceId())
+                .appendPathParam("resourceGroups")
+                .appendPathParam(request.getAnalyticsInstanceResourceGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.analytics.model.InstanceResourceGroup.class,
+                        UpdateResourceGroupResponse.Builder::instanceResourceGroup)
+                .handleResponseHeaderString("etag", UpdateResourceGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateResourceGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateResourceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "child-resource-id", UpdateResourceGroupResponse.Builder::childResourceId)
                 .callSync();
     }
 

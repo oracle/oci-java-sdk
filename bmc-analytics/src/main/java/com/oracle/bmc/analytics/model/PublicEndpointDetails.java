@@ -57,12 +57,12 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
             this.__explicitlySet__.add("whitelistedVcns");
             return this;
         }
-        /** Oracle Cloud Services that are allowed to access this Analytics instance. */
+        /** Oracle Cloud services that are allowed to access this Analytics instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedServices")
         private java.util.List<AccessControlServiceType> whitelistedServices;
 
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          *
          * @param whitelistedServices the value to set
          * @return this builder
@@ -148,12 +148,12 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         return whitelistedVcns;
     }
 
-    /** Oracle Cloud Services that are allowed to access this Analytics instance. */
+    /** Oracle Cloud services that are allowed to access this Analytics instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedServices")
     private final java.util.List<AccessControlServiceType> whitelistedServices;
 
     /**
-     * Oracle Cloud Services that are allowed to access this Analytics instance.
+     * Oracle Cloud services that are allowed to access this Analytics instance.
      *
      * @return the value
      */

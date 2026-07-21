@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Input payload to update a vanity url. <br>
+ * Input payload to update a vanity URL. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -40,12 +40,12 @@ public final class UpdateVanityUrlDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Passphrase for the PEM Private key (if any). */
+        /** Passphrase for the PEM private key (if any). */
         @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
         private String passphrase;
 
         /**
-         * Passphrase for the PEM Private key (if any).
+         * Passphrase for the PEM private key (if any).
          *
          * @param passphrase the value to set
          * @return this builder
@@ -55,12 +55,12 @@ public final class UpdateVanityUrlDetails
             this.__explicitlySet__.add("passphrase");
             return this;
         }
-        /** PEM Private key for HTTPS connections. */
+        /** PEM private key for HTTPS connections. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
         private String privateKey;
 
         /**
-         * PEM Private key for HTTPS connections.
+         * PEM private key for HTTPS connections.
          *
          * @param privateKey the value to set
          * @return this builder
@@ -86,13 +86,13 @@ public final class UpdateVanityUrlDetails
             return this;
         }
         /**
-         * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         * PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
         /**
-         * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         * PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
          *
          * @param caCertificate the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class UpdateVanityUrlDetails
         return new Builder().copy(this);
     }
 
-    /** Passphrase for the PEM Private key (if any). */
+    /** Passphrase for the PEM private key (if any). */
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
     private final String passphrase;
 
     /**
-     * Passphrase for the PEM Private key (if any).
+     * Passphrase for the PEM private key (if any).
      *
      * @return the value
      */
@@ -159,12 +159,12 @@ public final class UpdateVanityUrlDetails
         return passphrase;
     }
 
-    /** PEM Private key for HTTPS connections. */
+    /** PEM private key for HTTPS connections. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
     private final String privateKey;
 
     /**
-     * PEM Private key for HTTPS connections.
+     * PEM private key for HTTPS connections.
      *
      * @return the value
      */
@@ -185,12 +185,12 @@ public final class UpdateVanityUrlDetails
         return publicCertificate;
     }
 
-    /** PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates. */
+    /** PEM CA certificates for HTTPS connections. This may include multiple PEM certificates. */
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     private final String caCertificate;
 
     /**
-     * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      *
      * @return the value
      */

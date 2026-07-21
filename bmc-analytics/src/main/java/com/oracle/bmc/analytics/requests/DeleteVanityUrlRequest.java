@@ -13,17 +13,17 @@ import com.oracle.bmc.analytics.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public class DeleteVanityUrlRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     private String analyticsInstanceId;
 
-    /** The OCID of the AnalyticsInstance. */
+    /** The OCID of the Analytics instance. */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
-    /** Specify unique identifier key of a vanity url to update or delete. */
+    /** Specify unique identifier key of a vanity URL to update or delete. */
     private String vanityUrlKey;
 
-    /** Specify unique identifier key of a vanity url to update or delete. */
+    /** Specify unique identifier key of a vanity URL to update or delete. */
     public String getVanityUrlKey() {
         return vanityUrlKey;
     }
@@ -83,11 +83,11 @@ public class DeleteVanityUrlRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the AnalyticsInstance. */
+        /** The OCID of the Analytics instance. */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -97,11 +97,11 @@ public class DeleteVanityUrlRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Specify unique identifier key of a vanity url to update or delete. */
+        /** Specify unique identifier key of a vanity URL to update or delete. */
         private String vanityUrlKey = null;
 
         /**
-         * Specify unique identifier key of a vanity url to update or delete.
+         * Specify unique identifier key of a vanity URL to update or delete.
          *
          * @param vanityUrlKey the value to set
          * @return this builder instance

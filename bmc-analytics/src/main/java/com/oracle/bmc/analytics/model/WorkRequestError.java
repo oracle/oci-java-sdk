@@ -32,12 +32,12 @@ public final class WorkRequestError
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A short error code that defines the error, meant for programmatic parsing. */
+        /** A short error code that defines the error, for programmatic parsing. */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A short error code that defines the error, meant for programmatic parsing.
+         * A short error code that defines the error, for programmatic parsing.
          *
          * @param code the value to set
          * @return this builder
@@ -63,7 +63,7 @@ public final class WorkRequestError
             return this;
         }
         /**
-         * The date and time the error occured, in the format defined by RFC3339.
+         * The date and time the error occurred, in the format defined by RFC3339.
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          */
@@ -71,7 +71,7 @@ public final class WorkRequestError
         private java.util.Date timestamp;
 
         /**
-         * The date and time the error occured, in the format defined by RFC3339.
+         * The date and time the error occurred, in the format defined by RFC3339.
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -119,12 +119,12 @@ public final class WorkRequestError
         return new Builder().copy(this);
     }
 
-    /** A short error code that defines the error, meant for programmatic parsing. */
+    /** A short error code that defines the error, for programmatic parsing. */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A short error code that defines the error, meant for programmatic parsing.
+     * A short error code that defines the error, for programmatic parsing.
      *
      * @return the value
      */
@@ -146,7 +146,7 @@ public final class WorkRequestError
     }
 
     /**
-     * The date and time the error occured, in the format defined by RFC3339.
+     * The date and time the error occurred, in the format defined by RFC3339.
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      */
@@ -154,7 +154,7 @@ public final class WorkRequestError
     private final java.util.Date timestamp;
 
     /**
-     * The date and time the error occured, in the format defined by RFC3339.
+     * The date and time the error occurred, in the format defined by RFC3339.
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *

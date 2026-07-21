@@ -44,7 +44,8 @@ public final class CreateVirtualCircuitDetails
         "publicPrefixes",
         "region",
         "type",
-        "ipMtu"
+        "ipMtu",
+        "trafficMode"
     })
     public CreateVirtualCircuitDetails(
             String bandwidthShapeName,
@@ -67,7 +68,8 @@ public final class CreateVirtualCircuitDetails
             java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes,
             String region,
             Type type,
-            VirtualCircuitIpMtu ipMtu) {
+            VirtualCircuitIpMtu ipMtu,
+            TrafficMode trafficMode) {
         super();
         this.bandwidthShapeName = bandwidthShapeName;
         this.compartmentId = compartmentId;
@@ -90,6 +92,7 @@ public final class CreateVirtualCircuitDetails
         this.region = region;
         this.type = type;
         this.ipMtu = ipMtu;
+        this.trafficMode = trafficMode;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -540,6 +543,25 @@ public final class CreateVirtualCircuitDetails
             this.__explicitlySet__.add("ipMtu");
             return this;
         }
+        /**
+         * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic
+         * is to be drained for the associated Virtual Circuit or not.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
+        private TrafficMode trafficMode;
+
+        /**
+         * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic
+         * is to be drained for the associated Virtual Circuit or not.
+         *
+         * @param trafficMode the value to set
+         * @return this builder
+         */
+        public Builder trafficMode(TrafficMode trafficMode) {
+            this.trafficMode = trafficMode;
+            this.__explicitlySet__.add("trafficMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -567,7 +589,8 @@ public final class CreateVirtualCircuitDetails
                             this.publicPrefixes,
                             this.region,
                             this.type,
-                            this.ipMtu);
+                            this.ipMtu,
+                            this.trafficMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -638,6 +661,9 @@ public final class CreateVirtualCircuitDetails
             }
             if (model.wasPropertyExplicitlySet("ipMtu")) {
                 this.ipMtu(model.getIpMtu());
+            }
+            if (model.wasPropertyExplicitlySet("trafficMode")) {
+                this.trafficMode(model.getTrafficMode());
             }
             return this;
         }
@@ -1158,6 +1184,59 @@ public final class CreateVirtualCircuitDetails
         return ipMtu;
     }
 
+    /**
+     * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to
+     * be drained for the associated Virtual Circuit or not.
+     */
+    public enum TrafficMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Normal("NORMAL"),
+        Drain("DRAIN"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, TrafficMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TrafficMode v : TrafficMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        TrafficMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TrafficMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid TrafficMode: " + key);
+        }
+    };
+    /**
+     * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to
+     * be drained for the associated Virtual Circuit or not.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
+    private final TrafficMode trafficMode;
+
+    /**
+     * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to
+     * be drained for the associated Virtual Circuit or not.
+     *
+     * @return the value
+     */
+    public TrafficMode getTrafficMode() {
+        return trafficMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1194,6 +1273,7 @@ public final class CreateVirtualCircuitDetails
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", ipMtu=").append(String.valueOf(this.ipMtu));
+        sb.append(", trafficMode=").append(String.valueOf(this.trafficMode));
         sb.append(")");
         return sb.toString();
     }
@@ -1230,6 +1310,7 @@ public final class CreateVirtualCircuitDetails
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.ipMtu, other.ipMtu)
+                && java.util.Objects.equals(this.trafficMode, other.trafficMode)
                 && super.equals(other);
     }
 
@@ -1288,6 +1369,7 @@ public final class CreateVirtualCircuitDetails
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.ipMtu == null ? 43 : this.ipMtu.hashCode());
+        result = (result * PRIME) + (this.trafficMode == null ? 43 : this.trafficMode.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
