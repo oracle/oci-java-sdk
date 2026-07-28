@@ -181,6 +181,8 @@ public final class CreateDedicatedAiClusterDetails
          * - H100_X2
          * - H100_X4
          * - H100_X8
+         * - H100_X16
+         * - H100_X32
          * - H200_X1
          * - H200_X2
          * - H200_X4
@@ -191,6 +193,7 @@ public final class CreateDedicatedAiClusterDetails
          * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8
          * - A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
          * - H100_X1, H100_X2, H100_X4, H100_X8
+         * - H100_X16, H100_X32
          * - H200_X1, H200_X2, H200_X4, H200_X8
          * - OAI_A10_X2
          * - OAI_H100_X1
@@ -200,6 +203,15 @@ public final class CreateDedicatedAiClusterDetails
          * - OAI_A100_80G_X2
          * - OAI_A100_40G_X1
          * - OAI_A100_40G_X4
+         * - B200_X1
+         * - B200_X2
+         * - B200_X4
+         * - B200_X8
+         * - OAI_B200_X1
+         * - OAI_B200_X2
+         * - OAI_B200_X4
+         * - OAI_B200_X8
+         * - SB_B200_X1
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
@@ -242,6 +254,8 @@ public final class CreateDedicatedAiClusterDetails
          * - H100_X2
          * - H100_X4
          * - H100_X8
+         * - H100_X16
+         * - H100_X32
          * - H200_X1
          * - H200_X2
          * - H200_X4
@@ -252,6 +266,7 @@ public final class CreateDedicatedAiClusterDetails
          * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8
          * - A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
          * - H100_X1, H100_X2, H100_X4, H100_X8
+         * - H100_X16, H100_X32
          * - H200_X1, H200_X2, H200_X4, H200_X8
          * - OAI_A10_X2
          * - OAI_H100_X1
@@ -261,6 +276,15 @@ public final class CreateDedicatedAiClusterDetails
          * - OAI_A100_80G_X2
          * - OAI_A100_40G_X1
          * - OAI_A100_40G_X4
+         * - B200_X1
+         * - B200_X2
+         * - B200_X4
+         * - B200_X8
+         * - OAI_B200_X1
+         * - OAI_B200_X2
+         * - OAI_B200_X4
+         * - OAI_B200_X8
+         * - SB_B200_X1
          *
          * @param unitShape the value to set
          * @return this builder
@@ -498,6 +522,8 @@ public final class CreateDedicatedAiClusterDetails
      * - H100_X2
      * - H100_X4
      * - H100_X8
+     * - H100_X16
+     * - H100_X32
      * - H200_X1
      * - H200_X2
      * - H200_X4
@@ -508,6 +534,7 @@ public final class CreateDedicatedAiClusterDetails
      * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8
      * - A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
      * - H100_X1, H100_X2, H100_X4, H100_X8
+     * - H100_X16, H100_X32
      * - H200_X1, H200_X2, H200_X4, H200_X8
      * - OAI_A10_X2
      * - OAI_H100_X1
@@ -517,6 +544,15 @@ public final class CreateDedicatedAiClusterDetails
      * - OAI_A100_80G_X2
      * - OAI_A100_40G_X1
      * - OAI_A100_40G_X4
+     * - B200_X1
+     * - B200_X2
+     * - B200_X4
+     * - B200_X8
+     * - OAI_B200_X1
+     * - OAI_B200_X2
+     * - OAI_B200_X4
+     * - OAI_B200_X8
+     * - SB_B200_X1
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
@@ -559,6 +595,8 @@ public final class CreateDedicatedAiClusterDetails
      * - H100_X2
      * - H100_X4
      * - H100_X8
+     * - H100_X16
+     * - H100_X32
      * - H200_X1
      * - H200_X2
      * - H200_X4
@@ -569,6 +607,7 @@ public final class CreateDedicatedAiClusterDetails
      * - A100_40G_X1, A100_40G_X2, A100_40G_X4, A100_40G_X8
      * - A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
      * - H100_X1, H100_X2, H100_X4, H100_X8
+     * - H100_X16, H100_X32
      * - H200_X1, H200_X2, H200_X4, H200_X8
      * - OAI_A10_X2
      * - OAI_H100_X1
@@ -578,6 +617,15 @@ public final class CreateDedicatedAiClusterDetails
      * - OAI_A100_80G_X2
      * - OAI_A100_40G_X1
      * - OAI_A100_40G_X4
+     * - B200_X1
+     * - B200_X2
+     * - B200_X4
+     * - B200_X8
+     * - OAI_B200_X1
+     * - OAI_B200_X2
+     * - OAI_B200_X4
+     * - OAI_B200_X8
+     * - SB_B200_X1
      *
      * @return the value
      **/

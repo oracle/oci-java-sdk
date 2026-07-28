@@ -31,8 +31,13 @@ public class CreateVolumeConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateVolumeDetails(), "createVolumeDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("volumes");
+                newBaseTarget.path("/20160918").path("volumes");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

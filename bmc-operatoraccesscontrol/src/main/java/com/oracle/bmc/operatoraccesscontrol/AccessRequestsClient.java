@@ -577,7 +577,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "AccessRequests",
                         "ApproveAccessRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ApproveAccessRequest");
         java.util.function.Function<javax.ws.rs.core.Response, ApproveAccessRequestResponse>
                 transformer =
                         ApproveAccessRequestConverter.fromResponse(
@@ -615,7 +615,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "GetAccessRequest", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "GetAccessRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/GetAccessRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetAccessRequestResponse>
                 transformer =
                         GetAccessRequestConverter.fromResponse(
@@ -649,7 +652,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "GetAuditLogReport", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "GetAuditLogReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AuditLogReport/GetAuditLogReport");
         java.util.function.Function<javax.ws.rs.core.Response, GetAuditLogReportResponse>
                 transformer =
                         GetAuditLogReportConverter.fromResponse(
@@ -684,7 +690,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "InteractionRequest", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "InteractionRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest");
         java.util.function.Function<javax.ws.rs.core.Response, InteractionRequestResponse>
                 transformer =
                         InteractionRequestConverter.fromResponse(
@@ -726,7 +735,7 @@ public class AccessRequestsClient implements AccessRequests {
                         "AccessRequests",
                         "ListAccessRequestHistories",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequestHistories");
         java.util.function.Function<javax.ws.rs.core.Response, ListAccessRequestHistoriesResponse>
                 transformer =
                         ListAccessRequestHistoriesConverter.fromResponse(
@@ -760,7 +769,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "ListAccessRequests", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "ListAccessRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListAccessRequestsResponse>
                 transformer =
                         ListAccessRequestsConverter.fromResponse(
@@ -794,7 +806,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "ListInteractions", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "ListInteractions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions");
         java.util.function.Function<javax.ws.rs.core.Response, ListInteractionsResponse>
                 transformer =
                         ListInteractionsConverter.fromResponse(
@@ -829,7 +844,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "RejectAccessRequest", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "RejectAccessRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RejectAccessRequest");
         java.util.function.Function<javax.ws.rs.core.Response, RejectAccessRequestResponse>
                 transformer =
                         RejectAccessRequestConverter.fromResponse(
@@ -868,7 +886,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "ReviewAccessRequest", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "ReviewAccessRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ReviewAccessRequest");
         java.util.function.Function<javax.ws.rs.core.Response, ReviewAccessRequestResponse>
                 transformer =
                         ReviewAccessRequestConverter.fromResponse(
@@ -907,7 +928,10 @@ public class AccessRequestsClient implements AccessRequests {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "AccessRequests", "RevokeAccessRequest", ib.getRequestUri().toString(), "");
+                        "AccessRequests",
+                        "RevokeAccessRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RevokeAccessRequest");
         java.util.function.Function<javax.ws.rs.core.Response, RevokeAccessRequestResponse>
                 transformer =
                         RevokeAccessRequestConverter.fromResponse(

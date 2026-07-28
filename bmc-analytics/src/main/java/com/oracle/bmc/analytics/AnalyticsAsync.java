@@ -61,7 +61,7 @@ public interface AnalyticsAsync extends AutoCloseable {
 
     /**
      * Change the compartment of an Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -80,8 +80,8 @@ public interface AnalyticsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Change an Analytics instance network endpoint. The operation is long-running
-     * and creates a new WorkRequest.
+     * Change the network endpoint for an Analytics instance. The operation is long-running
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -100,8 +100,8 @@ public interface AnalyticsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a new AnalyticsInstance in the specified compartment. The operation is long-running
-     * and creates a new WorkRequest.
+     * Create a new Analytics instance in the specified compartment. The operation is long-running
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -118,8 +118,8 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create an Private access Channel for the Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * Create an private access channel for the Analytics instance. The operation is long-running
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -136,8 +136,24 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-     * for this host.
+     * Create a new resource group for the instance
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateResourceGroupResponse> createResourceGroup(
+            CreateResourceGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateResourceGroupRequest, CreateResourceGroupResponse>
+                    handler);
+
+    /**
+     * Allows you to specify a custom host name to be used to access the Analytics instance.  You must set up a DNS entry and certificate for this host in advance.
      *
      *
      * @param request The request object containing the details to send
@@ -153,8 +169,8 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Terminates the specified Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * Deletes the specified Analytics instance. The operation is long-running
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -171,7 +187,7 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete an Analytics instance's Private access channel with the given unique identifier key.
+     * Delete a private access channel with a given unique identifier key, for an Analytics instance.
      *
      *
      * @param request The request object containing the details to send
@@ -188,7 +204,24 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Allows deleting a previously created vanity url.
+     * Allows deleting a previously created resource group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteResourceGroupResponse> deleteResourceGroup(
+            DeleteResourceGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteResourceGroupRequest, DeleteResourceGroupResponse>
+                    handler);
+
+    /**
+     * Deletes a previously created vanity URL.
      *
      *
      * @param request The request object containing the details to send
@@ -204,7 +237,7 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancel a work request that has not started yet.
+     * Cancel a work request that hasn't started yet.
      *
      *
      * @param request The request object containing the details to send
@@ -221,7 +254,7 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Info for a specific Analytics instance.
+     * Information about a specific Analytics instance.
      *
      *
      * @param request The request object containing the details to send
@@ -238,7 +271,7 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieve private access channel in the specified Analytics Instance.
+     * Retrieve private access channel for the specified Analytics Instance.
      *
      *
      * @param request The request object containing the details to send
@@ -252,6 +285,22 @@ public interface AnalyticsAsync extends AutoCloseable {
             GetPrivateAccessChannelRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetPrivateAccessChannelRequest, GetPrivateAccessChannelResponse>
+                    handler);
+
+    /**
+     * Get details of a resource group for an instance
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResourceGroupResponse> getResourceGroup(
+            GetResourceGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetResourceGroupRequest, GetResourceGroupResponse>
                     handler);
 
     /**
@@ -285,6 +334,23 @@ public interface AnalyticsAsync extends AutoCloseable {
             ListAnalyticsInstancesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListAnalyticsInstancesRequest, ListAnalyticsInstancesResponse>
+                    handler);
+
+    /**
+     * List resource groups associated with an instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourceGroupsResponse> listResourceGroups(
+            ListResourceGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResourceGroupsRequest, ListResourceGroupsResponse>
                     handler);
 
     /**
@@ -339,7 +405,7 @@ public interface AnalyticsAsync extends AutoCloseable {
 
     /**
      * Scale an Analytics instance up or down. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -372,7 +438,7 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Encrypts the customer data of this Analytics instance using either a customer OCI Vault Key or Oracle managed default key.
+     * Encrypts the customer data of this Analytics instance using either a customer OCI vault key or default Oracle-managed key.
      *
      *
      * @param request The request object containing the details to send
@@ -388,7 +454,7 @@ public interface AnalyticsAsync extends AutoCloseable {
 
     /**
      * Starts the specified Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -406,7 +472,7 @@ public interface AnalyticsAsync extends AutoCloseable {
 
     /**
      * Stop the specified Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      *
      * @param request The request object containing the details to send
@@ -441,7 +507,7 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the Private Access Channel with the given unique identifier key in the specified Analytics Instance.
+     * Update the private access channel with the given unique identifier key in the specified Analytics instance.
      *
      *
      * @param request The request object containing the details to send
@@ -458,7 +524,24 @@ public interface AnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Allows uploading a new certificate for a vanity url, which will have to be done when the current certificate is expiring.
+     * Update any fields in a resource group
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateResourceGroupResponse> updateResourceGroup(
+            UpdateResourceGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateResourceGroupRequest, UpdateResourceGroupResponse>
+                    handler);
+
+    /**
+     * Uploads a new certificate for a vanity URL. Required before the current certificate expires.
      *
      *
      * @param request The request object containing the details to send

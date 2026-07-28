@@ -31,8 +31,14 @@ public class GetVolumeAttachmentConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeAttachmentId(), "volumeAttachmentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("volumeAttachmentId", request.getVolumeAttachmentId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("volumeAttachments")
                         .path(

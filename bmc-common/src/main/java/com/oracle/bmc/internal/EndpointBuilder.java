@@ -36,6 +36,22 @@ public class EndpointBuilder {
 
     private static final Pattern PLACEHOLDER_PATTERN = Pattern.compile("\\{(.*?)\\}");
 
+    /**
+     * Matches a domain-safe endpoint template parameter. Endpoint parameters with the {@code +Dot}
+     * suffix are interpolated directly into the hostname, so they must not contain URL syntax that
+     * could alter the request destination.
+     *
+     * <p>Examples of allowed values: {@code namespace}, {@code namespace1}, {@code namespace_name},
+     * {@code namespace.example}, {@code dex-us-phoenix-1}.
+     *
+     * <p>Examples of rejected values: {@code namespace/example}, {@code user@example}, {@code
+     * namespace?query}, {@code namespace name}, {@code -namespace}, {@code namespace-}.
+     */
+    private static final Pattern DOMAIN_SAFE_PARAMETER_PATTERN =
+            Pattern.compile(
+                    "[A-Z0-9_](?:[A-Z0-9_-]{0,61}[A-Z0-9_])?(?:\\.[A-Z0-9_](?:[A-Z0-9_-]{0,61}[A-Z0-9_])?)*",
+                    Pattern.CASE_INSENSITIVE);
+
     private static final String ENDPOINT_TEMPLATE_FOR_REGION_WITH_DOT =
             "https://{endpointServiceName}.{region}";
 
@@ -357,7 +373,9 @@ public class EndpointBuilder {
                                 paramName);
                         continue;
                     }
-                    updatedEndpointBuilder.append(paramValue);
+                    String paramValueString = (String) paramValue;
+                    validateDomainSafeParameter(paramName, paramValueString);
+                    updatedEndpointBuilder.append(paramValueString);
                     if (appendDot) {
                         updatedEndpointBuilder.append('.');
                     }
@@ -375,6 +393,22 @@ public class EndpointBuilder {
                 "getEndpointWithPopulateServiceParameters: processed all parameters, endpoint='{}'",
                 updatedEndpoint);
         return updatedEndpoint;
+    }
+
+    /**
+     * Validates a service endpoint template parameter that will be rendered into a hostname.
+     *
+     * @param paramName endpoint template parameter name
+     * @param paramValue endpoint template parameter value
+     * @throws IllegalArgumentException if the value is not domain-safe
+     */
+    private static void validateDomainSafeParameter(String paramName, String paramValue) {
+        if (!DOMAIN_SAFE_PARAMETER_PATTERN.matcher(paramValue).matches()) {
+            throw new IllegalArgumentException(
+                    "Endpoint parameter "
+                            + paramName
+                            + " contains characters that are not allowed in a domain-safe endpoint parameter");
+        }
     }
 
     /**

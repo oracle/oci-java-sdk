@@ -32,8 +32,15 @@ public class ListPublicIpsConverter {
         Validate.notNull(request.getScope(), "scope is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("scope", request.getScope());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("publicIps");
+                newBaseTarget.path("/20160918").path("publicIps");
 
         if (request.getLimit() != null) {
             target =

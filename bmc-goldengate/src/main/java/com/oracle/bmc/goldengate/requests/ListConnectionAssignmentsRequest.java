@@ -58,6 +58,33 @@ public class ListConnectionAssignmentsRequest
         return connectionId;
     }
     /**
+     * The array of connection types.
+     *
+     */
+    private java.util.List<com.oracle.bmc.goldengate.model.ConnectionType> connectionType;
+
+    /**
+     * The array of connection types.
+     *
+     */
+    public java.util.List<com.oracle.bmc.goldengate.model.ConnectionType> getConnectionType() {
+        return connectionType;
+    }
+    /**
+     * The array of connection types to exclude.
+     *
+     */
+    private java.util.List<com.oracle.bmc.goldengate.model.ConnectionType> connectionTypeNotEqualTo;
+
+    /**
+     * The array of connection types to exclude.
+     *
+     */
+    public java.util.List<com.oracle.bmc.goldengate.model.ConnectionType>
+            getConnectionTypeNotEqualTo() {
+        return connectionTypeNotEqualTo;
+    }
+    /**
      * The name of the connection in the assignment (aliasName).
      */
     private String name;
@@ -255,6 +282,65 @@ public class ListConnectionAssignmentsRequest
         }
 
         /**
+         * The array of connection types.
+         *
+         */
+        private java.util.List<com.oracle.bmc.goldengate.model.ConnectionType> connectionType =
+                null;
+
+        /**
+         * The array of connection types.
+         *
+         * @param connectionType the value to set
+         * @return this builder instance
+         */
+        public Builder connectionType(
+                java.util.List<com.oracle.bmc.goldengate.model.ConnectionType> connectionType) {
+            this.connectionType = connectionType;
+            return this;
+        }
+
+        /**
+         * Singular setter. The array of connection types.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder connectionType(ConnectionType singularValue) {
+            return this.connectionType(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * The array of connection types to exclude.
+         *
+         */
+        private java.util.List<com.oracle.bmc.goldengate.model.ConnectionType>
+                connectionTypeNotEqualTo = null;
+
+        /**
+         * The array of connection types to exclude.
+         *
+         * @param connectionTypeNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder connectionTypeNotEqualTo(
+                java.util.List<com.oracle.bmc.goldengate.model.ConnectionType>
+                        connectionTypeNotEqualTo) {
+            this.connectionTypeNotEqualTo = connectionTypeNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. The array of connection types to exclude.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder connectionTypeNotEqualTo(ConnectionType singularValue) {
+            return this.connectionTypeNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * The name of the connection in the assignment (aliasName).
          */
         private String name = null;
@@ -409,6 +495,8 @@ public class ListConnectionAssignmentsRequest
             compartmentId(o.getCompartmentId());
             deploymentId(o.getDeploymentId());
             connectionId(o.getConnectionId());
+            connectionType(o.getConnectionType());
+            connectionTypeNotEqualTo(o.getConnectionTypeNotEqualTo());
             name(o.getName());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
@@ -451,6 +539,8 @@ public class ListConnectionAssignmentsRequest
             request.compartmentId = compartmentId;
             request.deploymentId = deploymentId;
             request.connectionId = connectionId;
+            request.connectionType = connectionType;
+            request.connectionTypeNotEqualTo = connectionTypeNotEqualTo;
             request.name = name;
             request.lifecycleState = lifecycleState;
             request.limit = limit;
@@ -459,7 +549,7 @@ public class ListConnectionAssignmentsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListConnectionAssignmentsRequest(compartmentId, deploymentId, connectionId, name, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListConnectionAssignmentsRequest(compartmentId, deploymentId, connectionId, connectionType, connectionTypeNotEqualTo, name, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -472,6 +562,8 @@ public class ListConnectionAssignmentsRequest
                 .compartmentId(compartmentId)
                 .deploymentId(deploymentId)
                 .connectionId(connectionId)
+                .connectionType(connectionType)
+                .connectionTypeNotEqualTo(connectionTypeNotEqualTo)
                 .name(name)
                 .lifecycleState(lifecycleState)
                 .limit(limit)
@@ -497,6 +589,9 @@ public class ListConnectionAssignmentsRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",deploymentId=").append(String.valueOf(this.deploymentId));
         sb.append(",connectionId=").append(String.valueOf(this.connectionId));
+        sb.append(",connectionType=").append(String.valueOf(this.connectionType));
+        sb.append(",connectionTypeNotEqualTo=")
+                .append(String.valueOf(this.connectionTypeNotEqualTo));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -522,6 +617,9 @@ public class ListConnectionAssignmentsRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
                 && java.util.Objects.equals(this.connectionId, other.connectionId)
+                && java.util.Objects.equals(this.connectionType, other.connectionType)
+                && java.util.Objects.equals(
+                        this.connectionTypeNotEqualTo, other.connectionTypeNotEqualTo)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -540,6 +638,14 @@ public class ListConnectionAssignmentsRequest
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
         result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionType == null ? 43 : this.connectionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionTypeNotEqualTo == null
+                                ? 43
+                                : this.connectionTypeNotEqualTo.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result =
                 (result * PRIME)

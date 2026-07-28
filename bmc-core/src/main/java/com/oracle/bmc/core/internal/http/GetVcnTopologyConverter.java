@@ -32,8 +32,15 @@ public class GetVcnTopologyConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getVcnId(), "vcnId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("vcnId", request.getVcnId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("vcnTopology");
+                newBaseTarget.path("/20160918").path("vcnTopology");
 
         target =
                 target.queryParam(

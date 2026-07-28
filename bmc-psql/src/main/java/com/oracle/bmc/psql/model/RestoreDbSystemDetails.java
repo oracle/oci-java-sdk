@@ -22,11 +22,12 @@ package com.oracle.bmc.psql.model;
 public final class RestoreDbSystemDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"backupId", "ad"})
-    public RestoreDbSystemDetails(String backupId, String ad) {
+    @java.beans.ConstructorProperties({"backupId", "ad", "timeToRestore"})
+    public RestoreDbSystemDetails(String backupId, String ad, java.util.Date timeToRestore) {
         super();
         this.backupId = backupId;
         this.ad = ad;
+        this.timeToRestore = timeToRestore;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -67,12 +68,37 @@ public final class RestoreDbSystemDetails
             this.__explicitlySet__.add("ad");
             return this;
         }
+        /**
+         * The target point-in-time that the database system restore can get started from, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeToRestore")
+        private java.util.Date timeToRestore;
+
+        /**
+         * The target point-in-time that the database system restore can get started from, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeToRestore the value to set
+         * @return this builder
+         **/
+        public Builder timeToRestore(java.util.Date timeToRestore) {
+            this.timeToRestore = timeToRestore;
+            this.__explicitlySet__.add("timeToRestore");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestoreDbSystemDetails build() {
-            RestoreDbSystemDetails model = new RestoreDbSystemDetails(this.backupId, this.ad);
+            RestoreDbSystemDetails model =
+                    new RestoreDbSystemDetails(this.backupId, this.ad, this.timeToRestore);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -86,6 +112,9 @@ public final class RestoreDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("ad")) {
                 this.ad(model.getAd());
+            }
+            if (model.wasPropertyExplicitlySet("timeToRestore")) {
+                this.timeToRestore(model.getTimeToRestore());
             }
             return this;
         }
@@ -134,6 +163,28 @@ public final class RestoreDbSystemDetails
         return ad;
     }
 
+    /**
+     * The target point-in-time that the database system restore can get started from, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeToRestore")
+    private final java.util.Date timeToRestore;
+
+    /**
+     * The target point-in-time that the database system restore can get started from, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeToRestore() {
+        return timeToRestore;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -150,6 +201,7 @@ public final class RestoreDbSystemDetails
         sb.append("super=").append(super.toString());
         sb.append("backupId=").append(String.valueOf(this.backupId));
         sb.append(", ad=").append(String.valueOf(this.ad));
+        sb.append(", timeToRestore=").append(String.valueOf(this.timeToRestore));
         sb.append(")");
         return sb.toString();
     }
@@ -166,6 +218,7 @@ public final class RestoreDbSystemDetails
         RestoreDbSystemDetails other = (RestoreDbSystemDetails) o;
         return java.util.Objects.equals(this.backupId, other.backupId)
                 && java.util.Objects.equals(this.ad, other.ad)
+                && java.util.Objects.equals(this.timeToRestore, other.timeToRestore)
                 && super.equals(other);
     }
 
@@ -175,6 +228,9 @@ public final class RestoreDbSystemDetails
         int result = 1;
         result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
         result = (result * PRIME) + (this.ad == null ? 43 : this.ad.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeToRestore == null ? 43 : this.timeToRestore.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

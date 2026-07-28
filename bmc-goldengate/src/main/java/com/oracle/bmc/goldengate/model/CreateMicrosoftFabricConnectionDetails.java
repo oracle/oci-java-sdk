@@ -222,24 +222,35 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
         }
         /**
          * Client secret associated with the client id.
-         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-        private String clientSecret;
+        private char[] clientSecret;
 
         /**
          * Client secret associated with the client id.
-         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "clientSecretSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param clientSecret the value to set
          * @return this builder
          **/
-        public Builder clientSecret(String clientSecret) {
+        public Builder clientSecret(char[] clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
+
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+            this.__explicitlySet__.add("clientSecret");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          * Note: When provided, 'clientSecret' field must not be provided.
@@ -436,6 +447,54 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
         this.technologyType = technologyType;
         this.tenantId = tenantId;
         this.clientId = clientId;
+        this.clientSecret = clientSecret != null ? clientSecret.toCharArray() : null;
+        this.clientSecretSecretId = clientSecretSecretId;
+        this.endpoint = endpoint;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateMicrosoftFabricConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            MicrosoftFabricConnection.TechnologyType technologyType,
+            String tenantId,
+            String clientId,
+            char[] clientSecret,
+            String clientSecretSecretId,
+            String endpoint) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
+        this.tenantId = tenantId;
+        this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.clientSecretSecretId = clientSecretSecretId;
         this.endpoint = endpoint;
@@ -493,19 +552,39 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
 
     /**
      * Client secret associated with the client id.
-     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
-    private final String clientSecret;
+    private final char[] clientSecret;
 
     /**
      * Client secret associated with the client id.
-     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;clientSecretSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * return the value
+     * @Deprecated - Use getClientSecret__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getClientSecret() {
+        return clientSecret != null ? new String(clientSecret) : null;
+    }
+
+    /**
+     * Client secret associated with the client id.
+     * Deprecated: This field is deprecated and replaced by "clientSecretSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
-    public String getClientSecret() {
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
+    public char[] getClientSecret__AsCharArray() {
         return clientSecret;
     }
 
@@ -562,7 +641,7 @@ public final class CreateMicrosoftFabricConnectionDetails extends CreateConnecti
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
-        sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
+        sb.append(", clientSecret=").append("<redacted>");
         sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(")");

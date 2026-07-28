@@ -11,6 +11,7 @@ package com.oracle.bmc.resourcescheduler.model;
 public enum OperationType {
     StartResource("START_RESOURCE"),
     StopResource("STOP_RESOURCE"),
+    BackupResource("BACKUP_RESOURCE"),
     ChangeScheduleCompartment("CHANGE_SCHEDULE_COMPARTMENT"),
     CreateSchedule("CREATE_SCHEDULE"),
     UpdateSchedule("UPDATE_SCHEDULE"),

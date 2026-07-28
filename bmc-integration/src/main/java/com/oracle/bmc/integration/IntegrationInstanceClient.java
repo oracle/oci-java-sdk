@@ -1330,7 +1330,11 @@ public class IntegrationInstanceClient implements IntegrationInstance {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemoveLogAnalyticsLogGroupDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

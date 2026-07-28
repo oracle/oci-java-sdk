@@ -32,8 +32,15 @@ public class ListBootVolumeAttachmentsConverter {
         Validate.notNull(request.getAvailabilityDomain(), "availabilityDomain is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("availabilityDomain", request.getAvailabilityDomain());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("bootVolumeAttachments");
+                newBaseTarget.path("/20160918").path("bootVolumeAttachments");
 
         target =
                 target.queryParam(

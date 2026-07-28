@@ -245,6 +245,7 @@ public final class AmazonKinesisConnection extends Connection {
         }
         /**
          * Access key ID to access the Amazon Kinesis.
+         * Note: Despite the "Id" suffix, this value is not an OCI OCID.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
@@ -252,6 +253,7 @@ public final class AmazonKinesisConnection extends Connection {
 
         /**
          * Access key ID to access the Amazon Kinesis.
+         * Note: Despite the "Id" suffix, this value is not an OCI OCID.
          *
          * @param accessKeyId the value to set
          * @return this builder
@@ -585,6 +587,7 @@ public final class AmazonKinesisConnection extends Connection {
 
     /**
      * Access key ID to access the Amazon Kinesis.
+     * Note: Despite the "Id" suffix, this value is not an OCI OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
@@ -592,6 +595,7 @@ public final class AmazonKinesisConnection extends Connection {
 
     /**
      * Access key ID to access the Amazon Kinesis.
+     * Note: Despite the "Id" suffix, this value is not an OCI OCID.
      *
      * @return the value
      **/

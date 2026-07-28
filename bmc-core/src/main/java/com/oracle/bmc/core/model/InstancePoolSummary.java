@@ -26,6 +26,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
         "compartmentId",
         "displayName",
         "instanceConfigurationId",
+        "poolType",
         "lifecycleState",
         "availabilityDomains",
         "size",
@@ -39,6 +40,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
             String compartmentId,
             String displayName,
             String instanceConfigurationId,
+            InstancePool.PoolType poolType,
             LifecycleState lifecycleState,
             java.util.List<String> availabilityDomains,
             Integer size,
@@ -51,6 +53,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.instanceConfigurationId = instanceConfigurationId;
+        this.poolType = poolType;
         this.lifecycleState = lifecycleState;
         this.availabilityDomains = availabilityDomains;
         this.size = size;
@@ -128,6 +131,24 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = instanceConfigurationId;
             this.__explicitlySet__.add("instanceConfigurationId");
+            return this;
+        }
+        /**
+         * The type of resources managed by the pool.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("poolType")
+        private InstancePool.PoolType poolType;
+
+        /**
+         * The type of resources managed by the pool.
+         *
+         * @param poolType the value to set
+         * @return this builder
+         **/
+        public Builder poolType(InstancePool.PoolType poolType) {
+            this.poolType = poolType;
+            this.__explicitlySet__.add("poolType");
             return this;
         }
         /**
@@ -274,6 +295,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
                             this.compartmentId,
                             this.displayName,
                             this.instanceConfigurationId,
+                            this.poolType,
                             this.lifecycleState,
                             this.availabilityDomains,
                             this.size,
@@ -300,6 +322,9 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
                 this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("poolType")) {
+                this.poolType(model.getPoolType());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -395,6 +420,22 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
      **/
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
+    }
+
+    /**
+     * The type of resources managed by the pool.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("poolType")
+    private final InstancePool.PoolType poolType;
+
+    /**
+     * The type of resources managed by the pool.
+     *
+     * @return the value
+     **/
+    public InstancePool.PoolType getPoolType() {
+        return poolType;
     }
 
     /**
@@ -588,6 +629,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", poolType=").append(String.valueOf(this.poolType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", availabilityDomains=").append(String.valueOf(this.availabilityDomains));
         sb.append(", size=").append(String.valueOf(this.size));
@@ -614,6 +656,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(this.poolType, other.poolType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.availabilityDomains, other.availabilityDomains)
                 && java.util.Objects.equals(this.size, other.size)
@@ -638,6 +681,7 @@ public final class InstancePoolSummary extends com.oracle.bmc.http.internal.Expl
                         + (this.instanceConfigurationId == null
                                 ? 43
                                 : this.instanceConfigurationId.hashCode());
+        result = (result * PRIME) + (this.poolType == null ? 43 : this.poolType.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

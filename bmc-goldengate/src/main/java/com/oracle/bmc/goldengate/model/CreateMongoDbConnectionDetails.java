@@ -222,7 +222,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         }
         /**
          * The password Oracle GoldenGate uses to connect the associated database.
-         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -230,7 +232,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
         /**
          * The password Oracle GoldenGate uses to connect the associated database.
-         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -323,24 +327,36 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         }
         /**
          * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
-         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
-        private String tlsCertificateKeyFile;
+        private char[] tlsCertificateKeyFile;
 
         /**
          * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
-         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param tlsCertificateKeyFile the value to set
          * @return this builder
          **/
-        public Builder tlsCertificateKeyFile(String tlsCertificateKeyFile) {
+        public Builder tlsCertificateKeyFile(char[] tlsCertificateKeyFile) {
             this.tlsCertificateKeyFile = tlsCertificateKeyFile;
             this.__explicitlySet__.add("tlsCertificateKeyFile");
             return this;
         }
+
+        public Builder tlsCertificateKeyFile(String tlsCertificateKeyFile) {
+            this.tlsCertificateKeyFile =
+                    tlsCertificateKeyFile != null ? tlsCertificateKeyFile.toCharArray() : null;
+            this.__explicitlySet__.add("tlsCertificateKeyFile");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
          * - The content of a .pem file containing the client private key (for 2-way SSL).
@@ -365,7 +381,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         }
         /**
          * Client Certificate key file password.
-         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
@@ -373,7 +391,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
         /**
          * Client Certificate key file password.
-         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param tlsCertificateKeyFilePassword the value to set
          * @return this builder
@@ -606,7 +626,8 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         this.databaseId = databaseId;
         this.securityProtocol = securityProtocol;
         this.tlsCaFile = tlsCaFile;
-        this.tlsCertificateKeyFile = tlsCertificateKeyFile;
+        this.tlsCertificateKeyFile =
+                tlsCertificateKeyFile != null ? tlsCertificateKeyFile.toCharArray() : null;
         this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
         this.tlsCertificateKeyFilePassword =
                 tlsCertificateKeyFilePassword != null
@@ -641,7 +662,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             String databaseId,
             MongoDbConnection.SecurityProtocol securityProtocol,
             String tlsCaFile,
-            String tlsCertificateKeyFile,
+            char[] tlsCertificateKeyFile,
             String tlsCertificateKeyFileSecretId,
             char[] tlsCertificateKeyFilePassword,
             String tlsCertificateKeyFilePasswordSecretId) {
@@ -727,7 +748,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * The password Oracle GoldenGate uses to connect the associated database.
-     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -735,7 +758,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * The password Oracle GoldenGate uses to connect the associated database.
-     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getPassword__AsCharArray() instead.
@@ -748,7 +773,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * The password Oracle GoldenGate uses to connect the associated database.
-     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
@@ -825,19 +852,39 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
-     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
-    private final String tlsCertificateKeyFile;
+    private final char[] tlsCertificateKeyFile;
 
     /**
      * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
-     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;tlsCertificateKeyFileSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * return the value
+     * @Deprecated - Use getTlsCertificateKeyFile__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTlsCertificateKeyFile() {
+        return tlsCertificateKeyFile != null ? new String(tlsCertificateKeyFile) : null;
+    }
+
+    /**
+     * Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFileSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
-    public String getTlsCertificateKeyFile() {
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
+    public char[] getTlsCertificateKeyFile__AsCharArray() {
         return tlsCertificateKeyFile;
     }
 
@@ -863,7 +910,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Client Certificate key file password.
-     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
@@ -871,7 +920,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Client Certificate key file password.
-     * Deprecated: This field is deprecated and replaced by &quot;tlsCertificateKeyFilePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;tlsCertificateKeyFilePasswordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getTlsCertificateKeyFilePassword__AsCharArray() instead.
@@ -886,7 +937,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
 
     /**
      * Client Certificate key file password.
-     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "tlsCertificateKeyFilePasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
@@ -935,7 +988,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", tlsCaFile=").append(String.valueOf(this.tlsCaFile));
-        sb.append(", tlsCertificateKeyFile=").append(String.valueOf(this.tlsCertificateKeyFile));
+        sb.append(", tlsCertificateKeyFile=").append("<redacted>");
         sb.append(", tlsCertificateKeyFileSecretId=")
                 .append(String.valueOf(this.tlsCertificateKeyFileSecretId));
         sb.append(", tlsCertificateKeyFilePassword=").append("<redacted>");

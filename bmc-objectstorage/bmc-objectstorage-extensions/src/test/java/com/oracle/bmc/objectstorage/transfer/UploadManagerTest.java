@@ -96,7 +96,7 @@ import static org.mockito.Mockito.when;
     CommitMultipartUploadConverter.class,
     EndpointBuilder.class
 })
-@PowerMockIgnore({"jdk.internal.reflect.*"})
+@PowerMockIgnore({"jdk.internal.reflect.*", "javax.net.ssl.*"})
 public class UploadManagerTest {
     private static final String CONTENT =
             StringUtils.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB

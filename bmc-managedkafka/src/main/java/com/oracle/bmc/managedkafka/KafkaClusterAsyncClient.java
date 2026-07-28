@@ -983,6 +983,47 @@ public class KafkaClusterAsyncClient implements KafkaClusterAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAddonResponse> getAddon(
+            GetAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse>
+                    handler) {
+        LOG.trace("Called async getAddon");
+        final GetAddonRequest interceptedRequest = GetAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KafkaCluster",
+                        "GetAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterAddon/GetAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAddonResponse> transformer =
+                GetAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetAddonRequest, GetAddonResponse>,
+                        java.util.concurrent.Future<GetAddonResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAddonRequest, GetAddonResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetKafkaClusterResponse> getKafkaCluster(
             GetKafkaClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1159,6 +1200,145 @@ public class KafkaClusterAsyncClient implements KafkaClusterAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallAddonResponse> installAddon(
+            InstallAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<InstallAddonRequest, InstallAddonResponse>
+                    handler) {
+        LOG.trace("Called async installAddon");
+        final InstallAddonRequest interceptedRequest =
+                InstallAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KafkaCluster",
+                        "InstallAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/InstallAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, InstallAddonResponse>
+                transformer =
+                        InstallAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<InstallAddonRequest, InstallAddonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallAddonRequest, InstallAddonResponse>,
+                        java.util.concurrent.Future<InstallAddonResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInstallAddonDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallAddonRequest, InstallAddonResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonOptionsResponse> listAddonOptions(
+            ListAddonOptionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAddonOptionsRequest, ListAddonOptionsResponse>
+                    handler) {
+        LOG.trace("Called async listAddonOptions");
+        final ListAddonOptionsRequest interceptedRequest =
+                ListAddonOptionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddonOptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KafkaCluster",
+                        "ListAddonOptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/AddonOptionCollection/ListAddonOptions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAddonOptionsResponse>
+                transformer =
+                        ListAddonOptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAddonOptionsRequest, ListAddonOptionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddonOptionsRequest, ListAddonOptionsResponse>,
+                        java.util.concurrent.Future<ListAddonOptionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddonOptionsRequest, ListAddonOptionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonsResponse> listAddons(
+            ListAddonsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAddonsRequest, ListAddonsResponse>
+                    handler) {
+        LOG.trace("Called async listAddons");
+        final ListAddonsRequest interceptedRequest = ListAddonsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddonsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KafkaCluster",
+                        "ListAddons",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ListAddons");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAddonsResponse>
+                transformer =
+                        ListAddonsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAddonsRequest, ListAddonsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddonsRequest, ListAddonsResponse>,
+                        java.util.concurrent.Future<ListAddonsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddonsRequest, ListAddonsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1490,6 +1670,100 @@ public class KafkaClusterAsyncClient implements KafkaClusterAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UninstallAddonResponse> uninstallAddon(
+            UninstallAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UninstallAddonRequest, UninstallAddonResponse>
+                    handler) {
+        LOG.trace("Called async uninstallAddon");
+        final UninstallAddonRequest interceptedRequest =
+                UninstallAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UninstallAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KafkaCluster",
+                        "UninstallAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/UninstallAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, UninstallAddonResponse>
+                transformer =
+                        UninstallAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UninstallAddonRequest, UninstallAddonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UninstallAddonRequest, UninstallAddonResponse>,
+                        java.util.concurrent.Future<UninstallAddonResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UninstallAddonRequest, UninstallAddonResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAddonResponse> updateAddon(
+            UpdateAddonRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse>
+                    handler) {
+        LOG.trace("Called async updateAddon");
+        final UpdateAddonRequest interceptedRequest =
+                UpdateAddonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAddonConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KafkaCluster",
+                        "UpdateAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/UpdateAddon");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAddonResponse>
+                transformer =
+                        UpdateAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAddonRequest, UpdateAddonResponse>,
+                        java.util.concurrent.Future<UpdateAddonResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAddonDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAddonRequest, UpdateAddonResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

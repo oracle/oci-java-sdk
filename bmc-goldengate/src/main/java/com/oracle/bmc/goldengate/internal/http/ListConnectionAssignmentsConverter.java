@@ -57,6 +57,24 @@ public class ListConnectionAssignmentsConverter {
                                     request.getConnectionId()));
         }
 
+        if (request.getConnectionType() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "connectionType",
+                            request.getConnectionType(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getConnectionTypeNotEqualTo() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "connectionTypeNotEqualTo",
+                            request.getConnectionTypeNotEqualTo(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getName() != null) {
             target =
                     target.queryParam(

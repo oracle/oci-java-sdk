@@ -50,6 +50,14 @@ public class ListLinksConverter {
                                     request.getChildTenancyId()));
         }
 
+        if (request.getFeature() != null) {
+            target =
+                    target.queryParam(
+                            "feature",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFeature()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

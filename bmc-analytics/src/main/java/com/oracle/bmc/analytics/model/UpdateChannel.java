@@ -5,8 +5,8 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * EARLY - Early update channel recommended for pre-production use.
- * REGULAR - Regular update channel recommended for production use.
+ * EARLY - Early update cycle. Oracle delivers updates as soon as they're available.
+ * REGULAR - Regular update cycle. Oracle delivers updates a few weeks after completing the early update cycle.
  * PHASE_1 - Reserved for future use.
  * PHASE_2 - Reserved for future use.
  *

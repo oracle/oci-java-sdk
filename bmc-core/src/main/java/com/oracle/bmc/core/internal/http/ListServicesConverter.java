@@ -30,8 +30,13 @@ public class ListServicesConverter {
             com.oracle.bmc.core.requests.ListServicesRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("services");
+                newBaseTarget.path("/20160918").path("services");
 
         if (request.getLimit() != null) {
             target =

@@ -62,7 +62,7 @@ public interface Analytics extends AutoCloseable {
 
     /**
      * Change the compartment of an Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -76,8 +76,8 @@ public interface Analytics extends AutoCloseable {
             ChangeAnalyticsInstanceCompartmentRequest request);
 
     /**
-     * Change an Analytics instance network endpoint. The operation is long-running
-     * and creates a new WorkRequest.
+     * Change the network endpoint for an Analytics instance. The operation is long-running
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -91,8 +91,8 @@ public interface Analytics extends AutoCloseable {
             ChangeAnalyticsInstanceNetworkEndpointRequest request);
 
     /**
-     * Create a new AnalyticsInstance in the specified compartment. The operation is long-running
-     * and creates a new WorkRequest.
+     * Create a new Analytics instance in the specified compartment. The operation is long-running
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -105,8 +105,8 @@ public interface Analytics extends AutoCloseable {
     CreateAnalyticsInstanceResponse createAnalyticsInstance(CreateAnalyticsInstanceRequest request);
 
     /**
-     * Create an Private access Channel for the Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * Create an private access channel for the Analytics instance. The operation is long-running
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -120,8 +120,20 @@ public interface Analytics extends AutoCloseable {
             CreatePrivateAccessChannelRequest request);
 
     /**
-     * Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-     * for this host.
+     * Create a new resource group for the instance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/CreateResourceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateResourceGroup API.
+     */
+    CreateResourceGroupResponse createResourceGroup(CreateResourceGroupRequest request);
+
+    /**
+     * Allows you to specify a custom host name to be used to access the Analytics instance.  You must set up a DNS entry and certificate for this host in advance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -134,8 +146,8 @@ public interface Analytics extends AutoCloseable {
     CreateVanityUrlResponse createVanityUrl(CreateVanityUrlRequest request);
 
     /**
-     * Terminates the specified Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * Deletes the specified Analytics instance. The operation is long-running
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -148,7 +160,7 @@ public interface Analytics extends AutoCloseable {
     DeleteAnalyticsInstanceResponse deleteAnalyticsInstance(DeleteAnalyticsInstanceRequest request);
 
     /**
-     * Delete an Analytics instance's Private access channel with the given unique identifier key.
+     * Delete a private access channel with a given unique identifier key, for an Analytics instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -162,7 +174,20 @@ public interface Analytics extends AutoCloseable {
             DeletePrivateAccessChannelRequest request);
 
     /**
-     * Allows deleting a previously created vanity url.
+     * Allows deleting a previously created resource group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeleteResourceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteResourceGroup API.
+     */
+    DeleteResourceGroupResponse deleteResourceGroup(DeleteResourceGroupRequest request);
+
+    /**
+     * Deletes a previously created vanity URL.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -175,7 +200,7 @@ public interface Analytics extends AutoCloseable {
     DeleteVanityUrlResponse deleteVanityUrl(DeleteVanityUrlRequest request);
 
     /**
-     * Cancel a work request that has not started yet.
+     * Cancel a work request that hasn't started yet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -188,7 +213,7 @@ public interface Analytics extends AutoCloseable {
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
 
     /**
-     * Info for a specific Analytics instance.
+     * Information about a specific Analytics instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -201,7 +226,7 @@ public interface Analytics extends AutoCloseable {
     GetAnalyticsInstanceResponse getAnalyticsInstance(GetAnalyticsInstanceRequest request);
 
     /**
-     * Retrieve private access channel in the specified Analytics Instance.
+     * Retrieve private access channel for the specified Analytics Instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -212,6 +237,19 @@ public interface Analytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/GetPrivateAccessChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateAccessChannel API.
      */
     GetPrivateAccessChannelResponse getPrivateAccessChannel(GetPrivateAccessChannelRequest request);
+
+    /**
+     * Get details of a resource group for an instance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/GetResourceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceGroup API.
+     */
+    GetResourceGroupResponse getResourceGroup(GetResourceGroupRequest request);
 
     /**
      * Get the details of a work request.
@@ -238,6 +276,19 @@ public interface Analytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ListAnalyticsInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAnalyticsInstances API.
      */
     ListAnalyticsInstancesResponse listAnalyticsInstances(ListAnalyticsInstancesRequest request);
+
+    /**
+     * List resource groups associated with an instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/ListResourceGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceGroups API.
+     */
+    ListResourceGroupsResponse listResourceGroups(ListResourceGroupsRequest request);
 
     /**
      * Get the errors of a work request.
@@ -280,7 +331,7 @@ public interface Analytics extends AutoCloseable {
 
     /**
      * Scale an Analytics instance up or down. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -306,7 +357,7 @@ public interface Analytics extends AutoCloseable {
     SetFeatureBundleResponse setFeatureBundle(SetFeatureBundleRequest request);
 
     /**
-     * Encrypts the customer data of this Analytics instance using either a customer OCI Vault Key or Oracle managed default key.
+     * Encrypts the customer data of this Analytics instance using either a customer OCI vault key or default Oracle-managed key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -320,7 +371,7 @@ public interface Analytics extends AutoCloseable {
 
     /**
      * Starts the specified Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -334,7 +385,7 @@ public interface Analytics extends AutoCloseable {
 
     /**
      * Stop the specified Analytics instance. The operation is long-running
-     * and creates a new WorkRequest.
+     * and creates a new work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -361,7 +412,7 @@ public interface Analytics extends AutoCloseable {
     UpdateAnalyticsInstanceResponse updateAnalyticsInstance(UpdateAnalyticsInstanceRequest request);
 
     /**
-     * Update the Private Access Channel with the given unique identifier key in the specified Analytics Instance.
+     * Update the private access channel with the given unique identifier key in the specified Analytics instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -375,7 +426,20 @@ public interface Analytics extends AutoCloseable {
             UpdatePrivateAccessChannelRequest request);
 
     /**
-     * Allows uploading a new certificate for a vanity url, which will have to be done when the current certificate is expiring.
+     * Update any fields in a resource group
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/UpdateResourceGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResourceGroup API.
+     */
+    UpdateResourceGroupResponse updateResourceGroup(UpdateResourceGroupRequest request);
+
+    /**
+     * Uploads a new certificate for a vanity URL. Required before the current certificate expires.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -675,6 +675,58 @@ public class AiDataPlatformAsyncClient implements AiDataPlatformAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<EnableAiFeatureResponse> enableAiFeature(
+            EnableAiFeatureRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableAiFeatureRequest, EnableAiFeatureResponse>
+                    handler) {
+        LOG.trace("Called async enableAiFeature");
+        final EnableAiFeatureRequest interceptedRequest =
+                EnableAiFeatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAiFeatureConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AiDataPlatform",
+                        "EnableAiFeature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/EnableAiFeature");
+        final java.util.function.Function<javax.ws.rs.core.Response, EnableAiFeatureResponse>
+                transformer =
+                        EnableAiFeatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<EnableAiFeatureRequest, EnableAiFeatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableAiFeatureRequest, EnableAiFeatureResponse>,
+                        java.util.concurrent.Future<EnableAiFeatureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableAiFeatureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableAiFeatureRequest, EnableAiFeatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAiDataPlatformResponse> getAiDataPlatform(
             GetAiDataPlatformRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

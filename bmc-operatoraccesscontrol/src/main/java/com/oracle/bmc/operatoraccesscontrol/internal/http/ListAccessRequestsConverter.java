@@ -66,6 +66,14 @@ public class ListAccessRequestsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getNumDays() != null) {
+            target =
+                    target.queryParam(
+                            "numDays",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNumDays()));
+        }
+
         if (request.getTimeStart() != null) {
             target =
                     target.queryParam(

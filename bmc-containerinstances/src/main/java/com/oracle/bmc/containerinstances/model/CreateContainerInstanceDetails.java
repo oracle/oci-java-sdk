@@ -37,7 +37,8 @@ public final class CreateContainerInstanceDetails
         "imagePullSecrets",
         "containerRestartPolicy",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "securityContext"
     })
     public CreateContainerInstanceDetails(
             String displayName,
@@ -54,7 +55,8 @@ public final class CreateContainerInstanceDetails
             java.util.List<CreateImagePullSecretDetails> imagePullSecrets,
             ContainerInstance.ContainerRestartPolicy containerRestartPolicy,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            CreateContainerInstanceSecurityContextDetails securityContext) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -71,6 +73,7 @@ public final class CreateContainerInstanceDetails
         this.containerRestartPolicy = containerRestartPolicy;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityContext = securityContext;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -325,6 +328,16 @@ public final class CreateContainerInstanceDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+        private CreateContainerInstanceSecurityContextDetails securityContext;
+
+        public Builder securityContext(
+                CreateContainerInstanceSecurityContextDetails securityContext) {
+            this.securityContext = securityContext;
+            this.__explicitlySet__.add("securityContext");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -345,7 +358,8 @@ public final class CreateContainerInstanceDetails
                             this.imagePullSecrets,
                             this.containerRestartPolicy,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.securityContext);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -398,6 +412,9 @@ public final class CreateContainerInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityContext")) {
+                this.securityContext(model.getSecurityContext());
             }
             return this;
         }
@@ -630,6 +647,13 @@ public final class CreateContainerInstanceDetails
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+    private final CreateContainerInstanceSecurityContextDetails securityContext;
+
+    public CreateContainerInstanceSecurityContextDetails getSecurityContext() {
+        return securityContext;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -660,6 +684,7 @@ public final class CreateContainerInstanceDetails
         sb.append(", containerRestartPolicy=").append(String.valueOf(this.containerRestartPolicy));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityContext=").append(String.valueOf(this.securityContext));
         sb.append(")");
         return sb.toString();
     }
@@ -692,6 +717,7 @@ public final class CreateContainerInstanceDetails
                         this.containerRestartPolicy, other.containerRestartPolicy)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityContext, other.securityContext)
                 && super.equals(other);
     }
 
@@ -730,6 +756,9 @@ public final class CreateContainerInstanceDetails
                                 : this.containerRestartPolicy.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityContext == null ? 43 : this.securityContext.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

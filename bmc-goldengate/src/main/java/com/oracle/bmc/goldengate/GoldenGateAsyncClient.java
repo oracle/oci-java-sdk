@@ -2902,6 +2902,96 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAiModelsResponse> listAiModels(
+            ListAiModelsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAiModelsRequest, ListAiModelsResponse>
+                    handler) {
+        LOG.trace("Called async listAiModels");
+        final ListAiModelsRequest interceptedRequest =
+                ListAiModelsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAiModelsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListAiModels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/AiModelCollection/ListAiModels");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAiModelsResponse>
+                transformer =
+                        ListAiModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAiModelsRequest, ListAiModelsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAiModelsRequest, ListAiModelsResponse>,
+                        java.util.concurrent.Future<ListAiModelsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAiModelsRequest, ListAiModelsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAiProvidersResponse> listAiProviders(
+            ListAiProvidersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAiProvidersRequest, ListAiProvidersResponse>
+                    handler) {
+        LOG.trace("Called async listAiProviders");
+        final ListAiProvidersRequest interceptedRequest =
+                ListAiProvidersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAiProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListAiProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/AiProviderCollection/ListAiProviders");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAiProvidersResponse>
+                transformer =
+                        ListAiProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAiProvidersRequest, ListAiProvidersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAiProvidersRequest, ListAiProvidersResponse>,
+                        java.util.concurrent.Future<ListAiProvidersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAiProvidersRequest, ListAiProvidersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

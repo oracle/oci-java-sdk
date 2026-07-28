@@ -30,8 +30,14 @@ public class GetCpeDeviceConfigContentConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("cpeId", request.getCpeId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("cpes")
                         .path(

@@ -80,14 +80,16 @@ public final class CreateAnalyticsInstanceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+         * The name must start with a letter and can contain only letters, numbers and dash (-).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+         * The name must start with a letter and can contain only letters, numbers and dash (-).
          *
          * @param name the value to set
          * @return this builder
@@ -134,14 +136,14 @@ public final class CreateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * Analytics feature set.
+         * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
         private FeatureSet featureSet;
 
         /**
-         * Analytics feature set.
+         * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
          *
          * @param featureSet the value to set
          * @return this builder
@@ -273,14 +275,14 @@ public final class CreateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
         private UpdateChannel updateChannel;
 
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          *
          * @param updateChannel the value to set
          * @return this builder
@@ -291,14 +293,14 @@ public final class CreateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -309,14 +311,14 @@ public final class CreateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * domain id for which the user is authorized.
+         * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
         /**
-         * domain id for which the user is authorized.
+         * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
          *
          * @param domainId the value to set
          * @return this builder
@@ -327,14 +329,14 @@ public final class CreateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * user name of the authorized user.
+         * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminUser")
         private String adminUser;
 
         /**
-         * user name of the authorized user.
+         * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
          *
          * @param adminUser the value to set
          * @return this builder
@@ -457,14 +459,16 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+     * The name must start with a letter and can contain only letters, numbers and dash (-).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+     * The name must start with a letter and can contain only letters, numbers and dash (-).
      *
      * @return the value
      **/
@@ -505,14 +509,14 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * Analytics feature set.
+     * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
     private final FeatureSet featureSet;
 
     /**
-     * Analytics feature set.
+     * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
      *
      * @return the value
      **/
@@ -627,14 +631,14 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
     private final UpdateChannel updateChannel;
 
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      *
      * @return the value
      **/
@@ -643,14 +647,14 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      *
      * @return the value
      **/
@@ -659,14 +663,14 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      *
      * @return the value
      **/
@@ -675,14 +679,14 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUser")
     private final String adminUser;
 
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
      *
      * @return the value
      **/

@@ -106,6 +106,14 @@ public class ListTargetAlertPolicyAssociationsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getTargetType() != null) {
+            target =
+                    target.queryParam(
+                            "targetType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetType().getValue()));
+        }
+
         if (request.getTimeCreatedGreaterThanOrEqualTo() != null) {
             target =
                     target.queryParam(

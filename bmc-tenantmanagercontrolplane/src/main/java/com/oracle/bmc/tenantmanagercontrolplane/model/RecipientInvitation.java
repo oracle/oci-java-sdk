@@ -33,6 +33,7 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
         "timeCreated",
         "timeUpdated",
         "recipientEmailAddress",
+        "features",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -49,6 +50,7 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String recipientEmailAddress,
+            java.util.List<String> features,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -64,6 +66,7 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.recipientEmailAddress = recipientEmailAddress;
+        this.features = features;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -248,6 +251,22 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
+         * List of features that the invitation is being sent for. Each feature would create one link, of that type.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("features")
+        private java.util.List<String> features;
+
+        /**
+         * List of features that the invitation is being sent for. Each feature would create one link, of that type.
+         * @param features the value to set
+         * @return this builder
+         **/
+        public Builder features(java.util.List<String> features) {
+            this.features = features;
+            this.__explicitlySet__.add("features");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -326,6 +345,7 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
                             this.timeCreated,
                             this.timeUpdated,
                             this.recipientEmailAddress,
+                            this.features,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -369,6 +389,9 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("recipientEmailAddress")) {
                 this.recipientEmailAddress(model.getRecipientEmailAddress());
+            }
+            if (model.wasPropertyExplicitlySet("features")) {
+                this.features(model.getFeatures());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -549,6 +572,20 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
+     * List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("features")
+    private final java.util.List<String> features;
+
+    /**
+     * List of features that the invitation is being sent for. Each feature would create one link, of that type.
+     * @return the value
+     **/
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -627,6 +664,7 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", recipientEmailAddress=").append(String.valueOf(this.recipientEmailAddress));
+        sb.append(", features=").append(String.valueOf(this.features));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -655,6 +693,7 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.recipientEmailAddress, other.recipientEmailAddress)
+                && java.util.Objects.equals(this.features, other.features)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -690,6 +729,7 @@ public final class RecipientInvitation extends com.oracle.bmc.http.internal.Expl
                         + (this.recipientEmailAddress == null
                                 ? 43
                                 : this.recipientEmailAddress.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

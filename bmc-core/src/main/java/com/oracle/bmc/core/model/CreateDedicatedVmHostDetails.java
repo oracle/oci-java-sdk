@@ -33,7 +33,8 @@ public final class CreateDedicatedVmHostDetails
         "freeformTags",
         "placementConstraintDetails",
         "capacityConfig",
-        "isMemoryEncryptionEnabled"
+        "isMemoryEncryptionEnabled",
+        "isBurstable"
     })
     public CreateDedicatedVmHostDetails(
             String availabilityDomain,
@@ -45,7 +46,8 @@ public final class CreateDedicatedVmHostDetails
             java.util.Map<String, String> freeformTags,
             PlacementConstraintDetails placementConstraintDetails,
             String capacityConfig,
-            Boolean isMemoryEncryptionEnabled) {
+            Boolean isMemoryEncryptionEnabled,
+            Boolean isBurstable) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -57,6 +59,7 @@ public final class CreateDedicatedVmHostDetails
         this.placementConstraintDetails = placementConstraintDetails;
         this.capacityConfig = capacityConfig;
         this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+        this.isBurstable = isBurstable;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -270,6 +273,24 @@ public final class CreateDedicatedVmHostDetails
             this.__explicitlySet__.add("isMemoryEncryptionEnabled");
             return this;
         }
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+        private Boolean isBurstable;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+         *
+         * @param isBurstable the value to set
+         * @return this builder
+         **/
+        public Builder isBurstable(Boolean isBurstable) {
+            this.isBurstable = isBurstable;
+            this.__explicitlySet__.add("isBurstable");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -286,7 +307,8 @@ public final class CreateDedicatedVmHostDetails
                             this.freeformTags,
                             this.placementConstraintDetails,
                             this.capacityConfig,
-                            this.isMemoryEncryptionEnabled);
+                            this.isMemoryEncryptionEnabled,
+                            this.isBurstable);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -324,6 +346,9 @@ public final class CreateDedicatedVmHostDetails
             }
             if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
                 this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isBurstable")) {
+                this.isBurstable(model.getIsBurstable());
             }
             return this;
         }
@@ -527,6 +552,22 @@ public final class CreateDedicatedVmHostDetails
         return isMemoryEncryptionEnabled;
     }
 
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+    private final Boolean isBurstable;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+     *
+     * @return the value
+     **/
+    public Boolean getIsBurstable() {
+        return isBurstable;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -553,6 +594,7 @@ public final class CreateDedicatedVmHostDetails
         sb.append(", capacityConfig=").append(String.valueOf(this.capacityConfig));
         sb.append(", isMemoryEncryptionEnabled=")
                 .append(String.valueOf(this.isMemoryEncryptionEnabled));
+        sb.append(", isBurstable=").append(String.valueOf(this.isBurstable));
         sb.append(")");
         return sb.toString();
     }
@@ -579,6 +621,7 @@ public final class CreateDedicatedVmHostDetails
                 && java.util.Objects.equals(this.capacityConfig, other.capacityConfig)
                 && java.util.Objects.equals(
                         this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
+                && java.util.Objects.equals(this.isBurstable, other.isBurstable)
                 && super.equals(other);
     }
 
@@ -616,6 +659,7 @@ public final class CreateDedicatedVmHostDetails
                         + (this.isMemoryEncryptionEnabled == null
                                 ? 43
                                 : this.isMemoryEncryptionEnabled.hashCode());
+        result = (result * PRIME) + (this.isBurstable == null ? 43 : this.isBurstable.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

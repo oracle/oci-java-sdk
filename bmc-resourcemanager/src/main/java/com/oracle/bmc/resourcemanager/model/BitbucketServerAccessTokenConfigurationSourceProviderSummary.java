@@ -94,6 +94,15 @@ public final class BitbucketServerAccessTokenConfigurationSourceProviderSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMigrationRequired")
+        private Boolean isMigrationRequired;
+
+        public Builder isMigrationRequired(Boolean isMigrationRequired) {
+            this.isMigrationRequired = isMigrationRequired;
+            this.__explicitlySet__.add("isMigrationRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -155,6 +164,7 @@ public final class BitbucketServerAccessTokenConfigurationSourceProviderSummary
                             this.timeCreated,
                             this.lifecycleState,
                             this.privateServerConfigDetails,
+                            this.isMigrationRequired,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -187,6 +197,9 @@ public final class BitbucketServerAccessTokenConfigurationSourceProviderSummary
             }
             if (model.wasPropertyExplicitlySet("privateServerConfigDetails")) {
                 this.privateServerConfigDetails(model.getPrivateServerConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isMigrationRequired")) {
+                this.isMigrationRequired(model.getIsMigrationRequired());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -224,6 +237,7 @@ public final class BitbucketServerAccessTokenConfigurationSourceProviderSummary
             java.util.Date timeCreated,
             ConfigurationSourceProvider.LifecycleState lifecycleState,
             PrivateServerConfigDetails privateServerConfigDetails,
+            Boolean isMigrationRequired,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -236,6 +250,7 @@ public final class BitbucketServerAccessTokenConfigurationSourceProviderSummary
                 timeCreated,
                 lifecycleState,
                 privateServerConfigDetails,
+                isMigrationRequired,
                 freeformTags,
                 definedTags,
                 systemTags);

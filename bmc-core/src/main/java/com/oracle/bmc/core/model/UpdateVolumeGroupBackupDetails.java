@@ -22,15 +22,31 @@ package com.oracle.bmc.core.model;
 public final class UpdateVolumeGroupBackupDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"definedTags", "displayName", "freeformTags"})
+    @java.beans.ConstructorProperties({
+        "definedTags",
+        "displayName",
+        "freeformTags",
+        "retentionPeriod",
+        "isPreventDeletionEnabled",
+        "isRetentionLockEnabled",
+        "isIndefiniteRetentionEnabled"
+    })
     public UpdateVolumeGroupBackupDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            RetentionDuration retentionPeriod,
+            Boolean isPreventDeletionEnabled,
+            Boolean isRetentionLockEnabled,
+            Boolean isIndefiniteRetentionEnabled) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.retentionPeriod = retentionPeriod;
+        this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+        this.isRetentionLockEnabled = isRetentionLockEnabled;
+        this.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -105,13 +121,76 @@ public final class UpdateVolumeGroupBackupDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
+        private RetentionDuration retentionPeriod;
+
+        public Builder retentionPeriod(RetentionDuration retentionPeriod) {
+            this.retentionPeriod = retentionPeriod;
+            this.__explicitlySet__.add("retentionPeriod");
+            return this;
+        }
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isPreventDeletionEnabled")
+        private Boolean isPreventDeletionEnabled;
+
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         * @param isPreventDeletionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isPreventDeletionEnabled(Boolean isPreventDeletionEnabled) {
+            this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            this.__explicitlySet__.add("isPreventDeletionEnabled");
+            return this;
+        }
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+        private Boolean isRetentionLockEnabled;
+
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         * @param isRetentionLockEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            this.__explicitlySet__.add("isRetentionLockEnabled");
+            return this;
+        }
+        /**
+         * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isIndefiniteRetentionEnabled")
+        private Boolean isIndefiniteRetentionEnabled;
+
+        /**
+         * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         * @param isIndefiniteRetentionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isIndefiniteRetentionEnabled(Boolean isIndefiniteRetentionEnabled) {
+            this.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            this.__explicitlySet__.add("isIndefiniteRetentionEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateVolumeGroupBackupDetails build() {
             UpdateVolumeGroupBackupDetails model =
                     new UpdateVolumeGroupBackupDetails(
-                            this.definedTags, this.displayName, this.freeformTags);
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.retentionPeriod,
+                            this.isPreventDeletionEnabled,
+                            this.isRetentionLockEnabled,
+                            this.isIndefiniteRetentionEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -128,6 +207,18 @@ public final class UpdateVolumeGroupBackupDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriod")) {
+                this.retentionPeriod(model.getRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("isPreventDeletionEnabled")) {
+                this.isPreventDeletionEnabled(model.getIsPreventDeletionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRetentionLockEnabled")) {
+                this.isRetentionLockEnabled(model.getIsRetentionLockEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isIndefiniteRetentionEnabled")) {
+                this.isIndefiniteRetentionEnabled(model.getIsIndefiniteRetentionEnabled());
             }
             return this;
         }
@@ -206,6 +297,55 @@ public final class UpdateVolumeGroupBackupDetails
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
+    private final RetentionDuration retentionPeriod;
+
+    public RetentionDuration getRetentionPeriod() {
+        return retentionPeriod;
+    }
+
+    /**
+     * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPreventDeletionEnabled")
+    private final Boolean isPreventDeletionEnabled;
+
+    /**
+     * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * @return the value
+     **/
+    public Boolean getIsPreventDeletionEnabled() {
+        return isPreventDeletionEnabled;
+    }
+
+    /**
+     * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+    private final Boolean isRetentionLockEnabled;
+
+    /**
+     * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * @return the value
+     **/
+    public Boolean getIsRetentionLockEnabled() {
+        return isRetentionLockEnabled;
+    }
+
+    /**
+     * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIndefiniteRetentionEnabled")
+    private final Boolean isIndefiniteRetentionEnabled;
+
+    /**
+     * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * @return the value
+     **/
+    public Boolean getIsIndefiniteRetentionEnabled() {
+        return isIndefiniteRetentionEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -223,6 +363,12 @@ public final class UpdateVolumeGroupBackupDetails
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", retentionPeriod=").append(String.valueOf(this.retentionPeriod));
+        sb.append(", isPreventDeletionEnabled=")
+                .append(String.valueOf(this.isPreventDeletionEnabled));
+        sb.append(", isRetentionLockEnabled=").append(String.valueOf(this.isRetentionLockEnabled));
+        sb.append(", isIndefiniteRetentionEnabled=")
+                .append(String.valueOf(this.isIndefiniteRetentionEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -240,6 +386,13 @@ public final class UpdateVolumeGroupBackupDetails
         return java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.retentionPeriod, other.retentionPeriod)
+                && java.util.Objects.equals(
+                        this.isPreventDeletionEnabled, other.isPreventDeletionEnabled)
+                && java.util.Objects.equals(
+                        this.isRetentionLockEnabled, other.isRetentionLockEnabled)
+                && java.util.Objects.equals(
+                        this.isIndefiniteRetentionEnabled, other.isIndefiniteRetentionEnabled)
                 && super.equals(other);
     }
 
@@ -250,6 +403,24 @@ public final class UpdateVolumeGroupBackupDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriod == null ? 43 : this.retentionPeriod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPreventDeletionEnabled == null
+                                ? 43
+                                : this.isPreventDeletionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRetentionLockEnabled == null
+                                ? 43
+                                : this.isRetentionLockEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIndefiniteRetentionEnabled == null
+                                ? 43
+                                : this.isIndefiniteRetentionEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

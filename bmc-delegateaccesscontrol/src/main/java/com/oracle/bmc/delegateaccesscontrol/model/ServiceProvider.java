@@ -87,13 +87,13 @@ public final class ServiceProvider extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of the compartment that contains the Delegation Control.
+         * The OCID of the compartment that contains the Service Provider.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the Delegation Control.
+         * The OCID of the compartment that contains the Service Provider.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -425,13 +425,13 @@ public final class ServiceProvider extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of the compartment that contains the Delegation Control.
+     * The OCID of the compartment that contains the Service Provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the Delegation Control.
+     * The OCID of the compartment that contains the Service Provider.
      * @return the value
      **/
     public String getCompartmentId() {

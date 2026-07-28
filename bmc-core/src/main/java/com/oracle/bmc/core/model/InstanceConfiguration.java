@@ -6,6 +6,8 @@ package com.oracle.bmc.core.model;
 
 /**
  * An instance configuration is a template that defines the settings to use when creating Compute instances.
+ * An instance configuration is a template that defines the settings to use when creating Compute instances
+ * or GPU Memory Clusters.
  * For more information about instance configurations, see
  * [Managing Compute Instances](https://docs.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm).
  *
@@ -32,6 +34,8 @@ public final class InstanceConfiguration
         "freeformTags",
         "id",
         "instanceDetails",
+        "gmcConfigs",
+        "source",
         "deferredFields",
         "timeCreated"
     })
@@ -42,6 +46,8 @@ public final class InstanceConfiguration
             java.util.Map<String, String> freeformTags,
             String id,
             InstanceConfigurationInstanceDetails instanceDetails,
+            java.util.List<InstanceConfigurationGmcConfigDetail> gmcConfigs,
+            Source source,
             java.util.List<String> deferredFields,
             java.util.Date timeCreated) {
         super();
@@ -51,6 +57,8 @@ public final class InstanceConfiguration
         this.freeformTags = freeformTags;
         this.id = id;
         this.instanceDetails = instanceDetails;
+        this.gmcConfigs = gmcConfigs;
+        this.source = source;
         this.deferredFields = deferredFields;
         this.timeCreated = timeCreated;
     }
@@ -172,6 +180,46 @@ public final class InstanceConfiguration
             return this;
         }
         /**
+         * The GPU Memory Cluster configuration entries for.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("gmcConfigs")
+        private java.util.List<InstanceConfigurationGmcConfigDetail> gmcConfigs;
+
+        /**
+         * The GPU Memory Cluster configuration entries for.
+         * @param gmcConfigs the value to set
+         * @return this builder
+         **/
+        public Builder gmcConfigs(java.util.List<InstanceConfigurationGmcConfigDetail> gmcConfigs) {
+            this.gmcConfigs = gmcConfigs;
+            this.__explicitlySet__.add("gmcConfigs");
+            return this;
+        }
+        /**
+         * Differentiator for instance configuration.
+         * Following values are supported:
+         * * INSTANCE : All details related to instance will be passed within instanceDetails.
+         * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("source")
+        private Source source;
+
+        /**
+         * Differentiator for instance configuration.
+         * Following values are supported:
+         * * INSTANCE : All details related to instance will be passed within instanceDetails.
+         * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+         *
+         * @param source the value to set
+         * @return this builder
+         **/
+        public Builder source(Source source) {
+            this.source = source;
+            this.__explicitlySet__.add("source");
+            return this;
+        }
+        /**
          * Parameters that were not specified when the instance configuration was created, but that
          * are required to launch an instance from the instance configuration. See the
          * {@link #launchInstanceConfiguration(LaunchInstanceConfigurationRequest) launchInstanceConfiguration} operation.
@@ -228,6 +276,8 @@ public final class InstanceConfiguration
                             this.freeformTags,
                             this.id,
                             this.instanceDetails,
+                            this.gmcConfigs,
+                            this.source,
                             this.deferredFields,
                             this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -255,6 +305,12 @@ public final class InstanceConfiguration
             }
             if (model.wasPropertyExplicitlySet("instanceDetails")) {
                 this.instanceDetails(model.getInstanceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("gmcConfigs")) {
+                this.gmcConfigs(model.getGmcConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
             }
             if (model.wasPropertyExplicitlySet("deferredFields")) {
                 this.deferredFields(model.getDeferredFields());
@@ -379,6 +435,93 @@ public final class InstanceConfiguration
     }
 
     /**
+     * The GPU Memory Cluster configuration entries for.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("gmcConfigs")
+    private final java.util.List<InstanceConfigurationGmcConfigDetail> gmcConfigs;
+
+    /**
+     * The GPU Memory Cluster configuration entries for.
+     * @return the value
+     **/
+    public java.util.List<InstanceConfigurationGmcConfigDetail> getGmcConfigs() {
+        return gmcConfigs;
+    }
+
+    /**
+     * Differentiator for instance configuration.
+     * Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     *
+     **/
+    public enum Source {
+        Instance("INSTANCE"),
+        Gmc("GMC"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Source.class);
+
+        private final String value;
+        private static java.util.Map<String, Source> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Source v : Source.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Source(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Source create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Source', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Differentiator for instance configuration.
+     * Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("source")
+    private final Source source;
+
+    /**
+     * Differentiator for instance configuration.
+     * Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     *
+     * @return the value
+     **/
+    public Source getSource() {
+        return source;
+    }
+
+    /**
      * Parameters that were not specified when the instance configuration was created, but that
      * are required to launch an instance from the instance configuration. See the
      * {@link #launchInstanceConfiguration(LaunchInstanceConfigurationRequest) launchInstanceConfiguration} operation.
@@ -438,6 +581,8 @@ public final class InstanceConfiguration
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", instanceDetails=").append(String.valueOf(this.instanceDetails));
+        sb.append(", gmcConfigs=").append(String.valueOf(this.gmcConfigs));
+        sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", deferredFields=").append(String.valueOf(this.deferredFields));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
@@ -460,6 +605,8 @@ public final class InstanceConfiguration
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.instanceDetails, other.instanceDetails)
+                && java.util.Objects.equals(this.gmcConfigs, other.gmcConfigs)
+                && java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.deferredFields, other.deferredFields)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
@@ -479,6 +626,8 @@ public final class InstanceConfiguration
         result =
                 (result * PRIME)
                         + (this.instanceDetails == null ? 43 : this.instanceDetails.hashCode());
+        result = (result * PRIME) + (this.gmcConfigs == null ? 43 : this.gmcConfigs.hashCode());
+        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result =
                 (result * PRIME)
                         + (this.deferredFields == null ? 43 : this.deferredFields.hashCode());

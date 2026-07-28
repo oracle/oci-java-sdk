@@ -34,6 +34,17 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return childTenancyId;
     }
     /**
+     * The feature associated with this link.
+     */
+    private String feature;
+
+    /**
+     * The feature associated with this link.
+     */
+    public String getFeature() {
+        return feature;
+    }
+    /**
      * The lifecycle state of the resource.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState;
@@ -123,6 +134,21 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          */
         public Builder childTenancyId(String childTenancyId) {
             this.childTenancyId = childTenancyId;
+            return this;
+        }
+
+        /**
+         * The feature associated with this link.
+         */
+        private String feature = null;
+
+        /**
+         * The feature associated with this link.
+         * @param feature the value to set
+         * @return this builder instance
+         */
+        public Builder feature(String feature) {
+            this.feature = feature;
             return this;
         }
 
@@ -233,6 +259,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         public Builder copy(ListLinksRequest o) {
             parentTenancyId(o.getParentTenancyId());
             childTenancyId(o.getChildTenancyId());
+            feature(o.getFeature());
             lifecycleState(o.getLifecycleState());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
@@ -272,13 +299,14 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             ListLinksRequest request = new ListLinksRequest();
             request.parentTenancyId = parentTenancyId;
             request.childTenancyId = childTenancyId;
+            request.feature = feature;
             request.lifecycleState = lifecycleState;
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
             request.sortOrder = sortOrder;
             return request;
-            // new ListLinksRequest(parentTenancyId, childTenancyId, lifecycleState, opcRequestId, page, limit, sortOrder);
+            // new ListLinksRequest(parentTenancyId, childTenancyId, feature, lifecycleState, opcRequestId, page, limit, sortOrder);
         }
     }
 
@@ -290,6 +318,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return new Builder()
                 .parentTenancyId(parentTenancyId)
                 .childTenancyId(childTenancyId)
+                .feature(feature)
                 .lifecycleState(lifecycleState)
                 .opcRequestId(opcRequestId)
                 .page(page)
@@ -312,6 +341,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append("super=").append(super.toString());
         sb.append(",parentTenancyId=").append(String.valueOf(this.parentTenancyId));
         sb.append(",childTenancyId=").append(String.valueOf(this.childTenancyId));
+        sb.append(",feature=").append(String.valueOf(this.feature));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -334,6 +364,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return super.equals(o)
                 && java.util.Objects.equals(this.parentTenancyId, other.parentTenancyId)
                 && java.util.Objects.equals(this.childTenancyId, other.childTenancyId)
+                && java.util.Objects.equals(this.feature, other.feature)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
@@ -351,6 +382,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         result =
                 (result * PRIME)
                         + (this.childTenancyId == null ? 43 : this.childTenancyId.hashCode());
+        result = (result * PRIME) + (this.feature == null ? 43 : this.feature.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

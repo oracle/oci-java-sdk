@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Various types of Oracle Service categories that can be whitelisted to access an Analytics Instance.
+ * Various types of Oracle Service categories that can be whitelisted to access an Analytics instance.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")

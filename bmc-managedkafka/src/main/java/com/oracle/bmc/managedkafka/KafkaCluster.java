@@ -193,6 +193,18 @@ public interface KafkaCluster extends AutoCloseable {
     EnableSuperuserResponse enableSuperuser(EnableSuperuserRequest request);
 
     /**
+     * Gets information about a KafkaClusterAddon.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/GetAddonExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAddon API.
+     */
+    GetAddonResponse getAddon(GetAddonRequest request);
+
+    /**
      * Gets information about a KafkaCluster.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -240,6 +252,42 @@ public interface KafkaCluster extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Installs a KafkaClusterAddon.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/InstallAddonExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallAddon API.
+     */
+    InstallAddonResponse installAddon(InstallAddonRequest request);
+
+    /**
+     * Gets a list of supported KafkaClusterAddons.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/ListAddonOptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddonOptions API.
+     */
+    ListAddonOptionsResponse listAddonOptions(ListAddonOptionsRequest request);
+
+    /**
+     * Gets a list of KafkaClusterAddons.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/ListAddonsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddons API.
+     */
+    ListAddonsResponse listAddons(ListAddonsRequest request);
 
     /**
      * Gets a list of KafkaClusterConfig Versions.
@@ -331,6 +379,30 @@ public interface KafkaCluster extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Uninstalls a KafkaClusterAddon in a provisioned cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/UninstallAddonExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UninstallAddon API.
+     */
+    UninstallAddonResponse uninstallAddon(UninstallAddonRequest request);
+
+    /**
+     * Installs updates on the existing KafkaClusterAddon.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managedkafka/UpdateAddonExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAddon API.
+     */
+    UpdateAddonResponse updateAddon(UpdateAddonRequest request);
 
     /**
      * Updates a KafkaCluster.

@@ -37,8 +37,14 @@ public class ListFastConnectProviderVirtualCircuitBandwidthShapesConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("providerServiceId", request.getProviderServiceId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("fastConnectProviderServices")
                         .path(

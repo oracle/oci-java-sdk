@@ -46,6 +46,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "dataStorage",
         "hostnameLabel",
         "ipAddress",
+        "isIpv6Enabled",
+        "ipv6AddressIpv6SubnetCidrPairDetails",
         "port",
         "portX",
         "endpoints",
@@ -96,6 +98,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             DataStorage dataStorage,
             String hostnameLabel,
             String ipAddress,
+            Boolean isIpv6Enabled,
+            Ipv6AddressIpv6SubnetCidrPairDetails ipv6AddressIpv6SubnetCidrPairDetails,
             Integer port,
             Integer portX,
             java.util.List<DbSystemEndpoint> endpoints,
@@ -145,6 +149,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
+        this.isIpv6Enabled = isIpv6Enabled;
+        this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
         this.port = port;
         this.portX = portX;
         this.endpoints = endpoints;
@@ -588,6 +594,36 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * Whether an IPv6 address has been allocated for the DB system when attached
+         * to an IPv6 enabled subnet. Default: False.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
+        private Boolean isIpv6Enabled;
+
+        /**
+         * Whether an IPv6 address has been allocated for the DB system when attached
+         * to an IPv6 enabled subnet. Default: False.
+         *
+         * @param isIpv6Enabled the value to set
+         * @return this builder
+         **/
+        public Builder isIpv6Enabled(Boolean isIpv6Enabled) {
+            this.isIpv6Enabled = isIpv6Enabled;
+            this.__explicitlySet__.add("isIpv6Enabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressIpv6SubnetCidrPairDetails")
+        private Ipv6AddressIpv6SubnetCidrPairDetails ipv6AddressIpv6SubnetCidrPairDetails;
+
+        public Builder ipv6AddressIpv6SubnetCidrPairDetails(
+                Ipv6AddressIpv6SubnetCidrPairDetails ipv6AddressIpv6SubnetCidrPairDetails) {
+            this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
+            this.__explicitlySet__.add("ipv6AddressIpv6SubnetCidrPairDetails");
+            return this;
+        }
+        /**
          * The port for primary endpoint of the DB System to listen on.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -991,6 +1027,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
+                            this.isIpv6Enabled,
+                            this.ipv6AddressIpv6SubnetCidrPairDetails,
                             this.port,
                             this.portX,
                             this.endpoints,
@@ -1096,6 +1134,13 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("isIpv6Enabled")) {
+                this.isIpv6Enabled(model.getIsIpv6Enabled());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6AddressIpv6SubnetCidrPairDetails")) {
+                this.ipv6AddressIpv6SubnetCidrPairDetails(
+                        model.getIpv6AddressIpv6SubnetCidrPairDetails());
             }
             if (model.wasPropertyExplicitlySet("port")) {
                 this.port(model.getPort());
@@ -1543,6 +1588,31 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public String getIpAddress() {
         return ipAddress;
+    }
+
+    /**
+     * Whether an IPv6 address has been allocated for the DB system when attached
+     * to an IPv6 enabled subnet. Default: False.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
+    private final Boolean isIpv6Enabled;
+
+    /**
+     * Whether an IPv6 address has been allocated for the DB system when attached
+     * to an IPv6 enabled subnet. Default: False.
+     *
+     * @return the value
+     **/
+    public Boolean getIsIpv6Enabled() {
+        return isIpv6Enabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressIpv6SubnetCidrPairDetails")
+    private final Ipv6AddressIpv6SubnetCidrPairDetails ipv6AddressIpv6SubnetCidrPairDetails;
+
+    public Ipv6AddressIpv6SubnetCidrPairDetails getIpv6AddressIpv6SubnetCidrPairDetails() {
+        return ipv6AddressIpv6SubnetCidrPairDetails;
     }
 
     /**
@@ -2068,6 +2138,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", isIpv6Enabled=").append(String.valueOf(this.isIpv6Enabled));
+        sb.append(", ipv6AddressIpv6SubnetCidrPairDetails=")
+                .append(String.valueOf(this.ipv6AddressIpv6SubnetCidrPairDetails));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
         sb.append(", endpoints=").append(String.valueOf(this.endpoints));
@@ -2132,6 +2205,10 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.isIpv6Enabled, other.isIpv6Enabled)
+                && java.util.Objects.equals(
+                        this.ipv6AddressIpv6SubnetCidrPairDetails,
+                        other.ipv6AddressIpv6SubnetCidrPairDetails)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
                 && java.util.Objects.equals(this.endpoints, other.endpoints)
@@ -2221,6 +2298,14 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIpv6Enabled == null ? 43 : this.isIpv6Enabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6AddressIpv6SubnetCidrPairDetails == null
+                                ? 43
+                                : this.ipv6AddressIpv6SubnetCidrPairDetails.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
         result = (result * PRIME) + (this.endpoints == null ? 43 : this.endpoints.hashCode());

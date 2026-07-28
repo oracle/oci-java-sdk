@@ -984,7 +984,7 @@ public class DnsClient implements Dns {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
@@ -1018,7 +1018,7 @@ public class DnsClient implements Dns {
         try {
             final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                     com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            request.getRetryConfiguration(), retryConfiguration, false);
+                            request.getRetryConfiguration(), retryConfiguration, true);
             if (request.getRetryConfiguration() != null
                     || retryConfiguration != null
                     || shouldRetryBecauseOfWaiterConfiguration(retrier)

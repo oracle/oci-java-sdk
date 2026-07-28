@@ -499,7 +499,10 @@ public class OperatorActionsClient implements OperatorActions {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OperatorActions", "GetOperatorAction", ib.getRequestUri().toString(), "");
+                        "OperatorActions",
+                        "GetOperatorAction",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction");
         java.util.function.Function<javax.ws.rs.core.Response, GetOperatorActionResponse>
                 transformer =
                         GetOperatorActionConverter.fromResponse(
@@ -536,7 +539,7 @@ public class OperatorActionsClient implements OperatorActions {
                         "OperatorActions",
                         "ListOperatorActions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions");
         java.util.function.Function<javax.ws.rs.core.Response, ListOperatorActionsResponse>
                 transformer =
                         ListOperatorActionsConverter.fromResponse(

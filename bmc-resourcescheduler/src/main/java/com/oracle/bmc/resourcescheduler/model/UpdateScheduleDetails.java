@@ -380,6 +380,7 @@ public final class UpdateScheduleDetails
     public enum Action {
         StartResource("START_RESOURCE"),
         StopResource("STOP_RESOURCE"),
+        BackupResource("BACKUP_RESOURCE"),
         ;
 
         private final String value;

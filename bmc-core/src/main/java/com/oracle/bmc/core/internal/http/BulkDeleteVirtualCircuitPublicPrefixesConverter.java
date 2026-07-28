@@ -37,8 +37,14 @@ public class BulkDeleteVirtualCircuitPublicPrefixesConverter {
                 request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
                 "bulkDeleteVirtualCircuitPublicPrefixesDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("virtualCircuitId", request.getVirtualCircuitId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("virtualCircuits")
                         .path(

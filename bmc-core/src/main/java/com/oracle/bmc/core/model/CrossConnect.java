@@ -51,6 +51,9 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         "macsecProperties",
         "ociPhysicalDeviceName",
         "ociLogicalDeviceName",
+        "isInterfaceHoldTimerEnabled",
+        "interfaceDownTimerValueInMilliseconds",
+        "isQosEnabled",
         "interfaceName"
     })
     public CrossConnect(
@@ -69,6 +72,9 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
             MacsecProperties macsecProperties,
             String ociPhysicalDeviceName,
             String ociLogicalDeviceName,
+            Boolean isInterfaceHoldTimerEnabled,
+            Integer interfaceDownTimerValueInMilliseconds,
+            Boolean isQosEnabled,
             String interfaceName) {
         super();
         this.compartmentId = compartmentId;
@@ -86,6 +92,9 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         this.macsecProperties = macsecProperties;
         this.ociPhysicalDeviceName = ociPhysicalDeviceName;
         this.ociLogicalDeviceName = ociLogicalDeviceName;
+        this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+        this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+        this.isQosEnabled = isQosEnabled;
         this.interfaceName = interfaceName;
     }
 
@@ -372,6 +381,55 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * The flag to enable or disable the down timer for the interface.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+        private Boolean isInterfaceHoldTimerEnabled;
+
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         * @param isInterfaceHoldTimerEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            this.__explicitlySet__.add("isInterfaceHoldTimerEnabled");
+            return this;
+        }
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+        private Integer interfaceDownTimerValueInMilliseconds;
+
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         * @param interfaceDownTimerValueInMilliseconds the value to set
+         * @return this builder
+         **/
+        public Builder interfaceDownTimerValueInMilliseconds(
+                Integer interfaceDownTimerValueInMilliseconds) {
+            this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            this.__explicitlySet__.add("interfaceDownTimerValueInMilliseconds");
+            return this;
+        }
+        /**
+         * The flag to enable or disable the Qos for the cross-connect.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isQosEnabled")
+        private Boolean isQosEnabled;
+
+        /**
+         * The flag to enable or disable the Qos for the cross-connect.
+         * @param isQosEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isQosEnabled(Boolean isQosEnabled) {
+            this.isQosEnabled = isQosEnabled;
+            this.__explicitlySet__.add("isQosEnabled");
+            return this;
+        }
+        /**
          * The name of the FastConnect interface where this cross-connect is installed.
          *
          **/
@@ -411,6 +469,9 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.macsecProperties,
                             this.ociPhysicalDeviceName,
                             this.ociLogicalDeviceName,
+                            this.isInterfaceHoldTimerEnabled,
+                            this.interfaceDownTimerValueInMilliseconds,
+                            this.isQosEnabled,
                             this.interfaceName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -464,6 +525,16 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("ociLogicalDeviceName")) {
                 this.ociLogicalDeviceName(model.getOciLogicalDeviceName());
+            }
+            if (model.wasPropertyExplicitlySet("isInterfaceHoldTimerEnabled")) {
+                this.isInterfaceHoldTimerEnabled(model.getIsInterfaceHoldTimerEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("interfaceDownTimerValueInMilliseconds")) {
+                this.interfaceDownTimerValueInMilliseconds(
+                        model.getInterfaceDownTimerValueInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("isQosEnabled")) {
+                this.isQosEnabled(model.getIsQosEnabled());
             }
             if (model.wasPropertyExplicitlySet("interfaceName")) {
                 this.interfaceName(model.getInterfaceName());
@@ -785,6 +856,48 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * The flag to enable or disable the down timer for the interface.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+    private final Boolean isInterfaceHoldTimerEnabled;
+
+    /**
+     * The flag to enable or disable the down timer for the interface.
+     * @return the value
+     **/
+    public Boolean getIsInterfaceHoldTimerEnabled() {
+        return isInterfaceHoldTimerEnabled;
+    }
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+    private final Integer interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * @return the value
+     **/
+    public Integer getInterfaceDownTimerValueInMilliseconds() {
+        return interfaceDownTimerValueInMilliseconds;
+    }
+
+    /**
+     * The flag to enable or disable the Qos for the cross-connect.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isQosEnabled")
+    private final Boolean isQosEnabled;
+
+    /**
+     * The flag to enable or disable the Qos for the cross-connect.
+     * @return the value
+     **/
+    public Boolean getIsQosEnabled() {
+        return isQosEnabled;
+    }
+
+    /**
      * The name of the FastConnect interface where this cross-connect is installed.
      *
      **/
@@ -829,6 +942,11 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
         sb.append(", ociPhysicalDeviceName=").append(String.valueOf(this.ociPhysicalDeviceName));
         sb.append(", ociLogicalDeviceName=").append(String.valueOf(this.ociLogicalDeviceName));
+        sb.append(", isInterfaceHoldTimerEnabled=")
+                .append(String.valueOf(this.isInterfaceHoldTimerEnabled));
+        sb.append(", interfaceDownTimerValueInMilliseconds=")
+                .append(String.valueOf(this.interfaceDownTimerValueInMilliseconds));
+        sb.append(", isQosEnabled=").append(String.valueOf(this.isQosEnabled));
         sb.append(", interfaceName=").append(String.valueOf(this.interfaceName));
         sb.append(")");
         return sb.toString();
@@ -859,6 +977,12 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
                 && java.util.Objects.equals(this.ociPhysicalDeviceName, other.ociPhysicalDeviceName)
                 && java.util.Objects.equals(this.ociLogicalDeviceName, other.ociLogicalDeviceName)
+                && java.util.Objects.equals(
+                        this.isInterfaceHoldTimerEnabled, other.isInterfaceHoldTimerEnabled)
+                && java.util.Objects.equals(
+                        this.interfaceDownTimerValueInMilliseconds,
+                        other.interfaceDownTimerValueInMilliseconds)
+                && java.util.Objects.equals(this.isQosEnabled, other.isQosEnabled)
                 && java.util.Objects.equals(this.interfaceName, other.interfaceName)
                 && super.equals(other);
     }
@@ -908,6 +1032,17 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.ociLogicalDeviceName == null
                                 ? 43
                                 : this.ociLogicalDeviceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInterfaceHoldTimerEnabled == null
+                                ? 43
+                                : this.isInterfaceHoldTimerEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interfaceDownTimerValueInMilliseconds == null
+                                ? 43
+                                : this.interfaceDownTimerValueInMilliseconds.hashCode());
+        result = (result * PRIME) + (this.isQosEnabled == null ? 43 : this.isQosEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.interfaceName == null ? 43 : this.interfaceName.hashCode());

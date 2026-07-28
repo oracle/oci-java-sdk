@@ -32,6 +32,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.oracle.bmc.http.internal.HeaderUtils;
 import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.http.signing.RequestSigner;
@@ -326,7 +327,8 @@ public class RequestSignerImpl implements RequestSigner {
 
     private static String transformHeadersToJsonString(final Map<String, List<String>> headers) {
         try {
-            return com.oracle.bmc.http.Serialization.getObjectMapper().writeValueAsString(headers);
+            return com.oracle.bmc.http.Serialization.getObjectMapper()
+                    .writeValueAsString(HeaderUtils.sanitizeHeaders(headers));
         } catch (JsonProcessingException ex) {
             LOG.debug("Unable to serialize headers to JSON string", ex);
             return "UNABLE TO SERIALIZE";

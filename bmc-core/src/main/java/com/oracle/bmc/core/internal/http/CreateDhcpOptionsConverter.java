@@ -31,8 +31,13 @@ public class CreateDhcpOptionsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateDhcpDetails(), "createDhcpDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("dhcps");
+                newBaseTarget.path("/20160918").path("dhcps");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

@@ -33,6 +33,7 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
         "description",
         "notificationTopicId",
         "approverGroupIdList",
+        "approverGroupLevelList",
         "resourceType",
         "resources",
         "privilegedOperationList",
@@ -55,6 +56,7 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
             String description,
             String notificationTopicId,
             java.util.List<String> approverGroupIdList,
+            java.util.List<ApproverGroupLevel> approverGroupLevelList,
             String resourceType,
             java.util.List<String> resources,
             java.util.List<PrivilegedApiDetails> privilegedOperationList,
@@ -76,6 +78,7 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
         this.description = description;
         this.notificationTopicId = notificationTopicId;
         this.approverGroupIdList = approverGroupIdList;
+        this.approverGroupLevelList = approverGroupLevelList;
         this.resourceType = resourceType;
         this.resources = resources;
         this.privilegedOperationList = privilegedOperationList;
@@ -191,6 +194,23 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * List of Group containing the levels at which the users belonging to the group can authorize.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("approverGroupLevelList")
+        private java.util.List<ApproverGroupLevel> approverGroupLevelList;
+
+        /**
+         * List of Group containing the levels at which the users belonging to the group can authorize.
+         * @param approverGroupLevelList the value to set
+         * @return this builder
+         **/
+        public Builder approverGroupLevelList(
+                java.util.List<ApproverGroupLevel> approverGroupLevelList) {
+            this.approverGroupLevelList = approverGroupLevelList;
+            this.__explicitlySet__.add("approverGroupLevelList");
+            return this;
+        }
+        /**
          * resourceType for which the PrivilegedApiControl is applicable
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
@@ -259,7 +279,6 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          **/
@@ -268,7 +287,6 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
 
         /**
          * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
@@ -479,6 +497,7 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
                             this.description,
                             this.notificationTopicId,
                             this.approverGroupIdList,
+                            this.approverGroupLevelList,
                             this.resourceType,
                             this.resources,
                             this.privilegedOperationList,
@@ -518,6 +537,9 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("approverGroupIdList")) {
                 this.approverGroupIdList(model.getApproverGroupIdList());
+            }
+            if (model.wasPropertyExplicitlySet("approverGroupLevelList")) {
+                this.approverGroupLevelList(model.getApproverGroupLevelList());
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
@@ -661,6 +683,20 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * List of Group containing the levels at which the users belonging to the group can authorize.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approverGroupLevelList")
+    private final java.util.List<ApproverGroupLevel> approverGroupLevelList;
+
+    /**
+     * List of Group containing the levels at which the users belonging to the group can authorize.
+     * @return the value
+     **/
+    public java.util.List<ApproverGroupLevel> getApproverGroupLevelList() {
+        return approverGroupLevelList;
+    }
+
+    /**
      * resourceType for which the PrivilegedApiControl is applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
@@ -720,7 +756,6 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
 
     /**
      * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
@@ -729,7 +764,6 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
 
     /**
      * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
@@ -979,6 +1013,7 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", notificationTopicId=").append(String.valueOf(this.notificationTopicId));
         sb.append(", approverGroupIdList=").append(String.valueOf(this.approverGroupIdList));
+        sb.append(", approverGroupLevelList=").append(String.valueOf(this.approverGroupLevelList));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(", privilegedOperationList=")
@@ -1014,6 +1049,8 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
                 && java.util.Objects.equals(this.approverGroupIdList, other.approverGroupIdList)
+                && java.util.Objects.equals(
+                        this.approverGroupLevelList, other.approverGroupLevelList)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.resources, other.resources)
                 && java.util.Objects.equals(
@@ -1052,6 +1089,11 @@ public final class PrivilegedApiControl extends com.oracle.bmc.http.internal.Exp
                         + (this.approverGroupIdList == null
                                 ? 43
                                 : this.approverGroupIdList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approverGroupLevelList == null
+                                ? 43
+                                : this.approverGroupLevelList.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
         result =

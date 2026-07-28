@@ -39,6 +39,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         "dataStorage",
         "hostnameLabel",
         "ipAddress",
+        "ipv6Address",
         "port",
         "portX",
         "rest",
@@ -76,6 +77,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             DataStorage dataStorage,
             String hostnameLabel,
             String ipAddress,
+            String ipv6Address,
             Integer port,
             Integer portX,
             RestDetails rest,
@@ -112,6 +114,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
+        this.ipv6Address = ipv6Address;
         this.port = port;
         this.portX = portX;
         this.rest = rest;
@@ -451,6 +454,22 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * The IPv6 address the DB System is configured to listen on.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+        private String ipv6Address;
+
+        /**
+         * The IPv6 address the DB System is configured to listen on.
+         * @param ipv6Address the value to set
+         * @return this builder
+         **/
+        public Builder ipv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+            this.__explicitlySet__.add("ipv6Address");
+            return this;
+        }
+        /**
          * The port for primary endpoint of the DB System to listen on.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -717,6 +736,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
                             this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
+                            this.ipv6Address,
                             this.port,
                             this.portX,
                             this.rest,
@@ -795,6 +815,9 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Address")) {
+                this.ipv6Address(model.getIpv6Address());
             }
             if (model.wasPropertyExplicitlySet("port")) {
                 this.port(model.getPort());
@@ -1143,6 +1166,20 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * The IPv6 address the DB System is configured to listen on.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+    private final String ipv6Address;
+
+    /**
+     * The IPv6 address the DB System is configured to listen on.
+     * @return the value
+     **/
+    public String getIpv6Address() {
+        return ipv6Address;
+    }
+
+    /**
      * The port for primary endpoint of the DB System to listen on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -1380,6 +1417,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
         sb.append(", rest=").append(String.valueOf(this.rest));
@@ -1429,6 +1467,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
                 && java.util.Objects.equals(this.rest, other.rest)
@@ -1492,6 +1531,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.ipv6Address == null ? 43 : this.ipv6Address.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
         result = (result * PRIME) + (this.rest == null ? 43 : this.rest.hashCode());

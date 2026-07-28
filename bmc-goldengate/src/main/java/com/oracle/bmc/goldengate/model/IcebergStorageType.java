@@ -13,6 +13,8 @@ public enum IcebergStorageType {
     AmazonS3("AMAZON_S3"),
     GoogleCloudStorage("GOOGLE_CLOUD_STORAGE"),
     AzureDataLakeStorage("AZURE_DATA_LAKE_STORAGE"),
+    None("NONE"),
+    OciObjectStorageS3Api("OCI_OBJECT_STORAGE_S3_API"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

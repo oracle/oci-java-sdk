@@ -25,17 +25,21 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
     @java.beans.ConstructorProperties({
         "isEnabled",
         "readEndpointIpAddress",
+        "readEndpointIpv6AddressIpv6SubnetCidrPairDetails",
         "readEndpointHostnameLabel",
         "excludeIps"
     })
     public ReadEndpointDetails(
             Boolean isEnabled,
             String readEndpointIpAddress,
+            Ipv6AddressIpv6SubnetCidrPairDetails readEndpointIpv6AddressIpv6SubnetCidrPairDetails,
             String readEndpointHostnameLabel,
             java.util.List<String> excludeIps) {
         super();
         this.isEnabled = isEnabled;
         this.readEndpointIpAddress = readEndpointIpAddress;
+        this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails =
+                readEndpointIpv6AddressIpv6SubnetCidrPairDetails;
         this.readEndpointHostnameLabel = readEndpointHostnameLabel;
         this.excludeIps = excludeIps;
     }
@@ -84,6 +88,20 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
         public Builder readEndpointIpAddress(String readEndpointIpAddress) {
             this.readEndpointIpAddress = readEndpointIpAddress;
             this.__explicitlySet__.add("readEndpointIpAddress");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "readEndpointIpv6AddressIpv6SubnetCidrPairDetails")
+        private Ipv6AddressIpv6SubnetCidrPairDetails
+                readEndpointIpv6AddressIpv6SubnetCidrPairDetails;
+
+        public Builder readEndpointIpv6AddressIpv6SubnetCidrPairDetails(
+                Ipv6AddressIpv6SubnetCidrPairDetails
+                        readEndpointIpv6AddressIpv6SubnetCidrPairDetails) {
+            this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails =
+                    readEndpointIpv6AddressIpv6SubnetCidrPairDetails;
+            this.__explicitlySet__.add("readEndpointIpv6AddressIpv6SubnetCidrPairDetails");
             return this;
         }
         /**
@@ -141,6 +159,7 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
                     new ReadEndpointDetails(
                             this.isEnabled,
                             this.readEndpointIpAddress,
+                            this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails,
                             this.readEndpointHostnameLabel,
                             this.excludeIps);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -156,6 +175,11 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("readEndpointIpAddress")) {
                 this.readEndpointIpAddress(model.getReadEndpointIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "readEndpointIpv6AddressIpv6SubnetCidrPairDetails")) {
+                this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails(
+                        model.getReadEndpointIpv6AddressIpv6SubnetCidrPairDetails());
             }
             if (model.wasPropertyExplicitlySet("readEndpointHostnameLabel")) {
                 this.readEndpointHostnameLabel(model.getReadEndpointHostnameLabel());
@@ -218,6 +242,16 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
         return readEndpointIpAddress;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "readEndpointIpv6AddressIpv6SubnetCidrPairDetails")
+    private final Ipv6AddressIpv6SubnetCidrPairDetails
+            readEndpointIpv6AddressIpv6SubnetCidrPairDetails;
+
+    public Ipv6AddressIpv6SubnetCidrPairDetails
+            getReadEndpointIpv6AddressIpv6SubnetCidrPairDetails() {
+        return readEndpointIpv6AddressIpv6SubnetCidrPairDetails;
+    }
+
     /**
      * The hostname for the read endpoint of the DB System. Used for DNS.
      * <p>
@@ -276,6 +310,8 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", readEndpointIpAddress=").append(String.valueOf(this.readEndpointIpAddress));
+        sb.append(", readEndpointIpv6AddressIpv6SubnetCidrPairDetails=")
+                .append(String.valueOf(this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails));
         sb.append(", readEndpointHostnameLabel=")
                 .append(String.valueOf(this.readEndpointHostnameLabel));
         sb.append(", excludeIps=").append(String.valueOf(this.excludeIps));
@@ -296,6 +332,9 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.readEndpointIpAddress, other.readEndpointIpAddress)
                 && java.util.Objects.equals(
+                        this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails,
+                        other.readEndpointIpv6AddressIpv6SubnetCidrPairDetails)
+                && java.util.Objects.equals(
                         this.readEndpointHostnameLabel, other.readEndpointHostnameLabel)
                 && java.util.Objects.equals(this.excludeIps, other.excludeIps)
                 && super.equals(other);
@@ -311,6 +350,11 @@ public final class ReadEndpointDetails extends com.oracle.bmc.http.internal.Expl
                         + (this.readEndpointIpAddress == null
                                 ? 43
                                 : this.readEndpointIpAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails == null
+                                ? 43
+                                : this.readEndpointIpv6AddressIpv6SubnetCidrPairDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.readEndpointHostnameLabel == null

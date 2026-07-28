@@ -28,6 +28,7 @@ public final class DedicatedVmHostInstanceSummary
         "compartmentId",
         "instanceId",
         "isMemoryEncryptionEnabled",
+        "isBurstable",
         "shape",
         "timeCreated"
     })
@@ -36,6 +37,7 @@ public final class DedicatedVmHostInstanceSummary
             String compartmentId,
             String instanceId,
             Boolean isMemoryEncryptionEnabled,
+            Boolean isBurstable,
             String shape,
             java.util.Date timeCreated) {
         super();
@@ -43,6 +45,7 @@ public final class DedicatedVmHostInstanceSummary
         this.compartmentId = compartmentId;
         this.instanceId = instanceId;
         this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+        this.isBurstable = isBurstable;
         this.shape = shape;
         this.timeCreated = timeCreated;
     }
@@ -126,6 +129,24 @@ public final class DedicatedVmHostInstanceSummary
             return this;
         }
         /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+        private Boolean isBurstable;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+         *
+         * @param isBurstable the value to set
+         * @return this builder
+         **/
+        public Builder isBurstable(Boolean isBurstable) {
+            this.isBurstable = isBurstable;
+            this.__explicitlySet__.add("isBurstable");
+            return this;
+        }
+        /**
          * The shape of the VM instance.
          *
          **/
@@ -176,6 +197,7 @@ public final class DedicatedVmHostInstanceSummary
                             this.compartmentId,
                             this.instanceId,
                             this.isMemoryEncryptionEnabled,
+                            this.isBurstable,
                             this.shape,
                             this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -197,6 +219,9 @@ public final class DedicatedVmHostInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
                 this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isBurstable")) {
+                this.isBurstable(model.getIsBurstable());
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
@@ -288,6 +313,22 @@ public final class DedicatedVmHostInstanceSummary
     }
 
     /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+    private final Boolean isBurstable;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+     *
+     * @return the value
+     **/
+    public Boolean getIsBurstable() {
+        return isBurstable;
+    }
+
+    /**
      * The shape of the VM instance.
      *
      **/
@@ -342,6 +383,7 @@ public final class DedicatedVmHostInstanceSummary
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", isMemoryEncryptionEnabled=")
                 .append(String.valueOf(this.isMemoryEncryptionEnabled));
+        sb.append(", isBurstable=").append(String.valueOf(this.isBurstable));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
@@ -363,6 +405,7 @@ public final class DedicatedVmHostInstanceSummary
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(
                         this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
+                && java.util.Objects.equals(this.isBurstable, other.isBurstable)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
@@ -386,6 +429,7 @@ public final class DedicatedVmHostInstanceSummary
                         + (this.isMemoryEncryptionEnabled == null
                                 ? 43
                                 : this.isMemoryEncryptionEnabled.hashCode());
+        result = (result * PRIME) + (this.isBurstable == null ? 43 : this.isBurstable.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();

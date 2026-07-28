@@ -938,6 +938,66 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeHostedApplicationIamCompartmentResponse>
+            changeHostedApplicationIamCompartment(
+                    ChangeHostedApplicationIamCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeHostedApplicationIamCompartmentRequest,
+                                    ChangeHostedApplicationIamCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeHostedApplicationIamCompartment");
+        final ChangeHostedApplicationIamCompartmentRequest interceptedRequest =
+                ChangeHostedApplicationIamCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeHostedApplicationIamCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ChangeHostedApplicationIamCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/ChangeHostedApplicationIamCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeHostedApplicationIamCompartmentResponse>
+                transformer =
+                        ChangeHostedApplicationIamCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeHostedApplicationIamCompartmentRequest,
+                        ChangeHostedApplicationIamCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeHostedApplicationIamCompartmentRequest,
+                                ChangeHostedApplicationIamCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeHostedApplicationIamCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeHostedApplicationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeHostedApplicationIamCompartmentRequest,
+                    ChangeHostedApplicationIamCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeHostedApplicationStorageCompartmentResponse>
             changeHostedApplicationStorageCompartment(
                     ChangeHostedApplicationStorageCompartmentRequest request,
@@ -1480,6 +1540,63 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateHostedApplicationRequest, CreateHostedApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHostedApplicationIamResponse>
+            createHostedApplicationIam(
+                    CreateHostedApplicationIamRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateHostedApplicationIamRequest,
+                                    CreateHostedApplicationIamResponse>
+                            handler) {
+        LOG.trace("Called async createHostedApplicationIam");
+        final CreateHostedApplicationIamRequest interceptedRequest =
+                CreateHostedApplicationIamConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "CreateHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/CreateHostedApplicationIam");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateHostedApplicationIamResponse>
+                transformer =
+                        CreateHostedApplicationIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateHostedApplicationIamRequest, CreateHostedApplicationIamResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateHostedApplicationIamRequest,
+                                CreateHostedApplicationIamResponse>,
+                        java.util.concurrent.Future<CreateHostedApplicationIamResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateHostedApplicationIamDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateHostedApplicationIamRequest, CreateHostedApplicationIamResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2163,6 +2280,57 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteHostedApplicationIamResponse>
+            deleteHostedApplicationIam(
+                    DeleteHostedApplicationIamRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteHostedApplicationIamRequest,
+                                    DeleteHostedApplicationIamResponse>
+                            handler) {
+        LOG.trace("Called async deleteHostedApplicationIam");
+        final DeleteHostedApplicationIamRequest interceptedRequest =
+                DeleteHostedApplicationIamConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "DeleteHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/DeleteHostedApplicationIam");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteHostedApplicationIamResponse>
+                transformer =
+                        DeleteHostedApplicationIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteHostedApplicationIamRequest, DeleteHostedApplicationIamResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteHostedApplicationIamRequest,
+                                DeleteHostedApplicationIamResponse>,
+                        java.util.concurrent.Future<DeleteHostedApplicationIamResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteHostedApplicationIamRequest, DeleteHostedApplicationIamResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteHostedApplicationStorageResponse>
             deleteHostedApplicationStorage(
                     DeleteHostedApplicationStorageRequest request,
@@ -2769,6 +2937,54 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetHostedApplicationRequest, GetHostedApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostedApplicationIamResponse> getHostedApplicationIam(
+            GetHostedApplicationIamRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetHostedApplicationIamRequest, GetHostedApplicationIamResponse>
+                    handler) {
+        LOG.trace("Called async getHostedApplicationIam");
+        final GetHostedApplicationIamRequest interceptedRequest =
+                GetHostedApplicationIamConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "GetHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/GetHostedApplicationIam");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetHostedApplicationIamResponse>
+                transformer =
+                        GetHostedApplicationIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetHostedApplicationIamRequest, GetHostedApplicationIamResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHostedApplicationIamRequest, GetHostedApplicationIamResponse>,
+                        java.util.concurrent.Future<GetHostedApplicationIamResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHostedApplicationIamRequest, GetHostedApplicationIamResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3532,6 +3748,55 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListHostedApplicationsRequest, ListHostedApplicationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedApplicationsIamResponse> listHostedApplicationsIam(
+            ListHostedApplicationsIamRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListHostedApplicationsIamRequest, ListHostedApplicationsIamResponse>
+                    handler) {
+        LOG.trace("Called async listHostedApplicationsIam");
+        final ListHostedApplicationsIamRequest interceptedRequest =
+                ListHostedApplicationsIamConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHostedApplicationsIamConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ListHostedApplicationsIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationCollection/ListHostedApplicationsIam");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListHostedApplicationsIamResponse>
+                transformer =
+                        ListHostedApplicationsIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListHostedApplicationsIamRequest, ListHostedApplicationsIamResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListHostedApplicationsIamRequest,
+                                ListHostedApplicationsIamResponse>,
+                        java.util.concurrent.Future<ListHostedApplicationsIamResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListHostedApplicationsIamRequest, ListHostedApplicationsIamResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4484,6 +4749,62 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateHostedApplicationRequest, UpdateHostedApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostedApplicationIamResponse>
+            updateHostedApplicationIam(
+                    UpdateHostedApplicationIamRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateHostedApplicationIamRequest,
+                                    UpdateHostedApplicationIamResponse>
+                            handler) {
+        LOG.trace("Called async updateHostedApplicationIam");
+        final UpdateHostedApplicationIamRequest interceptedRequest =
+                UpdateHostedApplicationIamConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "UpdateHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/UpdateHostedApplicationIam");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateHostedApplicationIamResponse>
+                transformer =
+                        UpdateHostedApplicationIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateHostedApplicationIamRequest, UpdateHostedApplicationIamResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateHostedApplicationIamRequest,
+                                UpdateHostedApplicationIamResponse>,
+                        java.util.concurrent.Future<UpdateHostedApplicationIamResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHostedApplicationIamDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateHostedApplicationIamRequest, UpdateHostedApplicationIamResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

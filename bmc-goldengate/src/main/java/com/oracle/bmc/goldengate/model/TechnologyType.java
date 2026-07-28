@@ -22,10 +22,13 @@ public enum TechnologyType {
     OciStreamingWithApacheKafka("OCI_STREAMING_WITH_APACHE_KAFKA"),
     OracleDatabase("ORACLE_DATABASE"),
     OracleExadata("ORACLE_EXADATA"),
+    OracleExadataExascale("ORACLE_EXADATA_EXASCALE"),
     OracleExadataDatabaseAtAzure("ORACLE_EXADATA_DATABASE_AT_AZURE"),
+    OracleExadataExascaleAtAzure("ORACLE_EXADATA_EXASCALE_AT_AZURE"),
     OracleAutonomousDatabaseAtAzure("ORACLE_AUTONOMOUS_DATABASE_AT_AZURE"),
     OracleJsonCollection("ORACLE_JSON_COLLECTION"),
     OracleExadataDatabaseAtGoogleCloud("ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"),
+    OracleExadataExascaleAtGoogleCloud("ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD"),
     OracleAutonomousDatabaseAtGoogleCloud("ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"),
     OracleExadataDatabaseAtAws("ORACLE_EXADATA_DATABASE_AT_AWS"),
     OracleAutonomousDatabaseAtAws("ORACLE_AUTONOMOUS_DATABASE_AT_AWS"),
@@ -64,6 +67,7 @@ public enum TechnologyType {
     EdbPostgresAdvancedServer("EDB_POSTGRES_ADVANCED_SERVER"),
     GoogleAlloyDbForPostgresql("GOOGLE_ALLOY_DB_FOR_POSTGRESQL"),
     GoogleBigquery("GOOGLE_BIGQUERY"),
+    GoogleCloudManagedServiceForApacheKafka("GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA"),
     GoogleCloudStorage("GOOGLE_CLOUD_STORAGE"),
     GoogleCloudSqlMysql("GOOGLE_CLOUD_SQL_MYSQL"),
     GoogleCloudSqlPostgresql("GOOGLE_CLOUD_SQL_POSTGRESQL"),
@@ -85,6 +89,7 @@ public enum TechnologyType {
     SinglestoredbCloud("SINGLESTOREDB_CLOUD"),
     Snowflake("SNOWFLAKE"),
     YugabyteDb("YUGABYTE_DB"),
+    AiModel("AI_MODEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

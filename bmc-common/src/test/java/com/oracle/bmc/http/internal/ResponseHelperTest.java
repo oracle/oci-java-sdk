@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
@@ -25,6 +26,7 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -60,6 +62,7 @@ public class ResponseHelperTest {
                     "Unknown",
                     "Unexpected Content-Type: " + HTML_MEDIA_TYPE);
         }
+        verify(htmlResponse, never()).readEntity(String.class);
     }
 
     @Test
@@ -82,6 +85,7 @@ public class ResponseHelperTest {
             validateExceptionFields(
                     exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
         }
+        verify(jsonResponse).close();
     }
 
     @Test
@@ -111,6 +115,7 @@ public class ResponseHelperTest {
             validateExceptionFields(
                     exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
         }
+        verify(jsonResponse).close();
     }
 
     @Test
@@ -143,6 +148,7 @@ public class ResponseHelperTest {
             assertEquals(exception.getOriginalMessageTemplate(), dummyOriginalMessageTemplate);
             assertEquals(exception.getMessageArguments(), dummyMessageArguments);
         }
+        verify(jsonResponse).close();
     }
 
     @Test
@@ -173,6 +179,51 @@ public class ResponseHelperTest {
             assertNull(exception.getOriginalMessageTemplate());
             assertEquals(exception.getMessageArguments(), dummyTemplateArguments);
         }
+        verify(jsonResponse).close();
+    }
+
+    @Test
+    public void test_throwIfNotSuccessful_NullJsonErrorResponseClosesResponse() {
+        final Response jsonResponse =
+                buildMockResponse(OPC_REQUEST_ID, JSON_MEDIA_TYPE, BAD_GATEWAY_STATUS);
+        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class)).thenReturn(null);
+
+        try {
+            ResponseHelper.throwIfNotSuccessful(jsonResponse);
+            fail("Should have thrown");
+        } catch (BmcException exception) {
+            validateExceptionFields(
+                    exception,
+                    OPC_REQUEST_ID,
+                    BAD_GATEWAY_STATUS,
+                    "Unknown",
+                    "Detailed exception information not available");
+        }
+
+        verify(jsonResponse).close();
+    }
+
+    @Test
+    public void test_throwIfNotSuccessful_UnparseableJsonErrorResponseClosesResponse() {
+        final Response jsonResponse =
+                buildMockResponse(OPC_REQUEST_ID, JSON_MEDIA_TYPE, BAD_GATEWAY_STATUS);
+        ProcessingException failure = new ProcessingException("bad json");
+        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class)).thenThrow(failure);
+
+        try {
+            ResponseHelper.throwIfNotSuccessful(jsonResponse);
+            fail("Should have thrown");
+        } catch (BmcException exception) {
+            validateExceptionFields(
+                    exception,
+                    OPC_REQUEST_ID,
+                    BAD_GATEWAY_STATUS,
+                    "Unknown",
+                    "Unable to parse error response.");
+            assertSame(failure, exception.getCause());
+        }
+
+        verify(jsonResponse).close();
     }
 
     @Test
@@ -229,6 +280,35 @@ public class ResponseHelperTest {
         verify(response, never()).bufferEntity();
         verify(response).getStringHeaders();
         verifyNoMoreInteractions(response, statusInfo, mockStream);
+        assertEquals(
+                Collections.unmodifiableList(Arrays.asList(contentType)),
+                headers.get(HttpHeaders.CONTENT_TYPE));
+    }
+
+    @Test
+    public void testReadEntity_streamClosesResponseWhenReadEntityFails() {
+        Response response = mock(Response.class);
+        Response.StatusType statusInfo = mock(Response.StatusType.class);
+        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
+        List<Object> contentType = Collections.unmodifiableList(Arrays.asList("text"));
+        ProcessingException failure = new ProcessingException("interrupted");
+
+        Class<InputStream> entityType = InputStream.class;
+
+        when(response.getStatusInfo()).thenReturn(statusInfo);
+        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
+        when(response.getHeaders()).thenReturn(headers);
+        headers.add(HttpHeaders.CONTENT_TYPE, contentType);
+        when(response.readEntity(entityType)).thenThrow(failure);
+
+        try {
+            ResponseHelper.readEntity(response, entityType);
+            fail("Expected readEntity to fail");
+        } catch (ProcessingException e) {
+            assertSame(failure, e);
+        }
+
+        verify(response).close();
         assertEquals(
                 Collections.unmodifiableList(Arrays.asList(contentType)),
                 headers.get(HttpHeaders.CONTENT_TYPE));

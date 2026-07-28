@@ -32,8 +32,15 @@ public class GetSubnetTopologyConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getSubnetId(), "subnetId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("subnetTopology");
+                newBaseTarget.path("/20160918").path("subnetTopology");
 
         target =
                 target.queryParam(

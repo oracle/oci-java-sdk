@@ -824,6 +824,7 @@ public final class SteeringPolicySummary
     public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
+        Updating("UPDATING"),
         Deleted("DELETED"),
         Deleting("DELETING"),
 

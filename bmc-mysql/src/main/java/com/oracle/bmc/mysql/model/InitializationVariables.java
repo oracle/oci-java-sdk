@@ -33,11 +33,8 @@ public final class InitializationVariables
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         *
          * Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-         * <p>
          * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
-         * <p>
          * Valid values are:
          *   - CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
          *   - CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
@@ -47,11 +44,8 @@ public final class InitializationVariables
         private LowerCaseTableNames lowerCaseTableNames;
 
         /**
-         *
          * Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-         * <p>
          * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
-         * <p>
          * Valid values are:
          *   - CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
          *   - CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
@@ -97,11 +91,8 @@ public final class InitializationVariables
     }
 
     /**
-     *
      * Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-     * <p>
      * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
-     * <p>
      * Valid values are:
      *   - CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
      *   - CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
@@ -153,11 +144,8 @@ public final class InitializationVariables
         }
     };
     /**
-     *
      * Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-     * <p>
      * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
-     * <p>
      * Valid values are:
      *   - CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
      *   - CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
@@ -167,11 +155,8 @@ public final class InitializationVariables
     private final LowerCaseTableNames lowerCaseTableNames;
 
     /**
-     *
      * Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
-     * <p>
      * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
-     * <p>
      * Valid values are:
      *   - CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
      *   - CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)

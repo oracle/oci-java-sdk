@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Input payload to reset the OCI Vault encryption key.
+ * Input payload to reset the OCI vault encryption key.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -29,14 +29,14 @@ public final class SetKmsKeyDetails extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. An empty value indicates Oracle managed default encryption (null is not supported in this API).
+         * OCID of the OCI vault key encrypting the customer data stored in this Analytics instance. An empty value indicates the default Oracle-managed encryption (this API doesn't support null).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. An empty value indicates Oracle managed default encryption (null is not supported in this API).
+         * OCID of the OCI vault key encrypting the customer data stored in this Analytics instance. An empty value indicates the default Oracle-managed encryption (this API doesn't support null).
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -79,14 +79,14 @@ public final class SetKmsKeyDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. An empty value indicates Oracle managed default encryption (null is not supported in this API).
+     * OCID of the OCI vault key encrypting the customer data stored in this Analytics instance. An empty value indicates the default Oracle-managed encryption (this API doesn't support null).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. An empty value indicates Oracle managed default encryption (null is not supported in this API).
+     * OCID of the OCI vault key encrypting the customer data stored in this Analytics instance. An empty value indicates the default Oracle-managed encryption (this API doesn't support null).
      *
      * @return the value
      **/

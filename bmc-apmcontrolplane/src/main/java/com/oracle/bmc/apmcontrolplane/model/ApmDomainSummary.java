@@ -26,6 +26,7 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
         "compartmentId",
         "lifecycleState",
         "isFreeTier",
+        "logGroupId",
         "timeCreated",
         "timeUpdated",
         "freeformTags",
@@ -38,6 +39,7 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
             String compartmentId,
             LifecycleStates lifecycleState,
             Boolean isFreeTier,
+            String logGroupId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
@@ -49,6 +51,7 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
         this.isFreeTier = isFreeTier;
+        this.logGroupId = logGroupId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.freeformTags = freeformTags;
@@ -154,6 +157,22 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
+            return this;
+        }
+        /**
          * The time the APM domain was created, expressed in RFC 3339 timestamp format.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -239,6 +258,7 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
                             this.compartmentId,
                             this.lifecycleState,
                             this.isFreeTier,
+                            this.logGroupId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.freeformTags,
@@ -268,6 +288,9 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("isFreeTier")) {
                 this.isFreeTier(model.getIsFreeTier());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -381,6 +404,20 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * @return the value
+     **/
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    /**
      * The time the APM domain was created, expressed in RFC 3339 timestamp format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -464,6 +501,7 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -488,6 +526,7 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -509,6 +548,7 @@ public final class ApmDomainSummary extends com.oracle.bmc.http.internal.Explici
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

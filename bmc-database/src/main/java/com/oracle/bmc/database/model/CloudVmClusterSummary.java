@@ -35,6 +35,8 @@ public final class CloudVmClusterSummary
         "lastUpdateHistoryEntryId",
         "shape",
         "listenerPort",
+        "liveImageVersionDetails",
+        "oracleLinuxVersion",
         "lifecycleState",
         "nodeCount",
         "storageSizeInGBs",
@@ -100,6 +102,8 @@ public final class CloudVmClusterSummary
             String lastUpdateHistoryEntryId,
             String shape,
             Long listenerPort,
+            ExadataLiveImageVersionDetails liveImageVersionDetails,
+            String oracleLinuxVersion,
             LifecycleState lifecycleState,
             Integer nodeCount,
             Integer storageSizeInGBs,
@@ -164,6 +168,8 @@ public final class CloudVmClusterSummary
         this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
         this.shape = shape;
         this.listenerPort = listenerPort;
+        this.liveImageVersionDetails = liveImageVersionDetails;
+        this.oracleLinuxVersion = oracleLinuxVersion;
         this.lifecycleState = lifecycleState;
         this.nodeCount = nodeCount;
         this.storageSizeInGBs = storageSizeInGBs;
@@ -426,6 +432,32 @@ public final class CloudVmClusterSummary
         public Builder listenerPort(Long listenerPort) {
             this.listenerPort = listenerPort;
             this.__explicitlySet__.add("listenerPort");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("liveImageVersionDetails")
+        private ExadataLiveImageVersionDetails liveImageVersionDetails;
+
+        public Builder liveImageVersionDetails(
+                ExadataLiveImageVersionDetails liveImageVersionDetails) {
+            this.liveImageVersionDetails = liveImageVersionDetails;
+            this.__explicitlySet__.add("liveImageVersionDetails");
+            return this;
+        }
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleLinuxVersion")
+        private String oracleLinuxVersion;
+
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         * @param oracleLinuxVersion the value to set
+         * @return this builder
+         **/
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            this.oracleLinuxVersion = oracleLinuxVersion;
+            this.__explicitlySet__.add("oracleLinuxVersion");
             return this;
         }
         /**
@@ -1359,6 +1391,8 @@ public final class CloudVmClusterSummary
                             this.lastUpdateHistoryEntryId,
                             this.shape,
                             this.listenerPort,
+                            this.liveImageVersionDetails,
+                            this.oracleLinuxVersion,
                             this.lifecycleState,
                             this.nodeCount,
                             this.storageSizeInGBs,
@@ -1451,6 +1485,12 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("listenerPort")) {
                 this.listenerPort(model.getListenerPort());
+            }
+            if (model.wasPropertyExplicitlySet("liveImageVersionDetails")) {
+                this.liveImageVersionDetails(model.getLiveImageVersionDetails());
+            }
+            if (model.wasPropertyExplicitlySet("oracleLinuxVersion")) {
+                this.oracleLinuxVersion(model.getOracleLinuxVersion());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -1808,6 +1848,27 @@ public final class CloudVmClusterSummary
      **/
     public Long getListenerPort() {
         return listenerPort;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("liveImageVersionDetails")
+    private final ExadataLiveImageVersionDetails liveImageVersionDetails;
+
+    public ExadataLiveImageVersionDetails getLiveImageVersionDetails() {
+        return liveImageVersionDetails;
+    }
+
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleLinuxVersion")
+    private final String oracleLinuxVersion;
+
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     * @return the value
+     **/
+    public String getOracleLinuxVersion() {
+        return oracleLinuxVersion;
     }
 
     /**
@@ -3083,6 +3144,9 @@ public final class CloudVmClusterSummary
                 .append(String.valueOf(this.lastUpdateHistoryEntryId));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
+        sb.append(", liveImageVersionDetails=")
+                .append(String.valueOf(this.liveImageVersionDetails));
+        sb.append(", oracleLinuxVersion=").append(String.valueOf(this.oracleLinuxVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", storageSizeInGBs=").append(String.valueOf(this.storageSizeInGBs));
@@ -3169,6 +3233,9 @@ public final class CloudVmClusterSummary
                         this.lastUpdateHistoryEntryId, other.lastUpdateHistoryEntryId)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.listenerPort, other.listenerPort)
+                && java.util.Objects.equals(
+                        this.liveImageVersionDetails, other.liveImageVersionDetails)
+                && java.util.Objects.equals(this.oracleLinuxVersion, other.oracleLinuxVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.storageSizeInGBs, other.storageSizeInGBs)
@@ -3268,6 +3335,16 @@ public final class CloudVmClusterSummary
                                 : this.lastUpdateHistoryEntryId.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.liveImageVersionDetails == null
+                                ? 43
+                                : this.liveImageVersionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleLinuxVersion == null
+                                ? 43
+                                : this.oracleLinuxVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

@@ -31,17 +31,16 @@ public class ListPrivilegedApiControlsConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.apiaccesscontrol.requests.ListPrivilegedApiControlsRequest request) {
         Validate.notNull(request, "request instance is required");
+        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20241130").path("privilegedApiControls");
 
-        if (request.getCompartmentId() != null) {
-            target =
-                    target.queryParam(
-                            "compartmentId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getCompartmentId()));
-        }
+        target =
+                target.queryParam(
+                        "compartmentId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getCompartmentId()));
 
         if (request.getId() != null) {
             target =

@@ -65,13 +65,13 @@ public final class BackupCopyDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * List of region names of the remote region
+         * List of region names of the remote regions
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * List of region names of the remote region
+         * List of region names of the remote regions
          * @param regions the value to set
          * @return this builder
          **/
@@ -148,13 +148,13 @@ public final class BackupCopyDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * List of region names of the remote region
+     * List of region names of the remote regions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * List of region names of the remote region
+     * List of region names of the remote regions
      * @return the value
      **/
     public java.util.List<String> getRegions() {

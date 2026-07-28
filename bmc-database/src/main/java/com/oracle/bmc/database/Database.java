@@ -323,6 +323,20 @@ public interface Database extends AutoCloseable {
             ChangeBackupDestinationCompartmentRequest request);
 
     /**
+     * Moves a BaseDB-C@C VM cluster and its dependent resources to another compartment. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeBaseccVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBaseccVmClusterCompartment API.
+     */
+    ChangeBaseccVmClusterCompartmentResponse changeBaseccVmClusterCompartment(
+            ChangeBaseccVmClusterCompartmentRequest request);
+
+    /**
      * Moves an Autonomous Exadata VM cluster in the Oracle cloud and its dependent resources to another compartment. For Exadata Cloud@Customer systems, see {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest) changeAutonomousVmClusterCompartment}.
      *
      * @param request The request object containing the details to send
@@ -1019,6 +1033,19 @@ public interface Database extends AutoCloseable {
     CreateBackupDestinationResponse createBackupDestination(CreateBackupDestinationRequest request);
 
     /**
+     * Creates a BaseDB-C@C VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateBaseccVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBaseccVmCluster API.
+     */
+    CreateBaseccVmClusterResponse createBaseccVmCluster(CreateBaseccVmClusterRequest request);
+
+    /**
      * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #createAutonomousVmCluster(CreateAutonomousVmClusterRequest) createAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
@@ -1440,6 +1467,8 @@ public interface Database extends AutoCloseable {
      * Performs one of the following power actions on the specified DB node:
      * - start - power on
      * - stop - power off gracefully
+     * - forcestop - power off forcefully
+     * - forcereset - ACPI shutdown and power on forcefully
      * - softreset - ACPI shutdown and power on
      * - reset - power off and power on
      * <p>
@@ -1566,6 +1595,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackupDestination API.
      */
     DeleteBackupDestinationResponse deleteBackupDestination(DeleteBackupDestinationRequest request);
+
+    /**
+     * Deletes the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBaseccVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBaseccVmCluster API.
+     */
+    DeleteBaseccVmClusterResponse deleteBaseccVmCluster(DeleteBaseccVmClusterRequest request);
 
     /**
      * Deletes the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #deleteAutonomousVmCluster(DeleteAutonomousVmClusterRequest) deleteAutonomousVmCluster}.
@@ -2779,6 +2821,47 @@ public interface Database extends AutoCloseable {
     GetBackupDestinationResponse getBackupDestination(GetBackupDestinationRequest request);
 
     /**
+     * Gets information about the BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBaseccVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBaseccVmCluster API.
+     */
+    GetBaseccVmClusterResponse getBaseccVmCluster(GetBaseccVmClusterRequest request);
+
+    /**
+     * Gets information about a specified maintenance update package for a BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBaseccVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBaseccVmClusterUpdate API.
+     */
+    GetBaseccVmClusterUpdateResponse getBaseccVmClusterUpdate(
+            GetBaseccVmClusterUpdateRequest request);
+
+    /**
+     * Gets the maintenance update history details for the specified update history entry. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBaseccVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBaseccVmClusterUpdateHistoryEntry API.
+     */
+    GetBaseccVmClusterUpdateHistoryEntryResponse getBaseccVmClusterUpdateHistoryEntry(
+            GetBaseccVmClusterUpdateHistoryEntryRequest request);
+
+    /**
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see {@link #getAutonomousVmCluster(GetAutonomousVmClusterRequest) getAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
@@ -3964,6 +4047,47 @@ public interface Database extends AutoCloseable {
     ListBackupsResponse listBackups(ListBackupsRequest request);
 
     /**
+     * Gets the history of the maintenance update actions performed on the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBaseccVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBaseccVmClusterUpdateHistoryEntries API.
+     */
+    ListBaseccVmClusterUpdateHistoryEntriesResponse listBaseccVmClusterUpdateHistoryEntries(
+            ListBaseccVmClusterUpdateHistoryEntriesRequest request);
+
+    /**
+     * Lists the maintenance updates that can be applied to the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBaseccVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBaseccVmClusterUpdates API.
+     */
+    ListBaseccVmClusterUpdatesResponse listBaseccVmClusterUpdates(
+            ListBaseccVmClusterUpdatesRequest request);
+
+    /**
+     * Lists the BaseDB-C@C VM clusters in the specified compartment. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBaseccVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBaseccVmClusters API.
+     */
+    ListBaseccVmClustersResponse listBaseccVmClusters(ListBaseccVmClustersRequest request);
+
+    /**
      * Gets the list of resource usage details for all the Cloud Autonomous Container Database
      * in the specified Cloud Autonomous Exadata VM cluster.
      *
@@ -5078,6 +5202,20 @@ public interface Database extends AutoCloseable {
             RegisterCloudVmClusterPkcsRequest request);
 
     /**
+     * Install the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RegisterExadbVmClusterPkcsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RegisterExadbVmClusterPkcs API.
+     */
+    RegisterExadbVmClusterPkcsResponse registerExadbVmClusterPkcs(
+            RegisterExadbVmClusterPkcsRequest request);
+
+    /**
      * Reinstates a disabled standby Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter to an active standby ACD. For more information, see
      * [Reinstate the Disabled Standby in an Autonomous Data Guard Configuration](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-B5C6A90D-72E3-4F32-988D-8AECC0A2D947).
      *
@@ -5222,6 +5360,20 @@ public interface Database extends AutoCloseable {
     ReorderScheduledActionsResponse reorderScheduledActions(ReorderScheduledActionsRequest request);
 
     /**
+     * Reschedule the Managed Database Software Update
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RescheduleManagedDbSoftwareUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RescheduleManagedDbSoftwareUpdate API.
+     */
+    RescheduleManagedDbSoftwareUpdateResponse rescheduleManagedDbSoftwareUpdate(
+            RescheduleManagedDbSoftwareUpdateRequest request);
+
+    /**
      * Adds or removes Db server network nodes to extend or shrink the existing VM cluster network. Applies to Exadata
      * Cloud@Customer instances only.
      *
@@ -5274,6 +5426,34 @@ public interface Database extends AutoCloseable {
      */
     RestartAutonomousDatabaseResponse restartAutonomousDatabase(
             RestartAutonomousDatabaseRequest request);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousVmClusterOrdsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartAutonomousVmClusterOrds API.
+     */
+    RestartAutonomousVmClusterOrdsResponse restartAutonomousVmClusterOrds(
+            RestartAutonomousVmClusterOrdsRequest request);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for a cloud Autonomous Exadata VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartCloudAutonomousVmClusterOrdsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartCloudAutonomousVmClusterOrds API.
+     */
+    RestartCloudAutonomousVmClusterOrdsResponse restartCloudAutonomousVmClusterOrds(
+            RestartCloudAutonomousVmClusterOrdsRequest request);
 
     /**
      * Restores an Autonomous AI Database based on the provided request parameters.
@@ -5752,6 +5932,20 @@ public interface Database extends AutoCloseable {
             UnregisterCloudVmClusterPkcsRequest request);
 
     /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UnregisterExadbVmClusterPkcsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnregisterExadbVmClusterPkcs API.
+     */
+    UnregisterExadbVmClusterPkcsResponse unregisterExadbVmClusterPkcs(
+            UnregisterExadbVmClusterPkcsRequest request);
+
+    /**
      * Updates the advanced cluster file system resource.
      *
      * @param request The request object containing the details to send
@@ -5916,6 +6110,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateBackupDestinationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackupDestination API.
      */
     UpdateBackupDestinationResponse updateBackupDestination(UpdateBackupDestinationRequest request);
+
+    /**
+     * Updates the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateBaseccVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBaseccVmCluster API.
+     */
+    UpdateBaseccVmClusterResponse updateBaseccVmCluster(UpdateBaseccVmClusterRequest request);
 
     /**
      * Updates the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #updateAutonomousVmCluster(UpdateAutonomousVmClusterRequest) updateAutonomousVmCluster}.

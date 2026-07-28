@@ -149,6 +149,26 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
             this.__explicitlySet__.add("anonymousTransactionsHandling");
             return this;
         }
+        /**
+         * Whether the connection of the channel will be requested using the IPv6 address of
+         * the dual stack DB system or not. Default: False.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mustUseIpv6OnDualStack")
+        private Boolean mustUseIpv6OnDualStack;
+
+        /**
+         * Whether the connection of the channel will be requested using the IPv6 address of
+         * the dual stack DB system or not. Default: False.
+         *
+         * @param mustUseIpv6OnDualStack the value to set
+         * @return this builder
+         **/
+        public Builder mustUseIpv6OnDualStack(Boolean mustUseIpv6OnDualStack) {
+            this.mustUseIpv6OnDualStack = mustUseIpv6OnDualStack;
+            this.__explicitlySet__.add("mustUseIpv6OnDualStack");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -162,7 +182,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
                             this.password,
                             this.sslMode,
                             this.sslCaCertificate,
-                            this.anonymousTransactionsHandling);
+                            this.anonymousTransactionsHandling,
+                            this.mustUseIpv6OnDualStack);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -192,6 +213,9 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
             if (model.wasPropertyExplicitlySet("anonymousTransactionsHandling")) {
                 this.anonymousTransactionsHandling(model.getAnonymousTransactionsHandling());
             }
+            if (model.wasPropertyExplicitlySet("mustUseIpv6OnDualStack")) {
+                this.mustUseIpv6OnDualStack(model.getMustUseIpv6OnDualStack());
+            }
             return this;
         }
     }
@@ -215,7 +239,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
             String password,
             ChannelSourceMysql.SslMode sslMode,
             CaCertificate sslCaCertificate,
-            AnonymousTransactionsHandling anonymousTransactionsHandling) {
+            AnonymousTransactionsHandling anonymousTransactionsHandling,
+            Boolean mustUseIpv6OnDualStack) {
         super();
         this.hostname = hostname;
         this.port = port;
@@ -224,6 +249,7 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         this.sslMode = sslMode;
         this.sslCaCertificate = sslCaCertificate;
         this.anonymousTransactionsHandling = anonymousTransactionsHandling;
+        this.mustUseIpv6OnDualStack = mustUseIpv6OnDualStack;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -235,7 +261,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
             char[] password,
             ChannelSourceMysql.SslMode sslMode,
             CaCertificate sslCaCertificate,
-            AnonymousTransactionsHandling anonymousTransactionsHandling) {
+            AnonymousTransactionsHandling anonymousTransactionsHandling,
+            Boolean mustUseIpv6OnDualStack) {
         super();
         this.hostname = hostname;
         this.port = port;
@@ -244,6 +271,7 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         this.sslMode = sslMode;
         this.sslCaCertificate = sslCaCertificate;
         this.anonymousTransactionsHandling = anonymousTransactionsHandling;
+        this.mustUseIpv6OnDualStack = mustUseIpv6OnDualStack;
     }
 
     /**
@@ -360,6 +388,24 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         return anonymousTransactionsHandling;
     }
 
+    /**
+     * Whether the connection of the channel will be requested using the IPv6 address of
+     * the dual stack DB system or not. Default: False.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mustUseIpv6OnDualStack")
+    private final Boolean mustUseIpv6OnDualStack;
+
+    /**
+     * Whether the connection of the channel will be requested using the IPv6 address of
+     * the dual stack DB system or not. Default: False.
+     *
+     * @return the value
+     **/
+    public Boolean getMustUseIpv6OnDualStack() {
+        return mustUseIpv6OnDualStack;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -382,6 +428,7 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
         sb.append(", sslCaCertificate=").append(String.valueOf(this.sslCaCertificate));
         sb.append(", anonymousTransactionsHandling=")
                 .append(String.valueOf(this.anonymousTransactionsHandling));
+        sb.append(", mustUseIpv6OnDualStack=").append(String.valueOf(this.mustUseIpv6OnDualStack));
         sb.append(")");
         return sb.toString();
     }
@@ -404,6 +451,8 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
                 && java.util.Objects.equals(this.sslCaCertificate, other.sslCaCertificate)
                 && java.util.Objects.equals(
                         this.anonymousTransactionsHandling, other.anonymousTransactionsHandling)
+                && java.util.Objects.equals(
+                        this.mustUseIpv6OnDualStack, other.mustUseIpv6OnDualStack)
                 && super.equals(other);
     }
 
@@ -424,6 +473,11 @@ public final class UpdateChannelSourceFromMysqlDetails extends UpdateChannelSour
                         + (this.anonymousTransactionsHandling == null
                                 ? 43
                                 : this.anonymousTransactionsHandling.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mustUseIpv6OnDualStack == null
+                                ? 43
+                                : this.mustUseIpv6OnDualStack.hashCode());
         return result;
     }
 }

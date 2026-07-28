@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Vanity url configuration details.
+ * Vanity URL configuration details.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -38,14 +38,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The vanity url unique identifier key.
+         * The vanity URL unique identifier key.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * The vanity url unique identifier key.
+         * The vanity URL unique identifier key.
          *
          * @param key the value to set
          * @return this builder
@@ -56,14 +56,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Description of the vanity url.
+         * Description of the vanity URL.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the vanity url.
+         * Description of the vanity URL.
          *
          * @param description the value to set
          * @return this builder
@@ -74,14 +74,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * List of urls supported by this vanity URL definition (max of 3).
+         * List of URLs supported by this vanity URL definition (maximum of 3).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("urls")
         private java.util.List<String> urls;
 
         /**
-         * List of urls supported by this vanity URL definition (max of 3).
+         * List of URLs supported by this vanity URL definition (maximum of 3).
          *
          * @param urls the value to set
          * @return this builder
@@ -92,14 +92,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<String> hosts;
 
         /**
-         * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
          *
          * @param hosts the value to set
          * @return this builder
@@ -178,14 +178,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The vanity url unique identifier key.
+     * The vanity URL unique identifier key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * The vanity url unique identifier key.
+     * The vanity URL unique identifier key.
      *
      * @return the value
      **/
@@ -194,14 +194,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Description of the vanity url.
+     * Description of the vanity URL.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the vanity url.
+     * Description of the vanity URL.
      *
      * @return the value
      **/
@@ -210,14 +210,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * List of urls supported by this vanity URL definition (max of 3).
+     * List of URLs supported by this vanity URL definition (maximum of 3).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("urls")
     private final java.util.List<String> urls;
 
     /**
-     * List of urls supported by this vanity URL definition (max of 3).
+     * List of URLs supported by this vanity URL definition (maximum of 3).
      *
      * @return the value
      **/
@@ -226,14 +226,14 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<String> hosts;
 
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      *
      * @return the value
      **/

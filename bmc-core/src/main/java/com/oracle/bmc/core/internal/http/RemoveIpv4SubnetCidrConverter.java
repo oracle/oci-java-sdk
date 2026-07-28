@@ -34,8 +34,14 @@ public class RemoveIpv4SubnetCidrConverter {
                 request.getRemoveIpv4SubnetCidrDetails(),
                 "removeIpv4SubnetCidrDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("subnetId", request.getSubnetId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("subnets")
                         .path(

@@ -58,6 +58,15 @@ public class ListConnectionsConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getConnectionTypeNotEqualTo() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "connectionTypeNotEqualTo",
+                            request.getConnectionTypeNotEqualTo(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getAssignedDeploymentId() != null) {
             target =
                     target.queryParam(

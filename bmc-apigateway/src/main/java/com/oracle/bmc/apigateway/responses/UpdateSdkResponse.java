@@ -9,6 +9,21 @@ import com.oracle.bmc.apigateway.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class UpdateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide the request
      * id.
@@ -27,13 +42,36 @@ public class UpdateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    /**
+     * The returned Sdk instance.
+     */
+    private com.oracle.bmc.apigateway.model.Sdk sdk;
+
+    /**
+     * The returned Sdk instance.
+     * @return the value
+     */
+    public com.oracle.bmc.apigateway.model.Sdk getSdk() {
+        return sdk;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "sdk"
+    })
     private UpdateSdkResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
-            String opcRequestId) {
+            String etag,
+            String opcRequestId,
+            com.oracle.bmc.apigateway.model.Sdk sdk) {
         super(__httpStatusCode__, headers);
+        this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.sdk = sdk;
     }
 
     public static class Builder {
@@ -48,6 +86,23 @@ public class UpdateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
+            return this;
+        }
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
             return this;
         }
 
@@ -73,13 +128,30 @@ public class UpdateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
+         * The returned Sdk instance.
+         */
+        private com.oracle.bmc.apigateway.model.Sdk sdk;
+
+        /**
+         * The returned Sdk instance.
+         * @param sdk the value to set
+         * @return this builder
+         */
+        public Builder sdk(com.oracle.bmc.apigateway.model.Sdk sdk) {
+            this.sdk = sdk;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
         public Builder copy(UpdateSdkResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            sdk(o.getSdk());
 
             return this;
         }
@@ -89,7 +161,7 @@ public class UpdateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateSdkResponse build() {
-            return new UpdateSdkResponse(__httpStatusCode__, headers, opcRequestId);
+            return new UpdateSdkResponse(__httpStatusCode__, headers, etag, opcRequestId, sdk);
         }
     }
 
@@ -106,7 +178,9 @@ public class UpdateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",sdk=").append(String.valueOf(sdk));
         sb.append(")");
         return sb.toString();
     }
@@ -121,14 +195,19 @@ public class UpdateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         UpdateSdkResponse other = (UpdateSdkResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sdk, other.sdk);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sdk == null ? 43 : this.sdk.hashCode());
         return result;
     }
 }

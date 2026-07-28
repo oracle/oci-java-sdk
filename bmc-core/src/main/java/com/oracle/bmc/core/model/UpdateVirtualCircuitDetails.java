@@ -34,6 +34,7 @@ public final class UpdateVirtualCircuitDetails
         "definedTags",
         "displayName",
         "freeformTags",
+        "trafficMode",
         "gatewayId",
         "providerState",
         "providerServiceKeyName",
@@ -52,6 +53,7 @@ public final class UpdateVirtualCircuitDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            TrafficMode trafficMode,
             String gatewayId,
             ProviderState providerState,
             String providerServiceKeyName,
@@ -69,6 +71,7 @@ public final class UpdateVirtualCircuitDetails
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.trafficMode = trafficMode;
         this.gatewayId = gatewayId;
         this.providerState = providerState;
         this.providerServiceKeyName = providerServiceKeyName;
@@ -339,6 +342,26 @@ public final class UpdateVirtualCircuitDetails
             return this;
         }
         /**
+         * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+         * for the associated Virtual Circuit or not.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
+        private TrafficMode trafficMode;
+
+        /**
+         * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+         * for the associated Virtual Circuit or not.
+         *
+         * @param trafficMode the value to set
+         * @return this builder
+         **/
+        public Builder trafficMode(TrafficMode trafficMode) {
+            this.trafficMode = trafficMode;
+            this.__explicitlySet__.add("trafficMode");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
          * that this private virtual circuit uses.
          * <p>
@@ -468,6 +491,7 @@ public final class UpdateVirtualCircuitDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.trafficMode,
                             this.gatewayId,
                             this.providerState,
                             this.providerServiceKeyName,
@@ -513,6 +537,9 @@ public final class UpdateVirtualCircuitDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("trafficMode")) {
+                this.trafficMode(model.getTrafficMode());
             }
             if (model.wasPropertyExplicitlySet("gatewayId")) {
                 this.gatewayId(model.getGatewayId());
@@ -853,6 +880,61 @@ public final class UpdateVirtualCircuitDetails
     }
 
     /**
+     * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+     * for the associated Virtual Circuit or not.
+     *
+     **/
+    public enum TrafficMode {
+        Normal("NORMAL"),
+        Drain("DRAIN"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, TrafficMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TrafficMode v : TrafficMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        TrafficMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TrafficMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid TrafficMode: " + key);
+        }
+    };
+    /**
+     * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+     * for the associated Virtual Circuit or not.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trafficMode")
+    private final TrafficMode trafficMode;
+
+    /**
+     * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+     * for the associated Virtual Circuit or not.
+     *
+     * @return the value
+     **/
+    public TrafficMode getTrafficMode() {
+        return trafficMode;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
      * that this private virtual circuit uses.
      * <p>
@@ -1021,6 +1103,7 @@ public final class UpdateVirtualCircuitDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", trafficMode=").append(String.valueOf(this.trafficMode));
         sb.append(", gatewayId=").append(String.valueOf(this.gatewayId));
         sb.append(", providerState=").append(String.valueOf(this.providerState));
         sb.append(", providerServiceKeyName=").append(String.valueOf(this.providerServiceKeyName));
@@ -1051,6 +1134,7 @@ public final class UpdateVirtualCircuitDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.trafficMode, other.trafficMode)
                 && java.util.Objects.equals(this.gatewayId, other.gatewayId)
                 && java.util.Objects.equals(this.providerState, other.providerState)
                 && java.util.Objects.equals(
@@ -1091,6 +1175,7 @@ public final class UpdateVirtualCircuitDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.trafficMode == null ? 43 : this.trafficMode.hashCode());
         result = (result * PRIME) + (this.gatewayId == null ? 43 : this.gatewayId.hashCode());
         result =
                 (result * PRIME)

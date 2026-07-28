@@ -75,7 +75,7 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
-        private String properties;
+        private char[] properties;
 
         /**
          * The base64 encoded content of the configuration file containing additional properties for the REST catalog.
@@ -83,8 +83,14 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
          * @param properties the value to set
          * @return this builder
          **/
-        public Builder properties(String properties) {
+        public Builder properties(char[] properties) {
             this.properties = properties;
+            this.__explicitlySet__.add("properties");
+            return this;
+        }
+
+        public Builder properties(String properties) {
+            this.properties = properties != null ? properties.toCharArray() : null;
             this.__explicitlySet__.add("properties");
             return this;
         }
@@ -134,6 +140,16 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
         super();
         this.uri = uri;
         this.propertiesSecretId = propertiesSecretId;
+        this.properties = properties != null ? properties.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public UpdateRestIcebergCatalogDetails(
+            String uri, String propertiesSecretId, char[] properties) {
+        super();
+        this.uri = uri;
+        this.propertiesSecretId = propertiesSecretId;
         this.properties = properties;
     }
 
@@ -180,14 +196,27 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
-    private final String properties;
+    private final char[] properties;
+
+    /**
+     * The base64 encoded content of the configuration file containing additional properties for the REST catalog.
+     *
+     * return the value
+     * @Deprecated - Use getProperties__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getProperties() {
+        return properties != null ? new String(properties) : null;
+    }
 
     /**
      * The base64 encoded content of the configuration file containing additional properties for the REST catalog.
      *
      * @return the value
      **/
-    public String getProperties() {
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    public char[] getProperties__AsCharArray() {
         return properties;
     }
 
@@ -207,7 +236,7 @@ public final class UpdateRestIcebergCatalogDetails extends UpdateIcebergCatalogD
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", propertiesSecretId=").append(String.valueOf(this.propertiesSecretId));
-        sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", properties=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

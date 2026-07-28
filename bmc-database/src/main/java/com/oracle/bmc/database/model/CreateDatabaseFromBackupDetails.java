@@ -32,6 +32,8 @@ public final class CreateDatabaseFromBackupDetails
         "sidPrefix",
         "pluggableDatabases",
         "storageSizeDetails",
+        "managedSoftwareUpdateDetails",
+        "vmClusterId",
         "freeformTags",
         "definedTags"
     })
@@ -45,6 +47,8 @@ public final class CreateDatabaseFromBackupDetails
             String sidPrefix,
             java.util.List<String> pluggableDatabases,
             DatabaseStorageSizeDetails storageSizeDetails,
+            ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
+            String vmClusterId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -57,6 +61,8 @@ public final class CreateDatabaseFromBackupDetails
         this.sidPrefix = sidPrefix;
         this.pluggableDatabases = pluggableDatabases;
         this.storageSizeDetails = storageSizeDetails;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+        this.vmClusterId = vmClusterId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -196,6 +202,32 @@ public final class CreateDatabaseFromBackupDetails
             this.__explicitlySet__.add("storageSizeDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+        private ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+        public Builder managedSoftwareUpdateDetails(
+                ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails) {
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            this.__explicitlySet__.add("managedSoftwareUpdateDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+        private String vmClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * @param vmClusterId the value to set
+         * @return this builder
+         **/
+        public Builder vmClusterId(String vmClusterId) {
+            this.vmClusterId = vmClusterId;
+            this.__explicitlySet__.add("vmClusterId");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -257,6 +289,8 @@ public final class CreateDatabaseFromBackupDetails
                             this.sidPrefix,
                             this.pluggableDatabases,
                             this.storageSizeDetails,
+                            this.managedSoftwareUpdateDetails,
+                            this.vmClusterId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -294,6 +328,12 @@ public final class CreateDatabaseFromBackupDetails
             }
             if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
                 this.storageSizeDetails(model.getStorageSizeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("managedSoftwareUpdateDetails")) {
+                this.managedSoftwareUpdateDetails(model.getManagedSoftwareUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterId")) {
+                this.vmClusterId(model.getVmClusterId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -430,6 +470,27 @@ public final class CreateDatabaseFromBackupDetails
         return storageSizeDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+    private final ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+    public ManagedSoftwareUpdateInputDetails getManagedSoftwareUpdateDetails() {
+        return managedSoftwareUpdateDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+    private final String vmClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * @return the value
+     **/
+    public String getVmClusterId() {
+        return vmClusterId;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -494,6 +555,9 @@ public final class CreateDatabaseFromBackupDetails
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
         sb.append(", pluggableDatabases=").append(String.valueOf(this.pluggableDatabases));
         sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
+        sb.append(", managedSoftwareUpdateDetails=")
+                .append(String.valueOf(this.managedSoftwareUpdateDetails));
+        sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -521,6 +585,9 @@ public final class CreateDatabaseFromBackupDetails
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
                 && java.util.Objects.equals(this.pluggableDatabases, other.pluggableDatabases)
                 && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
+                && java.util.Objects.equals(
+                        this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
+                && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -555,6 +622,12 @@ public final class CreateDatabaseFromBackupDetails
                         + (this.storageSizeDetails == null
                                 ? 43
                                 : this.storageSizeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedSoftwareUpdateDetails == null
+                                ? 43
+                                : this.managedSoftwareUpdateDetails.hashCode());
+        result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -5,8 +5,16 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to update a compute cluster. A [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
- * is a remote direct memory access (RDMA) network group.
+ * The data to update a [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+ * <p>
+ * Use {@code COMPUTE_CLUSTER} type when using placementConstraintDetails.
+ * <p>
+ * {@code placementConstraintDetails.hpcIslandId} is create-only and cannot be part of this update request.
+ * <p>
+ * All other fields in {@code placementConstraintDetails} are optional, and only the fields provided will be updated.
+ * <p>
+ * If {@code placementConstraintDetails.targetNetworkBlockIds} or {@code placementConstraintDetails.targetMemoryFabricIds} is
+ * provided, then the target compute cluster must already have {@code hpcIslandId} persisted.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -24,15 +32,22 @@ package com.oracle.bmc.core.model;
 public final class UpdateComputeClusterDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "definedTags", "freeformTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "definedTags",
+        "freeformTags",
+        "placementConstraintDetails"
+    })
     public UpdateComputeClusterDetails(
             String displayName,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            PlacementConstraintDetails placementConstraintDetails) {
         super();
         this.displayName = displayName;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.placementConstraintDetails = placementConstraintDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,13 +122,26 @@ public final class UpdateComputeClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateComputeClusterDetails build() {
             UpdateComputeClusterDetails model =
                     new UpdateComputeClusterDetails(
-                            this.displayName, this.definedTags, this.freeformTags);
+                            this.displayName,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.placementConstraintDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -130,6 +158,9 @@ public final class UpdateComputeClusterDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
             }
             return this;
         }
@@ -208,6 +239,13 @@ public final class UpdateComputeClusterDetails
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -225,6 +263,8 @@ public final class UpdateComputeClusterDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -242,6 +282,8 @@ public final class UpdateComputeClusterDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
                 && super.equals(other);
     }
 
@@ -252,6 +294,11 @@ public final class UpdateComputeClusterDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

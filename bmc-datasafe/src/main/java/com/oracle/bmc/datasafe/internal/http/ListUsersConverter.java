@@ -208,6 +208,14 @@ public class ListUsersConverter {
                                     request.getPage()));
         }
 
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
         if (request.getSortOrder() != null) {
             target =
                     target.queryParam(
