@@ -35,7 +35,10 @@ public final class VolumeBackupSchedule
         "dayOfMonth",
         "month",
         "retentionSeconds",
-        "timeZone"
+        "timeZone",
+        "retentionPeriod",
+        "isPreventDeletionEnabled",
+        "isRetentionLockEnabled"
     })
     public VolumeBackupSchedule(
             BackupType backupType,
@@ -47,7 +50,10 @@ public final class VolumeBackupSchedule
             Integer dayOfMonth,
             Month month,
             Integer retentionSeconds,
-            TimeZone timeZone) {
+            TimeZone timeZone,
+            RetentionDuration retentionPeriod,
+            Boolean isPreventDeletionEnabled,
+            Boolean isRetentionLockEnabled) {
         super();
         this.backupType = backupType;
         this.offsetSeconds = offsetSeconds;
@@ -59,6 +65,9 @@ public final class VolumeBackupSchedule
         this.month = month;
         this.retentionSeconds = retentionSeconds;
         this.timeZone = timeZone;
+        this.retentionPeriod = retentionPeriod;
+        this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+        this.isRetentionLockEnabled = isRetentionLockEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -264,6 +273,59 @@ public final class VolumeBackupSchedule
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
+        private RetentionDuration retentionPeriod;
+
+        public Builder retentionPeriod(RetentionDuration retentionPeriod) {
+            this.retentionPeriod = retentionPeriod;
+            this.__explicitlySet__.add("retentionPeriod");
+            return this;
+        }
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an
+         * optional field. If it is not specified, it is set to null, prevent deletion will not be
+         * applied to the backups.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPreventDeletionEnabled")
+        private Boolean isPreventDeletionEnabled;
+
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an
+         * optional field. If it is not specified, it is set to null, prevent deletion will not be
+         * applied to the backups.
+         *
+         * @param isPreventDeletionEnabled the value to set
+         * @return this builder
+         */
+        public Builder isPreventDeletionEnabled(Boolean isPreventDeletionEnabled) {
+            this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            this.__explicitlySet__.add("isPreventDeletionEnabled");
+            return this;
+        }
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to
+         * ensure data protection and regulatory compliance. This is an optional field. If it is not
+         * specified, it is set to null, no retention lock will be applied to the backups. This
+         * feature should be used in conjunction with the retention-period field.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+        private Boolean isRetentionLockEnabled;
+
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to
+         * ensure data protection and regulatory compliance. This is an optional field. If it is not
+         * specified, it is set to null, no retention lock will be applied to the backups. This
+         * feature should be used in conjunction with the retention-period field.
+         *
+         * @param isRetentionLockEnabled the value to set
+         * @return this builder
+         */
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            this.__explicitlySet__.add("isRetentionLockEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -279,7 +341,10 @@ public final class VolumeBackupSchedule
                             this.dayOfMonth,
                             this.month,
                             this.retentionSeconds,
-                            this.timeZone);
+                            this.timeZone,
+                            this.retentionPeriod,
+                            this.isPreventDeletionEnabled,
+                            this.isRetentionLockEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -317,6 +382,15 @@ public final class VolumeBackupSchedule
             }
             if (model.wasPropertyExplicitlySet("timeZone")) {
                 this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriod")) {
+                this.retentionPeriod(model.getRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("isPreventDeletionEnabled")) {
+                this.isPreventDeletionEnabled(model.getIsPreventDeletionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRetentionLockEnabled")) {
+                this.isRetentionLockEnabled(model.getIsRetentionLockEnabled());
             }
             return this;
         }
@@ -826,6 +900,53 @@ public final class VolumeBackupSchedule
         return timeZone;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
+    private final RetentionDuration retentionPeriod;
+
+    public RetentionDuration getRetentionPeriod() {
+        return retentionPeriod;
+    }
+
+    /**
+     * Prevent backups from being deleted during the configured retention period. This is an
+     * optional field. If it is not specified, it is set to null, prevent deletion will not be
+     * applied to the backups.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPreventDeletionEnabled")
+    private final Boolean isPreventDeletionEnabled;
+
+    /**
+     * Prevent backups from being deleted during the configured retention period. This is an
+     * optional field. If it is not specified, it is set to null, prevent deletion will not be
+     * applied to the backups.
+     *
+     * @return the value
+     */
+    public Boolean getIsPreventDeletionEnabled() {
+        return isPreventDeletionEnabled;
+    }
+
+    /**
+     * feature that prevents deletion or alteration of backup data for a specified period to ensure
+     * data protection and regulatory compliance. This is an optional field. If it is not specified,
+     * it is set to null, no retention lock will be applied to the backups. This feature should be
+     * used in conjunction with the retention-period field.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+    private final Boolean isRetentionLockEnabled;
+
+    /**
+     * feature that prevents deletion or alteration of backup data for a specified period to ensure
+     * data protection and regulatory compliance. This is an optional field. If it is not specified,
+     * it is set to null, no retention lock will be applied to the backups. This feature should be
+     * used in conjunction with the retention-period field.
+     *
+     * @return the value
+     */
+    public Boolean getIsRetentionLockEnabled() {
+        return isRetentionLockEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -851,6 +972,10 @@ public final class VolumeBackupSchedule
         sb.append(", month=").append(String.valueOf(this.month));
         sb.append(", retentionSeconds=").append(String.valueOf(this.retentionSeconds));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
+        sb.append(", retentionPeriod=").append(String.valueOf(this.retentionPeriod));
+        sb.append(", isPreventDeletionEnabled=")
+                .append(String.valueOf(this.isPreventDeletionEnabled));
+        sb.append(", isRetentionLockEnabled=").append(String.valueOf(this.isRetentionLockEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -875,6 +1000,11 @@ public final class VolumeBackupSchedule
                 && java.util.Objects.equals(this.month, other.month)
                 && java.util.Objects.equals(this.retentionSeconds, other.retentionSeconds)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
+                && java.util.Objects.equals(this.retentionPeriod, other.retentionPeriod)
+                && java.util.Objects.equals(
+                        this.isPreventDeletionEnabled, other.isPreventDeletionEnabled)
+                && java.util.Objects.equals(
+                        this.isRetentionLockEnabled, other.isRetentionLockEnabled)
                 && super.equals(other);
     }
 
@@ -896,6 +1026,19 @@ public final class VolumeBackupSchedule
                 (result * PRIME)
                         + (this.retentionSeconds == null ? 43 : this.retentionSeconds.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriod == null ? 43 : this.retentionPeriod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPreventDeletionEnabled == null
+                                ? 43
+                                : this.isPreventDeletionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRetentionLockEnabled == null
+                                ? 43
+                                : this.isRetentionLockEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

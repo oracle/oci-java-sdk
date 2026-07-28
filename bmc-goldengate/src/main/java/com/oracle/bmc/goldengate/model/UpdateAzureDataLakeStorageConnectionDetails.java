@@ -162,8 +162,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * Azure storage account key. This property is required when 'authenticationType' is set to
          * 'SHARED_KEY'. e.g.:
          * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
-         * will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change
+         * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
         private char[] accountKey;
@@ -172,8 +173,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * Azure storage account key. This property is required when 'authenticationType' is set to
          * 'SHARED_KEY'. e.g.:
          * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
-         * will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change
+         * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param accountKey the value to set
          * @return this builder
@@ -215,8 +217,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.:
          * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will
-         * be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This change
+         * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
         private char[] sasToken;
@@ -226,8 +229,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.:
          * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will
-         * be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This change
+         * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param sasToken the value to set
          * @return this builder
@@ -306,7 +310,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * Azure client secret (aka application password) for authentication. This property is
          * required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
          * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and
-         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+         * replaced by "clientSecretSecretId". This change follows the GoldenGate "Plain Text Fields
+         * in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
         private char[] clientSecret;
@@ -315,7 +321,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * Azure client secret (aka application password) for authentication. This property is
          * required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
          * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and
-         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
+         * replaced by "clientSecretSecretId". This change follows the GoldenGate "Plain Text Fields
+         * in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param clientSecret the value to set
          * @return this builder
@@ -653,8 +661,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * Azure storage account key. This property is required when 'authenticationType' is set to
      * 'SHARED_KEY'. e.g.:
      * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
-     * removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
     private final char[] accountKey;
@@ -664,7 +673,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * to &#39;SHARED_KEY&#39;. e.g.:
      * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ&#x3D;&#x3D;
      * Deprecated: This field is deprecated and replaced by &quot;accountKeySecretId&quot;. This
-     * field will be removed after February 15 2026.
+     * change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getAccountKey__AsCharArray() instead.
@@ -679,8 +689,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * Azure storage account key. This property is required when 'authenticationType' is set to
      * 'SHARED_KEY'. e.g.:
      * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
-     * removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -713,8 +724,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.:
      * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be
-     * removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This change follows
+     * the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
     private final char[] sasToken;
@@ -724,8 +736,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * This property is required when &#39;authenticationType&#39; is set to
      * &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.:
      * ?sv&#x3D;2020-06-08&amp;ss&#x3D;bfqt&amp;srt&#x3D;sco&amp;sp&#x3D;rwdlacupyx&amp;se&#x3D;2020-09-10T20:27:28Z&amp;st&#x3D;2022-08-05T12:27:28Z&amp;spr&#x3D;https&amp;sig&#x3D;C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-     * Deprecated: This field is deprecated and replaced by &quot;sasTokenSecretId&quot;. This field
-     * will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;sasTokenSecretId&quot;. This
+     * change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getSasToken__AsCharArray() instead.
@@ -741,8 +754,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.:
      * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be
-     * removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This change follows
+     * the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -808,7 +822,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * Azure client secret (aka application password) for authentication. This property is required
      * when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
      * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by
-     * "clientSecretSecretId". This field will be removed after February 15 2026.
+     * "clientSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+     * deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
     private final char[] clientSecret;
@@ -817,7 +833,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * Azure client secret (aka application password) for authentication. This property is required
      * when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.:
      * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by
-     * &quot;clientSecretSecretId&quot;. This field will be removed after February 15 2026.
+     * &quot;clientSecretSecretId&quot;. This change follows the GoldenGate &quot;Plain Text Fields
+     * in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getClientSecret__AsCharArray() instead.
@@ -832,7 +850,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * Azure client secret (aka application password) for authentication. This property is required
      * when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
      * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by
-     * "clientSecretSecretId". This field will be removed after February 15 2026.
+     * "clientSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+     * deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */

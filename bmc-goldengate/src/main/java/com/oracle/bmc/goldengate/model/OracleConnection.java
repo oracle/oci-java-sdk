@@ -306,7 +306,7 @@ public final class OracleConnection extends Connection {
          * <p>The default is DIRECT, except when databaseId is provided and the discovered database
          * relies on the SCAN listener. In this case, the default is REDIRECT.
          *
-         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1,
+         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21,
          * 2027.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
@@ -323,7 +323,7 @@ public final class OracleConnection extends Connection {
          * <p>The default is DIRECT, except when databaseId is provided and the discovered database
          * relies on the SCAN listener. In this case, the default is REDIRECT.
          *
-         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1,
+         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21,
          * 2027.
          *
          * @param sessionMode the value to set
@@ -651,9 +651,12 @@ public final class OracleConnection extends Connection {
         OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),
         OracleDatabase("ORACLE_DATABASE"),
         OracleExadata("ORACLE_EXADATA"),
+        OracleExadataExascale("ORACLE_EXADATA_EXASCALE"),
         OracleExadataDatabaseAtAzure("ORACLE_EXADATA_DATABASE_AT_AZURE"),
+        OracleExadataExascaleAtAzure("ORACLE_EXADATA_EXASCALE_AT_AZURE"),
         OracleAutonomousDatabaseAtAzure("ORACLE_AUTONOMOUS_DATABASE_AT_AZURE"),
         OracleExadataDatabaseAtGoogleCloud("ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"),
+        OracleExadataExascaleAtGoogleCloud("ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD"),
         OracleAutonomousDatabaseAtGoogleCloud("ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"),
         OracleExadataDatabaseAtAws("ORACLE_EXADATA_DATABASE_AT_AWS"),
         OracleAutonomousDatabaseAtAws("ORACLE_AUTONOMOUS_DATABASE_AT_AWS"),
@@ -820,7 +823,7 @@ public final class OracleConnection extends Connection {
      * <p>The default is DIRECT, except when databaseId is provided and the discovered database
      * relies on the SCAN listener. In this case, the default is REDIRECT.
      *
-     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      */
     public enum SessionMode implements com.oracle.bmc.http.internal.BmcEnum {
         Direct("DIRECT"),
@@ -877,7 +880,7 @@ public final class OracleConnection extends Connection {
      * <p>The default is DIRECT, except when databaseId is provided and the discovered database
      * relies on the SCAN listener. In this case, the default is REDIRECT.
      *
-     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
@@ -892,7 +895,7 @@ public final class OracleConnection extends Connection {
      * <p>The default is DIRECT, except when databaseId is provided and the discovered database
      * relies on the SCAN listener. In this case, the default is REDIRECT.
      *
-     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      *
      * @return the value
      */

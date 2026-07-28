@@ -193,16 +193,18 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         }
         /**
          * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated:
-         * This field is deprecated and replaced by "passwordSecretId". This field will be removed
-         * after February 15 2026.
+         * This field is deprecated and replaced by "passwordSecretId". This change follows the
+         * GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated:
-         * This field is deprecated and replaced by "passwordSecretId". This field will be removed
-         * after February 15 2026.
+         * This field is deprecated and replaced by "passwordSecretId". This change follows the
+         * GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -279,10 +281,11 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
          * mode is not available.
          *
          * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId".
-         * This field will be removed after February 15 2026.
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
-        private String sslClientKeystoredb;
+        private char[] sslClientKeystoredb;
 
         /**
          * The base64 encoded keystore file created at the client containing the server certificate
@@ -290,13 +293,21 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
          * mode is not available.
          *
          * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId".
-         * This field will be removed after February 15 2026.
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param sslClientKeystoredb the value to set
          * @return this builder
          */
-        public Builder sslClientKeystoredb(String sslClientKeystoredb) {
+        public Builder sslClientKeystoredb(char[] sslClientKeystoredb) {
             this.sslClientKeystoredb = sslClientKeystoredb;
+            this.__explicitlySet__.add("sslClientKeystoredb");
+            return this;
+        }
+
+        public Builder sslClientKeystoredb(String sslClientKeystoredb) {
+            this.sslClientKeystoredb =
+                    sslClientKeystoredb != null ? sslClientKeystoredb.toCharArray() : null;
             this.__explicitlySet__.add("sslClientKeystoredb");
             return this;
         }
@@ -333,10 +344,11 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
          * not available.
          *
          * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
-         * field will be removed after February 15 2026.
+         * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
-        private String sslClientKeystash;
+        private char[] sslClientKeystash;
 
         /**
          * The base64 encoded keystash file which contains the encrypted password to the key
@@ -344,13 +356,21 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
          * not available.
          *
          * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
-         * field will be removed after February 15 2026.
+         * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param sslClientKeystash the value to set
          * @return this builder
          */
-        public Builder sslClientKeystash(String sslClientKeystash) {
+        public Builder sslClientKeystash(char[] sslClientKeystash) {
             this.sslClientKeystash = sslClientKeystash;
+            this.__explicitlySet__.add("sslClientKeystash");
+            return this;
+        }
+
+        public Builder sslClientKeystash(String sslClientKeystash) {
+            this.sslClientKeystash =
+                    sslClientKeystash != null ? sslClientKeystash.toCharArray() : null;
             this.__explicitlySet__.add("sslClientKeystash");
             return this;
         }
@@ -572,9 +592,10 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         this.passwordSecretId = passwordSecretId;
         this.additionalAttributes = additionalAttributes;
         this.securityProtocol = securityProtocol;
-        this.sslClientKeystoredb = sslClientKeystoredb;
+        this.sslClientKeystoredb =
+                sslClientKeystoredb != null ? sslClientKeystoredb.toCharArray() : null;
         this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
-        this.sslClientKeystash = sslClientKeystash;
+        this.sslClientKeystash = sslClientKeystash != null ? sslClientKeystash.toCharArray() : null;
         this.sslClientKeystashSecretId = sslClientKeystashSecretId;
         this.sslServerCertificate = sslServerCertificate;
     }
@@ -610,11 +631,11 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
             @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
                     Db2Connection.SecurityProtocol securityProtocol,
             @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
-                    String sslClientKeystoredb,
+                    char[] sslClientKeystoredb,
             @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredbSecretId")
                     String sslClientKeystoredbSecretId,
             @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
-                    String sslClientKeystash,
+                    char[] sslClientKeystash,
             @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystashSecretId")
                     String sslClientKeystashSecretId,
             @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
@@ -704,16 +725,18 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated: This
-     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-     * February 15 2026.
+     * field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate
+     * "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final char[] password;
 
     /**
      * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated: This
-     * field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed
-     * after February 15 2026.
+     * field is deprecated and replaced by &quot;passwordSecretId&quot;. This change follows the
+     * GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getPassword__AsCharArray() instead.
@@ -726,8 +749,9 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated: This
-     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-     * February 15 2026.
+     * field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate
+     * "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -791,10 +815,28 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
      * available.
      *
      * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This
-     * field will be removed after February 15 2026.
+     * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
-    private final String sslClientKeystoredb;
+    private final char[] sslClientKeystoredb;
+
+    /**
+     * The base64 encoded keystore file created at the client containing the server certificate / CA
+     * root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not
+     * available. &lt;p&gt; Deprecated: This field is deprecated and replaced by
+     * &quot;sslClientKeystoredbSecretId&quot;. This change follows the GoldenGate &quot;Plain Text
+     * Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getSslClientKeystoredb__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSslClientKeystoredb() {
+        return sslClientKeystoredb != null ? new String(sslClientKeystoredb) : null;
+    }
 
     /**
      * The base64 encoded keystore file created at the client containing the server certificate / CA
@@ -802,11 +844,13 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
      * available.
      *
      * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This
-     * field will be removed after February 15 2026.
+     * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
-    public String getSslClientKeystoredb() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
+    public char[] getSslClientKeystoredb__AsCharArray() {
         return sslClientKeystoredb;
     }
 
@@ -840,21 +884,41 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
      * file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      *
      * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
-     * field will be removed after February 15 2026.
+     * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
-    private final String sslClientKeystash;
+    private final char[] sslClientKeystash;
+
+    /**
+     * The base64 encoded keystash file which contains the encrypted password to the key database
+     * file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * &lt;p&gt; Deprecated: This field is deprecated and replaced by
+     * &quot;sslClientKeystashSecretId&quot;. This change follows the GoldenGate &quot;Plain Text
+     * Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getSslClientKeystash__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSslClientKeystash() {
+        return sslClientKeystash != null ? new String(sslClientKeystash) : null;
+    }
 
     /**
      * The base64 encoded keystash file which contains the encrypted password to the key database
      * file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      *
      * <p>Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
-     * field will be removed after February 15 2026.
+     * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
-    public String getSslClientKeystash() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
+    public char[] getSslClientKeystash__AsCharArray() {
         return sslClientKeystash;
     }
 
@@ -925,10 +989,10 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
-        sb.append(", sslClientKeystoredb=").append(String.valueOf(this.sslClientKeystoredb));
+        sb.append(", sslClientKeystoredb=").append("<redacted>");
         sb.append(", sslClientKeystoredbSecretId=")
                 .append(String.valueOf(this.sslClientKeystoredbSecretId));
-        sb.append(", sslClientKeystash=").append(String.valueOf(this.sslClientKeystash));
+        sb.append(", sslClientKeystash=").append("<redacted>");
         sb.append(", sslClientKeystashSecretId=")
                 .append(String.valueOf(this.sslClientKeystashSecretId));
         sb.append(", sslServerCertificate=").append(String.valueOf(this.sslServerCertificate));

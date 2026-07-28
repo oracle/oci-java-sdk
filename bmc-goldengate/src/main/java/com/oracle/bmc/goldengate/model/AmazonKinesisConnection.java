@@ -241,12 +241,16 @@ public final class AmazonKinesisConnection extends Connection {
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** Access key ID to access the Amazon Kinesis. */
+        /**
+         * Access key ID to access the Amazon Kinesis. Note: Despite the "Id" suffix, this value is
+         * not an OCI OCID.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
 
         /**
-         * Access key ID to access the Amazon Kinesis.
+         * Access key ID to access the Amazon Kinesis. Note: Despite the "Id" suffix, this value is
+         * not an OCI OCID.
          *
          * @param accessKeyId the value to set
          * @return this builder
@@ -570,12 +574,16 @@ public final class AmazonKinesisConnection extends Connection {
         return technologyType;
     }
 
-    /** Access key ID to access the Amazon Kinesis. */
+    /**
+     * Access key ID to access the Amazon Kinesis. Note: Despite the "Id" suffix, this value is not
+     * an OCI OCID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
     private final String accessKeyId;
 
     /**
-     * Access key ID to access the Amazon Kinesis.
+     * Access key ID to access the Amazon Kinesis. Note: Despite the "Id" suffix, this value is not
+     * an OCI OCID.
      *
      * @return the value
      */

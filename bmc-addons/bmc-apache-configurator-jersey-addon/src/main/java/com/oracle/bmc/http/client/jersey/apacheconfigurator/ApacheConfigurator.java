@@ -262,6 +262,18 @@ public class ApacheConfigurator implements ClientConfigurator {
         }
     }
 
+    /**
+     * Creates the connection socket factory registry.
+     *
+     * <p>SSL initialization failures are intentionally propagated. This configurator must not
+     * register a plaintext socket factory for the {@code https} scheme. Applications that require
+     * plaintext transport must explicitly provide a connection manager through {@link
+     * ApacheConnectorProperties}.
+     *
+     * @return the connection socket factory registry
+     * @throws org.apache.http.ssl.SSLInitializationException if the default SSL socket factory
+     *     cannot be initialized
+     */
     private Registry<ConnectionSocketFactory> getRegistry() {
         final RegistryBuilder<ConnectionSocketFactory> registryBuilder =
                 RegistryBuilder.<ConnectionSocketFactory>create()
@@ -284,10 +296,11 @@ public class ApacheConfigurator implements ClientConfigurator {
                                 .build();
             }
         } catch (SSLInitializationException e) {
-            registry =
-                    registryBuilder
-                            .register("https", PlainConnectionSocketFactory.getSocketFactory())
-                            .build();
+            // Fail closed: never fall back to a plaintext socket factory for the "https" scheme.
+            LOG.info(
+                    "Failed to initialize SSL context for the 'https' scheme; refusing to fall"
+                            + " back to plain text");
+            throw e;
         }
         return registry;
     }

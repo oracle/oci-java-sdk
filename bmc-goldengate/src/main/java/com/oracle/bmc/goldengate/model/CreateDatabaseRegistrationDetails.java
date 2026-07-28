@@ -56,7 +56,7 @@ public final class CreateDatabaseRegistrationDetails
         this.password = password != null ? password.toCharArray() : null;
         this.connectionString = connectionString;
         this.sessionMode = sessionMode;
-        this.wallet = wallet;
+        this.wallet = wallet != null ? wallet.toCharArray() : null;
         this.aliasName = aliasName;
         this.vaultId = vaultId;
         this.keyId = keyId;
@@ -99,7 +99,7 @@ public final class CreateDatabaseRegistrationDetails
             char[] password,
             String connectionString,
             SessionMode sessionMode,
-            String wallet,
+            char[] wallet,
             String aliasName,
             String vaultId,
             String keyId,
@@ -318,7 +318,9 @@ public final class CreateDatabaseRegistrationDetails
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private char[] password;
@@ -327,7 +329,9 @@ public final class CreateDatabaseRegistrationDetails
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -384,21 +388,31 @@ public final class CreateDatabaseRegistrationDetails
         /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
          * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
-         * replaced by "walletSecretId". This field will be removed after February 15 2026.
+         * replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
-        private String wallet;
+        private char[] wallet;
 
         /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
          * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
-         * replaced by "walletSecretId". This field will be removed after February 15 2026.
+         * replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param wallet the value to set
          * @return this builder
          */
-        public Builder wallet(String wallet) {
+        public Builder wallet(char[] wallet) {
             this.wallet = wallet;
+            this.__explicitlySet__.add("wallet");
+            return this;
+        }
+
+        public Builder wallet(String wallet) {
+            this.wallet = wallet != null ? wallet.toCharArray() : null;
             this.__explicitlySet__.add("wallet");
             return this;
         }
@@ -747,8 +761,9 @@ public final class CreateDatabaseRegistrationDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final char[] password;
@@ -757,7 +772,8 @@ public final class CreateDatabaseRegistrationDetails
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
      * so on. Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
-     * This field will be removed after February 15 2026.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getPassword__AsCharArray() instead.
@@ -771,8 +787,9 @@ public final class CreateDatabaseRegistrationDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -856,19 +873,40 @@ public final class CreateDatabaseRegistrationDetails
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
      * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
-     * "walletSecretId". This field will be removed after February 15 2026.
+     * "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+     * deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
-    private final String wallet;
+    private final char[] wallet;
 
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
      * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
-     * "walletSecretId". This field will be removed after February 15 2026.
+     * &quot;walletSecretId&quot;. This change follows the GoldenGate &quot;Plain Text Fields in
+     * Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getWallet__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getWallet() {
+        return wallet != null ? new String(wallet) : null;
+    }
+
+    /**
+     * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
+     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
+     * "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+     * deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
-    public String getWallet() {
+    @com.fasterxml.jackson.annotation.JsonProperty("wallet")
+    public char[] getWallet__AsCharArray() {
         return wallet;
     }
 
@@ -968,7 +1006,7 @@ public final class CreateDatabaseRegistrationDetails
         sb.append(", password=").append("<redacted>");
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
-        sb.append(", wallet=").append(String.valueOf(this.wallet));
+        sb.append(", wallet=").append("<redacted>");
         sb.append(", aliasName=").append(String.valueOf(this.aliasName));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));

@@ -30,6 +30,7 @@ public final class UpdatePrivilegedApiControlDetails
         "resources",
         "notificationTopicId",
         "approverGroupIdList",
+        "approverGroupLevelList",
         "privilegedOperationList",
         "numberOfApprovers",
         "freeformTags",
@@ -42,6 +43,7 @@ public final class UpdatePrivilegedApiControlDetails
             java.util.List<String> resources,
             String notificationTopicId,
             java.util.List<String> approverGroupIdList,
+            java.util.List<ApproverGroupLevel> approverGroupLevelList,
             java.util.List<PrivilegedApiDetails> privilegedOperationList,
             Integer numberOfApprovers,
             java.util.Map<String, String> freeformTags,
@@ -53,6 +55,7 @@ public final class UpdatePrivilegedApiControlDetails
         this.resources = resources;
         this.notificationTopicId = notificationTopicId;
         this.approverGroupIdList = approverGroupIdList;
+        this.approverGroupLevelList = approverGroupLevelList;
         this.privilegedOperationList = privilegedOperationList;
         this.numberOfApprovers = numberOfApprovers;
         this.freeformTags = freeformTags;
@@ -122,14 +125,14 @@ public final class UpdatePrivilegedApiControlDetails
             return this;
         }
         /**
-         * The OCID of the OCI Notification topic to publish messages related to this Delegation
+         * The OCID of the OCI Notification topic to publish messages related to this Privileged Api
          * Control.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
         /**
-         * The OCID of the OCI Notification topic to publish messages related to this Delegation
+         * The OCID of the OCI Notification topic to publish messages related to this Privileged Api
          * Control.
          *
          * @param notificationTopicId the value to set
@@ -157,6 +160,26 @@ public final class UpdatePrivilegedApiControlDetails
         public Builder approverGroupIdList(java.util.List<String> approverGroupIdList) {
             this.approverGroupIdList = approverGroupIdList;
             this.__explicitlySet__.add("approverGroupIdList");
+            return this;
+        }
+        /**
+         * List of Group containing the levels at which the users belonging to the group can
+         * authorize.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("approverGroupLevelList")
+        private java.util.List<ApproverGroupLevel> approverGroupLevelList;
+
+        /**
+         * List of Group containing the levels at which the users belonging to the group can
+         * authorize.
+         *
+         * @param approverGroupLevelList the value to set
+         * @return this builder
+         */
+        public Builder approverGroupLevelList(
+                java.util.List<ApproverGroupLevel> approverGroupLevelList) {
+            this.approverGroupLevelList = approverGroupLevelList;
+            this.__explicitlySet__.add("approverGroupLevelList");
             return this;
         }
         /**
@@ -260,6 +283,7 @@ public final class UpdatePrivilegedApiControlDetails
                             this.resources,
                             this.notificationTopicId,
                             this.approverGroupIdList,
+                            this.approverGroupLevelList,
                             this.privilegedOperationList,
                             this.numberOfApprovers,
                             this.freeformTags,
@@ -289,6 +313,9 @@ public final class UpdatePrivilegedApiControlDetails
             }
             if (model.wasPropertyExplicitlySet("approverGroupIdList")) {
                 this.approverGroupIdList(model.getApproverGroupIdList());
+            }
+            if (model.wasPropertyExplicitlySet("approverGroupLevelList")) {
+                this.approverGroupLevelList(model.getApproverGroupLevelList());
             }
             if (model.wasPropertyExplicitlySet("privilegedOperationList")) {
                 this.privilegedOperationList(model.getPrivilegedOperationList());
@@ -368,14 +395,14 @@ public final class UpdatePrivilegedApiControlDetails
     }
 
     /**
-     * The OCID of the OCI Notification topic to publish messages related to this Delegation
+     * The OCID of the OCI Notification topic to publish messages related to this Privileged Api
      * Control.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
     /**
-     * The OCID of the OCI Notification topic to publish messages related to this Delegation
+     * The OCID of the OCI Notification topic to publish messages related to this Privileged Api
      * Control.
      *
      * @return the value
@@ -399,6 +426,21 @@ public final class UpdatePrivilegedApiControlDetails
      */
     public java.util.List<String> getApproverGroupIdList() {
         return approverGroupIdList;
+    }
+
+    /**
+     * List of Group containing the levels at which the users belonging to the group can authorize.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("approverGroupLevelList")
+    private final java.util.List<ApproverGroupLevel> approverGroupLevelList;
+
+    /**
+     * List of Group containing the levels at which the users belonging to the group can authorize.
+     *
+     * @return the value
+     */
+    public java.util.List<ApproverGroupLevel> getApproverGroupLevelList() {
+        return approverGroupLevelList;
     }
 
     /**
@@ -500,6 +542,7 @@ public final class UpdatePrivilegedApiControlDetails
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(", notificationTopicId=").append(String.valueOf(this.notificationTopicId));
         sb.append(", approverGroupIdList=").append(String.valueOf(this.approverGroupIdList));
+        sb.append(", approverGroupLevelList=").append(String.valueOf(this.approverGroupLevelList));
         sb.append(", privilegedOperationList=")
                 .append(String.valueOf(this.privilegedOperationList));
         sb.append(", numberOfApprovers=").append(String.valueOf(this.numberOfApprovers));
@@ -526,6 +569,8 @@ public final class UpdatePrivilegedApiControlDetails
                 && java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
                 && java.util.Objects.equals(this.approverGroupIdList, other.approverGroupIdList)
                 && java.util.Objects.equals(
+                        this.approverGroupLevelList, other.approverGroupLevelList)
+                && java.util.Objects.equals(
                         this.privilegedOperationList, other.privilegedOperationList)
                 && java.util.Objects.equals(this.numberOfApprovers, other.numberOfApprovers)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -551,6 +596,11 @@ public final class UpdatePrivilegedApiControlDetails
                         + (this.approverGroupIdList == null
                                 ? 43
                                 : this.approverGroupIdList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approverGroupLevelList == null
+                                ? 43
+                                : this.approverGroupLevelList.hashCode());
         result =
                 (result * PRIME)
                         + (this.privilegedOperationList == null

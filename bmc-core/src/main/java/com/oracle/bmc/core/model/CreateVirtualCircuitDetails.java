@@ -45,6 +45,8 @@ public final class CreateVirtualCircuitDetails
         "region",
         "type",
         "ipMtu",
+        "providerRemoteRegion",
+        "remoteAccountId",
         "trafficMode"
     })
     public CreateVirtualCircuitDetails(
@@ -69,6 +71,8 @@ public final class CreateVirtualCircuitDetails
             String region,
             Type type,
             VirtualCircuitIpMtu ipMtu,
+            String providerRemoteRegion,
+            String remoteAccountId,
             TrafficMode trafficMode) {
         super();
         this.bandwidthShapeName = bandwidthShapeName;
@@ -92,6 +96,8 @@ public final class CreateVirtualCircuitDetails
         this.region = region;
         this.type = type;
         this.ipMtu = ipMtu;
+        this.providerRemoteRegion = providerRemoteRegion;
+        this.remoteAccountId = remoteAccountId;
         this.trafficMode = trafficMode;
     }
 
@@ -544,6 +550,42 @@ public final class CreateVirtualCircuitDetails
             return this;
         }
         /**
+         * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the
+         * OCI region. To get the list of associated provider remote region use the
+         * ListProviderRemoteRegions operation
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("providerRemoteRegion")
+        private String providerRemoteRegion;
+
+        /**
+         * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the
+         * OCI region. To get the list of associated provider remote region use the
+         * ListProviderRemoteRegions operation
+         *
+         * @param providerRemoteRegion the value to set
+         * @return this builder
+         */
+        public Builder providerRemoteRegion(String providerRemoteRegion) {
+            this.providerRemoteRegion = providerRemoteRegion;
+            this.__explicitlySet__.add("providerRemoteRegion");
+            return this;
+        }
+        /** Customer's account on Provider/Partner cloud (AWS, GCP or any other) */
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteAccountId")
+        private String remoteAccountId;
+
+        /**
+         * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+         *
+         * @param remoteAccountId the value to set
+         * @return this builder
+         */
+        public Builder remoteAccountId(String remoteAccountId) {
+            this.remoteAccountId = remoteAccountId;
+            this.__explicitlySet__.add("remoteAccountId");
+            return this;
+        }
+        /**
          * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic
          * is to be drained for the associated Virtual Circuit or not.
          */
@@ -590,6 +632,8 @@ public final class CreateVirtualCircuitDetails
                             this.region,
                             this.type,
                             this.ipMtu,
+                            this.providerRemoteRegion,
+                            this.remoteAccountId,
                             this.trafficMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -661,6 +705,12 @@ public final class CreateVirtualCircuitDetails
             }
             if (model.wasPropertyExplicitlySet("ipMtu")) {
                 this.ipMtu(model.getIpMtu());
+            }
+            if (model.wasPropertyExplicitlySet("providerRemoteRegion")) {
+                this.providerRemoteRegion(model.getProviderRemoteRegion());
+            }
+            if (model.wasPropertyExplicitlySet("remoteAccountId")) {
+                this.remoteAccountId(model.getRemoteAccountId());
             }
             if (model.wasPropertyExplicitlySet("trafficMode")) {
                 this.trafficMode(model.getTrafficMode());
@@ -1185,6 +1235,38 @@ public final class CreateVirtualCircuitDetails
     }
 
     /**
+     * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI
+     * region. To get the list of associated provider remote region use the
+     * ListProviderRemoteRegions operation
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("providerRemoteRegion")
+    private final String providerRemoteRegion;
+
+    /**
+     * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI
+     * region. To get the list of associated provider remote region use the
+     * ListProviderRemoteRegions operation
+     *
+     * @return the value
+     */
+    public String getProviderRemoteRegion() {
+        return providerRemoteRegion;
+    }
+
+    /** Customer's account on Provider/Partner cloud (AWS, GCP or any other) */
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteAccountId")
+    private final String remoteAccountId;
+
+    /**
+     * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+     *
+     * @return the value
+     */
+    public String getRemoteAccountId() {
+        return remoteAccountId;
+    }
+
+    /**
      * The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to
      * be drained for the associated Virtual Circuit or not.
      */
@@ -1273,6 +1355,8 @@ public final class CreateVirtualCircuitDetails
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", ipMtu=").append(String.valueOf(this.ipMtu));
+        sb.append(", providerRemoteRegion=").append(String.valueOf(this.providerRemoteRegion));
+        sb.append(", remoteAccountId=").append(String.valueOf(this.remoteAccountId));
         sb.append(", trafficMode=").append(String.valueOf(this.trafficMode));
         sb.append(")");
         return sb.toString();
@@ -1310,6 +1394,8 @@ public final class CreateVirtualCircuitDetails
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.ipMtu, other.ipMtu)
+                && java.util.Objects.equals(this.providerRemoteRegion, other.providerRemoteRegion)
+                && java.util.Objects.equals(this.remoteAccountId, other.remoteAccountId)
                 && java.util.Objects.equals(this.trafficMode, other.trafficMode)
                 && super.equals(other);
     }
@@ -1369,6 +1455,14 @@ public final class CreateVirtualCircuitDetails
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.ipMtu == null ? 43 : this.ipMtu.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerRemoteRegion == null
+                                ? 43
+                                : this.providerRemoteRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteAccountId == null ? 43 : this.remoteAccountId.hashCode());
         result = (result * PRIME) + (this.trafficMode == null ? 43 : this.trafficMode.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

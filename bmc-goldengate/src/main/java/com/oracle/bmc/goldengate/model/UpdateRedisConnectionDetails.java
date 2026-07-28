@@ -205,7 +205,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private char[] password;
@@ -214,7 +216,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -257,20 +261,30 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         }
         /**
          * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
-         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         * and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text
+         * Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
-        private String trustStore;
+        private char[] trustStore;
 
         /**
          * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
-         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         * and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text
+         * Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param trustStore the value to set
          * @return this builder
          */
-        public Builder trustStore(String trustStore) {
+        public Builder trustStore(char[] trustStore) {
             this.trustStore = trustStore;
+            this.__explicitlySet__.add("trustStore");
+            return this;
+        }
+
+        public Builder trustStore(String trustStore) {
+            this.trustStore = trustStore != null ? trustStore.toCharArray() : null;
             this.__explicitlySet__.add("trustStore");
             return this;
         }
@@ -297,14 +311,18 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         }
         /**
          * The TrustStore password. Deprecated: This field is deprecated and replaced by
-         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         * "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
         private char[] trustStorePassword;
 
         /**
          * The TrustStore password. Deprecated: This field is deprecated and replaced by
-         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         * "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param trustStorePassword the value to set
          * @return this builder
@@ -344,20 +362,30 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         }
         /**
          * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         * replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
-        private String keyStore;
+        private char[] keyStore;
 
         /**
          * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         * replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param keyStore the value to set
          * @return this builder
          */
-        public Builder keyStore(String keyStore) {
+        public Builder keyStore(char[] keyStore) {
             this.keyStore = keyStore;
+            this.__explicitlySet__.add("keyStore");
+            return this;
+        }
+
+        public Builder keyStore(String keyStore) {
+            this.keyStore = keyStore != null ? keyStore.toCharArray() : null;
             this.__explicitlySet__.add("keyStore");
             return this;
         }
@@ -384,14 +412,18 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         }
         /**
          * The KeyStore password. Deprecated: This field is deprecated and replaced by
-         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         * "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
         private char[] keyStorePassword;
 
         /**
          * The KeyStore password. Deprecated: This field is deprecated and replaced by
-         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         * "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param keyStorePassword the value to set
          * @return this builder
@@ -626,12 +658,12 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         this.username = username;
         this.password = password != null ? password.toCharArray() : null;
         this.passwordSecretId = passwordSecretId;
-        this.trustStore = trustStore;
+        this.trustStore = trustStore != null ? trustStore.toCharArray() : null;
         this.trustStoreSecretId = trustStoreSecretId;
         this.trustStorePassword =
                 trustStorePassword != null ? trustStorePassword.toCharArray() : null;
         this.trustStorePasswordSecretId = trustStorePasswordSecretId;
-        this.keyStore = keyStore;
+        this.keyStore = keyStore != null ? keyStore.toCharArray() : null;
         this.keyStoreSecretId = keyStoreSecretId;
         this.keyStorePassword = keyStorePassword != null ? keyStorePassword.toCharArray() : null;
         this.keyStorePasswordSecretId = keyStorePasswordSecretId;
@@ -666,14 +698,14 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
             @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
             @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
                     String passwordSecretId,
-            @com.fasterxml.jackson.annotation.JsonProperty("trustStore") String trustStore,
+            @com.fasterxml.jackson.annotation.JsonProperty("trustStore") char[] trustStore,
             @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
                     String trustStoreSecretId,
             @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
                     char[] trustStorePassword,
             @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
                     String trustStorePasswordSecretId,
-            @com.fasterxml.jackson.annotation.JsonProperty("keyStore") String keyStore,
+            @com.fasterxml.jackson.annotation.JsonProperty("keyStore") char[] keyStore,
             @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
                     String keyStoreSecretId,
             @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
@@ -780,8 +812,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final char[] password;
@@ -790,7 +823,8 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
      * so on. Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
-     * This field will be removed after February 15 2026.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getPassword__AsCharArray() instead.
@@ -804,8 +838,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -839,18 +874,38 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
 
     /**
      * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
-     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     * replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
-    private final String trustStore;
+    private final char[] trustStore;
 
     /**
      * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
-     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     * replaced by &quot;trustStoreSecretId&quot;. This change follows the GoldenGate &quot;Plain
+     * Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getTrustStore__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTrustStore() {
+        return trustStore != null ? new String(trustStore) : null;
+    }
+
+    /**
+     * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
+     * replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
-    public String getTrustStore() {
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
+    public char[] getTrustStore__AsCharArray() {
         return trustStore;
     }
 
@@ -875,14 +930,18 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
 
     /**
      * The TrustStore password. Deprecated: This field is deprecated and replaced by
-     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     * "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
     private final char[] trustStorePassword;
 
     /**
      * The TrustStore password. Deprecated: This field is deprecated and replaced by
-     * &quot;trustStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     * &quot;trustStorePasswordSecretId&quot;. This change follows the GoldenGate &quot;Plain Text
+     * Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getTrustStorePassword__AsCharArray() instead.
@@ -895,7 +954,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
 
     /**
      * The TrustStore password. Deprecated: This field is deprecated and replaced by
-     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     * "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -925,18 +986,38 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
 
     /**
      * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     * replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
-    private final String keyStore;
+    private final char[] keyStore;
 
     /**
      * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     * replaced by &quot;keyStoreSecretId&quot;. This change follows the GoldenGate &quot;Plain Text
+     * Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getKeyStore__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getKeyStore() {
+        return keyStore != null ? new String(keyStore) : null;
+    }
+
+    /**
+     * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+     * replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
-    public String getKeyStore() {
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
+    public char[] getKeyStore__AsCharArray() {
         return keyStore;
     }
 
@@ -961,14 +1042,18 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
 
     /**
      * The KeyStore password. Deprecated: This field is deprecated and replaced by
-     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     * "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
     private final char[] keyStorePassword;
 
     /**
      * The KeyStore password. Deprecated: This field is deprecated and replaced by
-     * &quot;keyStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     * &quot;keyStorePasswordSecretId&quot;. This change follows the GoldenGate &quot;Plain Text
+     * Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getKeyStorePassword__AsCharArray() instead.
@@ -981,7 +1066,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
 
     /**
      * The KeyStore password. Deprecated: This field is deprecated and replaced by
-     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     * "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in
+     * Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -1047,12 +1134,12 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
-        sb.append(", trustStore=").append(String.valueOf(this.trustStore));
+        sb.append(", trustStore=").append("<redacted>");
         sb.append(", trustStoreSecretId=").append(String.valueOf(this.trustStoreSecretId));
         sb.append(", trustStorePassword=").append("<redacted>");
         sb.append(", trustStorePasswordSecretId=")
                 .append(String.valueOf(this.trustStorePasswordSecretId));
-        sb.append(", keyStore=").append(String.valueOf(this.keyStore));
+        sb.append(", keyStore=").append("<redacted>");
         sb.append(", keyStoreSecretId=").append(String.valueOf(this.keyStoreSecretId));
         sb.append(", keyStorePassword=").append("<redacted>");
         sb.append(", keyStorePasswordSecretId=")

@@ -54,10 +54,15 @@ import java.net.URISyntaxException;
 import java.security.KeyStore;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static com.oracle.bmc.http.client.jersey.internal.IdleConnectionMonitor.DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS;
@@ -65,6 +70,11 @@ import static com.oracle.bmc.http.client.jersey.internal.IdleConnectionMonitor.D
 final class JerseyHttpClientBuilder implements HttpClientBuilder {
     private static final Logger LOG = LoggerFactory.getLogger(JerseyHttpClientBuilder.class);
     private static final int DEFAULT_MAX_ASYNC_THREADS = 50;
+    private static final String REDACTED_PROPERTY_VALUE = "<redacted>";
+    private static final Set<String> POSSIBLY_SENSITIVE_PROPERTY_KEY_SUBSTRINGS =
+            Collections.unmodifiableSet(
+                    new HashSet<>(
+                            Arrays.asList("password", "secret", "token", "credential", "auth")));
 
     /** The default {@link ClientBuilderDecorator} simply calls {@link ClientBuilder#build()}. */
     private static final ClientBuilderDecorator SIMPLE_DECORATOR =
@@ -397,7 +407,14 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
                 collectedProperties =
                         client.getConfiguration().getProperties().entrySet().stream()
                                 .sorted(Comparator.comparing(e -> e.getKey()))
-                                .map(e -> "['" + e.getKey() + "':'" + e.getValue() + "']")
+                                .map(
+                                        e ->
+                                                "['"
+                                                        + e.getKey()
+                                                        + "':'"
+                                                        + getPropertyValueForLogging(
+                                                                e.getKey(), e.getValue())
+                                                        + "']")
                                 .collect(Collectors.joining(", "));
             }
             LOG.trace(
@@ -423,6 +440,15 @@ final class JerseyHttpClientBuilder implements HttpClientBuilder {
                         .collect(Collectors.toList()),
                 isApacheNonBufferingClient,
                 httpClientConnectionManager);
+    }
+
+    static Object getPropertyValueForLogging(String key, Object value) {
+        if (ClientProperties.PROXY_PASSWORD.equals(key)
+                || POSSIBLY_SENSITIVE_PROPERTY_KEY_SUBSTRINGS.stream()
+                        .anyMatch(key.toLowerCase(Locale.ROOT)::contains)) {
+            return REDACTED_PROPERTY_VALUE;
+        }
+        return value;
     }
 
     private boolean shouldUseApacheConnector() {

@@ -26,6 +26,12 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateAmazonS3IcebergStorageDetails.class,
             name = "AMAZON_S3"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOciObjectStorageS3ApiIcebergStorageDetails.class,
+            name = "OCI_OBJECT_STORAGE_S3_API"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateNoIcebergStorageDetails.class,
+            name = "NONE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateGoogleCloudStorageIcebergStorageDetails.class,
             name = "GOOGLE_CLOUD_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

@@ -49,6 +49,13 @@ public class ListGiVersionMinorVersionsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** If provided, filters the results for the given Exadata Infrastructure. */
+    private String exadataInfrastructureId;
+
+    /** If provided, filters the results for the given Exadata Infrastructure. */
+    public String getExadataInfrastructureId() {
+        return exadataInfrastructureId;
+    }
     /**
      * If provided, filters the results to the set of database versions which are supported for the
      * given shape family.
@@ -283,6 +290,20 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
+        /** If provided, filters the results for the given Exadata Infrastructure. */
+        private String exadataInfrastructureId = null;
+
+        /**
+         * If provided, filters the results for the given Exadata Infrastructure.
+         *
+         * @param exadataInfrastructureId the value to set
+         * @return this builder instance
+         */
+        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
+            this.exadataInfrastructureId = exadataInfrastructureId;
+            return this;
+        }
+
         /**
          * If provided, filters the results to the set of database versions which are supported for
          * the given shape family.
@@ -423,6 +444,7 @@ public class ListGiVersionMinorVersionsRequest
             availabilityDomain(o.getAvailabilityDomain());
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
+            exadataInfrastructureId(o.getExadataInfrastructureId());
             shapeFamily(o.getShapeFamily());
             isGiVersionForProvisioning(o.getIsGiVersionForProvisioning());
             shape(o.getShape());
@@ -468,6 +490,7 @@ public class ListGiVersionMinorVersionsRequest
             request.availabilityDomain = availabilityDomain;
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
+            request.exadataInfrastructureId = exadataInfrastructureId;
             request.shapeFamily = shapeFamily;
             request.isGiVersionForProvisioning = isGiVersionForProvisioning;
             request.shape = shape;
@@ -477,8 +500,8 @@ public class ListGiVersionMinorVersionsRequest
             request.page = page;
             return request;
             // new ListGiVersionMinorVersionsRequest(version, availabilityDomain, compartmentId,
-            // opcRequestId, shapeFamily, isGiVersionForProvisioning, shape, sortBy, sortOrder,
-            // limit, page);
+            // opcRequestId, exadataInfrastructureId, shapeFamily, isGiVersionForProvisioning,
+            // shape, sortBy, sortOrder, limit, page);
         }
     }
 
@@ -493,6 +516,7 @@ public class ListGiVersionMinorVersionsRequest
                 .availabilityDomain(availabilityDomain)
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
+                .exadataInfrastructureId(exadataInfrastructureId)
                 .shapeFamily(shapeFamily)
                 .isGiVersionForProvisioning(isGiVersionForProvisioning)
                 .shape(shape)
@@ -520,6 +544,7 @@ public class ListGiVersionMinorVersionsRequest
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",exadataInfrastructureId=").append(String.valueOf(this.exadataInfrastructureId));
         sb.append(",shapeFamily=").append(String.valueOf(this.shapeFamily));
         sb.append(",isGiVersionForProvisioning=")
                 .append(String.valueOf(this.isGiVersionForProvisioning));
@@ -547,6 +572,8 @@ public class ListGiVersionMinorVersionsRequest
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructureId, other.exadataInfrastructureId)
                 && java.util.Objects.equals(this.shapeFamily, other.shapeFamily)
                 && java.util.Objects.equals(
                         this.isGiVersionForProvisioning, other.isGiVersionForProvisioning)
@@ -571,6 +598,11 @@ public class ListGiVersionMinorVersionsRequest
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructureId == null
+                                ? 43
+                                : this.exadataInfrastructureId.hashCode());
         result = (result * PRIME) + (this.shapeFamily == null ? 43 : this.shapeFamily.hashCode());
         result =
                 (result * PRIME)

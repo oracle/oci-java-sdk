@@ -14,6 +14,7 @@ import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.Priorities;
 import com.oracle.bmc.http.client.HttpClient;
+import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.Options;
@@ -198,7 +199,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                     }
                 };
 
-        this.httpClient =
+        HttpClientBuilder clientBuilder =
                 HttpProvider.getDefault()
                         .newBuilder()
                         .baseUri(URI.create(federationEndpoint))
@@ -216,8 +217,16 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                                         Collections.emptyMap()))
                         .registerRequestInterceptor(
                                 Priorities.HEADER_DECORATOR, new ClientIdFilter())
-                        .registerRequestInterceptor(Priorities.USER, new LogHeadersFilter())
-                        .build();
+                        .registerRequestInterceptor(Priorities.USER, new LogHeadersFilter());
+        if (clientConfigurator != null) {
+            clientConfigurator.customizeClient(clientBuilder);
+        }
+        if (additionalClientConfigurators != null) {
+            for (ClientConfigurator additionalClientConfigurator : additionalClientConfigurators) {
+                additionalClientConfigurator.customizeClient(clientBuilder);
+            }
+        }
+        this.httpClient = clientBuilder.build();
         this.circuitBreaker =
                 CircuitBreakerHelper.makeCircuitBreaker(this.httpClient, circuitBreakerConfig);
     }
@@ -409,7 +418,6 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                 .appendPathPart("x509")
                 .handleBody(SecurityToken.class, (builder, token) -> builder.token = token)
                 .retryConfiguration(RETRY_CONFIGURATION)
-                .clientConfigurator(clientConfigurator)
                 .circuitBreaker(circuitBreaker)
                 .accept("*/*")
                 .hasBody()

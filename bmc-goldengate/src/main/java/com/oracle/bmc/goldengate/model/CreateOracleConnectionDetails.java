@@ -203,7 +203,9 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private char[] password;
@@ -212,7 +214,9 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -290,21 +294,31 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
         /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
          * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
-         * replaced by "walletSecretId". This field will be removed after February 15 2026.
+         * replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
-        private String wallet;
+        private char[] wallet;
 
         /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
          * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
-         * replaced by "walletSecretId". This field will be removed after February 15 2026.
+         * replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in
+         * Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param wallet the value to set
          * @return this builder
          */
-        public Builder wallet(String wallet) {
+        public Builder wallet(char[] wallet) {
             this.wallet = wallet;
+            this.__explicitlySet__.add("wallet");
+            return this;
+        }
+
+        public Builder wallet(String wallet) {
+            this.wallet = wallet != null ? wallet.toCharArray() : null;
             this.__explicitlySet__.add("wallet");
             return this;
         }
@@ -340,7 +354,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
          * <p>The default is DIRECT, except when databaseId is provided and the discovered database
          * relies on the SCAN listener. In this case, the default is REDIRECT.
          *
-         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1,
+         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21,
          * 2027.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
@@ -357,7 +371,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
          * <p>The default is DIRECT, except when databaseId is provided and the discovered database
          * relies on the SCAN listener. In this case, the default is REDIRECT.
          *
-         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1,
+         * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21,
          * 2027.
          *
          * @param sessionMode the value to set
@@ -564,7 +578,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
         this.passwordSecretId = passwordSecretId;
         this.connectionString = connectionString;
         this.authenticationMode = authenticationMode;
-        this.wallet = wallet;
+        this.wallet = wallet != null ? wallet.toCharArray() : null;
         this.walletSecretId = walletSecretId;
         this.sessionMode = sessionMode;
         this.databaseId = databaseId;
@@ -605,7 +619,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
                     String connectionString,
             @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
                     OracleConnection.AuthenticationMode authenticationMode,
-            @com.fasterxml.jackson.annotation.JsonProperty("wallet") String wallet,
+            @com.fasterxml.jackson.annotation.JsonProperty("wallet") char[] wallet,
             @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId") String walletSecretId,
             @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
                     OracleConnection.SessionMode sessionMode,
@@ -673,8 +687,9 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final char[] password;
@@ -683,7 +698,8 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
      * so on. Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
-     * This field will be removed after February 15 2026.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getPassword__AsCharArray() instead.
@@ -697,8 +713,9 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -763,19 +780,40 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
      * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
-     * "walletSecretId". This field will be removed after February 15 2026.
+     * "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+     * deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
-    private final String wallet;
+    private final char[] wallet;
 
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
      * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
-     * "walletSecretId". This field will be removed after February 15 2026.
+     * &quot;walletSecretId&quot;. This change follows the GoldenGate &quot;Plain Text Fields in
+     * Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getWallet__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getWallet() {
+        return wallet != null ? new String(wallet) : null;
+    }
+
+    /**
+     * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
+     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
+     * "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+     * deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
-    public String getWallet() {
+    @com.fasterxml.jackson.annotation.JsonProperty("wallet")
+    public char[] getWallet__AsCharArray() {
         return wallet;
     }
 
@@ -808,7 +846,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
      * <p>The default is DIRECT, except when databaseId is provided and the discovered database
      * relies on the SCAN listener. In this case, the default is REDIRECT.
      *
-     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final OracleConnection.SessionMode sessionMode;
@@ -823,7 +861,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
      * <p>The default is DIRECT, except when databaseId is provided and the discovered database
      * relies on the SCAN listener. In this case, the default is REDIRECT.
      *
-     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * <p>Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      *
      * @return the value
      */
@@ -869,7 +907,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", authenticationMode=").append(String.valueOf(this.authenticationMode));
-        sb.append(", wallet=").append(String.valueOf(this.wallet));
+        sb.append(", wallet=").append("<redacted>");
         sb.append(", walletSecretId=").append(String.valueOf(this.walletSecretId));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));

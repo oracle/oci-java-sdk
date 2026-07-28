@@ -132,6 +132,7 @@ public class ApiMetadataAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
             final com.oracle.bmc.responses.AsyncHandler<
                             ListApiMetadataRequest, ListApiMetadataResponse>
                     handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListApiMetadataResponse::builder)
                 .logger(LOG, "listApiMetadata")
@@ -171,6 +172,7 @@ public class ApiMetadataAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                                     ListApiMetadataByEntityTypesRequest,
                                     ListApiMetadataByEntityTypesResponse>
                             handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListApiMetadataByEntityTypesResponse::builder)
                 .logger(LOG, "listApiMetadataByEntityTypes")

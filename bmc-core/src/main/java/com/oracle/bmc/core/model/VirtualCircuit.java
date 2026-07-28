@@ -73,6 +73,9 @@ public final class VirtualCircuit
         "timeCreated",
         "type",
         "ipMtu",
+        "providerRemoteRegion",
+        "sharedConnectionUuid",
+        "remoteAccountId",
         "trafficMode",
         "virtualCircuitRedundancyMetadata"
     })
@@ -108,6 +111,9 @@ public final class VirtualCircuit
             java.util.Date timeCreated,
             Type type,
             VirtualCircuitIpMtu ipMtu,
+            String providerRemoteRegion,
+            String sharedConnectionUuid,
+            String remoteAccountId,
             TrafficMode trafficMode,
             VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata) {
         super();
@@ -142,6 +148,9 @@ public final class VirtualCircuit
         this.timeCreated = timeCreated;
         this.type = type;
         this.ipMtu = ipMtu;
+        this.providerRemoteRegion = providerRemoteRegion;
+        this.sharedConnectionUuid = sharedConnectionUuid;
+        this.remoteAccountId = remoteAccountId;
         this.trafficMode = trafficMode;
         this.virtualCircuitRedundancyMetadata = virtualCircuitRedundancyMetadata;
     }
@@ -750,6 +759,61 @@ public final class VirtualCircuit
             return this;
         }
         /**
+         * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the
+         * OCI region. To get the list of associated provider remote region use the
+         * ListProviderRemoteRegions operation
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("providerRemoteRegion")
+        private String providerRemoteRegion;
+
+        /**
+         * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the
+         * OCI region. To get the list of associated provider remote region use the
+         * ListProviderRemoteRegions operation
+         *
+         * @param providerRemoteRegion the value to set
+         * @return this builder
+         */
+        public Builder providerRemoteRegion(String providerRemoteRegion) {
+            this.providerRemoteRegion = providerRemoteRegion;
+            this.__explicitlySet__.add("providerRemoteRegion");
+            return this;
+        }
+        /**
+         * The Shared unique identifier for the connection between the multicloud interconnect
+         * providers
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sharedConnectionUuid")
+        private String sharedConnectionUuid;
+
+        /**
+         * The Shared unique identifier for the connection between the multicloud interconnect
+         * providers
+         *
+         * @param sharedConnectionUuid the value to set
+         * @return this builder
+         */
+        public Builder sharedConnectionUuid(String sharedConnectionUuid) {
+            this.sharedConnectionUuid = sharedConnectionUuid;
+            this.__explicitlySet__.add("sharedConnectionUuid");
+            return this;
+        }
+        /** Customer's account on Provider/Partner cloud (AWS, GCP or any other) */
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteAccountId")
+        private String remoteAccountId;
+
+        /**
+         * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+         *
+         * @param remoteAccountId the value to set
+         * @return this builder
+         */
+        public Builder remoteAccountId(String remoteAccountId) {
+            this.remoteAccountId = remoteAccountId;
+            this.__explicitlySet__.add("remoteAccountId");
+            return this;
+        }
+        /**
          * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is
          * drained for the associated Virtual Circuit or not.
          */
@@ -816,6 +880,9 @@ public final class VirtualCircuit
                             this.timeCreated,
                             this.type,
                             this.ipMtu,
+                            this.providerRemoteRegion,
+                            this.sharedConnectionUuid,
+                            this.remoteAccountId,
                             this.trafficMode,
                             this.virtualCircuitRedundancyMetadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -918,6 +985,15 @@ public final class VirtualCircuit
             }
             if (model.wasPropertyExplicitlySet("ipMtu")) {
                 this.ipMtu(model.getIpMtu());
+            }
+            if (model.wasPropertyExplicitlySet("providerRemoteRegion")) {
+                this.providerRemoteRegion(model.getProviderRemoteRegion());
+            }
+            if (model.wasPropertyExplicitlySet("sharedConnectionUuid")) {
+                this.sharedConnectionUuid(model.getSharedConnectionUuid());
+            }
+            if (model.wasPropertyExplicitlySet("remoteAccountId")) {
+                this.remoteAccountId(model.getRemoteAccountId());
             }
             if (model.wasPropertyExplicitlySet("trafficMode")) {
                 this.trafficMode(model.getTrafficMode());
@@ -1912,6 +1988,53 @@ public final class VirtualCircuit
     }
 
     /**
+     * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI
+     * region. To get the list of associated provider remote region use the
+     * ListProviderRemoteRegions operation
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("providerRemoteRegion")
+    private final String providerRemoteRegion;
+
+    /**
+     * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI
+     * region. To get the list of associated provider remote region use the
+     * ListProviderRemoteRegions operation
+     *
+     * @return the value
+     */
+    public String getProviderRemoteRegion() {
+        return providerRemoteRegion;
+    }
+
+    /**
+     * The Shared unique identifier for the connection between the multicloud interconnect providers
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sharedConnectionUuid")
+    private final String sharedConnectionUuid;
+
+    /**
+     * The Shared unique identifier for the connection between the multicloud interconnect providers
+     *
+     * @return the value
+     */
+    public String getSharedConnectionUuid() {
+        return sharedConnectionUuid;
+    }
+
+    /** Customer's account on Provider/Partner cloud (AWS, GCP or any other) */
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteAccountId")
+    private final String remoteAccountId;
+
+    /**
+     * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+     *
+     * @return the value
+     */
+    public String getRemoteAccountId() {
+        return remoteAccountId;
+    }
+
+    /**
      * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is
      * drained for the associated Virtual Circuit or not.
      */
@@ -2030,6 +2153,9 @@ public final class VirtualCircuit
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", ipMtu=").append(String.valueOf(this.ipMtu));
+        sb.append(", providerRemoteRegion=").append(String.valueOf(this.providerRemoteRegion));
+        sb.append(", sharedConnectionUuid=").append(String.valueOf(this.sharedConnectionUuid));
+        sb.append(", remoteAccountId=").append(String.valueOf(this.remoteAccountId));
         sb.append(", trafficMode=").append(String.valueOf(this.trafficMode));
         sb.append(", virtualCircuitRedundancyMetadata=")
                 .append(String.valueOf(this.virtualCircuitRedundancyMetadata));
@@ -2079,6 +2205,9 @@ public final class VirtualCircuit
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.ipMtu, other.ipMtu)
+                && java.util.Objects.equals(this.providerRemoteRegion, other.providerRemoteRegion)
+                && java.util.Objects.equals(this.sharedConnectionUuid, other.sharedConnectionUuid)
+                && java.util.Objects.equals(this.remoteAccountId, other.remoteAccountId)
                 && java.util.Objects.equals(this.trafficMode, other.trafficMode)
                 && java.util.Objects.equals(
                         this.virtualCircuitRedundancyMetadata,
@@ -2165,6 +2294,19 @@ public final class VirtualCircuit
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.ipMtu == null ? 43 : this.ipMtu.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.providerRemoteRegion == null
+                                ? 43
+                                : this.providerRemoteRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sharedConnectionUuid == null
+                                ? 43
+                                : this.sharedConnectionUuid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteAccountId == null ? 43 : this.remoteAccountId.hashCode());
         result = (result * PRIME) + (this.trafficMode == null ? 43 : this.trafficMode.hashCode());
         result =
                 (result * PRIME)

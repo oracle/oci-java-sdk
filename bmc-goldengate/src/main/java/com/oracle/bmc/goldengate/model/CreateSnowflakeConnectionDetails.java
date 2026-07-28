@@ -234,16 +234,18 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         }
         /**
          * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This
-         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-         * February 15 2026.
+         * field is deprecated and replaced by "passwordSecretId". This change follows the
+         * GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private char[] password;
 
         /**
          * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This
-         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-         * February 15 2026.
+         * field is deprecated and replaced by "passwordSecretId". This change follows the
+         * GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -286,22 +288,30 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         }
         /**
          * The base64 encoded content of private key file in PEM format. Deprecated: This field is
-         * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
-         * February 15 2026.
+         * deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate
+         * "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
-        private String privateKeyFile;
+        private char[] privateKeyFile;
 
         /**
          * The base64 encoded content of private key file in PEM format. Deprecated: This field is
-         * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
-         * February 15 2026.
+         * deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate
+         * "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param privateKeyFile the value to set
          * @return this builder
          */
-        public Builder privateKeyFile(String privateKeyFile) {
+        public Builder privateKeyFile(char[] privateKeyFile) {
             this.privateKeyFile = privateKeyFile;
+            this.__explicitlySet__.add("privateKeyFile");
+            return this;
+        }
+
+        public Builder privateKeyFile(String privateKeyFile) {
+            this.privateKeyFile = privateKeyFile != null ? privateKeyFile.toCharArray() : null;
             this.__explicitlySet__.add("privateKeyFile");
             return this;
         }
@@ -332,16 +342,18 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         }
         /**
          * Password if the private key file is encrypted. Deprecated: This field is deprecated and
-         * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
-         * 2026.
+         * replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain
+         * Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
         private char[] privateKeyPassphrase;
 
         /**
          * Password if the private key file is encrypted. Deprecated: This field is deprecated and
-         * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
-         * 2026.
+         * replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain
+         * Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param privateKeyPassphrase the value to set
          * @return this builder
@@ -556,7 +568,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         this.username = username;
         this.password = password != null ? password.toCharArray() : null;
         this.passwordSecretId = passwordSecretId;
-        this.privateKeyFile = privateKeyFile;
+        this.privateKeyFile = privateKeyFile != null ? privateKeyFile.toCharArray() : null;
         this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphrase =
                 privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
@@ -597,7 +609,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
             @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
                     String passwordSecretId,
-            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile") String privateKeyFile,
+            @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile") char[] privateKeyFile,
             @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
                     String privateKeyFileSecretId,
             @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
@@ -694,16 +706,18 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field
-     * is deprecated and replaced by "passwordSecretId". This field will be removed after February
-     * 15 2026.
+     * is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain
+     * Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final char[] password;
 
     /**
      * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field
-     * is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after
-     * February 15 2026.
+     * is deprecated and replaced by &quot;passwordSecretId&quot;. This change follows the
+     * GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getPassword__AsCharArray() instead.
@@ -716,8 +730,9 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field
-     * is deprecated and replaced by "passwordSecretId". This field will be removed after February
-     * 15 2026.
+     * is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain
+     * Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -751,20 +766,38 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * The base64 encoded content of private key file in PEM format. Deprecated: This field is
-     * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
-     * February 15 2026.
+     * deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate
+     * "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
-    private final String privateKeyFile;
+    private final char[] privateKeyFile;
 
     /**
      * The base64 encoded content of private key file in PEM format. Deprecated: This field is
-     * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
-     * February 15 2026.
+     * deprecated and replaced by &quot;privateKeyFileSecretId&quot;. This change follows the
+     * GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getPrivateKeyFile__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPrivateKeyFile() {
+        return privateKeyFile != null ? new String(privateKeyFile) : null;
+    }
+
+    /**
+     * The base64 encoded content of private key file in PEM format. Deprecated: This field is
+     * deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate
+     * "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
-    public String getPrivateKeyFile() {
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
+    public char[] getPrivateKeyFile__AsCharArray() {
         return privateKeyFile;
     }
 
@@ -793,16 +826,18 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * Password if the private key file is encrypted. Deprecated: This field is deprecated and
-     * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
-     * 2026.
+     * replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain Text
+     * Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
     private final char[] privateKeyPassphrase;
 
     /**
      * Password if the private key file is encrypted. Deprecated: This field is deprecated and
-     * replaced by &quot;privateKeyPassphraseSecretId&quot;. This field will be removed after
-     * February 15 2026.
+     * replaced by &quot;privateKeyPassphraseSecretId&quot;. This change follows the GoldenGate
+     * &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getPrivateKeyPassphrase__AsCharArray() instead.
@@ -815,8 +850,9 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
 
     /**
      * Password if the private key file is encrypted. Deprecated: This field is deprecated and
-     * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
-     * 2026.
+     * replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain Text
+     * Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
@@ -865,7 +901,7 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
-        sb.append(", privateKeyFile=").append(String.valueOf(this.privateKeyFile));
+        sb.append(", privateKeyFile=").append("<redacted>");
         sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
         sb.append(", privateKeyPassphrase=").append("<redacted>");
         sb.append(", privateKeyPassphraseSecretId=")

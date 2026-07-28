@@ -32,6 +32,9 @@ public final class VmClusterUpdateSummary
         "id",
         "description",
         "lastAction",
+        "lastUpdateMode",
+        "availableUpdateModes",
+        "oracleLinuxVersion",
         "availableActions",
         "updateType",
         "lifecycleDetails",
@@ -43,6 +46,9 @@ public final class VmClusterUpdateSummary
             String id,
             String description,
             LastAction lastAction,
+            LastUpdateMode lastUpdateMode,
+            java.util.List<AvailableUpdateModes> availableUpdateModes,
+            String oracleLinuxVersion,
             java.util.List<AvailableActions> availableActions,
             UpdateType updateType,
             String lifecycleDetails,
@@ -53,6 +59,9 @@ public final class VmClusterUpdateSummary
         this.id = id;
         this.description = description;
         this.lastAction = lastAction;
+        this.lastUpdateMode = lastUpdateMode;
+        this.availableUpdateModes = availableUpdateModes;
+        this.oracleLinuxVersion = oracleLinuxVersion;
         this.availableActions = availableActions;
         this.updateType = updateType;
         this.lifecycleDetails = lifecycleDetails;
@@ -110,6 +119,60 @@ public final class VmClusterUpdateSummary
         public Builder lastAction(LastAction lastAction) {
             this.lastAction = lastAction;
             this.__explicitlySet__.add("lastAction");
+            return this;
+        }
+        /**
+         * The update mode performed most recently using this maintenance update (only valid for OS
+         * Update).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateMode")
+        private LastUpdateMode lastUpdateMode;
+
+        /**
+         * The update mode performed most recently using this maintenance update (only valid for OS
+         * Update).
+         *
+         * @param lastUpdateMode the value to set
+         * @return this builder
+         */
+        public Builder lastUpdateMode(LastUpdateMode lastUpdateMode) {
+            this.lastUpdateMode = lastUpdateMode;
+            this.__explicitlySet__.add("lastUpdateMode");
+            return this;
+        }
+        /**
+         * The possible update options that can be performed using this maintenance update (only
+         * valid for OS Update).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableUpdateModes")
+        private java.util.List<AvailableUpdateModes> availableUpdateModes;
+
+        /**
+         * The possible update options that can be performed using this maintenance update (only
+         * valid for OS Update).
+         *
+         * @param availableUpdateModes the value to set
+         * @return this builder
+         */
+        public Builder availableUpdateModes(
+                java.util.List<AvailableUpdateModes> availableUpdateModes) {
+            this.availableUpdateModes = availableUpdateModes;
+            this.__explicitlySet__.add("availableUpdateModes");
+            return this;
+        }
+        /** Oracle Linux version for the respective Exadata Image. */
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleLinuxVersion")
+        private String oracleLinuxVersion;
+
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         *
+         * @param oracleLinuxVersion the value to set
+         * @return this builder
+         */
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            this.oracleLinuxVersion = oracleLinuxVersion;
+            this.__explicitlySet__.add("oracleLinuxVersion");
             return this;
         }
         /** The possible actions that can be performed using this maintenance update. */
@@ -214,6 +277,9 @@ public final class VmClusterUpdateSummary
                             this.id,
                             this.description,
                             this.lastAction,
+                            this.lastUpdateMode,
+                            this.availableUpdateModes,
+                            this.oracleLinuxVersion,
                             this.availableActions,
                             this.updateType,
                             this.lifecycleDetails,
@@ -236,6 +302,15 @@ public final class VmClusterUpdateSummary
             }
             if (model.wasPropertyExplicitlySet("lastAction")) {
                 this.lastAction(model.getLastAction());
+            }
+            if (model.wasPropertyExplicitlySet("lastUpdateMode")) {
+                this.lastUpdateMode(model.getLastUpdateMode());
+            }
+            if (model.wasPropertyExplicitlySet("availableUpdateModes")) {
+                this.availableUpdateModes(model.getAvailableUpdateModes());
+            }
+            if (model.wasPropertyExplicitlySet("oracleLinuxVersion")) {
+                this.oracleLinuxVersion(model.getOracleLinuxVersion());
             }
             if (model.wasPropertyExplicitlySet("availableActions")) {
                 this.availableActions(model.getAvailableActions());
@@ -356,6 +431,154 @@ public final class VmClusterUpdateSummary
      */
     public LastAction getLastAction() {
         return lastAction;
+    }
+
+    /**
+     * The update mode performed most recently using this maintenance update (only valid for OS
+     * Update).
+     */
+    public enum LastUpdateMode implements com.oracle.bmc.http.internal.BmcEnum {
+        OnlineHighcvss("ONLINE_HIGHCVSS"),
+        OnlineAllcvss("ONLINE_ALLCVSS"),
+        OnlineAllUpdates("ONLINE_ALL_UPDATES"),
+        PendingUpdates("PENDING_UPDATES"),
+        FullUpdate("FULL_UPDATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LastUpdateMode.class);
+
+        private final String value;
+        private static java.util.Map<String, LastUpdateMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LastUpdateMode v : LastUpdateMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LastUpdateMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LastUpdateMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LastUpdateMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The update mode performed most recently using this maintenance update (only valid for OS
+     * Update).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastUpdateMode")
+    private final LastUpdateMode lastUpdateMode;
+
+    /**
+     * The update mode performed most recently using this maintenance update (only valid for OS
+     * Update).
+     *
+     * @return the value
+     */
+    public LastUpdateMode getLastUpdateMode() {
+        return lastUpdateMode;
+    }
+
+    /** */
+    public enum AvailableUpdateModes implements com.oracle.bmc.http.internal.BmcEnum {
+        OnlineHighcvss("ONLINE_HIGHCVSS"),
+        OnlineAllcvss("ONLINE_ALLCVSS"),
+        OnlineAllUpdates("ONLINE_ALL_UPDATES"),
+        PendingUpdates("PENDING_UPDATES"),
+        FullUpdate("FULL_UPDATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AvailableUpdateModes.class);
+
+        private final String value;
+        private static java.util.Map<String, AvailableUpdateModes> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AvailableUpdateModes v : AvailableUpdateModes.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AvailableUpdateModes(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AvailableUpdateModes create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AvailableUpdateModes', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The possible update options that can be performed using this maintenance update (only valid
+     * for OS Update).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableUpdateModes")
+    private final java.util.List<AvailableUpdateModes> availableUpdateModes;
+
+    /**
+     * The possible update options that can be performed using this maintenance update (only valid
+     * for OS Update).
+     *
+     * @return the value
+     */
+    public java.util.List<AvailableUpdateModes> getAvailableUpdateModes() {
+        return availableUpdateModes;
+    }
+
+    /** Oracle Linux version for the respective Exadata Image. */
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleLinuxVersion")
+    private final String oracleLinuxVersion;
+
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     *
+     * @return the value
+     */
+    public String getOracleLinuxVersion() {
+        return oracleLinuxVersion;
     }
 
     /** */
@@ -596,6 +819,9 @@ public final class VmClusterUpdateSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lastAction=").append(String.valueOf(this.lastAction));
+        sb.append(", lastUpdateMode=").append(String.valueOf(this.lastUpdateMode));
+        sb.append(", availableUpdateModes=").append(String.valueOf(this.availableUpdateModes));
+        sb.append(", oracleLinuxVersion=").append(String.valueOf(this.oracleLinuxVersion));
         sb.append(", availableActions=").append(String.valueOf(this.availableActions));
         sb.append(", updateType=").append(String.valueOf(this.updateType));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -619,6 +845,9 @@ public final class VmClusterUpdateSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.lastAction, other.lastAction)
+                && java.util.Objects.equals(this.lastUpdateMode, other.lastUpdateMode)
+                && java.util.Objects.equals(this.availableUpdateModes, other.availableUpdateModes)
+                && java.util.Objects.equals(this.oracleLinuxVersion, other.oracleLinuxVersion)
                 && java.util.Objects.equals(this.availableActions, other.availableActions)
                 && java.util.Objects.equals(this.updateType, other.updateType)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -635,6 +864,19 @@ public final class VmClusterUpdateSummary
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.lastAction == null ? 43 : this.lastAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastUpdateMode == null ? 43 : this.lastUpdateMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableUpdateModes == null
+                                ? 43
+                                : this.availableUpdateModes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleLinuxVersion == null
+                                ? 43
+                                : this.oracleLinuxVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.availableActions == null ? 43 : this.availableActions.hashCode());

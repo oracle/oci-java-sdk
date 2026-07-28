@@ -227,6 +227,38 @@ public class X509FederationClientTest {
     }
 
     @Test
+    public void testX509ClientUsesAdditionalClientConfigurators() {
+        ClientConfigurator additionalConfigurator =
+                httpClientBuilder ->
+                        httpClientBuilder.registerRequestInterceptor(
+                                0, request -> request.header("X-Test-Additional", "configured"));
+        clientUnderTest =
+                new X509FederationClient(
+                        "http://localhost:" + mockService.port(),
+                        "tenantId",
+                        clientUnderTest.getLeafCertificateSupplier(),
+                        mock(SessionKeySupplier.class),
+                        Collections.emptySet(),
+                        null,
+                        Collections.singletonList(additionalConfigurator),
+                        CircuitBreakerUtils.getDefaultAuthClientCircuitBreakerConfiguration());
+        stubFor(
+                post(urlEqualTo("/v1/x509"))
+                        .withHeader("X-Test-Additional", equalTo("configured"))
+                        .willReturn(
+                                aResponse()
+                                        .withStatus(200)
+                                        .withHeader("Content-Type", "application/json")
+                                        .withBody("{\"token\" : \"abcdef\"}")));
+        X509FederationClient.FederationResponseWrapper responseWrapper =
+                clientUnderTest.makeCall(federationRequest);
+        assertEquals("abcdef", responseWrapper.token.getToken());
+        verify(
+                postRequestedFor(urlEqualTo("/v1/x509"))
+                        .withHeader("X-Test-Additional", equalTo("configured")));
+    }
+
+    @Test
     public void jacksonCanDeserializeSecurityToken() throws IOException {
         final String strToken = "{\"token\" : \"abcdef\"}";
         // this line will fail on original code if Jackson is not at exactly the right version
