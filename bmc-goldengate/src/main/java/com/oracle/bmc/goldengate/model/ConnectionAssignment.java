@@ -27,6 +27,7 @@ public final class ConnectionAssignment
     @java.beans.ConstructorProperties({
         "id",
         "connectionId",
+        "connectionType",
         "deploymentId",
         "aliasName",
         "compartmentId",
@@ -37,6 +38,7 @@ public final class ConnectionAssignment
     public ConnectionAssignment(
             String id,
             String connectionId,
+            ConnectionType connectionType,
             String deploymentId,
             String aliasName,
             String compartmentId,
@@ -46,6 +48,7 @@ public final class ConnectionAssignment
         super();
         this.id = id;
         this.connectionId = connectionId;
+        this.connectionType = connectionType;
         this.deploymentId = deploymentId;
         this.aliasName = aliasName;
         this.compartmentId = compartmentId;
@@ -92,6 +95,21 @@ public final class ConnectionAssignment
         public Builder connectionId(String connectionId) {
             this.connectionId = connectionId;
             this.__explicitlySet__.add("connectionId");
+            return this;
+        }
+        /** The connection type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionType")
+        private ConnectionType connectionType;
+
+        /**
+         * The connection type.
+         *
+         * @param connectionType the value to set
+         * @return this builder
+         */
+        public Builder connectionType(ConnectionType connectionType) {
+            this.connectionType = connectionType;
+            this.__explicitlySet__.add("connectionType");
             return this;
         }
         /**
@@ -209,6 +227,7 @@ public final class ConnectionAssignment
                     new ConnectionAssignment(
                             this.id,
                             this.connectionId,
+                            this.connectionType,
                             this.deploymentId,
                             this.aliasName,
                             this.compartmentId,
@@ -228,6 +247,9 @@ public final class ConnectionAssignment
             }
             if (model.wasPropertyExplicitlySet("connectionId")) {
                 this.connectionId(model.getConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("connectionType")) {
+                this.connectionType(model.getConnectionType());
             }
             if (model.wasPropertyExplicitlySet("deploymentId")) {
                 this.deploymentId(model.getDeploymentId());
@@ -292,6 +314,19 @@ public final class ConnectionAssignment
      */
     public String getConnectionId() {
         return connectionId;
+    }
+
+    /** The connection type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionType")
+    private final ConnectionType connectionType;
+
+    /**
+     * The connection type.
+     *
+     * @return the value
+     */
+    public ConnectionType getConnectionType() {
+        return connectionType;
     }
 
     /**
@@ -454,6 +489,7 @@ public final class ConnectionAssignment
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", connectionId=").append(String.valueOf(this.connectionId));
+        sb.append(", connectionType=").append(String.valueOf(this.connectionType));
         sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
         sb.append(", aliasName=").append(String.valueOf(this.aliasName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -476,6 +512,7 @@ public final class ConnectionAssignment
         ConnectionAssignment other = (ConnectionAssignment) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.connectionId, other.connectionId)
+                && java.util.Objects.equals(this.connectionType, other.connectionType)
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
                 && java.util.Objects.equals(this.aliasName, other.aliasName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -491,6 +528,9 @@ public final class ConnectionAssignment
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionType == null ? 43 : this.connectionType.hashCode());
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
         result = (result * PRIME) + (this.aliasName == null ? 43 : this.aliasName.hashCode());
         result =

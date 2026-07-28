@@ -44,6 +44,14 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public java.util.List<com.oracle.bmc.goldengate.model.ConnectionType> getConnectionType() {
         return connectionType;
     }
+    /** The array of connection types to exclude. */
+    private java.util.List<com.oracle.bmc.goldengate.model.ConnectionType> connectionTypeNotEqualTo;
+
+    /** The array of connection types to exclude. */
+    public java.util.List<com.oracle.bmc.goldengate.model.ConnectionType>
+            getConnectionTypeNotEqualTo() {
+        return connectionTypeNotEqualTo;
+    }
     /** The OCID of the deployment which for the connection must be assigned. */
     private String assignedDeploymentId;
 
@@ -261,6 +269,33 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this.connectionType(java.util.Arrays.asList(singularValue));
         }
 
+        /** The array of connection types to exclude. */
+        private java.util.List<com.oracle.bmc.goldengate.model.ConnectionType>
+                connectionTypeNotEqualTo = null;
+
+        /**
+         * The array of connection types to exclude.
+         *
+         * @param connectionTypeNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder connectionTypeNotEqualTo(
+                java.util.List<com.oracle.bmc.goldengate.model.ConnectionType>
+                        connectionTypeNotEqualTo) {
+            this.connectionTypeNotEqualTo = connectionTypeNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. The array of connection types to exclude.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder connectionTypeNotEqualTo(ConnectionType singularValue) {
+            return this.connectionTypeNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
         /** The OCID of the deployment which for the connection must be assigned. */
         private String assignedDeploymentId = null;
 
@@ -454,6 +489,7 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             compartmentId(o.getCompartmentId());
             technologyType(o.getTechnologyType());
             connectionType(o.getConnectionType());
+            connectionTypeNotEqualTo(o.getConnectionTypeNotEqualTo());
             assignedDeploymentId(o.getAssignedDeploymentId());
             assignableDeploymentId(o.getAssignableDeploymentId());
             assignableDeploymentType(o.getAssignableDeploymentType());
@@ -501,6 +537,7 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.compartmentId = compartmentId;
             request.technologyType = technologyType;
             request.connectionType = connectionType;
+            request.connectionTypeNotEqualTo = connectionTypeNotEqualTo;
             request.assignedDeploymentId = assignedDeploymentId;
             request.assignableDeploymentId = assignableDeploymentId;
             request.assignableDeploymentType = assignableDeploymentType;
@@ -513,8 +550,9 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.opcRequestId = opcRequestId;
             return request;
             // new ListConnectionsRequest(compartmentId, technologyType, connectionType,
-            // assignedDeploymentId, assignableDeploymentId, assignableDeploymentType,
-            // lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // connectionTypeNotEqualTo, assignedDeploymentId, assignableDeploymentId,
+            // assignableDeploymentType, lifecycleState, displayName, limit, page, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
@@ -528,6 +566,7 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 .compartmentId(compartmentId)
                 .technologyType(technologyType)
                 .connectionType(connectionType)
+                .connectionTypeNotEqualTo(connectionTypeNotEqualTo)
                 .assignedDeploymentId(assignedDeploymentId)
                 .assignableDeploymentId(assignableDeploymentId)
                 .assignableDeploymentType(assignableDeploymentType)
@@ -557,6 +596,8 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",technologyType=").append(String.valueOf(this.technologyType));
         sb.append(",connectionType=").append(String.valueOf(this.connectionType));
+        sb.append(",connectionTypeNotEqualTo=")
+                .append(String.valueOf(this.connectionTypeNotEqualTo));
         sb.append(",assignedDeploymentId=").append(String.valueOf(this.assignedDeploymentId));
         sb.append(",assignableDeploymentId=").append(String.valueOf(this.assignableDeploymentId));
         sb.append(",assignableDeploymentType=")
@@ -586,6 +627,8 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.connectionType, other.connectionType)
+                && java.util.Objects.equals(
+                        this.connectionTypeNotEqualTo, other.connectionTypeNotEqualTo)
                 && java.util.Objects.equals(this.assignedDeploymentId, other.assignedDeploymentId)
                 && java.util.Objects.equals(
                         this.assignableDeploymentId, other.assignableDeploymentId)
@@ -613,6 +656,11 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
         result =
                 (result * PRIME)
                         + (this.connectionType == null ? 43 : this.connectionType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionTypeNotEqualTo == null
+                                ? 43
+                                : this.connectionTypeNotEqualTo.hashCode());
         result =
                 (result * PRIME)
                         + (this.assignedDeploymentId == null

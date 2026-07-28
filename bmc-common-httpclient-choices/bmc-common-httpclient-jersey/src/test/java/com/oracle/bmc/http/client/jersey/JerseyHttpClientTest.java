@@ -9,6 +9,7 @@ import com.oracle.bmc.http.client.internal.ClientThreadFactory;
 import com.oracle.bmc.http.client.jersey.internal.DaemonClientAsyncExecutorProvider;
 import com.oracle.bmc.http.client.jersey.internal.IdleConnectionMonitor;
 import org.apache.http.conn.HttpClientConnectionManager;
+import org.glassfish.jersey.client.ClientProperties;
 import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -17,6 +18,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -24,6 +26,28 @@ import static org.junit.Assert.assertTrue;
 public class JerseyHttpClientTest {
     private static final long TEST_KEEP_ALIVE_SECONDS = 1L;
     private static final long EXECUTOR_THREAD_TIMEOUT_WAIT_MILLIS = 5000L;
+
+    @Test
+    public void redactsSensitivePropertyValuesForTraceLogging() {
+        String value = "sensitive-value";
+        String[] sensitiveKeys = {
+            ClientProperties.PROXY_PASSWORD,
+            "proxyPassword",
+            "clientSecret",
+            "delegationToken",
+            "credentialProvider",
+            "authenticationMethod",
+            "MixedCaseToKeN"
+        };
+
+        for (String key : sensitiveKeys) {
+            assertEquals(
+                    "<redacted>", JerseyHttpClientBuilder.getPropertyValueForLogging(key, value));
+        }
+        assertEquals(
+                value,
+                JerseyHttpClientBuilder.getPropertyValueForLogging("request.timeout", value));
+    }
 
     @Test
     public void validateEnabledIdleConnectionMonitorThread() {

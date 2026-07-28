@@ -12,7 +12,9 @@ import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.client.HttpClient;
+import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.HttpProvider;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
@@ -104,6 +106,9 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /** The leaf certificate, or null if detecting from instance metadata. */
     protected X509CertificateSupplier leafCertificateSupplier;
 
+    /** Configurator for metadata service clients used to discover region and certificates. */
+    protected ClientConfigurator federationClientMetadataConfigurator;
+
     /** Tenancy OCI, or null if detecting from instance metadata. */
     protected String tenancyId;
 
@@ -171,6 +176,18 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     public B leafCertificateSupplier(X509CertificateSupplier leafCertificateSupplier) {
         this.leafCertificateSupplier = leafCertificateSupplier;
+        return (B) this;
+    }
+
+    /**
+     * Configures the ClientConfigurator to set on the metadata service clients used by the
+     * federation flow to discover region information and fetch certificates, if any.
+     *
+     * @param clientConfigurator the metadata service client configurator
+     * @return this builder
+     */
+    public B federationClientMetadataConfigurator(ClientConfigurator clientConfigurator) {
+        this.federationClientMetadataConfigurator = clientConfigurator;
         return (B) this;
     }
 
@@ -334,7 +351,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                         new URLBasedX509CertificateSupplier(
                                 getMetadataResourceDetails("identity/cert.pem"),
                                 getMetadataResourceDetails("identity/key.pem"),
-                                (char[]) null);
+                                (char[]) null,
+                                federationClientMetadataConfigurator);
             }
 
             if (tenancyId == null) {
@@ -352,7 +370,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                         new URLBasedX509CertificateSupplier(
                                 getMetadataResourceDetails("identity/intermediate.pem"),
                                 null,
-                                (char[]) null));
+                                (char[]) null,
+                                federationClientMetadataConfigurator));
             }
         } catch (MalformedURLException ex) {
             throw new IllegalArgumentException("The metadata service url is invalid.", ex);
@@ -362,8 +381,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     private <R> R fetchRegion(Function<HttpResponse, CompletionStage<R>> responseHandler) {
         Throwable lastException = null;
         try (HttpClient client =
-                HttpProvider.getDefault()
-                        .newBuilder()
+                metadataServiceHttpClientBuilder()
                         .property(StandardClientProperties.ASYNC_POOL_SIZE, 1)
                         .property(
                                 StandardClientProperties.CONNECT_TIMEOUT,
@@ -430,6 +448,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         } else {
             throw new RuntimeException("Failed to fetch region, lastException was null");
         }
+    }
+
+    private HttpClientBuilder metadataServiceHttpClientBuilder() {
+        HttpClientBuilder builder = HttpProvider.getDefault().newBuilder();
+        if (federationClientMetadataConfigurator != null) {
+            federationClientMetadataConfigurator.customizeClient(builder);
+        }
+        return builder;
     }
 
     /**

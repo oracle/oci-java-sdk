@@ -920,6 +920,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeBaseccVmClusterCompartmentResponse>
+            changeBaseccVmClusterCompartment(
+                    ChangeBaseccVmClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeBaseccVmClusterCompartmentRequest,
+                                    ChangeBaseccVmClusterCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeBaseccVmClusterCompartmentDetails(),
+                "changeBaseccVmClusterCompartmentDetails is required");
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+
+        return clientCall(request, ChangeBaseccVmClusterCompartmentResponse::builder)
+                .logger(LOG, "changeBaseccVmClusterCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeBaseccVmClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/ChangeBaseccVmClusterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeBaseccVmClusterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeBaseccVmClusterCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeBaseccVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeCloudAutonomousVmClusterCompartmentResponse>
             changeCloudAutonomousVmClusterCompartment(
                     ChangeCloudAutonomousVmClusterCompartmentRequest request,
@@ -2923,6 +2964,42 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBaseccVmClusterResponse> createBaseccVmCluster(
+            CreateBaseccVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateBaseccVmClusterRequest, CreateBaseccVmClusterResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateBaseccVmClusterDetails(),
+                "createBaseccVmClusterDetails is required");
+
+        return clientCall(request, CreateBaseccVmClusterResponse::builder)
+                .logger(LOG, "createBaseccVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "CreateBaseccVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/CreateBaseccVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBaseccVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.BaseccVmCluster.class,
+                        CreateBaseccVmClusterResponse.Builder::baseccVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateBaseccVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateBaseccVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateBaseccVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCloudAutonomousVmClusterResponse>
             createCloudAutonomousVmCluster(
                     CreateCloudAutonomousVmClusterRequest request,
@@ -4337,6 +4414,37 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteBackupDestinationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBaseccVmClusterResponse> deleteBaseccVmCluster(
+            DeleteBaseccVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBaseccVmClusterRequest, DeleteBaseccVmClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+
+        return clientCall(request, DeleteBaseccVmClusterResponse::builder)
+                .logger(LOG, "deleteBaseccVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "DeleteBaseccVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/DeleteBaseccVmCluster")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBaseccVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteBaseccVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteBaseccVmClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -7643,6 +7751,112 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetBaseccVmClusterResponse> getBaseccVmCluster(
+            GetBaseccVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBaseccVmClusterRequest, GetBaseccVmClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+
+        return clientCall(request, GetBaseccVmClusterResponse::builder)
+                .logger(LOG, "getBaseccVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "GetBaseccVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/GetBaseccVmCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBaseccVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.BaseccVmCluster.class,
+                        GetBaseccVmClusterResponse.Builder::baseccVmCluster)
+                .handleResponseHeaderString("etag", GetBaseccVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBaseccVmClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBaseccVmClusterUpdateResponse> getBaseccVmClusterUpdate(
+            GetBaseccVmClusterUpdateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBaseccVmClusterUpdateRequest, GetBaseccVmClusterUpdateResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+
+        Validate.notBlank(request.getUpdateId(), "updateId must not be blank");
+
+        return clientCall(request, GetBaseccVmClusterUpdateResponse::builder)
+                .logger(LOG, "getBaseccVmClusterUpdate")
+                .serviceDetails(
+                        "Database",
+                        "GetBaseccVmClusterUpdate",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdate/GetBaseccVmClusterUpdate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBaseccVmClusterUpdateRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .appendPathParam("updates")
+                .appendPathParam(request.getUpdateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.BaseccVmClusterUpdate.class,
+                        GetBaseccVmClusterUpdateResponse.Builder::baseccVmClusterUpdate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBaseccVmClusterUpdateResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBaseccVmClusterUpdateHistoryEntryResponse>
+            getBaseccVmClusterUpdateHistoryEntry(
+                    GetBaseccVmClusterUpdateHistoryEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetBaseccVmClusterUpdateHistoryEntryRequest,
+                                    GetBaseccVmClusterUpdateHistoryEntryResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+
+        Validate.notBlank(
+                request.getUpdateHistoryEntryId(), "updateHistoryEntryId must not be blank");
+
+        return clientCall(request, GetBaseccVmClusterUpdateHistoryEntryResponse::builder)
+                .logger(LOG, "getBaseccVmClusterUpdateHistoryEntry")
+                .serviceDetails(
+                        "Database",
+                        "GetBaseccVmClusterUpdateHistoryEntry",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdateHistoryEntry/GetBaseccVmClusterUpdateHistoryEntry")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBaseccVmClusterUpdateHistoryEntryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .appendPathParam("updateHistoryEntries")
+                .appendPathParam(request.getUpdateHistoryEntryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntry.class,
+                        GetBaseccVmClusterUpdateHistoryEntryResponse.Builder
+                                ::baseccVmClusterUpdateHistoryEntry)
+                .handleResponseHeaderString(
+                        "etag", GetBaseccVmClusterUpdateHistoryEntryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetBaseccVmClusterUpdateHistoryEntryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCloudAutonomousVmClusterResponse>
             getCloudAutonomousVmCluster(
                     GetCloudAutonomousVmClusterRequest request,
@@ -10798,6 +11012,127 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListBaseccVmClusterUpdateHistoryEntriesResponse>
+            listBaseccVmClusterUpdateHistoryEntries(
+                    ListBaseccVmClusterUpdateHistoryEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBaseccVmClusterUpdateHistoryEntriesRequest,
+                                    ListBaseccVmClusterUpdateHistoryEntriesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+
+        return clientCall(request, ListBaseccVmClusterUpdateHistoryEntriesResponse::builder)
+                .logger(LOG, "listBaseccVmClusterUpdateHistoryEntries")
+                .serviceDetails(
+                        "Database",
+                        "ListBaseccVmClusterUpdateHistoryEntries",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdateHistoryEntry/ListBaseccVmClusterUpdateHistoryEntries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBaseccVmClusterUpdateHistoryEntriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .appendPathParam("updateHistoryEntries")
+                .appendEnumQueryParam("updateType", request.getUpdateType())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntrySummary
+                                .class,
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBaseccVmClusterUpdatesResponse>
+            listBaseccVmClusterUpdates(
+                    ListBaseccVmClusterUpdatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBaseccVmClusterUpdatesRequest,
+                                    ListBaseccVmClusterUpdatesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+
+        return clientCall(request, ListBaseccVmClusterUpdatesResponse::builder)
+                .logger(LOG, "listBaseccVmClusterUpdates")
+                .serviceDetails(
+                        "Database",
+                        "ListBaseccVmClusterUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdate/ListBaseccVmClusterUpdates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBaseccVmClusterUpdatesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .appendPathParam("updates")
+                .appendEnumQueryParam("updateType", request.getUpdateType())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.BaseccVmClusterUpdateSummary.class,
+                        ListBaseccVmClusterUpdatesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBaseccVmClusterUpdatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBaseccVmClusterUpdatesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBaseccVmClustersResponse> listBaseccVmClusters(
+            ListBaseccVmClustersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBaseccVmClustersRequest, ListBaseccVmClustersResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListBaseccVmClustersResponse::builder)
+                .logger(LOG, "listBaseccVmClusters")
+                .serviceDetails(
+                        "Database",
+                        "ListBaseccVmClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/ListBaseccVmClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBaseccVmClustersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("baseInfrastructureId", request.getBaseInfrastructureId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("vmClusterType", request.getVmClusterType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.BaseccVmClusterSummary.class,
+                        ListBaseccVmClustersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBaseccVmClustersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBaseccVmClustersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCloudAutonomousVmClusterAcdResourceUsageResponse>
             listCloudAutonomousVmClusterAcdResourceUsage(
                     ListCloudAutonomousVmClusterAcdResourceUsageRequest request,
@@ -12510,6 +12845,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendPathParam("minorVersions")
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("exadataInfrastructureId", request.getExadataInfrastructureId())
                 .appendEnumQueryParam("shapeFamily", request.getShapeFamily())
                 .appendQueryParam(
                         "isGiVersionForProvisioning", request.getIsGiVersionForProvisioning())
@@ -14088,6 +14424,46 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         RegisterCloudVmClusterPkcsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", RegisterCloudVmClusterPkcsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterExadbVmClusterPkcsResponse>
+            registerExadbVmClusterPkcs(
+                    RegisterExadbVmClusterPkcsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RegisterExadbVmClusterPkcsRequest,
+                                    RegisterExadbVmClusterPkcsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getRegisterExadbVmClusterPkcsDetails(),
+                "registerExadbVmClusterPkcsDetails is required");
+
+        return clientCall(request, RegisterExadbVmClusterPkcsResponse::builder)
+                .logger(LOG, "registerExadbVmClusterPkcs")
+                .serviceDetails(
+                        "Database",
+                        "RegisterExadbVmClusterPkcs",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/RegisterExadbVmClusterPkcs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RegisterExadbVmClusterPkcsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("registerPkcs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RegisterExadbVmClusterPkcsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RegisterExadbVmClusterPkcsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -16226,6 +16602,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<UnregisterExadbVmClusterPkcsResponse>
+            unregisterExadbVmClusterPkcs(
+                    UnregisterExadbVmClusterPkcsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UnregisterExadbVmClusterPkcsRequest,
+                                    UnregisterExadbVmClusterPkcsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUnregisterExadbVmClusterPkcsDetails(),
+                "unregisterExadbVmClusterPkcsDetails is required");
+
+        return clientCall(request, UnregisterExadbVmClusterPkcsResponse::builder)
+                .logger(LOG, "unregisterExadbVmClusterPkcs")
+                .serviceDetails(
+                        "Database",
+                        "UnregisterExadbVmClusterPkcs",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/UnregisterExadbVmClusterPkcs")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UnregisterExadbVmClusterPkcsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("unregisterPkcs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UnregisterExadbVmClusterPkcsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UnregisterExadbVmClusterPkcsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAdvancedClusterFileSystemResponse>
             updateAdvancedClusterFileSystem(
                     UpdateAdvancedClusterFileSystemRequest request,
@@ -16732,6 +17149,45 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", UpdateBackupDestinationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateBackupDestinationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBaseccVmClusterResponse> updateBaseccVmCluster(
+            UpdateBaseccVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateBaseccVmClusterRequest, UpdateBaseccVmClusterResponse>
+                    handler) {
+
+        Validate.notBlank(request.getBaseccVmClusterId(), "baseccVmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateBaseccVmClusterDetails(),
+                "updateBaseccVmClusterDetails is required");
+
+        return clientCall(request, UpdateBaseccVmClusterResponse::builder)
+                .logger(LOG, "updateBaseccVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "UpdateBaseccVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/UpdateBaseccVmCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBaseccVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("baseccVmClusters")
+                .appendPathParam(request.getBaseccVmClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.BaseccVmCluster.class,
+                        UpdateBaseccVmClusterResponse.Builder::baseccVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateBaseccVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateBaseccVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateBaseccVmClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

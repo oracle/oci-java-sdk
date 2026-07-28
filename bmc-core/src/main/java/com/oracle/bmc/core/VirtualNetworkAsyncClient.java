@@ -7398,6 +7398,45 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<ListProviderRemoteRegionsResponse> listProviderRemoteRegions(
+            ListProviderRemoteRegionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProviderRemoteRegionsRequest, ListProviderRemoteRegionsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("providerServiceId", request.getProviderServiceId());
+
+        return clientCall(request, ListProviderRemoteRegionsResponse::builder)
+                .logger(LOG, "listProviderRemoteRegions")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ListProviderRemoteRegions",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ProviderRemoteRegionName/ListProviderRemoteRegions")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProviderRemoteRegionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendPathParam(request.getProviderServiceId())
+                .appendPathParam("providerRemoteRegions")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ProviderRemoteRegionName.class,
+                        ListProviderRemoteRegionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProviderRemoteRegionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProviderRemoteRegionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPublicIpPoolsResponse> listPublicIpPools(
             ListPublicIpPoolsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

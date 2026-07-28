@@ -272,6 +272,7 @@ public class PrivilegedApiRequestsClient extends com.oracle.bmc.http.internal.Ba
     @Override
     public ListPrivilegedApiRequestsResponse listPrivilegedApiRequests(
             ListPrivilegedApiRequestsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListPrivilegedApiRequestsResponse::builder)
                 .logger(LOG, "listPrivilegedApiRequests")

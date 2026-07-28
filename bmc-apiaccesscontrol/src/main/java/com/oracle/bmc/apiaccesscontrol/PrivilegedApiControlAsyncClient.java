@@ -255,6 +255,7 @@ public class PrivilegedApiControlAsyncClient extends com.oracle.bmc.http.interna
             final com.oracle.bmc.responses.AsyncHandler<
                             ListPrivilegedApiControlsRequest, ListPrivilegedApiControlsResponse>
                     handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListPrivilegedApiControlsResponse::builder)
                 .logger(LOG, "listPrivilegedApiControls")

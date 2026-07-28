@@ -24,10 +24,12 @@ package com.oracle.bmc.core.model;
 public final class SupportedCapabilities
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"isMemoryEncryptionSupported"})
-    public SupportedCapabilities(Boolean isMemoryEncryptionSupported) {
+    @java.beans.ConstructorProperties({"isMemoryEncryptionSupported", "isBurstableSupported"})
+    public SupportedCapabilities(
+            Boolean isMemoryEncryptionSupported, Boolean isBurstableSupported) {
         super();
         this.isMemoryEncryptionSupported = isMemoryEncryptionSupported;
+        this.isBurstableSupported = isBurstableSupported;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -51,13 +53,35 @@ public final class SupportedCapabilities
             this.__explicitlySet__.add("isMemoryEncryptionSupported");
             return this;
         }
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs.
+         * If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs
+         * cannot be launched.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isBurstableSupported")
+        private Boolean isBurstableSupported;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs.
+         * If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs
+         * cannot be launched.
+         *
+         * @param isBurstableSupported the value to set
+         * @return this builder
+         */
+        public Builder isBurstableSupported(Boolean isBurstableSupported) {
+            this.isBurstableSupported = isBurstableSupported;
+            this.__explicitlySet__.add("isBurstableSupported");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SupportedCapabilities build() {
             SupportedCapabilities model =
-                    new SupportedCapabilities(this.isMemoryEncryptionSupported);
+                    new SupportedCapabilities(
+                            this.isMemoryEncryptionSupported, this.isBurstableSupported);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -68,6 +92,9 @@ public final class SupportedCapabilities
         public Builder copy(SupportedCapabilities model) {
             if (model.wasPropertyExplicitlySet("isMemoryEncryptionSupported")) {
                 this.isMemoryEncryptionSupported(model.getIsMemoryEncryptionSupported());
+            }
+            if (model.wasPropertyExplicitlySet("isBurstableSupported")) {
+                this.isBurstableSupported(model.getIsBurstableSupported());
             }
             return this;
         }
@@ -99,6 +126,25 @@ public final class SupportedCapabilities
         return isMemoryEncryptionSupported;
     }
 
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If
+     * {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be
+     * launched.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isBurstableSupported")
+    private final Boolean isBurstableSupported;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If
+     * {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be
+     * launched.
+     *
+     * @return the value
+     */
+    public Boolean getIsBurstableSupported() {
+        return isBurstableSupported;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -116,6 +162,7 @@ public final class SupportedCapabilities
         sb.append("super=").append(super.toString());
         sb.append("isMemoryEncryptionSupported=")
                 .append(String.valueOf(this.isMemoryEncryptionSupported));
+        sb.append(", isBurstableSupported=").append(String.valueOf(this.isBurstableSupported));
         sb.append(")");
         return sb.toString();
     }
@@ -132,6 +179,7 @@ public final class SupportedCapabilities
         SupportedCapabilities other = (SupportedCapabilities) o;
         return java.util.Objects.equals(
                         this.isMemoryEncryptionSupported, other.isMemoryEncryptionSupported)
+                && java.util.Objects.equals(this.isBurstableSupported, other.isBurstableSupported)
                 && super.equals(other);
     }
 
@@ -144,6 +192,11 @@ public final class SupportedCapabilities
                         + (this.isMemoryEncryptionSupported == null
                                 ? 43
                                 : this.isMemoryEncryptionSupported.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBurstableSupported == null
+                                ? 43
+                                : this.isBurstableSupported.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

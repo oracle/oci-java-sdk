@@ -267,6 +267,7 @@ public class PrivilegedApiControlClient extends com.oracle.bmc.http.internal.Bas
     @Override
     public ListPrivilegedApiControlsResponse listPrivilegedApiControls(
             ListPrivilegedApiControlsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListPrivilegedApiControlsResponse::builder)
                 .logger(LOG, "listPrivilegedApiControls")

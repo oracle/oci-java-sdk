@@ -32,6 +32,7 @@ public final class DedicatedVmHostSummary
         "faultDomain",
         "id",
         "isMemoryEncryptionEnabled",
+        "isBurstable",
         "lifecycleState",
         "timeCreated",
         "remainingOcpus",
@@ -49,6 +50,7 @@ public final class DedicatedVmHostSummary
             String faultDomain,
             String id,
             Boolean isMemoryEncryptionEnabled,
+            Boolean isBurstable,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             Float remainingOcpus,
@@ -65,6 +67,7 @@ public final class DedicatedVmHostSummary
         this.faultDomain = faultDomain;
         this.id = id;
         this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+        this.isBurstable = isBurstable;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.remainingOcpus = remainingOcpus;
@@ -228,6 +231,27 @@ public final class DedicatedVmHostSummary
             this.__explicitlySet__.add("isMemoryEncryptionEnabled");
             return this;
         }
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs.
+         * If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs
+         * cannot be launched.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+        private Boolean isBurstable;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs.
+         * If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs
+         * cannot be launched.
+         *
+         * @param isBurstable the value to set
+         * @return this builder
+         */
+        public Builder isBurstable(Boolean isBurstable) {
+            this.isBurstable = isBurstable;
+            this.__explicitlySet__.add("isBurstable");
+            return this;
+        }
         /** The current state of the dedicated VM host. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -370,6 +394,7 @@ public final class DedicatedVmHostSummary
                             this.faultDomain,
                             this.id,
                             this.isMemoryEncryptionEnabled,
+                            this.isBurstable,
                             this.lifecycleState,
                             this.timeCreated,
                             this.remainingOcpus,
@@ -406,6 +431,9 @@ public final class DedicatedVmHostSummary
             }
             if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
                 this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isBurstable")) {
+                this.isBurstable(model.getIsBurstable());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -579,6 +607,25 @@ public final class DedicatedVmHostSummary
      */
     public Boolean getIsMemoryEncryptionEnabled() {
         return isMemoryEncryptionEnabled;
+    }
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If
+     * {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be
+     * launched.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+    private final Boolean isBurstable;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If
+     * {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be
+     * launched.
+     *
+     * @return the value
+     */
+    public Boolean getIsBurstable() {
+        return isBurstable;
     }
 
     /** The current state of the dedicated VM host. */
@@ -766,6 +813,7 @@ public final class DedicatedVmHostSummary
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", isMemoryEncryptionEnabled=")
                 .append(String.valueOf(this.isMemoryEncryptionEnabled));
+        sb.append(", isBurstable=").append(String.valueOf(this.isBurstable));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", remainingOcpus=").append(String.valueOf(this.remainingOcpus));
@@ -797,6 +845,7 @@ public final class DedicatedVmHostSummary
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(
                         this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
+                && java.util.Objects.equals(this.isBurstable, other.isBurstable)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.remainingOcpus, other.remainingOcpus)
@@ -834,6 +883,7 @@ public final class DedicatedVmHostSummary
                         + (this.isMemoryEncryptionEnabled == null
                                 ? 43
                                 : this.isMemoryEncryptionEnabled.hashCode());
+        result = (result * PRIME) + (this.isBurstable == null ? 43 : this.isBurstable.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

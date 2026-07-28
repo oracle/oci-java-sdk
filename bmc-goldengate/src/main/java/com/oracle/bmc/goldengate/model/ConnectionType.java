@@ -36,6 +36,7 @@ public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     GooglePubsub("GOOGLE_PUBSUB"),
     MicrosoftFabric("MICROSOFT_FABRIC"),
     Iceberg("ICEBERG"),
+    AiModel("AI_MODEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

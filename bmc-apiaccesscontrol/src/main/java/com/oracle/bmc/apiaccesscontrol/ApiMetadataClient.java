@@ -153,6 +153,7 @@ public class ApiMetadataClient extends com.oracle.bmc.http.internal.BaseSyncClie
 
     @Override
     public ListApiMetadataResponse listApiMetadata(ListApiMetadataRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListApiMetadataResponse::builder)
                 .logger(LOG, "listApiMetadata")
@@ -188,6 +189,7 @@ public class ApiMetadataClient extends com.oracle.bmc.http.internal.BaseSyncClie
     @Override
     public ListApiMetadataByEntityTypesResponse listApiMetadataByEntityTypes(
             ListApiMetadataByEntityTypesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListApiMetadataByEntityTypesResponse::builder)
                 .logger(LOG, "listApiMetadataByEntityTypes")

@@ -23,11 +23,21 @@ package com.oracle.bmc.database.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class UpdateDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"updateId", "updateAction", "giSoftwareImageId"})
-    public UpdateDetails(String updateId, UpdateAction updateAction, String giSoftwareImageId) {
+    @java.beans.ConstructorProperties({
+        "updateId",
+        "updateAction",
+        "updateMode",
+        "giSoftwareImageId"
+    })
+    public UpdateDetails(
+            String updateId,
+            UpdateAction updateAction,
+            UpdateMode updateMode,
+            String giSoftwareImageId) {
         super();
         this.updateId = updateId;
         this.updateAction = updateAction;
+        this.updateMode = updateMode;
         this.giSoftwareImageId = giSoftwareImageId;
     }
 
@@ -67,6 +77,21 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("updateAction");
             return this;
         }
+        /** The update mode to perform for OS Update. */
+        @com.fasterxml.jackson.annotation.JsonProperty("updateMode")
+        private UpdateMode updateMode;
+
+        /**
+         * The update mode to perform for OS Update.
+         *
+         * @param updateMode the value to set
+         * @return this builder
+         */
+        public Builder updateMode(UpdateMode updateMode) {
+            this.updateMode = updateMode;
+            this.__explicitlySet__.add("updateMode");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
          * grid infrastructure software image. This is a database software image of the type {@code
@@ -94,7 +119,11 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
 
         public UpdateDetails build() {
             UpdateDetails model =
-                    new UpdateDetails(this.updateId, this.updateAction, this.giSoftwareImageId);
+                    new UpdateDetails(
+                            this.updateId,
+                            this.updateAction,
+                            this.updateMode,
+                            this.giSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -108,6 +137,9 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("updateAction")) {
                 this.updateAction(model.getUpdateAction());
+            }
+            if (model.wasPropertyExplicitlySet("updateMode")) {
+                this.updateMode(model.getUpdateMode());
             }
             if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
                 this.giSoftwareImageId(model.getGiSoftwareImageId());
@@ -190,6 +222,55 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         return updateAction;
     }
 
+    /** The update mode to perform for OS Update. */
+    public enum UpdateMode implements com.oracle.bmc.http.internal.BmcEnum {
+        OnlineHighcvss("ONLINE_HIGHCVSS"),
+        OnlineAllcvss("ONLINE_ALLCVSS"),
+        OnlineAllUpdates("ONLINE_ALL_UPDATES"),
+        PendingUpdates("PENDING_UPDATES"),
+        FullUpdate("FULL_UPDATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, UpdateMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UpdateMode v : UpdateMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        UpdateMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UpdateMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid UpdateMode: " + key);
+        }
+    };
+    /** The update mode to perform for OS Update. */
+    @com.fasterxml.jackson.annotation.JsonProperty("updateMode")
+    private final UpdateMode updateMode;
+
+    /**
+     * The update mode to perform for OS Update.
+     *
+     * @return the value
+     */
+    public UpdateMode getUpdateMode() {
+        return updateMode;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
      * infrastructure software image. This is a database software image of the type {@code
@@ -226,6 +307,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         sb.append("super=").append(super.toString());
         sb.append("updateId=").append(String.valueOf(this.updateId));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
+        sb.append(", updateMode=").append(String.valueOf(this.updateMode));
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(")");
         return sb.toString();
@@ -243,6 +325,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         UpdateDetails other = (UpdateDetails) o;
         return java.util.Objects.equals(this.updateId, other.updateId)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
+                && java.util.Objects.equals(this.updateMode, other.updateMode)
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && super.equals(other);
     }
@@ -253,6 +336,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         int result = 1;
         result = (result * PRIME) + (this.updateId == null ? 43 : this.updateId.hashCode());
         result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
+        result = (result * PRIME) + (this.updateMode == null ? 43 : this.updateMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());

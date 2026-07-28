@@ -27,6 +27,7 @@ public final class ConnectionAssignmentSummary
         "id",
         "compartmentId",
         "connectionId",
+        "connectionType",
         "deploymentId",
         "aliasName",
         "lifecycleState",
@@ -37,6 +38,7 @@ public final class ConnectionAssignmentSummary
             String id,
             String compartmentId,
             String connectionId,
+            ConnectionType connectionType,
             String deploymentId,
             String aliasName,
             ConnectionAssignment.LifecycleState lifecycleState,
@@ -46,6 +48,7 @@ public final class ConnectionAssignmentSummary
         this.id = id;
         this.compartmentId = compartmentId;
         this.connectionId = connectionId;
+        this.connectionType = connectionType;
         this.deploymentId = deploymentId;
         this.aliasName = aliasName;
         this.lifecycleState = lifecycleState;
@@ -110,6 +113,21 @@ public final class ConnectionAssignmentSummary
         public Builder connectionId(String connectionId) {
             this.connectionId = connectionId;
             this.__explicitlySet__.add("connectionId");
+            return this;
+        }
+        /** The connection type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionType")
+        private ConnectionType connectionType;
+
+        /**
+         * The connection type.
+         *
+         * @param connectionType the value to set
+         * @return this builder
+         */
+        public Builder connectionType(ConnectionType connectionType) {
+            this.connectionType = connectionType;
+            this.__explicitlySet__.add("connectionType");
             return this;
         }
         /**
@@ -209,6 +227,7 @@ public final class ConnectionAssignmentSummary
                             this.id,
                             this.compartmentId,
                             this.connectionId,
+                            this.connectionType,
                             this.deploymentId,
                             this.aliasName,
                             this.lifecycleState,
@@ -230,6 +249,9 @@ public final class ConnectionAssignmentSummary
             }
             if (model.wasPropertyExplicitlySet("connectionId")) {
                 this.connectionId(model.getConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("connectionType")) {
+                this.connectionType(model.getConnectionType());
             }
             if (model.wasPropertyExplicitlySet("deploymentId")) {
                 this.deploymentId(model.getDeploymentId());
@@ -308,6 +330,19 @@ public final class ConnectionAssignmentSummary
      */
     public String getConnectionId() {
         return connectionId;
+    }
+
+    /** The connection type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionType")
+    private final ConnectionType connectionType;
+
+    /**
+     * The connection type.
+     *
+     * @return the value
+     */
+    public ConnectionType getConnectionType() {
+        return connectionType;
     }
 
     /**
@@ -405,6 +440,7 @@ public final class ConnectionAssignmentSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", connectionId=").append(String.valueOf(this.connectionId));
+        sb.append(", connectionType=").append(String.valueOf(this.connectionType));
         sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
         sb.append(", aliasName=").append(String.valueOf(this.aliasName));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -427,6 +463,7 @@ public final class ConnectionAssignmentSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.connectionId, other.connectionId)
+                && java.util.Objects.equals(this.connectionType, other.connectionType)
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
                 && java.util.Objects.equals(this.aliasName, other.aliasName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -444,6 +481,9 @@ public final class ConnectionAssignmentSummary
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.connectionType == null ? 43 : this.connectionType.hashCode());
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
         result = (result * PRIME) + (this.aliasName == null ? 43 : this.aliasName.hashCode());
         result =

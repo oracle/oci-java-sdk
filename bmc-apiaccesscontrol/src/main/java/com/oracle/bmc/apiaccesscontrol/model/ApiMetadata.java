@@ -36,6 +36,7 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
         "entityType",
         "apiName",
         "fields",
+        "attributes",
         "timeCreated",
         "timeUpdated",
         "timeDeleted",
@@ -53,6 +54,7 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
             String entityType,
             String apiName,
             java.util.List<String> fields,
+            java.util.List<String> attributes,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeDeleted,
@@ -69,6 +71,7 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
         this.entityType = entityType;
         this.apiName = apiName;
         this.fields = fields;
+        this.attributes = attributes;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeDeleted = timeDeleted;
@@ -175,12 +178,12 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("apiName");
             return this;
         }
-        /** List of the fields that is use while calling post or put for the data. */
+        /** deprecated; Use attributes field instead. */
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<String> fields;
 
         /**
-         * List of the fields that is use while calling post or put for the data.
+         * deprecated; Use attributes field instead.
          *
          * @param fields the value to set
          * @return this builder
@@ -188,6 +191,21 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
         public Builder fields(java.util.List<String> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
+            return this;
+        }
+        /** List of the fields that is use while calling post or put for the data. */
+        @com.fasterxml.jackson.annotation.JsonProperty("attributes")
+        private java.util.List<String> attributes;
+
+        /**
+         * List of the fields that is use while calling post or put for the data.
+         *
+         * @param attributes the value to set
+         * @return this builder
+         */
+        public Builder attributes(java.util.List<String> attributes) {
+            this.attributes = attributes;
+            this.__explicitlySet__.add("attributes");
             return this;
         }
         /**
@@ -381,6 +399,7 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
                             this.entityType,
                             this.apiName,
                             this.fields,
+                            this.attributes,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeDeleted,
@@ -417,6 +436,9 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("fields")) {
                 this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("attributes")) {
+                this.attributes(model.getAttributes());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -537,17 +559,30 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
         return apiName;
     }
 
-    /** List of the fields that is use while calling post or put for the data. */
+    /** deprecated; Use attributes field instead. */
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<String> fields;
+
+    /**
+     * deprecated; Use attributes field instead.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getFields() {
+        return fields;
+    }
+
+    /** List of the fields that is use while calling post or put for the data. */
+    @com.fasterxml.jackson.annotation.JsonProperty("attributes")
+    private final java.util.List<String> attributes;
 
     /**
      * List of the fields that is use while calling post or put for the data.
      *
      * @return the value
      */
-    public java.util.List<String> getFields() {
-        return fields;
+    public java.util.List<String> getAttributes() {
+        return attributes;
     }
 
     /**
@@ -780,6 +815,7 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", apiName=").append(String.valueOf(this.apiName));
         sb.append(", fields=").append(String.valueOf(this.fields));
+        sb.append(", attributes=").append(String.valueOf(this.attributes));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeDeleted=").append(String.valueOf(this.timeDeleted));
@@ -809,6 +845,7 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.apiName, other.apiName)
                 && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.attributes, other.attributes)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeDeleted, other.timeDeleted)
@@ -831,6 +868,7 @@ public final class ApiMetadata extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result = (result * PRIME) + (this.apiName == null ? 43 : this.apiName.hashCode());
         result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.attributes == null ? 43 : this.attributes.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeDeleted == null ? 43 : this.timeDeleted.hashCode());

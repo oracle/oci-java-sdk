@@ -775,6 +775,8 @@ public final class DedicatedAiCluster
         H100X2("H100_X2"),
         H100X4("H100_X4"),
         H100X8("H100_X8"),
+        H100X16("H100_X16"),
+        H100X32("H100_X32"),
         H200X1("H200_X1"),
         H200X2("H200_X2"),
         H200X4("H200_X4"),

@@ -1813,6 +1813,68 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListAiModelsResponse> listAiModels(
+            ListAiModelsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListAiModelsRequest, ListAiModelsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getProviderType(), "providerType is required");
+
+        return clientCall(request, ListAiModelsResponse::builder)
+                .logger(LOG, "listAiModels")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListAiModels",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/AiModelCollection/ListAiModels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAiModelsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("aiModels")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("providerType", request.getProviderType())
+                .appendQueryParam("region", request.getRegion())
+                .appendQueryParam("tenancyId", request.getTenancyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.AiModelCollection.class,
+                        ListAiModelsResponse.Builder::aiModelCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAiModelsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAiProvidersResponse> listAiProviders(
+            ListAiProvidersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAiProvidersRequest, ListAiProvidersResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAiProvidersResponse::builder)
+                .logger(LOG, "listAiProviders")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListAiProviders",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/AiProviderCollection/ListAiProviders")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAiProvidersRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("aiProviders")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.AiProviderCollection.class,
+                        ListAiProvidersResponse.Builder::aiProviderCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAiProvidersResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1871,6 +1933,14 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("deploymentId", request.getDeploymentId())
                 .appendQueryParam("connectionId", request.getConnectionId())
+                .appendListQueryParam(
+                        "connectionType",
+                        request.getConnectionType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "connectionTypeNotEqualTo",
+                        request.getConnectionTypeNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("name", request.getName())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
@@ -1915,6 +1985,10 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendListQueryParam(
                         "connectionType",
                         request.getConnectionType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "connectionTypeNotEqualTo",
+                        request.getConnectionTypeNotEqualTo(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("assignedDeploymentId", request.getAssignedDeploymentId())
                 .appendQueryParam("assignableDeploymentId", request.getAssignableDeploymentId())

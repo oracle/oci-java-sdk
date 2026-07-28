@@ -26,6 +26,7 @@ public final class ApproverDetail
     @java.beans.ConstructorProperties({
         "approverId",
         "approvalAction",
+        "approverGroupLevel",
         "approvalComment",
         "timeOfAuthorization",
         "timeApprovedForAccess"
@@ -33,12 +34,14 @@ public final class ApproverDetail
     public ApproverDetail(
             String approverId,
             String approvalAction,
+            Integer approverGroupLevel,
             String approvalComment,
             java.util.Date timeOfAuthorization,
             java.util.Date timeApprovedForAccess) {
         super();
         this.approverId = approverId;
         this.approvalAction = approvalAction;
+        this.approverGroupLevel = approverGroupLevel;
         this.approvalComment = approvalComment;
         this.timeOfAuthorization = timeOfAuthorization;
         this.timeApprovedForAccess = timeApprovedForAccess;
@@ -74,6 +77,21 @@ public final class ApproverDetail
         public Builder approvalAction(String approvalAction) {
             this.approvalAction = approvalAction;
             this.__explicitlySet__.add("approvalAction");
+            return this;
+        }
+        /** The group level at which the approver approved. */
+        @com.fasterxml.jackson.annotation.JsonProperty("approverGroupLevel")
+        private Integer approverGroupLevel;
+
+        /**
+         * The group level at which the approver approved.
+         *
+         * @param approverGroupLevel the value to set
+         * @return this builder
+         */
+        public Builder approverGroupLevel(Integer approverGroupLevel) {
+            this.approverGroupLevel = approverGroupLevel;
+            this.__explicitlySet__.add("approverGroupLevel");
             return this;
         }
         /** Comment specified by the approver of the request. */
@@ -142,6 +160,7 @@ public final class ApproverDetail
                     new ApproverDetail(
                             this.approverId,
                             this.approvalAction,
+                            this.approverGroupLevel,
                             this.approvalComment,
                             this.timeOfAuthorization,
                             this.timeApprovedForAccess);
@@ -158,6 +177,9 @@ public final class ApproverDetail
             }
             if (model.wasPropertyExplicitlySet("approvalAction")) {
                 this.approvalAction(model.getApprovalAction());
+            }
+            if (model.wasPropertyExplicitlySet("approverGroupLevel")) {
+                this.approverGroupLevel(model.getApproverGroupLevel());
             }
             if (model.wasPropertyExplicitlySet("approvalComment")) {
                 this.approvalComment(model.getApprovalComment());
@@ -205,6 +227,19 @@ public final class ApproverDetail
      */
     public String getApprovalAction() {
         return approvalAction;
+    }
+
+    /** The group level at which the approver approved. */
+    @com.fasterxml.jackson.annotation.JsonProperty("approverGroupLevel")
+    private final Integer approverGroupLevel;
+
+    /**
+     * The group level at which the approver approved.
+     *
+     * @return the value
+     */
+    public Integer getApproverGroupLevel() {
+        return approverGroupLevel;
     }
 
     /** Comment specified by the approver of the request. */
@@ -275,6 +310,7 @@ public final class ApproverDetail
         sb.append("super=").append(super.toString());
         sb.append("approverId=").append(String.valueOf(this.approverId));
         sb.append(", approvalAction=").append(String.valueOf(this.approvalAction));
+        sb.append(", approverGroupLevel=").append(String.valueOf(this.approverGroupLevel));
         sb.append(", approvalComment=").append(String.valueOf(this.approvalComment));
         sb.append(", timeOfAuthorization=").append(String.valueOf(this.timeOfAuthorization));
         sb.append(", timeApprovedForAccess=").append(String.valueOf(this.timeApprovedForAccess));
@@ -294,6 +330,7 @@ public final class ApproverDetail
         ApproverDetail other = (ApproverDetail) o;
         return java.util.Objects.equals(this.approverId, other.approverId)
                 && java.util.Objects.equals(this.approvalAction, other.approvalAction)
+                && java.util.Objects.equals(this.approverGroupLevel, other.approverGroupLevel)
                 && java.util.Objects.equals(this.approvalComment, other.approvalComment)
                 && java.util.Objects.equals(this.timeOfAuthorization, other.timeOfAuthorization)
                 && java.util.Objects.equals(this.timeApprovedForAccess, other.timeApprovedForAccess)
@@ -308,6 +345,11 @@ public final class ApproverDetail
         result =
                 (result * PRIME)
                         + (this.approvalAction == null ? 43 : this.approvalAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approverGroupLevel == null
+                                ? 43
+                                : this.approverGroupLevel.hashCode());
         result =
                 (result * PRIME)
                         + (this.approvalComment == null ? 43 : this.approvalComment.hashCode());

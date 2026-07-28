@@ -257,7 +257,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private char[] password;
@@ -266,7 +268,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
          * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -642,8 +646,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final char[] password;
@@ -652,7 +657,8 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
      * so on. Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
-     * This field will be removed after February 15 2026.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getPassword__AsCharArray() instead.
@@ -666,8 +672,9 @@ public final class CreateElasticsearchConnectionDetails extends CreateConnection
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */

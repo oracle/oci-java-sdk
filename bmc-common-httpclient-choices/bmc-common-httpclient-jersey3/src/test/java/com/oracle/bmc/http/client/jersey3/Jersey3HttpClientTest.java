@@ -10,6 +10,7 @@ import com.oracle.bmc.http.client.internal.ClientThreadFactory;
 import com.oracle.bmc.http.client.jersey3.internal.DaemonClientAsyncExecutorProvider;
 import com.oracle.bmc.http.client.jersey3.internal.IdleConnectionMonitor;
 import org.apache.http.conn.HttpClientConnectionManager;
+import org.glassfish.jersey.client.ClientProperties;
 import org.junit.Test;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -28,6 +29,28 @@ import static org.junit.Assert.assertTrue;
 public class Jersey3HttpClientTest {
     private static final long TEST_KEEP_ALIVE_SECONDS = 1L;
     private static final long EXECUTOR_THREAD_TIMEOUT_WAIT_MILLIS = 5000L;
+
+    @Test
+    public void redactsSensitivePropertyValuesForTraceLogging() {
+        String value = "sensitive-value";
+        String[] sensitiveKeys = {
+            ClientProperties.PROXY_PASSWORD,
+            "proxyPassword",
+            "clientSecret",
+            "delegationToken",
+            "credentialProvider",
+            "authenticationMethod",
+            "MixedCaseToKeN"
+        };
+
+        for (String key : sensitiveKeys) {
+            assertEquals(
+                    "<redacted>", Jersey3HttpClientBuilder.getPropertyValueForLogging(key, value));
+        }
+        assertEquals(
+                value,
+                Jersey3HttpClientBuilder.getPropertyValueForLogging("request.timeout", value));
+    }
 
     @Test
     public void validateEnabledIdleConnectionMonitorThread() {

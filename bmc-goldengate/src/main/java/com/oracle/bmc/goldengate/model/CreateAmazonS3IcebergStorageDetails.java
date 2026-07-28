@@ -57,12 +57,16 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
             this.__explicitlySet__.add("endpoint");
             return this;
         }
-        /** Access key ID to access the Amazon S3 bucket. */
+        /**
+         * Access key ID to access the Amazon S3 bucket. Note: Despite the "Id" suffix, this value
+         * is not an OCI OCID.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
 
         /**
-         * Access key ID to access the Amazon S3 bucket.
+         * Access key ID to access the Amazon S3 bucket. Note: Despite the "Id" suffix, this value
+         * is not an OCI OCID.
          *
          * @param accessKeyId the value to set
          * @return this builder
@@ -92,17 +96,21 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
             return this;
         }
         /**
-         * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
-         * field will be removed after February 15 2026.
+         * Secret access key to access the Amazon S3 bucket.
+         *
+         * <p>Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
         private char[] secretAccessKey;
 
         /**
-         * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
-         * field will be removed after February 15 2026.
+         * Secret access key to access the Amazon S3 bucket.
+         *
+         * <p>Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param secretAccessKey the value to set
          * @return this builder
@@ -272,12 +280,16 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
         return endpoint;
     }
 
-    /** Access key ID to access the Amazon S3 bucket. */
+    /**
+     * Access key ID to access the Amazon S3 bucket. Note: Despite the "Id" suffix, this value is
+     * not an OCI OCID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
     private final String accessKeyId;
 
     /**
-     * Access key ID to access the Amazon S3 bucket.
+     * Access key ID to access the Amazon S3 bucket. Note: Despite the "Id" suffix, this value is
+     * not an OCI OCID.
      *
      * @return the value
      */
@@ -303,17 +315,20 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
     }
 
     /**
-     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
-     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
-     * removed after February 15 2026.
+     * Secret access key to access the Amazon S3 bucket.
+     *
+     * <p>Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+     * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
     private final char[] secretAccessKey;
 
     /**
-     * Secret access key to access the Amazon S3 bucket. e.g.: &quot;this-is-not-the-secret&quot;
-     * Deprecated: This field is deprecated and replaced by &quot;secretAccessKeySecretId&quot;.
-     * This field will be removed after February 15 2026.
+     * Secret access key to access the Amazon S3 bucket. &lt;p&gt; Deprecated: This field is
+     * deprecated and replaced by &quot;secretAccessKeySecretId&quot;. This change follows the
+     * GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      * @deprecated Use getSecretAccessKey__AsCharArray() instead.
@@ -325,9 +340,11 @@ public final class CreateAmazonS3IcebergStorageDetails extends CreateIcebergStor
     }
 
     /**
-     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
-     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
-     * removed after February 15 2026.
+     * Secret access key to access the Amazon S3 bucket.
+     *
+     * <p>Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+     * change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */

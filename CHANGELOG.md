@@ -3,6 +3,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## Unreleased
+### Breaking Changes
+- Apache configurator add-ons now propagate `SSLInitializationException` when TLS initialization fails instead of silently registering a plaintext socket factory for `https`. Applications that require plaintext transport must explicitly provide a connection manager; see [PlainConnectionSocketFactoryExample.java](bmc-other-examples/bmc-jersey-examples/src/main/java/PlainConnectionSocketFactoryExample.java) and [PlainConnectionSocketFactoryExample.java](bmc-other-examples/bmc-jersey3-examples/src/main/java/PlainConnectionSocketFactoryExample.java) (Jersey 3).
+
+## 3.93.0 - 2026-07-28
+### Added 
+- Support for retention locks for block backups in the Block Volume service 
+- Support for Data Guard creation with Azure encryption keys and changing encryption key locations to Azure in the Database service 
+- Support for registering and unregistering PKCS for Exadata Database Service on Dedicated Infrastructure VM clusters in the Database service 
+- Support for Exadata DomU OS live updates in Exadata Cloud and Exadata Cloud@Customer in the Database service 
+- Support for Oracle Base Database Cloud@Customer VM clusters in the Database service 
+- Support for autonomous database and two-level approver groups in the Oracle API Access Control service 
+- Support for creating virtual circuits with AWS as the provider in the Networking service 
+- Support for listing available provider regions in the Networking service 
+- Support for Oracle Exadata Exascale, Oracle Exadata Exascale at Azure, and Oracle Exadata Exascale at Google Cloud connection technology types in the GoldenGate service 
+- Support for Google Cloud Managed Service for Apache Kafka connection technology types in the GoldenGate service 
+- Support for AI model connections in the GoldenGate service 
+- Support for listing supported AI models by provider, region, and tenancy in the GoldenGate service 
+- Support for NEEDS_ATTENTION lifecycle state for connection resources in the GoldenGate service 
+- Support for connectionType metadata and connectionTypeNotEqualTo filtering on connection assignment resources in the GoldenGate service 
+- Support for H100_X16 and H100_X32 Dedicated AI Cluster shapes for model import in the Generative AI service  
+
+### Breaking Changes 
+- The field `compartmentId` has been made required in the requests `ListApiMetadataByEntityTypesRequest`, `ListApiMetadataRequest`, `ListPrivilegedApiControlsRequest`, `ListPrivilegedApiRequestsRequest`, and `ListWorkRequestsRequest` in the Oracle API Access Control service 
+- The field `compartmentId` has been made required in the model `CreatePrivilegedApiRequestDetails` in the Oracle API Access Control service
+
 ## 3.92.1 - 2026-07-21
 ### Added 
 - Support for multiple FastConnect enhancements in the Networking service 
@@ -31,7 +57,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - The return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the model `com.oracle.bmc.generativeai.model.HostedApplicationSummary` in the Generative AI service 
 - The return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the request class `com.oracle.bmc.generativeai.requests.ListHostedApplicationsRequest` in the Generative AI service
 
-## 3.91.1 - 2026-06-07
+## 3.91.1 - 2026-07-07
 ### Added 
 - Support for DAC hardware shapes for self-hosted models in the Generative AI service
 

@@ -24,11 +24,20 @@ package com.oracle.bmc.database.model;
 public final class VmClusterUpdateDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"updateId", "updateAction", "giSoftwareImageId"})
+    @java.beans.ConstructorProperties({
+        "updateId",
+        "updateMode",
+        "updateAction",
+        "giSoftwareImageId"
+    })
     public VmClusterUpdateDetails(
-            String updateId, UpdateAction updateAction, String giSoftwareImageId) {
+            String updateId,
+            UpdateMode updateMode,
+            UpdateAction updateAction,
+            String giSoftwareImageId) {
         super();
         this.updateId = updateId;
+        this.updateMode = updateMode;
         this.updateAction = updateAction;
         this.giSoftwareImageId = giSoftwareImageId;
     }
@@ -52,6 +61,21 @@ public final class VmClusterUpdateDetails
         public Builder updateId(String updateId) {
             this.updateId = updateId;
             this.__explicitlySet__.add("updateId");
+            return this;
+        }
+        /** The update mode to perform for OS Update. */
+        @com.fasterxml.jackson.annotation.JsonProperty("updateMode")
+        private UpdateMode updateMode;
+
+        /**
+         * The update mode to perform for OS Update.
+         *
+         * @param updateMode the value to set
+         * @return this builder
+         */
+        public Builder updateMode(UpdateMode updateMode) {
+            this.updateMode = updateMode;
+            this.__explicitlySet__.add("updateMode");
             return this;
         }
         /** The update action to perform. */
@@ -97,7 +121,10 @@ public final class VmClusterUpdateDetails
         public VmClusterUpdateDetails build() {
             VmClusterUpdateDetails model =
                     new VmClusterUpdateDetails(
-                            this.updateId, this.updateAction, this.giSoftwareImageId);
+                            this.updateId,
+                            this.updateMode,
+                            this.updateAction,
+                            this.giSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -108,6 +135,9 @@ public final class VmClusterUpdateDetails
         public Builder copy(VmClusterUpdateDetails model) {
             if (model.wasPropertyExplicitlySet("updateId")) {
                 this.updateId(model.getUpdateId());
+            }
+            if (model.wasPropertyExplicitlySet("updateMode")) {
+                this.updateMode(model.getUpdateMode());
             }
             if (model.wasPropertyExplicitlySet("updateAction")) {
                 this.updateAction(model.getUpdateAction());
@@ -143,6 +173,55 @@ public final class VmClusterUpdateDetails
      */
     public String getUpdateId() {
         return updateId;
+    }
+
+    /** The update mode to perform for OS Update. */
+    public enum UpdateMode implements com.oracle.bmc.http.internal.BmcEnum {
+        OnlineHighcvss("ONLINE_HIGHCVSS"),
+        OnlineAllcvss("ONLINE_ALLCVSS"),
+        OnlineAllUpdates("ONLINE_ALL_UPDATES"),
+        PendingUpdates("PENDING_UPDATES"),
+        FullUpdate("FULL_UPDATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, UpdateMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UpdateMode v : UpdateMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        UpdateMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UpdateMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid UpdateMode: " + key);
+        }
+    };
+    /** The update mode to perform for OS Update. */
+    @com.fasterxml.jackson.annotation.JsonProperty("updateMode")
+    private final UpdateMode updateMode;
+
+    /**
+     * The update mode to perform for OS Update.
+     *
+     * @return the value
+     */
+    public UpdateMode getUpdateMode() {
+        return updateMode;
     }
 
     /** The update action to perform. */
@@ -227,6 +306,7 @@ public final class VmClusterUpdateDetails
         sb.append("VmClusterUpdateDetails(");
         sb.append("super=").append(super.toString());
         sb.append("updateId=").append(String.valueOf(this.updateId));
+        sb.append(", updateMode=").append(String.valueOf(this.updateMode));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(")");
@@ -244,6 +324,7 @@ public final class VmClusterUpdateDetails
 
         VmClusterUpdateDetails other = (VmClusterUpdateDetails) o;
         return java.util.Objects.equals(this.updateId, other.updateId)
+                && java.util.Objects.equals(this.updateMode, other.updateMode)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && super.equals(other);
@@ -254,6 +335,7 @@ public final class VmClusterUpdateDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.updateId == null ? 43 : this.updateId.hashCode());
+        result = (result * PRIME) + (this.updateMode == null ? 43 : this.updateMode.hashCode());
         result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
         result =
                 (result * PRIME)
