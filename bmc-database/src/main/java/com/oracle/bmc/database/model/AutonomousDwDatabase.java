@@ -154,6 +154,7 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
         "disasterRecoveryRegionType",
         "timeDisasterRecoveryRoleChanged",
         "remoteDisasterRecoveryConfiguration",
+        "accessTypes",
         "netServicesArchitecture",
         "availabilityDomain",
         "clusterPlacementGroupId",
@@ -294,6 +295,7 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
             DisasterRecoveryRegionType disasterRecoveryRegionType,
             java.util.Date timeDisasterRecoveryRoleChanged,
             DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
+            java.util.List<String> accessTypes,
             NetServicesArchitecture netServicesArchitecture,
             String availabilityDomain,
             String clusterPlacementGroupId,
@@ -433,6 +435,7 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
         this.disasterRecoveryRegionType = disasterRecoveryRegionType;
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
         this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
+        this.accessTypes = accessTypes;
         this.netServicesArchitecture = netServicesArchitecture;
         this.availabilityDomain = availabilityDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
@@ -2839,6 +2842,22 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * List of access types for an Autonomous AI Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("accessTypes")
+        private java.util.List<String> accessTypes;
+
+        /**
+         * List of access types for an Autonomous AI Database.
+         * @param accessTypes the value to set
+         * @return this builder
+         **/
+        public Builder accessTypes(java.util.List<String> accessTypes) {
+            this.accessTypes = accessTypes;
+            this.__explicitlySet__.add("accessTypes");
+            return this;
+        }
+        /**
          * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
          *
          **/
@@ -3094,6 +3113,7 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                             this.disasterRecoveryRegionType,
                             this.timeDisasterRecoveryRoleChanged,
                             this.remoteDisasterRecoveryConfiguration,
+                            this.accessTypes,
                             this.netServicesArchitecture,
                             this.availabilityDomain,
                             this.clusterPlacementGroupId,
@@ -3509,6 +3529,9 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("remoteDisasterRecoveryConfiguration")) {
                 this.remoteDisasterRecoveryConfiguration(
                         model.getRemoteDisasterRecoveryConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("accessTypes")) {
+                this.accessTypes(model.getAccessTypes());
             }
             if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
                 this.netServicesArchitecture(model.getNetServicesArchitecture());
@@ -6323,6 +6346,20 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * List of access types for an Autonomous AI Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("accessTypes")
+    private final java.util.List<String> accessTypes;
+
+    /**
+     * List of access types for an Autonomous AI Database.
+     * @return the value
+     **/
+    public java.util.List<String> getAccessTypes() {
+        return accessTypes;
+    }
+
+    /**
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      *
      **/
@@ -6688,6 +6725,7 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                 .append(String.valueOf(this.timeDisasterRecoveryRoleChanged));
         sb.append(", remoteDisasterRecoveryConfiguration=")
                 .append(String.valueOf(this.remoteDisasterRecoveryConfiguration));
+        sb.append(", accessTypes=").append(String.valueOf(this.accessTypes));
         sb.append(", netServicesArchitecture=")
                 .append(String.valueOf(this.netServicesArchitecture));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
@@ -6900,6 +6938,7 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(
                         this.remoteDisasterRecoveryConfiguration,
                         other.remoteDisasterRecoveryConfiguration)
+                && java.util.Objects.equals(this.accessTypes, other.accessTypes)
                 && java.util.Objects.equals(
                         this.netServicesArchitecture, other.netServicesArchitecture)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
@@ -7390,6 +7429,7 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                         + (this.remoteDisasterRecoveryConfiguration == null
                                 ? 43
                                 : this.remoteDisasterRecoveryConfiguration.hashCode());
+        result = (result * PRIME) + (this.accessTypes == null ? 43 : this.accessTypes.hashCode());
         result =
                 (result * PRIME)
                         + (this.netServicesArchitecture == null

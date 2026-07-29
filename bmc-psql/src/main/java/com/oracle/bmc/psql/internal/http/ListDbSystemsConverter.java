@@ -97,6 +97,14 @@ public class ListDbSystemsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getSystemRole() != null) {
+            target =
+                    target.queryParam(
+                            "systemRole",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSystemRole().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

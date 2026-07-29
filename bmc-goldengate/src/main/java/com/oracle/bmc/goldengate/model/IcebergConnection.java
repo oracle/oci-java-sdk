@@ -229,12 +229,14 @@ public final class IcebergConnection extends Connection {
         }
         /**
          * The Iceberg technology type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Iceberg technology type.
+         *
          * @param technologyType the value to set
          * @return this builder
          **/
@@ -448,6 +450,7 @@ public final class IcebergConnection extends Connection {
 
     /**
      * The Iceberg technology type.
+     *
      **/
     public enum TechnologyType {
         ApacheIceberg("APACHE_ICEBERG"),
@@ -495,12 +498,14 @@ public final class IcebergConnection extends Connection {
     };
     /**
      * The Iceberg technology type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Iceberg technology type.
+     *
      * @return the value
      **/
     public TechnologyType getTechnologyType() {

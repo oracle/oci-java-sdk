@@ -257,13 +257,13 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Details about the current state of the audit trail in Data Safe.
+         * Details about the current state of the audit trail in Data Safe. This attribute will be deprecated, but will still be available in GET audit trail response.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Details about the current state of the audit trail in Data Safe.
+         * Details about the current state of the audit trail in Data Safe. This attribute will be deprecated, but will still be available in GET audit trail response.
          * @param lifecycleDetails the value to set
          * @return this builder
          **/
@@ -620,13 +620,13 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Details about the current state of the audit trail in Data Safe.
+     * Details about the current state of the audit trail in Data Safe. This attribute will be deprecated, but will still be available in GET audit trail response.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Details about the current state of the audit trail in Data Safe.
+     * Details about the current state of the audit trail in Data Safe. This attribute will be deprecated, but will still be available in GET audit trail response.
      * @return the value
      **/
     public String getLifecycleDetails() {

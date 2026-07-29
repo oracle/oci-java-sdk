@@ -44,7 +44,9 @@ public final class CreateDatabaseDetails
             String sidPrefix,
             String keyStoreId,
             EncryptionKeyLocationDetails encryptionKeyLocationDetails,
-            DatabaseStorageSizeDetails storageSizeDetails) {
+            DatabaseStorageSizeDetails storageSizeDetails,
+            ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
+            String vmClusterId) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -65,6 +67,8 @@ public final class CreateDatabaseDetails
         this.keyStoreId = keyStoreId;
         this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
         this.storageSizeDetails = storageSizeDetails;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+        this.vmClusterId = vmClusterId;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -88,7 +92,9 @@ public final class CreateDatabaseDetails
         "sidPrefix",
         "keyStoreId",
         "encryptionKeyLocationDetails",
-        "storageSizeDetails"
+        "storageSizeDetails",
+        "managedSoftwareUpdateDetails",
+        "vmClusterId"
     })
     public CreateDatabaseDetails(
             String dbName,
@@ -109,7 +115,9 @@ public final class CreateDatabaseDetails
             String sidPrefix,
             String keyStoreId,
             EncryptionKeyLocationDetails encryptionKeyLocationDetails,
-            DatabaseStorageSizeDetails storageSizeDetails) {
+            DatabaseStorageSizeDetails storageSizeDetails,
+            ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
+            String vmClusterId) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -130,6 +138,8 @@ public final class CreateDatabaseDetails
         this.keyStoreId = keyStoreId;
         this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
         this.storageSizeDetails = storageSizeDetails;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+        this.vmClusterId = vmClusterId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -462,6 +472,32 @@ public final class CreateDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+        private ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+        public Builder managedSoftwareUpdateDetails(
+                ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails) {
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            this.__explicitlySet__.add("managedSoftwareUpdateDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+        private String vmClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * @param vmClusterId the value to set
+         * @return this builder
+         **/
+        public Builder vmClusterId(String vmClusterId) {
+            this.vmClusterId = vmClusterId;
+            this.__explicitlySet__.add("vmClusterId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -486,7 +522,9 @@ public final class CreateDatabaseDetails
                             this.sidPrefix,
                             this.keyStoreId,
                             this.encryptionKeyLocationDetails,
-                            this.storageSizeDetails);
+                            this.storageSizeDetails,
+                            this.managedSoftwareUpdateDetails,
+                            this.vmClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -551,6 +589,12 @@ public final class CreateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
                 this.storageSizeDetails(model.getStorageSizeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("managedSoftwareUpdateDetails")) {
+                this.managedSoftwareUpdateDetails(model.getManagedSoftwareUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterId")) {
+                this.vmClusterId(model.getVmClusterId());
             }
             return this;
         }
@@ -897,6 +941,27 @@ public final class CreateDatabaseDetails
         return storageSizeDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+    private final ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+    public ManagedSoftwareUpdateInputDetails getManagedSoftwareUpdateDetails() {
+        return managedSoftwareUpdateDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+    private final String vmClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * @return the value
+     **/
+    public String getVmClusterId() {
+        return vmClusterId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -932,6 +997,9 @@ public final class CreateDatabaseDetails
         sb.append(", encryptionKeyLocationDetails=")
                 .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
+        sb.append(", managedSoftwareUpdateDetails=")
+                .append(String.valueOf(this.managedSoftwareUpdateDetails));
+        sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -967,6 +1035,9 @@ public final class CreateDatabaseDetails
                 && java.util.Objects.equals(
                         this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
+                && java.util.Objects.equals(
+                        this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
+                && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && super.equals(other);
     }
 
@@ -1015,6 +1086,12 @@ public final class CreateDatabaseDetails
                         + (this.storageSizeDetails == null
                                 ? 43
                                 : this.storageSizeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedSoftwareUpdateDetails == null
+                                ? 43
+                                : this.managedSoftwareUpdateDetails.hashCode());
+        result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -51,6 +51,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.databasetools.SdkClientsMetadata",
     "com.oracle.bmc.databasetoolsruntime.SdkClientsMetadata",
     "com.oracle.bmc.datacatalog.SdkClientsMetadata",
+    "com.oracle.bmc.datacc.SdkClientsMetadata",
     "com.oracle.bmc.dataflow.SdkClientsMetadata",
     "com.oracle.bmc.dataintegration.SdkClientsMetadata",
     "com.oracle.bmc.datalabelingservice.SdkClientsMetadata",

@@ -12,6 +12,7 @@ import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
 
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import com.oracle.bmc.util.internal.StringUtils;
@@ -104,27 +105,35 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     private static final String OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME =
             "oci.javasdk.extra.imds.logs.enabled";
+    static final org.glassfish.jersey.logging.LoggingFeature.Verbosity
+            EXTRA_IMDS_LOGGING_VERBOSITY =
+                    org.glassfish.jersey.logging.LoggingFeature.Verbosity.PAYLOAD_TEXT;
 
     static {
-        String v = System.getProperty(OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME, "false");
-        if (Boolean.parseBoolean(v)) {
+        registerExtraImdsLoggingIfEnabled(
+                CLIENT, System.getProperty(OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME, "false"));
+    }
+
+    static boolean registerExtraImdsLoggingIfEnabled(Client client, String value) {
+        if (Boolean.parseBoolean(value)) {
             LOG.info(
                     "{} was set to {}, adding logging to AbstractFederationClientAuthenticationDetailsProviderBuilder.CLIENT",
                     OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME,
-                    v);
-            javax.ws.rs.core.Feature feature =
-                    new org.glassfish.jersey.logging.LoggingFeature(
-                            new JulFacade(),
-                            java.util.logging.Level.INFO,
-                            org.glassfish.jersey.logging.LoggingFeature.Verbosity.PAYLOAD_TEXT,
-                            8192);
-            CLIENT.register(feature);
+                    value);
+            client.register(createExtraImdsLoggingFeature());
+            return true;
         } else {
             LOG.debug(
                     "{} was set to {}, adding logging to AbstractFederationClientAuthenticationDetailsProviderBuilder.CLIENT",
                     OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME,
-                    System.getProperty(OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME));
+                    value);
+            return false;
         }
+    }
+
+    static javax.ws.rs.core.Feature createExtraImdsLoggingFeature() {
+        return new org.glassfish.jersey.logging.LoggingFeature(
+                new JulFacade(), java.util.logging.Level.INFO, EXTRA_IMDS_LOGGING_VERBOSITY, 8192);
     }
 
     /**
@@ -141,6 +150,9 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * The leaf certificate, or null if detecting from instance metadata.
      */
     protected X509CertificateSupplier leafCertificateSupplier;
+
+    /** Configurator for metadata service clients used to discover region and certificates. */
+    protected ClientConfigurator federationClientMetadataConfigurator;
 
     /**
      * Tenancy OCI, or null if detecting from instance metadata.
@@ -189,6 +201,18 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     public B leafCertificateSupplier(X509CertificateSupplier leafCertificateSupplier) {
         this.leafCertificateSupplier = leafCertificateSupplier;
+        return (B) this;
+    }
+
+    /**
+     * Configures the ClientConfigurator to set on the metadata service clients used by the
+     * federation flow to discover region information and fetch certificates, if any.
+     *
+     * @param clientConfigurator the metadata service client configurator
+     * @return this builder
+     */
+    public B federationClientMetadataConfigurator(ClientConfigurator clientConfigurator) {
+        this.federationClientMetadataConfigurator = clientConfigurator;
         return (B) this;
     }
 
@@ -290,7 +314,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
             executeImdsV2EndpointCheck();
             String regionStr =
-                    simpleRetry(
+                    simpleRetryWithMetadataClient(
                             base -> {
                                 String region =
                                         base.path(REGION_PATH_LITERAL)
@@ -350,7 +374,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                         new URLBasedX509CertificateSupplier(
                                 getMetadataResourceDetails("identity/cert.pem"),
                                 getMetadataResourceDetails("identity/key.pem"),
-                                (char[]) null);
+                                (char[]) null,
+                                federationClientMetadataConfigurator);
             }
 
             if (tenancyId == null) {
@@ -368,7 +393,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                         new URLBasedX509CertificateSupplier(
                                 getMetadataResourceDetails("identity/intermediate.pem"),
                                 null,
-                                (char[]) null));
+                                (char[]) null,
+                                federationClientMetadataConfigurator));
             }
         } catch (MalformedURLException ex) {
             throw new IllegalArgumentException("The metadata service url is invalid.", ex);
@@ -381,7 +407,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     private void executeImdsV2EndpointCheck() {
         try {
             Response response =
-                    simpleRetry(
+                    simpleRetryWithMetadataClient(
                             base -> {
                                 Response v2CheckResponse =
                                         base.path(REGION_PATH_LITERAL)
@@ -539,6 +565,24 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         return simpleRetry(GuavaUtils.adaptFromGuava(retryOperation), metadataServiceUrl, endpoint);
     }
 
+    private <T> T simpleRetryWithMetadataClient(
+            Function<WebTarget, T> retryOperation,
+            final String metadataServiceUrl,
+            final String endpoint) {
+        if (federationClientMetadataConfigurator == null) {
+            return simpleRetry(retryOperation, metadataServiceUrl, endpoint);
+        }
+        ClientBuilder clientBuilder = ClientBuilder.newBuilder();
+        federationClientMetadataConfigurator.customizeBuilder(clientBuilder);
+        Client client = clientBuilder.build();
+        federationClientMetadataConfigurator.customizeClient(client);
+        try {
+            return simpleRetry(retryOperation, metadataServiceUrl, endpoint, client);
+        } finally {
+            client.close();
+        }
+    }
+
     /**
      * Retry logic to get endpoint from instance metadata service
      *
@@ -551,6 +595,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             Function<WebTarget, T> retryOperation,
             final String metadataServiceUrl,
             final String endpoint) {
+        return simpleRetry(retryOperation, metadataServiceUrl, endpoint, CLIENT);
+    }
+
+    private static <T> T simpleRetry(
+            Function<WebTarget, T> retryOperation,
+            final String metadataServiceUrl,
+            final String endpoint,
+            final Client client) {
 
         ExponentialBackoffDelayStrategyWithJitter strategy =
                 new ExponentialBackoffDelayStrategyWithJitter(TimeUnit.SECONDS.toMillis(30));
@@ -561,7 +613,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         RuntimeException lastException = null;
         for (int retry = 0; retry < MAX_RETRIES; retry++) {
             try {
-                WebTarget base = CLIENT.target(metadataServiceUrl + "instance/");
+                WebTarget base = client.target(metadataServiceUrl + "instance/");
                 return retryOperation.apply(base);
             } catch (RuntimeException e) {
                 LOG.warn(

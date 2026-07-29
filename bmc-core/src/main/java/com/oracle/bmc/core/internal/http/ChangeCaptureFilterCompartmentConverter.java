@@ -35,8 +35,14 @@ public class ChangeCaptureFilterCompartmentConverter {
                 request.getChangeCaptureFilterCompartmentDetails(),
                 "changeCaptureFilterCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("captureFilterId", request.getCaptureFilterId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("captureFilters")
                         .path(

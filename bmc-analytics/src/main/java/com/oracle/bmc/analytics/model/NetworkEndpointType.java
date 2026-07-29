@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Public/Private endpoint access type.
+ * Public or private endpoint access type.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")

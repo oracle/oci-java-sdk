@@ -798,6 +798,7 @@ public final class KafkaConnection extends Connection {
         ApacheKafka("APACHE_KAFKA"),
         AzureEventHubs("AZURE_EVENT_HUBS"),
         ConfluentKafka("CONFLUENT_KAFKA"),
+        GoogleCloudManagedServiceForApacheKafka("GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA"),
         MicrosoftFabricEventstream("MICROSOFT_FABRIC_EVENTSTREAM"),
         OciStreaming("OCI_STREAMING"),
         OciStreamingWithApacheKafka("OCI_STREAMING_WITH_APACHE_KAFKA"),

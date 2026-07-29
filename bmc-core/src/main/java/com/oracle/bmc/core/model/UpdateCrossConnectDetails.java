@@ -29,7 +29,9 @@ public final class UpdateCrossConnectDetails
         "freeformTags",
         "isActive",
         "customerReferenceName",
-        "macsecProperties"
+        "macsecProperties",
+        "isInterfaceHoldTimerEnabled",
+        "interfaceDownTimerValueInMilliseconds"
     })
     public UpdateCrossConnectDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -37,7 +39,9 @@ public final class UpdateCrossConnectDetails
             java.util.Map<String, String> freeformTags,
             Boolean isActive,
             String customerReferenceName,
-            UpdateMacsecProperties macsecProperties) {
+            UpdateMacsecProperties macsecProperties,
+            Boolean isInterfaceHoldTimerEnabled,
+            Integer interfaceDownTimerValueInMilliseconds) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -45,6 +49,8 @@ public final class UpdateCrossConnectDetails
         this.isActive = isActive;
         this.customerReferenceName = customerReferenceName;
         this.macsecProperties = macsecProperties;
+        this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+        this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -171,6 +177,39 @@ public final class UpdateCrossConnectDetails
             this.__explicitlySet__.add("macsecProperties");
             return this;
         }
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+        private Boolean isInterfaceHoldTimerEnabled;
+
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         * @param isInterfaceHoldTimerEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            this.__explicitlySet__.add("isInterfaceHoldTimerEnabled");
+            return this;
+        }
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+        private Integer interfaceDownTimerValueInMilliseconds;
+
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         * @param interfaceDownTimerValueInMilliseconds the value to set
+         * @return this builder
+         **/
+        public Builder interfaceDownTimerValueInMilliseconds(
+                Integer interfaceDownTimerValueInMilliseconds) {
+            this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            this.__explicitlySet__.add("interfaceDownTimerValueInMilliseconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -183,7 +222,9 @@ public final class UpdateCrossConnectDetails
                             this.freeformTags,
                             this.isActive,
                             this.customerReferenceName,
-                            this.macsecProperties);
+                            this.macsecProperties,
+                            this.isInterfaceHoldTimerEnabled,
+                            this.interfaceDownTimerValueInMilliseconds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -209,6 +250,13 @@ public final class UpdateCrossConnectDetails
             }
             if (model.wasPropertyExplicitlySet("macsecProperties")) {
                 this.macsecProperties(model.getMacsecProperties());
+            }
+            if (model.wasPropertyExplicitlySet("isInterfaceHoldTimerEnabled")) {
+                this.isInterfaceHoldTimerEnabled(model.getIsInterfaceHoldTimerEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("interfaceDownTimerValueInMilliseconds")) {
+                this.interfaceDownTimerValueInMilliseconds(
+                        model.getInterfaceDownTimerValueInMilliseconds());
             }
             return this;
         }
@@ -334,6 +382,34 @@ public final class UpdateCrossConnectDetails
         return macsecProperties;
     }
 
+    /**
+     * The flag to enable or disable the down timer for the interface.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isInterfaceHoldTimerEnabled")
+    private final Boolean isInterfaceHoldTimerEnabled;
+
+    /**
+     * The flag to enable or disable the down timer for the interface.
+     * @return the value
+     **/
+    public Boolean getIsInterfaceHoldTimerEnabled() {
+        return isInterfaceHoldTimerEnabled;
+    }
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceDownTimerValueInMilliseconds")
+    private final Integer interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * @return the value
+     **/
+    public Integer getInterfaceDownTimerValueInMilliseconds() {
+        return interfaceDownTimerValueInMilliseconds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -354,6 +430,10 @@ public final class UpdateCrossConnectDetails
         sb.append(", isActive=").append(String.valueOf(this.isActive));
         sb.append(", customerReferenceName=").append(String.valueOf(this.customerReferenceName));
         sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
+        sb.append(", isInterfaceHoldTimerEnabled=")
+                .append(String.valueOf(this.isInterfaceHoldTimerEnabled));
+        sb.append(", interfaceDownTimerValueInMilliseconds=")
+                .append(String.valueOf(this.interfaceDownTimerValueInMilliseconds));
         sb.append(")");
         return sb.toString();
     }
@@ -374,6 +454,11 @@ public final class UpdateCrossConnectDetails
                 && java.util.Objects.equals(this.isActive, other.isActive)
                 && java.util.Objects.equals(this.customerReferenceName, other.customerReferenceName)
                 && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
+                && java.util.Objects.equals(
+                        this.isInterfaceHoldTimerEnabled, other.isInterfaceHoldTimerEnabled)
+                && java.util.Objects.equals(
+                        this.interfaceDownTimerValueInMilliseconds,
+                        other.interfaceDownTimerValueInMilliseconds)
                 && super.equals(other);
     }
 
@@ -393,6 +478,16 @@ public final class UpdateCrossConnectDetails
         result =
                 (result * PRIME)
                         + (this.macsecProperties == null ? 43 : this.macsecProperties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInterfaceHoldTimerEnabled == null
+                                ? 43
+                                : this.isInterfaceHoldTimerEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.interfaceDownTimerValueInMilliseconds == null
+                                ? 43
+                                : this.interfaceDownTimerValueInMilliseconds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

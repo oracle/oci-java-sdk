@@ -22,15 +22,23 @@ package com.oracle.bmc.apmcontrolplane.model;
 public final class UpdateApmDomainDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "logGroupId",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateApmDomainDetails(
             String displayName,
             String description,
+            String logGroupId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
+        this.logGroupId = logGroupId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -67,6 +75,22 @@ public final class UpdateApmDomainDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+        private String logGroupId;
+
+        /**
+         * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+         * @param logGroupId the value to set
+         * @return this builder
+         **/
+        public Builder logGroupId(String logGroupId) {
+            this.logGroupId = logGroupId;
+            this.__explicitlySet__.add("logGroupId");
             return this;
         }
         /**
@@ -119,6 +143,7 @@ public final class UpdateApmDomainDetails
                     new UpdateApmDomainDetails(
                             this.displayName,
                             this.description,
+                            this.logGroupId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -134,6 +159,9 @@ public final class UpdateApmDomainDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -182,6 +210,20 @@ public final class UpdateApmDomainDetails
      **/
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
+    private final String logGroupId;
+
+    /**
+     * The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+     * @return the value
+     **/
+    public String getLogGroupId() {
+        return logGroupId;
     }
 
     /**
@@ -236,6 +278,7 @@ public final class UpdateApmDomainDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -254,6 +297,7 @@ public final class UpdateApmDomainDetails
         UpdateApmDomainDetails other = (UpdateApmDomainDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -265,6 +309,7 @@ public final class UpdateApmDomainDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.logGroupId == null ? 43 : this.logGroupId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -65,14 +65,14 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
             return this;
         }
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          *
          * @param networkSecurityGroupIds the value to set
          * @return this builder
@@ -164,14 +164,14 @@ public final class PrivateEndpointDetails extends NetworkEndpointDetails {
     }
 
     /**
-     * Network Security Group OCIDs for an Analytics instance.
+     * Network Security Group OCIDs for the Analytics instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
     /**
-     * Network Security Group OCIDs for an Analytics instance.
+     * Network Security Group OCIDs for the Analytics instance.
      *
      * @return the value
      **/

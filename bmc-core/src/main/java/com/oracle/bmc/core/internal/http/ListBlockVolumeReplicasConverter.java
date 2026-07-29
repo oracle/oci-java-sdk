@@ -30,8 +30,13 @@ public class ListBlockVolumeReplicasConverter {
             com.oracle.bmc.core.requests.ListBlockVolumeReplicasRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("blockVolumeReplicas");
+                newBaseTarget.path("/20160918").path("blockVolumeReplicas");
 
         if (request.getAvailabilityDomain() != null) {
             target =

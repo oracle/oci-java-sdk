@@ -184,6 +184,28 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
             this.__explicitlySet__.add("logoutPath");
             return this;
         }
+        /**
+         * The path (relative to the deployment) where the Identity Provider
+         * will redirect the user after authentication. This path must match
+         * a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("loginPath")
+        private String loginPath;
+
+        /**
+         * The path (relative to the deployment) where the Identity Provider
+         * will redirect the user after authentication. This path must match
+         * a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+         *
+         * @param loginPath the value to set
+         * @return this builder
+         **/
+        public Builder loginPath(String loginPath) {
+            this.loginPath = loginPath;
+            this.__explicitlySet__.add("loginPath");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -200,7 +222,8 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
                             this.usePkce,
                             this.responseType,
                             this.fallbackRedirectPath,
-                            this.logoutPath);
+                            this.logoutPath,
+                            this.loginPath);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -239,6 +262,9 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
             if (model.wasPropertyExplicitlySet("logoutPath")) {
                 this.logoutPath(model.getLogoutPath());
             }
+            if (model.wasPropertyExplicitlySet("loginPath")) {
+                this.loginPath(model.getLoginPath());
+            }
             return this;
         }
     }
@@ -265,7 +291,8 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
             Boolean usePkce,
             ResponseType responseType,
             String fallbackRedirectPath,
-            String logoutPath) {
+            String logoutPath,
+            String loginPath) {
         super();
         this.clientDetails = clientDetails;
         this.sourceUriDetails = sourceUriDetails;
@@ -277,6 +304,7 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
         this.responseType = responseType;
         this.fallbackRedirectPath = fallbackRedirectPath;
         this.logoutPath = logoutPath;
+        this.loginPath = loginPath;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("clientDetails")
@@ -462,6 +490,26 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
         return logoutPath;
     }
 
+    /**
+     * The path (relative to the deployment) where the Identity Provider
+     * will redirect the user after authentication. This path must match
+     * a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loginPath")
+    private final String loginPath;
+
+    /**
+     * The path (relative to the deployment) where the Identity Provider
+     * will redirect the user after authentication. This path must match
+     * a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     *
+     * @return the value
+     **/
+    public String getLoginPath() {
+        return loginPath;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -488,6 +536,7 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
         sb.append(", responseType=").append(String.valueOf(this.responseType));
         sb.append(", fallbackRedirectPath=").append(String.valueOf(this.fallbackRedirectPath));
         sb.append(", logoutPath=").append(String.valueOf(this.logoutPath));
+        sb.append(", loginPath=").append(String.valueOf(this.loginPath));
         sb.append(")");
         return sb.toString();
     }
@@ -514,6 +563,7 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
                 && java.util.Objects.equals(this.responseType, other.responseType)
                 && java.util.Objects.equals(this.fallbackRedirectPath, other.fallbackRedirectPath)
                 && java.util.Objects.equals(this.logoutPath, other.logoutPath)
+                && java.util.Objects.equals(this.loginPath, other.loginPath)
                 && super.equals(other);
     }
 
@@ -551,6 +601,7 @@ public final class OAuth2ResponseValidationFailurePolicy extends ValidationFailu
                                 ? 43
                                 : this.fallbackRedirectPath.hashCode());
         result = (result * PRIME) + (this.logoutPath == null ? 43 : this.logoutPath.hashCode());
+        result = (result * PRIME) + (this.loginPath == null ? 43 : this.loginPath.hashCode());
         return result;
     }
 }

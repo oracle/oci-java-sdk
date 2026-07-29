@@ -2776,6 +2776,370 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBaseccVmClusterUpdateHistoryEntries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBaseccVmClusterUpdateHistoryEntriesResponse>
+            listBaseccVmClusterUpdateHistoryEntriesResponseIterator(
+                    final ListBaseccVmClusterUpdateHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder,
+                ListBaseccVmClusterUpdateHistoryEntriesRequest,
+                ListBaseccVmClusterUpdateHistoryEntriesResponse>(
+                new java.util.function.Supplier<
+                        ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder get() {
+                        return ListBaseccVmClusterUpdateHistoryEntriesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListBaseccVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder>,
+                        ListBaseccVmClusterUpdateHistoryEntriesRequest>() {
+                    @Override
+                    public ListBaseccVmClusterUpdateHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdateHistoryEntriesRequest,
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse>() {
+                    @Override
+                    public ListBaseccVmClusterUpdateHistoryEntriesResponse apply(
+                            ListBaseccVmClusterUpdateHistoryEntriesRequest request) {
+                        return client.listBaseccVmClusterUpdateHistoryEntries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntrySummary} objects
+     * contained in responses from the listBaseccVmClusterUpdateHistoryEntries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntrySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntrySummary>
+            listBaseccVmClusterUpdateHistoryEntriesRecordIterator(
+                    final ListBaseccVmClusterUpdateHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder,
+                ListBaseccVmClusterUpdateHistoryEntriesRequest,
+                ListBaseccVmClusterUpdateHistoryEntriesResponse,
+                com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntrySummary>(
+                new java.util.function.Supplier<
+                        ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder get() {
+                        return ListBaseccVmClusterUpdateHistoryEntriesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListBaseccVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder>,
+                        ListBaseccVmClusterUpdateHistoryEntriesRequest>() {
+                    @Override
+                    public ListBaseccVmClusterUpdateHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaseccVmClusterUpdateHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdateHistoryEntriesRequest,
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse>() {
+                    @Override
+                    public ListBaseccVmClusterUpdateHistoryEntriesResponse apply(
+                            ListBaseccVmClusterUpdateHistoryEntriesRequest request) {
+                        return client.listBaseccVmClusterUpdateHistoryEntries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdateHistoryEntriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .BaseccVmClusterUpdateHistoryEntrySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .BaseccVmClusterUpdateHistoryEntrySummary>
+                            apply(ListBaseccVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listBaseccVmClusterUpdates operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBaseccVmClusterUpdatesResponse> listBaseccVmClusterUpdatesResponseIterator(
+            final ListBaseccVmClusterUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBaseccVmClusterUpdatesRequest.Builder, ListBaseccVmClusterUpdatesRequest,
+                ListBaseccVmClusterUpdatesResponse>(
+                new java.util.function.Supplier<ListBaseccVmClusterUpdatesRequest.Builder>() {
+                    @Override
+                    public ListBaseccVmClusterUpdatesRequest.Builder get() {
+                        return ListBaseccVmClusterUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBaseccVmClusterUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListBaseccVmClusterUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaseccVmClusterUpdatesRequest.Builder>,
+                        ListBaseccVmClusterUpdatesRequest>() {
+                    @Override
+                    public ListBaseccVmClusterUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaseccVmClusterUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdatesRequest, ListBaseccVmClusterUpdatesResponse>() {
+                    @Override
+                    public ListBaseccVmClusterUpdatesResponse apply(
+                            ListBaseccVmClusterUpdatesRequest request) {
+                        return client.listBaseccVmClusterUpdates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.BaseccVmClusterUpdateSummary} objects
+     * contained in responses from the listBaseccVmClusterUpdates operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.BaseccVmClusterUpdateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.BaseccVmClusterUpdateSummary>
+            listBaseccVmClusterUpdatesRecordIterator(
+                    final ListBaseccVmClusterUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBaseccVmClusterUpdatesRequest.Builder, ListBaseccVmClusterUpdatesRequest,
+                ListBaseccVmClusterUpdatesResponse,
+                com.oracle.bmc.database.model.BaseccVmClusterUpdateSummary>(
+                new java.util.function.Supplier<ListBaseccVmClusterUpdatesRequest.Builder>() {
+                    @Override
+                    public ListBaseccVmClusterUpdatesRequest.Builder get() {
+                        return ListBaseccVmClusterUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBaseccVmClusterUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListBaseccVmClusterUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaseccVmClusterUpdatesRequest.Builder>,
+                        ListBaseccVmClusterUpdatesRequest>() {
+                    @Override
+                    public ListBaseccVmClusterUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaseccVmClusterUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdatesRequest, ListBaseccVmClusterUpdatesResponse>() {
+                    @Override
+                    public ListBaseccVmClusterUpdatesResponse apply(
+                            ListBaseccVmClusterUpdatesRequest request) {
+                        return client.listBaseccVmClusterUpdates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClusterUpdatesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.BaseccVmClusterUpdateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.BaseccVmClusterUpdateSummary>
+                            apply(ListBaseccVmClusterUpdatesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listBaseccVmClusters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBaseccVmClustersResponse> listBaseccVmClustersResponseIterator(
+            final ListBaseccVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBaseccVmClustersRequest.Builder, ListBaseccVmClustersRequest,
+                ListBaseccVmClustersResponse>(
+                new java.util.function.Supplier<ListBaseccVmClustersRequest.Builder>() {
+                    @Override
+                    public ListBaseccVmClustersRequest.Builder get() {
+                        return ListBaseccVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBaseccVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListBaseccVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaseccVmClustersRequest.Builder>,
+                        ListBaseccVmClustersRequest>() {
+                    @Override
+                    public ListBaseccVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaseccVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClustersRequest, ListBaseccVmClustersResponse>() {
+                    @Override
+                    public ListBaseccVmClustersResponse apply(ListBaseccVmClustersRequest request) {
+                        return client.listBaseccVmClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.BaseccVmClusterSummary} objects
+     * contained in responses from the listBaseccVmClusters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.BaseccVmClusterSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.BaseccVmClusterSummary>
+            listBaseccVmClustersRecordIterator(final ListBaseccVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBaseccVmClustersRequest.Builder, ListBaseccVmClustersRequest,
+                ListBaseccVmClustersResponse, com.oracle.bmc.database.model.BaseccVmClusterSummary>(
+                new java.util.function.Supplier<ListBaseccVmClustersRequest.Builder>() {
+                    @Override
+                    public ListBaseccVmClustersRequest.Builder get() {
+                        return ListBaseccVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBaseccVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListBaseccVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaseccVmClustersRequest.Builder>,
+                        ListBaseccVmClustersRequest>() {
+                    @Override
+                    public ListBaseccVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaseccVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClustersRequest, ListBaseccVmClustersResponse>() {
+                    @Override
+                    public ListBaseccVmClustersResponse apply(ListBaseccVmClustersRequest request) {
+                        return client.listBaseccVmClusters(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaseccVmClustersResponse,
+                        java.util.List<com.oracle.bmc.database.model.BaseccVmClusterSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.BaseccVmClusterSummary>
+                            apply(ListBaseccVmClustersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCloudAutonomousVmClusterAcdResourceUsage operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -32,7 +32,9 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(VirtualNetworkClient.class.getName())
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
+                    .endpointServiceName("iaas")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -10322,6 +10324,55 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListProviderRemoteRegionsResponse> listProviderRemoteRegions(
+            ListProviderRemoteRegionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProviderRemoteRegionsRequest, ListProviderRemoteRegionsResponse>
+                    handler) {
+        LOG.trace("Called async listProviderRemoteRegions");
+        final ListProviderRemoteRegionsRequest interceptedRequest =
+                ListProviderRemoteRegionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProviderRemoteRegionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ListProviderRemoteRegions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ProviderRemoteRegionName/ListProviderRemoteRegions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListProviderRemoteRegionsResponse>
+                transformer =
+                        ListProviderRemoteRegionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListProviderRemoteRegionsRequest, ListProviderRemoteRegionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProviderRemoteRegionsRequest,
+                                ListProviderRemoteRegionsResponse>,
+                        java.util.concurrent.Future<ListProviderRemoteRegionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProviderRemoteRegionsRequest, ListProviderRemoteRegionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPublicIpPoolsResponse> listPublicIpPools(
             ListPublicIpPoolsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -12200,6 +12251,65 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCrossConnectLetterOfAuthorityResponse>
+            updateCrossConnectLetterOfAuthority(
+                    UpdateCrossConnectLetterOfAuthorityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCrossConnectLetterOfAuthorityRequest,
+                                    UpdateCrossConnectLetterOfAuthorityResponse>
+                            handler) {
+        LOG.trace("Called async updateCrossConnectLetterOfAuthority");
+        final UpdateCrossConnectLetterOfAuthorityRequest interceptedRequest =
+                UpdateCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCrossConnectLetterOfAuthorityConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "UpdateCrossConnectLetterOfAuthority",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/UpdateCrossConnectLetterOfAuthority");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCrossConnectLetterOfAuthorityResponse>
+                transformer =
+                        UpdateCrossConnectLetterOfAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCrossConnectLetterOfAuthorityRequest,
+                        UpdateCrossConnectLetterOfAuthorityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCrossConnectLetterOfAuthorityRequest,
+                                UpdateCrossConnectLetterOfAuthorityResponse>,
+                        java.util.concurrent.Future<UpdateCrossConnectLetterOfAuthorityResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCrossConnectLetterOfAuthorityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCrossConnectLetterOfAuthorityRequest,
+                    UpdateCrossConnectLetterOfAuthorityResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

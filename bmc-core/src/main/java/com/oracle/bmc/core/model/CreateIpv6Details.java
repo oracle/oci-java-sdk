@@ -31,7 +31,8 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         "subnetId",
         "lifetime",
         "routeTableId",
-        "ipv6SubnetCidr"
+        "ipv6SubnetCidr",
+        "hostname"
     })
     public CreateIpv6Details(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -43,7 +44,8 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             String subnetId,
             Lifetime lifetime,
             String routeTableId,
-            String ipv6SubnetCidr) {
+            String ipv6SubnetCidr,
+            String hostname) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -55,6 +57,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         this.lifetime = lifetime;
         this.routeTableId = routeTableId;
         this.ipv6SubnetCidr = ipv6SubnetCidr;
+        this.hostname = hostname;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -274,6 +277,24 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("ipv6SubnetCidr");
             return this;
         }
+        /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
+
+        /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         * @param hostname the value to set
+         * @return this builder
+         **/
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -290,7 +311,8 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
                             this.subnetId,
                             this.lifetime,
                             this.routeTableId,
-                            this.ipv6SubnetCidr);
+                            this.ipv6SubnetCidr,
+                            this.hostname);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -328,6 +350,9 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("ipv6SubnetCidr")) {
                 this.ipv6SubnetCidr(model.getIpv6SubnetCidr());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
             }
             return this;
         }
@@ -577,6 +602,22 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         return ipv6SubnetCidr;
     }
 
+    /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    private final String hostname;
+
+    /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     * @return the value
+     **/
+    public String getHostname() {
+        return hostname;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -601,6 +642,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", ipv6SubnetCidr=").append(String.valueOf(this.ipv6SubnetCidr));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(")");
         return sb.toString();
     }
@@ -625,6 +667,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.ipv6SubnetCidr, other.ipv6SubnetCidr)
+                && java.util.Objects.equals(this.hostname, other.hostname)
                 && super.equals(other);
     }
 
@@ -646,6 +689,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.ipv6SubnetCidr == null ? 43 : this.ipv6SubnetCidr.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

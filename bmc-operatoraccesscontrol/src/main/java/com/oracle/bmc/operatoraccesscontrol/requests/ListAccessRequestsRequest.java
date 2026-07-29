@@ -57,6 +57,17 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         return lifecycleState;
     }
     /**
+     * The number of days since when the user wants to search .
+     */
+    private Integer numDays;
+
+    /**
+     * The number of days since when the user wants to search .
+     */
+    public Integer getNumDays() {
+        return numDays;
+    }
+    /**
      * Query start time in UTC in ISO 8601 format(inclusive).
      * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
      * timeIntervalStart and timeIntervalEnd parameters are used together.
@@ -256,6 +267,21 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * The number of days since when the user wants to search .
+         */
+        private Integer numDays = null;
+
+        /**
+         * The number of days since when the user wants to search .
+         * @param numDays the value to set
+         * @return this builder instance
+         */
+        public Builder numDays(Integer numDays) {
+            this.numDays = numDays;
+            return this;
+        }
+
+        /**
          * Query start time in UTC in ISO 8601 format(inclusive).
          * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
          * timeIntervalStart and timeIntervalEnd parameters are used together.
@@ -406,6 +432,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             resourceName(o.getResourceName());
             resourceType(o.getResourceType());
             lifecycleState(o.getLifecycleState());
+            numDays(o.getNumDays());
             timeStart(o.getTimeStart());
             timeEnd(o.getTimeEnd());
             limit(o.getLimit());
@@ -449,6 +476,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             request.resourceName = resourceName;
             request.resourceType = resourceType;
             request.lifecycleState = lifecycleState;
+            request.numDays = numDays;
             request.timeStart = timeStart;
             request.timeEnd = timeEnd;
             request.limit = limit;
@@ -457,7 +485,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAccessRequestsRequest(compartmentId, resourceName, resourceType, lifecycleState, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListAccessRequestsRequest(compartmentId, resourceName, resourceType, lifecycleState, numDays, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -471,6 +499,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
                 .resourceName(resourceName)
                 .resourceType(resourceType)
                 .lifecycleState(lifecycleState)
+                .numDays(numDays)
                 .timeStart(timeStart)
                 .timeEnd(timeEnd)
                 .limit(limit)
@@ -497,6 +526,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",resourceName=").append(String.valueOf(this.resourceName));
         sb.append(",resourceType=").append(String.valueOf(this.resourceType));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",numDays=").append(String.valueOf(this.numDays));
         sb.append(",timeStart=").append(String.valueOf(this.timeStart));
         sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -523,6 +553,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.numDays, other.numDays)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -544,6 +575,7 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.numDays == null ? 43 : this.numDays.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

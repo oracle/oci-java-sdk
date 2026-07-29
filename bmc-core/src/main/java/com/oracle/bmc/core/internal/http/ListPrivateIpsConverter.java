@@ -30,8 +30,13 @@ public class ListPrivateIpsConverter {
             com.oracle.bmc.core.requests.ListPrivateIpsRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("privateIps");
+                newBaseTarget.path("/20160918").path("privateIps");
 
         if (request.getLimit() != null) {
             target =

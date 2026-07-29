@@ -10,7 +10,8 @@ import com.oracle.bmc.database.model.*;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RestartAutonomousContainerDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails> {
 
     /**
      * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -53,10 +54,34 @@ public class RestartAutonomousContainerDatabaseRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Request details to restart the Autonomous Container Database with force option.
+     */
+    private com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails
+            restartAutonomousContainerDatabaseDetails;
+
+    /**
+     * Request details to restart the Autonomous Container Database with force option.
+     */
+    public com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails
+            getRestartAutonomousContainerDatabaseDetails() {
+        return restartAutonomousContainerDatabaseDetails;
+    }
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails getBody$() {
+        return restartAutonomousContainerDatabaseDetails;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestartAutonomousContainerDatabaseRequest, java.lang.Void> {
+                    RestartAutonomousContainerDatabaseRequest,
+                    com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,6 +140,25 @@ public class RestartAutonomousContainerDatabaseRequest
         }
 
         /**
+         * Request details to restart the Autonomous Container Database with force option.
+         */
+        private com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails
+                restartAutonomousContainerDatabaseDetails = null;
+
+        /**
+         * Request details to restart the Autonomous Container Database with force option.
+         * @param restartAutonomousContainerDatabaseDetails the value to set
+         * @return this builder instance
+         */
+        public Builder restartAutonomousContainerDatabaseDetails(
+                com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails
+                        restartAutonomousContainerDatabaseDetails) {
+            this.restartAutonomousContainerDatabaseDetails =
+                    restartAutonomousContainerDatabaseDetails;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -145,6 +189,8 @@ public class RestartAutonomousContainerDatabaseRequest
             autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            restartAutonomousContainerDatabaseDetails(
+                    o.getRestartAutonomousContainerDatabaseDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -168,6 +214,18 @@ public class RestartAutonomousContainerDatabaseRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.database.model.RestartAutonomousContainerDatabaseDetails body) {
+            restartAutonomousContainerDatabaseDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RestartAutonomousContainerDatabaseRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
@@ -181,8 +239,10 @@ public class RestartAutonomousContainerDatabaseRequest
             request.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.restartAutonomousContainerDatabaseDetails =
+                    restartAutonomousContainerDatabaseDetails;
             return request;
-            // new RestartAutonomousContainerDatabaseRequest(autonomousContainerDatabaseId, ifMatch, opcRequestId);
+            // new RestartAutonomousContainerDatabaseRequest(autonomousContainerDatabaseId, ifMatch, opcRequestId, restartAutonomousContainerDatabaseDetails);
         }
     }
 
@@ -194,7 +254,9 @@ public class RestartAutonomousContainerDatabaseRequest
         return new Builder()
                 .autonomousContainerDatabaseId(autonomousContainerDatabaseId)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .restartAutonomousContainerDatabaseDetails(
+                        restartAutonomousContainerDatabaseDetails);
     }
 
     /**
@@ -214,6 +276,8 @@ public class RestartAutonomousContainerDatabaseRequest
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",restartAutonomousContainerDatabaseDetails=")
+                .append(String.valueOf(this.restartAutonomousContainerDatabaseDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +297,10 @@ public class RestartAutonomousContainerDatabaseRequest
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.restartAutonomousContainerDatabaseDetails,
+                        other.restartAutonomousContainerDatabaseDetails);
     }
 
     @Override
@@ -247,6 +314,11 @@ public class RestartAutonomousContainerDatabaseRequest
                                 : this.autonomousContainerDatabaseId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restartAutonomousContainerDatabaseDetails == null
+                                ? 43
+                                : this.restartAutonomousContainerDatabaseDetails.hashCode());
         return result;
     }
 }

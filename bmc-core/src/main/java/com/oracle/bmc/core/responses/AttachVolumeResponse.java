@@ -41,6 +41,25 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
      * The returned VolumeAttachment instance.
      */
     private com.oracle.bmc.core.model.VolumeAttachment volumeAttachment;
@@ -58,6 +77,7 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
         "headers",
         "etag",
         "opcRequestId",
+        "opcWorkRequestId",
         "volumeAttachment"
     })
     private AttachVolumeResponse(
@@ -65,10 +85,12 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
+            String opcWorkRequestId,
             com.oracle.bmc.core.model.VolumeAttachment volumeAttachment) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.volumeAttachment = volumeAttachment;
     }
 
@@ -124,6 +146,27 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * with this ID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * The returned VolumeAttachment instance.
          */
         private com.oracle.bmc.core.model.VolumeAttachment volumeAttachment;
@@ -148,6 +191,7 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             volumeAttachment(o.getVolumeAttachment());
 
             return this;
@@ -159,7 +203,12 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public AttachVolumeResponse build() {
             return new AttachVolumeResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, volumeAttachment);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    volumeAttachment);
         }
     }
 
@@ -178,6 +227,7 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",volumeAttachment=").append(String.valueOf(volumeAttachment));
         sb.append(")");
         return sb.toString();
@@ -196,6 +246,7 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.volumeAttachment, other.volumeAttachment);
     }
 
@@ -205,6 +256,9 @@ public class AttachVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.volumeAttachment == null ? 43 : this.volumeAttachment.hashCode());

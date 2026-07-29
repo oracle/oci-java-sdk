@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+ * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -53,7 +53,7 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
         /**
          * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
-         * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
@@ -61,7 +61,7 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
         /**
          * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
-         * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          *
          * @param capacityValue the value to set
          * @return this builder
@@ -128,7 +128,7 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
-     * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+     * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
@@ -136,7 +136,7 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
-     * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+     * This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
      *
      * @return the value
      **/

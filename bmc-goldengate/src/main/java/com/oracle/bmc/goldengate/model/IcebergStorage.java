@@ -24,12 +24,20 @@ package com.oracle.bmc.goldengate.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OciObjectStorageS3ApiIcebergStorage.class,
+        name = "OCI_OBJECT_STORAGE_S3_API"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AmazonS3IcebergStorage.class,
         name = "AMAZON_S3"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AzureDataLakeStorageIcebergStorage.class,
         name = "AZURE_DATA_LAKE_STORAGE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = NoIcebergStorage.class,
+        name = "NONE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GoogleCloudStorageIcebergStorage.class,

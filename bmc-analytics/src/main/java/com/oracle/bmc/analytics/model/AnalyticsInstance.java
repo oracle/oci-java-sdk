@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Analytics Instance metadata.
+ * Analytics instance metadata.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -44,7 +44,8 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
         "timeCreated",
         "timeUpdated",
         "featureBundle",
-        "domainId"
+        "domainId",
+        "resourceGroups"
     })
     public AnalyticsInstance(
             String id,
@@ -68,7 +69,8 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             FeatureBundle featureBundle,
-            String domainId) {
+            String domainId,
+            java.util.List<InstanceResourceGroup> resourceGroups) {
         super();
         this.id = id;
         this.name = name;
@@ -92,6 +94,7 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
         this.timeUpdated = timeUpdated;
         this.featureBundle = featureBundle;
         this.domainId = domainId;
+        this.resourceGroups = resourceGroups;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -115,14 +118,16 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+         * The name must start with a letter and can contain only letters, numbers and dash (-).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+         * The name must start with a letter and can contain only letters, numbers and dash (-).
          *
          * @param name the value to set
          * @return this builder
@@ -169,14 +174,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The current state of an instance.
+         * The current state of the Analytics instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AnalyticsInstanceLifecycleState lifecycleState;
 
         /**
-         * The current state of an instance.
+         * The current state of the Analytics instance.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -187,14 +192,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Analytics feature set.
+         * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
         private FeatureSet featureSet;
 
         /**
-         * Analytics feature set.
+         * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
          *
          * @param featureSet the value to set
          * @return this builder
@@ -250,14 +255,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
         private UpdateChannel updateChannel;
 
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          *
          * @param updateChannel the value to set
          * @return this builder
@@ -314,14 +319,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * URL of the Analytics service.
+         * URL of the Analytics instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
         /**
-         * URL of the Analytics service.
+         * URL of the Analytics instance.
          *
          * @param serviceUrl the value to set
          * @return this builder
@@ -401,14 +406,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -419,7 +424,7 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The date and time the instance was created, in the format defined by RFC3339.
+         * The date and time the Analytics instance was created, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -428,7 +433,7 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the instance was created, in the format defined by RFC3339.
+         * The date and time the Analytics instance was created, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -441,18 +446,18 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The date and time the instance was last updated (in the format defined by RFC3339).
-         * This timestamp represents updates made through this API. External events do not
-         * influence it.
+         * The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+         * This timestamp represents updates made through this API. External events don't
+         * affect it.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the instance was last updated (in the format defined by RFC3339).
-         * This timestamp represents updates made through this API. External events do not
-         * influence it.
+         * The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+         * This timestamp represents updates made through this API. External events don't
+         * affect it.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -498,6 +503,24 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("domainId");
             return this;
         }
+        /**
+         * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceGroups")
+        private java.util.List<InstanceResourceGroup> resourceGroups;
+
+        /**
+         * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+         *
+         * @param resourceGroups the value to set
+         * @return this builder
+         **/
+        public Builder resourceGroups(java.util.List<InstanceResourceGroup> resourceGroups) {
+            this.resourceGroups = resourceGroups;
+            this.__explicitlySet__.add("resourceGroups");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -526,7 +549,8 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
                             this.timeCreated,
                             this.timeUpdated,
                             this.featureBundle,
-                            this.domainId);
+                            this.domainId,
+                            this.resourceGroups);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -601,6 +625,9 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("domainId")) {
                 this.domainId(model.getDomainId());
             }
+            if (model.wasPropertyExplicitlySet("resourceGroups")) {
+                this.resourceGroups(model.getResourceGroups());
+            }
             return this;
         }
     }
@@ -633,14 +660,16 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+     * The name must start with a letter and can contain only letters, numbers and dash (-).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+     * The name must start with a letter and can contain only letters, numbers and dash (-).
      *
      * @return the value
      **/
@@ -681,14 +710,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The current state of an instance.
+     * The current state of the Analytics instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AnalyticsInstanceLifecycleState lifecycleState;
 
     /**
-     * The current state of an instance.
+     * The current state of the Analytics instance.
      *
      * @return the value
      **/
@@ -697,14 +726,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Analytics feature set.
+     * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
     private final FeatureSet featureSet;
 
     /**
-     * Analytics feature set.
+     * The feature set. Either {@code SELF_SERVICE_ANALYTICS} (Professional Edition) or {@code ENTERPRISE_ANALYTICS} (Enterprise Edition).
      *
      * @return the value
      **/
@@ -752,14 +781,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
     private final UpdateChannel updateChannel;
 
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      *
      * @return the value
      **/
@@ -807,14 +836,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * URL of the Analytics service.
+     * URL of the Analytics instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
     private final String serviceUrl;
 
     /**
-     * URL of the Analytics service.
+     * URL of the Analytics instance.
      *
      * @return the value
      **/
@@ -885,14 +914,14 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      *
      * @return the value
      **/
@@ -901,7 +930,7 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -910,7 +939,7 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -921,18 +950,18 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339).
-     * This timestamp represents updates made through this API. External events do not
-     * influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+     * This timestamp represents updates made through this API. External events don't
+     * affect it.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339).
-     * This timestamp represents updates made through this API. External events do not
-     * influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+     * This timestamp represents updates made through this API. External events don't
+     * affect it.
      *
      * @return the value
      **/
@@ -972,6 +1001,22 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
         return domainId;
     }
 
+    /**
+     * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceGroups")
+    private final java.util.List<InstanceResourceGroup> resourceGroups;
+
+    /**
+     * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     *
+     * @return the value
+     **/
+    public java.util.List<InstanceResourceGroup> getResourceGroups() {
+        return resourceGroups;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1008,6 +1053,7 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", featureBundle=").append(String.valueOf(this.featureBundle));
         sb.append(", domainId=").append(String.valueOf(this.domainId));
+        sb.append(", resourceGroups=").append(String.valueOf(this.resourceGroups));
         sb.append(")");
         return sb.toString();
     }
@@ -1045,6 +1091,7 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.featureBundle, other.featureBundle)
                 && java.util.Objects.equals(this.domainId, other.domainId)
+                && java.util.Objects.equals(this.resourceGroups, other.resourceGroups)
                 && super.equals(other);
     }
 
@@ -1094,6 +1141,9 @@ public final class AnalyticsInstance extends com.oracle.bmc.http.internal.Explic
                 (result * PRIME)
                         + (this.featureBundle == null ? 43 : this.featureBundle.hashCode());
         result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroups == null ? 43 : this.resourceGroups.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

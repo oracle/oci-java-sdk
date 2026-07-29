@@ -292,6 +292,19 @@ public class HeadObjectConverter {
                                                     String.class));
                                 }
 
+                                java.util.Optional<java.util.List<String>>
+                                        opcBucketKeyEnabledHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-bucket-key-enabled");
+                                if (opcBucketKeyEnabledHeader.isPresent()) {
+                                    builder.opcBucketKeyEnabled(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-bucket-key-enabled",
+                                                    opcBucketKeyEnabledHeader.get().get(0),
+                                                    Boolean.class));
+                                }
+
                                 java.util.Optional<java.util.List<String>> contentTypeHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-type");

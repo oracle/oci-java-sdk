@@ -30,7 +30,9 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
         "facilityLocation",
         "portName",
         "timeExpires",
-        "timeIssued"
+        "timeIssued",
+        "authorizedAgent",
+        "extensionDetails"
     })
     public LetterOfAuthority(
             String authorizedEntityName,
@@ -39,7 +41,9 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
             String facilityLocation,
             String portName,
             java.util.Date timeExpires,
-            java.util.Date timeIssued) {
+            java.util.Date timeIssued,
+            String authorizedAgent,
+            LoaExtensionData extensionDetails) {
         super();
         this.authorizedEntityName = authorizedEntityName;
         this.circuitType = circuitType;
@@ -48,6 +52,8 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
         this.portName = portName;
         this.timeExpires = timeExpires;
         this.timeIssued = timeIssued;
+        this.authorizedAgent = authorizedAgent;
+        this.extensionDetails = extensionDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -172,6 +178,31 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("timeIssued");
             return this;
         }
+        /**
+         * Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("authorizedAgent")
+        private String authorizedAgent;
+
+        /**
+         * Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+         * @param authorizedAgent the value to set
+         * @return this builder
+         **/
+        public Builder authorizedAgent(String authorizedAgent) {
+            this.authorizedAgent = authorizedAgent;
+            this.__explicitlySet__.add("authorizedAgent");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("extensionDetails")
+        private LoaExtensionData extensionDetails;
+
+        public Builder extensionDetails(LoaExtensionData extensionDetails) {
+            this.extensionDetails = extensionDetails;
+            this.__explicitlySet__.add("extensionDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -185,7 +216,9 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
                             this.facilityLocation,
                             this.portName,
                             this.timeExpires,
-                            this.timeIssued);
+                            this.timeIssued,
+                            this.authorizedAgent,
+                            this.extensionDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -214,6 +247,12 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("timeIssued")) {
                 this.timeIssued(model.getTimeIssued());
+            }
+            if (model.wasPropertyExplicitlySet("authorizedAgent")) {
+                this.authorizedAgent(model.getAuthorizedAgent());
+            }
+            if (model.wasPropertyExplicitlySet("extensionDetails")) {
+                this.extensionDetails(model.getExtensionDetails());
             }
             return this;
         }
@@ -384,6 +423,27 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
         return timeIssued;
     }
 
+    /**
+     * Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("authorizedAgent")
+    private final String authorizedAgent;
+
+    /**
+     * Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+     * @return the value
+     **/
+    public String getAuthorizedAgent() {
+        return authorizedAgent;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("extensionDetails")
+    private final LoaExtensionData extensionDetails;
+
+    public LoaExtensionData getExtensionDetails() {
+        return extensionDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -405,6 +465,8 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
         sb.append(", portName=").append(String.valueOf(this.portName));
         sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
         sb.append(", timeIssued=").append(String.valueOf(this.timeIssued));
+        sb.append(", authorizedAgent=").append(String.valueOf(this.authorizedAgent));
+        sb.append(", extensionDetails=").append(String.valueOf(this.extensionDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -426,6 +488,8 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.portName, other.portName)
                 && java.util.Objects.equals(this.timeExpires, other.timeExpires)
                 && java.util.Objects.equals(this.timeIssued, other.timeIssued)
+                && java.util.Objects.equals(this.authorizedAgent, other.authorizedAgent)
+                && java.util.Objects.equals(this.extensionDetails, other.extensionDetails)
                 && super.equals(other);
     }
 
@@ -448,6 +512,12 @@ public final class LetterOfAuthority extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.portName == null ? 43 : this.portName.hashCode());
         result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
         result = (result * PRIME) + (this.timeIssued == null ? 43 : this.timeIssued.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authorizedAgent == null ? 43 : this.authorizedAgent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extensionDetails == null ? 43 : this.extensionDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

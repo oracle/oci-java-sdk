@@ -26,6 +26,7 @@ public final class NodePoolNodeConfigDetails
         "size",
         "nsgIds",
         "kmsKeyId",
+        "computeClusterId",
         "isPvEncryptionInTransitEnabled",
         "freeformTags",
         "definedTags",
@@ -36,6 +37,7 @@ public final class NodePoolNodeConfigDetails
             Integer size,
             java.util.List<String> nsgIds,
             String kmsKeyId,
+            String computeClusterId,
             Boolean isPvEncryptionInTransitEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -45,6 +47,7 @@ public final class NodePoolNodeConfigDetails
         this.size = size;
         this.nsgIds = nsgIds;
         this.kmsKeyId = kmsKeyId;
+        this.computeClusterId = computeClusterId;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -104,6 +107,22 @@ public final class NodePoolNodeConfigDetails
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+        /**
+         * The OCID of the Compute Cluster to be associated with the worker node instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+        private String computeClusterId;
+
+        /**
+         * The OCID of the Compute Cluster to be associated with the worker node instance.
+         * @param computeClusterId the value to set
+         * @return this builder
+         **/
+        public Builder computeClusterId(String computeClusterId) {
+            this.computeClusterId = computeClusterId;
+            this.__explicitlySet__.add("computeClusterId");
             return this;
         }
         /**
@@ -225,6 +244,7 @@ public final class NodePoolNodeConfigDetails
                             this.size,
                             this.nsgIds,
                             this.kmsKeyId,
+                            this.computeClusterId,
                             this.isPvEncryptionInTransitEnabled,
                             this.freeformTags,
                             this.definedTags,
@@ -246,6 +266,9 @@ public final class NodePoolNodeConfigDetails
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("computeClusterId")) {
+                this.computeClusterId(model.getComputeClusterId());
             }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
@@ -321,6 +344,20 @@ public final class NodePoolNodeConfigDetails
      **/
     public String getKmsKeyId() {
         return kmsKeyId;
+    }
+
+    /**
+     * The OCID of the Compute Cluster to be associated with the worker node instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
+    private final String computeClusterId;
+
+    /**
+     * The OCID of the Compute Cluster to be associated with the worker node instance.
+     * @return the value
+     **/
+    public String getComputeClusterId() {
+        return computeClusterId;
     }
 
     /**
@@ -436,6 +473,7 @@ public final class NodePoolNodeConfigDetails
         sb.append("size=").append(String.valueOf(this.size));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -460,6 +498,7 @@ public final class NodePoolNodeConfigDetails
         return java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -477,6 +516,9 @@ public final class NodePoolNodeConfigDetails
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeClusterId == null ? 43 : this.computeClusterId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPvEncryptionInTransitEnabled == null

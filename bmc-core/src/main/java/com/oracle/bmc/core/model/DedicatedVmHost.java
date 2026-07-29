@@ -33,6 +33,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         "id",
         "capacityConfig",
         "isMemoryEncryptionEnabled",
+        "isBurstable",
         "lifecycleState",
         "timeCreated",
         "totalOcpus",
@@ -56,6 +57,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             String id,
             String capacityConfig,
             Boolean isMemoryEncryptionEnabled,
+            Boolean isBurstable,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             Float totalOcpus,
@@ -78,6 +80,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         this.id = id;
         this.capacityConfig = capacityConfig;
         this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+        this.isBurstable = isBurstable;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.totalOcpus = totalOcpus;
@@ -318,6 +321,24 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+        private Boolean isBurstable;
+
+        /**
+         * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+         *
+         * @param isBurstable the value to set
+         * @return this builder
+         **/
+        public Builder isBurstable(Boolean isBurstable) {
+            this.isBurstable = isBurstable;
+            this.__explicitlySet__.add("isBurstable");
+            return this;
+        }
+        /**
          * The current state of the dedicated VM host.
          *
          **/
@@ -519,6 +540,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                             this.id,
                             this.capacityConfig,
                             this.isMemoryEncryptionEnabled,
+                            this.isBurstable,
                             this.lifecycleState,
                             this.timeCreated,
                             this.totalOcpus,
@@ -569,6 +591,9 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("isMemoryEncryptionEnabled")) {
                 this.isMemoryEncryptionEnabled(model.getIsMemoryEncryptionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isBurstable")) {
+                this.isBurstable(model.getIsBurstable());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -817,6 +842,22 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBurstable")
+    private final Boolean isBurstable;
+
+    /**
+     * Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If {@code true}, only Burstable VMs can be launched. If {@code false}, Burstable VMs cannot be launched.
+     *
+     * @return the value
+     **/
+    public Boolean getIsBurstable() {
+        return isBurstable;
+    }
+
+    /**
      * The current state of the dedicated VM host.
      *
      **/
@@ -1060,6 +1101,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         sb.append(", capacityConfig=").append(String.valueOf(this.capacityConfig));
         sb.append(", isMemoryEncryptionEnabled=")
                 .append(String.valueOf(this.isMemoryEncryptionEnabled));
+        sb.append(", isBurstable=").append(String.valueOf(this.isBurstable));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", totalOcpus=").append(String.valueOf(this.totalOcpus));
@@ -1098,6 +1140,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.capacityConfig, other.capacityConfig)
                 && java.util.Objects.equals(
                         this.isMemoryEncryptionEnabled, other.isMemoryEncryptionEnabled)
+                && java.util.Objects.equals(this.isBurstable, other.isBurstable)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.totalOcpus, other.totalOcpus)
@@ -1148,6 +1191,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
                         + (this.isMemoryEncryptionEnabled == null
                                 ? 43
                                 : this.isMemoryEncryptionEnabled.hashCode());
+        result = (result * PRIME) + (this.isBurstable == null ? 43 : this.isBurstable.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

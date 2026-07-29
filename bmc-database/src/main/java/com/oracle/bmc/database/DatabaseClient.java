@@ -1368,6 +1368,51 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeBaseccVmClusterCompartmentResponse changeBaseccVmClusterCompartment(
+            ChangeBaseccVmClusterCompartmentRequest request) {
+        LOG.trace("Called changeBaseccVmClusterCompartment");
+        final ChangeBaseccVmClusterCompartmentRequest interceptedRequest =
+                ChangeBaseccVmClusterCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeBaseccVmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeBaseccVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/ChangeBaseccVmClusterCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeBaseccVmClusterCompartmentResponse>
+                transformer =
+                        ChangeBaseccVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeBaseccVmClusterCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeCloudAutonomousVmClusterCompartmentResponse
             changeCloudAutonomousVmClusterCompartment(
                     ChangeCloudAutonomousVmClusterCompartmentRequest request) {
@@ -3517,6 +3562,49 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateBaseccVmClusterResponse createBaseccVmCluster(
+            CreateBaseccVmClusterRequest request) {
+        LOG.trace("Called createBaseccVmCluster");
+        final CreateBaseccVmClusterRequest interceptedRequest =
+                CreateBaseccVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBaseccVmClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateBaseccVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/CreateBaseccVmCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBaseccVmClusterResponse>
+                transformer =
+                        CreateBaseccVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBaseccVmClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateCloudAutonomousVmClusterResponse createCloudAutonomousVmCluster(
             CreateCloudAutonomousVmClusterRequest request) {
         LOG.trace("Called createCloudAutonomousVmCluster");
@@ -5135,6 +5223,45 @@ public class DatabaseClient implements Database {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
                 transformer =
                         DeleteBackupDestinationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteBaseccVmClusterResponse deleteBaseccVmCluster(
+            DeleteBaseccVmClusterRequest request) {
+        LOG.trace("Called deleteBaseccVmCluster");
+        final DeleteBaseccVmClusterRequest interceptedRequest =
+                DeleteBaseccVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBaseccVmClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteBaseccVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/DeleteBaseccVmCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBaseccVmClusterResponse>
+                transformer =
+                        DeleteBaseccVmClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -8661,6 +8788,121 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetBaseccVmClusterResponse getBaseccVmCluster(GetBaseccVmClusterRequest request) {
+        LOG.trace("Called getBaseccVmCluster");
+        final GetBaseccVmClusterRequest interceptedRequest =
+                GetBaseccVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBaseccVmClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetBaseccVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/GetBaseccVmCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, GetBaseccVmClusterResponse>
+                transformer =
+                        GetBaseccVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetBaseccVmClusterUpdateResponse getBaseccVmClusterUpdate(
+            GetBaseccVmClusterUpdateRequest request) {
+        LOG.trace("Called getBaseccVmClusterUpdate");
+        final GetBaseccVmClusterUpdateRequest interceptedRequest =
+                GetBaseccVmClusterUpdateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBaseccVmClusterUpdateConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetBaseccVmClusterUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdate/GetBaseccVmClusterUpdate");
+        java.util.function.Function<javax.ws.rs.core.Response, GetBaseccVmClusterUpdateResponse>
+                transformer =
+                        GetBaseccVmClusterUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetBaseccVmClusterUpdateHistoryEntryResponse getBaseccVmClusterUpdateHistoryEntry(
+            GetBaseccVmClusterUpdateHistoryEntryRequest request) {
+        LOG.trace("Called getBaseccVmClusterUpdateHistoryEntry");
+        final GetBaseccVmClusterUpdateHistoryEntryRequest interceptedRequest =
+                GetBaseccVmClusterUpdateHistoryEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBaseccVmClusterUpdateHistoryEntryConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetBaseccVmClusterUpdateHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdateHistoryEntry/GetBaseccVmClusterUpdateHistoryEntry");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetBaseccVmClusterUpdateHistoryEntryResponse>
+                transformer =
+                        GetBaseccVmClusterUpdateHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetCloudAutonomousVmClusterResponse getCloudAutonomousVmCluster(
             GetCloudAutonomousVmClusterRequest request) {
         LOG.trace("Called getCloudAutonomousVmCluster");
@@ -11951,6 +12193,121 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ListBaseccVmClusterUpdateHistoryEntriesResponse listBaseccVmClusterUpdateHistoryEntries(
+            ListBaseccVmClusterUpdateHistoryEntriesRequest request) {
+        LOG.trace("Called listBaseccVmClusterUpdateHistoryEntries");
+        final ListBaseccVmClusterUpdateHistoryEntriesRequest interceptedRequest =
+                ListBaseccVmClusterUpdateHistoryEntriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBaseccVmClusterUpdateHistoryEntriesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListBaseccVmClusterUpdateHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdateHistoryEntry/ListBaseccVmClusterUpdateHistoryEntries");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListBaseccVmClusterUpdateHistoryEntriesResponse>
+                transformer =
+                        ListBaseccVmClusterUpdateHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBaseccVmClusterUpdatesResponse listBaseccVmClusterUpdates(
+            ListBaseccVmClusterUpdatesRequest request) {
+        LOG.trace("Called listBaseccVmClusterUpdates");
+        final ListBaseccVmClusterUpdatesRequest interceptedRequest =
+                ListBaseccVmClusterUpdatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBaseccVmClusterUpdatesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListBaseccVmClusterUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdate/ListBaseccVmClusterUpdates");
+        java.util.function.Function<javax.ws.rs.core.Response, ListBaseccVmClusterUpdatesResponse>
+                transformer =
+                        ListBaseccVmClusterUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBaseccVmClustersResponse listBaseccVmClusters(ListBaseccVmClustersRequest request) {
+        LOG.trace("Called listBaseccVmClusters");
+        final ListBaseccVmClustersRequest interceptedRequest =
+                ListBaseccVmClustersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBaseccVmClustersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListBaseccVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/ListBaseccVmClusters");
+        java.util.function.Function<javax.ws.rs.core.Response, ListBaseccVmClustersResponse>
+                transformer =
+                        ListBaseccVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListCloudAutonomousVmClusterAcdResourceUsageResponse
             listCloudAutonomousVmClusterAcdResourceUsage(
                     ListCloudAutonomousVmClusterAcdResourceUsageRequest request) {
@@ -15124,6 +15481,50 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public RegisterExadbVmClusterPkcsResponse registerExadbVmClusterPkcs(
+            RegisterExadbVmClusterPkcsRequest request) {
+        LOG.trace("Called registerExadbVmClusterPkcs");
+        final RegisterExadbVmClusterPkcsRequest interceptedRequest =
+                RegisterExadbVmClusterPkcsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RegisterExadbVmClusterPkcsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RegisterExadbVmClusterPkcs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/RegisterExadbVmClusterPkcs");
+        java.util.function.Function<javax.ws.rs.core.Response, RegisterExadbVmClusterPkcsResponse>
+                transformer =
+                        RegisterExadbVmClusterPkcsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRegisterExadbVmClusterPkcsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ReinstateAutonomousContainerDatabaseDataguardResponse
             reinstateAutonomousContainerDatabaseDataguard(
                     ReinstateAutonomousContainerDatabaseDataguardRequest request) {
@@ -15564,6 +15965,47 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public RescheduleManagedDbSoftwareUpdateResponse rescheduleManagedDbSoftwareUpdate(
+            RescheduleManagedDbSoftwareUpdateRequest request) {
+        LOG.trace("Called rescheduleManagedDbSoftwareUpdate");
+        final RescheduleManagedDbSoftwareUpdateRequest interceptedRequest =
+                RescheduleManagedDbSoftwareUpdateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RescheduleManagedDbSoftwareUpdateConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RescheduleManagedDbSoftwareUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RescheduleManagedDbSoftwareUpdate");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RescheduleManagedDbSoftwareUpdateResponse>
+                transformer =
+                        RescheduleManagedDbSoftwareUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ResizeVmClusterNetworkResponse resizeVmClusterNetwork(
             ResizeVmClusterNetworkRequest request) {
         LOG.trace("Called resizeVmClusterNetwork");
@@ -15679,7 +16121,11 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRestartAutonomousContainerDatabaseDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -15707,6 +16153,93 @@ public class DatabaseClient implements Database {
         java.util.function.Function<javax.ws.rs.core.Response, RestartAutonomousDatabaseResponse>
                 transformer =
                         RestartAutonomousDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRestartAutonomousDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RestartAutonomousVmClusterOrdsResponse restartAutonomousVmClusterOrds(
+            RestartAutonomousVmClusterOrdsRequest request) {
+        LOG.trace("Called restartAutonomousVmClusterOrds");
+        final RestartAutonomousVmClusterOrdsRequest interceptedRequest =
+                RestartAutonomousVmClusterOrdsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartAutonomousVmClusterOrdsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestartAutonomousVmClusterOrds",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RestartAutonomousVmClusterOrds");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RestartAutonomousVmClusterOrdsResponse>
+                transformer =
+                        RestartAutonomousVmClusterOrdsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RestartCloudAutonomousVmClusterOrdsResponse restartCloudAutonomousVmClusterOrds(
+            RestartCloudAutonomousVmClusterOrdsRequest request) {
+        LOG.trace("Called restartCloudAutonomousVmClusterOrds");
+        final RestartCloudAutonomousVmClusterOrdsRequest interceptedRequest =
+                RestartCloudAutonomousVmClusterOrdsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartCloudAutonomousVmClusterOrdsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RestartCloudAutonomousVmClusterOrds",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RestartCloudAutonomousVmClusterOrds");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RestartCloudAutonomousVmClusterOrdsResponse>
+                transformer =
+                        RestartCloudAutonomousVmClusterOrdsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -16596,7 +17129,10 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getStopAutonomousDatabaseDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -17151,6 +17687,50 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public UnregisterExadbVmClusterPkcsResponse unregisterExadbVmClusterPkcs(
+            UnregisterExadbVmClusterPkcsRequest request) {
+        LOG.trace("Called unregisterExadbVmClusterPkcs");
+        final UnregisterExadbVmClusterPkcsRequest interceptedRequest =
+                UnregisterExadbVmClusterPkcsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnregisterExadbVmClusterPkcsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UnregisterExadbVmClusterPkcs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/UnregisterExadbVmClusterPkcs");
+        java.util.function.Function<javax.ws.rs.core.Response, UnregisterExadbVmClusterPkcsResponse>
+                transformer =
+                        UnregisterExadbVmClusterPkcsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getUnregisterExadbVmClusterPkcsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateAdvancedClusterFileSystemResponse updateAdvancedClusterFileSystem(
             UpdateAdvancedClusterFileSystemRequest request) {
         LOG.trace("Called updateAdvancedClusterFileSystem");
@@ -17669,6 +18249,48 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateBackupDestinationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateBaseccVmClusterResponse updateBaseccVmCluster(
+            UpdateBaseccVmClusterRequest request) {
+        LOG.trace("Called updateBaseccVmCluster");
+        final UpdateBaseccVmClusterRequest interceptedRequest =
+                UpdateBaseccVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBaseccVmClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateBaseccVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/UpdateBaseccVmCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBaseccVmClusterResponse>
+                transformer =
+                        UpdateBaseccVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBaseccVmClusterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

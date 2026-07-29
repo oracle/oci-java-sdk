@@ -54,6 +54,7 @@ For details on compatibility, advanced configurations, and add-ons, see [Configu
       -Doci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsClient=false -Doci.javasdk.ConnectionPoolingApacheConfigurator.enabled.com.oracle.bmc.vault.VaultsAsyncClient=false
       ```
     - The global property applies to all supported clients. The per-class property applies only to the named client class. Both properties default to `"true"`, and the configurator is used only when both the global property and that client class property are enabled.
+    - If TLS initialization fails, Apache connector configuration now throws `SSLInitializationException`; it no longer maps `https` routes to plaintext. Applications that intentionally require plaintext transport can provide an explicit connection manager or perform the former fallback themselves, as shown in [PlainConnectionSocketFactoryExample.java](/bmc-examples/src/main/java/PlainConnectionSocketFactoryExample.java).
 
 ## Examples
 

@@ -5,17 +5,13 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data for creating a [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
- * is an empty remote direct memory access (RDMA) network group
+ * The data for creating a [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
  * <p>
- * After the compute cluster is created, you can use the compute cluster's OCID with the
- * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the compute cluster.
- * The instances must be created in the same compartment and availability domain as the cluster.
+ * After the compute cluster is created, you can use the compute cluster's OCID to create Instance, GPU Memory
+ * Cluster or Instance Pool resources within the compute cluster. These resources must be created in the same
+ * compartment and availability domain as the cluster.
  * <p>
- * Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
- * <p>
- * For details about creating a cluster network that uses instance pools to manage groups of identical instances,
- * see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest) createClusterNetworkDetails}.
+ * Use {@code COMPUTE_CLUSTER} type when using placementConstraintDetails.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -38,20 +34,23 @@ public final class CreateComputeClusterDetails
         "compartmentId",
         "displayName",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "placementConstraintDetails"
     })
     public CreateComputeClusterDetails(
             String availabilityDomain,
             String compartmentId,
             String displayName,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            PlacementConstraintDetails placementConstraintDetails) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.placementConstraintDetails = placementConstraintDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -164,6 +163,16 @@ public final class CreateComputeClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+        private PlacementConstraintDetails placementConstraintDetails;
+
+        public Builder placementConstraintDetails(
+                PlacementConstraintDetails placementConstraintDetails) {
+            this.placementConstraintDetails = placementConstraintDetails;
+            this.__explicitlySet__.add("placementConstraintDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -174,7 +183,8 @@ public final class CreateComputeClusterDetails
                             this.compartmentId,
                             this.displayName,
                             this.definedTags,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.placementConstraintDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -197,6 +207,9 @@ public final class CreateComputeClusterDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("placementConstraintDetails")) {
+                this.placementConstraintDetails(model.getPlacementConstraintDetails());
             }
             return this;
         }
@@ -309,6 +322,13 @@ public final class CreateComputeClusterDetails
         return freeformTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraintDetails")
+    private final PlacementConstraintDetails placementConstraintDetails;
+
+    public PlacementConstraintDetails getPlacementConstraintDetails() {
+        return placementConstraintDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -328,6 +348,8 @@ public final class CreateComputeClusterDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", placementConstraintDetails=")
+                .append(String.valueOf(this.placementConstraintDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -347,6 +369,8 @@ public final class CreateComputeClusterDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(
+                        this.placementConstraintDetails, other.placementConstraintDetails)
                 && super.equals(other);
     }
 
@@ -365,6 +389,11 @@ public final class CreateComputeClusterDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.placementConstraintDetails == null
+                                ? 43
+                                : this.placementConstraintDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

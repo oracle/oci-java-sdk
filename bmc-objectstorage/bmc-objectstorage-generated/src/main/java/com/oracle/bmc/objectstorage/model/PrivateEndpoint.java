@@ -38,6 +38,7 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
         "accessTargets",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "id"
     })
     public PrivateEndpoint(
@@ -58,6 +59,7 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
             java.util.List<AccessTargetDetails> accessTargets,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String id) {
         super();
         this.name = name;
@@ -77,6 +79,7 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
         this.accessTargets = accessTargets;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.id = id;
     }
 
@@ -397,6 +400,31 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * Security attributes for Private Endpoint resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for Private Endpoint resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PrivateEndpoint.
          *
          **/
@@ -438,6 +466,7 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
                             this.accessTargets,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.id);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -497,6 +526,9 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -849,6 +881,28 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * Security attributes for Private Endpoint resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for Private Endpoint resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PrivateEndpoint.
      *
      **/
@@ -895,6 +949,7 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
         sb.append(", accessTargets=").append(String.valueOf(this.accessTargets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(")");
         return sb.toString();
@@ -927,6 +982,7 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.accessTargets, other.accessTargets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.id, other.id)
                 && super.equals(other);
     }
@@ -964,6 +1020,11 @@ public final class PrivateEndpoint extends com.oracle.bmc.http.internal.Explicit
                         + (this.accessTargets == null ? 43 : this.accessTargets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

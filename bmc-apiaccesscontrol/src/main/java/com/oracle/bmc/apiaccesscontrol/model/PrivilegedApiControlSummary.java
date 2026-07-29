@@ -171,7 +171,6 @@ public final class PrivilegedApiControlSummary
         }
         /**
          * The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          **/
@@ -180,7 +179,6 @@ public final class PrivilegedApiControlSummary
 
         /**
          * The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
@@ -488,7 +486,6 @@ public final class PrivilegedApiControlSummary
 
     /**
      * The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
@@ -497,7 +494,6 @@ public final class PrivilegedApiControlSummary
 
     /**
      * The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value

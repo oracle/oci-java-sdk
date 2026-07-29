@@ -42,6 +42,14 @@ public class ListResourceTypesConverter {
                                     request.getCompartmentId()));
         }
 
+        if (request.getActionType() != null) {
+            target =
+                    target.queryParam(
+                            "actionType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getActionType()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

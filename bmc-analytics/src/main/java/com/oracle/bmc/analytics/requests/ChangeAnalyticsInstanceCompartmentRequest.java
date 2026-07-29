@@ -14,13 +14,13 @@ public class ChangeAnalyticsInstanceCompartmentRequest
                 com.oracle.bmc.analytics.model.ChangeCompartmentDetails> {
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     private String analyticsInstanceId;
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     public String getAnalyticsInstanceId() {
@@ -112,13 +112,13 @@ public class ChangeAnalyticsInstanceCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance

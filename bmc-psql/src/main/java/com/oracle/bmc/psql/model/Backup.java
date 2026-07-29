@@ -627,6 +627,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     public enum SourceType {
         Scheduled("SCHEDULED"),
         Manual("MANUAL"),
+        Pitr("PITR"),
         Copied("COPIED"),
 
         /**

@@ -23,6 +23,7 @@ public final class ApiMetadataByEntityTypeSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "compartmentId",
         "entityType",
         "apiMetadatas",
         "freeformTags",
@@ -30,12 +31,14 @@ public final class ApiMetadataByEntityTypeSummary
         "systemTags"
     })
     public ApiMetadataByEntityTypeSummary(
+            String compartmentId,
             String entityType,
             java.util.List<ApiMetadataSummary> apiMetadatas,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
+        this.compartmentId = compartmentId;
         this.entityType = entityType;
         this.apiMetadatas = apiMetadatas;
         this.freeformTags = freeformTags;
@@ -45,6 +48,22 @@ public final class ApiMetadataByEntityTypeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the compartment that contains the Service Provider Action.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The OCID of the compartment that contains the Service Provider Action.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
         /**
          * The entity Type to which the Api belongs to.
          **/
@@ -155,6 +174,7 @@ public final class ApiMetadataByEntityTypeSummary
         public ApiMetadataByEntityTypeSummary build() {
             ApiMetadataByEntityTypeSummary model =
                     new ApiMetadataByEntityTypeSummary(
+                            this.compartmentId,
                             this.entityType,
                             this.apiMetadatas,
                             this.freeformTags,
@@ -168,6 +188,9 @@ public final class ApiMetadataByEntityTypeSummary
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ApiMetadataByEntityTypeSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("entityType")) {
                 this.entityType(model.getEntityType());
             }
@@ -196,6 +219,20 @@ public final class ApiMetadataByEntityTypeSummary
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The OCID of the compartment that contains the Service Provider Action.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The OCID of the compartment that contains the Service Provider Action.
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /**
@@ -304,7 +341,8 @@ public final class ApiMetadataByEntityTypeSummary
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiMetadataByEntityTypeSummary(");
         sb.append("super=").append(super.toString());
-        sb.append("entityType=").append(String.valueOf(this.entityType));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", apiMetadatas=").append(String.valueOf(this.apiMetadatas));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -323,7 +361,8 @@ public final class ApiMetadataByEntityTypeSummary
         }
 
         ApiMetadataByEntityTypeSummary other = (ApiMetadataByEntityTypeSummary) o;
-        return java.util.Objects.equals(this.entityType, other.entityType)
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.apiMetadatas, other.apiMetadatas)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -335,6 +374,9 @@ public final class ApiMetadataByEntityTypeSummary
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result = (result * PRIME) + (this.apiMetadatas == null ? 43 : this.apiMetadatas.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

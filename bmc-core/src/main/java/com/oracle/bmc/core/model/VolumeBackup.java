@@ -48,7 +48,13 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
         "type",
         "uniqueSizeInGBs",
         "uniqueSizeInMbs",
-        "volumeId"
+        "volumeId",
+        "timeRetentionExpiresAt",
+        "retentionPeriod",
+        "isPreventDeletionEnabled",
+        "isRetentionLockEnabled",
+        "isIndefiniteRetentionEnabled",
+        "volumeGroupBackupId"
     })
     public VolumeBackup(
             String compartmentId,
@@ -69,7 +75,13 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
             Type type,
             Long uniqueSizeInGBs,
             Long uniqueSizeInMbs,
-            String volumeId) {
+            String volumeId,
+            java.util.Date timeRetentionExpiresAt,
+            RetentionDuration retentionPeriod,
+            Boolean isPreventDeletionEnabled,
+            Boolean isRetentionLockEnabled,
+            Boolean isIndefiniteRetentionEnabled,
+            String volumeGroupBackupId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -90,6 +102,12 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
         this.uniqueSizeInGBs = uniqueSizeInGBs;
         this.uniqueSizeInMbs = uniqueSizeInMbs;
         this.volumeId = volumeId;
+        this.timeRetentionExpiresAt = timeRetentionExpiresAt;
+        this.retentionPeriod = retentionPeriod;
+        this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+        this.isRetentionLockEnabled = isRetentionLockEnabled;
+        this.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+        this.volumeGroupBackupId = volumeGroupBackupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -465,6 +483,95 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("volumeId");
             return this;
         }
+        /**
+         * The date and time when a backup\u2019s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRetentionExpiresAt")
+        private java.util.Date timeRetentionExpiresAt;
+
+        /**
+         * The date and time when a backup\u2019s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         * @param timeRetentionExpiresAt the value to set
+         * @return this builder
+         **/
+        public Builder timeRetentionExpiresAt(java.util.Date timeRetentionExpiresAt) {
+            this.timeRetentionExpiresAt = timeRetentionExpiresAt;
+            this.__explicitlySet__.add("timeRetentionExpiresAt");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
+        private RetentionDuration retentionPeriod;
+
+        public Builder retentionPeriod(RetentionDuration retentionPeriod) {
+            this.retentionPeriod = retentionPeriod;
+            this.__explicitlySet__.add("retentionPeriod");
+            return this;
+        }
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isPreventDeletionEnabled")
+        private Boolean isPreventDeletionEnabled;
+
+        /**
+         * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         * @param isPreventDeletionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isPreventDeletionEnabled(Boolean isPreventDeletionEnabled) {
+            this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            this.__explicitlySet__.add("isPreventDeletionEnabled");
+            return this;
+        }
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+        private Boolean isRetentionLockEnabled;
+
+        /**
+         * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         * @param isRetentionLockEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            this.__explicitlySet__.add("isRetentionLockEnabled");
+            return this;
+        }
+        /**
+         * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isIndefiniteRetentionEnabled")
+        private Boolean isIndefiniteRetentionEnabled;
+
+        /**
+         * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         * @param isIndefiniteRetentionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isIndefiniteRetentionEnabled(Boolean isIndefiniteRetentionEnabled) {
+            this.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            this.__explicitlySet__.add("isIndefiniteRetentionEnabled");
+            return this;
+        }
+        /**
+         * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupBackupId")
+        private String volumeGroupBackupId;
+
+        /**
+         * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+         * @param volumeGroupBackupId the value to set
+         * @return this builder
+         **/
+        public Builder volumeGroupBackupId(String volumeGroupBackupId) {
+            this.volumeGroupBackupId = volumeGroupBackupId;
+            this.__explicitlySet__.add("volumeGroupBackupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -490,7 +597,13 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.type,
                             this.uniqueSizeInGBs,
                             this.uniqueSizeInMbs,
-                            this.volumeId);
+                            this.volumeId,
+                            this.timeRetentionExpiresAt,
+                            this.retentionPeriod,
+                            this.isPreventDeletionEnabled,
+                            this.isRetentionLockEnabled,
+                            this.isIndefiniteRetentionEnabled,
+                            this.volumeGroupBackupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -555,6 +668,24 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("volumeId")) {
                 this.volumeId(model.getVolumeId());
+            }
+            if (model.wasPropertyExplicitlySet("timeRetentionExpiresAt")) {
+                this.timeRetentionExpiresAt(model.getTimeRetentionExpiresAt());
+            }
+            if (model.wasPropertyExplicitlySet("retentionPeriod")) {
+                this.retentionPeriod(model.getRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("isPreventDeletionEnabled")) {
+                this.isPreventDeletionEnabled(model.getIsPreventDeletionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRetentionLockEnabled")) {
+                this.isRetentionLockEnabled(model.getIsRetentionLockEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isIndefiniteRetentionEnabled")) {
+                this.isIndefiniteRetentionEnabled(model.getIsIndefiniteRetentionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("volumeGroupBackupId")) {
+                this.volumeGroupBackupId(model.getVolumeGroupBackupId());
             }
             return this;
         }
@@ -1050,6 +1181,83 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
         return volumeId;
     }
 
+    /**
+     * The date and time when a backup\u2019s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRetentionExpiresAt")
+    private final java.util.Date timeRetentionExpiresAt;
+
+    /**
+     * The date and time when a backup\u2019s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * @return the value
+     **/
+    public java.util.Date getTimeRetentionExpiresAt() {
+        return timeRetentionExpiresAt;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
+    private final RetentionDuration retentionPeriod;
+
+    public RetentionDuration getRetentionPeriod() {
+        return retentionPeriod;
+    }
+
+    /**
+     * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPreventDeletionEnabled")
+    private final Boolean isPreventDeletionEnabled;
+
+    /**
+     * Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * @return the value
+     **/
+    public Boolean getIsPreventDeletionEnabled() {
+        return isPreventDeletionEnabled;
+    }
+
+    /**
+     * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRetentionLockEnabled")
+    private final Boolean isRetentionLockEnabled;
+
+    /**
+     * feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * @return the value
+     **/
+    public Boolean getIsRetentionLockEnabled() {
+        return isRetentionLockEnabled;
+    }
+
+    /**
+     * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIndefiniteRetentionEnabled")
+    private final Boolean isIndefiniteRetentionEnabled;
+
+    /**
+     * feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * @return the value
+     **/
+    public Boolean getIsIndefiniteRetentionEnabled() {
+        return isIndefiniteRetentionEnabled;
+    }
+
+    /**
+     * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupBackupId")
+    private final String volumeGroupBackupId;
+
+    /**
+     * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     * @return the value
+     **/
+    public String getVolumeGroupBackupId() {
+        return volumeGroupBackupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1083,6 +1291,14 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", uniqueSizeInGBs=").append(String.valueOf(this.uniqueSizeInGBs));
         sb.append(", uniqueSizeInMbs=").append(String.valueOf(this.uniqueSizeInMbs));
         sb.append(", volumeId=").append(String.valueOf(this.volumeId));
+        sb.append(", timeRetentionExpiresAt=").append(String.valueOf(this.timeRetentionExpiresAt));
+        sb.append(", retentionPeriod=").append(String.valueOf(this.retentionPeriod));
+        sb.append(", isPreventDeletionEnabled=")
+                .append(String.valueOf(this.isPreventDeletionEnabled));
+        sb.append(", isRetentionLockEnabled=").append(String.valueOf(this.isRetentionLockEnabled));
+        sb.append(", isIndefiniteRetentionEnabled=")
+                .append(String.valueOf(this.isIndefiniteRetentionEnabled));
+        sb.append(", volumeGroupBackupId=").append(String.valueOf(this.volumeGroupBackupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1116,6 +1332,16 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.uniqueSizeInGBs, other.uniqueSizeInGBs)
                 && java.util.Objects.equals(this.uniqueSizeInMbs, other.uniqueSizeInMbs)
                 && java.util.Objects.equals(this.volumeId, other.volumeId)
+                && java.util.Objects.equals(
+                        this.timeRetentionExpiresAt, other.timeRetentionExpiresAt)
+                && java.util.Objects.equals(this.retentionPeriod, other.retentionPeriod)
+                && java.util.Objects.equals(
+                        this.isPreventDeletionEnabled, other.isPreventDeletionEnabled)
+                && java.util.Objects.equals(
+                        this.isRetentionLockEnabled, other.isRetentionLockEnabled)
+                && java.util.Objects.equals(
+                        this.isIndefiniteRetentionEnabled, other.isIndefiniteRetentionEnabled)
+                && java.util.Objects.equals(this.volumeGroupBackupId, other.volumeGroupBackupId)
                 && super.equals(other);
     }
 
@@ -1160,6 +1386,34 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
                 (result * PRIME)
                         + (this.uniqueSizeInMbs == null ? 43 : this.uniqueSizeInMbs.hashCode());
         result = (result * PRIME) + (this.volumeId == null ? 43 : this.volumeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRetentionExpiresAt == null
+                                ? 43
+                                : this.timeRetentionExpiresAt.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionPeriod == null ? 43 : this.retentionPeriod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPreventDeletionEnabled == null
+                                ? 43
+                                : this.isPreventDeletionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRetentionLockEnabled == null
+                                ? 43
+                                : this.isRetentionLockEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isIndefiniteRetentionEnabled == null
+                                ? 43
+                                : this.isIndefiniteRetentionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupBackupId == null
+                                ? 43
+                                : this.volumeGroupBackupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -31,8 +31,14 @@ public class ListFirmwareBundlesConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getPlatform(), "platform is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("platform", request.getPlatform());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("firmwareBundles");
+                newBaseTarget.path("/20160918").path("firmwareBundles");
 
         if (request.getCompartmentId() != null) {
             target =

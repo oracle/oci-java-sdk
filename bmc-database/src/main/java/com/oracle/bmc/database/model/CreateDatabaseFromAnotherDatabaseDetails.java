@@ -35,6 +35,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         "sidPrefix",
         "sourceEncryptionKeyLocationDetails",
         "storageSizeDetails",
+        "managedSoftwareUpdateDetails",
         "vmClusterId"
     })
     public CreateDatabaseFromAnotherDatabaseDetails(
@@ -50,6 +51,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             String sidPrefix,
             EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             DatabaseStorageSizeDetails storageSizeDetails,
+            ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
             String vmClusterId) {
         super();
         this.databaseId = databaseId;
@@ -64,6 +66,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         this.sidPrefix = sidPrefix;
         this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
         this.storageSizeDetails = storageSizeDetails;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.vmClusterId = vmClusterId;
     }
 
@@ -264,6 +267,16 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             this.__explicitlySet__.add("storageSizeDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+        private ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+        public Builder managedSoftwareUpdateDetails(
+                ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails) {
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            this.__explicitlySet__.add("managedSoftwareUpdateDetails");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          **/
@@ -299,6 +312,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                             this.sidPrefix,
                             this.sourceEncryptionKeyLocationDetails,
                             this.storageSizeDetails,
+                            this.managedSoftwareUpdateDetails,
                             this.vmClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -344,6 +358,9 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
                 this.storageSizeDetails(model.getStorageSizeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("managedSoftwareUpdateDetails")) {
+                this.managedSoftwareUpdateDetails(model.getManagedSoftwareUpdateDetails());
             }
             if (model.wasPropertyExplicitlySet("vmClusterId")) {
                 this.vmClusterId(model.getVmClusterId());
@@ -531,6 +548,13 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         return storageSizeDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+    private final ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails;
+
+    public ManagedSoftwareUpdateInputDetails getManagedSoftwareUpdateDetails() {
+        return managedSoftwareUpdateDetails;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      **/
@@ -573,6 +597,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         sb.append(", sourceEncryptionKeyLocationDetails=")
                 .append(String.valueOf(this.sourceEncryptionKeyLocationDetails));
         sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
+        sb.append(", managedSoftwareUpdateDetails=")
+                .append(String.valueOf(this.managedSoftwareUpdateDetails));
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(")");
         return sb.toString();
@@ -604,6 +630,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                         this.sourceEncryptionKeyLocationDetails,
                         other.sourceEncryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
+                && java.util.Objects.equals(
+                        this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
                 && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && super.equals(other);
     }
@@ -644,6 +672,11 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                         + (this.storageSizeDetails == null
                                 ? 43
                                 : this.storageSizeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedSoftwareUpdateDetails == null
+                                ? 43
+                                : this.managedSoftwareUpdateDetails.hashCode());
         result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

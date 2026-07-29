@@ -1220,6 +1220,71 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    ChangeBaseccVmClusterCompartmentRequest,
+                    ChangeBaseccVmClusterCompartmentResponse>
+            forChangeBaseccVmClusterCompartment(ChangeBaseccVmClusterCompartmentRequest request) {
+        return forChangeBaseccVmClusterCompartment(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeBaseccVmClusterCompartmentRequest,
+                    ChangeBaseccVmClusterCompartmentResponse>
+            forChangeBaseccVmClusterCompartment(
+                    ChangeBaseccVmClusterCompartmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ChangeBaseccVmClusterCompartmentResponse>() {
+                    @Override
+                    public ChangeBaseccVmClusterCompartmentResponse call() throws Exception {
+                        final ChangeBaseccVmClusterCompartmentResponse response =
+                                client.changeBaseccVmClusterCompartment(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ChangeCloudAutonomousVmClusterCompartmentRequest,
                     ChangeCloudAutonomousVmClusterCompartmentResponse>
             forChangeCloudAutonomousVmClusterCompartment(
@@ -4264,6 +4329,67 @@ public class DatabaseWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<CreateBaseccVmClusterRequest, CreateBaseccVmClusterResponse>
+            forCreateBaseccVmCluster(CreateBaseccVmClusterRequest request) {
+        return forCreateBaseccVmCluster(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<CreateBaseccVmClusterRequest, CreateBaseccVmClusterResponse>
+            forCreateBaseccVmCluster(
+                    CreateBaseccVmClusterRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<CreateBaseccVmClusterResponse>() {
+                    @Override
+                    public CreateBaseccVmClusterResponse call() throws Exception {
+                        final CreateBaseccVmClusterResponse response =
+                                client.createBaseccVmCluster(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<
                     CreateCloudAutonomousVmClusterRequest, CreateCloudAutonomousVmClusterResponse>
             forCreateCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest request) {
@@ -6476,6 +6602,67 @@ public class DatabaseWaiters {
                     @Override
                     public DeleteBackupResponse call() throws Exception {
                         final DeleteBackupResponse response = client.deleteBackup(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<DeleteBaseccVmClusterRequest, DeleteBaseccVmClusterResponse>
+            forDeleteBaseccVmCluster(DeleteBaseccVmClusterRequest request) {
+        return forDeleteBaseccVmCluster(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<DeleteBaseccVmClusterRequest, DeleteBaseccVmClusterResponse>
+            forDeleteBaseccVmCluster(
+                    DeleteBaseccVmClusterRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<DeleteBaseccVmClusterResponse>() {
+                    @Override
+                    public DeleteBaseccVmClusterResponse call() throws Exception {
+                        final DeleteBaseccVmClusterResponse response =
+                                client.deleteBaseccVmCluster(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -11833,6 +12020,344 @@ public class DatabaseWaiters {
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.BackupDestination.LifecycleState
                                         .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBaseccVmClusterRequest, GetBaseccVmClusterResponse>
+            forBaseccVmCluster(
+                    GetBaseccVmClusterRequest request,
+                    com.oracle.bmc.database.model.BaseccVmCluster.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBaseccVmCluster(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBaseccVmClusterRequest, GetBaseccVmClusterResponse>
+            forBaseccVmCluster(
+                    GetBaseccVmClusterRequest request,
+                    com.oracle.bmc.database.model.BaseccVmCluster.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forBaseccVmCluster(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBaseccVmClusterRequest, GetBaseccVmClusterResponse>
+            forBaseccVmCluster(
+                    GetBaseccVmClusterRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.BaseccVmCluster.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forBaseccVmCluster(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for BaseccVmCluster.
+    private com.oracle.bmc.waiter.Waiter<GetBaseccVmClusterRequest, GetBaseccVmClusterResponse>
+            forBaseccVmCluster(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetBaseccVmClusterRequest request,
+                    final com.oracle.bmc.database.model.BaseccVmCluster.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.BaseccVmCluster.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetBaseccVmClusterRequest, GetBaseccVmClusterResponse>() {
+                            @Override
+                            public GetBaseccVmClusterResponse apply(
+                                    GetBaseccVmClusterRequest request) {
+                                return client.getBaseccVmCluster(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetBaseccVmClusterResponse>() {
+                            @Override
+                            public boolean test(GetBaseccVmClusterResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getBaseccVmCluster().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.BaseccVmCluster.LifecycleState
+                                        .Terminated)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateRequest, GetBaseccVmClusterUpdateResponse>
+            forBaseccVmClusterUpdate(
+                    GetBaseccVmClusterUpdateRequest request,
+                    com.oracle.bmc.database.model.BaseccVmClusterUpdate.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBaseccVmClusterUpdate(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateRequest, GetBaseccVmClusterUpdateResponse>
+            forBaseccVmClusterUpdate(
+                    GetBaseccVmClusterUpdateRequest request,
+                    com.oracle.bmc.database.model.BaseccVmClusterUpdate.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forBaseccVmClusterUpdate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateRequest, GetBaseccVmClusterUpdateResponse>
+            forBaseccVmClusterUpdate(
+                    GetBaseccVmClusterUpdateRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.BaseccVmClusterUpdate.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forBaseccVmClusterUpdate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for BaseccVmClusterUpdate.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateRequest, GetBaseccVmClusterUpdateResponse>
+            forBaseccVmClusterUpdate(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetBaseccVmClusterUpdateRequest request,
+                    final com.oracle.bmc.database.model.BaseccVmClusterUpdate.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.BaseccVmClusterUpdate.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetBaseccVmClusterUpdateRequest,
+                                GetBaseccVmClusterUpdateResponse>() {
+                            @Override
+                            public GetBaseccVmClusterUpdateResponse apply(
+                                    GetBaseccVmClusterUpdateRequest request) {
+                                return client.getBaseccVmClusterUpdate(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetBaseccVmClusterUpdateResponse>() {
+                            @Override
+                            public boolean test(GetBaseccVmClusterUpdateResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getBaseccVmClusterUpdate().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateHistoryEntryRequest,
+                    GetBaseccVmClusterUpdateHistoryEntryResponse>
+            forBaseccVmClusterUpdateHistoryEntry(
+                    GetBaseccVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntry
+                                    .LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBaseccVmClusterUpdateHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateHistoryEntryRequest,
+                    GetBaseccVmClusterUpdateHistoryEntryResponse>
+            forBaseccVmClusterUpdateHistoryEntry(
+                    GetBaseccVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntry.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forBaseccVmClusterUpdateHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateHistoryEntryRequest,
+                    GetBaseccVmClusterUpdateHistoryEntryResponse>
+            forBaseccVmClusterUpdateHistoryEntry(
+                    GetBaseccVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntry
+                                    .LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forBaseccVmClusterUpdateHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for BaseccVmClusterUpdateHistoryEntry.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetBaseccVmClusterUpdateHistoryEntryRequest,
+                    GetBaseccVmClusterUpdateHistoryEntryResponse>
+            forBaseccVmClusterUpdateHistoryEntry(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetBaseccVmClusterUpdateHistoryEntryRequest request,
+                    final com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntry
+                                    .LifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.database.model.BaseccVmClusterUpdateHistoryEntry
+                                .LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetBaseccVmClusterUpdateHistoryEntryRequest,
+                                GetBaseccVmClusterUpdateHistoryEntryResponse>() {
+                            @Override
+                            public GetBaseccVmClusterUpdateHistoryEntryResponse apply(
+                                    GetBaseccVmClusterUpdateHistoryEntryRequest request) {
+                                return client.getBaseccVmClusterUpdateHistoryEntry(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetBaseccVmClusterUpdateHistoryEntryResponse>() {
+                            @Override
+                            public boolean test(
+                                    GetBaseccVmClusterUpdateHistoryEntryResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getBaseccVmClusterUpdateHistoryEntry()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
                 request);
     }
 
@@ -17615,6 +18140,69 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    RegisterExadbVmClusterPkcsRequest, RegisterExadbVmClusterPkcsResponse>
+            forRegisterExadbVmClusterPkcs(RegisterExadbVmClusterPkcsRequest request) {
+        return forRegisterExadbVmClusterPkcs(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RegisterExadbVmClusterPkcsRequest, RegisterExadbVmClusterPkcsResponse>
+            forRegisterExadbVmClusterPkcs(
+                    RegisterExadbVmClusterPkcsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RegisterExadbVmClusterPkcsResponse>() {
+                    @Override
+                    public RegisterExadbVmClusterPkcsResponse call() throws Exception {
+                        final RegisterExadbVmClusterPkcsResponse response =
+                                client.registerExadbVmClusterPkcs(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ReinstateAutonomousContainerDatabaseDataguardRequest,
                     ReinstateAutonomousContainerDatabaseDataguardResponse>
             forReinstateAutonomousContainerDatabaseDataguard(
@@ -18266,6 +18854,71 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    RescheduleManagedDbSoftwareUpdateRequest,
+                    RescheduleManagedDbSoftwareUpdateResponse>
+            forRescheduleManagedDbSoftwareUpdate(RescheduleManagedDbSoftwareUpdateRequest request) {
+        return forRescheduleManagedDbSoftwareUpdate(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RescheduleManagedDbSoftwareUpdateRequest,
+                    RescheduleManagedDbSoftwareUpdateResponse>
+            forRescheduleManagedDbSoftwareUpdate(
+                    RescheduleManagedDbSoftwareUpdateRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RescheduleManagedDbSoftwareUpdateResponse>() {
+                    @Override
+                    public RescheduleManagedDbSoftwareUpdateResponse call() throws Exception {
+                        final RescheduleManagedDbSoftwareUpdateResponse response =
+                                client.rescheduleManagedDbSoftwareUpdate(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ResizeVmClusterNetworkRequest, ResizeVmClusterNetworkResponse>
             forResizeVmClusterNetwork(ResizeVmClusterNetworkRequest request) {
         return forResizeVmClusterNetwork(
@@ -18429,6 +19082,135 @@ public class DatabaseWaiters {
                     public RestartAutonomousDatabaseResponse call() throws Exception {
                         final RestartAutonomousDatabaseResponse response =
                                 client.restartAutonomousDatabase(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RestartAutonomousVmClusterOrdsRequest, RestartAutonomousVmClusterOrdsResponse>
+            forRestartAutonomousVmClusterOrds(RestartAutonomousVmClusterOrdsRequest request) {
+        return forRestartAutonomousVmClusterOrds(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RestartAutonomousVmClusterOrdsRequest, RestartAutonomousVmClusterOrdsResponse>
+            forRestartAutonomousVmClusterOrds(
+                    RestartAutonomousVmClusterOrdsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RestartAutonomousVmClusterOrdsResponse>() {
+                    @Override
+                    public RestartAutonomousVmClusterOrdsResponse call() throws Exception {
+                        final RestartAutonomousVmClusterOrdsResponse response =
+                                client.restartAutonomousVmClusterOrds(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RestartCloudAutonomousVmClusterOrdsRequest,
+                    RestartCloudAutonomousVmClusterOrdsResponse>
+            forRestartCloudAutonomousVmClusterOrds(
+                    RestartCloudAutonomousVmClusterOrdsRequest request) {
+        return forRestartCloudAutonomousVmClusterOrds(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    RestartCloudAutonomousVmClusterOrdsRequest,
+                    RestartCloudAutonomousVmClusterOrdsResponse>
+            forRestartCloudAutonomousVmClusterOrds(
+                    RestartCloudAutonomousVmClusterOrdsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RestartCloudAutonomousVmClusterOrdsResponse>() {
+                    @Override
+                    public RestartCloudAutonomousVmClusterOrdsResponse call() throws Exception {
+                        final RestartCloudAutonomousVmClusterOrdsResponse response =
+                                client.restartCloudAutonomousVmClusterOrds(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -20563,6 +21345,69 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    UnregisterExadbVmClusterPkcsRequest, UnregisterExadbVmClusterPkcsResponse>
+            forUnregisterExadbVmClusterPkcs(UnregisterExadbVmClusterPkcsRequest request) {
+        return forUnregisterExadbVmClusterPkcs(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    UnregisterExadbVmClusterPkcsRequest, UnregisterExadbVmClusterPkcsResponse>
+            forUnregisterExadbVmClusterPkcs(
+                    UnregisterExadbVmClusterPkcsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UnregisterExadbVmClusterPkcsResponse>() {
+                    @Override
+                    public UnregisterExadbVmClusterPkcsResponse call() throws Exception {
+                        final UnregisterExadbVmClusterPkcsResponse response =
+                                client.unregisterExadbVmClusterPkcs(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     UpdateAdvancedClusterFileSystemRequest, UpdateAdvancedClusterFileSystemResponse>
             forUpdateAdvancedClusterFileSystem(UpdateAdvancedClusterFileSystemRequest request) {
         return forUpdateAdvancedClusterFileSystem(
@@ -21177,6 +22022,67 @@ public class DatabaseWaiters {
                     @Override
                     public UpdateBackupResponse call() throws Exception {
                         final UpdateBackupResponse response = client.updateBackup(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateBaseccVmClusterRequest, UpdateBaseccVmClusterResponse>
+            forUpdateBaseccVmCluster(UpdateBaseccVmClusterRequest request) {
+        return forUpdateBaseccVmCluster(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateBaseccVmClusterRequest, UpdateBaseccVmClusterResponse>
+            forUpdateBaseccVmCluster(
+                    UpdateBaseccVmClusterRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpdateBaseccVmClusterResponse>() {
+                    @Override
+                    public UpdateBaseccVmClusterResponse call() throws Exception {
+                        final UpdateBaseccVmClusterResponse response =
+                                client.updateBaseccVmCluster(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest

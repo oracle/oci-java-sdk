@@ -3,6 +3,188 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## Unreleased
+### Breaking Changes
+- Apache connector configuration now propagates `SSLInitializationException` when TLS initialization fails instead of silently registering a plaintext socket factory for `https`. Applications that require the former behavior must explicitly provide a plaintext connection manager; see [PlainConnectionSocketFactoryExample.java](bmc-examples/src/main/java/PlainConnectionSocketFactoryExample.java).
+
+## 2.95.0 - 2026-07-28
+### Added 
+- Support for B200 shapes in dedicated AI clusters in the Generative AI service 
+- Support for Oracle Managed Database Software Updates in the Database service 
+- Support for Oracle-managed and customer-managed database home types in the Database service 
+- Support for specifying VM cluster IDs when creating databases in the Database service 
+- Support for Oracle Managed Software Updates delegation controls in the Delegate Access Control service 
+- Support for Exadata Database VM clusters in delegation controls in the Delegate Access Control service 
+- Support for database IDs in delegated resource access requests in the Delegate Access Control service 
+- Support for approval action timestamps and SSH access indicators in the Delegate Access Control service 
+- Support for public connectivity add-ons in the OCI Streaming with Apache Kafka service 
+- Support for Kafka cluster add-ons in the OCI Streaming with Apache Kafka service 
+- Support for GPU memory fabric IDs and size details in GPU memory cluster summaries, filtering GPU memory clusters by GPU memory fabric, associated GPU memory cluster IDs in GPU memory fabric resources, and partner-provided OS licenses when launching and updating instances in the Compute service 
+- Support for work request and waiters when attaching volumes, detaching volumes, and terminating instances in the Compute service 
+- Support for single-stack IPv6 in the Virtual Cloud Network service 
+- Support for hostnames on IPv6 addresses during create, update, and bulk operations in the Virtual Cloud Network service 
+- Support for IPv6 addresses on DB systems, read endpoints, read replicas, and snapshots in the MySQL HeatWave service 
+- Support for IPv6 selection in replication channels on dual-stack DB systems in the MySQL HeatWave service 
+- Support for X509 identity propagation trusts and CA certificate chains in the Identity Domains service 
+- Support for resource subject type, impersonating resources, claim validations, and claim propagation in identity propagation trusts in the Identity Domains service 
+- Support for ExaDB-D Public Cloud in the Operator Access Control service 
+- Support for cross region replication with hot standby in the PostgreSQL service 
+- Support for starting and stopping DB systems in the PostgreSQL service 
+- Support for Kerberos authentication in the PostgreSQL service 
+- Support for performance insights in the PostgreSQL service 
+- Support for log analytics integration in the Application Performance Monitoring Control Plane service 
+- Support for storing large data files in Application Performance Monitoring configurations in the Application Performance Monitoring service 
+- Support for compute clusters and host groups in the Kubernetes Engine service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Object Storage service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes in the Cloud Migrations service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes in the Secure Desktops service 
+- Support for forcefully restarting and stopping Autonomous Databases and Autonomous Container Databases in the Database service 
+- Support for restarting Oracle Rest Data Services (ORDS) services on Autonomous VM Clusters and Cloud Autonomous VM Clusters in the Database service 
+- Support for triggering forced reboot and stop of DB nodes in ExaDB-D, ExaDB-XS and ExaDB-C@C in the Database service 
+- Support for additional coordinator node pools for OCI Search in the OpenSearch service 
+- Support for multi-link organizations in the Organizations service 
+- Support for static redirect paths in OAuth2 and OpenID Connect authentication policies in the API Gateway service 
+- Support for returning SDK resources and etags during SDK updates in the API Gateway service 
+- Support for virtual node pool cycling in the Kubernetes Engine service 
+- Support for access types on Autonomous AI Database Serverless instances in the Database service 
+- Support for external logical zones on Autonomous AI Database Serverless instances and local Autonomous Data Guard standby databases in the Database service 
+- Support for scheduled backups of Autonomous Database Dedicated resources in the Resource Scheduler service 
+- Support for action-type filtering of resource types in the Resource Scheduler service 
+- Support for Log Analytics log groups on Oracle Process Automation (OPA) instances attached to Integration instances in the Integration service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on DNS resolver endpoints in the DNS service 
+- Support for free-form and defined tags on DNS resolver endpoints in the DNS service 
+- Support for resolver, private endpoint, and VNIC identifiers in DNS resolver endpoint responses in the DNS service 
+- Support for the `UPDATING` lifecycle state on DNS steering policies in the DNS service 
+- Support for Bitbucket Cloud email and API token configuration source providers in the Resource Manager service 
+- Support for configurable randomization windows for schedules in the Data Science service 
+- Support for partner-provided Windows licensing in the Compute service 
+- Support for Key Management service (KMS) bucket key in the Object Storage service 
+- Support for Point-In-Time Recovery (PITR) in the PostgreSQL service 
+- Support for DAC hardware shapes for self-hosted models in the Generative AI service 
+- Support for the Oracle Data Infrastructure Cloud@Customer service 
+- Support for AI Agents features in the AI Data Platform service 
+- Support for Hosted Application IAM resources in the Generative AI service 
+- Support for File Storage Service (FSS) volumes in the Container Instances service 
+- Support for Linux file system group security contexts for volumes in the Container Instances service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Digital Assistant service 
+- Support for placement constraints on compute clusters in the Compute service 
+- Support for GPU memory cluster configurations in instance pools in the Compute service 
+- Support for target database groups in target alert policy associations in the Data Safe service 
+- Support for pagination when generating and scheduling reports in the Data Safe service 
+- Support for refreshing audit policies in the Data Safe service 
+- Support for single report generation for target database group security assessments in the Data Safe service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Data Safe service 
+- Support for IPv6 endpoints in the OS Management Hub service 
+- Support for multiple FastConnect enhancements in the Networking service 
+- Support for updating a Letter of Authority for a cross-connect in the Networking service 
+- Support for creating, updating, deleting, getting, and listing Analytics instance resource groups in the Analytics Cloud service 
+- Support for reporting snapshot-exclusive bytes for compartment-level quota tracking in the File Storage service 
+- Support for retention locks for block backups in the Block Volume service 
+- Support for Data Guard creation with Azure encryption keys and changing encryption key locations to Azure in the Database service 
+- Support for registering and unregistering PKCS for Exadata Database Service on Dedicated Infrastructure VM clusters in the Database service 
+- Support for Exadata DomU OS live updates in Exadata Cloud and Exadata Cloud@Customer in the Database service 
+- Support for Oracle Base Database Cloud@Customer VM clusters in the Database service 
+- Support for autonomous database and two-level approver groups in the Oracle API Access Control service 
+- Support for creating virtual circuits with AWS as the provider in the Networking service 
+- Support for listing available provider regions in the Networking service 
+- Support for Oracle Exadata Exascale, Oracle Exadata Exascale at Azure, and Oracle Exadata Exascale at Google Cloud connection technology types in the GoldenGate service 
+- Support for Google Cloud Managed Service for Apache Kafka connection technology types in the GoldenGate service 
+- Support for AI model connections in the GoldenGate service 
+- Support for listing supported AI models by provider, region, and tenancy in the GoldenGate service 
+- Support for NEEDS_ATTENTION lifecycle state for connection resources in the GoldenGate service 
+- Support for connectionType metadata and connectionTypeNotEqualTo filtering on connection assignment resources in the GoldenGate service 
+- Support for H100_X16 and H100_X32 Dedicated AI Cluster shapes for model import in the Generative AI service  
+
+### Breaking Changes 
+- Class `com.oracle.bmc.opensearch.model.CustomerLoggingDetails` has been removed from the OpenSearch service 
+- Class `com.oracle.bmc.tenantmanagercontrolplane.model.ReviveWorkflowInstanceDetails` has been removed from the Organizations service 
+- The models `BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary`, `BitbucketCloudUsernameAppPasswordConfigurationSourceProvider`, `CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails`, and `UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails` were removed in the Resource Manager service 
+- The return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the model `com.oracle.bmc.generativeai.model.HostedApplicationSummary` in the Generative AI service 
+- The return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the request class `com.oracle.bmc.generativeai.requests.ListHostedApplicationsRequest` in the Generative AI service
+- The field `compartmentId` has been made required in the requests `ListApiMetadataByEntityTypesRequest`, `ListApiMetadataRequest`, `ListPrivilegedApiControlsRequest`, `ListPrivilegedApiRequestsRequest`, and `ListWorkRequestsRequest` in the Oracle API Access Control service
+- The field `compartmentId` has been made required in the model `CreatePrivilegedApiRequestDetails` in the Oracle API Access Control service
+
+## 2.94.0 - 2026-07-14
+### Added  
+- Support for B200 shapes in dedicated AI clusters in the Generative AI service  
+- Support for Oracle Managed Database Software Updates in the Database service  
+- Support for Oracle-managed and customer-managed database home types in the Database service  
+- Support for specifying VM cluster IDs when creating databases in the Database service  
+- Support for Oracle Managed Software Updates delegation controls in the Delegate Access Control service  
+- Support for Exadata Database VM clusters in delegation controls in the Delegate Access Control service  
+- Support for database IDs in delegated resource access requests in the Delegate Access Control service  
+- Support for approval action timestamps and SSH access indicators in the Delegate Access Control service  
+- Support for public connectivity add-ons in the OCI Streaming with Apache Kafka service  
+- Support for Kafka cluster add-ons in the OCI Streaming with Apache Kafka service  
+- Support for GPU memory fabric IDs and size details in GPU memory cluster summaries, filtering GPU memory clusters by GPU memory fabric, associated GPU memory cluster IDs in GPU memory fabric resources, and partner-provided OS licenses when launching and updating instances in the Compute service  
+- Support for work request and waiters when attaching volumes, detaching volumes, and terminating instances in the Compute service  
+- Support for single-stack IPv6 in the Virtual Cloud Network service  
+- Support for hostnames on IPv6 addresses during create, update, and bulk operations in the Virtual Cloud Network service  
+- Support for IPv6 addresses on DB systems, read endpoints, read replicas, and snapshots in the MySQL HeatWave service  
+- Support for IPv6 selection in replication channels on dual-stack DB systems in the MySQL HeatWave service  
+- Support for X509 identity propagation trusts and CA certificate chains in the Identity Domains service  
+- Support for resource subject type, impersonating resources, claim validations, and claim propagation in identity propagation trusts in the Identity Domains service 
+- Support for ExaDB-D Public Cloud in the Operator Access Control service  
+- Support for cross region replication with hot standby in the PostgreSQL service  
+- Support for starting and stopping DB systems in the PostgreSQL service  
+- Support for Kerberos authentication in the PostgreSQL service  
+- Support for performance insights in the PostgreSQL service  
+- Support for log analytics integration in the Application Performance Monitoring Control Plane service  
+- Support for storing large data files in Application Performance Monitoring configurations in the Application Performance Monitoring service  
+- Support for compute clusters and host groups in the Kubernetes Engine service  
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Object Storage service  
+- Support for Zero Trust Packet Routing (ZPR) security attributes in the Cloud Migrations service  
+- Support for Zero Trust Packet Routing (ZPR) security attributes in the Secure Desktops service  
+- Support for forcefully restarting and stopping Autonomous Databases and Autonomous Container Databases in the Database service  
+- Support for restarting Oracle Rest Data Services (ORDS) services on Autonomous VM Clusters and Cloud Autonomous VM Clusters in the Database service  
+- Support for triggering forced reboot and stop of DB nodes in ExaDB-D, ExaDB-XS and ExaDB-C@C in the Database service  
+- Support for additional coordinator node pools for OCI Search in the OpenSearch service  
+- Support for multi-link organizations in the Organizations service 
+- Support for static redirect paths in OAuth2 and OpenID Connect authentication policies in the API Gateway service  
+- Support for returning SDK resources and etags during SDK updates in the API Gateway service  
+- Support for virtual node pool cycling in the Kubernetes Engine service  
+- Support for access types on Autonomous AI Database Serverless instances in the Database service  
+- Support for external logical zones on Autonomous AI Database Serverless instances and local Autonomous Data Guard standby databases in the Database service  
+- Support for scheduled backups of Autonomous Database Dedicated resources in the Resource Scheduler service  
+- Support for action-type filtering of resource types in the Resource Scheduler service  
+- Support for Log Analytics log groups on Oracle Process Automation (OPA) instances attached to Integration instances in the Integration service  
+- Support for Zero Trust Packet Routing (ZPR) security attributes on DNS resolver endpoints in the DNS service  
+- Support for free-form and defined tags on DNS resolver endpoints in the DNS service  
+- Support for resolver, private endpoint, and VNIC identifiers in DNS resolver endpoint responses in the DNS service  
+- Support for the `UPDATING` lifecycle state on DNS steering policies in the DNS service 
+- Support for Bitbucket Cloud email and API token configuration source providers in the Resource Manager service  
+- Support for configurable randomization windows for schedules in the Data Science service  
+- Support for partner-provided Windows licensing in the Compute service  
+- Support for Key Management service (KMS) bucket key in the Object Storage service  
+- Support for Point-In-Time Recovery (PITR) in the PostgreSQL service 
+- Support for DAC hardware shapes for self-hosted models in the Generative AI service 
+- Support for the Oracle Data Infrastructure Cloud@Customer service 
+- Support for AI Agents features in the AI Data Platform service 
+- Support for Hosted Application IAM resources in the Generative AI service 
+- Support for File Storage Service (FSS) volumes in the Container Instances service 
+- Support for Linux file system group security contexts for volumes in the Container Instances service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Digital Assistant service 
+- Support for placement constraints on compute clusters in the Compute service 
+- Support for GPU memory cluster configurations in instance pools in the Compute service 
+- Support for target database groups in target alert policy associations in the Data Safe service 
+- Support for pagination when generating and scheduling reports in the Data Safe service 
+- Support for refreshing audit policies in the Data Safe service 
+- Support for single report generation for target database group security assessments in the Data Safe service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Data Safe service 
+- Support for IPv6 endpoints in the OS Management Hub service  
+
+### Fixed 
+- Fixed a connection leak in `ResponseHelper` by ensuring error responses and failed stream reads close the underlying response 
+- Fixed SDK debug logging to redact credential-bearing request and response headers 
+- Fixed a Jackson Databind vulnerability by updating `jackson-databind` from `2.21.2` to `2.21.4`  
+
+### Breaking Changes  
+- Class `com.oracle.bmc.opensearch.model.CustomerLoggingDetails` has been removed from the OpenSearch service  
+- Class `com.oracle.bmc.tenantmanagercontrolplane.model.ReviveWorkflowInstanceDetails` has been removed from the Organizations service 
+- The models `BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary`, `BitbucketCloudUsernameAppPasswordConfigurationSourceProvider`, `CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails`, and `UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails` were removed in the Resource Manager service 
+- Return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the model `com.oracle.bmc.generativeai.model.HostedApplicationSummary` in the Generative AI service 
+- Return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the request `com.oracle.bmc.generativeai.requests.ListHostedApplicationsRequest` in the Generative AI service
+
 ## 2.93.0 - 2026-06-02
 ### Added 
 - Support for managing OLVM environment and endpoint fields for asset sources in the Cloud Bridge service 

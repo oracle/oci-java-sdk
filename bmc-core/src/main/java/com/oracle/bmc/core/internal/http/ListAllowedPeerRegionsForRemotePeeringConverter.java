@@ -33,8 +33,13 @@ public class ListAllowedPeerRegionsForRemotePeeringConverter {
             com.oracle.bmc.core.requests.ListAllowedPeerRegionsForRemotePeeringRequest request) {
         Validate.notNull(request, "request instance is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("allowedPeerRegionsForRemotePeering");
+                newBaseTarget.path("/20160918").path("allowedPeerRegionsForRemotePeering");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

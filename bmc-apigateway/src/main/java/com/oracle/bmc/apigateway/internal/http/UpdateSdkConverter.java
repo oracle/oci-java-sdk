@@ -91,18 +91,23 @@ public class UpdateSdkConverter {
                                         "Transform function invoked for com.oracle.bmc.apigateway.responses.UpdateSdkResponse");
                                 final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.apigateway.model.Sdk>>
                                         responseFn;
                                 if (serviceDetails.isPresent()) {
                                     responseFn =
                                             RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.apigateway.model.Sdk.class,
                                                     serviceDetails.get());
                                 } else {
-                                    responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                    responseFn =
+                                            RESPONSE_CONVERSION_FACTORY.create(
+                                                    com.oracle.bmc.apigateway.model.Sdk.class);
                                 }
 
-                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.apigateway.model.Sdk>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
@@ -112,6 +117,17 @@ public class UpdateSdkConverter {
                                                         .UpdateSdkResponse.builder()
                                                         .__httpStatusCode__(rawResponse.getStatus())
                                                         .headers(headers);
+
+                                builder.sdk(response.getItem());
+
+                                java.util.Optional<java.util.List<String>> etagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "etag");
+                                if (etagHeader.isPresent()) {
+                                    builder.etag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "etag", etagHeader.get().get(0), String.class));
+                                }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

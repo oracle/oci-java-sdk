@@ -554,6 +554,54 @@ public class LinkAsyncClient implements LinkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetLinkWithTenancyNamesResponse> getLinkWithTenancyNames(
+            GetLinkWithTenancyNamesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetLinkWithTenancyNamesRequest, GetLinkWithTenancyNamesResponse>
+                    handler) {
+        LOG.trace("Called async getLinkWithTenancyNames");
+        final GetLinkWithTenancyNamesRequest interceptedRequest =
+                GetLinkWithTenancyNamesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLinkWithTenancyNamesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Link",
+                        "GetLinkWithTenancyNames",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/LinkWithTenancyNames/GetLinkWithTenancyNames");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetLinkWithTenancyNamesResponse>
+                transformer =
+                        GetLinkWithTenancyNamesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetLinkWithTenancyNamesRequest, GetLinkWithTenancyNamesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetLinkWithTenancyNamesRequest, GetLinkWithTenancyNamesResponse>,
+                        java.util.concurrent.Future<GetLinkWithTenancyNamesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetLinkWithTenancyNamesRequest, GetLinkWithTenancyNamesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLinksResponse> listLinks(
             ListLinksRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListLinksRequest, ListLinksResponse>

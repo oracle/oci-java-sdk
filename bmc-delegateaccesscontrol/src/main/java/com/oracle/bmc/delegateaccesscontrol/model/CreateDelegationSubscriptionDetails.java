@@ -50,13 +50,13 @@ public final class CreateDelegationSubscriptionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the compartment that contains the Delegation Control.
+         * The OCID of the compartment that contains the Delegation Subscription.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the Delegation Control.
+         * The OCID of the compartment that contains the Delegation Subscription.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -219,13 +219,13 @@ public final class CreateDelegationSubscriptionDetails
     }
 
     /**
-     * The OCID of the compartment that contains the Delegation Control.
+     * The OCID of the compartment that contains the Delegation Subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the Delegation Control.
+     * The OCID of the compartment that contains the Delegation Subscription.
      * @return the value
      **/
     public String getCompartmentId() {

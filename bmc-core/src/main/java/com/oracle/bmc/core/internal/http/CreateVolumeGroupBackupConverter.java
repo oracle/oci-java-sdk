@@ -33,8 +33,13 @@ public class CreateVolumeGroupBackupConverter {
                 request.getCreateVolumeGroupBackupDetails(),
                 "createVolumeGroupBackupDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("volumeGroupBackups");
+                newBaseTarget.path("/20160918").path("volumeGroupBackups");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

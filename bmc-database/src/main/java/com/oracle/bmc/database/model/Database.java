@@ -55,6 +55,8 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "dataGuardGroup",
         "encryptionKeyLocationDetails",
         "storageSizeDetails",
+        "managedSoftwareUpdateDetails",
+        "homeType",
         "patchVersion"
     })
     public Database(
@@ -93,6 +95,8 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
             DataGuardGroup dataGuardGroup,
             EncryptionKeyLocationDetails encryptionKeyLocationDetails,
             DatabaseStorageSizeResponseDetails storageSizeDetails,
+            ManagedSoftwareUpdateDetails managedSoftwareUpdateDetails,
+            HomeType homeType,
             String patchVersion) {
         super();
         this.id = id;
@@ -131,6 +135,8 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.dataGuardGroup = dataGuardGroup;
         this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
         this.storageSizeDetails = storageSizeDetails;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+        this.homeType = homeType;
         this.patchVersion = patchVersion;
     }
 
@@ -696,6 +702,34 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("storageSizeDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+        private ManagedSoftwareUpdateDetails managedSoftwareUpdateDetails;
+
+        public Builder managedSoftwareUpdateDetails(
+                ManagedSoftwareUpdateDetails managedSoftwareUpdateDetails) {
+            this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+            this.__explicitlySet__.add("managedSoftwareUpdateDetails");
+            return this;
+        }
+        /**
+         * Represents database will be under oracle managed home or customer managed home
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("homeType")
+        private HomeType homeType;
+
+        /**
+         * Represents database will be under oracle managed home or customer managed home
+         *
+         * @param homeType the value to set
+         * @return this builder
+         **/
+        public Builder homeType(HomeType homeType) {
+            this.homeType = homeType;
+            this.__explicitlySet__.add("homeType");
+            return this;
+        }
         /**
          * The patch version of the database.
          **/
@@ -754,6 +788,8 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.dataGuardGroup,
                             this.encryptionKeyLocationDetails,
                             this.storageSizeDetails,
+                            this.managedSoftwareUpdateDetails,
+                            this.homeType,
                             this.patchVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -868,6 +904,12 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("storageSizeDetails")) {
                 this.storageSizeDetails(model.getStorageSizeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("managedSoftwareUpdateDetails")) {
+                this.managedSoftwareUpdateDetails(model.getManagedSoftwareUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("homeType")) {
+                this.homeType(model.getHomeType());
             }
             if (model.wasPropertyExplicitlySet("patchVersion")) {
                 this.patchVersion(model.getPatchVersion());
@@ -1428,6 +1470,78 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return storageSizeDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("managedSoftwareUpdateDetails")
+    private final ManagedSoftwareUpdateDetails managedSoftwareUpdateDetails;
+
+    public ManagedSoftwareUpdateDetails getManagedSoftwareUpdateDetails() {
+        return managedSoftwareUpdateDetails;
+    }
+
+    /**
+     * Represents database will be under oracle managed home or customer managed home
+     *
+     **/
+    public enum HomeType {
+        OracleManaged("ORACLE_MANAGED"),
+        CustomerManaged("CUSTOMER_MANAGED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(HomeType.class);
+
+        private final String value;
+        private static java.util.Map<String, HomeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (HomeType v : HomeType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        HomeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static HomeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'HomeType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Represents database will be under oracle managed home or customer managed home
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("homeType")
+    private final HomeType homeType;
+
+    /**
+     * Represents database will be under oracle managed home or customer managed home
+     *
+     * @return the value
+     **/
+    public HomeType getHomeType() {
+        return homeType;
+    }
+
     /**
      * The patch version of the database.
      **/
@@ -1497,6 +1611,9 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", encryptionKeyLocationDetails=")
                 .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
+        sb.append(", managedSoftwareUpdateDetails=")
+                .append(String.valueOf(this.managedSoftwareUpdateDetails));
+        sb.append(", homeType=").append(String.valueOf(this.homeType));
         sb.append(", patchVersion=").append(String.valueOf(this.patchVersion));
         sb.append(")");
         return sb.toString();
@@ -1554,6 +1671,9 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(
                         this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
+                && java.util.Objects.equals(
+                        this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
+                && java.util.Objects.equals(this.homeType, other.homeType)
                 && java.util.Objects.equals(this.patchVersion, other.patchVersion)
                 && super.equals(other);
     }
@@ -1649,6 +1769,12 @@ public final class Database extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.storageSizeDetails == null
                                 ? 43
                                 : this.storageSizeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedSoftwareUpdateDetails == null
+                                ? 43
+                                : this.managedSoftwareUpdateDetails.hashCode());
+        result = (result * PRIME) + (this.homeType == null ? 43 : this.homeType.hashCode());
         result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

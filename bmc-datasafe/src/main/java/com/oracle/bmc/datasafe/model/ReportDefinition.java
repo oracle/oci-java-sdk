@@ -45,6 +45,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         "recordTimeSpan",
         "complianceStandards",
         "lifecycleDetails",
+        "isSchedulePaginationEnabled",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -75,6 +76,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             String recordTimeSpan,
             java.util.List<String> complianceStandards,
             String lifecycleDetails,
+            Boolean isSchedulePaginationEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -104,6 +106,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         this.recordTimeSpan = recordTimeSpan;
         this.complianceStandards = complianceStandards;
         this.lifecycleDetails = lifecycleDetails;
+        this.isSchedulePaginationEnabled = isSchedulePaginationEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -560,6 +563,28 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * Indicates if the reports being generated should be paginated.
+         * If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+         * Values can either be 'true' or 'false'.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSchedulePaginationEnabled")
+        private Boolean isSchedulePaginationEnabled;
+
+        /**
+         * Indicates if the reports being generated should be paginated.
+         * If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+         * Values can either be 'true' or 'false'.
+         *
+         * @param isSchedulePaginationEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isSchedulePaginationEnabled(Boolean isSchedulePaginationEnabled) {
+            this.isSchedulePaginationEnabled = isSchedulePaginationEnabled;
+            this.__explicitlySet__.add("isSchedulePaginationEnabled");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -654,6 +679,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                             this.recordTimeSpan,
                             this.complianceStandards,
                             this.lifecycleDetails,
+                            this.isSchedulePaginationEnabled,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -739,6 +765,9 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isSchedulePaginationEnabled")) {
+                this.isSchedulePaginationEnabled(model.getIsSchedulePaginationEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1264,6 +1293,26 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * Indicates if the reports being generated should be paginated.
+     * If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+     * Values can either be 'true' or 'false'.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSchedulePaginationEnabled")
+    private final Boolean isSchedulePaginationEnabled;
+
+    /**
+     * Indicates if the reports being generated should be paginated.
+     * If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+     * Values can either be 'true' or 'false'.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSchedulePaginationEnabled() {
+        return isSchedulePaginationEnabled;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -1361,6 +1410,8 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         sb.append(", recordTimeSpan=").append(String.valueOf(this.recordTimeSpan));
         sb.append(", complianceStandards=").append(String.valueOf(this.complianceStandards));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", isSchedulePaginationEnabled=")
+                .append(String.valueOf(this.isSchedulePaginationEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1406,6 +1457,8 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.recordTimeSpan, other.recordTimeSpan)
                 && java.util.Objects.equals(this.complianceStandards, other.complianceStandards)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.isSchedulePaginationEnabled, other.isSchedulePaginationEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1473,6 +1526,11 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSchedulePaginationEnabled == null
+                                ? 43
+                                : this.isSchedulePaginationEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

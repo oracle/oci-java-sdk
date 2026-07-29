@@ -33,6 +33,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "definedTags",
         "systemTags",
         "systemType",
+        "systemRole",
+        "replicationConfig",
         "dbVersion",
         "configId",
         "shape",
@@ -43,7 +45,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "storageDetails",
         "networkDetails",
         "managementPolicy",
-        "source"
+        "source",
+        "kerberosAuthDetails",
+        "odspInsightDetails"
     })
     public DbSystem(
             String id,
@@ -59,6 +63,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             SystemType systemType,
+            SystemRole systemRole,
+            ReplicationConfig replicationConfig,
             String dbVersion,
             String configId,
             String shape,
@@ -69,7 +75,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             StorageDetails storageDetails,
             NetworkDetails networkDetails,
             ManagementPolicy managementPolicy,
-            SourceDetails source) {
+            SourceDetails source,
+            KerberosAuthDetails kerberosAuthDetails,
+            OdspInsightDetails odspInsightDetails) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -84,6 +92,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.systemType = systemType;
+        this.systemRole = systemRole;
+        this.replicationConfig = replicationConfig;
         this.dbVersion = dbVersion;
         this.configId = configId;
         this.shape = shape;
@@ -95,6 +105,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.networkDetails = networkDetails;
         this.managementPolicy = managementPolicy;
         this.source = source;
+        this.kerberosAuthDetails = kerberosAuthDetails;
+        this.odspInsightDetails = odspInsightDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -337,6 +349,31 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * Type of the database system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemRole")
+        private SystemRole systemRole;
+
+        /**
+         * Type of the database system.
+         * @param systemRole the value to set
+         * @return this builder
+         **/
+        public Builder systemRole(SystemRole systemRole) {
+            this.systemRole = systemRole;
+            this.__explicitlySet__.add("systemRole");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+        private ReplicationConfig replicationConfig;
+
+        public Builder replicationConfig(ReplicationConfig replicationConfig) {
+            this.replicationConfig = replicationConfig;
+            this.__explicitlySet__.add("replicationConfig");
+            return this;
+        }
+        /**
          * The major and minor versions of the database system software.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
@@ -489,6 +526,24 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kerberosAuthDetails")
+        private KerberosAuthDetails kerberosAuthDetails;
+
+        public Builder kerberosAuthDetails(KerberosAuthDetails kerberosAuthDetails) {
+            this.kerberosAuthDetails = kerberosAuthDetails;
+            this.__explicitlySet__.add("kerberosAuthDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("odspInsightDetails")
+        private OdspInsightDetails odspInsightDetails;
+
+        public Builder odspInsightDetails(OdspInsightDetails odspInsightDetails) {
+            this.odspInsightDetails = odspInsightDetails;
+            this.__explicitlySet__.add("odspInsightDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -508,6 +563,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.definedTags,
                             this.systemTags,
                             this.systemType,
+                            this.systemRole,
+                            this.replicationConfig,
                             this.dbVersion,
                             this.configId,
                             this.shape,
@@ -518,7 +575,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.storageDetails,
                             this.networkDetails,
                             this.managementPolicy,
-                            this.source);
+                            this.source,
+                            this.kerberosAuthDetails,
+                            this.odspInsightDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -566,6 +625,12 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             if (model.wasPropertyExplicitlySet("systemType")) {
                 this.systemType(model.getSystemType());
             }
+            if (model.wasPropertyExplicitlySet("systemRole")) {
+                this.systemRole(model.getSystemRole());
+            }
+            if (model.wasPropertyExplicitlySet("replicationConfig")) {
+                this.replicationConfig(model.getReplicationConfig());
+            }
             if (model.wasPropertyExplicitlySet("dbVersion")) {
                 this.dbVersion(model.getDbVersion());
             }
@@ -598,6 +663,12 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("source")) {
                 this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("kerberosAuthDetails")) {
+                this.kerberosAuthDetails(model.getKerberosAuthDetails());
+            }
+            if (model.wasPropertyExplicitlySet("odspInsightDetails")) {
+                this.odspInsightDetails(model.getOdspInsightDetails());
             }
             return this;
         }
@@ -926,6 +997,77 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * Type of the database system.
+     **/
+    public enum SystemRole {
+        StandaloneDbSystem("STANDALONE_DB_SYSTEM"),
+        PrimaryDbSystem("PRIMARY_DB_SYSTEM"),
+        WarmStandbyDbSystem("WARM_STANDBY_DB_SYSTEM"),
+        PilotLightDbSystem("PILOT_LIGHT_DB_SYSTEM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SystemRole.class);
+
+        private final String value;
+        private static java.util.Map<String, SystemRole> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SystemRole v : SystemRole.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SystemRole(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SystemRole create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SystemRole', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of the database system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemRole")
+    private final SystemRole systemRole;
+
+    /**
+     * Type of the database system.
+     * @return the value
+     **/
+    public SystemRole getSystemRole() {
+        return systemRole;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationConfig")
+    private final ReplicationConfig replicationConfig;
+
+    public ReplicationConfig getReplicationConfig() {
+        return replicationConfig;
+    }
+
+    /**
      * The major and minor versions of the database system software.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
@@ -1055,6 +1197,20 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return source;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("kerberosAuthDetails")
+    private final KerberosAuthDetails kerberosAuthDetails;
+
+    public KerberosAuthDetails getKerberosAuthDetails() {
+        return kerberosAuthDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("odspInsightDetails")
+    private final OdspInsightDetails odspInsightDetails;
+
+    public OdspInsightDetails getOdspInsightDetails() {
+        return odspInsightDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1082,6 +1238,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", systemType=").append(String.valueOf(this.systemType));
+        sb.append(", systemRole=").append(String.valueOf(this.systemRole));
+        sb.append(", replicationConfig=").append(String.valueOf(this.replicationConfig));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", configId=").append(String.valueOf(this.configId));
         sb.append(", shape=").append(String.valueOf(this.shape));
@@ -1094,6 +1252,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", networkDetails=").append(String.valueOf(this.networkDetails));
         sb.append(", managementPolicy=").append(String.valueOf(this.managementPolicy));
         sb.append(", source=").append(String.valueOf(this.source));
+        sb.append(", kerberosAuthDetails=").append(String.valueOf(this.kerberosAuthDetails));
+        sb.append(", odspInsightDetails=").append(String.valueOf(this.odspInsightDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1121,6 +1281,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.systemType, other.systemType)
+                && java.util.Objects.equals(this.systemRole, other.systemRole)
+                && java.util.Objects.equals(this.replicationConfig, other.replicationConfig)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.configId, other.configId)
                 && java.util.Objects.equals(this.shape, other.shape)
@@ -1133,6 +1295,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.networkDetails, other.networkDetails)
                 && java.util.Objects.equals(this.managementPolicy, other.managementPolicy)
                 && java.util.Objects.equals(this.source, other.source)
+                && java.util.Objects.equals(this.kerberosAuthDetails, other.kerberosAuthDetails)
+                && java.util.Objects.equals(this.odspInsightDetails, other.odspInsightDetails)
                 && super.equals(other);
     }
 
@@ -1161,6 +1325,10 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.systemType == null ? 43 : this.systemType.hashCode());
+        result = (result * PRIME) + (this.systemRole == null ? 43 : this.systemRole.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationConfig == null ? 43 : this.replicationConfig.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.configId == null ? 43 : this.configId.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
@@ -1186,6 +1354,16 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 (result * PRIME)
                         + (this.managementPolicy == null ? 43 : this.managementPolicy.hashCode());
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kerberosAuthDetails == null
+                                ? 43
+                                : this.kerberosAuthDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.odspInsightDetails == null
+                                ? 43
+                                : this.odspInsightDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

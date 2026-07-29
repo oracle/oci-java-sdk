@@ -95,6 +95,17 @@ public class X509FederationClientTest {
     }
 
     @Test
+    public void constructorPassesAdditionalClientConfiguratorsToRestClientUtils() {
+        PowerMockito.verifyStatic(Mockito.atLeastOnce());
+        RestClientUtils.createRestClient(
+                Mockito.eq("federationEndpoint"),
+                Mockito.<ClientConfigurator>any(),
+                Mockito.same(mockAddlConfigurators),
+                Mockito.<X509FederationClient>any(),
+                Mockito.<CircuitBreakerConfiguration>any());
+    }
+
+    @Test
     public void makeCall_shouldReuseWrappedInvocationBuilderReference_whenBmcExceptionIsThrown()
             throws Exception {
         // Set up WrappedInvocationBuilder used to verify

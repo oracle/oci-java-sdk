@@ -724,6 +724,7 @@ public final class DatabaseSoftwareImageSummary
         ExadataShape("EXADATA_SHAPE"),
         ExaccShape("EXACC_SHAPE"),
         ExadbxsShape("EXADBXS_SHAPE"),
+        BdbccShape("BDBCC_SHAPE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

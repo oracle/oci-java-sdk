@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Input payload to create a vanity url.
+ * Input payload to create a vanity URL.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -68,14 +68,14 @@ public final class CreateVanityUrlDetails
             return this;
         }
         /**
-         * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<String> hosts;
 
         /**
-         * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
          *
          * @param hosts the value to set
          * @return this builder
@@ -86,14 +86,14 @@ public final class CreateVanityUrlDetails
             return this;
         }
         /**
-         * Passphrase for the PEM Private key (if any).
+         * Passphrase for the PEM private key (if any).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
         private String passphrase;
 
         /**
-         * Passphrase for the PEM Private key (if any).
+         * Passphrase for the PEM private key (if any).
          *
          * @param passphrase the value to set
          * @return this builder
@@ -104,14 +104,14 @@ public final class CreateVanityUrlDetails
             return this;
         }
         /**
-         * PEM Private key for HTTPS connections.
+         * PEM private key for HTTPS connections.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
         private String privateKey;
 
         /**
-         * PEM Private key for HTTPS connections.
+         * PEM private key for HTTPS connections.
          *
          * @param privateKey the value to set
          * @return this builder
@@ -140,14 +140,14 @@ public final class CreateVanityUrlDetails
             return this;
         }
         /**
-         * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         * PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
         /**
-         * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         * PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
          *
          * @param caCertificate the value to set
          * @return this builder
@@ -228,14 +228,14 @@ public final class CreateVanityUrlDetails
     }
 
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<String> hosts;
 
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      *
      * @return the value
      **/
@@ -244,14 +244,14 @@ public final class CreateVanityUrlDetails
     }
 
     /**
-     * Passphrase for the PEM Private key (if any).
+     * Passphrase for the PEM private key (if any).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
     private final String passphrase;
 
     /**
-     * Passphrase for the PEM Private key (if any).
+     * Passphrase for the PEM private key (if any).
      *
      * @return the value
      **/
@@ -260,14 +260,14 @@ public final class CreateVanityUrlDetails
     }
 
     /**
-     * PEM Private key for HTTPS connections.
+     * PEM private key for HTTPS connections.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
     private final String privateKey;
 
     /**
-     * PEM Private key for HTTPS connections.
+     * PEM private key for HTTPS connections.
      *
      * @return the value
      **/
@@ -292,14 +292,14 @@ public final class CreateVanityUrlDetails
     }
 
     /**
-     * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     private final String caCertificate;
 
     /**
-     * PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      *
      * @return the value
      **/

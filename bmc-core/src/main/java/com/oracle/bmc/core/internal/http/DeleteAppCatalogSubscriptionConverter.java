@@ -33,8 +33,16 @@ public class DeleteAppCatalogSubscriptionConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getResourceVersion(), "resourceVersion is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("listingId", request.getListingId());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("resourceVersion", request.getResourceVersion());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("appCatalogSubscriptions");
+                newBaseTarget.path("/20160918").path("appCatalogSubscriptions");
 
         target =
                 target.queryParam(

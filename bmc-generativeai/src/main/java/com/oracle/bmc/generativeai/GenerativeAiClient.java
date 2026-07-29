@@ -925,6 +925,52 @@ public class GenerativeAiClient implements GenerativeAi {
     }
 
     @Override
+    public ChangeHostedApplicationIamCompartmentResponse changeHostedApplicationIamCompartment(
+            ChangeHostedApplicationIamCompartmentRequest request) {
+        LOG.trace("Called changeHostedApplicationIamCompartment");
+        final ChangeHostedApplicationIamCompartmentRequest interceptedRequest =
+                ChangeHostedApplicationIamCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeHostedApplicationIamCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ChangeHostedApplicationIamCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/ChangeHostedApplicationIamCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeHostedApplicationIamCompartmentResponse>
+                transformer =
+                        ChangeHostedApplicationIamCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeHostedApplicationCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeHostedApplicationStorageCompartmentResponse
             changeHostedApplicationStorageCompartment(
                     ChangeHostedApplicationStorageCompartmentRequest request) {
@@ -1354,6 +1400,50 @@ public class GenerativeAiClient implements GenerativeAi {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateHostedApplicationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateHostedApplicationIamResponse createHostedApplicationIam(
+            CreateHostedApplicationIamRequest request) {
+        LOG.trace("Called createHostedApplicationIam");
+        final CreateHostedApplicationIamRequest interceptedRequest =
+                CreateHostedApplicationIamConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "CreateHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/CreateHostedApplicationIam");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateHostedApplicationIamResponse>
+                transformer =
+                        CreateHostedApplicationIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateHostedApplicationIamDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1891,6 +1981,45 @@ public class GenerativeAiClient implements GenerativeAi {
     }
 
     @Override
+    public DeleteHostedApplicationIamResponse deleteHostedApplicationIam(
+            DeleteHostedApplicationIamRequest request) {
+        LOG.trace("Called deleteHostedApplicationIam");
+        final DeleteHostedApplicationIamRequest interceptedRequest =
+                DeleteHostedApplicationIamConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "DeleteHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/DeleteHostedApplicationIam");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteHostedApplicationIamResponse>
+                transformer =
+                        DeleteHostedApplicationIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteHostedApplicationStorageResponse deleteHostedApplicationStorage(
             DeleteHostedApplicationStorageRequest request) {
         LOG.trace("Called deleteHostedApplicationStorage");
@@ -2365,6 +2494,44 @@ public class GenerativeAiClient implements GenerativeAi {
         java.util.function.Function<javax.ws.rs.core.Response, GetHostedApplicationResponse>
                 transformer =
                         GetHostedApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetHostedApplicationIamResponse getHostedApplicationIam(
+            GetHostedApplicationIamRequest request) {
+        LOG.trace("Called getHostedApplicationIam");
+        final GetHostedApplicationIamRequest interceptedRequest =
+                GetHostedApplicationIamConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "GetHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/GetHostedApplicationIam");
+        java.util.function.Function<javax.ws.rs.core.Response, GetHostedApplicationIamResponse>
+                transformer =
+                        GetHostedApplicationIamConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2960,6 +3127,44 @@ public class GenerativeAiClient implements GenerativeAi {
         java.util.function.Function<javax.ws.rs.core.Response, ListHostedApplicationsResponse>
                 transformer =
                         ListHostedApplicationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListHostedApplicationsIamResponse listHostedApplicationsIam(
+            ListHostedApplicationsIamRequest request) {
+        LOG.trace("Called listHostedApplicationsIam");
+        final ListHostedApplicationsIamRequest interceptedRequest =
+                ListHostedApplicationsIamConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHostedApplicationsIamConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ListHostedApplicationsIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationCollection/ListHostedApplicationsIam");
+        java.util.function.Function<javax.ws.rs.core.Response, ListHostedApplicationsIamResponse>
+                transformer =
+                        ListHostedApplicationsIamConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3716,6 +3921,49 @@ public class GenerativeAiClient implements GenerativeAi {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateHostedApplicationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateHostedApplicationIamResponse updateHostedApplicationIam(
+            UpdateHostedApplicationIamRequest request) {
+        LOG.trace("Called updateHostedApplicationIam");
+        final UpdateHostedApplicationIamRequest interceptedRequest =
+                UpdateHostedApplicationIamConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateHostedApplicationIamConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "UpdateHostedApplicationIam",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/HostedApplicationIam/UpdateHostedApplicationIam");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateHostedApplicationIamResponse>
+                transformer =
+                        UpdateHostedApplicationIamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateHostedApplicationIamDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

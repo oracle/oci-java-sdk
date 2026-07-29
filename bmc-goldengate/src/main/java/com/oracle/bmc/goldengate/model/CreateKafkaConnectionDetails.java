@@ -288,7 +288,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
          * It must conform to the specific security requirements including length, case sensitivity, and so on.
-         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -297,7 +299,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
          * It must conform to the specific security requirements including length, case sensitivity, and so on.
-         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -342,24 +346,35 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         }
         /**
          * The base64 encoded content of the TrustStore file.
-         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
-        private String trustStore;
+        private char[] trustStore;
 
         /**
          * The base64 encoded content of the TrustStore file.
-         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param trustStore the value to set
          * @return this builder
          **/
-        public Builder trustStore(String trustStore) {
+        public Builder trustStore(char[] trustStore) {
             this.trustStore = trustStore;
             this.__explicitlySet__.add("trustStore");
             return this;
         }
+
+        public Builder trustStore(String trustStore) {
+            this.trustStore = trustStore != null ? trustStore.toCharArray() : null;
+            this.__explicitlySet__.add("trustStore");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
          * Note: When provided, 'trustStore' field must not be provided.
@@ -382,7 +397,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         }
         /**
          * The TrustStore password.
-         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
@@ -390,7 +407,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
         /**
          * The TrustStore password.
-         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param trustStorePassword the value to set
          * @return this builder
@@ -430,24 +449,35 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         }
         /**
          * The base64 encoded content of the KeyStore file.
-         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
-        private String keyStore;
+        private char[] keyStore;
 
         /**
          * The base64 encoded content of the KeyStore file.
-         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param keyStore the value to set
          * @return this builder
          **/
-        public Builder keyStore(String keyStore) {
+        public Builder keyStore(char[] keyStore) {
             this.keyStore = keyStore;
             this.__explicitlySet__.add("keyStore");
             return this;
         }
+
+        public Builder keyStore(String keyStore) {
+            this.keyStore = keyStore != null ? keyStore.toCharArray() : null;
+            this.__explicitlySet__.add("keyStore");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
          * Note: When provided, 'keyStore' field must not be provided.
@@ -470,7 +500,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         }
         /**
          * The KeyStore password.
-         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
@@ -478,7 +510,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
         /**
          * The KeyStore password.
-         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param keyStorePassword the value to set
          * @return this builder
@@ -519,7 +553,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         /**
          * The password for the cert inside of the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
-         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
@@ -528,7 +564,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         /**
          * The password for the cert inside of the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
-         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param sslKeyPassword the value to set
          * @return this builder
@@ -863,12 +901,12 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         this.username = username;
         this.password = password != null ? password.toCharArray() : null;
         this.passwordSecretId = passwordSecretId;
-        this.trustStore = trustStore;
+        this.trustStore = trustStore != null ? trustStore.toCharArray() : null;
         this.trustStoreSecretId = trustStoreSecretId;
         this.trustStorePassword =
                 trustStorePassword != null ? trustStorePassword.toCharArray() : null;
         this.trustStorePasswordSecretId = trustStorePasswordSecretId;
-        this.keyStore = keyStore;
+        this.keyStore = keyStore != null ? keyStore.toCharArray() : null;
         this.keyStoreSecretId = keyStoreSecretId;
         this.keyStorePassword = keyStorePassword != null ? keyStorePassword.toCharArray() : null;
         this.keyStorePasswordSecretId = keyStorePasswordSecretId;
@@ -905,11 +943,11 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             String username,
             char[] password,
             String passwordSecretId,
-            String trustStore,
+            char[] trustStore,
             String trustStoreSecretId,
             char[] trustStorePassword,
             String trustStorePasswordSecretId,
-            String keyStore,
+            char[] keyStore,
             String keyStoreSecretId,
             char[] keyStorePassword,
             String keyStorePasswordSecretId,
@@ -1068,7 +1106,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
-     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -1077,7 +1117,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
-     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getPassword__AsCharArray() instead.
@@ -1091,7 +1133,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
-     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
@@ -1126,19 +1170,39 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The base64 encoded content of the TrustStore file.
-     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
-    private final String trustStore;
+    private final char[] trustStore;
 
     /**
      * The base64 encoded content of the TrustStore file.
-     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;trustStoreSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * return the value
+     * @Deprecated - Use getTrustStore__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getTrustStore() {
+        return trustStore != null ? new String(trustStore) : null;
+    }
+
+    /**
+     * The base64 encoded content of the TrustStore file.
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
-    public String getTrustStore() {
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
+    public char[] getTrustStore__AsCharArray() {
         return trustStore;
     }
 
@@ -1162,7 +1226,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The TrustStore password.
-     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
@@ -1170,7 +1236,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The TrustStore password.
-     * Deprecated: This field is deprecated and replaced by &quot;trustStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;trustStorePasswordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getTrustStorePassword__AsCharArray() instead.
@@ -1183,7 +1251,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The TrustStore password.
-     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
@@ -1212,19 +1282,39 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The base64 encoded content of the KeyStore file.
-     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
-    private final String keyStore;
+    private final char[] keyStore;
 
     /**
      * The base64 encoded content of the KeyStore file.
-     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;keyStoreSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * return the value
+     * @Deprecated - Use getKeyStore__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getKeyStore() {
+        return keyStore != null ? new String(keyStore) : null;
+    }
+
+    /**
+     * The base64 encoded content of the KeyStore file.
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
-    public String getKeyStore() {
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
+    public char[] getKeyStore__AsCharArray() {
         return keyStore;
     }
 
@@ -1248,7 +1338,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The KeyStore password.
-     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
@@ -1256,7 +1348,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The KeyStore password.
-     * Deprecated: This field is deprecated and replaced by &quot;keyStorePasswordSecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;keyStorePasswordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getKeyStorePassword__AsCharArray() instead.
@@ -1269,7 +1363,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
 
     /**
      * The KeyStore password.
-     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
@@ -1299,7 +1395,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     /**
      * The password for the cert inside of the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
-     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
@@ -1308,7 +1406,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     /**
      * The password for the cert inside of the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
-     * Deprecated: This field is deprecated and replaced by &quot;sslKeyPasswordSecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;sslKeyPasswordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getSslKeyPassword__AsCharArray() instead.
@@ -1322,7 +1422,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     /**
      * The password for the cert inside of the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
-     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
@@ -1427,12 +1529,12 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
-        sb.append(", trustStore=").append(String.valueOf(this.trustStore));
+        sb.append(", trustStore=").append("<redacted>");
         sb.append(", trustStoreSecretId=").append(String.valueOf(this.trustStoreSecretId));
         sb.append(", trustStorePassword=").append("<redacted>");
         sb.append(", trustStorePasswordSecretId=")
                 .append(String.valueOf(this.trustStorePasswordSecretId));
-        sb.append(", keyStore=").append(String.valueOf(this.keyStore));
+        sb.append(", keyStore=").append("<redacted>");
         sb.append(", keyStoreSecretId=").append(String.valueOf(this.keyStoreSecretId));
         sb.append(", keyStorePassword=").append("<redacted>");
         sb.append(", keyStorePasswordSecretId=")

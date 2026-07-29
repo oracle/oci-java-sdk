@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * The license type of the instance.
+ * The license type of the Analytics instance.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")

@@ -31,8 +31,13 @@ public class CreateVcnConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateVcnDetails(), "createVcnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("vcns");
+                newBaseTarget.path("/20160918").path("vcns");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

@@ -32,8 +32,14 @@ public class PatchVcnConverter {
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
         Validate.notNull(request.getPatchVcnDetails(), "patchVcnDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("vcnId", request.getVcnId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("vcns")
                         .path(

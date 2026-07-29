@@ -29,6 +29,7 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
         "lifetime",
         "routeTableId",
         "ipv6SubnetCidr",
+        "hostname",
         "cidrPrefixLength"
     })
     public BulkCreateIpv6sItem(
@@ -39,6 +40,7 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
             Lifetime lifetime,
             String routeTableId,
             String ipv6SubnetCidr,
+            String hostname,
             Integer cidrPrefixLength) {
         super();
         this.definedTags = definedTags;
@@ -48,6 +50,7 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
         this.lifetime = lifetime;
         this.routeTableId = routeTableId;
         this.ipv6SubnetCidr = ipv6SubnetCidr;
+        this.hostname = hostname;
         this.cidrPrefixLength = cidrPrefixLength;
     }
 
@@ -213,6 +216,24 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
+
+        /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         * @param hostname the value to set
+         * @return this builder
+         **/
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
+            return this;
+        }
+        /**
          * Length of the CIDR range. Optional field to specify a flexible CIDR.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
@@ -242,6 +263,7 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
                             this.lifetime,
                             this.routeTableId,
                             this.ipv6SubnetCidr,
+                            this.hostname,
                             this.cidrPrefixLength);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -271,6 +293,9 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("ipv6SubnetCidr")) {
                 this.ipv6SubnetCidr(model.getIpv6SubnetCidr());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
             }
             if (model.wasPropertyExplicitlySet("cidrPrefixLength")) {
                 this.cidrPrefixLength(model.getCidrPrefixLength());
@@ -474,6 +499,22 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    private final String hostname;
+
+    /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     * @return the value
+     **/
+    public String getHostname() {
+        return hostname;
+    }
+
+    /**
      * Length of the CIDR range. Optional field to specify a flexible CIDR.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrPrefixLength")
@@ -508,6 +549,7 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", ipv6SubnetCidr=").append(String.valueOf(this.ipv6SubnetCidr));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", cidrPrefixLength=").append(String.valueOf(this.cidrPrefixLength));
         sb.append(")");
         return sb.toString();
@@ -530,6 +572,7 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.ipv6SubnetCidr, other.ipv6SubnetCidr)
+                && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.cidrPrefixLength, other.cidrPrefixLength)
                 && super.equals(other);
     }
@@ -547,6 +590,7 @@ public final class BulkCreateIpv6sItem extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.ipv6SubnetCidr == null ? 43 : this.ipv6SubnetCidr.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result =
                 (result * PRIME)
                         + (this.cidrPrefixLength == null ? 43 : this.cidrPrefixLength.hashCode());

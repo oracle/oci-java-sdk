@@ -57,6 +57,14 @@ public class ListGiVersionMinorVersionsConverter {
                                     request.getCompartmentId()));
         }
 
+        if (request.getExadataInfrastructureId() != null) {
+            target =
+                    target.queryParam(
+                            "exadataInfrastructureId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getExadataInfrastructureId()));
+        }
+
         if (request.getShapeFamily() != null) {
             target =
                     target.queryParam(

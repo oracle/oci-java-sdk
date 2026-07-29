@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * The data to create a hosted deployment.
+ * The data to create a hosted deployment. Exactly one of hostedApplicationId or hostedApplicationIamId must be provided.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -81,13 +81,13 @@ public final class CreateHostedDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostedApplicationId")
         private String hostedApplicationId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
          * @param hostedApplicationId the value to set
          * @return this builder
          **/
@@ -237,13 +237,13 @@ public final class CreateHostedDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostedApplicationId")
     private final String hostedApplicationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
      * @return the value
      **/
     public String getHostedApplicationId() {

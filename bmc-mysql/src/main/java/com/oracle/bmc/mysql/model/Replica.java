@@ -37,6 +37,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "nsgIds",
         "securityAttributes",
         "ipAddress",
+        "ipv6Address",
         "port",
         "portX",
         "freeformTags",
@@ -65,6 +66,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             java.util.List<String> nsgIds,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String ipAddress,
+            String ipv6Address,
             Integer port,
             Integer portX,
             java.util.Map<String, String> freeformTags,
@@ -92,6 +94,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.nsgIds = nsgIds;
         this.securityAttributes = securityAttributes;
         this.ipAddress = ipAddress;
+        this.ipv6Address = ipv6Address;
         this.port = port;
         this.portX = portX;
         this.freeformTags = freeformTags;
@@ -377,6 +380,22 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
+         * The IPv6 address the read replica is configured to listen on.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+        private String ipv6Address;
+
+        /**
+         * The IPv6 address the read replica is configured to listen on.
+         * @param ipv6Address the value to set
+         * @return this builder
+         **/
+        public Builder ipv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+            this.__explicitlySet__.add("ipv6Address");
+            return this;
+        }
+        /**
          * The port the read replica is configured to listen on.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -556,6 +575,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.nsgIds,
                             this.securityAttributes,
                             this.ipAddress,
+                            this.ipv6Address,
                             this.port,
                             this.portX,
                             this.freeformTags,
@@ -623,6 +643,9 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("ipAddress")) {
                 this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Address")) {
+                this.ipv6Address(model.getIpv6Address());
             }
             if (model.wasPropertyExplicitlySet("port")) {
                 this.port(model.getPort());
@@ -957,6 +980,20 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * The IPv6 address the read replica is configured to listen on.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
+    private final String ipv6Address;
+
+    /**
+     * The IPv6 address the read replica is configured to listen on.
+     * @return the value
+     **/
+    public String getIpv6Address() {
+        return ipv6Address;
+    }
+
+    /**
      * The port the read replica is configured to listen on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
@@ -1123,6 +1160,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
+        sb.append(", ipv6Address=").append(String.valueOf(this.ipv6Address));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", portX=").append(String.valueOf(this.portX));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1163,6 +1201,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
+                && java.util.Objects.equals(this.ipv6Address, other.ipv6Address)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.portX, other.portX)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1213,6 +1252,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                                 ? 43
                                 : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
+        result = (result * PRIME) + (this.ipv6Address == null ? 43 : this.ipv6Address.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.portX == null ? 43 : this.portX.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

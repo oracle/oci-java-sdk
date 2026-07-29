@@ -29,17 +29,16 @@ public class ListApiMetadataConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.apiaccesscontrol.requests.ListApiMetadataRequest request) {
         Validate.notNull(request, "request instance is required");
+        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20241130").path("apiMetadatas");
 
-        if (request.getCompartmentId() != null) {
-            target =
-                    target.queryParam(
-                            "compartmentId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getCompartmentId()));
-        }
+        target =
+                target.queryParam(
+                        "compartmentId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getCompartmentId()));
 
         if (request.getLifecycleState() != null) {
             target =

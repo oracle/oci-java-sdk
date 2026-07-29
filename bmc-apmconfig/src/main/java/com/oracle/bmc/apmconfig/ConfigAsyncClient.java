@@ -307,6 +307,11 @@ public class ConfigAsyncClient implements ConfigAsync {
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "ConfigAsyncClient", "getDataFile"));
+        }
     }
 
     /**
@@ -616,6 +621,52 @@ public class ConfigAsyncClient implements ConfigAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDataFileResponse> deleteDataFile(
+            DeleteDataFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDataFileRequest, DeleteDataFileResponse>
+                    handler) {
+        LOG.trace("Called async deleteDataFile");
+        final DeleteDataFileRequest interceptedRequest =
+                DeleteDataFileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDataFileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "DeleteDataFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/DeleteDataFile");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataFileResponse>
+                transformer =
+                        DeleteDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteDataFileRequest, DeleteDataFileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDataFileRequest, DeleteDataFileResponse>,
+                        java.util.concurrent.Future<DeleteDataFileResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDataFileRequest, DeleteDataFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportConfigurationResponse> exportConfiguration(
             ExportConfigurationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -711,6 +762,51 @@ public class ConfigAsyncClient implements ConfigAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataFileResponse> getDataFile(
+            GetDataFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetDataFileRequest, GetDataFileResponse>
+                    handler) {
+        LOG.trace("Called async getDataFile");
+        final GetDataFileRequest interceptedRequest =
+                GetDataFileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataFileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "GetDataFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/GetDataFile");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDataFileResponse>
+                transformer =
+                        GetDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetDataFileRequest, GetDataFileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDataFileRequest, GetDataFileResponse>,
+                        java.util.concurrent.Future<GetDataFileResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDataFileRequest, GetDataFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMatchAgentsWithAttributeKeyResponse>
             getMatchAgentsWithAttributeKey(
                     GetMatchAgentsWithAttributeKeyRequest request,
@@ -750,6 +846,51 @@ public class ConfigAsyncClient implements ConfigAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetMatchAgentsWithAttributeKeyRequest, GetMatchAgentsWithAttributeKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<HeadDataFileResponse> headDataFile(
+            HeadDataFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<HeadDataFileRequest, HeadDataFileResponse>
+                    handler) {
+        LOG.trace("Called async headDataFile");
+        final HeadDataFileRequest interceptedRequest =
+                HeadDataFileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadDataFileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "HeadDataFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/HeadDataFile");
+        final java.util.function.Function<javax.ws.rs.core.Response, HeadDataFileResponse>
+                transformer =
+                        HeadDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<HeadDataFileRequest, HeadDataFileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                HeadDataFileRequest, HeadDataFileResponse>,
+                        java.util.concurrent.Future<HeadDataFileResponse>>
+                futureSupplier = client.headFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    HeadDataFileRequest, HeadDataFileResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -853,6 +994,117 @@ public class ConfigAsyncClient implements ConfigAsync {
                     futureSupplier) {
                 @Override
                 protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataFilesResponse> listDataFiles(
+            ListDataFilesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListDataFilesRequest, ListDataFilesResponse>
+                    handler) {
+        LOG.trace("Called async listDataFiles");
+        final ListDataFilesRequest interceptedRequest =
+                ListDataFilesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataFilesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "ListDataFiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFileSummaryCollection/ListDataFiles");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDataFilesResponse>
+                transformer =
+                        ListDataFilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListDataFilesRequest, ListDataFilesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataFilesRequest, ListDataFilesResponse>,
+                        java.util.concurrent.Future<ListDataFilesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataFilesRequest, ListDataFilesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDataFileResponse> putDataFile(
+            PutDataFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<PutDataFileRequest, PutDataFileResponse>
+                    handler) {
+        LOG.trace("Called async putDataFile");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, PutDataFileRequest.builder());
+        }
+        final PutDataFileRequest interceptedRequest =
+                PutDataFileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutDataFileConverter.fromRequest(client, interceptedRequest);
+
+        ib.property(
+                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "PutDataFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/PutDataFile");
+        final java.util.function.Function<javax.ws.rs.core.Response, PutDataFileResponse>
+                transformer =
+                        PutDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<PutDataFileRequest, PutDataFileResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PutDataFileRequest, PutDataFileResponse>,
+                        java.util.concurrent.Future<PutDataFileResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPutDataFileBody(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PutDataFileRequest, PutDataFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getPutDataFileBody(), true);
+                }
             };
         } else {
             return futureSupplier.apply(handlerToUse);

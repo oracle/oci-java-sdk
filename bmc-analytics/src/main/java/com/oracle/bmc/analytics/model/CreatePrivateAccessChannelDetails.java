@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Input payload to create a Private Access Channel.
+ * Input payload to create a private access channel.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -50,14 +50,14 @@ public final class CreatePrivateAccessChannelDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Display Name of the Private Access Channel.
+         * Display name of the private access channel.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display Name of the Private Access Channel.
+         * Display name of the private access channel.
          *
          * @param displayName the value to set
          * @return this builder
@@ -68,14 +68,14 @@ public final class CreatePrivateAccessChannelDetails
             return this;
         }
         /**
-         * OCID of the customer VCN peered with private access channel.
+         * OCID of the customer VCN peered with the private access channel.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * OCID of the customer VCN peered with private access channel.
+         * OCID of the customer VCN peered with the private access channel.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -86,14 +86,14 @@ public final class CreatePrivateAccessChannelDetails
             return this;
         }
         /**
-         * OCID of the customer subnet connected to private access channel.
+         * OCID of the customer subnet connected to the private access channel.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * OCID of the customer subnet connected to private access channel.
+         * OCID of the customer subnet connected to the private access channel.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -104,18 +104,18 @@ public final class CreatePrivateAccessChannelDetails
             return this;
         }
         /**
-         * List of Private Source DNS zones registered with Private Access Channel,
-         * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
-         * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         * List of private source DNS zones registered with the private access channel. The
+         *  datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance.
+         * Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateSourceDnsZones")
         private java.util.List<PrivateSourceDnsZone> privateSourceDnsZones;
 
         /**
-         * List of Private Source DNS zones registered with Private Access Channel,
-         * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
-         * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         * List of private source DNS zones registered with the private access channel. The
+         *  datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance.
+         * Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
          *
          * @param privateSourceDnsZones the value to set
          * @return this builder
@@ -127,14 +127,14 @@ public final class CreatePrivateAccessChannelDetails
             return this;
         }
         /**
-         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
         private java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
 
         /**
-         * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
          *
          * @param privateSourceScanHosts the value to set
          * @return this builder
@@ -146,14 +146,14 @@ public final class CreatePrivateAccessChannelDetails
             return this;
         }
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          *
          * @param networkSecurityGroupIds the value to set
          * @return this builder
@@ -218,14 +218,14 @@ public final class CreatePrivateAccessChannelDetails
     }
 
     /**
-     * Display Name of the Private Access Channel.
+     * Display name of the private access channel.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display Name of the Private Access Channel.
+     * Display name of the private access channel.
      *
      * @return the value
      **/
@@ -234,14 +234,14 @@ public final class CreatePrivateAccessChannelDetails
     }
 
     /**
-     * OCID of the customer VCN peered with private access channel.
+     * OCID of the customer VCN peered with the private access channel.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * OCID of the customer VCN peered with private access channel.
+     * OCID of the customer VCN peered with the private access channel.
      *
      * @return the value
      **/
@@ -250,14 +250,14 @@ public final class CreatePrivateAccessChannelDetails
     }
 
     /**
-     * OCID of the customer subnet connected to private access channel.
+     * OCID of the customer subnet connected to the private access channel.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * OCID of the customer subnet connected to private access channel.
+     * OCID of the customer subnet connected to the private access channel.
      *
      * @return the value
      **/
@@ -266,18 +266,18 @@ public final class CreatePrivateAccessChannelDetails
     }
 
     /**
-     * List of Private Source DNS zones registered with Private Access Channel,
-     * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
-     * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * List of private source DNS zones registered with the private access channel. The
+     *  datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance.
+     * Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateSourceDnsZones")
     private final java.util.List<PrivateSourceDnsZone> privateSourceDnsZones;
 
     /**
-     * List of Private Source DNS zones registered with Private Access Channel,
-     * where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
-     * Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * List of private source DNS zones registered with the private access channel. The
+     *  datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance.
+     * Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      *
      * @return the value
      **/
@@ -286,14 +286,14 @@ public final class CreatePrivateAccessChannelDetails
     }
 
     /**
-     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateSourceScanHosts")
     private final java.util.List<PrivateSourceScanHost> privateSourceScanHosts;
 
     /**
-     * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      *
      * @return the value
      **/
@@ -302,14 +302,14 @@ public final class CreatePrivateAccessChannelDetails
     }
 
     /**
-     * Network Security Group OCIDs for an Analytics instance.
+     * Network Security Group OCIDs for the Analytics instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
     /**
-     * Network Security Group OCIDs for an Analytics instance.
+     * Network Security Group OCIDs for the Analytics instance.
      *
      * @return the value
      **/

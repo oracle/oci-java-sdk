@@ -14703,6 +14703,61 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListTargetAlertPolicyUnassociatedMembersResponse>
+            listTargetAlertPolicyUnassociatedMembers(
+                    ListTargetAlertPolicyUnassociatedMembersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListTargetAlertPolicyUnassociatedMembersRequest,
+                                    ListTargetAlertPolicyUnassociatedMembersResponse>
+                            handler) {
+        LOG.trace("Called async listTargetAlertPolicyUnassociatedMembers");
+        final ListTargetAlertPolicyUnassociatedMembersRequest interceptedRequest =
+                ListTargetAlertPolicyUnassociatedMembersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTargetAlertPolicyUnassociatedMembersConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListTargetAlertPolicyUnassociatedMembers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/ListTargetAlertPolicyUnassociatedMembers");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListTargetAlertPolicyUnassociatedMembersResponse>
+                transformer =
+                        ListTargetAlertPolicyUnassociatedMembersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTargetAlertPolicyUnassociatedMembersRequest,
+                        ListTargetAlertPolicyUnassociatedMembersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTargetAlertPolicyUnassociatedMembersRequest,
+                                ListTargetAlertPolicyUnassociatedMembersResponse>,
+                        java.util.concurrent.Future<
+                                ListTargetAlertPolicyUnassociatedMembersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTargetAlertPolicyUnassociatedMembersRequest,
+                    ListTargetAlertPolicyUnassociatedMembersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTargetDatabaseGroupsResponse> listTargetDatabaseGroups(
             ListTargetDatabaseGroupsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

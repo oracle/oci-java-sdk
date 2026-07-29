@@ -32,8 +32,13 @@ public class CreateDrgAttachmentConverter {
         Validate.notNull(
                 request.getCreateDrgAttachmentDetails(), "createDrgAttachmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("drgAttachments");
+                newBaseTarget.path("/20160918").path("drgAttachments");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

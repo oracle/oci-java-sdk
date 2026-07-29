@@ -164,13 +164,13 @@ public final class HostedDeployment extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostedApplicationId")
         private String hostedApplicationId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
          * @param hostedApplicationId the value to set
          * @return this builder
          **/
@@ -428,6 +428,7 @@ public final class HostedDeployment extends com.oracle.bmc.http.internal.Explici
      **/
     public enum LifecycleState {
         Creating("CREATING"),
+        NeedsAttention("NEEDS_ATTENTION"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Updating("UPDATING"),
@@ -491,13 +492,13 @@ public final class HostedDeployment extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostedApplicationId")
     private final String hostedApplicationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HostedApplication parent.
      * @return the value
      **/
     public String getHostedApplicationId() {

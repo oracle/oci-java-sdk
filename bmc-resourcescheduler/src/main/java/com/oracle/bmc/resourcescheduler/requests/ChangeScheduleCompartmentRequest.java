@@ -25,13 +25,13 @@ public class ChangeScheduleCompartmentRequest
         return scheduleId;
     }
     /**
-     * This is the change schedule compartment details that will be updated.
+     * These are the change schedule compartment details that will be updated.
      */
     private com.oracle.bmc.resourcescheduler.model.ChangeScheduleCompartmentDetails
             changeScheduleCompartmentDetails;
 
     /**
-     * This is the change schedule compartment details that will be updated.
+     * These are the change schedule compartment details that will be updated.
      */
     public com.oracle.bmc.resourcescheduler.model.ChangeScheduleCompartmentDetails
             getChangeScheduleCompartmentDetails() {
@@ -131,13 +131,13 @@ public class ChangeScheduleCompartmentRequest
         }
 
         /**
-         * This is the change schedule compartment details that will be updated.
+         * These are the change schedule compartment details that will be updated.
          */
         private com.oracle.bmc.resourcescheduler.model.ChangeScheduleCompartmentDetails
                 changeScheduleCompartmentDetails = null;
 
         /**
-         * This is the change schedule compartment details that will be updated.
+         * These are the change schedule compartment details that will be updated.
          * @param changeScheduleCompartmentDetails the value to set
          * @return this builder instance
          */

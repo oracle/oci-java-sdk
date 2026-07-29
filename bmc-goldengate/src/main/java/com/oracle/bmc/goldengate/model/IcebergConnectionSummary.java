@@ -229,12 +229,14 @@ public final class IcebergConnectionSummary extends ConnectionSummary {
         }
         /**
          * The Iceberg technology type.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private IcebergConnection.TechnologyType technologyType;
 
         /**
          * The Iceberg technology type.
+         *
          * @param technologyType the value to set
          * @return this builder
          **/
@@ -448,12 +450,14 @@ public final class IcebergConnectionSummary extends ConnectionSummary {
 
     /**
      * The Iceberg technology type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final IcebergConnection.TechnologyType technologyType;
 
     /**
      * The Iceberg technology type.
+     *
      * @return the value
      **/
     public IcebergConnection.TechnologyType getTechnologyType() {

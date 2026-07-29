@@ -313,7 +313,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
          * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
          * In this case, the default is REDIRECT.
          * <p>
-         * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+         * Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
@@ -329,7 +329,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
          * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
          * In this case, the default is REDIRECT.
          * <p>
-         * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+         * Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
          *
          * @param sessionMode the value to set
          * @return this builder
@@ -726,7 +726,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
      * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
      * In this case, the default is REDIRECT.
      * <p>
-     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
@@ -742,7 +742,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
      * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
      * In this case, the default is REDIRECT.
      * <p>
-     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      *
      * @return the value
      **/
