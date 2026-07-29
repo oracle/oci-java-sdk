@@ -237,55 +237,14 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         }
 
         if (iAmTheLeader) {
-            LOG.info("[Leader] About to refresh security token.");
-
-            if (refreshKeys) {
-                LOG.info("Refreshing session keys.");
-                sessionKeySupplier.refreshKeys();
-            }
-            if (leafCertificateSupplier instanceof Refreshable) {
-                try {
-                    ((Refreshable) leafCertificateSupplier).refresh();
-                } catch (RefreshFailedException ex) {
-                    throw new BmcException(
-                            false, "Can't refresh the leaf certification!", ex, null);
-                }
-                // When using default purpose (ex, instance principals), the token request should always be signed with the same tenant id as the certificate.
-                // For other purposes, the tenant id can be different.
-                if (this.purpose.equals(DEFAULT_PURPOSE)) {
-                    String newTenancyId =
-                            AuthUtils.getTenantIdFromCertificate(
-                                    leafCertificateSupplier
-                                            .getCertificateAndKeyPair()
-                                            .getCertificate());
-
-                    if (!this.tenancyId.equals(newTenancyId)) {
-                        throw new IllegalArgumentException(
-                                "The tenancy id should never be changed in cert file!");
-                    }
-                }
-            }
-
-            for (X509CertificateSupplier supplier : intermediateCertificateSuppliers) {
-                if (supplier instanceof Refreshable) {
-                    try {
-                        ((Refreshable) supplier).refresh();
-                    } catch (RefreshFailedException ex) {
-                        throw new BmcException(
-                                false, "Can't refresh the intermediate certification!", ex, null);
-                    }
-                }
-            }
-
             try {
-                securityTokenAdapter = getSecurityTokenFromServer();
-                String token = securityTokenAdapter.getSecurityToken();
+                LOG.info("[Leader] About to refresh security token.");
+                String token = refreshSecurityToken(refreshKeys);
                 future.complete(token);
                 return token;
-            } catch (Exception e) {
-                LOG.error("Error refreshing security token", e);
+            } catch (RuntimeException e) {
                 future.completeExceptionally(e);
-                throw new BmcException(false, "Error refreshing security token.", e, null);
+                throw e;
             } finally {
                 inFlightRefresh = null;
             }
@@ -307,6 +266,55 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                 throw new BmcException(
                         false, "Timed out waiting for security token refresh.", e, null);
             }
+        }
+    }
+
+    private String refreshSecurityToken(boolean refreshKeys) {
+        if (refreshKeys) {
+            LOG.info("Refreshing session keys.");
+            sessionKeySupplier.refreshKeys();
+        }
+        if (leafCertificateSupplier instanceof Refreshable) {
+            try {
+                ((Refreshable) leafCertificateSupplier).refresh();
+            } catch (RefreshFailedException ex) {
+                throw new BmcException(
+                        false,
+                        "Unable to refresh the client certificate used to obtain an OCI security token.",
+                        ex,
+                        null);
+            }
+            // When using default purpose (ex, instance principals), the token request should always be signed with the same tenant id as the certificate.
+            // For other purposes, the tenant id can be different.
+            if (this.purpose.equals(DEFAULT_PURPOSE)) {
+                String newTenancyId =
+                        AuthUtils.getTenantIdFromCertificate(
+                                leafCertificateSupplier.getCertificateAndKeyPair().getCertificate());
+
+                if (!this.tenancyId.equals(newTenancyId)) {
+                    throw new IllegalArgumentException(
+                            "The tenancy id should never be changed in cert file!");
+                }
+            }
+        }
+
+        for (X509CertificateSupplier supplier : intermediateCertificateSuppliers) {
+            if (supplier instanceof Refreshable) {
+                try {
+                    ((Refreshable) supplier).refresh();
+                } catch (RefreshFailedException ex) {
+                    throw new BmcException(
+                            false, "Can't refresh the intermediate certification!", ex, null);
+                }
+            }
+        }
+
+        try {
+            securityTokenAdapter = getSecurityTokenFromServer();
+            return securityTokenAdapter.getSecurityToken();
+        } catch (Exception e) {
+            LOG.error("Error refreshing security token", e);
+            throw new BmcException(false, "Error refreshing security token.", e, null);
         }
     }
 
