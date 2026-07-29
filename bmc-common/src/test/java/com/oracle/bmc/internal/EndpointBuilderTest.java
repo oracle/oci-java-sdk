@@ -201,6 +201,62 @@ public class EndpointBuilderTest {
     }
 
     @Test
+    public void testEndpointWithPopulatedServiceParamsAllowsHostLabelParameter() {
+        String endpointTemplate =
+                "https://{namespaceName+Dot}objectstorage.us-phoenix-1.example.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("namespaceName", "Dex_Namespace-1.example");
+
+        assertEquals(
+                "https://Dex_Namespace-1.example.objectstorage.us-phoenix-1.example.com",
+                EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                        endpointTemplate, requiredParametersMap, null));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEndpointWithPopulatedServiceParamsRejectsSlashInHostLabelParameter() {
+        String endpointTemplate =
+                "https://{namespaceName+Dot}objectstorage.us-phoenix-1.example.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("namespaceName", "namespace/objectstorage.evil.example");
+
+        EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                endpointTemplate, requiredParametersMap, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEndpointWithPopulatedServiceParamsRejectsLeadingHyphenInHostLabelParameter() {
+        String endpointTemplate =
+                "https://{namespaceName+Dot}objectstorage.us-phoenix-1.example.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("namespaceName", "-namespace");
+
+        EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                endpointTemplate, requiredParametersMap, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEndpointWithPopulatedServiceParamsRejectsTrailingHyphenInHostLabelParameter() {
+        String endpointTemplate =
+                "https://{namespaceName+Dot}objectstorage.us-phoenix-1.example.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("namespaceName", "namespace-");
+
+        EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                endpointTemplate, requiredParametersMap, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEndpointWithPopulatedServiceParamsRejectsUnsafeNonDotParameter() {
+        String endpointTemplate = "https://service.{region}.example.com";
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("region", "us/phoenix/1");
+
+        EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                endpointTemplate, requiredParametersMap, null);
+    }
+
+    @Test
     public void testUpdateEndpointTemplateForOptionsWhenEndpointHasInvalidOption() {
         Service testService =
                 Services.serviceBuilder()

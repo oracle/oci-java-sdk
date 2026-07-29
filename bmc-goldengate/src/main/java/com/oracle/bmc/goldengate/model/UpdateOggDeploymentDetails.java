@@ -40,7 +40,7 @@ public final class UpdateOggDeploymentDetails
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
         this.certificate = certificate;
-        this.key = key;
+        this.key = key != null ? key.toCharArray() : null;
         this.keySecretId = keySecretId;
         this.groupToRolesMapping = groupToRolesMapping;
     }
@@ -65,7 +65,7 @@ public final class UpdateOggDeploymentDetails
             String adminUsername,
             char[] adminPassword,
             String certificate,
-            String key,
+            char[] key,
             String keySecretId,
             UpdateGroupToRolesMappingDetails groupToRolesMapping) {
         super();
@@ -208,7 +208,7 @@ public final class UpdateOggDeploymentDetails
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
-        private String key;
+        private char[] key;
 
         /**
          * The base64 encoded content of the PEM file containing the private key.
@@ -216,11 +216,18 @@ public final class UpdateOggDeploymentDetails
          * @param key the value to set
          * @return this builder
          **/
-        public Builder key(String key) {
+        public Builder key(char[] key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
+
+        public Builder key(String key) {
+            this.key = key != null ? key.toCharArray() : null;
+            this.__explicitlySet__.add("key");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
          *
@@ -437,14 +444,27 @@ public final class UpdateOggDeploymentDetails
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    private final String key;
+    private final char[] key;
+
+    /**
+     * The base64 encoded content of the PEM file containing the private key.
+     *
+     * return the value
+     * @Deprecated - Use getKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getKey() {
+        return key != null ? new String(key) : null;
+    }
 
     /**
      * The base64 encoded content of the PEM file containing the private key.
      *
      * @return the value
      **/
-    public String getKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("key")
+    public char[] getKey__AsCharArray() {
         return key;
     }
 
@@ -491,7 +511,7 @@ public final class UpdateOggDeploymentDetails
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", certificate=").append(String.valueOf(this.certificate));
-        sb.append(", key=").append(String.valueOf(this.key));
+        sb.append(", key=").append("<redacted>");
         sb.append(", keySecretId=").append(String.valueOf(this.keySecretId));
         sb.append(", groupToRolesMapping=").append(String.valueOf(this.groupToRolesMapping));
         sb.append(")");

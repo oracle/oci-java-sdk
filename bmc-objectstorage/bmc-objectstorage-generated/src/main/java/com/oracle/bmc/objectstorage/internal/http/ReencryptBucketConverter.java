@@ -53,6 +53,14 @@ public class ReencryptBucketConverter {
                         .path("actions")
                         .path("reencrypt");
 
+        if (request.getIsReencryptBucketKeyOnly() != null) {
+            target =
+                    target.queryParam(
+                            "isReencryptBucketKeyOnly",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsReencryptBucketKeyOnly()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

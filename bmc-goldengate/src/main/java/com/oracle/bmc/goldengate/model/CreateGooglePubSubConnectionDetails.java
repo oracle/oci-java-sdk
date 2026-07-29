@@ -183,25 +183,37 @@ public final class CreateGooglePubSubConnectionDetails extends CreateConnectionD
         /**
          * The base64 encoded content of the service account key file containing
          * the credentials required to use Google PubSub.
-         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
-        private String serviceAccountKeyFile;
+        private char[] serviceAccountKeyFile;
 
         /**
          * The base64 encoded content of the service account key file containing
          * the credentials required to use Google PubSub.
-         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param serviceAccountKeyFile the value to set
          * @return this builder
          **/
-        public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
+        public Builder serviceAccountKeyFile(char[] serviceAccountKeyFile) {
             this.serviceAccountKeyFile = serviceAccountKeyFile;
             this.__explicitlySet__.add("serviceAccountKeyFile");
             return this;
         }
+
+        public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
+            this.serviceAccountKeyFile =
+                    serviceAccountKeyFile != null ? serviceAccountKeyFile.toCharArray() : null;
+            this.__explicitlySet__.add("serviceAccountKeyFile");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
          * which contains the credentials required to use Google PubSub.
@@ -363,6 +375,49 @@ public final class CreateGooglePubSubConnectionDetails extends CreateConnectionD
                 clusterPlacementGroupId,
                 securityAttributes);
         this.technologyType = technologyType;
+        this.serviceAccountKeyFile =
+                serviceAccountKeyFile != null ? serviceAccountKeyFile.toCharArray() : null;
+        this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateGooglePubSubConnectionDetails(
+            String displayName,
+            String description,
+            String compartmentId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
+            String vaultId,
+            String keyId,
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
+            String subscriptionId,
+            String clusterPlacementGroupId,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            GooglePubSubConnection.TechnologyType technologyType,
+            char[] serviceAccountKeyFile,
+            String serviceAccountKeyFileSecretId) {
+        super(
+                displayName,
+                description,
+                compartmentId,
+                freeformTags,
+                definedTags,
+                locks,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod,
+                doesUseSecretIds,
+                subscriptionId,
+                clusterPlacementGroupId,
+                securityAttributes);
+        this.technologyType = technologyType;
         this.serviceAccountKeyFile = serviceAccountKeyFile;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }
@@ -384,20 +439,41 @@ public final class CreateGooglePubSubConnectionDetails extends CreateConnectionD
     /**
      * The base64 encoded content of the service account key file containing
      * the credentials required to use Google PubSub.
-     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
-    private final String serviceAccountKeyFile;
+    private final char[] serviceAccountKeyFile;
 
     /**
      * The base64 encoded content of the service account key file containing
      * the credentials required to use Google PubSub.
-     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;serviceAccountKeyFileSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * return the value
+     * @Deprecated - Use getServiceAccountKeyFile__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getServiceAccountKeyFile() {
+        return serviceAccountKeyFile != null ? new String(serviceAccountKeyFile) : null;
+    }
+
+    /**
+     * The base64 encoded content of the service account key file containing
+     * the credentials required to use Google PubSub.
+     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
-    public String getServiceAccountKeyFile() {
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
+    public char[] getServiceAccountKeyFile__AsCharArray() {
         return serviceAccountKeyFile;
     }
 
@@ -436,7 +512,7 @@ public final class CreateGooglePubSubConnectionDetails extends CreateConnectionD
         sb.append("CreateGooglePubSubConnectionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
-        sb.append(", serviceAccountKeyFile=").append(String.valueOf(this.serviceAccountKeyFile));
+        sb.append(", serviceAccountKeyFile=").append("<redacted>");
         sb.append(", serviceAccountKeyFileSecretId=")
                 .append(String.valueOf(this.serviceAccountKeyFileSecretId));
         sb.append(")");

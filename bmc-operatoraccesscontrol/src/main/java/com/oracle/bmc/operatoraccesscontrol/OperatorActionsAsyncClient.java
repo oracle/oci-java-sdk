@@ -484,7 +484,10 @@ public class OperatorActionsAsyncClient implements OperatorActionsAsync {
                 GetOperatorActionConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OperatorActions", "GetOperatorAction", ib.getRequestUri().toString(), "");
+                        "OperatorActions",
+                        "GetOperatorAction",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOperatorActionResponse>
                 transformer =
                         GetOperatorActionConverter.fromResponse(
@@ -530,7 +533,7 @@ public class OperatorActionsAsyncClient implements OperatorActionsAsync {
                         "OperatorActions",
                         "ListOperatorActions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOperatorActionsResponse>
                 transformer =
                         ListOperatorActionsConverter.fromResponse(

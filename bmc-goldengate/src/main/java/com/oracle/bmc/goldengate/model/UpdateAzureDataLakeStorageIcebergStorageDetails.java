@@ -84,7 +84,9 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
         /**
          * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
          * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
@@ -93,7 +95,9 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
         /**
          * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
          * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param accountKey the value to set
          * @return this builder
@@ -260,7 +264,9 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
     /**
      * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
      * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
@@ -269,7 +275,9 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
     /**
      * Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;.
      * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ&#x3D;&#x3D;
-     * Deprecated: This field is deprecated and replaced by &quot;accountKeySecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;accountKeySecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getAccountKey__AsCharArray() instead.
@@ -283,7 +291,9 @@ public final class UpdateAzureDataLakeStorageIcebergStorageDetails
     /**
      * Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
      * e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/

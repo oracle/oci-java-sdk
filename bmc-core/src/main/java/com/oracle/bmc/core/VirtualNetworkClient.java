@@ -20,7 +20,9 @@ public class VirtualNetworkClient implements VirtualNetwork {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(VirtualNetworkClient.class.getName())
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
+                    .endpointServiceName("iaas")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -8359,6 +8361,44 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListProviderRemoteRegionsResponse listProviderRemoteRegions(
+            ListProviderRemoteRegionsRequest request) {
+        LOG.trace("Called listProviderRemoteRegions");
+        final ListProviderRemoteRegionsRequest interceptedRequest =
+                ListProviderRemoteRegionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProviderRemoteRegionsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ListProviderRemoteRegions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ProviderRemoteRegionName/ListProviderRemoteRegions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListProviderRemoteRegionsResponse>
+                transformer =
+                        ListProviderRemoteRegionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListPublicIpPoolsResponse listPublicIpPools(ListPublicIpPoolsRequest request) {
         LOG.trace("Called listPublicIpPools");
         final ListPublicIpPoolsRequest interceptedRequest =
@@ -9841,6 +9881,51 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateCrossConnectGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateCrossConnectLetterOfAuthorityResponse updateCrossConnectLetterOfAuthority(
+            UpdateCrossConnectLetterOfAuthorityRequest request) {
+        LOG.trace("Called updateCrossConnectLetterOfAuthority");
+        final UpdateCrossConnectLetterOfAuthorityRequest interceptedRequest =
+                UpdateCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCrossConnectLetterOfAuthorityConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "UpdateCrossConnectLetterOfAuthority",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/UpdateCrossConnectLetterOfAuthority");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCrossConnectLetterOfAuthorityResponse>
+                transformer =
+                        UpdateCrossConnectLetterOfAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateCrossConnectLetterOfAuthorityDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

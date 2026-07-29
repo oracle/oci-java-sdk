@@ -13,26 +13,26 @@ public class DeletePrivateAccessChannelRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique identifier key of the Private Access Channel.
+     * The unique identifier key of the private access channel.
      *
      */
     private String privateAccessChannelKey;
 
     /**
-     * The unique identifier key of the Private Access Channel.
+     * The unique identifier key of the private access channel.
      *
      */
     public String getPrivateAccessChannelKey() {
         return privateAccessChannelKey;
     }
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     private String analyticsInstanceId;
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     public String getAnalyticsInstanceId() {
@@ -100,13 +100,13 @@ public class DeletePrivateAccessChannelRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The unique identifier key of the Private Access Channel.
+         * The unique identifier key of the private access channel.
          *
          */
         private String privateAccessChannelKey = null;
 
         /**
-         * The unique identifier key of the Private Access Channel.
+         * The unique identifier key of the private access channel.
          *
          * @param privateAccessChannelKey the value to set
          * @return this builder instance
@@ -117,13 +117,13 @@ public class DeletePrivateAccessChannelRequest
         }
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance

@@ -22,10 +22,11 @@ package com.oracle.bmc.datasafe.model;
 public final class GenerateSecurityAssessmentReportDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"format"})
-    public GenerateSecurityAssessmentReportDetails(Format format) {
+    @java.beans.ConstructorProperties({"format", "isSingleReport"})
+    public GenerateSecurityAssessmentReportDetails(Format format, Boolean isSingleReport) {
         super();
         this.format = format;
+        this.isSingleReport = isSingleReport;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,13 +47,45 @@ public final class GenerateSecurityAssessmentReportDetails
             this.__explicitlySet__.add("format");
             return this;
         }
+        /**
+         * Optional flag controlling the output format of a target group report:
+         * - true: Generate a single consolidated report file for the entire target group.
+         * - false: Generate a ZIP archive containing one file per target in the group.
+         * <p>
+         * Important:
+         * - This flag is only applicable when the security assessment OCID refers to a target group assessment (targetType TARGET_DATABASE_GROUP).
+         * - If {@code isSingleReport} is set to true for an individual target (targetType TARGET_DATABASE), the request will return an error.
+         * - If {@code isSingleReport} is null or false for an individual target, the value is ignored and the selected output format for the assessment type is generated.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSingleReport")
+        private Boolean isSingleReport;
+
+        /**
+         * Optional flag controlling the output format of a target group report:
+         * - true: Generate a single consolidated report file for the entire target group.
+         * - false: Generate a ZIP archive containing one file per target in the group.
+         * <p>
+         * Important:
+         * - This flag is only applicable when the security assessment OCID refers to a target group assessment (targetType TARGET_DATABASE_GROUP).
+         * - If {@code isSingleReport} is set to true for an individual target (targetType TARGET_DATABASE), the request will return an error.
+         * - If {@code isSingleReport} is null or false for an individual target, the value is ignored and the selected output format for the assessment type is generated.
+         *
+         * @param isSingleReport the value to set
+         * @return this builder
+         **/
+        public Builder isSingleReport(Boolean isSingleReport) {
+            this.isSingleReport = isSingleReport;
+            this.__explicitlySet__.add("isSingleReport");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateSecurityAssessmentReportDetails build() {
             GenerateSecurityAssessmentReportDetails model =
-                    new GenerateSecurityAssessmentReportDetails(this.format);
+                    new GenerateSecurityAssessmentReportDetails(this.format, this.isSingleReport);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +96,9 @@ public final class GenerateSecurityAssessmentReportDetails
         public Builder copy(GenerateSecurityAssessmentReportDetails model) {
             if (model.wasPropertyExplicitlySet("format")) {
                 this.format(model.getFormat());
+            }
+            if (model.wasPropertyExplicitlySet("isSingleReport")) {
+                this.isSingleReport(model.getIsSingleReport());
             }
             return this;
         }
@@ -129,6 +165,36 @@ public final class GenerateSecurityAssessmentReportDetails
         return format;
     }
 
+    /**
+     * Optional flag controlling the output format of a target group report:
+     * - true: Generate a single consolidated report file for the entire target group.
+     * - false: Generate a ZIP archive containing one file per target in the group.
+     * <p>
+     * Important:
+     * - This flag is only applicable when the security assessment OCID refers to a target group assessment (targetType TARGET_DATABASE_GROUP).
+     * - If {@code isSingleReport} is set to true for an individual target (targetType TARGET_DATABASE), the request will return an error.
+     * - If {@code isSingleReport} is null or false for an individual target, the value is ignored and the selected output format for the assessment type is generated.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSingleReport")
+    private final Boolean isSingleReport;
+
+    /**
+     * Optional flag controlling the output format of a target group report:
+     * - true: Generate a single consolidated report file for the entire target group.
+     * - false: Generate a ZIP archive containing one file per target in the group.
+     * <p>
+     * Important:
+     * - This flag is only applicable when the security assessment OCID refers to a target group assessment (targetType TARGET_DATABASE_GROUP).
+     * - If {@code isSingleReport} is set to true for an individual target (targetType TARGET_DATABASE), the request will return an error.
+     * - If {@code isSingleReport} is null or false for an individual target, the value is ignored and the selected output format for the assessment type is generated.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSingleReport() {
+        return isSingleReport;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -144,6 +210,7 @@ public final class GenerateSecurityAssessmentReportDetails
         sb.append("GenerateSecurityAssessmentReportDetails(");
         sb.append("super=").append(super.toString());
         sb.append("format=").append(String.valueOf(this.format));
+        sb.append(", isSingleReport=").append(String.valueOf(this.isSingleReport));
         sb.append(")");
         return sb.toString();
     }
@@ -158,7 +225,9 @@ public final class GenerateSecurityAssessmentReportDetails
         }
 
         GenerateSecurityAssessmentReportDetails other = (GenerateSecurityAssessmentReportDetails) o;
-        return java.util.Objects.equals(this.format, other.format) && super.equals(other);
+        return java.util.Objects.equals(this.format, other.format)
+                && java.util.Objects.equals(this.isSingleReport, other.isSingleReport)
+                && super.equals(other);
     }
 
     @Override
@@ -166,6 +235,9 @@ public final class GenerateSecurityAssessmentReportDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.format == null ? 43 : this.format.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSingleReport == null ? 43 : this.isSingleReport.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

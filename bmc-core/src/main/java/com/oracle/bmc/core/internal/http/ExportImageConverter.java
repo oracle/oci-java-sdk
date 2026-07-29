@@ -32,8 +32,14 @@ public class ExportImageConverter {
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Validate.notNull(request.getExportImageDetails(), "exportImageDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("imageId", request.getImageId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("images")
                         .path(

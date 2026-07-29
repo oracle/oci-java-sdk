@@ -12,26 +12,26 @@ import com.oracle.bmc.analytics.model.*;
 public class DeleteVanityUrlRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     private String analyticsInstanceId;
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
     /**
-     * Specify unique identifier key of a vanity url to update or delete.
+     * Specify unique identifier key of a vanity URL to update or delete.
      *
      */
     private String vanityUrlKey;
 
     /**
-     * Specify unique identifier key of a vanity url to update or delete.
+     * Specify unique identifier key of a vanity URL to update or delete.
      *
      */
     public String getVanityUrlKey() {
@@ -99,13 +99,13 @@ public class DeleteVanityUrlRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -116,13 +116,13 @@ public class DeleteVanityUrlRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Specify unique identifier key of a vanity url to update or delete.
+         * Specify unique identifier key of a vanity URL to update or delete.
          *
          */
         private String vanityUrlKey = null;
 
         /**
-         * Specify unique identifier key of a vanity url to update or delete.
+         * Specify unique identifier key of a vanity URL to update or delete.
          *
          * @param vanityUrlKey the value to set
          * @return this builder instance

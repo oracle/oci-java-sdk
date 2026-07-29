@@ -259,7 +259,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
          * It must conform to the specific security requirements including length, case sensitivity, and so on.
-         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -268,7 +270,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given technology.
          * It must conform to the specific security requirements including length, case sensitivity, and so on.
-         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param password the value to set
          * @return this builder
@@ -427,24 +431,35 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-         * Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "sslKeySecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
-        private String sslKey;
+        private char[] sslKey;
 
         /**
          * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-         * Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "sslKeySecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param sslKey the value to set
          * @return this builder
          **/
-        public Builder sslKey(String sslKey) {
+        public Builder sslKey(char[] sslKey) {
             this.sslKey = sslKey;
             this.__explicitlySet__.add("sslKey");
             return this;
         }
+
+        public Builder sslKey(String sslKey) {
+            this.sslKey = sslKey != null ? sslKey.toCharArray() : null;
+            this.__explicitlySet__.add("sslKey");
+            return this;
+        }
+
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
          * Note: When provided, 'sslKey' field must not be provided.
@@ -699,7 +714,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         this.sslCa = sslCa;
         this.sslCrl = sslCrl;
         this.sslCert = sslCert;
-        this.sslKey = sslKey;
+        this.sslKey = sslKey != null ? sslKey.toCharArray() : null;
         this.sslKeySecretId = sslKeySecretId;
         this.dbSystemId = dbSystemId;
     }
@@ -735,7 +750,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             String sslCa,
             String sslCrl,
             String sslCert,
-            String sslKey,
+            char[] sslKey,
             String sslKeySecretId,
             String dbSystemId) {
         super(
@@ -857,7 +872,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
-     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
@@ -866,7 +883,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
-     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getPassword__AsCharArray() instead.
@@ -880,7 +899,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and so on.
-     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
@@ -1017,19 +1038,39 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     * Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "sslKeySecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
-    private final String sslKey;
+    private final char[] sslKey;
 
     /**
      * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     * Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;sslKeySecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * return the value
+     * @Deprecated - Use getSslKey__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getSslKey() {
+        return sslKey != null ? new String(sslKey) : null;
+    }
+
+    /**
+     * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+     * Deprecated: This field is deprecated and replaced by "sslKeySecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
-    public String getSslKey() {
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
+    public char[] getSslKey__AsCharArray() {
         return sslKey;
     }
 
@@ -1094,7 +1135,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         sb.append(", sslCa=").append(String.valueOf(this.sslCa));
         sb.append(", sslCrl=").append(String.valueOf(this.sslCrl));
         sb.append(", sslCert=").append(String.valueOf(this.sslCert));
-        sb.append(", sslKey=").append(String.valueOf(this.sslKey));
+        sb.append(", sslKey=").append("<redacted>");
         sb.append(", sslKeySecretId=").append(String.valueOf(this.sslKeySecretId));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(")");

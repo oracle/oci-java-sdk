@@ -30,6 +30,7 @@ public final class CreateTargetAlertPolicyAssociationDetails
         "description",
         "compartmentId",
         "isEnabled",
+        "targetType",
         "freeformTags",
         "definedTags"
     })
@@ -40,6 +41,7 @@ public final class CreateTargetAlertPolicyAssociationDetails
             String description,
             String compartmentId,
             Boolean isEnabled,
+            TargetAlertPolicyAssociation.TargetType targetType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -49,6 +51,7 @@ public final class CreateTargetAlertPolicyAssociationDetails
         this.description = description;
         this.compartmentId = compartmentId;
         this.isEnabled = isEnabled;
+        this.targetType = targetType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -72,13 +75,13 @@ public final class CreateTargetAlertPolicyAssociationDetails
             return this;
         }
         /**
-         * The OCID of the target.
+         * The OCID of the target or target database group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the target.
+         * The OCID of the target or target database group.
          * @param targetId the value to set
          * @return this builder
          **/
@@ -152,6 +155,22 @@ public final class CreateTargetAlertPolicyAssociationDetails
             return this;
         }
         /**
+         * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private TargetAlertPolicyAssociation.TargetType targetType;
+
+        /**
+         * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+         * @param targetType the value to set
+         * @return this builder
+         **/
+        public Builder targetType(TargetAlertPolicyAssociation.TargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -207,6 +226,7 @@ public final class CreateTargetAlertPolicyAssociationDetails
                             this.description,
                             this.compartmentId,
                             this.isEnabled,
+                            this.targetType,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -234,6 +254,9 @@ public final class CreateTargetAlertPolicyAssociationDetails
             }
             if (model.wasPropertyExplicitlySet("isEnabled")) {
                 this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -271,13 +294,13 @@ public final class CreateTargetAlertPolicyAssociationDetails
     }
 
     /**
-     * The OCID of the target.
+     * The OCID of the target or target database group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the target.
+     * The OCID of the target or target database group.
      * @return the value
      **/
     public String getTargetId() {
@@ -341,6 +364,20 @@ public final class CreateTargetAlertPolicyAssociationDetails
     }
 
     /**
+     * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    private final TargetAlertPolicyAssociation.TargetType targetType;
+
+    /**
+     * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     * @return the value
+     **/
+    public TargetAlertPolicyAssociation.TargetType getTargetType() {
+        return targetType;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -398,6 +435,7 @@ public final class CreateTargetAlertPolicyAssociationDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
+        sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -421,6 +459,7 @@ public final class CreateTargetAlertPolicyAssociationDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
+                && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -438,6 +477,7 @@ public final class CreateTargetAlertPolicyAssociationDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
+        result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

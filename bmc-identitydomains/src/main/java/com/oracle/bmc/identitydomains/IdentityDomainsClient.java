@@ -6950,7 +6950,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "ListIdentityPropagationTrusts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrusts/ListIdentityPropagationTrusts");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/ListIdentityPropagationTrusts");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListIdentityPropagationTrustsResponse>
                 transformer =

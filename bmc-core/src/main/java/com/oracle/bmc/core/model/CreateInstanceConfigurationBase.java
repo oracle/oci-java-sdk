@@ -24,6 +24,10 @@ package com.oracle.bmc.core.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateGmcConfigurationDetails.class,
+        name = "GMC"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateInstanceConfigurationDetails.class,
         name = "NONE"
     ),
@@ -214,11 +218,13 @@ public class CreateInstanceConfigurationBase
      * <p>
      * {@code NONE}: Creates an instance configuration using the list of settings that you specify.
      * * {@code INSTANCE}: Creates an instance configuration using an existing instance as a template.
+     * * {@code GMC}: Creates an instance configuration which can be used to create GMC backed pools.
      *
      **/
     public enum Source {
         None("NONE"),
         Instance("INSTANCE"),
+        Gmc("GMC"),
         ;
 
         private final String value;

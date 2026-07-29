@@ -48,7 +48,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The date and time the log entry occured, in the format defined by RFC3339.
+         * The date and time the log entry occurred, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -57,7 +57,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
         private java.util.Date timestamp;
 
         /**
-         * The date and time the log entry occured, in the format defined by RFC3339.
+         * The date and time the log entry occurred, in the format defined by RFC3339.
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
@@ -121,7 +121,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The date and time the log entry occured, in the format defined by RFC3339.
+     * The date and time the log entry occurred, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -130,7 +130,7 @@ public final class WorkRequestLog extends com.oracle.bmc.http.internal.Explicitl
     private final java.util.Date timestamp;
 
     /**
-     * The date and time the log entry occured, in the format defined by RFC3339.
+     * The date and time the log entry occurred, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *

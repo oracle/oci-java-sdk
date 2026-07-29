@@ -698,6 +698,59 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResourceGroupResponse> createResourceGroup(
+            CreateResourceGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateResourceGroupRequest, CreateResourceGroupResponse>
+                    handler) {
+        LOG.trace("Called async createResourceGroup");
+        final CreateResourceGroupRequest interceptedRequest =
+                CreateResourceGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateResourceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "CreateResourceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreateResourceGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateResourceGroupResponse>
+                transformer =
+                        CreateResourceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateResourceGroupRequest, CreateResourceGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateResourceGroupRequest, CreateResourceGroupResponse>,
+                        java.util.concurrent.Future<CreateResourceGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateResourceGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateResourceGroupRequest, CreateResourceGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVanityUrlResponse> createVanityUrl(
             CreateVanityUrlRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -838,6 +891,54 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeletePrivateAccessChannelRequest, DeletePrivateAccessChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceGroupResponse> deleteResourceGroup(
+            DeleteResourceGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteResourceGroupRequest, DeleteResourceGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteResourceGroup");
+        final DeleteResourceGroupRequest interceptedRequest =
+                DeleteResourceGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteResourceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "DeleteResourceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteResourceGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteResourceGroupResponse>
+                transformer =
+                        DeleteResourceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteResourceGroupRequest, DeleteResourceGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteResourceGroupRequest, DeleteResourceGroupResponse>,
+                        java.util.concurrent.Future<DeleteResourceGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteResourceGroupRequest, DeleteResourceGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1039,6 +1140,52 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceGroupResponse> getResourceGroup(
+            GetResourceGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceGroupRequest, GetResourceGroupResponse>
+                    handler) {
+        LOG.trace("Called async getResourceGroup");
+        final GetResourceGroupRequest interceptedRequest =
+                GetResourceGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetResourceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "GetResourceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetResourceGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResourceGroupResponse>
+                transformer =
+                        GetResourceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetResourceGroupRequest, GetResourceGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetResourceGroupRequest, GetResourceGroupResponse>,
+                        java.util.concurrent.Future<GetResourceGroupResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetResourceGroupRequest, GetResourceGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1118,6 +1265,52 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAnalyticsInstancesRequest, ListAnalyticsInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceGroupsResponse> listResourceGroups(
+            ListResourceGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListResourceGroupsRequest, ListResourceGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listResourceGroups");
+        final ListResourceGroupsRequest interceptedRequest =
+                ListResourceGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourceGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "ListResourceGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ListResourceGroups");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResourceGroupsResponse>
+                transformer =
+                        ListResourceGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListResourceGroupsRequest, ListResourceGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListResourceGroupsRequest, ListResourceGroupsResponse>,
+                        java.util.concurrent.Future<ListResourceGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListResourceGroupsRequest, ListResourceGroupsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1617,6 +1810,59 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdatePrivateAccessChannelRequest, UpdatePrivateAccessChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceGroupResponse> updateResourceGroup(
+            UpdateResourceGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateResourceGroupRequest, UpdateResourceGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateResourceGroup");
+        final UpdateResourceGroupRequest interceptedRequest =
+                UpdateResourceGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateResourceGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "UpdateResourceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateResourceGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateResourceGroupResponse>
+                transformer =
+                        UpdateResourceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateResourceGroupRequest, UpdateResourceGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateResourceGroupRequest, UpdateResourceGroupResponse>,
+                        java.util.concurrent.Future<UpdateResourceGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateResourceGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateResourceGroupRequest, UpdateResourceGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

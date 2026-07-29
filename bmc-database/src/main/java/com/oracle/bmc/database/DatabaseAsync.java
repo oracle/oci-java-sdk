@@ -404,6 +404,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a BaseDB-C@C VM cluster and its dependent resources to another compartment. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeBaseccVmClusterCompartmentResponse>
+            changeBaseccVmClusterCompartment(
+                    ChangeBaseccVmClusterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeBaseccVmClusterCompartmentRequest,
+                                    ChangeBaseccVmClusterCompartmentResponse>
+                            handler);
+
+    /**
      * Moves an Autonomous Exadata VM cluster in the Oracle cloud and its dependent resources to another compartment. For Exadata Cloud@Customer systems, see {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest, Consumer, Consumer) changeAutonomousVmClusterCompartment}.
      *
      *
@@ -1309,6 +1328,23 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a BaseDB-C@C VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBaseccVmClusterResponse> createBaseccVmCluster(
+            CreateBaseccVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateBaseccVmClusterRequest, CreateBaseccVmClusterResponse>
+                    handler);
+
+    /**
      * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #createAutonomousVmCluster(CreateAutonomousVmClusterRequest, Consumer, Consumer) createAutonomousVmCluster}.
      *
      *
@@ -1850,6 +1886,8 @@ public interface DatabaseAsync extends AutoCloseable {
      * Performs one of the following power actions on the specified DB node:
      * - start - power on
      * - stop - power off gracefully
+     * - forcestop - power off forcefully
+     * - forcereset - ACPI shutdown and power on forcefully
      * - softreset - ACPI shutdown and power on
      * - reset - power off and power on
      * <p>
@@ -2010,6 +2048,23 @@ public interface DatabaseAsync extends AutoCloseable {
             DeleteBackupDestinationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteBackupDestinationRequest, DeleteBackupDestinationResponse>
+                    handler);
+
+    /**
+     * Deletes the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBaseccVmClusterResponse> deleteBaseccVmCluster(
+            DeleteBaseccVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBaseccVmClusterRequest, DeleteBaseccVmClusterResponse>
                     handler);
 
     /**
@@ -3574,6 +3629,59 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBaseccVmClusterResponse> getBaseccVmCluster(
+            GetBaseccVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBaseccVmClusterRequest, GetBaseccVmClusterResponse>
+                    handler);
+
+    /**
+     * Gets information about a specified maintenance update package for a BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBaseccVmClusterUpdateResponse> getBaseccVmClusterUpdate(
+            GetBaseccVmClusterUpdateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBaseccVmClusterUpdateRequest, GetBaseccVmClusterUpdateResponse>
+                    handler);
+
+    /**
+     * Gets the maintenance update history details for the specified update history entry. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBaseccVmClusterUpdateHistoryEntryResponse>
+            getBaseccVmClusterUpdateHistoryEntry(
+                    GetBaseccVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetBaseccVmClusterUpdateHistoryEntryRequest,
+                                    GetBaseccVmClusterUpdateHistoryEntryResponse>
+                            handler);
+
+    /**
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see {@link #getAutonomousVmCluster(GetAutonomousVmClusterRequest, Consumer, Consumer) getAutonomousVmCluster}.
      *
      *
@@ -5101,6 +5209,59 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
 
     /**
+     * Gets the history of the maintenance update actions performed on the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBaseccVmClusterUpdateHistoryEntriesResponse>
+            listBaseccVmClusterUpdateHistoryEntries(
+                    ListBaseccVmClusterUpdateHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListBaseccVmClusterUpdateHistoryEntriesRequest,
+                                    ListBaseccVmClusterUpdateHistoryEntriesResponse>
+                            handler);
+
+    /**
+     * Lists the maintenance updates that can be applied to the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBaseccVmClusterUpdatesResponse> listBaseccVmClusterUpdates(
+            ListBaseccVmClusterUpdatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBaseccVmClusterUpdatesRequest, ListBaseccVmClusterUpdatesResponse>
+                    handler);
+
+    /**
+     * Lists the BaseDB-C@C VM clusters in the specified compartment. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBaseccVmClustersResponse> listBaseccVmClusters(
+            ListBaseccVmClustersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBaseccVmClustersRequest, ListBaseccVmClustersResponse>
+                    handler);
+
+    /**
      * Gets the list of resource usage details for all the Cloud Autonomous Container Database
      * in the specified Cloud Autonomous Exadata VM cluster.
      *
@@ -6544,6 +6705,23 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Install the PKCS11 driver for given keystore type
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RegisterExadbVmClusterPkcsResponse> registerExadbVmClusterPkcs(
+            RegisterExadbVmClusterPkcsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RegisterExadbVmClusterPkcsRequest, RegisterExadbVmClusterPkcsResponse>
+                    handler);
+
+    /**
      * Reinstates a disabled standby Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter to an active standby ACD. For more information, see
      * [Reinstate the Disabled Standby in an Autonomous Data Guard Configuration](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-B5C6A90D-72E3-4F32-988D-8AECC0A2D947).
      *
@@ -6732,6 +6910,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Reschedule the Managed Database Software Update
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RescheduleManagedDbSoftwareUpdateResponse>
+            rescheduleManagedDbSoftwareUpdate(
+                    RescheduleManagedDbSoftwareUpdateRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RescheduleManagedDbSoftwareUpdateRequest,
+                                    RescheduleManagedDbSoftwareUpdateResponse>
+                            handler);
+
+    /**
      * Adds or removes Db server network nodes to extend or shrink the existing VM cluster network. Applies to Exadata
      * Cloud@Customer instances only.
      *
@@ -6800,6 +6997,44 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RestartAutonomousDatabaseRequest, RestartAutonomousDatabaseResponse>
                     handler);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for Autonomous Exadata VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestartAutonomousVmClusterOrdsResponse>
+            restartAutonomousVmClusterOrds(
+                    RestartAutonomousVmClusterOrdsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RestartAutonomousVmClusterOrdsRequest,
+                                    RestartAutonomousVmClusterOrdsResponse>
+                            handler);
+
+    /**
+     * Restarts Oracle REST Data Services (ORDS) for a cloud Autonomous Exadata VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestartCloudAutonomousVmClusterOrdsResponse>
+            restartCloudAutonomousVmClusterOrds(
+                    RestartCloudAutonomousVmClusterOrdsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RestartCloudAutonomousVmClusterOrdsRequest,
+                                    RestartCloudAutonomousVmClusterOrdsResponse>
+                            handler);
 
     /**
      * Restores an Autonomous AI Database based on the provided request parameters.
@@ -7416,6 +7651,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Uninstall the PKCS11 driver for given keystore type
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnregisterExadbVmClusterPkcsResponse> unregisterExadbVmClusterPkcs(
+            UnregisterExadbVmClusterPkcsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnregisterExadbVmClusterPkcsRequest,
+                            UnregisterExadbVmClusterPkcsResponse>
+                    handler);
+
+    /**
      * Updates the advanced cluster file system resource.
      *
      *
@@ -7631,6 +7884,23 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateBackupDestinationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateBackupDestinationRequest, UpdateBackupDestinationResponse>
+                    handler);
+
+    /**
+     * Updates the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBaseccVmClusterResponse> updateBaseccVmCluster(
+            UpdateBaseccVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateBaseccVmClusterRequest, UpdateBaseccVmClusterResponse>
                     handler);
 
     /**

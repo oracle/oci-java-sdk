@@ -32,7 +32,9 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(ComputeManagementClient.class.getName())
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
+                    .endpointServiceName("iaas")
                     .build();
 
     private static final org.slf4j.Logger LOG =

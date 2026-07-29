@@ -15,6 +15,7 @@ public enum ResourceTypes {
     Autonomousvmcluster("AUTONOMOUSVMCLUSTER"),
     Cloudautonomousvmcluster("CLOUDAUTONOMOUSVMCLUSTER"),
     Cccinfrastructure("CCCINFRASTRUCTURE"),
+    Cloudexadatainfrastructure("CLOUDEXADATAINFRASTRUCTURE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

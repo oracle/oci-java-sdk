@@ -6,7 +6,7 @@ package com.oracle.bmc.datasafe.model;
 
 /**
  * Criteria to determine whether a target database should be included in the target database group.
- * If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+ * If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags or systemTags criteria then it qualifies for inclusion in the target database group.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

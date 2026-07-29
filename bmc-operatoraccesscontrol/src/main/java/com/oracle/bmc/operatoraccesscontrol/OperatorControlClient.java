@@ -578,7 +578,7 @@ public class OperatorControlClient implements OperatorControl {
                         "OperatorControl",
                         "ChangeOperatorControlCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeOperatorControlCompartmentResponse>
                 transformer =
@@ -623,7 +623,7 @@ public class OperatorControlClient implements OperatorControl {
                         "OperatorControl",
                         "CreateOperatorControl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl");
         java.util.function.Function<javax.ws.rs.core.Response, CreateOperatorControlResponse>
                 transformer =
                         CreateOperatorControlConverter.fromResponse(
@@ -665,7 +665,7 @@ public class OperatorControlClient implements OperatorControl {
                         "OperatorControl",
                         "DeleteOperatorControl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteOperatorControlResponse>
                 transformer =
                         DeleteOperatorControlConverter.fromResponse(
@@ -700,7 +700,10 @@ public class OperatorControlClient implements OperatorControl {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OperatorControl", "GetOperatorControl", ib.getRequestUri().toString(), "");
+                        "OperatorControl",
+                        "GetOperatorControl",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl");
         java.util.function.Function<javax.ws.rs.core.Response, GetOperatorControlResponse>
                 transformer =
                         GetOperatorControlConverter.fromResponse(
@@ -737,7 +740,7 @@ public class OperatorControlClient implements OperatorControl {
                         "OperatorControl",
                         "ListOperatorControls",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls");
         java.util.function.Function<javax.ws.rs.core.Response, ListOperatorControlsResponse>
                 transformer =
                         ListOperatorControlsConverter.fromResponse(
@@ -775,7 +778,7 @@ public class OperatorControlClient implements OperatorControl {
                         "OperatorControl",
                         "UpdateOperatorControl",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateOperatorControlResponse>
                 transformer =
                         UpdateOperatorControlConverter.fromResponse(

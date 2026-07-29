@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Private source DNS Zone model.
+ * Private source DNS zone model.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -32,14 +32,14 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZone")
         private String dnsZone;
 
         /**
-         * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          *
          * @param dnsZone the value to set
          * @return this builder
@@ -50,14 +50,14 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Description of private source dns zone.
+         * Description of the private source DNS zone.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of private source dns zone.
+         * Description of the private source DNS zone.
          *
          * @param description the value to set
          * @return this builder
@@ -103,14 +103,14 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZone")
     private final String dnsZone;
 
     /**
-     * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      *
      * @return the value
      **/
@@ -119,14 +119,14 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Description of private source dns zone.
+     * Description of the private source DNS zone.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of private source dns zone.
+     * Description of the private source DNS zone.
      *
      * @return the value
      **/

@@ -12,6 +12,7 @@ package com.oracle.bmc.analytics.model;
 public enum FeatureBundle {
     FawPaid("FAW_PAID"),
     FawFree("FAW_FREE"),
+    FdiBase("FDI_BASE"),
     EeEmbedded("EE_EMBEDDED"),
     SeEmbedded("SE_EMBEDDED"),
 

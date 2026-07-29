@@ -35,6 +35,8 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         "dataStoragePercentage",
         "recoStoragePercentage",
         "sparseStoragePercentage",
+        "liveImageVersionDetails",
+        "oracleLinuxVersion",
         "vmClusterNetworkId",
         "cpusEnabled",
         "ocpusEnabled",
@@ -78,6 +80,8 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
             Integer dataStoragePercentage,
             Integer recoStoragePercentage,
             Integer sparseStoragePercentage,
+            ExadataLiveImageVersionDetails liveImageVersionDetails,
+            String oracleLinuxVersion,
             String vmClusterNetworkId,
             Integer cpusEnabled,
             Float ocpusEnabled,
@@ -120,6 +124,8 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         this.dataStoragePercentage = dataStoragePercentage;
         this.recoStoragePercentage = recoStoragePercentage;
         this.sparseStoragePercentage = sparseStoragePercentage;
+        this.liveImageVersionDetails = liveImageVersionDetails;
+        this.oracleLinuxVersion = oracleLinuxVersion;
         this.vmClusterNetworkId = vmClusterNetworkId;
         this.cpusEnabled = cpusEnabled;
         this.ocpusEnabled = ocpusEnabled;
@@ -383,6 +389,32 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         public Builder sparseStoragePercentage(Integer sparseStoragePercentage) {
             this.sparseStoragePercentage = sparseStoragePercentage;
             this.__explicitlySet__.add("sparseStoragePercentage");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("liveImageVersionDetails")
+        private ExadataLiveImageVersionDetails liveImageVersionDetails;
+
+        public Builder liveImageVersionDetails(
+                ExadataLiveImageVersionDetails liveImageVersionDetails) {
+            this.liveImageVersionDetails = liveImageVersionDetails;
+            this.__explicitlySet__.add("liveImageVersionDetails");
+            return this;
+        }
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleLinuxVersion")
+        private String oracleLinuxVersion;
+
+        /**
+         * Oracle Linux version for the respective Exadata Image.
+         * @param oracleLinuxVersion the value to set
+         * @return this builder
+         **/
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            this.oracleLinuxVersion = oracleLinuxVersion;
+            this.__explicitlySet__.add("oracleLinuxVersion");
             return this;
         }
         /**
@@ -847,6 +879,8 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                             this.dataStoragePercentage,
                             this.recoStoragePercentage,
                             this.sparseStoragePercentage,
+                            this.liveImageVersionDetails,
+                            this.oracleLinuxVersion,
                             this.vmClusterNetworkId,
                             this.cpusEnabled,
                             this.ocpusEnabled,
@@ -923,6 +957,12 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("sparseStoragePercentage")) {
                 this.sparseStoragePercentage(model.getSparseStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("liveImageVersionDetails")) {
+                this.liveImageVersionDetails(model.getLiveImageVersionDetails());
+            }
+            if (model.wasPropertyExplicitlySet("oracleLinuxVersion")) {
+                this.oracleLinuxVersion(model.getOracleLinuxVersion());
             }
             if (model.wasPropertyExplicitlySet("vmClusterNetworkId")) {
                 this.vmClusterNetworkId(model.getVmClusterNetworkId());
@@ -1277,6 +1317,27 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
      **/
     public Integer getSparseStoragePercentage() {
         return sparseStoragePercentage;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("liveImageVersionDetails")
+    private final ExadataLiveImageVersionDetails liveImageVersionDetails;
+
+    public ExadataLiveImageVersionDetails getLiveImageVersionDetails() {
+        return liveImageVersionDetails;
+    }
+
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleLinuxVersion")
+    private final String oracleLinuxVersion;
+
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     * @return the value
+     **/
+    public String getOracleLinuxVersion() {
+        return oracleLinuxVersion;
     }
 
     /**
@@ -1984,6 +2045,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", recoStoragePercentage=").append(String.valueOf(this.recoStoragePercentage));
         sb.append(", sparseStoragePercentage=")
                 .append(String.valueOf(this.sparseStoragePercentage));
+        sb.append(", liveImageVersionDetails=")
+                .append(String.valueOf(this.liveImageVersionDetails));
+        sb.append(", oracleLinuxVersion=").append(String.valueOf(this.oracleLinuxVersion));
         sb.append(", vmClusterNetworkId=").append(String.valueOf(this.vmClusterNetworkId));
         sb.append(", cpusEnabled=").append(String.valueOf(this.cpusEnabled));
         sb.append(", ocpusEnabled=").append(String.valueOf(this.ocpusEnabled));
@@ -2047,6 +2111,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.recoStoragePercentage, other.recoStoragePercentage)
                 && java.util.Objects.equals(
                         this.sparseStoragePercentage, other.sparseStoragePercentage)
+                && java.util.Objects.equals(
+                        this.liveImageVersionDetails, other.liveImageVersionDetails)
+                && java.util.Objects.equals(this.oracleLinuxVersion, other.oracleLinuxVersion)
                 && java.util.Objects.equals(this.vmClusterNetworkId, other.vmClusterNetworkId)
                 && java.util.Objects.equals(this.cpusEnabled, other.cpusEnabled)
                 && java.util.Objects.equals(this.ocpusEnabled, other.ocpusEnabled)
@@ -2134,6 +2201,16 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                         + (this.sparseStoragePercentage == null
                                 ? 43
                                 : this.sparseStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.liveImageVersionDetails == null
+                                ? 43
+                                : this.liveImageVersionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleLinuxVersion == null
+                                ? 43
+                                : this.oracleLinuxVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.vmClusterNetworkId == null

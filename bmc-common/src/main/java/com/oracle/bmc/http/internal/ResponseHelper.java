@@ -39,7 +39,6 @@ public class ResponseHelper {
             org.slf4j.LoggerFactory.getLogger(ResponseHelper.class);
     private static final ObjectReader STRING_READER =
             com.oracle.bmc.http.Serialization.getObjectMapper().readerFor(String.class);
-    private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     private static final Map<Integer, String> DEFAULT_ERROR_MESSAGES = new HashMap<>();
 
@@ -91,23 +90,14 @@ public class ResponseHelper {
 
             // If the response Content-Type is not application/json, then don't bother parsing the response body.
             if (!typeEqual(MediaType.APPLICATION_JSON_TYPE, response.getMediaType())) {
-                String responseBody = "Cannot read response body!";
-                try {
-                    responseBody = response.readEntity(String.class);
-                } catch (ProcessingException e) {
-                    // Unable to read the response body. This is non-fatal so swallow the error and proceed.
-                    LOG.warn("Unable to read response body", e);
-                }
-
                 try {
                     throw new BmcException(
                             response.getStatus(),
                             "Unknown",
                             String.format(
-                                    "Unexpected Content-Type: %s instead of %s. Response body: %s",
+                                    "Unexpected Content-Type: %s instead of %s. Response body omitted.",
                                     response.getMediaType(),
-                                    MediaType.APPLICATION_JSON_TYPE,
-                                    responseBody),
+                                    MediaType.APPLICATION_JSON_TYPE),
                             opcRequestId,
                             serviceDetails);
                 } finally {
@@ -117,25 +107,7 @@ public class ResponseHelper {
                 }
             }
 
-            boolean isBuffered = false;
             try {
-                /*
-                 * Try to buffer the response for error logging in case parsing
-                 * fails. Ideally we would be able to specify "first X bytes" (to
-                 * avoid OOMs on large responses) but response buffering in JAX-RS
-                 * seems to be all-or-nothing unless we adopt a bit more complexity
-                 * by handing the parsing ourselves.
-                 */
-                if (response.getLength() < MAX_RESPONSE_BUFFER_BYTES) {
-                    try {
-                        isBuffered = response.bufferEntity();
-                    } catch (IllegalStateException e) {
-                        // bufferEntity will throw ISE if the response is closed already
-                        LOG.info(
-                                "Unable to buffer response entity as the response has already been closed",
-                                e);
-                    }
-                }
                 final ErrorCodeAndMessage errorCodeAndMessage =
                         response.readEntity(ErrorCodeAndMessage.class);
                 if (errorCodeAndMessage == null) {
@@ -162,18 +134,13 @@ public class ResponseHelper {
             } catch (ProcessingException e) {
                 // NOTE: for async paths, this means the first invocation will be the only one that gets
                 // the original message.
-                String message =
-                        isBuffered
-                                ? "Unable to parse error response: "
-                                        + response.readEntity(String.class)
-                                : "Unable to parse error response.";
+                String message = "Unable to parse error response.";
                 int status = response.getStatus();
 
-                // if there's a processing exception, we cannot assume that the response has been closed,
-                // so close it now after the response has been read out.
-                closeResponseSilently(response);
-
                 throw new BmcException(status, "Unknown", message, opcRequestId, e, serviceDetails);
+            } finally {
+                // Ensure JSON error responses also release their underlying connection.
+                closeResponseSilently(response);
             }
         }
     }
@@ -292,6 +259,9 @@ public class ResponseHelper {
                         }
 
                         return entityType.cast(inputStream);
+                    } catch (Exception e) {
+                        closeResponseSilently(response);
+                        throw e;
                     } finally {
                         if (contentType != null) {
                             response.getHeaders().addAll(HttpHeaders.CONTENT_TYPE, contentType);

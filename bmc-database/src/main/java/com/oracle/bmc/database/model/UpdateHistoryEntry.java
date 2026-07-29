@@ -25,6 +25,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
         "id",
         "updateId",
         "updateAction",
+        "updateMode",
         "updateType",
         "lifecycleState",
         "lifecycleDetails",
@@ -35,6 +36,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
             String id,
             String updateId,
             UpdateAction updateAction,
+            UpdateMode updateMode,
             UpdateType updateType,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -44,6 +46,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
         this.id = id;
         this.updateId = updateId;
         this.updateAction = updateAction;
+        this.updateMode = updateMode;
         this.updateType = updateType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -99,6 +102,22 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
         public Builder updateAction(UpdateAction updateAction) {
             this.updateAction = updateAction;
             this.__explicitlySet__.add("updateAction");
+            return this;
+        }
+        /**
+         * The OS update mode performed using this maintenance update.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("updateMode")
+        private UpdateMode updateMode;
+
+        /**
+         * The OS update mode performed using this maintenance update.
+         * @param updateMode the value to set
+         * @return this builder
+         **/
+        public Builder updateMode(UpdateMode updateMode) {
+            this.updateMode = updateMode;
+            this.__explicitlySet__.add("updateMode");
             return this;
         }
         /**
@@ -193,6 +212,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
                             this.id,
                             this.updateId,
                             this.updateAction,
+                            this.updateMode,
                             this.updateType,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -214,6 +234,9 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("updateAction")) {
                 this.updateAction(model.getUpdateAction());
+            }
+            if (model.wasPropertyExplicitlySet("updateMode")) {
+                this.updateMode(model.getUpdateMode());
             }
             if (model.wasPropertyExplicitlySet("updateType")) {
                 this.updateType(model.getUpdateType());
@@ -335,6 +358,73 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
      **/
     public UpdateAction getUpdateAction() {
         return updateAction;
+    }
+
+    /**
+     * The OS update mode performed using this maintenance update.
+     **/
+    public enum UpdateMode {
+        OnlineHighcvss("ONLINE_HIGHCVSS"),
+        OnlineAllcvss("ONLINE_ALLCVSS"),
+        OnlineAllUpdates("ONLINE_ALL_UPDATES"),
+        PendingUpdatesHighcvss("PENDING_UPDATES_HIGHCVSS"),
+        PendingUpdatesAllcvss("PENDING_UPDATES_ALLCVSS"),
+        PendingAllUpdates("PENDING_ALL_UPDATES"),
+        FullUpdate("FULL_UPDATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UpdateMode.class);
+
+        private final String value;
+        private static java.util.Map<String, UpdateMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UpdateMode v : UpdateMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        UpdateMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UpdateMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'UpdateMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The OS update mode performed using this maintenance update.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("updateMode")
+    private final UpdateMode updateMode;
+
+    /**
+     * The OS update mode performed using this maintenance update.
+     * @return the value
+     **/
+    public UpdateMode getUpdateMode() {
+        return updateMode;
     }
 
     /**
@@ -524,6 +614,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", updateId=").append(String.valueOf(this.updateId));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
+        sb.append(", updateMode=").append(String.valueOf(this.updateMode));
         sb.append(", updateType=").append(String.valueOf(this.updateType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -546,6 +637,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.updateId, other.updateId)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
+                && java.util.Objects.equals(this.updateMode, other.updateMode)
                 && java.util.Objects.equals(this.updateType, other.updateType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -561,6 +653,7 @@ public final class UpdateHistoryEntry extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.updateId == null ? 43 : this.updateId.hashCode());
         result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
+        result = (result * PRIME) + (this.updateMode == null ? 43 : this.updateMode.hashCode());
         result = (result * PRIME) + (this.updateType == null ? 43 : this.updateType.hashCode());
         result =
                 (result * PRIME)

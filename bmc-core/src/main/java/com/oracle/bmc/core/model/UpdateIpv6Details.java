@@ -26,6 +26,7 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
         "displayName",
         "freeformTags",
         "vnicId",
+        "hostname",
         "routeTableId",
         "lifetime"
     })
@@ -34,6 +35,7 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
             String displayName,
             java.util.Map<String, String> freeformTags,
             String vnicId,
+            String hostname,
             String routeTableId,
             Lifetime lifetime) {
         super();
@@ -41,6 +43,7 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.vnicId = vnicId;
+        this.hostname = hostname;
         this.routeTableId = routeTableId;
         this.lifetime = lifetime;
     }
@@ -137,6 +140,24 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
+
+        /**
+         * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+         *
+         * @param hostname the value to set
+         * @return this builder
+         **/
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
          * [Per-resource Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
@@ -191,6 +212,7 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
                             this.displayName,
                             this.freeformTags,
                             this.vnicId,
+                            this.hostname,
                             this.routeTableId,
                             this.lifetime);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -212,6 +234,9 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
@@ -315,6 +340,22 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    private final String hostname;
+
+    /**
+     * The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+     *
+     * @return the value
+     **/
+    public String getHostname() {
+        return hostname;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
      * [Per-resource Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
@@ -411,6 +452,7 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(", hostname=").append(String.valueOf(this.hostname));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(")");
@@ -431,6 +473,7 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.hostname, other.hostname)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && super.equals(other);
@@ -444,6 +487,7 @@ public final class UpdateIpv6Details extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + super.hashCode();

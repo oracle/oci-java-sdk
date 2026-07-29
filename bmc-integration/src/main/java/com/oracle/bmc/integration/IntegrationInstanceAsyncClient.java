@@ -1436,7 +1436,12 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                                 RemoveLogAnalyticsLogGroupRequest,
                                 RemoveLogAnalyticsLogGroupResponse>,
                         java.util.concurrent.Future<RemoveLogAnalyticsLogGroupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLogAnalyticsLogGroupDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

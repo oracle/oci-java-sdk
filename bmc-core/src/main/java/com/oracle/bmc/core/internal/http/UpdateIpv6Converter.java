@@ -32,8 +32,14 @@ public class UpdateIpv6Converter {
         Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
         Validate.notNull(request.getUpdateIpv6Details(), "updateIpv6Details is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("ipv6Id", request.getIpv6Id());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("ipv6")
                         .path(

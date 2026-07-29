@@ -31,8 +31,13 @@ public class BulkCreateIpv6sConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getBulkCreateIpv6sDetails(), "bulkCreateIpv6sDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("ipv6")
                         .path("actions")

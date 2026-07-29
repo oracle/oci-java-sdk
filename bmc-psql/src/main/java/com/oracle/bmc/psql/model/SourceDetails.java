@@ -27,8 +27,16 @@ package com.oracle.bmc.psql.model;
         name = "BACKUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PrimaryDbSystemSourceDetails.class,
+        name = "DB_SYSTEM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = NoneSourceDetails.class,
         name = "NONE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PointInTimeDbSystemSourceDetails.class,
+        name = "POINT_IN_TIME_DB_SYSTEM"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -85,6 +93,8 @@ public class SourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     public enum SourceType {
         Backup("BACKUP"),
         None("NONE"),
+        PointInTimeDbSystem("POINT_IN_TIME_DB_SYSTEM"),
+        DbSystem("DB_SYSTEM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

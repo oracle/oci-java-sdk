@@ -32,8 +32,15 @@ public class ListClusterNetworkInstancesConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("clusterNetworkId", request.getClusterNetworkId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("clusterNetworks")
                         .path(

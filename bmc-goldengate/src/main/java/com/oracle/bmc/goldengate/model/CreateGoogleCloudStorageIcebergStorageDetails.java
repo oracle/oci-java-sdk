@@ -84,25 +84,37 @@ public final class CreateGoogleCloudStorageIcebergStorageDetails
         /**
          * The base64 encoded content of the service account key file containing
          * the credentials required to use Google Cloud Storage.
-         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
-        private String serviceAccountKeyFile;
+        private char[] serviceAccountKeyFile;
 
         /**
          * The base64 encoded content of the service account key file containing
          * the credentials required to use Google Cloud Storage.
-         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param serviceAccountKeyFile the value to set
          * @return this builder
          **/
-        public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
+        public Builder serviceAccountKeyFile(char[] serviceAccountKeyFile) {
             this.serviceAccountKeyFile = serviceAccountKeyFile;
             this.__explicitlySet__.add("serviceAccountKeyFile");
             return this;
         }
+
+        public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
+            this.serviceAccountKeyFile =
+                    serviceAccountKeyFile != null ? serviceAccountKeyFile.toCharArray() : null;
+            this.__explicitlySet__.add("serviceAccountKeyFile");
+            return this;
+        }
+
         /**
          * A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port).
          * Default: https://storage.googleapis.com
@@ -184,6 +196,23 @@ public final class CreateGoogleCloudStorageIcebergStorageDetails
         this.bucket = bucket;
         this.projectId = projectId;
         this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+        this.serviceAccountKeyFile =
+                serviceAccountKeyFile != null ? serviceAccountKeyFile.toCharArray() : null;
+        this.endpoint = endpoint;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateGoogleCloudStorageIcebergStorageDetails(
+            String bucket,
+            String projectId,
+            String serviceAccountKeyFileSecretId,
+            char[] serviceAccountKeyFile,
+            String endpoint) {
+        super();
+        this.bucket = bucket;
+        this.projectId = projectId;
+        this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
         this.serviceAccountKeyFile = serviceAccountKeyFile;
         this.endpoint = endpoint;
     }
@@ -237,20 +266,41 @@ public final class CreateGoogleCloudStorageIcebergStorageDetails
     /**
      * The base64 encoded content of the service account key file containing
      * the credentials required to use Google Cloud Storage.
-     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
-    private final String serviceAccountKeyFile;
+    private final char[] serviceAccountKeyFile;
 
     /**
      * The base64 encoded content of the service account key file containing
      * the credentials required to use Google Cloud Storage.
-     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;serviceAccountKeyFileSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * return the value
+     * @Deprecated - Use getServiceAccountKeyFile__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getServiceAccountKeyFile() {
+        return serviceAccountKeyFile != null ? new String(serviceAccountKeyFile) : null;
+    }
+
+    /**
+     * The base64 encoded content of the service account key file containing
+     * the credentials required to use Google Cloud Storage.
+     * Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/
-    public String getServiceAccountKeyFile() {
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
+    public char[] getServiceAccountKeyFile__AsCharArray() {
         return serviceAccountKeyFile;
     }
 
@@ -290,7 +340,7 @@ public final class CreateGoogleCloudStorageIcebergStorageDetails
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", serviceAccountKeyFileSecretId=")
                 .append(String.valueOf(this.serviceAccountKeyFileSecretId));
-        sb.append(", serviceAccountKeyFile=").append(String.valueOf(this.serviceAccountKeyFile));
+        sb.append(", serviceAccountKeyFile=").append("<redacted>");
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(")");
         return sb.toString();

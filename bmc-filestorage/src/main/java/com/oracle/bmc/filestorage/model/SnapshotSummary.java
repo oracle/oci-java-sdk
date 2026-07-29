@@ -36,7 +36,8 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "exclusiveBytes"
     })
     public SnapshotSummary(
             String fileSystemId,
@@ -54,7 +55,8 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Long exclusiveBytes) {
         super();
         this.fileSystemId = fileSystemId;
         this.id = id;
@@ -72,6 +74,7 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.exclusiveBytes = exclusiveBytes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -396,6 +399,24 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exclusiveBytes")
+        private Long exclusiveBytes;
+
+        /**
+         * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+         *
+         * @param exclusiveBytes the value to set
+         * @return this builder
+         **/
+        public Builder exclusiveBytes(Long exclusiveBytes) {
+            this.exclusiveBytes = exclusiveBytes;
+            this.__explicitlySet__.add("exclusiveBytes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -418,7 +439,8 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.exclusiveBytes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -474,6 +496,9 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("exclusiveBytes")) {
+                this.exclusiveBytes(model.getExclusiveBytes());
             }
             return this;
         }
@@ -877,6 +902,22 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
         return systemTags;
     }
 
+    /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exclusiveBytes")
+    private final Long exclusiveBytes;
+
+    /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     *
+     * @return the value
+     **/
+    public Long getExclusiveBytes() {
+        return exclusiveBytes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -907,6 +948,7 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", exclusiveBytes=").append(String.valueOf(this.exclusiveBytes));
         sb.append(")");
         return sb.toString();
     }
@@ -937,6 +979,7 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.exclusiveBytes, other.exclusiveBytes)
                 && super.equals(other);
     }
 
@@ -972,6 +1015,9 @@ public final class SnapshotSummary extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exclusiveBytes == null ? 43 : this.exclusiveBytes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

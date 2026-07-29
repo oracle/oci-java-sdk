@@ -5,8 +5,8 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Input payload to update an Analytics instance. Fields that are not provided
- * will not be updated.
+ * Input payload to update an Analytics instance. Fields that aren't provided
+ * won't be updated.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -154,14 +154,14 @@ public final class UpdateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
         private UpdateChannel updateChannel;
 
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          *
          * @param updateChannel the value to set
          * @return this builder
@@ -318,14 +318,14 @@ public final class UpdateAnalyticsInstanceDetails
     }
 
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
     private final UpdateChannel updateChannel;
 
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      *
      * @return the value
      **/

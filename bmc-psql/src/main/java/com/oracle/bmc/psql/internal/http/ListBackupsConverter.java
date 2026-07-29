@@ -121,6 +121,14 @@ public class ListBackupsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getBackupSourceType() != null) {
+            target =
+                    target.queryParam(
+                            "backupSourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBackupSourceType()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

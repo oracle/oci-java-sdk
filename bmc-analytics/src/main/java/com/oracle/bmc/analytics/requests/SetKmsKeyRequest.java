@@ -14,26 +14,26 @@ public class SetKmsKeyRequest
                 com.oracle.bmc.analytics.model.SetKmsKeyDetails> {
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     private String analyticsInstanceId;
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      *
      */
     public String getAnalyticsInstanceId() {
         return analyticsInstanceId;
     }
     /**
-     * Input payload to reset the OCI Vault encryption key.
+     * Input payload to reset the OCI vault encryption key.
      *
      */
     private com.oracle.bmc.analytics.model.SetKmsKeyDetails setKmsKeyDetails;
 
     /**
-     * Input payload to reset the OCI Vault encryption key.
+     * Input payload to reset the OCI vault encryption key.
      *
      */
     public com.oracle.bmc.analytics.model.SetKmsKeyDetails getSetKmsKeyDetails() {
@@ -111,13 +111,13 @@ public class SetKmsKeyRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          */
         private String analyticsInstanceId = null;
 
         /**
-         * The OCID of the AnalyticsInstance.
+         * The OCID of the Analytics instance.
          *
          * @param analyticsInstanceId the value to set
          * @return this builder instance
@@ -128,13 +128,13 @@ public class SetKmsKeyRequest
         }
 
         /**
-         * Input payload to reset the OCI Vault encryption key.
+         * Input payload to reset the OCI vault encryption key.
          *
          */
         private com.oracle.bmc.analytics.model.SetKmsKeyDetails setKmsKeyDetails = null;
 
         /**
-         * Input payload to reset the OCI Vault encryption key.
+         * Input payload to reset the OCI vault encryption key.
          *
          * @param setKmsKeyDetails the value to set
          * @return this builder instance

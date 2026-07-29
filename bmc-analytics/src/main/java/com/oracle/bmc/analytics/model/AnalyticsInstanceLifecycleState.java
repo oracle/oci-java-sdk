@@ -5,7 +5,7 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * The current state of an instance.
+ * The current state of an Analytics instance.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")

@@ -130,6 +130,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
         }
         /**
          * Access key ID to access the Amazon Kinesis.
+         * Note: Despite the "Id" suffix, this value is not an OCI OCID.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
@@ -137,6 +138,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
         /**
          * Access key ID to access the Amazon Kinesis.
+         * Note: Despite the "Id" suffix, this value is not an OCI OCID.
          *
          * @param accessKeyId the value to set
          * @return this builder
@@ -148,7 +150,9 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
         }
         /**
          * Secret access key to access the Amazon Kinesis.
-         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
@@ -156,7 +160,9 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
         /**
          * Secret access key to access the Amazon Kinesis.
-         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId".
+         * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param secretAccessKey the value to set
          * @return this builder
@@ -408,6 +414,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
     /**
      * Access key ID to access the Amazon Kinesis.
+     * Note: Despite the "Id" suffix, this value is not an OCI OCID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
@@ -415,6 +422,7 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
     /**
      * Access key ID to access the Amazon Kinesis.
+     * Note: Despite the "Id" suffix, this value is not an OCI OCID.
      *
      * @return the value
      **/
@@ -424,7 +432,9 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
     /**
      * Secret access key to access the Amazon Kinesis.
-     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
@@ -432,7 +442,9 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
     /**
      * Secret access key to access the Amazon Kinesis.
-     * Deprecated: This field is deprecated and replaced by &quot;secretAccessKeySecretId&quot;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &quot;secretAccessKeySecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * return the value
      * @Deprecated - Use getSecretAccessKey__AsCharArray() instead.
@@ -445,7 +457,9 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
     /**
      * Secret access key to access the Amazon Kinesis.
-     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId".
+     * This change follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      **/

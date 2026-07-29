@@ -26,12 +26,13 @@ public class ListHostedApplicationsRequest
     /**
      * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
      */
-    private com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState lifecycleState;
+    private com.oracle.bmc.generativeai.model.HostedApplicationBase.LifecycleState lifecycleState;
 
     /**
      * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
      */
-    public com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState getLifecycleState() {
+    public com.oracle.bmc.generativeai.model.HostedApplicationBase.LifecycleState
+            getLifecycleState() {
         return lifecycleState;
     }
     /**
@@ -200,8 +201,8 @@ public class ListHostedApplicationsRequest
         /**
          * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
          */
-        private com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState lifecycleState =
-                null;
+        private com.oracle.bmc.generativeai.model.HostedApplicationBase.LifecycleState
+                lifecycleState = null;
 
         /**
          * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
@@ -209,7 +210,8 @@ public class ListHostedApplicationsRequest
          * @return this builder instance
          */
         public Builder lifecycleState(
-                com.oracle.bmc.generativeai.model.HostedApplication.LifecycleState lifecycleState) {
+                com.oracle.bmc.generativeai.model.HostedApplicationBase.LifecycleState
+                        lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }

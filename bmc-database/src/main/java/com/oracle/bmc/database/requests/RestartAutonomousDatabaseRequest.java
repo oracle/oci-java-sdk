@@ -10,7 +10,8 @@ import com.oracle.bmc.database.model.*;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RestartAutonomousDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails> {
 
     /**
      * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -52,6 +53,19 @@ public class RestartAutonomousDatabaseRequest
         return isOnlineRestart;
     }
     /**
+     * Request details to restart the Autonomous Database with force option.
+     */
+    private com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails
+            restartAutonomousDatabaseDetails;
+
+    /**
+     * Request details to restart the Autonomous Database with force option.
+     */
+    public com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails
+            getRestartAutonomousDatabaseDetails() {
+        return restartAutonomousDatabaseDetails;
+    }
+    /**
      * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
      * creating or updating a resource and is used only to perform validation on the submitted data.
      *
@@ -67,9 +81,20 @@ public class RestartAutonomousDatabaseRequest
         return opcDryRun;
     }
 
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails getBody$() {
+        return restartAutonomousDatabaseDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestartAutonomousDatabaseRequest, java.lang.Void> {
+                    RestartAutonomousDatabaseRequest,
+                    com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,6 +151,24 @@ public class RestartAutonomousDatabaseRequest
         }
 
         /**
+         * Request details to restart the Autonomous Database with force option.
+         */
+        private com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails
+                restartAutonomousDatabaseDetails = null;
+
+        /**
+         * Request details to restart the Autonomous Database with force option.
+         * @param restartAutonomousDatabaseDetails the value to set
+         * @return this builder instance
+         */
+        public Builder restartAutonomousDatabaseDetails(
+                com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails
+                        restartAutonomousDatabaseDetails) {
+            this.restartAutonomousDatabaseDetails = restartAutonomousDatabaseDetails;
+            return this;
+        }
+
+        /**
          * Indicates that the request is a dry run, if set to "true". A dry run request does not actually
          * creating or updating a resource and is used only to perform validation on the submitted data.
          *
@@ -175,6 +218,7 @@ public class RestartAutonomousDatabaseRequest
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             ifMatch(o.getIfMatch());
             isOnlineRestart(o.getIsOnlineRestart());
+            restartAutonomousDatabaseDetails(o.getRestartAutonomousDatabaseDetails());
             opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -199,6 +243,17 @@ public class RestartAutonomousDatabaseRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(com.oracle.bmc.database.model.RestartAutonomousDatabaseDetails body) {
+            restartAutonomousDatabaseDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RestartAutonomousDatabaseRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
@@ -211,9 +266,10 @@ public class RestartAutonomousDatabaseRequest
             request.autonomousDatabaseId = autonomousDatabaseId;
             request.ifMatch = ifMatch;
             request.isOnlineRestart = isOnlineRestart;
+            request.restartAutonomousDatabaseDetails = restartAutonomousDatabaseDetails;
             request.opcDryRun = opcDryRun;
             return request;
-            // new RestartAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch, isOnlineRestart, opcDryRun);
+            // new RestartAutonomousDatabaseRequest(autonomousDatabaseId, ifMatch, isOnlineRestart, restartAutonomousDatabaseDetails, opcDryRun);
         }
     }
 
@@ -226,6 +282,7 @@ public class RestartAutonomousDatabaseRequest
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .ifMatch(ifMatch)
                 .isOnlineRestart(isOnlineRestart)
+                .restartAutonomousDatabaseDetails(restartAutonomousDatabaseDetails)
                 .opcDryRun(opcDryRun);
     }
 
@@ -245,6 +302,8 @@ public class RestartAutonomousDatabaseRequest
         sb.append(",autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",isOnlineRestart=").append(String.valueOf(this.isOnlineRestart));
+        sb.append(",restartAutonomousDatabaseDetails=")
+                .append(String.valueOf(this.restartAutonomousDatabaseDetails));
         sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
@@ -264,6 +323,9 @@ public class RestartAutonomousDatabaseRequest
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.isOnlineRestart, other.isOnlineRestart)
+                && java.util.Objects.equals(
+                        this.restartAutonomousDatabaseDetails,
+                        other.restartAutonomousDatabaseDetails)
                 && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
@@ -280,6 +342,11 @@ public class RestartAutonomousDatabaseRequest
         result =
                 (result * PRIME)
                         + (this.isOnlineRestart == null ? 43 : this.isOnlineRestart.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restartAutonomousDatabaseDetails == null
+                                ? 43
+                                : this.restartAutonomousDatabaseDetails.hashCode());
         result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }

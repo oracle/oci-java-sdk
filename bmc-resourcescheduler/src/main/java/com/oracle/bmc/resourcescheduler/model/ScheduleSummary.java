@@ -628,6 +628,7 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     public enum Action {
         StartResource("START_RESOURCE"),
         StopResource("STOP_RESOURCE"),
+        BackupResource("BACKUP_RESOURCE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

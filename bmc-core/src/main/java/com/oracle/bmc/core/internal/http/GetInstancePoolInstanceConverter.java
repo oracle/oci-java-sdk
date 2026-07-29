@@ -32,8 +32,15 @@ public class GetInstancePoolInstanceConverter {
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("instancePools")
                         .path(

@@ -927,6 +927,7 @@ public final class SteeringPolicy extends com.oracle.bmc.http.internal.Explicitl
     public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
+        Updating("UPDATING"),
         Deleted("DELETED"),
         Deleting("DELETING"),
 

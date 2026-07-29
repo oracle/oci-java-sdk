@@ -31,6 +31,10 @@ package com.oracle.bmc.containerinstances.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ContainerConfigFileVolume.class,
         name = "CONFIGFILE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ContainerOciFssVolume.class,
+        name = "OCI_FSS_FILE_SYSTEM"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

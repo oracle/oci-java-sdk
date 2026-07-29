@@ -30,7 +30,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
+         * A machine-usable code for the error that occurred. Error codes are listed on
          * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm)
          *
          **/
@@ -38,7 +38,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
         private String code;
 
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
+         * A machine-usable code for the error that occurred. Error codes are listed on
          * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm)
          *
          * @param code the value to set
@@ -66,13 +66,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The time the error occured. An RFC3339 formatted datetime string.
+         * The time the error occurred. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured. An RFC3339 formatted datetime string.
+         * The time the error occurred. An RFC3339 formatted datetime string.
          * @param timestamp the value to set
          * @return this builder
          **/
@@ -120,7 +120,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
+     * A machine-usable code for the error that occurred. Error codes are listed on
      * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm)
      *
      **/
@@ -128,7 +128,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     private final String code;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
+     * A machine-usable code for the error that occurred. Error codes are listed on
      * (https://docs.oracle.com/iaas/Content/API/References/apierrors.htm)
      *
      * @return the value
@@ -152,13 +152,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The time the error occured. An RFC3339 formatted datetime string.
+     * The time the error occurred. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured. An RFC3339 formatted datetime string.
+     * The time the error occurred. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimestamp() {

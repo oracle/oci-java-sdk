@@ -24,6 +24,9 @@ public enum WorkRequestActionResult {
     PrivateAccessChannelUpdated("PRIVATE_ACCESS_CHANNEL_UPDATED"),
     PrivateAccessChannelDeleted("PRIVATE_ACCESS_CHANNEL_DELETED"),
     None("NONE"),
+    ResourceGroupCreated("RESOURCE_GROUP_CREATED"),
+    ResourceGroupUpdated("RESOURCE_GROUP_UPDATED"),
+    ResourceGroupDeleted("RESOURCE_GROUP_DELETED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

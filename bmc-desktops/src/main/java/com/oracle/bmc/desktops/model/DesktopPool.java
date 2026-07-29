@@ -46,6 +46,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         "availabilityDomain",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "nsgIds",
         "privateAccessDetails",
         "bootVolumeSizeInGBs"
@@ -77,6 +78,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             String availabilityDomain,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.List<String> nsgIds,
             DesktopPoolPrivateAccessDetails privateAccessDetails,
             Integer bootVolumeSizeInGBs) {
@@ -107,6 +109,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         this.availabilityDomain = availabilityDomain;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.nsgIds = nsgIds;
         this.privateAccessDetails = privateAccessDetails;
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
@@ -509,6 +512,33 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource.
+         * Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource.
+         * Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * A list of network security groups for the network.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -582,6 +612,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.availabilityDomain,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.nsgIds,
                             this.privateAccessDetails,
                             this.bootVolumeSizeInGBs);
@@ -670,6 +701,9 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
@@ -1085,6 +1119,30 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource.
+     * Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) for this resource.
+     * Each attribute can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * A list of network security groups for the network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -1160,6 +1218,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", privateAccessDetails=").append(String.valueOf(this.privateAccessDetails));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
@@ -1204,6 +1263,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.privateAccessDetails, other.privateAccessDetails)
                 && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
@@ -1284,6 +1344,11 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
                 (result * PRIME)

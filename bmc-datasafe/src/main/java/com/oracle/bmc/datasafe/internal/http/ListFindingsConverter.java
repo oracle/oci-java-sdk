@@ -74,6 +74,15 @@ public class ListFindingsConverter {
                                     request.getCategory()));
         }
 
+        if (request.getContainsOracleDefinedSeverity() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "containsOracleDefinedSeverity",
+                            request.getContainsOracleDefinedSeverity(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

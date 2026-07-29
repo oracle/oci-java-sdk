@@ -373,6 +373,7 @@ public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySe
         ChangeReportDefinitionCompartment("CHANGE_REPORT_DEFINITION_COMPARTMENT"),
         DeleteReportDefinition("DELETE_REPORT_DEFINITION"),
         GenerateReport("GENERATE_REPORT"),
+        GeneratePaginatedReport("GENERATE_PAGINATED_REPORT"),
         ChangeReportCompartment("CHANGE_REPORT_COMPARTMENT"),
         DeleteArchiveRetrieval("DELETE_ARCHIVE_RETRIEVAL"),
         CreateArchiveRetrieval("CREATE_ARCHIVE_RETRIEVAL"),

@@ -40,6 +40,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "freeformTags",
         "definedTags",
         "kmsKeyId",
+        "isBucketKeyEnabled",
         "objectLifecyclePolicyEtag",
         "approximateCount",
         "approximateSize",
@@ -64,6 +65,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String kmsKeyId,
+            Boolean isBucketKeyEnabled,
             String objectLifecyclePolicyEtag,
             Long approximateCount,
             Long approximateSize,
@@ -87,6 +89,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
+        this.isBucketKeyEnabled = isBucketKeyEnabled;
         this.objectLifecyclePolicyEtag = objectLifecyclePolicyEtag;
         this.approximateCount = approximateCount;
         this.approximateSize = approximateSize;
@@ -354,6 +357,28 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
+         * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+         * encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+         * Service (KMS). Existing objects are not affected.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isBucketKeyEnabled")
+        private Boolean isBucketKeyEnabled;
+
+        /**
+         * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+         * encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+         * Service (KMS). Existing objects are not affected.
+         *
+         * @param isBucketKeyEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isBucketKeyEnabled(Boolean isBucketKeyEnabled) {
+            this.isBucketKeyEnabled = isBucketKeyEnabled;
+            this.__explicitlySet__.add("isBucketKeyEnabled");
+            return this;
+        }
+        /**
          * The entity tag (ETag) for the live object lifecycle policy on the bucket.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectLifecyclePolicyEtag")
@@ -555,6 +580,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.freeformTags,
                             this.definedTags,
                             this.kmsKeyId,
+                            this.isBucketKeyEnabled,
                             this.objectLifecyclePolicyEtag,
                             this.approximateCount,
                             this.approximateSize,
@@ -610,6 +636,9 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("isBucketKeyEnabled")) {
+                this.isBucketKeyEnabled(model.getIsBucketKeyEnabled());
             }
             if (model.wasPropertyExplicitlySet("objectLifecyclePolicyEtag")) {
                 this.objectLifecyclePolicyEtag(model.getObjectLifecyclePolicyEtag());
@@ -986,6 +1015,26 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
+     * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+     * encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+     * Service (KMS). Existing objects are not affected.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBucketKeyEnabled")
+    private final Boolean isBucketKeyEnabled;
+
+    /**
+     * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+     * encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+     * Service (KMS). Existing objects are not affected.
+     *
+     * @return the value
+     **/
+    public Boolean getIsBucketKeyEnabled() {
+        return isBucketKeyEnabled;
+    }
+
+    /**
      * The entity tag (ETag) for the live object lifecycle policy on the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectLifecyclePolicyEtag")
@@ -1331,6 +1380,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", isBucketKeyEnabled=").append(String.valueOf(this.isBucketKeyEnabled));
         sb.append(", objectLifecyclePolicyEtag=")
                 .append(String.valueOf(this.objectLifecyclePolicyEtag));
         sb.append(", approximateCount=").append(String.valueOf(this.approximateCount));
@@ -1368,6 +1418,7 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.isBucketKeyEnabled, other.isBucketKeyEnabled)
                 && java.util.Objects.equals(
                         this.objectLifecyclePolicyEtag, other.objectLifecyclePolicyEtag)
                 && java.util.Objects.equals(this.approximateCount, other.approximateCount)
@@ -1406,6 +1457,11 @@ public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBucketKeyEnabled == null
+                                ? 43
+                                : this.isBucketKeyEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.objectLifecyclePolicyEtag == null

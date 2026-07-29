@@ -29,6 +29,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         "id",
         "displayName",
         "compartmentId",
+        "tenantId",
         "freeformTags",
         "definedTags",
         "systemTags",
@@ -48,12 +49,14 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         "dnsConfig",
         "gracefulShutdownTimeoutInSeconds",
         "imagePullSecrets",
-        "containerRestartPolicy"
+        "containerRestartPolicy",
+        "securityContext"
     })
     public ContainerInstance(
             String id,
             String displayName,
             String compartmentId,
+            String tenantId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -73,11 +76,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             ContainerDnsConfig dnsConfig,
             Long gracefulShutdownTimeoutInSeconds,
             java.util.List<ImagePullSecret> imagePullSecrets,
-            ContainerRestartPolicy containerRestartPolicy) {
+            ContainerRestartPolicy containerRestartPolicy,
+            ContainerInstanceSecurityContext securityContext) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
+        this.tenantId = tenantId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -98,6 +103,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         this.gracefulShutdownTimeoutInSeconds = gracefulShutdownTimeoutInSeconds;
         this.imagePullSecrets = imagePullSecrets;
         this.containerRestartPolicy = containerRestartPolicy;
+        this.securityContext = securityContext;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -148,6 +154,22 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * TenantId id of the container instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
+        private String tenantId;
+
+        /**
+         * TenantId id of the container instance.
+         * @param tenantId the value to set
+         * @return this builder
+         **/
+        public Builder tenantId(String tenantId) {
+            this.tenantId = tenantId;
+            this.__explicitlySet__.add("tenantId");
             return this;
         }
         /**
@@ -478,6 +500,15 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+        private ContainerInstanceSecurityContext securityContext;
+
+        public Builder securityContext(ContainerInstanceSecurityContext securityContext) {
+            this.securityContext = securityContext;
+            this.__explicitlySet__.add("securityContext");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -487,6 +518,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
                             this.id,
                             this.displayName,
                             this.compartmentId,
+                            this.tenantId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -506,7 +538,8 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
                             this.dnsConfig,
                             this.gracefulShutdownTimeoutInSeconds,
                             this.imagePullSecrets,
-                            this.containerRestartPolicy);
+                            this.containerRestartPolicy,
+                            this.securityContext);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -523,6 +556,9 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("tenantId")) {
+                this.tenantId(model.getTenantId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -584,6 +620,9 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("containerRestartPolicy")) {
                 this.containerRestartPolicy(model.getContainerRestartPolicy());
             }
+            if (model.wasPropertyExplicitlySet("securityContext")) {
+                this.securityContext(model.getSecurityContext());
+            }
             return this;
         }
     }
@@ -639,6 +678,20 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * TenantId id of the container instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
+    private final String tenantId;
+
+    /**
+     * TenantId id of the container instance.
+     * @return the value
+     **/
+    public String getTenantId() {
+        return tenantId;
     }
 
     /**
@@ -1029,6 +1082,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         return containerRestartPolicy;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityContext")
+    private final ContainerInstanceSecurityContext securityContext;
+
+    public ContainerInstanceSecurityContext getSecurityContext() {
+        return securityContext;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1046,6 +1106,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1067,6 +1128,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
                 .append(String.valueOf(this.gracefulShutdownTimeoutInSeconds));
         sb.append(", imagePullSecrets=").append(String.valueOf(this.imagePullSecrets));
         sb.append(", containerRestartPolicy=").append(String.valueOf(this.containerRestartPolicy));
+        sb.append(", securityContext=").append(String.valueOf(this.securityContext));
         sb.append(")");
         return sb.toString();
     }
@@ -1084,6 +1146,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1107,6 +1170,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.imagePullSecrets, other.imagePullSecrets)
                 && java.util.Objects.equals(
                         this.containerRestartPolicy, other.containerRestartPolicy)
+                && java.util.Objects.equals(this.securityContext, other.securityContext)
                 && super.equals(other);
     }
 
@@ -1119,6 +1183,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
@@ -1159,6 +1224,9 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
                         + (this.containerRestartPolicy == null
                                 ? 43
                                 : this.containerRestartPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityContext == null ? 43 : this.securityContext.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

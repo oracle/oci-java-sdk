@@ -35,8 +35,14 @@ public class ChangeServiceGatewayCompartmentConverter {
                 request.getChangeServiceGatewayCompartmentDetails(),
                 "changeServiceGatewayCompartmentDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("serviceGatewayId", request.getServiceGatewayId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20160918")
                         .path("serviceGateways")
                         .path(

@@ -686,6 +686,112 @@ public class PostgresqlAsyncClient implements PostgresqlAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeRoleToReplicaResponse> changeRoleToReplica(
+            ChangeRoleToReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRoleToReplicaRequest, ChangeRoleToReplicaResponse>
+                    handler) {
+        LOG.trace("Called async changeRoleToReplica");
+        final ChangeRoleToReplicaRequest interceptedRequest =
+                ChangeRoleToReplicaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRoleToReplicaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "ChangeRoleToReplica",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ChangeRoleToReplica");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeRoleToReplicaResponse>
+                transformer =
+                        ChangeRoleToReplicaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeRoleToReplicaRequest, ChangeRoleToReplicaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeRoleToReplicaRequest, ChangeRoleToReplicaResponse>,
+                        java.util.concurrent.Future<ChangeRoleToReplicaResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRoleToReplicaDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeRoleToReplicaRequest, ChangeRoleToReplicaResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeRoleToStandaloneResponse> changeRoleToStandalone(
+            ChangeRoleToStandaloneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRoleToStandaloneRequest, ChangeRoleToStandaloneResponse>
+                    handler) {
+        LOG.trace("Called async changeRoleToStandalone");
+        final ChangeRoleToStandaloneRequest interceptedRequest =
+                ChangeRoleToStandaloneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRoleToStandaloneConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "ChangeRoleToStandalone",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ChangeRoleToStandalone");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeRoleToStandaloneResponse>
+                transformer =
+                        ChangeRoleToStandaloneConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeRoleToStandaloneRequest, ChangeRoleToStandaloneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeRoleToStandaloneRequest, ChangeRoleToStandaloneResponse>,
+                        java.util.concurrent.Future<ChangeRoleToStandaloneResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRoleToStandaloneDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeRoleToStandaloneRequest, ChangeRoleToStandaloneResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBackupResponse> createBackup(
             CreateBackupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateBackupRequest, CreateBackupResponse>
@@ -1255,6 +1361,51 @@ public class PostgresqlAsyncClient implements PostgresqlAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetPitrDetailsResponse> getPitrDetails(
+            GetPitrDetailsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPitrDetailsRequest, GetPitrDetailsResponse>
+                    handler) {
+        LOG.trace("Called async getPitrDetails");
+        final GetPitrDetailsRequest interceptedRequest =
+                GetPitrDetailsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPitrDetailsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "GetPitrDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/PitrDetails/GetPitrDetails");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPitrDetailsResponse>
+                transformer =
+                        GetPitrDetailsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetPitrDetailsRequest, GetPitrDetailsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPitrDetailsRequest, GetPitrDetailsResponse>,
+                        java.util.concurrent.Future<GetPitrDetailsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPitrDetailsRequest, GetPitrDetailsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPrimaryDbInstanceResponse> getPrimaryDbInstance(
             GetPrimaryDbInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1437,6 +1588,53 @@ public class PostgresqlAsyncClient implements PostgresqlAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDbSystemReplicasResponse> listDbSystemReplicas(
+            ListDbSystemReplicasRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDbSystemReplicasRequest, ListDbSystemReplicasResponse>
+                    handler) {
+        LOG.trace("Called async listDbSystemReplicas");
+        final ListDbSystemReplicasRequest interceptedRequest =
+                ListDbSystemReplicasConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemReplicasConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "ListDbSystemReplicas",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystemReplicaCollection/ListDbSystemReplicas");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDbSystemReplicasResponse>
+                transformer =
+                        ListDbSystemReplicasConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDbSystemReplicasRequest, ListDbSystemReplicasResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDbSystemReplicasRequest, ListDbSystemReplicasResponse>,
+                        java.util.concurrent.Future<ListDbSystemReplicasResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDbSystemReplicasRequest, ListDbSystemReplicasResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
             ListDbSystemsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
@@ -1517,6 +1715,54 @@ public class PostgresqlAsyncClient implements PostgresqlAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDefaultConfigurationsRequest, ListDefaultConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInsightCapabilitiesResponse> listInsightCapabilities(
+            ListInsightCapabilitiesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInsightCapabilitiesRequest, ListInsightCapabilitiesResponse>
+                    handler) {
+        LOG.trace("Called async listInsightCapabilities");
+        final ListInsightCapabilitiesRequest interceptedRequest =
+                ListInsightCapabilitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInsightCapabilitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "ListInsightCapabilities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/InsightCapabilitySummary/ListInsightCapabilities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInsightCapabilitiesResponse>
+                transformer =
+                        ListInsightCapabilitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInsightCapabilitiesRequest, ListInsightCapabilitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInsightCapabilitiesRequest, ListInsightCapabilitiesResponse>,
+                        java.util.concurrent.Future<ListInsightCapabilitiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInsightCapabilitiesRequest, ListInsightCapabilitiesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1912,6 +2158,150 @@ public class PostgresqlAsyncClient implements PostgresqlAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RestoreDbSystemRequest, RestoreDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDbSystemResponse> startDbSystem(
+            StartDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async startDbSystem");
+        final StartDbSystemRequest interceptedRequest =
+                StartDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "StartDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/StartDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartDbSystemResponse>
+                transformer =
+                        StartDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartDbSystemRequest, StartDbSystemResponse>,
+                        java.util.concurrent.Future<StartDbSystemResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStartDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartDbSystemRequest, StartDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDbSystemResponse> stopDbSystem(
+            StopDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async stopDbSystem");
+        final StopDbSystemRequest interceptedRequest =
+                StopDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "StopDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/StopDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopDbSystemResponse>
+                transformer =
+                        StopDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopDbSystemRequest, StopDbSystemResponse>,
+                        java.util.concurrent.Future<StopDbSystemResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopDbSystemRequest, StopDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchOverResponse> switchOver(
+            SwitchOverRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SwitchOverRequest, SwitchOverResponse>
+                    handler) {
+        LOG.trace("Called async switchOver");
+        final SwitchOverRequest interceptedRequest = SwitchOverConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchOverConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Postgresql",
+                        "SwitchOver",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/SwitchOver");
+        final java.util.function.Function<javax.ws.rs.core.Response, SwitchOverResponse>
+                transformer =
+                        SwitchOverConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SwitchOverRequest, SwitchOverResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SwitchOverRequest, SwitchOverResponse>,
+                        java.util.concurrent.Future<SwitchOverResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSwitchOverDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SwitchOverRequest, SwitchOverResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

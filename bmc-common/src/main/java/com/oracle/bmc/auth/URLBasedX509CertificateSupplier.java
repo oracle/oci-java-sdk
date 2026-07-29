@@ -20,10 +20,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nonnull;
 import javax.security.auth.Refreshable;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.core.Response;
 
 import org.slf4j.Logger;
 
 import com.oracle.bmc.auth.internal.X509CertificateWithOriginalPem;
+import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 import com.oracle.bmc.util.StreamUtils;
 import org.slf4j.Logger;
@@ -166,6 +171,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      */
     private final char[] privateKeyPassphraseCharacters;
 
+    /** Optional configurator for HTTP(S) resource fetches. */
+    private final ClientConfigurator clientConfigurator;
+
     /**
      * Constructor.
      *
@@ -177,9 +185,30 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
             ResourceDetails certificateResourceDetails,
             ResourceDetails privateKeyResourceDetails,
             char[] privateKeyPassphraseCharacters) {
+        this(
+                certificateResourceDetails,
+                privateKeyResourceDetails,
+                privateKeyPassphraseCharacters,
+                null);
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param certificateResourceDetails     The certificate resource details
+     * @param privateKeyResourceDetails      The private key resource details, may be null for intermediate certificates
+     * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted private keys
+     * @param clientConfigurator optional configurator for the underlying HTTP(S) client
+     */
+    public URLBasedX509CertificateSupplier(
+            ResourceDetails certificateResourceDetails,
+            ResourceDetails privateKeyResourceDetails,
+            char[] privateKeyPassphraseCharacters,
+            ClientConfigurator clientConfigurator) {
         this.certificateDetails = certificateResourceDetails;
         this.privateKeyDetails = privateKeyResourceDetails;
         this.privateKeyPassphraseCharacters = privateKeyPassphraseCharacters;
+        this.clientConfigurator = clientConfigurator;
 
         refresh();
     }
@@ -193,10 +222,27 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      */
     public URLBasedX509CertificateSupplier(
             URL certificateUrl, URL privateKeyUrl, char[] privateKeyPassphraseCharacters) {
+        this(certificateUrl, privateKeyUrl, privateKeyPassphraseCharacters, null);
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param certificateUrl                 The certificate url
+     * @param privateKeyUrl                  The private key url, may be null for intermediate certificates
+     * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted private keys
+     * @param clientConfigurator optional configurator for the underlying HTTP(S) client
+     */
+    public URLBasedX509CertificateSupplier(
+            URL certificateUrl,
+            URL privateKeyUrl,
+            char[] privateKeyPassphraseCharacters,
+            ClientConfigurator clientConfigurator) {
         this(
                 ResourceDetails.builder().url(certificateUrl).build(),
                 ResourceDetails.builder().url(privateKeyUrl).build(),
-                privateKeyPassphraseCharacters);
+                privateKeyPassphraseCharacters,
+                clientConfigurator);
     }
 
     /**
@@ -213,7 +259,8 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         this(
                 certificateUrl,
                 privateKeyUrl,
-                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null);
+                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null,
+                null);
     }
 
     /**
@@ -233,10 +280,11 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      */
     @Override
     public void refresh() {
-        String rawCertificate = readRawCertificate(certificateDetails);
+        String rawCertificate = readRawCertificate(certificateDetails, clientConfigurator);
         X509Certificate certificate = readCertificate(rawCertificate);
         RSAPrivateKey privateKey =
-                readPrivateKey(privateKeyDetails, privateKeyPassphraseCharacters);
+                readPrivateKey(
+                        privateKeyDetails, privateKeyPassphraseCharacters, clientConfigurator);
         if (EXPERIMENTAL_SUPPRESS_X509_WORKAROUND) {
             this.certificateAndKeyPair.set(
                     new CertificateAndPrivateKeyPair(certificate, privateKey));
@@ -274,12 +322,16 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         }
     }
 
-    private static String readRawCertificate(final ResourceDetails certificateResourceDetails) {
+    private static String readRawCertificate(
+            final ResourceDetails certificateResourceDetails,
+            final ClientConfigurator clientConfigurator) {
         final int MAX_RETRIES = 3;
         IOException lastException = null;
         for (int retry = 0; retry < MAX_RETRIES; retry++) {
-            try (InputStream is = getResourceStream(certificateResourceDetails)) {
-                return StreamUtils.toString(is, StandardCharsets.UTF_8);
+            try {
+                return new String(
+                        readResource(certificateResourceDetails, clientConfigurator),
+                        StandardCharsets.UTF_8);
             } catch (IOException e) {
                 LOG.info("Attempt {} to open stream of certificate failed.", (retry + 1), e);
                 lastException = e;
@@ -296,6 +348,55 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
             }
         }
         throw new IllegalArgumentException("Open stream of certificate failed.", lastException);
+    }
+
+    private static byte[] readResource(
+            @Nonnull final ResourceDetails resourceDetails,
+            final ClientConfigurator clientConfigurator)
+            throws IOException {
+        if (shouldUseJaxRsClient(resourceDetails, clientConfigurator)) {
+            return getResourceBytesUsingJaxRsClient(resourceDetails, clientConfigurator);
+        }
+        try (InputStream is = getResourceStream(resourceDetails)) {
+            return StreamUtils.toByteArray(is);
+        }
+    }
+
+    private static boolean shouldUseJaxRsClient(
+            @Nonnull final ResourceDetails resourceDetails,
+            final ClientConfigurator clientConfigurator) {
+        if (clientConfigurator == null || resourceDetails.getUrl() == null) {
+            return false;
+        }
+        String protocol = resourceDetails.getUrl().getProtocol();
+        return "http".equalsIgnoreCase(protocol) || "https".equalsIgnoreCase(protocol);
+    }
+
+    private static byte[] getResourceBytesUsingJaxRsClient(
+            @Nonnull final ResourceDetails resourceDetails,
+            final ClientConfigurator clientConfigurator)
+            throws IOException {
+        ClientBuilder clientBuilder = ClientBuilder.newBuilder();
+        clientConfigurator.customizeBuilder(clientBuilder);
+        Client client = clientBuilder.build();
+        clientConfigurator.customizeClient(client);
+        try {
+            Invocation.Builder request =
+                    client.target(resourceDetails.getUrl().toExternalForm()).request();
+            if (resourceDetails.getHeaders() != null) {
+                resourceDetails.getHeaders().forEach(request::header);
+            }
+            try (Response response = request.get()) {
+                if (response.getStatus() >= 400) {
+                    throw new IOException(
+                            "Open stream of certificate failed with HTTP status "
+                                    + response.getStatus());
+                }
+                return response.readEntity(byte[].class);
+            }
+        } finally {
+            client.close();
+        }
     }
 
     private static InputStream getResourceStream(@Nonnull final ResourceDetails resourceDetails)
@@ -320,7 +421,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      * @return the private key
      */
     private static RSAPrivateKey readPrivateKey(
-            final ResourceDetails privateKeyResourceDetails, char[] privateKeyPassphrase) {
+            final ResourceDetails privateKeyResourceDetails,
+            char[] privateKeyPassphrase,
+            final ClientConfigurator clientConfigurator) {
         if (privateKeyResourceDetails == null || privateKeyResourceDetails.getUrl() == null) {
             return null;
         }
@@ -328,7 +431,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         final int MAX_RETRIES = 3;
         Exception lastException = null;
         for (int retry = 0; retry < MAX_RETRIES; retry++) {
-            try (InputStream inputStream = getResourceStream(privateKeyResourceDetails)) {
+            try (InputStream inputStream =
+                    new ByteArrayInputStream(
+                            readResource(privateKeyResourceDetails, clientConfigurator))) {
                 return new PEMFileRSAPrivateKeySupplier(inputStream, privateKeyPassphrase)
                         .supplyKey(null)
                         .orElse(null);

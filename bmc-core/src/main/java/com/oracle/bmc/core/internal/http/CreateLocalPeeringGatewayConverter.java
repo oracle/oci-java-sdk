@@ -33,8 +33,13 @@ public class CreateLocalPeeringGatewayConverter {
                 request.getCreateLocalPeeringGatewayDetails(),
                 "createLocalPeeringGatewayDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("localPeeringGateways");
+                newBaseTarget.path("/20160918").path("localPeeringGateways");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
