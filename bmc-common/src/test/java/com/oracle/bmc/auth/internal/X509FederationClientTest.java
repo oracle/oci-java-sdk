@@ -14,9 +14,12 @@ import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import java.security.KeyPairGenerator;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,6 +33,8 @@ import org.powermock.modules.junit4.PowerMockRunner;
 
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
+import javax.security.auth.RefreshFailedException;
+import javax.security.auth.Refreshable;
 
 import java.io.IOException;
 import java.net.URI;
@@ -311,5 +316,145 @@ public class X509FederationClientTest {
                 "Concurrent requests should coalesce into one server call",
                 1,
                 serverCallCount.get());
+    }
+
+    /**
+     * Regression test for:
+     *
+     * <ul>
+     *   <li><a href="https://jira.oci.oraclecorp.com/browse/TOSIM-3623">TOSIM-3623</a></li>
+     *   <li><a href="https://github.com/oracle/oci-java-sdk/issues/777">OCI Java SDK issue 777</a></li>
+     *   <li><a href="https://jira.oci.oraclecorp.com/browse/DEX-25556">DEX-25556</a></li>
+     * </ul>
+     *
+     * <p>This test simulates the Instance Metadata Service (IMDS) returning HTTP 404 while the
+     * leader refreshes {@code cert.pem}. The leader has already created {@code inFlightRefresh}; a
+     * concurrent follower therefore waits on that Future instead of starting another refresh.
+     *
+     * <p>The test verifies that the leader completes {@code inFlightRefresh} exceptionally before
+     * it returns. The follower must then receive the same error promptly, rather than waiting for
+     * the one-minute single-flight timeout.
+     */
+    @Test
+    public void
+            refreshFailureBeforeTokenRequest_completesInFlightRefreshSoFollowerDoesNotWait()
+                    throws Exception {
+        CountDownLatch leaderStartedCertificateRefresh = new CountDownLatch(1);
+        CountDownLatch failCertificateRefresh = new CountDownLatch(1);
+        AtomicReference<Throwable> leaderFailure = new AtomicReference<>();
+        AtomicReference<Throwable> followerFailure = new AtomicReference<>();
+
+        class RefreshableFailingLeafCertificateSupplier
+                implements X509CertificateSupplier, Refreshable {
+            @Override
+            public boolean isCurrent() {
+                return false;
+            }
+
+            @Override
+            public void refresh() throws RefreshFailedException {
+                leaderStartedCertificateRefresh.countDown();
+                try {
+                    if (!failCertificateRefresh.await(5, TimeUnit.SECONDS)) {
+                        throw new RefreshFailedException(
+                                "Timed out waiting to simulate cert.pem failure");
+                    }
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    throw new RefreshFailedException("Interrupted while simulating cert.pem failure");
+                }
+                throw new RefreshFailedException("IMDS GET cert.pem returned HTTP 404");
+            }
+
+            @Override
+            @Deprecated
+            public X509Certificate getCertificate() {
+                return null;
+            }
+
+            @Override
+            @Deprecated
+            public java.security.interfaces.RSAPrivateKey getPrivateKey() {
+                return null;
+            }
+
+            @Override
+            public CertificateAndPrivateKeyPair getCertificateAndKeyPair() {
+                return null;
+            }
+        }
+
+        X509CertificateSupplier refreshableLeafCertificateSupplier =
+                new RefreshableFailingLeafCertificateSupplier();
+
+        X509FederationClient client =
+                new X509FederationClient(
+                        "https://auth.example.com",
+                        "testTenantId",
+                        refreshableLeafCertificateSupplier,
+                        mock(SessionKeySupplier.class),
+                        Collections.emptySet(),
+                        mock(ClientConfigurator.class),
+                        Collections.emptyList(),
+                        mock(CircuitBreakerConfiguration.class));
+
+        Thread leader =
+                new Thread(
+                        () -> {
+                            try {
+                                client.getSecurityToken();
+                            } catch (Throwable e) {
+                                leaderFailure.set(e);
+                            }
+                        },
+                        "refresh-leader");
+        leader.start();
+        assertEquals(
+                "Leader should begin the simulated cert.pem refresh",
+                true,
+                leaderStartedCertificateRefresh.await(5, TimeUnit.SECONDS));
+
+        Thread follower =
+                new Thread(
+                        () -> {
+                            try {
+                                client.getSecurityToken();
+                            } catch (Throwable e) {
+                                followerFailure.set(e);
+                            }
+                        },
+                        "refresh-follower");
+        follower.start();
+
+        try {
+            final Object waitObject = new Object();
+            long deadline = System.currentTimeMillis() + 5_000;
+            while (follower.getState() != Thread.State.TIMED_WAITING
+                    && System.currentTimeMillis() < deadline) {
+                synchronized (waitObject) {
+                    waitObject.wait(10);
+                }
+            }
+            assertEquals(
+                    "Follower should wait on the leader's in-flight refresh before it fails",
+                    Thread.State.TIMED_WAITING,
+                    follower.getState());
+
+            failCertificateRefresh.countDown();
+            leader.join(5_000);
+            follower.join(2_000);
+
+            assertFalse("Leader should return the certificate refresh error", leader.isAlive());
+            assertFalse(
+                    "Follower must receive the leader failure instead of waiting for inFlightRefresh",
+                    follower.isAlive());
+            assertEquals(BmcException.class, leaderFailure.get().getClass());
+            assertEquals(BmcException.class, followerFailure.get().getClass());
+        } finally {
+            failCertificateRefresh.countDown();
+            follower.interrupt();
+            leader.join(5_000);
+            follower.join(5_000);
+        }
     }
 }
