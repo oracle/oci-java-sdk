@@ -240,6 +240,34 @@ public class OfferAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<SendOfferResponse> sendOffer(
+            SendOfferRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SendOfferRequest, SendOfferResponse>
+                    handler) {
+
+        Validate.notBlank(request.getOfferId(), "offerId must not be blank");
+
+        return clientCall(request, SendOfferResponse::builder)
+                .logger(LOG, "sendOffer")
+                .serviceDetails("Offer", "SendOffer", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SendOfferRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("offers")
+                .appendPathParam(request.getOfferId())
+                .appendPathParam("actions")
+                .appendPathParam("sendOffer")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SendOfferResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SendOfferResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOfferResponse> updateOffer(
             UpdateOfferRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateOfferRequest, UpdateOfferResponse>
@@ -266,6 +294,34 @@ public class OfferAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                 .handleResponseHeaderString("etag", UpdateOfferResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOfferResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<WithdrawOfferResponse> withdrawOffer(
+            WithdrawOfferRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<WithdrawOfferRequest, WithdrawOfferResponse>
+                    handler) {
+
+        Validate.notBlank(request.getOfferId(), "offerId must not be blank");
+
+        return clientCall(request, WithdrawOfferResponse::builder)
+                .logger(LOG, "withdrawOffer")
+                .serviceDetails("Offer", "WithdrawOffer", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(WithdrawOfferRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("offers")
+                .appendPathParam(request.getOfferId())
+                .appendPathParam("actions")
+                .appendPathParam("withdrawOffer")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", WithdrawOfferResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", WithdrawOfferResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

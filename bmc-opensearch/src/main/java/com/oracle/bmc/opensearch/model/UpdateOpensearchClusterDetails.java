@@ -32,6 +32,7 @@ public final class UpdateOpensearchClusterDetails
         "securityMasterUserPasswordHash",
         "securitySamlConfig",
         "backupPolicy",
+        "nsgId",
         "reverseConnectionEndpointCustomerIps",
         "outboundClusterConfig",
         "maintenanceDetails",
@@ -49,6 +50,7 @@ public final class UpdateOpensearchClusterDetails
             String securityMasterUserPasswordHash,
             SecuritySamlConfig securitySamlConfig,
             BackupPolicy backupPolicy,
+            String nsgId,
             java.util.List<String> reverseConnectionEndpointCustomerIps,
             OutboundClusterConfig outboundClusterConfig,
             UpdateMaintenanceDetails maintenanceDetails,
@@ -65,6 +67,7 @@ public final class UpdateOpensearchClusterDetails
         this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
         this.securitySamlConfig = securitySamlConfig;
         this.backupPolicy = backupPolicy;
+        this.nsgId = nsgId;
         this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
         this.outboundClusterConfig = outboundClusterConfig;
         this.maintenanceDetails = maintenanceDetails;
@@ -162,6 +165,21 @@ public final class UpdateOpensearchClusterDetails
         public Builder backupPolicy(BackupPolicy backupPolicy) {
             this.backupPolicy = backupPolicy;
             this.__explicitlySet__.add("backupPolicy");
+            return this;
+        }
+        /** The OCID of the NSG where the private endpoint vnic will be attached. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgId")
+        private String nsgId;
+
+        /**
+         * The OCID of the NSG where the private endpoint vnic will be attached.
+         *
+         * @param nsgId the value to set
+         * @return this builder
+         */
+        public Builder nsgId(String nsgId) {
+            this.nsgId = nsgId;
+            this.__explicitlySet__.add("nsgId");
             return this;
         }
         /** The customer IP addresses of the endpoint in customer VCN */
@@ -297,6 +315,7 @@ public final class UpdateOpensearchClusterDetails
                             this.securityMasterUserPasswordHash,
                             this.securitySamlConfig,
                             this.backupPolicy,
+                            this.nsgId,
                             this.reverseConnectionEndpointCustomerIps,
                             this.outboundClusterConfig,
                             this.maintenanceDetails,
@@ -333,6 +352,9 @@ public final class UpdateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("backupPolicy")) {
                 this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("nsgId")) {
+                this.nsgId(model.getNsgId());
             }
             if (model.wasPropertyExplicitlySet("reverseConnectionEndpointCustomerIps")) {
                 this.reverseConnectionEndpointCustomerIps(
@@ -443,6 +465,19 @@ public final class UpdateOpensearchClusterDetails
 
     public BackupPolicy getBackupPolicy() {
         return backupPolicy;
+    }
+
+    /** The OCID of the NSG where the private endpoint vnic will be attached. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgId")
+    private final String nsgId;
+
+    /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     *
+     * @return the value
+     */
+    public String getNsgId() {
+        return nsgId;
     }
 
     /** The customer IP addresses of the endpoint in customer VCN */
@@ -566,6 +601,7 @@ public final class UpdateOpensearchClusterDetails
                 .append(String.valueOf(this.securityMasterUserPasswordHash));
         sb.append(", securitySamlConfig=").append(String.valueOf(this.securitySamlConfig));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", nsgId=").append(String.valueOf(this.nsgId));
         sb.append(", reverseConnectionEndpointCustomerIps=")
                 .append(String.valueOf(this.reverseConnectionEndpointCustomerIps));
         sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
@@ -598,6 +634,7 @@ public final class UpdateOpensearchClusterDetails
                         this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
                 && java.util.Objects.equals(this.securitySamlConfig, other.securitySamlConfig)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(this.nsgId, other.nsgId)
                 && java.util.Objects.equals(
                         this.reverseConnectionEndpointCustomerIps,
                         other.reverseConnectionEndpointCustomerIps)
@@ -636,6 +673,7 @@ public final class UpdateOpensearchClusterDetails
                                 ? 43
                                 : this.securitySamlConfig.hashCode());
         result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result = (result * PRIME) + (this.nsgId == null ? 43 : this.nsgId.hashCode());
         result =
                 (result * PRIME)
                         + (this.reverseConnectionEndpointCustomerIps == null

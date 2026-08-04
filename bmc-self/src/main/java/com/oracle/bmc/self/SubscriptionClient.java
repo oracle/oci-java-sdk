@@ -124,6 +124,41 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CancelSubscriptionResponse cancelSubscription(CancelSubscriptionRequest request) {
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelSubscriptionDetails(), "cancelSubscriptionDetails is required");
+
+        return clientCall(request, CancelSubscriptionResponse::builder)
+                .logger(LOG, "cancelSubscription")
+                .serviceDetails(
+                        "Subscription",
+                        "CancelSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/CancelSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelSubscriptionRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("subscriptions")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.self.model.Subscription.class,
+                        CancelSubscriptionResponse.Builder::subscription)
+                .handleResponseHeaderString("etag", CancelSubscriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelSubscriptionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");

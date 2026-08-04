@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplaceprivateoffer.model;
 
 /**
- * The contact information of an individual <br>
+ * The contact information of an individual. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class Contact extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The first name of the contact */
+        /** The first name of the contact. */
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
-         * The first name of the contact
+         * The first name of the contact.
          *
          * @param firstName the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class Contact extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("firstName");
             return this;
         }
-        /** The last name of the contact */
+        /** The last name of the contact. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
-         * The last name of the contact
+         * The last name of the contact.
          *
          * @param lastName the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class Contact extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("lastName");
             return this;
         }
-        /** The email of the contact */
+        /** The email of the contact. */
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
-         * The email of the contact
+         * The email of the contact.
          *
          * @param email the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class Contact extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** The first name of the contact */
+    /** The first name of the contact. */
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
-     * The first name of the contact
+     * The first name of the contact.
      *
      * @return the value
      */
@@ -125,12 +125,12 @@ public final class Contact extends com.oracle.bmc.http.client.internal.Explicitl
         return firstName;
     }
 
-    /** The last name of the contact */
+    /** The last name of the contact. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
-     * The last name of the contact
+     * The last name of the contact.
      *
      * @return the value
      */
@@ -138,12 +138,12 @@ public final class Contact extends com.oracle.bmc.http.client.internal.Explicitl
         return lastName;
     }
 
-    /** The email of the contact */
+    /** The email of the contact. */
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
-     * The email of the contact
+     * The email of the contact.
      *
      * @return the value
      */

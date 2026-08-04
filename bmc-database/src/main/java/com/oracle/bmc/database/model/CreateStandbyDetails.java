@@ -35,7 +35,8 @@ public final class CreateStandbyDetails
             TransportType transportType,
             DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            AutoFailoverConfiguration autoFailoverConfiguration) {
         super();
         this.sourceDatabaseId = sourceDatabaseId;
         this.databaseAdminPassword =
@@ -51,6 +52,7 @@ public final class CreateStandbyDetails
         this.storageSizeDetails = storageSizeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.autoFailoverConfiguration = autoFailoverConfiguration;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -67,7 +69,8 @@ public final class CreateStandbyDetails
         "transportType",
         "storageSizeDetails",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "autoFailoverConfiguration"
     })
     public CreateStandbyDetails(
             String sourceDatabaseId,
@@ -81,7 +84,8 @@ public final class CreateStandbyDetails
             TransportType transportType,
             DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            AutoFailoverConfiguration autoFailoverConfiguration) {
         super();
         this.sourceDatabaseId = sourceDatabaseId;
         this.databaseAdminPassword = databaseAdminPassword;
@@ -95,6 +99,7 @@ public final class CreateStandbyDetails
         this.storageSizeDetails = storageSizeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.autoFailoverConfiguration = autoFailoverConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -342,6 +347,16 @@ public final class CreateStandbyDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autoFailoverConfiguration")
+        private AutoFailoverConfiguration autoFailoverConfiguration;
+
+        public Builder autoFailoverConfiguration(
+                AutoFailoverConfiguration autoFailoverConfiguration) {
+            this.autoFailoverConfiguration = autoFailoverConfiguration;
+            this.__explicitlySet__.add("autoFailoverConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -359,7 +374,8 @@ public final class CreateStandbyDetails
                             this.transportType,
                             this.storageSizeDetails,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.autoFailoverConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -404,6 +420,9 @@ public final class CreateStandbyDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("autoFailoverConfiguration")) {
+                this.autoFailoverConfiguration(model.getAutoFailoverConfiguration());
             }
             return this;
         }
@@ -733,6 +752,13 @@ public final class CreateStandbyDetails
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autoFailoverConfiguration")
+    private final AutoFailoverConfiguration autoFailoverConfiguration;
+
+    public AutoFailoverConfiguration getAutoFailoverConfiguration() {
+        return autoFailoverConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -762,6 +788,8 @@ public final class CreateStandbyDetails
         sb.append(", storageSizeDetails=").append(String.valueOf(this.storageSizeDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", autoFailoverConfiguration=")
+                .append(String.valueOf(this.autoFailoverConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -792,6 +820,8 @@ public final class CreateStandbyDetails
                 && java.util.Objects.equals(this.storageSizeDetails, other.storageSizeDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.autoFailoverConfiguration, other.autoFailoverConfiguration)
                 && super.equals(other);
     }
 
@@ -837,6 +867,11 @@ public final class CreateStandbyDetails
                                 : this.storageSizeDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoFailoverConfiguration == null
+                                ? 43
+                                : this.autoFailoverConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

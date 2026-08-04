@@ -136,6 +136,21 @@ public interface OfferAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListOffersRequest, ListOffersResponse> handler);
 
     /**
+     * Sends an Offer to be reviewed and accepted by the buyer. Validation will be run on the offer
+     * first to verify the offer is valid and contains all required fields.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SendOfferResponse> sendOffer(
+            SendOfferRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SendOfferRequest, SendOfferResponse> handler);
+
+    /**
      * Updates the Offer
      *
      * @param request The request object containing the details to send
@@ -148,4 +163,20 @@ public interface OfferAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateOfferResponse> updateOffer(
             UpdateOfferRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateOfferRequest, UpdateOfferResponse> handler);
+
+    /**
+     * Withdraws an Offer and sends it back into DRAFT state. Offers can only be withdrawn before
+     * they are accepted by the buyer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<WithdrawOfferResponse> withdrawOffer(
+            WithdrawOfferRequest request,
+            com.oracle.bmc.responses.AsyncHandler<WithdrawOfferRequest, WithdrawOfferResponse>
+                    handler);
 }

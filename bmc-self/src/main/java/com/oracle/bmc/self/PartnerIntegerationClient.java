@@ -107,7 +107,7 @@ public class PartnerIntegerationClient extends com.oracle.bmc.http.internal.Base
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateSubscriptionRequest::builder)
                 .basePath("/20260129")
-                .appendPathParam("partner")
+                .appendPathParam("partners")
                 .appendPathParam("subscriptions")
                 .appendPathParam(request.getSubscriptionId())
                 .appendPathParam("actions")
@@ -128,6 +128,38 @@ public class PartnerIntegerationClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public ListPartnersResponse listPartners(ListPartnersRequest request) {
+
+        return clientCall(request, ListPartnersResponse::builder)
+                .logger(LOG, "listPartners")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "ListPartners",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Partner/ListPartners")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPartnersRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("partners")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.self.model.PartnerCollection.class,
+                        ListPartnersResponse.Builder::partnerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPartnersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPartnersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListingSubscriptionsResponse listingSubscriptions(ListingSubscriptionsRequest request) {
         Objects.requireNonNull(request.getListingId(), "listingId is required");
 
@@ -140,7 +172,7 @@ public class PartnerIntegerationClient extends com.oracle.bmc.http.internal.Base
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListingSubscriptionsRequest::builder)
                 .basePath("/20260129")
-                .appendPathParam("partner")
+                .appendPathParam("partners")
                 .appendPathParam("subscriptions")
                 .appendQueryParam("listingId", request.getListingId())
                 .appendQueryParam("displayName", request.getDisplayName())
@@ -175,7 +207,7 @@ public class PartnerIntegerationClient extends com.oracle.bmc.http.internal.Base
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ResolveSubscriptionRequest::builder)
                 .basePath("/20260129")
-                .appendPathParam("partner")
+                .appendPathParam("partners")
                 .appendPathParam("subscriptions")
                 .appendPathParam("actions")
                 .appendPathParam("resolve")
@@ -191,6 +223,76 @@ public class PartnerIntegerationClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id", ResolveSubscriptionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ResolveSubscriptionResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public SubmitSubscriptionUsageBatchResponse submitSubscriptionUsageBatch(
+            SubmitSubscriptionUsageBatchRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getSubmitSubscriptionUsageBatchDetails(),
+                "submitSubscriptionUsageBatchDetails is required");
+
+        return clientCall(request, SubmitSubscriptionUsageBatchResponse::builder)
+                .logger(LOG, "submitSubscriptionUsageBatch")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "SubmitSubscriptionUsageBatch",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/CreateSubscriptionUsageRecordDetails/SubmitSubscriptionUsageBatch")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SubmitSubscriptionUsageBatchRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("partners")
+                .appendPathParam("actions")
+                .appendPathParam("batchUsageRecords")
+                .accept("application/json")
+                .appendHeader("compartment-id", request.getCompartmentId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SubmitSubscriptionUsageBatchResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SubmitSubscriptionUsageBatchResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SubmitSubscriptionUsageRecordsResponse submitSubscriptionUsageRecords(
+            SubmitSubscriptionUsageRecordsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getSubmitSubscriptionUsageRecordsDetails(),
+                "submitSubscriptionUsageRecordsDetails is required");
+
+        return clientCall(request, SubmitSubscriptionUsageRecordsResponse::builder)
+                .logger(LOG, "submitSubscriptionUsageRecords")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "SubmitSubscriptionUsageRecords",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/CreateSubscriptionUsageRecordDetails/SubmitSubscriptionUsageRecords")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SubmitSubscriptionUsageRecordsRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("partners")
+                .appendPathParam("actions")
+                .appendPathParam("submitUsageRecords")
+                .accept("application/json")
+                .appendHeader("compartment-id", request.getCompartmentId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SubmitSubscriptionUsageRecordsResponse.Builder::opcRequestId)
                 .callSync();
     }
 

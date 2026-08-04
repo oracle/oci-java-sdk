@@ -23,12 +23,15 @@ package com.oracle.bmc.database.model;
 public final class DataGuardGroup
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"members", "protectionMode"})
+    @java.beans.ConstructorProperties({"members", "protectionMode", "managedAutoFailOverReadiness"})
     public DataGuardGroup(
-            java.util.List<DataGuardGroupMember> members, ProtectionMode protectionMode) {
+            java.util.List<DataGuardGroupMember> members,
+            ProtectionMode protectionMode,
+            ManagedAutoFailOverReadiness managedAutoFailOverReadiness) {
         super();
         this.members = members;
         this.protectionMode = protectionMode;
+        this.managedAutoFailOverReadiness = managedAutoFailOverReadiness;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -71,12 +74,30 @@ public final class DataGuardGroup
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
+        /** Specifies readiness of Managed Automatic failover. */
+        @com.fasterxml.jackson.annotation.JsonProperty("managedAutoFailOverReadiness")
+        private ManagedAutoFailOverReadiness managedAutoFailOverReadiness;
+
+        /**
+         * Specifies readiness of Managed Automatic failover.
+         *
+         * @param managedAutoFailOverReadiness the value to set
+         * @return this builder
+         */
+        public Builder managedAutoFailOverReadiness(
+                ManagedAutoFailOverReadiness managedAutoFailOverReadiness) {
+            this.managedAutoFailOverReadiness = managedAutoFailOverReadiness;
+            this.__explicitlySet__.add("managedAutoFailOverReadiness");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataGuardGroup build() {
-            DataGuardGroup model = new DataGuardGroup(this.members, this.protectionMode);
+            DataGuardGroup model =
+                    new DataGuardGroup(
+                            this.members, this.protectionMode, this.managedAutoFailOverReadiness);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -90,6 +111,9 @@ public final class DataGuardGroup
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("managedAutoFailOverReadiness")) {
+                this.managedAutoFailOverReadiness(model.getManagedAutoFailOverReadiness());
             }
             return this;
         }
@@ -190,6 +214,65 @@ public final class DataGuardGroup
         return protectionMode;
     }
 
+    /** Specifies readiness of Managed Automatic failover. */
+    public enum ManagedAutoFailOverReadiness implements com.oracle.bmc.http.internal.BmcEnum {
+        Healthy("HEALTHY"),
+        Critical("CRITICAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagedAutoFailOverReadiness.class);
+
+        private final String value;
+        private static java.util.Map<String, ManagedAutoFailOverReadiness> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ManagedAutoFailOverReadiness v : ManagedAutoFailOverReadiness.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ManagedAutoFailOverReadiness(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ManagedAutoFailOverReadiness create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ManagedAutoFailOverReadiness', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Specifies readiness of Managed Automatic failover. */
+    @com.fasterxml.jackson.annotation.JsonProperty("managedAutoFailOverReadiness")
+    private final ManagedAutoFailOverReadiness managedAutoFailOverReadiness;
+
+    /**
+     * Specifies readiness of Managed Automatic failover.
+     *
+     * @return the value
+     */
+    public ManagedAutoFailOverReadiness getManagedAutoFailOverReadiness() {
+        return managedAutoFailOverReadiness;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -207,6 +290,8 @@ public final class DataGuardGroup
         sb.append("super=").append(super.toString());
         sb.append("members=").append(String.valueOf(this.members));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", managedAutoFailOverReadiness=")
+                .append(String.valueOf(this.managedAutoFailOverReadiness));
         sb.append(")");
         return sb.toString();
     }
@@ -223,6 +308,8 @@ public final class DataGuardGroup
         DataGuardGroup other = (DataGuardGroup) o;
         return java.util.Objects.equals(this.members, other.members)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(
+                        this.managedAutoFailOverReadiness, other.managedAutoFailOverReadiness)
                 && super.equals(other);
     }
 
@@ -234,6 +321,11 @@ public final class DataGuardGroup
         result =
                 (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedAutoFailOverReadiness == null
+                                ? 43
+                                : this.managedAutoFailOverReadiness.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

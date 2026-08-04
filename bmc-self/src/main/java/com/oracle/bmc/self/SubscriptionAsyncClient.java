@@ -96,6 +96,44 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<CancelSubscriptionResponse> cancelSubscription(
+            CancelSubscriptionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelSubscriptionRequest, CancelSubscriptionResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelSubscriptionDetails(), "cancelSubscriptionDetails is required");
+
+        return clientCall(request, CancelSubscriptionResponse::builder)
+                .logger(LOG, "cancelSubscription")
+                .serviceDetails(
+                        "Subscription",
+                        "CancelSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/CancelSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelSubscriptionRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("subscriptions")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.self.model.Subscription.class,
+                        CancelSubscriptionResponse.Builder::subscription)
+                .handleResponseHeaderString("etag", CancelSubscriptionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

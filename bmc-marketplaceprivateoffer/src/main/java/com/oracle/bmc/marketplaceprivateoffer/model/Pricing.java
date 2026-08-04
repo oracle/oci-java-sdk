@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplaceprivateoffer.model;
 
 /**
- * the pricing information for the offer <br>
+ * The pricing information for the offer. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class Pricing extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The currency supported for a given Offer, in the format specified by ISO-4217 */
+        /** The currency supported for a given Offer, in the format specified by ISO-4217. */
         @com.fasterxml.jackson.annotation.JsonProperty("currencyType")
         private String currencyType;
 
         /**
-         * The currency supported for a given Offer, in the format specified by ISO-4217
+         * The currency supported for a given Offer, in the format specified by ISO-4217.
          *
          * @param currencyType the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class Pricing extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("currencyType");
             return this;
         }
-        /** The total amount an Offer costs */
+        /** The total amount an offer costs. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalAmount")
         private Long totalAmount;
 
         /**
-         * The total amount an Offer costs
+         * The total amount an offer costs.
          *
          * @param totalAmount the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class Pricing extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("totalAmount");
             return this;
         }
-        /** The frequency at which the customer is billed for the Offer */
+        /** The frequency at which the customer is billed for the offer. */
         @com.fasterxml.jackson.annotation.JsonProperty("billingCycle")
         private BillingCycle billingCycle;
 
         /**
-         * The frequency at which the customer is billed for the Offer
+         * The frequency at which the customer is billed for the offer.
          *
          * @param billingCycle the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class Pricing extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** The currency supported for a given Offer, in the format specified by ISO-4217 */
+    /** The currency supported for a given Offer, in the format specified by ISO-4217. */
     @com.fasterxml.jackson.annotation.JsonProperty("currencyType")
     private final String currencyType;
 
     /**
-     * The currency supported for a given Offer, in the format specified by ISO-4217
+     * The currency supported for a given Offer, in the format specified by ISO-4217.
      *
      * @return the value
      */
@@ -125,12 +125,12 @@ public final class Pricing extends com.oracle.bmc.http.client.internal.Explicitl
         return currencyType;
     }
 
-    /** The total amount an Offer costs */
+    /** The total amount an offer costs. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalAmount")
     private final Long totalAmount;
 
     /**
-     * The total amount an Offer costs
+     * The total amount an offer costs.
      *
      * @return the value
      */
@@ -138,7 +138,7 @@ public final class Pricing extends com.oracle.bmc.http.client.internal.Explicitl
         return totalAmount;
     }
 
-    /** The frequency at which the customer is billed for the Offer */
+    /** The frequency at which the customer is billed for the offer. */
     public enum BillingCycle implements com.oracle.bmc.http.internal.BmcEnum {
         OneTime("ONE_TIME"),
 
@@ -183,12 +183,12 @@ public final class Pricing extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** The frequency at which the customer is billed for the Offer */
+    /** The frequency at which the customer is billed for the offer. */
     @com.fasterxml.jackson.annotation.JsonProperty("billingCycle")
     private final BillingCycle billingCycle;
 
     /**
-     * The frequency at which the customer is billed for the Offer
+     * The frequency at which the customer is billed for the offer.
      *
      * @return the value
      */

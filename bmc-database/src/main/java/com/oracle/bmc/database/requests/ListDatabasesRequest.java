@@ -182,6 +182,90 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getDbName() {
         return dbName;
     }
+    /** Filter the databases by managed auto failover param. */
+    private ManagedAutoFailover managedAutoFailover;
+
+    /** Filter the databases by managed auto failover param. */
+    public enum ManagedAutoFailover implements com.oracle.bmc.http.internal.BmcEnum {
+        Registered("REGISTERED"),
+        Unregistered("UNREGISTERED"),
+        All("ALL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ManagedAutoFailover> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ManagedAutoFailover v : ManagedAutoFailover.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ManagedAutoFailover(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ManagedAutoFailover create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ManagedAutoFailover: " + key);
+        }
+    };
+
+    /** Filter the databases by managed auto failover param. */
+    public ManagedAutoFailover getManagedAutoFailover() {
+        return managedAutoFailover;
+    }
+    /** Filter the databases by failoverTargets param. */
+    private FailoverTargets failoverTargets;
+
+    /** Filter the databases by failoverTargets param. */
+    public enum FailoverTargets implements com.oracle.bmc.http.internal.BmcEnum {
+        Defined("DEFINED"),
+        Undefined("UNDEFINED"),
+        All("ALL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, FailoverTargets> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (FailoverTargets v : FailoverTargets.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        FailoverTargets(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static FailoverTargets create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid FailoverTargets: " + key);
+        }
+    };
+
+    /** Filter the databases by failoverTargets param. */
+    public FailoverTargets getFailoverTargets() {
+        return failoverTargets;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -340,6 +424,34 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
+        /** Filter the databases by managed auto failover param. */
+        private ManagedAutoFailover managedAutoFailover = null;
+
+        /**
+         * Filter the databases by managed auto failover param.
+         *
+         * @param managedAutoFailover the value to set
+         * @return this builder instance
+         */
+        public Builder managedAutoFailover(ManagedAutoFailover managedAutoFailover) {
+            this.managedAutoFailover = managedAutoFailover;
+            return this;
+        }
+
+        /** Filter the databases by failoverTargets param. */
+        private FailoverTargets failoverTargets = null;
+
+        /**
+         * Filter the databases by failoverTargets param.
+         *
+         * @param failoverTargets the value to set
+         * @return this builder instance
+         */
+        public Builder failoverTargets(FailoverTargets failoverTargets) {
+            this.failoverTargets = failoverTargets;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -379,6 +491,8 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             dbName(o.getDbName());
+            managedAutoFailover(o.getManagedAutoFailover());
+            failoverTargets(o.getFailoverTargets());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -422,9 +536,11 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.dbName = dbName;
+            request.managedAutoFailover = managedAutoFailover;
+            request.failoverTargets = failoverTargets;
             return request;
             // new ListDatabasesRequest(compartmentId, dbHomeId, systemId, limit, page, sortBy,
-            // sortOrder, lifecycleState, dbName);
+            // sortOrder, lifecycleState, dbName, managedAutoFailover, failoverTargets);
         }
     }
 
@@ -443,7 +559,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
-                .dbName(dbName);
+                .dbName(dbName)
+                .managedAutoFailover(managedAutoFailover)
+                .failoverTargets(failoverTargets);
     }
 
     /**
@@ -469,6 +587,8 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",dbName=").append(String.valueOf(this.dbName));
+        sb.append(",managedAutoFailover=").append(String.valueOf(this.managedAutoFailover));
+        sb.append(",failoverTargets=").append(String.valueOf(this.failoverTargets));
         sb.append(")");
         return sb.toString();
     }
@@ -492,7 +612,9 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.dbName, other.dbName);
+                && java.util.Objects.equals(this.dbName, other.dbName)
+                && java.util.Objects.equals(this.managedAutoFailover, other.managedAutoFailover)
+                && java.util.Objects.equals(this.failoverTargets, other.failoverTargets);
     }
 
     @Override
@@ -512,6 +634,14 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedAutoFailover == null
+                                ? 43
+                                : this.managedAutoFailover.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failoverTargets == null ? 43 : this.failoverTargets.hashCode());
         return result;
     }
 }

@@ -31,8 +31,10 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         "type",
         "timeCreated",
         "lifecycleState",
+        "offerType",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public Attachment(
             String id,
@@ -44,8 +46,10 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
             Type type,
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
+            Offer.OfferType offerType,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.sellerCompartmentId = sellerCompartmentId;
@@ -56,8 +60,10 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         this.type = type;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.offerType = offerType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -197,6 +203,21 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /** The type of the offer. */
+        @com.fasterxml.jackson.annotation.JsonProperty("offerType")
+        private Offer.OfferType offerType;
+
+        /**
+         * The type of the offer.
+         *
+         * @param offerType the value to set
+         * @return this builder
+         */
+        public Builder offerType(Offer.OfferType offerType) {
+            this.offerType = offerType;
+            this.__explicitlySet__.add("offerType");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -236,6 +257,25 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -252,8 +292,10 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
                             this.type,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.offerType,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -289,11 +331,17 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("offerType")) {
+                this.offerType(model.getOfferType());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -522,6 +570,19 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         return lifecycleState;
     }
 
+    /** The type of the offer. */
+    @com.fasterxml.jackson.annotation.JsonProperty("offerType")
+    private final Offer.OfferType offerType;
+
+    /**
+     * The type of the offer.
+     *
+     * @return the value
+     */
+    public Offer.OfferType getOfferType() {
+        return offerType;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -556,6 +617,23 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         return definedTags;
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -580,8 +658,10 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", offerType=").append(String.valueOf(this.offerType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -605,8 +685,10 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.offerType, other.offerType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -633,8 +715,10 @@ public final class Attachment extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.offerType == null ? 43 : this.offerType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
