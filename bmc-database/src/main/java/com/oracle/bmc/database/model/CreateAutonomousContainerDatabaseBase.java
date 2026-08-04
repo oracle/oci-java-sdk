@@ -23,6 +23,9 @@ package com.oracle.bmc.database.model;
         defaultImpl = CreateAutonomousContainerDatabaseBase.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAutonomousContainerDatabaseFromBackupTimestampDetails.class,
+            name = "BACKUP_FROM_TIMESTAMP"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAutonomousContainerDatabaseDetails.class,
             name = "NONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -1302,6 +1305,7 @@ public class CreateAutonomousContainerDatabaseBase
     public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         BackupFromId("BACKUP_FROM_ID"),
+        BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
         ;
 
         private final String value;

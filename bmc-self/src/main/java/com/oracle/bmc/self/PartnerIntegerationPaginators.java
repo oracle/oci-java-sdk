@@ -42,6 +42,120 @@ public class PartnerIntegerationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listPartners
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPartnersResponse> listPartnersResponseIterator(
+            final ListPartnersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPartnersRequest.Builder, ListPartnersRequest, ListPartnersResponse>(
+                new java.util.function.Supplier<ListPartnersRequest.Builder>() {
+                    @Override
+                    public ListPartnersRequest.Builder get() {
+                        return ListPartnersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPartnersResponse, String>() {
+                    @Override
+                    public String apply(ListPartnersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPartnersRequest.Builder>,
+                        ListPartnersRequest>() {
+                    @Override
+                    public ListPartnersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPartnersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPartnersRequest, ListPartnersResponse>() {
+                    @Override
+                    public ListPartnersResponse apply(ListPartnersRequest request) {
+                        return client.listPartners(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.self.model.PartnerSummary} objects contained in responses from the
+     * listPartners operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.self.model.PartnerSummary} objects contained in responses received from
+     *     the service.
+     */
+    public Iterable<com.oracle.bmc.self.model.PartnerSummary> listPartnersRecordIterator(
+            final ListPartnersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPartnersRequest.Builder,
+                ListPartnersRequest,
+                ListPartnersResponse,
+                com.oracle.bmc.self.model.PartnerSummary>(
+                new java.util.function.Supplier<ListPartnersRequest.Builder>() {
+                    @Override
+                    public ListPartnersRequest.Builder get() {
+                        return ListPartnersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPartnersResponse, String>() {
+                    @Override
+                    public String apply(ListPartnersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPartnersRequest.Builder>,
+                        ListPartnersRequest>() {
+                    @Override
+                    public ListPartnersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPartnersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPartnersRequest, ListPartnersResponse>() {
+                    @Override
+                    public ListPartnersResponse apply(ListPartnersRequest request) {
+                        return client.listPartners(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPartnersResponse,
+                        java.util.List<com.oracle.bmc.self.model.PartnerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.self.model.PartnerSummary> apply(
+                            ListPartnersResponse response) {
+                        return response.getPartnerCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the
      * listingSubscriptions operation. This iterable will fetch more data from the server as needed.
      *

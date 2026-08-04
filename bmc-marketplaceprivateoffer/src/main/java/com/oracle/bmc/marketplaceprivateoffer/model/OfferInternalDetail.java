@@ -23,11 +23,15 @@ package com.oracle.bmc.marketplaceprivateoffer.model;
 public final class OfferInternalDetail
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"customFields", "internalNotes"})
-    public OfferInternalDetail(java.util.List<CustomField> customFields, String internalNotes) {
+    @java.beans.ConstructorProperties({"customFields", "internalNotes", "offerQuoteIds"})
+    public OfferInternalDetail(
+            java.util.List<CustomField> customFields,
+            String internalNotes,
+            java.util.List<String> offerQuoteIds) {
         super();
         this.customFields = customFields;
         this.internalNotes = internalNotes;
+        this.offerQuoteIds = offerQuoteIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,13 +66,29 @@ public final class OfferInternalDetail
             this.__explicitlySet__.add("internalNotes");
             return this;
         }
+        /** A list of associated offer quotes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("offerQuoteIds")
+        private java.util.List<String> offerQuoteIds;
+
+        /**
+         * A list of associated offer quotes.
+         *
+         * @param offerQuoteIds the value to set
+         * @return this builder
+         */
+        public Builder offerQuoteIds(java.util.List<String> offerQuoteIds) {
+            this.offerQuoteIds = offerQuoteIds;
+            this.__explicitlySet__.add("offerQuoteIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OfferInternalDetail build() {
             OfferInternalDetail model =
-                    new OfferInternalDetail(this.customFields, this.internalNotes);
+                    new OfferInternalDetail(
+                            this.customFields, this.internalNotes, this.offerQuoteIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +102,9 @@ public final class OfferInternalDetail
             }
             if (model.wasPropertyExplicitlySet("internalNotes")) {
                 this.internalNotes(model.getInternalNotes());
+            }
+            if (model.wasPropertyExplicitlySet("offerQuoteIds")) {
+                this.offerQuoteIds(model.getOfferQuoteIds());
             }
             return this;
         }
@@ -122,6 +145,19 @@ public final class OfferInternalDetail
         return internalNotes;
     }
 
+    /** A list of associated offer quotes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("offerQuoteIds")
+    private final java.util.List<String> offerQuoteIds;
+
+    /**
+     * A list of associated offer quotes.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getOfferQuoteIds() {
+        return offerQuoteIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +175,7 @@ public final class OfferInternalDetail
         sb.append("super=").append(super.toString());
         sb.append("customFields=").append(String.valueOf(this.customFields));
         sb.append(", internalNotes=").append(String.valueOf(this.internalNotes));
+        sb.append(", offerQuoteIds=").append(String.valueOf(this.offerQuoteIds));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +192,7 @@ public final class OfferInternalDetail
         OfferInternalDetail other = (OfferInternalDetail) o;
         return java.util.Objects.equals(this.customFields, other.customFields)
                 && java.util.Objects.equals(this.internalNotes, other.internalNotes)
+                && java.util.Objects.equals(this.offerQuoteIds, other.offerQuoteIds)
                 && super.equals(other);
     }
 
@@ -166,6 +204,9 @@ public final class OfferInternalDetail
         result =
                 (result * PRIME)
                         + (this.internalNotes == null ? 43 : this.internalNotes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.offerQuoteIds == null ? 43 : this.offerQuoteIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

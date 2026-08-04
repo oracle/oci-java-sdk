@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplaceprivateoffer.model;
 
 /**
- * Resource Bundle associated with an Offer <br>
+ * Resource bundle associated with an offer. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -37,12 +37,12 @@ public final class ResourceBundle
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of resources in the bundle */
+        /** The type of resources in the bundle. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * The type of resources in the bundle
+         * The type of resources in the bundle.
          *
          * @param type the value to set
          * @return this builder
@@ -52,12 +52,12 @@ public final class ResourceBundle
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The quantity of a resources associated with the bundle */
+        /** The quantity of a resources associated with the bundle. */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private Long quantity;
 
         /**
-         * The quantity of a resources associated with the bundle
+         * The quantity of a resources associated with the bundle.
          *
          * @param quantity the value to set
          * @return this builder
@@ -67,12 +67,12 @@ public final class ResourceBundle
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /** The unit of measurement for the resource bundle */
+        /** The unit of measurement for the resource bundle. */
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasurement")
         private UnitOfMeasurement unitOfMeasurement;
 
         /**
-         * The unit of measurement for the resource bundle
+         * The unit of measurement for the resource bundle.
          *
          * @param unitOfMeasurement the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class ResourceBundle
             this.__explicitlySet__.add("unitOfMeasurement");
             return this;
         }
-        /** the ids of the resources in the Offer */
+        /** The IDs of the resources in the offer. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
         private java.util.List<String> resourceIds;
 
         /**
-         * the ids of the resources in the Offer
+         * The IDs of the resources in the offer.
          *
          * @param resourceIds the value to set
          * @return this builder
@@ -138,7 +138,7 @@ public final class ResourceBundle
         return new Builder().copy(this);
     }
 
-    /** The type of resources in the bundle */
+    /** The type of resources in the bundle. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Listing("LISTING"),
 
@@ -181,12 +181,12 @@ public final class ResourceBundle
             return UnknownEnumValue;
         }
     };
-    /** The type of resources in the bundle */
+    /** The type of resources in the bundle. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * The type of resources in the bundle
+     * The type of resources in the bundle.
      *
      * @return the value
      */
@@ -194,12 +194,12 @@ public final class ResourceBundle
         return type;
     }
 
-    /** The quantity of a resources associated with the bundle */
+    /** The quantity of a resources associated with the bundle. */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final Long quantity;
 
     /**
-     * The quantity of a resources associated with the bundle
+     * The quantity of a resources associated with the bundle.
      *
      * @return the value
      */
@@ -207,7 +207,7 @@ public final class ResourceBundle
         return quantity;
     }
 
-    /** The unit of measurement for the resource bundle */
+    /** The unit of measurement for the resource bundle. */
     public enum UnitOfMeasurement implements com.oracle.bmc.http.internal.BmcEnum {
         OcpuPerHour("OCPU_PER_HOUR"),
         InstancePerHour("INSTANCE_PER_HOUR"),
@@ -256,12 +256,12 @@ public final class ResourceBundle
             return UnknownEnumValue;
         }
     };
-    /** The unit of measurement for the resource bundle */
+    /** The unit of measurement for the resource bundle. */
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasurement")
     private final UnitOfMeasurement unitOfMeasurement;
 
     /**
-     * The unit of measurement for the resource bundle
+     * The unit of measurement for the resource bundle.
      *
      * @return the value
      */
@@ -269,12 +269,12 @@ public final class ResourceBundle
         return unitOfMeasurement;
     }
 
-    /** the ids of the resources in the Offer */
+    /** The IDs of the resources in the offer. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
     private final java.util.List<String> resourceIds;
 
     /**
-     * the ids of the resources in the Offer
+     * The IDs of the resources in the offer.
      *
      * @return the value
      */

@@ -7214,6 +7214,42 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutonomousContainerDatabaseBackupResponse>
+            getAutonomousContainerDatabaseBackup(
+                    GetAutonomousContainerDatabaseBackupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousContainerDatabaseBackupRequest,
+                                    GetAutonomousContainerDatabaseBackupResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousContainerDatabaseBackupId(),
+                "autonomousContainerDatabaseBackupId must not be blank");
+
+        return clientCall(request, GetAutonomousContainerDatabaseBackupResponse::builder)
+                .logger(LOG, "getAutonomousContainerDatabaseBackup")
+                .serviceDetails(
+                        "Database",
+                        "GetAutonomousContainerDatabaseBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseBackup/GetAutonomousContainerDatabaseBackup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutonomousContainerDatabaseBackupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabaseBackups")
+                .appendPathParam(request.getAutonomousContainerDatabaseBackupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousContainerDatabaseBackup.class,
+                        GetAutonomousContainerDatabaseBackupResponse.Builder
+                                ::autonomousContainerDatabaseBackup)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAutonomousContainerDatabaseBackupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutonomousContainerDatabaseDataguardAssociationResponse>
             getAutonomousContainerDatabaseDataguardAssociation(
                     GetAutonomousContainerDatabaseDataguardAssociationRequest request,
@@ -10349,6 +10385,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("backupDestinationId", request.getBackupDestinationId())
                 .appendQueryParam("keyStoreId", request.getKeyStoreId())
                 .appendEnumQueryParam("infrastructureType", request.getInfrastructureType())
+                .appendQueryParam("isPitrEligible", request.getIsPitrEligible())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
@@ -10655,6 +10692,58 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListAutonomousDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAutonomousDatabasesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<
+                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>
+            listAutonomousDatabasesInAutonomousContainerDatabaseBackup(
+                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest,
+                                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getAutonomousContainerDatabaseId(),
+                "autonomousContainerDatabaseId is required");
+
+        Objects.requireNonNull(request.getTimeStampRequested(), "timeStampRequested is required");
+
+        return clientCall(
+                        request,
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse::builder)
+                .logger(LOG, "listAutonomousDatabasesInAutonomousContainerDatabaseBackup")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousDatabasesInAutonomousContainerDatabaseBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseInBackup/ListAutonomousDatabasesInAutonomousContainerDatabaseBackup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousContainerDatabaseBackups")
+                .appendPathParam("listAutonomousDatabasesInBackup")
+                .appendQueryParam(
+                        "autonomousContainerDatabaseId", request.getAutonomousContainerDatabaseId())
+                .appendQueryParam("timeStampRequested", request.getTimeStampRequested())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseInBackupCollection.class,
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse.Builder
+                                ::autonomousDatabaseInBackupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse.Builder
+                                ::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -11636,6 +11725,8 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("dbName", request.getDbName())
+                .appendEnumQueryParam("managedAutoFailover", request.getManagedAutoFailover())
+                .appendEnumQueryParam("failoverTargets", request.getFailoverTargets())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.DatabaseSummary.class,

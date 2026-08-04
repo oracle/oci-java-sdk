@@ -27,7 +27,8 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
         "planDescription",
         "billingFrequency",
         "planDuration",
-        "rates"
+        "rates",
+        "dimensions"
     })
     public PricingPlan(
             PlanType planType,
@@ -35,7 +36,8 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
             String planDescription,
             BillingFrequency billingFrequency,
             PlanDuration planDuration,
-            java.util.List<PricingRate> rates) {
+            java.util.List<PricingRate> rates,
+            java.util.List<UsageDimension> dimensions) {
         super();
         this.planType = planType;
         this.planName = planName;
@@ -43,6 +45,7 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
         this.billingFrequency = billingFrequency;
         this.planDuration = planDuration;
         this.rates = rates;
+        this.dimensions = dimensions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -92,12 +95,16 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("planDescription");
             return this;
         }
-        /** Specifies the interval at which billing occurs for the subscription plan. */
+        /**
+         * Specifies the interval at which billing occurs for the subscription plan or usage
+         * dimension.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("billingFrequency")
         private BillingFrequency billingFrequency;
 
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the interval at which billing occurs for the subscription plan or usage
+         * dimension.
          *
          * @param billingFrequency the value to set
          * @return this builder
@@ -107,12 +114,12 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("billingFrequency");
             return this;
         }
-        /** Specifies the interval at which billing occurs for the subscription plan. */
+        /** Specifies the duration of the subscription plan. */
         @com.fasterxml.jackson.annotation.JsonProperty("planDuration")
         private PlanDuration planDuration;
 
         /**
-         * Specifies the interval at which billing occurs for the subscription plan.
+         * Specifies the duration of the subscription plan.
          *
          * @param planDuration the value to set
          * @return this builder
@@ -137,6 +144,21 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("rates");
             return this;
         }
+        /** Metered usage dimensions associated with the pricing plan. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
+        private java.util.List<UsageDimension> dimensions;
+
+        /**
+         * Metered usage dimensions associated with the pricing plan.
+         *
+         * @param dimensions the value to set
+         * @return this builder
+         */
+        public Builder dimensions(java.util.List<UsageDimension> dimensions) {
+            this.dimensions = dimensions;
+            this.__explicitlySet__.add("dimensions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -149,7 +171,8 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
                             this.planDescription,
                             this.billingFrequency,
                             this.planDuration,
-                            this.rates);
+                            this.rates,
+                            this.dimensions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -176,6 +199,9 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("rates")) {
                 this.rates(model.getRates());
             }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
             return this;
         }
     }
@@ -192,6 +218,8 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
     /** The type of the subscription plan. */
     public enum PlanType implements com.oracle.bmc.http.internal.BmcEnum {
         Fixed("FIXED"),
+        UsageBased("USAGE_BASED"),
+        Hybrid("HYBRID"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -273,57 +301,14 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
         return planDescription;
     }
 
-    /** Specifies the interval at which billing occurs for the subscription plan. */
-    public enum BillingFrequency implements com.oracle.bmc.http.internal.BmcEnum {
-        Yearly("YEARLY"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(BillingFrequency.class);
-
-        private final String value;
-        private static java.util.Map<String, BillingFrequency> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (BillingFrequency v : BillingFrequency.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        BillingFrequency(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static BillingFrequency create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'BillingFrequency', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /** Specifies the interval at which billing occurs for the subscription plan. */
+    /**
+     * Specifies the interval at which billing occurs for the subscription plan or usage dimension.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("billingFrequency")
     private final BillingFrequency billingFrequency;
 
     /**
-     * Specifies the interval at which billing occurs for the subscription plan.
+     * Specifies the interval at which billing occurs for the subscription plan or usage dimension.
      *
      * @return the value
      */
@@ -331,9 +316,14 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
         return billingFrequency;
     }
 
-    /** Specifies the interval at which billing occurs for the subscription plan. */
+    /** Specifies the duration of the subscription plan. */
     public enum PlanDuration implements com.oracle.bmc.http.internal.BmcEnum {
+        Monthly("MONTHLY"),
+        Quarterly("QUARTERLY"),
+        SemiAnnual("SEMI_ANNUAL"),
         Annual("ANNUAL"),
+        Biennial("BIENNIAL"),
+        Triennial("TRIENNIAL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -376,12 +366,12 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** Specifies the interval at which billing occurs for the subscription plan. */
+    /** Specifies the duration of the subscription plan. */
     @com.fasterxml.jackson.annotation.JsonProperty("planDuration")
     private final PlanDuration planDuration;
 
     /**
-     * Specifies the interval at which billing occurs for the subscription plan.
+     * Specifies the duration of the subscription plan.
      *
      * @return the value
      */
@@ -400,6 +390,19 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
      */
     public java.util.List<PricingRate> getRates() {
         return rates;
+    }
+
+    /** Metered usage dimensions associated with the pricing plan. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
+    private final java.util.List<UsageDimension> dimensions;
+
+    /**
+     * Metered usage dimensions associated with the pricing plan.
+     *
+     * @return the value
+     */
+    public java.util.List<UsageDimension> getDimensions() {
+        return dimensions;
     }
 
     @Override
@@ -423,6 +426,7 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", billingFrequency=").append(String.valueOf(this.billingFrequency));
         sb.append(", planDuration=").append(String.valueOf(this.planDuration));
         sb.append(", rates=").append(String.valueOf(this.rates));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(")");
         return sb.toString();
     }
@@ -443,6 +447,7 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.billingFrequency, other.billingFrequency)
                 && java.util.Objects.equals(this.planDuration, other.planDuration)
                 && java.util.Objects.equals(this.rates, other.rates)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && super.equals(other);
     }
 
@@ -460,6 +465,7 @@ public final class PricingPlan extends com.oracle.bmc.http.client.internal.Expli
                         + (this.billingFrequency == null ? 43 : this.billingFrequency.hashCode());
         result = (result * PRIME) + (this.planDuration == null ? 43 : this.planDuration.hashCode());
         result = (result * PRIME) + (this.rates == null ? 43 : this.rates.hashCode());
+        result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

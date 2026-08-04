@@ -1747,6 +1747,165 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAutonomousDatabasesInAutonomousContainerDatabaseBackup operation. This iterable will
+     * fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>
+            listAutonomousDatabasesInAutonomousContainerDatabaseBackupResponseIterator(
+                    final ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                            request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest.Builder,
+                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest,
+                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>(
+                new java.util.function.Supplier<
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                .Builder>() {
+                    @Override
+                    public ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest.Builder
+                            get() {
+                        return ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                .builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse,
+                        String>() {
+                    @Override
+                    public String apply(
+                            ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse
+                                    response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                        .Builder>,
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest>() {
+                    @Override
+                    public ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest,
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>() {
+                    @Override
+                    public ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse apply(
+                            ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                    request) {
+                        return client.listAutonomousDatabasesInAutonomousContainerDatabaseBackup(
+                                request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.AutonomousDatabaseInBackupSummary} objects contained in
+     * responses from the listAutonomousDatabasesInAutonomousContainerDatabaseBackup operation. This
+     * iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.AutonomousDatabaseInBackupSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousDatabaseInBackupSummary>
+            listAutonomousDatabasesInAutonomousContainerDatabaseBackupRecordIterator(
+                    final ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                            request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest.Builder,
+                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest,
+                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse,
+                com.oracle.bmc.database.model.AutonomousDatabaseInBackupSummary>(
+                new java.util.function.Supplier<
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                .Builder>() {
+                    @Override
+                    public ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest.Builder
+                            get() {
+                        return ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                .builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse,
+                        String>() {
+                    @Override
+                    public String apply(
+                            ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse
+                                    response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                        .Builder>,
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest>() {
+                    @Override
+                    public ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest,
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>() {
+                    @Override
+                    public ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse apply(
+                            ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest
+                                    request) {
+                        return client.listAutonomousDatabasesInAutonomousContainerDatabaseBackup(
+                                request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousDatabaseInBackupSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.AutonomousDatabaseInBackupSummary>
+                            apply(
+                                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse
+                                            response) {
+                        return response.getAutonomousDatabaseInBackupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listAutonomousDbPreviewVersions operation. This iterable will fetch more data from the server
      * as needed.
      *

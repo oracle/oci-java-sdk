@@ -4,12 +4,13 @@
  */
 package com.oracle.bmc.self.model;
 
-/** Possible values for a metric types. */
+/** Possible values for metric types. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260129")
 public enum MetricType implements com.oracle.bmc.http.internal.BmcEnum {
     OcpuHours("OCPU_HOURS"),
     InstanceHours("INSTANCE_HOURS"),
     CoreHours("CORE_HOURS"),
+    Each("EACH"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

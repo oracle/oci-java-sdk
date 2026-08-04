@@ -141,6 +141,22 @@ public interface Offer extends AutoCloseable {
     ListOffersResponse listOffers(ListOffersRequest request);
 
     /**
+     * Sends an Offer to be reviewed and accepted by the buyer. Validation will be run on the offer
+     * first to verify the offer is valid and contains all required fields.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplaceprivateoffer/SendOfferExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SendOffer API.
+     */
+    SendOfferResponse sendOffer(SendOfferRequest request);
+
+    /**
      * Updates the Offer
      *
      * @param request The request object containing the details to send
@@ -154,6 +170,22 @@ public interface Offer extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOffer API.
      */
     UpdateOfferResponse updateOffer(UpdateOfferRequest request);
+
+    /**
+     * Withdraws an Offer and sends it back into DRAFT state. Offers can only be withdrawn before
+     * they are accepted by the buyer.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplaceprivateoffer/WithdrawOfferExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use WithdrawOffer API.
+     */
+    WithdrawOfferResponse withdrawOffer(WithdrawOfferRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

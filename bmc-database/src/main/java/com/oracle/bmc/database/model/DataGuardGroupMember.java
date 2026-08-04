@@ -39,7 +39,9 @@ public final class DataGuardGroupMember
         "failoverReadiness",
         "failoverReadinessMessage",
         "dataLossExposure",
-        "timeUpdated"
+        "timeUpdated",
+        "managedAutoFailover",
+        "failoverTargets"
     })
     public DataGuardGroupMember(
             String dbSystemId,
@@ -56,7 +58,9 @@ public final class DataGuardGroupMember
             FailoverReadiness failoverReadiness,
             String failoverReadinessMessage,
             String dataLossExposure,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            ManagedAutoFailover managedAutoFailover,
+            java.util.List<String> failoverTargets) {
         super();
         this.dbSystemId = dbSystemId;
         this.databaseId = databaseId;
@@ -73,6 +77,8 @@ public final class DataGuardGroupMember
         this.failoverReadinessMessage = failoverReadinessMessage;
         this.dataLossExposure = dataLossExposure;
         this.timeUpdated = timeUpdated;
+        this.managedAutoFailover = managedAutoFailover;
+        this.failoverTargets = failoverTargets;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -264,12 +270,18 @@ public final class DataGuardGroupMember
             this.__explicitlySet__.add("isActiveDataGuardEnabled");
             return this;
         }
-        /** The switchover readiness status of the Data Guard member. */
+        /**
+         * The switchover readiness status of the Data Guard member. *
+         * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is
+         * healthy but not currently designated to take switchover, when auto failover is enabled.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("switchoverReadiness")
         private SwitchoverReadiness switchoverReadiness;
 
         /**
-         * The switchover readiness status of the Data Guard member.
+         * The switchover readiness status of the Data Guard member. *
+         * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is
+         * healthy but not currently designated to take switchover, when auto failover is enabled.
          *
          * @param switchoverReadiness the value to set
          * @return this builder
@@ -298,12 +310,18 @@ public final class DataGuardGroupMember
             this.__explicitlySet__.add("switchoverReadinessMessage");
             return this;
         }
-        /** The failover readiness status of the Data Guard member. */
+        /**
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET
+         * - Indicates that the respective standby member is healthy but not currently designated to
+         * take failover, when auto failover is enabled.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("failoverReadiness")
         private FailoverReadiness failoverReadiness;
 
         /**
-         * The failover readiness status of the Data Guard member.
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET
+         * - Indicates that the respective standby member is healthy but not currently designated to
+         * take failover, when auto failover is enabled.
          *
          * @param failoverReadiness the value to set
          * @return this builder
@@ -370,6 +388,36 @@ public final class DataGuardGroupMember
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** The state of managed auto failover. */
+        @com.fasterxml.jackson.annotation.JsonProperty("managedAutoFailover")
+        private ManagedAutoFailover managedAutoFailover;
+
+        /**
+         * The state of managed auto failover.
+         *
+         * @param managedAutoFailover the value to set
+         * @return this builder
+         */
+        public Builder managedAutoFailover(ManagedAutoFailover managedAutoFailover) {
+            this.managedAutoFailover = managedAutoFailover;
+            this.__explicitlySet__.add("managedAutoFailover");
+            return this;
+        }
+        /** Specifies the {@code DB_UNIQUE_NAME} of the data guard group member databases. */
+        @com.fasterxml.jackson.annotation.JsonProperty("failoverTargets")
+        private java.util.List<String> failoverTargets;
+
+        /**
+         * Specifies the {@code DB_UNIQUE_NAME} of the data guard group member databases.
+         *
+         * @param failoverTargets the value to set
+         * @return this builder
+         */
+        public Builder failoverTargets(java.util.List<String> failoverTargets) {
+            this.failoverTargets = failoverTargets;
+            this.__explicitlySet__.add("failoverTargets");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -391,7 +439,9 @@ public final class DataGuardGroupMember
                             this.failoverReadiness,
                             this.failoverReadinessMessage,
                             this.dataLossExposure,
-                            this.timeUpdated);
+                            this.timeUpdated,
+                            this.managedAutoFailover,
+                            this.failoverTargets);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -444,6 +494,12 @@ public final class DataGuardGroupMember
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("managedAutoFailover")) {
+                this.managedAutoFailover(model.getManagedAutoFailover());
+            }
+            if (model.wasPropertyExplicitlySet("failoverTargets")) {
+                this.failoverTargets(model.getFailoverTargets());
             }
             return this;
         }
@@ -733,11 +789,16 @@ public final class DataGuardGroupMember
         return isActiveDataGuardEnabled;
     }
 
-    /** The switchover readiness status of the Data Guard member. */
+    /**
+     * The switchover readiness status of the Data Guard member. * HEALTHY_AND_NOT_ROLECHANGE_TARGET
+     * - Indicates that the respective standby member is healthy but not currently designated to
+     * take switchover, when auto failover is enabled.
+     */
     public enum SwitchoverReadiness implements com.oracle.bmc.http.internal.BmcEnum {
         Healthy("HEALTHY"),
         Warning("WARNING"),
         Critical("CRITICAL"),
+        HealthyAndNotRolechangeTarget("HEALTHY_AND_NOT_ROLECHANGE_TARGET"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -780,12 +841,18 @@ public final class DataGuardGroupMember
             return UnknownEnumValue;
         }
     };
-    /** The switchover readiness status of the Data Guard member. */
+    /**
+     * The switchover readiness status of the Data Guard member. * HEALTHY_AND_NOT_ROLECHANGE_TARGET
+     * - Indicates that the respective standby member is healthy but not currently designated to
+     * take switchover, when auto failover is enabled.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("switchoverReadiness")
     private final SwitchoverReadiness switchoverReadiness;
 
     /**
-     * The switchover readiness status of the Data Guard member.
+     * The switchover readiness status of the Data Guard member. * HEALTHY_AND_NOT_ROLECHANGE_TARGET
+     * - Indicates that the respective standby member is healthy but not currently designated to
+     * take switchover, when auto failover is enabled.
      *
      * @return the value
      */
@@ -810,11 +877,16 @@ public final class DataGuardGroupMember
         return switchoverReadinessMessage;
     }
 
-    /** The failover readiness status of the Data Guard member. */
+    /**
+     * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET -
+     * Indicates that the respective standby member is healthy but not currently designated to take
+     * failover, when auto failover is enabled.
+     */
     public enum FailoverReadiness implements com.oracle.bmc.http.internal.BmcEnum {
         Healthy("HEALTHY"),
         Warning("WARNING"),
         Critical("CRITICAL"),
+        HealthyAndNotRolechangeTarget("HEALTHY_AND_NOT_ROLECHANGE_TARGET"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -857,12 +929,18 @@ public final class DataGuardGroupMember
             return UnknownEnumValue;
         }
     };
-    /** The failover readiness status of the Data Guard member. */
+    /**
+     * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET -
+     * Indicates that the respective standby member is healthy but not currently designated to take
+     * failover, when auto failover is enabled.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("failoverReadiness")
     private final FailoverReadiness failoverReadiness;
 
     /**
-     * The failover readiness status of the Data Guard member.
+     * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET -
+     * Indicates that the respective standby member is healthy but not currently designated to take
+     * failover, when auto failover is enabled.
      *
      * @return the value
      */
@@ -919,6 +997,78 @@ public final class DataGuardGroupMember
         return timeUpdated;
     }
 
+    /** The state of managed auto failover. */
+    public enum ManagedAutoFailover implements com.oracle.bmc.http.internal.BmcEnum {
+        Enable("ENABLE"),
+        Disable("DISABLE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagedAutoFailover.class);
+
+        private final String value;
+        private static java.util.Map<String, ManagedAutoFailover> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ManagedAutoFailover v : ManagedAutoFailover.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ManagedAutoFailover(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ManagedAutoFailover create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ManagedAutoFailover', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The state of managed auto failover. */
+    @com.fasterxml.jackson.annotation.JsonProperty("managedAutoFailover")
+    private final ManagedAutoFailover managedAutoFailover;
+
+    /**
+     * The state of managed auto failover.
+     *
+     * @return the value
+     */
+    public ManagedAutoFailover getManagedAutoFailover() {
+        return managedAutoFailover;
+    }
+
+    /** Specifies the {@code DB_UNIQUE_NAME} of the data guard group member databases. */
+    @com.fasterxml.jackson.annotation.JsonProperty("failoverTargets")
+    private final java.util.List<String> failoverTargets;
+
+    /**
+     * Specifies the {@code DB_UNIQUE_NAME} of the data guard group member databases.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getFailoverTargets() {
+        return failoverTargets;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -952,6 +1102,8 @@ public final class DataGuardGroupMember
                 .append(String.valueOf(this.failoverReadinessMessage));
         sb.append(", dataLossExposure=").append(String.valueOf(this.dataLossExposure));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", managedAutoFailover=").append(String.valueOf(this.managedAutoFailover));
+        sb.append(", failoverTargets=").append(String.valueOf(this.failoverTargets));
         sb.append(")");
         return sb.toString();
     }
@@ -984,6 +1136,8 @@ public final class DataGuardGroupMember
                         this.failoverReadinessMessage, other.failoverReadinessMessage)
                 && java.util.Objects.equals(this.dataLossExposure, other.dataLossExposure)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.managedAutoFailover, other.managedAutoFailover)
+                && java.util.Objects.equals(this.failoverTargets, other.failoverTargets)
                 && super.equals(other);
     }
 
@@ -1032,6 +1186,14 @@ public final class DataGuardGroupMember
                 (result * PRIME)
                         + (this.dataLossExposure == null ? 43 : this.dataLossExposure.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedAutoFailover == null
+                                ? 43
+                                : this.managedAutoFailover.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.failoverTargets == null ? 43 : this.failoverTargets.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

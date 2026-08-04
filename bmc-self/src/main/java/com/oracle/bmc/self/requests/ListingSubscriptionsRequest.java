@@ -35,7 +35,6 @@ public class ListingSubscriptionsRequest
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
-        SelfTokenId("selfTokenId"),
         ProductId("productId"),
         ;
 

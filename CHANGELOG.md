@@ -3,9 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## Unreleased
-### Breaking Changes
-- Apache configurator add-ons now propagate `SSLInitializationException` when TLS initialization fails instead of silently registering a plaintext socket factory for `https`. Applications that require plaintext transport must explicitly provide a connection manager; see [PlainConnectionSocketFactoryExample.java](bmc-other-examples/bmc-jersey-examples/src/main/java/PlainConnectionSocketFactoryExample.java) and [PlainConnectionSocketFactoryExample.java](bmc-other-examples/bmc-jersey3-examples/src/main/java/PlainConnectionSocketFactoryExample.java) (Jersey 3).
+
+## 3.94.0 - 2026-08-04
+### Added 
+- Support for cloning autonomous container databases from backups by timestamp and retrieving backup details in the Database service 
+- Support for managing automatic failover for existing data guard configurations with multiple standby databases in the Database service 
+- Support for creating and managing private-offer quotes and quote attachments in the Marketplace Private Offer service 
+- Support for usage-based SaaS listings, subscription usage reporting, and subscription cancellation in the Service Enablement Lifecycle Framework service 
+- Support for network security group IDs on private endpoints during open search cluster updates in the OpenSearch service 
+- Support for database tools MCP server, DB API gateway configuration, and IAM authentication APIs in the Database Tools service    
+
+### Breaking Changes 
+- The return type of method `public com.oracle.bmc.self.model.PricingPlan$BillingFrequency getBillingFrequency()` has been changed to `com.oracle.bmc.self.model.BillingFrequency` in the model `com.oracle.bmc.self.model.PricingPlan` in the Service Enablement Lifecycle Framework service 
+- The return type of method `public com.oracle.bmc.self.model.BillingDetails getBillingDetails()` has been changed to `java.util.List` in the model `com.oracle.bmc.self.model.SubscriptionDetails` in the Service Enablement Lifecycle Framework service 
+- Class `com.oracle.bmc.self.model.PricingPlan$BillingFrequency` has been removed from the Service Enablement Lifecycle Framework service 
+- Enum value `SelfTokenId` has been removed from the enum class `SortBy` in request classes `com.oracle.bmc.self.requests.ListSubscriptionsRequest` and `com.oracle.bmc.self.requests.ListingSubscriptionsRequest` in the Service Enablement Lifecycle Framework service
 
 ## 3.93.0 - 2026-07-28
 ### Added 
@@ -28,6 +40,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Breaking Changes 
 - The field `compartmentId` has been made required in the requests `ListApiMetadataByEntityTypesRequest`, `ListApiMetadataRequest`, `ListPrivilegedApiControlsRequest`, `ListPrivilegedApiRequestsRequest`, and `ListWorkRequestsRequest` in the Oracle API Access Control service 
 - The field `compartmentId` has been made required in the model `CreatePrivilegedApiRequestDetails` in the Oracle API Access Control service
+- Apache configurator add-ons now propagate `SSLInitializationException` when TLS initialization fails instead of silently registering a plaintext socket factory for `https`. Applications that require plaintext transport must explicitly provide a connection manager; see [PlainConnectionSocketFactoryExample.java](bmc-other-examples/bmc-jersey-examples/src/main/java/PlainConnectionSocketFactoryExample.java) and [PlainConnectionSocketFactoryExample.java](bmc-other-examples/bmc-jersey3-examples/src/main/java/PlainConnectionSocketFactoryExample.java) (Jersey 3)
 
 ## 3.92.1 - 2026-07-21
 ### Added 

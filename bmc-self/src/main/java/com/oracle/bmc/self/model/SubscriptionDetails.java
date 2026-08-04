@@ -36,7 +36,7 @@ public final class SubscriptionDetails
             String partnerRegistrationUrl,
             String currency,
             Float amount,
-            BillingDetails billingDetails,
+            java.util.List<BillingDetails> billingDetails,
             Boolean isAutoRenew) {
         super();
         this.pricingPlan = pricingPlan;
@@ -103,11 +103,17 @@ public final class SubscriptionDetails
             this.__explicitlySet__.add("amount");
             return this;
         }
-
+        /** Billing details associated with the subscription plan and its usage dimensions. */
         @com.fasterxml.jackson.annotation.JsonProperty("billingDetails")
-        private BillingDetails billingDetails;
+        private java.util.List<BillingDetails> billingDetails;
 
-        public Builder billingDetails(BillingDetails billingDetails) {
+        /**
+         * Billing details associated with the subscription plan and its usage dimensions.
+         *
+         * @param billingDetails the value to set
+         * @return this builder
+         */
+        public Builder billingDetails(java.util.List<BillingDetails> billingDetails) {
             this.billingDetails = billingDetails;
             this.__explicitlySet__.add("billingDetails");
             return this;
@@ -225,10 +231,16 @@ public final class SubscriptionDetails
         return amount;
     }
 
+    /** Billing details associated with the subscription plan and its usage dimensions. */
     @com.fasterxml.jackson.annotation.JsonProperty("billingDetails")
-    private final BillingDetails billingDetails;
+    private final java.util.List<BillingDetails> billingDetails;
 
-    public BillingDetails getBillingDetails() {
+    /**
+     * Billing details associated with the subscription plan and its usage dimensions.
+     *
+     * @return the value
+     */
+    public java.util.List<BillingDetails> getBillingDetails() {
         return billingDetails;
     }
 
