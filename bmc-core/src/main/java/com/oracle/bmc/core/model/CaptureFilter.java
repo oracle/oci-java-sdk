@@ -34,6 +34,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         "id",
         "lifecycleState",
         "filterType",
+        "systemTags",
         "timeCreated",
         "vtapCaptureFilterRules",
         "flowLogCaptureFilterRules"
@@ -46,6 +47,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
             String id,
             LifecycleState lifecycleState,
             FilterType filterType,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             java.util.List<VtapCaptureFilterRuleDetails> vtapCaptureFilterRules,
             java.util.List<FlowLogCaptureFilterRuleDetails> flowLogCaptureFilterRules) {
@@ -57,6 +59,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.filterType = filterType;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vtapCaptureFilterRules = vtapCaptureFilterRules;
         this.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
@@ -203,6 +206,25 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the capture filter was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -271,6 +293,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
                             this.id,
                             this.lifecycleState,
                             this.filterType,
+                            this.systemTags,
                             this.timeCreated,
                             this.vtapCaptureFilterRules,
                             this.flowLogCaptureFilterRules);
@@ -302,6 +325,9 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("filterType")) {
                 this.filterType(model.getFilterType());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -544,6 +570,23 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the capture filter was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -612,6 +655,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", filterType=").append(String.valueOf(this.filterType));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vtapCaptureFilterRules=").append(String.valueOf(this.vtapCaptureFilterRules));
         sb.append(", flowLogCaptureFilterRules=")
@@ -637,6 +681,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.filterType, other.filterType)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(
                         this.vtapCaptureFilterRules, other.vtapCaptureFilterRules)
@@ -660,6 +705,7 @@ public final class CaptureFilter extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.filterType == null ? 43 : this.filterType.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)
