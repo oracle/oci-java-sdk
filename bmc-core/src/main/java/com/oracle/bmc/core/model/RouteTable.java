@@ -36,6 +36,7 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
         "id",
         "lifecycleState",
         "routeRules",
+        "systemTags",
         "timeCreated",
         "vcnId"
     })
@@ -47,6 +48,7 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
             String id,
             LifecycleState lifecycleState,
             java.util.List<RouteRule> routeRules,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String vcnId) {
         super();
@@ -57,6 +59,7 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.routeRules = routeRules;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
     }
@@ -202,6 +205,25 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the route table was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -257,6 +279,7 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
                             this.id,
                             this.lifecycleState,
                             this.routeRules,
+                            this.systemTags,
                             this.timeCreated,
                             this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -287,6 +310,9 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("routeRules")) {
                 this.routeRules(model.getRouteRules());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -479,6 +505,23 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the route table was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -538,6 +581,7 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", routeRules=").append(String.valueOf(this.routeRules));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(")");
@@ -561,6 +605,7 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.routeRules, other.routeRules)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && super.equals(other);
@@ -581,6 +626,7 @@ public final class RouteTable extends com.oracle.bmc.http.client.internal.Explic
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.routeRules == null ? 43 : this.routeRules.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + super.hashCode();

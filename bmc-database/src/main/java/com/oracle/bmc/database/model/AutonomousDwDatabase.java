@@ -159,6 +159,10 @@ public final class AutonomousDwDatabase
         "netServicesArchitecture",
         "availabilityDomain",
         "clusterPlacementGroupId",
+        "adScheduledForUpdate",
+        "timeEarliestAvailableAdUpdate",
+        "timeLatestAvailableAdUpdate",
+        "timeScheduledAdUpdate",
         "cloneTableSpaceList",
         "cloneType",
         "additionalAttributes",
@@ -300,6 +304,10 @@ public final class AutonomousDwDatabase
             NetServicesArchitecture netServicesArchitecture,
             String availabilityDomain,
             String clusterPlacementGroupId,
+            String adScheduledForUpdate,
+            java.util.Date timeEarliestAvailableAdUpdate,
+            java.util.Date timeLatestAvailableAdUpdate,
+            java.util.Date timeScheduledAdUpdate,
             java.util.List<Integer> cloneTableSpaceList,
             CloneType cloneType,
             java.util.Map<String, String> additionalAttributes,
@@ -440,6 +448,10 @@ public final class AutonomousDwDatabase
         this.netServicesArchitecture = netServicesArchitecture;
         this.availabilityDomain = availabilityDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.adScheduledForUpdate = adScheduledForUpdate;
+        this.timeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
+        this.timeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
+        this.timeScheduledAdUpdate = timeScheduledAdUpdate;
         this.cloneTableSpaceList = cloneTableSpaceList;
         this.cloneType = cloneType;
         this.additionalAttributes = additionalAttributes;
@@ -3304,6 +3316,78 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
+        /** The Availability Domain which is planned for Scheduled Update */
+        @com.fasterxml.jackson.annotation.JsonProperty("adScheduledForUpdate")
+        private String adScheduledForUpdate;
+
+        /**
+         * The Availability Domain which is planned for Scheduled Update
+         *
+         * @param adScheduledForUpdate the value to set
+         * @return this builder
+         */
+        public Builder adScheduledForUpdate(String adScheduledForUpdate) {
+            this.adScheduledForUpdate = adScheduledForUpdate;
+            this.__explicitlySet__.add("adScheduledForUpdate");
+            return this;
+        }
+        /**
+         * The earliest date and time to which you can schedule an Autonomous Database availability
+         * domain update.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestAvailableAdUpdate")
+        private java.util.Date timeEarliestAvailableAdUpdate;
+
+        /**
+         * The earliest date and time to which you can schedule an Autonomous Database availability
+         * domain update.
+         *
+         * @param timeEarliestAvailableAdUpdate the value to set
+         * @return this builder
+         */
+        public Builder timeEarliestAvailableAdUpdate(java.util.Date timeEarliestAvailableAdUpdate) {
+            this.timeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
+            this.__explicitlySet__.add("timeEarliestAvailableAdUpdate");
+            return this;
+        }
+        /**
+         * The latest date and time to which you can schedule an Autonomous Database availability
+         * domain update.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLatestAvailableAdUpdate")
+        private java.util.Date timeLatestAvailableAdUpdate;
+
+        /**
+         * The latest date and time to which you can schedule an Autonomous Database availability
+         * domain update.
+         *
+         * @param timeLatestAvailableAdUpdate the value to set
+         * @return this builder
+         */
+        public Builder timeLatestAvailableAdUpdate(java.util.Date timeLatestAvailableAdUpdate) {
+            this.timeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
+            this.__explicitlySet__.add("timeLatestAvailableAdUpdate");
+            return this;
+        }
+        /**
+         * The date and time to which the Autonomous Database availability domain update is
+         * scheduled.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledAdUpdate")
+        private java.util.Date timeScheduledAdUpdate;
+
+        /**
+         * The date and time to which the Autonomous Database availability domain update is
+         * scheduled.
+         *
+         * @param timeScheduledAdUpdate the value to set
+         * @return this builder
+         */
+        public Builder timeScheduledAdUpdate(java.util.Date timeScheduledAdUpdate) {
+            this.timeScheduledAdUpdate = timeScheduledAdUpdate;
+            this.__explicitlySet__.add("timeScheduledAdUpdate");
+            return this;
+        }
         /**
          * A list of the source Autonomous AI Database's table space number(s) used to create this
          * partial clone from the backup.
@@ -3520,6 +3604,10 @@ public final class AutonomousDwDatabase
                             this.netServicesArchitecture,
                             this.availabilityDomain,
                             this.clusterPlacementGroupId,
+                            this.adScheduledForUpdate,
+                            this.timeEarliestAvailableAdUpdate,
+                            this.timeLatestAvailableAdUpdate,
+                            this.timeScheduledAdUpdate,
                             this.cloneTableSpaceList,
                             this.cloneType,
                             this.additionalAttributes,
@@ -3944,6 +4032,18 @@ public final class AutonomousDwDatabase
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("adScheduledForUpdate")) {
+                this.adScheduledForUpdate(model.getAdScheduledForUpdate());
+            }
+            if (model.wasPropertyExplicitlySet("timeEarliestAvailableAdUpdate")) {
+                this.timeEarliestAvailableAdUpdate(model.getTimeEarliestAvailableAdUpdate());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestAvailableAdUpdate")) {
+                this.timeLatestAvailableAdUpdate(model.getTimeLatestAvailableAdUpdate());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledAdUpdate")) {
+                this.timeScheduledAdUpdate(model.getTimeScheduledAdUpdate());
             }
             if (model.wasPropertyExplicitlySet("cloneTableSpaceList")) {
                 this.cloneTableSpaceList(model.getCloneTableSpaceList());
@@ -7207,6 +7307,68 @@ public final class AutonomousDwDatabase
         return clusterPlacementGroupId;
     }
 
+    /** The Availability Domain which is planned for Scheduled Update */
+    @com.fasterxml.jackson.annotation.JsonProperty("adScheduledForUpdate")
+    private final String adScheduledForUpdate;
+
+    /**
+     * The Availability Domain which is planned for Scheduled Update
+     *
+     * @return the value
+     */
+    public String getAdScheduledForUpdate() {
+        return adScheduledForUpdate;
+    }
+
+    /**
+     * The earliest date and time to which you can schedule an Autonomous Database availability
+     * domain update.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestAvailableAdUpdate")
+    private final java.util.Date timeEarliestAvailableAdUpdate;
+
+    /**
+     * The earliest date and time to which you can schedule an Autonomous Database availability
+     * domain update.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeEarliestAvailableAdUpdate() {
+        return timeEarliestAvailableAdUpdate;
+    }
+
+    /**
+     * The latest date and time to which you can schedule an Autonomous Database availability domain
+     * update.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLatestAvailableAdUpdate")
+    private final java.util.Date timeLatestAvailableAdUpdate;
+
+    /**
+     * The latest date and time to which you can schedule an Autonomous Database availability domain
+     * update.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeLatestAvailableAdUpdate() {
+        return timeLatestAvailableAdUpdate;
+    }
+
+    /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledAdUpdate")
+    private final java.util.Date timeScheduledAdUpdate;
+
+    /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeScheduledAdUpdate() {
+        return timeScheduledAdUpdate;
+    }
+
     /**
      * A list of the source Autonomous AI Database's table space number(s) used to create this
      * partial clone from the backup.
@@ -7503,6 +7665,12 @@ public final class AutonomousDwDatabase
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", adScheduledForUpdate=").append(String.valueOf(this.adScheduledForUpdate));
+        sb.append(", timeEarliestAvailableAdUpdate=")
+                .append(String.valueOf(this.timeEarliestAvailableAdUpdate));
+        sb.append(", timeLatestAvailableAdUpdate=")
+                .append(String.valueOf(this.timeLatestAvailableAdUpdate));
+        sb.append(", timeScheduledAdUpdate=").append(String.valueOf(this.timeScheduledAdUpdate));
         sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
@@ -7716,6 +7884,12 @@ public final class AutonomousDwDatabase
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.adScheduledForUpdate, other.adScheduledForUpdate)
+                && java.util.Objects.equals(
+                        this.timeEarliestAvailableAdUpdate, other.timeEarliestAvailableAdUpdate)
+                && java.util.Objects.equals(
+                        this.timeLatestAvailableAdUpdate, other.timeLatestAvailableAdUpdate)
+                && java.util.Objects.equals(this.timeScheduledAdUpdate, other.timeScheduledAdUpdate)
                 && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && java.util.Objects.equals(this.cloneType, other.cloneType)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
@@ -8217,6 +8391,26 @@ public final class AutonomousDwDatabase
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adScheduledForUpdate == null
+                                ? 43
+                                : this.adScheduledForUpdate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeEarliestAvailableAdUpdate == null
+                                ? 43
+                                : this.timeEarliestAvailableAdUpdate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLatestAvailableAdUpdate == null
+                                ? 43
+                                : this.timeLatestAvailableAdUpdate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledAdUpdate == null
+                                ? 43
+                                : this.timeScheduledAdUpdate.hashCode());
         result =
                 (result * PRIME)
                         + (this.cloneTableSpaceList == null

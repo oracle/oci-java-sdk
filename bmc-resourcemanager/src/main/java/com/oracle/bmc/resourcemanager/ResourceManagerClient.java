@@ -1094,6 +1094,79 @@ public class ResourceManagerClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetWorkRequestLogEntriesResponse getWorkRequestLogEntries(
+            GetWorkRequestLogEntriesRequest request) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestLogEntriesResponse::builder)
+                .logger(LOG, "getWorkRequestLogEntries")
+                .serviceDetails(
+                        "ResourceManager",
+                        "GetWorkRequestLogEntries",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequestLogEntries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestLogEntriesRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logEntries")
+                .appendListQueryParam(
+                        "type",
+                        request.getType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam(
+                        "levelGreaterThanOrEqualTo", request.getLevelGreaterThanOrEqualTo())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam(
+                        "timestampGreaterThanOrEqualTo", request.getTimestampGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timestampLessThanOrEqualTo", request.getTimestampLessThanOrEqualTo())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.resourcemanager.model.LogEntryCollection.class,
+                        GetWorkRequestLogEntriesResponse.Builder::logEntryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestLogEntriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetWorkRequestLogEntriesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetWorkRequestLogEntriesContentResponse getWorkRequestLogEntriesContent(
+            GetWorkRequestLogEntriesContentRequest request) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestLogEntriesContentResponse::builder)
+                .logger(LOG, "getWorkRequestLogEntriesContent")
+                .serviceDetails(
+                        "ResourceManager",
+                        "GetWorkRequestLogEntriesContent",
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequestLogEntriesContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestLogEntriesContentRequest::builder)
+                .basePath("/20180917")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logEntries")
+                .appendPathParam("content")
+                .accept("text/plain; charset=utf-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(String.class, GetWorkRequestLogEntriesContentResponse.Builder::value)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetWorkRequestLogEntriesContentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListConfigurationSourceProvidersResponse listConfigurationSourceProviders(
             ListConfigurationSourceProvidersRequest request) {
 

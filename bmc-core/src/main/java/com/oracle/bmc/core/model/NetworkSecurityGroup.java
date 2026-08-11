@@ -70,6 +70,7 @@ public final class NetworkSecurityGroup
         "freeformTags",
         "id",
         "lifecycleState",
+        "systemTags",
         "timeCreated",
         "vcnId"
     })
@@ -80,6 +81,7 @@ public final class NetworkSecurityGroup
             java.util.Map<String, String> freeformTags,
             String id,
             LifecycleState lifecycleState,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String vcnId) {
         super();
@@ -89,6 +91,7 @@ public final class NetworkSecurityGroup
         this.freeformTags = freeformTags;
         this.id = id;
         this.lifecycleState = lifecycleState;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
     }
@@ -219,6 +222,25 @@ public final class NetworkSecurityGroup
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the network security group was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -273,6 +295,7 @@ public final class NetworkSecurityGroup
                             this.freeformTags,
                             this.id,
                             this.lifecycleState,
+                            this.systemTags,
                             this.timeCreated,
                             this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -300,6 +323,9 @@ public final class NetworkSecurityGroup
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -479,6 +505,23 @@ public final class NetworkSecurityGroup
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the network security group was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -537,6 +580,7 @@ public final class NetworkSecurityGroup
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(")");
@@ -559,6 +603,7 @@ public final class NetworkSecurityGroup
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && super.equals(other);
@@ -578,6 +623,7 @@ public final class NetworkSecurityGroup
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + super.hashCode();

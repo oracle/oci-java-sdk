@@ -41,6 +41,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "nsgIds",
         "vlanTag",
         "routeTableId",
+        "systemTags",
         "timeCreated",
         "vcnId"
     })
@@ -56,6 +57,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
             java.util.List<String> nsgIds,
             Integer vlanTag,
             String routeTableId,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String vcnId) {
         super();
@@ -70,6 +72,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.nsgIds = nsgIds;
         this.vlanTag = vlanTag;
         this.routeTableId = routeTableId;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
     }
@@ -307,6 +310,25 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the VLAN was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -366,6 +388,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.nsgIds,
                             this.vlanTag,
                             this.routeTableId,
+                            this.systemTags,
                             this.timeCreated,
                             this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -408,6 +431,9 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -685,6 +711,23 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the VLAN was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -748,6 +791,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", vlanTag=").append(String.valueOf(this.vlanTag));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(")");
@@ -775,6 +819,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.vlanTag, other.vlanTag)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && super.equals(other);
@@ -803,6 +848,7 @@ public final class Vlan extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.vlanTag == null ? 43 : this.vlanTag.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + super.hashCode();
