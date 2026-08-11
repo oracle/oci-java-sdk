@@ -45,7 +45,6 @@ public class ListingSubscriptionsRequest
     public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
-        SelfTokenId("selfTokenId"),
         ProductId("productId"),
         ;
 

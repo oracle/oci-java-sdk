@@ -32,7 +32,7 @@ public class ListingSubscriptionsConverter {
         Validate.notNull(request.getListingId(), "listingId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20260129").path("partner").path("subscriptions");
+                client.getBaseTarget().path("/20260129").path("partners").path("subscriptions");
 
         target =
                 target.queryParam(

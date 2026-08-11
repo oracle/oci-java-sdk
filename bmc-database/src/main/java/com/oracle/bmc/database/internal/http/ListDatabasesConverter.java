@@ -104,6 +104,22 @@ public class ListDatabasesConverter {
                                     request.getDbName()));
         }
 
+        if (request.getManagedAutoFailover() != null) {
+            target =
+                    target.queryParam(
+                            "managedAutoFailover",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getManagedAutoFailover().getValue()));
+        }
+
+        if (request.getFailoverTargets() != null) {
+            target =
+                    target.queryParam(
+                            "failoverTargets",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFailoverTargets().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

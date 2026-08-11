@@ -230,6 +230,19 @@ public class ListAutonomousDatabaseBackupsRequest
         return infrastructureType;
     }
     /**
+     * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     *
+     */
+    private Boolean isPitrEligible;
+
+    /**
+     * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     *
+     */
+    public Boolean getIsPitrEligible() {
+        return isPitrEligible;
+    }
+    /**
      * Unique identifier for the request.
      *
      */
@@ -443,6 +456,23 @@ public class ListAutonomousDatabaseBackupsRequest
         }
 
         /**
+         * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+         *
+         */
+        private Boolean isPitrEligible = null;
+
+        /**
+         * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+         *
+         * @param isPitrEligible the value to set
+         * @return this builder instance
+         */
+        public Builder isPitrEligible(Boolean isPitrEligible) {
+            this.isPitrEligible = isPitrEligible;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          *
          */
@@ -499,6 +529,7 @@ public class ListAutonomousDatabaseBackupsRequest
             backupDestinationId(o.getBackupDestinationId());
             keyStoreId(o.getKeyStoreId());
             infrastructureType(o.getInfrastructureType());
+            isPitrEligible(o.getIsPitrEligible());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -545,9 +576,10 @@ public class ListAutonomousDatabaseBackupsRequest
             request.backupDestinationId = backupDestinationId;
             request.keyStoreId = keyStoreId;
             request.infrastructureType = infrastructureType;
+            request.isPitrEligible = isPitrEligible;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAutonomousDatabaseBackupsRequest(autonomousDatabaseId, compartmentId, limit, page, sortBy, sortOrder, lifecycleState, displayName, type, backupDestinationId, keyStoreId, infrastructureType, opcRequestId);
+            // new ListAutonomousDatabaseBackupsRequest(autonomousDatabaseId, compartmentId, limit, page, sortBy, sortOrder, lifecycleState, displayName, type, backupDestinationId, keyStoreId, infrastructureType, isPitrEligible, opcRequestId);
         }
     }
 
@@ -569,6 +601,7 @@ public class ListAutonomousDatabaseBackupsRequest
                 .backupDestinationId(backupDestinationId)
                 .keyStoreId(keyStoreId)
                 .infrastructureType(infrastructureType)
+                .isPitrEligible(isPitrEligible)
                 .opcRequestId(opcRequestId);
     }
 
@@ -597,6 +630,7 @@ public class ListAutonomousDatabaseBackupsRequest
         sb.append(",backupDestinationId=").append(String.valueOf(this.backupDestinationId));
         sb.append(",keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(",infrastructureType=").append(String.valueOf(this.infrastructureType));
+        sb.append(",isPitrEligible=").append(String.valueOf(this.isPitrEligible));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -625,6 +659,7 @@ public class ListAutonomousDatabaseBackupsRequest
                 && java.util.Objects.equals(this.backupDestinationId, other.backupDestinationId)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
+                && java.util.Objects.equals(this.isPitrEligible, other.isPitrEligible)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -660,6 +695,9 @@ public class ListAutonomousDatabaseBackupsRequest
                         + (this.infrastructureType == null
                                 ? 43
                                 : this.infrastructureType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPitrEligible == null ? 43 : this.isPitrEligible.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

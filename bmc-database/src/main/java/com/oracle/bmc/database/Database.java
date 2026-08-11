@@ -2619,6 +2619,20 @@ public interface Database extends AutoCloseable {
             GetAutonomousContainerDatabaseRequest request);
 
     /**
+     * Gets information about the specified Autonomous Container Database backup.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutonomousContainerDatabaseBackup API.
+     */
+    GetAutonomousContainerDatabaseBackupResponse getAutonomousContainerDatabaseBackup(
+            GetAutonomousContainerDatabaseBackupRequest request);
+
+    /**
      * **Deprecated.** Use the {@link #getAutonomousContainerDatabase(GetAutonomousContainerDatabaseRequest) getAutonomousContainerDatabase} operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      *
      * @param request The request object containing the details to send
@@ -3921,6 +3935,21 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabases API.
      */
     ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
+
+    /**
+     * Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container's compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasesInAutonomousContainerDatabaseBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAutonomousDatabasesInAutonomousContainerDatabaseBackup API.
+     */
+    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse
+            listAutonomousDatabasesInAutonomousContainerDatabaseBackup(
+                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest request);
 
     /**
      * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for

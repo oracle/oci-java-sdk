@@ -411,6 +411,57 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
             this.__explicitlySet__.add("autonomousContainerDatabaseBackupId");
             return this;
         }
+        /**
+         * The Autonomous AI Database clone type.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+        private CloneType cloneType;
+
+        /**
+         * The Autonomous AI Database clone type.
+         * @param cloneType the value to set
+         * @return this builder
+         **/
+        public Builder cloneType(CloneType cloneType) {
+            this.cloneType = cloneType;
+            this.__explicitlySet__.add("cloneType");
+            return this;
+        }
+        /**
+         * A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabasesToClone")
+        private java.util.List<String> autonomousDatabasesToClone;
+
+        /**
+         * A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+         *
+         * @param autonomousDatabasesToClone the value to set
+         * @return this builder
+         **/
+        public Builder autonomousDatabasesToClone(
+                java.util.List<String> autonomousDatabasesToClone) {
+            this.autonomousDatabasesToClone = autonomousDatabasesToClone;
+            this.__explicitlySet__.add("autonomousDatabasesToClone");
+            return this;
+        }
+        /**
+         * The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneBandWidth")
+        private CloneBandWidth cloneBandWidth;
+
+        /**
+         * The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+         * @param cloneBandWidth the value to set
+         * @return this builder
+         **/
+        public Builder cloneBandWidth(CloneBandWidth cloneBandWidth) {
+            this.cloneBandWidth = cloneBandWidth;
+            this.__explicitlySet__.add("cloneBandWidth");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -457,7 +508,10 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
                             this.vmFailoverReservation,
                             this.distributionAffinity,
                             this.netServicesArchitecture,
-                            this.autonomousContainerDatabaseBackupId);
+                            this.autonomousContainerDatabaseBackupId,
+                            this.cloneType,
+                            this.autonomousDatabasesToClone,
+                            this.cloneBandWidth);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -593,6 +647,15 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
                 this.autonomousContainerDatabaseBackupId(
                         model.getAutonomousContainerDatabaseBackupId());
             }
+            if (model.wasPropertyExplicitlySet("cloneType")) {
+                this.cloneType(model.getCloneType());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDatabasesToClone")) {
+                this.autonomousDatabasesToClone(model.getAutonomousDatabasesToClone());
+            }
+            if (model.wasPropertyExplicitlySet("cloneBandWidth")) {
+                this.cloneBandWidth(model.getCloneBandWidth());
+            }
             return this;
         }
     }
@@ -649,7 +712,10 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
             Integer vmFailoverReservation,
             DistributionAffinity distributionAffinity,
             NetServicesArchitecture netServicesArchitecture,
-            String autonomousContainerDatabaseBackupId) {
+            String autonomousContainerDatabaseBackupId,
+            CloneType cloneType,
+            java.util.List<String> autonomousDatabasesToClone,
+            CloneBandWidth cloneBandWidth) {
         super(
                 customerContacts,
                 okvEndPointGroupName,
@@ -691,6 +757,9 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
                 distributionAffinity,
                 netServicesArchitecture);
         this.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
+        this.cloneType = cloneType;
+        this.autonomousDatabasesToClone = autonomousDatabasesToClone;
+        this.cloneBandWidth = cloneBandWidth;
     }
 
     /**
@@ -705,6 +774,122 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
      **/
     public String getAutonomousContainerDatabaseBackupId() {
         return autonomousContainerDatabaseBackupId;
+    }
+
+    /**
+     * The Autonomous AI Database clone type.
+     **/
+    public enum CloneType {
+        Full("FULL"),
+        Metadata("METADATA"),
+        Partial("PARTIAL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CloneType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneType v : CloneType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CloneType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CloneType: " + key);
+        }
+    };
+    /**
+     * The Autonomous AI Database clone type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+    private final CloneType cloneType;
+
+    /**
+     * The Autonomous AI Database clone type.
+     * @return the value
+     **/
+    public CloneType getCloneType() {
+        return cloneType;
+    }
+
+    /**
+     * A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabasesToClone")
+    private final java.util.List<String> autonomousDatabasesToClone;
+
+    /**
+     * A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getAutonomousDatabasesToClone() {
+        return autonomousDatabasesToClone;
+    }
+
+    /**
+     * The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+     **/
+    public enum CloneBandWidth {
+        Slow("SLOW"),
+        Medium("MEDIUM"),
+        Fast("FAST"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CloneBandWidth> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneBandWidth v : CloneBandWidth.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CloneBandWidth(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneBandWidth create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CloneBandWidth: " + key);
+        }
+    };
+    /**
+     * The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneBandWidth")
+    private final CloneBandWidth cloneBandWidth;
+
+    /**
+     * The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+     * @return the value
+     **/
+    public CloneBandWidth getCloneBandWidth() {
+        return cloneBandWidth;
     }
 
     @Override
@@ -723,6 +908,10 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", autonomousContainerDatabaseBackupId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseBackupId));
+        sb.append(", cloneType=").append(String.valueOf(this.cloneType));
+        sb.append(", autonomousDatabasesToClone=")
+                .append(String.valueOf(this.autonomousDatabasesToClone));
+        sb.append(", cloneBandWidth=").append(String.valueOf(this.cloneBandWidth));
         sb.append(")");
         return sb.toString();
     }
@@ -741,6 +930,10 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
         return java.util.Objects.equals(
                         this.autonomousContainerDatabaseBackupId,
                         other.autonomousContainerDatabaseBackupId)
+                && java.util.Objects.equals(this.cloneType, other.cloneType)
+                && java.util.Objects.equals(
+                        this.autonomousDatabasesToClone, other.autonomousDatabasesToClone)
+                && java.util.Objects.equals(this.cloneBandWidth, other.cloneBandWidth)
                 && super.equals(other);
     }
 
@@ -753,6 +946,15 @@ public final class CreateAutonomousContainerDatabaseFromBackupDetails
                         + (this.autonomousContainerDatabaseBackupId == null
                                 ? 43
                                 : this.autonomousContainerDatabaseBackupId.hashCode());
+        result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDatabasesToClone == null
+                                ? 43
+                                : this.autonomousDatabasesToClone.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneBandWidth == null ? 43 : this.cloneBandWidth.hashCode());
         return result;
     }
 }

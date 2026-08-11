@@ -31,6 +31,7 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         "resources",
         "timeStarts",
         "timeEnds",
+        "localTimeZone",
         "timeCreated",
         "timeUpdated",
         "timeLastRun",
@@ -53,6 +54,7 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
             java.util.List<Resource> resources,
             java.util.Date timeStarts,
             java.util.Date timeEnds,
+            String localTimeZone,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeLastRun,
@@ -74,6 +76,7 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         this.resources = resources;
         this.timeStarts = timeStarts;
         this.timeEnds = timeEnds;
+        this.localTimeZone = localTimeZone;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeLastRun = timeLastRun;
@@ -277,6 +280,26 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         public Builder timeEnds(java.util.Date timeEnds) {
             this.timeEnds = timeEnds;
             this.__explicitlySet__.add("timeEnds");
+            return this;
+        }
+        /**
+         * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+         * This determines the timezone context for evaluating the recurrence expression.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("localTimeZone")
+        private String localTimeZone;
+
+        /**
+         * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+         * This determines the timezone context for evaluating the recurrence expression.
+         *
+         * @param localTimeZone the value to set
+         * @return this builder
+         **/
+        public Builder localTimeZone(String localTimeZone) {
+            this.localTimeZone = localTimeZone;
+            this.__explicitlySet__.add("localTimeZone");
             return this;
         }
         /**
@@ -488,6 +511,7 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
                             this.resources,
                             this.timeStarts,
                             this.timeEnds,
+                            this.localTimeZone,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeLastRun,
@@ -537,6 +561,9 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("timeEnds")) {
                 this.timeEnds(model.getTimeEnds());
+            }
+            if (model.wasPropertyExplicitlySet("localTimeZone")) {
+                this.localTimeZone(model.getLocalTimeZone());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -847,6 +874,24 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+     * This determines the timezone context for evaluating the recurrence expression.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("localTimeZone")
+    private final String localTimeZone;
+
+    /**
+     * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+     * This determines the timezone context for evaluating the recurrence expression.
+     *
+     * @return the value
+     **/
+    public String getLocalTimeZone() {
+        return localTimeZone;
+    }
+
+    /**
      * This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -1043,6 +1088,7 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(", timeStarts=").append(String.valueOf(this.timeStarts));
         sb.append(", timeEnds=").append(String.valueOf(this.timeEnds));
+        sb.append(", localTimeZone=").append(String.valueOf(this.localTimeZone));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeLastRun=").append(String.valueOf(this.timeLastRun));
@@ -1077,6 +1123,7 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.resources, other.resources)
                 && java.util.Objects.equals(this.timeStarts, other.timeStarts)
                 && java.util.Objects.equals(this.timeEnds, other.timeEnds)
+                && java.util.Objects.equals(this.localTimeZone, other.localTimeZone)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeLastRun, other.timeLastRun)
@@ -1112,6 +1159,9 @@ public final class ScheduleSummary extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
         result = (result * PRIME) + (this.timeStarts == null ? 43 : this.timeStarts.hashCode());
         result = (result * PRIME) + (this.timeEnds == null ? 43 : this.timeEnds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localTimeZone == null ? 43 : this.localTimeZone.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeLastRun == null ? 43 : this.timeLastRun.hashCode());

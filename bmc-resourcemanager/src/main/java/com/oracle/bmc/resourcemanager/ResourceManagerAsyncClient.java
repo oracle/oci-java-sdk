@@ -2019,6 +2019,107 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetWorkRequestLogEntriesResponse> getWorkRequestLogEntries(
+            GetWorkRequestLogEntriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestLogEntriesRequest, GetWorkRequestLogEntriesResponse>
+                    handler) {
+        LOG.trace("Called async getWorkRequestLogEntries");
+        final GetWorkRequestLogEntriesRequest interceptedRequest =
+                GetWorkRequestLogEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestLogEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetWorkRequestLogEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequestLogEntries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetWorkRequestLogEntriesResponse>
+                transformer =
+                        GetWorkRequestLogEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetWorkRequestLogEntriesRequest, GetWorkRequestLogEntriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkRequestLogEntriesRequest, GetWorkRequestLogEntriesResponse>,
+                        java.util.concurrent.Future<GetWorkRequestLogEntriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkRequestLogEntriesRequest, GetWorkRequestLogEntriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkRequestLogEntriesContentResponse>
+            getWorkRequestLogEntriesContent(
+                    GetWorkRequestLogEntriesContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetWorkRequestLogEntriesContentRequest,
+                                    GetWorkRequestLogEntriesContentResponse>
+                            handler) {
+        LOG.trace("Called async getWorkRequestLogEntriesContent");
+        final GetWorkRequestLogEntriesContentRequest interceptedRequest =
+                GetWorkRequestLogEntriesContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestLogEntriesContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ResourceManager",
+                        "GetWorkRequestLogEntriesContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequestLogEntriesContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetWorkRequestLogEntriesContentResponse>
+                transformer =
+                        GetWorkRequestLogEntriesContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetWorkRequestLogEntriesContentRequest,
+                        GetWorkRequestLogEntriesContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkRequestLogEntriesContentRequest,
+                                GetWorkRequestLogEntriesContentResponse>,
+                        java.util.concurrent.Future<GetWorkRequestLogEntriesContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkRequestLogEntriesContentRequest,
+                    GetWorkRequestLogEntriesContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListConfigurationSourceProvidersResponse>
             listConfigurationSourceProviders(
                     ListConfigurationSourceProvidersRequest request,

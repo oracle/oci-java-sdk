@@ -43,6 +43,10 @@ public final class UpdateAutonomousDatabaseDetails
         "dataStorageSizeInGBs",
         "displayName",
         "isFreeTier",
+        "availabilityDomain",
+        "timeScheduledAdUpdate",
+        "isDisableAdUpdateSchedule",
+        "isScheduleAdUpdateToEarliest",
         "adminPassword",
         "dbName",
         "freeformTags",
@@ -107,6 +111,10 @@ public final class UpdateAutonomousDatabaseDetails
             Integer dataStorageSizeInGBs,
             String displayName,
             Boolean isFreeTier,
+            String availabilityDomain,
+            java.util.Date timeScheduledAdUpdate,
+            Boolean isDisableAdUpdateSchedule,
+            Boolean isScheduleAdUpdateToEarliest,
             String adminPassword,
             String dbName,
             java.util.Map<String, String> freeformTags,
@@ -170,6 +178,10 @@ public final class UpdateAutonomousDatabaseDetails
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
         this.displayName = displayName;
         this.isFreeTier = isFreeTier;
+        this.availabilityDomain = availabilityDomain;
+        this.timeScheduledAdUpdate = timeScheduledAdUpdate;
+        this.isDisableAdUpdateSchedule = isDisableAdUpdateSchedule;
+        this.isScheduleAdUpdateToEarliest = isScheduleAdUpdateToEarliest;
         this.adminPassword = adminPassword;
         this.dbName = dbName;
         this.freeformTags = freeformTags;
@@ -496,6 +508,70 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder isFreeTier(Boolean isFreeTier) {
             this.isFreeTier = isFreeTier;
             this.__explicitlySet__.add("isFreeTier");
+            return this;
+        }
+        /**
+         * The Autonomous Database Serverless instance's availability domain.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The Autonomous Database Serverless instance's availability domain.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
+         * The date and time when the Autonomous Database availability domain is to be updated.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledAdUpdate")
+        private java.util.Date timeScheduledAdUpdate;
+
+        /**
+         * The date and time when the Autonomous Database availability domain is to be updated.
+         * @param timeScheduledAdUpdate the value to set
+         * @return this builder
+         **/
+        public Builder timeScheduledAdUpdate(java.util.Date timeScheduledAdUpdate) {
+            this.timeScheduledAdUpdate = timeScheduledAdUpdate;
+            this.__explicitlySet__.add("timeScheduledAdUpdate");
+            return this;
+        }
+        /**
+         * True, if you want to disable Autonomous Database availability domain scheduled update.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisableAdUpdateSchedule")
+        private Boolean isDisableAdUpdateSchedule;
+
+        /**
+         * True, if you want to disable Autonomous Database availability domain scheduled update.
+         * @param isDisableAdUpdateSchedule the value to set
+         * @return this builder
+         **/
+        public Builder isDisableAdUpdateSchedule(Boolean isDisableAdUpdateSchedule) {
+            this.isDisableAdUpdateSchedule = isDisableAdUpdateSchedule;
+            this.__explicitlySet__.add("isDisableAdUpdateSchedule");
+            return this;
+        }
+        /**
+         * True, if you want to schedule Autonomous Database availability domain update to the earliest available time.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isScheduleAdUpdateToEarliest")
+        private Boolean isScheduleAdUpdateToEarliest;
+
+        /**
+         * True, if you want to schedule Autonomous Database availability domain update to the earliest available time.
+         * @param isScheduleAdUpdateToEarliest the value to set
+         * @return this builder
+         **/
+        public Builder isScheduleAdUpdateToEarliest(Boolean isScheduleAdUpdateToEarliest) {
+            this.isScheduleAdUpdateToEarliest = isScheduleAdUpdateToEarliest;
+            this.__explicitlySet__.add("isScheduleAdUpdateToEarliest");
             return this;
         }
         /**
@@ -1609,6 +1685,10 @@ public final class UpdateAutonomousDatabaseDetails
                             this.dataStorageSizeInGBs,
                             this.displayName,
                             this.isFreeTier,
+                            this.availabilityDomain,
+                            this.timeScheduledAdUpdate,
+                            this.isDisableAdUpdateSchedule,
+                            this.isScheduleAdUpdateToEarliest,
                             this.adminPassword,
                             this.dbName,
                             this.freeformTags,
@@ -1705,6 +1785,18 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("isFreeTier")) {
                 this.isFreeTier(model.getIsFreeTier());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledAdUpdate")) {
+                this.timeScheduledAdUpdate(model.getTimeScheduledAdUpdate());
+            }
+            if (model.wasPropertyExplicitlySet("isDisableAdUpdateSchedule")) {
+                this.isDisableAdUpdateSchedule(model.getIsDisableAdUpdateSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("isScheduleAdUpdateToEarliest")) {
+                this.isScheduleAdUpdateToEarliest(model.getIsScheduleAdUpdateToEarliest());
             }
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
@@ -2152,6 +2244,62 @@ public final class UpdateAutonomousDatabaseDetails
      **/
     public Boolean getIsFreeTier() {
         return isFreeTier;
+    }
+
+    /**
+     * The Autonomous Database Serverless instance's availability domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The Autonomous Database Serverless instance's availability domain.
+     * @return the value
+     **/
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /**
+     * The date and time when the Autonomous Database availability domain is to be updated.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledAdUpdate")
+    private final java.util.Date timeScheduledAdUpdate;
+
+    /**
+     * The date and time when the Autonomous Database availability domain is to be updated.
+     * @return the value
+     **/
+    public java.util.Date getTimeScheduledAdUpdate() {
+        return timeScheduledAdUpdate;
+    }
+
+    /**
+     * True, if you want to disable Autonomous Database availability domain scheduled update.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisableAdUpdateSchedule")
+    private final Boolean isDisableAdUpdateSchedule;
+
+    /**
+     * True, if you want to disable Autonomous Database availability domain scheduled update.
+     * @return the value
+     **/
+    public Boolean getIsDisableAdUpdateSchedule() {
+        return isDisableAdUpdateSchedule;
+    }
+
+    /**
+     * True, if you want to schedule Autonomous Database availability domain update to the earliest available time.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isScheduleAdUpdateToEarliest")
+    private final Boolean isScheduleAdUpdateToEarliest;
+
+    /**
+     * True, if you want to schedule Autonomous Database availability domain update to the earliest available time.
+     * @return the value
+     **/
+    public Boolean getIsScheduleAdUpdateToEarliest() {
+        return isScheduleAdUpdateToEarliest;
     }
 
     /**
@@ -3408,6 +3556,12 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", timeScheduledAdUpdate=").append(String.valueOf(this.timeScheduledAdUpdate));
+        sb.append(", isDisableAdUpdateSchedule=")
+                .append(String.valueOf(this.isDisableAdUpdateSchedule));
+        sb.append(", isScheduleAdUpdateToEarliest=")
+                .append(String.valueOf(this.isScheduleAdUpdateToEarliest));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -3502,6 +3656,12 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.timeScheduledAdUpdate, other.timeScheduledAdUpdate)
+                && java.util.Objects.equals(
+                        this.isDisableAdUpdateSchedule, other.isDisableAdUpdateSchedule)
+                && java.util.Objects.equals(
+                        this.isScheduleAdUpdateToEarliest, other.isScheduleAdUpdateToEarliest)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -3615,6 +3775,26 @@ public final class UpdateAutonomousDatabaseDetails
                                 : this.dataStorageSizeInGBs.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledAdUpdate == null
+                                ? 43
+                                : this.timeScheduledAdUpdate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisableAdUpdateSchedule == null
+                                ? 43
+                                : this.isDisableAdUpdateSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isScheduleAdUpdateToEarliest == null
+                                ? 43
+                                : this.isScheduleAdUpdateToEarliest.hashCode());
         result =
                 (result * PRIME)
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());

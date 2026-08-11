@@ -130,6 +130,14 @@ public class ListAutonomousDatabaseBackupsConverter {
                                     request.getInfrastructureType().getValue()));
         }
 
+        if (request.getIsPitrEligible() != null) {
+            target =
+                    target.queryParam(
+                            "isPitrEligible",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsPitrEligible()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

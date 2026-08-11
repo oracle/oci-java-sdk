@@ -35,7 +35,7 @@ public class ResolveSubscriptionConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20260129")
-                        .path("partner")
+                        .path("partners")
                         .path("subscriptions")
                         .path("actions")
                         .path("resolve");
