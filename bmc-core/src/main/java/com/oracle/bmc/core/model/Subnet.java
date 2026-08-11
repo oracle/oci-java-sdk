@@ -50,6 +50,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         "routeTableId",
         "securityListIds",
         "subnetDomainName",
+        "systemTags",
         "timeCreated",
         "vcnId",
         "virtualRouterIp",
@@ -75,6 +76,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
             String routeTableId,
             java.util.List<String> securityListIds,
             String subnetDomainName,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String vcnId,
             String virtualRouterIp,
@@ -99,6 +101,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         this.routeTableId = routeTableId;
         this.securityListIds = securityListIds;
         this.subnetDomainName = subnetDomainName;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
         this.virtualRouterIp = virtualRouterIp;
@@ -568,6 +571,25 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the subnet was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -677,6 +699,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
                             this.routeTableId,
                             this.securityListIds,
                             this.subnetDomainName,
+                            this.systemTags,
                             this.timeCreated,
                             this.vcnId,
                             this.virtualRouterIp,
@@ -745,6 +768,9 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("subnetDomainName")) {
                 this.subnetDomainName(model.getSubnetDomainName());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -1236,6 +1262,23 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the subnet was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -1346,6 +1389,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", securityListIds=").append(String.valueOf(this.securityListIds));
         sb.append(", subnetDomainName=").append(String.valueOf(this.subnetDomainName));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", virtualRouterIp=").append(String.valueOf(this.virtualRouterIp));
@@ -1385,6 +1429,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.securityListIds, other.securityListIds)
                 && java.util.Objects.equals(this.subnetDomainName, other.subnetDomainName)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.virtualRouterIp, other.virtualRouterIp)
@@ -1447,6 +1492,7 @@ public final class Subnet extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.subnetDomainName == null ? 43 : this.subnetDomainName.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result =

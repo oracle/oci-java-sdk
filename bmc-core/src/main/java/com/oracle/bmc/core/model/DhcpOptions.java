@@ -45,6 +45,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         "id",
         "lifecycleState",
         "options",
+        "systemTags",
         "timeCreated",
         "vcnId",
         "domainNameType"
@@ -57,6 +58,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
             String id,
             LifecycleState lifecycleState,
             java.util.List<DhcpOption> options,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String vcnId,
             DomainNameType domainNameType) {
@@ -68,6 +70,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.options = options;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
         this.domainNameType = domainNameType;
@@ -214,6 +217,25 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Date and time the set of DHCP options was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
@@ -284,6 +306,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
                             this.id,
                             this.lifecycleState,
                             this.options,
+                            this.systemTags,
                             this.timeCreated,
                             this.vcnId,
                             this.domainNameType);
@@ -315,6 +338,9 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("options")) {
                 this.options(model.getOptions());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -510,6 +536,23 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code {
+     * "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Date and time the set of DHCP options was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
@@ -629,6 +672,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", options=").append(String.valueOf(this.options));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", domainNameType=").append(String.valueOf(this.domainNameType));
@@ -653,6 +697,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.options, other.options)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.domainNameType, other.domainNameType)
@@ -674,6 +719,7 @@ public final class DhcpOptions extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result =

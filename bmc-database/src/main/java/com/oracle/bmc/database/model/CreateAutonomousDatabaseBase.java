@@ -67,6 +67,7 @@ public class CreateAutonomousDatabaseBase
     @java.beans.ConstructorProperties({
         "subscriptionId",
         "compartmentId",
+        "availabilityDomain",
         "characterSet",
         "ncharacterSet",
         "dbName",
@@ -124,6 +125,7 @@ public class CreateAutonomousDatabaseBase
     protected CreateAutonomousDatabaseBase(
             String subscriptionId,
             String compartmentId,
+            String availabilityDomain,
             String characterSet,
             String ncharacterSet,
             String dbName,
@@ -180,6 +182,7 @@ public class CreateAutonomousDatabaseBase
         super();
         this.subscriptionId = subscriptionId;
         this.compartmentId = compartmentId;
+        this.availabilityDomain = availabilityDomain;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
         this.dbName = dbName;
@@ -267,6 +270,19 @@ public class CreateAutonomousDatabaseBase
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /** The Autonomous Database Serverless instance's availability domain. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The Autonomous Database Serverless instance's availability domain.
+     *
+     * @return the value
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
     }
 
     /**
@@ -1767,6 +1783,7 @@ public class CreateAutonomousDatabaseBase
         sb.append("super=").append(super.toString());
         sb.append("subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
@@ -1847,6 +1864,7 @@ public class CreateAutonomousDatabaseBase
         CreateAutonomousDatabaseBase other = (CreateAutonomousDatabaseBase) o;
         return java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
                 && java.util.Objects.equals(this.dbName, other.dbName)
@@ -1928,6 +1946,11 @@ public class CreateAutonomousDatabaseBase
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
         result =
                 (result * PRIME)

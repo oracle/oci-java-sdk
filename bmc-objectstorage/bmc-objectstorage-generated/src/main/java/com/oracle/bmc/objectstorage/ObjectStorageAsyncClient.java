@@ -33,10 +33,11 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(ObjectStorageClient.class.getName())
                     .serviceEndpointPrefix("objectstorage")
-                    .serviceEndpointTemplate("https://objectstorage.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://objectstorage.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
                     .addServiceEndpointTemplateForRealm(
                             "oc1",
-                            "https://{namespaceName+Dot}objectstorage.{region}.oci.customer-oci.com")
+                            "https://{namespaceName+Dot}objectstorage.{region}.{dualStack?ds.:}oci.customer-oci.com")
                     .endpointServiceName("objectstorage")
                     .build();
 
