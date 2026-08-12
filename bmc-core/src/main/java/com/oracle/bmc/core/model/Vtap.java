@@ -32,6 +32,7 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "id",
         "lifecycleState",
         "lifecycleStateDetails",
+        "systemTags",
         "timeCreated",
         "sourceId",
         "targetId",
@@ -56,6 +57,7 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String id,
             LifecycleState lifecycleState,
             LifecycleStateDetails lifecycleStateDetails,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String sourceId,
             String targetId,
@@ -79,6 +81,7 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.lifecycleStateDetails = lifecycleStateDetails;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.sourceId = sourceId;
         this.targetId = targetId;
@@ -244,6 +247,26 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         public Builder lifecycleStateDetails(LifecycleStateDetails lifecycleStateDetails) {
             this.lifecycleStateDetails = lifecycleStateDetails;
             this.__explicitlySet__.add("lifecycleStateDetails");
+            return this;
+        }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
@@ -519,6 +542,7 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.id,
                             this.lifecycleState,
                             this.lifecycleStateDetails,
+                            this.systemTags,
                             this.timeCreated,
                             this.sourceId,
                             this.targetId,
@@ -564,6 +588,9 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
                 this.lifecycleStateDetails(model.getLifecycleStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -851,6 +878,24 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      **/
     public LifecycleStateDetails getLifecycleStateDetails() {
         return lifecycleStateDetails;
+    }
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     /**
@@ -1304,6 +1349,7 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleStateDetails=").append(String.valueOf(this.lifecycleStateDetails));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
@@ -1342,6 +1388,7 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleStateDetails, other.lifecycleStateDetails)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
@@ -1382,6 +1429,7 @@ public final class Vtap extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                         + (this.lifecycleStateDetails == null
                                 ? 43
                                 : this.lifecycleStateDetails.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());

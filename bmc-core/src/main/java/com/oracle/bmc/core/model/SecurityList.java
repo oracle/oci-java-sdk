@@ -45,6 +45,7 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
         "id",
         "ingressSecurityRules",
         "lifecycleState",
+        "systemTags",
         "timeCreated",
         "vcnId"
     })
@@ -57,6 +58,7 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
             String id,
             java.util.List<IngressSecurityRule> ingressSecurityRules,
             LifecycleState lifecycleState,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String vcnId) {
         super();
@@ -68,6 +70,7 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
         this.id = id;
         this.ingressSecurityRules = ingressSecurityRules;
         this.lifecycleState = lifecycleState;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
     }
@@ -225,6 +228,26 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -277,6 +300,7 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.id,
                             this.ingressSecurityRules,
                             this.lifecycleState,
+                            this.systemTags,
                             this.timeCreated,
                             this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -310,6 +334,9 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -515,6 +542,24 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -570,6 +615,7 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ingressSecurityRules=").append(String.valueOf(this.ingressSecurityRules));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(")");
@@ -594,6 +640,7 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ingressSecurityRules, other.ingressSecurityRules)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && super.equals(other);
@@ -623,6 +670,7 @@ public final class SecurityList extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + super.hashCode();

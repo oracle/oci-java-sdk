@@ -5,7 +5,7 @@
 package com.oracle.bmc.self.model;
 
 /**
- * Sku details for billing subscription.
+ * Billing detail entry associated with a subscription.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -20,6 +20,8 @@ package com.oracle.bmc.self.model;
 public final class BillingDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "pricingPlanKey",
+        "billingModel",
         "sku",
         "metricType",
         "rateAllocation",
@@ -27,12 +29,16 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
         "meters"
     })
     public BillingDetails(
+            String pricingPlanKey,
+            BillingModel billingModel,
             String sku,
             MetricType metricType,
             Float rateAllocation,
             Boolean hasGovSku,
             java.util.List<Meter> meters) {
         super();
+        this.pricingPlanKey = pricingPlanKey;
+        this.billingModel = billingModel;
         this.sku = sku;
         this.metricType = metricType;
         this.rateAllocation = rateAllocation;
@@ -42,6 +48,38 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique key used to map this SKU to the pricing plan.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pricingPlanKey")
+        private String pricingPlanKey;
+
+        /**
+         * Unique key used to map this SKU to the pricing plan.
+         * @param pricingPlanKey the value to set
+         * @return this builder
+         **/
+        public Builder pricingPlanKey(String pricingPlanKey) {
+            this.pricingPlanKey = pricingPlanKey;
+            this.__explicitlySet__.add("pricingPlanKey");
+            return this;
+        }
+        /**
+         * The billing model this billing detail applies to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
+        private BillingModel billingModel;
+
+        /**
+         * The billing model this billing detail applies to.
+         * @param billingModel the value to set
+         * @return this builder
+         **/
+        public Builder billingModel(BillingModel billingModel) {
+            this.billingModel = billingModel;
+            this.__explicitlySet__.add("billingModel");
+            return this;
+        }
         /**
          * Sku for service.
          **/
@@ -129,6 +167,8 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
         public BillingDetails build() {
             BillingDetails model =
                     new BillingDetails(
+                            this.pricingPlanKey,
+                            this.billingModel,
                             this.sku,
                             this.metricType,
                             this.rateAllocation,
@@ -142,6 +182,12 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BillingDetails model) {
+            if (model.wasPropertyExplicitlySet("pricingPlanKey")) {
+                this.pricingPlanKey(model.getPricingPlanKey());
+            }
+            if (model.wasPropertyExplicitlySet("billingModel")) {
+                this.billingModel(model.getBillingModel());
+            }
             if (model.wasPropertyExplicitlySet("sku")) {
                 this.sku(model.getSku());
             }
@@ -170,6 +216,82 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Unique key used to map this SKU to the pricing plan.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pricingPlanKey")
+    private final String pricingPlanKey;
+
+    /**
+     * Unique key used to map this SKU to the pricing plan.
+     * @return the value
+     **/
+    public String getPricingPlanKey() {
+        return pricingPlanKey;
+    }
+
+    /**
+     * The billing model this billing detail applies to.
+     **/
+    public enum BillingModel {
+        FlatRate("FLAT_RATE"),
+        UsageBased("USAGE_BASED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BillingModel.class);
+
+        private final String value;
+        private static java.util.Map<String, BillingModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BillingModel v : BillingModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BillingModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BillingModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BillingModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The billing model this billing detail applies to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
+    private final BillingModel billingModel;
+
+    /**
+     * The billing model this billing detail applies to.
+     * @return the value
+     **/
+    public BillingModel getBillingModel() {
+        return billingModel;
     }
 
     /**
@@ -256,7 +378,9 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BillingDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("sku=").append(String.valueOf(this.sku));
+        sb.append("pricingPlanKey=").append(String.valueOf(this.pricingPlanKey));
+        sb.append(", billingModel=").append(String.valueOf(this.billingModel));
+        sb.append(", sku=").append(String.valueOf(this.sku));
         sb.append(", metricType=").append(String.valueOf(this.metricType));
         sb.append(", rateAllocation=").append(String.valueOf(this.rateAllocation));
         sb.append(", hasGovSku=").append(String.valueOf(this.hasGovSku));
@@ -275,7 +399,9 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
         }
 
         BillingDetails other = (BillingDetails) o;
-        return java.util.Objects.equals(this.sku, other.sku)
+        return java.util.Objects.equals(this.pricingPlanKey, other.pricingPlanKey)
+                && java.util.Objects.equals(this.billingModel, other.billingModel)
+                && java.util.Objects.equals(this.sku, other.sku)
                 && java.util.Objects.equals(this.metricType, other.metricType)
                 && java.util.Objects.equals(this.rateAllocation, other.rateAllocation)
                 && java.util.Objects.equals(this.hasGovSku, other.hasGovSku)
@@ -287,6 +413,10 @@ public final class BillingDetails extends com.oracle.bmc.http.internal.Explicitl
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.pricingPlanKey == null ? 43 : this.pricingPlanKey.hashCode());
+        result = (result * PRIME) + (this.billingModel == null ? 43 : this.billingModel.hashCode());
         result = (result * PRIME) + (this.sku == null ? 43 : this.sku.hashCode());
         result = (result * PRIME) + (this.metricType == null ? 43 : this.metricType.hashCode());
         result =

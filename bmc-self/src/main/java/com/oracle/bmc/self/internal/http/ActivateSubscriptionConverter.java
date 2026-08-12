@@ -37,7 +37,7 @@ public class ActivateSubscriptionConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20260129")
-                        .path("partner")
+                        .path("partners")
                         .path("subscriptions")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(

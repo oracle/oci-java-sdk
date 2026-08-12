@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplaceprivateoffer.model;
 
 /**
- * A key value pair specified by the seller of the offer
+ * A key value pair specified by the seller of the offer.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,13 +29,13 @@ public final class CustomField extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * the key of the custom field
+         * The key of the custom field.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * the key of the custom field
+         * The key of the custom field.
          * @param key the value to set
          * @return this builder
          **/
@@ -45,13 +45,13 @@ public final class CustomField extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * the value of the custom field
+         * The value of the custom field.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * the value of the custom field
+         * The value of the custom field.
          * @param value the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class CustomField extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * the key of the custom field
+     * The key of the custom field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * the key of the custom field
+     * The key of the custom field.
      * @return the value
      **/
     public String getKey() {
@@ -110,13 +110,13 @@ public final class CustomField extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * the value of the custom field
+     * The value of the custom field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * the value of the custom field
+     * The value of the custom field.
      * @return the value
      **/
     public String getValue() {

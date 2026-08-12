@@ -524,6 +524,50 @@ public class PartnerIntegerationAsyncClient implements PartnerIntegerationAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<ListPartnersResponse> listPartners(
+            ListPartnersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPartnersRequest, ListPartnersResponse>
+                    handler) {
+        LOG.trace("Called async listPartners");
+        final ListPartnersRequest interceptedRequest =
+                ListPartnersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPartnersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ListPartners",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Partner/ListPartners");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPartnersResponse>
+                transformer =
+                        ListPartnersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListPartnersRequest, ListPartnersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPartnersRequest, ListPartnersResponse>,
+                        java.util.concurrent.Future<ListPartnersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPartnersRequest, ListPartnersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListingSubscriptionsResponse> listingSubscriptions(
             ListingSubscriptionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -611,6 +655,133 @@ public class PartnerIntegerationAsyncClient implements PartnerIntegerationAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ResolveSubscriptionRequest, ResolveSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitSubscriptionUsageBatchResponse>
+            submitSubscriptionUsageBatch(
+                    SubmitSubscriptionUsageBatchRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SubmitSubscriptionUsageBatchRequest,
+                                    SubmitSubscriptionUsageBatchResponse>
+                            handler) {
+        LOG.trace("Called async submitSubscriptionUsageBatch");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, SubmitSubscriptionUsageBatchRequest.builder());
+        }
+        final SubmitSubscriptionUsageBatchRequest interceptedRequest =
+                SubmitSubscriptionUsageBatchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SubmitSubscriptionUsageBatchConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "SubmitSubscriptionUsageBatch",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/CreateSubscriptionUsageRecordDetails/SubmitSubscriptionUsageBatch");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SubmitSubscriptionUsageBatchResponse>
+                transformer =
+                        SubmitSubscriptionUsageBatchConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SubmitSubscriptionUsageBatchRequest, SubmitSubscriptionUsageBatchResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SubmitSubscriptionUsageBatchRequest,
+                                SubmitSubscriptionUsageBatchResponse>,
+                        java.util.concurrent.Future<SubmitSubscriptionUsageBatchResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSubmitSubscriptionUsageBatchDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SubmitSubscriptionUsageBatchRequest, SubmitSubscriptionUsageBatchResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getSubmitSubscriptionUsageBatchDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitSubscriptionUsageRecordsResponse>
+            submitSubscriptionUsageRecords(
+                    SubmitSubscriptionUsageRecordsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SubmitSubscriptionUsageRecordsRequest,
+                                    SubmitSubscriptionUsageRecordsResponse>
+                            handler) {
+        LOG.trace("Called async submitSubscriptionUsageRecords");
+        final SubmitSubscriptionUsageRecordsRequest interceptedRequest =
+                SubmitSubscriptionUsageRecordsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SubmitSubscriptionUsageRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "SubmitSubscriptionUsageRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/CreateSubscriptionUsageRecordDetails/SubmitSubscriptionUsageRecords");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SubmitSubscriptionUsageRecordsResponse>
+                transformer =
+                        SubmitSubscriptionUsageRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SubmitSubscriptionUsageRecordsRequest,
+                        SubmitSubscriptionUsageRecordsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SubmitSubscriptionUsageRecordsRequest,
+                                SubmitSubscriptionUsageRecordsResponse>,
+                        java.util.concurrent.Future<SubmitSubscriptionUsageRecordsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSubmitSubscriptionUsageRecordsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SubmitSubscriptionUsageRecordsRequest, SubmitSubscriptionUsageRecordsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

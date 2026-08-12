@@ -20,10 +20,11 @@ public class ObjectStorageClient implements ObjectStorage {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(ObjectStorageClient.class.getName())
                     .serviceEndpointPrefix("objectstorage")
-                    .serviceEndpointTemplate("https://objectstorage.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://objectstorage.{region}.{dualStack?ds.oci.:}{secondLevelDomain}")
                     .addServiceEndpointTemplateForRealm(
                             "oc1",
-                            "https://{namespaceName+Dot}objectstorage.{region}.oci.customer-oci.com")
+                            "https://{namespaceName+Dot}objectstorage.{region}.{dualStack?ds.:}oci.customer-oci.com")
                     .endpointServiceName("objectstorage")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
@@ -55,6 +56,7 @@ public class ObjectStorageClient implements ObjectStorage {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+    private final java.util.Map<String, Boolean> optionsMap = new java.util.HashMap<>();
 
     // This pattern matches substrings that are enclosed within curly braces {}
     private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
@@ -387,6 +389,9 @@ public class ObjectStorageClient implements ObjectStorage {
                 }
             }
         }
+        enableDualStackEndpoints(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils
+                        .isDualStackEnabledForClientDefault(SERVICE));
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
@@ -562,6 +567,14 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
                         .getRealmSpecificEndpointTemplate(
                                 useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public synchronized void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled) {
+        optionsMap.put(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils.DUAL_STACK_OPTION,
+                dualStackEndpointTemplateEnabled);
+        client.setOptionsMap(optionsMap);
     }
 
     @Override

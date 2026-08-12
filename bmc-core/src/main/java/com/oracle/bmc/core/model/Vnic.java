@@ -58,6 +58,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "publicIp",
         "skipSourceDestCheck",
         "subnetId",
+        "systemTags",
         "timeCreated",
         "ipv6Addresses",
         "routeTableId"
@@ -80,6 +81,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String publicIp,
             Boolean skipSourceDestCheck,
             String subnetId,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             java.util.List<String> ipv6Addresses,
             String routeTableId) {
@@ -101,6 +103,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.publicIp = publicIp;
         this.skipSourceDestCheck = skipSourceDestCheck;
         this.subnetId = subnetId;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.ipv6Addresses = ipv6Addresses;
         this.routeTableId = routeTableId;
@@ -511,6 +514,26 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -598,6 +621,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.publicIp,
                             this.skipSourceDestCheck,
                             this.subnetId,
+                            this.systemTags,
                             this.timeCreated,
                             this.ipv6Addresses,
                             this.routeTableId);
@@ -659,6 +683,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -1101,6 +1128,24 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -1189,6 +1234,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", publicIp=").append(String.valueOf(this.publicIp));
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", ipv6Addresses=").append(String.valueOf(this.ipv6Addresses));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
@@ -1223,6 +1269,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.publicIp, other.publicIp)
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.ipv6Addresses, other.ipv6Addresses)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
@@ -1268,6 +1315,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                                 ? 43
                                 : this.skipSourceDestCheck.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)

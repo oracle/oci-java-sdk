@@ -3,9 +3,51 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## Unreleased
-### Breaking Changes
-- Apache connector configuration now propagates `SSLInitializationException` when TLS initialization fails instead of silently registering a plaintext socket factory for `https`. Applications that require the former behavior must explicitly provide a plaintext connection manager; see [PlainConnectionSocketFactoryExample.java](bmc-examples/src/main/java/PlainConnectionSocketFactoryExample.java).
+
+## 2.97.0 - 2026-08-11
+## Added 
+- Support for the OCI Device Data FHIR (Fast Healthcare Interoperability Resources) Service 
+- Support for the Globally Distributed Database service 
+- Support for cloning autonomous container databases from backups by timestamp and retrieving backup details in the Database service 
+- Support for managing automatic failover for existing data guard configurations with multiple standby databases in the Database service 
+- Support for creating and managing private-offer quotes and quote attachments in the Marketplace Private Offer service 
+- Support for usage-based SaaS listings, subscription usage reporting, and subscription cancellation in the Service Enablement Lifecycle Framework service 
+- Support for network security group IDs on private endpoints during open search cluster updates in the OpenSearch service 
+- Support for database tools MCP server, DB API gateway configuration, and IAM authentication APIs in the Database Tools service  
+- Support for availability domain selection during and after provisioning of autonomous databases in the Database service 
+- Support for system tags in virtual cloud networks and subnets in the Networking service 
+- Support for local time zones in the Resource Scheduler service 
+- Support for IPv6 dual-stack endpoints in the Object Storage service 
+- Support for B300 unit shapes in the Generative AI service 
+- Support for retrieving work request log entries and their content in the Resource Manager service 
+- Support for quick-recycle settings in compute host groups in the Compute service   
+
+### Breaking Changes 
+- The return type of method `public com.oracle.bmc.self.model.PricingPlan$BillingFrequency getBillingFrequency()` has been changed to `com.oracle.bmc.self.model.BillingFrequency` in the model `com.oracle.bmc.self.model.PricingPlan` in the Service Enablement Lifecycle Framework service 
+- The return type of method `public com.oracle.bmc.self.model.BillingDetails getBillingDetails()` has been changed to `java.util.List` in the model `com.oracle.bmc.self.model.SubscriptionDetails` in the Service Enablement Lifecycle Framework service 
+- Class `com.oracle.bmc.self.model.PricingPlan$BillingFrequency` has been removed from the Service Enablement Lifecycle Framework service 
+- Enum value `SelfTokenId` has been removed from the enum class `SortBy` in request classes `com.oracle.bmc.self.requests.ListSubscriptionsRequest` and `com.oracle.bmc.self.requests.ListingSubscriptionsRequest` in the Service Enablement Lifecycle Framework service  
+
+### Fixed 
+- Fixed token refresh recovery after session-key or certificate-refresh failures so concurrent callers are not left attached to an incomplete refresh
+
+## 2.96.0 - 2026-08-04
+### Added 
+- Support for cloning autonomous container databases from backups by timestamp and retrieving backup details in the Database service 
+- Support for managing automatic failover for existing data guard configurations with multiple standby databases in the Database service 
+- Support for creating and managing private-offer quotes and quote attachments in the Marketplace Private Offer service 
+- Support for usage-based SaaS listings, subscription usage reporting, and subscription cancellation in the Service Enablement Lifecycle Framework service 
+- Support for network security group IDs on private endpoints during open search cluster updates in the OpenSearch service 
+- Support for database tools MCP server, DB API gateway configuration, and IAM authentication APIs in the Database Tools service    
+
+### Breaking Changes 
+- The return type of method `public com.oracle.bmc.self.model.PricingPlan$BillingFrequency getBillingFrequency()` has been changed to `com.oracle.bmc.self.model.BillingFrequency` in the model `com.oracle.bmc.self.model.PricingPlan` in the Service Enablement Lifecycle Framework service 
+- The return type of method `public com.oracle.bmc.self.model.BillingDetails getBillingDetails()` has been changed to `java.util.List` in the model `com.oracle.bmc.self.model.SubscriptionDetails` in the Service Enablement Lifecycle Framework service 
+- Class `com.oracle.bmc.self.model.PricingPlan$BillingFrequency` has been removed from the Service Enablement Lifecycle Framework service 
+- Enum value `SelfTokenId` has been removed from the enum class `SortBy` in request classes `com.oracle.bmc.self.requests.ListSubscriptionsRequest` and `com.oracle.bmc.self.requests.ListingSubscriptionsRequest` in the Service Enablement Lifecycle Framework service  
+
+### Fixed 
+- Fixed token refresh recovery after session-key or certificate-refresh failures so concurrent callers are not left attached to an incomplete refresh
 
 ## 2.95.0 - 2026-07-28
 ### Added 
@@ -103,6 +145,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - The return type of method `public com.oracle.bmc.generativeai.model.HostedApplication$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.generativeai.model.HostedApplicationBase$LifecycleState` in the request class `com.oracle.bmc.generativeai.requests.ListHostedApplicationsRequest` in the Generative AI service
 - The field `compartmentId` has been made required in the requests `ListApiMetadataByEntityTypesRequest`, `ListApiMetadataRequest`, `ListPrivilegedApiControlsRequest`, `ListPrivilegedApiRequestsRequest`, and `ListWorkRequestsRequest` in the Oracle API Access Control service
 - The field `compartmentId` has been made required in the model `CreatePrivilegedApiRequestDetails` in the Oracle API Access Control service
+- Apache connector configuration now propagates `SSLInitializationException` when TLS initialization fails instead of silently registering a plaintext socket factory for `https`. Applications that require the former behavior must explicitly provide a plaintext connection manager; see [PlainConnectionSocketFactoryExample.java](bmc-examples/src/main/java/PlainConnectionSocketFactoryExample.java)
 
 ## 2.94.0 - 2026-07-14
 ### Added  

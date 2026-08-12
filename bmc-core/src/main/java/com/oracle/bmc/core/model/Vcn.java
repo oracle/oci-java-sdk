@@ -39,6 +39,7 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "dnsLabel",
         "freeformTags",
         "securityAttributes",
+        "systemTags",
         "id",
         "ipv6CidrBlocks",
         "lifecycleState",
@@ -60,6 +61,7 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             String dnsLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String id,
             java.util.List<String> ipv6CidrBlocks,
             LifecycleState lifecycleState,
@@ -80,6 +82,7 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.dnsLabel = dnsLabel;
         this.freeformTags = freeformTags;
         this.securityAttributes = securityAttributes;
+        this.systemTags = systemTags;
         this.id = id;
         this.ipv6CidrBlocks = ipv6CidrBlocks;
         this.lifecycleState = lifecycleState;
@@ -371,6 +374,26 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The VCN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -512,6 +535,7 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.dnsLabel,
                             this.freeformTags,
                             this.securityAttributes,
+                            this.systemTags,
                             this.id,
                             this.ipv6CidrBlocks,
                             this.lifecycleState,
@@ -564,6 +588,9 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -851,6 +878,24 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The VCN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -1038,6 +1083,7 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -1071,6 +1117,7 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -1121,6 +1168,7 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)

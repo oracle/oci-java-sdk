@@ -568,6 +568,35 @@ public interface ResourceManager extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Returns console log entries for the specified work request in JSON format.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetWorkRequestLogEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequestLogEntries API.
+     */
+    GetWorkRequestLogEntriesResponse getWorkRequestLogEntries(
+            GetWorkRequestLogEntriesRequest request);
+
+    /**
+     * Returns the raw log file for the specified work request in text format.
+     * The file includes a maximum of 100,000 log entries.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetWorkRequestLogEntriesContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequestLogEntriesContent API.
+     */
+    GetWorkRequestLogEntriesContentResponse getWorkRequestLogEntriesContent(
+            GetWorkRequestLogEntriesContentRequest request);
+
+    /**
      * Lists configuration source providers according to the specified filter.
      * For more information, see
      * [Listing Configuration Source Providers](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-csp.htm).

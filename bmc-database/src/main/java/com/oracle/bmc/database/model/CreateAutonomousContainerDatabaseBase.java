@@ -24,6 +24,10 @@ package com.oracle.bmc.database.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateAutonomousContainerDatabaseFromBackupTimestampDetails.class,
+        name = "BACKUP_FROM_TIMESTAMP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAutonomousContainerDatabaseDetails.class,
         name = "NONE"
     ),
@@ -1243,6 +1247,7 @@ public class CreateAutonomousContainerDatabaseBase
     public enum Source {
         None("NONE"),
         BackupFromId("BACKUP_FROM_ID"),
+        BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
         ;
 
         private final String value;

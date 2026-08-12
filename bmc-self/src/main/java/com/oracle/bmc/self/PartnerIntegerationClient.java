@@ -528,6 +528,41 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
     }
 
     @Override
+    public ListPartnersResponse listPartners(ListPartnersRequest request) {
+        LOG.trace("Called listPartners");
+        final ListPartnersRequest interceptedRequest =
+                ListPartnersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPartnersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ListPartners",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Partner/ListPartners");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPartnersResponse> transformer =
+                ListPartnersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListingSubscriptionsResponse listingSubscriptions(ListingSubscriptionsRequest request) {
         LOG.trace("Called listingSubscriptions");
         final ListingSubscriptionsRequest interceptedRequest =
@@ -607,7 +642,155 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
     }
 
     @Override
+    public SubmitSubscriptionUsageBatchResponse submitSubscriptionUsageBatch(
+            SubmitSubscriptionUsageBatchRequest request) {
+        LOG.trace("Called submitSubscriptionUsageBatch");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, SubmitSubscriptionUsageBatchRequest.builder());
+            }
+            final SubmitSubscriptionUsageBatchRequest interceptedRequest =
+                    SubmitSubscriptionUsageBatchConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    SubmitSubscriptionUsageBatchConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "PartnerIntegeration",
+                            "SubmitSubscriptionUsageBatch",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/self/20260129/CreateSubscriptionUsageRecordDetails/SubmitSubscriptionUsageBatch");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, SubmitSubscriptionUsageBatchResponse>
+                    transformer =
+                            SubmitSubscriptionUsageBatchConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getSubmitSubscriptionUsageBatchDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getSubmitSubscriptionUsageBatchDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getSubmitSubscriptionUsageBatchDetails());
+        }
+    }
+
+    @Override
+    public SubmitSubscriptionUsageRecordsResponse submitSubscriptionUsageRecords(
+            SubmitSubscriptionUsageRecordsRequest request) {
+        LOG.trace("Called submitSubscriptionUsageRecords");
+        final SubmitSubscriptionUsageRecordsRequest interceptedRequest =
+                SubmitSubscriptionUsageRecordsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SubmitSubscriptionUsageRecordsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "SubmitSubscriptionUsageRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/CreateSubscriptionUsageRecordDetails/SubmitSubscriptionUsageRecords");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SubmitSubscriptionUsageRecordsResponse>
+                transformer =
+                        SubmitSubscriptionUsageRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSubmitSubscriptionUsageRecordsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public PartnerIntegerationPaginators getPaginators() {
         return paginators;
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

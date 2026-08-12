@@ -11,6 +11,10 @@ import com.oracle.bmc.SdkClients;
     AttachmentAsyncClient.class,
     AttachmentClient.class,
     OfferAsyncClient.class,
-    OfferClient.class
+    OfferClient.class,
+    OfferQuoteAsyncClient.class,
+    OfferQuoteClient.class,
+    QuoteAttachmentAsyncClient.class,
+    QuoteAttachmentClient.class
 })
 public final class SdkClientsMetadata {}

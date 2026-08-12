@@ -13,6 +13,7 @@ public enum OperationType {
     UpdateSubscription("UPDATE_SUBSCRIPTION"),
     DeleteSubscription("DELETE_SUBSCRIPTION"),
     MoveSubscription("MOVE_SUBSCRIPTION"),
+    SubmitSubscriptionUsageBatch("SUBMIT_SUBSCRIPTION_USAGE_BATCH"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

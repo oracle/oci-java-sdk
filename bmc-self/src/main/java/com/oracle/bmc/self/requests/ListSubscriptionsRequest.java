@@ -115,7 +115,6 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
     public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
-        SelfTokenId("selfTokenId"),
         ProductId("productId"),
         ;
 

@@ -212,6 +212,9 @@ public final class CreateDedicatedAiClusterDetails
          * - OAI_B200_X4
          * - OAI_B200_X8
          * - SB_B200_X1
+         * - COHERE_B300_X1
+         * - META_B300_X1
+         * - OAI_B300_X1
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
@@ -285,6 +288,9 @@ public final class CreateDedicatedAiClusterDetails
          * - OAI_B200_X4
          * - OAI_B200_X8
          * - SB_B200_X1
+         * - COHERE_B300_X1
+         * - META_B300_X1
+         * - OAI_B300_X1
          *
          * @param unitShape the value to set
          * @return this builder
@@ -553,6 +559,9 @@ public final class CreateDedicatedAiClusterDetails
      * - OAI_B200_X4
      * - OAI_B200_X8
      * - SB_B200_X1
+     * - COHERE_B300_X1
+     * - META_B300_X1
+     * - OAI_B300_X1
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
@@ -626,6 +635,9 @@ public final class CreateDedicatedAiClusterDetails
      * - OAI_B200_X4
      * - OAI_B200_X8
      * - SB_B200_X1
+     * - COHERE_B300_X1
+     * - META_B300_X1
+     * - OAI_B300_X1
      *
      * @return the value
      **/
