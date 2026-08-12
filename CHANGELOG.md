@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
 ## 2.97.0 - 2026-08-11
-## Added 
+### Added
 - Support for the OCI Device Data FHIR (Fast Healthcare Interoperability Resources) Service 
 - Support for the Globally Distributed Database service 
 - Support for cloning autonomous container databases from backups by timestamp and retrieving backup details in the Database service 
