@@ -59,6 +59,25 @@ public interface SubscriptionAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Requests cancellation of a Subscription. The subscription transitions to PendingCancellation
+     * and remains active until the end of the current billing cycle, at which point it transitions
+     * to Canceled. The subscription must be in the Active state to be canceled.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelSubscriptionResponse> cancelSubscription(
+            CancelSubscriptionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelSubscriptionRequest, CancelSubscriptionResponse>
+                    handler);
+
+    /**
      * Cancels a work request.
      *
      * @param request The request object containing the details to send

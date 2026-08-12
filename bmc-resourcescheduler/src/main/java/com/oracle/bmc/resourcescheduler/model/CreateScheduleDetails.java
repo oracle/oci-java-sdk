@@ -33,6 +33,7 @@ public final class CreateScheduleDetails
         "resources",
         "timeStarts",
         "timeEnds",
+        "localTimeZone",
         "freeformTags",
         "definedTags"
     })
@@ -47,6 +48,7 @@ public final class CreateScheduleDetails
             java.util.List<Resource> resources,
             java.util.Date timeStarts,
             java.util.Date timeEnds,
+            String localTimeZone,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -60,6 +62,7 @@ public final class CreateScheduleDetails
         this.resources = resources;
         this.timeStarts = timeStarts;
         this.timeEnds = timeEnds;
+        this.localTimeZone = localTimeZone;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -243,6 +246,26 @@ public final class CreateScheduleDetails
             return this;
         }
         /**
+         * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+         * This determines the timezone context for evaluating the recurrence expression.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("localTimeZone")
+        private String localTimeZone;
+
+        /**
+         * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+         * This determines the timezone context for evaluating the recurrence expression.
+         *
+         * @param localTimeZone the value to set
+         * @return this builder
+         **/
+        public Builder localTimeZone(String localTimeZone) {
+            this.localTimeZone = localTimeZone;
+            this.__explicitlySet__.add("localTimeZone");
+            return this;
+        }
+        /**
          * These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -308,6 +331,7 @@ public final class CreateScheduleDetails
                             this.resources,
                             this.timeStarts,
                             this.timeEnds,
+                            this.localTimeZone,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -347,6 +371,9 @@ public final class CreateScheduleDetails
             }
             if (model.wasPropertyExplicitlySet("timeEnds")) {
                 this.timeEnds(model.getTimeEnds());
+            }
+            if (model.wasPropertyExplicitlySet("localTimeZone")) {
+                this.localTimeZone(model.getLocalTimeZone());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -597,6 +624,24 @@ public final class CreateScheduleDetails
     }
 
     /**
+     * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+     * This determines the timezone context for evaluating the recurrence expression.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("localTimeZone")
+    private final String localTimeZone;
+
+    /**
+     * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+     * This determines the timezone context for evaluating the recurrence expression.
+     *
+     * @return the value
+     **/
+    public String getLocalTimeZone() {
+        return localTimeZone;
+    }
+
+    /**
      * These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -664,6 +709,7 @@ public final class CreateScheduleDetails
         sb.append(", resources=").append(String.valueOf(this.resources));
         sb.append(", timeStarts=").append(String.valueOf(this.timeStarts));
         sb.append(", timeEnds=").append(String.valueOf(this.timeEnds));
+        sb.append(", localTimeZone=").append(String.valueOf(this.localTimeZone));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -690,6 +736,7 @@ public final class CreateScheduleDetails
                 && java.util.Objects.equals(this.resources, other.resources)
                 && java.util.Objects.equals(this.timeStarts, other.timeStarts)
                 && java.util.Objects.equals(this.timeEnds, other.timeEnds)
+                && java.util.Objects.equals(this.localTimeZone, other.localTimeZone)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -717,6 +764,9 @@ public final class CreateScheduleDetails
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
         result = (result * PRIME) + (this.timeStarts == null ? 43 : this.timeStarts.hashCode());
         result = (result * PRIME) + (this.timeEnds == null ? 43 : this.timeEnds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.localTimeZone == null ? 43 : this.localTimeZone.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

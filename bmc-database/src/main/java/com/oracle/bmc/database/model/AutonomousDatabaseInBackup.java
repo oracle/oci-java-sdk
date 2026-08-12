@@ -23,11 +23,13 @@ package com.oracle.bmc.database.model;
 public final class AutonomousDatabaseInBackup
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "displayName"})
-    public AutonomousDatabaseInBackup(String compartmentId, String displayName) {
+    @java.beans.ConstructorProperties({"compartmentId", "displayName", "lifecycleState"})
+    public AutonomousDatabaseInBackup(
+            String compartmentId, String displayName, LifecycleState lifecycleState) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.lifecycleState = lifecycleState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -64,13 +66,30 @@ public final class AutonomousDatabaseInBackup
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * The current state of the Autonomous AI Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        /**
+         * The current state of the Autonomous AI Database.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseInBackup build() {
             AutonomousDatabaseInBackup model =
-                    new AutonomousDatabaseInBackup(this.compartmentId, this.displayName);
+                    new AutonomousDatabaseInBackup(
+                            this.compartmentId, this.displayName, this.lifecycleState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -84,6 +103,9 @@ public final class AutonomousDatabaseInBackup
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
             }
             return this;
         }
@@ -128,6 +150,88 @@ public final class AutonomousDatabaseInBackup
         return displayName;
     }
 
+    /**
+     * The current state of the Autonomous AI Database.
+     **/
+    public enum LifecycleState {
+        Provisioning("PROVISIONING"),
+        Available("AVAILABLE"),
+        Stopping("STOPPING"),
+        Stopped("STOPPED"),
+        Starting("STARTING"),
+        Terminating("TERMINATING"),
+        Terminated("TERMINATED"),
+        Unavailable("UNAVAILABLE"),
+        RestoreInProgress("RESTORE_IN_PROGRESS"),
+        RestoreFailed("RESTORE_FAILED"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        ScaleInProgress("SCALE_IN_PROGRESS"),
+        AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
+        Updating("UPDATING"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
+        Restarting("RESTARTING"),
+        Recreating("RECREATING"),
+        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        Upgrading("UPGRADING"),
+        Inaccessible("INACCESSIBLE"),
+        Standby("STANDBY"),
+        Transporting("TRANSPORTING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of the Autonomous AI Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleState lifecycleState;
+
+    /**
+     * The current state of the Autonomous AI Database.
+     * @return the value
+     **/
+    public LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -144,6 +248,7 @@ public final class AutonomousDatabaseInBackup
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
     }
@@ -160,6 +265,7 @@ public final class AutonomousDatabaseInBackup
         AutonomousDatabaseInBackup other = (AutonomousDatabaseInBackup) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && super.equals(other);
     }
 
@@ -171,6 +277,9 @@ public final class AutonomousDatabaseInBackup
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

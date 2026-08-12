@@ -22,13 +22,24 @@ package com.oracle.bmc.core.model;
 public final class HostGroupConfiguration
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"target", "firmwareBundleId", "recycleLevel", "state"})
+    @java.beans.ConstructorProperties({
+        "target",
+        "firmwareBundleId",
+        "recycleLevel",
+        "quickRecycleSettings",
+        "state"
+    })
     public HostGroupConfiguration(
-            String target, String firmwareBundleId, RecycleLevel recycleLevel, State state) {
+            String target,
+            String firmwareBundleId,
+            RecycleLevel recycleLevel,
+            QuickRecycleSettings quickRecycleSettings,
+            State state) {
         super();
         this.target = target;
         this.firmwareBundleId = firmwareBundleId;
         this.recycleLevel = recycleLevel;
+        this.quickRecycleSettings = quickRecycleSettings;
         this.state = state;
     }
 
@@ -88,6 +99,15 @@ public final class HostGroupConfiguration
             this.__explicitlySet__.add("recycleLevel");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("quickRecycleSettings")
+        private QuickRecycleSettings quickRecycleSettings;
+
+        public Builder quickRecycleSettings(QuickRecycleSettings quickRecycleSettings) {
+            this.quickRecycleSettings = quickRecycleSettings;
+            this.__explicitlySet__.add("quickRecycleSettings");
+            return this;
+        }
         /**
          * The state of the host group configuration.
          **/
@@ -111,7 +131,11 @@ public final class HostGroupConfiguration
         public HostGroupConfiguration build() {
             HostGroupConfiguration model =
                     new HostGroupConfiguration(
-                            this.target, this.firmwareBundleId, this.recycleLevel, this.state);
+                            this.target,
+                            this.firmwareBundleId,
+                            this.recycleLevel,
+                            this.quickRecycleSettings,
+                            this.state);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -128,6 +152,9 @@ public final class HostGroupConfiguration
             }
             if (model.wasPropertyExplicitlySet("recycleLevel")) {
                 this.recycleLevel(model.getRecycleLevel());
+            }
+            if (model.wasPropertyExplicitlySet("quickRecycleSettings")) {
+                this.quickRecycleSettings(model.getQuickRecycleSettings());
             }
             if (model.wasPropertyExplicitlySet("state")) {
                 this.state(model.getState());
@@ -246,6 +273,13 @@ public final class HostGroupConfiguration
         return recycleLevel;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("quickRecycleSettings")
+    private final QuickRecycleSettings quickRecycleSettings;
+
+    public QuickRecycleSettings getQuickRecycleSettings() {
+        return quickRecycleSettings;
+    }
+
     /**
      * The state of the host group configuration.
      **/
@@ -324,6 +358,7 @@ public final class HostGroupConfiguration
         sb.append("target=").append(String.valueOf(this.target));
         sb.append(", firmwareBundleId=").append(String.valueOf(this.firmwareBundleId));
         sb.append(", recycleLevel=").append(String.valueOf(this.recycleLevel));
+        sb.append(", quickRecycleSettings=").append(String.valueOf(this.quickRecycleSettings));
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(")");
         return sb.toString();
@@ -342,6 +377,7 @@ public final class HostGroupConfiguration
         return java.util.Objects.equals(this.target, other.target)
                 && java.util.Objects.equals(this.firmwareBundleId, other.firmwareBundleId)
                 && java.util.Objects.equals(this.recycleLevel, other.recycleLevel)
+                && java.util.Objects.equals(this.quickRecycleSettings, other.quickRecycleSettings)
                 && java.util.Objects.equals(this.state, other.state)
                 && super.equals(other);
     }
@@ -355,6 +391,11 @@ public final class HostGroupConfiguration
                 (result * PRIME)
                         + (this.firmwareBundleId == null ? 43 : this.firmwareBundleId.hashCode());
         result = (result * PRIME) + (this.recycleLevel == null ? 43 : this.recycleLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.quickRecycleSettings == null
+                                ? 43
+                                : this.quickRecycleSettings.hashCode());
         result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

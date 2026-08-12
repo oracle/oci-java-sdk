@@ -47,6 +47,15 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
         private String characterSet;
 
@@ -658,6 +667,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                     new CreateRefreshableAutonomousDatabaseCloneDetails(
                             this.subscriptionId,
                             this.compartmentId,
+                            this.availabilityDomain,
                             this.characterSet,
                             this.ncharacterSet,
                             this.dbName,
@@ -731,6 +741,9 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
             }
             if (model.wasPropertyExplicitlySet("characterSet")) {
                 this.characterSet(model.getCharacterSet());
@@ -934,6 +947,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
     public CreateRefreshableAutonomousDatabaseCloneDetails(
             String subscriptionId,
             String compartmentId,
+            String availabilityDomain,
             String characterSet,
             String ncharacterSet,
             String dbName,
@@ -997,6 +1011,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         super(
                 subscriptionId,
                 compartmentId,
+                availabilityDomain,
                 characterSet,
                 ncharacterSet,
                 dbName,

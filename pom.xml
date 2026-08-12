@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.95.0</version>
+  <version>2.97.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -894,6 +894,8 @@
     <module>bmc-databasetoolsruntime</module>
     <module>bmc-costad</module>
     <module>bmc-datacc</module>
+    <module>bmc-ddfs</module>
+    <module>bmc-distributeddatabasev26</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

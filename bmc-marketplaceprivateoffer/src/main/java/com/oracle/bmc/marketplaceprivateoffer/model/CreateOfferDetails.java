@@ -35,6 +35,8 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
         "sellerInformation",
         "resourceBundles",
         "customFields",
+        "offerType",
+        "offerQuoteIds",
         "freeformTags",
         "definedTags"
     })
@@ -52,6 +54,8 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
             SellerInformation sellerInformation,
             java.util.List<ResourceBundle> resourceBundles,
             java.util.List<CustomField> customFields,
+            Offer.OfferType offerType,
+            java.util.List<String> offerQuoteIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -68,6 +72,8 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
         this.sellerInformation = sellerInformation;
         this.resourceBundles = resourceBundles;
         this.customFields = customFields;
+        this.offerType = offerType;
+        this.offerQuoteIds = offerQuoteIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -262,6 +268,38 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The type of the offer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("offerType")
+        private Offer.OfferType offerType;
+
+        /**
+         * The type of the offer.
+         * @param offerType the value to set
+         * @return this builder
+         **/
+        public Builder offerType(Offer.OfferType offerType) {
+            this.offerType = offerType;
+            this.__explicitlySet__.add("offerType");
+            return this;
+        }
+        /**
+         * A list of associated offer quotes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("offerQuoteIds")
+        private java.util.List<String> offerQuoteIds;
+
+        /**
+         * A list of associated offer quotes.
+         * @param offerQuoteIds the value to set
+         * @return this builder
+         **/
+        public Builder offerQuoteIds(java.util.List<String> offerQuoteIds) {
+            this.offerQuoteIds = offerQuoteIds;
+            this.__explicitlySet__.add("offerQuoteIds");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -322,6 +360,8 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
                             this.sellerInformation,
                             this.resourceBundles,
                             this.customFields,
+                            this.offerType,
+                            this.offerQuoteIds,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -370,6 +410,12 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("customFields")) {
                 this.customFields(model.getCustomFields());
+            }
+            if (model.wasPropertyExplicitlySet("offerType")) {
+                this.offerType(model.getOfferType());
+            }
+            if (model.wasPropertyExplicitlySet("offerQuoteIds")) {
+                this.offerQuoteIds(model.getOfferQuoteIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -554,6 +600,34 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The type of the offer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("offerType")
+    private final Offer.OfferType offerType;
+
+    /**
+     * The type of the offer.
+     * @return the value
+     **/
+    public Offer.OfferType getOfferType() {
+        return offerType;
+    }
+
+    /**
+     * A list of associated offer quotes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("offerQuoteIds")
+    private final java.util.List<String> offerQuoteIds;
+
+    /**
+     * A list of associated offer quotes.
+     * @return the value
+     **/
+    public java.util.List<String> getOfferQuoteIds() {
+        return offerQuoteIds;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -616,6 +690,8 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", sellerInformation=").append(String.valueOf(this.sellerInformation));
         sb.append(", resourceBundles=").append(String.valueOf(this.resourceBundles));
         sb.append(", customFields=").append(String.valueOf(this.customFields));
+        sb.append(", offerType=").append(String.valueOf(this.offerType));
+        sb.append(", offerQuoteIds=").append(String.valueOf(this.offerQuoteIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -645,6 +721,8 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.sellerInformation, other.sellerInformation)
                 && java.util.Objects.equals(this.resourceBundles, other.resourceBundles)
                 && java.util.Objects.equals(this.customFields, other.customFields)
+                && java.util.Objects.equals(this.offerType, other.offerType)
+                && java.util.Objects.equals(this.offerQuoteIds, other.offerQuoteIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -685,6 +763,10 @@ public final class CreateOfferDetails extends com.oracle.bmc.http.internal.Expli
                 (result * PRIME)
                         + (this.resourceBundles == null ? 43 : this.resourceBundles.hashCode());
         result = (result * PRIME) + (this.customFields == null ? 43 : this.customFields.hashCode());
+        result = (result * PRIME) + (this.offerType == null ? 43 : this.offerType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.offerQuoteIds == null ? 43 : this.offerQuoteIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

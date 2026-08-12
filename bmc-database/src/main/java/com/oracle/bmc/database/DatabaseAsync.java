@@ -3366,6 +3366,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about the specified Autonomous Container Database backup.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousContainerDatabaseBackupResponse>
+            getAutonomousContainerDatabaseBackup(
+                    GetAutonomousContainerDatabaseBackupRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousContainerDatabaseBackupRequest,
+                                    GetAutonomousContainerDatabaseBackupResponse>
+                            handler);
+
+    /**
      * **Deprecated.** Use the {@link #getAutonomousContainerDatabase(GetAutonomousContainerDatabaseRequest, Consumer, Consumer) getAutonomousContainerDatabase} operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
      *
      *
@@ -5046,6 +5065,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListAutonomousDatabasesRequest, ListAutonomousDatabasesResponse>
                     handler);
+
+    /**
+     * Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container's compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>
+            listAutonomousDatabasesInAutonomousContainerDatabaseBackup(
+                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupRequest,
+                                    ListAutonomousDatabasesInAutonomousContainerDatabaseBackupResponse>
+                            handler);
 
     /**
      * Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for

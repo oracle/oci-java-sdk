@@ -559,6 +559,48 @@ public class SubscriptionClient implements Subscription {
     }
 
     @Override
+    public CancelSubscriptionResponse cancelSubscription(CancelSubscriptionRequest request) {
+        LOG.trace("Called cancelSubscription");
+        final CancelSubscriptionRequest interceptedRequest =
+                CancelSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelSubscriptionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "CancelSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/Subscription/CancelSubscription");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelSubscriptionResponse>
+                transformer =
+                        CancelSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCancelSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
         LOG.trace("Called cancelWorkRequest");
         final CancelWorkRequestRequest interceptedRequest =

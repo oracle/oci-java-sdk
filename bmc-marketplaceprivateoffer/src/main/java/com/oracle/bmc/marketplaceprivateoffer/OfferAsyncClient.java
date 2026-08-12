@@ -681,6 +681,45 @@ public class OfferAsyncClient implements OfferAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SendOfferResponse> sendOffer(
+            SendOfferRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SendOfferRequest, SendOfferResponse>
+                    handler) {
+        LOG.trace("Called async sendOffer");
+        final SendOfferRequest interceptedRequest = SendOfferConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SendOfferConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Offer", "SendOffer", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, SendOfferResponse>
+                transformer =
+                        SendOfferConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SendOfferRequest, SendOfferResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<SendOfferRequest, SendOfferResponse>,
+                        java.util.concurrent.Future<SendOfferResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SendOfferRequest, SendOfferResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOfferResponse> updateOffer(
             UpdateOfferRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateOfferRequest, UpdateOfferResponse>
@@ -714,6 +753,47 @@ public class OfferAsyncClient implements OfferAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateOfferRequest, UpdateOfferResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<WithdrawOfferResponse> withdrawOffer(
+            WithdrawOfferRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<WithdrawOfferRequest, WithdrawOfferResponse>
+                    handler) {
+        LOG.trace("Called async withdrawOffer");
+        final WithdrawOfferRequest interceptedRequest =
+                WithdrawOfferConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                WithdrawOfferConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Offer", "WithdrawOffer", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, WithdrawOfferResponse>
+                transformer =
+                        WithdrawOfferConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<WithdrawOfferRequest, WithdrawOfferResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                WithdrawOfferRequest, WithdrawOfferResponse>,
+                        java.util.concurrent.Future<WithdrawOfferResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    WithdrawOfferRequest, WithdrawOfferResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

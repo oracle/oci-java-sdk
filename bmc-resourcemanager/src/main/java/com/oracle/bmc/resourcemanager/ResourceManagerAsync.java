@@ -670,6 +670,43 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns console log entries for the specified work request in JSON format.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestLogEntriesResponse> getWorkRequestLogEntries(
+            GetWorkRequestLogEntriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestLogEntriesRequest, GetWorkRequestLogEntriesResponse>
+                    handler);
+
+    /**
+     * Returns the raw log file for the specified work request in text format.
+     * The file includes a maximum of 100,000 log entries.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestLogEntriesContentResponse>
+            getWorkRequestLogEntriesContent(
+                    GetWorkRequestLogEntriesContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetWorkRequestLogEntriesContentRequest,
+                                    GetWorkRequestLogEntriesContentResponse>
+                            handler);
+
+    /**
      * Lists configuration source providers according to the specified filter.
      * For more information, see
      * [Listing Configuration Source Providers](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/list-csp.htm).

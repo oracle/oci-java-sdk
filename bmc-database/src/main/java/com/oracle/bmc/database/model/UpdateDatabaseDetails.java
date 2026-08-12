@@ -35,7 +35,12 @@ public final class UpdateDatabaseDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
-            PatchOptions patchOptions) {
+            PatchOptions patchOptions,
+            String databaseAdminPassword,
+            ProtectionMode protectionMode,
+            TransportType transportType,
+            Boolean isActiveDataGuardEnabled,
+            AutoFailoverConfiguration autoFailoverConfiguration) {
         super();
         this.dbBackupConfig = dbBackupConfig;
         this.dbHomeId = dbHomeId;
@@ -49,6 +54,12 @@ public final class UpdateDatabaseDetails
         this.definedTags = definedTags;
         this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.patchOptions = patchOptions;
+        this.databaseAdminPassword =
+                databaseAdminPassword != null ? databaseAdminPassword.toCharArray() : null;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+        this.autoFailoverConfiguration = autoFailoverConfiguration;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -63,7 +74,12 @@ public final class UpdateDatabaseDetails
         "freeformTags",
         "definedTags",
         "managedSoftwareUpdateDetails",
-        "patchOptions"
+        "patchOptions",
+        "databaseAdminPassword",
+        "protectionMode",
+        "transportType",
+        "isActiveDataGuardEnabled",
+        "autoFailoverConfiguration"
     })
     public UpdateDatabaseDetails(
             DbBackupConfig dbBackupConfig,
@@ -75,7 +91,12 @@ public final class UpdateDatabaseDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
-            PatchOptions patchOptions) {
+            PatchOptions patchOptions,
+            char[] databaseAdminPassword,
+            ProtectionMode protectionMode,
+            TransportType transportType,
+            Boolean isActiveDataGuardEnabled,
+            AutoFailoverConfiguration autoFailoverConfiguration) {
         super();
         this.dbBackupConfig = dbBackupConfig;
         this.dbHomeId = dbHomeId;
@@ -87,6 +108,11 @@ public final class UpdateDatabaseDetails
         this.definedTags = definedTags;
         this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.patchOptions = patchOptions;
+        this.databaseAdminPassword = databaseAdminPassword;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
+        this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+        this.autoFailoverConfiguration = autoFailoverConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -260,6 +286,122 @@ public final class UpdateDatabaseDetails
             this.__explicitlySet__.add("patchOptions");
             return this;
         }
+        /**
+         * The administrator password of the primary database in this Data Guard association.
+         * <p>
+         **The password MUST be the same as the primary admin password.**
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
+        private char[] databaseAdminPassword;
+
+        /**
+         * The administrator password of the primary database in this Data Guard association.
+         * <p>
+         **The password MUST be the same as the primary admin password.**
+         *
+         * @param databaseAdminPassword the value to set
+         * @return this builder
+         **/
+        public Builder databaseAdminPassword(char[] databaseAdminPassword) {
+            this.databaseAdminPassword = databaseAdminPassword;
+            this.__explicitlySet__.add("databaseAdminPassword");
+            return this;
+        }
+
+        public Builder databaseAdminPassword(String databaseAdminPassword) {
+            this.databaseAdminPassword =
+                    databaseAdminPassword != null ? databaseAdminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("databaseAdminPassword");
+            return this;
+        }
+
+        /**
+         * The protection mode of this Data Guard. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private ProtectionMode protectionMode;
+
+        /**
+         * The protection mode of this Data Guard. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * in the Oracle Data Guard documentation.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         **/
+        public Builder protectionMode(ProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+         * <p>
+         * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * <p>
+         * For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * in the Oracle Data Guard documentation.
+         * <p>
+         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+        private TransportType transportType;
+
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+         * <p>
+         * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * <p>
+         * For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * in the Oracle Data Guard documentation.
+         * <p>
+         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+         *
+         * @param transportType the value to set
+         * @return this builder
+         **/
+        public Builder transportType(TransportType transportType) {
+            this.transportType = transportType;
+            this.__explicitlySet__.add("transportType");
+            return this;
+        }
+        /**
+         * True if active Data Guard is enabled.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
+        private Boolean isActiveDataGuardEnabled;
+
+        /**
+         * True if active Data Guard is enabled.
+         * @param isActiveDataGuardEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            this.__explicitlySet__.add("isActiveDataGuardEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoFailoverConfiguration")
+        private AutoFailoverConfiguration autoFailoverConfiguration;
+
+        public Builder autoFailoverConfiguration(
+                AutoFailoverConfiguration autoFailoverConfiguration) {
+            this.autoFailoverConfiguration = autoFailoverConfiguration;
+            this.__explicitlySet__.add("autoFailoverConfiguration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -276,7 +418,12 @@ public final class UpdateDatabaseDetails
                             this.freeformTags,
                             this.definedTags,
                             this.managedSoftwareUpdateDetails,
-                            this.patchOptions);
+                            this.patchOptions,
+                            this.databaseAdminPassword,
+                            this.protectionMode,
+                            this.transportType,
+                            this.isActiveDataGuardEnabled,
+                            this.autoFailoverConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -314,6 +461,21 @@ public final class UpdateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("patchOptions")) {
                 this.patchOptions(model.getPatchOptions());
+            }
+            if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
+                this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
+            }
+            if (model.wasPropertyExplicitlySet("isActiveDataGuardEnabled")) {
+                this.isActiveDataGuardEnabled(model.getIsActiveDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoFailoverConfiguration")) {
+                this.autoFailoverConfiguration(model.getAutoFailoverConfiguration());
             }
             return this;
         }
@@ -490,6 +652,203 @@ public final class UpdateDatabaseDetails
         return patchOptions;
     }
 
+    /**
+     * The administrator password of the primary database in this Data Guard association.
+     * <p>
+     **The password MUST be the same as the primary admin password.**
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
+    private final char[] databaseAdminPassword;
+
+    /**
+     * The administrator password of the primary database in this Data Guard association.
+     * &lt;p&gt;
+     **The password MUST be the same as the primary admin password.**
+     *
+     * return the value
+     * @Deprecated - Use getDatabaseAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getDatabaseAdminPassword() {
+        return databaseAdminPassword != null ? new String(databaseAdminPassword) : null;
+    }
+
+    /**
+     * The administrator password of the primary database in this Data Guard association.
+     * <p>
+     **The password MUST be the same as the primary admin password.**
+     *
+     * @return the value
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
+    public char[] getDatabaseAdminPassword__AsCharArray() {
+        return databaseAdminPassword;
+    }
+    /**
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     **/
+    public enum ProtectionMode {
+        MaximumAvailability("MAXIMUM_AVAILABILITY"),
+        MaximumPerformance("MAXIMUM_PERFORMANCE"),
+        MaximumProtection("MAXIMUM_PROTECTION"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ProtectionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProtectionMode v : ProtectionMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ProtectionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProtectionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ProtectionMode: " + key);
+        }
+    };
+    /**
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    private final ProtectionMode protectionMode;
+
+    /**
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     * @return the value
+     **/
+    public ProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
+    /**
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+     * <p>
+     * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * <p>
+     * For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * in the Oracle Data Guard documentation.
+     * <p>
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     *
+     **/
+    public enum TransportType {
+        Sync("SYNC"),
+        Async("ASYNC"),
+        Fastsync("FASTSYNC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, TransportType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TransportType v : TransportType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        TransportType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TransportType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid TransportType: " + key);
+        }
+    };
+    /**
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+     * <p>
+     * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * <p>
+     * For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * in the Oracle Data Guard documentation.
+     * <p>
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+    private final TransportType transportType;
+
+    /**
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+     * <p>
+     * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * <p>
+     * For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * in the Oracle Data Guard documentation.
+     * <p>
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+     *
+     * @return the value
+     **/
+    public TransportType getTransportType() {
+        return transportType;
+    }
+
+    /**
+     * True if active Data Guard is enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
+    private final Boolean isActiveDataGuardEnabled;
+
+    /**
+     * True if active Data Guard is enabled.
+     * @return the value
+     **/
+    public Boolean getIsActiveDataGuardEnabled() {
+        return isActiveDataGuardEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autoFailoverConfiguration")
+    private final AutoFailoverConfiguration autoFailoverConfiguration;
+
+    public AutoFailoverConfiguration getAutoFailoverConfiguration() {
+        return autoFailoverConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -515,6 +874,13 @@ public final class UpdateDatabaseDetails
         sb.append(", managedSoftwareUpdateDetails=")
                 .append(String.valueOf(this.managedSoftwareUpdateDetails));
         sb.append(", patchOptions=").append(String.valueOf(this.patchOptions));
+        sb.append(", databaseAdminPassword=").append("<redacted>");
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", transportType=").append(String.valueOf(this.transportType));
+        sb.append(", isActiveDataGuardEnabled=")
+                .append(String.valueOf(this.isActiveDataGuardEnabled));
+        sb.append(", autoFailoverConfiguration=")
+                .append(String.valueOf(this.autoFailoverConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -540,6 +906,13 @@ public final class UpdateDatabaseDetails
                 && java.util.Objects.equals(
                         this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
                 && java.util.Objects.equals(this.patchOptions, other.patchOptions)
+                && java.util.Objects.equals(this.databaseAdminPassword, other.databaseAdminPassword)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.transportType, other.transportType)
+                && java.util.Objects.equals(
+                        this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
+                && java.util.Objects.equals(
+                        this.autoFailoverConfiguration, other.autoFailoverConfiguration)
                 && super.equals(other);
     }
 
@@ -577,6 +950,27 @@ public final class UpdateDatabaseDetails
                                 ? 43
                                 : this.managedSoftwareUpdateDetails.hashCode());
         result = (result * PRIME) + (this.patchOptions == null ? 43 : this.patchOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseAdminPassword == null
+                                ? 43
+                                : this.databaseAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportType == null ? 43 : this.transportType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isActiveDataGuardEnabled == null
+                                ? 43
+                                : this.isActiveDataGuardEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoFailoverConfiguration == null
+                                ? 43
+                                : this.autoFailoverConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

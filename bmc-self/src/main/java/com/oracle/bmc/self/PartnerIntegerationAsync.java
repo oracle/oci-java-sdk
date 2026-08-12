@@ -76,6 +76,22 @@ public interface PartnerIntegerationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists marketplace publisher partner info for a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPartnersResponse> listPartners(
+            ListPartnersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPartnersRequest, ListPartnersResponse>
+                    handler);
+
+    /**
      * Gets information about a Subscription.
      *
      * @param request The request object containing the details to send
@@ -107,4 +123,44 @@ public interface PartnerIntegerationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ResolveSubscriptionRequest, ResolveSubscriptionResponse>
                     handler);
+
+    /**
+     * Asynchronously submits a UTF-8 CSV usage file for marketplace offers. The file
+     * must not exceed 50 MB or 10,000 rows and must include required usage columns.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SubmitSubscriptionUsageBatchResponse> submitSubscriptionUsageBatch(
+            SubmitSubscriptionUsageBatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SubmitSubscriptionUsageBatchRequest,
+                            SubmitSubscriptionUsageBatchResponse>
+                    handler);
+
+    /**
+     * Synchronously submits usage records for marketplace offers. Each record must include
+     * `id`, `marketplaceOfferId`, `amount`, `currencyCode`, `timeUsageStarted`,
+     * `timeUsageEnded`, and `usageDimensionName`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SubmitSubscriptionUsageRecordsResponse>
+            submitSubscriptionUsageRecords(
+                    SubmitSubscriptionUsageRecordsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SubmitSubscriptionUsageRecordsRequest,
+                                    SubmitSubscriptionUsageRecordsResponse>
+                            handler);
 }

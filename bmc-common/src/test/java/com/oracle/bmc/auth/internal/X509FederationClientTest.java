@@ -13,10 +13,19 @@ import com.oracle.bmc.http.internal.RestClient;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
+import java.lang.reflect.Field;
 import java.security.KeyPairGenerator;
+import java.security.cert.X509Certificate;
+import java.security.interfaces.RSAPrivateKey;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.security.auth.RefreshFailedException;
+import javax.security.auth.Refreshable;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,6 +48,11 @@ import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.mock;
@@ -50,6 +64,7 @@ import static org.powermock.api.mockito.PowerMockito.whenNew;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({
+    AuthUtils.class,
     RestClientUtils.class,
     Thread.class,
     X509FederationClient.class,
@@ -311,5 +326,368 @@ public class X509FederationClientTest {
                 "Concurrent requests should coalesce into one server call",
                 1,
                 serverCallCount.get());
+    }
+
+    @Test
+    public void leafCertificateRuntimeFailureReleasesWaitingCallersAndAllowsNextRefresh()
+            throws Exception {
+        assertFailureReleasesWaitingCallersAndAllowsNextRefresh(
+                new IllegalArgumentException("Simulated IMDS certificate failure"));
+    }
+
+    @Test
+    public void
+            leafCertificateRefreshFailureReturnsErrorToRefreshingAndWaitingCallersAndAllowsNextRefresh()
+                    throws Exception {
+        RefreshFailedException failure =
+                new RefreshFailedException("IMDS GET cert.pem returned HTTP 404");
+        CountDownLatch refreshEntered = new CountDownLatch(1);
+        CountDownLatch releaseFailure = new CountDownLatch(1);
+        AtomicInteger refreshAttempts = new AtomicInteger();
+        TestRefreshableCertificateSupplier leafCertificateSupplier =
+                new TestRefreshableCertificateSupplier() {
+                    @Override
+                    public void refresh() throws RefreshFailedException {
+                        if (refreshAttempts.getAndIncrement() != 0) {
+                            return;
+                        }
+                        refreshEntered.countDown();
+                        try {
+                            if (!releaseFailure.await(5, TimeUnit.SECONDS)) {
+                                throw new RefreshFailedException(
+                                        "Timed out waiting to simulate cert.pem failure");
+                            }
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                            throw new RefreshFailedException(
+                                    "Interrupted while simulating cert.pem failure");
+                        }
+                        throw failure;
+                    }
+                };
+        SessionKeySupplier sessionKeySupplier = mock(SessionKeySupplier.class);
+        X509FederationClient client =
+                createClient(
+                        leafCertificateSupplier,
+                        sessionKeySupplier,
+                        Collections.emptySet(),
+                        "TEST");
+        stubSuccessfulTokenRequest(client, sessionKeySupplier);
+
+        FutureTask<Throwable> leader =
+                new FutureTask<>(() -> captureGetSecurityTokenFailure(client));
+        FutureTask<Throwable> follower =
+                new FutureTask<>(() -> captureGetSecurityTokenFailure(client));
+        Thread leaderThread = new Thread(leader, "x509-refresh-leader");
+        Thread followerThread = new Thread(follower, "x509-refresh-follower");
+        try {
+            leaderThread.start();
+            assertTrue(
+                    "Leader did not enter certificate refresh",
+                    refreshEntered.await(5, TimeUnit.SECONDS));
+
+            followerThread.start();
+            final Object waitObject = new Object();
+            long deadline = System.currentTimeMillis() + 5_000;
+            while (followerThread.getState() != Thread.State.TIMED_WAITING
+                    && System.currentTimeMillis() < deadline) {
+                synchronized (waitObject) {
+                    waitObject.wait(10);
+                }
+            }
+            assertEquals(Thread.State.TIMED_WAITING, followerThread.getState());
+
+            releaseFailure.countDown();
+            Throwable leaderFailure = leader.get(5, TimeUnit.SECONDS);
+            Throwable followerFailure = follower.get(2, TimeUnit.SECONDS);
+
+            assertTrue(leaderFailure instanceof BmcException);
+            assertSame(failure, leaderFailure.getCause());
+            assertSame(leaderFailure, followerFailure);
+            assertNull(getInFlightRefresh(client));
+            assertEquals(VALID_TOKEN, client.refreshAndGetSecurityToken());
+        } finally {
+            releaseFailure.countDown();
+            leaderThread.interrupt();
+            followerThread.interrupt();
+            leaderThread.join(5_000);
+            followerThread.join(5_000);
+        }
+    }
+
+    @Test
+    public void seriousJavaErrorReleasesWaitingCallersAndAllowsNextRefresh() throws Exception {
+        assertFailureReleasesWaitingCallersAndAllowsNextRefresh(
+                new AssertionError("Simulated serious JVM failure"));
+    }
+
+    @Test
+    public void sessionKeyFailureDoesNotBlockNextTokenRefresh() throws Exception {
+        IllegalStateException failure = new IllegalStateException("Session key refresh failed");
+        SessionKeySupplier sessionKeySupplier = mock(SessionKeySupplier.class);
+        AtomicInteger refreshAttempts = new AtomicInteger();
+        Mockito.doAnswer(
+                        invocation -> {
+                            if (refreshAttempts.getAndIncrement() == 0) {
+                                throw failure;
+                            }
+                            return null;
+                        })
+                .when(sessionKeySupplier)
+                .refreshKeys();
+
+        X509FederationClient client =
+                createClient(
+                        mock(X509CertificateSupplier.class),
+                        sessionKeySupplier,
+                        Collections.emptySet(),
+                        "TEST");
+        stubSuccessfulTokenRequest(client, sessionKeySupplier);
+
+        assertSame(failure, captureRefreshFailure(client));
+        assertNull(getInFlightRefresh(client));
+        assertEquals(VALID_TOKEN, client.refreshAndGetSecurityToken());
+    }
+
+    @Test
+    public void certificateTenancyValidationFailureDoesNotBlockNextTokenRefresh() throws Exception {
+        IllegalArgumentException failure =
+                new IllegalArgumentException("Certificate tenancy validation failed");
+        X509Certificate certificate = mock(X509Certificate.class);
+        X509CertificateSupplier.CertificateAndPrivateKeyPair certificateAndPrivateKeyPair =
+                new X509CertificateSupplier.CertificateAndPrivateKeyPair(certificate, null);
+        TestRefreshableCertificateSupplier leafCertificateSupplier =
+                new TestRefreshableCertificateSupplier() {
+                    @Override
+                    public void refresh() {}
+
+                    @Override
+                    public CertificateAndPrivateKeyPair getCertificateAndKeyPair() {
+                        return certificateAndPrivateKeyPair;
+                    }
+                };
+        SessionKeySupplier sessionKeySupplier = mock(SessionKeySupplier.class);
+        SecurityTokenAdapter successfulToken =
+                new SecurityTokenAdapter(VALID_TOKEN, sessionKeySupplier);
+        mockStatic(AuthUtils.class);
+        PowerMockito.when(AuthUtils.getTenantIdFromCertificate(certificate))
+                .thenThrow(failure)
+                .thenReturn("tenantId");
+        X509FederationClient client =
+                createClient(
+                        leafCertificateSupplier,
+                        sessionKeySupplier,
+                        Collections.emptySet(),
+                        "DEFAULT");
+        PowerMockito.doReturn(successfulToken).when(client, "getSecurityTokenFromServer");
+
+        assertSame(failure, captureRefreshFailure(client));
+        assertNull(getInFlightRefresh(client));
+        assertEquals(VALID_TOKEN, client.refreshAndGetSecurityToken());
+    }
+
+    @Test
+    public void intermediateCertificateFailureDoesNotBlockNextTokenRefresh() throws Exception {
+        RefreshFailedException failure =
+                new RefreshFailedException("Intermediate certificate refresh failed");
+        AtomicInteger refreshAttempts = new AtomicInteger();
+        TestRefreshableCertificateSupplier intermediateCertificateSupplier =
+                new TestRefreshableCertificateSupplier() {
+                    @Override
+                    public void refresh() throws RefreshFailedException {
+                        if (refreshAttempts.getAndIncrement() == 0) {
+                            throw failure;
+                        }
+                    }
+                };
+        SessionKeySupplier sessionKeySupplier = mock(SessionKeySupplier.class);
+        X509FederationClient client =
+                createClient(
+                        mock(X509CertificateSupplier.class),
+                        sessionKeySupplier,
+                        Collections.singleton(intermediateCertificateSupplier),
+                        "TEST");
+        stubSuccessfulTokenRequest(client, sessionKeySupplier);
+
+        Throwable actualFailure = captureRefreshFailure(client);
+        assertTrue(actualFailure instanceof BmcException);
+        assertSame(failure, actualFailure.getCause());
+        assertNull(getInFlightRefresh(client));
+        assertEquals(VALID_TOKEN, client.refreshAndGetSecurityToken());
+    }
+
+    @Test
+    public void federationServerFailurePreservesErrorAndDoesNotBlockNextTokenRefresh()
+            throws Exception {
+        BmcException serverFailure =
+                new BmcException(500, "InternalError", "Federation server failed", "requestId");
+        SessionKeySupplier sessionKeySupplier = mock(SessionKeySupplier.class);
+        X509FederationClient client =
+                createClient(
+                        mock(X509CertificateSupplier.class),
+                        sessionKeySupplier,
+                        Collections.emptySet(),
+                        "TEST");
+        AtomicInteger serverAttempts = new AtomicInteger();
+        PowerMockito.doAnswer(
+                        invocation -> {
+                            if (serverAttempts.getAndIncrement() == 0) {
+                                throw serverFailure;
+                            }
+                            return new SecurityTokenAdapter(VALID_TOKEN, sessionKeySupplier);
+                        })
+                .when(client, "getSecurityTokenFromServer");
+
+        Throwable actualFailure = captureRefreshFailure(client);
+        assertTrue(actualFailure instanceof BmcException);
+        assertTrue(actualFailure.getMessage().contains("Error refreshing security token."));
+        assertSame(serverFailure, actualFailure.getCause());
+        assertNull(getInFlightRefresh(client));
+        assertEquals(VALID_TOKEN, client.refreshAndGetSecurityToken());
+    }
+
+    private void assertFailureReleasesWaitingCallersAndAllowsNextRefresh(Throwable failure)
+            throws Exception {
+        CountDownLatch refreshEntered = new CountDownLatch(1);
+        CountDownLatch releaseFailure = new CountDownLatch(1);
+        AtomicInteger refreshAttempts = new AtomicInteger();
+        TestRefreshableCertificateSupplier leafCertificateSupplier =
+                new TestRefreshableCertificateSupplier() {
+                    @Override
+                    public void refresh() {
+                        if (refreshAttempts.getAndIncrement() != 0) {
+                            return;
+                        }
+                        refreshEntered.countDown();
+                        try {
+                            if (!releaseFailure.await(5, TimeUnit.SECONDS)) {
+                                throw new AssertionError(
+                                        "Timed out waiting to release refresh failure");
+                            }
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                            throw new AssertionError(
+                                    "Interrupted while simulating refresh failure", e);
+                        }
+                        if (failure instanceof Error) {
+                            throw (Error) failure;
+                        }
+                        throw (RuntimeException) failure;
+                    }
+                };
+        SessionKeySupplier sessionKeySupplier = mock(SessionKeySupplier.class);
+        X509FederationClient client =
+                createClient(
+                        leafCertificateSupplier,
+                        sessionKeySupplier,
+                        Collections.emptySet(),
+                        "TEST");
+        stubSuccessfulTokenRequest(client, sessionKeySupplier);
+
+        FutureTask<String> leader = new FutureTask<>(client::refreshAndGetSecurityToken);
+        Thread leaderThread = new Thread(leader, "x509-refresh-leader");
+        leaderThread.start();
+        assertTrue(
+                "Leader did not enter certificate refresh",
+                refreshEntered.await(5, TimeUnit.SECONDS));
+        CompletableFuture<String> sharedFuture = getInFlightRefresh(client);
+        assertNotNull(sharedFuture);
+
+        releaseFailure.countDown();
+        try {
+            leader.get(5, TimeUnit.SECONDS);
+            fail("Leader should propagate the refresh failure");
+        } catch (ExecutionException e) {
+            assertSame(failure, e.getCause());
+        } finally {
+            releaseFailure.countDown();
+        }
+
+        assertTrue(sharedFuture.isCompletedExceptionally());
+        try {
+            sharedFuture.get(1, TimeUnit.SECONDS);
+            fail("Follower should receive the leader failure");
+        } catch (ExecutionException e) {
+            assertSame(failure, e.getCause());
+        }
+        assertNull(getInFlightRefresh(client));
+        assertEquals(VALID_TOKEN, client.refreshAndGetSecurityToken());
+    }
+
+    private X509FederationClient createClient(
+            X509CertificateSupplier leafCertificateSupplier,
+            SessionKeySupplier sessionKeySupplier,
+            Set<X509CertificateSupplier> intermediateCertificateSuppliers,
+            String purpose) {
+        return PowerMockito.spy(
+                new X509FederationClient(
+                        "https://auth.example.com",
+                        "tenantId",
+                        leafCertificateSupplier,
+                        sessionKeySupplier,
+                        intermediateCertificateSuppliers,
+                        mock(ClientConfigurator.class),
+                        Collections.emptyList(),
+                        mock(CircuitBreakerConfiguration.class),
+                        purpose));
+    }
+
+    private void stubSuccessfulTokenRequest(
+            X509FederationClient client, SessionKeySupplier sessionKeySupplier) throws Exception {
+        PowerMockito.doReturn(new SecurityTokenAdapter(VALID_TOKEN, sessionKeySupplier))
+                .when(client, "getSecurityTokenFromServer");
+    }
+
+    private Throwable captureRefreshFailure(X509FederationClient client) {
+        try {
+            client.refreshAndGetSecurityToken();
+        } catch (RuntimeException failure) {
+            return failure;
+        }
+        fail("Token refresh should fail");
+        return null;
+    }
+
+    private Throwable captureGetSecurityTokenFailure(X509FederationClient client) {
+        try {
+            client.getSecurityToken();
+        } catch (BmcException failure) {
+            return failure;
+        }
+        fail("Token refresh should fail");
+        return null;
+    }
+
+    @SuppressWarnings("unchecked")
+    private CompletableFuture<String> getInFlightRefresh(X509FederationClient client)
+            throws Exception {
+        Field field = X509FederationClient.class.getDeclaredField("inFlightRefresh");
+        field.setAccessible(true);
+        return (CompletableFuture<String>) field.get(client);
+    }
+
+    private abstract static class TestRefreshableCertificateSupplier
+            implements X509CertificateSupplier, Refreshable {
+        @Override
+        public boolean isCurrent() {
+            return false;
+        }
+
+        @Override
+        @Deprecated
+        public X509Certificate getCertificate() {
+            return null;
+        }
+
+        @Override
+        @Deprecated
+        public RSAPrivateKey getPrivateKey() {
+            return null;
+        }
+
+        @Override
+        public CertificateAndPrivateKeyPair getCertificateAndKeyPair() {
+            return null;
+        }
     }
 }

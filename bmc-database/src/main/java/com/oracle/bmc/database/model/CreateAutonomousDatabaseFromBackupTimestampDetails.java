@@ -47,6 +47,15 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
         private String characterSet;
 
@@ -623,6 +632,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
                     new CreateAutonomousDatabaseFromBackupTimestampDetails(
                             this.subscriptionId,
                             this.compartmentId,
+                            this.availabilityDomain,
                             this.characterSet,
                             this.ncharacterSet,
                             this.dbName,
@@ -694,6 +704,9 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
             }
             if (model.wasPropertyExplicitlySet("characterSet")) {
                 this.characterSet(model.getCharacterSet());
@@ -892,6 +905,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
     public CreateAutonomousDatabaseFromBackupTimestampDetails(
             String subscriptionId,
             String compartmentId,
+            String availabilityDomain,
             String characterSet,
             String ncharacterSet,
             String dbName,
@@ -953,6 +967,7 @@ public final class CreateAutonomousDatabaseFromBackupTimestampDetails
         super(
                 subscriptionId,
                 compartmentId,
+                availabilityDomain,
                 characterSet,
                 ncharacterSet,
                 dbName,

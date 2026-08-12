@@ -44,7 +44,9 @@ public final class AutonomousContainerDatabaseBackupSummary
         "freeformTags",
         "definedTags",
         "systemTags",
-        "autonomousDatabases"
+        "autonomousDatabases",
+        "dbVersion",
+        "backupDestinationDetails"
     })
     public AutonomousContainerDatabaseBackupSummary(
             String id,
@@ -64,7 +66,9 @@ public final class AutonomousContainerDatabaseBackupSummary
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            java.util.List<AutonomousDatabaseInBackup> autonomousDatabases) {
+            java.util.List<AutonomousDatabaseInBackup> autonomousDatabases,
+            String dbVersion,
+            BackupDestinationDetails backupDestinationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -84,6 +88,8 @@ public final class AutonomousContainerDatabaseBackupSummary
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.autonomousDatabases = autonomousDatabases;
+        this.dbVersion = dbVersion;
+        this.backupDestinationDetails = backupDestinationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -394,6 +400,43 @@ public final class AutonomousContainerDatabaseBackupSummary
             this.__explicitlySet__.add("autonomousDatabases");
             return this;
         }
+        /**
+         * A valid Oracle AI Database version for Autonomous AI Database.
+         * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+         * For new databases, it is recommended to use either 19c or 26ai.
+         * <p>
+         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        /**
+         * A valid Oracle AI Database version for Autonomous AI Database.
+         * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+         * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+         * For new databases, it is recommended to use either 19c or 26ai.
+         * <p>
+         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+         *
+         * @param dbVersion the value to set
+         * @return this builder
+         **/
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+        private BackupDestinationDetails backupDestinationDetails;
+
+        public Builder backupDestinationDetails(BackupDestinationDetails backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
+            this.__explicitlySet__.add("backupDestinationDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -418,7 +461,9 @@ public final class AutonomousContainerDatabaseBackupSummary
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.autonomousDatabases);
+                            this.autonomousDatabases,
+                            this.dbVersion,
+                            this.backupDestinationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -480,6 +525,12 @@ public final class AutonomousContainerDatabaseBackupSummary
             }
             if (model.wasPropertyExplicitlySet("autonomousDatabases")) {
                 this.autonomousDatabases(model.getAutonomousDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
+                this.backupDestinationDetails(model.getBackupDestinationDetails());
             }
             return this;
         }
@@ -910,6 +961,39 @@ public final class AutonomousContainerDatabaseBackupSummary
         return autonomousDatabases;
     }
 
+    /**
+     * A valid Oracle AI Database version for Autonomous AI Database.
+     * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+     * For new databases, it is recommended to use either 19c or 26ai.
+     * <p>
+     **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    private final String dbVersion;
+
+    /**
+     * A valid Oracle AI Database version for Autonomous AI Database.
+     * When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+     * When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+     * For new databases, it is recommended to use either 19c or 26ai.
+     * <p>
+     **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+     *
+     * @return the value
+     **/
+    public String getDbVersion() {
+        return dbVersion;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+    private final BackupDestinationDetails backupDestinationDetails;
+
+    public BackupDestinationDetails getBackupDestinationDetails() {
+        return backupDestinationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -943,6 +1027,9 @@ public final class AutonomousContainerDatabaseBackupSummary
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", autonomousDatabases=").append(String.valueOf(this.autonomousDatabases));
+        sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", backupDestinationDetails=")
+                .append(String.valueOf(this.backupDestinationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -977,6 +1064,9 @@ public final class AutonomousContainerDatabaseBackupSummary
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.autonomousDatabases, other.autonomousDatabases)
+                && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(
+                        this.backupDestinationDetails, other.backupDestinationDetails)
                 && super.equals(other);
     }
 
@@ -1028,6 +1118,12 @@ public final class AutonomousContainerDatabaseBackupSummary
                         + (this.autonomousDatabases == null
                                 ? 43
                                 : this.autonomousDatabases.hashCode());
+        result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationDetails == null
+                                ? 43
+                                : this.backupDestinationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

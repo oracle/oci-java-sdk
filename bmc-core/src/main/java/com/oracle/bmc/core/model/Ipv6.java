@@ -37,6 +37,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "cidrPrefixLength",
         "lifecycleState",
         "subnetId",
+        "systemTags",
         "timeCreated",
         "vnicId",
         "ipState",
@@ -54,6 +55,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             Integer cidrPrefixLength,
             LifecycleState lifecycleState,
             String subnetId,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             String vnicId,
             IpState ipState,
@@ -70,6 +72,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.cidrPrefixLength = cidrPrefixLength;
         this.lifecycleState = lifecycleState;
         this.subnetId = subnetId;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.vnicId = vnicId;
         this.ipState = ipState;
@@ -258,6 +261,26 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -395,6 +418,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.cidrPrefixLength,
                             this.lifecycleState,
                             this.subnetId,
+                            this.systemTags,
                             this.timeCreated,
                             this.vnicId,
                             this.ipState,
@@ -435,6 +459,9 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -678,6 +705,24 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code { "orcl-cloud": { "free-tier-retained": "true" } }}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the IPv6 was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
@@ -911,6 +956,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", cidrPrefixLength=").append(String.valueOf(this.cidrPrefixLength));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
         sb.append(", ipState=").append(String.valueOf(this.ipState));
@@ -940,6 +986,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.cidrPrefixLength, other.cidrPrefixLength)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
                 && java.util.Objects.equals(this.ipState, other.ipState)
@@ -968,6 +1015,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
         result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());

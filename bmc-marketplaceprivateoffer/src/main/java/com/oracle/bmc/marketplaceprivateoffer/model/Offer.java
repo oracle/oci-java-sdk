@@ -40,8 +40,10 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "buyerInformation",
         "sellerInformation",
         "resourceBundles",
+        "offerType",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public Offer(
             String id,
@@ -64,8 +66,10 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             BuyerInformation buyerInformation,
             SellerInformation sellerInformation,
             java.util.List<ResourceBundle> resourceBundles,
+            OfferType offerType,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -87,8 +91,10 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.buyerInformation = buyerInformation;
         this.sellerInformation = sellerInformation;
         this.resourceBundles = resourceBundles;
+        this.offerType = offerType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -386,6 +392,22 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
+         * The type of the offer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("offerType")
+        private OfferType offerType;
+
+        /**
+         * The type of the offer.
+         * @param offerType the value to set
+         * @return this builder
+         **/
+        public Builder offerType(OfferType offerType) {
+            this.offerType = offerType;
+            this.__explicitlySet__.add("offerType");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -426,6 +448,26 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -453,8 +495,10 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.buyerInformation,
                             this.sellerInformation,
                             this.resourceBundles,
+                            this.offerType,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -523,11 +567,17 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             if (model.wasPropertyExplicitlySet("resourceBundles")) {
                 this.resourceBundles(model.getResourceBundles());
             }
+            if (model.wasPropertyExplicitlySet("offerType")) {
+                this.offerType(model.getOfferType());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -904,6 +954,68 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
+     * The type of the offer.
+     **/
+    public enum OfferType {
+        Direct("DIRECT"),
+        MultiParty("MULTI_PARTY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(OfferType.class);
+
+        private final String value;
+        private static java.util.Map<String, OfferType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OfferType v : OfferType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        OfferType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OfferType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'OfferType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of the offer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("offerType")
+    private final OfferType offerType;
+
+    /**
+     * The type of the offer.
+     * @return the value
+     **/
+    public OfferType getOfferType() {
+        return offerType;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -937,6 +1049,24 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     @Override
@@ -973,8 +1103,10 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", buyerInformation=").append(String.valueOf(this.buyerInformation));
         sb.append(", sellerInformation=").append(String.valueOf(this.sellerInformation));
         sb.append(", resourceBundles=").append(String.valueOf(this.resourceBundles));
+        sb.append(", offerType=").append(String.valueOf(this.offerType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -1009,8 +1141,10 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.buyerInformation, other.buyerInformation)
                 && java.util.Objects.equals(this.sellerInformation, other.sellerInformation)
                 && java.util.Objects.equals(this.resourceBundles, other.resourceBundles)
+                && java.util.Objects.equals(this.offerType, other.offerType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -1060,8 +1194,10 @@ public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result =
                 (result * PRIME)
                         + (this.resourceBundles == null ? 43 : this.resourceBundles.hashCode());
+        result = (result * PRIME) + (this.offerType == null ? 43 : this.offerType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
