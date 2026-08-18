@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.94.2 - 2026-08-18
+### Added 
+- Support for creating databases from another database with additional input fields and source encryption-key location details in the Database service 
+- Support for IPv6 dual-stack endpoints in the Compute Instance Agent service  
+
+### Changed  
+- Updated jackson-core to 2.21.4 to address GHSA-r7wm-3cxj-wff9
+
 ## 3.94.1 - 2026-08-11
 ### Added 
 - Support for the OCI Device Data FHIR (Fast Healthcare Interoperability Resources) Service 

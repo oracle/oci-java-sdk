@@ -20,7 +20,8 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(ComputeInstanceAgentClient.class.getName())
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -132,12 +133,16 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
         Validate.notBlank(
                 request.getInstanceAgentCommandId(), "instanceAgentCommandId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceAgentCommandId", request.getInstanceAgentCommandId());
+
         return clientCall(request, CancelInstanceAgentCommandResponse::builder)
                 .logger(LOG, "cancelInstanceAgentCommand")
                 .serviceDetails(
                         "ComputeInstanceAgent",
                         "CancelInstanceAgentCommand",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CancelInstanceAgentCommand")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelInstanceAgentCommandRequest::builder)
                 .basePath("/20180530")
@@ -158,12 +163,15 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
                 request.getCreateInstanceAgentCommandDetails(),
                 "createInstanceAgentCommandDetails is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
         return clientCall(request, CreateInstanceAgentCommandResponse::builder)
                 .logger(LOG, "createInstanceAgentCommand")
                 .serviceDetails(
                         "ComputeInstanceAgent",
                         "CreateInstanceAgentCommand",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CreateInstanceAgentCommand")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateInstanceAgentCommandRequest::builder)
                 .basePath("/20180530")
@@ -189,12 +197,16 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
         Validate.notBlank(
                 request.getInstanceAgentCommandId(), "instanceAgentCommandId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceAgentCommandId", request.getInstanceAgentCommandId());
+
         return clientCall(request, GetInstanceAgentCommandResponse::builder)
                 .logger(LOG, "getInstanceAgentCommand")
                 .serviceDetails(
                         "ComputeInstanceAgent",
                         "GetInstanceAgentCommand",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/GetInstanceAgentCommand")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceAgentCommandRequest::builder)
                 .basePath("/20180530")
@@ -219,12 +231,17 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
                 request.getInstanceAgentCommandId(), "instanceAgentCommandId must not be blank");
         Objects.requireNonNull(request.getInstanceId(), "instanceId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceAgentCommandId", request.getInstanceAgentCommandId());
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, GetInstanceAgentCommandExecutionResponse::builder)
                 .logger(LOG, "getInstanceAgentCommandExecution")
                 .serviceDetails(
                         "ComputeInstanceAgent",
                         "GetInstanceAgentCommandExecution",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecution/GetInstanceAgentCommandExecution")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceAgentCommandExecutionRequest::builder)
                 .basePath("/20180530")
@@ -254,12 +271,17 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
 
         Objects.requireNonNull(request.getInstanceId(), "instanceId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+
         return clientCall(request, ListInstanceAgentCommandExecutionsResponse::builder)
                 .logger(LOG, "listInstanceAgentCommandExecutions")
                 .serviceDetails(
                         "ComputeInstanceAgent",
                         "ListInstanceAgentCommandExecutions",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecutionSummary/ListInstanceAgentCommandExecutions")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceAgentCommandExecutionsRequest::builder)
                 .basePath("/20180530")
@@ -291,12 +313,16 @@ public class ComputeInstanceAgentClient extends com.oracle.bmc.http.internal.Bas
             ListInstanceAgentCommandsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
         return clientCall(request, ListInstanceAgentCommandsResponse::builder)
                 .logger(LOG, "listInstanceAgentCommands")
                 .serviceDetails(
                         "ComputeInstanceAgent",
                         "ListInstanceAgentCommands",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandSummary/ListInstanceAgentCommands")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceAgentCommandsRequest::builder)
                 .basePath("/20180530")

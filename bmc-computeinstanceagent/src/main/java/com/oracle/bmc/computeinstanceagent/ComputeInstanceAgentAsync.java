@@ -63,6 +63,16 @@ public interface ComputeInstanceAgentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Determines whether dual stack endpoint should be used or not. Set
+     * dualStackEndpointTemplateEnabled to "true" if the user wants to enable use of dual stack
+     * endpoint template. Default value is "false"
+     *
+     * @param dualStackEndpointTemplateEnabled flag to enable the use of dual stack endpoint
+     *     template
+     */
+    void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
+
+    /**
      * Cancels a command that is scheduled to run on a compute instance that is managed by Oracle
      * Cloud Agent.
      *

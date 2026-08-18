@@ -38,7 +38,8 @@ public final class BackupDestinationConfigurationSummary
         "isRetentionLockEnabled",
         "backupRetentionPolicyOnTerminate",
         "isRemote",
-        "remoteRegion"
+        "remoteRegion",
+        "tdeWalletBackupDestination"
     })
     public BackupDestinationConfigurationSummary(
             Integer recoveryWindowInDays,
@@ -55,7 +56,8 @@ public final class BackupDestinationConfigurationSummary
             Boolean isRetentionLockEnabled,
             BackupRetentionPolicyOnTerminate backupRetentionPolicyOnTerminate,
             Boolean isRemote,
-            String remoteRegion) {
+            String remoteRegion,
+            TdeWalletBackupDestination tdeWalletBackupDestination) {
         super();
         this.recoveryWindowInDays = recoveryWindowInDays;
         this.backupDestinationAttachHistory = backupDestinationAttachHistory;
@@ -72,6 +74,7 @@ public final class BackupDestinationConfigurationSummary
         this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
         this.isRemote = isRemote;
         this.remoteRegion = remoteRegion;
+        this.tdeWalletBackupDestination = tdeWalletBackupDestination;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -377,6 +380,16 @@ public final class BackupDestinationConfigurationSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletBackupDestination")
+        private TdeWalletBackupDestination tdeWalletBackupDestination;
+
+        public Builder tdeWalletBackupDestination(
+                TdeWalletBackupDestination tdeWalletBackupDestination) {
+            this.tdeWalletBackupDestination = tdeWalletBackupDestination;
+            this.__explicitlySet__.add("tdeWalletBackupDestination");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -397,7 +410,8 @@ public final class BackupDestinationConfigurationSummary
                             this.isRetentionLockEnabled,
                             this.backupRetentionPolicyOnTerminate,
                             this.isRemote,
-                            this.remoteRegion);
+                            this.remoteRegion,
+                            this.tdeWalletBackupDestination);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -451,6 +465,9 @@ public final class BackupDestinationConfigurationSummary
             }
             if (model.wasPropertyExplicitlySet("remoteRegion")) {
                 this.remoteRegion(model.getRemoteRegion());
+            }
+            if (model.wasPropertyExplicitlySet("tdeWalletBackupDestination")) {
+                this.tdeWalletBackupDestination(model.getTdeWalletBackupDestination());
             }
             return this;
         }
@@ -830,6 +847,13 @@ public final class BackupDestinationConfigurationSummary
         return remoteRegion;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletBackupDestination")
+    private final TdeWalletBackupDestination tdeWalletBackupDestination;
+
+    public TdeWalletBackupDestination getTdeWalletBackupDestination() {
+        return tdeWalletBackupDestination;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -863,6 +887,8 @@ public final class BackupDestinationConfigurationSummary
                 .append(String.valueOf(this.backupRetentionPolicyOnTerminate));
         sb.append(", isRemote=").append(String.valueOf(this.isRemote));
         sb.append(", remoteRegion=").append(String.valueOf(this.remoteRegion));
+        sb.append(", tdeWalletBackupDestination=")
+                .append(String.valueOf(this.tdeWalletBackupDestination));
         sb.append(")");
         return sb.toString();
     }
@@ -898,6 +924,8 @@ public final class BackupDestinationConfigurationSummary
                         other.backupRetentionPolicyOnTerminate)
                 && java.util.Objects.equals(this.isRemote, other.isRemote)
                 && java.util.Objects.equals(this.remoteRegion, other.remoteRegion)
+                && java.util.Objects.equals(
+                        this.tdeWalletBackupDestination, other.tdeWalletBackupDestination)
                 && super.equals(other);
     }
 
@@ -950,6 +978,11 @@ public final class BackupDestinationConfigurationSummary
                                 : this.backupRetentionPolicyOnTerminate.hashCode());
         result = (result * PRIME) + (this.isRemote == null ? 43 : this.isRemote.hashCode());
         result = (result * PRIME) + (this.remoteRegion == null ? 43 : this.remoteRegion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tdeWalletBackupDestination == null
+                                ? 43
+                                : this.tdeWalletBackupDestination.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

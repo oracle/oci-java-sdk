@@ -20,7 +20,8 @@ public class PluginconfigClient extends com.oracle.bmc.http.internal.BaseSyncCli
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(PluginconfigClient.class.getName())
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -98,12 +99,18 @@ public class PluginconfigClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         Objects.requireNonNull(request.getOsVersion(), "osVersion is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("osName", request.getOsName());
+        requiredParametersMap.put("osVersion", request.getOsVersion());
+
         return clientCall(request, ListInstanceagentAvailablePluginsResponse::builder)
                 .logger(LOG, "listInstanceagentAvailablePlugins")
                 .serviceDetails(
                         "Pluginconfig",
                         "ListInstanceagentAvailablePlugins",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceagentAvailablePluginsRequest::builder)
                 .basePath("/20180530")
