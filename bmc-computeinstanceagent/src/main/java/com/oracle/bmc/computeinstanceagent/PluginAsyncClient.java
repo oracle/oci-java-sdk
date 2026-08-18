@@ -33,7 +33,8 @@ public class PluginAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(PluginClient.class.getName())
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -107,12 +108,18 @@ public class PluginAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
 
         Validate.notBlank(request.getPluginName(), "pluginName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceagentId", request.getInstanceagentId());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("pluginName", request.getPluginName());
+
         return clientCall(request, GetInstanceAgentPluginResponse::builder)
                 .logger(LOG, "getInstanceAgentPlugin")
                 .serviceDetails(
                         "Plugin",
                         "GetInstanceAgentPlugin",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/GetInstanceAgentPlugin")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceAgentPluginRequest::builder)
                 .basePath("/20180530")
@@ -141,12 +148,17 @@ public class PluginAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
 
         Validate.notBlank(request.getInstanceagentId(), "instanceagentId must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("instanceagentId", request.getInstanceagentId());
+
         return clientCall(request, ListInstanceAgentPluginsResponse::builder)
                 .logger(LOG, "listInstanceAgentPlugins")
                 .serviceDetails(
                         "Plugin",
                         "ListInstanceAgentPlugins",
                         "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceAgentPlugins")
+                .requiredParametersMap(requiredParametersMap)
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstanceAgentPluginsRequest::builder)
                 .basePath("/20180530")

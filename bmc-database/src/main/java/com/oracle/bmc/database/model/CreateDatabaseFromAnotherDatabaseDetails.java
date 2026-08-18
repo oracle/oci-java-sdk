@@ -23,22 +23,6 @@ package com.oracle.bmc.database.model;
 public final class CreateDatabaseFromAnotherDatabaseDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "databaseId",
-        "backupTDEPassword",
-        "adminPassword",
-        "dbUniqueName",
-        "dbName",
-        "timeStampForPointInTimeRecovery",
-        "pluggableDatabases",
-        "freeformTags",
-        "definedTags",
-        "sidPrefix",
-        "sourceEncryptionKeyLocationDetails",
-        "storageSizeDetails",
-        "managedSoftwareUpdateDetails",
-        "vmClusterId"
-    })
     public CreateDatabaseFromAnotherDatabaseDetails(
             String databaseId,
             String backupTDEPassword,
@@ -53,7 +37,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             DatabaseStorageSizeDetails storageSizeDetails,
             ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
-            String vmClusterId) {
+            String vmClusterId,
+            String recoveryApplianceVpcPassword) {
         super();
         this.databaseId = databaseId;
         this.backupTDEPassword = backupTDEPassword;
@@ -69,6 +54,63 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         this.storageSizeDetails = storageSizeDetails;
         this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.vmClusterId = vmClusterId;
+        this.recoveryApplianceVpcPassword =
+                recoveryApplianceVpcPassword != null
+                        ? recoveryApplianceVpcPassword.toCharArray()
+                        : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({
+        "databaseId",
+        "backupTDEPassword",
+        "adminPassword",
+        "dbUniqueName",
+        "dbName",
+        "timeStampForPointInTimeRecovery",
+        "pluggableDatabases",
+        "freeformTags",
+        "definedTags",
+        "sidPrefix",
+        "sourceEncryptionKeyLocationDetails",
+        "storageSizeDetails",
+        "managedSoftwareUpdateDetails",
+        "vmClusterId",
+        "recoveryApplianceVpcPassword"
+    })
+    public CreateDatabaseFromAnotherDatabaseDetails(
+            String databaseId,
+            String backupTDEPassword,
+            String adminPassword,
+            String dbUniqueName,
+            String dbName,
+            java.util.Date timeStampForPointInTimeRecovery,
+            java.util.List<String> pluggableDatabases,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String sidPrefix,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
+            DatabaseStorageSizeDetails storageSizeDetails,
+            ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
+            String vmClusterId,
+            char[] recoveryApplianceVpcPassword) {
+        super();
+        this.databaseId = databaseId;
+        this.backupTDEPassword = backupTDEPassword;
+        this.adminPassword = adminPassword;
+        this.dbUniqueName = dbUniqueName;
+        this.dbName = dbName;
+        this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+        this.pluggableDatabases = pluggableDatabases;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
+        this.sidPrefix = sidPrefix;
+        this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+        this.storageSizeDetails = storageSizeDetails;
+        this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
+        this.vmClusterId = vmClusterId;
+        this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -309,6 +351,34 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             this.__explicitlySet__.add("vmClusterId");
             return this;
         }
+        /**
+         * The password for the VPC user that is used to access the Recovery Appliance, if the given
+         * backup is from a backup destination of type RECOVERY_APPLIANCE.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("recoveryApplianceVpcPassword")
+        private char[] recoveryApplianceVpcPassword;
+
+        /**
+         * The password for the VPC user that is used to access the Recovery Appliance, if the given
+         * backup is from a backup destination of type RECOVERY_APPLIANCE.
+         *
+         * @param recoveryApplianceVpcPassword the value to set
+         * @return this builder
+         */
+        public Builder recoveryApplianceVpcPassword(char[] recoveryApplianceVpcPassword) {
+            this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+            this.__explicitlySet__.add("recoveryApplianceVpcPassword");
+            return this;
+        }
+
+        public Builder recoveryApplianceVpcPassword(String recoveryApplianceVpcPassword) {
+            this.recoveryApplianceVpcPassword =
+                    recoveryApplianceVpcPassword != null
+                            ? recoveryApplianceVpcPassword.toCharArray()
+                            : null;
+            this.__explicitlySet__.add("recoveryApplianceVpcPassword");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -329,7 +399,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                             this.sourceEncryptionKeyLocationDetails,
                             this.storageSizeDetails,
                             this.managedSoftwareUpdateDetails,
-                            this.vmClusterId);
+                            this.vmClusterId,
+                            this.recoveryApplianceVpcPassword);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -380,6 +451,9 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("vmClusterId")) {
                 this.vmClusterId(model.getVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("recoveryApplianceVpcPassword")) {
+                this.recoveryApplianceVpcPassword(model.getRecoveryApplianceVpcPassword());
             }
             return this;
         }
@@ -596,6 +670,39 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         return vmClusterId;
     }
 
+    /**
+     * The password for the VPC user that is used to access the Recovery Appliance, if the given
+     * backup is from a backup destination of type RECOVERY_APPLIANCE.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("recoveryApplianceVpcPassword")
+    private final char[] recoveryApplianceVpcPassword;
+
+    /**
+     * The password for the VPC user that is used to access the Recovery Appliance, if the given
+     * backup is from a backup destination of type RECOVERY_APPLIANCE.
+     *
+     * @return the value
+     * @deprecated Use getRecoveryApplianceVpcPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getRecoveryApplianceVpcPassword() {
+        return recoveryApplianceVpcPassword != null
+                ? new String(recoveryApplianceVpcPassword)
+                : null;
+    }
+
+    /**
+     * The password for the VPC user that is used to access the Recovery Appliance, if the given
+     * backup is from a backup destination of type RECOVERY_APPLIANCE.
+     *
+     * @return the value
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("recoveryApplianceVpcPassword")
+    public char[] getRecoveryApplianceVpcPassword__AsCharArray() {
+        return recoveryApplianceVpcPassword;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -628,6 +735,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         sb.append(", managedSoftwareUpdateDetails=")
                 .append(String.valueOf(this.managedSoftwareUpdateDetails));
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
+        sb.append(", recoveryApplianceVpcPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }
@@ -661,6 +769,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                 && java.util.Objects.equals(
                         this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
                 && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
+                && java.util.Objects.equals(
+                        this.recoveryApplianceVpcPassword, other.recoveryApplianceVpcPassword)
                 && super.equals(other);
     }
 
@@ -706,6 +816,11 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                                 ? 43
                                 : this.managedSoftwareUpdateDetails.hashCode());
         result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recoveryApplianceVpcPassword == null
+                                ? 43
+                                : this.recoveryApplianceVpcPassword.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
