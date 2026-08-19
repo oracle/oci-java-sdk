@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import com.oracle.bmc.objectstorage.model.CommitMultipartUploadPartDetails;
 import com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary;
@@ -19,7 +20,7 @@ import com.oracle.bmc.objectstorage.transfer.MultipartManifest;
 public class MultipartManifestImpl implements MultipartManifest {
     private final String uploadId;
 
-    private final Map<Integer, PartAndStatus> parts = new HashMap<>();
+    private final Map<Integer, PartAndStatus> parts = new TreeMap<>();
     private final AtomicInteger nextPartNumber = new AtomicInteger(1);
     private final Map<PartAndStatus, Exception> partFailureDetails = new HashMap<>();
 
