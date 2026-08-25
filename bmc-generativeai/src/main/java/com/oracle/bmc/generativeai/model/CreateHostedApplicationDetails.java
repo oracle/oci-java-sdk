@@ -137,16 +137,12 @@ public final class CreateHostedApplicationDetails
             this.__explicitlySet__.add("networkingConfig");
             return this;
         }
-        /**
-         * The list of storage configuration for the Hosted Application. Defines a list of
-         * service-managed storage back-ends.
-         */
+        /** A list of managed storage configurations for the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageConfigs")
         private java.util.List<StorageConfig> storageConfigs;
 
         /**
-         * The list of storage configuration for the Hosted Application. Defines a list of
-         * service-managed storage back-ends.
+         * A list of managed storage configurations for the application.
          *
          * @param storageConfigs the value to set
          * @return this builder
@@ -359,16 +355,12 @@ public final class CreateHostedApplicationDetails
         return networkingConfig;
     }
 
-    /**
-     * The list of storage configuration for the Hosted Application. Defines a list of
-     * service-managed storage back-ends.
-     */
+    /** A list of managed storage configurations for the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageConfigs")
     private final java.util.List<StorageConfig> storageConfigs;
 
     /**
-     * The list of storage configuration for the Hosted Application. Defines a list of
-     * service-managed storage back-ends.
+     * A list of managed storage configurations for the application.
      *
      * @return the value
      */

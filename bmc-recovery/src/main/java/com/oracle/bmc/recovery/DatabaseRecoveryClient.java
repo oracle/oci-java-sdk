@@ -150,6 +150,37 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     }
 
     @Override
+    public CancelLongTermBackupResponse cancelLongTermBackup(CancelLongTermBackupRequest request) {
+
+        Validate.notBlank(request.getLongTermBackupId(), "longTermBackupId must not be blank");
+
+        return clientCall(request, CancelLongTermBackupResponse::builder)
+                .logger(LOG, "cancelLongTermBackup")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "CancelLongTermBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/CancelLongTermBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelLongTermBackupRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("longTermBackups")
+                .appendPathParam(request.getLongTermBackupId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CancelLongTermBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelLongTermBackupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CancelProtectedDatabaseDeletionResponse cancelProtectedDatabaseDeletion(
             CancelProtectedDatabaseDeletionRequest request) {
 
@@ -170,6 +201,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam("actions")
                 .appendPathParam("cancelDeletion")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -203,6 +235,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -240,6 +273,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam("actions")
                 .appendPathParam("changeSubscription")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
@@ -276,6 +310,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -313,6 +348,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -323,6 +359,41 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeRecoveryServiceSubnetCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateLongTermBackupResponse createLongTermBackup(CreateLongTermBackupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateLongTermBackupDetails(),
+                "createLongTermBackupDetails is required");
+
+        return clientCall(request, CreateLongTermBackupResponse::builder)
+                .logger(LOG, "createLongTermBackup")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "CreateLongTermBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/CreateLongTermBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateLongTermBackupRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("longTermBackups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.recovery.model.LongTermBackup.class,
+                        CreateLongTermBackupResponse.Builder::longTermBackup)
+                .handleResponseHeaderString(
+                        "location", CreateLongTermBackupResponse.Builder::location)
+                .handleResponseHeaderString("etag", CreateLongTermBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateLongTermBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateLongTermBackupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -437,6 +508,34 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     }
 
     @Override
+    public DeleteLongTermBackupResponse deleteLongTermBackup(DeleteLongTermBackupRequest request) {
+
+        Validate.notBlank(request.getLongTermBackupId(), "longTermBackupId must not be blank");
+
+        return clientCall(request, DeleteLongTermBackupResponse::builder)
+                .logger(LOG, "deleteLongTermBackup")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "DeleteLongTermBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/DeleteLongTermBackup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteLongTermBackupRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("longTermBackups")
+                .appendPathParam(request.getLongTermBackupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteLongTermBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteLongTermBackupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteProtectedDatabaseResponse deleteProtectedDatabase(
             DeleteProtectedDatabaseRequest request) {
 
@@ -547,6 +646,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam("actions")
                 .appendPathParam("getConfiguration")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
                 .operationUsesDefaultRetries()
@@ -565,6 +665,34 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-checksum",
                         FetchProtectedDatabaseConfigurationResponse.Builder::opcChecksum)
+                .callSync();
+    }
+
+    @Override
+    public GetLongTermBackupResponse getLongTermBackup(GetLongTermBackupRequest request) {
+
+        Validate.notBlank(request.getLongTermBackupId(), "longTermBackupId must not be blank");
+
+        return clientCall(request, GetLongTermBackupResponse::builder)
+                .logger(LOG, "getLongTermBackup")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "GetLongTermBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/GetLongTermBackup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLongTermBackupRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("longTermBackups")
+                .appendPathParam(request.getLongTermBackupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.recovery.model.LongTermBackup.class,
+                        GetLongTermBackupResponse.Builder::longTermBackup)
+                .handleResponseHeaderString("etag", GetLongTermBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLongTermBackupResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -685,9 +813,43 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     }
 
     @Override
+    public ListLongTermBackupsResponse listLongTermBackups(ListLongTermBackupsRequest request) {
+
+        return clientCall(request, ListLongTermBackupsResponse::builder)
+                .logger(LOG, "listLongTermBackups")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ListLongTermBackups",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackupCollection/ListLongTermBackups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLongTermBackupsRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("longTermBackups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("protectedDatabaseId", request.getProtectedDatabaseId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.recovery.model.LongTermBackupCollection.class,
+                        ListLongTermBackupsResponse.Builder::longTermBackupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLongTermBackupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLongTermBackupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListProtectedDatabasesResponse listProtectedDatabases(
             ListProtectedDatabasesRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListProtectedDatabasesResponse::builder)
                 .logger(LOG, "listProtectedDatabases")
@@ -705,6 +867,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("protectionPolicyId", request.getProtectionPolicyId())
                 .appendQueryParam("recoveryServiceSubnetId", request.getRecoveryServiceSubnetId())
+                .appendEnumQueryParam("backupCloudLocation", request.getBackupCloudLocation())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -725,7 +888,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     @Override
     public ListProtectionPoliciesResponse listProtectionPolicies(
             ListProtectionPoliciesRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListProtectionPoliciesResponse::builder)
                 .logger(LOG, "listProtectionPolicies")
@@ -742,6 +904,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("protectionPolicyId", request.getProtectionPolicyId())
                 .appendEnumQueryParam("owner", request.getOwner())
+                .appendQueryParam("mustEnforceCloudLocality", request.getMustEnforceCloudLocality())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -762,7 +925,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     @Override
     public ListRecoveryServiceSubnetsResponse listRecoveryServiceSubnets(
             ListRecoveryServiceSubnetsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListRecoveryServiceSubnetsResponse::builder)
                 .logger(LOG, "listRecoveryServiceSubnets")
@@ -867,7 +1029,6 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
@@ -921,6 +1082,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendPathParam("actions")
                 .appendPathParam("scheduleDeletion")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -931,6 +1093,38 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ScheduleProtectedDatabaseDeletionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateLongTermBackupResponse updateLongTermBackup(UpdateLongTermBackupRequest request) {
+
+        Validate.notBlank(request.getLongTermBackupId(), "longTermBackupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateLongTermBackupDetails(),
+                "updateLongTermBackupDetails is required");
+
+        return clientCall(request, UpdateLongTermBackupResponse::builder)
+                .logger(LOG, "updateLongTermBackup")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "UpdateLongTermBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/UpdateLongTermBackup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLongTermBackupRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("longTermBackups")
+                .appendPathParam(request.getLongTermBackupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateLongTermBackupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLongTermBackupResponse.Builder::opcRequestId)
                 .callSync();
     }
 

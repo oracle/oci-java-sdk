@@ -64,6 +64,25 @@ public interface DatabaseRecovery extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Cancels a long-term backup that is being created or scheduled to be created. You must specify
+     * the unique identifier or OCID of the long-term backup that you want to cancel. You can cancel
+     * a long-term backup only if the current state of the backup resource is
+     * WAITING_FOR_BACKUP_FROM_DB, or SCHEDULED_FOR_ARCHIVAL, or ARCHIVAL_IN_PROGRESS.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CancelLongTermBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CancelLongTermBackup API.
+     */
+    CancelLongTermBackupResponse cancelLongTermBackup(CancelLongTermBackupRequest request);
+
+    /**
      * Cancels the scheduled deletion of a protected database, and returns the protected database to
      * an ACTIVE state. You can cancel the deletion only if the protected database is in the DELETE
      * SCHEDULED state.
@@ -155,6 +174,22 @@ public interface DatabaseRecovery extends AutoCloseable {
             ChangeRecoveryServiceSubnetCompartmentRequest request);
 
     /**
+     * Creates a long-term backup of a specified protected database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateLongTermBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateLongTermBackup API.
+     */
+    CreateLongTermBackupResponse createLongTermBackup(CreateLongTermBackupRequest request);
+
+    /**
      * Creates a new Protected Database.
      *
      * @param request The request object containing the details to send
@@ -204,7 +239,26 @@ public interface DatabaseRecovery extends AutoCloseable {
             CreateRecoveryServiceSubnetRequest request);
 
     /**
-     * Deletes a protected database based on the specified protected database ID.
+     * Deletes a long-term backup. You can delete a long-term backup only if the current state of
+     * the backup is ACTIVE, FAILED, or CANCELED.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/DeleteLongTermBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteLongTermBackup API.
+     */
+    DeleteLongTermBackupResponse deleteLongTermBackup(DeleteLongTermBackupRequest request);
+
+    /**
+     * Deletes a protected database based on the specified protected database ID. Only the user or
+     * the Oracle Database service that created the protected database is allowed to modify or
+     * delete it.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -272,6 +326,22 @@ public interface DatabaseRecovery extends AutoCloseable {
             FetchProtectedDatabaseConfigurationRequest request);
 
     /**
+     * Retrieves information regarding a long-term backup.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetLongTermBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLongTermBackup
+     *     API.
+     */
+    GetLongTermBackupResponse getLongTermBackup(GetLongTermBackupRequest request);
+
+    /**
      * Gets information about a specified protected database.
      *
      * @param request The request object containing the details to send
@@ -334,6 +404,24 @@ public interface DatabaseRecovery extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Lists the long-term backups associated with a protected database. You can filter the results
+     * using the unique identifier (OCID) of a specific compartment, a protected database, or a
+     * long-term backup.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListLongTermBackupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLongTermBackups
+     *     API.
+     */
+    ListLongTermBackupsResponse listLongTermBackups(ListLongTermBackupsRequest request);
 
     /**
      * Lists the protected databases based on the specified parameters.
@@ -434,8 +522,11 @@ public interface DatabaseRecovery extends AutoCloseable {
 
     /**
      * Defines a preferred schedule to delete a protected database after you terminate the source
-     * database. The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can
-     * occur 72 hours (3 days) after the source database is terminated. The alternate schedule is
+     * database. Only the user or the Oracle Database service that created the protected database is
+     * allowed to modify or delete it.
+     *
+     * <p>The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72
+     * hours (3 days) after the source database is terminated. The alternate schedule is
      * DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database
      * only after the policy-defined backup retention period expires.
      *
@@ -452,6 +543,22 @@ public interface DatabaseRecovery extends AutoCloseable {
      */
     ScheduleProtectedDatabaseDeletionResponse scheduleProtectedDatabaseDeletion(
             ScheduleProtectedDatabaseDeletionRequest request);
+
+    /**
+     * Updates the specified long term backup.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/UpdateLongTermBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateLongTermBackup API.
+     */
+    UpdateLongTermBackupResponse updateLongTermBackup(UpdateLongTermBackupRequest request);
 
     /**
      * Updates the Protected Database

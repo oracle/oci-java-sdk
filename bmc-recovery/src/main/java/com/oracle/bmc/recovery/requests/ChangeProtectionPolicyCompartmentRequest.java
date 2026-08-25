@@ -39,6 +39,25 @@ public class ChangeProtectionPolicyCompartmentRequest
         return changeProtectionPolicyCompartmentDetails;
     }
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+    /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
      * if-match} parameter to the value of the etag from a previous GET or POST response for that
      * resource. The resource will be updated or deleted only if the etag you provide matches the
@@ -118,6 +137,30 @@ public class ChangeProtectionPolicyCompartmentRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
          * {@code if-match} parameter to the value of the etag from a previous GET or POST response
          * for that resource. The resource will be updated or deleted only if the etag you provide
@@ -186,6 +229,7 @@ public class ChangeProtectionPolicyCompartmentRequest
             protectionPolicyId(o.getProtectionPolicyId());
             changeProtectionPolicyCompartmentDetails(
                     o.getChangeProtectionPolicyCompartmentDetails());
+            opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -241,11 +285,12 @@ public class ChangeProtectionPolicyCompartmentRequest
             request.protectionPolicyId = protectionPolicyId;
             request.changeProtectionPolicyCompartmentDetails =
                     changeProtectionPolicyCompartmentDetails;
+            request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
             // new ChangeProtectionPolicyCompartmentRequest(protectionPolicyId,
-            // changeProtectionPolicyCompartmentDetails, ifMatch, opcRequestId);
+            // changeProtectionPolicyCompartmentDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
@@ -258,6 +303,7 @@ public class ChangeProtectionPolicyCompartmentRequest
         return new Builder()
                 .protectionPolicyId(protectionPolicyId)
                 .changeProtectionPolicyCompartmentDetails(changeProtectionPolicyCompartmentDetails)
+                .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -279,6 +325,7 @@ public class ChangeProtectionPolicyCompartmentRequest
         sb.append(",protectionPolicyId=").append(String.valueOf(this.protectionPolicyId));
         sb.append(",changeProtectionPolicyCompartmentDetails=")
                 .append(String.valueOf(this.changeProtectionPolicyCompartmentDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -301,6 +348,7 @@ public class ChangeProtectionPolicyCompartmentRequest
                 && java.util.Objects.equals(
                         this.changeProtectionPolicyCompartmentDetails,
                         other.changeProtectionPolicyCompartmentDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -319,6 +367,9 @@ public class ChangeProtectionPolicyCompartmentRequest
                         + (this.changeProtectionPolicyCompartmentDetails == null
                                 ? 43
                                 : this.changeProtectionPolicyCompartmentDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

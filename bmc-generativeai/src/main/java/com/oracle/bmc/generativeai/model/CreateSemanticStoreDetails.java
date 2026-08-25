@@ -27,6 +27,8 @@ public final class CreateSemanticStoreDetails
         "description",
         "compartmentId",
         "displayName",
+        "isUserDefinedSemanticsEnabled",
+        "modelSelection",
         "dataSource",
         "refreshSchedule",
         "schemas",
@@ -37,6 +39,8 @@ public final class CreateSemanticStoreDetails
             String description,
             String compartmentId,
             String displayName,
+            Boolean isUserDefinedSemanticsEnabled,
+            SemanticStoreModelSelection modelSelection,
             CreateDataSourceDetails dataSource,
             RefreshScheduleDetails refreshSchedule,
             CreateSchemasDetails schemas,
@@ -46,6 +50,8 @@ public final class CreateSemanticStoreDetails
         this.description = description;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.isUserDefinedSemanticsEnabled = isUserDefinedSemanticsEnabled;
+        this.modelSelection = modelSelection;
         this.dataSource = dataSource;
         this.refreshSchedule = refreshSchedule;
         this.schemas = schemas;
@@ -104,6 +110,38 @@ public final class CreateSemanticStoreDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Whether to include user-defined semantic inputs, such as annotations, comments, and
+         * synonyms, during semantic-store enrichment. When true, enrichment uses both metadata and
+         * user-defined semantics. When false, enrichment uses metadata only. When omitted, this
+         * value defaults to true.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUserDefinedSemanticsEnabled")
+        private Boolean isUserDefinedSemanticsEnabled;
+
+        /**
+         * Whether to include user-defined semantic inputs, such as annotations, comments, and
+         * synonyms, during semantic-store enrichment. When true, enrichment uses both metadata and
+         * user-defined semantics. When false, enrichment uses metadata only. When omitted, this
+         * value defaults to true.
+         *
+         * @param isUserDefinedSemanticsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isUserDefinedSemanticsEnabled(Boolean isUserDefinedSemanticsEnabled) {
+            this.isUserDefinedSemanticsEnabled = isUserDefinedSemanticsEnabled;
+            this.__explicitlySet__.add("isUserDefinedSemanticsEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("modelSelection")
+        private SemanticStoreModelSelection modelSelection;
+
+        public Builder modelSelection(SemanticStoreModelSelection modelSelection) {
+            this.modelSelection = modelSelection;
+            this.__explicitlySet__.add("modelSelection");
             return this;
         }
 
@@ -194,6 +232,8 @@ public final class CreateSemanticStoreDetails
                             this.description,
                             this.compartmentId,
                             this.displayName,
+                            this.isUserDefinedSemanticsEnabled,
+                            this.modelSelection,
                             this.dataSource,
                             this.refreshSchedule,
                             this.schemas,
@@ -215,6 +255,12 @@ public final class CreateSemanticStoreDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isUserDefinedSemanticsEnabled")) {
+                this.isUserDefinedSemanticsEnabled(model.getIsUserDefinedSemanticsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("modelSelection")) {
+                this.modelSelection(model.getModelSelection());
             }
             if (model.wasPropertyExplicitlySet("dataSource")) {
                 this.dataSource(model.getDataSource());
@@ -287,6 +333,34 @@ public final class CreateSemanticStoreDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Whether to include user-defined semantic inputs, such as annotations, comments, and synonyms,
+     * during semantic-store enrichment. When true, enrichment uses both metadata and user-defined
+     * semantics. When false, enrichment uses metadata only. When omitted, this value defaults to
+     * true.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUserDefinedSemanticsEnabled")
+    private final Boolean isUserDefinedSemanticsEnabled;
+
+    /**
+     * Whether to include user-defined semantic inputs, such as annotations, comments, and synonyms,
+     * during semantic-store enrichment. When true, enrichment uses both metadata and user-defined
+     * semantics. When false, enrichment uses metadata only. When omitted, this value defaults to
+     * true.
+     *
+     * @return the value
+     */
+    public Boolean getIsUserDefinedSemanticsEnabled() {
+        return isUserDefinedSemanticsEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("modelSelection")
+    private final SemanticStoreModelSelection modelSelection;
+
+    public SemanticStoreModelSelection getModelSelection() {
+        return modelSelection;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
@@ -374,6 +448,9 @@ public final class CreateSemanticStoreDetails
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isUserDefinedSemanticsEnabled=")
+                .append(String.valueOf(this.isUserDefinedSemanticsEnabled));
+        sb.append(", modelSelection=").append(String.valueOf(this.modelSelection));
         sb.append(", dataSource=").append(String.valueOf(this.dataSource));
         sb.append(", refreshSchedule=").append(String.valueOf(this.refreshSchedule));
         sb.append(", schemas=").append(String.valueOf(this.schemas));
@@ -396,6 +473,9 @@ public final class CreateSemanticStoreDetails
         return java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.isUserDefinedSemanticsEnabled, other.isUserDefinedSemanticsEnabled)
+                && java.util.Objects.equals(this.modelSelection, other.modelSelection)
                 && java.util.Objects.equals(this.dataSource, other.dataSource)
                 && java.util.Objects.equals(this.refreshSchedule, other.refreshSchedule)
                 && java.util.Objects.equals(this.schemas, other.schemas)
@@ -413,6 +493,14 @@ public final class CreateSemanticStoreDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUserDefinedSemanticsEnabled == null
+                                ? 43
+                                : this.isUserDefinedSemanticsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelSelection == null ? 43 : this.modelSelection.hashCode());
         result = (result * PRIME) + (this.dataSource == null ? 43 : this.dataSource.hashCode());
         result =
                 (result * PRIME)

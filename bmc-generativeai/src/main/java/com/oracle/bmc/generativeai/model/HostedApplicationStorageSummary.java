@@ -128,12 +128,12 @@ public final class HostedApplicationStorageSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** type like Cache, Postgresql and ADB. */
+        /** The managed storage type for the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageType")
         private StorageType storageType;
 
         /**
-         * type like Cache, Postgresql and ADB.
+         * The managed storage type for the application.
          *
          * @param storageType the value to set
          * @return this builder
@@ -392,7 +392,7 @@ public final class HostedApplicationStorageSummary
         return compartmentId;
     }
 
-    /** type like Cache, Postgresql and ADB. */
+    /** The managed storage type for the application. */
     public enum StorageType implements com.oracle.bmc.http.internal.BmcEnum {
         Cache("CACHE"),
         Postgresql("POSTGRESQL"),
@@ -439,12 +439,12 @@ public final class HostedApplicationStorageSummary
             return UnknownEnumValue;
         }
     };
-    /** type like Cache, Postgresql and ADB. */
+    /** The managed storage type for the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageType")
     private final StorageType storageType;
 
     /**
-     * type like Cache, Postgresql and ADB.
+     * The managed storage type for the application.
      *
      * @return the value
      */

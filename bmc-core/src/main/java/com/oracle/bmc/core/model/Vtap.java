@@ -1092,6 +1092,7 @@ public final class Vtap extends com.oracle.bmc.http.client.internal.ExplicitlySe
         DbSystem("DB_SYSTEM"),
         ExadataVmCluster("EXADATA_VM_CLUSTER"),
         AutonomousDataWarehouse("AUTONOMOUS_DATA_WAREHOUSE"),
+        NetworkFirewall("NETWORK_FIREWALL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

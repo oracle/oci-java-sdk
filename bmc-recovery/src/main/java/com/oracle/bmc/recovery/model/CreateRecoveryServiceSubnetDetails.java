@@ -28,6 +28,7 @@ public final class CreateRecoveryServiceSubnetDetails
         "subnetId",
         "subnets",
         "nsgIds",
+        "securityAttributes",
         "vcnId",
         "compartmentId",
         "freeformTags",
@@ -38,6 +39,7 @@ public final class CreateRecoveryServiceSubnetDetails
             String subnetId,
             java.util.List<String> subnets,
             java.util.List<String> nsgIds,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String vcnId,
             String compartmentId,
             java.util.Map<String, String> freeformTags,
@@ -47,6 +49,7 @@ public final class CreateRecoveryServiceSubnetDetails
         this.subnetId = subnetId;
         this.subnets = subnets;
         this.nsgIds = nsgIds;
+        this.securityAttributes = securityAttributes;
         this.vcnId = vcnId;
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
@@ -127,6 +130,34 @@ public final class CreateRecoveryServiceSubnetDetails
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode":
+         * "enforce"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -217,6 +248,7 @@ public final class CreateRecoveryServiceSubnetDetails
                             this.subnetId,
                             this.subnets,
                             this.nsgIds,
+                            this.securityAttributes,
                             this.vcnId,
                             this.compartmentId,
                             this.freeformTags,
@@ -240,6 +272,9 @@ public final class CreateRecoveryServiceSubnetDetails
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
@@ -333,6 +368,29 @@ public final class CreateRecoveryServiceSubnetDetails
     }
 
     /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You
      * can create a single recovery service subnet per VCN.
      */
@@ -417,6 +475,7 @@ public final class CreateRecoveryServiceSubnetDetails
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", subnets=").append(String.valueOf(this.subnets));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -439,6 +498,7 @@ public final class CreateRecoveryServiceSubnetDetails
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.subnets, other.subnets)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -454,6 +514,11 @@ public final class CreateRecoveryServiceSubnetDetails
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.subnets == null ? 43 : this.subnets.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result =
                 (result * PRIME)

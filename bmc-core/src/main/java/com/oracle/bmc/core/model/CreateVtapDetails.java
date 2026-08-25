@@ -772,6 +772,7 @@ public final class CreateVtapDetails
         DbSystem("DB_SYSTEM"),
         ExadataVmCluster("EXADATA_VM_CLUSTER"),
         AutonomousDataWarehouse("AUTONOMOUS_DATA_WAREHOUSE"),
+        NetworkFirewall("NETWORK_FIREWALL"),
         ;
 
         private final String value;

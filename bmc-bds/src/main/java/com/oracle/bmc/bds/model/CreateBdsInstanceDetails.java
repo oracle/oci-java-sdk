@@ -36,6 +36,8 @@ public final class CreateBdsInstanceDetails
             NetworkConfig networkConfig,
             String bootstrapScriptUrl,
             java.util.List<CreateNodeDetails> nodes,
+            java.util.List<CreateBdsCapacityReservationConfigurationDetails>
+                    bdsCapacityReservationConfigurations,
             String kerberosRealmName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -56,6 +58,7 @@ public final class CreateBdsInstanceDetails
         this.networkConfig = networkConfig;
         this.bootstrapScriptUrl = bootstrapScriptUrl;
         this.nodes = nodes;
+        this.bdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
         this.kerberosRealmName = kerberosRealmName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -79,6 +82,7 @@ public final class CreateBdsInstanceDetails
         "networkConfig",
         "bootstrapScriptUrl",
         "nodes",
+        "bdsCapacityReservationConfigurations",
         "kerberosRealmName",
         "freeformTags",
         "definedTags",
@@ -99,6 +103,8 @@ public final class CreateBdsInstanceDetails
             NetworkConfig networkConfig,
             String bootstrapScriptUrl,
             java.util.List<CreateNodeDetails> nodes,
+            java.util.List<CreateBdsCapacityReservationConfigurationDetails>
+                    bdsCapacityReservationConfigurations,
             String kerberosRealmName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -118,6 +124,7 @@ public final class CreateBdsInstanceDetails
         this.networkConfig = networkConfig;
         this.bootstrapScriptUrl = bootstrapScriptUrl;
         this.nodes = nodes;
+        this.bdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
         this.kerberosRealmName = kerberosRealmName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -317,6 +324,28 @@ public final class CreateBdsInstanceDetails
             this.__explicitlySet__.add("nodes");
             return this;
         }
+        /**
+         * Optional BDS capacity reservation configurations to associate with the cluster during
+         * creation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("bdsCapacityReservationConfigurations")
+        private java.util.List<CreateBdsCapacityReservationConfigurationDetails>
+                bdsCapacityReservationConfigurations;
+
+        /**
+         * Optional BDS capacity reservation configurations to associate with the cluster during
+         * creation.
+         *
+         * @param bdsCapacityReservationConfigurations the value to set
+         * @return this builder
+         */
+        public Builder bdsCapacityReservationConfigurations(
+                java.util.List<CreateBdsCapacityReservationConfigurationDetails>
+                        bdsCapacityReservationConfigurations) {
+            this.bdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
+            this.__explicitlySet__.add("bdsCapacityReservationConfigurations");
+            return this;
+        }
         /** The user-defined kerberos realm name. */
         @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealmName")
         private String kerberosRealmName;
@@ -429,6 +458,7 @@ public final class CreateBdsInstanceDetails
                             this.networkConfig,
                             this.bootstrapScriptUrl,
                             this.nodes,
+                            this.bdsCapacityReservationConfigurations,
                             this.kerberosRealmName,
                             this.freeformTags,
                             this.definedTags,
@@ -478,6 +508,10 @@ public final class CreateBdsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("nodes")) {
                 this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("bdsCapacityReservationConfigurations")) {
+                this.bdsCapacityReservationConfigurations(
+                        model.getBdsCapacityReservationConfigurations());
             }
             if (model.wasPropertyExplicitlySet("kerberosRealmName")) {
                 this.kerberosRealmName(model.getKerberosRealmName());
@@ -682,6 +716,25 @@ public final class CreateBdsInstanceDetails
         return nodes;
     }
 
+    /**
+     * Optional BDS capacity reservation configurations to associate with the cluster during
+     * creation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("bdsCapacityReservationConfigurations")
+    private final java.util.List<CreateBdsCapacityReservationConfigurationDetails>
+            bdsCapacityReservationConfigurations;
+
+    /**
+     * Optional BDS capacity reservation configurations to associate with the cluster during
+     * creation.
+     *
+     * @return the value
+     */
+    public java.util.List<CreateBdsCapacityReservationConfigurationDetails>
+            getBdsCapacityReservationConfigurations() {
+        return bdsCapacityReservationConfigurations;
+    }
+
     /** The user-defined kerberos realm name. */
     @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealmName")
     private final String kerberosRealmName;
@@ -789,6 +842,8 @@ public final class CreateBdsInstanceDetails
         sb.append(", networkConfig=").append(String.valueOf(this.networkConfig));
         sb.append(", bootstrapScriptUrl=").append(String.valueOf(this.bootstrapScriptUrl));
         sb.append(", nodes=").append(String.valueOf(this.nodes));
+        sb.append(", bdsCapacityReservationConfigurations=")
+                .append(String.valueOf(this.bdsCapacityReservationConfigurations));
         sb.append(", kerberosRealmName=").append(String.valueOf(this.kerberosRealmName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -822,6 +877,9 @@ public final class CreateBdsInstanceDetails
                 && java.util.Objects.equals(this.networkConfig, other.networkConfig)
                 && java.util.Objects.equals(this.bootstrapScriptUrl, other.bootstrapScriptUrl)
                 && java.util.Objects.equals(this.nodes, other.nodes)
+                && java.util.Objects.equals(
+                        this.bdsCapacityReservationConfigurations,
+                        other.bdsCapacityReservationConfigurations)
                 && java.util.Objects.equals(this.kerberosRealmName, other.kerberosRealmName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -870,6 +928,11 @@ public final class CreateBdsInstanceDetails
                                 ? 43
                                 : this.bootstrapScriptUrl.hashCode());
         result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bdsCapacityReservationConfigurations == null
+                                ? 43
+                                : this.bdsCapacityReservationConfigurations.hashCode());
         result =
                 (result * PRIME)
                         + (this.kerberosRealmName == null ? 43 : this.kerberosRealmName.hashCode());

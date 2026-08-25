@@ -38,7 +38,9 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "isUserDefinedSemanticsEnabled",
         "dataSource",
+        "modelSelection",
         "refreshSchedule",
         "schemas",
         "freeformTags",
@@ -54,7 +56,9 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            Boolean isUserDefinedSemanticsEnabled,
             DataSourceDetails dataSource,
+            SemanticStoreModelSelection modelSelection,
             RefreshScheduleDetails refreshSchedule,
             SchemasDetails schemas,
             java.util.Map<String, String> freeformTags,
@@ -69,7 +73,9 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.isUserDefinedSemanticsEnabled = isUserDefinedSemanticsEnabled;
         this.dataSource = dataSource;
+        this.modelSelection = modelSelection;
         this.refreshSchedule = refreshSchedule;
         this.schemas = schemas;
         this.freeformTags = freeformTags;
@@ -221,6 +227,29 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are
+         * enabled for semantic-store enrichment. When true, enrichment uses both metadata and
+         * user-defined semantics. When false, enrichment uses metadata only. If not specified when
+         * the semantic store is created, this value defaults to true.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUserDefinedSemanticsEnabled")
+        private Boolean isUserDefinedSemanticsEnabled;
+
+        /**
+         * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are
+         * enabled for semantic-store enrichment. When true, enrichment uses both metadata and
+         * user-defined semantics. When false, enrichment uses metadata only. If not specified when
+         * the semantic store is created, this value defaults to true.
+         *
+         * @param isUserDefinedSemanticsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isUserDefinedSemanticsEnabled(Boolean isUserDefinedSemanticsEnabled) {
+            this.isUserDefinedSemanticsEnabled = isUserDefinedSemanticsEnabled;
+            this.__explicitlySet__.add("isUserDefinedSemanticsEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
         private DataSourceDetails dataSource;
@@ -228,6 +257,15 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
         public Builder dataSource(DataSourceDetails dataSource) {
             this.dataSource = dataSource;
             this.__explicitlySet__.add("dataSource");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("modelSelection")
+        private SemanticStoreModelSelection modelSelection;
+
+        public Builder modelSelection(SemanticStoreModelSelection modelSelection) {
+            this.modelSelection = modelSelection;
+            this.__explicitlySet__.add("modelSelection");
             return this;
         }
 
@@ -335,7 +373,9 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.isUserDefinedSemanticsEnabled,
                             this.dataSource,
+                            this.modelSelection,
                             this.refreshSchedule,
                             this.schemas,
                             this.freeformTags,
@@ -373,8 +413,14 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("isUserDefinedSemanticsEnabled")) {
+                this.isUserDefinedSemanticsEnabled(model.getIsUserDefinedSemanticsEnabled());
+            }
             if (model.wasPropertyExplicitlySet("dataSource")) {
                 this.dataSource(model.getDataSource());
+            }
+            if (model.wasPropertyExplicitlySet("modelSelection")) {
+                this.modelSelection(model.getModelSelection());
             }
             if (model.wasPropertyExplicitlySet("refreshSchedule")) {
                 this.refreshSchedule(model.getRefreshSchedule());
@@ -580,11 +626,39 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
         return lifecycleDetails;
     }
 
+    /**
+     * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are
+     * enabled for semantic-store enrichment. When true, enrichment uses both metadata and
+     * user-defined semantics. When false, enrichment uses metadata only. If not specified when the
+     * semantic store is created, this value defaults to true.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUserDefinedSemanticsEnabled")
+    private final Boolean isUserDefinedSemanticsEnabled;
+
+    /**
+     * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are
+     * enabled for semantic-store enrichment. When true, enrichment uses both metadata and
+     * user-defined semantics. When false, enrichment uses metadata only. If not specified when the
+     * semantic store is created, this value defaults to true.
+     *
+     * @return the value
+     */
+    public Boolean getIsUserDefinedSemanticsEnabled() {
+        return isUserDefinedSemanticsEnabled;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataSource")
     private final DataSourceDetails dataSource;
 
     public DataSourceDetails getDataSource() {
         return dataSource;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("modelSelection")
+    private final SemanticStoreModelSelection modelSelection;
+
+    public SemanticStoreModelSelection getModelSelection() {
+        return modelSelection;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("refreshSchedule")
@@ -689,7 +763,10 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", isUserDefinedSemanticsEnabled=")
+                .append(String.valueOf(this.isUserDefinedSemanticsEnabled));
         sb.append(", dataSource=").append(String.valueOf(this.dataSource));
+        sb.append(", modelSelection=").append(String.valueOf(this.modelSelection));
         sb.append(", refreshSchedule=").append(String.valueOf(this.refreshSchedule));
         sb.append(", schemas=").append(String.valueOf(this.schemas));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -717,7 +794,10 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.isUserDefinedSemanticsEnabled, other.isUserDefinedSemanticsEnabled)
                 && java.util.Objects.equals(this.dataSource, other.dataSource)
+                && java.util.Objects.equals(this.modelSelection, other.modelSelection)
                 && java.util.Objects.equals(this.refreshSchedule, other.refreshSchedule)
                 && java.util.Objects.equals(this.schemas, other.schemas)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -744,7 +824,15 @@ public final class SemanticStore extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUserDefinedSemanticsEnabled == null
+                                ? 43
+                                : this.isUserDefinedSemanticsEnabled.hashCode());
         result = (result * PRIME) + (this.dataSource == null ? 43 : this.dataSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelSelection == null ? 43 : this.modelSelection.hashCode());
         result =
                 (result * PRIME)
                         + (this.refreshSchedule == null ? 43 : this.refreshSchedule.hashCode());

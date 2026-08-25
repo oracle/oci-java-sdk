@@ -57,6 +57,13 @@ public class ListProtectedDatabasesRequest
     public String getRecoveryServiceSubnetId() {
         return recoveryServiceSubnetId;
     }
+    /** Filter for cloud location of protected database. */
+    private com.oracle.bmc.recovery.model.BackupCloudLocation backupCloudLocation;
+
+    /** Filter for cloud location of protected database. */
+    public com.oracle.bmc.recovery.model.BackupCloudLocation getBackupCloudLocation() {
+        return backupCloudLocation;
+    }
     /** The maximum number of items to return per page. */
     private Integer limit;
 
@@ -244,6 +251,21 @@ public class ListProtectedDatabasesRequest
             return this;
         }
 
+        /** Filter for cloud location of protected database. */
+        private com.oracle.bmc.recovery.model.BackupCloudLocation backupCloudLocation = null;
+
+        /**
+         * Filter for cloud location of protected database.
+         *
+         * @param backupCloudLocation the value to set
+         * @return this builder instance
+         */
+        public Builder backupCloudLocation(
+                com.oracle.bmc.recovery.model.BackupCloudLocation backupCloudLocation) {
+            this.backupCloudLocation = backupCloudLocation;
+            return this;
+        }
+
         /** The maximum number of items to return per page. */
         private Integer limit = null;
 
@@ -366,6 +388,7 @@ public class ListProtectedDatabasesRequest
             id(o.getId());
             protectionPolicyId(o.getProtectionPolicyId());
             recoveryServiceSubnetId(o.getRecoveryServiceSubnetId());
+            backupCloudLocation(o.getBackupCloudLocation());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -411,6 +434,7 @@ public class ListProtectedDatabasesRequest
             request.id = id;
             request.protectionPolicyId = protectionPolicyId;
             request.recoveryServiceSubnetId = recoveryServiceSubnetId;
+            request.backupCloudLocation = backupCloudLocation;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -418,8 +442,8 @@ public class ListProtectedDatabasesRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListProtectedDatabasesRequest(compartmentId, lifecycleState, displayName, id,
-            // protectionPolicyId, recoveryServiceSubnetId, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // protectionPolicyId, recoveryServiceSubnetId, backupCloudLocation, limit, page,
+            // sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -436,6 +460,7 @@ public class ListProtectedDatabasesRequest
                 .id(id)
                 .protectionPolicyId(protectionPolicyId)
                 .recoveryServiceSubnetId(recoveryServiceSubnetId)
+                .backupCloudLocation(backupCloudLocation)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -463,6 +488,7 @@ public class ListProtectedDatabasesRequest
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",protectionPolicyId=").append(String.valueOf(this.protectionPolicyId));
         sb.append(",recoveryServiceSubnetId=").append(String.valueOf(this.recoveryServiceSubnetId));
+        sb.append(",backupCloudLocation=").append(String.valueOf(this.backupCloudLocation));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -490,6 +516,7 @@ public class ListProtectedDatabasesRequest
                 && java.util.Objects.equals(this.protectionPolicyId, other.protectionPolicyId)
                 && java.util.Objects.equals(
                         this.recoveryServiceSubnetId, other.recoveryServiceSubnetId)
+                && java.util.Objects.equals(this.backupCloudLocation, other.backupCloudLocation)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -519,6 +546,11 @@ public class ListProtectedDatabasesRequest
                         + (this.recoveryServiceSubnetId == null
                                 ? 43
                                 : this.recoveryServiceSubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupCloudLocation == null
+                                ? 43
+                                : this.backupCloudLocation.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

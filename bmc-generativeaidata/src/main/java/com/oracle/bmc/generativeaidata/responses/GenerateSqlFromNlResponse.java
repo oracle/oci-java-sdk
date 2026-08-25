@@ -36,15 +36,11 @@ public class GenerateSqlFromNlResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
-     * status.
-     */
+    /** Not used when {@code 200} status is returned */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
-     * status.
+     * Not used when {@code 200} status is returned
      *
      * @return the value
      */
@@ -136,15 +132,11 @@ public class GenerateSqlFromNlResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
-         * its status.
-         */
+        /** Not used when {@code 200} status is returned */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
-         * its status.
+         * Not used when {@code 200} status is returned
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
