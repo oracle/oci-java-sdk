@@ -94,12 +94,12 @@ public final class CreateHostedApplicationStorageDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** type like Cache, Postgresql and ADB. */
+        /** The managed storage type for the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageType")
         private HostedApplicationStorage.StorageType storageType;
 
         /**
-         * type like Cache, Postgresql and ADB.
+         * The managed storage type for the application.
          *
          * @param storageType the value to set
          * @return this builder
@@ -251,12 +251,12 @@ public final class CreateHostedApplicationStorageDetails
         return compartmentId;
     }
 
-    /** type like Cache, Postgresql and ADB. */
+    /** The managed storage type for the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageType")
     private final HostedApplicationStorage.StorageType storageType;
 
     /**
-     * type like Cache, Postgresql and ADB.
+     * The managed storage type for the application.
      *
      * @return the value
      */

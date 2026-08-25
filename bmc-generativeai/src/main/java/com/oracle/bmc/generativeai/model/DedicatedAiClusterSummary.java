@@ -258,16 +258,12 @@ public final class DedicatedAiClusterSummary
             this.__explicitlySet__.add("unitCount");
             return this;
         }
-        /**
-         * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
-         * hidden from customers.
-         */
+        /** The shape of dedicated unit in this AI cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
         private DedicatedAiCluster.UnitShape unitShape;
 
         /**
-         * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
-         * hidden from customers.
+         * The shape of dedicated unit in this AI cluster.
          *
          * @param unitShape the value to set
          * @return this builder
@@ -604,16 +600,12 @@ public final class DedicatedAiClusterSummary
         return unitCount;
     }
 
-    /**
-     * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
-     * hidden from customers.
-     */
+    /** The shape of dedicated unit in this AI cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
 
     /**
-     * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
-     * hidden from customers.
+     * The shape of dedicated unit in this AI cluster.
      *
      * @return the value
      */

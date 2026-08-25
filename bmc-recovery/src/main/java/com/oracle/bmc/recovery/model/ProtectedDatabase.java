@@ -49,6 +49,7 @@ public final class ProtectedDatabase
         "lifecycleDetails",
         "healthDetails",
         "metrics",
+        "backupCloudLocation",
         "subscriptionId",
         "freeformTags",
         "definedTags",
@@ -77,6 +78,7 @@ public final class ProtectedDatabase
             String lifecycleDetails,
             String healthDetails,
             Metrics metrics,
+            BackupCloudLocation backupCloudLocation,
             String subscriptionId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -104,6 +106,7 @@ public final class ProtectedDatabase
         this.lifecycleDetails = lifecycleDetails;
         this.healthDetails = healthDetails;
         this.metrics = metrics;
+        this.backupCloudLocation = backupCloudLocation;
         this.subscriptionId = subscriptionId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -541,6 +544,25 @@ public final class ProtectedDatabase
             this.__explicitlySet__.add("metrics");
             return this;
         }
+        /**
+         * Indicates the cloud service environment where the protected database is provisioned. For
+         * example, Oracle Cloud or Microsoft Azure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupCloudLocation")
+        private BackupCloudLocation backupCloudLocation;
+
+        /**
+         * Indicates the cloud service environment where the protected database is provisioned. For
+         * example, Oracle Cloud or Microsoft Azure.
+         *
+         * @param backupCloudLocation the value to set
+         * @return this builder
+         */
+        public Builder backupCloudLocation(BackupCloudLocation backupCloudLocation) {
+            this.backupCloudLocation = backupCloudLocation;
+            this.__explicitlySet__.add("backupCloudLocation");
+            return this;
+        }
         /** The OCID of the cloud service subscription to which the protected database is linked. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
@@ -649,6 +671,7 @@ public final class ProtectedDatabase
                             this.lifecycleDetails,
                             this.healthDetails,
                             this.metrics,
+                            this.backupCloudLocation,
                             this.subscriptionId,
                             this.freeformTags,
                             this.definedTags,
@@ -726,6 +749,9 @@ public final class ProtectedDatabase
             }
             if (model.wasPropertyExplicitlySet("metrics")) {
                 this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("backupCloudLocation")) {
+                this.backupCloudLocation(model.getBackupCloudLocation());
             }
             if (model.wasPropertyExplicitlySet("subscriptionId")) {
                 this.subscriptionId(model.getSubscriptionId());
@@ -1130,6 +1156,23 @@ public final class ProtectedDatabase
         return metrics;
     }
 
+    /**
+     * Indicates the cloud service environment where the protected database is provisioned. For
+     * example, Oracle Cloud or Microsoft Azure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupCloudLocation")
+    private final BackupCloudLocation backupCloudLocation;
+
+    /**
+     * Indicates the cloud service environment where the protected database is provisioned. For
+     * example, Oracle Cloud or Microsoft Azure.
+     *
+     * @return the value
+     */
+    public BackupCloudLocation getBackupCloudLocation() {
+        return backupCloudLocation;
+    }
+
     /** The OCID of the cloud service subscription to which the protected database is linked. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
@@ -1235,6 +1278,7 @@ public final class ProtectedDatabase
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", healthDetails=").append(String.valueOf(this.healthDetails));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", backupCloudLocation=").append(String.valueOf(this.backupCloudLocation));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1276,6 +1320,7 @@ public final class ProtectedDatabase
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.healthDetails, other.healthDetails)
                 && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.backupCloudLocation, other.backupCloudLocation)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1339,6 +1384,11 @@ public final class ProtectedDatabase
                 (result * PRIME)
                         + (this.healthDetails == null ? 43 : this.healthDetails.hashCode());
         result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupCloudLocation == null
+                                ? 43
+                                : this.backupCloudLocation.hashCode());
         result =
                 (result * PRIME)
                         + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());

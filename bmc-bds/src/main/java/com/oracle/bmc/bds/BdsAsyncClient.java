@@ -97,6 +97,52 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateBdsCapacityReservationConfigurationResponse>
+            activateBdsCapacityReservationConfiguration(
+                    ActivateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateBdsCapacityReservationConfigurationRequest,
+                                    ActivateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationConfigurationId(),
+                "bdsCapacityReservationConfigurationId must not be blank");
+
+        return clientCall(request, ActivateBdsCapacityReservationConfigurationResponse::builder)
+                .logger(LOG, "activateBdsCapacityReservationConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "ActivateBdsCapacityReservationConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ActivateBdsCapacityReservationConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateBdsCapacityReservationConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("bdsCapacityReservationConfigurations")
+                .appendPathParam(request.getBdsCapacityReservationConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.class,
+                        ActivateBdsCapacityReservationConfigurationResponse.Builder
+                                ::bdsCapacityReservationConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ActivateBdsCapacityReservationConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", ActivateBdsCapacityReservationConfigurationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ActivateBdsMetastoreConfigurationResponse>
             activateBdsMetastoreConfiguration(
                     ActivateBdsMetastoreConfigurationRequest request,
@@ -596,6 +642,46 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeBdsCapacityReservationCompartmentResponse>
+            changeBdsCapacityReservationCompartment(
+                    ChangeBdsCapacityReservationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeBdsCapacityReservationCompartmentRequest,
+                                    ChangeBdsCapacityReservationCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationId(),
+                "bdsCapacityReservationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeBdsCapacityReservationCompartmentDetails(),
+                "changeBdsCapacityReservationCompartmentDetails is required");
+
+        return clientCall(request, ChangeBdsCapacityReservationCompartmentResponse::builder)
+                .logger(LOG, "changeBdsCapacityReservationCompartment")
+                .serviceDetails(
+                        "Bds",
+                        "ChangeBdsCapacityReservationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/ChangeBdsCapacityReservationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeBdsCapacityReservationCompartmentRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReservations")
+                .appendPathParam(request.getBdsCapacityReservationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeBdsCapacityReservationCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBdsInstanceCompartmentResponse>
             changeBdsInstanceCompartment(
                     ChangeBdsInstanceCompartmentRequest request,
@@ -733,6 +819,102 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         CreateBdsCapacityReportResponse.Builder::bdsCapacityReport)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateBdsCapacityReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBdsCapacityReservationResponse>
+            createBdsCapacityReservation(
+                    CreateBdsCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateBdsCapacityReservationRequest,
+                                    CreateBdsCapacityReservationResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateBdsCapacityReservationDetails(),
+                "createBdsCapacityReservationDetails is required");
+
+        return clientCall(request, CreateBdsCapacityReservationResponse::builder)
+                .logger(LOG, "createBdsCapacityReservation")
+                .serviceDetails(
+                        "Bds",
+                        "CreateBdsCapacityReservation",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/CreateBdsCapacityReservation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBdsCapacityReservationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReservations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservation.class,
+                        CreateBdsCapacityReservationResponse.Builder::bdsCapacityReservation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateBdsCapacityReservationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateBdsCapacityReservationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateBdsCapacityReservationResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateBdsCapacityReservationResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "etag", CreateBdsCapacityReservationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBdsCapacityReservationConfigurationResponse>
+            createBdsCapacityReservationConfiguration(
+                    CreateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateBdsCapacityReservationConfigurationRequest,
+                                    CreateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateBdsCapacityReservationConfigurationDetails(),
+                "createBdsCapacityReservationConfigurationDetails is required");
+
+        return clientCall(request, CreateBdsCapacityReservationConfigurationResponse::builder)
+                .logger(LOG, "createBdsCapacityReservationConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateBdsCapacityReservationConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/CreateBdsCapacityReservationConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateBdsCapacityReservationConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("bdsCapacityReservationConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.class,
+                        CreateBdsCapacityReservationConfigurationResponse.Builder
+                                ::bdsCapacityReservationConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateBdsCapacityReservationConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateBdsCapacityReservationConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "location",
+                        CreateBdsCapacityReservationConfigurationResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateBdsCapacityReservationConfigurationResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "etag", CreateBdsCapacityReservationConfigurationResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -1000,6 +1182,52 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateBdsCapacityReservationConfigurationResponse>
+            deactivateBdsCapacityReservationConfiguration(
+                    DeactivateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeactivateBdsCapacityReservationConfigurationRequest,
+                                    DeactivateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationConfigurationId(),
+                "bdsCapacityReservationConfigurationId must not be blank");
+
+        return clientCall(request, DeactivateBdsCapacityReservationConfigurationResponse::builder)
+                .logger(LOG, "deactivateBdsCapacityReservationConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeactivateBdsCapacityReservationConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/DeactivateBdsCapacityReservationConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateBdsCapacityReservationConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("bdsCapacityReservationConfigurations")
+                .appendPathParam(request.getBdsCapacityReservationConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.class,
+                        DeactivateBdsCapacityReservationConfigurationResponse.Builder
+                                ::bdsCapacityReservationConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeactivateBdsCapacityReservationConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", DeactivateBdsCapacityReservationConfigurationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeactivateIamUserSyncConfigurationResponse>
             deactivateIamUserSyncConfiguration(
                     DeactivateIamUserSyncConfigurationRequest request,
@@ -1121,6 +1349,76 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-request-id", DeleteBdsApiKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteBdsApiKeyResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBdsCapacityReservationResponse>
+            deleteBdsCapacityReservation(
+                    DeleteBdsCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteBdsCapacityReservationRequest,
+                                    DeleteBdsCapacityReservationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationId(),
+                "bdsCapacityReservationId must not be blank");
+
+        return clientCall(request, DeleteBdsCapacityReservationResponse::builder)
+                .logger(LOG, "deleteBdsCapacityReservation")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteBdsCapacityReservation",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/DeleteBdsCapacityReservation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBdsCapacityReservationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReservations")
+                .appendPathParam(request.getBdsCapacityReservationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteBdsCapacityReservationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBdsCapacityReservationConfigurationResponse>
+            deleteBdsCapacityReservationConfiguration(
+                    DeleteBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteBdsCapacityReservationConfigurationRequest,
+                                    DeleteBdsCapacityReservationConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationConfigurationId(),
+                "bdsCapacityReservationConfigurationId must not be blank");
+
+        return clientCall(request, DeleteBdsCapacityReservationConfigurationResponse::builder)
+                .logger(LOG, "deleteBdsCapacityReservationConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteBdsCapacityReservationConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/DeleteBdsCapacityReservationConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteBdsCapacityReservationConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("bdsCapacityReservationConfigurations")
+                .appendPathParam(request.getBdsCapacityReservationConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteBdsCapacityReservationConfigurationResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1611,6 +1909,81 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", GetBdsApiKeyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetBdsApiKeyResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBdsCapacityReservationResponse> getBdsCapacityReservation(
+            GetBdsCapacityReservationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationId(),
+                "bdsCapacityReservationId must not be blank");
+
+        return clientCall(request, GetBdsCapacityReservationResponse::builder)
+                .logger(LOG, "getBdsCapacityReservation")
+                .serviceDetails(
+                        "Bds",
+                        "GetBdsCapacityReservation",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/GetBdsCapacityReservation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBdsCapacityReservationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReservations")
+                .appendPathParam(request.getBdsCapacityReservationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservation.class,
+                        GetBdsCapacityReservationResponse.Builder::bdsCapacityReservation)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBdsCapacityReservationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetBdsCapacityReservationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBdsCapacityReservationConfigurationResponse>
+            getBdsCapacityReservationConfiguration(
+                    GetBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetBdsCapacityReservationConfigurationRequest,
+                                    GetBdsCapacityReservationConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationConfigurationId(),
+                "bdsCapacityReservationConfigurationId must not be blank");
+
+        return clientCall(request, GetBdsCapacityReservationConfigurationResponse::builder)
+                .logger(LOG, "getBdsCapacityReservationConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetBdsCapacityReservationConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/GetBdsCapacityReservationConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBdsCapacityReservationConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("bdsCapacityReservationConfigurations")
+                .appendPathParam(request.getBdsCapacityReservationConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.class,
+                        GetBdsCapacityReservationConfigurationResponse.Builder
+                                ::bdsCapacityReservationConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetBdsCapacityReservationConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetBdsCapacityReservationConfigurationResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -2216,6 +2589,144 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                         "opc-request-id", ListBdsApiKeysResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListBdsApiKeysResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBdsCapacityReservationAssociatedConfigurationsResponse>
+            listBdsCapacityReservationAssociatedConfigurations(
+                    ListBdsCapacityReservationAssociatedConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                                    ListBdsCapacityReservationAssociatedConfigurationsResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationId(),
+                "bdsCapacityReservationId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(
+                        request,
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse::builder)
+                .logger(LOG, "listBdsCapacityReservationAssociatedConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservationAssociatedConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ListBdsCapacityReservationAssociatedConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsCapacityReservationAssociatedConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReservations")
+                .appendPathParam(request.getBdsCapacityReservationId())
+                .appendPathParam("associatedConfigurations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model
+                                .BdsCapacityReservationAssociatedConfigurationCollection.class,
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse.Builder
+                                ::bdsCapacityReservationAssociatedConfigurationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse.Builder
+                                ::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBdsCapacityReservationConfigurationsResponse>
+            listBdsCapacityReservationConfigurations(
+                    ListBdsCapacityReservationConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationConfigurationsRequest,
+                                    ListBdsCapacityReservationConfigurationsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListBdsCapacityReservationConfigurationsResponse::builder)
+                .logger(LOG, "listBdsCapacityReservationConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservationConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ListBdsCapacityReservationConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsCapacityReservationConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("bdsCapacityReservationConfigurations")
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservationConfigurationCollection
+                                .class,
+                        ListBdsCapacityReservationConfigurationsResponse.Builder
+                                ::bdsCapacityReservationConfigurationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListBdsCapacityReservationConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListBdsCapacityReservationConfigurationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBdsCapacityReservationsResponse>
+            listBdsCapacityReservations(
+                    ListBdsCapacityReservationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationsRequest,
+                                    ListBdsCapacityReservationsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListBdsCapacityReservationsResponse::builder)
+                .logger(LOG, "listBdsCapacityReservations")
+                .serviceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/ListBdsCapacityReservations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsCapacityReservationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReservations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservationCollection.class,
+                        ListBdsCapacityReservationsResponse.Builder
+                                ::bdsCapacityReservationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBdsCapacityReservationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBdsCapacityReservationsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3607,6 +4118,97 @@ public class BdsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateAutoScalingConfigurationResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBdsCapacityReservationResponse>
+            updateBdsCapacityReservation(
+                    UpdateBdsCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateBdsCapacityReservationRequest,
+                                    UpdateBdsCapacityReservationResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationId(),
+                "bdsCapacityReservationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateBdsCapacityReservationDetails(),
+                "updateBdsCapacityReservationDetails is required");
+
+        return clientCall(request, UpdateBdsCapacityReservationResponse::builder)
+                .logger(LOG, "updateBdsCapacityReservation")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateBdsCapacityReservation",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/UpdateBdsCapacityReservation")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBdsCapacityReservationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsCapacityReservations")
+                .appendPathParam(request.getBdsCapacityReservationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservation.class,
+                        UpdateBdsCapacityReservationResponse.Builder::bdsCapacityReservation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateBdsCapacityReservationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateBdsCapacityReservationResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBdsCapacityReservationConfigurationResponse>
+            updateBdsCapacityReservationConfiguration(
+                    UpdateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateBdsCapacityReservationConfigurationRequest,
+                                    UpdateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getBdsCapacityReservationConfigurationId(),
+                "bdsCapacityReservationConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateBdsCapacityReservationConfigurationDetails(),
+                "updateBdsCapacityReservationConfigurationDetails is required");
+
+        return clientCall(request, UpdateBdsCapacityReservationConfigurationResponse::builder)
+                .logger(LOG, "updateBdsCapacityReservationConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateBdsCapacityReservationConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/UpdateBdsCapacityReservationConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateBdsCapacityReservationConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("bdsCapacityReservationConfigurations")
+                .appendPathParam(request.getBdsCapacityReservationConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.class,
+                        UpdateBdsCapacityReservationConfigurationResponse.Builder
+                                ::bdsCapacityReservationConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateBdsCapacityReservationConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateBdsCapacityReservationConfigurationResponse.Builder::etag)
                 .callAsync(handler);
     }
 

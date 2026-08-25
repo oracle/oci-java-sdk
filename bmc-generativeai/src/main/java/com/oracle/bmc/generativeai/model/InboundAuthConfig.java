@@ -5,9 +5,8 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * The client-side inbound authentication configuration for the Hosted Application. Defines the
- * network access rules. When unspecified, the service applies the default inbound authentication
- * configuration type. <br>
+ * The inbound authentication configuration for the Hosted Application. When unspecified, the
+ * service applies the default inbound authentication configuration type. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,12 +34,12 @@ public final class InboundAuthConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG). */
+        /** The inbound authentication configuration type for the Hosted Application. */
         @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfigType")
         private InboundAuthConfigType inboundAuthConfigType;
 
         /**
-         * Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         * The inbound authentication configuration type for the Hosted Application.
          *
          * @param inboundAuthConfigType the value to set
          * @return this builder
@@ -93,7 +92,7 @@ public final class InboundAuthConfig
         return new Builder().copy(this);
     }
 
-    /** Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG). */
+    /** The inbound authentication configuration type for the Hosted Application. */
     public enum InboundAuthConfigType implements com.oracle.bmc.http.internal.BmcEnum {
         IdcsAuthConfig("IDCS_AUTH_CONFIG"),
 
@@ -138,12 +137,12 @@ public final class InboundAuthConfig
             return UnknownEnumValue;
         }
     };
-    /** Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG). */
+    /** The inbound authentication configuration type for the Hosted Application. */
     @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfigType")
     private final InboundAuthConfigType inboundAuthConfigType;
 
     /**
-     * Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+     * The inbound authentication configuration type for the Hosted Application.
      *
      * @return the value
      */

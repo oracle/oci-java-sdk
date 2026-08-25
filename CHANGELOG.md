@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.95.0 - 2026-08-25
+### Added 
+- Support for blue/green deployments in the MySQL HeatWave service 
+- Support for capacity reservations, capacity reservation configurations, and associating reservations when creating instances in the Big Data service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on recovery subnets in the Autonomous Recovery service 
+- Support for network firewall as a Virtual Test Access Points (VTAP) source in the Networking service 
+- Support for NL2SQL model selection, annotation, background mode and delta enrichment in the Generative AI service 
+- Support for NL2SQL model selection, annotation, background mode and delta enrichment in the Generative AI Data service 
+- Support for B200, B300, L40S, and MI300X dedicated AI cluster unit shapes in the Generative AI service   
+
+### Breaking Changes 
+- Class `com.oracle.bmc.generativeaidata.CancelEnrichmentJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.CancelEnrichmentJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateEnrichmentJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateEnrichmentJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateSqlFromNlJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateSqlFromNlJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GetEnrichmentJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GetEnrichmentJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GetEnrichmentJobWaiters` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.ListEnrichmentJobs` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.ListEnrichmentJobsClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.ListEnrichmentJobsPaginators` has been removed from the Generative AI Data service  
+
+### Changed 
+- Updated `jackson-core` and `jackson-databind` to version `2.21.5` to address CVE-2026-54515
+
 ## 3.94.2 - 2026-08-18
 ### Added 
 - Support for creating databases from another database with additional input fields and source encryption-key location details in the Database service 

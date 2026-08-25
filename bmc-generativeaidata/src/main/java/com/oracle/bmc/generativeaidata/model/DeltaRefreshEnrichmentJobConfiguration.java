@@ -7,9 +7,10 @@ package com.oracle.bmc.generativeaidata.model;
 /**
  * A DeltaRefreshEnrichmentJobConfiguration is an EnrichmentJobConfiguration [indicated by the first
  * item under {@code allOf}, which is a reference to EnrichmentJobConfiguration] that describes the
- * database schema that will be the scope of the enrichment job and the schedule on which the job
- * will run. As distinguished by enrichmentJobType [with specific characteristics defined by the
- * second item under {@code allOf}]. <br>
+ * database schema that will be the scope of the delta refresh enrichment job. As distinguished by
+ * enrichmentJobType [with specific characteristics defined by the second item under {@code allOf}].
+ * deltaRefreshSchedule is optional, is not used by the service, and is retained only for backward
+ * compatibility. It should be treated as deprecated. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,12 +47,16 @@ public final class DeltaRefreshEnrichmentJobConfiguration extends EnrichmentJobC
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** Schedule for occurrences of Delta Refresh jobs */
+        /**
+         * Deprecated schedule for occurrences of Delta Refresh jobs. This value is not used by the
+         * service.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deltaRefreshSchedule")
         private Object deltaRefreshSchedule;
 
         /**
-         * Schedule for occurrences of Delta Refresh jobs
+         * Deprecated schedule for occurrences of Delta Refresh jobs. This value is not used by the
+         * service.
          *
          * @param deltaRefreshSchedule the value to set
          * @return this builder
@@ -116,12 +121,16 @@ public final class DeltaRefreshEnrichmentJobConfiguration extends EnrichmentJobC
         return schemaName;
     }
 
-    /** Schedule for occurrences of Delta Refresh jobs */
+    /**
+     * Deprecated schedule for occurrences of Delta Refresh jobs. This value is not used by the
+     * service.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deltaRefreshSchedule")
     private final Object deltaRefreshSchedule;
 
     /**
-     * Schedule for occurrences of Delta Refresh jobs
+     * Deprecated schedule for occurrences of Delta Refresh jobs. This value is not used by the
+     * service.
      *
      * @return the value
      */
