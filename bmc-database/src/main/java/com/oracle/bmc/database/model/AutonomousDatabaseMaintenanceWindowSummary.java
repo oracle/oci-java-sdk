@@ -26,13 +26,25 @@ package com.oracle.bmc.database.model;
 public final class AutonomousDatabaseMaintenanceWindowSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"dayOfWeek", "maintenanceStartTime", "maintenanceEndTime"})
+    @java.beans.ConstructorProperties({
+        "dayOfWeek",
+        "maintenanceStartTime",
+        "maintenanceEndTime",
+        "availabilityDomain",
+        "isMaintenanceWindowChangeScheduled"
+    })
     public AutonomousDatabaseMaintenanceWindowSummary(
-            DayOfWeek dayOfWeek, String maintenanceStartTime, String maintenanceEndTime) {
+            DayOfWeek dayOfWeek,
+            String maintenanceStartTime,
+            String maintenanceEndTime,
+            String availabilityDomain,
+            Boolean isMaintenanceWindowChangeScheduled) {
         super();
         this.dayOfWeek = dayOfWeek;
         this.maintenanceStartTime = maintenanceStartTime;
         this.maintenanceEndTime = maintenanceEndTime;
+        this.availabilityDomain = availabilityDomain;
+        this.isMaintenanceWindowChangeScheduled = isMaintenanceWindowChangeScheduled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,6 +88,41 @@ public final class AutonomousDatabaseMaintenanceWindowSummary
             this.__explicitlySet__.add("maintenanceEndTime");
             return this;
         }
+        /** The AD in which the maintenance will occur. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The AD in which the maintenance will occur.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI
+         * Database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceWindowChangeScheduled")
+        private Boolean isMaintenanceWindowChangeScheduled;
+
+        /**
+         * Indicates if the maintenance window change is scheduled or not for the Autonomous AI
+         * Database.
+         *
+         * @param isMaintenanceWindowChangeScheduled the value to set
+         * @return this builder
+         */
+        public Builder isMaintenanceWindowChangeScheduled(
+                Boolean isMaintenanceWindowChangeScheduled) {
+            this.isMaintenanceWindowChangeScheduled = isMaintenanceWindowChangeScheduled;
+            this.__explicitlySet__.add("isMaintenanceWindowChangeScheduled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -83,7 +130,11 @@ public final class AutonomousDatabaseMaintenanceWindowSummary
         public AutonomousDatabaseMaintenanceWindowSummary build() {
             AutonomousDatabaseMaintenanceWindowSummary model =
                     new AutonomousDatabaseMaintenanceWindowSummary(
-                            this.dayOfWeek, this.maintenanceStartTime, this.maintenanceEndTime);
+                            this.dayOfWeek,
+                            this.maintenanceStartTime,
+                            this.maintenanceEndTime,
+                            this.availabilityDomain,
+                            this.isMaintenanceWindowChangeScheduled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -100,6 +151,13 @@ public final class AutonomousDatabaseMaintenanceWindowSummary
             }
             if (model.wasPropertyExplicitlySet("maintenanceEndTime")) {
                 this.maintenanceEndTime(model.getMaintenanceEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("isMaintenanceWindowChangeScheduled")) {
+                this.isMaintenanceWindowChangeScheduled(
+                        model.getIsMaintenanceWindowChangeScheduled());
             }
             return this;
         }
@@ -147,6 +205,36 @@ public final class AutonomousDatabaseMaintenanceWindowSummary
         return maintenanceEndTime;
     }
 
+    /** The AD in which the maintenance will occur. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The AD in which the maintenance will occur.
+     *
+     * @return the value
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /**
+     * Indicates if the maintenance window change is scheduled or not for the Autonomous AI
+     * Database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceWindowChangeScheduled")
+    private final Boolean isMaintenanceWindowChangeScheduled;
+
+    /**
+     * Indicates if the maintenance window change is scheduled or not for the Autonomous AI
+     * Database.
+     *
+     * @return the value
+     */
+    public Boolean getIsMaintenanceWindowChangeScheduled() {
+        return isMaintenanceWindowChangeScheduled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -165,6 +253,9 @@ public final class AutonomousDatabaseMaintenanceWindowSummary
         sb.append("dayOfWeek=").append(String.valueOf(this.dayOfWeek));
         sb.append(", maintenanceStartTime=").append(String.valueOf(this.maintenanceStartTime));
         sb.append(", maintenanceEndTime=").append(String.valueOf(this.maintenanceEndTime));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", isMaintenanceWindowChangeScheduled=")
+                .append(String.valueOf(this.isMaintenanceWindowChangeScheduled));
         sb.append(")");
         return sb.toString();
     }
@@ -183,6 +274,10 @@ public final class AutonomousDatabaseMaintenanceWindowSummary
         return java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
                 && java.util.Objects.equals(this.maintenanceStartTime, other.maintenanceStartTime)
                 && java.util.Objects.equals(this.maintenanceEndTime, other.maintenanceEndTime)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(
+                        this.isMaintenanceWindowChangeScheduled,
+                        other.isMaintenanceWindowChangeScheduled)
                 && super.equals(other);
     }
 
@@ -201,6 +296,16 @@ public final class AutonomousDatabaseMaintenanceWindowSummary
                         + (this.maintenanceEndTime == null
                                 ? 43
                                 : this.maintenanceEndTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaintenanceWindowChangeScheduled == null
+                                ? 43
+                                : this.isMaintenanceWindowChangeScheduled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

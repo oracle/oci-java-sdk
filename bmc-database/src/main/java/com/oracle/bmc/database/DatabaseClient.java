@@ -3381,6 +3381,32 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateGiHomeResponse createGiHome(CreateGiHomeRequest request) {
+        Objects.requireNonNull(request.getCreateGiHomeDetails(), "createGiHomeDetails is required");
+
+        return clientCall(request, CreateGiHomeResponse::builder)
+                .logger(LOG, "createGiHome")
+                .serviceDetails("Database", "CreateGiHome", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHome.class,
+                        CreateGiHomeResponse.Builder::giHome)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateGiHomeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateGiHomeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateGiHomeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request) {
         Objects.requireNonNull(
                 request.getCreateKeyStoreDetails(), "createKeyStoreDetails is required");
@@ -4544,6 +4570,32 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteExternalPluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteGiHomeResponse deleteGiHome(DeleteGiHomeRequest request) {
+
+        Validate.notBlank(request.getGiHomeId(), "giHomeId must not be blank");
+
+        return clientCall(request, DeleteGiHomeResponse::builder)
+                .logger(LOG, "deleteGiHome")
+                .serviceDetails(
+                        "Database",
+                        "DeleteGiHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/DeleteGiHome")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendPathParam(request.getGiHomeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteGiHomeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteGiHomeResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -8388,6 +8440,33 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetGiHomeResponse getGiHome(GetGiHomeRequest request) {
+
+        Validate.notBlank(request.getGiHomeId(), "giHomeId must not be blank");
+
+        return clientCall(request, GetGiHomeResponse::builder)
+                .logger(LOG, "getGiHome")
+                .serviceDetails(
+                        "Database",
+                        "GetGiHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/GetGiHome")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendPathParam(request.getGiHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHome.class,
+                        GetGiHomeResponse.Builder::giHome)
+                .handleResponseHeaderString("etag", GetGiHomeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetGiHomeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetInfrastructureTargetVersionsResponse getInfrastructureTargetVersions(
             GetInfrastructureTargetVersionsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -9862,6 +9941,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListAutonomousVmClustersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAutonomousVmClustersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListAvailableMaintenanceWindowsResponse listAvailableMaintenanceWindows(
+            ListAvailableMaintenanceWindowsRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ListAvailableMaintenanceWindowsResponse::builder)
+                .logger(LOG, "listAvailableMaintenanceWindows")
+                .serviceDetails(
+                        "Database",
+                        "ListAvailableMaintenanceWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAvailableMaintenanceWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAvailableMaintenanceWindowsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("availableMaintenanceWindows")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseMaintenanceWindowCollection
+                                .class,
+                        ListAvailableMaintenanceWindowsResponse.Builder
+                                ::autonomousDatabaseMaintenanceWindowCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAvailableMaintenanceWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAvailableMaintenanceWindowsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -11549,6 +11665,41 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListFlexComponentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFlexComponentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListGiHomesResponse listGiHomes(ListGiHomesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListGiHomesResponse::builder)
+                .logger(LOG, "listGiHomes")
+                .serviceDetails(
+                        "Database",
+                        "ListGiHomes",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/ListGiHomes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGiHomesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("dbSystemId", request.getDbSystemId())
+                .appendQueryParam("giVersion", request.getGiVersion())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHomeCollection.class,
+                        ListGiHomesResponse.Builder::giHomeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGiHomesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGiHomesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -16339,6 +16490,36 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateExternalPluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateGiHomeResponse updateGiHome(UpdateGiHomeRequest request) {
+
+        Validate.notBlank(request.getGiHomeId(), "giHomeId must not be blank");
+        Objects.requireNonNull(request.getUpdateGiHomeDetails(), "updateGiHomeDetails is required");
+
+        return clientCall(request, UpdateGiHomeResponse::builder)
+                .logger(LOG, "updateGiHome")
+                .serviceDetails(
+                        "Database",
+                        "UpdateGiHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/UpdateGiHome")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendPathParam(request.getGiHomeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHome.class,
+                        UpdateGiHomeResponse.Builder::giHome)
+                .handleResponseHeaderString("etag", UpdateGiHomeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateGiHomeResponse.Builder::opcRequestId)
                 .callSync();
     }
 

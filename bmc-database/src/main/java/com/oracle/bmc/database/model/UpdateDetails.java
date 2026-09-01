@@ -25,17 +25,20 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
     @Deprecated
     @java.beans.ConstructorProperties({
         "updateId",
+        "giHomeId",
         "updateAction",
         "updateMode",
         "giSoftwareImageId"
     })
     public UpdateDetails(
             String updateId,
+            String giHomeId,
             UpdateAction updateAction,
             UpdateMode updateMode,
             String giSoftwareImageId) {
         super();
         this.updateId = updateId;
+        this.giHomeId = giHomeId;
         this.updateAction = updateAction;
         this.updateMode = updateMode;
         this.giSoftwareImageId = giSoftwareImageId;
@@ -60,6 +63,31 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         public Builder updateId(String updateId) {
             this.updateId = updateId;
             this.__explicitlySet__.add("updateId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Grid Infrastructure Home. Specify this field for out of place Grid Infrastructure Home
+         * patching and upgrade of the Cloud VM Cluster. This is mutually exclusive option to {@code
+         * updateId} and {@code giSoftwareImageId} which are used for in place patching and upgrade
+         * using Oracle supplied and custom images respectively.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("giHomeId")
+        private String giHomeId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Grid Infrastructure Home. Specify this field for out of place Grid Infrastructure Home
+         * patching and upgrade of the Cloud VM Cluster. This is mutually exclusive option to {@code
+         * updateId} and {@code giSoftwareImageId} which are used for in place patching and upgrade
+         * using Oracle supplied and custom images respectively.
+         *
+         * @param giHomeId the value to set
+         * @return this builder
+         */
+        public Builder giHomeId(String giHomeId) {
+            this.giHomeId = giHomeId;
+            this.__explicitlySet__.add("giHomeId");
             return this;
         }
         /** The update action. */
@@ -121,6 +149,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
             UpdateDetails model =
                     new UpdateDetails(
                             this.updateId,
+                            this.giHomeId,
                             this.updateAction,
                             this.updateMode,
                             this.giSoftwareImageId);
@@ -134,6 +163,9 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         public Builder copy(UpdateDetails model) {
             if (model.wasPropertyExplicitlySet("updateId")) {
                 this.updateId(model.getUpdateId());
+            }
+            if (model.wasPropertyExplicitlySet("giHomeId")) {
+                this.giHomeId(model.getGiHomeId());
             }
             if (model.wasPropertyExplicitlySet("updateAction")) {
                 this.updateAction(model.getUpdateAction());
@@ -172,6 +204,29 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
      */
     public String getUpdateId() {
         return updateId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Grid
+     * Infrastructure Home. Specify this field for out of place Grid Infrastructure Home patching
+     * and upgrade of the Cloud VM Cluster. This is mutually exclusive option to {@code updateId}
+     * and {@code giSoftwareImageId} which are used for in place patching and upgrade using Oracle
+     * supplied and custom images respectively.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("giHomeId")
+    private final String giHomeId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Grid
+     * Infrastructure Home. Specify this field for out of place Grid Infrastructure Home patching
+     * and upgrade of the Cloud VM Cluster. This is mutually exclusive option to {@code updateId}
+     * and {@code giSoftwareImageId} which are used for in place patching and upgrade using Oracle
+     * supplied and custom images respectively.
+     *
+     * @return the value
+     */
+    public String getGiHomeId() {
+        return giHomeId;
     }
 
     /** The update action. */
@@ -306,6 +361,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         sb.append("UpdateDetails(");
         sb.append("super=").append(super.toString());
         sb.append("updateId=").append(String.valueOf(this.updateId));
+        sb.append(", giHomeId=").append(String.valueOf(this.giHomeId));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
         sb.append(", updateMode=").append(String.valueOf(this.updateMode));
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
@@ -324,6 +380,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
 
         UpdateDetails other = (UpdateDetails) o;
         return java.util.Objects.equals(this.updateId, other.updateId)
+                && java.util.Objects.equals(this.giHomeId, other.giHomeId)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
                 && java.util.Objects.equals(this.updateMode, other.updateMode)
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
@@ -335,6 +392,7 @@ public final class UpdateDetails extends com.oracle.bmc.http.client.internal.Exp
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.updateId == null ? 43 : this.updateId.hashCode());
+        result = (result * PRIME) + (this.giHomeId == null ? 43 : this.giHomeId.hashCode());
         result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
         result = (result * PRIME) + (this.updateMode == null ? 43 : this.updateMode.hashCode());
         result =

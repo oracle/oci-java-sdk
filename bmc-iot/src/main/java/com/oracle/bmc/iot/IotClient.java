@@ -122,6 +122,38 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public ActivateIotFlowRuntimeResponse activateIotFlowRuntime(
+            ActivateIotFlowRuntimeRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+
+        return clientCall(request, ActivateIotFlowRuntimeResponse::builder)
+                .logger(LOG, "activateIotFlowRuntime")
+                .serviceDetails(
+                        "Iot",
+                        "ActivateIotFlowRuntime",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ActivateIotFlowRuntime")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateIotFlowRuntimeRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateIotFlowRuntimeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateIotFlowRuntimeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeIotDomainCompartmentResponse changeIotDomainCompartment(
             ChangeIotDomainCompartmentRequest request) {
 
@@ -228,6 +260,43 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeIotDomainGroupCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeIotFlowRuntimeCompartmentResponse changeIotFlowRuntimeCompartment(
+            ChangeIotFlowRuntimeCompartmentRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeIotFlowRuntimeCompartmentDetails(),
+                "changeIotFlowRuntimeCompartmentDetails is required");
+
+        return clientCall(request, ChangeIotFlowRuntimeCompartmentResponse::builder)
+                .logger(LOG, "changeIotFlowRuntimeCompartment")
+                .serviceDetails(
+                        "Iot",
+                        "ChangeIotFlowRuntimeCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ChangeIotFlowRuntimeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeIotFlowRuntimeCompartmentRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeIotFlowRuntimeCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeIotFlowRuntimeCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -503,6 +572,75 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public CreateIotFlowRuntimeResponse createIotFlowRuntime(CreateIotFlowRuntimeRequest request) {
+        Objects.requireNonNull(
+                request.getCreateIotFlowRuntimeDetails(),
+                "createIotFlowRuntimeDetails is required");
+
+        return clientCall(request, CreateIotFlowRuntimeResponse::builder)
+                .logger(LOG, "createIotFlowRuntime")
+                .serviceDetails(
+                        "Iot",
+                        "CreateIotFlowRuntime",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/CreateIotFlowRuntime")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIotFlowRuntimeRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.iot.model.IotFlowRuntime.class,
+                        CreateIotFlowRuntimeResponse.Builder::iotFlowRuntime)
+                .handleResponseHeaderString(
+                        "location", CreateIotFlowRuntimeResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateIotFlowRuntimeResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateIotFlowRuntimeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateIotFlowRuntimeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIotFlowRuntimeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeactivateIotFlowRuntimeResponse deactivateIotFlowRuntime(
+            DeactivateIotFlowRuntimeRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+
+        return clientCall(request, DeactivateIotFlowRuntimeResponse::builder)
+                .logger(LOG, "deactivateIotFlowRuntime")
+                .serviceDetails(
+                        "Iot",
+                        "DeactivateIotFlowRuntime",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/DeactivateIotFlowRuntime")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateIotFlowRuntimeRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateIotFlowRuntimeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateIotFlowRuntimeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteDigitalTwinAdapterResponse deleteDigitalTwinAdapter(
             DeleteDigitalTwinAdapterRequest request) {
 
@@ -663,6 +801,34 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         DeleteIotDomainGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteIotDomainGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteIotFlowRuntimeResponse deleteIotFlowRuntime(DeleteIotFlowRuntimeRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+
+        return clientCall(request, DeleteIotFlowRuntimeResponse::builder)
+                .logger(LOG, "deleteIotFlowRuntime")
+                .serviceDetails(
+                        "Iot",
+                        "DeleteIotFlowRuntime",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/DeleteIotFlowRuntime")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIotFlowRuntimeRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteIotFlowRuntimeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIotFlowRuntimeResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -903,6 +1069,64 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString("etag", GetIotDomainGroupResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIotDomainGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetIotFlowRuntimeResponse getIotFlowRuntime(GetIotFlowRuntimeRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+
+        return clientCall(request, GetIotFlowRuntimeResponse::builder)
+                .logger(LOG, "getIotFlowRuntime")
+                .serviceDetails(
+                        "Iot",
+                        "GetIotFlowRuntime",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/GetIotFlowRuntime")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIotFlowRuntimeRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.iot.model.IotFlowRuntime.class,
+                        GetIotFlowRuntimeResponse.Builder::iotFlowRuntime)
+                .handleResponseHeaderString("etag", GetIotFlowRuntimeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIotFlowRuntimeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetIotFlowRuntimeFlowsResponse getIotFlowRuntimeFlows(
+            GetIotFlowRuntimeFlowsRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+
+        return clientCall(request, GetIotFlowRuntimeFlowsResponse::builder)
+                .logger(LOG, "getIotFlowRuntimeFlows")
+                .serviceDetails(
+                        "Iot",
+                        "GetIotFlowRuntimeFlows",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/GetIotFlowRuntimeFlows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIotFlowRuntimeFlowsRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .appendPathParam("flows")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        GetIotFlowRuntimeFlowsResponse.ResultWrapper.class,
+                        GetIotFlowRuntimeFlowsResponse.Builder::resultWrapper)
+                .handleResponseHeaderString("etag", GetIotFlowRuntimeFlowsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIotFlowRuntimeFlowsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1206,6 +1430,44 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-next-page", ListIotDomainsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListIotDomainsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListIotFlowRuntimesResponse listIotFlowRuntimes(ListIotFlowRuntimesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListIotFlowRuntimesResponse::builder)
+                .logger(LOG, "listIotFlowRuntimes")
+                .serviceDetails(
+                        "Iot",
+                        "ListIotFlowRuntimes",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ListIotFlowRuntimes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIotFlowRuntimesRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("iotDomainId", request.getIotDomainId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.iot.model.IotFlowRuntimeCollection.class,
+                        ListIotFlowRuntimesResponse.Builder::iotFlowRuntimeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIotFlowRuntimesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIotFlowRuntimesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListIotFlowRuntimesResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -1520,6 +1782,71 @@ public class IotClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         UpdateIotDomainGroupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateIotDomainGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateIotFlowRuntimeResponse updateIotFlowRuntime(UpdateIotFlowRuntimeRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIotFlowRuntimeDetails(),
+                "updateIotFlowRuntimeDetails is required");
+
+        return clientCall(request, UpdateIotFlowRuntimeResponse::builder)
+                .logger(LOG, "updateIotFlowRuntime")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateIotFlowRuntime",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/UpdateIotFlowRuntime")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIotFlowRuntimeRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateIotFlowRuntimeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIotFlowRuntimeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateIotFlowRuntimeFlowsResponse updateIotFlowRuntimeFlows(
+            UpdateIotFlowRuntimeFlowsRequest request) {
+
+        Validate.notBlank(request.getIotFlowRuntimeId(), "iotFlowRuntimeId must not be blank");
+        Objects.requireNonNull(request.getFlowsDocument(), "flowsDocument is required");
+
+        return clientCall(request, UpdateIotFlowRuntimeFlowsResponse::builder)
+                .logger(LOG, "updateIotFlowRuntimeFlows")
+                .serviceDetails(
+                        "Iot",
+                        "UpdateIotFlowRuntimeFlows",
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/UpdateIotFlowRuntimeFlows")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIotFlowRuntimeFlowsRequest::builder)
+                .basePath("/20250531")
+                .appendPathParam("iotFlowRuntimes")
+                .appendPathParam(request.getIotFlowRuntimeId())
+                .appendPathParam("flows")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        UpdateIotFlowRuntimeFlowsResponse.ResultWrapper.class,
+                        UpdateIotFlowRuntimeFlowsResponse.Builder::resultWrapper)
+                .handleResponseHeaderString("etag", UpdateIotFlowRuntimeFlowsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIotFlowRuntimeFlowsResponse.Builder::opcRequestId)
                 .callSync();
     }
 

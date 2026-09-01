@@ -29,17 +29,23 @@ public final class DigitalTwinAdapterInboundRoute
     @java.beans.ConstructorProperties({
         "condition",
         "referencePayload",
+        "target",
+        "contentRoot",
         "payloadMapping",
         "description"
     })
     public DigitalTwinAdapterInboundRoute(
             String condition,
             DigitalTwinAdapterPayload referencePayload,
+            String target,
+            String contentRoot,
             java.util.Map<String, String> payloadMapping,
             String description) {
         super();
         this.condition = condition;
         this.referencePayload = referencePayload;
+        this.target = target;
+        this.contentRoot = contentRoot;
         this.payloadMapping = payloadMapping;
         this.description = description;
     }
@@ -74,6 +80,44 @@ public final class DigitalTwinAdapterInboundRoute
         public Builder referencePayload(DigitalTwinAdapterPayload referencePayload) {
             this.referencePayload = referencePayload;
             this.__explicitlySet__.add("referencePayload");
+            return this;
+        }
+        /**
+         * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+         * instance, the incoming data belongs to.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("target")
+        private String target;
+
+        /**
+         * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+         * instance, the incoming data belongs to.
+         *
+         * @param target the value to set
+         * @return this builder
+         */
+        public Builder target(String target) {
+            this.target = target;
+            this.__explicitlySet__.add("target");
+            return this;
+        }
+        /**
+         * JSON Path string to override the context root before delegating to the adapter of the
+         * target digital twin instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("contentRoot")
+        private String contentRoot;
+
+        /**
+         * JSON Path string to override the context root before delegating to the adapter of the
+         * target digital twin instance.
+         *
+         * @param contentRoot the value to set
+         * @return this builder
+         */
+        public Builder contentRoot(String contentRoot) {
+            this.contentRoot = contentRoot;
+            this.__explicitlySet__.add("contentRoot");
             return this;
         }
         /**
@@ -133,6 +177,8 @@ public final class DigitalTwinAdapterInboundRoute
                     new DigitalTwinAdapterInboundRoute(
                             this.condition,
                             this.referencePayload,
+                            this.target,
+                            this.contentRoot,
                             this.payloadMapping,
                             this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -148,6 +194,12 @@ public final class DigitalTwinAdapterInboundRoute
             }
             if (model.wasPropertyExplicitlySet("referencePayload")) {
                 this.referencePayload(model.getReferencePayload());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("contentRoot")) {
+                this.contentRoot(model.getContentRoot());
             }
             if (model.wasPropertyExplicitlySet("payloadMapping")) {
                 this.payloadMapping(model.getPayloadMapping());
@@ -192,6 +244,40 @@ public final class DigitalTwinAdapterInboundRoute
 
     public DigitalTwinAdapterPayload getReferencePayload() {
         return referencePayload;
+    }
+
+    /**
+     * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+     * instance, the incoming data belongs to.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("target")
+    private final String target;
+
+    /**
+     * Optional. JQ expression to map the target resource, which is externalKey of digital twin
+     * instance, the incoming data belongs to.
+     *
+     * @return the value
+     */
+    public String getTarget() {
+        return target;
+    }
+
+    /**
+     * JSON Path string to override the context root before delegating to the adapter of the target
+     * digital twin instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("contentRoot")
+    private final String contentRoot;
+
+    /**
+     * JSON Path string to override the context root before delegating to the adapter of the target
+     * digital twin instance.
+     *
+     * @return the value
+     */
+    public String getContentRoot() {
+        return contentRoot;
     }
 
     /**
@@ -255,6 +341,8 @@ public final class DigitalTwinAdapterInboundRoute
         sb.append("super=").append(super.toString());
         sb.append("condition=").append(String.valueOf(this.condition));
         sb.append(", referencePayload=").append(String.valueOf(this.referencePayload));
+        sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", contentRoot=").append(String.valueOf(this.contentRoot));
         sb.append(", payloadMapping=").append(String.valueOf(this.payloadMapping));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
@@ -273,6 +361,8 @@ public final class DigitalTwinAdapterInboundRoute
         DigitalTwinAdapterInboundRoute other = (DigitalTwinAdapterInboundRoute) o;
         return java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.referencePayload, other.referencePayload)
+                && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.contentRoot, other.contentRoot)
                 && java.util.Objects.equals(this.payloadMapping, other.payloadMapping)
                 && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
@@ -286,6 +376,8 @@ public final class DigitalTwinAdapterInboundRoute
         result =
                 (result * PRIME)
                         + (this.referencePayload == null ? 43 : this.referencePayload.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result = (result * PRIME) + (this.contentRoot == null ? 43 : this.contentRoot.hashCode());
         result =
                 (result * PRIME)
                         + (this.payloadMapping == null ? 43 : this.payloadMapping.hashCode());
