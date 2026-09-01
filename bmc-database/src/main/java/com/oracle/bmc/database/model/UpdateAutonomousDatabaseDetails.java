@@ -84,6 +84,8 @@ public final class UpdateAutonomousDatabaseDetails
         "autonomousMaintenanceScheduleType",
         "autonomousDatabaseMaintenanceWindow",
         "timeMaintenancePauseUntil",
+        "scheduledMaintenanceWindow",
+        "timeScheduledMaintenanceWindowUpdate",
         "isBackupRetentionLocked",
         "timeScheduledDbVersionUpgrade",
         "isDisableDbVersionUpgradeSchedule",
@@ -152,6 +154,8 @@ public final class UpdateAutonomousDatabaseDetails
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.Date timeMaintenancePauseUntil,
+            AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow,
+            java.util.Date timeScheduledMaintenanceWindowUpdate,
             Boolean isBackupRetentionLocked,
             java.util.Date timeScheduledDbVersionUpgrade,
             Boolean isDisableDbVersionUpgradeSchedule,
@@ -219,6 +223,8 @@ public final class UpdateAutonomousDatabaseDetails
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
         this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
         this.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
+        this.scheduledMaintenanceWindow = scheduledMaintenanceWindow;
+        this.timeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
         this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
         this.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
@@ -1763,6 +1769,36 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("timeMaintenancePauseUntil");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow;
+
+        public Builder scheduledMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow) {
+            this.scheduledMaintenanceWindow = scheduledMaintenanceWindow;
+            this.__explicitlySet__.add("scheduledMaintenanceWindow");
+            return this;
+        }
+        /**
+         * The date and time at which operation to change Maintenance Window is scheduled to take
+         * place.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledMaintenanceWindowUpdate")
+        private java.util.Date timeScheduledMaintenanceWindowUpdate;
+
+        /**
+         * The date and time at which operation to change Maintenance Window is scheduled to take
+         * place.
+         *
+         * @param timeScheduledMaintenanceWindowUpdate the value to set
+         * @return this builder
+         */
+        public Builder timeScheduledMaintenanceWindowUpdate(
+                java.util.Date timeScheduledMaintenanceWindowUpdate) {
+            this.timeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
+            this.__explicitlySet__.add("timeScheduledMaintenanceWindowUpdate");
+            return this;
+        }
         /** True if the Autonomous AI Database is backup retention locked. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
         private Boolean isBackupRetentionLocked;
@@ -2111,6 +2147,8 @@ public final class UpdateAutonomousDatabaseDetails
                             this.autonomousMaintenanceScheduleType,
                             this.autonomousDatabaseMaintenanceWindow,
                             this.timeMaintenancePauseUntil,
+                            this.scheduledMaintenanceWindow,
+                            this.timeScheduledMaintenanceWindowUpdate,
                             this.isBackupRetentionLocked,
                             this.timeScheduledDbVersionUpgrade,
                             this.isDisableDbVersionUpgradeSchedule,
@@ -2291,6 +2329,13 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("timeMaintenancePauseUntil")) {
                 this.timeMaintenancePauseUntil(model.getTimeMaintenancePauseUntil());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledMaintenanceWindow")) {
+                this.scheduledMaintenanceWindow(model.getScheduledMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledMaintenanceWindowUpdate")) {
+                this.timeScheduledMaintenanceWindowUpdate(
+                        model.getTimeScheduledMaintenanceWindowUpdate());
             }
             if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
                 this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
@@ -4017,6 +4062,28 @@ public final class UpdateAutonomousDatabaseDetails
         return timeMaintenancePauseUntil;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledMaintenanceWindow")
+    private final AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow;
+
+    public AutonomousDatabaseMaintenanceWindowSummary getScheduledMaintenanceWindow() {
+        return scheduledMaintenanceWindow;
+    }
+
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledMaintenanceWindowUpdate")
+    private final java.util.Date timeScheduledMaintenanceWindowUpdate;
+
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeScheduledMaintenanceWindowUpdate() {
+        return timeScheduledMaintenanceWindowUpdate;
+    }
+
     /** True if the Autonomous AI Database is backup retention locked. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
     private final Boolean isBackupRetentionLocked;
@@ -4350,6 +4417,10 @@ public final class UpdateAutonomousDatabaseDetails
                 .append(String.valueOf(this.autonomousDatabaseMaintenanceWindow));
         sb.append(", timeMaintenancePauseUntil=")
                 .append(String.valueOf(this.timeMaintenancePauseUntil));
+        sb.append(", scheduledMaintenanceWindow=")
+                .append(String.valueOf(this.scheduledMaintenanceWindow));
+        sb.append(", timeScheduledMaintenanceWindowUpdate=")
+                .append(String.valueOf(this.timeScheduledMaintenanceWindowUpdate));
         sb.append(", isBackupRetentionLocked=")
                 .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", timeScheduledDbVersionUpgrade=")
@@ -4454,6 +4525,11 @@ public final class UpdateAutonomousDatabaseDetails
                         other.autonomousDatabaseMaintenanceWindow)
                 && java.util.Objects.equals(
                         this.timeMaintenancePauseUntil, other.timeMaintenancePauseUntil)
+                && java.util.Objects.equals(
+                        this.scheduledMaintenanceWindow, other.scheduledMaintenanceWindow)
+                && java.util.Objects.equals(
+                        this.timeScheduledMaintenanceWindowUpdate,
+                        other.timeScheduledMaintenanceWindowUpdate)
                 && java.util.Objects.equals(
                         this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(
@@ -4663,6 +4739,16 @@ public final class UpdateAutonomousDatabaseDetails
                         + (this.timeMaintenancePauseUntil == null
                                 ? 43
                                 : this.timeMaintenancePauseUntil.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledMaintenanceWindow == null
+                                ? 43
+                                : this.scheduledMaintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledMaintenanceWindowUpdate == null
+                                ? 43
+                                : this.timeScheduledMaintenanceWindowUpdate.hashCode());
         result =
                 (result * PRIME)
                         + (this.isBackupRetentionLocked == null

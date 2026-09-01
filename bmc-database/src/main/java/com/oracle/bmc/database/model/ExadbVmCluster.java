@@ -1809,6 +1809,7 @@ public final class ExadbVmCluster
     public enum GridImageType implements com.oracle.bmc.http.internal.BmcEnum {
         ReleaseUpdate("RELEASE_UPDATE"),
         CustomImage("CUSTOM_IMAGE"),
+        GridHome("GRID_HOME"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -767,6 +767,124 @@ public class IotPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listIotFlowRuntimes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListIotFlowRuntimesResponse> listIotFlowRuntimesResponseIterator(
+            final ListIotFlowRuntimesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListIotFlowRuntimesRequest.Builder,
+                ListIotFlowRuntimesRequest,
+                ListIotFlowRuntimesResponse>(
+                new java.util.function.Supplier<ListIotFlowRuntimesRequest.Builder>() {
+                    @Override
+                    public ListIotFlowRuntimesRequest.Builder get() {
+                        return ListIotFlowRuntimesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListIotFlowRuntimesResponse, String>() {
+                    @Override
+                    public String apply(ListIotFlowRuntimesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIotFlowRuntimesRequest.Builder>,
+                        ListIotFlowRuntimesRequest>() {
+                    @Override
+                    public ListIotFlowRuntimesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIotFlowRuntimesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListIotFlowRuntimesRequest, ListIotFlowRuntimesResponse>() {
+                    @Override
+                    public ListIotFlowRuntimesResponse apply(ListIotFlowRuntimesRequest request) {
+                        return client.listIotFlowRuntimes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.iot.model.IotFlowRuntimeSummary} objects contained in responses from the
+     * listIotFlowRuntimes operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.iot.model.IotFlowRuntimeSummary} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.iot.model.IotFlowRuntimeSummary>
+            listIotFlowRuntimesRecordIterator(final ListIotFlowRuntimesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListIotFlowRuntimesRequest.Builder,
+                ListIotFlowRuntimesRequest,
+                ListIotFlowRuntimesResponse,
+                com.oracle.bmc.iot.model.IotFlowRuntimeSummary>(
+                new java.util.function.Supplier<ListIotFlowRuntimesRequest.Builder>() {
+                    @Override
+                    public ListIotFlowRuntimesRequest.Builder get() {
+                        return ListIotFlowRuntimesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListIotFlowRuntimesResponse, String>() {
+                    @Override
+                    public String apply(ListIotFlowRuntimesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIotFlowRuntimesRequest.Builder>,
+                        ListIotFlowRuntimesRequest>() {
+                    @Override
+                    public ListIotFlowRuntimesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIotFlowRuntimesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListIotFlowRuntimesRequest, ListIotFlowRuntimesResponse>() {
+                    @Override
+                    public ListIotFlowRuntimesResponse apply(ListIotFlowRuntimesRequest request) {
+                        return client.listIotFlowRuntimes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListIotFlowRuntimesResponse,
+                        java.util.List<com.oracle.bmc.iot.model.IotFlowRuntimeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.iot.model.IotFlowRuntimeSummary> apply(
+                            ListIotFlowRuntimesResponse response) {
+                        return response.getIotFlowRuntimeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

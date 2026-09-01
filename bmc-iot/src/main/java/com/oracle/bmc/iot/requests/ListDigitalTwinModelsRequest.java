@@ -17,13 +17,13 @@ public class ListDigitalTwinModelsRequest
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT
-     * domain in which to list digital twin resources.
+     * domain in which to list IoT resources.
      */
     private String iotDomainId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT
-     * domain in which to list digital twin resources.
+     * domain in which to list IoT resources.
      */
     public String getIotDomainId() {
         return iotDomainId;
@@ -207,13 +207,13 @@ public class ListDigitalTwinModelsRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IoT domain in which to list digital twin resources.
+         * IoT domain in which to list IoT resources.
          */
         private String iotDomainId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IoT domain in which to list digital twin resources.
+         * IoT domain in which to list IoT resources.
          *
          * @param iotDomainId the value to set
          * @return this builder instance

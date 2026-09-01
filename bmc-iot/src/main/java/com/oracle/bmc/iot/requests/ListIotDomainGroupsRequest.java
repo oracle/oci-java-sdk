@@ -55,10 +55,16 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
     public com.oracle.bmc.iot.model.IotDomainGroup.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD. */
+    /**
+     * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and
+     * STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
+     */
     private com.oracle.bmc.iot.model.IotDomainGroup.Type type;
 
-    /** Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD. */
+    /**
+     * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and
+     * STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
+     */
     public com.oracle.bmc.iot.model.IotDomainGroup.Type getType() {
         return type;
     }
@@ -270,11 +276,15 @@ public class ListIotDomainGroupsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD. */
+        /**
+         * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and
+         * STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
+         */
         private com.oracle.bmc.iot.model.IotDomainGroup.Type type = null;
 
         /**
-         * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+         * Filter resources by type. Valid values are DEVELOPMENT or PRODUCTION. LIGHTWEIGHT and
+         * STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION, respectively.
          *
          * @param type the value to set
          * @return this builder instance

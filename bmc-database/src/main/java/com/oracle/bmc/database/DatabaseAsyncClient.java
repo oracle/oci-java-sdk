@@ -3730,6 +3730,35 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGiHomeResponse> createGiHome(
+            CreateGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateGiHomeRequest, CreateGiHomeResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCreateGiHomeDetails(), "createGiHomeDetails is required");
+
+        return clientCall(request, CreateGiHomeResponse::builder)
+                .logger(LOG, "createGiHome")
+                .serviceDetails("Database", "CreateGiHome", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHome.class,
+                        CreateGiHomeResponse.Builder::giHome)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateGiHomeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateGiHomeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateGiHomeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateKeyStoreResponse> createKeyStore(
             CreateKeyStoreRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5047,6 +5076,35 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteExternalPluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGiHomeResponse> deleteGiHome(
+            DeleteGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteGiHomeRequest, DeleteGiHomeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getGiHomeId(), "giHomeId must not be blank");
+
+        return clientCall(request, DeleteGiHomeResponse::builder)
+                .logger(LOG, "deleteGiHome")
+                .serviceDetails(
+                        "Database",
+                        "DeleteGiHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/DeleteGiHome")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendPathParam(request.getGiHomeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteGiHomeResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteGiHomeResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -9359,6 +9417,36 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetGiHomeResponse> getGiHome(
+            GetGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetGiHomeRequest, GetGiHomeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getGiHomeId(), "giHomeId must not be blank");
+
+        return clientCall(request, GetGiHomeResponse::builder)
+                .logger(LOG, "getGiHome")
+                .serviceDetails(
+                        "Database",
+                        "GetGiHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/GetGiHome")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendPathParam(request.getGiHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHome.class,
+                        GetGiHomeResponse.Builder::giHome)
+                .handleResponseHeaderString("etag", GetGiHomeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetGiHomeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInfrastructureTargetVersionsResponse>
             getInfrastructureTargetVersions(
                     GetInfrastructureTargetVersionsRequest request,
@@ -11021,6 +11109,48 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListAutonomousVmClustersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListAutonomousVmClustersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAvailableMaintenanceWindowsResponse>
+            listAvailableMaintenanceWindows(
+                    ListAvailableMaintenanceWindowsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAvailableMaintenanceWindowsRequest,
+                                    ListAvailableMaintenanceWindowsResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ListAvailableMaintenanceWindowsResponse::builder)
+                .logger(LOG, "listAvailableMaintenanceWindows")
+                .serviceDetails(
+                        "Database",
+                        "ListAvailableMaintenanceWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAvailableMaintenanceWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAvailableMaintenanceWindowsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("availableMaintenanceWindows")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseMaintenanceWindowCollection
+                                .class,
+                        ListAvailableMaintenanceWindowsResponse.Builder
+                                ::autonomousDatabaseMaintenanceWindowCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAvailableMaintenanceWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAvailableMaintenanceWindowsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -12908,6 +13038,44 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListFlexComponentsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListFlexComponentsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGiHomesResponse> listGiHomes(
+            ListGiHomesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListGiHomesRequest, ListGiHomesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListGiHomesResponse::builder)
+                .logger(LOG, "listGiHomes")
+                .serviceDetails(
+                        "Database",
+                        "ListGiHomes",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/ListGiHomes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGiHomesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("dbSystemId", request.getDbSystemId())
+                .appendQueryParam("giVersion", request.getGiVersion())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHomeCollection.class,
+                        ListGiHomesResponse.Builder::giHomeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGiHomesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGiHomesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -18236,6 +18404,39 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateExternalPluggableDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGiHomeResponse> updateGiHome(
+            UpdateGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateGiHomeRequest, UpdateGiHomeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getGiHomeId(), "giHomeId must not be blank");
+        Objects.requireNonNull(request.getUpdateGiHomeDetails(), "updateGiHomeDetails is required");
+
+        return clientCall(request, UpdateGiHomeResponse::builder)
+                .logger(LOG, "updateGiHome")
+                .serviceDetails(
+                        "Database",
+                        "UpdateGiHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/UpdateGiHome")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateGiHomeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giHomes")
+                .appendPathParam(request.getGiHomeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.GiHome.class,
+                        UpdateGiHomeResponse.Builder::giHome)
+                .handleResponseHeaderString("etag", UpdateGiHomeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateGiHomeResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

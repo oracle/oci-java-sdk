@@ -37,7 +37,8 @@ public final class CreateDatabaseSoftwareImageDetails
         "lsInventory",
         "freeformTags",
         "definedTags",
-        "sourceDbHomeId"
+        "sourceDbHomeId",
+        "sourceGiHomeId"
     })
     public CreateDatabaseSoftwareImageDetails(
             String compartmentId,
@@ -50,7 +51,8 @@ public final class CreateDatabaseSoftwareImageDetails
             String lsInventory,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String sourceDbHomeId) {
+            String sourceDbHomeId,
+            String sourceGiHomeId) {
         super();
         this.compartmentId = compartmentId;
         this.databaseVersion = databaseVersion;
@@ -63,6 +65,7 @@ public final class CreateDatabaseSoftwareImageDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.sourceDbHomeId = sourceDbHomeId;
+        this.sourceGiHomeId = sourceGiHomeId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -266,6 +269,25 @@ public final class CreateDatabaseSoftwareImageDetails
             this.__explicitlySet__.add("sourceDbHomeId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Grid Infrastructure Home.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceGiHomeId")
+        private String sourceGiHomeId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Grid Infrastructure Home.
+         *
+         * @param sourceGiHomeId the value to set
+         * @return this builder
+         */
+        public Builder sourceGiHomeId(String sourceGiHomeId) {
+            this.sourceGiHomeId = sourceGiHomeId;
+            this.__explicitlySet__.add("sourceGiHomeId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -283,7 +305,8 @@ public final class CreateDatabaseSoftwareImageDetails
                             this.lsInventory,
                             this.freeformTags,
                             this.definedTags,
-                            this.sourceDbHomeId);
+                            this.sourceDbHomeId,
+                            this.sourceGiHomeId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -325,6 +348,9 @@ public final class CreateDatabaseSoftwareImageDetails
             }
             if (model.wasPropertyExplicitlySet("sourceDbHomeId")) {
                 this.sourceDbHomeId(model.getSourceDbHomeId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceGiHomeId")) {
+                this.sourceGiHomeId(model.getSourceGiHomeId());
             }
             return this;
         }
@@ -581,6 +607,23 @@ public final class CreateDatabaseSoftwareImageDetails
         return sourceDbHomeId;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Grid
+     * Infrastructure Home.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceGiHomeId")
+    private final String sourceGiHomeId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Grid
+     * Infrastructure Home.
+     *
+     * @return the value
+     */
+    public String getSourceGiHomeId() {
+        return sourceGiHomeId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -608,6 +651,7 @@ public final class CreateDatabaseSoftwareImageDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", sourceDbHomeId=").append(String.valueOf(this.sourceDbHomeId));
+        sb.append(", sourceGiHomeId=").append(String.valueOf(this.sourceGiHomeId));
         sb.append(")");
         return sb.toString();
     }
@@ -635,6 +679,7 @@ public final class CreateDatabaseSoftwareImageDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.sourceDbHomeId, other.sourceDbHomeId)
+                && java.util.Objects.equals(this.sourceGiHomeId, other.sourceGiHomeId)
                 && super.equals(other);
     }
 
@@ -665,6 +710,9 @@ public final class CreateDatabaseSoftwareImageDetails
         result =
                 (result * PRIME)
                         + (this.sourceDbHomeId == null ? 43 : this.sourceDbHomeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceGiHomeId == null ? 43 : this.sourceGiHomeId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

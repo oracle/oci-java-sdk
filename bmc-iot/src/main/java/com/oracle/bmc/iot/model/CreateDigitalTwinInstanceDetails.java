@@ -86,12 +86,12 @@ public final class CreateDigitalTwinInstanceDetails
             this.__explicitlySet__.add("iotDomainId");
             return this;
         }
-        /** Connectivity type of the digital twin instance */
+        /** Connectivity type of the digital twin instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
         private DigitalTwinInstanceConnectivityType connectivityType;
 
         /**
-         * Connectivity type of the digital twin instance
+         * Connectivity type of the digital twin instance.
          *
          * @param connectivityType the value to set
          * @return this builder
@@ -397,12 +397,12 @@ public final class CreateDigitalTwinInstanceDetails
         return iotDomainId;
     }
 
-    /** Connectivity type of the digital twin instance */
+    /** Connectivity type of the digital twin instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
     private final DigitalTwinInstanceConnectivityType connectivityType;
 
     /**
-     * Connectivity type of the digital twin instance
+     * Connectivity type of the digital twin instance.
      *
      * @return the value
      */
