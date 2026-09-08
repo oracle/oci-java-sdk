@@ -116,6 +116,40 @@ public interface RedisClusterAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Converts an existing cluster into a secondary cluster by transforming it into a replica cache
+     * that replicates data from the specified primary cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertToSecondaryClusterResponse> convertToSecondaryCluster(
+            ConvertToSecondaryClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConvertToSecondaryClusterRequest, ConvertToSecondaryClusterResponse>
+                    handler);
+
+    /**
+     * Converts a secondary cluster into a standalone cluster so that it operates as an independent
+     * cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConvertToStandaloneClusterResponse> convertToStandaloneCluster(
+            ConvertToStandaloneClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConvertToStandaloneClusterRequest, ConvertToStandaloneClusterResponse>
+                    handler);
+
+    /**
      * Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. You can
      * optionally initialize the cluster data by restoring from an OCI Cache Backup (backupId) or by
      * importing from Object Storage RDB file(s) (importFromObjectStorageDetails). For more
@@ -294,6 +328,21 @@ public interface RedisClusterAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Switchover the roles between a secondary cluster and its primary cluster, making the
+     * secondary cluster the new primary and the original primary its secondary.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchoverResponse> switchover(
+            SwitchoverRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SwitchoverRequest, SwitchoverResponse> handler);
 
     /**
      * Updates the specified OCI Cache cluster. A cluster is a memory-based storage solution. For

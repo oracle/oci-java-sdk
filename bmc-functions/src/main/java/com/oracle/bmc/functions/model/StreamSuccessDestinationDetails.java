@@ -5,8 +5,8 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * The destination stream in the Streaming service to which to send the response of the successful
- * detached function invocation.
+ * Note: Deprecated. Use the new resource model APIs instead. The destination stream in the
+ * Streaming service to which to send the response of the successful detached function invocation.
  *
  * <p>Example: {@code {"kind": "STREAM", "streamId": "stream_OCID"}} <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

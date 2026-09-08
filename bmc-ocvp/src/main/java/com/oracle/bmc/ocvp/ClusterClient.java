@@ -177,6 +177,41 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public GenerateHostDistributionReportResponse generateHostDistributionReport(
+            GenerateHostDistributionReportRequest request) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        return clientCall(request, GenerateHostDistributionReportResponse::builder)
+                .logger(LOG, "generateHostDistributionReport")
+                .serviceDetails(
+                        "Cluster",
+                        "GenerateHostDistributionReport",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Cluster/GenerateHostDistributionReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateHostDistributionReportRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("generateHostDistributionReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.HostDistributionReportDetails.class,
+                        GenerateHostDistributionReportResponse.Builder
+                                ::hostDistributionReportDetails)
+                .handleResponseHeaderString(
+                        "etag", GenerateHostDistributionReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateHostDistributionReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetClusterResponse getCluster(GetClusterRequest request) {
 
         Validate.notBlank(request.getClusterId(), "clusterId must not be blank");

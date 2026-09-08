@@ -60,8 +60,9 @@ public interface FunctionsManagementAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves an application into a different compartment within the same tenancy. For information
-     * about moving resources between compartments, see [Moving Resources Between
+     * Note: Deprecated. Use the new operation instead. Moves an application into a different
+     * compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources Between
      * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -79,7 +80,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new application.
+     * Note: Deprecated. Use the new operation instead. \"Creates a new application.\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -95,7 +96,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new function.
+     * Note: Deprecated. Use the new operation instead. \"Creates a new function.\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -110,7 +111,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes an application.
+     * Note: Deprecated. Use the new operation instead. Deletes an application.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -126,7 +127,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a function.
+     * Note: Deprecated. Use the new operation instead. Deletes a function.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -141,7 +142,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves an application.
+     * Note: Deprecated. Use the new operation instead. \"Retrieves an application.\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -156,7 +157,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves a function.
+     * Note: Deprecated. Use the new operation instead. \"Retrieves a function.\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -170,7 +171,8 @@ public interface FunctionsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetFunctionRequest, GetFunctionResponse> handler);
 
     /**
-     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     * Note: Deprecated. Use the new operation instead. Fetches a Pre-built Function(PBF) Listing.
+     * Returns a PbfListing response model.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -185,7 +187,8 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a PbfListingVersion by identifier for a PbfListing.
+     * Note: Deprecated. Use the new operation instead. Gets a PbfListingVersion by identifier for a
+     * PbfListing.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -201,7 +204,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists applications for a compartment.
+     * Note: Deprecated. Use the new operation instead. \"Lists applications for a compartment.\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -216,7 +219,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists functions for an application.
+     * Note: Deprecated. Use the new operation instead. \"Lists functions for an application.\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -231,8 +234,9 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a
-     * PbfListingVersionCollection containing an array of PbfListingVersionSummary response models.
+     * Note: Deprecated. Use the new operation instead. Fetches a wrapped list of all Pre-built
+     * Function(PBF) Listing versions. Returns a PbfListingVersionCollection containing an array of
+     * PbfListingVersionSummary response models.
      *
      * <p>Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an
      * exception shall be thrown.
@@ -251,8 +255,9 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a
-     * PbfListingCollection containing an array of PbfListingSummary response models.
+     * Note: Deprecated. Use the new operation instead. Fetches a wrapped list of all Pre-built
+     * Function(PBF) Listings. Returns a PbfListingCollection containing an array of
+     * PbfListingSummary response models.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -267,7 +272,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Triggers.
+     * Note: Deprecated. Use the new operation instead. Returns a list of Triggers.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -282,7 +287,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Modifies an application
+     * Note: Deprecated. Use the new operation instead. \"Modifies an application\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -298,7 +303,7 @@ public interface FunctionsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Modifies a function
+     * Note: Deprecated. Use the new operation instead. \"Modifies a function\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

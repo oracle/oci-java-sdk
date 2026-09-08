@@ -65,8 +65,9 @@ public interface FunctionsManagement extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves an application into a different compartment within the same tenancy. For information
-     * about moving resources between compartments, see [Moving Resources Between
+     * Note: Deprecated. Use the new operation instead. Moves an application into a different
+     * compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources Between
      * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -84,7 +85,7 @@ public interface FunctionsManagement extends AutoCloseable {
             ChangeApplicationCompartmentRequest request);
 
     /**
-     * Creates a new application.
+     * Note: Deprecated. Use the new operation instead. \"Creates a new application.\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,7 +101,7 @@ public interface FunctionsManagement extends AutoCloseable {
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
     /**
-     * Creates a new function.
+     * Note: Deprecated. Use the new operation instead. \"Creates a new function.\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -115,7 +116,7 @@ public interface FunctionsManagement extends AutoCloseable {
     CreateFunctionResponse createFunction(CreateFunctionRequest request);
 
     /**
-     * Deletes an application.
+     * Note: Deprecated. Use the new operation instead. Deletes an application.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -131,7 +132,7 @@ public interface FunctionsManagement extends AutoCloseable {
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
     /**
-     * Deletes a function.
+     * Note: Deprecated. Use the new operation instead. Deletes a function.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -146,7 +147,7 @@ public interface FunctionsManagement extends AutoCloseable {
     DeleteFunctionResponse deleteFunction(DeleteFunctionRequest request);
 
     /**
-     * Retrieves an application.
+     * Note: Deprecated. Use the new operation instead. \"Retrieves an application.\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -161,7 +162,7 @@ public interface FunctionsManagement extends AutoCloseable {
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
     /**
-     * Retrieves a function.
+     * Note: Deprecated. Use the new operation instead. \"Retrieves a function.\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -176,7 +177,8 @@ public interface FunctionsManagement extends AutoCloseable {
     GetFunctionResponse getFunction(GetFunctionRequest request);
 
     /**
-     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+     * Note: Deprecated. Use the new operation instead. Fetches a Pre-built Function(PBF) Listing.
+     * Returns a PbfListing response model.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -191,7 +193,8 @@ public interface FunctionsManagement extends AutoCloseable {
     GetPbfListingResponse getPbfListing(GetPbfListingRequest request);
 
     /**
-     * Gets a PbfListingVersion by identifier for a PbfListing.
+     * Note: Deprecated. Use the new operation instead. Gets a PbfListingVersion by identifier for a
+     * PbfListing.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -207,7 +210,7 @@ public interface FunctionsManagement extends AutoCloseable {
     GetPbfListingVersionResponse getPbfListingVersion(GetPbfListingVersionRequest request);
 
     /**
-     * Lists applications for a compartment.
+     * Note: Deprecated. Use the new operation instead. \"Lists applications for a compartment.\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -223,7 +226,7 @@ public interface FunctionsManagement extends AutoCloseable {
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
     /**
-     * Lists functions for an application.
+     * Note: Deprecated. Use the new operation instead. \"Lists functions for an application.\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -238,8 +241,9 @@ public interface FunctionsManagement extends AutoCloseable {
     ListFunctionsResponse listFunctions(ListFunctionsRequest request);
 
     /**
-     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a
-     * PbfListingVersionCollection containing an array of PbfListingVersionSummary response models.
+     * Note: Deprecated. Use the new operation instead. Fetches a wrapped list of all Pre-built
+     * Function(PBF) Listing versions. Returns a PbfListingVersionCollection containing an array of
+     * PbfListingVersionSummary response models.
      *
      * <p>Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an
      * exception shall be thrown.
@@ -258,8 +262,9 @@ public interface FunctionsManagement extends AutoCloseable {
     ListPbfListingVersionsResponse listPbfListingVersions(ListPbfListingVersionsRequest request);
 
     /**
-     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a
-     * PbfListingCollection containing an array of PbfListingSummary response models.
+     * Note: Deprecated. Use the new operation instead. Fetches a wrapped list of all Pre-built
+     * Function(PBF) Listings. Returns a PbfListingCollection containing an array of
+     * PbfListingSummary response models.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -275,7 +280,7 @@ public interface FunctionsManagement extends AutoCloseable {
     ListPbfListingsResponse listPbfListings(ListPbfListingsRequest request);
 
     /**
-     * Returns a list of Triggers.
+     * Note: Deprecated. Use the new operation instead. Returns a list of Triggers.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -290,7 +295,7 @@ public interface FunctionsManagement extends AutoCloseable {
     ListTriggersResponse listTriggers(ListTriggersRequest request);
 
     /**
-     * Modifies an application
+     * Note: Deprecated. Use the new operation instead. \"Modifies an application\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -306,7 +311,7 @@ public interface FunctionsManagement extends AutoCloseable {
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
     /**
-     * Modifies a function
+     * Note: Deprecated. Use the new operation instead. \"Modifies a function\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

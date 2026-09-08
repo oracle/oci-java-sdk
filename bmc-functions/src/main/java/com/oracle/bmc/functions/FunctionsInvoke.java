@@ -65,7 +65,7 @@ public interface FunctionsInvoke extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Invokes a function
+     * Note: Deprecated. Use the new operation instead. \"Invokes a function\"
      *
      * <p>Note: This operation consumes a stream.
      *

@@ -202,6 +202,80 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ConvertToSecondaryClusterResponse> convertToSecondaryCluster(
+            ConvertToSecondaryClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConvertToSecondaryClusterRequest, ConvertToSecondaryClusterResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getConvertToSecondaryClusterDetails(),
+                "convertToSecondaryClusterDetails is required");
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, ConvertToSecondaryClusterResponse::builder)
+                .logger(LOG, "convertToSecondaryCluster")
+                .serviceDetails(
+                        "RedisCluster",
+                        "ConvertToSecondaryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ConvertToSecondaryCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertToSecondaryClusterRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("convertToSecondaryCluster")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertToSecondaryClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertToSecondaryClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConvertToStandaloneClusterResponse>
+            convertToStandaloneCluster(
+                    ConvertToStandaloneClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertToStandaloneClusterRequest,
+                                    ConvertToStandaloneClusterResponse>
+                            handler) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, ConvertToStandaloneClusterResponse::builder)
+                .logger(LOG, "convertToStandaloneCluster")
+                .serviceDetails(
+                        "RedisCluster",
+                        "ConvertToStandaloneCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ConvertToStandaloneCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertToStandaloneClusterRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("convertToStandaloneCluster")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertToStandaloneClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertToStandaloneClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRedisClusterResponse> createRedisCluster(
             CreateRedisClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -589,6 +663,38 @@ public class RedisClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchoverResponse> switchover(
+            SwitchoverRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SwitchoverRequest, SwitchoverResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, SwitchoverResponse::builder)
+                .logger(LOG, "switchover")
+                .serviceDetails(
+                        "RedisCluster",
+                        "Switchover",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/Switchover")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchoverRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SwitchoverResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwitchoverResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

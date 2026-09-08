@@ -154,6 +154,45 @@ public class ClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateHostDistributionReportResponse>
+            generateHostDistributionReport(
+                    GenerateHostDistributionReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateHostDistributionReportRequest,
+                                    GenerateHostDistributionReportResponse>
+                            handler) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        return clientCall(request, GenerateHostDistributionReportResponse::builder)
+                .logger(LOG, "generateHostDistributionReport")
+                .serviceDetails(
+                        "Cluster",
+                        "GenerateHostDistributionReport",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Cluster/GenerateHostDistributionReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateHostDistributionReportRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("generateHostDistributionReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.HostDistributionReportDetails.class,
+                        GenerateHostDistributionReportResponse.Builder
+                                ::hostDistributionReportDetails)
+                .handleResponseHeaderString(
+                        "etag", GenerateHostDistributionReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateHostDistributionReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetClusterResponse> getCluster(
             GetClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetClusterRequest, GetClusterResponse>

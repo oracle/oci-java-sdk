@@ -26,9 +26,13 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
         "compartmentId",
         "displayName",
         "isDefaultCreated",
+        "isActive",
         "lifecycleState",
         "timeCreated",
         "homePath",
+        "availableActions",
+        "availableType",
+        "lifecycleDetails",
         "giVersion",
         "giImageId",
         "timeUpdated",
@@ -42,9 +46,13 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
             String compartmentId,
             String displayName,
             Boolean isDefaultCreated,
+            Boolean isActive,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String homePath,
+            java.util.List<AvailableActions> availableActions,
+            AvailableType availableType,
+            String lifecycleDetails,
             String giVersion,
             String giImageId,
             java.util.Date timeUpdated,
@@ -57,9 +65,13 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.isDefaultCreated = isDefaultCreated;
+        this.isActive = isActive;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.homePath = homePath;
+        this.availableActions = availableActions;
+        this.availableType = availableType;
+        this.lifecycleDetails = lifecycleDetails;
         this.giVersion = giVersion;
         this.giImageId = giImageId;
         this.timeUpdated = timeUpdated;
@@ -143,6 +155,21 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("isDefaultCreated");
             return this;
         }
+        /** Indicates whether the Grid Infrastructure Home is currently active for the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isActive")
+        private Boolean isActive;
+
+        /**
+         * Indicates whether the Grid Infrastructure Home is currently active for the cluster.
+         *
+         * @param isActive the value to set
+         * @return this builder
+         */
+        public Builder isActive(Boolean isActive) {
+            this.isActive = isActive;
+            this.__explicitlySet__.add("isActive");
+            return this;
+        }
         /** The current state of the Grid Infrastructure Home. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
@@ -190,6 +217,55 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder homePath(String homePath) {
             this.homePath = homePath;
             this.__explicitlySet__.add("homePath");
+            return this;
+        }
+        /**
+         * The possible Grid Infrastructure update actions that can be performed using this Grid
+         * Infrastructure Home.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
+        private java.util.List<AvailableActions> availableActions;
+
+        /**
+         * The possible Grid Infrastructure update actions that can be performed using this Grid
+         * Infrastructure Home.
+         *
+         * @param availableActions the value to set
+         * @return this builder
+         */
+        public Builder availableActions(java.util.List<AvailableActions> availableActions) {
+            this.availableActions = availableActions;
+            this.__explicitlySet__.add("availableActions");
+            return this;
+        }
+        /** The type of update that the Grid Infrastructure Home can be used for. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availableType")
+        private AvailableType availableType;
+
+        /**
+         * The type of update that the Grid Infrastructure Home can be used for.
+         *
+         * @param availableType the value to set
+         * @return this builder
+         */
+        public Builder availableType(AvailableType availableType) {
+            this.availableType = availableType;
+            this.__explicitlySet__.add("availableType");
+            return this;
+        }
+        /** Additional information about the current lifecycle state. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Additional information about the current lifecycle state.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /** A valid Oracle Grid Infrastructure (GI) software version. */
@@ -343,9 +419,13 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
                             this.compartmentId,
                             this.displayName,
                             this.isDefaultCreated,
+                            this.isActive,
                             this.lifecycleState,
                             this.timeCreated,
                             this.homePath,
+                            this.availableActions,
+                            this.availableType,
+                            this.lifecycleDetails,
                             this.giVersion,
                             this.giImageId,
                             this.timeUpdated,
@@ -373,6 +453,9 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
             if (model.wasPropertyExplicitlySet("isDefaultCreated")) {
                 this.isDefaultCreated(model.getIsDefaultCreated());
             }
+            if (model.wasPropertyExplicitlySet("isActive")) {
+                this.isActive(model.getIsActive());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
@@ -381,6 +464,15 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("homePath")) {
                 this.homePath(model.getHomePath());
+            }
+            if (model.wasPropertyExplicitlySet("availableActions")) {
+                this.availableActions(model.getAvailableActions());
+            }
+            if (model.wasPropertyExplicitlySet("availableType")) {
+                this.availableType(model.getAvailableType());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("giVersion")) {
                 this.giVersion(model.getGiVersion());
@@ -480,6 +572,19 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
         return isDefaultCreated;
     }
 
+    /** Indicates whether the Grid Infrastructure Home is currently active for the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isActive")
+    private final Boolean isActive;
+
+    /**
+     * Indicates whether the Grid Infrastructure Home is currently active for the cluster.
+     *
+     * @return the value
+     */
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
     /** The current state of the Grid Infrastructure Home. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
@@ -572,6 +677,143 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
      */
     public String getHomePath() {
         return homePath;
+    }
+
+    /** */
+    public enum AvailableActions implements com.oracle.bmc.http.internal.BmcEnum {
+        Precheck("PRECHECK"),
+        RollingApply("ROLLING_APPLY"),
+        Retry("RETRY"),
+        Rollback("ROLLBACK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AvailableActions.class);
+
+        private final String value;
+        private static java.util.Map<String, AvailableActions> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AvailableActions v : AvailableActions.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AvailableActions(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AvailableActions create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AvailableActions', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The possible Grid Infrastructure update actions that can be performed using this Grid
+     * Infrastructure Home.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
+    private final java.util.List<AvailableActions> availableActions;
+
+    /**
+     * The possible Grid Infrastructure update actions that can be performed using this Grid
+     * Infrastructure Home.
+     *
+     * @return the value
+     */
+    public java.util.List<AvailableActions> getAvailableActions() {
+        return availableActions;
+    }
+
+    /** The type of update that the Grid Infrastructure Home can be used for. */
+    public enum AvailableType implements com.oracle.bmc.http.internal.BmcEnum {
+        GiUpgrade("GI_UPGRADE"),
+        GiPatch("GI_PATCH"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AvailableType.class);
+
+        private final String value;
+        private static java.util.Map<String, AvailableType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AvailableType v : AvailableType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AvailableType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AvailableType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AvailableType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The type of update that the Grid Infrastructure Home can be used for. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availableType")
+    private final AvailableType availableType;
+
+    /**
+     * The type of update that the Grid Infrastructure Home can be used for.
+     *
+     * @return the value
+     */
+    public AvailableType getAvailableType() {
+        return availableType;
+    }
+
+    /** Additional information about the current lifecycle state. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Additional information about the current lifecycle state.
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /** A valid Oracle Grid Infrastructure (GI) software version. */
@@ -718,9 +960,13 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isDefaultCreated=").append(String.valueOf(this.isDefaultCreated));
+        sb.append(", isActive=").append(String.valueOf(this.isActive));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", homePath=").append(String.valueOf(this.homePath));
+        sb.append(", availableActions=").append(String.valueOf(this.availableActions));
+        sb.append(", availableType=").append(String.valueOf(this.availableType));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
         sb.append(", giImageId=").append(String.valueOf(this.giImageId));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -746,9 +992,13 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isDefaultCreated, other.isDefaultCreated)
+                && java.util.Objects.equals(this.isActive, other.isActive)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.homePath, other.homePath)
+                && java.util.Objects.equals(this.availableActions, other.availableActions)
+                && java.util.Objects.equals(this.availableType, other.availableType)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
                 && java.util.Objects.equals(this.giImageId, other.giImageId)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -771,11 +1021,21 @@ public final class GiHome extends com.oracle.bmc.http.client.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.isDefaultCreated == null ? 43 : this.isDefaultCreated.hashCode());
+        result = (result * PRIME) + (this.isActive == null ? 43 : this.isActive.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.homePath == null ? 43 : this.homePath.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableActions == null ? 43 : this.availableActions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableType == null ? 43 : this.availableType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.giVersion == null ? 43 : this.giVersion.hashCode());
         result = (result * PRIME) + (this.giImageId == null ? 43 : this.giImageId.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());

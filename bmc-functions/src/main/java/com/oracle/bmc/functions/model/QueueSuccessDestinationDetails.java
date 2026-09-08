@@ -5,8 +5,8 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * The destination queue or channel in the Queue service to which to send the response of the
- * successful detached function invocation.
+ * Note: Deprecated. Use the new resource model APIs instead. The destination queue or channel in
+ * the Queue service to which to send the response of the successful detached function invocation.
  *
  * <p>Example: {@code {"kind": "QUEUE", "queueId": "queue_OCID", "channelId": "channel_Id"}} <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
