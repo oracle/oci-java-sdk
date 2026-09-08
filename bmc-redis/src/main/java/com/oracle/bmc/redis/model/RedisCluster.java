@@ -48,6 +48,9 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         "backupId",
         "importFromObjectStorageDetails",
         "securityAttributes",
+        "clusterRole",
+        "primaryClusterId",
+        "clusterReplicationTopology",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -78,6 +81,9 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
             String backupId,
             ImportOciCacheFromObjectStorageDetails importFromObjectStorageDetails,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            ClusterRole clusterRole,
+            String primaryClusterId,
+            ClusterReplicationTopology clusterReplicationTopology,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -107,6 +113,9 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         this.backupId = backupId;
         this.importFromObjectStorageDetails = importFromObjectStorageDetails;
         this.securityAttributes = securityAttributes;
+        this.clusterRole = clusterRole;
+        this.primaryClusterId = primaryClusterId;
+        this.clusterReplicationTopology = clusterReplicationTopology;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -543,6 +552,50 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /** The current role of the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterRole")
+        private ClusterRole clusterRole;
+
+        /**
+         * The current role of the cluster.
+         *
+         * @param clusterRole the value to set
+         * @return this builder
+         */
+        public Builder clusterRole(ClusterRole clusterRole) {
+            this.clusterRole = clusterRole;
+            this.__explicitlySet__.add("clusterRole");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the primary cluster in CRR.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryClusterId")
+        private String primaryClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the primary cluster in CRR.
+         *
+         * @param primaryClusterId the value to set
+         * @return this builder
+         */
+        public Builder primaryClusterId(String primaryClusterId) {
+            this.primaryClusterId = primaryClusterId;
+            this.__explicitlySet__.add("primaryClusterId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterReplicationTopology")
+        private ClusterReplicationTopology clusterReplicationTopology;
+
+        public Builder clusterReplicationTopology(
+                ClusterReplicationTopology clusterReplicationTopology) {
+            this.clusterReplicationTopology = clusterReplicationTopology;
+            this.__explicitlySet__.add("clusterReplicationTopology");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -633,6 +686,9 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
                             this.backupId,
                             this.importFromObjectStorageDetails,
                             this.securityAttributes,
+                            this.clusterRole,
+                            this.primaryClusterId,
+                            this.clusterReplicationTopology,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -718,6 +774,15 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("clusterRole")) {
+                this.clusterRole(model.getClusterRole());
+            }
+            if (model.wasPropertyExplicitlySet("primaryClusterId")) {
+                this.primaryClusterId(model.getPrimaryClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterReplicationTopology")) {
+                this.clusterReplicationTopology(model.getClusterReplicationTopology());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1252,6 +1317,90 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         return securityAttributes;
     }
 
+    /** The current role of the cluster. */
+    public enum ClusterRole implements com.oracle.bmc.http.internal.BmcEnum {
+        Primary("PRIMARY"),
+        Secondary("SECONDARY"),
+        Standalone("STANDALONE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ClusterRole.class);
+
+        private final String value;
+        private static java.util.Map<String, ClusterRole> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ClusterRole v : ClusterRole.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ClusterRole(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ClusterRole create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ClusterRole', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The current role of the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterRole")
+    private final ClusterRole clusterRole;
+
+    /**
+     * The current role of the cluster.
+     *
+     * @return the value
+     */
+    public ClusterRole getClusterRole() {
+        return clusterRole;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the primary cluster in CRR.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryClusterId")
+    private final String primaryClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the primary cluster in CRR.
+     *
+     * @return the value
+     */
+    public String getPrimaryClusterId() {
+        return primaryClusterId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterReplicationTopology")
+    private final ClusterReplicationTopology clusterReplicationTopology;
+
+    public ClusterReplicationTopology getClusterReplicationTopology() {
+        return clusterReplicationTopology;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1347,6 +1496,10 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", importFromObjectStorageDetails=")
                 .append(String.valueOf(this.importFromObjectStorageDetails));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", clusterRole=").append(String.valueOf(this.clusterRole));
+        sb.append(", primaryClusterId=").append(String.valueOf(this.primaryClusterId));
+        sb.append(", clusterReplicationTopology=")
+                .append(String.valueOf(this.clusterReplicationTopology));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1393,6 +1546,10 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(
                         this.importFromObjectStorageDetails, other.importFromObjectStorageDetails)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.clusterRole, other.clusterRole)
+                && java.util.Objects.equals(this.primaryClusterId, other.primaryClusterId)
+                && java.util.Objects.equals(
+                        this.clusterReplicationTopology, other.clusterReplicationTopology)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1466,6 +1623,15 @@ public final class RedisCluster extends com.oracle.bmc.http.client.internal.Expl
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result = (result * PRIME) + (this.clusterRole == null ? 43 : this.clusterRole.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryClusterId == null ? 43 : this.primaryClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterReplicationTopology == null
+                                ? 43
+                                : this.clusterReplicationTopology.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

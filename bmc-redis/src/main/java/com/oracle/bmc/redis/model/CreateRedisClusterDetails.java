@@ -39,6 +39,7 @@ public final class CreateRedisClusterDetails
         "securityAttributes",
         "backupId",
         "importFromObjectStorageDetails",
+        "primaryClusterId",
         "freeformTags",
         "definedTags"
     })
@@ -56,6 +57,7 @@ public final class CreateRedisClusterDetails
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String backupId,
             ImportOciCacheFromObjectStorageDetails importFromObjectStorageDetails,
+            String primaryClusterId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -72,6 +74,7 @@ public final class CreateRedisClusterDetails
         this.securityAttributes = securityAttributes;
         this.backupId = backupId;
         this.importFromObjectStorageDetails = importFromObjectStorageDetails;
+        this.primaryClusterId = primaryClusterId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -310,6 +313,25 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the primary cluster from which data will be replicated.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryClusterId")
+        private String primaryClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the primary cluster from which data will be replicated.
+         *
+         * @param primaryClusterId the value to set
+         * @return this builder
+         */
+        public Builder primaryClusterId(String primaryClusterId) {
+            this.primaryClusterId = primaryClusterId;
+            this.__explicitlySet__.add("primaryClusterId");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -368,6 +390,7 @@ public final class CreateRedisClusterDetails
                             this.securityAttributes,
                             this.backupId,
                             this.importFromObjectStorageDetails,
+                            this.primaryClusterId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -416,6 +439,9 @@ public final class CreateRedisClusterDetails
             }
             if (model.wasPropertyExplicitlySet("importFromObjectStorageDetails")) {
                 this.importFromObjectStorageDetails(model.getImportFromObjectStorageDetails());
+            }
+            if (model.wasPropertyExplicitlySet("primaryClusterId")) {
+                this.primaryClusterId(model.getPrimaryClusterId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -638,6 +664,23 @@ public final class CreateRedisClusterDetails
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the primary cluster from which data will be replicated.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryClusterId")
+    private final String primaryClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the primary cluster from which data will be replicated.
+     *
+     * @return the value
+     */
+    public String getPrimaryClusterId() {
+        return primaryClusterId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -700,6 +743,7 @@ public final class CreateRedisClusterDetails
         sb.append(", backupId=").append(String.valueOf(this.backupId));
         sb.append(", importFromObjectStorageDetails=")
                 .append(String.valueOf(this.importFromObjectStorageDetails));
+        sb.append(", primaryClusterId=").append(String.valueOf(this.primaryClusterId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -730,6 +774,7 @@ public final class CreateRedisClusterDetails
                 && java.util.Objects.equals(this.backupId, other.backupId)
                 && java.util.Objects.equals(
                         this.importFromObjectStorageDetails, other.importFromObjectStorageDetails)
+                && java.util.Objects.equals(this.primaryClusterId, other.primaryClusterId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -770,6 +815,9 @@ public final class CreateRedisClusterDetails
                         + (this.importFromObjectStorageDetails == null
                                 ? 43
                                 : this.importFromObjectStorageDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryClusterId == null ? 43 : this.primaryClusterId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

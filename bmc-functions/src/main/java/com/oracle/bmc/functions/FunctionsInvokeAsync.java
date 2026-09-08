@@ -60,7 +60,7 @@ public interface FunctionsInvokeAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Invokes a function
+     * Note: Deprecated. Use the new operation instead. \"Invokes a function\"
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

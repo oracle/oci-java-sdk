@@ -117,6 +117,42 @@ public interface RedisCluster extends AutoCloseable {
             ChangeRedisClusterCompartmentRequest request);
 
     /**
+     * Converts an existing cluster into a secondary cluster by transforming it into a replica cache
+     * that replicates data from the specified primary cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/ConvertToSecondaryClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConvertToSecondaryCluster API.
+     */
+    ConvertToSecondaryClusterResponse convertToSecondaryCluster(
+            ConvertToSecondaryClusterRequest request);
+
+    /**
+     * Converts a secondary cluster into a standalone cluster so that it operates as an independent
+     * cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/ConvertToStandaloneClusterExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConvertToStandaloneCluster API.
+     */
+    ConvertToStandaloneClusterResponse convertToStandaloneCluster(
+            ConvertToStandaloneClusterRequest request);
+
+    /**
      * Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. You can
      * optionally initialize the cluster data by restoring from an OCI Cache Backup (backupId) or by
      * importing from Object Storage RDB file(s) (importFromObjectStorageDetails). For more
@@ -298,6 +334,22 @@ public interface RedisCluster extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Switchover the roles between a secondary cluster and its primary cluster, making the
+     * secondary cluster the new primary and the original primary its secondary.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/SwitchoverExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use Switchover API.
+     */
+    SwitchoverResponse switchover(SwitchoverRequest request);
 
     /**
      * Updates the specified OCI Cache cluster. A cluster is a memory-based storage solution. For

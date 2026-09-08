@@ -23,10 +23,18 @@ package com.oracle.bmc.ocvp.model;
 public final class ReplaceHostDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"esxiSoftwareVersion", "vcfByolAllocationId"})
-    public ReplaceHostDetails(String esxiSoftwareVersion, String vcfByolAllocationId) {
+    @java.beans.ConstructorProperties({
+        "esxiSoftwareVersion",
+        "initialFaultDomainHostDistribution",
+        "vcfByolAllocationId"
+    })
+    public ReplaceHostDetails(
+            String esxiSoftwareVersion,
+            FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
+            String vcfByolAllocationId) {
         super();
         this.esxiSoftwareVersion = esxiSoftwareVersion;
+        this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.vcfByolAllocationId = vcfByolAllocationId;
     }
 
@@ -57,6 +65,22 @@ public final class ReplaceHostDetails
             this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
+        /** Initial Fault Domain Host distribution mode for the ESXi host. */
+        @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+        private FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+        /**
+         * Initial Fault Domain Host distribution mode for the ESXi host.
+         *
+         * @param initialFaultDomainHostDistribution the value to set
+         * @return this builder
+         */
+        public Builder initialFaultDomainHostDistribution(
+                FaultDomainHostDistributionModes initialFaultDomainHostDistribution) {
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            this.__explicitlySet__.add("initialFaultDomainHostDistribution");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Byol Allocation for VCF (VMware Cloud Foundation) deployment.
@@ -82,7 +106,10 @@ public final class ReplaceHostDetails
 
         public ReplaceHostDetails build() {
             ReplaceHostDetails model =
-                    new ReplaceHostDetails(this.esxiSoftwareVersion, this.vcfByolAllocationId);
+                    new ReplaceHostDetails(
+                            this.esxiSoftwareVersion,
+                            this.initialFaultDomainHostDistribution,
+                            this.vcfByolAllocationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -93,6 +120,10 @@ public final class ReplaceHostDetails
         public Builder copy(ReplaceHostDetails model) {
             if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
                 this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
+                this.initialFaultDomainHostDistribution(
+                        model.getInitialFaultDomainHostDistribution());
             }
             if (model.wasPropertyExplicitlySet("vcfByolAllocationId")) {
                 this.vcfByolAllocationId(model.getVcfByolAllocationId());
@@ -133,6 +164,19 @@ public final class ReplaceHostDetails
         return esxiSoftwareVersion;
     }
 
+    /** Initial Fault Domain Host distribution mode for the ESXi host. */
+    @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+    private final FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+    /**
+     * Initial Fault Domain Host distribution mode for the ESXi host.
+     *
+     * @return the value
+     */
+    public FaultDomainHostDistributionModes getInitialFaultDomainHostDistribution() {
+        return initialFaultDomainHostDistribution;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol
      * Allocation for VCF (VMware Cloud Foundation) deployment.
@@ -166,6 +210,8 @@ public final class ReplaceHostDetails
         sb.append("ReplaceHostDetails(");
         sb.append("super=").append(super.toString());
         sb.append("esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
+        sb.append(", initialFaultDomainHostDistribution=")
+                .append(String.valueOf(this.initialFaultDomainHostDistribution));
         sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
         sb.append(")");
         return sb.toString();
@@ -182,6 +228,9 @@ public final class ReplaceHostDetails
 
         ReplaceHostDetails other = (ReplaceHostDetails) o;
         return java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
+                && java.util.Objects.equals(
+                        this.initialFaultDomainHostDistribution,
+                        other.initialFaultDomainHostDistribution)
                 && java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
                 && super.equals(other);
     }
@@ -195,6 +244,11 @@ public final class ReplaceHostDetails
                         + (this.esxiSoftwareVersion == null
                                 ? 43
                                 : this.esxiSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialFaultDomainHostDistribution == null
+                                ? 43
+                                : this.initialFaultDomainHostDistribution.hashCode());
         result =
                 (result * PRIME)
                         + (this.vcfByolAllocationId == null

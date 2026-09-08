@@ -48,6 +48,8 @@ public final class RedisClusterSummary
         "nsgIds",
         "backupId",
         "securityAttributes",
+        "clusterRole",
+        "primaryClusterId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -76,6 +78,8 @@ public final class RedisClusterSummary
             java.util.List<String> nsgIds,
             String backupId,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            RedisCluster.ClusterRole clusterRole,
+            String primaryClusterId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -103,6 +107,8 @@ public final class RedisClusterSummary
         this.nsgIds = nsgIds;
         this.backupId = backupId;
         this.securityAttributes = securityAttributes;
+        this.clusterRole = clusterRole;
+        this.primaryClusterId = primaryClusterId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -520,6 +526,40 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("securityAttributes");
             return this;
         }
+        /** The current role of the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterRole")
+        private RedisCluster.ClusterRole clusterRole;
+
+        /**
+         * The current role of the cluster.
+         *
+         * @param clusterRole the value to set
+         * @return this builder
+         */
+        public Builder clusterRole(RedisCluster.ClusterRole clusterRole) {
+            this.clusterRole = clusterRole;
+            this.__explicitlySet__.add("clusterRole");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the primary cluster in CRR.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryClusterId")
+        private String primaryClusterId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
+         * of the primary cluster in CRR.
+         *
+         * @param primaryClusterId the value to set
+         * @return this builder
+         */
+        public Builder primaryClusterId(String primaryClusterId) {
+            this.primaryClusterId = primaryClusterId;
+            this.__explicitlySet__.add("primaryClusterId");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -608,6 +648,8 @@ public final class RedisClusterSummary
                             this.nsgIds,
                             this.backupId,
                             this.securityAttributes,
+                            this.clusterRole,
+                            this.primaryClusterId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -687,6 +729,12 @@ public final class RedisClusterSummary
             }
             if (model.wasPropertyExplicitlySet("securityAttributes")) {
                 this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("clusterRole")) {
+                this.clusterRole(model.getClusterRole());
+            }
+            if (model.wasPropertyExplicitlySet("primaryClusterId")) {
+                this.primaryClusterId(model.getPrimaryClusterId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1063,6 +1111,36 @@ public final class RedisClusterSummary
         return securityAttributes;
     }
 
+    /** The current role of the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterRole")
+    private final RedisCluster.ClusterRole clusterRole;
+
+    /**
+     * The current role of the cluster.
+     *
+     * @return the value
+     */
+    public RedisCluster.ClusterRole getClusterRole() {
+        return clusterRole;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the primary cluster in CRR.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryClusterId")
+    private final String primaryClusterId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
+     * the primary cluster in CRR.
+     *
+     * @return the value
+     */
+    public String getPrimaryClusterId() {
+        return primaryClusterId;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1155,6 +1233,8 @@ public final class RedisClusterSummary
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupId=").append(String.valueOf(this.backupId));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", clusterRole=").append(String.valueOf(this.clusterRole));
+        sb.append(", primaryClusterId=").append(String.valueOf(this.primaryClusterId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1198,6 +1278,8 @@ public final class RedisClusterSummary
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupId, other.backupId)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(this.clusterRole, other.clusterRole)
+                && java.util.Objects.equals(this.primaryClusterId, other.primaryClusterId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1263,6 +1345,10 @@ public final class RedisClusterSummary
                         + (this.securityAttributes == null
                                 ? 43
                                 : this.securityAttributes.hashCode());
+        result = (result * PRIME) + (this.clusterRole == null ? 43 : this.clusterRole.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryClusterId == null ? 43 : this.primaryClusterId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

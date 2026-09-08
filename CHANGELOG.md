@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.95.2 - 2026-09-08
+### Added 
+- Support for configurable fault-domain preferences during provisioning in the Oracle Cloud VMware Solution service 
+- Support for code-only functions with managed runtimes and automated image builds in the Functions service 
+- Support for out-of-place Grid Infrastructure patching and upgrades with Oracle-provided or custom Grid Infrastructure software images in the Database service 
+- Support for active-passive cross-region replication in the OCI Cache service
+
 ## 3.95.1 - 2026-09-01
 ### Added 
 - Support for the Cluster Health service 

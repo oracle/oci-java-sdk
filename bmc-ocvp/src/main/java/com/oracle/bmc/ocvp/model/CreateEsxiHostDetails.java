@@ -34,6 +34,7 @@ public final class CreateEsxiHostDetails
         "hostOcpuCount",
         "capacityReservationId",
         "esxiSoftwareVersion",
+        "initialFaultDomainHostDistribution",
         "vcfByolAllocationId",
         "isVsanByolEnabled",
         "freeformTags",
@@ -50,6 +51,7 @@ public final class CreateEsxiHostDetails
             Float hostOcpuCount,
             String capacityReservationId,
             String esxiSoftwareVersion,
+            FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
             String vcfByolAllocationId,
             Boolean isVsanByolEnabled,
             java.util.Map<String, String> freeformTags,
@@ -65,6 +67,7 @@ public final class CreateEsxiHostDetails
         this.hostOcpuCount = hostOcpuCount;
         this.capacityReservationId = capacityReservationId;
         this.esxiSoftwareVersion = esxiSoftwareVersion;
+        this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.vcfByolAllocationId = vcfByolAllocationId;
         this.isVsanByolEnabled = isVsanByolEnabled;
         this.freeformTags = freeformTags;
@@ -289,6 +292,22 @@ public final class CreateEsxiHostDetails
             this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
+        /** The initial fault domain host distribution mode for the ESXi host. */
+        @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+        private FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+        /**
+         * The initial fault domain host distribution mode for the ESXi host.
+         *
+         * @param initialFaultDomainHostDistribution the value to set
+         * @return this builder
+         */
+        public Builder initialFaultDomainHostDistribution(
+                FaultDomainHostDistributionModes initialFaultDomainHostDistribution) {
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            this.__explicitlySet__.add("initialFaultDomainHostDistribution");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Byol Allocation for VCF (VMware Cloud Foundation) deployment.
@@ -391,6 +410,7 @@ public final class CreateEsxiHostDetails
                             this.hostOcpuCount,
                             this.capacityReservationId,
                             this.esxiSoftwareVersion,
+                            this.initialFaultDomainHostDistribution,
                             this.vcfByolAllocationId,
                             this.isVsanByolEnabled,
                             this.freeformTags,
@@ -432,6 +452,10 @@ public final class CreateEsxiHostDetails
             }
             if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
                 this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
+                this.initialFaultDomainHostDistribution(
+                        model.getInitialFaultDomainHostDistribution());
             }
             if (model.wasPropertyExplicitlySet("vcfByolAllocationId")) {
                 this.vcfByolAllocationId(model.getVcfByolAllocationId());
@@ -654,6 +678,19 @@ public final class CreateEsxiHostDetails
         return esxiSoftwareVersion;
     }
 
+    /** The initial fault domain host distribution mode for the ESXi host. */
+    @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+    private final FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+    /**
+     * The initial fault domain host distribution mode for the ESXi host.
+     *
+     * @return the value
+     */
+    public FaultDomainHostDistributionModes getInitialFaultDomainHostDistribution() {
+        return initialFaultDomainHostDistribution;
+    }
+
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol
      * Allocation for VCF (VMware Cloud Foundation) deployment.
@@ -756,6 +793,8 @@ public final class CreateEsxiHostDetails
         sb.append(", hostOcpuCount=").append(String.valueOf(this.hostOcpuCount));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
+        sb.append(", initialFaultDomainHostDistribution=")
+                .append(String.valueOf(this.initialFaultDomainHostDistribution));
         sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
         sb.append(", isVsanByolEnabled=").append(String.valueOf(this.isVsanByolEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -785,6 +824,9 @@ public final class CreateEsxiHostDetails
                 && java.util.Objects.equals(this.hostOcpuCount, other.hostOcpuCount)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
+                && java.util.Objects.equals(
+                        this.initialFaultDomainHostDistribution,
+                        other.initialFaultDomainHostDistribution)
                 && java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
                 && java.util.Objects.equals(this.isVsanByolEnabled, other.isVsanByolEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -830,6 +872,11 @@ public final class CreateEsxiHostDetails
                         + (this.esxiSoftwareVersion == null
                                 ? 43
                                 : this.esxiSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialFaultDomainHostDistribution == null
+                                ? 43
+                                : this.initialFaultDomainHostDistribution.hashCode());
         result =
                 (result * PRIME)
                         + (this.vcfByolAllocationId == null

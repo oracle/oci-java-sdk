@@ -5,7 +5,7 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Specifies no success destination
+ * Note: Deprecated. Use the new resource model APIs instead. Specifies no success destination
  *
  * <p>Example: {@code {"kind": "NONE"}} <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

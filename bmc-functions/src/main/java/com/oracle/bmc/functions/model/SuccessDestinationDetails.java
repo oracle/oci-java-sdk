@@ -5,9 +5,9 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * An object that represents the destination to which Oracle Functions will send an invocation
- * record with the details of the successful detached function invocation. A stream is an example of
- * a success destination.
+ * Note: Deprecated. Use the new resource model APIs instead. An object that represents the
+ * destination to which Oracle Functions will send an invocation record with the details of the
+ * successful detached function invocation. A stream is an example of a success destination.
  *
  * <p>Example: {@code {"kind": "STREAM", "streamId": "stream_OCID"}} <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

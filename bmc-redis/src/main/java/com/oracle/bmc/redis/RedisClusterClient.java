@@ -220,6 +220,74 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ConvertToSecondaryClusterResponse convertToSecondaryCluster(
+            ConvertToSecondaryClusterRequest request) {
+        Objects.requireNonNull(
+                request.getConvertToSecondaryClusterDetails(),
+                "convertToSecondaryClusterDetails is required");
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, ConvertToSecondaryClusterResponse::builder)
+                .logger(LOG, "convertToSecondaryCluster")
+                .serviceDetails(
+                        "RedisCluster",
+                        "ConvertToSecondaryCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ConvertToSecondaryCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertToSecondaryClusterRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("convertToSecondaryCluster")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertToSecondaryClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertToSecondaryClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ConvertToStandaloneClusterResponse convertToStandaloneCluster(
+            ConvertToStandaloneClusterRequest request) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, ConvertToStandaloneClusterResponse::builder)
+                .logger(LOG, "convertToStandaloneCluster")
+                .serviceDetails(
+                        "RedisCluster",
+                        "ConvertToStandaloneCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ConvertToStandaloneCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertToStandaloneClusterRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("convertToStandaloneCluster")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertToStandaloneClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertToStandaloneClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateRedisClusterResponse createRedisCluster(CreateRedisClusterRequest request) {
         Objects.requireNonNull(
                 request.getCreateRedisClusterDetails(), "createRedisClusterDetails is required");
@@ -577,6 +645,36 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public SwitchoverResponse switchover(SwitchoverRequest request) {
+
+        Validate.notBlank(request.getRedisClusterId(), "redisClusterId must not be blank");
+
+        return clientCall(request, SwitchoverResponse::builder)
+                .logger(LOG, "switchover")
+                .serviceDetails(
+                        "RedisCluster",
+                        "Switchover",
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/Switchover")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchoverRequest::builder)
+                .basePath("/20220315")
+                .appendPathParam("redisClusters")
+                .appendPathParam(request.getRedisClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SwitchoverResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwitchoverResponse.Builder::opcRequestId)
                 .callSync();
     }
 
