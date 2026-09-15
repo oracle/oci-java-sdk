@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.96.0 - 2026-09-15
+### Added 
+- Support for higher usage submission limits for metered SaaS listings and legacy subscription endpoints in the Service Enablement Lifecycle Framework service 
+- Support for customer-managed encryption keys for database systems and cross-region backup copies in the PostgreSQL service 
+- Support for listing available VMware binaries and generating download links in the Oracle Cloud VMware Solution service 
+- Support for data verification using database object counts, object statuses, and estimated table row counts in the Database Migration service 
+- Support for settings specific to online logical, offline logical, and online standby Oracle migrations in the Database Migration service   
+
+### Breaking Changes 
+- Method `public java.lang.String getUsageRecordId()` has been removed from the model `com.oracle.bmc.self.model.CreateSubscriptionUsageRecordDetails` in the Service Enablement Lifecycle Framework service 
+- Client-side decryption using `KmsMasterKeyProvider(KmsMasterKey)` now rejects encrypted blobs whose master key ID, vault ID, or region differs from the configured key. To decrypt data encrypted with different KMS keys, use `KmsMasterKeyProvider(BasicAuthenticationDetailsProvider)`. 
+- Client-side decryption using `KmsMasterKeyProvider(BasicAuthenticationDetailsProvider)` now requires the region to be known independently of the encrypted blob through built-in SDK definitions, `Region.register(...)`, supported region metadata configuration, opted-in Instance Metadata Service (IMDS), or an exact region match on `ConfigFileAuthenticationDetailsProvider` or `SessionTokenAuthenticationDetailsProvider`. A region resolved only through implicit OC1 or `OCI_DEFAULT_REALM` fallback is rejected. If a region is not yet included in this SDK release, register it or supply region metadata before decrypting.
+
 ## 3.95.2 - 2026-09-08
 ### Added 
 - Support for configurable fault-domain preferences during provisioning in the Oracle Cloud VMware Solution service 

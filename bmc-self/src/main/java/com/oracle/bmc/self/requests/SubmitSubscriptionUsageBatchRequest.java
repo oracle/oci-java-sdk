@@ -29,7 +29,7 @@ public class SubmitSubscriptionUsageBatchRequest
         return compartmentId;
     }
     /**
-     * UTF-8 CSV file with no more than 10,000 usage records and a maximum size of 50 MB. Required
+     * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB. Required
      * columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code CurrencyCode},
      * {@code UsageStartTime}, {@code UsageEndTime}, and {@code UsageDimensionName}. Optional
      * columns are {@code ConsumedQuantity}, {@code CustomerTenancyId}, {@code BillingIdentifier},
@@ -41,7 +41,7 @@ public class SubmitSubscriptionUsageBatchRequest
     private java.io.InputStream submitSubscriptionUsageBatchDetails;
 
     /**
-     * UTF-8 CSV file with no more than 10,000 usage records and a maximum size of 50 MB. Required
+     * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB. Required
      * columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code CurrencyCode},
      * {@code UsageStartTime}, {@code UsageEndTime}, and {@code UsageDimensionName}. Optional
      * columns are {@code ConsumedQuantity}, {@code CustomerTenancyId}, {@code BillingIdentifier},
@@ -124,7 +124,7 @@ public class SubmitSubscriptionUsageBatchRequest
         }
 
         /**
-         * UTF-8 CSV file with no more than 10,000 usage records and a maximum size of 50 MB.
+         * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB.
          * Required columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code
          * CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code
          * UsageDimensionName}. Optional columns are {@code ConsumedQuantity}, {@code
@@ -137,7 +137,7 @@ public class SubmitSubscriptionUsageBatchRequest
         private java.io.InputStream submitSubscriptionUsageBatchDetails = null;
 
         /**
-         * UTF-8 CSV file with no more than 10,000 usage records and a maximum size of 50 MB.
+         * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB.
          * Required columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code
          * CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code
          * UsageDimensionName}. Optional columns are {@code ConsumedQuantity}, {@code

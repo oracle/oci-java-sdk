@@ -84,6 +84,10 @@ public final class Region implements Serializable, Comparable<Region> {
     // LinkedHashMap to ensure stable ordering of the registered regions
     private static final Map<String, Region> ALL_REGIONS = new LinkedHashMap<>();
 
+    // Region IDs registered from an independent source for secure endpoint resolution. Access is
+    // guarded by the region lock.
+    private static final Set<String> TRUSTED_REGION_IDS = new HashSet<>();
+
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Region.class);
     private static volatile boolean hasUsedEnvVar = false;
     private static volatile boolean hasUsedConfigFile = false;
@@ -599,6 +603,18 @@ public final class Region implements Serializable, Comparable<Region> {
             @Nonnull final Realm realm,
             String regionCode,
             boolean isDeveloperToolConfigurationRegion) {
+        // Public registration is explicit, so it is trusted for secure endpoint resolution.
+        return register(regionId, realm, regionCode, isDeveloperToolConfigurationRegion, true);
+    }
+
+    // The additional parameter records whether the region came from an independent source while
+    // leaving the public registration API unchanged.
+    private static Region register(
+            @Nonnull String regionId,
+            @Nonnull final Realm realm,
+            String regionCode,
+            boolean isDeveloperToolConfigurationRegion,
+            boolean isTrustedRegistration) {
         if (regionId == null) {
             throw new java.lang.NullPointerException("regionId is marked non-null but is null");
         }
@@ -615,7 +631,10 @@ public final class Region implements Serializable, Comparable<Region> {
         readLock.lock();
         try {
             region = getRegion(regionId, realm, isDeveloperToolConfigurationRegion);
-            if (region != null) {
+            if (region != null
+                    && (isDeveloperToolConfigurationRegion
+                            || !isTrustedRegistration
+                            || TRUSTED_REGION_IDS.contains(region.getRegionId()))) {
                 return region;
             }
         } finally {
@@ -626,6 +645,9 @@ public final class Region implements Serializable, Comparable<Region> {
             // Recheck if the region exists because another thread might have acquired lock.
             region = getRegion(regionId, realm, isDeveloperToolConfigurationRegion);
             if (region != null) {
+                if (!isDeveloperToolConfigurationRegion && isTrustedRegistration) {
+                    TRUSTED_REGION_IDS.add(region.getRegionId());
+                }
                 return region;
             }
             if (regionCode != null) {
@@ -634,11 +656,16 @@ public final class Region implements Serializable, Comparable<Region> {
                     regionCode = null;
                 }
             }
-            return new Region(
-                    regionId,
-                    Optional.ofNullable(regionCode),
-                    realm,
-                    isDeveloperToolConfigurationRegion);
+            Region registeredRegion =
+                    new Region(
+                            regionId,
+                            Optional.ofNullable(regionCode),
+                            realm,
+                            isDeveloperToolConfigurationRegion);
+            if (!isDeveloperToolConfigurationRegion && isTrustedRegistration) {
+                TRUSTED_REGION_IDS.add(regionId);
+            }
+            return registeredRegion;
         } finally {
             writeLock.unlock();
         }
@@ -680,13 +707,21 @@ public final class Region implements Serializable, Comparable<Region> {
 
     private static java.util.Optional<Region> maybeFromRegionCodeOrIdWithoutRegistering(
             String regionCodeOrId) {
+        // Preserve existing Region API behavior, including OCI_DEFAULT_REALM fallback regions.
+        return maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId, true);
+    }
+
+    private static java.util.Optional<Region> maybeFromRegionCodeOrIdWithoutRegistering(
+            String regionCodeOrId, boolean includeDefaultRealmFallback) {
         readLock.lock();
         try {
             return KNOWN_REGIONS.values().stream()
                     .filter(
                             r ->
-                                    r.getRegionCode().equalsIgnoreCase(regionCodeOrId)
-                                            || r.regionId.equalsIgnoreCase(regionCodeOrId))
+                                    (r.getRegionCode().equalsIgnoreCase(regionCodeOrId)
+                                                    || r.regionId.equalsIgnoreCase(regionCodeOrId))
+                                            && (includeDefaultRealmFallback
+                                                    || TRUSTED_REGION_IDS.contains(r.regionId)))
                     .findAny();
         } finally {
             readLock.unlock();
@@ -734,6 +769,12 @@ public final class Region implements Serializable, Comparable<Region> {
 
     /** Implements decision tree to determine Region. */
     private static Optional<Region> getRegionAndRegisterIfNecessary(String regionCodeOrId) {
+        // Preserve existing Region API behavior by enabling the OCI_DEFAULT_REALM fallback.
+        return getRegionAndRegisterIfNecessary(regionCodeOrId, true);
+    }
+
+    private static Optional<Region> getRegionAndRegisterIfNecessary(
+            String regionCodeOrId, boolean includeDefaultRealmFallback) {
 
         if (regionCodeOrId.contains("_")) {
             regionCodeOrId = NameUtils.decanonicalizeFromEnumTypes(regionCodeOrId);
@@ -749,6 +790,9 @@ public final class Region implements Serializable, Comparable<Region> {
             if (maybeRegion.isPresent()) {
                 return maybeRegion;
             } else if (!DeveloperToolConfiguration.isDevToolConfigRegionCoexistEnabled()) {
+                if (!includeDefaultRealmFallback) {
+                    return Optional.empty();
+                }
                 LOG.error(
                         "The region '{}' you're targeting is not declared in the '{}' DeveloperToolConfiguration configuration file. Please check if this is the correct region you're targeting or contact the '{}' cloud provider for help. If you want to target both OCI regions and '{}' regions, please set the OCI_PLC_REGION_COEXIST env var to true.",
                         regionCodeOrId,
@@ -762,14 +806,18 @@ public final class Region implements Serializable, Comparable<Region> {
             }
         }
 
-        maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+        maybeRegion =
+                maybeFromRegionCodeOrIdWithoutRegistering(
+                        regionCodeOrId, includeDefaultRealmFallback);
         if (maybeRegion.isPresent()) {
             return maybeRegion; // already known
         }
 
         if (!hasUsedConfigFile) {
             readRegionConfigFile(); // registers region and sets hasUsedConfigFile = true;
-            maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            maybeRegion =
+                    maybeFromRegionCodeOrIdWithoutRegistering(
+                            regionCodeOrId, includeDefaultRealmFallback);
             if (maybeRegion.isPresent()) {
                 return maybeRegion;
             }
@@ -777,7 +825,9 @@ public final class Region implements Serializable, Comparable<Region> {
 
         if (!hasUsedEnvVar) {
             readEnvVar(); // registers region and sets hasUsedEnvVar = true;
-            maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            maybeRegion =
+                    maybeFromRegionCodeOrIdWithoutRegistering(
+                            regionCodeOrId, includeDefaultRealmFallback);
             if (maybeRegion.isPresent()) {
                 return maybeRegion;
             }
@@ -786,13 +836,17 @@ public final class Region implements Serializable, Comparable<Region> {
         if (hasOptedForInstanceMetadataService && !hasUsedInstanceMetadataService) {
             registerFromInstanceMetadataService(); // registers region and sets
             // hasUsedInstanceMetadataService = true;
-            maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            maybeRegion =
+                    maybeFromRegionCodeOrIdWithoutRegistering(
+                            regionCodeOrId, includeDefaultRealmFallback);
             if (maybeRegion.isPresent()) {
                 return maybeRegion;
             }
         }
 
-        if (defaultRealmEnvVar != null && !StringUtils.isBlank(defaultRealmEnvVar)) {
+        if (includeDefaultRealmFallback
+                && defaultRealmEnvVar != null
+                && !StringUtils.isBlank(defaultRealmEnvVar)) {
             registerRegionWithDefaultRealm(regionCodeOrId);
             maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
@@ -801,6 +855,53 @@ public final class Region implements Serializable, Comparable<Region> {
         }
 
         return Optional.empty();
+    }
+
+    /**
+     * Returns a previously registered trusted region without loading region metadata from a file,
+     * environment variable, or the Instance Metadata Service (IMDS).
+     *
+     * @param regionCodeOrId The region code or ID.
+     * @return The trusted region, or empty if no matching region is registered.
+     */
+    @InternalSdk
+    public static Optional<Region> resolveRegisteredRegion(String regionCodeOrId) {
+        if (regionCodeOrId.contains("_")) {
+            regionCodeOrId = NameUtils.decanonicalizeFromEnumTypes(regionCodeOrId);
+        }
+
+        Optional<Region> maybeRegion =
+                maybeFromDevToolConfigRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+        if (maybeRegion.isPresent()) {
+            return maybeRegion;
+        }
+        return maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId, false);
+    }
+
+    /**
+     * Resolves a trusted region without using the {@code OCI_DEFAULT_REALM} fallback.
+     *
+     * @param regionCodeOrId The region code or ID.
+     * @return The trusted region, or empty if no matching region can be resolved.
+     */
+    @InternalSdk
+    public static Optional<Region> resolveRegionWithoutDefaultRealmFallback(String regionCodeOrId) {
+        return getRegionAndRegisterIfNecessary(regionCodeOrId, false);
+    }
+
+    /**
+     * Registers a region using the configuration provider's legacy OC1 fallback. The region remains
+     * available to normal SDK clients but is not independently trusted for secure endpoint
+     * resolution.
+     *
+     * @param regionId The region ID from the SDK configuration.
+     * @param realm The realm used by the configuration provider's fallback.
+     * @return The registered region (or existing one if found).
+     */
+    @InternalSdk
+    public static Region registerFromConfigFileFallback(
+            @Nonnull String regionId, @Nonnull final Realm realm) {
+        return register(regionId, realm, null, false, false);
     }
 
     /** Registers region and sets envVarUsed status to true. */
@@ -837,7 +938,8 @@ public final class Region implements Serializable, Comparable<Region> {
                 regionId,
                 trimmedDefaultRealm);
         if (defaultRealmFromEnvVar != null) {
-            register(regionId, defaultRealmFromEnvVar);
+            // Keep fallback-created regions out of trusted endpoint resolution.
+            register(regionId, defaultRealmFromEnvVar, null, false, false);
         }
     }
 

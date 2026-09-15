@@ -229,10 +229,10 @@ public class WorkloadIdentityFederationAuthenticationDetailProvider
             }
             if (!isBase64Encoded(clientCredential)) {
                 this.clientCredential = base64Encode(clientCredential);
-                LOG.debug("Client Credential (base64 encoded): {}", this.clientCredential);
+                LOG.debug("Client credential configured (Base64 encoded)");
             } else {
                 this.clientCredential = clientCredential;
-                LOG.debug("Client Credential (already base64 encoded): {}", this.clientCredential);
+                LOG.debug("Client credential configured (already Base64 encoded)");
             }
             return this;
         }

@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -26,6 +27,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.helper.EnvironmentVariablesHelper;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
@@ -56,15 +58,15 @@ public class RegionTest {
                     .build();
 
     private static final String REGION_ID_WITH_DOT = "some.customerdomain.com";
+    private static final String OCI_REGION_METADATA_VALUE =
+            "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
 
     @BeforeClass
     public static void init() throws Exception {
 
         Map<String, String> newEnvMap = new HashMap<>();
 
-        String regionBlob =
-                "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
-        newEnvMap.put("OCI_REGION_METADATA", regionBlob);
+        newEnvMap.put("OCI_REGION_METADATA", OCI_REGION_METADATA_VALUE);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         Region.resetDeveloperToolConfiguration();
     }
@@ -73,6 +75,128 @@ public class RegionTest {
     public void reset() {
         Region.hasUsedInstanceMetadataService = false;
         Region.skipInstanceMetadataService();
+    }
+
+    @Test
+    public void secureRegionLookupAcceptsBuiltInRegionShortName() {
+        assertSame(Region.US_PHOENIX_1, Region.resolveRegisteredRegion("phx").get());
+    }
+
+    @Test
+    public void secureRegionLookupAcceptsGovernmentRegion() {
+        assertSame(
+                Region.US_GOV_ASHBURN_1,
+                Region.resolveRegionWithoutDefaultRealmFallback("us-gov-ashburn-1").get());
+    }
+
+    @Test
+    public void secureRegionLookupAcceptsRegionFromEnvironmentMetadata() {
+        assertEquals(
+                "us-abv-1",
+                Region.resolveRegionWithoutDefaultRealmFallback("ABV").get().getRegionId());
+    }
+
+    @Test
+    public void secureRegionLookupAcceptsExplicitlyRegisteredPrivateRegion() {
+        Region registeredRegion = Region.register("private.customer.example.com", Realm.OC1);
+
+        assertSame(
+                registeredRegion,
+                Region.resolveRegionWithoutDefaultRealmFallback("private.customer.example.com")
+                        .get());
+    }
+
+    @Test
+    public void secureRegionLookupRejectsUnknownPrivateRegion() {
+        assertFalse(
+                Region.resolveRegionWithoutDefaultRealmFallback("attacker.example.com")
+                        .isPresent());
+    }
+
+    @Test
+    public void secureRegionLookupRejectsRegionCreatedOnlyByDefaultRealmFallback() {
+        String originalDefaultRealm = Region.defaultRealmEnvVar;
+        String regionId = "untrusted-default-realm-region";
+        try {
+            Region.defaultRealmEnvVar = "oraclevaporcloud.space";
+            assertNotNull(Region.fromRegionId(regionId));
+
+            assertFalse(Region.resolveRegionWithoutDefaultRealmFallback(regionId).isPresent());
+        } finally {
+            Region.defaultRealmEnvVar = originalDefaultRealm;
+        }
+    }
+
+    @Test
+    public void explicitRegistrationMakesFallbackRegionTrusted() {
+        String originalDefaultRealm = Region.defaultRealmEnvVar;
+        String regionId = "explicitly-registered-default-realm-region";
+        try {
+            Region.defaultRealmEnvVar = "oraclevaporcloud.space";
+            Region fallbackRegion = Region.fromRegionId(regionId);
+            assertFalse(Region.resolveRegionWithoutDefaultRealmFallback(regionId).isPresent());
+
+            assertSame(fallbackRegion, Region.register(regionId, fallbackRegion.getRealm()));
+            assertSame(
+                    fallbackRegion,
+                    Region.resolveRegionWithoutDefaultRealmFallback(regionId).get());
+        } finally {
+            Region.defaultRealmEnvVar = originalDefaultRealm;
+        }
+    }
+
+    @Test
+    public void secureRegionLookupRejectsRegionCreatedOnlyByConfigFileOc1Fallback()
+            throws IOException {
+        String originalDefaultRealm = Region.defaultRealmEnvVar;
+        String regionId = "config-only.private.example.com";
+        try {
+            Region.defaultRealmEnvVar = null;
+            ConfigFileReader.ConfigFile configFile =
+                    ConfigFileReader.parse(
+                            new ByteArrayInputStream(
+                                    ("[DEFAULT]\nregion=" + regionId)
+                                            .getBytes(StandardCharsets.UTF_8)),
+                            null);
+
+            Region configuredRegion =
+                    ConfigFileAuthenticationDetailsProvider.getRegionFromConfigFile(configFile);
+
+            assertSame(configuredRegion, Region.fromRegionId(regionId));
+            assertFalse(Region.resolveRegionWithoutDefaultRealmFallback(regionId).isPresent());
+        } finally {
+            Region.defaultRealmEnvVar = originalDefaultRealm;
+        }
+    }
+
+    @Test
+    public void secureRegionLookupDoesNotConfuseDeveloperToolRegionWithSameNamedFallback()
+            throws Exception {
+        String originalDefaultRealm = Region.defaultRealmEnvVar;
+        String regionId = "fallback-and-developer-tool.example.com";
+        try {
+            Region.defaultRealmEnvVar = "oraclevaporcloud.space";
+            Region.fromRegionId(regionId);
+            assertFalse(Region.resolveRegisteredRegion(regionId).isPresent());
+
+            Region developerToolRegion =
+                    Region.register(
+                            regionId,
+                            Realm.register(
+                                    "DEVELOPER_TOOL_COLLISION", "developer-tool.example.com", true),
+                            null,
+                            true);
+            assertSame(developerToolRegion, Region.resolveRegisteredRegion(regionId).get());
+
+            Region.resetDeveloperToolConfiguration();
+            assertFalse(Region.resolveRegisteredRegion(regionId).isPresent());
+        } finally {
+            Map<String, String> restoredEnv = new HashMap<>();
+            restoredEnv.put("OCI_REGION_METADATA", OCI_REGION_METADATA_VALUE);
+            EnvironmentVariablesHelper.setEnvironmentVariable(restoredEnv);
+            Region.resetDeveloperToolConfiguration();
+            Region.defaultRealmEnvVar = originalDefaultRealm;
+        }
     }
 
     @Test
@@ -391,7 +515,7 @@ public class RegionTest {
         int count = Region.values().length;
         Region.fromRegionCodeOrId("ABV");
         int afterCheckEnvCount = Region.values().length;
-        assertSame(count, afterCheckEnvCount);
+        assertEquals(count, afterCheckEnvCount);
     }
 
     @Test(expected = IllegalArgumentException.class)
