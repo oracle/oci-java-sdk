@@ -23,13 +23,17 @@ package com.oracle.bmc.psql.model;
 public final class BackupCopyDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "retentionPeriod", "regions"})
+    @java.beans.ConstructorProperties({"compartmentId", "retentionPeriod", "regions", "kmsKeyIds"})
     public BackupCopyDetails(
-            String compartmentId, Integer retentionPeriod, java.util.List<String> regions) {
+            String compartmentId,
+            Integer retentionPeriod,
+            java.util.List<String> regions,
+            java.util.List<String> kmsKeyIds) {
         super();
         this.compartmentId = compartmentId;
         this.retentionPeriod = retentionPeriod;
         this.regions = regions;
+        this.kmsKeyIds = kmsKeyIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -79,13 +83,29 @@ public final class BackupCopyDetails
             this.__explicitlySet__.add("regions");
             return this;
         }
+        /** List of key ids of the remote regions */
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyIds")
+        private java.util.List<String> kmsKeyIds;
+
+        /**
+         * List of key ids of the remote regions
+         *
+         * @param kmsKeyIds the value to set
+         * @return this builder
+         */
+        public Builder kmsKeyIds(java.util.List<String> kmsKeyIds) {
+            this.kmsKeyIds = kmsKeyIds;
+            this.__explicitlySet__.add("kmsKeyIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackupCopyDetails build() {
             BackupCopyDetails model =
-                    new BackupCopyDetails(this.compartmentId, this.retentionPeriod, this.regions);
+                    new BackupCopyDetails(
+                            this.compartmentId, this.retentionPeriod, this.regions, this.kmsKeyIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +122,9 @@ public final class BackupCopyDetails
             }
             if (model.wasPropertyExplicitlySet("regions")) {
                 this.regions(model.getRegions());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyIds")) {
+                this.kmsKeyIds(model.getKmsKeyIds());
             }
             return this;
         }
@@ -155,6 +178,19 @@ public final class BackupCopyDetails
         return regions;
     }
 
+    /** List of key ids of the remote regions */
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyIds")
+    private final java.util.List<String> kmsKeyIds;
+
+    /**
+     * List of key ids of the remote regions
+     *
+     * @return the value
+     */
+    public java.util.List<String> getKmsKeyIds() {
+        return kmsKeyIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -173,6 +209,7 @@ public final class BackupCopyDetails
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", retentionPeriod=").append(String.valueOf(this.retentionPeriod));
         sb.append(", regions=").append(String.valueOf(this.regions));
+        sb.append(", kmsKeyIds=").append(String.valueOf(this.kmsKeyIds));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +227,7 @@ public final class BackupCopyDetails
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.retentionPeriod, other.retentionPeriod)
                 && java.util.Objects.equals(this.regions, other.regions)
+                && java.util.Objects.equals(this.kmsKeyIds, other.kmsKeyIds)
                 && super.equals(other);
     }
 
@@ -204,6 +242,7 @@ public final class BackupCopyDetails
                 (result * PRIME)
                         + (this.retentionPeriod == null ? 43 : this.retentionPeriod.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
+        result = (result * PRIME) + (this.kmsKeyIds == null ? 43 : this.kmsKeyIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

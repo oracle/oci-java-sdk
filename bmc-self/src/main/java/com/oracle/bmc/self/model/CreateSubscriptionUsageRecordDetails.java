@@ -40,7 +40,6 @@ public final class CreateSubscriptionUsageRecordDetails
         "productSku",
         "contractDuration",
         "additionalMetadata",
-        "usageRecordId",
         "timeUsageStarted",
         "timeUsageEnded"
     })
@@ -60,7 +59,6 @@ public final class CreateSubscriptionUsageRecordDetails
             String productSku,
             BillingFrequency contractDuration,
             java.util.List<ExtendedMetadata> additionalMetadata,
-            String usageRecordId,
             java.util.Date timeUsageStarted,
             java.util.Date timeUsageEnded) {
         super();
@@ -79,7 +77,6 @@ public final class CreateSubscriptionUsageRecordDetails
         this.productSku = productSku;
         this.contractDuration = contractDuration;
         this.additionalMetadata = additionalMetadata;
-        this.usageRecordId = usageRecordId;
         this.timeUsageStarted = timeUsageStarted;
         this.timeUsageEnded = timeUsageEnded;
     }
@@ -325,21 +322,6 @@ public final class CreateSubscriptionUsageRecordDetails
             this.__explicitlySet__.add("additionalMetadata");
             return this;
         }
-        /** Partner-provided usage record identifier for traceability. */
-        @com.fasterxml.jackson.annotation.JsonProperty("usageRecordId")
-        private String usageRecordId;
-
-        /**
-         * Partner-provided usage record identifier for traceability.
-         *
-         * @param usageRecordId the value to set
-         * @return this builder
-         */
-        public Builder usageRecordId(String usageRecordId) {
-            this.usageRecordId = usageRecordId;
-            this.__explicitlySet__.add("usageRecordId");
-            return this;
-        }
         /**
          * The inclusive start timestamp for the usage window. This value must be before {@code
          * timeUsageEnded}.
@@ -400,7 +382,6 @@ public final class CreateSubscriptionUsageRecordDetails
                             this.productSku,
                             this.contractDuration,
                             this.additionalMetadata,
-                            this.usageRecordId,
                             this.timeUsageStarted,
                             this.timeUsageEnded);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -455,9 +436,6 @@ public final class CreateSubscriptionUsageRecordDetails
             }
             if (model.wasPropertyExplicitlySet("additionalMetadata")) {
                 this.additionalMetadata(model.getAdditionalMetadata());
-            }
-            if (model.wasPropertyExplicitlySet("usageRecordId")) {
-                this.usageRecordId(model.getUsageRecordId());
             }
             if (model.wasPropertyExplicitlySet("timeUsageStarted")) {
                 this.timeUsageStarted(model.getTimeUsageStarted());
@@ -720,19 +698,6 @@ public final class CreateSubscriptionUsageRecordDetails
         return additionalMetadata;
     }
 
-    /** Partner-provided usage record identifier for traceability. */
-    @com.fasterxml.jackson.annotation.JsonProperty("usageRecordId")
-    private final String usageRecordId;
-
-    /**
-     * Partner-provided usage record identifier for traceability.
-     *
-     * @return the value
-     */
-    public String getUsageRecordId() {
-        return usageRecordId;
-    }
-
     /**
      * The inclusive start timestamp for the usage window. This value must be before {@code
      * timeUsageEnded}.
@@ -797,7 +762,6 @@ public final class CreateSubscriptionUsageRecordDetails
         sb.append(", productSku=").append(String.valueOf(this.productSku));
         sb.append(", contractDuration=").append(String.valueOf(this.contractDuration));
         sb.append(", additionalMetadata=").append(String.valueOf(this.additionalMetadata));
-        sb.append(", usageRecordId=").append(String.valueOf(this.usageRecordId));
         sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
         sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
         sb.append(")");
@@ -829,7 +793,6 @@ public final class CreateSubscriptionUsageRecordDetails
                 && java.util.Objects.equals(this.productSku, other.productSku)
                 && java.util.Objects.equals(this.contractDuration, other.contractDuration)
                 && java.util.Objects.equals(this.additionalMetadata, other.additionalMetadata)
-                && java.util.Objects.equals(this.usageRecordId, other.usageRecordId)
                 && java.util.Objects.equals(this.timeUsageStarted, other.timeUsageStarted)
                 && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
                 && super.equals(other);
@@ -878,9 +841,6 @@ public final class CreateSubscriptionUsageRecordDetails
                         + (this.additionalMetadata == null
                                 ? 43
                                 : this.additionalMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.usageRecordId == null ? 43 : this.usageRecordId.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeUsageStarted == null ? 43 : this.timeUsageStarted.hashCode());

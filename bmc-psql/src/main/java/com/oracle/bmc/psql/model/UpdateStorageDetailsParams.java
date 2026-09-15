@@ -23,10 +23,11 @@ package com.oracle.bmc.psql.model;
 public final class UpdateStorageDetailsParams
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"iops"})
-    public UpdateStorageDetailsParams(Long iops) {
+    @java.beans.ConstructorProperties({"iops", "kmsKeyId"})
+    public UpdateStorageDetailsParams(Long iops, String kmsKeyId) {
         super();
         this.iops = iops;
+        this.kmsKeyId = kmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -50,12 +51,32 @@ public final class UpdateStorageDetailsParams
             this.__explicitlySet__.add("iops");
             return this;
         }
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the database
+         * system.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the database
+         * system.
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         */
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateStorageDetailsParams build() {
-            UpdateStorageDetailsParams model = new UpdateStorageDetailsParams(this.iops);
+            UpdateStorageDetailsParams model =
+                    new UpdateStorageDetailsParams(this.iops, this.kmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -66,6 +87,9 @@ public final class UpdateStorageDetailsParams
         public Builder copy(UpdateStorageDetailsParams model) {
             if (model.wasPropertyExplicitlySet("iops")) {
                 this.iops(model.getIops());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
             }
             return this;
         }
@@ -97,6 +121,23 @@ public final class UpdateStorageDetailsParams
         return iops;
     }
 
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the database
+     * system.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the database
+     * system.
+     *
+     * @return the value
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -113,6 +154,7 @@ public final class UpdateStorageDetailsParams
         sb.append("UpdateStorageDetailsParams(");
         sb.append("super=").append(super.toString());
         sb.append("iops=").append(String.valueOf(this.iops));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -127,7 +169,9 @@ public final class UpdateStorageDetailsParams
         }
 
         UpdateStorageDetailsParams other = (UpdateStorageDetailsParams) o;
-        return java.util.Objects.equals(this.iops, other.iops) && super.equals(other);
+        return java.util.Objects.equals(this.iops, other.iops)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && super.equals(other);
     }
 
     @Override
@@ -135,6 +179,7 @@ public final class UpdateStorageDetailsParams
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.iops == null ? 43 : this.iops.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

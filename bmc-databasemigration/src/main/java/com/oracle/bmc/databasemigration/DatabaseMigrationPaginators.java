@@ -888,6 +888,408 @@ public class DatabaseMigrationPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listDataVerificationObjectStatuses operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDataVerificationObjectStatusesResponse>
+            listDataVerificationObjectStatusesResponseIterator(
+                    final ListDataVerificationObjectStatusesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataVerificationObjectStatusesRequest.Builder,
+                ListDataVerificationObjectStatusesRequest,
+                ListDataVerificationObjectStatusesResponse>(
+                new java.util.function.Supplier<
+                        ListDataVerificationObjectStatusesRequest.Builder>() {
+                    @Override
+                    public ListDataVerificationObjectStatusesRequest.Builder get() {
+                        return ListDataVerificationObjectStatusesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectStatusesResponse, String>() {
+                    @Override
+                    public String apply(ListDataVerificationObjectStatusesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataVerificationObjectStatusesRequest.Builder>,
+                        ListDataVerificationObjectStatusesRequest>() {
+                    @Override
+                    public ListDataVerificationObjectStatusesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataVerificationObjectStatusesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectStatusesRequest,
+                        ListDataVerificationObjectStatusesResponse>() {
+                    @Override
+                    public ListDataVerificationObjectStatusesResponse apply(
+                            ListDataVerificationObjectStatusesRequest request) {
+                        return client.listDataVerificationObjectStatuses(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.DataVerificationObjectStatusSummary} objects contained
+     * in responses from the listDataVerificationObjectStatuses operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.DataVerificationObjectStatusSummary} objects
+     *     contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.DataVerificationObjectStatusSummary>
+            listDataVerificationObjectStatusesRecordIterator(
+                    final ListDataVerificationObjectStatusesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataVerificationObjectStatusesRequest.Builder,
+                ListDataVerificationObjectStatusesRequest,
+                ListDataVerificationObjectStatusesResponse,
+                com.oracle.bmc.databasemigration.model.DataVerificationObjectStatusSummary>(
+                new java.util.function.Supplier<
+                        ListDataVerificationObjectStatusesRequest.Builder>() {
+                    @Override
+                    public ListDataVerificationObjectStatusesRequest.Builder get() {
+                        return ListDataVerificationObjectStatusesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectStatusesResponse, String>() {
+                    @Override
+                    public String apply(ListDataVerificationObjectStatusesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataVerificationObjectStatusesRequest.Builder>,
+                        ListDataVerificationObjectStatusesRequest>() {
+                    @Override
+                    public ListDataVerificationObjectStatusesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataVerificationObjectStatusesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectStatusesRequest,
+                        ListDataVerificationObjectStatusesResponse>() {
+                    @Override
+                    public ListDataVerificationObjectStatusesResponse apply(
+                            ListDataVerificationObjectStatusesRequest request) {
+                        return client.listDataVerificationObjectStatuses(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectStatusesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .DataVerificationObjectStatusSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .DataVerificationObjectStatusSummary>
+                            apply(ListDataVerificationObjectStatusesResponse response) {
+                        return response.getDataVerificationObjectStatusCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDataVerificationObjectTypeCounts operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDataVerificationObjectTypeCountsResponse>
+            listDataVerificationObjectTypeCountsResponseIterator(
+                    final ListDataVerificationObjectTypeCountsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataVerificationObjectTypeCountsRequest.Builder,
+                ListDataVerificationObjectTypeCountsRequest,
+                ListDataVerificationObjectTypeCountsResponse>(
+                new java.util.function.Supplier<
+                        ListDataVerificationObjectTypeCountsRequest.Builder>() {
+                    @Override
+                    public ListDataVerificationObjectTypeCountsRequest.Builder get() {
+                        return ListDataVerificationObjectTypeCountsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectTypeCountsResponse, String>() {
+                    @Override
+                    public String apply(ListDataVerificationObjectTypeCountsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataVerificationObjectTypeCountsRequest.Builder>,
+                        ListDataVerificationObjectTypeCountsRequest>() {
+                    @Override
+                    public ListDataVerificationObjectTypeCountsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataVerificationObjectTypeCountsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectTypeCountsRequest,
+                        ListDataVerificationObjectTypeCountsResponse>() {
+                    @Override
+                    public ListDataVerificationObjectTypeCountsResponse apply(
+                            ListDataVerificationObjectTypeCountsRequest request) {
+                        return client.listDataVerificationObjectTypeCounts(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.DataVerificationObjectTypeCountSummary} objects
+     * contained in responses from the listDataVerificationObjectTypeCounts operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.DataVerificationObjectTypeCountSummary} objects
+     *     contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.DataVerificationObjectTypeCountSummary>
+            listDataVerificationObjectTypeCountsRecordIterator(
+                    final ListDataVerificationObjectTypeCountsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataVerificationObjectTypeCountsRequest.Builder,
+                ListDataVerificationObjectTypeCountsRequest,
+                ListDataVerificationObjectTypeCountsResponse,
+                com.oracle.bmc.databasemigration.model.DataVerificationObjectTypeCountSummary>(
+                new java.util.function.Supplier<
+                        ListDataVerificationObjectTypeCountsRequest.Builder>() {
+                    @Override
+                    public ListDataVerificationObjectTypeCountsRequest.Builder get() {
+                        return ListDataVerificationObjectTypeCountsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectTypeCountsResponse, String>() {
+                    @Override
+                    public String apply(ListDataVerificationObjectTypeCountsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataVerificationObjectTypeCountsRequest.Builder>,
+                        ListDataVerificationObjectTypeCountsRequest>() {
+                    @Override
+                    public ListDataVerificationObjectTypeCountsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataVerificationObjectTypeCountsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectTypeCountsRequest,
+                        ListDataVerificationObjectTypeCountsResponse>() {
+                    @Override
+                    public ListDataVerificationObjectTypeCountsResponse apply(
+                            ListDataVerificationObjectTypeCountsRequest request) {
+                        return client.listDataVerificationObjectTypeCounts(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationObjectTypeCountsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .DataVerificationObjectTypeCountSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .DataVerificationObjectTypeCountSummary>
+                            apply(ListDataVerificationObjectTypeCountsResponse response) {
+                        return response.getDataVerificationObjectTypeCountCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDataVerificationTableRowCounts operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDataVerificationTableRowCountsResponse>
+            listDataVerificationTableRowCountsResponseIterator(
+                    final ListDataVerificationTableRowCountsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataVerificationTableRowCountsRequest.Builder,
+                ListDataVerificationTableRowCountsRequest,
+                ListDataVerificationTableRowCountsResponse>(
+                new java.util.function.Supplier<
+                        ListDataVerificationTableRowCountsRequest.Builder>() {
+                    @Override
+                    public ListDataVerificationTableRowCountsRequest.Builder get() {
+                        return ListDataVerificationTableRowCountsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationTableRowCountsResponse, String>() {
+                    @Override
+                    public String apply(ListDataVerificationTableRowCountsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataVerificationTableRowCountsRequest.Builder>,
+                        ListDataVerificationTableRowCountsRequest>() {
+                    @Override
+                    public ListDataVerificationTableRowCountsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataVerificationTableRowCountsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationTableRowCountsRequest,
+                        ListDataVerificationTableRowCountsResponse>() {
+                    @Override
+                    public ListDataVerificationTableRowCountsResponse apply(
+                            ListDataVerificationTableRowCountsRequest request) {
+                        return client.listDataVerificationTableRowCounts(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.DataVerificationTableRowCountSummary} objects
+     * contained in responses from the listDataVerificationTableRowCounts operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.DataVerificationTableRowCountSummary} objects
+     *     contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.DataVerificationTableRowCountSummary>
+            listDataVerificationTableRowCountsRecordIterator(
+                    final ListDataVerificationTableRowCountsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataVerificationTableRowCountsRequest.Builder,
+                ListDataVerificationTableRowCountsRequest,
+                ListDataVerificationTableRowCountsResponse,
+                com.oracle.bmc.databasemigration.model.DataVerificationTableRowCountSummary>(
+                new java.util.function.Supplier<
+                        ListDataVerificationTableRowCountsRequest.Builder>() {
+                    @Override
+                    public ListDataVerificationTableRowCountsRequest.Builder get() {
+                        return ListDataVerificationTableRowCountsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationTableRowCountsResponse, String>() {
+                    @Override
+                    public String apply(ListDataVerificationTableRowCountsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataVerificationTableRowCountsRequest.Builder>,
+                        ListDataVerificationTableRowCountsRequest>() {
+                    @Override
+                    public ListDataVerificationTableRowCountsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataVerificationTableRowCountsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationTableRowCountsRequest,
+                        ListDataVerificationTableRowCountsResponse>() {
+                    @Override
+                    public ListDataVerificationTableRowCountsResponse apply(
+                            ListDataVerificationTableRowCountsRequest request) {
+                        return client.listDataVerificationTableRowCounts(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataVerificationTableRowCountsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .DataVerificationTableRowCountSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .DataVerificationTableRowCountSummary>
+                            apply(ListDataVerificationTableRowCountsResponse response) {
+                        return response.getDataVerificationTableRowCountCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDatabaseConnectionType operation. This iterable will fetch more data from the server as
      * needed.
      *

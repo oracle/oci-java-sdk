@@ -7,9 +7,13 @@ package com.oracle.bmc.encryption.internal;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Optional;
 import javax.crypto.Cipher;
 
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
+import com.oracle.bmc.Region;
+import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.SessionTokenAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.*;
 
 public class DecryptionHandler extends CipherHandler {
@@ -50,24 +54,110 @@ public class DecryptionHandler extends CipherHandler {
     }
 
     /**
-     * If this key provider already has the KMSMasterKey that was requested, it will return it. If
-     * it does not have a representation of the KMSMasterKey locally, it will attempt to retrieve it
-     * from KMS.
+     * If this key provider already has the requested KmsMasterKey, it will return it after
+     * validating the encrypted blob metadata. If it does not have a representation of the
+     * KmsMasterKey locally, it will attempt to retrieve it from KMS only when the blob region is
+     * registered with the SDK or matches the provider's configured region.
      */
     private KmsMasterKey createDecryptionKmsMasterKey(EncryptionHeader encryptionHeader) {
-        KmsMasterKey kmsMasterKey = (KmsMasterKey) provider.getMasterKey();
+        if (encryptionHeader == null) {
+            throw new IllegalArgumentException("Encrypted blob header is missing.");
+        }
+
+        if (encryptionHeader.getEncryptedDataKeys() == null
+                || encryptionHeader.getEncryptedDataKeys().isEmpty()
+                || encryptionHeader.getEncryptionKey() == null) {
+            throw new IllegalArgumentException("Encrypted blob KMS key metadata is missing.");
+        }
+
         EncryptionKey encryptionKey = encryptionHeader.getEncryptionKey();
-        if (kmsMasterKey == null
-                || !kmsMasterKey.getVaultId().equals(encryptionKey.getVaultId())
-                || !kmsMasterKey.getKmsMasterKeyId().equals(encryptionKey.getMasterKeyId())
-                || !kmsMasterKey.getRegion().equals(encryptionKey.getRegion())) {
-            return new KmsMasterKey(
-                    (AuthenticationDetailsProvider) provider.getAuthenticationProvider(),
-                    encryptionKey.getRegion(),
-                    encryptionKey.getVaultId(),
-                    encryptionKey.getMasterKeyId());
+        validateRequiredMetadata(encryptionKey.getMasterKeyId(), "master key ID");
+        validateRequiredMetadata(encryptionKey.getVaultId(), "vault ID");
+        validateRequiredMetadata(encryptionKey.getRegion(), "region");
+
+        KmsMasterKey kmsMasterKey = (KmsMasterKey) provider.getMasterKey();
+        if (kmsMasterKey != null) {
+            if (!kmsMasterKey.getKmsMasterKeyId().equals(encryptionKey.getMasterKeyId())) {
+                throw new IllegalArgumentException(
+                        "Encrypted blob master key ID does not match the configured KMS master key.");
+            }
+            if (!kmsMasterKey.getVaultId().equals(encryptionKey.getVaultId())) {
+                throw new IllegalArgumentException(
+                        "Encrypted blob vault ID does not match the configured KMS master key.");
+            }
+            if (!regionsMatch(kmsMasterKey.getRegion(), encryptionKey.getRegion())) {
+                throw new IllegalArgumentException(
+                        "Encrypted blob region does not match the configured KMS master key.");
+            }
+            return kmsMasterKey;
+        }
+
+        Optional<Region> resolvedRegion =
+                Region.resolveRegionWithoutDefaultRealmFallback(encryptionKey.getRegion());
+        BasicAuthenticationDetailsProvider authenticationDetailsProvider = null;
+        if (!resolvedRegion.isPresent()) {
+            authenticationDetailsProvider =
+                    (BasicAuthenticationDetailsProvider) provider.getAuthenticationProvider();
+            resolvedRegion =
+                    getMatchingConfiguredRegion(
+                            authenticationDetailsProvider, encryptionKey.getRegion());
+        }
+
+        Region region =
+                resolvedRegion.orElseThrow(
+                        () ->
+                                new IllegalArgumentException(
+                                        "Encrypted blob region is not registered with the SDK."));
+        if (authenticationDetailsProvider == null) {
+            authenticationDetailsProvider =
+                    (BasicAuthenticationDetailsProvider) provider.getAuthenticationProvider();
+        }
+        return new KmsMasterKey(
+                authenticationDetailsProvider,
+                region.getRegionId(),
+                encryptionKey.getVaultId(),
+                encryptionKey.getMasterKeyId());
+    }
+
+    static Optional<Region> getMatchingConfiguredRegion(
+            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            String requestedRegion) {
+        Region configuredRegion;
+        if (authenticationDetailsProvider instanceof ConfigFileAuthenticationDetailsProvider) {
+            configuredRegion =
+                    ((ConfigFileAuthenticationDetailsProvider) authenticationDetailsProvider)
+                            .getRegion();
+        } else if (authenticationDetailsProvider
+                instanceof SessionTokenAuthenticationDetailsProvider) {
+            configuredRegion =
+                    ((SessionTokenAuthenticationDetailsProvider) authenticationDetailsProvider)
+                            .getRegion();
         } else {
-            return (KmsMasterKey) provider.getMasterKey();
+            return Optional.empty();
+        }
+
+        if (configuredRegion != null
+                && configuredRegion.getRegionId().equalsIgnoreCase(requestedRegion)) {
+            return Optional.of(configuredRegion);
+        }
+        return Optional.empty();
+    }
+
+    private static boolean regionsMatch(String configuredRegion, String blobRegion) {
+        if (configuredRegion.equalsIgnoreCase(blobRegion)) {
+            return true;
+        }
+
+        return Region.resolveRegisteredRegion(configuredRegion)
+                .flatMap(
+                        configured ->
+                                Region.resolveRegisteredRegion(blobRegion).map(configured::equals))
+                .orElse(false);
+    }
+
+    private static void validateRequiredMetadata(String value, String fieldName) {
+        if (value == null || value.isEmpty()) {
+            throw new IllegalArgumentException("Encrypted blob " + fieldName + " is missing.");
         }
     }
 }

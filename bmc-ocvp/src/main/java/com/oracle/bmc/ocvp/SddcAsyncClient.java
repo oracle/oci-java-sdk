@@ -255,6 +255,46 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateVmwareBinaryDownloadInfoResponse>
+            generateVmwareBinaryDownloadInfo(
+                    GenerateVmwareBinaryDownloadInfoRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateVmwareBinaryDownloadInfoRequest,
+                                    GenerateVmwareBinaryDownloadInfoResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateVmwareBinaryDownloadInfoDetails(),
+                "generateVmwareBinaryDownloadInfoDetails is required");
+
+        return clientCall(request, GenerateVmwareBinaryDownloadInfoResponse::builder)
+                .logger(LOG, "generateVmwareBinaryDownloadInfo")
+                .serviceDetails(
+                        "Sddc",
+                        "GenerateVmwareBinaryDownloadInfo",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/GenerateVmwareBinaryDownloadInfo")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateVmwareBinaryDownloadInfoRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("sddcs")
+                .appendPathParam(request.getSddcId())
+                .appendPathParam("actions")
+                .appendPathParam("generateVmwareBinaryDownloadInfo")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.VmwareBinaryDownloadInfo.class,
+                        GenerateVmwareBinaryDownloadInfoResponse.Builder::vmwareBinaryDownloadInfo)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateVmwareBinaryDownloadInfoResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSddcResponse> getSddc(
             GetSddcRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSddcRequest, GetSddcResponse> handler) {
@@ -498,6 +538,43 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
                 .handleResponseHeaderString("etag", RetrievePasswordResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrievePasswordResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveVmwareBinariesResponse> retrieveVmwareBinaries(
+            RetrieveVmwareBinariesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveVmwareBinariesRequest, RetrieveVmwareBinariesResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
+
+        return clientCall(request, RetrieveVmwareBinariesResponse::builder)
+                .logger(LOG, "retrieveVmwareBinaries")
+                .serviceDetails(
+                        "Sddc",
+                        "RetrieveVmwareBinaries",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RetrieveVmwareBinaries")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetrieveVmwareBinariesRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("sddcs")
+                .appendPathParam(request.getSddcId())
+                .appendPathParam("actions")
+                .appendPathParam("retrieveVmwareBinaries")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.VmwareBinaryCollection.class,
+                        RetrieveVmwareBinariesResponse.Builder::vmwareBinaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", RetrieveVmwareBinariesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", RetrieveVmwareBinariesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

@@ -448,6 +448,22 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns availability and report status information used by the Data Verification UI.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDataVerificationDetailResponse> getDataVerificationDetail(
+            GetDataVerificationDetailRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDataVerificationDetailRequest, GetDataVerificationDetailResponse>
+                    handler);
+
+    /**
      * Get a migration job.
      *
      * @param request The request object containing the details to send
@@ -681,6 +697,64 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             ListConnectionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListConnectionsRequest, ListConnectionsResponse>
                     handler);
+
+    /**
+     * Lists per-object status comparison results for a migration.
+     *
+     * <p>The `objectType` filter is a database-specific string and is validated by the backend.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataVerificationObjectStatusesResponse>
+            listDataVerificationObjectStatuses(
+                    ListDataVerificationObjectStatusesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationObjectStatusesRequest,
+                                    ListDataVerificationObjectStatusesResponse>
+                            handler);
+
+    /**
+     * Lists object type count comparison results for a migration.
+     *
+     * <p>The `objectType` filter is a database-specific string and is validated by the backend.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataVerificationObjectTypeCountsResponse>
+            listDataVerificationObjectTypeCounts(
+                    ListDataVerificationObjectTypeCountsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationObjectTypeCountsRequest,
+                                    ListDataVerificationObjectTypeCountsResponse>
+                            handler);
+
+    /**
+     * Lists table row count comparison results for a migration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataVerificationTableRowCountsResponse>
+            listDataVerificationTableRowCounts(
+                    ListDataVerificationTableRowCountsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationTableRowCountsRequest,
+                                    ListDataVerificationTableRowCountsResponse>
+                            handler);
 
     /**
      * List supported Database Types, Sub-types and Versions.
@@ -999,6 +1073,22 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             RetrieveSupportedPhasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RetrieveSupportedPhasesRequest, RetrieveSupportedPhasesResponse>
+                    handler);
+
+    /**
+     * Runs Data Verification for a migration and returns the updated Data Verification summary.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RunDataVerificationResponse> runDataVerification(
+            RunDataVerificationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RunDataVerificationRequest, RunDataVerificationResponse>
                     handler);
 
     /**

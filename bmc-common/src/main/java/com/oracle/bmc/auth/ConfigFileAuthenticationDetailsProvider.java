@@ -114,7 +114,7 @@ public class ConfigFileAuthenticationDetailsProvider
                         regionId,
                         e);
                 // Proceed by assuming the region id in the config file belongs to OC1 realm.
-                region = Region.register(regionId, Realm.OC1);
+                region = Region.registerFromConfigFileFallback(regionId, Realm.OC1);
             }
         } else {
             LOG.info(

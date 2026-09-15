@@ -137,6 +137,51 @@ public class PartnerIntegerationAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    @Deprecated
+    public java.util.concurrent.Future<ActivateSubscriptionDeprecatedResponse>
+            activateSubscriptionDeprecated(
+                    ActivateSubscriptionDeprecatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateSubscriptionDeprecatedRequest,
+                                    ActivateSubscriptionDeprecatedResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(
+                request.getActivateSubscriptionDetails(),
+                "activateSubscriptionDetails is required");
+
+        return clientCall(request, ActivateSubscriptionDeprecatedResponse::builder)
+                .logger(LOG, "activateSubscriptionDeprecated")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "ActivateSubscriptionDeprecated",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ActivateSubscriptionDeprecated")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateSubscriptionDeprecatedRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("partner")
+                .appendPathParam("subscriptions")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.self.model.ActivateSubscriptionResult.class,
+                        ActivateSubscriptionDeprecatedResponse.Builder::activateSubscriptionResult)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ActivateSubscriptionDeprecatedResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", ActivateSubscriptionDeprecatedResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPartnersResponse> listPartners(
             ListPartnersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListPartnersRequest, ListPartnersResponse>
@@ -208,6 +253,49 @@ public class PartnerIntegerationAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    @Deprecated
+    public java.util.concurrent.Future<ListingSubscriptionsDeprecatedResponse>
+            listingSubscriptionsDeprecated(
+                    ListingSubscriptionsDeprecatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListingSubscriptionsDeprecatedRequest,
+                                    ListingSubscriptionsDeprecatedResponse>
+                            handler) {
+        Objects.requireNonNull(request.getListingId(), "listingId is required");
+
+        return clientCall(request, ListingSubscriptionsDeprecatedResponse::builder)
+                .logger(LOG, "listingSubscriptionsDeprecated")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "ListingSubscriptionsDeprecated",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/ListingSubscriptionsCollection/ListingSubscriptionsDeprecated")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListingSubscriptionsDeprecatedRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("partner")
+                .appendPathParam("subscriptions")
+                .appendQueryParam("listingId", request.getListingId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.self.model.ListingSubscriptionsCollection.class,
+                        ListingSubscriptionsDeprecatedResponse.Builder
+                                ::listingSubscriptionsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListingSubscriptionsDeprecatedResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListingSubscriptionsDeprecatedResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ResolveSubscriptionResponse> resolveSubscription(
             ResolveSubscriptionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -240,6 +328,47 @@ public class PartnerIntegerationAsyncClient extends com.oracle.bmc.http.internal
                 .handleResponseHeaderString(
                         "opc-request-id", ResolveSubscriptionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", ResolveSubscriptionResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    @Deprecated
+    public java.util.concurrent.Future<ResolveSubscriptionDeprecatedResponse>
+            resolveSubscriptionDeprecated(
+                    ResolveSubscriptionDeprecatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ResolveSubscriptionDeprecatedRequest,
+                                    ResolveSubscriptionDeprecatedResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getResolveSubscriptionDetails(), "resolveSubscriptionDetails is required");
+
+        return clientCall(request, ResolveSubscriptionDeprecatedResponse::builder)
+                .logger(LOG, "resolveSubscriptionDeprecated")
+                .serviceDetails(
+                        "PartnerIntegeration",
+                        "ResolveSubscriptionDeprecated",
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ResolveSubscriptionDeprecated")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ResolveSubscriptionDeprecatedRequest::builder)
+                .basePath("/20260129")
+                .appendPathParam("partner")
+                .appendPathParam("subscriptions")
+                .appendPathParam("actions")
+                .appendPathParam("resolve")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.self.model.PartnerSubscription.class,
+                        ResolveSubscriptionDeprecatedResponse.Builder::partnerSubscription)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ResolveSubscriptionDeprecatedResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", ResolveSubscriptionDeprecatedResponse.Builder::etag)
                 .callAsync(handler);
     }
 

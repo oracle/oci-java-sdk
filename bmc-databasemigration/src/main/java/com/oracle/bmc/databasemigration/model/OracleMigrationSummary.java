@@ -5,7 +5,8 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Oracle Migration Summary <br>
+ * Oracle Migration Summary. Deprecated: The parent-level Oracle migration configuration properties
+ * on this model are deprecated. Use {@code migrationSettings} instead. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -171,6 +172,15 @@ public final class OracleMigrationSummary extends MigrationSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("migrationSettings")
+        private OracleMigrationSettingsSummary migrationSettings;
+
+        public Builder migrationSettings(OracleMigrationSettingsSummary migrationSettings) {
+            this.migrationSettings = migrationSettings;
+            this.__explicitlySet__.add("migrationSettings");
+            return this;
+        }
         /** The OCID of the resource being referenced. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
         private String sourceContainerDatabaseConnectionId;
@@ -225,6 +235,7 @@ public final class OracleMigrationSummary extends MigrationSummary {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.migrationSettings,
                             this.sourceContainerDatabaseConnectionId,
                             this.sourceStandbyDatabaseConnectionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -283,6 +294,9 @@ public final class OracleMigrationSummary extends MigrationSummary {
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("migrationSettings")) {
+                this.migrationSettings(model.getMigrationSettings());
+            }
             if (model.wasPropertyExplicitlySet("sourceContainerDatabaseConnectionId")) {
                 this.sourceContainerDatabaseConnectionId(
                         model.getSourceContainerDatabaseConnectionId());
@@ -322,6 +336,7 @@ public final class OracleMigrationSummary extends MigrationSummary {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            OracleMigrationSettingsSummary migrationSettings,
             String sourceContainerDatabaseConnectionId,
             String sourceStandbyDatabaseConnectionId) {
         super(
@@ -341,8 +356,16 @@ public final class OracleMigrationSummary extends MigrationSummary {
                 freeformTags,
                 definedTags,
                 systemTags);
+        this.migrationSettings = migrationSettings;
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
         this.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationSettings")
+    private final OracleMigrationSettingsSummary migrationSettings;
+
+    public OracleMigrationSettingsSummary getMigrationSettings() {
+        return migrationSettings;
     }
 
     /** The OCID of the resource being referenced. */
@@ -386,6 +409,7 @@ public final class OracleMigrationSummary extends MigrationSummary {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OracleMigrationSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", migrationSettings=").append(String.valueOf(this.migrationSettings));
         sb.append(", sourceContainerDatabaseConnectionId=")
                 .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
         sb.append(", sourceStandbyDatabaseConnectionId=")
@@ -404,7 +428,8 @@ public final class OracleMigrationSummary extends MigrationSummary {
         }
 
         OracleMigrationSummary other = (OracleMigrationSummary) o;
-        return java.util.Objects.equals(
+        return java.util.Objects.equals(this.migrationSettings, other.migrationSettings)
+                && java.util.Objects.equals(
                         this.sourceContainerDatabaseConnectionId,
                         other.sourceContainerDatabaseConnectionId)
                 && java.util.Objects.equals(
@@ -417,6 +442,9 @@ public final class OracleMigrationSummary extends MigrationSummary {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.migrationSettings == null ? 43 : this.migrationSettings.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceContainerDatabaseConnectionId == null

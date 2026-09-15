@@ -993,6 +993,40 @@ public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataVerificationDetailResponse> getDataVerificationDetail(
+            GetDataVerificationDetailRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDataVerificationDetailRequest, GetDataVerificationDetailResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+
+        return clientCall(request, GetDataVerificationDetailResponse::builder)
+                .logger(LOG, "getDataVerificationDetail")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "GetDataVerificationDetail",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationDetail/GetDataVerificationDetail")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataVerificationDetailRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("dataVerification")
+                .appendPathParam("detail")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.DataVerificationDetail.class,
+                        GetDataVerificationDetailResponse.Builder::dataVerificationDetail)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDataVerificationDetailResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetDataVerificationDetailResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobResponse> getJob(
             GetJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler) {
@@ -1536,6 +1570,160 @@ public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", ListConnectionsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListConnectionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataVerificationObjectStatusesResponse>
+            listDataVerificationObjectStatuses(
+                    ListDataVerificationObjectStatusesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationObjectStatusesRequest,
+                                    ListDataVerificationObjectStatusesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDataVerificationObjectStatusesResponse::builder)
+                .logger(LOG, "listDataVerificationObjectStatuses")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationObjectStatuses",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationObjectStatusCollection/ListDataVerificationObjectStatuses")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataVerificationObjectStatusesRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("dataVerification")
+                .appendPathParam("objectStatuses")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("owner", request.getOwner())
+                .appendQueryParam("objectType", request.getObjectType())
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("isMatch", request.getIsMatch())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model
+                                .DataVerificationObjectStatusCollection.class,
+                        ListDataVerificationObjectStatusesResponse.Builder
+                                ::dataVerificationObjectStatusCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDataVerificationObjectStatusesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDataVerificationObjectStatusesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataVerificationObjectTypeCountsResponse>
+            listDataVerificationObjectTypeCounts(
+                    ListDataVerificationObjectTypeCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationObjectTypeCountsRequest,
+                                    ListDataVerificationObjectTypeCountsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDataVerificationObjectTypeCountsResponse::builder)
+                .logger(LOG, "listDataVerificationObjectTypeCounts")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationObjectTypeCounts",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationObjectTypeCountCollection/ListDataVerificationObjectTypeCounts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataVerificationObjectTypeCountsRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("dataVerification")
+                .appendPathParam("objectTypeCounts")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("schemaName", request.getSchemaName())
+                .appendQueryParam("objectType", request.getObjectType())
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("minAbsDeltaPercent", request.getMinAbsDeltaPercent())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model
+                                .DataVerificationObjectTypeCountCollection.class,
+                        ListDataVerificationObjectTypeCountsResponse.Builder
+                                ::dataVerificationObjectTypeCountCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDataVerificationObjectTypeCountsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDataVerificationObjectTypeCountsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataVerificationTableRowCountsResponse>
+            listDataVerificationTableRowCounts(
+                    ListDataVerificationTableRowCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationTableRowCountsRequest,
+                                    ListDataVerificationTableRowCountsResponse>
+                            handler) {
+
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDataVerificationTableRowCountsResponse::builder)
+                .logger(LOG, "listDataVerificationTableRowCounts")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationTableRowCounts",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationTableRowCountCollection/ListDataVerificationTableRowCounts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataVerificationTableRowCountsRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("dataVerification")
+                .appendPathParam("tableRowCounts")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("owner", request.getOwner())
+                .appendQueryParam("tableName", request.getTableName())
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("minAbsDeltaPercent", request.getMinAbsDeltaPercent())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model
+                                .DataVerificationTableRowCountCollection.class,
+                        ListDataVerificationTableRowCountsResponse.Builder
+                                ::dataVerificationTableRowCountCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDataVerificationTableRowCountsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDataVerificationTableRowCountsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -2313,6 +2501,44 @@ public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.B
                         RetrieveSupportedPhasesResponse.Builder::migrationPhaseCollection)
                 .handleResponseHeaderString(
                         "opc-request-id", RetrieveSupportedPhasesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RunDataVerificationResponse> runDataVerification(
+            RunDataVerificationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RunDataVerificationRequest, RunDataVerificationResponse>
+                    handler) {
+
+        Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
+        Objects.requireNonNull(
+                request.getRunDataVerificationDetails(), "runDataVerificationDetails is required");
+
+        return clientCall(request, RunDataVerificationResponse::builder)
+                .logger(LOG, "runDataVerification")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "RunDataVerification",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/RunDataVerification")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RunDataVerificationRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrations")
+                .appendPathParam(request.getMigrationId())
+                .appendPathParam("actions")
+                .appendPathParam("runDataVerification")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.DataVerificationDetail.class,
+                        RunDataVerificationResponse.Builder::dataVerificationDetail)
+                .handleResponseHeaderString(
+                        "opc-request-id", RunDataVerificationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", RunDataVerificationResponse.Builder::etag)
                 .callAsync(handler);
     }
 
