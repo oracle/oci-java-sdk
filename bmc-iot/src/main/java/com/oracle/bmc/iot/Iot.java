@@ -62,6 +62,19 @@ public interface Iot extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Activates the IoT flow runtime identified by the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/ActivateIotFlowRuntimeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateIotFlowRuntime API.
+     */
+    ActivateIotFlowRuntimeResponse activateIotFlowRuntime(ActivateIotFlowRuntimeRequest request);
+
+    /**
      * Moves an IoT domain to a different compartment within the same tenancy. For information about moving resources between
      * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
@@ -104,6 +117,21 @@ public interface Iot extends AutoCloseable {
      */
     ChangeIotDomainGroupCompartmentResponse changeIotDomainGroupCompartment(
             ChangeIotDomainGroupCompartmentRequest request);
+
+    /**
+     * Moves an IoT flow runtime to a different compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/ChangeIotFlowRuntimeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIotFlowRuntimeCompartment API.
+     */
+    ChangeIotFlowRuntimeCompartmentResponse changeIotFlowRuntimeCompartment(
+            ChangeIotFlowRuntimeCompartmentRequest request);
 
     /**
      * Updates an IoT domain Data Access.
@@ -214,6 +242,33 @@ public interface Iot extends AutoCloseable {
     CreateIotDomainGroupResponse createIotDomainGroup(CreateIotDomainGroupRequest request);
 
     /**
+     * Creates an IoT flow runtime.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/CreateIotFlowRuntimeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIotFlowRuntime API.
+     */
+    CreateIotFlowRuntimeResponse createIotFlowRuntime(CreateIotFlowRuntimeRequest request);
+
+    /**
+     * Deactivates the IoT flow runtime identified by the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/DeactivateIotFlowRuntimeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateIotFlowRuntime API.
+     */
+    DeactivateIotFlowRuntimeResponse deactivateIotFlowRuntime(
+            DeactivateIotFlowRuntimeRequest request);
+
+    /**
      * Deletes the digital twin adapter identified by the specified OCID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -287,6 +342,18 @@ public interface Iot extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/DeleteIotDomainGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIotDomainGroup API.
      */
     DeleteIotDomainGroupResponse deleteIotDomainGroup(DeleteIotDomainGroupRequest request);
+
+    /**
+     * Deletes the IoT flow runtime identified by the specified OCID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/DeleteIotFlowRuntimeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIotFlowRuntime API.
+     */
+    DeleteIotFlowRuntimeResponse deleteIotFlowRuntime(DeleteIotFlowRuntimeRequest request);
 
     /**
      * Retrieves the digital twin adapter identified by the specified OCID.
@@ -387,6 +454,30 @@ public interface Iot extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/GetIotDomainGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIotDomainGroup API.
      */
     GetIotDomainGroupResponse getIotDomainGroup(GetIotDomainGroupRequest request);
+
+    /**
+     * Gets the IoT flow runtime identified by the specified OCID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/GetIotFlowRuntimeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIotFlowRuntime API.
+     */
+    GetIotFlowRuntimeResponse getIotFlowRuntime(GetIotFlowRuntimeRequest request);
+
+    /**
+     * Gets the opaque flows document for the IoT flow runtime identified by the specified OCID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/GetIotFlowRuntimeFlowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIotFlowRuntimeFlows API.
+     */
+    GetIotFlowRuntimeFlowsResponse getIotFlowRuntimeFlows(GetIotFlowRuntimeFlowsRequest request);
 
     /**
      * Retrieves the status of the work request with the given ID.
@@ -492,6 +583,19 @@ public interface Iot extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/ListIotDomainsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIotDomains API.
      */
     ListIotDomainsResponse listIotDomains(ListIotDomainsRequest request);
+
+    /**
+     * Lists IoT flow runtimes in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/ListIotFlowRuntimesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIotFlowRuntimes API.
+     */
+    ListIotFlowRuntimesResponse listIotFlowRuntimes(ListIotFlowRuntimesRequest request);
 
     /**
      * Lists errors associated with the specified work request.
@@ -606,6 +710,32 @@ public interface Iot extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/UpdateIotDomainGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIotDomainGroup API.
      */
     UpdateIotDomainGroupResponse updateIotDomainGroup(UpdateIotDomainGroupRequest request);
+
+    /**
+     * Updates the IoT flow runtime identified by the specified OCID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/UpdateIotFlowRuntimeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIotFlowRuntime API.
+     */
+    UpdateIotFlowRuntimeResponse updateIotFlowRuntime(UpdateIotFlowRuntimeRequest request);
+
+    /**
+     * Replaces the complete flows document for the IoT flow runtime identified by the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/iot/UpdateIotFlowRuntimeFlowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIotFlowRuntimeFlows API.
+     */
+    UpdateIotFlowRuntimeFlowsResponse updateIotFlowRuntimeFlows(
+            UpdateIotFlowRuntimeFlowsRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -105,6 +105,22 @@ public final class CreateReviewSupportDocumentAttachment
             this.__explicitlySet__.add("templateCode");
             return this;
         }
+        /**
+         * The specified attachment type is Internal or External.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private ListingRevisionAttachment.SourceType sourceType;
+
+        /**
+         * The specified attachment type is Internal or External.
+         * @param sourceType the value to set
+         * @return this builder
+         **/
+        public Builder sourceType(ListingRevisionAttachment.SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -118,7 +134,8 @@ public final class CreateReviewSupportDocumentAttachment
                             this.freeformTags,
                             this.definedTags,
                             this.documentName,
-                            this.templateCode);
+                            this.templateCode,
+                            this.sourceType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -148,6 +165,9 @@ public final class CreateReviewSupportDocumentAttachment
             if (model.wasPropertyExplicitlySet("templateCode")) {
                 this.templateCode(model.getTemplateCode());
             }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
             return this;
         }
     }
@@ -171,10 +191,12 @@ public final class CreateReviewSupportDocumentAttachment
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String documentName,
-            String templateCode) {
+            String templateCode,
+            ListingRevisionAttachment.SourceType sourceType) {
         super(listingRevisionId, displayName, description, freeformTags, definedTags);
         this.documentName = documentName;
         this.templateCode = templateCode;
+        this.sourceType = sourceType;
     }
 
     /**
@@ -205,6 +227,20 @@ public final class CreateReviewSupportDocumentAttachment
         return templateCode;
     }
 
+    /**
+     * The specified attachment type is Internal or External.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final ListingRevisionAttachment.SourceType sourceType;
+
+    /**
+     * The specified attachment type is Internal or External.
+     * @return the value
+     **/
+    public ListingRevisionAttachment.SourceType getSourceType() {
+        return sourceType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -221,6 +257,7 @@ public final class CreateReviewSupportDocumentAttachment
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", documentName=").append(String.valueOf(this.documentName));
         sb.append(", templateCode=").append(String.valueOf(this.templateCode));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -237,6 +274,7 @@ public final class CreateReviewSupportDocumentAttachment
         CreateReviewSupportDocumentAttachment other = (CreateReviewSupportDocumentAttachment) o;
         return java.util.Objects.equals(this.documentName, other.documentName)
                 && java.util.Objects.equals(this.templateCode, other.templateCode)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && super.equals(other);
     }
 
@@ -246,6 +284,7 @@ public final class CreateReviewSupportDocumentAttachment
         int result = super.hashCode();
         result = (result * PRIME) + (this.documentName == null ? 43 : this.documentName.hashCode());
         result = (result * PRIME) + (this.templateCode == null ? 43 : this.templateCode.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         return result;
     }
 }

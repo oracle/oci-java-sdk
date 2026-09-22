@@ -29,13 +29,13 @@ public final class StorageConfig extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The key of environment variable to store the database connection.
+         * The environment variable key for accessing the managed storage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentVariableKey")
         private String environmentVariableKey;
 
         /**
-         * The key of environment variable to store the database connection.
+         * The environment variable key for accessing the managed storage.
          * @param environmentVariableKey the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class StorageConfig extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The key of environment variable to store the database connection.
+     * The environment variable key for accessing the managed storage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentVariableKey")
     private final String environmentVariableKey;
 
     /**
-     * The key of environment variable to store the database connection.
+     * The environment variable key for accessing the managed storage.
      * @return the value
      **/
     public String getEnvironmentVariableKey() {

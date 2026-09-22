@@ -104,6 +104,17 @@ public class ListProtectionPoliciesRequest
         return owner;
     }
     /**
+     * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     */
+    private Boolean mustEnforceCloudLocality;
+
+    /**
+     * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+     */
+    public Boolean getMustEnforceCloudLocality() {
+        return mustEnforceCloudLocality;
+    }
+    /**
      * The maximum number of items to return. Specify a value greater than 4.
      */
     private Integer limit;
@@ -296,6 +307,21 @@ public class ListProtectionPoliciesRequest
         }
 
         /**
+         * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+         */
+        private Boolean mustEnforceCloudLocality = null;
+
+        /**
+         * A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
+         * @param mustEnforceCloudLocality the value to set
+         * @return this builder instance
+         */
+        public Builder mustEnforceCloudLocality(Boolean mustEnforceCloudLocality) {
+            this.mustEnforceCloudLocality = mustEnforceCloudLocality;
+            return this;
+        }
+
+        /**
          * The maximum number of items to return. Specify a value greater than 4.
          */
         private Integer limit = null;
@@ -417,6 +443,7 @@ public class ListProtectionPoliciesRequest
             displayName(o.getDisplayName());
             protectionPolicyId(o.getProtectionPolicyId());
             owner(o.getOwner());
+            mustEnforceCloudLocality(o.getMustEnforceCloudLocality());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -459,13 +486,14 @@ public class ListProtectionPoliciesRequest
             request.displayName = displayName;
             request.protectionPolicyId = protectionPolicyId;
             request.owner = owner;
+            request.mustEnforceCloudLocality = mustEnforceCloudLocality;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListProtectionPoliciesRequest(compartmentId, lifecycleState, displayName, protectionPolicyId, owner, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListProtectionPoliciesRequest(compartmentId, lifecycleState, displayName, protectionPolicyId, owner, mustEnforceCloudLocality, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -480,6 +508,7 @@ public class ListProtectionPoliciesRequest
                 .displayName(displayName)
                 .protectionPolicyId(protectionPolicyId)
                 .owner(owner)
+                .mustEnforceCloudLocality(mustEnforceCloudLocality)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -505,6 +534,8 @@ public class ListProtectionPoliciesRequest
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",protectionPolicyId=").append(String.valueOf(this.protectionPolicyId));
         sb.append(",owner=").append(String.valueOf(this.owner));
+        sb.append(",mustEnforceCloudLocality=")
+                .append(String.valueOf(this.mustEnforceCloudLocality));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -530,6 +561,8 @@ public class ListProtectionPoliciesRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.protectionPolicyId, other.protectionPolicyId)
                 && java.util.Objects.equals(this.owner, other.owner)
+                && java.util.Objects.equals(
+                        this.mustEnforceCloudLocality, other.mustEnforceCloudLocality)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -554,6 +587,11 @@ public class ListProtectionPoliciesRequest
                                 ? 43
                                 : this.protectionPolicyId.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mustEnforceCloudLocality == null
+                                ? 43
+                                : this.mustEnforceCloudLocality.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

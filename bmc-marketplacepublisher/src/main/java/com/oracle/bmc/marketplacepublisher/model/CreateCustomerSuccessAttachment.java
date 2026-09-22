@@ -120,6 +120,22 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
             this.__explicitlySet__.add("productCodes");
             return this;
         }
+        /**
+         * The specified attachment type is Internal or External.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private ListingRevisionAttachment.SourceType sourceType;
+
+        /**
+         * The specified attachment type is Internal or External.
+         * @param sourceType the value to set
+         * @return this builder
+         **/
+        public Builder sourceType(ListingRevisionAttachment.SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -134,7 +150,8 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
                             this.definedTags,
                             this.customerName,
                             this.url,
-                            this.productCodes);
+                            this.productCodes,
+                            this.sourceType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -167,6 +184,9 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
             if (model.wasPropertyExplicitlySet("productCodes")) {
                 this.productCodes(model.getProductCodes());
             }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
             return this;
         }
     }
@@ -191,11 +211,13 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String customerName,
             String url,
-            java.util.List<String> productCodes) {
+            java.util.List<String> productCodes,
+            ListingRevisionAttachment.SourceType sourceType) {
         super(listingRevisionId, displayName, description, freeformTags, definedTags);
         this.customerName = customerName;
         this.url = url;
         this.productCodes = productCodes;
+        this.sourceType = sourceType;
     }
 
     /**
@@ -240,6 +262,20 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
         return productCodes;
     }
 
+    /**
+     * The specified attachment type is Internal or External.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final ListingRevisionAttachment.SourceType sourceType;
+
+    /**
+     * The specified attachment type is Internal or External.
+     * @return the value
+     **/
+    public ListingRevisionAttachment.SourceType getSourceType() {
+        return sourceType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -257,6 +293,7 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
         sb.append(", customerName=").append(String.valueOf(this.customerName));
         sb.append(", url=").append(String.valueOf(this.url));
         sb.append(", productCodes=").append(String.valueOf(this.productCodes));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -274,6 +311,7 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
         return java.util.Objects.equals(this.customerName, other.customerName)
                 && java.util.Objects.equals(this.url, other.url)
                 && java.util.Objects.equals(this.productCodes, other.productCodes)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && super.equals(other);
     }
 
@@ -284,6 +322,7 @@ public final class CreateCustomerSuccessAttachment extends CreateListingRevision
         result = (result * PRIME) + (this.customerName == null ? 43 : this.customerName.hashCode());
         result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
         result = (result * PRIME) + (this.productCodes == null ? 43 : this.productCodes.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         return result;
     }
 }

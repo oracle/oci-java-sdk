@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDistributedDatabaseDetails.Builder.class
 )
@@ -22,13 +22,20 @@ package com.oracle.bmc.distributeddatabase.model;
 public final class UpdateDistributedDatabaseDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "notificationTopicIds",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateDistributedDatabaseDetails(
             String displayName,
+            java.util.List<String> notificationTopicIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.notificationTopicIds = notificationTopicIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -49,6 +56,26 @@ public final class UpdateDistributedDatabaseDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+         * Pass an empty list ({@code []}) to remove existing notification topics (set {@code notificationTopicIds} to empty).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicIds")
+        private java.util.List<String> notificationTopicIds;
+
+        /**
+         * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+         * Pass an empty list ({@code []}) to remove existing notification topics (set {@code notificationTopicIds} to empty).
+         *
+         * @param notificationTopicIds the value to set
+         * @return this builder
+         **/
+        public Builder notificationTopicIds(java.util.List<String> notificationTopicIds) {
+            this.notificationTopicIds = notificationTopicIds;
+            this.__explicitlySet__.add("notificationTopicIds");
             return this;
         }
         /**
@@ -99,7 +126,10 @@ public final class UpdateDistributedDatabaseDetails
         public UpdateDistributedDatabaseDetails build() {
             UpdateDistributedDatabaseDetails model =
                     new UpdateDistributedDatabaseDetails(
-                            this.displayName, this.freeformTags, this.definedTags);
+                            this.displayName,
+                            this.notificationTopicIds,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -110,6 +140,9 @@ public final class UpdateDistributedDatabaseDetails
         public Builder copy(UpdateDistributedDatabaseDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("notificationTopicIds")) {
+                this.notificationTopicIds(model.getNotificationTopicIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -144,6 +177,24 @@ public final class UpdateDistributedDatabaseDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+     * Pass an empty list ({@code []}) to remove existing notification topics (set {@code notificationTopicIds} to empty).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicIds")
+    private final java.util.List<String> notificationTopicIds;
+
+    /**
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+     * Pass an empty list ({@code []}) to remove existing notification topics (set {@code notificationTopicIds} to empty).
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getNotificationTopicIds() {
+        return notificationTopicIds;
     }
 
     /**
@@ -197,6 +248,7 @@ public final class UpdateDistributedDatabaseDetails
         sb.append("UpdateDistributedDatabaseDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", notificationTopicIds=").append(String.valueOf(this.notificationTopicIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -214,6 +266,7 @@ public final class UpdateDistributedDatabaseDetails
 
         UpdateDistributedDatabaseDetails other = (UpdateDistributedDatabaseDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.notificationTopicIds, other.notificationTopicIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -224,6 +277,11 @@ public final class UpdateDistributedDatabaseDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTopicIds == null
+                                ? 43
+                                : this.notificationTopicIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -33,13 +33,13 @@ public final class SubmitSubscriptionUsageRecordsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The usage records to submit. The array must contain at least one record and no more than 100 records.
+         * The usage records to submit. The array must contain at least one record and no more than 1,000 records.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionUsageRecords")
         private java.util.List<CreateSubscriptionUsageRecordDetails> subscriptionUsageRecords;
 
         /**
-         * The usage records to submit. The array must contain at least one record and no more than 100 records.
+         * The usage records to submit. The array must contain at least one record and no more than 1,000 records.
          * @param subscriptionUsageRecords the value to set
          * @return this builder
          **/
@@ -83,13 +83,13 @@ public final class SubmitSubscriptionUsageRecordsDetails
     }
 
     /**
-     * The usage records to submit. The array must contain at least one record and no more than 100 records.
+     * The usage records to submit. The array must contain at least one record and no more than 1,000 records.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionUsageRecords")
     private final java.util.List<CreateSubscriptionUsageRecordDetails> subscriptionUsageRecords;
 
     /**
-     * The usage records to submit. The array must contain at least one record and no more than 100 records.
+     * The usage records to submit. The array must contain at least one record and no more than 1,000 records.
      * @return the value
      **/
     public java.util.List<CreateSubscriptionUsageRecordDetails> getSubscriptionUsageRecords() {

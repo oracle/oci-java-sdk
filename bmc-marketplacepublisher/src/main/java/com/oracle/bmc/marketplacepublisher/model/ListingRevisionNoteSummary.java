@@ -28,6 +28,7 @@ public final class ListingRevisionNoteSummary
         "compartmentId",
         "noteSource",
         "noteDetails",
+        "adminEmail",
         "lifecycleState",
         "timeCreated",
         "timeUpdated",
@@ -41,6 +42,7 @@ public final class ListingRevisionNoteSummary
             String compartmentId,
             ListingRevisionNote.NoteSource noteSource,
             String noteDetails,
+            String adminEmail,
             ListingRevisionNote.LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -53,6 +55,7 @@ public final class ListingRevisionNoteSummary
         this.compartmentId = compartmentId;
         this.noteSource = noteSource;
         this.noteDetails = noteDetails;
+        this.adminEmail = adminEmail;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -141,6 +144,22 @@ public final class ListingRevisionNoteSummary
         public Builder noteDetails(String noteDetails) {
             this.noteDetails = noteDetails;
             this.__explicitlySet__.add("noteDetails");
+            return this;
+        }
+        /**
+         * Email address of the administrator who created the note, if available.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
+        private String adminEmail;
+
+        /**
+         * Email address of the administrator who created the note, if available.
+         * @param adminEmail the value to set
+         * @return this builder
+         **/
+        public Builder adminEmail(String adminEmail) {
+            this.adminEmail = adminEmail;
+            this.__explicitlySet__.add("adminEmail");
             return this;
         }
         /**
@@ -280,6 +299,7 @@ public final class ListingRevisionNoteSummary
                             this.compartmentId,
                             this.noteSource,
                             this.noteDetails,
+                            this.adminEmail,
                             this.lifecycleState,
                             this.timeCreated,
                             this.timeUpdated,
@@ -308,6 +328,9 @@ public final class ListingRevisionNoteSummary
             }
             if (model.wasPropertyExplicitlySet("noteDetails")) {
                 this.noteDetails(model.getNoteDetails());
+            }
+            if (model.wasPropertyExplicitlySet("adminEmail")) {
+                this.adminEmail(model.getAdminEmail());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -410,6 +433,20 @@ public final class ListingRevisionNoteSummary
      **/
     public String getNoteDetails() {
         return noteDetails;
+    }
+
+    /**
+     * Email address of the administrator who created the note, if available.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
+    private final String adminEmail;
+
+    /**
+     * Email address of the administrator who created the note, if available.
+     * @return the value
+     **/
+    public String getAdminEmail() {
+        return adminEmail;
     }
 
     /**
@@ -543,6 +580,7 @@ public final class ListingRevisionNoteSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", noteSource=").append(String.valueOf(this.noteSource));
         sb.append(", noteDetails=").append(String.valueOf(this.noteDetails));
+        sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -568,6 +606,7 @@ public final class ListingRevisionNoteSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.noteSource, other.noteSource)
                 && java.util.Objects.equals(this.noteDetails, other.noteDetails)
+                && java.util.Objects.equals(this.adminEmail, other.adminEmail)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -590,6 +629,7 @@ public final class ListingRevisionNoteSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.noteSource == null ? 43 : this.noteSource.hashCode());
         result = (result * PRIME) + (this.noteDetails == null ? 43 : this.noteDetails.hashCode());
+        result = (result * PRIME) + (this.adminEmail == null ? 43 : this.adminEmail.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

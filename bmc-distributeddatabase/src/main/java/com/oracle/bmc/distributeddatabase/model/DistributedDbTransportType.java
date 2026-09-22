@@ -5,9 +5,9 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * The redo transport type to use for this Data Guard association.
+ * The transport type to use for this Data Guard association.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum DistributedDbTransportType {
     Sync("SYNC"),
     Async("ASYNC"),

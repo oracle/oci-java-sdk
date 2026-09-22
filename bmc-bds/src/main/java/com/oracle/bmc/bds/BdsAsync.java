@@ -60,6 +60,24 @@ public interface BdsAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Activates the BDS capacity reservation configuration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateBdsCapacityReservationConfigurationResponse>
+            activateBdsCapacityReservationConfiguration(
+                    ActivateBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateBdsCapacityReservationConfigurationRequest,
+                                    ActivateBdsCapacityReservationConfigurationResponse>
+                            handler);
+
+    /**
      * Activate specified metastore configuration.
      *
      *
@@ -273,6 +291,24 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a BDS capacity reservation into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeBdsCapacityReservationCompartmentResponse>
+            changeBdsCapacityReservationCompartment(
+                    ChangeBdsCapacityReservationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeBdsCapacityReservationCompartmentRequest,
+                                    ChangeBdsCapacityReservationCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a Big Data Service cluster into a different compartment.
      *
      *
@@ -337,6 +373,43 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateBdsCapacityReportRequest, CreateBdsCapacityReportResponse>
                     handler);
+
+    /**
+     * Creates a reusable BDS capacity reservation resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBdsCapacityReservationResponse> createBdsCapacityReservation(
+            CreateBdsCapacityReservationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateBdsCapacityReservationRequest,
+                            CreateBdsCapacityReservationResponse>
+                    handler);
+
+    /**
+     * Creates a configuration between the specified BDS cluster and a BDS capacity reservation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBdsCapacityReservationConfigurationResponse>
+            createBdsCapacityReservationConfiguration(
+                    CreateBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateBdsCapacityReservationConfigurationRequest,
+                                    CreateBdsCapacityReservationConfigurationResponse>
+                            handler);
 
     /**
      * Create a BDS certificate configuration for the cluster.
@@ -467,6 +540,24 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deactivates the BDS capacity reservation configuration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateBdsCapacityReservationConfigurationResponse>
+            deactivateBdsCapacityReservationConfiguration(
+                    DeactivateBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeactivateBdsCapacityReservationConfigurationRequest,
+                                    DeactivateBdsCapacityReservationConfigurationResponse>
+                            handler);
+
+    /**
      * Deactivate the IAM user sync configuration.
      *
      * @param request The request object containing the details to send
@@ -514,6 +605,41 @@ public interface BdsAsync extends AutoCloseable {
             DeleteBdsApiKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteBdsApiKeyRequest, DeleteBdsApiKeyResponse>
                     handler);
+
+    /**
+     * Deletes the BDS capacity reservation identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBdsCapacityReservationResponse> deleteBdsCapacityReservation(
+            DeleteBdsCapacityReservationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBdsCapacityReservationRequest,
+                            DeleteBdsCapacityReservationResponse>
+                    handler);
+
+    /**
+     * Deletes the BDS capacity reservation configuration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBdsCapacityReservationConfigurationResponse>
+            deleteBdsCapacityReservationConfiguration(
+                    DeleteBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteBdsCapacityReservationConfigurationRequest,
+                                    DeleteBdsCapacityReservationConfigurationResponse>
+                            handler);
 
     /**
      * Delete the BDS certificate configuration for the given ID.
@@ -734,6 +860,40 @@ public interface BdsAsync extends AutoCloseable {
             GetBdsApiKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetBdsApiKeyRequest, GetBdsApiKeyResponse>
                     handler);
+
+    /**
+     * Returns information about the BDS capacity reservation identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBdsCapacityReservationResponse> getBdsCapacityReservation(
+            GetBdsCapacityReservationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+                    handler);
+
+    /**
+     * Returns information about the BDS capacity reservation configuration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBdsCapacityReservationConfigurationResponse>
+            getBdsCapacityReservationConfiguration(
+                    GetBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetBdsCapacityReservationConfigurationRequest,
+                                    GetBdsCapacityReservationConfigurationResponse>
+                            handler);
 
     /**
      * Returns details of the BdsCertificateConfiguration identified by the given ID.
@@ -1001,6 +1161,61 @@ public interface BdsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListBdsApiKeysResponse> listBdsApiKeys(
             ListBdsApiKeysRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBdsApiKeysRequest, ListBdsApiKeysResponse>
+                    handler);
+
+    /**
+     * Returns a list of BDS capacity reservation configurations associated with the specified BDS capacity reservation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBdsCapacityReservationAssociatedConfigurationsResponse>
+            listBdsCapacityReservationAssociatedConfigurations(
+                    ListBdsCapacityReservationAssociatedConfigurationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                                    ListBdsCapacityReservationAssociatedConfigurationsResponse>
+                            handler);
+
+    /**
+     * Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBdsCapacityReservationConfigurationsResponse>
+            listBdsCapacityReservationConfigurations(
+                    ListBdsCapacityReservationConfigurationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationConfigurationsRequest,
+                                    ListBdsCapacityReservationConfigurationsResponse>
+                            handler);
+
+    /**
+     * Returns a list of BDS capacity reservations in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBdsCapacityReservationsResponse> listBdsCapacityReservations(
+            ListBdsCapacityReservationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBdsCapacityReservationsRequest, ListBdsCapacityReservationsResponse>
                     handler);
 
     /**
@@ -1598,6 +1813,41 @@ public interface BdsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateAutoScalingConfigurationRequest,
                                     UpdateAutoScalingConfigurationResponse>
+                            handler);
+
+    /**
+     * Updates the BDS capacity reservation identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBdsCapacityReservationResponse> updateBdsCapacityReservation(
+            UpdateBdsCapacityReservationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateBdsCapacityReservationRequest,
+                            UpdateBdsCapacityReservationResponse>
+                    handler);
+
+    /**
+     * Updates the BDS capacity reservation configuration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBdsCapacityReservationConfigurationResponse>
+            updateBdsCapacityReservationConfiguration(
+                    UpdateBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateBdsCapacityReservationConfigurationRequest,
+                                    UpdateBdsCapacityReservationConfigurationResponse>
                             handler);
 
     /**

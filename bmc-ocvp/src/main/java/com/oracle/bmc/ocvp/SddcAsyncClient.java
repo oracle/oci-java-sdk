@@ -712,6 +712,65 @@ public class SddcAsyncClient implements SddcAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateVmwareBinaryDownloadInfoResponse>
+            generateVmwareBinaryDownloadInfo(
+                    GenerateVmwareBinaryDownloadInfoRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateVmwareBinaryDownloadInfoRequest,
+                                    GenerateVmwareBinaryDownloadInfoResponse>
+                            handler) {
+        LOG.trace("Called async generateVmwareBinaryDownloadInfo");
+        final GenerateVmwareBinaryDownloadInfoRequest interceptedRequest =
+                GenerateVmwareBinaryDownloadInfoConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateVmwareBinaryDownloadInfoConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "GenerateVmwareBinaryDownloadInfo",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/GenerateVmwareBinaryDownloadInfo");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateVmwareBinaryDownloadInfoResponse>
+                transformer =
+                        GenerateVmwareBinaryDownloadInfoConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateVmwareBinaryDownloadInfoRequest,
+                        GenerateVmwareBinaryDownloadInfoResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateVmwareBinaryDownloadInfoRequest,
+                                GenerateVmwareBinaryDownloadInfoResponse>,
+                        java.util.concurrent.Future<GenerateVmwareBinaryDownloadInfoResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateVmwareBinaryDownloadInfoDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateVmwareBinaryDownloadInfoRequest,
+                    GenerateVmwareBinaryDownloadInfoResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSddcResponse> getSddc(
             GetSddcRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSddcRequest, GetSddcResponse> handler) {
@@ -1027,6 +1086,54 @@ public class SddcAsyncClient implements SddcAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RetrievePasswordRequest, RetrievePasswordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveVmwareBinariesResponse> retrieveVmwareBinaries(
+            RetrieveVmwareBinariesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetrieveVmwareBinariesRequest, RetrieveVmwareBinariesResponse>
+                    handler) {
+        LOG.trace("Called async retrieveVmwareBinaries");
+        final RetrieveVmwareBinariesRequest interceptedRequest =
+                RetrieveVmwareBinariesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrieveVmwareBinariesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "RetrieveVmwareBinaries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RetrieveVmwareBinaries");
+        final java.util.function.Function<javax.ws.rs.core.Response, RetrieveVmwareBinariesResponse>
+                transformer =
+                        RetrieveVmwareBinariesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RetrieveVmwareBinariesRequest, RetrieveVmwareBinariesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetrieveVmwareBinariesRequest, RetrieveVmwareBinariesResponse>,
+                        java.util.concurrent.Future<RetrieveVmwareBinariesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetrieveVmwareBinariesRequest, RetrieveVmwareBinariesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

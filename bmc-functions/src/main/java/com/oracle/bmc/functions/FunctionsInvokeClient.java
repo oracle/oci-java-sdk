@@ -11,7 +11,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class FunctionsInvokeClient implements FunctionsInvoke {
     /**
      * Service instance for FunctionsInvoke.
@@ -512,7 +512,7 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
                             "FunctionsInvoke",
                             "InvokeFunction",
                             ib.getRequestUri().toString(),
-                            "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction");
+                            "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/InvokeFunction");
             java.util.function.Function<javax.ws.rs.core.Response, InvokeFunctionResponse>
                     transformer =
                             InvokeFunctionConverter.fromResponse(

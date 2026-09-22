@@ -35,7 +35,6 @@ public class ListCustomerInstanceReportRecordsConverter {
                     request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getDateRange(), "dateRange is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20241201").path("customerInstanceReportRecords");
@@ -45,12 +44,6 @@ public class ListCustomerInstanceReportRecordsConverter {
                         "compartmentId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
-
-        target =
-                target.queryParam(
-                        "dateRange",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getDateRange().getValue()));
 
         if (request.getLimit() != null) {
             target =
@@ -90,6 +83,102 @@ public class ListCustomerInstanceReportRecordsConverter {
                             "name",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getName()));
+        }
+
+        if (request.getListingId() != null) {
+            target =
+                    target.queryParam(
+                            "listingId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getListingId()));
+        }
+
+        if (request.getStatus() != null) {
+            target =
+                    target.queryParam(
+                            "status",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getStatus().getValue()));
+        }
+
+        if (request.getShape() != null) {
+            target =
+                    target.queryParam(
+                            "shape",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getShape()));
+        }
+
+        if (request.getRegion() != null) {
+            target =
+                    target.queryParam(
+                            "region",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRegion()));
+        }
+
+        if (request.getRealm() != null) {
+            target =
+                    target.queryParam(
+                            "realm",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRealm()));
+        }
+
+        if (request.getTenantAdminDomain() != null) {
+            target =
+                    target.queryParam(
+                            "tenantAdminDomain",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTenantAdminDomain()));
+        }
+
+        if (request.getPackageVersion() != null) {
+            target =
+                    target.queryParam(
+                            "packageVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPackageVersion()));
+        }
+
+        if (request.getInstanceOcid() != null) {
+            target =
+                    target.queryParam(
+                            "instanceOcid",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getInstanceOcid()));
+        }
+
+        if (request.getTimeInstanceCreationFromDate() != null) {
+            target =
+                    target.queryParam(
+                            "timeInstanceCreationFromDate",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeInstanceCreationFromDate()));
+        }
+
+        if (request.getTimeInstanceCreationToDate() != null) {
+            target =
+                    target.queryParam(
+                            "timeInstanceCreationToDate",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeInstanceCreationToDate()));
+        }
+
+        if (request.getTimeInstanceTerminationFromDate() != null) {
+            target =
+                    target.queryParam(
+                            "timeInstanceTerminationFromDate",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeInstanceTerminationFromDate()));
+        }
+
+        if (request.getTimeInstanceTerminationToDate() != null) {
+            target =
+                    target.queryParam(
+                            "timeInstanceTerminationToDate",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeInstanceTerminationToDate()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

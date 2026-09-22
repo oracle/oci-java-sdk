@@ -60,6 +60,24 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
             this.__explicitlySet__.add("blockStorageSizeInGBs");
             return this;
         }
+        /**
+         * This specifies the list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+        private java.util.List<String> capacityReservationIds;
+
+        /**
+         * This specifies the list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.
+         *
+         * @param capacityReservationIds the value to set
+         * @return this builder
+         **/
+        public Builder capacityReservationIds(java.util.List<String> capacityReservationIds) {
+            this.capacityReservationIds = capacityReservationIds;
+            this.__explicitlySet__.add("capacityReservationIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("jobShapeConfigDetails")
         private JobShapeConfigDetails jobShapeConfigDetails;
@@ -76,7 +94,10 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
         public MultiNodeJobInfrastructureConfigurationDetails build() {
             MultiNodeJobInfrastructureConfigurationDetails model =
                     new MultiNodeJobInfrastructureConfigurationDetails(
-                            this.shapeName, this.blockStorageSizeInGBs, this.jobShapeConfigDetails);
+                            this.shapeName,
+                            this.blockStorageSizeInGBs,
+                            this.capacityReservationIds,
+                            this.jobShapeConfigDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -90,6 +111,9 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("blockStorageSizeInGBs")) {
                 this.blockStorageSizeInGBs(model.getBlockStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationIds")) {
+                this.capacityReservationIds(model.getCapacityReservationIds());
             }
             if (model.wasPropertyExplicitlySet("jobShapeConfigDetails")) {
                 this.jobShapeConfigDetails(model.getJobShapeConfigDetails());
@@ -113,10 +137,12 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
     public MultiNodeJobInfrastructureConfigurationDetails(
             String shapeName,
             Integer blockStorageSizeInGBs,
+            java.util.List<String> capacityReservationIds,
             JobShapeConfigDetails jobShapeConfigDetails) {
         super();
         this.shapeName = shapeName;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
+        this.capacityReservationIds = capacityReservationIds;
         this.jobShapeConfigDetails = jobShapeConfigDetails;
     }
 
@@ -148,6 +174,22 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
         return blockStorageSizeInGBs;
     }
 
+    /**
+     * This specifies the list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+    private final java.util.List<String> capacityReservationIds;
+
+    /**
+     * This specifies the list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching jobs.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getCapacityReservationIds() {
+        return capacityReservationIds;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jobShapeConfigDetails")
     private final JobShapeConfigDetails jobShapeConfigDetails;
 
@@ -171,6 +213,7 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
+        sb.append(", capacityReservationIds=").append(String.valueOf(this.capacityReservationIds));
         sb.append(", jobShapeConfigDetails=").append(String.valueOf(this.jobShapeConfigDetails));
         sb.append(")");
         return sb.toString();
@@ -189,6 +232,8 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
                 (MultiNodeJobInfrastructureConfigurationDetails) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
+                && java.util.Objects.equals(
+                        this.capacityReservationIds, other.capacityReservationIds)
                 && java.util.Objects.equals(this.jobShapeConfigDetails, other.jobShapeConfigDetails)
                 && super.equals(other);
     }
@@ -203,6 +248,11 @@ public final class MultiNodeJobInfrastructureConfigurationDetails
                         + (this.blockStorageSizeInGBs == null
                                 ? 43
                                 : this.blockStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationIds == null
+                                ? 43
+                                : this.capacityReservationIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobShapeConfigDetails == null

@@ -14,6 +14,10 @@ public enum OperationType {
     DeleteOffer("DELETE_OFFER"),
     MoveOffer("MOVE_OFFER"),
     DeleteOfferAttachment("DELETE_OFFER_ATTACHMENT"),
+    UpdateOfferQuote("UPDATE_OFFER_QUOTE"),
+    CreateOfferQuote("CREATE_OFFER_QUOTE"),
+    CreateOfferQuoteAttachment("CREATE_OFFER_QUOTE_ATTACHMENT"),
+    CreateCustomerInstanceReportExport("CREATE_CUSTOMER_INSTANCE_REPORT_EXPORT"),
     PublishListingRevisionPackage("PUBLISH_LISTING_REVISION_PACKAGE"),
     UnpublishListingRevisionPackage("UNPUBLISH_LISTING_REVISION_PACKAGE"),
     PublishListingRevision("PUBLISH_LISTING_REVISION"),
@@ -30,6 +34,8 @@ public enum OperationType {
     ChangeTermCompartment("CHANGE_TERM_COMPARTMENT"),
     DeleteArtifact("DELETE_ARTIFACT"),
     UpdateArtifact("UPDATE_ARTIFACT"),
+    RealmBuild("REALM_BUILD"),
+    UpdateListingRevisionMetadata("UPDATE_LISTING_REVISION_METADATA"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

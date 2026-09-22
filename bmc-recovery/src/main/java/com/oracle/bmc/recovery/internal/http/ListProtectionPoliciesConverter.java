@@ -29,16 +29,17 @@ public class ListProtectionPoliciesConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.recovery.requests.ListProtectionPoliciesRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20210216").path("protectionPolicies");
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
 
         if (request.getLifecycleState() != null) {
             target =
@@ -70,6 +71,14 @@ public class ListProtectionPoliciesConverter {
                             "owner",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getOwner().getValue()));
+        }
+
+        if (request.getMustEnforceCloudLocality() != null) {
+            target =
+                    target.queryParam(
+                            "mustEnforceCloudLocality",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getMustEnforceCloudLocality()));
         }
 
         if (request.getLimit() != null) {

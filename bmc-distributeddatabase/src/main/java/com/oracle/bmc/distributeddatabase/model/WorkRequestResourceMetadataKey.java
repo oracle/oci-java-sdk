@@ -7,7 +7,7 @@ package com.oracle.bmc.distributeddatabase.model;
 /**
  * Possible Metadata keys for workRequest resource metadata
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum WorkRequestResourceMetadataKey {
     IsDryRun("IS_DRY_RUN"),
 

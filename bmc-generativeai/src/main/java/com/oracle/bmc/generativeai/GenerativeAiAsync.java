@@ -280,6 +280,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a routing profile into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRoutingProfileCompartmentResponse>
+            changeRoutingProfileCompartment(
+                    ChangeRoutingProfileCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRoutingProfileCompartmentRequest,
+                                    ChangeRoutingProfileCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a SemanticStore into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -484,6 +502,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateModelResponse> createModel(
             CreateModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse> handler);
+
+    /**
+     * Creates a routing profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRoutingProfileResponse> createRoutingProfile(
+            CreateRoutingProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRoutingProfileRequest, CreateRoutingProfileResponse>
+                    handler);
 
     /**
      * Creates a SemanticStore.
@@ -747,6 +781,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
 
     /**
+     * Deletes a routing profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRoutingProfileResponse> deleteRoutingProfile(
+            DeleteRoutingProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRoutingProfileRequest, DeleteRoutingProfileResponse>
+                    handler);
+
+    /**
      * Deletes a semanticStore.
      *
      * @param request The request object containing the details to send
@@ -949,6 +999,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<GetModelResponse> getModel(
             GetModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handler);
+
+    /**
+     * Gets information about a routing profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRoutingProfileResponse> getRoutingProfile(
+            GetRoutingProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRoutingProfileRequest, GetRoutingProfileResponse>
+                    handler);
 
     /**
      * Gets information about a semanticStore.
@@ -1194,6 +1260,24 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a list of models along with their capabilities, supported features, and deployment availability.
+     * Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListModelDiscoveryResponse> listModelDiscovery(
+            ListModelDiscoveryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListModelDiscoveryRequest, ListModelDiscoveryResponse>
+                    handler);
+
+    /**
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      *
      * @param request The request object containing the details to send
@@ -1206,6 +1290,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<ListModelsResponse> listModels(
             ListModelsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse> handler);
+
+    /**
+     * Lists the routing profiles of a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRoutingProfilesResponse> listRoutingProfiles(
+            ListRoutingProfilesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRoutingProfilesRequest, ListRoutingProfilesResponse>
+                    handler);
 
     /**
      * Lists the SemanticStores given specific filter.
@@ -1527,6 +1627,22 @@ public interface GenerativeAiAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateModelResponse> updateModel(
             UpdateModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse> handler);
+
+    /**
+     * Updates the properties of a routing profile.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRoutingProfileResponse> updateRoutingProfile(
+            UpdateRoutingProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRoutingProfileRequest, UpdateRoutingProfileResponse>
+                    handler);
 
     /**
      * Updates the properties of a SemanticStore.

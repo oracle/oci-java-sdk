@@ -7,17 +7,17 @@ package com.oracle.bmc.distributeddatabase.model;
 /**
  * Possible operation types.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum OperationType {
     CreateDistributedDb("CREATE_DISTRIBUTED_DB"),
     PatchDistributedDbInsertShards("PATCH_DISTRIBUTED_DB_INSERT_SHARDS"),
     PatchDistributedDbRemoveShards("PATCH_DISTRIBUTED_DB_REMOVE_SHARDS"),
     PatchDistributedDbMergeCatalogShards("PATCH_DISTRIBUTED_DB_MERGE_CATALOG_SHARDS"),
+    PatchDistributedDbNsgids("PATCH_DISTRIBUTED_DB_NSGIDS"),
     DeleteDistributedDb("DELETE_DISTRIBUTED_DB"),
     ChangeDistributedDbCompartment("CHANGE_DISTRIBUTED_DB_COMPARTMENT"),
     ConfigureDistributedDbGsms("CONFIGURE_DISTRIBUTED_DB_GSMS"),
     ConfigureDistributedDbSharding("CONFIGURE_DISTRIBUTED_DB_SHARDING"),
-    GenerateDistributedDbGsmCertSigningReq("GENERATE_DISTRIBUTED_DB_GSM_CERT_SIGNING_REQ"),
     RotateDistributedDbPasswords("ROTATE_DISTRIBUTED_DB_PASSWORDS"),
     StartDistributedDb("START_DISTRIBUTED_DB"),
     StopDistributedDb("STOP_DISTRIBUTED_DB"),
@@ -25,8 +25,6 @@ public enum OperationType {
     StartDistributedDbCatalog("START_DISTRIBUTED_DB_CATALOG"),
     StopDistributedDbShard("STOP_DISTRIBUTED_DB_SHARD"),
     StopDistributedDbCatalog("STOP_DISTRIBUTED_DB_CATALOG"),
-    UploadDistributedDbSignedCertAndGenerateWallet(
-            "UPLOAD_DISTRIBUTED_DB_SIGNED_CERT_AND_GENERATE_WALLET"),
     CreateDistributedDbShard("CREATE_DISTRIBUTED_DB_SHARD"),
     CreateDistributedDbCatalog("CREATE_DISTRIBUTED_DB_CATALOG"),
     CreateDistributedDbGsm("CREATE_DISTRIBUTED_DB_GSM"),
@@ -35,6 +33,7 @@ public enum OperationType {
     ExecuteValidateNetworkTests("EXECUTE_VALIDATE_NETWORK_TESTS"),
     CreatePrivateEndpoint("CREATE_PRIVATE_ENDPOINT"),
     DeletePrivateEndpoint("DELETE_PRIVATE_ENDPOINT"),
+    PatchPrivateEndpoint("PATCH_PRIVATE_ENDPOINT"),
     ChangePrivateEndpointCompartment("CHANGE_PRIVATE_ENDPOINT_COMPARTMENT"),
     ReinstateProxyInstance("REINSTATE_PROXY_INSTANCE"),
     DeleteDistributedDbShard("DELETE_DISTRIBUTED_DB_SHARD"),
@@ -42,8 +41,10 @@ public enum OperationType {
     DeleteDistributedDbGsm("DELETE_DISTRIBUTED_DB_GSM"),
     AddGdscontrolNode("ADD_GDSCONTROL_NODE"),
     ChangeDistributedDbBackupConfig("CHANGE_DISTRIBUTED_DB_BACKUP_CONFIG"),
-    AddDistributedDbDg("ADD_DISTRIBUTED_DB_DG"),
-    RemoveDistributedDbDg("REMOVE_DISTRIBUTED_DB_DG"),
+    AddDistributedDbDgExadb("ADD_DISTRIBUTED_DB_DG_EXADB"),
+    AddDistributedDbDgAdb("ADD_DISTRIBUTED_DB_DG_ADB"),
+    RemoveDistributedDbDgAdb("REMOVE_DISTRIBUTED_DB_DG_ADB"),
+    RemoveDistributedDbDgExadb("REMOVE_DISTRIBUTED_DB_DG_EXADB"),
     ConfigureDistributedDbGsmsWallet("CONFIGURE_DISTRIBUTED_DB_GSMS_WALLET"),
     ValidateCaBundle("VALIDATE_CA_BUNDLE"),
     RecreateFailedResource("RECREATE_FAILED_RESOURCE"),

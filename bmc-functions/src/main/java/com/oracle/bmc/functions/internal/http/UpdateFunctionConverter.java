@@ -10,7 +10,7 @@ import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class UpdateFunctionConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -34,7 +34,7 @@ public class UpdateFunctionConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20181201")
+                        .path("/20260325")
                         .path("functions")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
@@ -83,23 +83,18 @@ public class UpdateFunctionConverter {
                                         "Transform function invoked for com.oracle.bmc.functions.responses.UpdateFunctionResponse");
                                 final java.util.function.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<
-                                                        com.oracle.bmc.functions.model.Function>>
+                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
                                         responseFn;
                                 if (serviceDetails.isPresent()) {
                                     responseFn =
                                             RESPONSE_CONVERSION_FACTORY.create(
-                                                    com.oracle.bmc.functions.model.Function.class,
                                                     serviceDetails.get());
                                 } else {
-                                    responseFn =
-                                            RESPONSE_CONVERSION_FACTORY.create(
-                                                    com.oracle.bmc.functions.model.Function.class);
+                                    responseFn = RESPONSE_CONVERSION_FACTORY.create();
                                 }
 
-                                com.oracle.bmc.http.internal.WithHeaders<
-                                                com.oracle.bmc.functions.model.Function>
-                                        response = responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
+                                        responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
@@ -110,17 +105,6 @@ public class UpdateFunctionConverter {
                                                         .__httpStatusCode__(rawResponse.getStatus())
                                                         .headers(headers);
 
-                                builder.function(response.getItem());
-
-                                java.util.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
-                                                headers, "etag");
-                                if (etagHeader.isPresent()) {
-                                    builder.etag(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "etag", etagHeader.get().get(0), String.class));
-                                }
-
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
@@ -129,6 +113,17 @@ public class UpdateFunctionConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
                                                     String.class));
                                 }
 

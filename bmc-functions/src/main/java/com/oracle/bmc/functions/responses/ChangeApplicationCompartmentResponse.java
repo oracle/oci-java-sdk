@@ -6,18 +6,18 @@ package com.oracle.bmc.functions.responses;
 
 import com.oracle.bmc.functions.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle
-     * about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle
-     * about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +25,37 @@ public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private ChangeApplicationCompartmentResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
-            String opcRequestId) {
+            String opcRequestId,
+            String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder {
@@ -50,21 +74,40 @@ public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -76,6 +119,7 @@ public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.respons
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
@@ -86,7 +130,7 @@ public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.respons
          */
         public ChangeApplicationCompartmentResponse build() {
             return new ChangeApplicationCompartmentResponse(
-                    __httpStatusCode__, headers, opcRequestId);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 
@@ -104,6 +148,7 @@ public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.respons
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -118,7 +163,9 @@ public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.respons
         }
 
         ChangeApplicationCompartmentResponse other = (ChangeApplicationCompartmentResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
     }
 
     @Override
@@ -126,6 +173,9 @@ public class ChangeApplicationCompartmentResponse extends com.oracle.bmc.respons
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         return result;
     }
 }

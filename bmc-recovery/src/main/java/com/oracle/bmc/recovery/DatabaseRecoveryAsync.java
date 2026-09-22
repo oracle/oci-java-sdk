@@ -59,6 +59,22 @@ public interface DatabaseRecoveryAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Cancels a long-term backup that is being created or scheduled to be created. You must specify the unique identifier or OCID of the long-term backup that you want to cancel. You can cancel a long-term backup only if the current state of the backup resource is WAITING_FOR_BACKUP_FROM_DB, or SCHEDULED_FOR_ARCHIVAL, or ARCHIVAL_IN_PROGRESS.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelLongTermBackupResponse> cancelLongTermBackup(
+            CancelLongTermBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelLongTermBackupRequest, CancelLongTermBackupResponse>
+                    handler);
+
+    /**
      * Cancels the scheduled deletion of a protected database, and returns the protected database to an ACTIVE state. You can cancel the deletion only if the protected database is in the DELETE SCHEDULED state.
      *
      * @param request The request object containing the details to send
@@ -149,6 +165,23 @@ public interface DatabaseRecoveryAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a long-term backup of a specified protected database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateLongTermBackupResponse> createLongTermBackup(
+            CreateLongTermBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateLongTermBackupRequest, CreateLongTermBackupResponse>
+                    handler);
+
+    /**
      * Creates a new Protected Database.
      *
      *
@@ -200,7 +233,26 @@ public interface DatabaseRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a long-term backup. You can delete a long-term backup only if the current state of the backup is ACTIVE, FAILED, or CANCELED.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteLongTermBackupResponse> deleteLongTermBackup(
+            DeleteLongTermBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteLongTermBackupRequest, DeleteLongTermBackupResponse>
+                    handler);
+
+    /**
      * Deletes a protected database based on the specified protected database ID.
+     * Only the user or the Oracle Database service that created the protected database is allowed to modify or delete it.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -268,6 +320,22 @@ public interface DatabaseRecoveryAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Retrieves information regarding a long-term backup.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetLongTermBackupResponse> getLongTermBackup(
+            GetLongTermBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetLongTermBackupRequest, GetLongTermBackupResponse>
+                    handler);
+
+    /**
      * Gets information about a specified protected database.
      *
      * @param request The request object containing the details to send
@@ -328,6 +396,23 @@ public interface DatabaseRecoveryAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Lists the long-term backups associated with a protected database. You can filter the results using the unique identifier (OCID) of a specific compartment, a protected database, or a long-term backup.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListLongTermBackupsResponse> listLongTermBackups(
+            ListLongTermBackupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListLongTermBackupsRequest, ListLongTermBackupsResponse>
                     handler);
 
     /**
@@ -433,6 +518,8 @@ public interface DatabaseRecoveryAsync extends AutoCloseable {
 
     /**
      * Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * Only the user or the Oracle Database service that created the protected database is allowed to modify or delete it.
+     * <p>
      * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
      * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
      *
@@ -451,6 +538,22 @@ public interface DatabaseRecoveryAsync extends AutoCloseable {
                                     ScheduleProtectedDatabaseDeletionRequest,
                                     ScheduleProtectedDatabaseDeletionResponse>
                             handler);
+
+    /**
+     * Updates the specified long term backup.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateLongTermBackupResponse> updateLongTermBackup(
+            UpdateLongTermBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateLongTermBackupRequest, UpdateLongTermBackupResponse>
+                    handler);
 
     /**
      * Updates the Protected Database

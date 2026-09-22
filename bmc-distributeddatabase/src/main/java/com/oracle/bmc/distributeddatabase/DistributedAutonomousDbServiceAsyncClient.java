@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedAutonomousDbServiceAsyncClient
         implements DistributedAutonomousDbServiceAsync {
     /**
@@ -312,7 +312,7 @@ public class DistributedAutonomousDbServiceAsyncClient
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DistributedAutonomousDbServiceAsyncClient",
-                            "downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest,generateDistributedAutonomousDatabaseWallet"));
+                            "generateDistributedAutonomousDatabaseWallet"));
         }
     }
 
@@ -497,7 +497,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "AddDistributedAutonomousDatabaseGdsControlNode",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/AddDistributedAutonomousDatabaseGdsControlNode");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/AddDistributedAutonomousDatabaseGdsControlNode");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AddDistributedAutonomousDatabaseGdsControlNodeResponse>
@@ -560,7 +560,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ChangeDistributedAutonomousDatabaseCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDatabaseCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDatabaseCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDistributedAutonomousDatabaseCompartmentResponse>
@@ -623,7 +623,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ChangeDistributedAutonomousDbBackupConfig",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDbBackupConfig");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDbBackupConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDistributedAutonomousDbBackupConfigResponse>
@@ -667,6 +667,72 @@ public class DistributedAutonomousDbServiceAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>
+            configureDistributedAutonomousDatabaseAutoResourceManagement(
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest,
+                                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>
+                            handler) {
+        LOG.trace("Called async configureDistributedAutonomousDatabaseAutoResourceManagement");
+        final ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest
+                interceptedRequest =
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementConverter
+                                .interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureDistributedAutonomousDatabaseAutoResourceManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedAutonomousDbService",
+                        "ConfigureDistributedAutonomousDatabaseAutoResourceManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseAutoResourceManagement");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>
+                transformer =
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest,
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest,
+                                ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>,
+                        java.util.concurrent.Future<
+                                ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getConfigureDistributedAutonomousDatabaseAutoResourceManagementDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest,
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ConfigureDistributedAutonomousDatabaseGsmWalletResponse>
             configureDistributedAutonomousDatabaseGsmWallet(
                     ConfigureDistributedAutonomousDatabaseGsmWalletRequest request,
@@ -686,7 +752,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseGsmWallet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsmWallet");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsmWallet");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ConfigureDistributedAutonomousDatabaseGsmWalletResponse>
@@ -749,7 +815,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseGsms",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsms");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsms");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ConfigureDistributedAutonomousDatabaseGsmsResponse>
@@ -812,7 +878,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseSharding",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseSharding");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseSharding");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ConfigureDistributedAutonomousDatabaseShardingResponse>
@@ -929,7 +995,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "DeleteDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/DeleteDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/DeleteDistributedAutonomousDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -965,128 +1031,6 @@ public class DistributedAutonomousDbServiceAsyncClient
     }
 
     @Override
-    public java.util.concurrent.Future<
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-            downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                            handler) {
-        LOG.trace("Called async downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        final DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                interceptedRequest =
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                        .fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedAutonomousDbService",
-                        "DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                transformer =
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                                DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>,
-                        java.util.concurrent.Future<
-                                DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-            generateDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                            handler) {
-        LOG.trace("Called async generateDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        final GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                interceptedRequest =
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                        .fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedAutonomousDbService",
-                        "GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                transformer =
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                                GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>,
-                        java.util.concurrent.Future<
-                                GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<GenerateDistributedAutonomousDatabaseWalletResponse>
             generateDistributedAutonomousDatabaseWallet(
                     GenerateDistributedAutonomousDatabaseWalletRequest request,
@@ -1106,7 +1050,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "GenerateDistributedAutonomousDatabaseWallet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseWallet");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseWallet");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GenerateDistributedAutonomousDatabaseWalletResponse>
@@ -1167,7 +1111,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "GetDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GetDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/GetDistributedAutonomousDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1221,7 +1165,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "GetDistributedAutonomousDatabaseRaftMetric",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedAutonomousDatabaseRaftMetric");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedAutonomousDatabaseRaftMetric");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDistributedAutonomousDatabaseRaftMetricResponse>
@@ -1259,6 +1203,62 @@ public class DistributedAutonomousDbServiceAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetDistributedAutonomousDatabaseRuChangeLogResponse>
+            getDistributedAutonomousDatabaseRuChangeLog(
+                    GetDistributedAutonomousDatabaseRuChangeLogRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDistributedAutonomousDatabaseRuChangeLogRequest,
+                                    GetDistributedAutonomousDatabaseRuChangeLogResponse>
+                            handler) {
+        LOG.trace("Called async getDistributedAutonomousDatabaseRuChangeLog");
+        final GetDistributedAutonomousDatabaseRuChangeLogRequest interceptedRequest =
+                GetDistributedAutonomousDatabaseRuChangeLogConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDistributedAutonomousDatabaseRuChangeLogConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedAutonomousDbService",
+                        "GetDistributedAutonomousDatabaseRuChangeLog",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedAutonomousDatabaseRuChangeLog");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetDistributedAutonomousDatabaseRuChangeLogResponse>
+                transformer =
+                        GetDistributedAutonomousDatabaseRuChangeLogConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDistributedAutonomousDatabaseRuChangeLogRequest,
+                        GetDistributedAutonomousDatabaseRuChangeLogResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDistributedAutonomousDatabaseRuChangeLogRequest,
+                                GetDistributedAutonomousDatabaseRuChangeLogResponse>,
+                        java.util.concurrent.Future<
+                                GetDistributedAutonomousDatabaseRuChangeLogResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDistributedAutonomousDatabaseRuChangeLogRequest,
+                    GetDistributedAutonomousDatabaseRuChangeLogResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributedAutonomousDatabasesResponse>
             listDistributedAutonomousDatabases(
                     ListDistributedAutonomousDatabasesRequest request,
@@ -1276,7 +1276,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ListDistributedAutonomousDatabases",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabaseCollection/ListDistributedAutonomousDatabases");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabaseCollection/ListDistributedAutonomousDatabases");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDistributedAutonomousDatabasesResponse>
                 transformer =
@@ -1331,7 +1331,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "MoveDistributedAutonomousDatabaseReplicationUnit",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/MoveDistributedAutonomousDatabaseReplicationUnit");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/MoveDistributedAutonomousDatabaseReplicationUnit");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         MoveDistributedAutonomousDatabaseReplicationUnitResponse>
@@ -1393,7 +1393,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "PatchDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/PatchDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/PatchDistributedAutonomousDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PatchDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1454,7 +1454,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "RecreateFailedDistributedAutonomousDatabaseResource",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/RecreateFailedDistributedAutonomousDatabaseResource");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/RecreateFailedDistributedAutonomousDatabaseResource");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RecreateFailedDistributedAutonomousDatabaseResourceResponse>
@@ -1511,7 +1511,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "RotateDistributedAutonomousDatabasePasswords",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/RotateDistributedAutonomousDatabasePasswords");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/RotateDistributedAutonomousDatabasePasswords");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RotateDistributedAutonomousDatabasePasswordsResponse>
@@ -1529,13 +1529,80 @@ public class DistributedAutonomousDbServiceAsyncClient
                                 RotateDistributedAutonomousDatabasePasswordsResponse>,
                         java.util.concurrent.Future<
                                 RotateDistributedAutonomousDatabasePasswordsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRotateDistributedAutonomousDatabasePasswordsDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RotateDistributedAutonomousDatabasePasswordsRequest,
                     RotateDistributedAutonomousDatabasePasswordsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScaleDistributedAutonomousDatabaseGsmsResponse>
+            scaleDistributedAutonomousDatabaseGsms(
+                    ScaleDistributedAutonomousDatabaseGsmsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScaleDistributedAutonomousDatabaseGsmsRequest,
+                                    ScaleDistributedAutonomousDatabaseGsmsResponse>
+                            handler) {
+        LOG.trace("Called async scaleDistributedAutonomousDatabaseGsms");
+        final ScaleDistributedAutonomousDatabaseGsmsRequest interceptedRequest =
+                ScaleDistributedAutonomousDatabaseGsmsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScaleDistributedAutonomousDatabaseGsmsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedAutonomousDbService",
+                        "ScaleDistributedAutonomousDatabaseGsms",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ScaleDistributedAutonomousDatabaseGsms");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScaleDistributedAutonomousDatabaseGsmsResponse>
+                transformer =
+                        ScaleDistributedAutonomousDatabaseGsmsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScaleDistributedAutonomousDatabaseGsmsRequest,
+                        ScaleDistributedAutonomousDatabaseGsmsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScaleDistributedAutonomousDatabaseGsmsRequest,
+                                ScaleDistributedAutonomousDatabaseGsmsResponse>,
+                        java.util.concurrent.Future<ScaleDistributedAutonomousDatabaseGsmsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getScaleDistributedAutonomousDatabaseGsmsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScaleDistributedAutonomousDatabaseGsmsRequest,
+                    ScaleDistributedAutonomousDatabaseGsmsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1567,7 +1634,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "StartDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/StartDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/StartDistributedAutonomousDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, StartDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1621,7 +1688,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "StopDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/StopDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/StopDistributedAutonomousDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, StopDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1675,7 +1742,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "UpdateDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/UpdateDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/UpdateDistributedAutonomousDatabase");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1716,74 +1783,6 @@ public class DistributedAutonomousDbServiceAsyncClient
     }
 
     @Override
-    public java.util.concurrent.Future<
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>
-            uploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet(
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest
-                            request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest,
-                                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>
-                            handler) {
-        LOG.trace(
-                "Called async uploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet");
-        final UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest
-                interceptedRequest =
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletConverter
-                                .interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletConverter
-                        .fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedAutonomousDbService",
-                        "UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>
-                transformer =
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest,
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest,
-                                UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>,
-                        java.util.concurrent.Future<
-                                UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getUploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest,
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<ValidateDistributedAutonomousDatabaseCaBundleResponse>
             validateDistributedAutonomousDatabaseCaBundle(
                     ValidateDistributedAutonomousDatabaseCaBundleRequest request,
@@ -1803,7 +1802,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ValidateDistributedAutonomousDatabaseCaBundle",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseCaBundle");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseCaBundle");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ValidateDistributedAutonomousDatabaseCaBundleResponse>
@@ -1860,7 +1859,7 @@ public class DistributedAutonomousDbServiceAsyncClient
                         "DistributedAutonomousDbService",
                         "ValidateDistributedAutonomousDatabaseNetwork",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseNetwork");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseNetwork");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ValidateDistributedAutonomousDatabaseNetworkResponse>

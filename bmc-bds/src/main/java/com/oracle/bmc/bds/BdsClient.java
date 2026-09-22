@@ -559,6 +559,50 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public ActivateBdsCapacityReservationConfigurationResponse
+            activateBdsCapacityReservationConfiguration(
+                    ActivateBdsCapacityReservationConfigurationRequest request) {
+        LOG.trace("Called activateBdsCapacityReservationConfiguration");
+        final ActivateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                ActivateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ActivateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ActivateBdsCapacityReservationConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ActivateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        ActivateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ActivateBdsMetastoreConfigurationResponse activateBdsMetastoreConfiguration(
             ActivateBdsMetastoreConfigurationRequest request) {
         LOG.trace("Called activateBdsMetastoreConfiguration");
@@ -1105,6 +1149,52 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public ChangeBdsCapacityReservationCompartmentResponse changeBdsCapacityReservationCompartment(
+            ChangeBdsCapacityReservationCompartmentRequest request) {
+        LOG.trace("Called changeBdsCapacityReservationCompartment");
+        final ChangeBdsCapacityReservationCompartmentRequest interceptedRequest =
+                ChangeBdsCapacityReservationCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeBdsCapacityReservationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ChangeBdsCapacityReservationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/ChangeBdsCapacityReservationCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeBdsCapacityReservationCompartmentResponse>
+                transformer =
+                        ChangeBdsCapacityReservationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeBdsCapacityReservationCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeBdsInstanceCompartmentResponse changeBdsInstanceCompartment(
             ChangeBdsInstanceCompartmentRequest request) {
         LOG.trace("Called changeBdsInstanceCompartment");
@@ -1267,6 +1357,98 @@ public class BdsClient implements Bds {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateBdsCapacityReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateBdsCapacityReservationResponse createBdsCapacityReservation(
+            CreateBdsCapacityReservationRequest request) {
+        LOG.trace("Called createBdsCapacityReservation");
+        final CreateBdsCapacityReservationRequest interceptedRequest =
+                CreateBdsCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "CreateBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/CreateBdsCapacityReservation");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateBdsCapacityReservationResponse>
+                transformer =
+                        CreateBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateBdsCapacityReservationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateBdsCapacityReservationConfigurationResponse
+            createBdsCapacityReservationConfiguration(
+                    CreateBdsCapacityReservationConfigurationRequest request) {
+        LOG.trace("Called createBdsCapacityReservationConfiguration");
+        final CreateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                CreateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "CreateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/CreateBdsCapacityReservationConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CreateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        CreateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateBdsCapacityReservationConfigurationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1586,6 +1768,50 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public DeactivateBdsCapacityReservationConfigurationResponse
+            deactivateBdsCapacityReservationConfiguration(
+                    DeactivateBdsCapacityReservationConfigurationRequest request) {
+        LOG.trace("Called deactivateBdsCapacityReservationConfiguration");
+        final DeactivateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                DeactivateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "DeactivateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/DeactivateBdsCapacityReservationConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DeactivateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        DeactivateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeactivateIamUserSyncConfigurationResponse deactivateIamUserSyncConfiguration(
             DeactivateIamUserSyncConfigurationRequest request) {
         LOG.trace("Called deactivateIamUserSyncConfiguration");
@@ -1695,6 +1921,88 @@ public class BdsClient implements Bds {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsApiKeyResponse>
                 transformer =
                         DeleteBdsApiKeyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteBdsCapacityReservationResponse deleteBdsCapacityReservation(
+            DeleteBdsCapacityReservationRequest request) {
+        LOG.trace("Called deleteBdsCapacityReservation");
+        final DeleteBdsCapacityReservationRequest interceptedRequest =
+                DeleteBdsCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "DeleteBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/DeleteBdsCapacityReservation");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteBdsCapacityReservationResponse>
+                transformer =
+                        DeleteBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteBdsCapacityReservationConfigurationResponse
+            deleteBdsCapacityReservationConfiguration(
+                    DeleteBdsCapacityReservationConfigurationRequest request) {
+        LOG.trace("Called deleteBdsCapacityReservationConfiguration");
+        final DeleteBdsCapacityReservationConfigurationRequest interceptedRequest =
+                DeleteBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "DeleteBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/DeleteBdsCapacityReservationConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DeleteBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        DeleteBdsCapacityReservationConfigurationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2221,6 +2529,84 @@ public class BdsClient implements Bds {
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/GetBdsApiKey");
         java.util.function.Function<javax.ws.rs.core.Response, GetBdsApiKeyResponse> transformer =
                 GetBdsApiKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetBdsCapacityReservationResponse getBdsCapacityReservation(
+            GetBdsCapacityReservationRequest request) {
+        LOG.trace("Called getBdsCapacityReservation");
+        final GetBdsCapacityReservationRequest interceptedRequest =
+                GetBdsCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "GetBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/GetBdsCapacityReservation");
+        java.util.function.Function<javax.ws.rs.core.Response, GetBdsCapacityReservationResponse>
+                transformer =
+                        GetBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetBdsCapacityReservationConfigurationResponse getBdsCapacityReservationConfiguration(
+            GetBdsCapacityReservationConfigurationRequest request) {
+        LOG.trace("Called getBdsCapacityReservationConfiguration");
+        final GetBdsCapacityReservationConfigurationRequest interceptedRequest =
+                GetBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "GetBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/GetBdsCapacityReservationConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        GetBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2830,6 +3216,128 @@ public class BdsClient implements Bds {
                         "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/ListBdsApiKeys");
         java.util.function.Function<javax.ws.rs.core.Response, ListBdsApiKeysResponse> transformer =
                 ListBdsApiKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBdsCapacityReservationAssociatedConfigurationsResponse
+            listBdsCapacityReservationAssociatedConfigurations(
+                    ListBdsCapacityReservationAssociatedConfigurationsRequest request) {
+        LOG.trace("Called listBdsCapacityReservationAssociatedConfigurations");
+        final ListBdsCapacityReservationAssociatedConfigurationsRequest interceptedRequest =
+                ListBdsCapacityReservationAssociatedConfigurationsConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsCapacityReservationAssociatedConfigurationsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservationAssociatedConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ListBdsCapacityReservationAssociatedConfigurations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse>
+                transformer =
+                        ListBdsCapacityReservationAssociatedConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBdsCapacityReservationConfigurationsResponse
+            listBdsCapacityReservationConfigurations(
+                    ListBdsCapacityReservationConfigurationsRequest request) {
+        LOG.trace("Called listBdsCapacityReservationConfigurations");
+        final ListBdsCapacityReservationConfigurationsRequest interceptedRequest =
+                ListBdsCapacityReservationConfigurationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsCapacityReservationConfigurationsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservationConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ListBdsCapacityReservationConfigurations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListBdsCapacityReservationConfigurationsResponse>
+                transformer =
+                        ListBdsCapacityReservationConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBdsCapacityReservationsResponse listBdsCapacityReservations(
+            ListBdsCapacityReservationsRequest request) {
+        LOG.trace("Called listBdsCapacityReservations");
+        final ListBdsCapacityReservationsRequest interceptedRequest =
+                ListBdsCapacityReservationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsCapacityReservationsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/ListBdsCapacityReservations");
+        java.util.function.Function<javax.ws.rs.core.Response, ListBdsCapacityReservationsResponse>
+                transformer =
+                        ListBdsCapacityReservationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4251,6 +4759,98 @@ public class BdsClient implements Bds {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateAutoScalingConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateBdsCapacityReservationResponse updateBdsCapacityReservation(
+            UpdateBdsCapacityReservationRequest request) {
+        LOG.trace("Called updateBdsCapacityReservation");
+        final UpdateBdsCapacityReservationRequest interceptedRequest =
+                UpdateBdsCapacityReservationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "UpdateBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/UpdateBdsCapacityReservation");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateBdsCapacityReservationResponse>
+                transformer =
+                        UpdateBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateBdsCapacityReservationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateBdsCapacityReservationConfigurationResponse
+            updateBdsCapacityReservationConfiguration(
+                    UpdateBdsCapacityReservationConfigurationRequest request) {
+        LOG.trace("Called updateBdsCapacityReservationConfiguration");
+        final UpdateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                UpdateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "UpdateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/UpdateBdsCapacityReservationConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        UpdateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        UpdateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateBdsCapacityReservationConfigurationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -8,15 +8,9 @@ import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 @SdkClients({
-    CancelEnrichmentJobAsyncClient.class,
-    CancelEnrichmentJobClient.class,
-    GenerateEnrichmentJobAsyncClient.class,
-    GenerateEnrichmentJobClient.class,
-    GenerateSqlFromNlJobAsyncClient.class,
-    GenerateSqlFromNlJobClient.class,
-    GetEnrichmentJobAsyncClient.class,
-    GetEnrichmentJobClient.class,
-    ListEnrichmentJobsAsyncClient.class,
-    ListEnrichmentJobsClient.class
+    EnrichmentJobAsyncClient.class,
+    EnrichmentJobClient.class,
+    GenerateSqlAsyncClient.class,
+    GenerateSqlClient.class
 })
 public final class SdkClientsMetadata {}

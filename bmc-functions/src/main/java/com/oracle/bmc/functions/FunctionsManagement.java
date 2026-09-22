@@ -12,7 +12,7 @@ import com.oracle.bmc.functions.responses.*;
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public interface FunctionsManagement extends AutoCloseable {
 
     /**
@@ -148,6 +148,33 @@ public interface FunctionsManagement extends AutoCloseable {
     GetFunctionResponse getFunction(GetFunctionRequest request);
 
     /**
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetFunctionsRuntimeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunctionsRuntime API.
+     */
+    GetFunctionsRuntimeResponse getFunctionsRuntime(GetFunctionsRuntimeRequest request);
+
+    /**
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetFunctionsRuntimeVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunctionsRuntimeVersion API.
+     */
+    GetFunctionsRuntimeVersionResponse getFunctionsRuntimeVersion(
+            GetFunctionsRuntimeVersionRequest request);
+
+    /**
      * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
      *
      * @param request The request object containing the details to send
@@ -195,6 +222,35 @@ public interface FunctionsManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctions API.
      */
     ListFunctionsResponse listFunctions(ListFunctionsRequest request);
+
+    /**
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsRuntimeVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctionsRuntimeVersions API.
+     */
+    ListFunctionsRuntimeVersionsResponse listFunctionsRuntimeVersions(
+            ListFunctionsRuntimeVersionsRequest request);
+
+    /**
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsRuntimesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctionsRuntimes API.
+     */
+    ListFunctionsRuntimesResponse listFunctionsRuntimes(ListFunctionsRuntimesRequest request);
 
     /**
      * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection

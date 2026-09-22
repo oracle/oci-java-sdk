@@ -21,10 +21,11 @@ package com.oracle.bmc.marketplacepublisher.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateVideoDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"contentUrl"})
-    public CreateVideoDetails(String contentUrl) {
+    @java.beans.ConstructorProperties({"contentUrl", "sourceType"})
+    public CreateVideoDetails(String contentUrl, ListingRevisionAttachment.SourceType sourceType) {
         super();
         this.contentUrl = contentUrl;
+        this.sourceType = sourceType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -45,12 +46,28 @@ public final class CreateVideoDetails extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
+        /**
+         * The specified attachment type is Internal or External.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private ListingRevisionAttachment.SourceType sourceType;
+
+        /**
+         * The specified attachment type is Internal or External.
+         * @param sourceType the value to set
+         * @return this builder
+         **/
+        public Builder sourceType(ListingRevisionAttachment.SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVideoDetails build() {
-            CreateVideoDetails model = new CreateVideoDetails(this.contentUrl);
+            CreateVideoDetails model = new CreateVideoDetails(this.contentUrl, this.sourceType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +78,9 @@ public final class CreateVideoDetails extends com.oracle.bmc.http.internal.Expli
         public Builder copy(CreateVideoDetails model) {
             if (model.wasPropertyExplicitlySet("contentUrl")) {
                 this.contentUrl(model.getContentUrl());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
             }
             return this;
         }
@@ -91,6 +111,20 @@ public final class CreateVideoDetails extends com.oracle.bmc.http.internal.Expli
         return contentUrl;
     }
 
+    /**
+     * The specified attachment type is Internal or External.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final ListingRevisionAttachment.SourceType sourceType;
+
+    /**
+     * The specified attachment type is Internal or External.
+     * @return the value
+     **/
+    public ListingRevisionAttachment.SourceType getSourceType() {
+        return sourceType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -106,6 +140,7 @@ public final class CreateVideoDetails extends com.oracle.bmc.http.internal.Expli
         sb.append("CreateVideoDetails(");
         sb.append("super=").append(super.toString());
         sb.append("contentUrl=").append(String.valueOf(this.contentUrl));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +155,9 @@ public final class CreateVideoDetails extends com.oracle.bmc.http.internal.Expli
         }
 
         CreateVideoDetails other = (CreateVideoDetails) o;
-        return java.util.Objects.equals(this.contentUrl, other.contentUrl) && super.equals(other);
+        return java.util.Objects.equals(this.contentUrl, other.contentUrl)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && super.equals(other);
     }
 
     @Override
@@ -128,6 +165,7 @@ public final class CreateVideoDetails extends com.oracle.bmc.http.internal.Expli
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

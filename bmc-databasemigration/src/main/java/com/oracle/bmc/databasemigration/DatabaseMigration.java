@@ -394,6 +394,20 @@ public interface DatabaseMigration extends AutoCloseable {
     GetConnectionResponse getConnection(GetConnectionRequest request);
 
     /**
+     * Returns availability and report status information used by the Data Verification UI.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetDataVerificationDetailExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataVerificationDetail API.
+     */
+    GetDataVerificationDetailResponse getDataVerificationDetail(
+            GetDataVerificationDetailRequest request);
+
+    /**
      * Get a migration job.
      *
      * @param request The request object containing the details to send
@@ -589,6 +603,52 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnections API.
      */
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
+
+    /**
+     * Lists per-object status comparison results for a migration.
+     * <p>
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListDataVerificationObjectStatusesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataVerificationObjectStatuses API.
+     */
+    ListDataVerificationObjectStatusesResponse listDataVerificationObjectStatuses(
+            ListDataVerificationObjectStatusesRequest request);
+
+    /**
+     * Lists object type count comparison results for a migration.
+     * <p>
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListDataVerificationObjectTypeCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataVerificationObjectTypeCounts API.
+     */
+    ListDataVerificationObjectTypeCountsResponse listDataVerificationObjectTypeCounts(
+            ListDataVerificationObjectTypeCountsRequest request);
+
+    /**
+     * Lists table row count comparison results for a migration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListDataVerificationTableRowCountsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataVerificationTableRowCounts API.
+     */
+    ListDataVerificationTableRowCountsResponse listDataVerificationTableRowCounts(
+            ListDataVerificationTableRowCountsRequest request);
 
     /**
      * List supported Database Types, Sub-types and Versions.
@@ -853,6 +913,19 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/RetrieveSupportedPhasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveSupportedPhases API.
      */
     RetrieveSupportedPhasesResponse retrieveSupportedPhases(RetrieveSupportedPhasesRequest request);
+
+    /**
+     * Runs Data Verification for a migration and returns the updated Data Verification summary.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/RunDataVerificationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RunDataVerification API.
+     */
+    RunDataVerificationResponse runDataVerification(RunDataVerificationRequest request);
 
     /**
      * Start Migration job.

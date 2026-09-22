@@ -572,7 +572,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -608,7 +611,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ChangeInstanceCompartment", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ChangeInstanceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/ChangeInstanceCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeInstanceCompartmentResponse>
                 transformer =
                         ChangeInstanceCompartmentConverter.fromResponse(
@@ -648,7 +654,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "CreateInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "CreateInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/CreateInstance");
         java.util.function.Function<javax.ws.rs.core.Response, CreateInstanceResponse> transformer =
                 CreateInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -684,7 +693,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "DeleteInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "DeleteInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/DeleteInstance");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteInstanceResponse> transformer =
                 DeleteInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -717,7 +729,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "GetInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "GetInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/GetInstance");
         java.util.function.Function<javax.ws.rs.core.Response, GetInstanceResponse> transformer =
                 GetInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -749,7 +764,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -781,7 +799,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListInstances", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/InstanceCollection/ListInstances");
         java.util.function.Function<javax.ws.rs.core.Response, ListInstancesResponse> transformer =
                 ListInstancesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -814,7 +835,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -848,7 +872,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -882,7 +909,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -916,7 +946,10 @@ public class InstanceClient implements Instance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "UpdateInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "UpdateInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/UpdateInstance");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateInstanceResponse> transformer =
                 UpdateInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

@@ -20,7 +20,8 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName(ComputeInstanceAgentClient.class.getName())
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://iaas.{region}.{dualStack?ds.:}oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -51,6 +52,7 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
     private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
             circuitBreakerConfiguration;
     private String regionId;
+    private final java.util.Map<String, Boolean> optionsMap = new java.util.HashMap<>();
 
     // This pattern matches substrings that are enclosed within curly braces {}
     private static final Pattern PATTERN_FOR_SUBSTRINGS_IN_CURLY_BRACES =
@@ -381,6 +383,9 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                 }
             }
         }
+        enableDualStackEndpoints(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils
+                        .isDualStackEnabledForClientDefault(SERVICE));
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
@@ -552,6 +557,14 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                 com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
                         .getRealmSpecificEndpointTemplate(
                                 useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public synchronized void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled) {
+        optionsMap.put(
+                com.oracle.bmc.util.internal.EndpointTemplateForOptionsUtils.DUAL_STACK_OPTION,
+                dualStackEndpointTemplateEnabled);
+        client.setOptionsMap(optionsMap);
     }
 
     @Override

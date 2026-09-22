@@ -21,6 +21,10 @@ public enum OperationType {
     UpdateRecoveryServiceSubnet("UPDATE_RECOVERY_SERVICE_SUBNET"),
     DeleteRecoveryServiceSubnet("DELETE_RECOVERY_SERVICE_SUBNET"),
     MoveRecoveryServiceSubnet("MOVE_RECOVERY_SERVICE_SUBNET"),
+    CreateLongTermBackup("CREATE_LONG_TERM_BACKUP"),
+    DeleteLongTermBackup("DELETE_LONG_TERM_BACKUP"),
+    UpdateLongTermBackup("UPDATE_LONG_TERM_BACKUP"),
+    CancelLongTermBackup("CANCEL_LONG_TERM_BACKUP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

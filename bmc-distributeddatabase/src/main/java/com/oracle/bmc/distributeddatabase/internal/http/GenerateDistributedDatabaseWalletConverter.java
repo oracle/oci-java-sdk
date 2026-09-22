@@ -9,7 +9,7 @@ import com.oracle.bmc.distributeddatabase.requests.*;
 import com.oracle.bmc.distributeddatabase.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class GenerateDistributedDatabaseWalletConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -41,7 +41,7 @@ public class GenerateDistributedDatabaseWalletConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20250101")
+                        .path("/20260101")
                         .path("distributedDatabases")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(

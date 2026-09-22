@@ -26,6 +26,8 @@ public final class GenerateSqlFromNlDetails
         "description",
         "displayName",
         "inputNaturalLanguageQuery",
+        "modelId",
+        "completionMode",
         "freeformTags",
         "definedTags"
     })
@@ -33,12 +35,16 @@ public final class GenerateSqlFromNlDetails
             String description,
             String displayName,
             String inputNaturalLanguageQuery,
+            String modelId,
+            CompletionMode completionMode,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.description = description;
         this.displayName = displayName;
         this.inputNaturalLanguageQuery = inputNaturalLanguageQuery;
+        this.modelId = modelId;
+        this.completionMode = completionMode;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -100,6 +106,44 @@ public final class GenerateSqlFromNlDetails
             return this;
         }
         /**
+         * The generative AI modelId to use for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+        private String modelId;
+
+        /**
+         * The generative AI modelId to use for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+         * @param modelId the value to set
+         * @return this builder
+         **/
+        public Builder modelId(String modelId) {
+            this.modelId = modelId;
+            this.__explicitlySet__.add("modelId");
+            return this;
+        }
+        /**
+         * Controls whether GenerateSqlFromNl should be accepted as a background job or wait for completion.
+         * BACKGROUND_JOB accepts the request for background processing and returns a pollable job.
+         * WAIT_FOR_COMPLETION waits for completion within the service-defined timeout.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("completionMode")
+        private CompletionMode completionMode;
+
+        /**
+         * Controls whether GenerateSqlFromNl should be accepted as a background job or wait for completion.
+         * BACKGROUND_JOB accepts the request for background processing and returns a pollable job.
+         * WAIT_FOR_COMPLETION waits for completion within the service-defined timeout.
+         *
+         * @param completionMode the value to set
+         * @return this builder
+         **/
+        public Builder completionMode(CompletionMode completionMode) {
+            this.completionMode = completionMode;
+            this.__explicitlySet__.add("completionMode");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -150,6 +194,8 @@ public final class GenerateSqlFromNlDetails
                             this.description,
                             this.displayName,
                             this.inputNaturalLanguageQuery,
+                            this.modelId,
+                            this.completionMode,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -168,6 +214,12 @@ public final class GenerateSqlFromNlDetails
             }
             if (model.wasPropertyExplicitlySet("inputNaturalLanguageQuery")) {
                 this.inputNaturalLanguageQuery(model.getInputNaturalLanguageQuery());
+            }
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("completionMode")) {
+                this.completionMode(model.getCompletionMode());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -239,6 +291,40 @@ public final class GenerateSqlFromNlDetails
     }
 
     /**
+     * The generative AI modelId to use for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+    private final String modelId;
+
+    /**
+     * The generative AI modelId to use for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+     * @return the value
+     **/
+    public String getModelId() {
+        return modelId;
+    }
+
+    /**
+     * Controls whether GenerateSqlFromNl should be accepted as a background job or wait for completion.
+     * BACKGROUND_JOB accepts the request for background processing and returns a pollable job.
+     * WAIT_FOR_COMPLETION waits for completion within the service-defined timeout.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("completionMode")
+    private final CompletionMode completionMode;
+
+    /**
+     * Controls whether GenerateSqlFromNl should be accepted as a background job or wait for completion.
+     * BACKGROUND_JOB accepts the request for background processing and returns a pollable job.
+     * WAIT_FOR_COMPLETION waits for completion within the service-defined timeout.
+     *
+     * @return the value
+     **/
+    public CompletionMode getCompletionMode() {
+        return completionMode;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -292,6 +378,8 @@ public final class GenerateSqlFromNlDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", inputNaturalLanguageQuery=")
                 .append(String.valueOf(this.inputNaturalLanguageQuery));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
+        sb.append(", completionMode=").append(String.valueOf(this.completionMode));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -312,6 +400,8 @@ public final class GenerateSqlFromNlDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.inputNaturalLanguageQuery, other.inputNaturalLanguageQuery)
+                && java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(this.completionMode, other.completionMode)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -328,6 +418,10 @@ public final class GenerateSqlFromNlDetails
                         + (this.inputNaturalLanguageQuery == null
                                 ? 43
                                 : this.inputNaturalLanguageQuery.hashCode());
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.completionMode == null ? 43 : this.completionMode.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

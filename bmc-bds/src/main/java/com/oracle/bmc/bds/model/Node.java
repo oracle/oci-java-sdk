@@ -33,6 +33,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "sshFingerprint",
         "availabilityDomain",
         "faultDomain",
+        "computeCapacityReservationId",
         "timeCreated",
         "timeUpdated",
         "ocpus",
@@ -61,6 +62,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String sshFingerprint,
             String availabilityDomain,
             String faultDomain,
+            String computeCapacityReservationId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             Integer ocpus,
@@ -88,6 +90,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.sshFingerprint = sshFingerprint;
         this.availabilityDomain = availabilityDomain;
         this.faultDomain = faultDomain;
+        this.computeCapacityReservationId = computeCapacityReservationId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.ocpus = ocpus;
@@ -312,6 +315,22 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+        /**
+         * The OCID of the Compute capacity reservation used by this node.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeCapacityReservationId")
+        private String computeCapacityReservationId;
+
+        /**
+         * The OCID of the Compute capacity reservation used by this node.
+         * @param computeCapacityReservationId the value to set
+         * @return this builder
+         **/
+        public Builder computeCapacityReservationId(String computeCapacityReservationId) {
+            this.computeCapacityReservationId = computeCapacityReservationId;
+            this.__explicitlySet__.add("computeCapacityReservationId");
             return this;
         }
         /**
@@ -542,6 +561,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.sshFingerprint,
                             this.availabilityDomain,
                             this.faultDomain,
+                            this.computeCapacityReservationId,
                             this.timeCreated,
                             this.timeUpdated,
                             this.ocpus,
@@ -601,6 +621,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("computeCapacityReservationId")) {
+                this.computeCapacityReservationId(model.getComputeCapacityReservationId());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -949,6 +972,20 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
+     * The OCID of the Compute capacity reservation used by this node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeCapacityReservationId")
+    private final String computeCapacityReservationId;
+
+    /**
+     * The OCID of the Compute capacity reservation used by this node.
+     * @return the value
+     **/
+    public String getComputeCapacityReservationId() {
+        return computeCapacityReservationId;
+    }
+
+    /**
      * The time the node was created, shown as an RFC 3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -1157,6 +1194,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", sshFingerprint=").append(String.valueOf(this.sshFingerprint));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", computeCapacityReservationId=")
+                .append(String.valueOf(this.computeCapacityReservationId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", ocpus=").append(String.valueOf(this.ocpus));
@@ -1200,6 +1239,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.sshFingerprint, other.sshFingerprint)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(
+                        this.computeCapacityReservationId, other.computeCapacityReservationId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.ocpus, other.ocpus)
@@ -1248,6 +1289,11 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                                 ? 43
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeCapacityReservationId == null
+                                ? 43
+                                : this.computeCapacityReservationId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());

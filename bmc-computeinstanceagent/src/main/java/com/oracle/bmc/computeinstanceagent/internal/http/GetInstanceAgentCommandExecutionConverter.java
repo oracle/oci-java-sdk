@@ -38,8 +38,15 @@ public class GetInstanceAgentCommandExecutionConverter {
                 request.getInstanceAgentCommandId(), "instanceAgentCommandId must not be blank");
         Validate.notNull(request.getInstanceId(), "instanceId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceAgentCommandId", request.getInstanceAgentCommandId());
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20180530")
                         .path("instanceAgentCommands")
                         .path(

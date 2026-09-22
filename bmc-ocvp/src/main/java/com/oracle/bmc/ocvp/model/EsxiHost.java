@@ -52,6 +52,8 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "nonUpgradedEsxiHostId",
         "upgradedReplacementEsxiHostId",
         "computeAvailabilityDomain",
+        "computeFaultDomain",
+        "initialFaultDomainHostDistribution",
         "hostShapeName",
         "hostOcpuCount",
         "capacityReservationId",
@@ -89,6 +91,8 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String nonUpgradedEsxiHostId,
             String upgradedReplacementEsxiHostId,
             String computeAvailabilityDomain,
+            String computeFaultDomain,
+            FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
             String hostShapeName,
             Float hostOcpuCount,
             String capacityReservationId,
@@ -125,6 +129,8 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
         this.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
+        this.computeFaultDomain = computeFaultDomain;
+        this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.hostShapeName = hostShapeName;
         this.hostOcpuCount = hostOcpuCount;
         this.capacityReservationId = capacityReservationId;
@@ -611,6 +617,43 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * The fault domain of the ESXi host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeFaultDomain")
+        private String computeFaultDomain;
+
+        /**
+         * The fault domain of the ESXi host.
+         *
+         * @param computeFaultDomain the value to set
+         * @return this builder
+         **/
+        public Builder computeFaultDomain(String computeFaultDomain) {
+            this.computeFaultDomain = computeFaultDomain;
+            this.__explicitlySet__.add("computeFaultDomain");
+            return this;
+        }
+        /**
+         * The initial fault domain host distribution mode for the ESXi host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+        private FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+        /**
+         * The initial fault domain host distribution mode for the ESXi host.
+         *
+         * @param initialFaultDomainHostDistribution the value to set
+         * @return this builder
+         **/
+        public Builder initialFaultDomainHostDistribution(
+                FaultDomainHostDistributionModes initialFaultDomainHostDistribution) {
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            this.__explicitlySet__.add("initialFaultDomainHostDistribution");
+            return this;
+        }
+        /**
          * The compute shape name of the ESXi host.
          * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
          *
@@ -855,6 +898,8 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.nonUpgradedEsxiHostId,
                             this.upgradedReplacementEsxiHostId,
                             this.computeAvailabilityDomain,
+                            this.computeFaultDomain,
+                            this.initialFaultDomainHostDistribution,
                             this.hostShapeName,
                             this.hostOcpuCount,
                             this.capacityReservationId,
@@ -945,6 +990,13 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
                 this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("computeFaultDomain")) {
+                this.computeFaultDomain(model.getComputeFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
+                this.initialFaultDomainHostDistribution(
+                        model.getInitialFaultDomainHostDistribution());
             }
             if (model.wasPropertyExplicitlySet("hostShapeName")) {
                 this.hostShapeName(model.getHostShapeName());
@@ -1417,6 +1469,38 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * The fault domain of the ESXi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeFaultDomain")
+    private final String computeFaultDomain;
+
+    /**
+     * The fault domain of the ESXi host.
+     *
+     * @return the value
+     **/
+    public String getComputeFaultDomain() {
+        return computeFaultDomain;
+    }
+
+    /**
+     * The initial fault domain host distribution mode for the ESXi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+    private final FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+    /**
+     * The initial fault domain host distribution mode for the ESXi host.
+     *
+     * @return the value
+     **/
+    public FaultDomainHostDistributionModes getInitialFaultDomainHostDistribution() {
+        return initialFaultDomainHostDistribution;
+    }
+
+    /**
      * The compute shape name of the ESXi host.
      * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
      *
@@ -1648,6 +1732,9 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 .append(String.valueOf(this.upgradedReplacementEsxiHostId));
         sb.append(", computeAvailabilityDomain=")
                 .append(String.valueOf(this.computeAvailabilityDomain));
+        sb.append(", computeFaultDomain=").append(String.valueOf(this.computeFaultDomain));
+        sb.append(", initialFaultDomainHostDistribution=")
+                .append(String.valueOf(this.initialFaultDomainHostDistribution));
         sb.append(", hostShapeName=").append(String.valueOf(this.hostShapeName));
         sb.append(", hostOcpuCount=").append(String.valueOf(this.hostOcpuCount));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
@@ -1702,6 +1789,10 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         this.upgradedReplacementEsxiHostId, other.upgradedReplacementEsxiHostId)
                 && java.util.Objects.equals(
                         this.computeAvailabilityDomain, other.computeAvailabilityDomain)
+                && java.util.Objects.equals(this.computeFaultDomain, other.computeFaultDomain)
+                && java.util.Objects.equals(
+                        this.initialFaultDomainHostDistribution,
+                        other.initialFaultDomainHostDistribution)
                 && java.util.Objects.equals(this.hostShapeName, other.hostShapeName)
                 && java.util.Objects.equals(this.hostOcpuCount, other.hostOcpuCount)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
@@ -1802,6 +1893,16 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.computeAvailabilityDomain == null
                                 ? 43
                                 : this.computeAvailabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeFaultDomain == null
+                                ? 43
+                                : this.computeFaultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialFaultDomainHostDistribution == null
+                                ? 43
+                                : this.initialFaultDomainHostDistribution.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostShapeName == null ? 43 : this.hostShapeName.hashCode());

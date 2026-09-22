@@ -38,6 +38,27 @@ public class ChangeProtectedDatabaseSubscriptionRequest
         return changeProtectedDatabaseSubscriptionDetails;
     }
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+    /**
      * Unique identifier for the request.
      */
     private String opcRequestId;
@@ -123,6 +144,31 @@ public class ChangeProtectedDatabaseSubscriptionRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request.
          */
         private String opcRequestId = null;
@@ -193,6 +239,7 @@ public class ChangeProtectedDatabaseSubscriptionRequest
             protectedDatabaseId(o.getProtectedDatabaseId());
             changeProtectedDatabaseSubscriptionDetails(
                     o.getChangeProtectedDatabaseSubscriptionDetails());
+            opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
@@ -243,10 +290,11 @@ public class ChangeProtectedDatabaseSubscriptionRequest
             request.protectedDatabaseId = protectedDatabaseId;
             request.changeProtectedDatabaseSubscriptionDetails =
                     changeProtectedDatabaseSubscriptionDetails;
+            request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new ChangeProtectedDatabaseSubscriptionRequest(protectedDatabaseId, changeProtectedDatabaseSubscriptionDetails, opcRequestId, ifMatch);
+            // new ChangeProtectedDatabaseSubscriptionRequest(protectedDatabaseId, changeProtectedDatabaseSubscriptionDetails, opcRetryToken, opcRequestId, ifMatch);
         }
     }
 
@@ -259,6 +307,7 @@ public class ChangeProtectedDatabaseSubscriptionRequest
                 .protectedDatabaseId(protectedDatabaseId)
                 .changeProtectedDatabaseSubscriptionDetails(
                         changeProtectedDatabaseSubscriptionDetails)
+                .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch);
     }
@@ -279,6 +328,7 @@ public class ChangeProtectedDatabaseSubscriptionRequest
         sb.append(",protectedDatabaseId=").append(String.valueOf(this.protectedDatabaseId));
         sb.append(",changeProtectedDatabaseSubscriptionDetails=")
                 .append(String.valueOf(this.changeProtectedDatabaseSubscriptionDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
@@ -301,6 +351,7 @@ public class ChangeProtectedDatabaseSubscriptionRequest
                 && java.util.Objects.equals(
                         this.changeProtectedDatabaseSubscriptionDetails,
                         other.changeProtectedDatabaseSubscriptionDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
@@ -319,6 +370,9 @@ public class ChangeProtectedDatabaseSubscriptionRequest
                         + (this.changeProtectedDatabaseSubscriptionDetails == null
                                 ? 43
                                 : this.changeProtectedDatabaseSubscriptionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;

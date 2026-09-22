@@ -76,6 +76,26 @@ public interface PartnerIntegerationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deprecated. This endpoint has moved permanently to
+     * `/partners/subscriptions/{subscriptionId}/actions/activate`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateSubscriptionDeprecatedResponse>
+            activateSubscriptionDeprecated(
+                    ActivateSubscriptionDeprecatedRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateSubscriptionDeprecatedRequest,
+                                    ActivateSubscriptionDeprecatedResponse>
+                            handler);
+
+    /**
      * Lists marketplace publisher partner info for a compartment.
      *
      *
@@ -108,6 +128,24 @@ public interface PartnerIntegerationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListingSubscriptionsDeprecatedResponse>
+            listingSubscriptionsDeprecated(
+                    ListingSubscriptionsDeprecatedRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListingSubscriptionsDeprecatedRequest,
+                                    ListingSubscriptionsDeprecatedResponse>
+                            handler);
+
+    /**
      * This API returns the subscription details by resolving JWT token to corresponding subscription and move its state to Pending Activation state.
      *
      *
@@ -125,8 +163,28 @@ public interface PartnerIntegerationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions/actions/resolve`.
+     * It returns a 301 response and does not resolve a subscription.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ResolveSubscriptionDeprecatedResponse>
+            resolveSubscriptionDeprecated(
+                    ResolveSubscriptionDeprecatedRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ResolveSubscriptionDeprecatedRequest,
+                                    ResolveSubscriptionDeprecatedResponse>
+                            handler);
+
+    /**
      * Asynchronously submits a UTF-8 CSV usage file for marketplace offers. The file
-     * must not exceed 50 MB or 10,000 rows and must include required usage columns.
+     * must not exceed 50 MB or 30,000 rows and must include required usage columns.
      *
      *
      * @param request The request object containing the details to send

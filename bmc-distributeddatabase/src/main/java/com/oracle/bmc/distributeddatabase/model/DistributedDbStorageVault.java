@@ -5,7 +5,7 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * The Storage Vault for Distributed Database Resource
+ * The Storage Vault for Distributed Database Resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedDbStorageVault.Builder.class
 )
@@ -23,25 +23,53 @@ public final class DistributedDbStorageVault
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "compartmentId",
         "displayName",
         "dbStorageVaultId",
         "highCapacityDatabaseStorage",
-        "additionalFlashCacheInPercent"
+        "additionalFlashCacheInPercent",
+        "subscriptionId",
+        "isAutoscaleEnabled",
+        "autoscaleLimitInGBs"
     })
     public DistributedDbStorageVault(
+            String compartmentId,
             String displayName,
             String dbStorageVaultId,
             Integer highCapacityDatabaseStorage,
-            Integer additionalFlashCacheInPercent) {
+            Integer additionalFlashCacheInPercent,
+            String subscriptionId,
+            Boolean isAutoscaleEnabled,
+            Integer autoscaleLimitInGBs) {
         super();
+        this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.dbStorageVaultId = dbStorageVaultId;
         this.highCapacityDatabaseStorage = highCapacityDatabaseStorage;
         this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
+        this.subscriptionId = subscriptionId;
+        this.isAutoscaleEnabled = isAutoscaleEnabled;
+        this.autoscaleLimitInGBs = autoscaleLimitInGBs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
         /**
          * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
          **/
@@ -59,13 +87,13 @@ public final class DistributedDbStorageVault
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbStorageVaultId")
         private String dbStorageVaultId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
          * @param dbStorageVaultId the value to set
          * @return this builder
          **/
@@ -106,6 +134,54 @@ public final class DistributedDbStorageVault
             this.__explicitlySet__.add("additionalFlashCacheInPercent");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+        private Boolean isAutoscaleEnabled;
+
+        /**
+         * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+         * @param isAutoscaleEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAutoscaleEnabled(Boolean isAutoscaleEnabled) {
+            this.isAutoscaleEnabled = isAutoscaleEnabled;
+            this.__explicitlySet__.add("isAutoscaleEnabled");
+            return this;
+        }
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+        private Integer autoscaleLimitInGBs;
+
+        /**
+         * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+         * @param autoscaleLimitInGBs the value to set
+         * @return this builder
+         **/
+        public Builder autoscaleLimitInGBs(Integer autoscaleLimitInGBs) {
+            this.autoscaleLimitInGBs = autoscaleLimitInGBs;
+            this.__explicitlySet__.add("autoscaleLimitInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -113,10 +189,14 @@ public final class DistributedDbStorageVault
         public DistributedDbStorageVault build() {
             DistributedDbStorageVault model =
                     new DistributedDbStorageVault(
+                            this.compartmentId,
                             this.displayName,
                             this.dbStorageVaultId,
                             this.highCapacityDatabaseStorage,
-                            this.additionalFlashCacheInPercent);
+                            this.additionalFlashCacheInPercent,
+                            this.subscriptionId,
+                            this.isAutoscaleEnabled,
+                            this.autoscaleLimitInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -125,6 +205,9 @@ public final class DistributedDbStorageVault
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DistributedDbStorageVault model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -136,6 +219,15 @@ public final class DistributedDbStorageVault
             }
             if (model.wasPropertyExplicitlySet("additionalFlashCacheInPercent")) {
                 this.additionalFlashCacheInPercent(model.getAdditionalFlashCacheInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoscaleEnabled")) {
+                this.isAutoscaleEnabled(model.getIsAutoscaleEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoscaleLimitInGBs")) {
+                this.autoscaleLimitInGBs(model.getAutoscaleLimitInGBs());
             }
             return this;
         }
@@ -153,6 +245,20 @@ public final class DistributedDbStorageVault
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for Db Storage Vault.
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    /**
      * The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -167,13 +273,13 @@ public final class DistributedDbStorageVault
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbStorageVaultId")
     private final String dbStorageVaultId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Vault Storage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      * @return the value
      **/
     public String getDbStorageVaultId() {
@@ -208,6 +314,48 @@ public final class DistributedDbStorageVault
         return additionalFlashCacheInPercent;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoscaleEnabled")
+    private final Boolean isAutoscaleEnabled;
+
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is {@code FALSE}.
+     * @return the value
+     **/
+    public Boolean getIsAutoscaleEnabled() {
+        return isAutoscaleEnabled;
+    }
+
+    /**
+     * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoscaleLimitInGBs")
+    private final Integer autoscaleLimitInGBs;
+
+    /**
+     * The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault.
+     * @return the value
+     **/
+    public Integer getAutoscaleLimitInGBs() {
+        return autoscaleLimitInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -222,12 +370,16 @@ public final class DistributedDbStorageVault
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DistributedDbStorageVault(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", dbStorageVaultId=").append(String.valueOf(this.dbStorageVaultId));
         sb.append(", highCapacityDatabaseStorage=")
                 .append(String.valueOf(this.highCapacityDatabaseStorage));
         sb.append(", additionalFlashCacheInPercent=")
                 .append(String.valueOf(this.additionalFlashCacheInPercent));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", isAutoscaleEnabled=").append(String.valueOf(this.isAutoscaleEnabled));
+        sb.append(", autoscaleLimitInGBs=").append(String.valueOf(this.autoscaleLimitInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -242,12 +394,16 @@ public final class DistributedDbStorageVault
         }
 
         DistributedDbStorageVault other = (DistributedDbStorageVault) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dbStorageVaultId, other.dbStorageVaultId)
                 && java.util.Objects.equals(
                         this.highCapacityDatabaseStorage, other.highCapacityDatabaseStorage)
                 && java.util.Objects.equals(
                         this.additionalFlashCacheInPercent, other.additionalFlashCacheInPercent)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.isAutoscaleEnabled, other.isAutoscaleEnabled)
+                && java.util.Objects.equals(this.autoscaleLimitInGBs, other.autoscaleLimitInGBs)
                 && super.equals(other);
     }
 
@@ -255,6 +411,9 @@ public final class DistributedDbStorageVault
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -269,6 +428,19 @@ public final class DistributedDbStorageVault
                         + (this.additionalFlashCacheInPercent == null
                                 ? 43
                                 : this.additionalFlashCacheInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoscaleEnabled == null
+                                ? 43
+                                : this.isAutoscaleEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoscaleLimitInGBs == null
+                                ? 43
+                                : this.autoscaleLimitInGBs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

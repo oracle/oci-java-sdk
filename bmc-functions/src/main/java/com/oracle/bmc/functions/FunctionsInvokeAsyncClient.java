@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
     /**
      * Service instance for FunctionsInvoke.
@@ -498,7 +498,7 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
                         "FunctionsInvoke",
                         "InvokeFunction",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/InvokeFunction");
         final java.util.function.Function<javax.ws.rs.core.Response, InvokeFunctionResponse>
                 transformer =
                         InvokeFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));

@@ -37,6 +37,12 @@ public enum OperationType {
     ExportOciCacheBackupToOs("EXPORT_OCI_CACHE_BACKUP_TO_OS"),
     PatchOciCacheCluster("PATCH_OCI_CACHE_CLUSTER"),
     ReplaceOciCacheNode("REPLACE_OCI_CACHE_NODE"),
+    ConvertToSecondaryCluster("CONVERT_TO_SECONDARY_CLUSTER"),
+    ConvertToStandaloneCluster("CONVERT_TO_STANDALONE_CLUSTER"),
+    RollbackCrrSetup("ROLLBACK_CRR_SETUP"),
+    Switchover("SWITCHOVER"),
+    SetupCrr("SETUP_CRR"),
+    ChangeRoleToSecondary("CHANGE_ROLE_TO_SECONDARY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

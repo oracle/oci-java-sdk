@@ -82,6 +82,22 @@ public final class UpdateRelatedDocumentAttachmentDetails
             this.__explicitlySet__.add("documentCategory");
             return this;
         }
+        /**
+         * The document URL of the listing revision attachment.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
+        private String sourceUrl;
+
+        /**
+         * The document URL of the listing revision attachment.
+         * @param sourceUrl the value to set
+         * @return this builder
+         **/
+        public Builder sourceUrl(String sourceUrl) {
+            this.sourceUrl = sourceUrl;
+            this.__explicitlySet__.add("sourceUrl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -93,7 +109,8 @@ public final class UpdateRelatedDocumentAttachmentDetails
                             this.description,
                             this.freeformTags,
                             this.definedTags,
-                            this.documentCategory);
+                            this.documentCategory,
+                            this.sourceUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -117,6 +134,9 @@ public final class UpdateRelatedDocumentAttachmentDetails
             if (model.wasPropertyExplicitlySet("documentCategory")) {
                 this.documentCategory(model.getDocumentCategory());
             }
+            if (model.wasPropertyExplicitlySet("sourceUrl")) {
+                this.sourceUrl(model.getSourceUrl());
+            }
             return this;
         }
     }
@@ -138,9 +158,11 @@ public final class UpdateRelatedDocumentAttachmentDetails
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            RelatedDocumentAttachment.DocumentCategory documentCategory) {
+            RelatedDocumentAttachment.DocumentCategory documentCategory,
+            String sourceUrl) {
         super(displayName, description, freeformTags, definedTags);
         this.documentCategory = documentCategory;
+        this.sourceUrl = sourceUrl;
     }
 
     /**
@@ -155,6 +177,20 @@ public final class UpdateRelatedDocumentAttachmentDetails
      **/
     public RelatedDocumentAttachment.DocumentCategory getDocumentCategory() {
         return documentCategory;
+    }
+
+    /**
+     * The document URL of the listing revision attachment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
+    private final String sourceUrl;
+
+    /**
+     * The document URL of the listing revision attachment.
+     * @return the value
+     **/
+    public String getSourceUrl() {
+        return sourceUrl;
     }
 
     @Override
@@ -172,6 +208,7 @@ public final class UpdateRelatedDocumentAttachmentDetails
         sb.append("UpdateRelatedDocumentAttachmentDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", documentCategory=").append(String.valueOf(this.documentCategory));
+        sb.append(", sourceUrl=").append(String.valueOf(this.sourceUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -187,6 +224,7 @@ public final class UpdateRelatedDocumentAttachmentDetails
 
         UpdateRelatedDocumentAttachmentDetails other = (UpdateRelatedDocumentAttachmentDetails) o;
         return java.util.Objects.equals(this.documentCategory, other.documentCategory)
+                && java.util.Objects.equals(this.sourceUrl, other.sourceUrl)
                 && super.equals(other);
     }
 
@@ -197,6 +235,7 @@ public final class UpdateRelatedDocumentAttachmentDetails
         result =
                 (result * PRIME)
                         + (this.documentCategory == null ? 43 : this.documentCategory.hashCode());
+        result = (result * PRIME) + (this.sourceUrl == null ? 43 : this.sourceUrl.hashCode());
         return result;
     }
 }

@@ -143,6 +143,20 @@ public interface Sddc extends AutoCloseable {
     DowngradeHcxResponse downgradeHcx(DowngradeHcxRequest request);
 
     /**
+     * Generate the VMware binary download information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GenerateVmwareBinaryDownloadInfoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateVmwareBinaryDownloadInfo API.
+     */
+    GenerateVmwareBinaryDownloadInfoResponse generateVmwareBinaryDownloadInfo(
+            GenerateVmwareBinaryDownloadInfoRequest request);
+
+    /**
      * Gets the specified SDDC's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -234,6 +248,19 @@ public interface Sddc extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RetrievePasswordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrievePassword API.
      */
     RetrievePasswordResponse retrievePassword(RetrievePasswordRequest request);
+
+    /**
+     * Retrieve the list of available VMware binaries for the SDDC.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RetrieveVmwareBinariesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveVmwareBinaries API.
+     */
+    RetrieveVmwareBinariesResponse retrieveVmwareBinaries(RetrieveVmwareBinariesRequest request);
 
     /**
      * Updates the specified SDDC.

@@ -1107,6 +1107,51 @@ public class GenerativeAiClient implements GenerativeAi {
     }
 
     @Override
+    public ChangeRoutingProfileCompartmentResponse changeRoutingProfileCompartment(
+            ChangeRoutingProfileCompartmentRequest request) {
+        LOG.trace("Called changeRoutingProfileCompartment");
+        final ChangeRoutingProfileCompartmentRequest interceptedRequest =
+                ChangeRoutingProfileCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRoutingProfileCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ChangeRoutingProfileCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/ChangeRoutingProfileCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeRoutingProfileCompartmentResponse>
+                transformer =
+                        ChangeRoutingProfileCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeRoutingProfileCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeSemanticStoreCompartmentResponse changeSemanticStoreCompartment(
             ChangeSemanticStoreCompartmentRequest request) {
         LOG.trace("Called changeSemanticStoreCompartment");
@@ -1614,6 +1659,48 @@ public class GenerativeAiClient implements GenerativeAi {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateModelDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateRoutingProfileResponse createRoutingProfile(CreateRoutingProfileRequest request) {
+        LOG.trace("Called createRoutingProfile");
+        final CreateRoutingProfileRequest interceptedRequest =
+                CreateRoutingProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRoutingProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "CreateRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/CreateRoutingProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRoutingProfileResponse>
+                transformer =
+                        CreateRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateRoutingProfileDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -2213,6 +2300,44 @@ public class GenerativeAiClient implements GenerativeAi {
     }
 
     @Override
+    public DeleteRoutingProfileResponse deleteRoutingProfile(DeleteRoutingProfileRequest request) {
+        LOG.trace("Called deleteRoutingProfile");
+        final DeleteRoutingProfileRequest interceptedRequest =
+                DeleteRoutingProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRoutingProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "DeleteRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/DeleteRoutingProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRoutingProfileResponse>
+                transformer =
+                        DeleteRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteSemanticStoreResponse deleteSemanticStore(DeleteSemanticStoreRequest request) {
         LOG.trace("Called deleteSemanticStore");
         final DeleteSemanticStoreRequest interceptedRequest =
@@ -2679,6 +2804,43 @@ public class GenerativeAiClient implements GenerativeAi {
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/GetModel");
         java.util.function.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
                 GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRoutingProfileResponse getRoutingProfile(GetRoutingProfileRequest request) {
+        LOG.trace("Called getRoutingProfile");
+        final GetRoutingProfileRequest interceptedRequest =
+                GetRoutingProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRoutingProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "GetRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/GetRoutingProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRoutingProfileResponse>
+                transformer =
+                        GetRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3257,6 +3419,43 @@ public class GenerativeAiClient implements GenerativeAi {
     }
 
     @Override
+    public ListModelDiscoveryResponse listModelDiscovery(ListModelDiscoveryRequest request) {
+        LOG.trace("Called listModelDiscovery");
+        final ListModelDiscoveryRequest interceptedRequest =
+                ListModelDiscoveryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelDiscoveryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ListModelDiscovery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ModelDiscoveryCollection/ListModelDiscovery");
+        java.util.function.Function<javax.ws.rs.core.Response, ListModelDiscoveryResponse>
+                transformer =
+                        ListModelDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListModelsResponse listModels(ListModelsRequest request) {
         LOG.trace("Called listModels");
         final ListModelsRequest interceptedRequest = ListModelsConverter.interceptRequest(request);
@@ -3275,6 +3474,43 @@ public class GenerativeAiClient implements GenerativeAi {
                         "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels");
         java.util.function.Function<javax.ws.rs.core.Response, ListModelsResponse> transformer =
                 ListModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRoutingProfilesResponse listRoutingProfiles(ListRoutingProfilesRequest request) {
+        LOG.trace("Called listRoutingProfiles");
+        final ListRoutingProfilesRequest interceptedRequest =
+                ListRoutingProfilesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRoutingProfilesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ListRoutingProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfileCollection/ListRoutingProfiles");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRoutingProfilesResponse>
+                transformer =
+                        ListRoutingProfilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4087,6 +4323,47 @@ public class GenerativeAiClient implements GenerativeAi {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateModelDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateRoutingProfileResponse updateRoutingProfile(UpdateRoutingProfileRequest request) {
+        LOG.trace("Called updateRoutingProfile");
+        final UpdateRoutingProfileRequest interceptedRequest =
+                UpdateRoutingProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRoutingProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "UpdateRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/UpdateRoutingProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRoutingProfileResponse>
+                transformer =
+                        UpdateRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRoutingProfileDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

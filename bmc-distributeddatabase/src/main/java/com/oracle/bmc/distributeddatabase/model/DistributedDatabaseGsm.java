@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedDatabaseGsm.Builder.class
 )
@@ -109,13 +109,13 @@ public final class DistributedDatabaseGsm
             return this;
         }
         /**
-         * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -125,13 +125,13 @@ public final class DistributedDatabaseGsm
             return this;
         }
         /**
-         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -319,13 +319,13 @@ public final class DistributedDatabaseGsm
     }
 
     /**
-     * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -333,13 +333,13 @@ public final class DistributedDatabaseGsm
     }
 
     /**
-     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {

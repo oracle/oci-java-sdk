@@ -8,7 +8,7 @@ import com.oracle.bmc.distributeddatabase.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestLogsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -56,17 +56,17 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         return limit;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
      *
      **/
     public enum SortBy {
-        TimeAccepted("timeAccepted"),
+        Timestamp("timestamp"),
         ;
 
         private final String value;
@@ -98,7 +98,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
      *
      */
     public SortBy getSortBy() {
@@ -184,13 +184,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance

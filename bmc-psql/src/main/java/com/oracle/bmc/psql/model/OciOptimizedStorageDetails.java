@@ -44,6 +44,15 @@ public final class OciOptimizedStorageDetails extends StorageDetails {
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
         /**
          * Guaranteed input/output storage requests per second (IOPS) available to the database system.
          **/
@@ -67,7 +76,10 @@ public final class OciOptimizedStorageDetails extends StorageDetails {
         public OciOptimizedStorageDetails build() {
             OciOptimizedStorageDetails model =
                     new OciOptimizedStorageDetails(
-                            this.isRegionallyDurable, this.availabilityDomain, this.iops);
+                            this.isRegionallyDurable,
+                            this.availabilityDomain,
+                            this.kmsKeyId,
+                            this.iops);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,6 +93,9 @@ public final class OciOptimizedStorageDetails extends StorageDetails {
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
             }
             if (model.wasPropertyExplicitlySet("iops")) {
                 this.iops(model.getIops());
@@ -102,8 +117,8 @@ public final class OciOptimizedStorageDetails extends StorageDetails {
 
     @Deprecated
     public OciOptimizedStorageDetails(
-            Boolean isRegionallyDurable, String availabilityDomain, Long iops) {
-        super(isRegionallyDurable, availabilityDomain);
+            Boolean isRegionallyDurable, String availabilityDomain, String kmsKeyId, Long iops) {
+        super(isRegionallyDurable, availabilityDomain, kmsKeyId);
         this.iops = iops;
     }
 

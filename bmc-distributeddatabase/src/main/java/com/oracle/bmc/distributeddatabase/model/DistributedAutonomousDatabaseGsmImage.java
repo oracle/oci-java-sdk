@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedAutonomousDatabaseGsmImage.Builder.class
 )
@@ -22,11 +22,11 @@ package com.oracle.bmc.distributeddatabase.model;
 public final class DistributedAutonomousDatabaseGsmImage
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "versionNumber"})
-    public DistributedAutonomousDatabaseGsmImage(String id, Integer versionNumber) {
+    @java.beans.ConstructorProperties({"id", "version"})
+    public DistributedAutonomousDatabaseGsmImage(String id, String version) {
         super();
         this.id = id;
-        this.versionNumber = versionNumber;
+        this.version = version;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -48,19 +48,19 @@ public final class DistributedAutonomousDatabaseGsmImage
             return this;
         }
         /**
-         * The version number associated with the image identified by id.
+         * The version associated with the image identified by id.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
-        private Integer versionNumber;
+        @com.fasterxml.jackson.annotation.JsonProperty("version")
+        private String version;
 
         /**
-         * The version number associated with the image identified by id.
-         * @param versionNumber the value to set
+         * The version associated with the image identified by id.
+         * @param version the value to set
          * @return this builder
          **/
-        public Builder versionNumber(Integer versionNumber) {
-            this.versionNumber = versionNumber;
-            this.__explicitlySet__.add("versionNumber");
+        public Builder version(String version) {
+            this.version = version;
+            this.__explicitlySet__.add("version");
             return this;
         }
 
@@ -69,7 +69,7 @@ public final class DistributedAutonomousDatabaseGsmImage
 
         public DistributedAutonomousDatabaseGsmImage build() {
             DistributedAutonomousDatabaseGsmImage model =
-                    new DistributedAutonomousDatabaseGsmImage(this.id, this.versionNumber);
+                    new DistributedAutonomousDatabaseGsmImage(this.id, this.version);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,8 +81,8 @@ public final class DistributedAutonomousDatabaseGsmImage
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
-            if (model.wasPropertyExplicitlySet("versionNumber")) {
-                this.versionNumber(model.getVersionNumber());
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
             }
             return this;
         }
@@ -114,17 +114,17 @@ public final class DistributedAutonomousDatabaseGsmImage
     }
 
     /**
-     * The version number associated with the image identified by id.
+     * The version associated with the image identified by id.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
-    private final Integer versionNumber;
+    @com.fasterxml.jackson.annotation.JsonProperty("version")
+    private final String version;
 
     /**
-     * The version number associated with the image identified by id.
+     * The version associated with the image identified by id.
      * @return the value
      **/
-    public Integer getVersionNumber() {
-        return versionNumber;
+    public String getVersion() {
+        return version;
     }
 
     @Override
@@ -142,7 +142,7 @@ public final class DistributedAutonomousDatabaseGsmImage
         sb.append("DistributedAutonomousDatabaseGsmImage(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
-        sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
+        sb.append(", version=").append(String.valueOf(this.version));
         sb.append(")");
         return sb.toString();
     }
@@ -158,7 +158,7 @@ public final class DistributedAutonomousDatabaseGsmImage
 
         DistributedAutonomousDatabaseGsmImage other = (DistributedAutonomousDatabaseGsmImage) o;
         return java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.versionNumber, other.versionNumber)
+                && java.util.Objects.equals(this.version, other.version)
                 && super.equals(other);
     }
 
@@ -167,9 +167,7 @@ public final class DistributedAutonomousDatabaseGsmImage
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.versionNumber == null ? 43 : this.versionNumber.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

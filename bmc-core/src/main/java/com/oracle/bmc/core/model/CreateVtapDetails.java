@@ -776,6 +776,7 @@ public final class CreateVtapDetails extends com.oracle.bmc.http.internal.Explic
         DbSystem("DB_SYSTEM"),
         ExadataVmCluster("EXADATA_VM_CLUSTER"),
         AutonomousDataWarehouse("AUTONOMOUS_DATA_WAREHOUSE"),
+        NetworkFirewall("NETWORK_FIREWALL"),
         ;
 
         private final String value;

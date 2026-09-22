@@ -14,6 +14,17 @@ public class ActivateTargetDatabaseRequest
                 com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails> {
 
     /**
+     * The OCID of the Data Safe target database.
+     */
+    private String targetDatabaseId;
+
+    /**
+     * The OCID of the Data Safe target database.
+     */
+    public String getTargetDatabaseId() {
+        return targetDatabaseId;
+    }
+    /**
      * The details used to reactivate a target database in Data Safe.
      */
     private com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails
@@ -25,17 +36,6 @@ public class ActivateTargetDatabaseRequest
     public com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails
             getActivateTargetDatabaseDetails() {
         return activateTargetDatabaseDetails;
-    }
-    /**
-     * The OCID of the Data Safe target database.
-     */
-    private String targetDatabaseId;
-
-    /**
-     * The OCID of the Data Safe target database.
-     */
-    public String getTargetDatabaseId() {
-        return targetDatabaseId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -108,6 +108,21 @@ public class ActivateTargetDatabaseRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
+         * The OCID of the Data Safe target database.
+         */
+        private String targetDatabaseId = null;
+
+        /**
+         * The OCID of the Data Safe target database.
+         * @param targetDatabaseId the value to set
+         * @return this builder instance
+         */
+        public Builder targetDatabaseId(String targetDatabaseId) {
+            this.targetDatabaseId = targetDatabaseId;
+            return this;
+        }
+
+        /**
          * The details used to reactivate a target database in Data Safe.
          */
         private com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails
@@ -122,21 +137,6 @@ public class ActivateTargetDatabaseRequest
                 com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails
                         activateTargetDatabaseDetails) {
             this.activateTargetDatabaseDetails = activateTargetDatabaseDetails;
-            return this;
-        }
-
-        /**
-         * The OCID of the Data Safe target database.
-         */
-        private String targetDatabaseId = null;
-
-        /**
-         * The OCID of the Data Safe target database.
-         * @param targetDatabaseId the value to set
-         * @return this builder instance
-         */
-        public Builder targetDatabaseId(String targetDatabaseId) {
-            this.targetDatabaseId = targetDatabaseId;
             return this;
         }
 
@@ -231,8 +231,8 @@ public class ActivateTargetDatabaseRequest
          * @return this builder instance
          */
         public Builder copy(ActivateTargetDatabaseRequest o) {
-            activateTargetDatabaseDetails(o.getActivateTargetDatabaseDetails());
             targetDatabaseId(o.getTargetDatabaseId());
+            activateTargetDatabaseDetails(o.getActivateTargetDatabaseDetails());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
@@ -279,13 +279,13 @@ public class ActivateTargetDatabaseRequest
          */
         public ActivateTargetDatabaseRequest buildWithoutInvocationCallback() {
             ActivateTargetDatabaseRequest request = new ActivateTargetDatabaseRequest();
-            request.activateTargetDatabaseDetails = activateTargetDatabaseDetails;
             request.targetDatabaseId = targetDatabaseId;
+            request.activateTargetDatabaseDetails = activateTargetDatabaseDetails;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ActivateTargetDatabaseRequest(activateTargetDatabaseDetails, targetDatabaseId, opcRetryToken, ifMatch, opcRequestId);
+            // new ActivateTargetDatabaseRequest(targetDatabaseId, activateTargetDatabaseDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
@@ -295,8 +295,8 @@ public class ActivateTargetDatabaseRequest
      */
     public Builder toBuilder() {
         return new Builder()
-                .activateTargetDatabaseDetails(activateTargetDatabaseDetails)
                 .targetDatabaseId(targetDatabaseId)
+                .activateTargetDatabaseDetails(activateTargetDatabaseDetails)
                 .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
@@ -315,9 +315,9 @@ public class ActivateTargetDatabaseRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",targetDatabaseId=").append(String.valueOf(this.targetDatabaseId));
         sb.append(",activateTargetDatabaseDetails=")
                 .append(String.valueOf(this.activateTargetDatabaseDetails));
-        sb.append(",targetDatabaseId=").append(String.valueOf(this.targetDatabaseId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -336,9 +336,9 @@ public class ActivateTargetDatabaseRequest
 
         ActivateTargetDatabaseRequest other = (ActivateTargetDatabaseRequest) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.targetDatabaseId, other.targetDatabaseId)
                 && java.util.Objects.equals(
                         this.activateTargetDatabaseDetails, other.activateTargetDatabaseDetails)
-                && java.util.Objects.equals(this.targetDatabaseId, other.targetDatabaseId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -350,12 +350,12 @@ public class ActivateTargetDatabaseRequest
         int result = super.hashCode();
         result =
                 (result * PRIME)
+                        + (this.targetDatabaseId == null ? 43 : this.targetDatabaseId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.activateTargetDatabaseDetails == null
                                 ? 43
                                 : this.activateTargetDatabaseDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.targetDatabaseId == null ? 43 : this.targetDatabaseId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

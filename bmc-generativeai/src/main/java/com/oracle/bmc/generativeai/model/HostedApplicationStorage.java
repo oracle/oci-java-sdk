@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * defines a physical storage (database or cache) managed by service. Each application can choose one or two storages for certain purpose such as agent memory.
+ * Represents managed storage for an application. An application can use at most one managed storage resource of each type.
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator who gives OCI resource access to users. See
  * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm) and [Getting Access to Generative AI Resources](https://docs.oracle.com/iaas/Content/generative-ai/iam-policies.htm).
@@ -138,13 +138,13 @@ public final class HostedApplicationStorage
             return this;
         }
         /**
-         * type like Cache, Postgresql and ADB.
+         * The managed storage type for the application.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageType")
         private StorageType storageType;
 
         /**
-         * type like Cache, Postgresql and ADB.
+         * The managed storage type for the application.
          * @param storageType the value to set
          * @return this builder
          **/
@@ -443,7 +443,7 @@ public final class HostedApplicationStorage
     }
 
     /**
-     * type like Cache, Postgresql and ADB.
+     * The managed storage type for the application.
      **/
     public enum StorageType {
         Cache("CACHE"),
@@ -492,13 +492,13 @@ public final class HostedApplicationStorage
         }
     };
     /**
-     * type like Cache, Postgresql and ADB.
+     * The managed storage type for the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageType")
     private final StorageType storageType;
 
     /**
-     * type like Cache, Postgresql and ADB.
+     * The managed storage type for the application.
      * @return the value
      **/
     public StorageType getStorageType() {

@@ -22,6 +22,7 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
     @java.beans.ConstructorProperties({
         "name",
         "code",
+        "timeCreated",
         "usageInstructions",
         "isMultiSelect",
         "isMandatory",
@@ -30,6 +31,7 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
     public AdditionalFilter(
             String name,
             String code,
+            java.util.Date timeCreated,
             String usageInstructions,
             Boolean isMultiSelect,
             Boolean isMandatory,
@@ -37,6 +39,7 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
         super();
         this.name = name;
         this.code = code;
+        this.timeCreated = timeCreated;
         this.usageInstructions = usageInstructions;
         this.isMultiSelect = isMultiSelect;
         this.isMandatory = isMandatory;
@@ -75,6 +78,28 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
+            return this;
+        }
+        /**
+         * The date and time the additional filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2022-09-15T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        /**
+         * The date and time the additional filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2022-09-15T21:10:29.600Z}
+         *
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
@@ -150,6 +175,7 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
                     new AdditionalFilter(
                             this.name,
                             this.code,
+                            this.timeCreated,
                             this.usageInstructions,
                             this.isMultiSelect,
                             this.isMandatory,
@@ -167,6 +193,9 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("code")) {
                 this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
             }
             if (model.wasPropertyExplicitlySet("usageInstructions")) {
                 this.usageInstructions(model.getUsageInstructions());
@@ -221,6 +250,26 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
      **/
     public String getCode() {
         return code;
+    }
+
+    /**
+     * The date and time the additional filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2022-09-15T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * The date and time the additional filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2022-09-15T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
     }
 
     /**
@@ -295,6 +344,7 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", code=").append(String.valueOf(this.code));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", usageInstructions=").append(String.valueOf(this.usageInstructions));
         sb.append(", isMultiSelect=").append(String.valueOf(this.isMultiSelect));
         sb.append(", isMandatory=").append(String.valueOf(this.isMandatory));
@@ -315,6 +365,7 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
         AdditionalFilter other = (AdditionalFilter) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.code, other.code)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.usageInstructions, other.usageInstructions)
                 && java.util.Objects.equals(this.isMultiSelect, other.isMultiSelect)
                 && java.util.Objects.equals(this.isMandatory, other.isMandatory)
@@ -328,6 +379,7 @@ public final class AdditionalFilter extends com.oracle.bmc.http.internal.Explici
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result =
                 (result * PRIME)
                         + (this.usageInstructions == null ? 43 : this.usageInstructions.hashCode());
