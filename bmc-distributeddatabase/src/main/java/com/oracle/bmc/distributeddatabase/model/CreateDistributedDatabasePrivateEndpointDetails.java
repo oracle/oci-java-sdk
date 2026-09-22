@@ -15,7 +15,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateDistributedDatabasePrivateEndpointDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -28,7 +28,7 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
         "subnetId",
         "displayName",
         "description",
-        "nsgIds",
+        "vcnNsgIds",
         "freeformTags",
         "definedTags"
     })
@@ -37,7 +37,7 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
             String subnetId,
             String displayName,
             String description,
-            java.util.List<String> nsgIds,
+            java.util.List<VcnNsgIdsDetails> vcnNsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -45,7 +45,7 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
         this.subnetId = subnetId;
         this.displayName = displayName;
         this.description = description;
-        this.nsgIds = nsgIds;
+        this.vcnNsgIds = vcnNsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -112,19 +112,23 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCIDs of the network security groups that the private endpoint belongs to. */
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
+        /**
+         * The list of network security group (NSG) details to be associated with the private
+         * endpoint.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+        private java.util.List<VcnNsgIdsDetails> vcnNsgIds;
 
         /**
-         * The OCIDs of the network security groups that the private endpoint belongs to.
+         * The list of network security group (NSG) details to be associated with the private
+         * endpoint.
          *
-         * @param nsgIds the value to set
+         * @param vcnNsgIds the value to set
          * @return this builder
          */
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
+        public Builder vcnNsgIds(java.util.List<VcnNsgIdsDetails> vcnNsgIds) {
+            this.vcnNsgIds = vcnNsgIds;
+            this.__explicitlySet__.add("vcnNsgIds");
             return this;
         }
         /**
@@ -177,7 +181,7 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
                             this.subnetId,
                             this.displayName,
                             this.description,
-                            this.nsgIds,
+                            this.vcnNsgIds,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -200,8 +204,8 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
-            if (model.wasPropertyExplicitlySet("nsgIds")) {
-                this.nsgIds(model.getNsgIds());
+            if (model.wasPropertyExplicitlySet("vcnNsgIds")) {
+                this.vcnNsgIds(model.getVcnNsgIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -274,17 +278,19 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
         return description;
     }
 
-    /** The OCIDs of the network security groups that the private endpoint belongs to. */
-    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    private final java.util.List<String> nsgIds;
+    /**
+     * The list of network security group (NSG) details to be associated with the private endpoint.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+    private final java.util.List<VcnNsgIdsDetails> vcnNsgIds;
 
     /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
+     * The list of network security group (NSG) details to be associated with the private endpoint.
      *
      * @return the value
      */
-    public java.util.List<String> getNsgIds() {
-        return nsgIds;
+    public java.util.List<VcnNsgIdsDetails> getVcnNsgIds() {
+        return vcnNsgIds;
     }
 
     /**
@@ -340,7 +346,7 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", vcnNsgIds=").append(String.valueOf(this.vcnNsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -362,7 +368,7 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.vcnNsgIds, other.vcnNsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -378,7 +384,7 @@ public final class CreateDistributedDatabasePrivateEndpointDetails
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.vcnNsgIds == null ? 43 : this.vcnNsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

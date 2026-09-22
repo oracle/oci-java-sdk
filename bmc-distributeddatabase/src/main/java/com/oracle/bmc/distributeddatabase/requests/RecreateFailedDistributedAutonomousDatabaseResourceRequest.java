@@ -11,30 +11,23 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RecreateFailedDistributedAutonomousDatabaseResourceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     private String distributedAutonomousDatabaseId;
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     public String getDistributedAutonomousDatabaseId() {
         return distributedAutonomousDatabaseId;
     }
-    /** Specify the name of Shard, Catalog or GSM. */
+    /** Specify the name of the shard, catalog, or GSM. */
     private String resourceName;
 
-    /** Specify the name of Shard, Catalog or GSM. */
+    /** Specify the name of the shard, catalog, or GSM. */
     public String getResourceName() {
         return resourceName;
-    }
-    /** The shardGroup name example Shardgroupa, Shardgroupb. */
-    private String shardGroup;
-
-    /** The shardGroup name example Shardgroupa, Shardgroupb. */
-    public String getShardGroup() {
-        return shardGroup;
     }
     /** The client request ID for tracing. */
     private String opcRequestId;
@@ -86,11 +79,11 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Globally distributed autonomous database identifier */
+        /** Globally distributed autonomous database identifier. */
         private String distributedAutonomousDatabaseId = null;
 
         /**
-         * Globally distributed autonomous database identifier
+         * Globally distributed autonomous database identifier.
          *
          * @param distributedAutonomousDatabaseId the value to set
          * @return this builder instance
@@ -100,31 +93,17 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
             return this;
         }
 
-        /** Specify the name of Shard, Catalog or GSM. */
+        /** Specify the name of the shard, catalog, or GSM. */
         private String resourceName = null;
 
         /**
-         * Specify the name of Shard, Catalog or GSM.
+         * Specify the name of the shard, catalog, or GSM.
          *
          * @param resourceName the value to set
          * @return this builder instance
          */
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
-            return this;
-        }
-
-        /** The shardGroup name example Shardgroupa, Shardgroupb. */
-        private String shardGroup = null;
-
-        /**
-         * The shardGroup name example Shardgroupa, Shardgroupb.
-         *
-         * @param shardGroup the value to set
-         * @return this builder instance
-         */
-        public Builder shardGroup(String shardGroup) {
-            this.shardGroup = shardGroup;
             return this;
         }
 
@@ -220,7 +199,6 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
         public Builder copy(RecreateFailedDistributedAutonomousDatabaseResourceRequest o) {
             distributedAutonomousDatabaseId(o.getDistributedAutonomousDatabaseId());
             resourceName(o.getResourceName());
-            shardGroup(o.getShardGroup());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
@@ -265,13 +243,12 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
                     new RecreateFailedDistributedAutonomousDatabaseResourceRequest();
             request.distributedAutonomousDatabaseId = distributedAutonomousDatabaseId;
             request.resourceName = resourceName;
-            request.shardGroup = shardGroup;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             return request;
             // new
-            // RecreateFailedDistributedAutonomousDatabaseResourceRequest(distributedAutonomousDatabaseId, resourceName, shardGroup, opcRequestId, ifMatch, opcRetryToken);
+            // RecreateFailedDistributedAutonomousDatabaseResourceRequest(distributedAutonomousDatabaseId, resourceName, opcRequestId, ifMatch, opcRetryToken);
         }
     }
 
@@ -284,7 +261,6 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
         return new Builder()
                 .distributedAutonomousDatabaseId(distributedAutonomousDatabaseId)
                 .resourceName(resourceName)
-                .shardGroup(shardGroup)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken);
@@ -307,7 +283,6 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
         sb.append(",distributedAutonomousDatabaseId=")
                 .append(String.valueOf(this.distributedAutonomousDatabaseId));
         sb.append(",resourceName=").append(String.valueOf(this.resourceName));
-        sb.append(",shardGroup=").append(String.valueOf(this.shardGroup));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
@@ -330,7 +305,6 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
                 && java.util.Objects.equals(
                         this.distributedAutonomousDatabaseId, other.distributedAutonomousDatabaseId)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
-                && java.util.Objects.equals(this.shardGroup, other.shardGroup)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
@@ -346,7 +320,6 @@ public class RecreateFailedDistributedAutonomousDatabaseResourceRequest
                                 ? 43
                                 : this.distributedAutonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
-        result = (result * PRIME) + (this.shardGroup == null ? 43 : this.shardGroup.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result =

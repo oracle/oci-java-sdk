@@ -5,8 +5,7 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead. The source details for the Function.
- * The function can be created from various sources. <br>
+ * The source details for the Function. The function can be created from various sources. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -16,13 +15,19 @@ package com.oracle.bmc.functions.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
         property = "sourceType",
         defaultImpl = FunctionSourceDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ContainerImageFunctionSourceDetails.class,
+            name = "CONTAINER_IMAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ArchiveFunctionSourceDetails.class,
+            name = "ARCHIVE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PreBuiltFunctionSourceDetails.class,
             name = "PRE_BUILT_FUNCTIONS")
@@ -77,9 +82,11 @@ public class FunctionSourceDetails
         return result;
     }
 
-    /** Type of the Function Source. Possible values: PBF. */
+    /** Type of the Function Source. Possible values: CONTAINER_IMAGE, PBF and ARCHIVE. */
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         PreBuiltFunctions("PRE_BUILT_FUNCTIONS"),
+        Archive("ARCHIVE"),
+        ContainerImage("CONTAINER_IMAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

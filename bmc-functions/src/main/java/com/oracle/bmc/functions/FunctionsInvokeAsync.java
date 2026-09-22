@@ -8,7 +8,7 @@ import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
 
 /** API for the Functions service. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public interface FunctionsInvokeAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -60,7 +60,7 @@ public interface FunctionsInvokeAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Invokes a function\"
+     * Invokes a function
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

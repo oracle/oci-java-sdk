@@ -106,7 +106,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("Instance", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "Instance",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20260831")
@@ -134,7 +137,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ChangeInstanceCompartmentResponse::builder)
                 .logger(LOG, "changeInstanceCompartment")
-                .serviceDetails("Instance", "ChangeInstanceCompartment", "")
+                .serviceDetails(
+                        "Instance",
+                        "ChangeInstanceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/ChangeInstanceCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeInstanceCompartmentRequest::builder)
                 .basePath("/20260831")
@@ -165,7 +171,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, CreateInstanceResponse::builder)
                 .logger(LOG, "createInstance")
-                .serviceDetails("Instance", "CreateInstance", "")
+                .serviceDetails(
+                        "Instance",
+                        "CreateInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/CreateInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateInstanceRequest::builder)
                 .basePath("/20260831")
@@ -199,7 +208,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, DeleteInstanceResponse::builder)
                 .logger(LOG, "deleteInstance")
-                .serviceDetails("Instance", "DeleteInstance", "")
+                .serviceDetails(
+                        "Instance",
+                        "DeleteInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/DeleteInstance")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteInstanceRequest::builder)
                 .basePath("/20260831")
@@ -225,7 +237,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, GetInstanceResponse::builder)
                 .logger(LOG, "getInstance")
-                .serviceDetails("Instance", "GetInstance", "")
+                .serviceDetails(
+                        "Instance",
+                        "GetInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/GetInstance")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetInstanceRequest::builder)
                 .basePath("/20260831")
@@ -253,7 +268,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("Instance", "GetWorkRequest", "")
+                .serviceDetails(
+                        "Instance",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20260831")
@@ -280,7 +298,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ListInstancesResponse::builder)
                 .logger(LOG, "listInstances")
-                .serviceDetails("Instance", "ListInstances", "")
+                .serviceDetails(
+                        "Instance",
+                        "ListInstances",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/InstanceCollection/ListInstances")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstancesRequest::builder)
                 .basePath("/20260831")
@@ -316,7 +337,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("Instance", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "Instance",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20260831")
@@ -350,7 +374,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("Instance", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "Instance",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20260831")
@@ -382,7 +409,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("Instance", "ListWorkRequests", "")
+                .serviceDetails(
+                        "Instance",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20260831")
@@ -420,7 +450,10 @@ public class InstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
 
         return clientCall(request, UpdateInstanceResponse::builder)
                 .logger(LOG, "updateInstance")
-                .serviceDetails("Instance", "UpdateInstance", "")
+                .serviceDetails(
+                        "Instance",
+                        "UpdateInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/UpdateInstance")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInstanceRequest::builder)
                 .basePath("/20260831")

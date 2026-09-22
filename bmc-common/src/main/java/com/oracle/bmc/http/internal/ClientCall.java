@@ -1140,6 +1140,7 @@ public final class ClientCall<
                 long start = circuitBreaker.getCurrentTimestamp();
                 CompletionStage<HttpResponse> upstream;
                 try {
+                    executed = true;
                     upstream =
                             transientRequest
                                     .execute()

@@ -72,6 +72,15 @@ public final class ReviewSupportDocumentAttachment extends ListingRevisionAttach
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -198,6 +207,7 @@ public final class ReviewSupportDocumentAttachment extends ListingRevisionAttach
                             this.listingRevisionId,
                             this.displayName,
                             this.description,
+                            this.sourceType,
                             this.lifecycleState,
                             this.timeCreated,
                             this.timeUpdated,
@@ -230,6 +240,9 @@ public final class ReviewSupportDocumentAttachment extends ListingRevisionAttach
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -281,6 +294,7 @@ public final class ReviewSupportDocumentAttachment extends ListingRevisionAttach
             String listingRevisionId,
             String displayName,
             String description,
+            SourceType sourceType,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -297,6 +311,7 @@ public final class ReviewSupportDocumentAttachment extends ListingRevisionAttach
                 listingRevisionId,
                 displayName,
                 description,
+                sourceType,
                 lifecycleState,
                 timeCreated,
                 timeUpdated,

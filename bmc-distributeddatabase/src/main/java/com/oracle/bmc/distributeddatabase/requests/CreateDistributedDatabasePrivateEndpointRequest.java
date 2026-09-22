@@ -11,7 +11,7 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * CreateDistributedDatabasePrivateEndpointRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class CreateDistributedDatabasePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.distributeddatabase.model

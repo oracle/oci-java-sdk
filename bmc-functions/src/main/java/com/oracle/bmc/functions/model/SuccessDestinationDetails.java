@@ -5,9 +5,9 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead. An object that represents the
- * destination to which Oracle Functions will send an invocation record with the details of the
- * successful detached function invocation. A stream is an example of a success destination.
+ * An object that represents the destination to which Oracle Functions will send an invocation
+ * record with the details of the successful detached function invocation. A stream is an example of
+ * a success destination.
  *
  * <p>Example: {@code {"kind": "STREAM", "streamId": "stream_OCID"}} <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
@@ -19,7 +19,7 @@ package com.oracle.bmc.functions.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,

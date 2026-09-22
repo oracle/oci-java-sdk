@@ -25,7 +25,7 @@ import java.util.Objects;
  * Please refer to
  * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         implements DistributedDbServiceAsync {
     /** Service instance for DistributedDbService. */
@@ -56,7 +56,7 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DistributedDbServiceAsyncClient",
-                            "downloadDistributedDatabaseGsmCertificateSigningRequest,generateDistributedDatabaseWallet"));
+                            "generateDistributedDatabaseWallet"));
         }
     }
 
@@ -144,10 +144,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "AddDistributedDatabaseGdsControlNode",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/AddDistributedDatabaseGdsControlNode")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/AddDistributedDatabaseGdsControlNode")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddDistributedDatabaseGdsControlNodeRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -186,10 +186,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "ChangeDistributedDatabaseCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ChangeDistributedDatabaseCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ChangeDistributedDatabaseCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDistributedDatabaseCompartmentRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -228,10 +228,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "ChangeDistributedDbBackupConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ChangeDistributedDbBackupConfig")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ChangeDistributedDbBackupConfig")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDistributedDbBackupConfigRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -247,6 +247,56 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeDistributedDbBackupConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureDistributedDatabaseAutoResourceManagementResponse>
+            configureDistributedDatabaseAutoResourceManagement(
+                    ConfigureDistributedDatabaseAutoResourceManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureDistributedDatabaseAutoResourceManagementRequest,
+                                    ConfigureDistributedDatabaseAutoResourceManagementResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureDistributedDatabaseAutoResourceManagementDetails(),
+                "configureDistributedDatabaseAutoResourceManagementDetails is required");
+
+        return clientCall(
+                        request,
+                        ConfigureDistributedDatabaseAutoResourceManagementResponse::builder)
+                .logger(LOG, "configureDistributedDatabaseAutoResourceManagement")
+                .serviceDetails(
+                        "DistributedDbService",
+                        "ConfigureDistributedDatabaseAutoResourceManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ConfigureDistributedDatabaseAutoResourceManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureDistributedDatabaseAutoResourceManagementRequest::builder)
+                .basePath("/20260101")
+                .appendPathParam("distributedDatabases")
+                .appendPathParam(request.getDistributedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("configureAutoResourceManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.distributeddatabase.model
+                                .DistributedDatabaseAutoResourceManagementDetails.class,
+                        ConfigureDistributedDatabaseAutoResourceManagementResponse.Builder
+                                ::distributedDatabaseAutoResourceManagementDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfigureDistributedDatabaseAutoResourceManagementResponse.Builder
+                                ::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag",
+                        ConfigureDistributedDatabaseAutoResourceManagementResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -270,10 +320,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "ConfigureDistributedDatabaseGsms",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ConfigureDistributedDatabaseGsms")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ConfigureDistributedDatabaseGsms")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureDistributedDatabaseGsmsRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -309,10 +359,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "ConfigureDistributedDatabaseSharding",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ConfigureDistributedDatabaseSharding")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ConfigureDistributedDatabaseSharding")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfigureDistributedDatabaseShardingRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -346,7 +396,7 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails("DistributedDbService", "CreateDistributedDatabase", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDistributedDatabaseRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -379,13 +429,12 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "DeleteDistributedDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/DeleteDistributedDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/DeleteDistributedDatabase")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDistributedDatabaseRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
-                .appendQueryParam("mustDeleteInfra", request.getMustDeleteInfra())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -395,108 +444,6 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                         DeleteDistributedDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDistributedDatabaseResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<
-                    DownloadDistributedDatabaseGsmCertificateSigningRequestResponse>
-            downloadDistributedDatabaseGsmCertificateSigningRequest(
-                    DownloadDistributedDatabaseGsmCertificateSigningRequestRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DownloadDistributedDatabaseGsmCertificateSigningRequestRequest,
-                                    DownloadDistributedDatabaseGsmCertificateSigningRequestResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
-
-        return clientCall(
-                        request,
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestResponse::builder)
-                .logger(LOG, "downloadDistributedDatabaseGsmCertificateSigningRequest")
-                .serviceDetails(
-                        "DistributedDbService",
-                        "DownloadDistributedDatabaseGsmCertificateSigningRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/DownloadDistributedDatabaseGsmCertificateSigningRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestRequest::builder)
-                .basePath("/20250101")
-                .appendPathParam("distributedDatabases")
-                .appendPathParam(request.getDistributedDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("downloadGsmCertificateSigningRequest")
-                .accept("application/octet-stream")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleBody(
-                        java.io.InputStream.class,
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestResponse.Builder
-                                ::inputStream)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestResponse.Builder
-                                ::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag",
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestResponse.Builder
-                                ::etag)
-                .handleResponseHeaderLong(
-                        "content-length",
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestResponse.Builder
-                                ::contentLength)
-                .handleResponseHeaderDate(
-                        "last-modified",
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestResponse.Builder
-                                ::lastModified)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<
-                    GenerateDistributedDatabaseGsmCertificateSigningRequestResponse>
-            generateDistributedDatabaseGsmCertificateSigningRequest(
-                    GenerateDistributedDatabaseGsmCertificateSigningRequestRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateDistributedDatabaseGsmCertificateSigningRequestRequest,
-                                    GenerateDistributedDatabaseGsmCertificateSigningRequestResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
-        Objects.requireNonNull(request.getCaBundleId(), "caBundleId is required");
-
-        return clientCall(
-                        request,
-                        GenerateDistributedDatabaseGsmCertificateSigningRequestResponse::builder)
-                .logger(LOG, "generateDistributedDatabaseGsmCertificateSigningRequest")
-                .serviceDetails(
-                        "DistributedDbService",
-                        "GenerateDistributedDatabaseGsmCertificateSigningRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GenerateDistributedDatabaseGsmCertificateSigningRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(
-                        GenerateDistributedDatabaseGsmCertificateSigningRequestRequest::builder)
-                .basePath("/20250101")
-                .appendPathParam("distributedDatabases")
-                .appendPathParam(request.getDistributedDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("generateGsmCertificateSigningRequest")
-                .appendQueryParam("caBundleId", request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        GenerateDistributedDatabaseGsmCertificateSigningRequestResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GenerateDistributedDatabaseGsmCertificateSigningRequestResponse.Builder
-                                ::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -520,10 +467,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "GenerateDistributedDatabaseWallet",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GenerateDistributedDatabaseWallet")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GenerateDistributedDatabaseWallet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateDistributedDatabaseWalletRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -565,10 +512,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "GetDistributedDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedDatabase")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDistributedDatabaseRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendQueryParam("metadata", request.getMetadata())
@@ -601,10 +548,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "GetDistributedDatabaseRaftMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedDatabaseRaftMetric")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedDatabaseRaftMetric")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDistributedDatabaseRaftMetricRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("raftMetrics")
@@ -622,6 +569,44 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
     }
 
     @Override
+    public java.util.concurrent.Future<GetDistributedDatabaseRuChangeLogResponse>
+            getDistributedDatabaseRuChangeLog(
+                    GetDistributedDatabaseRuChangeLogRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDistributedDatabaseRuChangeLogRequest,
+                                    GetDistributedDatabaseRuChangeLogResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
+
+        return clientCall(request, GetDistributedDatabaseRuChangeLogResponse::builder)
+                .logger(LOG, "getDistributedDatabaseRuChangeLog")
+                .serviceDetails(
+                        "DistributedDbService",
+                        "GetDistributedDatabaseRuChangeLog",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedDatabaseRuChangeLog")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDistributedDatabaseRuChangeLogRequest::builder)
+                .basePath("/20260101")
+                .appendPathParam("distributedDatabases")
+                .appendPathParam(request.getDistributedDatabaseId())
+                .appendPathParam("ruChangeLog")
+                .appendQueryParam("sourceShardName", request.getSourceShardName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.distributeddatabase.model.DistributedDatabaseRuChangeLog
+                                .class,
+                        GetDistributedDatabaseRuChangeLogResponse.Builder
+                                ::distributedDatabaseRuChangeLog)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDistributedDatabaseRuChangeLogResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributedDatabasesResponse> listDistributedDatabases(
             ListDistributedDatabasesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -634,20 +619,24 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "ListDistributedDatabases",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabaseCollection/ListDistributedDatabases")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabaseCollection/ListDistributedDatabases")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDistributedDatabasesRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("privateEndpointId", request.getPrivateEndpointId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam(
+                        "isAutoResourceManagementEnabled",
+                        request.getIsAutoResourceManagementEnabled())
                 .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("dbDeploymentType", request.getDbDeploymentType())
+                .appendQueryParam("dbDeploymentType", request.getDbDeploymentType())
                 .appendQueryParam("metadata", request.getMetadata())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -682,10 +671,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "MoveDistributedDatabaseReplicationUnit",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/MoveDistributedDatabaseReplicationUnit")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/MoveDistributedDatabaseReplicationUnit")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(MoveDistributedDatabaseReplicationUnitRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -722,10 +711,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "PatchDistributedDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/PatchDistributedDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/PatchDistributedDatabase")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchDistributedDatabaseRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .accept("application/json")
@@ -759,16 +748,15 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "RecreateFailedDistributedDatabaseResource",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/RecreateFailedDistributedDatabaseResource")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/RecreateFailedDistributedDatabaseResource")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RecreateFailedDistributedDatabaseResourceRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
                 .appendPathParam("recreateFailedResource")
                 .appendQueryParam("resourceName", request.getResourceName())
-                .appendQueryParam("shardGroup", request.getShardGroup())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -793,30 +781,76 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
 
         Validate.notBlank(
                 request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getRotateDistributedDatabasePasswordsDetails(),
+                "rotateDistributedDatabasePasswordsDetails is required");
 
         return clientCall(request, RotateDistributedDatabasePasswordsResponse::builder)
                 .logger(LOG, "rotateDistributedDatabasePasswords")
                 .serviceDetails(
                         "DistributedDbService",
                         "RotateDistributedDatabasePasswords",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/RotateDistributedDatabasePasswords")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/RotateDistributedDatabasePasswords")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RotateDistributedDatabasePasswordsRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
                 .appendPathParam("rotateDbPasswords")
                 .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         RotateDistributedDatabasePasswordsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RotateDistributedDatabasePasswordsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScaleDistributedDatabaseGsmsResponse>
+            scaleDistributedDatabaseGsms(
+                    ScaleDistributedDatabaseGsmsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScaleDistributedDatabaseGsmsRequest,
+                                    ScaleDistributedDatabaseGsmsResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getScaleDistributedDatabaseGsmsDetails(),
+                "scaleDistributedDatabaseGsmsDetails is required");
+
+        Validate.notBlank(
+                request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
+
+        return clientCall(request, ScaleDistributedDatabaseGsmsResponse::builder)
+                .logger(LOG, "scaleDistributedDatabaseGsms")
+                .serviceDetails(
+                        "DistributedDbService",
+                        "ScaleDistributedDatabaseGsms",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ScaleDistributedDatabaseGsms")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScaleDistributedDatabaseGsmsRequest::builder)
+                .basePath("/20260101")
+                .appendPathParam("distributedDatabases")
+                .appendPathParam(request.getDistributedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("scaleGsms")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ScaleDistributedDatabaseGsmsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ScaleDistributedDatabaseGsmsResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -835,10 +869,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "StartDistributedDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/StartDistributedDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/StartDistributedDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartDistributedDatabaseRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -870,10 +904,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "StopDistributedDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/StopDistributedDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/StopDistributedDatabase")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopDistributedDatabaseRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
@@ -908,10 +942,10 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "UpdateDistributedDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/UpdateDistributedDatabase")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/UpdateDistributedDatabase")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDistributedDatabaseRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .accept("application/json")
@@ -924,55 +958,6 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDistributedDatabaseResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateDistributedDatabaseResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<
-                    UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse>
-            uploadDistributedDatabaseSignedCertificateAndGenerateWallet(
-                    UploadDistributedDatabaseSignedCertificateAndGenerateWalletRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UploadDistributedDatabaseSignedCertificateAndGenerateWalletRequest,
-                                    UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
-        Objects.requireNonNull(
-                request.getUploadDistributedDatabaseSignedCertificateAndGenerateWalletDetails(),
-                "uploadDistributedDatabaseSignedCertificateAndGenerateWalletDetails is required");
-
-        return clientCall(
-                        request,
-                        UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse
-                                ::builder)
-                .logger(LOG, "uploadDistributedDatabaseSignedCertificateAndGenerateWallet")
-                .serviceDetails(
-                        "DistributedDbService",
-                        "UploadDistributedDatabaseSignedCertificateAndGenerateWallet",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/UploadDistributedDatabaseSignedCertificateAndGenerateWallet")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(
-                        UploadDistributedDatabaseSignedCertificateAndGenerateWalletRequest::builder)
-                .basePath("/20250101")
-                .appendPathParam("distributedDatabases")
-                .appendPathParam(request.getDistributedDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("uploadSignedCertificateAndGenerateWallet")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse.Builder
-                                ::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse.Builder
-                                ::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -993,17 +978,15 @@ public class DistributedDbServiceAsyncClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "DistributedDbService",
                         "ValidateDistributedDatabaseNetwork",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ValidateDistributedDatabaseNetwork")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ValidateDistributedDatabaseNetwork")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateDistributedDatabaseNetworkRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabases")
                 .appendPathParam(request.getDistributedDatabaseId())
                 .appendPathParam("actions")
                 .appendPathParam("validateNetwork")
                 .appendQueryParam("isSurrogate", request.getIsSurrogate())
-                .appendQueryParam("resourceName", request.getResourceName())
-                .appendQueryParam("shardGroup", request.getShardGroup())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())

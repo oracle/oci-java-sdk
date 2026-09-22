@@ -5,7 +5,7 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * Globally distributed database catalog. <br>
+ * Details of a Globally distributed database catalog. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,71 +15,102 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "source",
-        defaultImpl = DistributedDatabaseCatalog.class)
-@com.fasterxml.jackson.annotation.JsonSubTypes({
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DistributedDatabaseCatalogWithExadbXs.class,
-            name = "EXADB_XS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DistributedDatabaseCatalogWithExadbXsNewVaultAndCluster.class,
-            name = "NEW_VAULT_AND_CLUSTER")
-})
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = DistributedDatabaseCatalog.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DistributedDatabaseCatalog
+public final class DistributedDatabaseCatalog
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "timeCreated", "timeUpdated"})
-    protected DistributedDatabaseCatalog(
-            String name, java.util.Date timeCreated, java.util.Date timeUpdated) {
+    @java.beans.ConstructorProperties({"originalReplica", "dataGuardReplicas"})
+    public DistributedDatabaseCatalog(
+            DistributedDatabaseCatalogReplicaDetails originalReplica,
+            java.util.List<DistributedDatabaseCatalogReplicaDetails> dataGuardReplicas) {
         super();
-        this.name = name;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
+        this.originalReplica = originalReplica;
+        this.dataGuardReplicas = dataGuardReplicas;
     }
 
-    /** The name of catalog. */
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    private final String name;
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("originalReplica")
+        private DistributedDatabaseCatalogReplicaDetails originalReplica;
+
+        public Builder originalReplica(DistributedDatabaseCatalogReplicaDetails originalReplica) {
+            this.originalReplica = originalReplica;
+            this.__explicitlySet__.add("originalReplica");
+            return this;
+        }
+        /** The details of data guard replicas for the catalog. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataGuardReplicas")
+        private java.util.List<DistributedDatabaseCatalogReplicaDetails> dataGuardReplicas;
+
+        /**
+         * The details of data guard replicas for the catalog.
+         *
+         * @param dataGuardReplicas the value to set
+         * @return this builder
+         */
+        public Builder dataGuardReplicas(
+                java.util.List<DistributedDatabaseCatalogReplicaDetails> dataGuardReplicas) {
+            this.dataGuardReplicas = dataGuardReplicas;
+            this.__explicitlySet__.add("dataGuardReplicas");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public DistributedDatabaseCatalog build() {
+            DistributedDatabaseCatalog model =
+                    new DistributedDatabaseCatalog(this.originalReplica, this.dataGuardReplicas);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(DistributedDatabaseCatalog model) {
+            if (model.wasPropertyExplicitlySet("originalReplica")) {
+                this.originalReplica(model.getOriginalReplica());
+            }
+            if (model.wasPropertyExplicitlySet("dataGuardReplicas")) {
+                this.dataGuardReplicas(model.getDataGuardReplicas());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("originalReplica")
+    private final DistributedDatabaseCatalogReplicaDetails originalReplica;
+
+    public DistributedDatabaseCatalogReplicaDetails getOriginalReplica() {
+        return originalReplica;
+    }
+
+    /** The details of data guard replicas for the catalog. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataGuardReplicas")
+    private final java.util.List<DistributedDatabaseCatalogReplicaDetails> dataGuardReplicas;
 
     /**
-     * The name of catalog.
+     * The details of data guard replicas for the catalog.
      *
      * @return the value
      */
-    public String getName() {
-        return name;
-    }
-
-    /** The time the catalog was created. An RFC3339 formatted datetime string */
-    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    private final java.util.Date timeCreated;
-
-    /**
-     * The time the catalog was created. An RFC3339 formatted datetime string
-     *
-     * @return the value
-     */
-    public java.util.Date getTimeCreated() {
-        return timeCreated;
-    }
-
-    /** The time the catalog was last updated. An RFC3339 formatted datetime string */
-    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    private final java.util.Date timeUpdated;
-
-    /**
-     * The time the catalog was last updated. An RFC3339 formatted datetime string
-     *
-     * @return the value
-     */
-    public java.util.Date getTimeUpdated() {
-        return timeUpdated;
+    public java.util.List<DistributedDatabaseCatalogReplicaDetails> getDataGuardReplicas() {
+        return dataGuardReplicas;
     }
 
     @Override
@@ -97,9 +128,8 @@ public class DistributedDatabaseCatalog
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DistributedDatabaseCatalog(");
         sb.append("super=").append(super.toString());
-        sb.append("name=").append(String.valueOf(this.name));
-        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append("originalReplica=").append(String.valueOf(this.originalReplica));
+        sb.append(", dataGuardReplicas=").append(String.valueOf(this.dataGuardReplicas));
         sb.append(")");
         return sb.toString();
     }
@@ -114,9 +144,8 @@ public class DistributedDatabaseCatalog
         }
 
         DistributedDatabaseCatalog other = (DistributedDatabaseCatalog) o;
-        return java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+        return java.util.Objects.equals(this.originalReplica, other.originalReplica)
+                && java.util.Objects.equals(this.dataGuardReplicas, other.dataGuardReplicas)
                 && super.equals(other);
     }
 
@@ -124,63 +153,13 @@ public class DistributedDatabaseCatalog
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.originalReplica == null ? 43 : this.originalReplica.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataGuardReplicas == null ? 43 : this.dataGuardReplicas.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
-
-    /**
-     * Type of Globally distributed database Shard or Catalog. Use NEW_VAULT_AND_CLUSTER for a
-     * Globally distributed database on Exascale with new vaults and clusters created from scratch.
-     * Use EXISTING_CLUSTER for a Globally distributed database on Exascale based on pre-existing
-     * clusters. EXADB_XS is currently the same as EXISTING_CLUSTER and will be deprecated after the
-     * deprecation cycle.
-     */
-    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
-        ExadbXs("EXADB_XS"),
-        NewVaultAndCluster("NEW_VAULT_AND_CLUSTER"),
-        ExistingCluster("EXISTING_CLUSTER"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Source.class);
-
-        private final String value;
-        private static java.util.Map<String, Source> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Source v : Source.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Source(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Source create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Source', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
 }

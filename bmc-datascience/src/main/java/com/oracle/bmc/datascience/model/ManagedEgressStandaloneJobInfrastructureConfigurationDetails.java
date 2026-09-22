@@ -59,6 +59,27 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
             this.__explicitlySet__.add("blockStorageSizeInGBs");
             return this;
         }
+        /**
+         * This specifies the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customer-managed compute capacity reservation to be used for launching jobs.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * This specifies the
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customer-managed compute capacity reservation to be used for launching jobs.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("jobShapeConfigDetails")
         private JobShapeConfigDetails jobShapeConfigDetails;
@@ -75,7 +96,10 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
         public ManagedEgressStandaloneJobInfrastructureConfigurationDetails build() {
             ManagedEgressStandaloneJobInfrastructureConfigurationDetails model =
                     new ManagedEgressStandaloneJobInfrastructureConfigurationDetails(
-                            this.shapeName, this.blockStorageSizeInGBs, this.jobShapeConfigDetails);
+                            this.shapeName,
+                            this.blockStorageSizeInGBs,
+                            this.capacityReservationId,
+                            this.jobShapeConfigDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -89,6 +113,9 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("blockStorageSizeInGBs")) {
                 this.blockStorageSizeInGBs(model.getBlockStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
             }
             if (model.wasPropertyExplicitlySet("jobShapeConfigDetails")) {
                 this.jobShapeConfigDetails(model.getJobShapeConfigDetails());
@@ -110,10 +137,12 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
     public ManagedEgressStandaloneJobInfrastructureConfigurationDetails(
             String shapeName,
             Integer blockStorageSizeInGBs,
+            String capacityReservationId,
             JobShapeConfigDetails jobShapeConfigDetails) {
         super();
         this.shapeName = shapeName;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
+        this.capacityReservationId = capacityReservationId;
         this.jobShapeConfigDetails = jobShapeConfigDetails;
     }
 
@@ -143,6 +172,25 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
         return blockStorageSizeInGBs;
     }
 
+    /**
+     * This specifies the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customer-managed compute capacity reservation to be used for launching jobs.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * This specifies the
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customer-managed compute capacity reservation to be used for launching jobs.
+     *
+     * @return the value
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jobShapeConfigDetails")
     private final JobShapeConfigDetails jobShapeConfigDetails;
 
@@ -167,6 +215,7 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", jobShapeConfigDetails=").append(String.valueOf(this.jobShapeConfigDetails));
         sb.append(")");
         return sb.toString();
@@ -185,6 +234,7 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
                 (ManagedEgressStandaloneJobInfrastructureConfigurationDetails) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.jobShapeConfigDetails, other.jobShapeConfigDetails)
                 && super.equals(other);
     }
@@ -199,6 +249,11 @@ public final class ManagedEgressStandaloneJobInfrastructureConfigurationDetails
                         + (this.blockStorageSizeInGBs == null
                                 ? 43
                                 : this.blockStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobShapeConfigDetails == null

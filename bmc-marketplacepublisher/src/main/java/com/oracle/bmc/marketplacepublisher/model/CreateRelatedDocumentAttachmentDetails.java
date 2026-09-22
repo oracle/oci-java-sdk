@@ -89,6 +89,53 @@ public final class CreateRelatedDocumentAttachmentDetails
             this.__explicitlySet__.add("documentCategory");
             return this;
         }
+        /** The document URL of the listing revision attachment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
+        private String sourceUrl;
+
+        /**
+         * The document URL of the listing revision attachment.
+         *
+         * @param sourceUrl the value to set
+         * @return this builder
+         */
+        public Builder sourceUrl(String sourceUrl) {
+            this.sourceUrl = sourceUrl;
+            this.__explicitlySet__.add("sourceUrl");
+            return this;
+        }
+        /** The specified attachment type is Internal or External. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private ListingRevisionAttachment.SourceType sourceType;
+
+        /**
+         * The specified attachment type is Internal or External.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(ListingRevisionAttachment.SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /**
+         * Identifies whether the attachment is for Internal Oracle Users or external users as well.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOracleUsersOnly")
+        private Boolean isOracleUsersOnly;
+
+        /**
+         * Identifies whether the attachment is for Internal Oracle Users or external users as well.
+         *
+         * @param isOracleUsersOnly the value to set
+         * @return this builder
+         */
+        public Builder isOracleUsersOnly(Boolean isOracleUsersOnly) {
+            this.isOracleUsersOnly = isOracleUsersOnly;
+            this.__explicitlySet__.add("isOracleUsersOnly");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -101,7 +148,10 @@ public final class CreateRelatedDocumentAttachmentDetails
                             this.description,
                             this.freeformTags,
                             this.definedTags,
-                            this.documentCategory);
+                            this.documentCategory,
+                            this.sourceUrl,
+                            this.sourceType,
+                            this.isOracleUsersOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -128,6 +178,15 @@ public final class CreateRelatedDocumentAttachmentDetails
             if (model.wasPropertyExplicitlySet("documentCategory")) {
                 this.documentCategory(model.getDocumentCategory());
             }
+            if (model.wasPropertyExplicitlySet("sourceUrl")) {
+                this.sourceUrl(model.getSourceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("isOracleUsersOnly")) {
+                this.isOracleUsersOnly(model.getIsOracleUsersOnly());
+            }
             return this;
         }
     }
@@ -148,9 +207,15 @@ public final class CreateRelatedDocumentAttachmentDetails
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            RelatedDocumentAttachment.DocumentCategory documentCategory) {
+            RelatedDocumentAttachment.DocumentCategory documentCategory,
+            String sourceUrl,
+            ListingRevisionAttachment.SourceType sourceType,
+            Boolean isOracleUsersOnly) {
         super(listingRevisionId, displayName, description, freeformTags, definedTags);
         this.documentCategory = documentCategory;
+        this.sourceUrl = sourceUrl;
+        this.sourceType = sourceType;
+        this.isOracleUsersOnly = isOracleUsersOnly;
     }
 
     /** The document category of the listing revision attachment. */
@@ -164,6 +229,45 @@ public final class CreateRelatedDocumentAttachmentDetails
      */
     public RelatedDocumentAttachment.DocumentCategory getDocumentCategory() {
         return documentCategory;
+    }
+
+    /** The document URL of the listing revision attachment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceUrl")
+    private final String sourceUrl;
+
+    /**
+     * The document URL of the listing revision attachment.
+     *
+     * @return the value
+     */
+    public String getSourceUrl() {
+        return sourceUrl;
+    }
+
+    /** The specified attachment type is Internal or External. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final ListingRevisionAttachment.SourceType sourceType;
+
+    /**
+     * The specified attachment type is Internal or External.
+     *
+     * @return the value
+     */
+    public ListingRevisionAttachment.SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /** Identifies whether the attachment is for Internal Oracle Users or external users as well. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOracleUsersOnly")
+    private final Boolean isOracleUsersOnly;
+
+    /**
+     * Identifies whether the attachment is for Internal Oracle Users or external users as well.
+     *
+     * @return the value
+     */
+    public Boolean getIsOracleUsersOnly() {
+        return isOracleUsersOnly;
     }
 
     @Override
@@ -182,6 +286,9 @@ public final class CreateRelatedDocumentAttachmentDetails
         sb.append("CreateRelatedDocumentAttachmentDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", documentCategory=").append(String.valueOf(this.documentCategory));
+        sb.append(", sourceUrl=").append(String.valueOf(this.sourceUrl));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", isOracleUsersOnly=").append(String.valueOf(this.isOracleUsersOnly));
         sb.append(")");
         return sb.toString();
     }
@@ -197,6 +304,9 @@ public final class CreateRelatedDocumentAttachmentDetails
 
         CreateRelatedDocumentAttachmentDetails other = (CreateRelatedDocumentAttachmentDetails) o;
         return java.util.Objects.equals(this.documentCategory, other.documentCategory)
+                && java.util.Objects.equals(this.sourceUrl, other.sourceUrl)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.isOracleUsersOnly, other.isOracleUsersOnly)
                 && super.equals(other);
     }
 
@@ -207,6 +317,11 @@ public final class CreateRelatedDocumentAttachmentDetails
         result =
                 (result * PRIME)
                         + (this.documentCategory == null ? 43 : this.documentCategory.hashCode());
+        result = (result * PRIME) + (this.sourceUrl == null ? 43 : this.sourceUrl.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOracleUsersOnly == null ? 43 : this.isOracleUsersOnly.hashCode());
         return result;
     }
 }

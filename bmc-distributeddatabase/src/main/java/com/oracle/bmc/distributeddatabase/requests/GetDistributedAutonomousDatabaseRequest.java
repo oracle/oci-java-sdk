@@ -11,21 +11,21 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * GetDistributedAutonomousDatabaseRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class GetDistributedAutonomousDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     private String distributedAutonomousDatabaseId;
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     public String getDistributedAutonomousDatabaseId() {
         return distributedAutonomousDatabaseId;
     }
-    /** Comma separated names of argument corresponding to which metadata need to be retrived. */
+    /** Comma-separated argument names for which metadata should be retrieved. */
     private String metadata;
 
-    /** Comma separated names of argument corresponding to which metadata need to be retrived. */
+    /** Comma-separated argument names for which metadata should be retrieved. */
     public String getMetadata() {
         return metadata;
     }
@@ -60,11 +60,11 @@ public class GetDistributedAutonomousDatabaseRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Globally distributed autonomous database identifier */
+        /** Globally distributed autonomous database identifier. */
         private String distributedAutonomousDatabaseId = null;
 
         /**
-         * Globally distributed autonomous database identifier
+         * Globally distributed autonomous database identifier.
          *
          * @param distributedAutonomousDatabaseId the value to set
          * @return this builder instance
@@ -74,13 +74,11 @@ public class GetDistributedAutonomousDatabaseRequest
             return this;
         }
 
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
+        /** Comma-separated argument names for which metadata should be retrieved. */
         private String metadata = null;
 
         /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
+         * Comma-separated argument names for which metadata should be retrieved.
          *
          * @param metadata the value to set
          * @return this builder instance

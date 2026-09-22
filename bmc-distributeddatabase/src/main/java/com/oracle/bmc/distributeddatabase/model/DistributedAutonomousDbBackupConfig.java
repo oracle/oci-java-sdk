@@ -15,7 +15,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = DistributedAutonomousDbBackupConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(

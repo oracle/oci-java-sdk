@@ -631,6 +631,35 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public CreatePublisherResponse createPublisher(CreatePublisherRequest request) {
+        Objects.requireNonNull(
+                request.getCreatePublisherDetails(), "createPublisherDetails is required");
+
+        return clientCall(request, CreatePublisherResponse::builder)
+                .logger(LOG, "createPublisher")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "CreatePublisher",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Publisher/CreatePublisher")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePublisherRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("publishers")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.Publisher.class,
+                        CreatePublisherResponse.Builder::publisher)
+                .handleResponseHeaderString("etag", CreatePublisherResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePublisherResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateTermResponse createTerm(CreateTermRequest request) {
         Objects.requireNonNull(request.getCreateTermDetails(), "createTermDetails is required");
 
@@ -717,6 +746,35 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         "opc-work-request-id", DeleteArtifactResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteCustomerInstanceReportExportResponse deleteCustomerInstanceReportExport(
+            DeleteCustomerInstanceReportExportRequest request) {
+
+        Validate.notBlank(
+                request.getCustomerInstanceReportExportId(),
+                "customerInstanceReportExportId must not be blank");
+
+        return clientCall(request, DeleteCustomerInstanceReportExportResponse::builder)
+                .logger(LOG, "deleteCustomerInstanceReportExport")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "DeleteCustomerInstanceReportExport",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/DeleteCustomerInstanceReportExport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCustomerInstanceReportExportRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("customerInstanceReportExports")
+                .appendPathParam(request.getCustomerInstanceReportExportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteCustomerInstanceReportExportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -907,6 +965,42 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public GenerateCustomerInstanceReportExportResponse generateCustomerInstanceReportExport(
+            GenerateCustomerInstanceReportExportRequest request) {
+        Objects.requireNonNull(
+                request.getGenerateCustomerInstanceReportExportDetails(),
+                "generateCustomerInstanceReportExportDetails is required");
+
+        return clientCall(request, GenerateCustomerInstanceReportExportResponse::builder)
+                .logger(LOG, "generateCustomerInstanceReportExport")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GenerateCustomerInstanceReportExport",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GenerateCustomerInstanceReportExport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateCustomerInstanceReportExportRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("customerInstanceReportExports")
+                .appendPathParam("actions")
+                .appendPathParam("generate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateCustomerInstanceReportExportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateCustomerInstanceReportExportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "exportIdentifier",
+                        GenerateCustomerInstanceReportExportResponse.Builder::exportIdentifier)
+                .callSync();
+    }
+
+    @Override
     public GetArtifactResponse getArtifact(GetArtifactRequest request) {
 
         Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
@@ -961,6 +1055,70 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString("etag", GetCategoryResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetCategoryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCustomerInstanceReportExportResponse getCustomerInstanceReportExport(
+            GetCustomerInstanceReportExportRequest request) {
+
+        Validate.notBlank(
+                request.getCustomerInstanceReportExportId(),
+                "customerInstanceReportExportId must not be blank");
+
+        return clientCall(request, GetCustomerInstanceReportExportResponse::builder)
+                .logger(LOG, "getCustomerInstanceReportExport")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetCustomerInstanceReportExport",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GetCustomerInstanceReportExport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCustomerInstanceReportExportRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("customerInstanceReportExports")
+                .appendPathParam(request.getCustomerInstanceReportExportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportExport
+                                .class,
+                        GetCustomerInstanceReportExportResponse.Builder
+                                ::customerInstanceReportExport)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCustomerInstanceReportExportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetCustomerInstanceReportExportResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetCustomerInstanceReportExportContentResponse getCustomerInstanceReportExportContent(
+            GetCustomerInstanceReportExportContentRequest request) {
+
+        Validate.notBlank(
+                request.getCustomerInstanceReportExportId(),
+                "customerInstanceReportExportId must not be blank");
+
+        return clientCall(request, GetCustomerInstanceReportExportContentResponse::builder)
+                .logger(LOG, "getCustomerInstanceReportExportContent")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "GetCustomerInstanceReportExportContent",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GetCustomerInstanceReportExportContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCustomerInstanceReportExportContentRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("customerInstanceReportExports")
+                .appendPathParam(request.getCustomerInstanceReportExportId())
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCustomerInstanceReportExportContentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1567,11 +1725,64 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public ListCustomerInstanceReportExportsResponse listCustomerInstanceReportExports(
+            ListCustomerInstanceReportExportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCustomerInstanceReportExportsResponse::builder)
+                .logger(LOG, "listCustomerInstanceReportExports")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "ListCustomerInstanceReportExports",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExportCollection/ListCustomerInstanceReportExports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCustomerInstanceReportExportsRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("customerInstanceReportExports")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("listingId", request.getListingId())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("region", request.getRegion())
+                .appendQueryParam("realm", request.getRealm())
+                .appendQueryParam("tenantAdminDomain", request.getTenantAdminDomain())
+                .appendQueryParam("packageVersion", request.getPackageVersion())
+                .appendQueryParam("instanceOcid", request.getInstanceOcid())
+                .appendQueryParam(
+                        "timeInstanceCreationFromDate", request.getTimeInstanceCreationFromDate())
+                .appendQueryParam(
+                        "timeInstanceCreationToDate", request.getTimeInstanceCreationToDate())
+                .appendQueryParam(
+                        "timeInstanceTerminationFromDate",
+                        request.getTimeInstanceTerminationFromDate())
+                .appendQueryParam(
+                        "timeInstanceTerminationToDate", request.getTimeInstanceTerminationToDate())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model
+                                .CustomerInstanceReportExportCollection.class,
+                        ListCustomerInstanceReportExportsResponse.Builder
+                                ::customerInstanceReportExportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCustomerInstanceReportExportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCustomerInstanceReportExportsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListCustomerInstanceReportRecordsResponse listCustomerInstanceReportRecords(
             ListCustomerInstanceReportRecordsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getDateRange(), "dateRange is required");
 
         return clientCall(request, ListCustomerInstanceReportRecordsResponse::builder)
                 .logger(LOG, "listCustomerInstanceReportRecords")
@@ -1584,12 +1795,28 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                 .basePath("/20241201")
                 .appendPathParam("customerInstanceReportRecords")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("dateRange", request.getDateRange())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("name", request.getName())
+                .appendQueryParam("listingId", request.getListingId())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("region", request.getRegion())
+                .appendQueryParam("realm", request.getRealm())
+                .appendQueryParam("tenantAdminDomain", request.getTenantAdminDomain())
+                .appendQueryParam("packageVersion", request.getPackageVersion())
+                .appendQueryParam("instanceOcid", request.getInstanceOcid())
+                .appendQueryParam(
+                        "timeInstanceCreationFromDate", request.getTimeInstanceCreationFromDate())
+                .appendQueryParam(
+                        "timeInstanceCreationToDate", request.getTimeInstanceCreationToDate())
+                .appendQueryParam(
+                        "timeInstanceTerminationFromDate",
+                        request.getTimeInstanceTerminationFromDate())
+                .appendQueryParam(
+                        "timeInstanceTerminationToDate", request.getTimeInstanceTerminationToDate())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -2621,6 +2848,48 @@ public class MarketplacePublisherClient extends com.oracle.bmc.http.internal.Bas
                         UpdateListingRevisionAttachmentContentResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", UpdateListingRevisionAttachmentContentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateListingRevisionBannerContentResponse updateListingRevisionBannerContent(
+            UpdateListingRevisionBannerContentRequest request) {
+
+        Validate.notBlank(request.getListingRevisionId(), "listingRevisionId must not be blank");
+        Objects.requireNonNull(request.getBannerName(), "bannerName is required");
+
+        Objects.requireNonNull(
+                request.getUpdateListingRevisionBannerContent(),
+                "updateListingRevisionBannerContent is required");
+
+        return clientCall(request, UpdateListingRevisionBannerContentResponse::builder)
+                .logger(LOG, "updateListingRevisionBannerContent")
+                .serviceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionBannerContent",
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/UpdateListingRevisionBannerContent")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateListingRevisionBannerContentRequest::builder)
+                .basePath("/20241201")
+                .appendPathParam("listingRevisions")
+                .appendPathParam(request.getListingRevisionId())
+                .appendPathParam("banner")
+                .appendPathParam("content")
+                .appendQueryParam("bannerName", request.getBannerName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.marketplacepublisher.model.ListingRevision.class,
+                        UpdateListingRevisionBannerContentResponse.Builder::listingRevision)
+                .handleResponseHeaderString(
+                        "etag", UpdateListingRevisionBannerContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateListingRevisionBannerContentResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -12,6 +12,7 @@ public enum ReportDefinitionDataSource implements com.oracle.bmc.http.internal.B
     Events("EVENTS"),
     Alerts("ALERTS"),
     SecurityAssessment("SECURITY_ASSESSMENT"),
+    CryptoAssessment("CRYPTO_ASSESSMENT"),
     Violations("VIOLATIONS"),
     AllowedSql("ALLOWED_SQL"),
 

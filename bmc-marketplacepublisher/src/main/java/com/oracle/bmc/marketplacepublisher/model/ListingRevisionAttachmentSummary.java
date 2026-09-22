@@ -29,6 +29,7 @@ public final class ListingRevisionAttachmentSummary
         "compartmentId",
         "displayName",
         "attachmentType",
+        "sourceType",
         "documentCategory",
         "contentUrl",
         "mimeType",
@@ -45,6 +46,7 @@ public final class ListingRevisionAttachmentSummary
             String compartmentId,
             String displayName,
             ListingRevisionAttachment.AttachmentType attachmentType,
+            ListingRevisionAttachment.SourceType sourceType,
             DocumentCategory documentCategory,
             String contentUrl,
             String mimeType,
@@ -60,6 +62,7 @@ public final class ListingRevisionAttachmentSummary
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.attachmentType = attachmentType;
+        this.sourceType = sourceType;
         this.documentCategory = documentCategory;
         this.contentUrl = contentUrl;
         this.mimeType = mimeType;
@@ -146,6 +149,21 @@ public final class ListingRevisionAttachmentSummary
         public Builder attachmentType(ListingRevisionAttachment.AttachmentType attachmentType) {
             this.attachmentType = attachmentType;
             this.__explicitlySet__.add("attachmentType");
+            return this;
+        }
+        /** The specified attachment type is Internal or External. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private ListingRevisionAttachment.SourceType sourceType;
+
+        /**
+         * The specified attachment type is Internal or External.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(ListingRevisionAttachment.SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
             return this;
         }
         /** Possible lifecycle states. */
@@ -324,6 +342,7 @@ public final class ListingRevisionAttachmentSummary
                             this.compartmentId,
                             this.displayName,
                             this.attachmentType,
+                            this.sourceType,
                             this.documentCategory,
                             this.contentUrl,
                             this.mimeType,
@@ -355,6 +374,9 @@ public final class ListingRevisionAttachmentSummary
             }
             if (model.wasPropertyExplicitlySet("attachmentType")) {
                 this.attachmentType(model.getAttachmentType());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
             }
             if (model.wasPropertyExplicitlySet("documentCategory")) {
                 this.documentCategory(model.getDocumentCategory());
@@ -459,6 +481,19 @@ public final class ListingRevisionAttachmentSummary
      */
     public ListingRevisionAttachment.AttachmentType getAttachmentType() {
         return attachmentType;
+    }
+
+    /** The specified attachment type is Internal or External. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final ListingRevisionAttachment.SourceType sourceType;
+
+    /**
+     * The specified attachment type is Internal or External.
+     *
+     * @return the value
+     */
+    public ListingRevisionAttachment.SourceType getSourceType() {
+        return sourceType;
     }
 
     /** Possible lifecycle states. */
@@ -678,6 +713,7 @@ public final class ListingRevisionAttachmentSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", attachmentType=").append(String.valueOf(this.attachmentType));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(", documentCategory=").append(String.valueOf(this.documentCategory));
         sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
@@ -706,6 +742,7 @@ public final class ListingRevisionAttachmentSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.attachmentType, other.attachmentType)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.documentCategory, other.documentCategory)
                 && java.util.Objects.equals(this.contentUrl, other.contentUrl)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
@@ -733,6 +770,7 @@ public final class ListingRevisionAttachmentSummary
         result =
                 (result * PRIME)
                         + (this.attachmentType == null ? 43 : this.attachmentType.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result =
                 (result * PRIME)
                         + (this.documentCategory == null ? 43 : this.documentCategory.hashCode());

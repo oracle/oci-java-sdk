@@ -14,7 +14,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
  * <p>The default configuration used is defined by {@link
  * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbPrivateEndpointServiceWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final DistributedDbPrivateEndpointService client;

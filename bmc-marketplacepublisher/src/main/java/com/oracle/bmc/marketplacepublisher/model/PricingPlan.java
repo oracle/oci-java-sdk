@@ -23,6 +23,12 @@ package com.oracle.bmc.marketplacepublisher.model;
         defaultImpl = PricingPlan.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HybridPricingPlan.class,
+            name = "HYBRID"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UsageBasedPricingPlan.class,
+            name = "USAGE_BASED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MeteredPricingPlan.class,
             name = "METERED"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -98,6 +104,8 @@ public class PricingPlan extends com.oracle.bmc.http.client.internal.ExplicitlyS
     public enum PlanType implements com.oracle.bmc.http.internal.BmcEnum {
         Metered("METERED"),
         Fixed("FIXED"),
+        UsageBased("USAGE_BASED"),
+        Hybrid("HYBRID"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

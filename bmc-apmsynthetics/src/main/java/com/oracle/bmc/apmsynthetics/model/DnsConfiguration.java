@@ -47,15 +47,15 @@ public final class DnsConfiguration
             return this;
         }
         /**
-         * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns
-         * is set to true.
+         * Attribute to override the DNS IP value. This value is required only if isOverrideDns is
+         * set to true.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("overrideDnsIp")
         private String overrideDnsIp;
 
         /**
-         * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns
-         * is set to true.
+         * Attribute to override the DNS IP value. This value is required only if isOverrideDns is
+         * set to true.
          *
          * @param overrideDnsIp the value to set
          * @return this builder
@@ -112,15 +112,15 @@ public final class DnsConfiguration
     }
 
     /**
-     * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is
-     * set to true.
+     * Attribute to override the DNS IP value. This value is required only if isOverrideDns is set
+     * to true.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("overrideDnsIp")
     private final String overrideDnsIp;
 
     /**
-     * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is
-     * set to true.
+     * Attribute to override the DNS IP value. This value is required only if isOverrideDns is set
+     * to true.
      *
      * @return the value
      */

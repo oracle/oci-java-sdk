@@ -5,7 +5,7 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * Globally distributed autonomous database catalog with dedicated autonomous infrastructure. <br>
+ * Details of a distributed autonomous database catalog on dedicated infrastructure. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = DistributedAutonomousDatabaseCatalogWithDedicatedInfra.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
@@ -25,7 +25,7 @@ package com.oracle.bmc.distributeddatabase.model;
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
-        extends DistributedAutonomousDatabaseCatalog {
+        extends DistributedAutonomousDatabaseCatalogDatabase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -52,6 +52,15 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private DistributedAutonomousDbMetadata metadata;
+
+        public Builder metadata(DistributedAutonomousDbMetadata metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
             return this;
         }
         /** The compute count for the catalog database. It has to be in multiples of 2. */
@@ -84,12 +93,16 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             this.__explicitlySet__.add("dataStorageSizeInGbs");
             return this;
         }
-        /** Determines the auto-scaling mode for the catalog database. */
+        /**
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core
+         * count. The default value is {@code FALSE}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
         /**
-         * Determines the auto-scaling mode for the catalog database.
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core
+         * count. The default value is {@code FALSE}.
          *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
@@ -99,31 +112,16 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
-        /** The name of the shardGroup for the catalog. */
-        @com.fasterxml.jackson.annotation.JsonProperty("shardGroup")
-        private String shardGroup;
-
-        /**
-         * The name of the shardGroup for the catalog.
-         *
-         * @param shardGroup the value to set
-         * @return this builder
-         */
-        public Builder shardGroup(String shardGroup) {
-            this.shardGroup = shardGroup;
-            this.__explicitlySet__.add("shardGroup");
-            return this;
-        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cloudAutonomousVmCluster.
+         * cloud Autonomous VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
         private String cloudAutonomousVmClusterId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cloudAutonomousVmCluster.
+         * cloud Autonomous VM Cluster.
          *
          * @param cloudAutonomousVmClusterId the value to set
          * @return this builder
@@ -131,24 +129,6 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
             this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             this.__explicitlySet__.add("cloudAutonomousVmClusterId");
-            return this;
-        }
-        /**
-         * This field is deprecated. For catalog peer details please refer peerDetails attribute.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
-        private java.util.List<String> peerCloudAutonomousVmClusterIds;
-
-        /**
-         * This field is deprecated. For catalog peer details please refer peerDetails attribute.
-         *
-         * @param peerCloudAutonomousVmClusterIds the value to set
-         * @return this builder
-         */
-        public Builder peerCloudAutonomousVmClusterIds(
-                java.util.List<String> peerCloudAutonomousVmClusterIds) {
-            this.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
-            this.__explicitlySet__.add("peerCloudAutonomousVmClusterIds");
             return this;
         }
         /**
@@ -175,15 +155,17 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             return this;
         }
         /**
-         * The OCID of the key container that is used as the master encryption key in database
-         * transparent data encryption (TDE) operations.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container that is used as the master encryption key in database transparent data
+         * encryption (TDE) operations.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the key container that is used as the master encryption key in database
-         * transparent data encryption (TDE) operations.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container that is used as the master encryption key in database transparent data
+         * encryption (TDE) operations.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -194,15 +176,17 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data
-         * encryption (TDE) operations KMS Key can have multiple key versions.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container version that is used in database transparent data encryption (TDE)
+         * operations KMS Key can have multiple key versions.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data
-         * encryption (TDE) operations KMS Key can have multiple key versions.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container version that is used in database transparent data encryption (TDE)
+         * operations KMS Key can have multiple key versions.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -213,15 +197,97 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             return this;
         }
         /**
-         * Status of catalog with dedicated infrastructure for the Globally distributed autonomous
-         * database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key store used to create the catalog.
          */
+        @com.fasterxml.jackson.annotation.JsonProperty("okvKeyStoreId")
+        private String okvKeyStoreId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key store used to create the catalog.
+         *
+         * @param okvKeyStoreId the value to set
+         * @return this builder
+         */
+        public Builder okvKeyStoreId(String okvKeyStoreId) {
+            this.okvKeyStoreId = okvKeyStoreId;
+            this.__explicitlySet__.add("okvKeyStoreId");
+            return this;
+        }
+        /** The OKV endpoint name. */
+        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+        private String okvEndPointGroupName;
+
+        /**
+         * The OKV endpoint name.
+         *
+         * @param okvEndPointGroupName the value to set
+         * @return this builder
+         */
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            this.okvEndPointGroupName = okvEndPointGroupName;
+            this.__explicitlySet__.add("okvEndPointGroupName");
+            return this;
+        }
+        /** The protection mode for the catalog peer. */
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private DistributedAutonomousDbProtectionMode protectionMode;
+
+        /**
+         * The protection mode for the catalog peer.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         */
+        public Builder protectionMode(DistributedAutonomousDbProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+        /** The lag time preference based on data loss tolerance in seconds. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+        private Integer fastStartFailOverLagLimitInSeconds;
+
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         *
+         * @param fastStartFailOverLagLimitInSeconds the value to set
+         * @return this builder
+         */
+        public Builder fastStartFailOverLagLimitInSeconds(
+                Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            this.__explicitlySet__.add("fastStartFailOverLagLimitInSeconds");
+            return this;
+        }
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous
+         * Container Database. This value represents the number of days before scheduled maintenance
+         * of the primary database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+        private Integer standbyMaintenanceBufferInDays;
+
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous
+         * Container Database. This value represents the number of days before scheduled maintenance
+         * of the primary database.
+         *
+         * @param standbyMaintenanceBufferInDays the value to set
+         * @return this builder
+         */
+        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
+            this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
+            return this;
+        }
+        /** Status of the distributed autonomous database catalog. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Status of catalog with dedicated infrastructure for the Globally distributed autonomous
-         * database.
+         * Status of the distributed autonomous database catalog.
          *
          * @param status the value to set
          * @return this builder
@@ -261,64 +327,6 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             this.__explicitlySet__.add("containerDatabaseId");
             return this;
         }
-        /** Peer details for the catalog with dedicated infrastructure. */
-        @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
-        private java.util.List<CatalogPeerWithDedicatedInfra> peerDetails;
-
-        /**
-         * Peer details for the catalog with dedicated infrastructure.
-         *
-         * @param peerDetails the value to set
-         * @return this builder
-         */
-        public Builder peerDetails(java.util.List<CatalogPeerWithDedicatedInfra> peerDetails) {
-            this.peerDetails = peerDetails;
-            this.__explicitlySet__.add("peerDetails");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * key store used to create the shard.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("okvKeyStoreId")
-        private String okvKeyStoreId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * key store used to create the shard.
-         *
-         * @param okvKeyStoreId the value to set
-         * @return this builder
-         */
-        public Builder okvKeyStoreId(String okvKeyStoreId) {
-            this.okvKeyStoreId = okvKeyStoreId;
-            this.__explicitlySet__.add("okvKeyStoreId");
-            return this;
-        }
-        /** The OKV endpoint name. */
-        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroup")
-        private String okvEndPointGroup;
-
-        /**
-         * The OKV endpoint name.
-         *
-         * @param okvEndPointGroup the value to set
-         * @return this builder
-         */
-        public Builder okvEndPointGroup(String okvEndPointGroup) {
-            this.okvEndPointGroup = okvEndPointGroup;
-            this.__explicitlySet__.add("okvEndPointGroup");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-        private DistributedAutonomousDbMetadata metadata;
-
-        public Builder metadata(DistributedAutonomousDbMetadata metadata) {
-            this.metadata = metadata;
-            this.__explicitlySet__.add("metadata");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -329,22 +337,22 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
                             this.name,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.metadata,
                             this.computeCount,
                             this.dataStorageSizeInGbs,
                             this.isAutoScalingEnabled,
-                            this.shardGroup,
                             this.cloudAutonomousVmClusterId,
-                            this.peerCloudAutonomousVmClusterIds,
                             this.vaultId,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
+                            this.okvKeyStoreId,
+                            this.okvEndPointGroupName,
+                            this.protectionMode,
+                            this.fastStartFailOverLagLimitInSeconds,
+                            this.standbyMaintenanceBufferInDays,
                             this.status,
                             this.supportingResourceId,
-                            this.containerDatabaseId,
-                            this.peerDetails,
-                            this.okvKeyStoreId,
-                            this.okvEndPointGroup,
-                            this.metadata);
+                            this.containerDatabaseId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -362,6 +370,9 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
             }
@@ -371,14 +382,8 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
             }
-            if (model.wasPropertyExplicitlySet("shardGroup")) {
-                this.shardGroup(model.getShardGroup());
-            }
             if (model.wasPropertyExplicitlySet("cloudAutonomousVmClusterId")) {
                 this.cloudAutonomousVmClusterId(model.getCloudAutonomousVmClusterId());
-            }
-            if (model.wasPropertyExplicitlySet("peerCloudAutonomousVmClusterIds")) {
-                this.peerCloudAutonomousVmClusterIds(model.getPeerCloudAutonomousVmClusterIds());
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
@@ -389,6 +394,22 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
                 this.kmsKeyVersionId(model.getKmsKeyVersionId());
             }
+            if (model.wasPropertyExplicitlySet("okvKeyStoreId")) {
+                this.okvKeyStoreId(model.getOkvKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("okvEndPointGroupName")) {
+                this.okvEndPointGroupName(model.getOkvEndPointGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("fastStartFailOverLagLimitInSeconds")) {
+                this.fastStartFailOverLagLimitInSeconds(
+                        model.getFastStartFailOverLagLimitInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
+                this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
+            }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
             }
@@ -397,18 +418,6 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             }
             if (model.wasPropertyExplicitlySet("containerDatabaseId")) {
                 this.containerDatabaseId(model.getContainerDatabaseId());
-            }
-            if (model.wasPropertyExplicitlySet("peerDetails")) {
-                this.peerDetails(model.getPeerDetails());
-            }
-            if (model.wasPropertyExplicitlySet("okvKeyStoreId")) {
-                this.okvKeyStoreId(model.getOkvKeyStoreId());
-            }
-            if (model.wasPropertyExplicitlySet("okvEndPointGroup")) {
-                this.okvEndPointGroup(model.getOkvEndPointGroup());
-            }
-            if (model.wasPropertyExplicitlySet("metadata")) {
-                this.metadata(model.getMetadata());
             }
             return this;
         }
@@ -428,39 +437,38 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             String name,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            DistributedAutonomousDbMetadata metadata,
             Float computeCount,
             Double dataStorageSizeInGbs,
             Boolean isAutoScalingEnabled,
-            String shardGroup,
             String cloudAutonomousVmClusterId,
-            java.util.List<String> peerCloudAutonomousVmClusterIds,
             String vaultId,
             String kmsKeyId,
             String kmsKeyVersionId,
+            String okvKeyStoreId,
+            String okvEndPointGroupName,
+            DistributedAutonomousDbProtectionMode protectionMode,
+            Integer fastStartFailOverLagLimitInSeconds,
+            Integer standbyMaintenanceBufferInDays,
             Status status,
             String supportingResourceId,
-            String containerDatabaseId,
-            java.util.List<CatalogPeerWithDedicatedInfra> peerDetails,
-            String okvKeyStoreId,
-            String okvEndPointGroup,
-            DistributedAutonomousDbMetadata metadata) {
-        super(name, timeCreated, timeUpdated);
+            String containerDatabaseId) {
+        super(name, timeCreated, timeUpdated, metadata);
         this.computeCount = computeCount;
         this.dataStorageSizeInGbs = dataStorageSizeInGbs;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
-        this.shardGroup = shardGroup;
         this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
-        this.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
         this.vaultId = vaultId;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
+        this.okvKeyStoreId = okvKeyStoreId;
+        this.okvEndPointGroupName = okvEndPointGroupName;
+        this.protectionMode = protectionMode;
+        this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+        this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
         this.status = status;
         this.supportingResourceId = supportingResourceId;
         this.containerDatabaseId = containerDatabaseId;
-        this.peerDetails = peerDetails;
-        this.okvKeyStoreId = okvKeyStoreId;
-        this.okvEndPointGroup = okvEndPointGroup;
-        this.metadata = metadata;
     }
 
     /** The compute count for the catalog database. It has to be in multiples of 2. */
@@ -489,12 +497,16 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
         return dataStorageSizeInGbs;
     }
 
-    /** Determines the auto-scaling mode for the catalog database. */
+    /**
+     * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count.
+     * The default value is {@code FALSE}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
-     * Determines the auto-scaling mode for the catalog database.
+     * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count.
+     * The default value is {@code FALSE}.
      *
      * @return the value
      */
@@ -502,47 +514,21 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
         return isAutoScalingEnabled;
     }
 
-    /** The name of the shardGroup for the catalog. */
-    @com.fasterxml.jackson.annotation.JsonProperty("shardGroup")
-    private final String shardGroup;
-
-    /**
-     * The name of the shardGroup for the catalog.
-     *
-     * @return the value
-     */
-    public String getShardGroup() {
-        return shardGroup;
-    }
-
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cloudAutonomousVmCluster.
+     * cloud Autonomous VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
     private final String cloudAutonomousVmClusterId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cloudAutonomousVmCluster.
+     * cloud Autonomous VM Cluster.
      *
      * @return the value
      */
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
-    }
-
-    /** This field is deprecated. For catalog peer details please refer peerDetails attribute. */
-    @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
-    private final java.util.List<String> peerCloudAutonomousVmClusterIds;
-
-    /**
-     * This field is deprecated. For catalog peer details please refer peerDetails attribute.
-     *
-     * @return the value
-     */
-    public java.util.List<String> getPeerCloudAutonomousVmClusterIds() {
-        return peerCloudAutonomousVmClusterIds;
     }
 
     /**
@@ -567,15 +553,17 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
     }
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database
-     * transparent data encryption (TDE) operations.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container that is used as the master encryption key in database transparent data encryption
+     * (TDE) operations.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database
-     * transparent data encryption (TDE) operations.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container that is used as the master encryption key in database transparent data encryption
+     * (TDE) operations.
      *
      * @return the value
      */
@@ -584,15 +572,17 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption
-     * (TDE) operations KMS Key can have multiple key versions.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container version that is used in database transparent data encryption (TDE) operations KMS
+     * Key can have multiple key versions.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption
-     * (TDE) operations KMS Key can have multiple key versions.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container version that is used in database transparent data encryption (TDE) operations KMS
+     * Key can have multiple key versions.
      *
      * @return the value
      */
@@ -601,9 +591,81 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
     }
 
     /**
-     * Status of catalog with dedicated infrastructure for the Globally distributed autonomous
-     * database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * store used to create the catalog.
      */
+    @com.fasterxml.jackson.annotation.JsonProperty("okvKeyStoreId")
+    private final String okvKeyStoreId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * store used to create the catalog.
+     *
+     * @return the value
+     */
+    public String getOkvKeyStoreId() {
+        return okvKeyStoreId;
+    }
+
+    /** The OKV endpoint name. */
+    @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+    private final String okvEndPointGroupName;
+
+    /**
+     * The OKV endpoint name.
+     *
+     * @return the value
+     */
+    public String getOkvEndPointGroupName() {
+        return okvEndPointGroupName;
+    }
+
+    /** The protection mode for the catalog peer. */
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    private final DistributedAutonomousDbProtectionMode protectionMode;
+
+    /**
+     * The protection mode for the catalog peer.
+     *
+     * @return the value
+     */
+    public DistributedAutonomousDbProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
+    /** The lag time preference based on data loss tolerance in seconds. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+    private final Integer fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * The lag time preference based on data loss tolerance in seconds.
+     *
+     * @return the value
+     */
+    public Integer getFastStartFailOverLagLimitInSeconds() {
+        return fastStartFailOverLagLimitInSeconds;
+    }
+
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous
+     * Container Database. This value represents the number of days before scheduled maintenance of
+     * the primary database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+    private final Integer standbyMaintenanceBufferInDays;
+
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous
+     * Container Database. This value represents the number of days before scheduled maintenance of
+     * the primary database.
+     *
+     * @return the value
+     */
+    public Integer getStandbyMaintenanceBufferInDays() {
+        return standbyMaintenanceBufferInDays;
+    }
+
+    /** Status of the distributed autonomous database catalog. */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Deleting("DELETING"),
@@ -655,16 +717,12 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status of catalog with dedicated infrastructure for the Globally distributed autonomous
-     * database.
-     */
+    /** Status of the distributed autonomous database catalog. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Status of catalog with dedicated infrastructure for the Globally distributed autonomous
-     * database.
+     * Status of the distributed autonomous database catalog.
      *
      * @return the value
      */
@@ -698,56 +756,6 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
         return containerDatabaseId;
     }
 
-    /** Peer details for the catalog with dedicated infrastructure. */
-    @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
-    private final java.util.List<CatalogPeerWithDedicatedInfra> peerDetails;
-
-    /**
-     * Peer details for the catalog with dedicated infrastructure.
-     *
-     * @return the value
-     */
-    public java.util.List<CatalogPeerWithDedicatedInfra> getPeerDetails() {
-        return peerDetails;
-    }
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
-     * store used to create the shard.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("okvKeyStoreId")
-    private final String okvKeyStoreId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
-     * store used to create the shard.
-     *
-     * @return the value
-     */
-    public String getOkvKeyStoreId() {
-        return okvKeyStoreId;
-    }
-
-    /** The OKV endpoint name. */
-    @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroup")
-    private final String okvEndPointGroup;
-
-    /**
-     * The OKV endpoint name.
-     *
-     * @return the value
-     */
-    public String getOkvEndPointGroup() {
-        return okvEndPointGroup;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    private final DistributedAutonomousDbMetadata metadata;
-
-    public DistributedAutonomousDbMetadata getMetadata() {
-        return metadata;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -766,21 +774,21 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", dataStorageSizeInGbs=").append(String.valueOf(this.dataStorageSizeInGbs));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
-        sb.append(", shardGroup=").append(String.valueOf(this.shardGroup));
         sb.append(", cloudAutonomousVmClusterId=")
                 .append(String.valueOf(this.cloudAutonomousVmClusterId));
-        sb.append(", peerCloudAutonomousVmClusterIds=")
-                .append(String.valueOf(this.peerCloudAutonomousVmClusterIds));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
+        sb.append(", okvKeyStoreId=").append(String.valueOf(this.okvKeyStoreId));
+        sb.append(", okvEndPointGroupName=").append(String.valueOf(this.okvEndPointGroupName));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", fastStartFailOverLagLimitInSeconds=")
+                .append(String.valueOf(this.fastStartFailOverLagLimitInSeconds));
+        sb.append(", standbyMaintenanceBufferInDays=")
+                .append(String.valueOf(this.standbyMaintenanceBufferInDays));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", supportingResourceId=").append(String.valueOf(this.supportingResourceId));
         sb.append(", containerDatabaseId=").append(String.valueOf(this.containerDatabaseId));
-        sb.append(", peerDetails=").append(String.valueOf(this.peerDetails));
-        sb.append(", okvKeyStoreId=").append(String.valueOf(this.okvKeyStoreId));
-        sb.append(", okvEndPointGroup=").append(String.valueOf(this.okvEndPointGroup));
-        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
     }
@@ -799,21 +807,22 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
         return java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.dataStorageSizeInGbs, other.dataStorageSizeInGbs)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
-                && java.util.Objects.equals(this.shardGroup, other.shardGroup)
                 && java.util.Objects.equals(
                         this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
-                && java.util.Objects.equals(
-                        this.peerCloudAutonomousVmClusterIds, other.peerCloudAutonomousVmClusterIds)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
+                && java.util.Objects.equals(this.okvKeyStoreId, other.okvKeyStoreId)
+                && java.util.Objects.equals(this.okvEndPointGroupName, other.okvEndPointGroupName)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(
+                        this.fastStartFailOverLagLimitInSeconds,
+                        other.fastStartFailOverLagLimitInSeconds)
+                && java.util.Objects.equals(
+                        this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.supportingResourceId, other.supportingResourceId)
                 && java.util.Objects.equals(this.containerDatabaseId, other.containerDatabaseId)
-                && java.util.Objects.equals(this.peerDetails, other.peerDetails)
-                && java.util.Objects.equals(this.okvKeyStoreId, other.okvKeyStoreId)
-                && java.util.Objects.equals(this.okvEndPointGroup, other.okvEndPointGroup)
-                && java.util.Objects.equals(this.metadata, other.metadata)
                 && super.equals(other);
     }
 
@@ -832,22 +841,37 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
                         + (this.isAutoScalingEnabled == null
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
-        result = (result * PRIME) + (this.shardGroup == null ? 43 : this.shardGroup.hashCode());
         result =
                 (result * PRIME)
                         + (this.cloudAutonomousVmClusterId == null
                                 ? 43
                                 : this.cloudAutonomousVmClusterId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.peerCloudAutonomousVmClusterIds == null
-                                ? 43
-                                : this.peerCloudAutonomousVmClusterIds.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.okvKeyStoreId == null ? 43 : this.okvKeyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.okvEndPointGroupName == null
+                                ? 43
+                                : this.okvEndPointGroupName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fastStartFailOverLagLimitInSeconds == null
+                                ? 43
+                                : this.fastStartFailOverLagLimitInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standbyMaintenanceBufferInDays == null
+                                ? 43
+                                : this.standbyMaintenanceBufferInDays.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =
                 (result * PRIME)
@@ -859,14 +883,6 @@ public final class DistributedAutonomousDatabaseCatalogWithDedicatedInfra
                         + (this.containerDatabaseId == null
                                 ? 43
                                 : this.containerDatabaseId.hashCode());
-        result = (result * PRIME) + (this.peerDetails == null ? 43 : this.peerDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.okvKeyStoreId == null ? 43 : this.okvKeyStoreId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.okvEndPointGroup == null ? 43 : this.okvEndPointGroup.hashCode());
-        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         return result;
     }
 }

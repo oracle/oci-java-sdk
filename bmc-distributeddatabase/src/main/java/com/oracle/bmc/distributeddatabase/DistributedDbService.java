@@ -12,7 +12,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
  * databases. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the
  * operations by default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public interface DistributedDbService extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -116,6 +116,24 @@ public interface DistributedDbService extends AutoCloseable {
             ChangeDistributedDbBackupConfigRequest request);
 
     /**
+     * Configure autoResourceManagement options for the Globally distributed database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/ConfigureDistributedDatabaseAutoResourceManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConfigureDistributedDatabaseAutoResourceManagement API.
+     */
+    ConfigureDistributedDatabaseAutoResourceManagementResponse
+            configureDistributedDatabaseAutoResourceManagement(
+                    ConfigureDistributedDatabaseAutoResourceManagementRequest request);
+
+    /**
      * Configure new Global Service Manager(GSM aka shard manager) instances for the Globally
      * distributed database.
      *
@@ -173,9 +191,7 @@ public interface DistributedDbService extends AutoCloseable {
             CreateDistributedDatabaseRequest request);
 
     /**
-     * Terminate the given Globally distributed databases. For an EXADB_XS based distributed
-     * database, if the parameter mustDeleteInfra is set to true, then the VmCluster and
-     * DbStorageVault associated with each shard and catalog will also be deleted.
+     * Terminate the given Globally distributed database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -190,48 +206,6 @@ public interface DistributedDbService extends AutoCloseable {
      */
     DeleteDistributedDatabaseResponse deleteDistributedDatabase(
             DeleteDistributedDatabaseRequest request);
-
-    /**
-     * Generate the common certificate signing request for GSMs. Download the <globaldb-prefix>.csr
-     * file from API response. Users can use this .csr file to generate the CA signed certificate,
-     * and as a next step use 'uploadSignedCertificateAndGenerateWallet' API to upload the CA signed
-     * certificate to GSM, and generate wallets for the GSM instances of the Globally distributed
-     * database.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/DownloadDistributedDatabaseGsmCertificateSigningRequestExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     DownloadDistributedDatabaseGsmCertificateSigningRequest API.
-     */
-    DownloadDistributedDatabaseGsmCertificateSigningRequestResponse
-            downloadDistributedDatabaseGsmCertificateSigningRequest(
-                    DownloadDistributedDatabaseGsmCertificateSigningRequestRequest request);
-
-    /**
-     * Generate the certificate signing request for GSM instances of the Globally distributed
-     * database. Once certificate signing request is generated, then customers can download the
-     * certificate signing request using 'downloadGsmCertificateSigningRequest' api call.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/GenerateDistributedDatabaseGsmCertificateSigningRequestExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     GenerateDistributedDatabaseGsmCertificateSigningRequest API.
-     */
-    GenerateDistributedDatabaseGsmCertificateSigningRequestResponse
-            generateDistributedDatabaseGsmCertificateSigningRequest(
-                    GenerateDistributedDatabaseGsmCertificateSigningRequestRequest request);
 
     /**
      * Generate the wallet associated with Globally distributed database.
@@ -285,6 +259,24 @@ public interface DistributedDbService extends AutoCloseable {
             GetDistributedDatabaseRaftMetricRequest request);
 
     /**
+     * Operation to retrieve move RU invocation history and status for the Globally distributed
+     * database. Results are ordered by created timestamp in descending order.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/GetDistributedDatabaseRuChangeLogExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDistributedDatabaseRuChangeLog API.
+     */
+    GetDistributedDatabaseRuChangeLogResponse getDistributedDatabaseRuChangeLog(
+            GetDistributedDatabaseRuChangeLogRequest request);
+
+    /**
      * List of Globally distributed databases.
      *
      * @param request The request object containing the details to send
@@ -322,9 +314,7 @@ public interface DistributedDbService extends AutoCloseable {
     /**
      * Patch operation to add, remove or update shards to the Globally distributed database
      * topology. In single patch operation, multiple shards can be either added, or removed or
-     * updated. Combination of inserts, update and remove in single operation is not allowed. For an
-     * EXADB_XS based distributed database, removing a shard with the parameter mustDeleteInfra set
-     * to true will also delete the associated VmCluster and DbStorageVault.
+     * updated. Combination of inserts, update and remove in single operation is not allowed.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -376,7 +366,25 @@ public interface DistributedDbService extends AutoCloseable {
             RotateDistributedDatabasePasswordsRequest request);
 
     /**
-     * Start the shards, catalog and GSMs of Globally distributed database.
+     * Scale global service manager(GSM aka shard manager) instances for the Globally distributed
+     * database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/ScaleDistributedDatabaseGsmsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ScaleDistributedDatabaseGsms API.
+     */
+    ScaleDistributedDatabaseGsmsResponse scaleDistributedDatabaseGsms(
+            ScaleDistributedDatabaseGsmsRequest request);
+
+    /**
+     * Start the shards, catalog, GSMs and GDSCTL instances of Globally distributed database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -393,7 +401,7 @@ public interface DistributedDbService extends AutoCloseable {
             StartDistributedDatabaseRequest request);
 
     /**
-     * Stop the shards, catalog and GSM instances for the Globally distributed database.
+     * Stop the shards, catalog, GSMs and GDSCTL instances for the Globally distributed database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -424,26 +432,6 @@ public interface DistributedDbService extends AutoCloseable {
      */
     UpdateDistributedDatabaseResponse updateDistributedDatabase(
             UpdateDistributedDatabaseRequest request);
-
-    /**
-     * Upload the CA signed certificate to the GSM instances and generate wallets for GSM instances
-     * of the Globally distributed database. Customer shall provide the CA signed certificate key
-     * details by adding the certificate in request body.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation uses
-     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
-     *     provided. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/UploadDistributedDatabaseSignedCertificateAndGenerateWalletExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
-     *     UploadDistributedDatabaseSignedCertificateAndGenerateWallet API.
-     */
-    UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse
-            uploadDistributedDatabaseSignedCertificateAndGenerateWallet(
-                    UploadDistributedDatabaseSignedCertificateAndGenerateWalletRequest request);
 
     /**
      * Validate the network connectivity between components of the globally distributed database.

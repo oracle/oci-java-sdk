@@ -13,7 +13,7 @@ import com.oracle.bmc.functions.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public interface FunctionsManagement extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -65,9 +65,8 @@ public interface FunctionsManagement extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Moves an application into a different
-     * compartment within the same tenancy. For information about moving resources between
-     * compartments, see [Moving Resources Between
+     * Moves an application into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources Between
      * Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -85,7 +84,7 @@ public interface FunctionsManagement extends AutoCloseable {
             ChangeApplicationCompartmentRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Creates a new application.\"
+     * Creates a new application.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -101,7 +100,7 @@ public interface FunctionsManagement extends AutoCloseable {
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Creates a new function.\"
+     * Creates a new function.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -116,7 +115,7 @@ public interface FunctionsManagement extends AutoCloseable {
     CreateFunctionResponse createFunction(CreateFunctionRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Deletes an application.
+     * Deletes an application.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -132,7 +131,7 @@ public interface FunctionsManagement extends AutoCloseable {
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Deletes a function.
+     * Deletes a function.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -147,7 +146,7 @@ public interface FunctionsManagement extends AutoCloseable {
     DeleteFunctionResponse deleteFunction(DeleteFunctionRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Retrieves an application.\"
+     * Retrieves an application.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -162,7 +161,7 @@ public interface FunctionsManagement extends AutoCloseable {
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Retrieves a function.\"
+     * Retrieves a function.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -177,8 +176,40 @@ public interface FunctionsManagement extends AutoCloseable {
     GetFunctionResponse getFunction(GetFunctionRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Fetches a Pre-built Function(PBF) Listing.
-     * Returns a PbfListing response model.
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetFunctionsRuntimeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunctionsRuntime
+     *     API.
+     */
+    GetFunctionsRuntimeResponse getFunctionsRuntime(GetFunctionsRuntimeRequest request);
+
+    /**
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetFunctionsRuntimeVersionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetFunctionsRuntimeVersion API.
+     */
+    GetFunctionsRuntimeVersionResponse getFunctionsRuntimeVersion(
+            GetFunctionsRuntimeVersionRequest request);
+
+    /**
+     * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -193,8 +224,7 @@ public interface FunctionsManagement extends AutoCloseable {
     GetPbfListingResponse getPbfListing(GetPbfListingRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Gets a PbfListingVersion by identifier for a
-     * PbfListing.
+     * Gets a PbfListingVersion by identifier for a PbfListing.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -210,7 +240,7 @@ public interface FunctionsManagement extends AutoCloseable {
     GetPbfListingVersionResponse getPbfListingVersion(GetPbfListingVersionRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Lists applications for a compartment.\"
+     * Lists applications for a compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -226,7 +256,7 @@ public interface FunctionsManagement extends AutoCloseable {
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Lists functions for an application.\"
+     * Lists functions for an application.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -241,9 +271,44 @@ public interface FunctionsManagement extends AutoCloseable {
     ListFunctionsResponse listFunctions(ListFunctionsRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Fetches a wrapped list of all Pre-built
-     * Function(PBF) Listing versions. Returns a PbfListingVersionCollection containing an array of
-     * PbfListingVersionSummary response models.
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a
+     * FunctionsRuntimeVersionCollection containing an array of FunctionsRuntimeVersionSummary
+     * response models.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsRuntimeVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListFunctionsRuntimeVersions API.
+     */
+    ListFunctionsRuntimeVersionsResponse listFunctionsRuntimeVersions(
+            ListFunctionsRuntimeVersionsRequest request);
+
+    /**
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection
+     * containing an array of FunctionsRuntimeSummary response models.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsRuntimesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListFunctionsRuntimes API.
+     */
+    ListFunctionsRuntimesResponse listFunctionsRuntimes(ListFunctionsRuntimesRequest request);
+
+    /**
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a
+     * PbfListingVersionCollection containing an array of PbfListingVersionSummary response models.
      *
      * <p>Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an
      * exception shall be thrown.
@@ -262,9 +327,8 @@ public interface FunctionsManagement extends AutoCloseable {
     ListPbfListingVersionsResponse listPbfListingVersions(ListPbfListingVersionsRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Fetches a wrapped list of all Pre-built
-     * Function(PBF) Listings. Returns a PbfListingCollection containing an array of
-     * PbfListingSummary response models.
+     * Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a
+     * PbfListingCollection containing an array of PbfListingSummary response models.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -280,7 +344,7 @@ public interface FunctionsManagement extends AutoCloseable {
     ListPbfListingsResponse listPbfListings(ListPbfListingsRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. Returns a list of Triggers.
+     * Returns a list of Triggers.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -295,7 +359,7 @@ public interface FunctionsManagement extends AutoCloseable {
     ListTriggersResponse listTriggers(ListTriggersRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Modifies an application\"
+     * Modifies an application
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -311,7 +375,7 @@ public interface FunctionsManagement extends AutoCloseable {
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Modifies a function\"
+     * Modifies a function
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

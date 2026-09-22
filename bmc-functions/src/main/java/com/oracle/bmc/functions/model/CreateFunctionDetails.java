@@ -5,8 +5,7 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead. Properties to create a new function.
- * <br>
+ * Properties to create a new function. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -16,7 +15,7 @@ package com.oracle.bmc.functions.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateFunctionDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -27,8 +26,6 @@ public final class CreateFunctionDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "applicationId",
-        "image",
-        "imageDigest",
         "sourceDetails",
         "memoryInMBs",
         "config",
@@ -44,9 +41,7 @@ public final class CreateFunctionDetails
     public CreateFunctionDetails(
             String displayName,
             String applicationId,
-            String image,
-            String imageDigest,
-            FunctionSourceDetails sourceDetails,
+            CreateFunctionSourceDetails sourceDetails,
             Long memoryInMBs,
             java.util.Map<String, String> config,
             Integer timeoutInSeconds,
@@ -60,8 +55,6 @@ public final class CreateFunctionDetails
         super();
         this.displayName = displayName;
         this.applicationId = applicationId;
-        this.image = image;
-        this.imageDigest = imageDigest;
         this.sourceDetails = sourceDetails;
         this.memoryInMBs = memoryInMBs;
         this.config = config;
@@ -111,55 +104,11 @@ public final class CreateFunctionDetails
             this.__explicitlySet__.add("applicationId");
             return this;
         }
-        /**
-         * The qualified name of the Docker image to use in the function, including the image tag.
-         * The image should be in the OCI Registry that is in the same region as the function
-         * itself. Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("image")
-        private String image;
-
-        /**
-         * The qualified name of the Docker image to use in the function, including the image tag.
-         * The image should be in the OCI Registry that is in the same region as the function
-         * itself. Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-         *
-         * @param image the value to set
-         * @return this builder
-         */
-        public Builder image(String image) {
-            this.image = image;
-            this.__explicitlySet__.add("image");
-            return this;
-        }
-        /**
-         * The image digest for the version of the image that will be pulled when invoking this
-         * function. If no value is specified, the digest currently associated with the image in the
-         * OCI Registry will be used. Example: {@code
-         * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
-        private String imageDigest;
-
-        /**
-         * The image digest for the version of the image that will be pulled when invoking this
-         * function. If no value is specified, the digest currently associated with the image in the
-         * OCI Registry will be used. Example: {@code
-         * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-         *
-         * @param imageDigest the value to set
-         * @return this builder
-         */
-        public Builder imageDigest(String imageDigest) {
-            this.imageDigest = imageDigest;
-            this.__explicitlySet__.add("imageDigest");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
-        private FunctionSourceDetails sourceDetails;
+        private CreateFunctionSourceDetails sourceDetails;
 
-        public Builder sourceDetails(FunctionSourceDetails sourceDetails) {
+        public Builder sourceDetails(CreateFunctionSourceDetails sourceDetails) {
             this.sourceDetails = sourceDetails;
             this.__explicitlySet__.add("sourceDetails");
             return this;
@@ -339,8 +288,6 @@ public final class CreateFunctionDetails
                     new CreateFunctionDetails(
                             this.displayName,
                             this.applicationId,
-                            this.image,
-                            this.imageDigest,
                             this.sourceDetails,
                             this.memoryInMBs,
                             this.config,
@@ -365,12 +312,6 @@ public final class CreateFunctionDetails
             }
             if (model.wasPropertyExplicitlySet("applicationId")) {
                 this.applicationId(model.getApplicationId());
-            }
-            if (model.wasPropertyExplicitlySet("image")) {
-                this.image(model.getImage());
-            }
-            if (model.wasPropertyExplicitlySet("imageDigest")) {
-                this.imageDigest(model.getImageDigest());
             }
             if (model.wasPropertyExplicitlySet("sourceDetails")) {
                 this.sourceDetails(model.getSourceDetails());
@@ -448,50 +389,10 @@ public final class CreateFunctionDetails
         return applicationId;
     }
 
-    /**
-     * The qualified name of the Docker image to use in the function, including the image tag. The
-     * image should be in the OCI Registry that is in the same region as the function itself.
-     * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("image")
-    private final String image;
-
-    /**
-     * The qualified name of the Docker image to use in the function, including the image tag. The
-     * image should be in the OCI Registry that is in the same region as the function itself.
-     * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-     *
-     * @return the value
-     */
-    public String getImage() {
-        return image;
-    }
-
-    /**
-     * The image digest for the version of the image that will be pulled when invoking this
-     * function. If no value is specified, the digest currently associated with the image in the OCI
-     * Registry will be used. Example: {@code
-     * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
-    private final String imageDigest;
-
-    /**
-     * The image digest for the version of the image that will be pulled when invoking this
-     * function. If no value is specified, the digest currently associated with the image in the OCI
-     * Registry will be used. Example: {@code
-     * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-     *
-     * @return the value
-     */
-    public String getImageDigest() {
-        return imageDigest;
-    }
-
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
-    private final FunctionSourceDetails sourceDetails;
+    private final CreateFunctionSourceDetails sourceDetails;
 
-    public FunctionSourceDetails getSourceDetails() {
+    public CreateFunctionSourceDetails getSourceDetails() {
         return sourceDetails;
     }
 
@@ -656,8 +557,6 @@ public final class CreateFunctionDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", applicationId=").append(String.valueOf(this.applicationId));
-        sb.append(", image=").append(String.valueOf(this.image));
-        sb.append(", imageDigest=").append(String.valueOf(this.imageDigest));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", memoryInMBs=").append(String.valueOf(this.memoryInMBs));
         sb.append(", config=").append(String.valueOf(this.config));
@@ -687,8 +586,6 @@ public final class CreateFunctionDetails
         CreateFunctionDetails other = (CreateFunctionDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.applicationId, other.applicationId)
-                && java.util.Objects.equals(this.image, other.image)
-                && java.util.Objects.equals(this.imageDigest, other.imageDigest)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.memoryInMBs, other.memoryInMBs)
                 && java.util.Objects.equals(this.config, other.config)
@@ -713,8 +610,6 @@ public final class CreateFunctionDetails
         result =
                 (result * PRIME)
                         + (this.applicationId == null ? 43 : this.applicationId.hashCode());
-        result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
-        result = (result * PRIME) + (this.imageDigest == null ? 43 : this.imageDigest.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());

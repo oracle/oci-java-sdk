@@ -9,6 +9,7 @@ import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import com.oracle.bmc.circuitbreaker.internal.resilience4j.OciCircuitBreakerImpl;
 import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpRequest;
+import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.model.BmcException;
 import org.junit.Test;
@@ -19,6 +20,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
 import static org.junit.Assert.fail;
@@ -167,6 +169,44 @@ public class ClientCallTransientRequestLeakTest {
         } catch (BmcException ignored) {
             // expected
         }
+
+        assertAllRequestsExecutedOrDiscardedExactlyOnce(requests);
+    }
+
+    @Test
+    public void requestsExecutedOrDiscarded_whenCircuitBreakerClosed_executesRequest()
+            throws Exception {
+        HttpClient mockClient = mock(HttpClient.class);
+        List<HttpRequest> requests = new ArrayList<>();
+
+        HttpRequest main = mock(HttpRequest.class);
+        requests.add(main);
+
+        when(mockClient.createRequest(any())).thenReturn(main);
+        when(main.offloadExecutor(any())).thenReturn(main);
+        when(main.copy())
+                .thenAnswer(
+                        inv -> {
+                            HttpRequest copy = mock(HttpRequest.class);
+                            HttpResponse response = mock(HttpResponse.class);
+                            when(copy.headers()).thenReturn(new HashMap<>());
+                            when(copy.execute())
+                                    .thenReturn(CompletableFuture.completedFuture(response));
+                            when(response.status()).thenReturn(200);
+                            when(response.headers()).thenReturn(new HashMap<>());
+                            requests.add(copy);
+                            return copy;
+                        });
+        when(main.uri()).thenReturn(new URI("https://localhost"));
+
+        OciCircuitBreaker closedCb =
+                new OciCircuitBreakerImpl(new CircuitBreakerConfiguration(), t -> true);
+
+        ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder())
+                .circuitBreaker(closedCb)
+                .logger(LOG, "mockLogger")
+                .method(Method.GET)
+                .callSync();
 
         assertAllRequestsExecutedOrDiscardedExactlyOnce(requests);
     }

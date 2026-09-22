@@ -29,6 +29,10 @@ public class ListDisbursementReportRecordsRequest
     public enum DateRange implements com.oracle.bmc.http.internal.BmcEnum {
         LastMonth("LAST_MONTH"),
         LastThreeMonths("LAST_THREE_MONTHS"),
+        LastSixMonths("LAST_SIX_MONTHS"),
+        LastTwelveMonths("LAST_TWELVE_MONTHS"),
+        LastEighteenMonths("LAST_EIGHTEEN_MONTHS"),
+        AllTime("ALL_TIME"),
         ;
 
         private final String value;

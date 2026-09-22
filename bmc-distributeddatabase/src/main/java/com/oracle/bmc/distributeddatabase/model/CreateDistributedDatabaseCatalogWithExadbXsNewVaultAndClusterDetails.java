@@ -5,7 +5,8 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * Globally distributed database catalog based on ExaDbXs. <br>
+ * Configuration for creating a distributed database catalog on a new ExaDB-XS VM cluster and
+ * storage vault. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +16,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder =
                 CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails.Builder.class)
@@ -26,9 +27,36 @@ package com.oracle.bmc.distributeddatabase.model;
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails
-        extends CreateDistributedDatabaseCatalogDetails {
+        extends CreateDistributedDatabaseCatalogDatabaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+        private String tdeWalletPassword;
+
+        public Builder tdeWalletPassword(String tdeWalletPassword) {
+            this.tdeWalletPassword = tdeWalletPassword;
+            this.__explicitlySet__.add("tdeWalletPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPasswordSecretId")
+        private String tdeWalletPasswordSecretId;
+
+        public Builder tdeWalletPasswordSecretId(String tdeWalletPasswordSecretId) {
+            this.tdeWalletPasswordSecretId = tdeWalletPasswordSecretId;
+            this.__explicitlySet__.add("tdeWalletPasswordSecretId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPasswordSecretVersionNumber")
+        private Integer tdeWalletPasswordSecretVersionNumber;
+
+        public Builder tdeWalletPasswordSecretVersionNumber(
+                Integer tdeWalletPasswordSecretVersionNumber) {
+            this.tdeWalletPasswordSecretVersionNumber = tdeWalletPasswordSecretVersionNumber;
+            this.__explicitlySet__.add("tdeWalletPasswordSecretVersionNumber");
+            return this;
+        }
         /** The admin password for the catalog associated with Globally distributed database. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private char[] adminPassword;
@@ -51,44 +79,41 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
             return this;
         }
         /**
-         * The details required for creation of the peer for the ExadbXs infrastructure based
-         * catalog.
+         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used
+         * in conjunction with adminPassword.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
-        private java.util.List<CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails> peerDetails;
+        @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretId")
+        private String adminPasswordSecretId;
 
         /**
-         * The details required for creation of the peer for the ExadbXs infrastructure based
-         * catalog.
+         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used
+         * in conjunction with adminPassword.
          *
-         * @param peerDetails the value to set
+         * @param adminPasswordSecretId the value to set
          * @return this builder
          */
-        public Builder peerDetails(
-                java.util.List<CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails> peerDetails) {
-            this.peerDetails = peerDetails;
-            this.__explicitlySet__.add("peerDetails");
+        public Builder adminPasswordSecretId(String adminPasswordSecretId) {
+            this.adminPasswordSecretId = adminPasswordSecretId;
+            this.__explicitlySet__.add("adminPasswordSecretId");
             return this;
         }
         /**
-         * The shard space name for the Globally distributed database. Shard space for existing
-         * shard cannot be changed, once shard is created. Shard space name shall be used while
-         * creation of new shards.
+         * The version of the vault secret. If no version is specified, the latest version will be
+         * used.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("shardSpace")
-        private String shardSpace;
+        @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretVersionNumber")
+        private Integer adminPasswordSecretVersionNumber;
 
         /**
-         * The shard space name for the Globally distributed database. Shard space for existing
-         * shard cannot be changed, once shard is created. Shard space name shall be used while
-         * creation of new shards.
+         * The version of the vault secret. If no version is specified, the latest version will be
+         * used.
          *
-         * @param shardSpace the value to set
+         * @param adminPasswordSecretVersionNumber the value to set
          * @return this builder
          */
-        public Builder shardSpace(String shardSpace) {
-            this.shardSpace = shardSpace;
-            this.__explicitlySet__.add("shardSpace");
+        public Builder adminPasswordSecretVersionNumber(Integer adminPasswordSecretVersionNumber) {
+            this.adminPasswordSecretVersionNumber = adminPasswordSecretVersionNumber;
+            this.__explicitlySet__.add("adminPasswordSecretVersionNumber");
             return this;
         }
         /**
@@ -115,15 +140,17 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
             return this;
         }
         /**
-         * The OCID of the key container that is used as the master encryption key in database
-         * transparent data encryption (TDE) operations.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container that is used as the master encryption key in database transparent data
+         * encryption (TDE) operations.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the key container that is used as the master encryption key in database
-         * transparent data encryption (TDE) operations.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container that is used as the master encryption key in database transparent data
+         * encryption (TDE) operations.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -134,15 +161,17 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data
-         * encryption (TDE) operations KMS Key can have multiple key versions.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container version that is used in database transparent data encryption (TDE)
+         * operations KMS Key can have multiple key versions.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data
-         * encryption (TDE) operations KMS Key can have multiple key versions.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * key container version that is used in database transparent data encryption (TDE)
+         * operations KMS Key can have multiple key versions.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -153,14 +182,14 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
             return this;
         }
         /**
-         * The name of the availability domain that the distributed database shard will be located
+         * The name of the availability domain that the distributed database catalog will be located
          * in.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The name of the availability domain that the distributed database shard will be located
+         * The name of the availability domain that the distributed database catalog will be located
          * in.
          *
          * @param availabilityDomain the value to set
@@ -189,6 +218,36 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
             this.__explicitlySet__.add("vmClusterDetails");
             return this;
         }
+        /** The protection mode used for the Data Guard association. */
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private DistributedDbProtectionMode protectionMode;
+
+        /**
+         * The protection mode used for the Data Guard association.
+         *
+         * @param protectionMode the value to set
+         * @return this builder
+         */
+        public Builder protectionMode(DistributedDbProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+        /** The transport type used for the Data Guard association. */
+        @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+        private DistributedDbTransportType transportType;
+
+        /**
+         * The transport type used for the Data Guard association.
+         *
+         * @param transportType the value to set
+         * @return this builder
+         */
+        public Builder transportType(DistributedDbTransportType transportType) {
+            this.transportType = transportType;
+            this.__explicitlySet__.add("transportType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -196,15 +255,20 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
         public CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails build() {
             CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails model =
                     new CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails(
+                            this.tdeWalletPassword,
+                            this.tdeWalletPasswordSecretId,
+                            this.tdeWalletPasswordSecretVersionNumber,
                             this.adminPassword,
-                            this.peerDetails,
-                            this.shardSpace,
+                            this.adminPasswordSecretId,
+                            this.adminPasswordSecretVersionNumber,
                             this.vaultId,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
                             this.availabilityDomain,
                             this.dbStorageVaultDetails,
-                            this.vmClusterDetails);
+                            this.vmClusterDetails,
+                            this.protectionMode,
+                            this.transportType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -214,14 +278,24 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(
                 CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("tdeWalletPassword")) {
+                this.tdeWalletPassword(model.getTdeWalletPassword());
+            }
+            if (model.wasPropertyExplicitlySet("tdeWalletPasswordSecretId")) {
+                this.tdeWalletPasswordSecretId(model.getTdeWalletPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("tdeWalletPasswordSecretVersionNumber")) {
+                this.tdeWalletPasswordSecretVersionNumber(
+                        model.getTdeWalletPasswordSecretVersionNumber());
+            }
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
             }
-            if (model.wasPropertyExplicitlySet("peerDetails")) {
-                this.peerDetails(model.getPeerDetails());
+            if (model.wasPropertyExplicitlySet("adminPasswordSecretId")) {
+                this.adminPasswordSecretId(model.getAdminPasswordSecretId());
             }
-            if (model.wasPropertyExplicitlySet("shardSpace")) {
-                this.shardSpace(model.getShardSpace());
+            if (model.wasPropertyExplicitlySet("adminPasswordSecretVersionNumber")) {
+                this.adminPasswordSecretVersionNumber(model.getAdminPasswordSecretVersionNumber());
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
@@ -241,6 +315,12 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
             if (model.wasPropertyExplicitlySet("vmClusterDetails")) {
                 this.vmClusterDetails(model.getVmClusterDetails());
             }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
+            }
             return this;
         }
     }
@@ -256,35 +336,48 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
 
     @Deprecated
     public CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails(
+            String tdeWalletPassword,
+            String tdeWalletPasswordSecretId,
+            Integer tdeWalletPasswordSecretVersionNumber,
             String adminPassword,
-            java.util.List<CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails> peerDetails,
-            String shardSpace,
+            String adminPasswordSecretId,
+            Integer adminPasswordSecretVersionNumber,
             String vaultId,
             String kmsKeyId,
             String kmsKeyVersionId,
             String availabilityDomain,
             DbStorageVaultDetails dbStorageVaultDetails,
-            VmClusterDetails vmClusterDetails) {
-        super();
+            VmClusterDetails vmClusterDetails,
+            DistributedDbProtectionMode protectionMode,
+            DistributedDbTransportType transportType) {
+        super(tdeWalletPassword, tdeWalletPasswordSecretId, tdeWalletPasswordSecretVersionNumber);
         this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
-        this.peerDetails = peerDetails;
-        this.shardSpace = shardSpace;
+        this.adminPasswordSecretId = adminPasswordSecretId;
+        this.adminPasswordSecretVersionNumber = adminPasswordSecretVersionNumber;
         this.vaultId = vaultId;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.availabilityDomain = availabilityDomain;
         this.dbStorageVaultDetails = dbStorageVaultDetails;
         this.vmClusterDetails = vmClusterDetails;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
     @Deprecated
     public CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+                    String tdeWalletPassword,
+            @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPasswordSecretId")
+                    String tdeWalletPasswordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPasswordSecretVersionNumber")
+                    Integer tdeWalletPasswordSecretVersionNumber,
             @com.fasterxml.jackson.annotation.JsonProperty("adminPassword") char[] adminPassword,
-            @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
-                    java.util.List<CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails>
-                            peerDetails,
-            @com.fasterxml.jackson.annotation.JsonProperty("shardSpace") String shardSpace,
+            @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretId")
+                    String adminPasswordSecretId,
+            @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretVersionNumber")
+                    Integer adminPasswordSecretVersionNumber,
             @com.fasterxml.jackson.annotation.JsonProperty("vaultId") String vaultId,
             @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId") String kmsKeyId,
             @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
@@ -294,17 +387,23 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
             @com.fasterxml.jackson.annotation.JsonProperty("dbStorageVaultDetails")
                     DbStorageVaultDetails dbStorageVaultDetails,
             @com.fasterxml.jackson.annotation.JsonProperty("vmClusterDetails")
-                    VmClusterDetails vmClusterDetails) {
-        super();
+                    VmClusterDetails vmClusterDetails,
+            @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+                    DistributedDbProtectionMode protectionMode,
+            @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+                    DistributedDbTransportType transportType) {
+        super(tdeWalletPassword, tdeWalletPasswordSecretId, tdeWalletPasswordSecretVersionNumber);
         this.adminPassword = adminPassword;
-        this.peerDetails = peerDetails;
-        this.shardSpace = shardSpace;
+        this.adminPasswordSecretId = adminPasswordSecretId;
+        this.adminPasswordSecretVersionNumber = adminPasswordSecretVersionNumber;
         this.vaultId = vaultId;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.availabilityDomain = availabilityDomain;
         this.dbStorageVaultDetails = dbStorageVaultDetails;
         this.vmClusterDetails = vmClusterDetails;
+        this.protectionMode = protectionMode;
+        this.transportType = transportType;
     }
 
     /** The admin password for the catalog associated with Globally distributed database. */
@@ -334,37 +433,35 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
     }
 
     /**
-     * The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in
+     * conjunction with adminPassword.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
-    private final java.util.List<CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails> peerDetails;
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretId")
+    private final String adminPasswordSecretId;
 
     /**
-     * The details required for creation of the peer for the ExadbXs infrastructure based catalog.
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in
+     * conjunction with adminPassword.
      *
      * @return the value
      */
-    public java.util.List<CreateCatalogPeerWithExadbXsNewVaultAndClusterDetails> getPeerDetails() {
-        return peerDetails;
+    public String getAdminPasswordSecretId() {
+        return adminPasswordSecretId;
     }
 
     /**
-     * The shard space name for the Globally distributed database. Shard space for existing shard
-     * cannot be changed, once shard is created. Shard space name shall be used while creation of
-     * new shards.
+     * The version of the vault secret. If no version is specified, the latest version will be used.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("shardSpace")
-    private final String shardSpace;
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretVersionNumber")
+    private final Integer adminPasswordSecretVersionNumber;
 
     /**
-     * The shard space name for the Globally distributed database. Shard space for existing shard
-     * cannot be changed, once shard is created. Shard space name shall be used while creation of
-     * new shards.
+     * The version of the vault secret. If no version is specified, the latest version will be used.
      *
      * @return the value
      */
-    public String getShardSpace() {
-        return shardSpace;
+    public Integer getAdminPasswordSecretVersionNumber() {
+        return adminPasswordSecretVersionNumber;
     }
 
     /**
@@ -389,15 +486,17 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
     }
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database
-     * transparent data encryption (TDE) operations.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container that is used as the master encryption key in database transparent data encryption
+     * (TDE) operations.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database
-     * transparent data encryption (TDE) operations.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container that is used as the master encryption key in database transparent data encryption
+     * (TDE) operations.
      *
      * @return the value
      */
@@ -406,15 +505,17 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption
-     * (TDE) operations KMS Key can have multiple key versions.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container version that is used in database transparent data encryption (TDE) operations KMS
+     * Key can have multiple key versions.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption
-     * (TDE) operations KMS Key can have multiple key versions.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key
+     * container version that is used in database transparent data encryption (TDE) operations KMS
+     * Key can have multiple key versions.
      *
      * @return the value
      */
@@ -423,13 +524,13 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
     }
 
     /**
-     * The name of the availability domain that the distributed database shard will be located in.
+     * The name of the availability domain that the distributed database catalog will be located in.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The name of the availability domain that the distributed database shard will be located in.
+     * The name of the availability domain that the distributed database catalog will be located in.
      *
      * @return the value
      */
@@ -451,6 +552,32 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
         return vmClusterDetails;
     }
 
+    /** The protection mode used for the Data Guard association. */
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    private final DistributedDbProtectionMode protectionMode;
+
+    /**
+     * The protection mode used for the Data Guard association.
+     *
+     * @return the value
+     */
+    public DistributedDbProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
+    /** The transport type used for the Data Guard association. */
+    @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+    private final DistributedDbTransportType transportType;
+
+    /**
+     * The transport type used for the Data Guard association.
+     *
+     * @return the value
+     */
+    public DistributedDbTransportType getTransportType() {
+        return transportType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -467,14 +594,17 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
         sb.append("CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", adminPassword=").append("<redacted>");
-        sb.append(", peerDetails=").append(String.valueOf(this.peerDetails));
-        sb.append(", shardSpace=").append(String.valueOf(this.shardSpace));
+        sb.append(", adminPasswordSecretId=").append(String.valueOf(this.adminPasswordSecretId));
+        sb.append(", adminPasswordSecretVersionNumber=")
+                .append(String.valueOf(this.adminPasswordSecretVersionNumber));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", dbStorageVaultDetails=").append(String.valueOf(this.dbStorageVaultDetails));
         sb.append(", vmClusterDetails=").append(String.valueOf(this.vmClusterDetails));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", transportType=").append(String.valueOf(this.transportType));
         sb.append(")");
         return sb.toString();
     }
@@ -491,14 +621,18 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
         CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails other =
                 (CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndClusterDetails) o;
         return java.util.Objects.equals(this.adminPassword, other.adminPassword)
-                && java.util.Objects.equals(this.peerDetails, other.peerDetails)
-                && java.util.Objects.equals(this.shardSpace, other.shardSpace)
+                && java.util.Objects.equals(this.adminPasswordSecretId, other.adminPasswordSecretId)
+                && java.util.Objects.equals(
+                        this.adminPasswordSecretVersionNumber,
+                        other.adminPasswordSecretVersionNumber)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.dbStorageVaultDetails, other.dbStorageVaultDetails)
                 && java.util.Objects.equals(this.vmClusterDetails, other.vmClusterDetails)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.transportType, other.transportType)
                 && super.equals(other);
     }
 
@@ -509,8 +643,16 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
         result =
                 (result * PRIME)
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
-        result = (result * PRIME) + (this.peerDetails == null ? 43 : this.peerDetails.hashCode());
-        result = (result * PRIME) + (this.shardSpace == null ? 43 : this.shardSpace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPasswordSecretId == null
+                                ? 43
+                                : this.adminPasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPasswordSecretVersionNumber == null
+                                ? 43
+                                : this.adminPasswordSecretVersionNumber.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
@@ -529,6 +671,12 @@ public final class CreateDistributedDatabaseCatalogWithExadbXsNewVaultAndCluster
         result =
                 (result * PRIME)
                         + (this.vmClusterDetails == null ? 43 : this.vmClusterDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportType == null ? 43 : this.transportType.hashCode());
         return result;
     }
 }

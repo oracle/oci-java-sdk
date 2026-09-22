@@ -5,9 +5,8 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead. A function resource defines the code
- * (Docker image) and configuration for a specific function. Functions are defined in applications.
- * Avoid entering confidential information. <br>
+ * A function resource defines the code (Docker image) and configuration for a specific function.
+ * Functions are defined in applications. Avoid entering confidential information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -17,7 +16,7 @@ package com.oracle.bmc.functions.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Function.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -29,8 +28,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         "lifecycleState",
         "applicationId",
         "compartmentId",
-        "image",
-        "imageDigest",
         "sourceDetails",
         "shape",
         "memoryInMBs",
@@ -53,8 +50,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             LifecycleState lifecycleState,
             String applicationId,
             String compartmentId,
-            String image,
-            String imageDigest,
             FunctionSourceDetails sourceDetails,
             Shape shape,
             Long memoryInMBs,
@@ -76,8 +71,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         this.lifecycleState = lifecycleState;
         this.applicationId = applicationId;
         this.compartmentId = compartmentId;
-        this.image = image;
-        this.imageDigest = imageDigest;
         this.sourceDetails = sourceDetails;
         this.shape = shape;
         this.memoryInMBs = memoryInMBs;
@@ -178,50 +171,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-        /**
-         * The qualified name of the Docker image to use in the function, including the image tag.
-         * The image should be in the OCI Registry that is in the same region as the function
-         * itself. Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("image")
-        private String image;
-
-        /**
-         * The qualified name of the Docker image to use in the function, including the image tag.
-         * The image should be in the OCI Registry that is in the same region as the function
-         * itself. Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-         *
-         * @param image the value to set
-         * @return this builder
-         */
-        public Builder image(String image) {
-            this.image = image;
-            this.__explicitlySet__.add("image");
-            return this;
-        }
-        /**
-         * The image digest for the version of the image that will be pulled when invoking this
-         * function. If no value is specified, the digest currently associated with the image in the
-         * OCI Registry will be used. Example: {@code
-         * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
-        private String imageDigest;
-
-        /**
-         * The image digest for the version of the image that will be pulled when invoking this
-         * function. If no value is specified, the digest currently associated with the image in the
-         * OCI Registry will be used. Example: {@code
-         * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-         *
-         * @param imageDigest the value to set
-         * @return this builder
-         */
-        public Builder imageDigest(String imageDigest) {
-            this.imageDigest = imageDigest;
-            this.__explicitlySet__.add("imageDigest");
             return this;
         }
 
@@ -499,8 +448,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
                             this.lifecycleState,
                             this.applicationId,
                             this.compartmentId,
-                            this.image,
-                            this.imageDigest,
                             this.sourceDetails,
                             this.shape,
                             this.memoryInMBs,
@@ -538,12 +485,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
-            }
-            if (model.wasPropertyExplicitlySet("image")) {
-                this.image(model.getImage());
-            }
-            if (model.wasPropertyExplicitlySet("imageDigest")) {
-                this.imageDigest(model.getImageDigest());
             }
             if (model.wasPropertyExplicitlySet("sourceDetails")) {
                 this.sourceDetails(model.getSourceDetails());
@@ -725,46 +666,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
      */
     public String getCompartmentId() {
         return compartmentId;
-    }
-
-    /**
-     * The qualified name of the Docker image to use in the function, including the image tag. The
-     * image should be in the OCI Registry that is in the same region as the function itself.
-     * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("image")
-    private final String image;
-
-    /**
-     * The qualified name of the Docker image to use in the function, including the image tag. The
-     * image should be in the OCI Registry that is in the same region as the function itself.
-     * Example: {@code phx.ocir.io/ten/functions/function:0.0.1}
-     *
-     * @return the value
-     */
-    public String getImage() {
-        return image;
-    }
-
-    /**
-     * The image digest for the version of the image that will be pulled when invoking this
-     * function. If no value is specified, the digest currently associated with the image in the OCI
-     * Registry will be used. Example: {@code
-     * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("imageDigest")
-    private final String imageDigest;
-
-    /**
-     * The image digest for the version of the image that will be pulled when invoking this
-     * function. If no value is specified, the digest currently associated with the image in the OCI
-     * Registry will be used. Example: {@code
-     * sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7}
-     *
-     * @return the value
-     */
-    public String getImageDigest() {
-        return imageDigest;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
@@ -1067,8 +968,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", image=").append(String.valueOf(this.image));
-        sb.append(", imageDigest=").append(String.valueOf(this.imageDigest));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", memoryInMBs=").append(String.valueOf(this.memoryInMBs));
@@ -1105,8 +1004,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.applicationId, other.applicationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.image, other.image)
-                && java.util.Objects.equals(this.imageDigest, other.imageDigest)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.memoryInMBs, other.memoryInMBs)
@@ -1142,8 +1039,6 @@ public final class Function extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.image == null ? 43 : this.image.hashCode());
-        result = (result * PRIME) + (this.imageDigest == null ? 43 : this.imageDigest.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());

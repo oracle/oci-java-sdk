@@ -71,7 +71,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataSafeClient",
-                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
+                            "downloadCryptoAssessmentReport,downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
         }
     }
 
@@ -153,9 +153,6 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     @Override
     public ActivateTargetDatabaseResponse activateTargetDatabase(
             ActivateTargetDatabaseRequest request) {
-        Objects.requireNonNull(
-                request.getActivateTargetDatabaseDetails(),
-                "activateTargetDatabaseDetails is required");
 
         Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
 
@@ -811,6 +808,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAuditProfileCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeCryptoAssessmentCompartmentResponse changeCryptoAssessmentCompartment(
+            ChangeCryptoAssessmentCompartmentRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCryptoAssessmentCompartmentDetails(),
+                "changeCryptoAssessmentCompartmentDetails is required");
+
+        return clientCall(request, ChangeCryptoAssessmentCompartmentResponse::builder)
+                .logger(LOG, "changeCryptoAssessmentCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeCryptoAssessmentCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ChangeCryptoAssessmentCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCryptoAssessmentCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCryptoAssessmentCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCryptoAssessmentCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3161,6 +3195,35 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteCryptoAssessmentResponse deleteCryptoAssessment(
+            DeleteCryptoAssessmentRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+
+        return clientCall(request, DeleteCryptoAssessmentResponse::builder)
+                .logger(LOG, "deleteCryptoAssessment")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteCryptoAssessment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/DeleteCryptoAssessment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCryptoAssessmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteCryptoAssessmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCryptoAssessmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteDataSafePrivateEndpointResponse deleteDataSafePrivateEndpoint(
             DeleteDataSafePrivateEndpointRequest request) {
 
@@ -4144,6 +4207,48 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DownloadCryptoAssessmentReportResponse downloadCryptoAssessmentReport(
+            DownloadCryptoAssessmentReportRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+        Objects.requireNonNull(
+                request.getDownloadCryptoAssessmentReportDetails(),
+                "downloadCryptoAssessmentReportDetails is required");
+
+        return clientCall(request, DownloadCryptoAssessmentReportResponse::builder)
+                .logger(LOG, "downloadCryptoAssessmentReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DownloadCryptoAssessmentReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/DownloadCryptoAssessmentReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadCryptoAssessmentReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .appendPathParam("actions")
+                .appendPathParam("downloadReport")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        DownloadCryptoAssessmentReportResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DownloadCryptoAssessmentReportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", DownloadCryptoAssessmentReportResponse.Builder::etag)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        DownloadCryptoAssessmentReportResponse.Builder::contentLength)
+                .callSync();
+    }
+
+    @Override
     public DownloadDiscoveryReportResponse downloadDiscoveryReport(
             DownloadDiscoveryReportRequest request) {
 
@@ -4513,6 +4618,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         EnableDataSafeConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableDataSafeConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GenerateCryptoAssessmentReportResponse generateCryptoAssessmentReport(
+            GenerateCryptoAssessmentReportRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateCryptoAssessmentReportDetails(),
+                "generateCryptoAssessmentReportDetails is required");
+
+        return clientCall(request, GenerateCryptoAssessmentReportResponse::builder)
+                .logger(LOG, "generateCryptoAssessmentReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GenerateCryptoAssessmentReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GenerateCryptoAssessmentReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateCryptoAssessmentReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .appendPathParam("actions")
+                .appendPathParam("generateReport")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateCryptoAssessmentReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateCryptoAssessmentReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -5178,6 +5320,75 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-prev-page",
                         GetCompatibleFormatsForSensitiveTypesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public GetCryptoAssessmentResponse getCryptoAssessment(GetCryptoAssessmentRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+
+        return clientCall(request, GetCryptoAssessmentResponse::builder)
+                .logger(LOG, "getCryptoAssessment")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetCryptoAssessment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GetCryptoAssessment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCryptoAssessmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessment.class,
+                        GetCryptoAssessmentResponse.Builder::cryptoAssessment)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCryptoAssessmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetCryptoAssessmentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetCryptoAssessmentSqlnetParametersResponse getCryptoAssessmentSqlnetParameters(
+            GetCryptoAssessmentSqlnetParametersRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+
+        return clientCall(request, GetCryptoAssessmentSqlnetParametersResponse::builder)
+                .logger(LOG, "getCryptoAssessmentSqlnetParameters")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetCryptoAssessmentSqlnetParameters",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GetCryptoAssessmentSqlnetParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCryptoAssessmentSqlnetParametersRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .appendPathParam("sqlnetParameters")
+                .appendQueryParam("parameter", request.getParameter())
+                .appendEnumQueryParam("quantumReadiness", request.getQuantumReadiness())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentSqlnetParameters.class,
+                        GetCryptoAssessmentSqlnetParametersResponse.Builder
+                                ::cryptoAssessmentSqlnetParameters)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetCryptoAssessmentSqlnetParametersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        GetCryptoAssessmentSqlnetParametersResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCryptoAssessmentSqlnetParametersResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7465,6 +7676,514 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListColumnsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentBackupSetsResponse listCryptoAssessmentBackupSets(
+            ListCryptoAssessmentBackupSetsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCryptoAssessmentBackupSetsResponse::builder)
+                .logger(LOG, "listCryptoAssessmentBackupSets")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentBackupSets",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentBackupSets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentBackupSetsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam("backupSets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("assessmentId", request.getAssessmentId())
+                .appendEnumQueryParam("assessmentType", request.getAssessmentType())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "targetIds",
+                        request.getTargetIds(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("backupSetKey", request.getBackupSetKey())
+                .appendQueryParam("isEncrypted", request.getIsEncrypted())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentBackupSetCollection.class,
+                        ListCryptoAssessmentBackupSetsResponse.Builder
+                                ::cryptoAssessmentBackupSetCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCryptoAssessmentBackupSetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCryptoAssessmentBackupSetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListCryptoAssessmentBackupSetsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentCbomItemsResponse listCryptoAssessmentCbomItems(
+            ListCryptoAssessmentCbomItemsRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+
+        return clientCall(request, ListCryptoAssessmentCbomItemsResponse::builder)
+                .logger(LOG, "listCryptoAssessmentCbomItems")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentCbomItems",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentCbomItems")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentCbomItemsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .appendPathParam("cbomItems")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentCbomItemCollection.class,
+                        ListCryptoAssessmentCbomItemsResponse.Builder
+                                ::cryptoAssessmentCbomItemCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCryptoAssessmentCbomItemsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentCertificatesResponse listCryptoAssessmentCertificates(
+            ListCryptoAssessmentCertificatesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCryptoAssessmentCertificatesResponse::builder)
+                .logger(LOG, "listCryptoAssessmentCertificates")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentCertificates",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentCertificates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentCertificatesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam("certificates")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("assessmentId", request.getAssessmentId())
+                .appendEnumQueryParam("assessmentType", request.getAssessmentType())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "targetIds",
+                        request.getTargetIds(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "certificateType",
+                        request.getCertificateType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "publicKeyType",
+                        request.getPublicKeyType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "signatureAlgorithm",
+                        request.getSignatureAlgorithm(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("expiryBucket", request.getExpiryBucket())
+                .appendQueryParam("daysToExpiry", request.getDaysToExpiry())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentCertificateCollection.class,
+                        ListCryptoAssessmentCertificatesResponse.Builder
+                                ::cryptoAssessmentCertificateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCryptoAssessmentCertificatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCryptoAssessmentCertificatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListCryptoAssessmentCertificatesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentFindingAnalyticsResponse listCryptoAssessmentFindingAnalytics(
+            ListCryptoAssessmentFindingAnalyticsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCryptoAssessmentFindingAnalyticsResponse::builder)
+                .logger(LOG, "listCryptoAssessmentFindingAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindingAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindingAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentFindingAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam("findingAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("category", request.getCategory())
+                .appendListQueryParam(
+                        "findingKey",
+                        request.getFindingKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isQuantumReadinessCheck", request.getIsQuantumReadinessCheck())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentFindingAnalyticsCollection
+                                .class,
+                        ListCryptoAssessmentFindingAnalyticsResponse.Builder
+                                ::cryptoAssessmentFindingAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCryptoAssessmentFindingAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCryptoAssessmentFindingAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListCryptoAssessmentFindingAnalyticsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentFindingTargetsResponse listCryptoAssessmentFindingTargets(
+            ListCryptoAssessmentFindingTargetsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getFindingKey(), "findingKey is required");
+
+        return clientCall(request, ListCryptoAssessmentFindingTargetsResponse::builder)
+                .logger(LOG, "listCryptoAssessmentFindingTargets")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindingTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindingTargets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentFindingTargetsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam("findingTargets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "findingKey",
+                        request.getFindingKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("assessmentType", request.getAssessmentType())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "targetIds",
+                        request.getTargetIds(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("isQuantumReadinessCheck", request.getIsQuantumReadinessCheck())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentFindingTargetCollection.class,
+                        ListCryptoAssessmentFindingTargetsResponse.Builder
+                                ::cryptoAssessmentFindingTargetCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCryptoAssessmentFindingTargetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCryptoAssessmentFindingTargetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListCryptoAssessmentFindingTargetsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentFindingsResponse listCryptoAssessmentFindings(
+            ListCryptoAssessmentFindingsRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+
+        return clientCall(request, ListCryptoAssessmentFindingsResponse::builder)
+                .logger(LOG, "listCryptoAssessmentFindings")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindings",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentFindingsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .appendPathParam("findings")
+                .appendQueryParam("findingKey", request.getFindingKey())
+                .appendQueryParam("title", request.getTitle())
+                .appendEnumQueryParam("category", request.getCategory())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("isQuantumReadinessCheck", request.getIsQuantumReadinessCheck())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentFindingCollection.class,
+                        ListCryptoAssessmentFindingsResponse.Builder
+                                ::cryptoAssessmentFindingCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCryptoAssessmentFindingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCryptoAssessmentFindingsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentKeysResponse listCryptoAssessmentKeys(
+            ListCryptoAssessmentKeysRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCryptoAssessmentKeysResponse::builder)
+                .logger(LOG, "listCryptoAssessmentKeys")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentKeys",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentKeys")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentKeysRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam("keys")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("assessmentId", request.getAssessmentId())
+                .appendEnumQueryParam("assessmentType", request.getAssessmentType())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "targetIds",
+                        request.getTargetIds(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("feature", request.getFeature())
+                .appendQueryParam("keyId", request.getKeyId())
+                .appendEnumQueryParam("keyType", request.getKeyType())
+                .appendListQueryParam(
+                        "keyManagerType",
+                        request.getKeyManagerType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentKeyCollection.class,
+                        ListCryptoAssessmentKeysResponse.Builder::cryptoAssessmentKeyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCryptoAssessmentKeysResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCryptoAssessmentKeysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListCryptoAssessmentKeysResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentTdeObjectsResponse listCryptoAssessmentTdeObjects(
+            ListCryptoAssessmentTdeObjectsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getObjectType(), "objectType is required");
+
+        return clientCall(request, ListCryptoAssessmentTdeObjectsResponse::builder)
+                .logger(LOG, "listCryptoAssessmentTdeObjects")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentTdeObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentTdeObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentTdeObjectsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam("tdeObjects")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("assessmentId", request.getAssessmentId())
+                .appendEnumQueryParam("assessmentType", request.getAssessmentType())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "targetIds",
+                        request.getTargetIds(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("objectType", request.getObjectType())
+                .appendEnumQueryParam("quantumReadiness", request.getQuantumReadiness())
+                .appendListQueryParam(
+                        "encryptionObserved",
+                        request.getEncryptionObserved(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("encryptionStatus", request.getEncryptionStatus())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentTdeObjectCollection.class,
+                        ListCryptoAssessmentTdeObjectsResponse.Builder
+                                ::cryptoAssessmentTdeObjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCryptoAssessmentTdeObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCryptoAssessmentTdeObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListCryptoAssessmentTdeObjectsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentWalletsResponse listCryptoAssessmentWallets(
+            ListCryptoAssessmentWalletsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCryptoAssessmentWalletsResponse::builder)
+                .logger(LOG, "listCryptoAssessmentWallets")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentWallets",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentWallets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentWalletsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam("wallets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("assessmentId", request.getAssessmentId())
+                .appendEnumQueryParam("assessmentType", request.getAssessmentType())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "targetIds",
+                        request.getTargetIds(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("feature", request.getFeature())
+                .appendListQueryParam(
+                        "walletEncryptionAlgorithm",
+                        request.getWalletEncryptionAlgorithm(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentWalletCollection.class,
+                        ListCryptoAssessmentWalletsResponse.Builder
+                                ::cryptoAssessmentWalletCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCryptoAssessmentWalletsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCryptoAssessmentWalletsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListCryptoAssessmentWalletsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCryptoAssessmentsResponse listCryptoAssessments(
+            ListCryptoAssessmentsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCryptoAssessmentsResponse::builder)
+                .logger(LOG, "listCryptoAssessments")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessments",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCryptoAssessmentsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("type", request.getType())
+                .appendQueryParam("assessmentId", request.getAssessmentId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendListQueryParam(
+                        "targetIds",
+                        request.getTargetIds(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("targetDatabaseGroupId", request.getTargetDatabaseGroupId())
+                .appendEnumQueryParam("targetType", request.getTargetType())
+                .appendListQueryParam(
+                        "postureCategory",
+                        request.getPostureCategory(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isAssessmentScheduled", request.getIsAssessmentScheduled())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.CryptoAssessmentCollection.class,
+                        ListCryptoAssessmentsResponse.Builder::cryptoAssessmentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCryptoAssessmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCryptoAssessmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListCryptoAssessmentsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -11668,6 +12387,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public RefreshCryptoAssessmentResponse refreshCryptoAssessment(
+            RefreshCryptoAssessmentRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+        Objects.requireNonNull(
+                request.getRunCryptoAssessmentDetails(), "runCryptoAssessmentDetails is required");
+
+        return clientCall(request, RefreshCryptoAssessmentResponse::builder)
+                .logger(LOG, "refreshCryptoAssessment")
+                .serviceDetails(
+                        "DataSafe",
+                        "RefreshCryptoAssessment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/RefreshCryptoAssessment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshCryptoAssessmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshCryptoAssessmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshCryptoAssessmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RefreshDatabaseSecurityConfigurationResponse refreshDatabaseSecurityConfiguration(
             RefreshDatabaseSecurityConfigurationRequest request) {
 
@@ -12600,6 +13354,39 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-work-request-id", UpdateAuditTrailResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAuditTrailResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCryptoAssessmentResponse updateCryptoAssessment(
+            UpdateCryptoAssessmentRequest request) {
+
+        Validate.notBlank(request.getCryptoAssessmentId(), "cryptoAssessmentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCryptoAssessmentDetails(),
+                "updateCryptoAssessmentDetails is required");
+
+        return clientCall(request, UpdateCryptoAssessmentResponse::builder)
+                .logger(LOG, "updateCryptoAssessment")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateCryptoAssessment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/UpdateCryptoAssessment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCryptoAssessmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("cryptoAssessments")
+                .appendPathParam(request.getCryptoAssessmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateCryptoAssessmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCryptoAssessmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 

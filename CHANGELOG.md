@@ -4,6 +4,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.97.0 - 2026-09-22
+### Added 
+- Support for recurring maintenance windows in the Application Performance Monitoring Synthetics service 
+- Support for crypto posture assessments in the Data Safe service 
+- Support for customer-managed compute capacity reservations for model deployments, notebook sessions, jobs, and pipelines in the Data Science service 
+- Support for code-only functions with managed runtimes and automated image builds in the Functions service 
+- Support for routing profiles and model discovery in the Generative AI service 
+- Support for generating, filtering, and downloading Customer Instance Report exports in the Marketplace Publisher service   
+
+### Breaking Changes 
+- The Distributed Database V26 service was renamed to Distributed Database service 
+- Method `getImage()` has been removed from the model `CreateFunctionDetails` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `CreateFunctionDetails` in the Functions service 
+- The return type of method `getSourceDetails()` has changed to `com.oracle.bmc.functions.model.CreateFunctionSourceDetails` in the model `CreateFunctionDetails` in the Functions service 
+- Method `getImage()` has been removed from the model `Function` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `Function` in the Functions service 
+- Method `getImage()` has been removed from the model `FunctionSummary` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `FunctionSummary` in the Functions service 
+- Method `getImage()` has been removed from the model `UpdateFunctionDetails` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `UpdateFunctionDetails` in the Functions service 
+- Method `getApplication()` has been removed from the response `UpdateApplicationResponse` in the Functions service 
+- Method `getEtag()` has been removed from the response `UpdateApplicationResponse` in the Functions service 
+- Method `getEtag()` has been removed from the response `UpdateFunctionResponse` in the Functions service 
+- Method `getFunction()` has been removed from the response `UpdateFunctionResponse` in the Functions service 
+- Method `getTenantAdminEmail()` has been removed from the model `CustomerInstanceReportRecord` in the Marketplace Publisher service 
+- Method `getTenantAdminName()` has been removed from the model `CustomerInstanceReportRecord` in the Marketplace Publisher service 
+- The return type of method `getMetricType()` has changed to `com.oracle.bmc.marketplacepublisher.model.MetricType` in the model `ListingPart` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.model.ListingPart$MetricType` has been removed from the Marketplace Publisher service 
+- The return type of method `getOpnStatus()` has changed to `com.oracle.bmc.marketplacepublisher.model.AdminOpnPartnerSummary$MembershipStatus` in the model `OpnMembership` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.model.OpnMembership$OpnStatus` has been removed from the Marketplace Publisher service 
+- The return type of method `getPublisherStatus()` has changed to `com.oracle.bmc.marketplacepublisher.model.PublisherStatus` in the model `Publisher` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.model.Publisher$PublisherStatus` has been removed from the Marketplace Publisher service 
+- The enum value `Yearly` has been removed from the model `SaaSPricingPlan$BillingFrequency` in the Marketplace Publisher service 
+- Method `getDateRange()` has been removed from the request `ListCustomerInstanceReportRecordsRequest` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.requests.ListCustomerInstanceReportRecordsRequest$DateRange` has been removed from the Marketplace Publisher service 
+- Enum value `DisplayName` has been removed from the request `ListCustomerInstanceReportRecordsRequest$SortBy` in the Marketplace Publisher service 
+- Enum value `TimeCreated` has been removed from the request `ListCustomerInstanceReportRecordsRequest$SortBy` in the Marketplace Publisher service
+
 ## 3.96.0 - 2026-09-15
 ### Added 
 - Support for higher usage submission limits for metered SaaS listings and legacy subscription endpoints in the Service Enablement Lifecycle Framework service 

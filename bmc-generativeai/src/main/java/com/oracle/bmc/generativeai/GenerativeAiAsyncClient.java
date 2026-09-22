@@ -601,6 +601,48 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeRoutingProfileCompartmentResponse>
+            changeRoutingProfileCompartment(
+                    ChangeRoutingProfileCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRoutingProfileCompartmentRequest,
+                                    ChangeRoutingProfileCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getRoutingProfileId(), "routingProfileId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRoutingProfileCompartmentDetails(),
+                "changeRoutingProfileCompartmentDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("routingProfileId", request.getRoutingProfileId());
+
+        return clientCall(request, ChangeRoutingProfileCompartmentResponse::builder)
+                .logger(LOG, "changeRoutingProfileCompartment")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ChangeRoutingProfileCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/ChangeRoutingProfileCompartment")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRoutingProfileCompartmentRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("routingProfiles")
+                .appendPathParam(request.getRoutingProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRoutingProfileCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSemanticStoreCompartmentResponse>
             changeSemanticStoreCompartment(
                     ChangeSemanticStoreCompartmentRequest request,
@@ -1075,6 +1117,42 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", CreateModelResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "model-deprecation-info", CreateModelResponse.Builder::modelDeprecationInfo)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRoutingProfileResponse> createRoutingProfile(
+            CreateRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateRoutingProfileRequest, CreateRoutingProfileResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateRoutingProfileDetails(),
+                "createRoutingProfileDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
+        return clientCall(request, CreateRoutingProfileResponse::builder)
+                .logger(LOG, "createRoutingProfile")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateRoutingProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/CreateRoutingProfile")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRoutingProfileRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("routingProfiles")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.RoutingProfile.class,
+                        CreateRoutingProfileResponse.Builder::routingProfile)
+                .handleResponseHeaderString("etag", CreateRoutingProfileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRoutingProfileResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -1642,6 +1720,38 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRoutingProfileResponse> deleteRoutingProfile(
+            DeleteRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRoutingProfileRequest, DeleteRoutingProfileResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRoutingProfileId(), "routingProfileId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("routingProfileId", request.getRoutingProfileId());
+
+        return clientCall(request, DeleteRoutingProfileResponse::builder)
+                .logger(LOG, "deleteRoutingProfile")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteRoutingProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/DeleteRoutingProfile")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRoutingProfileRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("routingProfiles")
+                .appendPathParam(request.getRoutingProfileId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRoutingProfileResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSemanticStoreResponse> deleteSemanticStore(
             DeleteSemanticStoreRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2110,6 +2220,41 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRoutingProfileResponse> getRoutingProfile(
+            GetRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRoutingProfileRequest, GetRoutingProfileResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRoutingProfileId(), "routingProfileId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("routingProfileId", request.getRoutingProfileId());
+
+        return clientCall(request, GetRoutingProfileResponse::builder)
+                .logger(LOG, "getRoutingProfile")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetRoutingProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/GetRoutingProfile")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRoutingProfileRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("routingProfiles")
+                .appendPathParam(request.getRoutingProfileId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.RoutingProfile.class,
+                        GetRoutingProfileResponse.Builder::routingProfile)
+                .handleResponseHeaderString("etag", GetRoutingProfileResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRoutingProfileResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -2745,6 +2890,71 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListModelDiscoveryResponse> listModelDiscovery(
+            ListModelDiscoveryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelDiscoveryRequest, ListModelDiscoveryResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
+        return clientCall(request, ListModelDiscoveryResponse::builder)
+                .logger(LOG, "listModelDiscovery")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListModelDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ModelDiscoveryCollection/ListModelDiscovery")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelDiscoveryRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("modelDiscovery")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "realm",
+                        request.getRealm(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "region",
+                        request.getRegion(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("modelId", request.getModelId())
+                .appendListQueryParam(
+                        "servingMode",
+                        request.getServingMode(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "apiCapability",
+                        request.getApiCapability(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "capability",
+                        request.getCapability(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "modelAccess",
+                        request.getModelAccess(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isDeprecated", request.getIsDeprecated())
+                .appendQueryParam("isOnDemandRetired", request.getIsOnDemandRetired())
+                .appendQueryParam("isDedicatedRetired", request.getIsDedicatedRetired())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.ModelDiscoveryCollection.class,
+                        ListModelDiscoveryResponse.Builder::modelDiscoveryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelDiscoveryResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelDiscoveryResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResponse> listModels(
             ListModelsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse>
@@ -2787,6 +2997,48 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", ListModelsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListModelsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoutingProfilesResponse> listRoutingProfiles(
+            ListRoutingProfilesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRoutingProfilesRequest, ListRoutingProfilesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
+        return clientCall(request, ListRoutingProfilesResponse::builder)
+                .logger(LOG, "listRoutingProfiles")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListRoutingProfiles",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfileCollection/ListRoutingProfiles")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRoutingProfilesRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("routingProfiles")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.RoutingProfileCollection.class,
+                        ListRoutingProfilesResponse.Builder::routingProfileCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRoutingProfilesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRoutingProfilesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3652,6 +3904,46 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString("etag", UpdateModelResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileResponse> updateRoutingProfile(
+            UpdateRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRoutingProfileRequest, UpdateRoutingProfileResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRoutingProfileId(), "routingProfileId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRoutingProfileDetails(),
+                "updateRoutingProfileDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("routingProfileId", request.getRoutingProfileId());
+
+        return clientCall(request, UpdateRoutingProfileResponse::builder)
+                .logger(LOG, "updateRoutingProfile")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateRoutingProfile",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/UpdateRoutingProfile")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRoutingProfileRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("routingProfiles")
+                .appendPathParam(request.getRoutingProfileId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.RoutingProfile.class,
+                        UpdateRoutingProfileResponse.Builder::routingProfile)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRoutingProfileResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateRoutingProfileResponse.Builder::etag)
                 .callAsync(handler);
     }
 

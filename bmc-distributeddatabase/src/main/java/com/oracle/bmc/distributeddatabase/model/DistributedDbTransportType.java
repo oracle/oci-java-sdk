@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.distributeddatabase.model;
 
-/** The redo transport type to use for this Data Guard association. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+/** The transport type to use for this Data Guard association. */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum DistributedDbTransportType implements com.oracle.bmc.http.internal.BmcEnum {
     Sync("SYNC"),
     Async("ASYNC"),

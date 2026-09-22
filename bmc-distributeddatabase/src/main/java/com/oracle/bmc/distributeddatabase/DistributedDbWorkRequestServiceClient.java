@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbWorkRequestServiceClient
         extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DistributedDbWorkRequestService {
@@ -136,10 +136,10 @@ public class DistributedDbWorkRequestServiceClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequest/GetWorkRequest")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
@@ -166,10 +166,10 @@ public class DistributedDbWorkRequestServiceClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequestError/ListWorkRequestErrors")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("errors")
@@ -200,10 +200,10 @@ public class DistributedDbWorkRequestServiceClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequestLogEntry/ListWorkRequestLogs")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("workRequests")
                 .appendPathParam(request.getWorkRequestId())
                 .appendPathParam("logs")
@@ -234,10 +234,10 @@ public class DistributedDbWorkRequestServiceClient
                 .serviceDetails(
                         "DistributedDbWorkRequestService",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequest/ListWorkRequests")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("workRequests")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("workRequestId", request.getWorkRequestId())
