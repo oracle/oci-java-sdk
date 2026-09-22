@@ -8,7 +8,7 @@ import com.oracle.bmc.distributeddatabase.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/ListDistributedDatabasePrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDistributedDatabasePrivateEndpointsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class ListDistributedDatabasePrivateEndpointsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -22,6 +22,17 @@ public class ListDistributedDatabasePrivateEndpointsRequest
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+    /**
+     * When set to true, returns resources in the specified compartment and in all of its child compartments recursively. Defaults to false.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * When set to true, returns resources in the specified compartment and in all of its child compartments recursively. Defaults to false.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
     }
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -167,6 +178,21 @@ public class ListDistributedDatabasePrivateEndpointsRequest
         }
 
         /**
+         * When set to true, returns resources in the specified compartment and in all of its child compartments recursively. Defaults to false.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * When set to true, returns resources in the specified compartment and in all of its child compartments recursively. Defaults to false.
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.distributeddatabase.model.DistributedDatabasePrivateEndpoint
@@ -307,6 +333,7 @@ public class ListDistributedDatabasePrivateEndpointsRequest
          */
         public Builder copy(ListDistributedDatabasePrivateEndpointsRequest o) {
             compartmentId(o.getCompartmentId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());
@@ -349,6 +376,7 @@ public class ListDistributedDatabasePrivateEndpointsRequest
             ListDistributedDatabasePrivateEndpointsRequest request =
                     new ListDistributedDatabasePrivateEndpointsRequest();
             request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.lifecycleState = lifecycleState;
             request.limit = limit;
             request.page = page;
@@ -357,7 +385,7 @@ public class ListDistributedDatabasePrivateEndpointsRequest
             request.opcRequestId = opcRequestId;
             request.displayName = displayName;
             return request;
-            // new ListDistributedDatabasePrivateEndpointsRequest(compartmentId, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId, displayName);
+            // new ListDistributedDatabasePrivateEndpointsRequest(compartmentId, compartmentIdInSubtree, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId, displayName);
         }
     }
 
@@ -368,6 +396,7 @@ public class ListDistributedDatabasePrivateEndpointsRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .lifecycleState(lifecycleState)
                 .limit(limit)
                 .page(page)
@@ -391,6 +420,7 @@ public class ListDistributedDatabasePrivateEndpointsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -415,6 +445,8 @@ public class ListDistributedDatabasePrivateEndpointsRequest
                 (ListDistributedDatabasePrivateEndpointsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -431,6 +463,11 @@ public class ListDistributedDatabasePrivateEndpointsRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

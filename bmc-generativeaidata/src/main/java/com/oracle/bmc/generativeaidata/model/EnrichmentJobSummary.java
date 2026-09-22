@@ -26,6 +26,7 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
         "semanticStoreId",
         "displayName",
         "enrichmentJobType",
+        "modelId",
         "timeAccepted",
         "lifecycleState",
         "freeformTags",
@@ -37,6 +38,7 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
             String semanticStoreId,
             String displayName,
             EnrichmentJobType enrichmentJobType,
+            String modelId,
             java.util.Date timeAccepted,
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
@@ -47,6 +49,7 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
         this.semanticStoreId = semanticStoreId;
         this.displayName = displayName;
         this.enrichmentJobType = enrichmentJobType;
+        this.modelId = modelId;
         this.timeAccepted = timeAccepted;
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
@@ -57,13 +60,13 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation.
+         * The OCID of the Semantic Store job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation.
+         * The OCID of the Semantic Store job.
          * @param id the value to set
          * @return this builder
          **/
@@ -73,13 +76,13 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a GenerateSqlJob.
+         * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the EnrichmentJob.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("semanticStoreId")
         private String semanticStoreId;
 
         /**
-         * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a GenerateSqlJob.
+         * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the EnrichmentJob.
          * @param semanticStoreId the value to set
          * @return this builder
          **/
@@ -105,19 +108,35 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+         * Enrichment job type. Supported values are Full Build (all supported objects in a given schema), Partial Build (selected tables and/or supported objects in a given schema), and Delta Refresh (objects in a given schema that have changed since the previous enrichment job).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("enrichmentJobType")
         private EnrichmentJobType enrichmentJobType;
 
         /**
-         * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+         * Enrichment job type. Supported values are Full Build (all supported objects in a given schema), Partial Build (selected tables and/or supported objects in a given schema), and Delta Refresh (objects in a given schema that have changed since the previous enrichment job).
          * @param enrichmentJobType the value to set
          * @return this builder
          **/
         public Builder enrichmentJobType(EnrichmentJobType enrichmentJobType) {
             this.enrichmentJobType = enrichmentJobType;
             this.__explicitlySet__.add("enrichmentJobType");
+            return this;
+        }
+        /**
+         * The generative AI modelId used for Enrichment. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+        private String modelId;
+
+        /**
+         * The generative AI modelId used for Enrichment. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+         * @param modelId the value to set
+         * @return this builder
+         **/
+        public Builder modelId(String modelId) {
+            this.modelId = modelId;
+            this.__explicitlySet__.add("modelId");
             return this;
         }
         /**
@@ -137,13 +156,13 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The lifecycleState of GenerateSqlJob.
+         * The lifecycle state of the EnrichmentJob.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycleState of GenerateSqlJob.
+         * The lifecycle state of the EnrichmentJob.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -224,6 +243,7 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
                             this.semanticStoreId,
                             this.displayName,
                             this.enrichmentJobType,
+                            this.modelId,
                             this.timeAccepted,
                             this.lifecycleState,
                             this.freeformTags,
@@ -248,6 +268,9 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("enrichmentJobType")) {
                 this.enrichmentJobType(model.getEnrichmentJobType());
+            }
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
             }
             if (model.wasPropertyExplicitlySet("timeAccepted")) {
                 this.timeAccepted(model.getTimeAccepted());
@@ -280,13 +303,13 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Unique identifier that is immutable on creation.
+     * The OCID of the Semantic Store job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation.
+     * The OCID of the Semantic Store job.
      * @return the value
      **/
     public String getId() {
@@ -294,13 +317,13 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a GenerateSqlJob.
+     * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the EnrichmentJob.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("semanticStoreId")
     private final String semanticStoreId;
 
     /**
-     * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a GenerateSqlJob.
+     * Owning SemanticStore [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the EnrichmentJob.
      * @return the value
      **/
     public String getSemanticStoreId() {
@@ -322,17 +345,31 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+     * Enrichment job type. Supported values are Full Build (all supported objects in a given schema), Partial Build (selected tables and/or supported objects in a given schema), and Delta Refresh (objects in a given schema that have changed since the previous enrichment job).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enrichmentJobType")
     private final EnrichmentJobType enrichmentJobType;
 
     /**
-     * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+     * Enrichment job type. Supported values are Full Build (all supported objects in a given schema), Partial Build (selected tables and/or supported objects in a given schema), and Delta Refresh (objects in a given schema that have changed since the previous enrichment job).
      * @return the value
      **/
     public EnrichmentJobType getEnrichmentJobType() {
         return enrichmentJobType;
+    }
+
+    /**
+     * The generative AI modelId used for Enrichment. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+    private final String modelId;
+
+    /**
+     * The generative AI modelId used for Enrichment. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+     * @return the value
+     **/
+    public String getModelId() {
+        return modelId;
     }
 
     /**
@@ -350,13 +387,13 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The lifecycleState of GenerateSqlJob.
+     * The lifecycle state of the EnrichmentJob.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycleState of GenerateSqlJob.
+     * The lifecycle state of the EnrichmentJob.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -435,6 +472,7 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", semanticStoreId=").append(String.valueOf(this.semanticStoreId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", enrichmentJobType=").append(String.valueOf(this.enrichmentJobType));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -458,6 +496,7 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.semanticStoreId, other.semanticStoreId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.enrichmentJobType, other.enrichmentJobType)
+                && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -478,6 +517,7 @@ public final class EnrichmentJobSummary extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.enrichmentJobType == null ? 43 : this.enrichmentJobType.hashCode());
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result =
                 (result * PRIME)

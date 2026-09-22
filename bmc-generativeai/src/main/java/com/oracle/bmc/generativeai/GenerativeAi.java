@@ -229,6 +229,19 @@ public interface GenerativeAi extends AutoCloseable {
     ChangeModelCompartmentResponse changeModelCompartment(ChangeModelCompartmentRequest request);
 
     /**
+     * Moves a routing profile into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ChangeRoutingProfileCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoutingProfileCompartment API.
+     */
+    ChangeRoutingProfileCompartmentResponse changeRoutingProfileCompartment(
+            ChangeRoutingProfileCompartmentRequest request);
+
+    /**
      * Moves a SemanticStore into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -389,6 +402,18 @@ public interface GenerativeAi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateModelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateModel API.
      */
     CreateModelResponse createModel(CreateModelRequest request);
+
+    /**
+     * Creates a routing profile.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateRoutingProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoutingProfile API.
+     */
+    CreateRoutingProfileResponse createRoutingProfile(CreateRoutingProfileRequest request);
 
     /**
      * Creates a SemanticStore.
@@ -596,6 +621,18 @@ public interface GenerativeAi extends AutoCloseable {
     DeleteModelResponse deleteModel(DeleteModelRequest request);
 
     /**
+     * Deletes a routing profile.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteRoutingProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoutingProfile API.
+     */
+    DeleteRoutingProfileResponse deleteRoutingProfile(DeleteRoutingProfileRequest request);
+
+    /**
      * Deletes a semanticStore.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -754,6 +791,18 @@ public interface GenerativeAi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetModelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetModel API.
      */
     GetModelResponse getModel(GetModelRequest request);
+
+    /**
+     * Gets information about a routing profile.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetRoutingProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoutingProfile API.
+     */
+    GetRoutingProfileResponse getRoutingProfile(GetRoutingProfileRequest request);
 
     /**
      * Gets information about a semanticStore.
@@ -943,6 +992,20 @@ public interface GenerativeAi extends AutoCloseable {
     ListImportedModelsResponse listImportedModels(ListImportedModelsRequest request);
 
     /**
+     * Retrieves a list of models along with their capabilities, supported features, and deployment availability.
+     * Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListModelDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModelDiscovery API.
+     */
+    ListModelDiscoveryResponse listModelDiscovery(ListModelDiscoveryRequest request);
+
+    /**
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -953,6 +1016,18 @@ public interface GenerativeAi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListModelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListModels API.
      */
     ListModelsResponse listModels(ListModelsRequest request);
+
+    /**
+     * Lists the routing profiles of a specific compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListRoutingProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoutingProfiles API.
+     */
+    ListRoutingProfilesResponse listRoutingProfiles(ListRoutingProfilesRequest request);
 
     /**
      * Lists the SemanticStores given specific filter.
@@ -1203,6 +1278,18 @@ public interface GenerativeAi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateModelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateModel API.
      */
     UpdateModelResponse updateModel(UpdateModelRequest request);
+
+    /**
+     * Updates the properties of a routing profile.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateRoutingProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoutingProfile API.
+     */
+    UpdateRoutingProfileResponse updateRoutingProfile(UpdateRoutingProfileRequest request);
 
     /**
      * Updates the properties of a SemanticStore.

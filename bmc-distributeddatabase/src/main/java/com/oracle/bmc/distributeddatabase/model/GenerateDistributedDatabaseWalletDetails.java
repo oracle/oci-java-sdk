@@ -15,7 +15,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = GenerateDistributedDatabaseWalletDetails.Builder.class
 )
@@ -23,8 +23,15 @@ package com.oracle.bmc.distributeddatabase.model;
 public final class GenerateDistributedDatabaseWalletDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"password"})
     public GenerateDistributedDatabaseWalletDetails(String password) {
+        super();
+        this.password = password != null ? password.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    @java.beans.ConstructorProperties({"password"})
+    public GenerateDistributedDatabaseWalletDetails(char[] password) {
         super();
         this.password = password;
     }
@@ -35,15 +42,21 @@ public final class GenerateDistributedDatabaseWalletDetails
          * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
          * @param password the value to set
          * @return this builder
          **/
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -84,13 +97,25 @@ public final class GenerateDistributedDatabaseWalletDetails
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+     * return the value
+     * @Deprecated - Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      * @return the value
      **/
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -108,7 +133,7 @@ public final class GenerateDistributedDatabaseWalletDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenerateDistributedDatabaseWalletDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("password=").append(String.valueOf(this.password));
+        sb.append("password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

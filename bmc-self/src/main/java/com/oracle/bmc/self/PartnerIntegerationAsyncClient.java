@@ -524,6 +524,64 @@ public class PartnerIntegerationAsyncClient implements PartnerIntegerationAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateSubscriptionDeprecatedResponse>
+            activateSubscriptionDeprecated(
+                    ActivateSubscriptionDeprecatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateSubscriptionDeprecatedRequest,
+                                    ActivateSubscriptionDeprecatedResponse>
+                            handler) {
+        LOG.trace("Called async activateSubscriptionDeprecated");
+        final ActivateSubscriptionDeprecatedRequest interceptedRequest =
+                ActivateSubscriptionDeprecatedConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateSubscriptionDeprecatedConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ActivateSubscriptionDeprecated",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ActivateSubscriptionDeprecated");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ActivateSubscriptionDeprecatedResponse>
+                transformer =
+                        ActivateSubscriptionDeprecatedConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ActivateSubscriptionDeprecatedRequest,
+                        ActivateSubscriptionDeprecatedResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ActivateSubscriptionDeprecatedRequest,
+                                ActivateSubscriptionDeprecatedResponse>,
+                        java.util.concurrent.Future<ActivateSubscriptionDeprecatedResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getActivateSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ActivateSubscriptionDeprecatedRequest, ActivateSubscriptionDeprecatedResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPartnersResponse> listPartners(
             ListPartnersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListPartnersRequest, ListPartnersResponse>
@@ -615,6 +673,58 @@ public class PartnerIntegerationAsyncClient implements PartnerIntegerationAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<ListingSubscriptionsDeprecatedResponse>
+            listingSubscriptionsDeprecated(
+                    ListingSubscriptionsDeprecatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListingSubscriptionsDeprecatedRequest,
+                                    ListingSubscriptionsDeprecatedResponse>
+                            handler) {
+        LOG.trace("Called async listingSubscriptionsDeprecated");
+        final ListingSubscriptionsDeprecatedRequest interceptedRequest =
+                ListingSubscriptionsDeprecatedConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListingSubscriptionsDeprecatedConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ListingSubscriptionsDeprecated",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/ListingSubscriptionsCollection/ListingSubscriptionsDeprecated");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListingSubscriptionsDeprecatedResponse>
+                transformer =
+                        ListingSubscriptionsDeprecatedConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListingSubscriptionsDeprecatedRequest,
+                        ListingSubscriptionsDeprecatedResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListingSubscriptionsDeprecatedRequest,
+                                ListingSubscriptionsDeprecatedResponse>,
+                        java.util.concurrent.Future<ListingSubscriptionsDeprecatedResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListingSubscriptionsDeprecatedRequest, ListingSubscriptionsDeprecatedResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ResolveSubscriptionResponse> resolveSubscription(
             ResolveSubscriptionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -655,6 +765,63 @@ public class PartnerIntegerationAsyncClient implements PartnerIntegerationAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ResolveSubscriptionRequest, ResolveSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResolveSubscriptionDeprecatedResponse>
+            resolveSubscriptionDeprecated(
+                    ResolveSubscriptionDeprecatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ResolveSubscriptionDeprecatedRequest,
+                                    ResolveSubscriptionDeprecatedResponse>
+                            handler) {
+        LOG.trace("Called async resolveSubscriptionDeprecated");
+        final ResolveSubscriptionDeprecatedRequest interceptedRequest =
+                ResolveSubscriptionDeprecatedConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResolveSubscriptionDeprecatedConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ResolveSubscriptionDeprecated",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ResolveSubscriptionDeprecated");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ResolveSubscriptionDeprecatedResponse>
+                transformer =
+                        ResolveSubscriptionDeprecatedConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ResolveSubscriptionDeprecatedRequest, ResolveSubscriptionDeprecatedResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ResolveSubscriptionDeprecatedRequest,
+                                ResolveSubscriptionDeprecatedResponse>,
+                        java.util.concurrent.Future<ResolveSubscriptionDeprecatedResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getResolveSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ResolveSubscriptionDeprecatedRequest, ResolveSubscriptionDeprecatedResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

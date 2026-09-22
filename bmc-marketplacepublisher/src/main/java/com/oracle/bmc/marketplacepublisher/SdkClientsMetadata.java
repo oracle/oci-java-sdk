@@ -7,5 +7,14 @@ package com.oracle.bmc.marketplacepublisher;
 import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20241201")
-@SdkClients({MarketplacePublisherAsyncClient.class, MarketplacePublisherClient.class})
+@SdkClients({
+    AdministratorArtifactAsyncClient.class,
+    AdministratorArtifactClient.class,
+    AdministratorPublisherAsyncClient.class,
+    AdministratorPublisherClient.class,
+    MarketplaceAdministratorAsyncClient.class,
+    MarketplaceAdministratorClient.class,
+    MarketplacePublisherAsyncClient.class,
+    MarketplacePublisherClient.class
+})
 public final class SdkClientsMetadata {}

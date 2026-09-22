@@ -9,6 +9,21 @@ import com.oracle.bmc.generativeaidata.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class CancelEnrichmentJobResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -40,20 +55,39 @@ public class CancelEnrichmentJobResponse extends com.oracle.bmc.responses.BmcRes
         return opcWorkRequestId;
     }
 
+    /**
+     * The returned EnrichmentJob instance.
+     */
+    private com.oracle.bmc.generativeaidata.model.EnrichmentJob enrichmentJob;
+
+    /**
+     * The returned EnrichmentJob instance.
+     * @return the value
+     */
+    public com.oracle.bmc.generativeaidata.model.EnrichmentJob getEnrichmentJob() {
+        return enrichmentJob;
+    }
+
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
+        "etag",
         "opcRequestId",
-        "opcWorkRequestId"
+        "opcWorkRequestId",
+        "enrichmentJob"
     })
     private CancelEnrichmentJobResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
             String opcRequestId,
-            String opcWorkRequestId) {
+            String opcWorkRequestId,
+            com.oracle.bmc.generativeaidata.model.EnrichmentJob enrichmentJob) {
         super(__httpStatusCode__, headers);
+        this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
+        this.enrichmentJob = enrichmentJob;
     }
 
     public static class Builder {
@@ -68,6 +102,23 @@ public class CancelEnrichmentJobResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
+            return this;
+        }
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
             return this;
         }
 
@@ -108,14 +159,32 @@ public class CancelEnrichmentJobResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
+         * The returned EnrichmentJob instance.
+         */
+        private com.oracle.bmc.generativeaidata.model.EnrichmentJob enrichmentJob;
+
+        /**
+         * The returned EnrichmentJob instance.
+         * @param enrichmentJob the value to set
+         * @return this builder
+         */
+        public Builder enrichmentJob(
+                com.oracle.bmc.generativeaidata.model.EnrichmentJob enrichmentJob) {
+            this.enrichmentJob = enrichmentJob;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
         public Builder copy(CancelEnrichmentJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
+            enrichmentJob(o.getEnrichmentJob());
 
             return this;
         }
@@ -126,7 +195,12 @@ public class CancelEnrichmentJobResponse extends com.oracle.bmc.responses.BmcRes
          */
         public CancelEnrichmentJobResponse build() {
             return new CancelEnrichmentJobResponse(
-                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    enrichmentJob);
         }
     }
 
@@ -143,8 +217,10 @@ public class CancelEnrichmentJobResponse extends com.oracle.bmc.responses.BmcRes
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",enrichmentJob=").append(String.valueOf(enrichmentJob));
         sb.append(")");
         return sb.toString();
     }
@@ -160,18 +236,24 @@ public class CancelEnrichmentJobResponse extends com.oracle.bmc.responses.BmcRes
 
         CancelEnrichmentJobResponse other = (CancelEnrichmentJobResponse) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.enrichmentJob, other.enrichmentJob);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enrichmentJob == null ? 43 : this.enrichmentJob.hashCode());
         return result;
     }
 }

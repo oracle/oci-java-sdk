@@ -564,6 +564,59 @@ public class ClusterAsyncClient implements ClusterAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateHostDistributionReportResponse>
+            generateHostDistributionReport(
+                    GenerateHostDistributionReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateHostDistributionReportRequest,
+                                    GenerateHostDistributionReportResponse>
+                            handler) {
+        LOG.trace("Called async generateHostDistributionReport");
+        final GenerateHostDistributionReportRequest interceptedRequest =
+                GenerateHostDistributionReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateHostDistributionReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Cluster",
+                        "GenerateHostDistributionReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Cluster/GenerateHostDistributionReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateHostDistributionReportResponse>
+                transformer =
+                        GenerateHostDistributionReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateHostDistributionReportRequest,
+                        GenerateHostDistributionReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateHostDistributionReportRequest,
+                                GenerateHostDistributionReportResponse>,
+                        java.util.concurrent.Future<GenerateHostDistributionReportResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateHostDistributionReportRequest, GenerateHostDistributionReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetClusterResponse> getCluster(
             GetClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetClusterRequest, GetClusterResponse>

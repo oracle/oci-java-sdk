@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedAutonomousDatabaseGsm.Builder.class
 )
@@ -61,13 +61,13 @@ public final class DistributedAutonomousDatabaseGsm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of the Global service manager instance
+         * Name of the Global service manager instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Name of the Global service manager instance
+         * Name of the Global service manager instance.
          * @param name the value to set
          * @return this builder
          **/
@@ -109,13 +109,13 @@ public final class DistributedAutonomousDatabaseGsm
             return this;
         }
         /**
-         * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -125,13 +125,13 @@ public final class DistributedAutonomousDatabaseGsm
             return this;
         }
         /**
-         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+         * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -157,13 +157,13 @@ public final class DistributedAutonomousDatabaseGsm
             return this;
         }
         /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSslCertificateExpires")
         private java.util.Date timeSslCertificateExpires;
 
         /**
-         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+         * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string.
          * @param timeSslCertificateExpires the value to set
          * @return this builder
          **/
@@ -277,13 +277,13 @@ public final class DistributedAutonomousDatabaseGsm
     }
 
     /**
-     * Name of the Global service manager instance
+     * Name of the Global service manager instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the Global service manager instance
+     * Name of the Global service manager instance.
      * @return the value
      **/
     public String getName() {
@@ -319,13 +319,13 @@ public final class DistributedAutonomousDatabaseGsm
     }
 
     /**
-     * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Global service manager instance was created. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was created. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -333,13 +333,13 @@ public final class DistributedAutonomousDatabaseGsm
     }
 
     /**
-     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string
+     * The time the Global service manager instance was last updated. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -415,13 +415,13 @@ public final class DistributedAutonomousDatabaseGsm
     }
 
     /**
-     * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+     * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSslCertificateExpires")
     private final java.util.Date timeSslCertificateExpires;
 
     /**
-     * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string
+     * The time the ssl certificate associated with Global service manager expires. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeSslCertificateExpires() {

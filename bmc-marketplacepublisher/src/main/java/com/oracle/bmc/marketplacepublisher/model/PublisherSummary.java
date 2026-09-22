@@ -38,6 +38,14 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
         "publisherType",
         "timeCreated",
         "timeUpdated",
+        "email",
+        "businessPhoneNumber",
+        "employeeCount",
+        "solutionDescription",
+        "opnNumber",
+        "country",
+        "city",
+        "state",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -61,6 +69,14 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
             PublisherType publisherType,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String email,
+            String businessPhoneNumber,
+            Long employeeCount,
+            String solutionDescription,
+            String opnNumber,
+            String country,
+            String city,
+            String state,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -83,6 +99,14 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
         this.publisherType = publisherType;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.email = email;
+        this.businessPhoneNumber = businessPhoneNumber;
+        this.employeeCount = employeeCount;
+        this.solutionDescription = solutionDescription;
+        this.opnNumber = opnNumber;
+        this.country = country;
+        this.city = city;
+        this.state = state;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -372,6 +396,134 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * Email address of the publisher.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
+
+        /**
+         * Email address of the publisher.
+         * @param email the value to set
+         * @return this builder
+         **/
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
+            return this;
+        }
+        /**
+         * The business phone number of the publisher.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("businessPhoneNumber")
+        private String businessPhoneNumber;
+
+        /**
+         * The business phone number of the publisher.
+         * @param businessPhoneNumber the value to set
+         * @return this builder
+         **/
+        public Builder businessPhoneNumber(String businessPhoneNumber) {
+            this.businessPhoneNumber = businessPhoneNumber;
+            this.__explicitlySet__.add("businessPhoneNumber");
+            return this;
+        }
+        /**
+         * Count of employees in publisher's company
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("employeeCount")
+        private Long employeeCount;
+
+        /**
+         * Count of employees in publisher's company
+         * @param employeeCount the value to set
+         * @return this builder
+         **/
+        public Builder employeeCount(Long employeeCount) {
+            this.employeeCount = employeeCount;
+            this.__explicitlySet__.add("employeeCount");
+            return this;
+        }
+        /**
+         * A description of the publisher solutions.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("solutionDescription")
+        private String solutionDescription;
+
+        /**
+         * A description of the publisher solutions.
+         * @param solutionDescription the value to set
+         * @return this builder
+         **/
+        public Builder solutionDescription(String solutionDescription) {
+            this.solutionDescription = solutionDescription;
+            this.__explicitlySet__.add("solutionDescription");
+            return this;
+        }
+        /**
+         * OPN membership number of the publisher
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("opnNumber")
+        private String opnNumber;
+
+        /**
+         * OPN membership number of the publisher
+         * @param opnNumber the value to set
+         * @return this builder
+         **/
+        public Builder opnNumber(String opnNumber) {
+            this.opnNumber = opnNumber;
+            this.__explicitlySet__.add("opnNumber");
+            return this;
+        }
+        /**
+         * Country in which partner company resides
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("country")
+        private String country;
+
+        /**
+         * Country in which partner company resides
+         * @param country the value to set
+         * @return this builder
+         **/
+        public Builder country(String country) {
+            this.country = country;
+            this.__explicitlySet__.add("country");
+            return this;
+        }
+        /**
+         * City in which partner company resides
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("city")
+        private String city;
+
+        /**
+         * City in which partner company resides
+         * @param city the value to set
+         * @return this builder
+         **/
+        public Builder city(String city) {
+            this.city = city;
+            this.__explicitlySet__.add("city");
+            return this;
+        }
+        /**
+         * State in which partner company resides
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("state")
+        private String state;
+
+        /**
+         * State in which partner company resides
+         * @param state the value to set
+         * @return this builder
+         **/
+        public Builder state(String state) {
+            this.state = state;
+            this.__explicitlySet__.add("state");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -457,6 +609,14 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
                             this.publisherType,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.email,
+                            this.businessPhoneNumber,
+                            this.employeeCount,
+                            this.solutionDescription,
+                            this.opnNumber,
+                            this.country,
+                            this.city,
+                            this.state,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -521,6 +681,30 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            if (model.wasPropertyExplicitlySet("businessPhoneNumber")) {
+                this.businessPhoneNumber(model.getBusinessPhoneNumber());
+            }
+            if (model.wasPropertyExplicitlySet("employeeCount")) {
+                this.employeeCount(model.getEmployeeCount());
+            }
+            if (model.wasPropertyExplicitlySet("solutionDescription")) {
+                this.solutionDescription(model.getSolutionDescription());
+            }
+            if (model.wasPropertyExplicitlySet("opnNumber")) {
+                this.opnNumber(model.getOpnNumber());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("city")) {
+                this.city(model.getCity());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -840,6 +1024,118 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * Email address of the publisher.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    private final String email;
+
+    /**
+     * Email address of the publisher.
+     * @return the value
+     **/
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * The business phone number of the publisher.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("businessPhoneNumber")
+    private final String businessPhoneNumber;
+
+    /**
+     * The business phone number of the publisher.
+     * @return the value
+     **/
+    public String getBusinessPhoneNumber() {
+        return businessPhoneNumber;
+    }
+
+    /**
+     * Count of employees in publisher's company
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("employeeCount")
+    private final Long employeeCount;
+
+    /**
+     * Count of employees in publisher's company
+     * @return the value
+     **/
+    public Long getEmployeeCount() {
+        return employeeCount;
+    }
+
+    /**
+     * A description of the publisher solutions.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("solutionDescription")
+    private final String solutionDescription;
+
+    /**
+     * A description of the publisher solutions.
+     * @return the value
+     **/
+    public String getSolutionDescription() {
+        return solutionDescription;
+    }
+
+    /**
+     * OPN membership number of the publisher
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("opnNumber")
+    private final String opnNumber;
+
+    /**
+     * OPN membership number of the publisher
+     * @return the value
+     **/
+    public String getOpnNumber() {
+        return opnNumber;
+    }
+
+    /**
+     * Country in which partner company resides
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("country")
+    private final String country;
+
+    /**
+     * Country in which partner company resides
+     * @return the value
+     **/
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * City in which partner company resides
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("city")
+    private final String city;
+
+    /**
+     * City in which partner company resides
+     * @return the value
+     **/
+    public String getCity() {
+        return city;
+    }
+
+    /**
+     * State in which partner company resides
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
+    private final String state;
+
+    /**
+     * State in which partner company resides
+     * @return the value
+     **/
+    public String getState() {
+        return state;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -925,6 +1221,14 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", publisherType=").append(String.valueOf(this.publisherType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", email=").append(String.valueOf(this.email));
+        sb.append(", businessPhoneNumber=").append(String.valueOf(this.businessPhoneNumber));
+        sb.append(", employeeCount=").append(String.valueOf(this.employeeCount));
+        sb.append(", solutionDescription=").append(String.valueOf(this.solutionDescription));
+        sb.append(", opnNumber=").append(String.valueOf(this.opnNumber));
+        sb.append(", country=").append(String.valueOf(this.country));
+        sb.append(", city=").append(String.valueOf(this.city));
+        sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -960,6 +1264,14 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.publisherType, other.publisherType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.email, other.email)
+                && java.util.Objects.equals(this.businessPhoneNumber, other.businessPhoneNumber)
+                && java.util.Objects.equals(this.employeeCount, other.employeeCount)
+                && java.util.Objects.equals(this.solutionDescription, other.solutionDescription)
+                && java.util.Objects.equals(this.opnNumber, other.opnNumber)
+                && java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.city, other.city)
+                && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -994,6 +1306,24 @@ public final class PublisherSummary extends com.oracle.bmc.http.internal.Explici
                         + (this.publisherType == null ? 43 : this.publisherType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.businessPhoneNumber == null
+                                ? 43
+                                : this.businessPhoneNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.employeeCount == null ? 43 : this.employeeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.solutionDescription == null
+                                ? 43
+                                : this.solutionDescription.hashCode());
+        result = (result * PRIME) + (this.opnNumber == null ? 43 : this.opnNumber.hashCode());
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result = (result * PRIME) + (this.city == null ? 43 : this.city.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -5477,6 +5477,53 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGiHomeResponse> createGiHome(
+            CreateGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateGiHomeRequest, CreateGiHomeResponse>
+                    handler) {
+        LOG.trace("Called async createGiHome");
+        final CreateGiHomeRequest interceptedRequest =
+                CreateGiHomeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateGiHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database", "CreateGiHome", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateGiHomeResponse>
+                transformer =
+                        CreateGiHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateGiHomeRequest, CreateGiHomeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateGiHomeRequest, CreateGiHomeResponse>,
+                        java.util.concurrent.Future<CreateGiHomeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateGiHomeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateGiHomeRequest, CreateGiHomeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateKeyStoreResponse> createKeyStore(
             CreateKeyStoreRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7420,6 +7467,50 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteExternalPluggableDatabaseRequest,
                     DeleteExternalPluggableDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGiHomeResponse> deleteGiHome(
+            DeleteGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteGiHomeRequest, DeleteGiHomeResponse>
+                    handler) {
+        LOG.trace("Called async deleteGiHome");
+        final DeleteGiHomeRequest interceptedRequest =
+                DeleteGiHomeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteGiHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteGiHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/DeleteGiHome");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteGiHomeResponse>
+                transformer =
+                        DeleteGiHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteGiHomeRequest, DeleteGiHomeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteGiHomeRequest, DeleteGiHomeResponse>,
+                        java.util.concurrent.Future<DeleteGiHomeResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteGiHomeRequest, DeleteGiHomeResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -13315,6 +13406,48 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetGiHomeResponse> getGiHome(
+            GetGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetGiHomeRequest, GetGiHomeResponse>
+                    handler) {
+        LOG.trace("Called async getGiHome");
+        final GetGiHomeRequest interceptedRequest = GetGiHomeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetGiHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetGiHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/GetGiHome");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetGiHomeResponse>
+                transformer =
+                        GetGiHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetGiHomeRequest, GetGiHomeResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetGiHomeRequest, GetGiHomeResponse>,
+                        java.util.concurrent.Future<GetGiHomeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetGiHomeRequest, GetGiHomeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInfrastructureTargetVersionsResponse>
             getInfrastructureTargetVersions(
                     GetInfrastructureTargetVersionsRequest request,
@@ -15489,6 +15622,59 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAutonomousVmClustersRequest, ListAutonomousVmClustersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAvailableMaintenanceWindowsResponse>
+            listAvailableMaintenanceWindows(
+                    ListAvailableMaintenanceWindowsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAvailableMaintenanceWindowsRequest,
+                                    ListAvailableMaintenanceWindowsResponse>
+                            handler) {
+        LOG.trace("Called async listAvailableMaintenanceWindows");
+        final ListAvailableMaintenanceWindowsRequest interceptedRequest =
+                ListAvailableMaintenanceWindowsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailableMaintenanceWindowsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAvailableMaintenanceWindows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAvailableMaintenanceWindows");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAvailableMaintenanceWindowsResponse>
+                transformer =
+                        ListAvailableMaintenanceWindowsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAvailableMaintenanceWindowsRequest,
+                        ListAvailableMaintenanceWindowsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAvailableMaintenanceWindowsRequest,
+                                ListAvailableMaintenanceWindowsResponse>,
+                        java.util.concurrent.Future<ListAvailableMaintenanceWindowsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAvailableMaintenanceWindowsRequest,
+                    ListAvailableMaintenanceWindowsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -17852,6 +18038,50 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFlexComponentsRequest, ListFlexComponentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGiHomesResponse> listGiHomes(
+            ListGiHomesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListGiHomesRequest, ListGiHomesResponse>
+                    handler) {
+        LOG.trace("Called async listGiHomes");
+        final ListGiHomesRequest interceptedRequest =
+                ListGiHomesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGiHomesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListGiHomes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/ListGiHomes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListGiHomesResponse>
+                transformer =
+                        ListGiHomesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListGiHomesRequest, ListGiHomesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListGiHomesRequest, ListGiHomesResponse>,
+                        java.util.concurrent.Future<ListGiHomesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListGiHomesRequest, ListGiHomesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -24698,6 +24928,55 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateExternalPluggableDatabaseRequest,
                     UpdateExternalPluggableDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGiHomeResponse> updateGiHome(
+            UpdateGiHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateGiHomeRequest, UpdateGiHomeResponse>
+                    handler) {
+        LOG.trace("Called async updateGiHome");
+        final UpdateGiHomeRequest interceptedRequest =
+                UpdateGiHomeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateGiHomeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateGiHome",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiHome/UpdateGiHome");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGiHomeResponse>
+                transformer =
+                        UpdateGiHomeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateGiHomeRequest, UpdateGiHomeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateGiHomeRequest, UpdateGiHomeResponse>,
+                        java.util.concurrent.Future<UpdateGiHomeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGiHomeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateGiHomeRequest, UpdateGiHomeResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

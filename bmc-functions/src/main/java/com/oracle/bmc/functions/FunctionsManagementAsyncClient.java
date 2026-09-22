@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class FunctionsManagementAsyncClient implements FunctionsManagementAsync {
     /**
      * Service instance for FunctionsManagement.
@@ -488,7 +488,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "ChangeApplicationCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/ChangeApplicationCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer =
@@ -542,7 +542,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "CreateApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer =
                         CreateApplicationConverter.fromResponse(
@@ -590,10 +590,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 CreateFunctionConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FunctionsManagement",
-                        "CreateFunction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction");
+                        "FunctionsManagement", "CreateFunction", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateFunctionResponse>
                 transformer =
                         CreateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -643,7 +640,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "DeleteApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/DeleteApplication");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer =
                         DeleteApplicationConverter.fromResponse(
@@ -689,7 +686,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "DeleteFunction",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/DeleteFunction");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteFunctionResponse>
                 transformer =
                         DeleteFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -734,7 +731,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "GetApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/GetApplication");
         final java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse>
                 transformer =
                         GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -778,7 +775,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "GetFunction",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/GetFunction");
         final java.util.function.Function<javax.ws.rs.core.Response, GetFunctionResponse>
                 transformer =
                         GetFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -808,6 +805,104 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<GetFunctionsRuntimeResponse> getFunctionsRuntime(
+            GetFunctionsRuntimeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetFunctionsRuntimeRequest, GetFunctionsRuntimeResponse>
+                    handler) {
+        LOG.trace("Called async getFunctionsRuntime");
+        final GetFunctionsRuntimeRequest interceptedRequest =
+                GetFunctionsRuntimeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFunctionsRuntimeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "GetFunctionsRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntime/GetFunctionsRuntime");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetFunctionsRuntimeResponse>
+                transformer =
+                        GetFunctionsRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetFunctionsRuntimeRequest, GetFunctionsRuntimeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetFunctionsRuntimeRequest, GetFunctionsRuntimeResponse>,
+                        java.util.concurrent.Future<GetFunctionsRuntimeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetFunctionsRuntimeRequest, GetFunctionsRuntimeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionsRuntimeVersionResponse>
+            getFunctionsRuntimeVersion(
+                    GetFunctionsRuntimeVersionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetFunctionsRuntimeVersionRequest,
+                                    GetFunctionsRuntimeVersionResponse>
+                            handler) {
+        LOG.trace("Called async getFunctionsRuntimeVersion");
+        final GetFunctionsRuntimeVersionRequest interceptedRequest =
+                GetFunctionsRuntimeVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFunctionsRuntimeVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "GetFunctionsRuntimeVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntimeVersion/GetFunctionsRuntimeVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetFunctionsRuntimeVersionResponse>
+                transformer =
+                        GetFunctionsRuntimeVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetFunctionsRuntimeVersionRequest, GetFunctionsRuntimeVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetFunctionsRuntimeVersionRequest,
+                                GetFunctionsRuntimeVersionResponse>,
+                        java.util.concurrent.Future<GetFunctionsRuntimeVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetFunctionsRuntimeVersionRequest, GetFunctionsRuntimeVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPbfListingResponse> getPbfListing(
             GetPbfListingRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPbfListingRequest, GetPbfListingResponse>
@@ -822,7 +917,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "GetPbfListing",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/GetPbfListing");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListing/GetPbfListing");
         final java.util.function.Function<javax.ws.rs.core.Response, GetPbfListingResponse>
                 transformer =
                         GetPbfListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -867,7 +962,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "GetPbfListingVersion",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/GetPbfListingVersion");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListingVersion/GetPbfListingVersion");
         final java.util.function.Function<javax.ws.rs.core.Response, GetPbfListingVersionResponse>
                 transformer =
                         GetPbfListingVersionConverter.fromResponse(
@@ -914,7 +1009,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "ListApplications",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/ApplicationSummary/ListApplications");
         final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
@@ -959,7 +1054,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "ListFunctions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionSummary/ListFunctions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListFunctionsResponse>
                 transformer =
                         ListFunctionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -989,6 +1084,104 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<ListFunctionsRuntimeVersionsResponse>
+            listFunctionsRuntimeVersions(
+                    ListFunctionsRuntimeVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListFunctionsRuntimeVersionsRequest,
+                                    ListFunctionsRuntimeVersionsResponse>
+                            handler) {
+        LOG.trace("Called async listFunctionsRuntimeVersions");
+        final ListFunctionsRuntimeVersionsRequest interceptedRequest =
+                ListFunctionsRuntimeVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFunctionsRuntimeVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "ListFunctionsRuntimeVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntimeVersion/ListFunctionsRuntimeVersions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListFunctionsRuntimeVersionsResponse>
+                transformer =
+                        ListFunctionsRuntimeVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFunctionsRuntimeVersionsRequest, ListFunctionsRuntimeVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFunctionsRuntimeVersionsRequest,
+                                ListFunctionsRuntimeVersionsResponse>,
+                        java.util.concurrent.Future<ListFunctionsRuntimeVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFunctionsRuntimeVersionsRequest, ListFunctionsRuntimeVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFunctionsRuntimesResponse> listFunctionsRuntimes(
+            ListFunctionsRuntimesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFunctionsRuntimesRequest, ListFunctionsRuntimesResponse>
+                    handler) {
+        LOG.trace("Called async listFunctionsRuntimes");
+        final ListFunctionsRuntimesRequest interceptedRequest =
+                ListFunctionsRuntimesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFunctionsRuntimesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "ListFunctionsRuntimes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntime/ListFunctionsRuntimes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFunctionsRuntimesResponse>
+                transformer =
+                        ListFunctionsRuntimesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFunctionsRuntimesRequest, ListFunctionsRuntimesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFunctionsRuntimesRequest, ListFunctionsRuntimesResponse>,
+                        java.util.concurrent.Future<ListFunctionsRuntimesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFunctionsRuntimesRequest, ListFunctionsRuntimesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPbfListingVersionsResponse> listPbfListingVersions(
             ListPbfListingVersionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1004,7 +1197,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "ListPbfListingVersions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/ListPbfListingVersions");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListingVersion/ListPbfListingVersions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListPbfListingVersionsResponse>
                 transformer =
                         ListPbfListingVersionsConverter.fromResponse(
@@ -1051,7 +1244,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "ListPbfListings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/ListPbfListings");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListing/ListPbfListings");
         final java.util.function.Function<javax.ws.rs.core.Response, ListPbfListingsResponse>
                 transformer =
                         ListPbfListingsConverter.fromResponse(
@@ -1096,7 +1289,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "ListTriggers",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/TriggersCollection/ListTriggers");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/TriggersCollection/ListTriggers");
         final java.util.function.Function<javax.ws.rs.core.Response, ListTriggersResponse>
                 transformer =
                         ListTriggersConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1141,7 +1334,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "UpdateApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/UpdateApplication");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer =
                         UpdateApplicationConverter.fromResponse(
@@ -1192,7 +1385,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                         "FunctionsManagement",
                         "UpdateFunction",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/UpdateFunction");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateFunctionResponse>
                 transformer =
                         UpdateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));

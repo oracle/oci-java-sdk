@@ -189,6 +189,15 @@ public final class OciListingRevision extends ListingRevision {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("banner")
+        private ListingRevisionBannerAttachment banner;
+
+        public Builder banner(ListingRevisionBannerAttachment banner) {
+            this.banner = banner;
+            this.__explicitlySet__.add("banner");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -319,6 +328,38 @@ public final class OciListingRevision extends ListingRevision {
             return this;
         }
         /**
+         * The url provided by partner for the registration of subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerRegistrationUrl")
+        private String partnerRegistrationUrl;
+
+        /**
+         * The url provided by partner for the registration of subscription.
+         * @param partnerRegistrationUrl the value to set
+         * @return this builder
+         **/
+        public Builder partnerRegistrationUrl(String partnerRegistrationUrl) {
+            this.partnerRegistrationUrl = partnerRegistrationUrl;
+            this.__explicitlySet__.add("partnerRegistrationUrl");
+            return this;
+        }
+        /**
+         * The unique id of the term attached to the listing.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("termId")
+        private String termId;
+
+        /**
+         * The unique id of the term attached to the listing.
+         * @param termId the value to set
+         * @return this builder
+         **/
+        public Builder termId(String termId) {
+            this.termId = termId;
+            this.__explicitlySet__.add("termId");
+            return this;
+        }
+        /**
          * List of Pricing Plans provided by publisher.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("pricingPlans")
@@ -431,6 +472,38 @@ public final class OciListingRevision extends ListingRevision {
             this.__explicitlySet__.add("isRoverExportable");
             return this;
         }
+        /**
+         * Url to demo of the listing
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("demoUrl")
+        private String demoUrl;
+
+        /**
+         * Url to demo of the listing
+         * @param demoUrl the value to set
+         * @return this builder
+         **/
+        public Builder demoUrl(String demoUrl) {
+            this.demoUrl = demoUrl;
+            this.__explicitlySet__.add("demoUrl");
+            return this;
+        }
+        /**
+         * Url to training resources of the listing
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("selfPacedTrainingUrl")
+        private String selfPacedTrainingUrl;
+
+        /**
+         * Url to training resources of the listing
+         * @param selfPacedTrainingUrl the value to set
+         * @return this builder
+         **/
+        public Builder selfPacedTrainingUrl(String selfPacedTrainingUrl) {
+            this.selfPacedTrainingUrl = selfPacedTrainingUrl;
+            this.__explicitlySet__.add("selfPacedTrainingUrl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -456,6 +529,7 @@ public final class OciListingRevision extends ListingRevision {
                             this.supportContacts,
                             this.supportLinks,
                             this.icon,
+                            this.banner,
                             this.status,
                             this.statusNotes,
                             this.lifecycleState,
@@ -468,13 +542,17 @@ public final class OciListingRevision extends ListingRevision {
                             this.systemRequirements,
                             this.pricingType,
                             this.products,
+                            this.partnerRegistrationUrl,
+                            this.termId,
                             this.pricingPlans,
                             this.availabilityAndPricingPolicy,
                             this.allowedTenancies,
                             this.vanityUrl,
                             this.recommendedServiceProviderListingIds,
                             this.areInternalTenancyLaunchAllowed,
-                            this.isRoverExportable);
+                            this.isRoverExportable,
+                            this.demoUrl,
+                            this.selfPacedTrainingUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -537,6 +615,9 @@ public final class OciListingRevision extends ListingRevision {
             if (model.wasPropertyExplicitlySet("icon")) {
                 this.icon(model.getIcon());
             }
+            if (model.wasPropertyExplicitlySet("banner")) {
+                this.banner(model.getBanner());
+            }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
             }
@@ -573,6 +654,12 @@ public final class OciListingRevision extends ListingRevision {
             if (model.wasPropertyExplicitlySet("products")) {
                 this.products(model.getProducts());
             }
+            if (model.wasPropertyExplicitlySet("partnerRegistrationUrl")) {
+                this.partnerRegistrationUrl(model.getPartnerRegistrationUrl());
+            }
+            if (model.wasPropertyExplicitlySet("termId")) {
+                this.termId(model.getTermId());
+            }
             if (model.wasPropertyExplicitlySet("pricingPlans")) {
                 this.pricingPlans(model.getPricingPlans());
             }
@@ -594,6 +681,12 @@ public final class OciListingRevision extends ListingRevision {
             }
             if (model.wasPropertyExplicitlySet("isRoverExportable")) {
                 this.isRoverExportable(model.getIsRoverExportable());
+            }
+            if (model.wasPropertyExplicitlySet("demoUrl")) {
+                this.demoUrl(model.getDemoUrl());
+            }
+            if (model.wasPropertyExplicitlySet("selfPacedTrainingUrl")) {
+                this.selfPacedTrainingUrl(model.getSelfPacedTrainingUrl());
             }
             return this;
         }
@@ -630,6 +723,7 @@ public final class OciListingRevision extends ListingRevision {
             java.util.List<SupportContact> supportContacts,
             java.util.List<NamedLink> supportLinks,
             ListingRevisionIconAttachment icon,
+            ListingRevisionBannerAttachment banner,
             Status status,
             String statusNotes,
             LifecycleState lifecycleState,
@@ -642,13 +736,17 @@ public final class OciListingRevision extends ListingRevision {
             String systemRequirements,
             PricingType pricingType,
             java.util.List<ListingProduct> products,
+            String partnerRegistrationUrl,
+            String termId,
             java.util.List<PricingPlan> pricingPlans,
             String availabilityAndPricingPolicy,
             java.util.List<String> allowedTenancies,
             String vanityUrl,
             java.util.List<String> recommendedServiceProviderListingIds,
             Boolean areInternalTenancyLaunchAllowed,
-            Boolean isRoverExportable) {
+            Boolean isRoverExportable,
+            String demoUrl,
+            String selfPacedTrainingUrl) {
         super(
                 id,
                 listingId,
@@ -668,6 +766,7 @@ public final class OciListingRevision extends ListingRevision {
                 supportContacts,
                 supportLinks,
                 icon,
+                banner,
                 status,
                 statusNotes,
                 lifecycleState,
@@ -680,6 +779,8 @@ public final class OciListingRevision extends ListingRevision {
         this.systemRequirements = systemRequirements;
         this.pricingType = pricingType;
         this.products = products;
+        this.partnerRegistrationUrl = partnerRegistrationUrl;
+        this.termId = termId;
         this.pricingPlans = pricingPlans;
         this.availabilityAndPricingPolicy = availabilityAndPricingPolicy;
         this.allowedTenancies = allowedTenancies;
@@ -687,6 +788,8 @@ public final class OciListingRevision extends ListingRevision {
         this.recommendedServiceProviderListingIds = recommendedServiceProviderListingIds;
         this.areInternalTenancyLaunchAllowed = areInternalTenancyLaunchAllowed;
         this.isRoverExportable = isRoverExportable;
+        this.demoUrl = demoUrl;
+        this.selfPacedTrainingUrl = selfPacedTrainingUrl;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("versionDetails")
@@ -788,6 +891,34 @@ public final class OciListingRevision extends ListingRevision {
     }
 
     /**
+     * The url provided by partner for the registration of subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerRegistrationUrl")
+    private final String partnerRegistrationUrl;
+
+    /**
+     * The url provided by partner for the registration of subscription.
+     * @return the value
+     **/
+    public String getPartnerRegistrationUrl() {
+        return partnerRegistrationUrl;
+    }
+
+    /**
+     * The unique id of the term attached to the listing.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("termId")
+    private final String termId;
+
+    /**
+     * The unique id of the term attached to the listing.
+     * @return the value
+     **/
+    public String getTermId() {
+        return termId;
+    }
+
+    /**
      * List of Pricing Plans provided by publisher.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingPlans")
@@ -885,6 +1016,34 @@ public final class OciListingRevision extends ListingRevision {
         return isRoverExportable;
     }
 
+    /**
+     * Url to demo of the listing
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("demoUrl")
+    private final String demoUrl;
+
+    /**
+     * Url to demo of the listing
+     * @return the value
+     **/
+    public String getDemoUrl() {
+        return demoUrl;
+    }
+
+    /**
+     * Url to training resources of the listing
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("selfPacedTrainingUrl")
+    private final String selfPacedTrainingUrl;
+
+    /**
+     * Url to training resources of the listing
+     * @return the value
+     **/
+    public String getSelfPacedTrainingUrl() {
+        return selfPacedTrainingUrl;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -903,6 +1062,8 @@ public final class OciListingRevision extends ListingRevision {
         sb.append(", systemRequirements=").append(String.valueOf(this.systemRequirements));
         sb.append(", pricingType=").append(String.valueOf(this.pricingType));
         sb.append(", products=").append(String.valueOf(this.products));
+        sb.append(", partnerRegistrationUrl=").append(String.valueOf(this.partnerRegistrationUrl));
+        sb.append(", termId=").append(String.valueOf(this.termId));
         sb.append(", pricingPlans=").append(String.valueOf(this.pricingPlans));
         sb.append(", availabilityAndPricingPolicy=")
                 .append(String.valueOf(this.availabilityAndPricingPolicy));
@@ -913,6 +1074,8 @@ public final class OciListingRevision extends ListingRevision {
         sb.append(", areInternalTenancyLaunchAllowed=")
                 .append(String.valueOf(this.areInternalTenancyLaunchAllowed));
         sb.append(", isRoverExportable=").append(String.valueOf(this.isRoverExportable));
+        sb.append(", demoUrl=").append(String.valueOf(this.demoUrl));
+        sb.append(", selfPacedTrainingUrl=").append(String.valueOf(this.selfPacedTrainingUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -931,6 +1094,9 @@ public final class OciListingRevision extends ListingRevision {
                 && java.util.Objects.equals(this.systemRequirements, other.systemRequirements)
                 && java.util.Objects.equals(this.pricingType, other.pricingType)
                 && java.util.Objects.equals(this.products, other.products)
+                && java.util.Objects.equals(
+                        this.partnerRegistrationUrl, other.partnerRegistrationUrl)
+                && java.util.Objects.equals(this.termId, other.termId)
                 && java.util.Objects.equals(this.pricingPlans, other.pricingPlans)
                 && java.util.Objects.equals(
                         this.availabilityAndPricingPolicy, other.availabilityAndPricingPolicy)
@@ -942,6 +1108,8 @@ public final class OciListingRevision extends ListingRevision {
                 && java.util.Objects.equals(
                         this.areInternalTenancyLaunchAllowed, other.areInternalTenancyLaunchAllowed)
                 && java.util.Objects.equals(this.isRoverExportable, other.isRoverExportable)
+                && java.util.Objects.equals(this.demoUrl, other.demoUrl)
+                && java.util.Objects.equals(this.selfPacedTrainingUrl, other.selfPacedTrainingUrl)
                 && super.equals(other);
     }
 
@@ -959,6 +1127,12 @@ public final class OciListingRevision extends ListingRevision {
                                 : this.systemRequirements.hashCode());
         result = (result * PRIME) + (this.pricingType == null ? 43 : this.pricingType.hashCode());
         result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerRegistrationUrl == null
+                                ? 43
+                                : this.partnerRegistrationUrl.hashCode());
+        result = (result * PRIME) + (this.termId == null ? 43 : this.termId.hashCode());
         result = (result * PRIME) + (this.pricingPlans == null ? 43 : this.pricingPlans.hashCode());
         result =
                 (result * PRIME)
@@ -982,6 +1156,12 @@ public final class OciListingRevision extends ListingRevision {
         result =
                 (result * PRIME)
                         + (this.isRoverExportable == null ? 43 : this.isRoverExportable.hashCode());
+        result = (result * PRIME) + (this.demoUrl == null ? 43 : this.demoUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selfPacedTrainingUrl == null
+                                ? 43
+                                : this.selfPacedTrainingUrl.hashCode());
         return result;
     }
 }

@@ -39,6 +39,7 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
         "nonUpgradedEsxiHostId",
         "upgradedReplacementEsxiHostId",
         "computeAvailabilityDomain",
+        "computeFaultDomain",
         "hostShapeName",
         "hostOcpuCount",
         "billingDonorHostId",
@@ -73,6 +74,7 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
             String nonUpgradedEsxiHostId,
             String upgradedReplacementEsxiHostId,
             String computeAvailabilityDomain,
+            String computeFaultDomain,
             String hostShapeName,
             Float hostOcpuCount,
             String billingDonorHostId,
@@ -106,6 +108,7 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
         this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
         this.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
         this.computeAvailabilityDomain = computeAvailabilityDomain;
+        this.computeFaultDomain = computeFaultDomain;
         this.hostShapeName = hostShapeName;
         this.hostOcpuCount = hostOcpuCount;
         this.billingDonorHostId = billingDonorHostId;
@@ -504,6 +507,24 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * The fault domain of the ESXi host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeFaultDomain")
+        private String computeFaultDomain;
+
+        /**
+         * The fault domain of the ESXi host.
+         *
+         * @param computeFaultDomain the value to set
+         * @return this builder
+         **/
+        public Builder computeFaultDomain(String computeFaultDomain) {
+            this.computeFaultDomain = computeFaultDomain;
+            this.__explicitlySet__.add("computeFaultDomain");
+            return this;
+        }
+        /**
          * The compute shape name of the ESXi host.
          * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
          *
@@ -780,6 +801,7 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
                             this.nonUpgradedEsxiHostId,
                             this.upgradedReplacementEsxiHostId,
                             this.computeAvailabilityDomain,
+                            this.computeFaultDomain,
                             this.hostShapeName,
                             this.hostOcpuCount,
                             this.billingDonorHostId,
@@ -857,6 +879,9 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
                 this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("computeFaultDomain")) {
+                this.computeFaultDomain(model.getComputeFaultDomain());
             }
             if (model.wasPropertyExplicitlySet("hostShapeName")) {
                 this.hostShapeName(model.getHostShapeName());
@@ -1255,6 +1280,22 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * The fault domain of the ESXi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeFaultDomain")
+    private final String computeFaultDomain;
+
+    /**
+     * The fault domain of the ESXi host.
+     *
+     * @return the value
+     **/
+    public String getComputeFaultDomain() {
+        return computeFaultDomain;
+    }
+
+    /**
      * The compute shape name of the ESXi host.
      * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
      *
@@ -1513,6 +1554,7 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
                 .append(String.valueOf(this.upgradedReplacementEsxiHostId));
         sb.append(", computeAvailabilityDomain=")
                 .append(String.valueOf(this.computeAvailabilityDomain));
+        sb.append(", computeFaultDomain=").append(String.valueOf(this.computeFaultDomain));
         sb.append(", hostShapeName=").append(String.valueOf(this.hostShapeName));
         sb.append(", hostOcpuCount=").append(String.valueOf(this.hostOcpuCount));
         sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
@@ -1564,6 +1606,7 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
                         this.upgradedReplacementEsxiHostId, other.upgradedReplacementEsxiHostId)
                 && java.util.Objects.equals(
                         this.computeAvailabilityDomain, other.computeAvailabilityDomain)
+                && java.util.Objects.equals(this.computeFaultDomain, other.computeFaultDomain)
                 && java.util.Objects.equals(this.hostShapeName, other.hostShapeName)
                 && java.util.Objects.equals(this.hostOcpuCount, other.hostOcpuCount)
                 && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
@@ -1645,6 +1688,11 @@ public final class EsxiHostSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.computeAvailabilityDomain == null
                                 ? 43
                                 : this.computeAvailabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.computeFaultDomain == null
+                                ? 43
+                                : this.computeFaultDomain.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostShapeName == null ? 43 : this.hostShapeName.hashCode());

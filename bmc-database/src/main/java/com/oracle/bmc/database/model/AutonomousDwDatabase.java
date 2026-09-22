@@ -143,6 +143,8 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
         "autonomousMaintenanceScheduleType",
         "autonomousDatabaseMaintenanceWindow",
         "timeMaintenancePauseUntil",
+        "scheduledMaintenanceWindow",
+        "timeScheduledMaintenanceWindowUpdate",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "allocatedStorageSizeInTBs",
@@ -288,6 +290,8 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             AutonomousDatabaseMaintenanceWindowSummary autonomousDatabaseMaintenanceWindow,
             java.util.Date timeMaintenancePauseUntil,
+            AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow,
+            java.util.Date timeScheduledMaintenanceWindowUpdate,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             Double allocatedStorageSizeInTBs,
@@ -432,6 +436,8 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
         this.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
         this.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
+        this.scheduledMaintenanceWindow = scheduledMaintenanceWindow;
+        this.timeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.allocatedStorageSizeInTBs = allocatedStorageSizeInTBs;
@@ -2654,6 +2660,33 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("timeMaintenancePauseUntil");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledMaintenanceWindow")
+        private AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow;
+
+        public Builder scheduledMaintenanceWindow(
+                AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow) {
+            this.scheduledMaintenanceWindow = scheduledMaintenanceWindow;
+            this.__explicitlySet__.add("scheduledMaintenanceWindow");
+            return this;
+        }
+        /**
+         * The date and time at which operation to change Maintenance Window is scheduled to take place.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledMaintenanceWindowUpdate")
+        private java.util.Date timeScheduledMaintenanceWindowUpdate;
+
+        /**
+         * The date and time at which operation to change Maintenance Window is scheduled to take place.
+         * @param timeScheduledMaintenanceWindowUpdate the value to set
+         * @return this builder
+         **/
+        public Builder timeScheduledMaintenanceWindowUpdate(
+                java.util.Date timeScheduledMaintenanceWindowUpdate) {
+            this.timeScheduledMaintenanceWindowUpdate = timeScheduledMaintenanceWindowUpdate;
+            this.__explicitlySet__.add("timeScheduledMaintenanceWindowUpdate");
+            return this;
+        }
         /**
          * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
          * <p>
@@ -3178,6 +3211,8 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                             this.autonomousMaintenanceScheduleType,
                             this.autonomousDatabaseMaintenanceWindow,
                             this.timeMaintenancePauseUntil,
+                            this.scheduledMaintenanceWindow,
+                            this.timeScheduledMaintenanceWindowUpdate,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.allocatedStorageSizeInTBs,
@@ -3575,6 +3610,13 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeMaintenancePauseUntil")) {
                 this.timeMaintenancePauseUntil(model.getTimeMaintenancePauseUntil());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledMaintenanceWindow")) {
+                this.scheduledMaintenanceWindow(model.getScheduledMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledMaintenanceWindowUpdate")) {
+                this.timeScheduledMaintenanceWindowUpdate(
+                        model.getTimeScheduledMaintenanceWindowUpdate());
             }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
@@ -6193,6 +6235,27 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
         return timeMaintenancePauseUntil;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledMaintenanceWindow")
+    private final AutonomousDatabaseMaintenanceWindowSummary scheduledMaintenanceWindow;
+
+    public AutonomousDatabaseMaintenanceWindowSummary getScheduledMaintenanceWindow() {
+        return scheduledMaintenanceWindow;
+    }
+
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledMaintenanceWindowUpdate")
+    private final java.util.Date timeScheduledMaintenanceWindowUpdate;
+
+    /**
+     * The date and time at which operation to change Maintenance Window is scheduled to take place.
+     * @return the value
+     **/
+    public java.util.Date getTimeScheduledMaintenanceWindowUpdate() {
+        return timeScheduledMaintenanceWindowUpdate;
+    }
+
     /**
      * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * <p>
@@ -6855,6 +6918,10 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                 .append(String.valueOf(this.autonomousDatabaseMaintenanceWindow));
         sb.append(", timeMaintenancePauseUntil=")
                 .append(String.valueOf(this.timeMaintenancePauseUntil));
+        sb.append(", scheduledMaintenanceWindow=")
+                .append(String.valueOf(this.scheduledMaintenanceWindow));
+        sb.append(", timeScheduledMaintenanceWindowUpdate=")
+                .append(String.valueOf(this.timeScheduledMaintenanceWindowUpdate));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -7073,6 +7140,11 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                         other.autonomousDatabaseMaintenanceWindow)
                 && java.util.Objects.equals(
                         this.timeMaintenancePauseUntil, other.timeMaintenancePauseUntil)
+                && java.util.Objects.equals(
+                        this.scheduledMaintenanceWindow, other.scheduledMaintenanceWindow)
+                && java.util.Objects.equals(
+                        this.timeScheduledMaintenanceWindowUpdate,
+                        other.timeScheduledMaintenanceWindowUpdate)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -7540,6 +7612,16 @@ public final class AutonomousDwDatabase extends com.oracle.bmc.http.internal.Exp
                         + (this.timeMaintenancePauseUntil == null
                                 ? 43
                                 : this.timeMaintenancePauseUntil.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledMaintenanceWindow == null
+                                ? 43
+                                : this.scheduledMaintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduledMaintenanceWindowUpdate == null
+                                ? 43
+                                : this.timeScheduledMaintenanceWindowUpdate.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduledOperations == null

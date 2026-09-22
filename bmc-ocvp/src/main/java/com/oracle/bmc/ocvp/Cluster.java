@@ -98,6 +98,19 @@ public interface Cluster extends AutoCloseable {
     DeleteClusterResponse deleteCluster(DeleteClusterRequest request);
 
     /**
+     * Generates report for how ESXi hosts are distributed across Fault Domains.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GenerateHostDistributionReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateHostDistributionReport API.
+     */
+    GenerateHostDistributionReportResponse generateHostDistributionReport(
+            GenerateHostDistributionReportRequest request);
+
+    /**
      * Gets the specified Cluster's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedDbBackupDestination.Builder.class
 )
@@ -25,9 +25,6 @@ public final class DistributedDbBackupDestination
     @java.beans.ConstructorProperties({
         "type",
         "id",
-        "vpcUser",
-        "vpcPassword",
-        "isZeroDataLossEnabled",
         "internetProxy",
         "dbrsPolicyId",
         "isRemote",
@@ -36,9 +33,6 @@ public final class DistributedDbBackupDestination
     public DistributedDbBackupDestination(
             Type type,
             String id,
-            String vpcUser,
-            String vpcPassword,
-            Boolean isZeroDataLossEnabled,
             String internetProxy,
             String dbrsPolicyId,
             Boolean isRemote,
@@ -46,9 +40,6 @@ public final class DistributedDbBackupDestination
         super();
         this.type = type;
         this.id = id;
-        this.vpcUser = vpcUser;
-        this.vpcPassword = vpcPassword;
-        this.isZeroDataLossEnabled = isZeroDataLossEnabled;
         this.internetProxy = internetProxy;
         this.dbrsPolicyId = dbrsPolicyId;
         this.isRemote = isRemote;
@@ -87,54 +78,6 @@ public final class DistributedDbBackupDestination
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
-            return this;
-        }
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
-        private String vpcUser;
-
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         * @param vpcUser the value to set
-         * @return this builder
-         **/
-        public Builder vpcUser(String vpcUser) {
-            this.vpcUser = vpcUser;
-            this.__explicitlySet__.add("vpcUser");
-            return this;
-        }
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
-        private String vpcPassword;
-
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         * @param vpcPassword the value to set
-         * @return this builder
-         **/
-        public Builder vpcPassword(String vpcPassword) {
-            this.vpcPassword = vpcPassword;
-            this.__explicitlySet__.add("vpcPassword");
-            return this;
-        }
-        /**
-         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
-        private Boolean isZeroDataLossEnabled;
-
-        /**
-         * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
-         * @param isZeroDataLossEnabled the value to set
-         * @return this builder
-         **/
-        public Builder isZeroDataLossEnabled(Boolean isZeroDataLossEnabled) {
-            this.isZeroDataLossEnabled = isZeroDataLossEnabled;
-            this.__explicitlySet__.add("isZeroDataLossEnabled");
             return this;
         }
         /**
@@ -216,9 +159,6 @@ public final class DistributedDbBackupDestination
                     new DistributedDbBackupDestination(
                             this.type,
                             this.id,
-                            this.vpcUser,
-                            this.vpcPassword,
-                            this.isZeroDataLossEnabled,
                             this.internetProxy,
                             this.dbrsPolicyId,
                             this.isRemote,
@@ -236,15 +176,6 @@ public final class DistributedDbBackupDestination
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
-            }
-            if (model.wasPropertyExplicitlySet("vpcUser")) {
-                this.vpcUser(model.getVpcUser());
-            }
-            if (model.wasPropertyExplicitlySet("vpcPassword")) {
-                this.vpcPassword(model.getVpcPassword());
-            }
-            if (model.wasPropertyExplicitlySet("isZeroDataLossEnabled")) {
-                this.isZeroDataLossEnabled(model.getIsZeroDataLossEnabled());
             }
             if (model.wasPropertyExplicitlySet("internetProxy")) {
                 this.internetProxy(model.getInternetProxy());
@@ -278,7 +209,6 @@ public final class DistributedDbBackupDestination
      **/
     public enum Type {
         Nfs("NFS"),
-        RecoveryAppliance("RECOVERY_APPLIANCE"),
         ObjectStore("OBJECT_STORE"),
         Local("LOCAL"),
         Dbrs("DBRS"),
@@ -348,48 +278,6 @@ public final class DistributedDbBackupDestination
      **/
     public String getId() {
         return id;
-    }
-
-    /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
-    private final String vpcUser;
-
-    /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-     * @return the value
-     **/
-    public String getVpcUser() {
-        return vpcUser;
-    }
-
-    /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
-    private final String vpcPassword;
-
-    /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-     * @return the value
-     **/
-    public String getVpcPassword() {
-        return vpcPassword;
-    }
-
-    /**
-     * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
-    private final Boolean isZeroDataLossEnabled;
-
-    /**
-     * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
-     * @return the value
-     **/
-    public Boolean getIsZeroDataLossEnabled() {
-        return isZeroDataLossEnabled;
     }
 
     /**
@@ -470,9 +358,6 @@ public final class DistributedDbBackupDestination
         sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", id=").append(String.valueOf(this.id));
-        sb.append(", vpcUser=").append(String.valueOf(this.vpcUser));
-        sb.append(", vpcPassword=").append(String.valueOf(this.vpcPassword));
-        sb.append(", isZeroDataLossEnabled=").append(String.valueOf(this.isZeroDataLossEnabled));
         sb.append(", internetProxy=").append(String.valueOf(this.internetProxy));
         sb.append(", dbrsPolicyId=").append(String.valueOf(this.dbrsPolicyId));
         sb.append(", isRemote=").append(String.valueOf(this.isRemote));
@@ -493,9 +378,6 @@ public final class DistributedDbBackupDestination
         DistributedDbBackupDestination other = (DistributedDbBackupDestination) o;
         return java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.vpcUser, other.vpcUser)
-                && java.util.Objects.equals(this.vpcPassword, other.vpcPassword)
-                && java.util.Objects.equals(this.isZeroDataLossEnabled, other.isZeroDataLossEnabled)
                 && java.util.Objects.equals(this.internetProxy, other.internetProxy)
                 && java.util.Objects.equals(this.dbrsPolicyId, other.dbrsPolicyId)
                 && java.util.Objects.equals(this.isRemote, other.isRemote)
@@ -509,13 +391,6 @@ public final class DistributedDbBackupDestination
         int result = 1;
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result = (result * PRIME) + (this.vpcUser == null ? 43 : this.vpcUser.hashCode());
-        result = (result * PRIME) + (this.vpcPassword == null ? 43 : this.vpcPassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.isZeroDataLossEnabled == null
-                                ? 43
-                                : this.isZeroDataLossEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.internetProxy == null ? 43 : this.internetProxy.hashCode());

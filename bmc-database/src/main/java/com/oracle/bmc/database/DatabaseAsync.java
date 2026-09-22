@@ -1690,6 +1690,21 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new Grid Infrastructure Home in the specified database system based on the request parameters you provide.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateGiHomeResponse> createGiHome(
+            CreateGiHomeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateGiHomeRequest, CreateGiHomeResponse>
+                    handler);
+
+    /**
      * Creates a Key Store.
      *
      *
@@ -2390,6 +2405,22 @@ public interface DatabaseAsync extends AutoCloseable {
                                     DeleteExternalPluggableDatabaseRequest,
                                     DeleteExternalPluggableDatabaseResponse>
                             handler);
+
+    /**
+     * Deletes a Grid Infrastructure Home.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteGiHomeResponse> deleteGiHome(
+            DeleteGiHomeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteGiHomeRequest, DeleteGiHomeResponse>
+                    handler);
 
     /**
      * Deletes a key store.
@@ -4437,6 +4468,20 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified Grid Infrastructure Home.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetGiHomeResponse> getGiHome(
+            GetGiHomeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetGiHomeRequest, GetGiHomeResponse> handler);
+
+    /**
      * Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
      * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
      *
@@ -5213,6 +5258,24 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListAutonomousVmClustersRequest, ListAutonomousVmClustersResponse>
                     handler);
+
+    /**
+     * Retrieves the list of available maintenance window options for the specified Autonomous AI Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAvailableMaintenanceWindowsResponse>
+            listAvailableMaintenanceWindows(
+                    ListAvailableMaintenanceWindowsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAvailableMaintenanceWindowsRequest,
+                                    ListAvailableMaintenanceWindowsResponse>
+                            handler);
 
     /**
      * Gets a list of backup destinations in the specified compartment.
@@ -6057,6 +6120,21 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListFlexComponentsRequest, ListFlexComponentsResponse>
                     handler);
+
+    /**
+     * Lists the Grid Infrastructure Homes.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListGiHomesResponse> listGiHomes(
+            ListGiHomesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListGiHomesRequest, ListGiHomesResponse> handler);
 
     /**
      * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
@@ -8352,6 +8430,21 @@ public interface DatabaseAsync extends AutoCloseable {
                                     UpdateExternalPluggableDatabaseRequest,
                                     UpdateExternalPluggableDatabaseResponse>
                             handler);
+
+    /**
+     * Updates the tags and display name of a specified Grid Infrastructure Home.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateGiHomeResponse> updateGiHome(
+            UpdateGiHomeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateGiHomeRequest, UpdateGiHomeResponse>
+                    handler);
 
     /**
      * Edit the key store.

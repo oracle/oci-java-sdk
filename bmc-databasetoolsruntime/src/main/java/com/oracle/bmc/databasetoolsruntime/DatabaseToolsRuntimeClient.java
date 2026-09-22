@@ -582,7 +582,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -620,7 +620,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "CreateCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/CreateCredential");
         java.util.function.Function<javax.ws.rs.core.Response, CreateCredentialResponse>
                 transformer =
                         CreateCredentialConverter.fromResponse(
@@ -662,7 +662,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "CreateCredentialExecuteGrantee",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/CreateCredentialExecuteGrantee");
         java.util.function.Function<
                         javax.ws.rs.core.Response, CreateCredentialExecuteGranteeResponse>
                 transformer =
@@ -706,7 +706,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "CreateCredentialPublicSynonym",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/CreateCredentialPublicSynonym");
         java.util.function.Function<
                         javax.ws.rs.core.Response, CreateCredentialPublicSynonymResponse>
                 transformer =
@@ -753,7 +753,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "CreateDatabaseToolsDatabaseApiGatewayConfigPool",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/CreateDatabaseToolsDatabaseApiGatewayConfigPool");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         CreateDatabaseToolsDatabaseApiGatewayConfigPoolResponse>
@@ -802,7 +802,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "CreateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/CreateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         CreateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResponse>
@@ -851,7 +851,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "CreateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/CreateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         CreateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResponse>
@@ -895,7 +895,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "DeleteCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/DeleteCredential");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteCredentialResponse>
                 transformer =
                         DeleteCredentialConverter.fromResponse(
@@ -934,7 +934,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "DeleteCredentialExecuteGrantee",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/DeleteCredentialExecuteGrantee");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteCredentialExecuteGranteeResponse>
                 transformer =
@@ -974,7 +974,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "DeleteCredentialPublicSynonym",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/DeleteCredentialPublicSynonym");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteCredentialPublicSynonymResponse>
                 transformer =
@@ -1016,7 +1016,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "DeleteDatabaseToolsDatabaseApiGatewayConfigPool",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPool");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DeleteDatabaseToolsDatabaseApiGatewayConfigPoolResponse>
@@ -1060,7 +1060,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "DeleteDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DeleteDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResponse>
@@ -1104,7 +1104,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "DeleteDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DeleteDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResponse>
@@ -1145,7 +1145,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ExecuteSqlDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/ExecuteSqlDatabaseToolsConnection");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ExecuteSqlDatabaseToolsConnectionResponse>
                 transformer =
@@ -1185,7 +1185,10 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseToolsRuntime", "GetCredential", ib.getRequestUri().toString(), "");
+                        "DatabaseToolsRuntime",
+                        "GetCredential",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/GetCredential");
         java.util.function.Function<javax.ws.rs.core.Response, GetCredentialResponse> transformer =
                 GetCredentialConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1221,7 +1224,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetCredentialExecuteGrantee",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/GetCredentialExecuteGrantee");
         java.util.function.Function<javax.ws.rs.core.Response, GetCredentialExecuteGranteeResponse>
                 transformer =
                         GetCredentialExecuteGranteeConverter.fromResponse(
@@ -1259,7 +1262,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetCredentialPublicSynonym",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/GetCredentialPublicSynonym");
         java.util.function.Function<javax.ws.rs.core.Response, GetCredentialPublicSynonymResponse>
                 transformer =
                         GetCredentialPublicSynonymConverter.fromResponse(
@@ -1299,7 +1302,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigContent",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/GetDatabaseToolsDatabaseApiGatewayConfigContent");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDatabaseToolsDatabaseApiGatewayConfigContentResponse>
@@ -1341,7 +1344,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigGlobal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigGlobal/GetDatabaseToolsDatabaseApiGatewayConfigGlobal");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDatabaseToolsDatabaseApiGatewayConfigGlobalResponse>
@@ -1383,7 +1386,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigPool",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/GetDatabaseToolsDatabaseApiGatewayConfigPool");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDatabaseToolsDatabaseApiGatewayConfigPoolResponse>
@@ -1426,7 +1429,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/GetDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResponse>
@@ -1469,7 +1472,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/GetDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResponse>
@@ -1508,7 +1511,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetPropertySet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/PropertySet/GetPropertySet");
         java.util.function.Function<javax.ws.rs.core.Response, GetPropertySetResponse> transformer =
                 GetPropertySetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1543,7 +1546,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetUserCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/UserCredential/GetUserCredential");
         java.util.function.Function<javax.ws.rs.core.Response, GetUserCredentialResponse>
                 transformer =
                         GetUserCredentialConverter.fromResponse(
@@ -1580,7 +1583,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1616,7 +1619,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListCredentialExecuteGrantees",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGranteeCollection/ListCredentialExecuteGrantees");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListCredentialExecuteGranteesResponse>
                 transformer =
@@ -1655,7 +1658,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListCredentialPublicSynonyms",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonymCollection/ListCredentialPublicSynonyms");
         java.util.function.Function<javax.ws.rs.core.Response, ListCredentialPublicSynonymsResponse>
                 transformer =
                         ListCredentialPublicSynonymsConverter.fromResponse(
@@ -1692,7 +1695,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListCredentials",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialCollection/ListCredentials");
         java.util.function.Function<javax.ws.rs.core.Response, ListCredentialsResponse>
                 transformer =
                         ListCredentialsConverter.fromResponse(
@@ -1734,7 +1737,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummary/ListDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListDatabaseToolsDatabaseApiGatewayConfigAdvancedPropertiesResponse>
@@ -1777,7 +1780,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecsResponse>
@@ -1820,7 +1823,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecsResponse>
@@ -1862,7 +1865,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListDatabaseToolsDatabaseApiGatewayConfigPools",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPools");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListDatabaseToolsDatabaseApiGatewayConfigPoolsResponse>
@@ -1901,7 +1904,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListUserCredentials",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/UserCredentialCollection/ListUserCredentials");
         java.util.function.Function<javax.ws.rs.core.Response, ListUserCredentialsResponse>
                 transformer =
                         ListUserCredentialsConverter.fromResponse(
@@ -1939,7 +1942,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1976,7 +1979,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -2013,7 +2016,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -2050,7 +2053,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "UpdateCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/UpdateCredential");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateCredentialResponse>
                 transformer =
                         UpdateCredentialConverter.fromResponse(
@@ -2095,7 +2098,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigGlobal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigGlobal/UpdateDatabaseToolsDatabaseApiGatewayConfigGlobal");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         UpdateDatabaseToolsDatabaseApiGatewayConfigGlobalResponse>
@@ -2142,7 +2145,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigPool",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/UpdateDatabaseToolsDatabaseApiGatewayConfigPool");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         UpdateDatabaseToolsDatabaseApiGatewayConfigPoolResponse>
@@ -2190,7 +2193,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/UpdateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         UpdateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecResponse>
@@ -2238,7 +2241,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/UpdateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         UpdateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecResponse>
@@ -2282,7 +2285,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "UpdatePropertySet",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/PropertySet/UpdatePropertySet");
         java.util.function.Function<javax.ws.rs.core.Response, UpdatePropertySetResponse>
                 transformer =
                         UpdatePropertySetConverter.fromResponse(
@@ -2324,7 +2327,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ValidateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/ValidateDatabaseToolsConnection");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsConnectionResponse>
                 transformer =
@@ -2369,7 +2372,7 @@ public class DatabaseToolsRuntimeClient implements DatabaseToolsRuntime {
                         "DatabaseToolsRuntime",
                         "ValidateDatabaseToolsIdentityCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsIdentityCredentialResponse>
                 transformer =

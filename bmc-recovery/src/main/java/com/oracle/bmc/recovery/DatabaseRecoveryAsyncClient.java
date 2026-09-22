@@ -476,6 +476,54 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelLongTermBackupResponse> cancelLongTermBackup(
+            CancelLongTermBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelLongTermBackupRequest, CancelLongTermBackupResponse>
+                    handler) {
+        LOG.trace("Called async cancelLongTermBackup");
+        final CancelLongTermBackupRequest interceptedRequest =
+                CancelLongTermBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelLongTermBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "CancelLongTermBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/CancelLongTermBackup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelLongTermBackupResponse>
+                transformer =
+                        CancelLongTermBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelLongTermBackupRequest, CancelLongTermBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelLongTermBackupRequest, CancelLongTermBackupResponse>,
+                        java.util.concurrent.Future<CancelLongTermBackupResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelLongTermBackupRequest, CancelLongTermBackupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelProtectedDatabaseDeletionResponse>
             cancelProtectedDatabaseDeletion(
                     CancelProtectedDatabaseDeletionRequest request,
@@ -488,6 +536,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 CancelProtectedDatabaseDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CancelProtectedDatabaseDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseRecovery",
@@ -541,6 +590,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 ChangeProtectedDatabaseCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeProtectedDatabaseCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseRecovery",
@@ -600,6 +650,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeProtectedDatabaseSubscriptionConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseRecovery",
@@ -658,6 +709,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 ChangeProtectionPolicyCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeProtectionPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseRecovery",
@@ -717,6 +769,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeRecoveryServiceSubnetCompartmentConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseRecovery",
@@ -751,6 +804,59 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeRecoveryServiceSubnetCompartmentRequest,
                     ChangeRecoveryServiceSubnetCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLongTermBackupResponse> createLongTermBackup(
+            CreateLongTermBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateLongTermBackupRequest, CreateLongTermBackupResponse>
+                    handler) {
+        LOG.trace("Called async createLongTermBackup");
+        final CreateLongTermBackupRequest interceptedRequest =
+                CreateLongTermBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLongTermBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "CreateLongTermBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/CreateLongTermBackup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateLongTermBackupResponse>
+                transformer =
+                        CreateLongTermBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateLongTermBackupRequest, CreateLongTermBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateLongTermBackupRequest, CreateLongTermBackupResponse>,
+                        java.util.concurrent.Future<CreateLongTermBackupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLongTermBackupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateLongTermBackupRequest, CreateLongTermBackupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -928,6 +1034,53 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLongTermBackupResponse> deleteLongTermBackup(
+            DeleteLongTermBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteLongTermBackupRequest, DeleteLongTermBackupResponse>
+                    handler) {
+        LOG.trace("Called async deleteLongTermBackup");
+        final DeleteLongTermBackupRequest interceptedRequest =
+                DeleteLongTermBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLongTermBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "DeleteLongTermBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/DeleteLongTermBackup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteLongTermBackupResponse>
+                transformer =
+                        DeleteLongTermBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteLongTermBackupRequest, DeleteLongTermBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteLongTermBackupRequest, DeleteLongTermBackupResponse>,
+                        java.util.concurrent.Future<DeleteLongTermBackupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteLongTermBackupRequest, DeleteLongTermBackupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteProtectedDatabaseResponse> deleteProtectedDatabase(
             DeleteProtectedDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1087,6 +1240,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 FetchProtectedDatabaseConfigurationConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseRecovery",
@@ -1120,6 +1274,52 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     FetchProtectedDatabaseConfigurationRequest,
                     FetchProtectedDatabaseConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLongTermBackupResponse> getLongTermBackup(
+            GetLongTermBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetLongTermBackupRequest, GetLongTermBackupResponse>
+                    handler) {
+        LOG.trace("Called async getLongTermBackup");
+        final GetLongTermBackupRequest interceptedRequest =
+                GetLongTermBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLongTermBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "GetLongTermBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/GetLongTermBackup");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetLongTermBackupResponse>
+                transformer =
+                        GetLongTermBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetLongTermBackupRequest, GetLongTermBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetLongTermBackupRequest, GetLongTermBackupResponse>,
+                        java.util.concurrent.Future<GetLongTermBackupResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetLongTermBackupRequest, GetLongTermBackupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1307,6 +1507,53 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLongTermBackupsResponse> listLongTermBackups(
+            ListLongTermBackupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListLongTermBackupsRequest, ListLongTermBackupsResponse>
+                    handler) {
+        LOG.trace("Called async listLongTermBackups");
+        final ListLongTermBackupsRequest interceptedRequest =
+                ListLongTermBackupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLongTermBackupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "ListLongTermBackups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackupCollection/ListLongTermBackups");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListLongTermBackupsResponse>
+                transformer =
+                        ListLongTermBackupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListLongTermBackupsRequest, ListLongTermBackupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListLongTermBackupsRequest, ListLongTermBackupsResponse>,
+                        java.util.concurrent.Future<ListLongTermBackupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListLongTermBackupsRequest, ListLongTermBackupsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1617,6 +1864,7 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 ScheduleProtectedDatabaseDeletionConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ScheduleProtectedDatabaseDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "DatabaseRecovery",
@@ -1650,6 +1898,58 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ScheduleProtectedDatabaseDeletionRequest,
                     ScheduleProtectedDatabaseDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLongTermBackupResponse> updateLongTermBackup(
+            UpdateLongTermBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateLongTermBackupRequest, UpdateLongTermBackupResponse>
+                    handler) {
+        LOG.trace("Called async updateLongTermBackup");
+        final UpdateLongTermBackupRequest interceptedRequest =
+                UpdateLongTermBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLongTermBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "UpdateLongTermBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/UpdateLongTermBackup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateLongTermBackupResponse>
+                transformer =
+                        UpdateLongTermBackupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateLongTermBackupRequest, UpdateLongTermBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateLongTermBackupRequest, UpdateLongTermBackupResponse>,
+                        java.util.concurrent.Future<UpdateLongTermBackupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLongTermBackupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateLongTermBackupRequest, UpdateLongTermBackupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

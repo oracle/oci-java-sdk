@@ -37,8 +37,15 @@ public class ListInstanceAgentCommandExecutionsConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getInstanceId(), "instanceId is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("instanceId", request.getInstanceId());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20180530").path("instanceAgentCommandExecutions");
+                newBaseTarget.path("/20180530").path("instanceAgentCommandExecutions");
 
         target =
                 target.queryParam(

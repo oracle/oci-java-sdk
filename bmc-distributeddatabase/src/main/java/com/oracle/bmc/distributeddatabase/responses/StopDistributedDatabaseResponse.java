@@ -6,7 +6,7 @@ package com.oracle.bmc.distributeddatabase.responses;
 
 import com.oracle.bmc.distributeddatabase.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class StopDistributedDatabaseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.

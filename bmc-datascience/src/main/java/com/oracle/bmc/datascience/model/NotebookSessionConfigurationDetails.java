@@ -27,6 +27,7 @@ public final class NotebookSessionConfigurationDetails
         "blockStorageSizeInGBs",
         "subnetId",
         "privateEndpointId",
+        "capacityReservationId",
         "notebookSessionShapeConfigDetails"
     })
     public NotebookSessionConfigurationDetails(
@@ -34,12 +35,14 @@ public final class NotebookSessionConfigurationDetails
             Integer blockStorageSizeInGBs,
             String subnetId,
             String privateEndpointId,
+            String capacityReservationId,
             NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails) {
         super();
         this.shape = shape;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
         this.subnetId = subnetId;
         this.privateEndpointId = privateEndpointId;
+        this.capacityReservationId = capacityReservationId;
         this.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
     }
 
@@ -117,6 +120,24 @@ public final class NotebookSessionConfigurationDetails
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
+        /**
+         * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         **/
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionShapeConfigDetails")
         private NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
@@ -138,6 +159,7 @@ public final class NotebookSessionConfigurationDetails
                             this.blockStorageSizeInGBs,
                             this.subnetId,
                             this.privateEndpointId,
+                            this.capacityReservationId,
                             this.notebookSessionShapeConfigDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -158,6 +180,9 @@ public final class NotebookSessionConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("privateEndpointId")) {
                 this.privateEndpointId(model.getPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
             }
             if (model.wasPropertyExplicitlySet("notebookSessionShapeConfigDetails")) {
                 this.notebookSessionShapeConfigDetails(
@@ -242,6 +267,22 @@ public final class NotebookSessionConfigurationDetails
         return privateEndpointId;
     }
 
+    /**
+     * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching notebook sessions.
+     *
+     * @return the value
+     **/
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionShapeConfigDetails")
     private final NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
 
@@ -267,6 +308,7 @@ public final class NotebookSessionConfigurationDetails
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", notebookSessionShapeConfigDetails=")
                 .append(String.valueOf(this.notebookSessionShapeConfigDetails));
         sb.append(")");
@@ -287,6 +329,7 @@ public final class NotebookSessionConfigurationDetails
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(
                         this.notebookSessionShapeConfigDetails,
                         other.notebookSessionShapeConfigDetails)
@@ -307,6 +350,11 @@ public final class NotebookSessionConfigurationDetails
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result =
                 (result * PRIME)
                         + (this.notebookSessionShapeConfigDetails == null

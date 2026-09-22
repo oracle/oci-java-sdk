@@ -27,12 +27,14 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
         "description",
         "compartmentId",
         "dataSource",
+        "modelSelection",
         "refreshSchedule",
         "schemas",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "isUserDefinedSemanticsEnabled",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -43,12 +45,14 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
             String description,
             String compartmentId,
             DataSourceDetails dataSource,
+            SemanticStoreModelSelection modelSelection,
             RefreshScheduleDetails refreshSchedule,
             SchemasDetails schemas,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             SemanticStore.LifecycleState lifecycleState,
             String lifecycleDetails,
+            Boolean isUserDefinedSemanticsEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -58,12 +62,14 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
         this.description = description;
         this.compartmentId = compartmentId;
         this.dataSource = dataSource;
+        this.modelSelection = modelSelection;
         this.refreshSchedule = refreshSchedule;
         this.schemas = schemas;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.isUserDefinedSemanticsEnabled = isUserDefinedSemanticsEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -142,6 +148,15 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
         public Builder dataSource(DataSourceDetails dataSource) {
             this.dataSource = dataSource;
             this.__explicitlySet__.add("dataSource");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("modelSelection")
+        private SemanticStoreModelSelection modelSelection;
+
+        public Builder modelSelection(SemanticStoreModelSelection modelSelection) {
+            this.modelSelection = modelSelection;
+            this.__explicitlySet__.add("modelSelection");
             return this;
         }
 
@@ -245,6 +260,30 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are enabled for semantic-store enrichment.
+         * When true, enrichment uses both metadata and user-defined semantics.
+         * When false, enrichment uses metadata only.
+         * If not specified when the semantic store is created, this value defaults to true.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isUserDefinedSemanticsEnabled")
+        private Boolean isUserDefinedSemanticsEnabled;
+
+        /**
+         * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are enabled for semantic-store enrichment.
+         * When true, enrichment uses both metadata and user-defined semantics.
+         * When false, enrichment uses metadata only.
+         * If not specified when the semantic store is created, this value defaults to true.
+         *
+         * @param isUserDefinedSemanticsEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isUserDefinedSemanticsEnabled(Boolean isUserDefinedSemanticsEnabled) {
+            this.isUserDefinedSemanticsEnabled = isUserDefinedSemanticsEnabled;
+            this.__explicitlySet__.add("isUserDefinedSemanticsEnabled");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -327,12 +366,14 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
                             this.description,
                             this.compartmentId,
                             this.dataSource,
+                            this.modelSelection,
                             this.refreshSchedule,
                             this.schemas,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.isUserDefinedSemanticsEnabled,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -359,6 +400,9 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("dataSource")) {
                 this.dataSource(model.getDataSource());
             }
+            if (model.wasPropertyExplicitlySet("modelSelection")) {
+                this.modelSelection(model.getModelSelection());
+            }
             if (model.wasPropertyExplicitlySet("refreshSchedule")) {
                 this.refreshSchedule(model.getRefreshSchedule());
             }
@@ -376,6 +420,9 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isUserDefinedSemanticsEnabled")) {
+                this.isUserDefinedSemanticsEnabled(model.getIsUserDefinedSemanticsEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -462,6 +509,13 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
 
     public DataSourceDetails getDataSource() {
         return dataSource;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("modelSelection")
+    private final SemanticStoreModelSelection modelSelection;
+
+    public SemanticStoreModelSelection getModelSelection() {
+        return modelSelection;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("refreshSchedule")
@@ -553,6 +607,28 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are enabled for semantic-store enrichment.
+     * When true, enrichment uses both metadata and user-defined semantics.
+     * When false, enrichment uses metadata only.
+     * If not specified when the semantic store is created, this value defaults to true.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUserDefinedSemanticsEnabled")
+    private final Boolean isUserDefinedSemanticsEnabled;
+
+    /**
+     * Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are enabled for semantic-store enrichment.
+     * When true, enrichment uses both metadata and user-defined semantics.
+     * When false, enrichment uses metadata only.
+     * If not specified when the semantic store is created, this value defaults to true.
+     *
+     * @return the value
+     **/
+    public Boolean getIsUserDefinedSemanticsEnabled() {
+        return isUserDefinedSemanticsEnabled;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -635,12 +711,15 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataSource=").append(String.valueOf(this.dataSource));
+        sb.append(", modelSelection=").append(String.valueOf(this.modelSelection));
         sb.append(", refreshSchedule=").append(String.valueOf(this.refreshSchedule));
         sb.append(", schemas=").append(String.valueOf(this.schemas));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", isUserDefinedSemanticsEnabled=")
+                .append(String.valueOf(this.isUserDefinedSemanticsEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -663,12 +742,15 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dataSource, other.dataSource)
+                && java.util.Objects.equals(this.modelSelection, other.modelSelection)
                 && java.util.Objects.equals(this.refreshSchedule, other.refreshSchedule)
                 && java.util.Objects.equals(this.schemas, other.schemas)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.isUserDefinedSemanticsEnabled, other.isUserDefinedSemanticsEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -688,6 +770,9 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
         result = (result * PRIME) + (this.dataSource == null ? 43 : this.dataSource.hashCode());
         result =
                 (result * PRIME)
+                        + (this.modelSelection == null ? 43 : this.modelSelection.hashCode());
+        result =
+                (result * PRIME)
                         + (this.refreshSchedule == null ? 43 : this.refreshSchedule.hashCode());
         result = (result * PRIME) + (this.schemas == null ? 43 : this.schemas.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
@@ -698,6 +783,11 @@ public final class SemanticStoreSummary extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUserDefinedSemanticsEnabled == null
+                                ? 43
+                                : this.isUserDefinedSemanticsEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

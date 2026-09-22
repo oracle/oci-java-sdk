@@ -8,20 +8,56 @@ import com.oracle.bmc.distributeddatabase.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/RotateDistributedDatabasePasswordsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RotateDistributedDatabasePasswordsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class RotateDistributedDatabasePasswordsRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.distributeddatabase.model
+                        .RotateDistributedDatabasePasswordsDetails> {
 
     /**
-     * Globally distributed database identifier
+     * Globally distributed database identifier.
      */
     private String distributedDatabaseId;
 
     /**
-     * Globally distributed database identifier
+     * Globally distributed database identifier.
      */
     public String getDistributedDatabaseId() {
         return distributedDatabaseId;
+    }
+    /**
+     * Details to rotate passwords for shards and catalogs in the Globally distributed database.
+     */
+    private com.oracle.bmc.distributeddatabase.model.RotateDistributedDatabasePasswordsDetails
+            rotateDistributedDatabasePasswordsDetails;
+
+    /**
+     * Details to rotate passwords for shards and catalogs in the Globally distributed database.
+     */
+    public com.oracle.bmc.distributeddatabase.model.RotateDistributedDatabasePasswordsDetails
+            getRotateDistributedDatabasePasswordsDetails() {
+        return rotateDistributedDatabasePasswordsDetails;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
     /**
      * The client request ID for tracing.
@@ -55,47 +91,83 @@ public class RotateDistributedDatabasePasswordsRequest
     public String getIfMatch() {
         return ifMatch;
     }
-    /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
-     */
-    private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * Alternative accessor for the body parameter.
+     * @return body parameter
      */
-    public String getOpcRetryToken() {
-        return opcRetryToken;
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.distributeddatabase.model.RotateDistributedDatabasePasswordsDetails
+            getBody$() {
+        return rotateDistributedDatabasePasswordsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RotateDistributedDatabasePasswordsRequest, java.lang.Void> {
+                    RotateDistributedDatabasePasswordsRequest,
+                    com.oracle.bmc.distributeddatabase.model
+                            .RotateDistributedDatabasePasswordsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Globally distributed database identifier
+         * Globally distributed database identifier.
          */
         private String distributedDatabaseId = null;
 
         /**
-         * Globally distributed database identifier
+         * Globally distributed database identifier.
          * @param distributedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder distributedDatabaseId(String distributedDatabaseId) {
             this.distributedDatabaseId = distributedDatabaseId;
+            return this;
+        }
+
+        /**
+         * Details to rotate passwords for shards and catalogs in the Globally distributed database.
+         */
+        private com.oracle.bmc.distributeddatabase.model.RotateDistributedDatabasePasswordsDetails
+                rotateDistributedDatabasePasswordsDetails = null;
+
+        /**
+         * Details to rotate passwords for shards and catalogs in the Globally distributed database.
+         * @param rotateDistributedDatabasePasswordsDetails the value to set
+         * @return this builder instance
+         */
+        public Builder rotateDistributedDatabasePasswordsDetails(
+                com.oracle.bmc.distributeddatabase.model.RotateDistributedDatabasePasswordsDetails
+                        rotateDistributedDatabasePasswordsDetails) {
+            this.rotateDistributedDatabasePasswordsDetails =
+                    rotateDistributedDatabasePasswordsDetails;
+            return this;
+        }
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
             return this;
         }
 
@@ -140,31 +212,6 @@ public class RotateDistributedDatabasePasswordsRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
-         */
-        private String opcRetryToken = null;
-
-        /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
-         * @param opcRetryToken the value to set
-         * @return this builder instance
-         */
-        public Builder opcRetryToken(String opcRetryToken) {
-            this.opcRetryToken = opcRetryToken;
-            return this;
-        }
-
-        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -193,9 +240,11 @@ public class RotateDistributedDatabasePasswordsRequest
          */
         public Builder copy(RotateDistributedDatabasePasswordsRequest o) {
             distributedDatabaseId(o.getDistributedDatabaseId());
+            rotateDistributedDatabasePasswordsDetails(
+                    o.getRotateDistributedDatabasePasswordsDetails());
+            opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
-            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -219,6 +268,19 @@ public class RotateDistributedDatabasePasswordsRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.distributeddatabase.model.RotateDistributedDatabasePasswordsDetails
+                        body) {
+            rotateDistributedDatabasePasswordsDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RotateDistributedDatabasePasswordsRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
@@ -230,11 +292,13 @@ public class RotateDistributedDatabasePasswordsRequest
             RotateDistributedDatabasePasswordsRequest request =
                     new RotateDistributedDatabasePasswordsRequest();
             request.distributedDatabaseId = distributedDatabaseId;
+            request.rotateDistributedDatabasePasswordsDetails =
+                    rotateDistributedDatabasePasswordsDetails;
+            request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
-            request.opcRetryToken = opcRetryToken;
             return request;
-            // new RotateDistributedDatabasePasswordsRequest(distributedDatabaseId, opcRequestId, ifMatch, opcRetryToken);
+            // new RotateDistributedDatabasePasswordsRequest(distributedDatabaseId, rotateDistributedDatabasePasswordsDetails, opcRetryToken, opcRequestId, ifMatch);
         }
     }
 
@@ -245,9 +309,11 @@ public class RotateDistributedDatabasePasswordsRequest
     public Builder toBuilder() {
         return new Builder()
                 .distributedDatabaseId(distributedDatabaseId)
+                .rotateDistributedDatabasePasswordsDetails(
+                        rotateDistributedDatabasePasswordsDetails)
+                .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId)
-                .ifMatch(ifMatch)
-                .opcRetryToken(opcRetryToken);
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -264,9 +330,11 @@ public class RotateDistributedDatabasePasswordsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",distributedDatabaseId=").append(String.valueOf(this.distributedDatabaseId));
+        sb.append(",rotateDistributedDatabasePasswordsDetails=")
+                .append(String.valueOf(this.rotateDistributedDatabasePasswordsDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
-        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -284,9 +352,12 @@ public class RotateDistributedDatabasePasswordsRequest
                 (RotateDistributedDatabasePasswordsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.distributedDatabaseId, other.distributedDatabaseId)
+                && java.util.Objects.equals(
+                        this.rotateDistributedDatabasePasswordsDetails,
+                        other.rotateDistributedDatabasePasswordsDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -298,11 +369,16 @@ public class RotateDistributedDatabasePasswordsRequest
                         + (this.distributedDatabaseId == null
                                 ? 43
                                 : this.distributedDatabaseId.hashCode());
-        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotateDistributedDatabasePasswordsDetails == null
+                                ? 43
+                                : this.rotateDistributedDatabasePasswordsDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;
     }
 }

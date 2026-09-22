@@ -27,20 +27,23 @@ public final class PipelineInfrastructureConfigurationDetails
         "blockStorageSizeInGBs",
         "subnetId",
         "shapeConfigDetails",
-        "blockStorageSizeInGBsParameterized"
+        "blockStorageSizeInGBsParameterized",
+        "capacityReservationId"
     })
     public PipelineInfrastructureConfigurationDetails(
             String shapeName,
             Integer blockStorageSizeInGBs,
             String subnetId,
             PipelineShapeConfigDetails shapeConfigDetails,
-            String blockStorageSizeInGBsParameterized) {
+            String blockStorageSizeInGBsParameterized,
+            String capacityReservationId) {
         super();
         this.shapeName = shapeName;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
         this.subnetId = subnetId;
         this.shapeConfigDetails = shapeConfigDetails;
         this.blockStorageSizeInGBsParameterized = blockStorageSizeInGBsParameterized;
+        this.capacityReservationId = capacityReservationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -127,6 +130,24 @@ public final class PipelineInfrastructureConfigurationDetails
             this.__explicitlySet__.add("blockStorageSizeInGBsParameterized");
             return this;
         }
+        /**
+         * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching pipelines.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching pipelines.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         **/
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -138,7 +159,8 @@ public final class PipelineInfrastructureConfigurationDetails
                             this.blockStorageSizeInGBs,
                             this.subnetId,
                             this.shapeConfigDetails,
-                            this.blockStorageSizeInGBsParameterized);
+                            this.blockStorageSizeInGBsParameterized,
+                            this.capacityReservationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -162,6 +184,9 @@ public final class PipelineInfrastructureConfigurationDetails
             if (model.wasPropertyExplicitlySet("blockStorageSizeInGBsParameterized")) {
                 this.blockStorageSizeInGBsParameterized(
                         model.getBlockStorageSizeInGBsParameterized());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
             }
             return this;
         }
@@ -249,6 +274,22 @@ public final class PipelineInfrastructureConfigurationDetails
         return blockStorageSizeInGBsParameterized;
     }
 
+    /**
+     * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching pipelines.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * This specifies the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer-managed compute capacity reservation to be used for launching pipelines.
+     *
+     * @return the value
+     **/
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -269,6 +310,7 @@ public final class PipelineInfrastructureConfigurationDetails
         sb.append(", shapeConfigDetails=").append(String.valueOf(this.shapeConfigDetails));
         sb.append(", blockStorageSizeInGBsParameterized=")
                 .append(String.valueOf(this.blockStorageSizeInGBsParameterized));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(")");
         return sb.toString();
     }
@@ -291,6 +333,7 @@ public final class PipelineInfrastructureConfigurationDetails
                 && java.util.Objects.equals(
                         this.blockStorageSizeInGBsParameterized,
                         other.blockStorageSizeInGBsParameterized)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && super.equals(other);
     }
 
@@ -315,6 +358,11 @@ public final class PipelineInfrastructureConfigurationDetails
                         + (this.blockStorageSizeInGBsParameterized == null
                                 ? 43
                                 : this.blockStorageSizeInGBsParameterized.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

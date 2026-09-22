@@ -216,13 +216,13 @@ public final class HostedApplicationIam extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * A list of storageConfigs managed by the OCI GenAI Platform and attached to the application.
+         * A list of managed storage configurations for the application.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageConfigs")
         private java.util.List<StorageConfig> storageConfigs;
 
         /**
-         * A list of storageConfigs managed by the OCI GenAI Platform and attached to the application.
+         * A list of managed storage configurations for the application.
          * @param storageConfigs the value to set
          * @return this builder
          **/
@@ -594,13 +594,13 @@ public final class HostedApplicationIam extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * A list of storageConfigs managed by the OCI GenAI Platform and attached to the application.
+     * A list of managed storage configurations for the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageConfigs")
     private final java.util.List<StorageConfig> storageConfigs;
 
     /**
-     * A list of storageConfigs managed by the OCI GenAI Platform and attached to the application.
+     * A list of managed storage configurations for the application.
      * @return the value
      **/
     public java.util.List<StorageConfig> getStorageConfigs() {

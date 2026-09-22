@@ -6,7 +6,7 @@ package com.oracle.bmc.functions.responses;
 
 import com.oracle.bmc.functions.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. Add this value to the {@code if-match} parameter
@@ -45,6 +45,23 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
      * The returned Function instance.
      */
     private com.oracle.bmc.functions.model.Function function;
@@ -62,6 +79,7 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         "headers",
         "etag",
         "opcRequestId",
+        "opcWorkRequestId",
         "function"
     })
     private CreateFunctionResponse(
@@ -69,10 +87,12 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
+            String opcWorkRequestId,
             com.oracle.bmc.functions.model.Function function) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.function = function;
     }
 
@@ -132,6 +152,25 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * The returned Function instance.
          */
         private com.oracle.bmc.functions.model.Function function;
@@ -155,6 +194,7 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             function(o.getFunction());
 
             return this;
@@ -166,7 +206,7 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public CreateFunctionResponse build() {
             return new CreateFunctionResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, function);
+                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId, function);
         }
     }
 
@@ -185,6 +225,7 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",function=").append(String.valueOf(function));
         sb.append(")");
         return sb.toString();
@@ -203,6 +244,7 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.function, other.function);
     }
 
@@ -212,6 +254,9 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.function == null ? 43 : this.function.hashCode());
         return result;
     }

@@ -24,6 +24,27 @@ public class CancelProtectedDatabaseDeletionRequest
         return protectedDatabaseId;
     }
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+    /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
@@ -75,6 +96,31 @@ public class CancelProtectedDatabaseDeletionRequest
          */
         public Builder protectedDatabaseId(String protectedDatabaseId) {
             this.protectedDatabaseId = protectedDatabaseId;
+            return this;
+        }
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
             return this;
         }
 
@@ -147,6 +193,7 @@ public class CancelProtectedDatabaseDeletionRequest
          */
         public Builder copy(CancelProtectedDatabaseDeletionRequest o) {
             protectedDatabaseId(o.getProtectedDatabaseId());
+            opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -183,10 +230,11 @@ public class CancelProtectedDatabaseDeletionRequest
             CancelProtectedDatabaseDeletionRequest request =
                     new CancelProtectedDatabaseDeletionRequest();
             request.protectedDatabaseId = protectedDatabaseId;
+            request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CancelProtectedDatabaseDeletionRequest(protectedDatabaseId, ifMatch, opcRequestId);
+            // new CancelProtectedDatabaseDeletionRequest(protectedDatabaseId, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
@@ -197,6 +245,7 @@ public class CancelProtectedDatabaseDeletionRequest
     public Builder toBuilder() {
         return new Builder()
                 .protectedDatabaseId(protectedDatabaseId)
+                .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -215,6 +264,7 @@ public class CancelProtectedDatabaseDeletionRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",protectedDatabaseId=").append(String.valueOf(this.protectedDatabaseId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -233,6 +283,7 @@ public class CancelProtectedDatabaseDeletionRequest
         CancelProtectedDatabaseDeletionRequest other = (CancelProtectedDatabaseDeletionRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.protectedDatabaseId, other.protectedDatabaseId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -246,6 +297,9 @@ public class CancelProtectedDatabaseDeletionRequest
                         + (this.protectedDatabaseId == null
                                 ? 43
                                 : this.protectedDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedDatabase.Builder.class
 )
@@ -29,29 +29,36 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         "timeUpdated",
         "databaseVersion",
         "lifecycleState",
+        "shardingMethod",
+        "replicationMethod",
+        "dbDeploymentType",
         "lifecycleDetails",
         "connectionStrings",
         "prefix",
         "privateEndpointIds",
+        "notificationTopicIds",
         "latestGsmImageDetails",
-        "shardingMethod",
         "characterSet",
         "ncharacterSet",
-        "chunks",
         "listenerPort",
         "listenerPortTls",
         "onsPortLocal",
         "onsPortRemote",
         "scanListenerPort",
-        "replicationMethod",
-        "replicationFactor",
-        "replicationUnit",
-        "dbDeploymentType",
-        "shardDetails",
+        "systemChunkCount",
+        "systemRaftReplicationUnitCount",
+        "compositeRaftShardSpaces",
+        "compositeDataGuardShardSpaces",
+        "systemRaftClusters",
+        "systemDataGuardDatabases",
+        "userShardSpaces",
         "catalogDetails",
         "gsmDetails",
+        "gdsControlNodeDetails",
         "dbBackupConfig",
+        "autoResourceManagementConfig",
         "gsmSshPublicKey",
+        "vcnNsgIds",
         "metadata",
         "freeformTags",
         "definedTags",
@@ -65,29 +72,36 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             java.util.Date timeUpdated,
             String databaseVersion,
             LifecycleState lifecycleState,
+            ShardingMethod shardingMethod,
+            ReplicationMethod replicationMethod,
+            DbDeploymentType dbDeploymentType,
             String lifecycleDetails,
             DistributedDbConnectionString connectionStrings,
             String prefix,
             java.util.List<String> privateEndpointIds,
+            java.util.List<String> notificationTopicIds,
             DistributedDbGsmImage latestGsmImageDetails,
-            ShardingMethod shardingMethod,
             String characterSet,
             String ncharacterSet,
-            Integer chunks,
             Integer listenerPort,
             Integer listenerPortTls,
             Integer onsPortLocal,
             Integer onsPortRemote,
             Integer scanListenerPort,
-            ReplicationMethod replicationMethod,
-            Integer replicationFactor,
-            Integer replicationUnit,
-            DbDeploymentType dbDeploymentType,
-            java.util.List<DistributedDatabaseShard> shardDetails,
+            Integer systemChunkCount,
+            Integer systemRaftReplicationUnitCount,
+            java.util.List<CompositeRaftShardSpace> compositeRaftShardSpaces,
+            java.util.List<CompositeDataGuardShardSpace> compositeDataGuardShardSpaces,
+            java.util.List<SystemRaftCluster> systemRaftClusters,
+            SystemDataGuardDatabase systemDataGuardDatabases,
+            java.util.List<UserShardSpace> userShardSpaces,
             java.util.List<DistributedDatabaseCatalog> catalogDetails,
             java.util.List<DistributedDatabaseGsm> gsmDetails,
+            java.util.List<DistributedDatabaseGdsControlNode> gdsControlNodeDetails,
             DistributedDbBackupConfig dbBackupConfig,
+            AutoResourceManagementConfigurationDetails autoResourceManagementConfig,
             String gsmSshPublicKey,
+            java.util.List<VcnNsgIdsDetails> vcnNsgIds,
             DistributedDbMetadata metadata,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -100,29 +114,36 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         this.timeUpdated = timeUpdated;
         this.databaseVersion = databaseVersion;
         this.lifecycleState = lifecycleState;
+        this.shardingMethod = shardingMethod;
+        this.replicationMethod = replicationMethod;
+        this.dbDeploymentType = dbDeploymentType;
         this.lifecycleDetails = lifecycleDetails;
         this.connectionStrings = connectionStrings;
         this.prefix = prefix;
         this.privateEndpointIds = privateEndpointIds;
+        this.notificationTopicIds = notificationTopicIds;
         this.latestGsmImageDetails = latestGsmImageDetails;
-        this.shardingMethod = shardingMethod;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
-        this.chunks = chunks;
         this.listenerPort = listenerPort;
         this.listenerPortTls = listenerPortTls;
         this.onsPortLocal = onsPortLocal;
         this.onsPortRemote = onsPortRemote;
         this.scanListenerPort = scanListenerPort;
-        this.replicationMethod = replicationMethod;
-        this.replicationFactor = replicationFactor;
-        this.replicationUnit = replicationUnit;
-        this.dbDeploymentType = dbDeploymentType;
-        this.shardDetails = shardDetails;
+        this.systemChunkCount = systemChunkCount;
+        this.systemRaftReplicationUnitCount = systemRaftReplicationUnitCount;
+        this.compositeRaftShardSpaces = compositeRaftShardSpaces;
+        this.compositeDataGuardShardSpaces = compositeDataGuardShardSpaces;
+        this.systemRaftClusters = systemRaftClusters;
+        this.systemDataGuardDatabases = systemDataGuardDatabases;
+        this.userShardSpaces = userShardSpaces;
         this.catalogDetails = catalogDetails;
         this.gsmDetails = gsmDetails;
+        this.gdsControlNodeDetails = gdsControlNodeDetails;
         this.dbBackupConfig = dbBackupConfig;
+        this.autoResourceManagementConfig = autoResourceManagementConfig;
         this.gsmSshPublicKey = gsmSshPublicKey;
+        this.vcnNsgIds = vcnNsgIds;
         this.metadata = metadata;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -180,13 +201,13 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+         * The time the Globally distributed database was created. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+         * The time the Globally distributed database was created. An RFC3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -196,13 +217,13 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+         * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -241,6 +262,64 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Sharding methods for the Globally distributed database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
+        private ShardingMethod shardingMethod;
+
+        /**
+         * Sharding methods for the Globally distributed database.
+         * @param shardingMethod the value to set
+         * @return this builder
+         **/
+        public Builder shardingMethod(ShardingMethod shardingMethod) {
+            this.shardingMethod = shardingMethod;
+            this.__explicitlySet__.add("shardingMethod");
+            return this;
+        }
+        /**
+         * The Replication method for Globally distributed database. Use RAFT for Raft based replication.
+         * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+         * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+         * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
+        private ReplicationMethod replicationMethod;
+
+        /**
+         * The Replication method for Globally distributed database. Use RAFT for Raft based replication.
+         * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+         * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+         * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
+         *
+         * @param replicationMethod the value to set
+         * @return this builder
+         **/
+        public Builder replicationMethod(ReplicationMethod replicationMethod) {
+            this.replicationMethod = replicationMethod;
+            this.__explicitlySet__.add("replicationMethod");
+            return this;
+        }
+        /**
+         * The distributed database deployment type.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbDeploymentType")
+        private DbDeploymentType dbDeploymentType;
+
+        /**
+         * The distributed database deployment type.
+         *
+         * @param dbDeploymentType the value to set
+         * @return this builder
+         **/
+        public Builder dbDeploymentType(DbDeploymentType dbDeploymentType) {
+            this.dbDeploymentType = dbDeploymentType;
+            this.__explicitlySet__.add("dbDeploymentType");
             return this;
         }
         /**
@@ -304,6 +383,22 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("privateEndpointIds");
             return this;
         }
+        /**
+         * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicIds")
+        private java.util.List<String> notificationTopicIds;
+
+        /**
+         * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+         * @param notificationTopicIds the value to set
+         * @return this builder
+         **/
+        public Builder notificationTopicIds(java.util.List<String> notificationTopicIds) {
+            this.notificationTopicIds = notificationTopicIds;
+            this.__explicitlySet__.add("notificationTopicIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("latestGsmImageDetails")
         private DistributedDbGsmImage latestGsmImageDetails;
@@ -311,22 +406,6 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         public Builder latestGsmImageDetails(DistributedDbGsmImage latestGsmImageDetails) {
             this.latestGsmImageDetails = latestGsmImageDetails;
             this.__explicitlySet__.add("latestGsmImageDetails");
-            return this;
-        }
-        /**
-         * Sharding Methods for the Globally distributed database.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
-        private ShardingMethod shardingMethod;
-
-        /**
-         * Sharding Methods for the Globally distributed database.
-         * @param shardingMethod the value to set
-         * @return this builder
-         **/
-        public Builder shardingMethod(ShardingMethod shardingMethod) {
-            this.shardingMethod = shardingMethod;
-            this.__explicitlySet__.add("shardingMethod");
             return this;
         }
         /**
@@ -359,26 +438,6 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             this.__explicitlySet__.add("ncharacterSet");
-            return this;
-        }
-        /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be
-         * greater than 2 times the size of the largest shardgroup in any shardspace.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("chunks")
-        private Integer chunks;
-
-        /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be
-         * greater than 2 times the size of the largest shardgroup in any shardspace.
-         *
-         * @param chunks the value to set
-         * @return this builder
-         **/
-        public Builder chunks(Integer chunks) {
-            this.chunks = chunks;
-            this.__explicitlySet__.add("chunks");
             return this;
         }
         /**
@@ -446,13 +505,13 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+         * The TCP SCAN listener port for database clusters with source type XS_NEW_VAULT_AND_CLUSTER or XS_NEW_CLUSTER.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPort")
         private Integer scanListenerPort;
 
         /**
-         * The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
+         * The TCP SCAN listener port for database clusters with source type XS_NEW_VAULT_AND_CLUSTER or XS_NEW_CLUSTER.
          * @param scanListenerPort the value to set
          * @return this builder
          **/
@@ -462,105 +521,120 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for
-         * DataGuard. If replicationMethod is not provided, it defaults to DG.
-         *
+         * Count of chunks associated with system raft clusters or system data guard databases.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
-        private ReplicationMethod replicationMethod;
+        @com.fasterxml.jackson.annotation.JsonProperty("systemChunkCount")
+        private Integer systemChunkCount;
 
         /**
-         * The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for
-         * DataGuard. If replicationMethod is not provided, it defaults to DG.
-         *
-         * @param replicationMethod the value to set
+         * Count of chunks associated with system raft clusters or system data guard databases.
+         * @param systemChunkCount the value to set
          * @return this builder
          **/
-        public Builder replicationMethod(ReplicationMethod replicationMethod) {
-            this.replicationMethod = replicationMethod;
-            this.__explicitlySet__.add("replicationMethod");
+        public Builder systemChunkCount(Integer systemChunkCount) {
+            this.systemChunkCount = systemChunkCount;
+            this.__explicitlySet__.add("systemChunkCount");
             return this;
         }
         /**
-         * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
-         *
+         * Number of replication units associated with system raft clusters.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
-        private Integer replicationFactor;
+        @com.fasterxml.jackson.annotation.JsonProperty("systemRaftReplicationUnitCount")
+        private Integer systemRaftReplicationUnitCount;
 
         /**
-         * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
-         *
-         * @param replicationFactor the value to set
+         * Number of replication units associated with system raft clusters.
+         * @param systemRaftReplicationUnitCount the value to set
          * @return this builder
          **/
-        public Builder replicationFactor(Integer replicationFactor) {
-            this.replicationFactor = replicationFactor;
-            this.__explicitlySet__.add("replicationFactor");
+        public Builder systemRaftReplicationUnitCount(Integer systemRaftReplicationUnitCount) {
+            this.systemRaftReplicationUnitCount = systemRaftReplicationUnitCount;
+            this.__explicitlySet__.add("systemRaftReplicationUnitCount");
             return this;
         }
         /**
-         * The replication unit count for RAFT based distributed database. For RAFT replication based
-         * Globally distributed database, the value should be at least twice the number of shards.
-         *
+         * Collection of composite raft shards.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
-        private Integer replicationUnit;
+        @com.fasterxml.jackson.annotation.JsonProperty("compositeRaftShardSpaces")
+        private java.util.List<CompositeRaftShardSpace> compositeRaftShardSpaces;
 
         /**
-         * The replication unit count for RAFT based distributed database. For RAFT replication based
-         * Globally distributed database, the value should be at least twice the number of shards.
-         *
-         * @param replicationUnit the value to set
+         * Collection of composite raft shards.
+         * @param compositeRaftShardSpaces the value to set
          * @return this builder
          **/
-        public Builder replicationUnit(Integer replicationUnit) {
-            this.replicationUnit = replicationUnit;
-            this.__explicitlySet__.add("replicationUnit");
+        public Builder compositeRaftShardSpaces(
+                java.util.List<CompositeRaftShardSpace> compositeRaftShardSpaces) {
+            this.compositeRaftShardSpaces = compositeRaftShardSpaces;
+            this.__explicitlySet__.add("compositeRaftShardSpaces");
             return this;
         }
         /**
-         * The distributed database deployment type.
-         *
+         * Collection of composite data guard shard spaces.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("dbDeploymentType")
-        private DbDeploymentType dbDeploymentType;
+        @com.fasterxml.jackson.annotation.JsonProperty("compositeDataGuardShardSpaces")
+        private java.util.List<CompositeDataGuardShardSpace> compositeDataGuardShardSpaces;
 
         /**
-         * The distributed database deployment type.
-         *
-         * @param dbDeploymentType the value to set
+         * Collection of composite data guard shard spaces.
+         * @param compositeDataGuardShardSpaces the value to set
          * @return this builder
          **/
-        public Builder dbDeploymentType(DbDeploymentType dbDeploymentType) {
-            this.dbDeploymentType = dbDeploymentType;
-            this.__explicitlySet__.add("dbDeploymentType");
+        public Builder compositeDataGuardShardSpaces(
+                java.util.List<CompositeDataGuardShardSpace> compositeDataGuardShardSpaces) {
+            this.compositeDataGuardShardSpaces = compositeDataGuardShardSpaces;
+            this.__explicitlySet__.add("compositeDataGuardShardSpaces");
             return this;
         }
         /**
-         * Collection of shards associated with the Globally distributed database.
+         * Collection of system raft clusters.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("shardDetails")
-        private java.util.List<DistributedDatabaseShard> shardDetails;
+        @com.fasterxml.jackson.annotation.JsonProperty("systemRaftClusters")
+        private java.util.List<SystemRaftCluster> systemRaftClusters;
 
         /**
-         * Collection of shards associated with the Globally distributed database.
-         * @param shardDetails the value to set
+         * Collection of system raft clusters.
+         * @param systemRaftClusters the value to set
          * @return this builder
          **/
-        public Builder shardDetails(java.util.List<DistributedDatabaseShard> shardDetails) {
-            this.shardDetails = shardDetails;
-            this.__explicitlySet__.add("shardDetails");
+        public Builder systemRaftClusters(java.util.List<SystemRaftCluster> systemRaftClusters) {
+            this.systemRaftClusters = systemRaftClusters;
+            this.__explicitlySet__.add("systemRaftClusters");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemDataGuardDatabases")
+        private SystemDataGuardDatabase systemDataGuardDatabases;
+
+        public Builder systemDataGuardDatabases(SystemDataGuardDatabase systemDataGuardDatabases) {
+            this.systemDataGuardDatabases = systemDataGuardDatabases;
+            this.__explicitlySet__.add("systemDataGuardDatabases");
             return this;
         }
         /**
-         * Collection of catalogs associated with the Globally distributed database.
+         * Collection of user defined shard spaces.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("userShardSpaces")
+        private java.util.List<UserShardSpace> userShardSpaces;
+
+        /**
+         * Collection of user defined shard spaces.
+         * @param userShardSpaces the value to set
+         * @return this builder
+         **/
+        public Builder userShardSpaces(java.util.List<UserShardSpace> userShardSpaces) {
+            this.userShardSpaces = userShardSpaces;
+            this.__explicitlySet__.add("userShardSpaces");
+            return this;
+        }
+        /**
+         * Catalog details associated with the distributed database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogDetails")
         private java.util.List<DistributedDatabaseCatalog> catalogDetails;
 
         /**
-         * Collection of catalogs associated with the Globally distributed database.
+         * Catalog details associated with the distributed database.
          * @param catalogDetails the value to set
          * @return this builder
          **/
@@ -570,19 +644,36 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Collection of catalogs associated with the Globally distributed database.
+         * Global Service Manager (GSM) instances associated with the distributed database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("gsmDetails")
         private java.util.List<DistributedDatabaseGsm> gsmDetails;
 
         /**
-         * Collection of catalogs associated with the Globally distributed database.
+         * Global Service Manager (GSM) instances associated with the distributed database.
          * @param gsmDetails the value to set
          * @return this builder
          **/
         public Builder gsmDetails(java.util.List<DistributedDatabaseGsm> gsmDetails) {
             this.gsmDetails = gsmDetails;
             this.__explicitlySet__.add("gsmDetails");
+            return this;
+        }
+        /**
+         * Global Database Services Control(GDS CTL) instances associated with the distributed database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("gdsControlNodeDetails")
+        private java.util.List<DistributedDatabaseGdsControlNode> gdsControlNodeDetails;
+
+        /**
+         * Global Database Services Control(GDS CTL) instances associated with the distributed database.
+         * @param gdsControlNodeDetails the value to set
+         * @return this builder
+         **/
+        public Builder gdsControlNodeDetails(
+                java.util.List<DistributedDatabaseGdsControlNode> gdsControlNodeDetails) {
+            this.gdsControlNodeDetails = gdsControlNodeDetails;
+            this.__explicitlySet__.add("gdsControlNodeDetails");
             return this;
         }
 
@@ -592,6 +683,16 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         public Builder dbBackupConfig(DistributedDbBackupConfig dbBackupConfig) {
             this.dbBackupConfig = dbBackupConfig;
             this.__explicitlySet__.add("dbBackupConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoResourceManagementConfig")
+        private AutoResourceManagementConfigurationDetails autoResourceManagementConfig;
+
+        public Builder autoResourceManagementConfig(
+                AutoResourceManagementConfigurationDetails autoResourceManagementConfig) {
+            this.autoResourceManagementConfig = autoResourceManagementConfig;
+            this.__explicitlySet__.add("autoResourceManagementConfig");
             return this;
         }
         /**
@@ -608,6 +709,22 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         public Builder gsmSshPublicKey(String gsmSshPublicKey) {
             this.gsmSshPublicKey = gsmSshPublicKey;
             this.__explicitlySet__.add("gsmSshPublicKey");
+            return this;
+        }
+        /**
+         * The list of network security group (NSG) details associated with the distributed database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+        private java.util.List<VcnNsgIdsDetails> vcnNsgIds;
+
+        /**
+         * The list of network security group (NSG) details associated with the distributed database.
+         * @param vcnNsgIds the value to set
+         * @return this builder
+         **/
+        public Builder vcnNsgIds(java.util.List<VcnNsgIdsDetails> vcnNsgIds) {
+            this.vcnNsgIds = vcnNsgIds;
+            this.__explicitlySet__.add("vcnNsgIds");
             return this;
         }
 
@@ -694,29 +811,36 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
                             this.timeUpdated,
                             this.databaseVersion,
                             this.lifecycleState,
+                            this.shardingMethod,
+                            this.replicationMethod,
+                            this.dbDeploymentType,
                             this.lifecycleDetails,
                             this.connectionStrings,
                             this.prefix,
                             this.privateEndpointIds,
+                            this.notificationTopicIds,
                             this.latestGsmImageDetails,
-                            this.shardingMethod,
                             this.characterSet,
                             this.ncharacterSet,
-                            this.chunks,
                             this.listenerPort,
                             this.listenerPortTls,
                             this.onsPortLocal,
                             this.onsPortRemote,
                             this.scanListenerPort,
-                            this.replicationMethod,
-                            this.replicationFactor,
-                            this.replicationUnit,
-                            this.dbDeploymentType,
-                            this.shardDetails,
+                            this.systemChunkCount,
+                            this.systemRaftReplicationUnitCount,
+                            this.compositeRaftShardSpaces,
+                            this.compositeDataGuardShardSpaces,
+                            this.systemRaftClusters,
+                            this.systemDataGuardDatabases,
+                            this.userShardSpaces,
                             this.catalogDetails,
                             this.gsmDetails,
+                            this.gdsControlNodeDetails,
                             this.dbBackupConfig,
+                            this.autoResourceManagementConfig,
                             this.gsmSshPublicKey,
+                            this.vcnNsgIds,
                             this.metadata,
                             this.freeformTags,
                             this.definedTags,
@@ -750,6 +874,15 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("shardingMethod")) {
+                this.shardingMethod(model.getShardingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("replicationMethod")) {
+                this.replicationMethod(model.getReplicationMethod());
+            }
+            if (model.wasPropertyExplicitlySet("dbDeploymentType")) {
+                this.dbDeploymentType(model.getDbDeploymentType());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
@@ -762,20 +895,17 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("privateEndpointIds")) {
                 this.privateEndpointIds(model.getPrivateEndpointIds());
             }
+            if (model.wasPropertyExplicitlySet("notificationTopicIds")) {
+                this.notificationTopicIds(model.getNotificationTopicIds());
+            }
             if (model.wasPropertyExplicitlySet("latestGsmImageDetails")) {
                 this.latestGsmImageDetails(model.getLatestGsmImageDetails());
-            }
-            if (model.wasPropertyExplicitlySet("shardingMethod")) {
-                this.shardingMethod(model.getShardingMethod());
             }
             if (model.wasPropertyExplicitlySet("characterSet")) {
                 this.characterSet(model.getCharacterSet());
             }
             if (model.wasPropertyExplicitlySet("ncharacterSet")) {
                 this.ncharacterSet(model.getNcharacterSet());
-            }
-            if (model.wasPropertyExplicitlySet("chunks")) {
-                this.chunks(model.getChunks());
             }
             if (model.wasPropertyExplicitlySet("listenerPort")) {
                 this.listenerPort(model.getListenerPort());
@@ -792,20 +922,26 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("scanListenerPort")) {
                 this.scanListenerPort(model.getScanListenerPort());
             }
-            if (model.wasPropertyExplicitlySet("replicationMethod")) {
-                this.replicationMethod(model.getReplicationMethod());
+            if (model.wasPropertyExplicitlySet("systemChunkCount")) {
+                this.systemChunkCount(model.getSystemChunkCount());
             }
-            if (model.wasPropertyExplicitlySet("replicationFactor")) {
-                this.replicationFactor(model.getReplicationFactor());
+            if (model.wasPropertyExplicitlySet("systemRaftReplicationUnitCount")) {
+                this.systemRaftReplicationUnitCount(model.getSystemRaftReplicationUnitCount());
             }
-            if (model.wasPropertyExplicitlySet("replicationUnit")) {
-                this.replicationUnit(model.getReplicationUnit());
+            if (model.wasPropertyExplicitlySet("compositeRaftShardSpaces")) {
+                this.compositeRaftShardSpaces(model.getCompositeRaftShardSpaces());
             }
-            if (model.wasPropertyExplicitlySet("dbDeploymentType")) {
-                this.dbDeploymentType(model.getDbDeploymentType());
+            if (model.wasPropertyExplicitlySet("compositeDataGuardShardSpaces")) {
+                this.compositeDataGuardShardSpaces(model.getCompositeDataGuardShardSpaces());
             }
-            if (model.wasPropertyExplicitlySet("shardDetails")) {
-                this.shardDetails(model.getShardDetails());
+            if (model.wasPropertyExplicitlySet("systemRaftClusters")) {
+                this.systemRaftClusters(model.getSystemRaftClusters());
+            }
+            if (model.wasPropertyExplicitlySet("systemDataGuardDatabases")) {
+                this.systemDataGuardDatabases(model.getSystemDataGuardDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("userShardSpaces")) {
+                this.userShardSpaces(model.getUserShardSpaces());
             }
             if (model.wasPropertyExplicitlySet("catalogDetails")) {
                 this.catalogDetails(model.getCatalogDetails());
@@ -813,11 +949,20 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("gsmDetails")) {
                 this.gsmDetails(model.getGsmDetails());
             }
+            if (model.wasPropertyExplicitlySet("gdsControlNodeDetails")) {
+                this.gdsControlNodeDetails(model.getGdsControlNodeDetails());
+            }
             if (model.wasPropertyExplicitlySet("dbBackupConfig")) {
                 this.dbBackupConfig(model.getDbBackupConfig());
             }
+            if (model.wasPropertyExplicitlySet("autoResourceManagementConfig")) {
+                this.autoResourceManagementConfig(model.getAutoResourceManagementConfig());
+            }
             if (model.wasPropertyExplicitlySet("gsmSshPublicKey")) {
                 this.gsmSshPublicKey(model.getGsmSshPublicKey());
+            }
+            if (model.wasPropertyExplicitlySet("vcnNsgIds")) {
+                this.vcnNsgIds(model.getVcnNsgIds());
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
@@ -889,13 +1034,13 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+     * The time the Globally distributed database was created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Globally distributed database was created. An RFC3339 formatted datetime string
+     * The time the Globally distributed database was created. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -903,13 +1048,13 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+     * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
+     * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -999,71 +1144,12 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The lifecycleDetails for the Globally distributed database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    private final String lifecycleDetails;
-
-    /**
-     * The lifecycleDetails for the Globally distributed database.
-     * @return the value
-     **/
-    public String getLifecycleDetails() {
-        return lifecycleDetails;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
-    private final DistributedDbConnectionString connectionStrings;
-
-    public DistributedDbConnectionString getConnectionStrings() {
-        return connectionStrings;
-    }
-
-    /**
-     * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character
-     * has to be a letter followed by any combination of letter and number.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("prefix")
-    private final String prefix;
-
-    /**
-     * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character
-     * has to be a letter followed by any combination of letter and number.
-     *
-     * @return the value
-     **/
-    public String getPrefix() {
-        return prefix;
-    }
-
-    /**
-     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIds")
-    private final java.util.List<String> privateEndpointIds;
-
-    /**
-     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
-     * @return the value
-     **/
-    public java.util.List<String> getPrivateEndpointIds() {
-        return privateEndpointIds;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("latestGsmImageDetails")
-    private final DistributedDbGsmImage latestGsmImageDetails;
-
-    public DistributedDbGsmImage getLatestGsmImageDetails() {
-        return latestGsmImageDetails;
-    }
-
-    /**
-     * Sharding Methods for the Globally distributed database.
+     * Sharding methods for the Globally distributed database.
      **/
     public enum ShardingMethod {
         User("USER"),
         System("SYSTEM"),
+        Composite("COMPOSITE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1107,13 +1193,13 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * Sharding Methods for the Globally distributed database.
+     * Sharding methods for the Globally distributed database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
     private final ShardingMethod shardingMethod;
 
     /**
-     * Sharding Methods for the Globally distributed database.
+     * Sharding methods for the Globally distributed database.
      * @return the value
      **/
     public ShardingMethod getShardingMethod() {
@@ -1121,124 +1207,10 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The character set for the database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-    private final String characterSet;
-
-    /**
-     * The character set for the database.
-     * @return the value
-     **/
-    public String getCharacterSet() {
-        return characterSet;
-    }
-
-    /**
-     * The national character set for the database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    private final String ncharacterSet;
-
-    /**
-     * The national character set for the database.
-     * @return the value
-     **/
-    public String getNcharacterSet() {
-        return ncharacterSet;
-    }
-
-    /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be
-     * greater than 2 times the size of the largest shardgroup in any shardspace.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("chunks")
-    private final Integer chunks;
-
-    /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be
-     * greater than 2 times the size of the largest shardgroup in any shardspace.
-     *
-     * @return the value
-     **/
-    public Integer getChunks() {
-        return chunks;
-    }
-
-    /**
-     * The Global service manager listener port number for the Globally distributed database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
-    private final Integer listenerPort;
-
-    /**
-     * The Global service manager listener port number for the Globally distributed database.
-     * @return the value
-     **/
-    public Integer getListenerPort() {
-        return listenerPort;
-    }
-
-    /**
-     * The TLS listener port number for Globally distributed database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
-    private final Integer listenerPortTls;
-
-    /**
-     * The TLS listener port number for Globally distributed database.
-     * @return the value
-     **/
-    public Integer getListenerPortTls() {
-        return listenerPortTls;
-    }
-
-    /**
-     * Ons local port number.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
-    private final Integer onsPortLocal;
-
-    /**
-     * Ons local port number.
-     * @return the value
-     **/
-    public Integer getOnsPortLocal() {
-        return onsPortLocal;
-    }
-
-    /**
-     * Ons remote port number.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
-    private final Integer onsPortRemote;
-
-    /**
-     * Ons remote port number.
-     * @return the value
-     **/
-    public Integer getOnsPortRemote() {
-        return onsPortRemote;
-    }
-
-    /**
-     * The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPort")
-    private final Integer scanListenerPort;
-
-    /**
-     * The TCP Single Client Access Name (SCAN) port for Globally distributed database clusters.
-     * @return the value
-     **/
-    public Integer getScanListenerPort() {
-        return scanListenerPort;
-    }
-
-    /**
-     * The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for
-     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed database. Use RAFT for Raft based replication.
+     * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+     * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+     * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      *
      **/
     public enum ReplicationMethod {
@@ -1287,16 +1259,20 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for
-     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed database. Use RAFT for Raft based replication.
+     * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+     * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+     * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
     private final ReplicationMethod replicationMethod;
 
     /**
-     * The Replication method for Globally distributed database. Use RAFT for Raft replication, and DG for
-     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed database. Use RAFT for Raft based replication.
+     * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+     * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+     * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      *
      * @return the value
      **/
@@ -1305,45 +1281,11 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
-    private final Integer replicationFactor;
-
-    /**
-     * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
-     *
-     * @return the value
-     **/
-    public Integer getReplicationFactor() {
-        return replicationFactor;
-    }
-
-    /**
-     * The replication unit count for RAFT based distributed database. For RAFT replication based
-     * Globally distributed database, the value should be at least twice the number of shards.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
-    private final Integer replicationUnit;
-
-    /**
-     * The replication unit count for RAFT based distributed database. For RAFT replication based
-     * Globally distributed database, the value should be at least twice the number of shards.
-     *
-     * @return the value
-     **/
-    public Integer getReplicationUnit() {
-        return replicationUnit;
-    }
-
-    /**
      * The distributed database deployment type.
      *
      **/
     public enum DbDeploymentType {
-        ExadbXs("EXADB_XS"),
+        Exadb("EXADB"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1403,27 +1345,276 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Collection of shards associated with the Globally distributed database.
+     * The lifecycleDetails for the Globally distributed database.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("shardDetails")
-    private final java.util.List<DistributedDatabaseShard> shardDetails;
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
 
     /**
-     * Collection of shards associated with the Globally distributed database.
+     * The lifecycleDetails for the Globally distributed database.
      * @return the value
      **/
-    public java.util.List<DistributedDatabaseShard> getShardDetails() {
-        return shardDetails;
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
+    private final DistributedDbConnectionString connectionStrings;
+
+    public DistributedDbConnectionString getConnectionStrings() {
+        return connectionStrings;
     }
 
     /**
-     * Collection of catalogs associated with the Globally distributed database.
+     * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character
+     * has to be a letter followed by any combination of letter and number.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("prefix")
+    private final String prefix;
+
+    /**
+     * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character
+     * has to be a letter followed by any combination of letter and number.
+     *
+     * @return the value
+     **/
+    public String getPrefix() {
+        return prefix;
+    }
+
+    /**
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIds")
+    private final java.util.List<String> privateEndpointIds;
+
+    /**
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
+     * @return the value
+     **/
+    public java.util.List<String> getPrivateEndpointIds() {
+        return privateEndpointIds;
+    }
+
+    /**
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicIds")
+    private final java.util.List<String> notificationTopicIds;
+
+    /**
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed database.
+     * @return the value
+     **/
+    public java.util.List<String> getNotificationTopicIds() {
+        return notificationTopicIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("latestGsmImageDetails")
+    private final DistributedDbGsmImage latestGsmImageDetails;
+
+    public DistributedDbGsmImage getLatestGsmImageDetails() {
+        return latestGsmImageDetails;
+    }
+
+    /**
+     * The character set for the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
+    private final String characterSet;
+
+    /**
+     * The character set for the database.
+     * @return the value
+     **/
+    public String getCharacterSet() {
+        return characterSet;
+    }
+
+    /**
+     * The national character set for the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
+    private final String ncharacterSet;
+
+    /**
+     * The national character set for the database.
+     * @return the value
+     **/
+    public String getNcharacterSet() {
+        return ncharacterSet;
+    }
+
+    /**
+     * The Global service manager listener port number for the Globally distributed database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
+    private final Integer listenerPort;
+
+    /**
+     * The Global service manager listener port number for the Globally distributed database.
+     * @return the value
+     **/
+    public Integer getListenerPort() {
+        return listenerPort;
+    }
+
+    /**
+     * The TLS listener port number for Globally distributed database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
+    private final Integer listenerPortTls;
+
+    /**
+     * The TLS listener port number for Globally distributed database.
+     * @return the value
+     **/
+    public Integer getListenerPortTls() {
+        return listenerPortTls;
+    }
+
+    /**
+     * Ons local port number.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
+    private final Integer onsPortLocal;
+
+    /**
+     * Ons local port number.
+     * @return the value
+     **/
+    public Integer getOnsPortLocal() {
+        return onsPortLocal;
+    }
+
+    /**
+     * Ons remote port number.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
+    private final Integer onsPortRemote;
+
+    /**
+     * Ons remote port number.
+     * @return the value
+     **/
+    public Integer getOnsPortRemote() {
+        return onsPortRemote;
+    }
+
+    /**
+     * The TCP SCAN listener port for database clusters with source type XS_NEW_VAULT_AND_CLUSTER or XS_NEW_CLUSTER.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPort")
+    private final Integer scanListenerPort;
+
+    /**
+     * The TCP SCAN listener port for database clusters with source type XS_NEW_VAULT_AND_CLUSTER or XS_NEW_CLUSTER.
+     * @return the value
+     **/
+    public Integer getScanListenerPort() {
+        return scanListenerPort;
+    }
+
+    /**
+     * Count of chunks associated with system raft clusters or system data guard databases.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemChunkCount")
+    private final Integer systemChunkCount;
+
+    /**
+     * Count of chunks associated with system raft clusters or system data guard databases.
+     * @return the value
+     **/
+    public Integer getSystemChunkCount() {
+        return systemChunkCount;
+    }
+
+    /**
+     * Number of replication units associated with system raft clusters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemRaftReplicationUnitCount")
+    private final Integer systemRaftReplicationUnitCount;
+
+    /**
+     * Number of replication units associated with system raft clusters.
+     * @return the value
+     **/
+    public Integer getSystemRaftReplicationUnitCount() {
+        return systemRaftReplicationUnitCount;
+    }
+
+    /**
+     * Collection of composite raft shards.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compositeRaftShardSpaces")
+    private final java.util.List<CompositeRaftShardSpace> compositeRaftShardSpaces;
+
+    /**
+     * Collection of composite raft shards.
+     * @return the value
+     **/
+    public java.util.List<CompositeRaftShardSpace> getCompositeRaftShardSpaces() {
+        return compositeRaftShardSpaces;
+    }
+
+    /**
+     * Collection of composite data guard shard spaces.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compositeDataGuardShardSpaces")
+    private final java.util.List<CompositeDataGuardShardSpace> compositeDataGuardShardSpaces;
+
+    /**
+     * Collection of composite data guard shard spaces.
+     * @return the value
+     **/
+    public java.util.List<CompositeDataGuardShardSpace> getCompositeDataGuardShardSpaces() {
+        return compositeDataGuardShardSpaces;
+    }
+
+    /**
+     * Collection of system raft clusters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemRaftClusters")
+    private final java.util.List<SystemRaftCluster> systemRaftClusters;
+
+    /**
+     * Collection of system raft clusters.
+     * @return the value
+     **/
+    public java.util.List<SystemRaftCluster> getSystemRaftClusters() {
+        return systemRaftClusters;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("systemDataGuardDatabases")
+    private final SystemDataGuardDatabase systemDataGuardDatabases;
+
+    public SystemDataGuardDatabase getSystemDataGuardDatabases() {
+        return systemDataGuardDatabases;
+    }
+
+    /**
+     * Collection of user defined shard spaces.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("userShardSpaces")
+    private final java.util.List<UserShardSpace> userShardSpaces;
+
+    /**
+     * Collection of user defined shard spaces.
+     * @return the value
+     **/
+    public java.util.List<UserShardSpace> getUserShardSpaces() {
+        return userShardSpaces;
+    }
+
+    /**
+     * Catalog details associated with the distributed database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("catalogDetails")
     private final java.util.List<DistributedDatabaseCatalog> catalogDetails;
 
     /**
-     * Collection of catalogs associated with the Globally distributed database.
+     * Catalog details associated with the distributed database.
      * @return the value
      **/
     public java.util.List<DistributedDatabaseCatalog> getCatalogDetails() {
@@ -1431,17 +1622,31 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Collection of catalogs associated with the Globally distributed database.
+     * Global Service Manager (GSM) instances associated with the distributed database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gsmDetails")
     private final java.util.List<DistributedDatabaseGsm> gsmDetails;
 
     /**
-     * Collection of catalogs associated with the Globally distributed database.
+     * Global Service Manager (GSM) instances associated with the distributed database.
      * @return the value
      **/
     public java.util.List<DistributedDatabaseGsm> getGsmDetails() {
         return gsmDetails;
+    }
+
+    /**
+     * Global Database Services Control(GDS CTL) instances associated with the distributed database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("gdsControlNodeDetails")
+    private final java.util.List<DistributedDatabaseGdsControlNode> gdsControlNodeDetails;
+
+    /**
+     * Global Database Services Control(GDS CTL) instances associated with the distributed database.
+     * @return the value
+     **/
+    public java.util.List<DistributedDatabaseGdsControlNode> getGdsControlNodeDetails() {
+        return gdsControlNodeDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
@@ -1449,6 +1654,13 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
 
     public DistributedDbBackupConfig getDbBackupConfig() {
         return dbBackupConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autoResourceManagementConfig")
+    private final AutoResourceManagementConfigurationDetails autoResourceManagementConfig;
+
+    public AutoResourceManagementConfigurationDetails getAutoResourceManagementConfig() {
+        return autoResourceManagementConfig;
     }
 
     /**
@@ -1463,6 +1675,20 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
      **/
     public String getGsmSshPublicKey() {
         return gsmSshPublicKey;
+    }
+
+    /**
+     * The list of network security group (NSG) details associated with the distributed database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+    private final java.util.List<VcnNsgIdsDetails> vcnNsgIds;
+
+    /**
+     * The list of network security group (NSG) details associated with the distributed database.
+     * @return the value
+     **/
+    public java.util.List<VcnNsgIdsDetails> getVcnNsgIds() {
+        return vcnNsgIds;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
@@ -1547,29 +1773,41 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", shardingMethod=").append(String.valueOf(this.shardingMethod));
+        sb.append(", replicationMethod=").append(String.valueOf(this.replicationMethod));
+        sb.append(", dbDeploymentType=").append(String.valueOf(this.dbDeploymentType));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
         sb.append(", privateEndpointIds=").append(String.valueOf(this.privateEndpointIds));
+        sb.append(", notificationTopicIds=").append(String.valueOf(this.notificationTopicIds));
         sb.append(", latestGsmImageDetails=").append(String.valueOf(this.latestGsmImageDetails));
-        sb.append(", shardingMethod=").append(String.valueOf(this.shardingMethod));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
-        sb.append(", chunks=").append(String.valueOf(this.chunks));
         sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
         sb.append(", listenerPortTls=").append(String.valueOf(this.listenerPortTls));
         sb.append(", onsPortLocal=").append(String.valueOf(this.onsPortLocal));
         sb.append(", onsPortRemote=").append(String.valueOf(this.onsPortRemote));
         sb.append(", scanListenerPort=").append(String.valueOf(this.scanListenerPort));
-        sb.append(", replicationMethod=").append(String.valueOf(this.replicationMethod));
-        sb.append(", replicationFactor=").append(String.valueOf(this.replicationFactor));
-        sb.append(", replicationUnit=").append(String.valueOf(this.replicationUnit));
-        sb.append(", dbDeploymentType=").append(String.valueOf(this.dbDeploymentType));
-        sb.append(", shardDetails=").append(String.valueOf(this.shardDetails));
+        sb.append(", systemChunkCount=").append(String.valueOf(this.systemChunkCount));
+        sb.append(", systemRaftReplicationUnitCount=")
+                .append(String.valueOf(this.systemRaftReplicationUnitCount));
+        sb.append(", compositeRaftShardSpaces=")
+                .append(String.valueOf(this.compositeRaftShardSpaces));
+        sb.append(", compositeDataGuardShardSpaces=")
+                .append(String.valueOf(this.compositeDataGuardShardSpaces));
+        sb.append(", systemRaftClusters=").append(String.valueOf(this.systemRaftClusters));
+        sb.append(", systemDataGuardDatabases=")
+                .append(String.valueOf(this.systemDataGuardDatabases));
+        sb.append(", userShardSpaces=").append(String.valueOf(this.userShardSpaces));
         sb.append(", catalogDetails=").append(String.valueOf(this.catalogDetails));
         sb.append(", gsmDetails=").append(String.valueOf(this.gsmDetails));
+        sb.append(", gdsControlNodeDetails=").append(String.valueOf(this.gdsControlNodeDetails));
         sb.append(", dbBackupConfig=").append(String.valueOf(this.dbBackupConfig));
+        sb.append(", autoResourceManagementConfig=")
+                .append(String.valueOf(this.autoResourceManagementConfig));
         sb.append(", gsmSshPublicKey=").append(String.valueOf(this.gsmSshPublicKey));
+        sb.append(", vcnNsgIds=").append(String.valueOf(this.vcnNsgIds));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1595,29 +1833,41 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.shardingMethod, other.shardingMethod)
+                && java.util.Objects.equals(this.replicationMethod, other.replicationMethod)
+                && java.util.Objects.equals(this.dbDeploymentType, other.dbDeploymentType)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
                 && java.util.Objects.equals(this.prefix, other.prefix)
                 && java.util.Objects.equals(this.privateEndpointIds, other.privateEndpointIds)
+                && java.util.Objects.equals(this.notificationTopicIds, other.notificationTopicIds)
                 && java.util.Objects.equals(this.latestGsmImageDetails, other.latestGsmImageDetails)
-                && java.util.Objects.equals(this.shardingMethod, other.shardingMethod)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
-                && java.util.Objects.equals(this.chunks, other.chunks)
                 && java.util.Objects.equals(this.listenerPort, other.listenerPort)
                 && java.util.Objects.equals(this.listenerPortTls, other.listenerPortTls)
                 && java.util.Objects.equals(this.onsPortLocal, other.onsPortLocal)
                 && java.util.Objects.equals(this.onsPortRemote, other.onsPortRemote)
                 && java.util.Objects.equals(this.scanListenerPort, other.scanListenerPort)
-                && java.util.Objects.equals(this.replicationMethod, other.replicationMethod)
-                && java.util.Objects.equals(this.replicationFactor, other.replicationFactor)
-                && java.util.Objects.equals(this.replicationUnit, other.replicationUnit)
-                && java.util.Objects.equals(this.dbDeploymentType, other.dbDeploymentType)
-                && java.util.Objects.equals(this.shardDetails, other.shardDetails)
+                && java.util.Objects.equals(this.systemChunkCount, other.systemChunkCount)
+                && java.util.Objects.equals(
+                        this.systemRaftReplicationUnitCount, other.systemRaftReplicationUnitCount)
+                && java.util.Objects.equals(
+                        this.compositeRaftShardSpaces, other.compositeRaftShardSpaces)
+                && java.util.Objects.equals(
+                        this.compositeDataGuardShardSpaces, other.compositeDataGuardShardSpaces)
+                && java.util.Objects.equals(this.systemRaftClusters, other.systemRaftClusters)
+                && java.util.Objects.equals(
+                        this.systemDataGuardDatabases, other.systemDataGuardDatabases)
+                && java.util.Objects.equals(this.userShardSpaces, other.userShardSpaces)
                 && java.util.Objects.equals(this.catalogDetails, other.catalogDetails)
                 && java.util.Objects.equals(this.gsmDetails, other.gsmDetails)
+                && java.util.Objects.equals(this.gdsControlNodeDetails, other.gdsControlNodeDetails)
                 && java.util.Objects.equals(this.dbBackupConfig, other.dbBackupConfig)
+                && java.util.Objects.equals(
+                        this.autoResourceManagementConfig, other.autoResourceManagementConfig)
                 && java.util.Objects.equals(this.gsmSshPublicKey, other.gsmSshPublicKey)
+                && java.util.Objects.equals(this.vcnNsgIds, other.vcnNsgIds)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1644,6 +1894,15 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result =
                 (result * PRIME)
+                        + (this.shardingMethod == null ? 43 : this.shardingMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationMethod == null ? 43 : this.replicationMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbDeploymentType == null ? 43 : this.dbDeploymentType.hashCode());
+        result =
+                (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
@@ -1656,17 +1915,18 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
                                 : this.privateEndpointIds.hashCode());
         result =
                 (result * PRIME)
+                        + (this.notificationTopicIds == null
+                                ? 43
+                                : this.notificationTopicIds.hashCode());
+        result =
+                (result * PRIME)
                         + (this.latestGsmImageDetails == null
                                 ? 43
                                 : this.latestGsmImageDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.shardingMethod == null ? 43 : this.shardingMethod.hashCode());
         result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
         result =
                 (result * PRIME)
                         + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
-        result = (result * PRIME) + (this.chunks == null ? 43 : this.chunks.hashCode());
         result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
         result =
                 (result * PRIME)
@@ -1680,27 +1940,56 @@ public final class DistributedDatabase extends com.oracle.bmc.http.internal.Expl
                         + (this.scanListenerPort == null ? 43 : this.scanListenerPort.hashCode());
         result =
                 (result * PRIME)
-                        + (this.replicationMethod == null ? 43 : this.replicationMethod.hashCode());
+                        + (this.systemChunkCount == null ? 43 : this.systemChunkCount.hashCode());
         result =
                 (result * PRIME)
-                        + (this.replicationFactor == null ? 43 : this.replicationFactor.hashCode());
+                        + (this.systemRaftReplicationUnitCount == null
+                                ? 43
+                                : this.systemRaftReplicationUnitCount.hashCode());
         result =
                 (result * PRIME)
-                        + (this.replicationUnit == null ? 43 : this.replicationUnit.hashCode());
+                        + (this.compositeRaftShardSpaces == null
+                                ? 43
+                                : this.compositeRaftShardSpaces.hashCode());
         result =
                 (result * PRIME)
-                        + (this.dbDeploymentType == null ? 43 : this.dbDeploymentType.hashCode());
-        result = (result * PRIME) + (this.shardDetails == null ? 43 : this.shardDetails.hashCode());
+                        + (this.compositeDataGuardShardSpaces == null
+                                ? 43
+                                : this.compositeDataGuardShardSpaces.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemRaftClusters == null
+                                ? 43
+                                : this.systemRaftClusters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemDataGuardDatabases == null
+                                ? 43
+                                : this.systemDataGuardDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userShardSpaces == null ? 43 : this.userShardSpaces.hashCode());
         result =
                 (result * PRIME)
                         + (this.catalogDetails == null ? 43 : this.catalogDetails.hashCode());
         result = (result * PRIME) + (this.gsmDetails == null ? 43 : this.gsmDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.gdsControlNodeDetails == null
+                                ? 43
+                                : this.gdsControlNodeDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dbBackupConfig == null ? 43 : this.dbBackupConfig.hashCode());
         result =
                 (result * PRIME)
+                        + (this.autoResourceManagementConfig == null
+                                ? 43
+                                : this.autoResourceManagementConfig.hashCode());
+        result =
+                (result * PRIME)
                         + (this.gsmSshPublicKey == null ? 43 : this.gsmSshPublicKey.hashCode());
+        result = (result * PRIME) + (this.vcnNsgIds == null ? 43 : this.vcnNsgIds.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

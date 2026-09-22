@@ -471,6 +471,63 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateBdsCapacityReservationConfigurationResponse>
+            activateBdsCapacityReservationConfiguration(
+                    ActivateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateBdsCapacityReservationConfigurationRequest,
+                                    ActivateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async activateBdsCapacityReservationConfiguration");
+        final ActivateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                ActivateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ActivateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ActivateBdsCapacityReservationConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ActivateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        ActivateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ActivateBdsCapacityReservationConfigurationRequest,
+                        ActivateBdsCapacityReservationConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ActivateBdsCapacityReservationConfigurationRequest,
+                                ActivateBdsCapacityReservationConfigurationResponse>,
+                        java.util.concurrent.Future<
+                                ActivateBdsCapacityReservationConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ActivateBdsCapacityReservationConfigurationRequest,
+                    ActivateBdsCapacityReservationConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ActivateBdsMetastoreConfigurationResponse>
             activateBdsMetastoreConfiguration(
                     ActivateBdsMetastoreConfigurationRequest request,
@@ -1160,6 +1217,68 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeBdsCapacityReservationCompartmentResponse>
+            changeBdsCapacityReservationCompartment(
+                    ChangeBdsCapacityReservationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeBdsCapacityReservationCompartmentRequest,
+                                    ChangeBdsCapacityReservationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeBdsCapacityReservationCompartment");
+        final ChangeBdsCapacityReservationCompartmentRequest interceptedRequest =
+                ChangeBdsCapacityReservationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeBdsCapacityReservationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ChangeBdsCapacityReservationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/ChangeBdsCapacityReservationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeBdsCapacityReservationCompartmentResponse>
+                transformer =
+                        ChangeBdsCapacityReservationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeBdsCapacityReservationCompartmentRequest,
+                        ChangeBdsCapacityReservationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeBdsCapacityReservationCompartmentRequest,
+                                ChangeBdsCapacityReservationCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeBdsCapacityReservationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeBdsCapacityReservationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeBdsCapacityReservationCompartmentRequest,
+                    ChangeBdsCapacityReservationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBdsInstanceCompartmentResponse>
             changeBdsInstanceCompartment(
                     ChangeBdsInstanceCompartmentRequest request,
@@ -1360,6 +1479,126 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateBdsCapacityReportRequest, CreateBdsCapacityReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBdsCapacityReservationResponse>
+            createBdsCapacityReservation(
+                    CreateBdsCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateBdsCapacityReservationRequest,
+                                    CreateBdsCapacityReservationResponse>
+                            handler) {
+        LOG.trace("Called async createBdsCapacityReservation");
+        final CreateBdsCapacityReservationRequest interceptedRequest =
+                CreateBdsCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "CreateBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/CreateBdsCapacityReservation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateBdsCapacityReservationResponse>
+                transformer =
+                        CreateBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateBdsCapacityReservationRequest, CreateBdsCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateBdsCapacityReservationRequest,
+                                CreateBdsCapacityReservationResponse>,
+                        java.util.concurrent.Future<CreateBdsCapacityReservationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBdsCapacityReservationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateBdsCapacityReservationRequest, CreateBdsCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBdsCapacityReservationConfigurationResponse>
+            createBdsCapacityReservationConfiguration(
+                    CreateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateBdsCapacityReservationConfigurationRequest,
+                                    CreateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async createBdsCapacityReservationConfiguration");
+        final CreateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                CreateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "CreateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/CreateBdsCapacityReservationConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CreateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        CreateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateBdsCapacityReservationConfigurationRequest,
+                        CreateBdsCapacityReservationConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateBdsCapacityReservationConfigurationRequest,
+                                CreateBdsCapacityReservationConfigurationResponse>,
+                        java.util.concurrent.Future<
+                                CreateBdsCapacityReservationConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getCreateBdsCapacityReservationConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateBdsCapacityReservationConfigurationRequest,
+                    CreateBdsCapacityReservationConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1775,6 +2014,63 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateBdsCapacityReservationConfigurationResponse>
+            deactivateBdsCapacityReservationConfiguration(
+                    DeactivateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeactivateBdsCapacityReservationConfigurationRequest,
+                                    DeactivateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async deactivateBdsCapacityReservationConfiguration");
+        final DeactivateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                DeactivateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "DeactivateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/DeactivateBdsCapacityReservationConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DeactivateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        DeactivateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeactivateBdsCapacityReservationConfigurationRequest,
+                        DeactivateBdsCapacityReservationConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeactivateBdsCapacityReservationConfigurationRequest,
+                                DeactivateBdsCapacityReservationConfigurationResponse>,
+                        java.util.concurrent.Future<
+                                DeactivateBdsCapacityReservationConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeactivateBdsCapacityReservationConfigurationRequest,
+                    DeactivateBdsCapacityReservationConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeactivateIamUserSyncConfigurationResponse>
             deactivateIamUserSyncConfiguration(
                     DeactivateIamUserSyncConfigurationRequest request,
@@ -1924,6 +2220,113 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteBdsApiKeyRequest, DeleteBdsApiKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBdsCapacityReservationResponse>
+            deleteBdsCapacityReservation(
+                    DeleteBdsCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteBdsCapacityReservationRequest,
+                                    DeleteBdsCapacityReservationResponse>
+                            handler) {
+        LOG.trace("Called async deleteBdsCapacityReservation");
+        final DeleteBdsCapacityReservationRequest interceptedRequest =
+                DeleteBdsCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "DeleteBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/DeleteBdsCapacityReservation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteBdsCapacityReservationResponse>
+                transformer =
+                        DeleteBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteBdsCapacityReservationRequest, DeleteBdsCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteBdsCapacityReservationRequest,
+                                DeleteBdsCapacityReservationResponse>,
+                        java.util.concurrent.Future<DeleteBdsCapacityReservationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteBdsCapacityReservationRequest, DeleteBdsCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBdsCapacityReservationConfigurationResponse>
+            deleteBdsCapacityReservationConfiguration(
+                    DeleteBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteBdsCapacityReservationConfigurationRequest,
+                                    DeleteBdsCapacityReservationConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async deleteBdsCapacityReservationConfiguration");
+        final DeleteBdsCapacityReservationConfigurationRequest interceptedRequest =
+                DeleteBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "DeleteBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/DeleteBdsCapacityReservationConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DeleteBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        DeleteBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteBdsCapacityReservationConfigurationRequest,
+                        DeleteBdsCapacityReservationConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteBdsCapacityReservationConfigurationRequest,
+                                DeleteBdsCapacityReservationConfigurationResponse>,
+                        java.util.concurrent.Future<
+                                DeleteBdsCapacityReservationConfigurationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteBdsCapacityReservationConfigurationRequest,
+                    DeleteBdsCapacityReservationConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2587,6 +2990,109 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetBdsApiKeyRequest, GetBdsApiKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBdsCapacityReservationResponse> getBdsCapacityReservation(
+            GetBdsCapacityReservationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+                    handler) {
+        LOG.trace("Called async getBdsCapacityReservation");
+        final GetBdsCapacityReservationRequest interceptedRequest =
+                GetBdsCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "GetBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/GetBdsCapacityReservation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetBdsCapacityReservationResponse>
+                transformer =
+                        GetBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetBdsCapacityReservationRequest,
+                                GetBdsCapacityReservationResponse>,
+                        java.util.concurrent.Future<GetBdsCapacityReservationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBdsCapacityReservationConfigurationResponse>
+            getBdsCapacityReservationConfiguration(
+                    GetBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetBdsCapacityReservationConfigurationRequest,
+                                    GetBdsCapacityReservationConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async getBdsCapacityReservationConfiguration");
+        final GetBdsCapacityReservationConfigurationRequest interceptedRequest =
+                GetBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "GetBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/GetBdsCapacityReservationConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        GetBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBdsCapacityReservationConfigurationRequest,
+                        GetBdsCapacityReservationConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetBdsCapacityReservationConfigurationRequest,
+                                GetBdsCapacityReservationConfigurationResponse>,
+                        java.util.concurrent.Future<GetBdsCapacityReservationConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetBdsCapacityReservationConfigurationRequest,
+                    GetBdsCapacityReservationConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3371,6 +3877,169 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListBdsApiKeysRequest, ListBdsApiKeysResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBdsCapacityReservationAssociatedConfigurationsResponse>
+            listBdsCapacityReservationAssociatedConfigurations(
+                    ListBdsCapacityReservationAssociatedConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                                    ListBdsCapacityReservationAssociatedConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listBdsCapacityReservationAssociatedConfigurations");
+        final ListBdsCapacityReservationAssociatedConfigurationsRequest interceptedRequest =
+                ListBdsCapacityReservationAssociatedConfigurationsConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsCapacityReservationAssociatedConfigurationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservationAssociatedConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ListBdsCapacityReservationAssociatedConfigurations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse>
+                transformer =
+                        ListBdsCapacityReservationAssociatedConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                                ListBdsCapacityReservationAssociatedConfigurationsResponse>,
+                        java.util.concurrent.Future<
+                                ListBdsCapacityReservationAssociatedConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                    ListBdsCapacityReservationAssociatedConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBdsCapacityReservationConfigurationsResponse>
+            listBdsCapacityReservationConfigurations(
+                    ListBdsCapacityReservationConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationConfigurationsRequest,
+                                    ListBdsCapacityReservationConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listBdsCapacityReservationConfigurations");
+        final ListBdsCapacityReservationConfigurationsRequest interceptedRequest =
+                ListBdsCapacityReservationConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsCapacityReservationConfigurationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservationConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/ListBdsCapacityReservationConfigurations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListBdsCapacityReservationConfigurationsResponse>
+                transformer =
+                        ListBdsCapacityReservationConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBdsCapacityReservationConfigurationsRequest,
+                        ListBdsCapacityReservationConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBdsCapacityReservationConfigurationsRequest,
+                                ListBdsCapacityReservationConfigurationsResponse>,
+                        java.util.concurrent.Future<
+                                ListBdsCapacityReservationConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBdsCapacityReservationConfigurationsRequest,
+                    ListBdsCapacityReservationConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBdsCapacityReservationsResponse>
+            listBdsCapacityReservations(
+                    ListBdsCapacityReservationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsCapacityReservationsRequest,
+                                    ListBdsCapacityReservationsResponse>
+                            handler) {
+        LOG.trace("Called async listBdsCapacityReservations");
+        final ListBdsCapacityReservationsRequest interceptedRequest =
+                ListBdsCapacityReservationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsCapacityReservationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListBdsCapacityReservations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/ListBdsCapacityReservations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListBdsCapacityReservationsResponse>
+                transformer =
+                        ListBdsCapacityReservationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBdsCapacityReservationsRequest, ListBdsCapacityReservationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBdsCapacityReservationsRequest,
+                                ListBdsCapacityReservationsResponse>,
+                        java.util.concurrent.Future<ListBdsCapacityReservationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBdsCapacityReservationsRequest, ListBdsCapacityReservationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5174,6 +5843,126 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateAutoScalingConfigurationRequest, UpdateAutoScalingConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBdsCapacityReservationResponse>
+            updateBdsCapacityReservation(
+                    UpdateBdsCapacityReservationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateBdsCapacityReservationRequest,
+                                    UpdateBdsCapacityReservationResponse>
+                            handler) {
+        LOG.trace("Called async updateBdsCapacityReservation");
+        final UpdateBdsCapacityReservationRequest interceptedRequest =
+                UpdateBdsCapacityReservationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBdsCapacityReservationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "UpdateBdsCapacityReservation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservation/UpdateBdsCapacityReservation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateBdsCapacityReservationResponse>
+                transformer =
+                        UpdateBdsCapacityReservationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateBdsCapacityReservationRequest, UpdateBdsCapacityReservationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateBdsCapacityReservationRequest,
+                                UpdateBdsCapacityReservationResponse>,
+                        java.util.concurrent.Future<UpdateBdsCapacityReservationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBdsCapacityReservationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateBdsCapacityReservationRequest, UpdateBdsCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBdsCapacityReservationConfigurationResponse>
+            updateBdsCapacityReservationConfiguration(
+                    UpdateBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateBdsCapacityReservationConfigurationRequest,
+                                    UpdateBdsCapacityReservationConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async updateBdsCapacityReservationConfiguration");
+        final UpdateBdsCapacityReservationConfigurationRequest interceptedRequest =
+                UpdateBdsCapacityReservationConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBdsCapacityReservationConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "UpdateBdsCapacityReservationConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsCapacityReservationConfiguration/UpdateBdsCapacityReservationConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        UpdateBdsCapacityReservationConfigurationResponse>
+                transformer =
+                        UpdateBdsCapacityReservationConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateBdsCapacityReservationConfigurationRequest,
+                        UpdateBdsCapacityReservationConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateBdsCapacityReservationConfigurationRequest,
+                                UpdateBdsCapacityReservationConfigurationResponse>,
+                        java.util.concurrent.Future<
+                                UpdateBdsCapacityReservationConfigurationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateBdsCapacityReservationConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateBdsCapacityReservationConfigurationRequest,
+                    UpdateBdsCapacityReservationConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

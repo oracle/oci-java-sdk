@@ -1189,6 +1189,48 @@ public class MarketplacePublisherClient implements MarketplacePublisher {
     }
 
     @Override
+    public CreatePublisherResponse createPublisher(CreatePublisherRequest request) {
+        LOG.trace("Called createPublisher");
+        final CreatePublisherRequest interceptedRequest =
+                CreatePublisherConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePublisherConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreatePublisher",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Publisher/CreatePublisher");
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePublisherResponse>
+                transformer =
+                        CreatePublisherConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreatePublisherDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateTermResponse createTerm(CreateTermRequest request) {
         LOG.trace("Called createTerm");
         final CreateTermRequest interceptedRequest = CreateTermConverter.interceptRequest(request);
@@ -1323,6 +1365,46 @@ public class MarketplacePublisherClient implements MarketplacePublisher {
                         "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Artifact/DeleteArtifact");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteArtifactResponse> transformer =
                 DeleteArtifactConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteCustomerInstanceReportExportResponse deleteCustomerInstanceReportExport(
+            DeleteCustomerInstanceReportExportRequest request) {
+        LOG.trace("Called deleteCustomerInstanceReportExport");
+        final DeleteCustomerInstanceReportExportRequest interceptedRequest =
+                DeleteCustomerInstanceReportExportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCustomerInstanceReportExportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteCustomerInstanceReportExport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/DeleteCustomerInstanceReportExport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteCustomerInstanceReportExportResponse>
+                transformer =
+                        DeleteCustomerInstanceReportExportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1606,6 +1688,52 @@ public class MarketplacePublisherClient implements MarketplacePublisher {
     }
 
     @Override
+    public GenerateCustomerInstanceReportExportResponse generateCustomerInstanceReportExport(
+            GenerateCustomerInstanceReportExportRequest request) {
+        LOG.trace("Called generateCustomerInstanceReportExport");
+        final GenerateCustomerInstanceReportExportRequest interceptedRequest =
+                GenerateCustomerInstanceReportExportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateCustomerInstanceReportExportConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GenerateCustomerInstanceReportExport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GenerateCustomerInstanceReportExport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateCustomerInstanceReportExportResponse>
+                transformer =
+                        GenerateCustomerInstanceReportExportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getGenerateCustomerInstanceReportExportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetArtifactResponse getArtifact(GetArtifactRequest request) {
         LOG.trace("Called getArtifact");
         final GetArtifactRequest interceptedRequest =
@@ -1660,6 +1788,85 @@ public class MarketplacePublisherClient implements MarketplacePublisher {
                         "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Category/GetCategory");
         java.util.function.Function<javax.ws.rs.core.Response, GetCategoryResponse> transformer =
                 GetCategoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetCustomerInstanceReportExportResponse getCustomerInstanceReportExport(
+            GetCustomerInstanceReportExportRequest request) {
+        LOG.trace("Called getCustomerInstanceReportExport");
+        final GetCustomerInstanceReportExportRequest interceptedRequest =
+                GetCustomerInstanceReportExportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCustomerInstanceReportExportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetCustomerInstanceReportExport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GetCustomerInstanceReportExport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCustomerInstanceReportExportResponse>
+                transformer =
+                        GetCustomerInstanceReportExportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetCustomerInstanceReportExportContentResponse getCustomerInstanceReportExportContent(
+            GetCustomerInstanceReportExportContentRequest request) {
+        LOG.trace("Called getCustomerInstanceReportExportContent");
+        final GetCustomerInstanceReportExportContentRequest interceptedRequest =
+                GetCustomerInstanceReportExportContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCustomerInstanceReportExportContentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetCustomerInstanceReportExportContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GetCustomerInstanceReportExportContent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCustomerInstanceReportExportContentResponse>
+                transformer =
+                        GetCustomerInstanceReportExportContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2383,6 +2590,45 @@ public class MarketplacePublisherClient implements MarketplacePublisher {
                         "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CategoryCollection/ListCategories");
         java.util.function.Function<javax.ws.rs.core.Response, ListCategoriesResponse> transformer =
                 ListCategoriesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCustomerInstanceReportExportsResponse listCustomerInstanceReportExports(
+            ListCustomerInstanceReportExportsRequest request) {
+        LOG.trace("Called listCustomerInstanceReportExports");
+        final ListCustomerInstanceReportExportsRequest interceptedRequest =
+                ListCustomerInstanceReportExportsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCustomerInstanceReportExportsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListCustomerInstanceReportExports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExportCollection/ListCustomerInstanceReportExports");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCustomerInstanceReportExportsResponse>
+                transformer =
+                        ListCustomerInstanceReportExportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3590,6 +3836,83 @@ public class MarketplacePublisherClient implements MarketplacePublisher {
         } finally {
             com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
                     request.getUpdateListingRevisionAttachmentContent());
+        }
+    }
+
+    @Override
+    public UpdateListingRevisionBannerContentResponse updateListingRevisionBannerContent(
+            UpdateListingRevisionBannerContentRequest request) {
+        LOG.trace("Called updateListingRevisionBannerContent");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateListingRevisionBannerContentRequest.builder());
+            }
+            final UpdateListingRevisionBannerContentRequest interceptedRequest =
+                    UpdateListingRevisionBannerContentConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateListingRevisionBannerContentConverter.fromRequest(
+                            client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "MarketplacePublisher",
+                            "UpdateListingRevisionBannerContent",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/UpdateListingRevisionBannerContent");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, UpdateListingRevisionBannerContentResponse>
+                    transformer =
+                            UpdateListingRevisionBannerContentConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUpdateListingRevisionBannerContent(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUpdateListingRevisionBannerContent(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUpdateListingRevisionBannerContent());
         }
     }
 

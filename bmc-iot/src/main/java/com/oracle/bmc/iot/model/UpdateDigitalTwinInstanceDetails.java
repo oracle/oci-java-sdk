@@ -24,6 +24,7 @@ public final class UpdateDigitalTwinInstanceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "connectivityType",
         "authId",
         "externalKey",
         "displayName",
@@ -36,6 +37,7 @@ public final class UpdateDigitalTwinInstanceDetails
         "definedTags"
     })
     public UpdateDigitalTwinInstanceDetails(
+            DigitalTwinInstanceConnectivityType connectivityType,
             String authId,
             String externalKey,
             String displayName,
@@ -47,6 +49,7 @@ public final class UpdateDigitalTwinInstanceDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.connectivityType = connectivityType;
         this.authId = authId;
         this.externalKey = externalKey;
         this.displayName = displayName;
@@ -61,6 +64,22 @@ public final class UpdateDigitalTwinInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Connectivity type of the digital twin instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
+        private DigitalTwinInstanceConnectivityType connectivityType;
+
+        /**
+         * Connectivity type of the digital twin instance.
+         * @param connectivityType the value to set
+         * @return this builder
+         **/
+        public Builder connectivityType(DigitalTwinInstanceConnectivityType connectivityType) {
+            this.connectivityType = connectivityType;
+            this.__explicitlySet__.add("connectivityType");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
          **/
@@ -255,6 +274,7 @@ public final class UpdateDigitalTwinInstanceDetails
         public UpdateDigitalTwinInstanceDetails build() {
             UpdateDigitalTwinInstanceDetails model =
                     new UpdateDigitalTwinInstanceDetails(
+                            this.connectivityType,
                             this.authId,
                             this.externalKey,
                             this.displayName,
@@ -273,6 +293,9 @@ public final class UpdateDigitalTwinInstanceDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDigitalTwinInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("connectivityType")) {
+                this.connectivityType(model.getConnectivityType());
+            }
             if (model.wasPropertyExplicitlySet("authId")) {
                 this.authId(model.getAuthId());
             }
@@ -316,6 +339,20 @@ public final class UpdateDigitalTwinInstanceDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Connectivity type of the digital twin instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
+    private final DigitalTwinInstanceConnectivityType connectivityType;
+
+    /**
+     * Connectivity type of the digital twin instance.
+     * @return the value
+     **/
+    public DigitalTwinInstanceConnectivityType getConnectivityType() {
+        return connectivityType;
     }
 
     /**
@@ -498,7 +535,8 @@ public final class UpdateDigitalTwinInstanceDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDigitalTwinInstanceDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("authId=").append(String.valueOf(this.authId));
+        sb.append("connectivityType=").append(String.valueOf(this.connectivityType));
+        sb.append(", authId=").append(String.valueOf(this.authId));
         sb.append(", externalKey=").append(String.valueOf(this.externalKey));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -523,7 +561,8 @@ public final class UpdateDigitalTwinInstanceDetails
         }
 
         UpdateDigitalTwinInstanceDetails other = (UpdateDigitalTwinInstanceDetails) o;
-        return java.util.Objects.equals(this.authId, other.authId)
+        return java.util.Objects.equals(this.connectivityType, other.connectivityType)
+                && java.util.Objects.equals(this.authId, other.authId)
                 && java.util.Objects.equals(this.externalKey, other.externalKey)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
@@ -541,6 +580,9 @@ public final class UpdateDigitalTwinInstanceDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.connectivityType == null ? 43 : this.connectivityType.hashCode());
         result = (result * PRIME) + (this.authId == null ? 43 : this.authId.hashCode());
         result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());

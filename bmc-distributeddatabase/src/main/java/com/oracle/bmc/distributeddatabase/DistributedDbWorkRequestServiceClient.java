@@ -11,7 +11,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbWorkRequestServiceClient implements DistributedDbWorkRequestService {
     /**
      * Service instance for DistributedDbWorkRequestService.
@@ -576,7 +576,7 @@ public class DistributedDbWorkRequestServiceClient implements DistributedDbWorkR
                         "DistributedDbWorkRequestService",
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequest/GetWorkRequest");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -612,7 +612,7 @@ public class DistributedDbWorkRequestServiceClient implements DistributedDbWorkR
                         "DistributedDbWorkRequestService",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequestError/ListWorkRequestErrors");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -649,7 +649,7 @@ public class DistributedDbWorkRequestServiceClient implements DistributedDbWorkR
                         "DistributedDbWorkRequestService",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -686,7 +686,7 @@ public class DistributedDbWorkRequestServiceClient implements DistributedDbWorkR
                         "DistributedDbWorkRequestService",
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/WorkRequest/ListWorkRequests");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(

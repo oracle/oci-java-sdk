@@ -255,4 +255,124 @@ public class PartnerIntegerationPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listingSubscriptionsDeprecated operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListingSubscriptionsDeprecatedResponse>
+            listingSubscriptionsDeprecatedResponseIterator(
+                    final ListingSubscriptionsDeprecatedRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListingSubscriptionsDeprecatedRequest.Builder,
+                ListingSubscriptionsDeprecatedRequest, ListingSubscriptionsDeprecatedResponse>(
+                new java.util.function.Supplier<ListingSubscriptionsDeprecatedRequest.Builder>() {
+                    @Override
+                    public ListingSubscriptionsDeprecatedRequest.Builder get() {
+                        return ListingSubscriptionsDeprecatedRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListingSubscriptionsDeprecatedResponse, String>() {
+                    @Override
+                    public String apply(ListingSubscriptionsDeprecatedResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListingSubscriptionsDeprecatedRequest.Builder>,
+                        ListingSubscriptionsDeprecatedRequest>() {
+                    @Override
+                    public ListingSubscriptionsDeprecatedRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListingSubscriptionsDeprecatedRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListingSubscriptionsDeprecatedRequest,
+                        ListingSubscriptionsDeprecatedResponse>() {
+                    @Override
+                    public ListingSubscriptionsDeprecatedResponse apply(
+                            ListingSubscriptionsDeprecatedRequest request) {
+                        return client.listingSubscriptionsDeprecated(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.self.model.ListingSubscriptionSummary} objects
+     * contained in responses from the listingSubscriptionsDeprecated operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.self.model.ListingSubscriptionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.self.model.ListingSubscriptionSummary>
+            listingSubscriptionsDeprecatedRecordIterator(
+                    final ListingSubscriptionsDeprecatedRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListingSubscriptionsDeprecatedRequest.Builder,
+                ListingSubscriptionsDeprecatedRequest, ListingSubscriptionsDeprecatedResponse,
+                com.oracle.bmc.self.model.ListingSubscriptionSummary>(
+                new java.util.function.Supplier<ListingSubscriptionsDeprecatedRequest.Builder>() {
+                    @Override
+                    public ListingSubscriptionsDeprecatedRequest.Builder get() {
+                        return ListingSubscriptionsDeprecatedRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListingSubscriptionsDeprecatedResponse, String>() {
+                    @Override
+                    public String apply(ListingSubscriptionsDeprecatedResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListingSubscriptionsDeprecatedRequest.Builder>,
+                        ListingSubscriptionsDeprecatedRequest>() {
+                    @Override
+                    public ListingSubscriptionsDeprecatedRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListingSubscriptionsDeprecatedRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListingSubscriptionsDeprecatedRequest,
+                        ListingSubscriptionsDeprecatedResponse>() {
+                    @Override
+                    public ListingSubscriptionsDeprecatedResponse apply(
+                            ListingSubscriptionsDeprecatedRequest request) {
+                        return client.listingSubscriptionsDeprecated(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListingSubscriptionsDeprecatedResponse,
+                        java.util.List<com.oracle.bmc.self.model.ListingSubscriptionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.self.model.ListingSubscriptionSummary>
+                            apply(ListingSubscriptionsDeprecatedResponse response) {
+                        return response.getListingSubscriptionsCollection().getItems();
+                    }
+                });
+    }
 }

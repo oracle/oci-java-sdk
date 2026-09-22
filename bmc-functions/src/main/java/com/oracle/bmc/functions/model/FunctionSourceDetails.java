@@ -15,7 +15,7 @@ package com.oracle.bmc.functions.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -23,6 +23,14 @@ package com.oracle.bmc.functions.model;
     defaultImpl = FunctionSourceDetails.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ContainerImageFunctionSourceDetails.class,
+        name = "CONTAINER_IMAGE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ArchiveFunctionSourceDetails.class,
+        name = "ARCHIVE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PreBuiltFunctionSourceDetails.class,
         name = "PRE_BUILT_FUNCTIONS"
@@ -76,11 +84,13 @@ public class FunctionSourceDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Type of the Function Source. Possible values: PBF.
+     * Type of the Function Source. Possible values: CONTAINER_IMAGE, PBF and ARCHIVE.
      *
      **/
     public enum SourceType {
         PreBuiltFunctions("PRE_BUILT_FUNCTIONS"),
+        Archive("ARCHIVE"),
+        ContainerImage("CONTAINER_IMAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

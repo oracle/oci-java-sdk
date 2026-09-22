@@ -74,6 +74,22 @@ public final class CreateScreenShotAttachmentDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The specified attachment type is Internal or External.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private ListingRevisionAttachment.SourceType sourceType;
+
+        /**
+         * The specified attachment type is Internal or External.
+         * @param sourceType the value to set
+         * @return this builder
+         **/
+        public Builder sourceType(ListingRevisionAttachment.SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -85,7 +101,8 @@ public final class CreateScreenShotAttachmentDetails
                             this.displayName,
                             this.description,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.sourceType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -109,6 +126,9 @@ public final class CreateScreenShotAttachmentDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
             return this;
         }
     }
@@ -130,8 +150,24 @@ public final class CreateScreenShotAttachmentDetails
             String displayName,
             String description,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ListingRevisionAttachment.SourceType sourceType) {
         super(listingRevisionId, displayName, description, freeformTags, definedTags);
+        this.sourceType = sourceType;
+    }
+
+    /**
+     * The specified attachment type is Internal or External.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final ListingRevisionAttachment.SourceType sourceType;
+
+    /**
+     * The specified attachment type is Internal or External.
+     * @return the value
+     **/
+    public ListingRevisionAttachment.SourceType getSourceType() {
+        return sourceType;
     }
 
     @Override
@@ -148,6 +184,7 @@ public final class CreateScreenShotAttachmentDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateScreenShotAttachmentDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -162,13 +199,14 @@ public final class CreateScreenShotAttachmentDetails
         }
 
         CreateScreenShotAttachmentDetails other = (CreateScreenShotAttachmentDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.sourceType, other.sourceType) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         return result;
     }
 }

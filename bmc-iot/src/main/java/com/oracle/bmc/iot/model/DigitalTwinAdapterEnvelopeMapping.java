@@ -81,12 +81,14 @@ public final class DigitalTwinAdapterEnvelopeMapping
         }
         /**
          * JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentRoot")
         private String contentRoot;
 
         /**
          * JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+         *
          * @param contentRoot the value to set
          * @return this builder
          **/
@@ -177,12 +179,14 @@ public final class DigitalTwinAdapterEnvelopeMapping
 
     /**
      * JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentRoot")
     private final String contentRoot;
 
     /**
      * JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+     *
      * @return the value
      **/
     public String getContentRoot() {

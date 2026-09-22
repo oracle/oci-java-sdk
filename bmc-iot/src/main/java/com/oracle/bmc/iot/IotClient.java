@@ -558,6 +558,46 @@ public class IotClient implements Iot {
     }
 
     @Override
+    public ActivateIotFlowRuntimeResponse activateIotFlowRuntime(
+            ActivateIotFlowRuntimeRequest request) {
+        LOG.trace("Called activateIotFlowRuntime");
+        final ActivateIotFlowRuntimeRequest interceptedRequest =
+                ActivateIotFlowRuntimeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "ActivateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ActivateIotFlowRuntime");
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateIotFlowRuntimeResponse>
+                transformer =
+                        ActivateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeIotDomainCompartmentResponse changeIotDomainCompartment(
             ChangeIotDomainCompartmentRequest request) {
         LOG.trace("Called changeIotDomainCompartment");
@@ -685,6 +725,51 @@ public class IotClient implements Iot {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeIotDomainGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeIotFlowRuntimeCompartmentResponse changeIotFlowRuntimeCompartment(
+            ChangeIotFlowRuntimeCompartmentRequest request) {
+        LOG.trace("Called changeIotFlowRuntimeCompartment");
+        final ChangeIotFlowRuntimeCompartmentRequest interceptedRequest =
+                ChangeIotFlowRuntimeCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeIotFlowRuntimeCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "ChangeIotFlowRuntimeCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ChangeIotFlowRuntimeCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeIotFlowRuntimeCompartmentResponse>
+                transformer =
+                        ChangeIotFlowRuntimeCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeIotFlowRuntimeCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1040,6 +1125,88 @@ public class IotClient implements Iot {
     }
 
     @Override
+    public CreateIotFlowRuntimeResponse createIotFlowRuntime(CreateIotFlowRuntimeRequest request) {
+        LOG.trace("Called createIotFlowRuntime");
+        final CreateIotFlowRuntimeRequest interceptedRequest =
+                CreateIotFlowRuntimeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "CreateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/CreateIotFlowRuntime");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateIotFlowRuntimeResponse>
+                transformer =
+                        CreateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateIotFlowRuntimeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeactivateIotFlowRuntimeResponse deactivateIotFlowRuntime(
+            DeactivateIotFlowRuntimeRequest request) {
+        LOG.trace("Called deactivateIotFlowRuntime");
+        final DeactivateIotFlowRuntimeRequest interceptedRequest =
+                DeactivateIotFlowRuntimeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "DeactivateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/DeactivateIotFlowRuntime");
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateIotFlowRuntimeResponse>
+                transformer =
+                        DeactivateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDigitalTwinAdapterResponse deleteDigitalTwinAdapter(
             DeleteDigitalTwinAdapterRequest request) {
         LOG.trace("Called deleteDigitalTwinAdapter");
@@ -1255,6 +1422,44 @@ public class IotClient implements Iot {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteIotDomainGroupResponse>
                 transformer =
                         DeleteIotDomainGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteIotFlowRuntimeResponse deleteIotFlowRuntime(DeleteIotFlowRuntimeRequest request) {
+        LOG.trace("Called deleteIotFlowRuntime");
+        final DeleteIotFlowRuntimeRequest interceptedRequest =
+                DeleteIotFlowRuntimeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "DeleteIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/DeleteIotFlowRuntime");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteIotFlowRuntimeResponse>
+                transformer =
+                        DeleteIotFlowRuntimeConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1573,6 +1778,81 @@ public class IotClient implements Iot {
     }
 
     @Override
+    public GetIotFlowRuntimeResponse getIotFlowRuntime(GetIotFlowRuntimeRequest request) {
+        LOG.trace("Called getIotFlowRuntime");
+        final GetIotFlowRuntimeRequest interceptedRequest =
+                GetIotFlowRuntimeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "GetIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/GetIotFlowRuntime");
+        java.util.function.Function<javax.ws.rs.core.Response, GetIotFlowRuntimeResponse>
+                transformer =
+                        GetIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetIotFlowRuntimeFlowsResponse getIotFlowRuntimeFlows(
+            GetIotFlowRuntimeFlowsRequest request) {
+        LOG.trace("Called getIotFlowRuntimeFlows");
+        final GetIotFlowRuntimeFlowsRequest interceptedRequest =
+                GetIotFlowRuntimeFlowsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIotFlowRuntimeFlowsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "GetIotFlowRuntimeFlows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/GetIotFlowRuntimeFlows");
+        java.util.function.Function<javax.ws.rs.core.Response, GetIotFlowRuntimeFlowsResponse>
+                transformer =
+                        GetIotFlowRuntimeFlowsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         final GetWorkRequestRequest interceptedRequest =
@@ -1858,6 +2138,43 @@ public class IotClient implements Iot {
                         "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ListIotDomains");
         java.util.function.Function<javax.ws.rs.core.Response, ListIotDomainsResponse> transformer =
                 ListIotDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListIotFlowRuntimesResponse listIotFlowRuntimes(ListIotFlowRuntimesRequest request) {
+        LOG.trace("Called listIotFlowRuntimes");
+        final ListIotFlowRuntimesRequest interceptedRequest =
+                ListIotFlowRuntimesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIotFlowRuntimesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "ListIotFlowRuntimes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ListIotFlowRuntimes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListIotFlowRuntimesResponse>
+                transformer =
+                        ListIotFlowRuntimesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2232,6 +2549,89 @@ public class IotClient implements Iot {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateIotDomainGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateIotFlowRuntimeResponse updateIotFlowRuntime(UpdateIotFlowRuntimeRequest request) {
+        LOG.trace("Called updateIotFlowRuntime");
+        final UpdateIotFlowRuntimeRequest interceptedRequest =
+                UpdateIotFlowRuntimeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "UpdateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/UpdateIotFlowRuntime");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIotFlowRuntimeResponse>
+                transformer =
+                        UpdateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateIotFlowRuntimeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateIotFlowRuntimeFlowsResponse updateIotFlowRuntimeFlows(
+            UpdateIotFlowRuntimeFlowsRequest request) {
+        LOG.trace("Called updateIotFlowRuntimeFlows");
+        final UpdateIotFlowRuntimeFlowsRequest interceptedRequest =
+                UpdateIotFlowRuntimeFlowsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIotFlowRuntimeFlowsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "UpdateIotFlowRuntimeFlows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/UpdateIotFlowRuntimeFlows");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateIotFlowRuntimeFlowsResponse>
+                transformer =
+                        UpdateIotFlowRuntimeFlowsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getFlowsDocument(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

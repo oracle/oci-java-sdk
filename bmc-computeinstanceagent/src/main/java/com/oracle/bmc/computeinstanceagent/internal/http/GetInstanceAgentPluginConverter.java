@@ -35,8 +35,16 @@ public class GetInstanceAgentPluginConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notBlank(request.getPluginName(), "pluginName must not be blank");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instanceagentId", request.getInstanceagentId());
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("pluginName", request.getPluginName());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
+                newBaseTarget
                         .path("/20180530")
                         .path("instanceagents")
                         .path(

@@ -12,7 +12,7 @@ import com.oracle.bmc.functions.responses.*;
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public interface FunctionsInvoke extends AutoCloseable {
 
     /**

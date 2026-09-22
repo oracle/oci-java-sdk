@@ -8,7 +8,7 @@ import com.oracle.bmc.distributeddatabase.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/DeleteDistributedDatabasePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDistributedDatabasePrivateEndpointRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DeleteDistributedDatabasePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

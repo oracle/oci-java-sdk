@@ -38,11 +38,16 @@ public class ListInstanceagentAvailablePluginsConverter {
         Validate.notNull(request.getOsName(), "osName is required");
         Validate.notNull(request.getOsVersion(), "osVersion is required");
 
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("osName", request.getOsName());
+        requiredParametersMap.put("osVersion", request.getOsVersion());
+        com.oracle.bmc.http.internal.WrappedWebTarget newBaseTarget =
+                com.oracle.bmc.internal.EndpointBuilder.populateServiceParametersInEndpoint(
+                        client, requiredParametersMap);
+
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget()
-                        .path("/20180530")
-                        .path("instanceagent")
-                        .path("availablePlugins");
+                newBaseTarget.path("/20180530").path("instanceagent").path("availablePlugins");
 
         target =
                 target.queryParam(

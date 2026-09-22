@@ -241,6 +241,240 @@ public class BdsWaiters {
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+            forBdsCapacityReservation(
+                    GetBdsCapacityReservationRequest request,
+                    com.oracle.bmc.bds.model.BdsCapacityReservation.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBdsCapacityReservation(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+            forBdsCapacityReservation(
+                    GetBdsCapacityReservationRequest request,
+                    com.oracle.bmc.bds.model.BdsCapacityReservation.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forBdsCapacityReservation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+            forBdsCapacityReservation(
+                    GetBdsCapacityReservationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.bds.model.BdsCapacityReservation.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forBdsCapacityReservation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for BdsCapacityReservation.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationRequest, GetBdsCapacityReservationResponse>
+            forBdsCapacityReservation(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetBdsCapacityReservationRequest request,
+                    final com.oracle.bmc.bds.model.BdsCapacityReservation.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.bds.model.BdsCapacityReservation.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetBdsCapacityReservationRequest,
+                                GetBdsCapacityReservationResponse>() {
+                            @Override
+                            public GetBdsCapacityReservationResponse apply(
+                                    GetBdsCapacityReservationRequest request) {
+                                return client.getBdsCapacityReservation(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetBdsCapacityReservationResponse>() {
+                            @Override
+                            public boolean test(GetBdsCapacityReservationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getBdsCapacityReservation().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.bds.model.BdsCapacityReservation.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationConfigurationRequest,
+                    GetBdsCapacityReservationConfigurationResponse>
+            forBdsCapacityReservationConfiguration(
+                    GetBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBdsCapacityReservationConfiguration(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationConfigurationRequest,
+                    GetBdsCapacityReservationConfigurationResponse>
+            forBdsCapacityReservationConfiguration(
+                    GetBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forBdsCapacityReservationConfiguration(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationConfigurationRequest,
+                    GetBdsCapacityReservationConfigurationResponse>
+            forBdsCapacityReservationConfiguration(
+                    GetBdsCapacityReservationConfigurationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forBdsCapacityReservationConfiguration(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for BdsCapacityReservationConfiguration.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetBdsCapacityReservationConfigurationRequest,
+                    GetBdsCapacityReservationConfigurationResponse>
+            forBdsCapacityReservationConfiguration(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetBdsCapacityReservationConfigurationRequest request,
+                    final com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration
+                                    .LifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetBdsCapacityReservationConfigurationRequest,
+                                GetBdsCapacityReservationConfigurationResponse>() {
+                            @Override
+                            public GetBdsCapacityReservationConfigurationResponse apply(
+                                    GetBdsCapacityReservationConfigurationRequest request) {
+                                return client.getBdsCapacityReservationConfiguration(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetBdsCapacityReservationConfigurationResponse>() {
+                            @Override
+                            public boolean test(
+                                    GetBdsCapacityReservationConfigurationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getBdsCapacityReservationConfiguration()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration
+                                        .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     GetBdsCertificateConfigurationRequest, GetBdsCertificateConfigurationResponse>
             forBdsCertificateConfiguration(
                     GetBdsCertificateConfigurationRequest request,

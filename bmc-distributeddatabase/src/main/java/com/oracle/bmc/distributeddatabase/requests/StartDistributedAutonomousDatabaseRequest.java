@@ -8,17 +8,17 @@ import com.oracle.bmc.distributeddatabase.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/StartDistributedAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use StartDistributedAutonomousDatabaseRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class StartDistributedAutonomousDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Globally distributed autonomous database identifier
+     * Globally distributed autonomous database identifier.
      */
     private String distributedAutonomousDatabaseId;
 
     /**
-     * Globally distributed autonomous database identifier
+     * Globally distributed autonomous database identifier.
      */
     public String getDistributedAutonomousDatabaseId() {
         return distributedAutonomousDatabaseId;
@@ -85,12 +85,12 @@ public class StartDistributedAutonomousDatabaseRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Globally distributed autonomous database identifier
+         * Globally distributed autonomous database identifier.
          */
         private String distributedAutonomousDatabaseId = null;
 
         /**
-         * Globally distributed autonomous database identifier
+         * Globally distributed autonomous database identifier.
          * @param distributedAutonomousDatabaseId the value to set
          * @return this builder instance
          */

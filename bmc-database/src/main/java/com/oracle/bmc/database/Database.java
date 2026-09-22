@@ -1314,6 +1314,18 @@ public interface Database extends AutoCloseable {
             CreateExternalPluggableDatabaseRequest request);
 
     /**
+     * Creates a new Grid Infrastructure Home in the specified database system based on the request parameters you provide.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateGiHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGiHome API.
+     */
+    CreateGiHomeResponse createGiHome(CreateGiHomeRequest request);
+
+    /**
      * Creates a Key Store.
      *
      * @param request The request object containing the details to send
@@ -1858,6 +1870,19 @@ public interface Database extends AutoCloseable {
      */
     DeleteExternalPluggableDatabaseResponse deleteExternalPluggableDatabase(
             DeleteExternalPluggableDatabaseRequest request);
+
+    /**
+     * Deletes a Grid Infrastructure Home.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteGiHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGiHome API.
+     */
+    DeleteGiHomeResponse deleteGiHome(DeleteGiHomeRequest request);
 
     /**
      * Deletes a key store.
@@ -3454,6 +3479,18 @@ public interface Database extends AutoCloseable {
             GetExternalPluggableDatabaseRequest request);
 
     /**
+     * Gets information about the specified Grid Infrastructure Home.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetGiHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGiHome API.
+     */
+    GetGiHomeResponse getGiHome(GetGiHomeRequest request);
+
+    /**
      * Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
      * Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
      *
@@ -4048,6 +4085,19 @@ public interface Database extends AutoCloseable {
      */
     ListAutonomousVmClustersResponse listAutonomousVmClusters(
             ListAutonomousVmClustersRequest request);
+
+    /**
+     * Retrieves the list of available maintenance window options for the specified Autonomous AI Database.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAvailableMaintenanceWindowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAvailableMaintenanceWindows API.
+     */
+    ListAvailableMaintenanceWindowsResponse listAvailableMaintenanceWindows(
+            ListAvailableMaintenanceWindowsRequest request);
 
     /**
      * Gets a list of backup destinations in the specified compartment.
@@ -4701,6 +4751,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListFlexComponentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFlexComponents API.
      */
     ListFlexComponentsResponse listFlexComponents(ListFlexComponentsRequest request);
+
+    /**
+     * Lists the Grid Infrastructure Homes.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiHomesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGiHomes API.
+     */
+    ListGiHomesResponse listGiHomes(ListGiHomesRequest request);
 
     /**
      * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
@@ -6473,6 +6536,18 @@ public interface Database extends AutoCloseable {
      */
     UpdateExternalPluggableDatabaseResponse updateExternalPluggableDatabase(
             UpdateExternalPluggableDatabaseRequest request);
+
+    /**
+     * Updates the tags and display name of a specified Grid Infrastructure Home.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateGiHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGiHome API.
+     */
+    UpdateGiHomeResponse updateGiHome(UpdateGiHomeRequest request);
 
     /**
      * Edit the key store.

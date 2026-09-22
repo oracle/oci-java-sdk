@@ -20,6 +20,12 @@ public enum OperationType {
     ConfigureDomainDataAccess("CONFIGURE_DOMAIN_DATA_ACCESS"),
     ConfigureDomainGroupDataAccess("CONFIGURE_DOMAIN_GROUP_DATA_ACCESS"),
     ChangeIotDomainDataRetention("CHANGE_IOT_DOMAIN_DATA_RETENTION"),
+    CreateIotFlowRuntime("CREATE_IOT_FLOW_RUNTIME"),
+    UpdateIotFlowRuntime("UPDATE_IOT_FLOW_RUNTIME"),
+    DeleteIotFlowRuntime("DELETE_IOT_FLOW_RUNTIME"),
+    MoveIotFlowRuntime("MOVE_IOT_FLOW_RUNTIME"),
+    ActivateIotFlowRuntime("ACTIVATE_IOT_FLOW_RUNTIME"),
+    DeactivateIotFlowRuntime("DEACTIVATE_IOT_FLOW_RUNTIME"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

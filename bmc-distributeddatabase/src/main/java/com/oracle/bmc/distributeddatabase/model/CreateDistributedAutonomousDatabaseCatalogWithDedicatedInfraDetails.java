@@ -5,7 +5,7 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * Globally distributed autonomous database catalog based on Dedicated infrastructure.
+ * Configuration for creating a distributed autonomous database catalog using an existing ADB-D VM cluster.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails.Builder.class
 )
@@ -25,23 +25,62 @@ package com.oracle.bmc.distributeddatabase.model;
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails
-        extends CreateDistributedAutonomousDatabaseCatalogDetails {
+        extends CreateAutonomousCatalogDatabaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Admin password for catalog database.
+         * The admin password for the catalog associated with the distributed autonomous database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
+        private char[] adminPassword;
 
         /**
-         * Admin password for catalog database.
+         * The admin password for the catalog associated with the distributed autonomous database.
          * @param adminPassword the value to set
          * @return this builder
          **/
-        public Builder adminPassword(String adminPassword) {
+        public Builder adminPassword(char[] adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
+        /**
+         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretId")
+        private String adminPasswordSecretId;
+
+        /**
+         * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+         * @param adminPasswordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder adminPasswordSecretId(String adminPasswordSecretId) {
+            this.adminPasswordSecretId = adminPasswordSecretId;
+            this.__explicitlySet__.add("adminPasswordSecretId");
+            return this;
+        }
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretVersionNumber")
+        private Integer adminPasswordSecretVersionNumber;
+
+        /**
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         * @param adminPasswordSecretVersionNumber the value to set
+         * @return this builder
+         **/
+        public Builder adminPasswordSecretVersionNumber(Integer adminPasswordSecretVersionNumber) {
+            this.adminPasswordSecretVersionNumber = adminPasswordSecretVersionNumber;
+            this.__explicitlySet__.add("adminPasswordSecretVersionNumber");
             return this;
         }
         /**
@@ -77,13 +116,17 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             return this;
         }
         /**
-         * Determines the auto-scaling mode for the catalog database.
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count.
+         * The default value is {@code FALSE}.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
         /**
-         * Determines the auto-scaling mode for the catalog database.
+         * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count.
+         * The default value is {@code FALSE}.
+         *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
          **/
@@ -109,51 +152,17 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             return this;
         }
         /**
-         * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers
-         * on catalog of distributed autonomous database please use peerDetails.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
          *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
-        private java.util.List<String> peerCloudAutonomousVmClusterIds;
-
-        /**
-         * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers
-         * on catalog of distributed autonomous database please use peerDetails.
-         *
-         * @param peerCloudAutonomousVmClusterIds the value to set
-         * @return this builder
-         **/
-        public Builder peerCloudAutonomousVmClusterIds(
-                java.util.List<String> peerCloudAutonomousVmClusterIds) {
-            this.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
-            this.__explicitlySet__.add("peerCloudAutonomousVmClusterIds");
-            return this;
-        }
-        /**
-         * The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
-        private java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails;
-
-        /**
-         * The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
-         * @param peerDetails the value to set
-         * @return this builder
-         **/
-        public Builder peerDetails(
-                java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails) {
-            this.peerDetails = peerDetails;
-            this.__explicitlySet__.add("peerDetails");
-            return this;
-        }
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
+         *
          * @param vaultId the value to set
          * @return this builder
          **/
@@ -163,13 +172,13 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             return this;
         }
         /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          * @param kmsKeyId the value to set
          * @return this builder
          **/
@@ -179,14 +188,14 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -215,17 +224,70 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
         /**
          * The OKV endpoint name.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroup")
-        private String okvEndPointGroup;
+        @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+        private String okvEndPointGroupName;
 
         /**
          * The OKV endpoint name.
-         * @param okvEndPointGroup the value to set
+         * @param okvEndPointGroupName the value to set
          * @return this builder
          **/
-        public Builder okvEndPointGroup(String okvEndPointGroup) {
-            this.okvEndPointGroup = okvEndPointGroup;
-            this.__explicitlySet__.add("okvEndPointGroup");
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            this.okvEndPointGroupName = okvEndPointGroupName;
+            this.__explicitlySet__.add("okvEndPointGroupName");
+            return this;
+        }
+        /**
+         * The protectionMode for the catalog peer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private DistributedAutonomousDbProtectionMode protectionMode;
+
+        /**
+         * The protectionMode for the catalog peer.
+         * @param protectionMode the value to set
+         * @return this builder
+         **/
+        public Builder protectionMode(DistributedAutonomousDbProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+        private Integer fastStartFailOverLagLimitInSeconds;
+
+        /**
+         * The lag time preference based on data loss tolerance in seconds.
+         * @param fastStartFailOverLagLimitInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder fastStartFailOverLagLimitInSeconds(
+                Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            this.__explicitlySet__.add("fastStartFailOverLagLimitInSeconds");
+            return this;
+        }
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         * This value represents the number of days before scheduled maintenance of the primary database.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+        private Integer standbyMaintenanceBufferInDays;
+
+        /**
+         * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+         * This value represents the number of days before scheduled maintenance of the primary database.
+         *
+         * @param standbyMaintenanceBufferInDays the value to set
+         * @return this builder
+         **/
+        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
+            this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
             return this;
         }
 
@@ -236,17 +298,20 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails model =
                     new CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails(
                             this.adminPassword,
+                            this.adminPasswordSecretId,
+                            this.adminPasswordSecretVersionNumber,
                             this.computeCount,
                             this.dataStorageSizeInGbs,
                             this.isAutoScalingEnabled,
                             this.cloudAutonomousVmClusterId,
-                            this.peerCloudAutonomousVmClusterIds,
-                            this.peerDetails,
                             this.vaultId,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
                             this.okvKeyStoreId,
-                            this.okvEndPointGroup);
+                            this.okvEndPointGroupName,
+                            this.protectionMode,
+                            this.fastStartFailOverLagLimitInSeconds,
+                            this.standbyMaintenanceBufferInDays);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -258,6 +323,12 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                 CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails model) {
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("adminPasswordSecretId")) {
+                this.adminPasswordSecretId(model.getAdminPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("adminPasswordSecretVersionNumber")) {
+                this.adminPasswordSecretVersionNumber(model.getAdminPasswordSecretVersionNumber());
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
@@ -271,12 +342,6 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             if (model.wasPropertyExplicitlySet("cloudAutonomousVmClusterId")) {
                 this.cloudAutonomousVmClusterId(model.getCloudAutonomousVmClusterId());
             }
-            if (model.wasPropertyExplicitlySet("peerCloudAutonomousVmClusterIds")) {
-                this.peerCloudAutonomousVmClusterIds(model.getPeerCloudAutonomousVmClusterIds());
-            }
-            if (model.wasPropertyExplicitlySet("peerDetails")) {
-                this.peerDetails(model.getPeerDetails());
-            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -289,8 +354,18 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
             if (model.wasPropertyExplicitlySet("okvKeyStoreId")) {
                 this.okvKeyStoreId(model.getOkvKeyStoreId());
             }
-            if (model.wasPropertyExplicitlySet("okvEndPointGroup")) {
-                this.okvEndPointGroup(model.getOkvEndPointGroup());
+            if (model.wasPropertyExplicitlySet("okvEndPointGroupName")) {
+                this.okvEndPointGroupName(model.getOkvEndPointGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("fastStartFailOverLagLimitInSeconds")) {
+                this.fastStartFailOverLagLimitInSeconds(
+                        model.getFastStartFailOverLagLimitInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("standbyMaintenanceBufferInDays")) {
+                this.standbyMaintenanceBufferInDays(model.getStandbyMaintenanceBufferInDays());
             }
             return this;
         }
@@ -310,44 +385,126 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
     @Deprecated
     public CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails(
             String adminPassword,
+            String adminPasswordSecretId,
+            Integer adminPasswordSecretVersionNumber,
             Float computeCount,
             Double dataStorageSizeInGbs,
             Boolean isAutoScalingEnabled,
             String cloudAutonomousVmClusterId,
-            java.util.List<String> peerCloudAutonomousVmClusterIds,
-            java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails,
             String vaultId,
             String kmsKeyId,
             String kmsKeyVersionId,
             String okvKeyStoreId,
-            String okvEndPointGroup) {
+            String okvEndPointGroupName,
+            DistributedAutonomousDbProtectionMode protectionMode,
+            Integer fastStartFailOverLagLimitInSeconds,
+            Integer standbyMaintenanceBufferInDays) {
         super();
-        this.adminPassword = adminPassword;
+        this.adminPassword = adminPassword != null ? adminPassword.toCharArray() : null;
+        this.adminPasswordSecretId = adminPasswordSecretId;
+        this.adminPasswordSecretVersionNumber = adminPasswordSecretVersionNumber;
         this.computeCount = computeCount;
         this.dataStorageSizeInGbs = dataStorageSizeInGbs;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
-        this.peerCloudAutonomousVmClusterIds = peerCloudAutonomousVmClusterIds;
-        this.peerDetails = peerDetails;
         this.vaultId = vaultId;
         this.kmsKeyId = kmsKeyId;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.okvKeyStoreId = okvKeyStoreId;
-        this.okvEndPointGroup = okvEndPointGroup;
+        this.okvEndPointGroupName = okvEndPointGroupName;
+        this.protectionMode = protectionMode;
+        this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+        this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails(
+            char[] adminPassword,
+            String adminPasswordSecretId,
+            Integer adminPasswordSecretVersionNumber,
+            Float computeCount,
+            Double dataStorageSizeInGbs,
+            Boolean isAutoScalingEnabled,
+            String cloudAutonomousVmClusterId,
+            String vaultId,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            String okvKeyStoreId,
+            String okvEndPointGroupName,
+            DistributedAutonomousDbProtectionMode protectionMode,
+            Integer fastStartFailOverLagLimitInSeconds,
+            Integer standbyMaintenanceBufferInDays) {
+        super();
+        this.adminPassword = adminPassword;
+        this.adminPasswordSecretId = adminPasswordSecretId;
+        this.adminPasswordSecretVersionNumber = adminPasswordSecretVersionNumber;
+        this.computeCount = computeCount;
+        this.dataStorageSizeInGbs = dataStorageSizeInGbs;
+        this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+        this.vaultId = vaultId;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
+        this.okvKeyStoreId = okvKeyStoreId;
+        this.okvEndPointGroupName = okvEndPointGroupName;
+        this.protectionMode = protectionMode;
+        this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+        this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
     }
 
     /**
-     * Admin password for catalog database.
+     * The admin password for the catalog associated with the distributed autonomous database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    private final String adminPassword;
+    private final char[] adminPassword;
 
     /**
-     * Admin password for catalog database.
+     * The admin password for the catalog associated with the distributed autonomous database.
+     * return the value
+     * @Deprecated - Use getAdminPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getAdminPassword() {
+        return adminPassword != null ? new String(adminPassword) : null;
+    }
+
+    /**
+     * The admin password for the catalog associated with the distributed autonomous database.
      * @return the value
      **/
-    public String getAdminPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    public char[] getAdminPassword__AsCharArray() {
         return adminPassword;
+    }
+
+    /**
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretId")
+    private final String adminPasswordSecretId;
+
+    /**
+     * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID. This cannot be used in conjunction with adminPassword.
+     * @return the value
+     **/
+    public String getAdminPasswordSecretId() {
+        return adminPasswordSecretId;
+    }
+
+    /**
+     * The version of the vault secret. If no version is specified, the latest version will be used.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPasswordSecretVersionNumber")
+    private final Integer adminPasswordSecretVersionNumber;
+
+    /**
+     * The version of the vault secret. If no version is specified, the latest version will be used.
+     * @return the value
+     **/
+    public Integer getAdminPasswordSecretVersionNumber() {
+        return adminPasswordSecretVersionNumber;
     }
 
     /**
@@ -379,13 +536,17 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
     }
 
     /**
-     * Determines the auto-scaling mode for the catalog database.
+     * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count.
+     * The default value is {@code FALSE}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
-     * Determines the auto-scaling mode for the catalog database.
+     * Indicates if vertical auto scaling is enabled for the Autonomous AI Database CPU core count.
+     * The default value is {@code FALSE}.
+     *
      * @return the value
      **/
     public Boolean getIsAutoScalingEnabled() {
@@ -407,45 +568,17 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
     }
 
     /**
-     * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers
-     * on catalog of distributed autonomous database please use peerDetails.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
      *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterIds")
-    private final java.util.List<String> peerCloudAutonomousVmClusterIds;
-
-    /**
-     * This field is deprecated. This should not be used while creation of new distributed autonomous database. To set the peers
-     * on catalog of distributed autonomous database please use peerDetails.
-     *
-     * @return the value
-     **/
-    public java.util.List<String> getPeerCloudAutonomousVmClusterIds() {
-        return peerCloudAutonomousVmClusterIds;
-    }
-
-    /**
-     * The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("peerDetails")
-    private final java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> peerDetails;
-
-    /**
-     * The details required for creation of the peer for the autonomous dedicated infrastructure based catalog.
-     * @return the value
-     **/
-    public java.util.List<CreateCatalogPeerWithDedicatedInfraDetails> getPeerDetails() {
-        return peerDetails;
-    }
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code kmsKeyId} are required for Customer Managed Keys.
+     *
      * @return the value
      **/
     public String getVaultId() {
@@ -453,13 +586,13 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
     }
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * @return the value
      **/
     public String getKmsKeyId() {
@@ -467,14 +600,14 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions.
      *
      * @return the value
      **/
@@ -499,15 +632,61 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
     /**
      * The OKV endpoint name.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroup")
-    private final String okvEndPointGroup;
+    @com.fasterxml.jackson.annotation.JsonProperty("okvEndPointGroupName")
+    private final String okvEndPointGroupName;
 
     /**
      * The OKV endpoint name.
      * @return the value
      **/
-    public String getOkvEndPointGroup() {
-        return okvEndPointGroup;
+    public String getOkvEndPointGroupName() {
+        return okvEndPointGroupName;
+    }
+
+    /**
+     * The protectionMode for the catalog peer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    private final DistributedAutonomousDbProtectionMode protectionMode;
+
+    /**
+     * The protectionMode for the catalog peer.
+     * @return the value
+     **/
+    public DistributedAutonomousDbProtectionMode getProtectionMode() {
+        return protectionMode;
+    }
+
+    /**
+     * The lag time preference based on data loss tolerance in seconds.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fastStartFailOverLagLimitInSeconds")
+    private final Integer fastStartFailOverLagLimitInSeconds;
+
+    /**
+     * The lag time preference based on data loss tolerance in seconds.
+     * @return the value
+     **/
+    public Integer getFastStartFailOverLagLimitInSeconds() {
+        return fastStartFailOverLagLimitInSeconds;
+    }
+
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+     * This value represents the number of days before scheduled maintenance of the primary database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+    private final Integer standbyMaintenanceBufferInDays;
+
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+     * This value represents the number of days before scheduled maintenance of the primary database.
+     *
+     * @return the value
+     **/
+    public Integer getStandbyMaintenanceBufferInDays() {
+        return standbyMaintenanceBufferInDays;
     }
 
     @Override
@@ -524,20 +703,25 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", adminPassword=").append("<redacted>");
+        sb.append(", adminPasswordSecretId=").append(String.valueOf(this.adminPasswordSecretId));
+        sb.append(", adminPasswordSecretVersionNumber=")
+                .append(String.valueOf(this.adminPasswordSecretVersionNumber));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", dataStorageSizeInGbs=").append(String.valueOf(this.dataStorageSizeInGbs));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(", cloudAutonomousVmClusterId=")
                 .append(String.valueOf(this.cloudAutonomousVmClusterId));
-        sb.append(", peerCloudAutonomousVmClusterIds=")
-                .append(String.valueOf(this.peerCloudAutonomousVmClusterIds));
-        sb.append(", peerDetails=").append(String.valueOf(this.peerDetails));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", okvKeyStoreId=").append(String.valueOf(this.okvKeyStoreId));
-        sb.append(", okvEndPointGroup=").append(String.valueOf(this.okvEndPointGroup));
+        sb.append(", okvEndPointGroupName=").append(String.valueOf(this.okvEndPointGroupName));
+        sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", fastStartFailOverLagLimitInSeconds=")
+                .append(String.valueOf(this.fastStartFailOverLagLimitInSeconds));
+        sb.append(", standbyMaintenanceBufferInDays=")
+                .append(String.valueOf(this.standbyMaintenanceBufferInDays));
         sb.append(")");
         return sb.toString();
     }
@@ -554,19 +738,26 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
         CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails other =
                 (CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraDetails) o;
         return java.util.Objects.equals(this.adminPassword, other.adminPassword)
+                && java.util.Objects.equals(this.adminPasswordSecretId, other.adminPasswordSecretId)
+                && java.util.Objects.equals(
+                        this.adminPasswordSecretVersionNumber,
+                        other.adminPasswordSecretVersionNumber)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.dataStorageSizeInGbs, other.dataStorageSizeInGbs)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && java.util.Objects.equals(
                         this.cloudAutonomousVmClusterId, other.cloudAutonomousVmClusterId)
-                && java.util.Objects.equals(
-                        this.peerCloudAutonomousVmClusterIds, other.peerCloudAutonomousVmClusterIds)
-                && java.util.Objects.equals(this.peerDetails, other.peerDetails)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.okvKeyStoreId, other.okvKeyStoreId)
-                && java.util.Objects.equals(this.okvEndPointGroup, other.okvEndPointGroup)
+                && java.util.Objects.equals(this.okvEndPointGroupName, other.okvEndPointGroupName)
+                && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(
+                        this.fastStartFailOverLagLimitInSeconds,
+                        other.fastStartFailOverLagLimitInSeconds)
+                && java.util.Objects.equals(
+                        this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
                 && super.equals(other);
     }
 
@@ -577,6 +768,16 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
         result =
                 (result * PRIME)
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPasswordSecretId == null
+                                ? 43
+                                : this.adminPasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.adminPasswordSecretVersionNumber == null
+                                ? 43
+                                : this.adminPasswordSecretVersionNumber.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result =
                 (result * PRIME)
@@ -593,12 +794,6 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                         + (this.cloudAutonomousVmClusterId == null
                                 ? 43
                                 : this.cloudAutonomousVmClusterId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.peerCloudAutonomousVmClusterIds == null
-                                ? 43
-                                : this.peerCloudAutonomousVmClusterIds.hashCode());
-        result = (result * PRIME) + (this.peerDetails == null ? 43 : this.peerDetails.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
@@ -609,7 +804,22 @@ public final class CreateDistributedAutonomousDatabaseCatalogWithDedicatedInfraD
                         + (this.okvKeyStoreId == null ? 43 : this.okvKeyStoreId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.okvEndPointGroup == null ? 43 : this.okvEndPointGroup.hashCode());
+                        + (this.okvEndPointGroupName == null
+                                ? 43
+                                : this.okvEndPointGroupName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fastStartFailOverLagLimitInSeconds == null
+                                ? 43
+                                : this.fastStartFailOverLagLimitInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.standbyMaintenanceBufferInDays == null
+                                ? 43
+                                : this.standbyMaintenanceBufferInDays.hashCode());
         return result;
     }
 }

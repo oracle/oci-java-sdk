@@ -402,6 +402,26 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the specified saved crypto assessment into a different compartment.
+     * Only `SAVED` crypto assessments are supported.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCryptoAssessmentCompartmentResponse>
+            changeCryptoAssessmentCompartment(
+                    ChangeCryptoAssessmentCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCryptoAssessmentCompartmentRequest,
+                                    ChangeCryptoAssessmentCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the Data Safe private endpoint and its dependent resources to the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -1638,6 +1658,24 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified saved crypto assessment.
+     * Only assessments of type `SAVED` can be deleted. Attempts to delete a `LATEST` assessment return `400 InvalidParameter`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCryptoAssessmentResponse> deleteCryptoAssessment(
+            DeleteCryptoAssessmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCryptoAssessmentRequest, DeleteCryptoAssessmentResponse>
+                    handler);
+
+    /**
      * Deletes the specified Data Safe private endpoint.
      *
      * @param request The request object containing the details to send
@@ -2194,6 +2232,26 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Downloads the report of the specified crypto assessment. To download the crypto assessment report, it needs to be generated first.
+     * Please use GenerateCryptoAssessmentReport to generate a downloadable report in the preferred format (PDF, XLS).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadCryptoAssessmentReportResponse>
+            downloadCryptoAssessmentReport(
+                    DownloadCryptoAssessmentReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DownloadCryptoAssessmentReportRequest,
+                                    DownloadCryptoAssessmentReportResponse>
+                            handler);
+
+    /**
      * Downloads an already-generated discovery report. Note that the GenerateDiscoveryReportForDownload operation is a
      * prerequisite for the DownloadDiscoveryReport operation. Use GenerateDiscoveryReportForDownload to generate a discovery
      * report file and then use DownloadDiscoveryReport to download the generated file. By default, it downloads report for
@@ -2380,6 +2438,26 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             EnableDataSafeConfigurationRequest, EnableDataSafeConfigurationResponse>
                     handler);
+
+    /**
+     * Generates the report of the specified crypto assessment.
+     * Supported output formats are PDF and XLS.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateCryptoAssessmentReportResponse>
+            generateCryptoAssessmentReport(
+                    GenerateCryptoAssessmentReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateCryptoAssessmentReportRequest,
+                                    GenerateCryptoAssessmentReportResponse>
+                            handler);
 
     /**
      * Generates a downloadable discovery report. It's a prerequisite for the DownloadDiscoveryReport operation. Use this
@@ -2741,6 +2819,40 @@ public interface DataSafeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     GetCompatibleFormatsForSensitiveTypesRequest,
                                     GetCompatibleFormatsForSensitiveTypesResponse>
+                            handler);
+
+    /**
+     * Gets the details of the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCryptoAssessmentResponse> getCryptoAssessment(
+            GetCryptoAssessmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCryptoAssessmentRequest, GetCryptoAssessmentResponse>
+                    handler);
+
+    /**
+     * Gets SQLNET.ORA parameter values and quantum-readiness evaluation for the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCryptoAssessmentSqlnetParametersResponse>
+            getCryptoAssessmentSqlnetParameters(
+                    GetCryptoAssessmentSqlnetParametersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCryptoAssessmentSqlnetParametersRequest,
+                                    GetCryptoAssessmentSqlnetParametersResponse>
                             handler);
 
     /**
@@ -3915,6 +4027,179 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<ListColumnsResponse> listColumns(
             ListColumnsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListColumnsRequest, ListColumnsResponse> handler);
+
+    /**
+     * Gets backup set summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentBackupSetsResponse>
+            listCryptoAssessmentBackupSets(
+                    ListCryptoAssessmentBackupSetsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentBackupSetsRequest,
+                                    ListCryptoAssessmentBackupSetsResponse>
+                            handler);
+
+    /**
+     * Lists the CBOM items for the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentCbomItemsResponse>
+            listCryptoAssessmentCbomItems(
+                    ListCryptoAssessmentCbomItemsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentCbomItemsRequest,
+                                    ListCryptoAssessmentCbomItemsResponse>
+                            handler);
+
+    /**
+     * Lists certificates discovered across targets in a compartment, including target, wallet location, issuer, subject, validity window, expiry bucket, public key type, and status so expiring or weak certificates can be identified and prioritized.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentCertificatesResponse>
+            listCryptoAssessmentCertificates(
+                    ListCryptoAssessmentCertificatesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentCertificatesRequest,
+                                    ListCryptoAssessmentCertificatesResponse>
+                            handler);
+
+    /**
+     * Lists findings in a compartment with the number of affected targets.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentFindingAnalyticsResponse>
+            listCryptoAssessmentFindingAnalytics(
+                    ListCryptoAssessmentFindingAnalyticsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentFindingAnalyticsRequest,
+                                    ListCryptoAssessmentFindingAnalyticsResponse>
+                            handler);
+
+    /**
+     * For a selected finding, lists targets where it occurs in assessments.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentFindingTargetsResponse>
+            listCryptoAssessmentFindingTargets(
+                    ListCryptoAssessmentFindingTargetsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentFindingTargetsRequest,
+                                    ListCryptoAssessmentFindingTargetsResponse>
+                            handler);
+
+    /**
+     * Lists crypto deviation findings for the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentFindingsResponse> listCryptoAssessmentFindings(
+            ListCryptoAssessmentFindingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAssessmentFindingsRequest,
+                            ListCryptoAssessmentFindingsResponse>
+                    handler);
+
+    /**
+     * Gets a paginated list of cryptographic keys across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentKeysResponse> listCryptoAssessmentKeys(
+            ListCryptoAssessmentKeysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAssessmentKeysRequest, ListCryptoAssessmentKeysResponse>
+                    handler);
+
+    /**
+     * Lists TDE object encryption summaries across targets in a compartment. Use assessmentId to narrow results to one crypto assessment, and objectType to return either tablespace-level or column-level TDE observations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentTdeObjectsResponse>
+            listCryptoAssessmentTdeObjects(
+                    ListCryptoAssessmentTdeObjectsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentTdeObjectsRequest,
+                                    ListCryptoAssessmentTdeObjectsResponse>
+                            handler);
+
+    /**
+     * Gets wallet details across targets in a compartment. Use assessmentId to narrow results to one crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentWalletsResponse> listCryptoAssessmentWallets(
+            ListCryptoAssessmentWalletsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAssessmentWalletsRequest, ListCryptoAssessmentWalletsResponse>
+                    handler);
+
+    /**
+     * Gets a list of crypto assessments with filtering and pagination support.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCryptoAssessmentsResponse> listCryptoAssessments(
+            ListCryptoAssessmentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAssessmentsRequest, ListCryptoAssessmentsResponse>
+                    handler);
 
     /**
      * Gets a list of Data Safe private endpoints.
@@ -5851,6 +6136,25 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Runs a crypto assessment, refreshes the latest assessment, and saves it for future reference.
+     * This operation runs with a cryptoAssessmentId of type LATEST.
+     * Before you start, first call the ListCryptoAssessments operation with filter \"type = latest\" to get the crypto assessment ID for the target's latest assessment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshCryptoAssessmentResponse> refreshCryptoAssessment(
+            RefreshCryptoAssessmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RefreshCryptoAssessmentRequest, RefreshCryptoAssessmentResponse>
+                    handler);
+
+    /**
      * Refreshes the specified database security configuration.
      *
      * @param request The request object containing the details to send
@@ -6331,6 +6635,22 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateAuditTrailResponse> updateAuditTrail(
             UpdateAuditTrailRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateAuditTrailRequest, UpdateAuditTrailResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCryptoAssessmentResponse> updateCryptoAssessment(
+            UpdateCryptoAssessmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCryptoAssessmentRequest, UpdateCryptoAssessmentResponse>
                     handler);
 
     /**

@@ -311,7 +311,7 @@ public class DataSafeAsyncClient implements DataSafeAsync {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DataSafeAsyncClient",
-                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
+                            "downloadCryptoAssessmentReport,downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
         }
     }
 
@@ -1526,6 +1526,65 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeAuditProfileCompartmentRequest, ChangeAuditProfileCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCryptoAssessmentCompartmentResponse>
+            changeCryptoAssessmentCompartment(
+                    ChangeCryptoAssessmentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCryptoAssessmentCompartmentRequest,
+                                    ChangeCryptoAssessmentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeCryptoAssessmentCompartment");
+        final ChangeCryptoAssessmentCompartmentRequest interceptedRequest =
+                ChangeCryptoAssessmentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCryptoAssessmentCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeCryptoAssessmentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ChangeCryptoAssessmentCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCryptoAssessmentCompartmentResponse>
+                transformer =
+                        ChangeCryptoAssessmentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCryptoAssessmentCompartmentRequest,
+                        ChangeCryptoAssessmentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCryptoAssessmentCompartmentRequest,
+                                ChangeCryptoAssessmentCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeCryptoAssessmentCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCryptoAssessmentCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCryptoAssessmentCompartmentRequest,
+                    ChangeCryptoAssessmentCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5268,6 +5327,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCryptoAssessmentResponse> deleteCryptoAssessment(
+            DeleteCryptoAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCryptoAssessmentRequest, DeleteCryptoAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async deleteCryptoAssessment");
+        final DeleteCryptoAssessmentRequest interceptedRequest =
+                DeleteCryptoAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/DeleteCryptoAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCryptoAssessmentResponse>
+                transformer =
+                        DeleteCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCryptoAssessmentRequest, DeleteCryptoAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCryptoAssessmentRequest, DeleteCryptoAssessmentResponse>,
+                        java.util.concurrent.Future<DeleteCryptoAssessmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCryptoAssessmentRequest, DeleteCryptoAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataSafePrivateEndpointResponse>
             deleteDataSafePrivateEndpoint(
                     DeleteDataSafePrivateEndpointRequest request,
@@ -6885,6 +6991,64 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DownloadCryptoAssessmentReportResponse>
+            downloadCryptoAssessmentReport(
+                    DownloadCryptoAssessmentReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DownloadCryptoAssessmentReportRequest,
+                                    DownloadCryptoAssessmentReportResponse>
+                            handler) {
+        LOG.trace("Called async downloadCryptoAssessmentReport");
+        final DownloadCryptoAssessmentReportRequest interceptedRequest =
+                DownloadCryptoAssessmentReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadCryptoAssessmentReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DownloadCryptoAssessmentReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/DownloadCryptoAssessmentReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DownloadCryptoAssessmentReportResponse>
+                transformer =
+                        DownloadCryptoAssessmentReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DownloadCryptoAssessmentReportRequest,
+                        DownloadCryptoAssessmentReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DownloadCryptoAssessmentReportRequest,
+                                DownloadCryptoAssessmentReportResponse>,
+                        java.util.concurrent.Future<DownloadCryptoAssessmentReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDownloadCryptoAssessmentReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DownloadCryptoAssessmentReportRequest, DownloadCryptoAssessmentReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadDiscoveryReportResponse> downloadDiscoveryReport(
             DownloadDiscoveryReportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7413,6 +7577,64 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableDataSafeConfigurationRequest, EnableDataSafeConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateCryptoAssessmentReportResponse>
+            generateCryptoAssessmentReport(
+                    GenerateCryptoAssessmentReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateCryptoAssessmentReportRequest,
+                                    GenerateCryptoAssessmentReportResponse>
+                            handler) {
+        LOG.trace("Called async generateCryptoAssessmentReport");
+        final GenerateCryptoAssessmentReportRequest interceptedRequest =
+                GenerateCryptoAssessmentReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateCryptoAssessmentReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GenerateCryptoAssessmentReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GenerateCryptoAssessmentReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateCryptoAssessmentReportResponse>
+                transformer =
+                        GenerateCryptoAssessmentReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateCryptoAssessmentReportRequest,
+                        GenerateCryptoAssessmentReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateCryptoAssessmentReportRequest,
+                                GenerateCryptoAssessmentReportResponse>,
+                        java.util.concurrent.Future<GenerateCryptoAssessmentReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateCryptoAssessmentReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateCryptoAssessmentReportRequest, GenerateCryptoAssessmentReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8445,6 +8667,107 @@ public class DataSafeAsyncClient implements DataSafeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetCompatibleFormatsForSensitiveTypesRequest,
                     GetCompatibleFormatsForSensitiveTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCryptoAssessmentResponse> getCryptoAssessment(
+            GetCryptoAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCryptoAssessmentRequest, GetCryptoAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async getCryptoAssessment");
+        final GetCryptoAssessmentRequest interceptedRequest =
+                GetCryptoAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GetCryptoAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCryptoAssessmentResponse>
+                transformer =
+                        GetCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCryptoAssessmentRequest, GetCryptoAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCryptoAssessmentRequest, GetCryptoAssessmentResponse>,
+                        java.util.concurrent.Future<GetCryptoAssessmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCryptoAssessmentRequest, GetCryptoAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCryptoAssessmentSqlnetParametersResponse>
+            getCryptoAssessmentSqlnetParameters(
+                    GetCryptoAssessmentSqlnetParametersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCryptoAssessmentSqlnetParametersRequest,
+                                    GetCryptoAssessmentSqlnetParametersResponse>
+                            handler) {
+        LOG.trace("Called async getCryptoAssessmentSqlnetParameters");
+        final GetCryptoAssessmentSqlnetParametersRequest interceptedRequest =
+                GetCryptoAssessmentSqlnetParametersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCryptoAssessmentSqlnetParametersConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetCryptoAssessmentSqlnetParameters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GetCryptoAssessmentSqlnetParameters");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCryptoAssessmentSqlnetParametersResponse>
+                transformer =
+                        GetCryptoAssessmentSqlnetParametersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCryptoAssessmentSqlnetParametersRequest,
+                        GetCryptoAssessmentSqlnetParametersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCryptoAssessmentSqlnetParametersRequest,
+                                GetCryptoAssessmentSqlnetParametersResponse>,
+                        java.util.concurrent.Future<GetCryptoAssessmentSqlnetParametersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCryptoAssessmentSqlnetParametersRequest,
+                    GetCryptoAssessmentSqlnetParametersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -11537,6 +11860,518 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListColumnsRequest, ListColumnsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentBackupSetsResponse>
+            listCryptoAssessmentBackupSets(
+                    ListCryptoAssessmentBackupSetsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentBackupSetsRequest,
+                                    ListCryptoAssessmentBackupSetsResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentBackupSets");
+        final ListCryptoAssessmentBackupSetsRequest interceptedRequest =
+                ListCryptoAssessmentBackupSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentBackupSetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentBackupSets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentBackupSets");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentBackupSetsResponse>
+                transformer =
+                        ListCryptoAssessmentBackupSetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentBackupSetsRequest,
+                        ListCryptoAssessmentBackupSetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentBackupSetsRequest,
+                                ListCryptoAssessmentBackupSetsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentBackupSetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentBackupSetsRequest, ListCryptoAssessmentBackupSetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentCbomItemsResponse>
+            listCryptoAssessmentCbomItems(
+                    ListCryptoAssessmentCbomItemsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentCbomItemsRequest,
+                                    ListCryptoAssessmentCbomItemsResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentCbomItems");
+        final ListCryptoAssessmentCbomItemsRequest interceptedRequest =
+                ListCryptoAssessmentCbomItemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentCbomItemsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentCbomItems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentCbomItems");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentCbomItemsResponse>
+                transformer =
+                        ListCryptoAssessmentCbomItemsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentCbomItemsRequest, ListCryptoAssessmentCbomItemsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentCbomItemsRequest,
+                                ListCryptoAssessmentCbomItemsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentCbomItemsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentCbomItemsRequest, ListCryptoAssessmentCbomItemsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentCertificatesResponse>
+            listCryptoAssessmentCertificates(
+                    ListCryptoAssessmentCertificatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentCertificatesRequest,
+                                    ListCryptoAssessmentCertificatesResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentCertificates");
+        final ListCryptoAssessmentCertificatesRequest interceptedRequest =
+                ListCryptoAssessmentCertificatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentCertificatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentCertificates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentCertificates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentCertificatesResponse>
+                transformer =
+                        ListCryptoAssessmentCertificatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentCertificatesRequest,
+                        ListCryptoAssessmentCertificatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentCertificatesRequest,
+                                ListCryptoAssessmentCertificatesResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentCertificatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentCertificatesRequest,
+                    ListCryptoAssessmentCertificatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentFindingAnalyticsResponse>
+            listCryptoAssessmentFindingAnalytics(
+                    ListCryptoAssessmentFindingAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentFindingAnalyticsRequest,
+                                    ListCryptoAssessmentFindingAnalyticsResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentFindingAnalytics");
+        final ListCryptoAssessmentFindingAnalyticsRequest interceptedRequest =
+                ListCryptoAssessmentFindingAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentFindingAnalyticsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindingAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindingAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentFindingAnalyticsResponse>
+                transformer =
+                        ListCryptoAssessmentFindingAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentFindingAnalyticsRequest,
+                        ListCryptoAssessmentFindingAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentFindingAnalyticsRequest,
+                                ListCryptoAssessmentFindingAnalyticsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentFindingAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentFindingAnalyticsRequest,
+                    ListCryptoAssessmentFindingAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentFindingTargetsResponse>
+            listCryptoAssessmentFindingTargets(
+                    ListCryptoAssessmentFindingTargetsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentFindingTargetsRequest,
+                                    ListCryptoAssessmentFindingTargetsResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentFindingTargets");
+        final ListCryptoAssessmentFindingTargetsRequest interceptedRequest =
+                ListCryptoAssessmentFindingTargetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentFindingTargetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindingTargets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindingTargets");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentFindingTargetsResponse>
+                transformer =
+                        ListCryptoAssessmentFindingTargetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentFindingTargetsRequest,
+                        ListCryptoAssessmentFindingTargetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentFindingTargetsRequest,
+                                ListCryptoAssessmentFindingTargetsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentFindingTargetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentFindingTargetsRequest,
+                    ListCryptoAssessmentFindingTargetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentFindingsResponse>
+            listCryptoAssessmentFindings(
+                    ListCryptoAssessmentFindingsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentFindingsRequest,
+                                    ListCryptoAssessmentFindingsResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentFindings");
+        final ListCryptoAssessmentFindingsRequest interceptedRequest =
+                ListCryptoAssessmentFindingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentFindingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindings");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentFindingsResponse>
+                transformer =
+                        ListCryptoAssessmentFindingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentFindingsRequest, ListCryptoAssessmentFindingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentFindingsRequest,
+                                ListCryptoAssessmentFindingsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentFindingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentFindingsRequest, ListCryptoAssessmentFindingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentKeysResponse> listCryptoAssessmentKeys(
+            ListCryptoAssessmentKeysRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAssessmentKeysRequest, ListCryptoAssessmentKeysResponse>
+                    handler) {
+        LOG.trace("Called async listCryptoAssessmentKeys");
+        final ListCryptoAssessmentKeysRequest interceptedRequest =
+                ListCryptoAssessmentKeysConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentKeysConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentKeys");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentKeysResponse>
+                transformer =
+                        ListCryptoAssessmentKeysConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentKeysRequest, ListCryptoAssessmentKeysResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentKeysRequest, ListCryptoAssessmentKeysResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentKeysResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentKeysRequest, ListCryptoAssessmentKeysResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentTdeObjectsResponse>
+            listCryptoAssessmentTdeObjects(
+                    ListCryptoAssessmentTdeObjectsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentTdeObjectsRequest,
+                                    ListCryptoAssessmentTdeObjectsResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentTdeObjects");
+        final ListCryptoAssessmentTdeObjectsRequest interceptedRequest =
+                ListCryptoAssessmentTdeObjectsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentTdeObjectsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentTdeObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentTdeObjects");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentTdeObjectsResponse>
+                transformer =
+                        ListCryptoAssessmentTdeObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentTdeObjectsRequest,
+                        ListCryptoAssessmentTdeObjectsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentTdeObjectsRequest,
+                                ListCryptoAssessmentTdeObjectsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentTdeObjectsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentTdeObjectsRequest, ListCryptoAssessmentTdeObjectsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentWalletsResponse>
+            listCryptoAssessmentWallets(
+                    ListCryptoAssessmentWalletsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCryptoAssessmentWalletsRequest,
+                                    ListCryptoAssessmentWalletsResponse>
+                            handler) {
+        LOG.trace("Called async listCryptoAssessmentWallets");
+        final ListCryptoAssessmentWalletsRequest interceptedRequest =
+                ListCryptoAssessmentWalletsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentWalletsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentWallets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentWallets");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentWalletsResponse>
+                transformer =
+                        ListCryptoAssessmentWalletsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentWalletsRequest, ListCryptoAssessmentWalletsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentWalletsRequest,
+                                ListCryptoAssessmentWalletsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentWalletsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentWalletsRequest, ListCryptoAssessmentWalletsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCryptoAssessmentsResponse> listCryptoAssessments(
+            ListCryptoAssessmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCryptoAssessmentsRequest, ListCryptoAssessmentsResponse>
+                    handler) {
+        LOG.trace("Called async listCryptoAssessments");
+        final ListCryptoAssessmentsRequest interceptedRequest =
+                ListCryptoAssessmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessments");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCryptoAssessmentsResponse>
+                transformer =
+                        ListCryptoAssessmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCryptoAssessmentsRequest, ListCryptoAssessmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCryptoAssessmentsRequest, ListCryptoAssessmentsResponse>,
+                        java.util.concurrent.Future<ListCryptoAssessmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCryptoAssessmentsRequest, ListCryptoAssessmentsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -16159,6 +16994,60 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RefreshCryptoAssessmentResponse> refreshCryptoAssessment(
+            RefreshCryptoAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshCryptoAssessmentRequest, RefreshCryptoAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async refreshCryptoAssessment");
+        final RefreshCryptoAssessmentRequest interceptedRequest =
+                RefreshCryptoAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/RefreshCryptoAssessment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshCryptoAssessmentResponse>
+                transformer =
+                        RefreshCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshCryptoAssessmentRequest, RefreshCryptoAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshCryptoAssessmentRequest, RefreshCryptoAssessmentResponse>,
+                        java.util.concurrent.Future<RefreshCryptoAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRunCryptoAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshCryptoAssessmentRequest, RefreshCryptoAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshDatabaseSecurityConfigurationResponse>
             refreshDatabaseSecurityConfiguration(
                     RefreshDatabaseSecurityConfigurationRequest request,
@@ -17637,6 +18526,58 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateAuditTrailRequest, UpdateAuditTrailResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCryptoAssessmentResponse> updateCryptoAssessment(
+            UpdateCryptoAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCryptoAssessmentRequest, UpdateCryptoAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async updateCryptoAssessment");
+        final UpdateCryptoAssessmentRequest interceptedRequest =
+                UpdateCryptoAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/UpdateCryptoAssessment");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCryptoAssessmentResponse>
+                transformer =
+                        UpdateCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCryptoAssessmentRequest, UpdateCryptoAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCryptoAssessmentRequest, UpdateCryptoAssessmentResponse>,
+                        java.util.concurrent.Future<UpdateCryptoAssessmentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCryptoAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCryptoAssessmentRequest, UpdateCryptoAssessmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

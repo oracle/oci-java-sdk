@@ -10,7 +10,7 @@ import com.oracle.bmc.distributeddatabase.requests.*;
 import com.oracle.bmc.distributeddatabase.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class RotateDistributedDatabasePasswordsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -36,10 +36,13 @@ public class RotateDistributedDatabasePasswordsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getDistributedDatabaseId(), "distributedDatabaseId must not be blank");
+        Validate.notNull(
+                request.getRotateDistributedDatabasePasswordsDetails(),
+                "rotateDistributedDatabasePasswordsDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20250101")
+                        .path("/20260101")
                         .path("distributedDatabases")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
@@ -51,16 +54,16 @@ public class RotateDistributedDatabasePasswordsConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
+
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
         if (request.getIfMatch() != null) {
             ib.header("if-match", request.getIfMatch());
-        }
-
-        if (request.getOpcRetryToken() != null) {
-            ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
         if (client.getClientConfigurator() != null) {

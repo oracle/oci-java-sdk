@@ -128,17 +128,13 @@ public final class CreateHostedApplicationIamDetails
             return this;
         }
         /**
-         * The list of storage configuration for the Hosted Application.
-         * Defines a list of service-managed storage back-ends.
-         *
+         * A list of managed storage configurations for the application.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageConfigs")
         private java.util.List<StorageConfig> storageConfigs;
 
         /**
-         * The list of storage configuration for the Hosted Application.
-         * Defines a list of service-managed storage back-ends.
-         *
+         * A list of managed storage configurations for the application.
          * @param storageConfigs the value to set
          * @return this builder
          **/
@@ -344,17 +340,13 @@ public final class CreateHostedApplicationIamDetails
     }
 
     /**
-     * The list of storage configuration for the Hosted Application.
-     * Defines a list of service-managed storage back-ends.
-     *
+     * A list of managed storage configurations for the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageConfigs")
     private final java.util.List<StorageConfig> storageConfigs;
 
     /**
-     * The list of storage configuration for the Hosted Application.
-     * Defines a list of service-managed storage back-ends.
-     *
+     * A list of managed storage configurations for the application.
      * @return the value
      **/
     public java.util.List<StorageConfig> getStorageConfigs() {

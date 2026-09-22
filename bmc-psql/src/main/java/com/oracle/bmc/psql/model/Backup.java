@@ -38,6 +38,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "lastAcceptedRequestToken",
         "lastCompletedRequestToken",
         "copyStatus",
+        "kmsKeyId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -61,6 +62,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             String lastAcceptedRequestToken,
             String lastCompletedRequestToken,
             java.util.List<BackupCopyStatusDetails> copyStatus,
+            String kmsKeyId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -83,6 +85,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.lastAcceptedRequestToken = lastAcceptedRequestToken;
         this.lastCompletedRequestToken = lastCompletedRequestToken;
         this.copyStatus = copyStatus;
+        this.kmsKeyId = kmsKeyId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -391,6 +394,22 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
+         * The OCID of the master encryption key for the backup.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the master encryption key for the backup.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -476,6 +495,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.lastAcceptedRequestToken,
                             this.lastCompletedRequestToken,
                             this.copyStatus,
+                            this.kmsKeyId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -540,6 +560,9 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("copyStatus")) {
                 this.copyStatus(model.getCopyStatus());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -931,6 +954,20 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
+     * The OCID of the master encryption key for the backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the master encryption key for the backup.
+     * @return the value
+     **/
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -1018,6 +1055,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", lastCompletedRequestToken=")
                 .append(String.valueOf(this.lastCompletedRequestToken));
         sb.append(", copyStatus=").append(String.valueOf(this.copyStatus));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1055,6 +1093,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(
                         this.lastCompletedRequestToken, other.lastCompletedRequestToken)
                 && java.util.Objects.equals(this.copyStatus, other.copyStatus)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1109,6 +1148,7 @@ public final class Backup extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                                 ? 43
                                 : this.lastCompletedRequestToken.hashCode());
         result = (result * PRIME) + (this.copyStatus == null ? 43 : this.copyStatus.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

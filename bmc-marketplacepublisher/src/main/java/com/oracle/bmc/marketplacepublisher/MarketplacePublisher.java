@@ -202,7 +202,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * <p>
      * You must also specify a *name* for the listing and cannot be updated later.
      * <p>
-     * You must also specify a *packageType* for the listing. Allowed values are CONTAINER_IMAGE and HELM_CHART
+     * You must also specify a *packageType* for the listing. Allowed values are CONTAINER_IMAGE, HELM_CHART, COMPUTE_IMAGE, TERRAFORM_STACK and SAAS
      * <p>
      * After you send your request, the new object's `lifecycleState` will be CREATING.
      * Before using the object, first make sure its `lifecycleState` has changed to ACTIVE.
@@ -273,6 +273,19 @@ public interface MarketplacePublisher extends AutoCloseable {
             CreateListingRevisionPackageRequest request);
 
     /**
+     * Creates a new publisher
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreatePublisherExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePublisher API.
+     */
+    CreatePublisherResponse createPublisher(CreatePublisherRequest request);
+
+    /**
      * Creates a new Term.
      *
      * @param request The request object containing the details to send
@@ -335,6 +348,19 @@ public interface MarketplacePublisher extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteArtifact API.
      */
     DeleteArtifactResponse deleteArtifact(DeleteArtifactRequest request);
+
+    /**
+     * Deletes a generated Customer Instance Report export.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteCustomerInstanceReportExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomerInstanceReportExport API.
+     */
+    DeleteCustomerInstanceReportExportResponse deleteCustomerInstanceReportExport(
+            DeleteCustomerInstanceReportExportRequest request);
 
     /**
      * Deletes a listing by the identifier
@@ -424,6 +450,20 @@ public interface MarketplacePublisher extends AutoCloseable {
     DeleteTermVersionResponse deleteTermVersion(DeleteTermVersionRequest request);
 
     /**
+     * Generates a new asynchronous Customer Instance Report export for the selected filters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GenerateCustomerInstanceReportExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateCustomerInstanceReportExport API.
+     */
+    GenerateCustomerInstanceReportExportResponse generateCustomerInstanceReportExport(
+            GenerateCustomerInstanceReportExportRequest request);
+
+    /**
      * Gets the specified artifact's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -446,6 +486,32 @@ public interface MarketplacePublisher extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetCategoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCategory API.
      */
     GetCategoryResponse getCategory(GetCategoryRequest request);
+
+    /**
+     * Gets details for a specific Customer Instance Report export.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetCustomerInstanceReportExportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomerInstanceReportExport API.
+     */
+    GetCustomerInstanceReportExportResponse getCustomerInstanceReportExport(
+            GetCustomerInstanceReportExportRequest request);
+
+    /**
+     * Downloads the generated Customer Instance Report CSV for the specified export.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetCustomerInstanceReportExportContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomerInstanceReportExportContent API.
+     */
+    GetCustomerInstanceReportExportContentResponse getCustomerInstanceReportExportContent(
+            GetCustomerInstanceReportExportContentRequest request);
 
     /**
      * Gets the details for a lead.
@@ -706,6 +772,20 @@ public interface MarketplacePublisher extends AutoCloseable {
     ListCategoriesResponse listCategories(ListCategoriesRequest request);
 
     /**
+     * Lists existing Customer Instance Report exports for the caller.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListCustomerInstanceReportExportsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomerInstanceReportExports API.
+     */
+    ListCustomerInstanceReportExportsResponse listCustomerInstanceReportExports(
+            ListCustomerInstanceReportExportsRequest request);
+
+    /**
      * List customer instance report records
      *
      * @param request The request object containing the details to send
@@ -792,7 +872,6 @@ public interface MarketplacePublisher extends AutoCloseable {
 
     /**
      * Lists the list of listing revisions for a specific listing ID, compartment ID or listing revision status.
-     * <p>
      * You can specify your compartment's OCID as the value for the compartment ID.
      * For information about OCIDs, see Resource Identifiers (Content/General/Concepts/identifiers.htm).
      *
@@ -1134,6 +1213,46 @@ public interface MarketplacePublisher extends AutoCloseable {
      */
     UpdateListingRevisionAttachmentContentResponse updateListingRevisionAttachmentContent(
             UpdateListingRevisionAttachmentContentRequest request);
+
+    /**
+     * Updates the Listing Revision
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionBannerContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionBannerContent API.
+     */
+    UpdateListingRevisionBannerContentResponse updateListingRevisionBannerContent(
+            UpdateListingRevisionBannerContentRequest request);
 
     /**
      * Updates the Listing Revision

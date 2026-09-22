@@ -4,6 +4,84 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 2.98.0 - 2026-09-22
+### Added 
+- Support for recurring maintenance windows in the Application Performance Monitoring Synthetics service 
+- Support for crypto posture assessments in the Data Safe service 
+- Support for customer-managed compute capacity reservations for model deployments, notebook sessions, jobs, and pipelines in the Data Science service 
+- Support for code-only functions with managed runtimes and automated image builds in the Functions service 
+- Support for routing profiles and model discovery in the Generative AI service 
+- Support for generating, filtering, and downloading Customer Instance Report exports in the Marketplace Publisher service 
+- Support for higher usage submission limits for metered SaaS listings and legacy subscription endpoints in the Service Enablement Lifecycle Framework service 
+- Support for customer-managed encryption keys for database systems and cross-region backup copies in the PostgreSQL service 
+- Support for listing available VMware binaries and generating download links in the Oracle Cloud VMware Solution service 
+- Support for data verification using database object counts, object statuses, and estimated table row counts in the Database Migration service 
+- Support for settings specific to online logical, offline logical, and online standby Oracle migrations in the Database Migration service 
+- Support for configurable fault-domain preferences during provisioning in the Oracle Cloud VMware Solution service 
+- Support for code-only functions with managed runtimes and automated image builds in the Functions service 
+- Support for out-of-place Grid Infrastructure patching and upgrades with Oracle-provided or custom Grid Infrastructure software images in the Database service 
+- Support for active-passive cross-region replication in the OCI Cache service 
+- Support for the Cluster Health service 
+- Support for scheduling and canceling maintenance window changes after provisioning Autonomous Database Serverless instances in the Database service 
+- Support for quick launches of BaseDB Database systems in the Database service 
+- Support for IoT Flow Runtime (Node-RED) resources in the OCI Internet of Things (OCI IoT) service 
+- Support for blue/green deployments in the MySQL HeatWave service 
+- Support for capacity reservations, capacity reservation configurations, and associating reservations when creating instances in the Big Data service 
+- Support for Zero Trust Packet Routing (ZPR) security attributes on recovery subnets in the Autonomous Recovery service 
+- Support for network firewall as a Virtual Test Access Points (VTAP) source in the Networking service 
+- Support for NL2SQL model selection, annotation, background mode and delta enrichment in the Generative AI service 
+- Support for NL2SQL model selection, annotation, background mode and delta enrichment in the Generative AI Data service 
+- Support for B200, B300, L40S, and MI300X dedicated AI cluster unit shapes in the Generative AI service 
+- Support for creating databases from another database with additional input fields and source encryption-key location details in the Database service 
+- Support for IPv6 dual-stack endpoints in the Compute Instance Agent service   
+
+### Breaking Changes 
+- The Distributed Database V26 service was renamed to Distributed Database service 
+- Method `getImage()` has been removed from the model `CreateFunctionDetails` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `CreateFunctionDetails` in the Functions service 
+- The return type of method `getSourceDetails()` has changed to `com.oracle.bmc.functions.model.CreateFunctionSourceDetails` in the model `CreateFunctionDetails` in the Functions service 
+- Method `getImage()` has been removed from the model `Function` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `Function` in the Functions service 
+- Method `getImage()` has been removed from the model `FunctionSummary` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `FunctionSummary` in the Functions service 
+- Method `getImage()` has been removed from the model `UpdateFunctionDetails` in the Functions service 
+- Method `getImageDigest()` has been removed from the model `UpdateFunctionDetails` in the Functions service 
+- Method `getApplication()` has been removed from the response `UpdateApplicationResponse` in the Functions service 
+- Method `getEtag()` has been removed from the response `UpdateApplicationResponse` in the Functions service 
+- Method `getEtag()` has been removed from the response `UpdateFunctionResponse` in the Functions service 
+- Method `getFunction()` has been removed from the response `UpdateFunctionResponse` in the Functions service 
+- Method `getTenantAdminEmail()` has been removed from the model `CustomerInstanceReportRecord` in the Marketplace Publisher service 
+- Method `getTenantAdminName()` has been removed from the model `CustomerInstanceReportRecord` in the Marketplace Publisher service 
+- The return type of method `getMetricType()` has changed to `com.oracle.bmc.marketplacepublisher.model.MetricType` in the model `ListingPart` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.model.ListingPart$MetricType` has been removed from the Marketplace Publisher service 
+- The return type of method `getOpnStatus()` has changed to `com.oracle.bmc.marketplacepublisher.model.AdminOpnPartnerSummary$MembershipStatus` in the model `OpnMembership` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.model.OpnMembership$OpnStatus` has been removed from the Marketplace Publisher service 
+- The return type of method `getPublisherStatus()` has changed to `com.oracle.bmc.marketplacepublisher.model.PublisherStatus` in the model `Publisher` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.model.Publisher$PublisherStatus` has been removed from the Marketplace Publisher service 
+- The enum value `Yearly` has been removed from the model `SaaSPricingPlan$BillingFrequency` in the Marketplace Publisher service 
+- Method `getDateRange()` has been removed from the request `ListCustomerInstanceReportRecordsRequest` in the Marketplace Publisher service 
+- Class `com.oracle.bmc.marketplacepublisher.requests.ListCustomerInstanceReportRecordsRequest$DateRange` has been removed from the Marketplace Publisher service 
+- Enum value `DisplayName` has been removed from the request `ListCustomerInstanceReportRecordsRequest$SortBy` in the Marketplace Publisher service 
+- Enum value `TimeCreated` has been removed from the request `ListCustomerInstanceReportRecordsRequest$SortBy` in the Marketplace Publisher service 
+- Method `public java.lang.String getUsageRecordId()` has been removed from the model `com.oracle.bmc.self.model.CreateSubscriptionUsageRecordDetails` in the Service Enablement Lifecycle Framework service 
+- Client-side decryption using `KmsMasterKeyProvider(KmsMasterKey)` now rejects encrypted blobs whose master key ID, vault ID, or region differs from the configured key. To decrypt data encrypted with different KMS keys, use `KmsMasterKeyProvider(BasicAuthenticationDetailsProvider)` 
+- Client-side decryption using `KmsMasterKeyProvider(BasicAuthenticationDetailsProvider)` now requires the region to be known independently of the encrypted blob through built-in SDK definitions, `Region.register(...)`, supported region metadata configuration, opted-in Instance Metadata Service (IMDS), or an exact region match on `ConfigFileAuthenticationDetailsProvider` or `SessionTokenAuthenticationDetailsProvider`. A region resolved only through implicit OC1 or `OCI_DEFAULT_REALM` fallback is rejected. If a region is not yet included in this SDK release, register it or supply region metadata before decrypting 
+- Class `com.oracle.bmc.generativeaidata.CancelEnrichmentJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.CancelEnrichmentJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateEnrichmentJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateEnrichmentJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateSqlFromNlJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GenerateSqlFromNlJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GetEnrichmentJob` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GetEnrichmentJobClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.GetEnrichmentJobWaiters` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.ListEnrichmentJobs` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.ListEnrichmentJobsClient$Builder` has been removed from the Generative AI Data service 
+- Class `com.oracle.bmc.generativeaidata.ListEnrichmentJobsPaginators` has been removed from the Generative AI Data service  
+
+### Changed 
+- Updated `jackson-core` and `jackson-databind` to version `2.21.5` to address CVE-2026-54515
+
 ## 2.97.0 - 2026-08-11
 ### Added
 - Support for the OCI Device Data FHIR (Fast Healthcare Interoperability Resources) Service 

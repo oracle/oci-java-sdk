@@ -10,7 +10,7 @@ import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class ListApplicationsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -32,7 +32,7 @@ public class ListApplicationsConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20181201").path("applications");
+                client.getBaseTarget().path("/20260325").path("applications");
 
         target =
                 target.queryParam(

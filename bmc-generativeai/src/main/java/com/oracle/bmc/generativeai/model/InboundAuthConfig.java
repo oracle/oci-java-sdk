@@ -5,8 +5,7 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * The client-side inbound authentication configuration for the Hosted Application.
- * Defines the network access rules.
+ * The inbound authentication configuration for the Hosted Application.
  * When unspecified, the service applies the default inbound authentication configuration type.
  *
  * <br/>
@@ -35,16 +34,14 @@ public final class InboundAuthConfig extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Inbound authentication configuration type of network access
-         * (IDCS_AUTH_CONFIG).
+         * The inbound authentication configuration type for the Hosted Application.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfigType")
         private InboundAuthConfigType inboundAuthConfigType;
 
         /**
-         * Inbound authentication configuration type of network access
-         * (IDCS_AUTH_CONFIG).
+         * The inbound authentication configuration type for the Hosted Application.
          *
          * @param inboundAuthConfigType the value to set
          * @return this builder
@@ -100,8 +97,7 @@ public final class InboundAuthConfig extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Inbound authentication configuration type of network access
-     * (IDCS_AUTH_CONFIG).
+     * The inbound authentication configuration type for the Hosted Application.
      *
      **/
     public enum InboundAuthConfigType {
@@ -149,16 +145,14 @@ public final class InboundAuthConfig extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * Inbound authentication configuration type of network access
-     * (IDCS_AUTH_CONFIG).
+     * The inbound authentication configuration type for the Hosted Application.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inboundAuthConfigType")
     private final InboundAuthConfigType inboundAuthConfigType;
 
     /**
-     * Inbound authentication configuration type of network access
-     * (IDCS_AUTH_CONFIG).
+     * The inbound authentication configuration type for the Hosted Application.
      *
      * @return the value
      **/

@@ -470,6 +470,54 @@ public class IotAsyncClient implements IotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateIotFlowRuntimeResponse> activateIotFlowRuntime(
+            ActivateIotFlowRuntimeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ActivateIotFlowRuntimeRequest, ActivateIotFlowRuntimeResponse>
+                    handler) {
+        LOG.trace("Called async activateIotFlowRuntime");
+        final ActivateIotFlowRuntimeRequest interceptedRequest =
+                ActivateIotFlowRuntimeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "ActivateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ActivateIotFlowRuntime");
+        final java.util.function.Function<javax.ws.rs.core.Response, ActivateIotFlowRuntimeResponse>
+                transformer =
+                        ActivateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ActivateIotFlowRuntimeRequest, ActivateIotFlowRuntimeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ActivateIotFlowRuntimeRequest, ActivateIotFlowRuntimeResponse>,
+                        java.util.concurrent.Future<ActivateIotFlowRuntimeResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ActivateIotFlowRuntimeRequest, ActivateIotFlowRuntimeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeIotDomainCompartmentResponse>
             changeIotDomainCompartment(
                     ChangeIotDomainCompartmentRequest request,
@@ -632,6 +680,65 @@ public class IotAsyncClient implements IotAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeIotDomainGroupCompartmentRequest,
                     ChangeIotDomainGroupCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeIotFlowRuntimeCompartmentResponse>
+            changeIotFlowRuntimeCompartment(
+                    ChangeIotFlowRuntimeCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeIotFlowRuntimeCompartmentRequest,
+                                    ChangeIotFlowRuntimeCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeIotFlowRuntimeCompartment");
+        final ChangeIotFlowRuntimeCompartmentRequest interceptedRequest =
+                ChangeIotFlowRuntimeCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeIotFlowRuntimeCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "ChangeIotFlowRuntimeCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ChangeIotFlowRuntimeCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeIotFlowRuntimeCompartmentResponse>
+                transformer =
+                        ChangeIotFlowRuntimeCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeIotFlowRuntimeCompartmentRequest,
+                        ChangeIotFlowRuntimeCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeIotFlowRuntimeCompartmentRequest,
+                                ChangeIotFlowRuntimeCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeIotFlowRuntimeCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeIotFlowRuntimeCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeIotFlowRuntimeCompartmentRequest,
+                    ChangeIotFlowRuntimeCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1085,6 +1192,108 @@ public class IotAsyncClient implements IotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateIotFlowRuntimeResponse> createIotFlowRuntime(
+            CreateIotFlowRuntimeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateIotFlowRuntimeRequest, CreateIotFlowRuntimeResponse>
+                    handler) {
+        LOG.trace("Called async createIotFlowRuntime");
+        final CreateIotFlowRuntimeRequest interceptedRequest =
+                CreateIotFlowRuntimeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "CreateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/CreateIotFlowRuntime");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateIotFlowRuntimeResponse>
+                transformer =
+                        CreateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateIotFlowRuntimeRequest, CreateIotFlowRuntimeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateIotFlowRuntimeRequest, CreateIotFlowRuntimeResponse>,
+                        java.util.concurrent.Future<CreateIotFlowRuntimeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateIotFlowRuntimeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateIotFlowRuntimeRequest, CreateIotFlowRuntimeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateIotFlowRuntimeResponse> deactivateIotFlowRuntime(
+            DeactivateIotFlowRuntimeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateIotFlowRuntimeRequest, DeactivateIotFlowRuntimeResponse>
+                    handler) {
+        LOG.trace("Called async deactivateIotFlowRuntime");
+        final DeactivateIotFlowRuntimeRequest interceptedRequest =
+                DeactivateIotFlowRuntimeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "DeactivateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/DeactivateIotFlowRuntime");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeactivateIotFlowRuntimeResponse>
+                transformer =
+                        DeactivateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeactivateIotFlowRuntimeRequest, DeactivateIotFlowRuntimeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeactivateIotFlowRuntimeRequest, DeactivateIotFlowRuntimeResponse>,
+                        java.util.concurrent.Future<DeactivateIotFlowRuntimeResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeactivateIotFlowRuntimeRequest, DeactivateIotFlowRuntimeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDigitalTwinAdapterResponse> deleteDigitalTwinAdapter(
             DeleteDigitalTwinAdapterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1360,6 +1569,53 @@ public class IotAsyncClient implements IotAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteIotDomainGroupRequest, DeleteIotDomainGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIotFlowRuntimeResponse> deleteIotFlowRuntime(
+            DeleteIotFlowRuntimeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIotFlowRuntimeRequest, DeleteIotFlowRuntimeResponse>
+                    handler) {
+        LOG.trace("Called async deleteIotFlowRuntime");
+        final DeleteIotFlowRuntimeRequest interceptedRequest =
+                DeleteIotFlowRuntimeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "DeleteIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/DeleteIotFlowRuntime");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteIotFlowRuntimeResponse>
+                transformer =
+                        DeleteIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteIotFlowRuntimeRequest, DeleteIotFlowRuntimeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteIotFlowRuntimeRequest, DeleteIotFlowRuntimeResponse>,
+                        java.util.concurrent.Future<DeleteIotFlowRuntimeResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteIotFlowRuntimeRequest, DeleteIotFlowRuntimeResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1754,6 +2010,99 @@ public class IotAsyncClient implements IotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetIotFlowRuntimeResponse> getIotFlowRuntime(
+            GetIotFlowRuntimeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetIotFlowRuntimeRequest, GetIotFlowRuntimeResponse>
+                    handler) {
+        LOG.trace("Called async getIotFlowRuntime");
+        final GetIotFlowRuntimeRequest interceptedRequest =
+                GetIotFlowRuntimeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "GetIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/GetIotFlowRuntime");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIotFlowRuntimeResponse>
+                transformer =
+                        GetIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetIotFlowRuntimeRequest, GetIotFlowRuntimeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetIotFlowRuntimeRequest, GetIotFlowRuntimeResponse>,
+                        java.util.concurrent.Future<GetIotFlowRuntimeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetIotFlowRuntimeRequest, GetIotFlowRuntimeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIotFlowRuntimeFlowsResponse> getIotFlowRuntimeFlows(
+            GetIotFlowRuntimeFlowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetIotFlowRuntimeFlowsRequest, GetIotFlowRuntimeFlowsResponse>
+                    handler) {
+        LOG.trace("Called async getIotFlowRuntimeFlows");
+        final GetIotFlowRuntimeFlowsRequest interceptedRequest =
+                GetIotFlowRuntimeFlowsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIotFlowRuntimeFlowsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "GetIotFlowRuntimeFlows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/GetIotFlowRuntimeFlows");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetIotFlowRuntimeFlowsResponse>
+                transformer =
+                        GetIotFlowRuntimeFlowsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetIotFlowRuntimeFlowsRequest, GetIotFlowRuntimeFlowsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetIotFlowRuntimeFlowsRequest, GetIotFlowRuntimeFlowsResponse>,
+                        java.util.concurrent.Future<GetIotFlowRuntimeFlowsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetIotFlowRuntimeFlowsRequest, GetIotFlowRuntimeFlowsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2124,6 +2473,53 @@ public class IotAsyncClient implements IotAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListIotDomainsRequest, ListIotDomainsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIotFlowRuntimesResponse> listIotFlowRuntimes(
+            ListIotFlowRuntimesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListIotFlowRuntimesRequest, ListIotFlowRuntimesResponse>
+                    handler) {
+        LOG.trace("Called async listIotFlowRuntimes");
+        final ListIotFlowRuntimesRequest interceptedRequest =
+                ListIotFlowRuntimesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIotFlowRuntimesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "ListIotFlowRuntimes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/ListIotFlowRuntimes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIotFlowRuntimesResponse>
+                transformer =
+                        ListIotFlowRuntimesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListIotFlowRuntimesRequest, ListIotFlowRuntimesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListIotFlowRuntimesRequest, ListIotFlowRuntimesResponse>,
+                        java.util.concurrent.Future<ListIotFlowRuntimesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListIotFlowRuntimesRequest, ListIotFlowRuntimesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2582,6 +2978,112 @@ public class IotAsyncClient implements IotAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateIotDomainGroupRequest, UpdateIotDomainGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIotFlowRuntimeResponse> updateIotFlowRuntime(
+            UpdateIotFlowRuntimeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIotFlowRuntimeRequest, UpdateIotFlowRuntimeResponse>
+                    handler) {
+        LOG.trace("Called async updateIotFlowRuntime");
+        final UpdateIotFlowRuntimeRequest interceptedRequest =
+                UpdateIotFlowRuntimeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIotFlowRuntimeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "UpdateIotFlowRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/UpdateIotFlowRuntime");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateIotFlowRuntimeResponse>
+                transformer =
+                        UpdateIotFlowRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateIotFlowRuntimeRequest, UpdateIotFlowRuntimeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateIotFlowRuntimeRequest, UpdateIotFlowRuntimeResponse>,
+                        java.util.concurrent.Future<UpdateIotFlowRuntimeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateIotFlowRuntimeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateIotFlowRuntimeRequest, UpdateIotFlowRuntimeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIotFlowRuntimeFlowsResponse> updateIotFlowRuntimeFlows(
+            UpdateIotFlowRuntimeFlowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIotFlowRuntimeFlowsRequest, UpdateIotFlowRuntimeFlowsResponse>
+                    handler) {
+        LOG.trace("Called async updateIotFlowRuntimeFlows");
+        final UpdateIotFlowRuntimeFlowsRequest interceptedRequest =
+                UpdateIotFlowRuntimeFlowsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIotFlowRuntimeFlowsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Iot",
+                        "UpdateIotFlowRuntimeFlows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotFlowRuntime/UpdateIotFlowRuntimeFlows");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateIotFlowRuntimeFlowsResponse>
+                transformer =
+                        UpdateIotFlowRuntimeFlowsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateIotFlowRuntimeFlowsRequest, UpdateIotFlowRuntimeFlowsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateIotFlowRuntimeFlowsRequest,
+                                UpdateIotFlowRuntimeFlowsResponse>,
+                        java.util.concurrent.Future<UpdateIotFlowRuntimeFlowsResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getFlowsDocument(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateIotFlowRuntimeFlowsRequest, UpdateIotFlowRuntimeFlowsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

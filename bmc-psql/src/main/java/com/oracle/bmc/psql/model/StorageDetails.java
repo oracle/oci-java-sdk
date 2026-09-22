@@ -30,11 +30,13 @@ package com.oracle.bmc.psql.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class StorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"isRegionallyDurable", "availabilityDomain"})
-    protected StorageDetails(Boolean isRegionallyDurable, String availabilityDomain) {
+    @java.beans.ConstructorProperties({"isRegionallyDurable", "availabilityDomain", "kmsKeyId"})
+    protected StorageDetails(
+            Boolean isRegionallyDurable, String availabilityDomain, String kmsKeyId) {
         super();
         this.isRegionallyDurable = isRegionallyDurable;
         this.availabilityDomain = availabilityDomain;
+        this.kmsKeyId = kmsKeyId;
     }
 
     /**
@@ -79,6 +81,20 @@ public class StorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return availabilityDomain;
     }
 
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the database system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the database system.
+     * @return the value
+     **/
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -95,6 +111,7 @@ public class StorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append("super=").append(super.toString());
         sb.append("isRegionallyDurable=").append(String.valueOf(this.isRegionallyDurable));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -111,6 +128,7 @@ public class StorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBm
         StorageDetails other = (StorageDetails) o;
         return java.util.Objects.equals(this.isRegionallyDurable, other.isRegionallyDurable)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && super.equals(other);
     }
 
@@ -128,6 +146,7 @@ public class StorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

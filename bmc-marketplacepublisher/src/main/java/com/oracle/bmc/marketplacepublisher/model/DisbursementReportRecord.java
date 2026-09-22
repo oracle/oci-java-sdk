@@ -56,6 +56,7 @@ public final class DisbursementReportRecord
         "disbursementAmountUsd",
         "partnerName",
         "partnerId",
+        "publisherServiceListingId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -94,6 +95,7 @@ public final class DisbursementReportRecord
             String disbursementAmountUsd,
             String partnerName,
             String partnerId,
+            String publisherServiceListingId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -131,6 +133,7 @@ public final class DisbursementReportRecord
         this.disbursementAmountUsd = disbursementAmountUsd;
         this.partnerName = partnerName;
         this.partnerId = partnerId;
+        this.publisherServiceListingId = publisherServiceListingId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -668,6 +671,22 @@ public final class DisbursementReportRecord
             return this;
         }
         /**
+         * The listing ocid of the listing
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("publisherServiceListingId")
+        private String publisherServiceListingId;
+
+        /**
+         * The listing ocid of the listing
+         * @param publisherServiceListingId the value to set
+         * @return this builder
+         **/
+        public Builder publisherServiceListingId(String publisherServiceListingId) {
+            this.publisherServiceListingId = publisherServiceListingId;
+            this.__explicitlySet__.add("publisherServiceListingId");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -768,6 +787,7 @@ public final class DisbursementReportRecord
                             this.disbursementAmountUsd,
                             this.partnerName,
                             this.partnerId,
+                            this.publisherServiceListingId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -878,6 +898,9 @@ public final class DisbursementReportRecord
             }
             if (model.wasPropertyExplicitlySet("partnerId")) {
                 this.partnerId(model.getPartnerId());
+            }
+            if (model.wasPropertyExplicitlySet("publisherServiceListingId")) {
+                this.publisherServiceListingId(model.getPublisherServiceListingId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1366,6 +1389,20 @@ public final class DisbursementReportRecord
     }
 
     /**
+     * The listing ocid of the listing
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publisherServiceListingId")
+    private final String publisherServiceListingId;
+
+    /**
+     * The listing ocid of the listing
+     * @return the value
+     **/
+    public String getPublisherServiceListingId() {
+        return publisherServiceListingId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -1469,6 +1506,8 @@ public final class DisbursementReportRecord
         sb.append(", disbursementAmountUsd=").append(String.valueOf(this.disbursementAmountUsd));
         sb.append(", partnerName=").append(String.valueOf(this.partnerName));
         sb.append(", partnerId=").append(String.valueOf(this.partnerId));
+        sb.append(", publisherServiceListingId=")
+                .append(String.valueOf(this.publisherServiceListingId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1524,6 +1563,8 @@ public final class DisbursementReportRecord
                 && java.util.Objects.equals(this.disbursementAmountUsd, other.disbursementAmountUsd)
                 && java.util.Objects.equals(this.partnerName, other.partnerName)
                 && java.util.Objects.equals(this.partnerId, other.partnerId)
+                && java.util.Objects.equals(
+                        this.publisherServiceListingId, other.publisherServiceListingId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1625,6 +1666,11 @@ public final class DisbursementReportRecord
                                 : this.disbursementAmountUsd.hashCode());
         result = (result * PRIME) + (this.partnerName == null ? 43 : this.partnerName.hashCode());
         result = (result * PRIME) + (this.partnerId == null ? 43 : this.partnerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publisherServiceListingId == null
+                                ? 43
+                                : this.publisherServiceListingId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

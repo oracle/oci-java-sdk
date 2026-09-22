@@ -1,0 +1,353 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.bds.responses;
+
+import com.oracle.bmc.bds.model.*;
+
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+public class CreateBdsCapacityReservationConfigurationResponse
+        extends com.oracle.bmc.responses.BmcResponse {
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a request, provide this request ID.
+     *
+     * @return the value
+     */
+    public String getOpcRequestId() {
+        return opcRequestId;
+    }
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
+     * The URI of the created resource.
+     *
+     */
+    private String location;
+
+    /**
+     * The URI of the created resource.
+     *
+     * @return the value
+     */
+    public String getLocation() {
+        return location;
+    }
+
+    /**
+     * The URI of the resource representation returned in the response body.
+     *
+     */
+    private String contentLocation;
+
+    /**
+     * The URI of the resource representation returned in the response body.
+     *
+     * @return the value
+     */
+    public String getContentLocation() {
+        return contentLocation;
+    }
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
+    /**
+     * The returned BdsCapacityReservationConfiguration instance.
+     */
+    private com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration
+            bdsCapacityReservationConfiguration;
+
+    /**
+     * The returned BdsCapacityReservationConfiguration instance.
+     * @return the value
+     */
+    public com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration
+            getBdsCapacityReservationConfiguration() {
+        return bdsCapacityReservationConfiguration;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "location",
+        "contentLocation",
+        "etag",
+        "bdsCapacityReservationConfiguration"
+    })
+    private CreateBdsCapacityReservationConfigurationResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcWorkRequestId,
+            String location,
+            String contentLocation,
+            String etag,
+            com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration
+                    bdsCapacityReservationConfiguration) {
+        super(__httpStatusCode__, headers);
+        this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
+        this.location = location;
+        this.contentLocation = contentLocation;
+        this.etag = etag;
+        this.bdsCapacityReservationConfiguration = bdsCapacityReservationConfiguration;
+    }
+
+    public static class Builder {
+        private int __httpStatusCode__;
+
+        public Builder __httpStatusCode__(int __httpStatusCode__) {
+            this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
+            return this;
+        }
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
+         */
+        private String opcRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a request, provide this request ID.
+         *
+         * @param opcRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
+         * The URI of the created resource.
+         *
+         */
+        private String location;
+
+        /**
+         * The URI of the created resource.
+         *
+         * @param location the value to set
+         * @return this builder
+         */
+        public Builder location(String location) {
+            this.location = location;
+            return this;
+        }
+
+        /**
+         * The URI of the resource representation returned in the response body.
+         *
+         */
+        private String contentLocation;
+
+        /**
+         * The URI of the resource representation returned in the response body.
+         *
+         * @param contentLocation the value to set
+         * @return this builder
+         */
+        public Builder contentLocation(String contentLocation) {
+            this.contentLocation = contentLocation;
+            return this;
+        }
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        /**
+         * The returned BdsCapacityReservationConfiguration instance.
+         */
+        private com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration
+                bdsCapacityReservationConfiguration;
+
+        /**
+         * The returned BdsCapacityReservationConfiguration instance.
+         * @param bdsCapacityReservationConfiguration the value to set
+         * @return this builder
+         */
+        public Builder bdsCapacityReservationConfiguration(
+                com.oracle.bmc.bds.model.BdsCapacityReservationConfiguration
+                        bdsCapacityReservationConfiguration) {
+            this.bdsCapacityReservationConfiguration = bdsCapacityReservationConfiguration;
+            return this;
+        }
+
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(CreateBdsCapacityReservationConfigurationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
+            opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
+            location(o.getLocation());
+            contentLocation(o.getContentLocation());
+            etag(o.getEtag());
+            bdsCapacityReservationConfiguration(o.getBdsCapacityReservationConfiguration());
+
+            return this;
+        }
+
+        /**
+         * Build the response object.
+         * @return the response object
+         */
+        public CreateBdsCapacityReservationConfigurationResponse build() {
+            return new CreateBdsCapacityReservationConfigurationResponse(
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    location,
+                    contentLocation,
+                    etag,
+                    bdsCapacityReservationConfiguration);
+        }
+    }
+
+    /**
+     * Return a new builder for this response object.
+     * @return builder for the response object
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    @Override
+    public String toString() {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("(");
+        sb.append("super=").append(super.toString());
+        sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
+        sb.append(",location=").append(String.valueOf(location));
+        sb.append(",contentLocation=").append(String.valueOf(contentLocation));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",bdsCapacityReservationConfiguration=")
+                .append(String.valueOf(bdsCapacityReservationConfiguration));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateBdsCapacityReservationConfigurationResponse)) {
+            return false;
+        }
+
+        CreateBdsCapacityReservationConfigurationResponse other =
+                (CreateBdsCapacityReservationConfigurationResponse) o;
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.contentLocation, other.contentLocation)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(
+                        this.bdsCapacityReservationConfiguration,
+                        other.bdsCapacityReservationConfiguration);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.contentLocation == null ? 43 : this.contentLocation.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bdsCapacityReservationConfiguration == null
+                                ? 43
+                                : this.bdsCapacityReservationConfiguration.hashCode());
+        return result;
+    }
+}

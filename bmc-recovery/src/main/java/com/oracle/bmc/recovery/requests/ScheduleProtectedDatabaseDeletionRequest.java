@@ -38,6 +38,27 @@ public class ScheduleProtectedDatabaseDeletionRequest
         return scheduleProtectedDatabaseDeletionDetails;
     }
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
+    }
+    /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
@@ -123,6 +144,31 @@ public class ScheduleProtectedDatabaseDeletionRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * For optimistic concurrency control. In the PUT or DELETE call
          * for a resource, set the {@code if-match} parameter to the value of the
          * etag from a previous GET or POST response for that resource.
@@ -193,6 +239,7 @@ public class ScheduleProtectedDatabaseDeletionRequest
             protectedDatabaseId(o.getProtectedDatabaseId());
             scheduleProtectedDatabaseDeletionDetails(
                     o.getScheduleProtectedDatabaseDeletionDetails());
+            opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -243,10 +290,11 @@ public class ScheduleProtectedDatabaseDeletionRequest
             request.protectedDatabaseId = protectedDatabaseId;
             request.scheduleProtectedDatabaseDeletionDetails =
                     scheduleProtectedDatabaseDeletionDetails;
+            request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ScheduleProtectedDatabaseDeletionRequest(protectedDatabaseId, scheduleProtectedDatabaseDeletionDetails, ifMatch, opcRequestId);
+            // new ScheduleProtectedDatabaseDeletionRequest(protectedDatabaseId, scheduleProtectedDatabaseDeletionDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
@@ -258,6 +306,7 @@ public class ScheduleProtectedDatabaseDeletionRequest
         return new Builder()
                 .protectedDatabaseId(protectedDatabaseId)
                 .scheduleProtectedDatabaseDeletionDetails(scheduleProtectedDatabaseDeletionDetails)
+                .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -278,6 +327,7 @@ public class ScheduleProtectedDatabaseDeletionRequest
         sb.append(",protectedDatabaseId=").append(String.valueOf(this.protectedDatabaseId));
         sb.append(",scheduleProtectedDatabaseDeletionDetails=")
                 .append(String.valueOf(this.scheduleProtectedDatabaseDeletionDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -300,6 +350,7 @@ public class ScheduleProtectedDatabaseDeletionRequest
                 && java.util.Objects.equals(
                         this.scheduleProtectedDatabaseDeletionDetails,
                         other.scheduleProtectedDatabaseDeletionDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -318,6 +369,9 @@ public class ScheduleProtectedDatabaseDeletionRequest
                         + (this.scheduleProtectedDatabaseDeletionDetails == null
                                 ? 43
                                 : this.scheduleProtectedDatabaseDeletionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

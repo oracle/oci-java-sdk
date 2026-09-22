@@ -626,6 +626,113 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ConvertToSecondaryClusterResponse> convertToSecondaryCluster(
+            ConvertToSecondaryClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConvertToSecondaryClusterRequest, ConvertToSecondaryClusterResponse>
+                    handler) {
+        LOG.trace("Called async convertToSecondaryCluster");
+        final ConvertToSecondaryClusterRequest interceptedRequest =
+                ConvertToSecondaryClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConvertToSecondaryClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RedisCluster",
+                        "ConvertToSecondaryCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ConvertToSecondaryCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ConvertToSecondaryClusterResponse>
+                transformer =
+                        ConvertToSecondaryClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConvertToSecondaryClusterRequest, ConvertToSecondaryClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConvertToSecondaryClusterRequest,
+                                ConvertToSecondaryClusterResponse>,
+                        java.util.concurrent.Future<ConvertToSecondaryClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getConvertToSecondaryClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConvertToSecondaryClusterRequest, ConvertToSecondaryClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConvertToStandaloneClusterResponse>
+            convertToStandaloneCluster(
+                    ConvertToStandaloneClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConvertToStandaloneClusterRequest,
+                                    ConvertToStandaloneClusterResponse>
+                            handler) {
+        LOG.trace("Called async convertToStandaloneCluster");
+        final ConvertToStandaloneClusterRequest interceptedRequest =
+                ConvertToStandaloneClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConvertToStandaloneClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RedisCluster",
+                        "ConvertToStandaloneCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ConvertToStandaloneCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ConvertToStandaloneClusterResponse>
+                transformer =
+                        ConvertToStandaloneClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConvertToStandaloneClusterRequest, ConvertToStandaloneClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConvertToStandaloneClusterRequest,
+                                ConvertToStandaloneClusterResponse>,
+                        java.util.concurrent.Future<ConvertToStandaloneClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConvertToStandaloneClusterRequest, ConvertToStandaloneClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRedisClusterResponse> createRedisCluster(
             CreateRedisClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1137,6 +1244,50 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchoverResponse> switchover(
+            SwitchoverRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SwitchoverRequest, SwitchoverResponse>
+                    handler) {
+        LOG.trace("Called async switchover");
+        final SwitchoverRequest interceptedRequest = SwitchoverConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchoverConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "RedisCluster",
+                        "Switchover",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/Switchover");
+        final java.util.function.Function<javax.ws.rs.core.Response, SwitchoverResponse>
+                transformer =
+                        SwitchoverConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SwitchoverRequest, SwitchoverResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SwitchoverRequest, SwitchoverResponse>,
+                        java.util.concurrent.Future<SwitchoverResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SwitchoverRequest, SwitchoverResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

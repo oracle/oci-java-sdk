@@ -1172,6 +1172,65 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeRoutingProfileCompartmentResponse>
+            changeRoutingProfileCompartment(
+                    ChangeRoutingProfileCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRoutingProfileCompartmentRequest,
+                                    ChangeRoutingProfileCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeRoutingProfileCompartment");
+        final ChangeRoutingProfileCompartmentRequest interceptedRequest =
+                ChangeRoutingProfileCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRoutingProfileCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ChangeRoutingProfileCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/ChangeRoutingProfileCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeRoutingProfileCompartmentResponse>
+                transformer =
+                        ChangeRoutingProfileCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeRoutingProfileCompartmentRequest,
+                        ChangeRoutingProfileCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeRoutingProfileCompartmentRequest,
+                                ChangeRoutingProfileCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeRoutingProfileCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeRoutingProfileCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeRoutingProfileCompartmentRequest,
+                    ChangeRoutingProfileCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSemanticStoreCompartmentResponse>
             changeSemanticStoreCompartment(
                     ChangeSemanticStoreCompartmentRequest request,
@@ -1811,6 +1870,59 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateModelRequest, CreateModelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRoutingProfileResponse> createRoutingProfile(
+            CreateRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateRoutingProfileRequest, CreateRoutingProfileResponse>
+                    handler) {
+        LOG.trace("Called async createRoutingProfile");
+        final CreateRoutingProfileRequest interceptedRequest =
+                CreateRoutingProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRoutingProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "CreateRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/CreateRoutingProfile");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateRoutingProfileResponse>
+                transformer =
+                        CreateRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateRoutingProfileRequest, CreateRoutingProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateRoutingProfileRequest, CreateRoutingProfileResponse>,
+                        java.util.concurrent.Future<CreateRoutingProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateRoutingProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateRoutingProfileRequest, CreateRoutingProfileResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2573,6 +2685,53 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRoutingProfileResponse> deleteRoutingProfile(
+            DeleteRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRoutingProfileRequest, DeleteRoutingProfileResponse>
+                    handler) {
+        LOG.trace("Called async deleteRoutingProfile");
+        final DeleteRoutingProfileRequest interceptedRequest =
+                DeleteRoutingProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRoutingProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "DeleteRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/DeleteRoutingProfile");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRoutingProfileResponse>
+                transformer =
+                        DeleteRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteRoutingProfileRequest, DeleteRoutingProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteRoutingProfileRequest, DeleteRoutingProfileResponse>,
+                        java.util.concurrent.Future<DeleteRoutingProfileResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteRoutingProfileRequest, DeleteRoutingProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSemanticStoreResponse> deleteSemanticStore(
             DeleteSemanticStoreRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3170,6 +3329,52 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetModelRequest, GetModelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRoutingProfileResponse> getRoutingProfile(
+            GetRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRoutingProfileRequest, GetRoutingProfileResponse>
+                    handler) {
+        LOG.trace("Called async getRoutingProfile");
+        final GetRoutingProfileRequest interceptedRequest =
+                GetRoutingProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRoutingProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "GetRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/GetRoutingProfile");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetRoutingProfileResponse>
+                transformer =
+                        GetRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetRoutingProfileRequest, GetRoutingProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetRoutingProfileRequest, GetRoutingProfileResponse>,
+                        java.util.concurrent.Future<GetRoutingProfileResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetRoutingProfileRequest, GetRoutingProfileResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3903,6 +4108,52 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListModelDiscoveryResponse> listModelDiscovery(
+            ListModelDiscoveryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListModelDiscoveryRequest, ListModelDiscoveryResponse>
+                    handler) {
+        LOG.trace("Called async listModelDiscovery");
+        final ListModelDiscoveryRequest interceptedRequest =
+                ListModelDiscoveryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModelDiscoveryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ListModelDiscovery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ModelDiscoveryCollection/ListModelDiscovery");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListModelDiscoveryResponse>
+                transformer =
+                        ListModelDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListModelDiscoveryRequest, ListModelDiscoveryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListModelDiscoveryRequest, ListModelDiscoveryResponse>,
+                        java.util.concurrent.Future<ListModelDiscoveryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListModelDiscoveryRequest, ListModelDiscoveryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResponse> listModels(
             ListModelsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse>
@@ -3933,6 +4184,53 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListModelsRequest, ListModelsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoutingProfilesResponse> listRoutingProfiles(
+            ListRoutingProfilesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRoutingProfilesRequest, ListRoutingProfilesResponse>
+                    handler) {
+        LOG.trace("Called async listRoutingProfiles");
+        final ListRoutingProfilesRequest interceptedRequest =
+                ListRoutingProfilesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRoutingProfilesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "ListRoutingProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfileCollection/ListRoutingProfiles");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRoutingProfilesResponse>
+                transformer =
+                        ListRoutingProfilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListRoutingProfilesRequest, ListRoutingProfilesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRoutingProfilesRequest, ListRoutingProfilesResponse>,
+                        java.util.concurrent.Future<ListRoutingProfilesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRoutingProfilesRequest, ListRoutingProfilesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4959,6 +5257,58 @@ public class GenerativeAiAsyncClient implements GenerativeAiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateModelRequest, UpdateModelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileResponse> updateRoutingProfile(
+            UpdateRoutingProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRoutingProfileRequest, UpdateRoutingProfileResponse>
+                    handler) {
+        LOG.trace("Called async updateRoutingProfile");
+        final UpdateRoutingProfileRequest interceptedRequest =
+                UpdateRoutingProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRoutingProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GenerativeAi",
+                        "UpdateRoutingProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/RoutingProfile/UpdateRoutingProfile");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRoutingProfileResponse>
+                transformer =
+                        UpdateRoutingProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateRoutingProfileRequest, UpdateRoutingProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateRoutingProfileRequest, UpdateRoutingProfileResponse>,
+                        java.util.concurrent.Future<UpdateRoutingProfileResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateRoutingProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateRoutingProfileRequest, UpdateRoutingProfileResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

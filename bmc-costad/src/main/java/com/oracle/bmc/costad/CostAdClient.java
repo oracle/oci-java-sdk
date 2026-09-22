@@ -574,7 +574,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "CreateCostAlertSubscription", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "CreateCostAlertSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/CreateCostAlertSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, CreateCostAlertSubscriptionResponse>
                 transformer =
                         CreateCostAlertSubscriptionConverter.fromResponse(
@@ -615,7 +618,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "CreateCostAnomalyMonitor", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "CreateCostAnomalyMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/CreateCostAnomalyMonitor");
         java.util.function.Function<javax.ws.rs.core.Response, CreateCostAnomalyMonitorResponse>
                 transformer =
                         CreateCostAnomalyMonitorConverter.fromResponse(
@@ -654,7 +660,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "DeleteCostAlertSubscription", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "DeleteCostAlertSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/DeleteCostAlertSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteCostAlertSubscriptionResponse>
                 transformer =
                         DeleteCostAlertSubscriptionConverter.fromResponse(
@@ -690,7 +699,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "DeleteCostAnomalyMonitor", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "DeleteCostAnomalyMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/DeleteCostAnomalyMonitor");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteCostAnomalyMonitorResponse>
                 transformer =
                         DeleteCostAnomalyMonitorConverter.fromResponse(
@@ -727,7 +739,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "DisableCostAnomalyMonitor", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "DisableCostAnomalyMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/DisableCostAnomalyMonitor");
         java.util.function.Function<javax.ws.rs.core.Response, DisableCostAnomalyMonitorResponse>
                 transformer =
                         DisableCostAnomalyMonitorConverter.fromResponse(
@@ -764,7 +779,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "EnableCostAnomalyMonitor", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "EnableCostAnomalyMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/EnableCostAnomalyMonitor");
         java.util.function.Function<javax.ws.rs.core.Response, EnableCostAnomalyMonitorResponse>
                 transformer =
                         EnableCostAnomalyMonitorConverter.fromResponse(
@@ -800,7 +818,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "GetCostAlertSubscription", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "GetCostAlertSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/GetCostAlertSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, GetCostAlertSubscriptionResponse>
                 transformer =
                         GetCostAlertSubscriptionConverter.fromResponse(
@@ -834,7 +855,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "GetCostAnomalyEvent", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "GetCostAnomalyEvent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/GetCostAnomalyEvent");
         java.util.function.Function<javax.ws.rs.core.Response, GetCostAnomalyEventResponse>
                 transformer =
                         GetCostAnomalyEventConverter.fromResponse(
@@ -869,7 +893,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "GetCostAnomalyMonitor", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "GetCostAnomalyMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/GetCostAnomalyMonitor");
         java.util.function.Function<javax.ws.rs.core.Response, GetCostAnomalyMonitorResponse>
                 transformer =
                         GetCostAnomalyMonitorConverter.fromResponse(
@@ -904,7 +931,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "ListCostAlertSubscriptions", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "ListCostAlertSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscriptionCollection/ListCostAlertSubscriptions");
         java.util.function.Function<javax.ws.rs.core.Response, ListCostAlertSubscriptionsResponse>
                 transformer =
                         ListCostAlertSubscriptionsConverter.fromResponse(
@@ -939,7 +969,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "ListCostAnomalyEvents", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "ListCostAnomalyEvents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEventCollection/ListCostAnomalyEvents");
         java.util.function.Function<javax.ws.rs.core.Response, ListCostAnomalyEventsResponse>
                 transformer =
                         ListCostAnomalyEventsConverter.fromResponse(
@@ -974,7 +1007,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "ListCostAnomalyMonitors", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "ListCostAnomalyMonitors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitorCollection/ListCostAnomalyMonitors");
         java.util.function.Function<javax.ws.rs.core.Response, ListCostAnomalyMonitorsResponse>
                 transformer =
                         ListCostAnomalyMonitorsConverter.fromResponse(
@@ -1012,7 +1048,7 @@ public class CostAdClient implements CostAd {
                         "CostAd",
                         "SummarizeCostAnomalyEventAnalytics",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/SummarizeCostAnomalyEventAnalytics");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeCostAnomalyEventAnalyticsResponse>
                 transformer =
@@ -1048,7 +1084,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "UpdateCostAlertSubscription", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "UpdateCostAlertSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/UpdateCostAlertSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateCostAlertSubscriptionResponse>
                 transformer =
                         UpdateCostAlertSubscriptionConverter.fromResponse(
@@ -1088,7 +1127,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "UpdateCostAnomalyEvent", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "UpdateCostAnomalyEvent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/UpdateCostAnomalyEvent");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateCostAnomalyEventResponse>
                 transformer =
                         UpdateCostAnomalyEventConverter.fromResponse(
@@ -1127,7 +1169,10 @@ public class CostAdClient implements CostAd {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "CostAd", "UpdateCostAnomalyMonitor", ib.getRequestUri().toString(), "");
+                        "CostAd",
+                        "UpdateCostAnomalyMonitor",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/UpdateCostAnomalyMonitor");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateCostAnomalyMonitorResponse>
                 transformer =
                         UpdateCostAnomalyMonitorConverter.fromResponse(

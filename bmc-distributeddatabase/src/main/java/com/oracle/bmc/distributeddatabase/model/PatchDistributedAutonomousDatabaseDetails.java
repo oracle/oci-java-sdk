@@ -5,7 +5,7 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * Provide PatchInstuction(s) in items array. All instructions in items have to be of same type.
+ * Provide PatchInstruction(s) in items array. All instructions in items have to be of same type.
  * All instructions in items have to either PatchInsertInstruction type, PatchRemoveInstruction or
  * PatchMergeInstruction. Multiple instructions of different types is not allowed to be performed in
  * single operation.
@@ -18,7 +18,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PatchDistributedAutonomousDatabaseDetails.Builder.class
 )

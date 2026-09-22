@@ -7,7 +7,7 @@ package com.oracle.bmc.distributeddatabase.model;
 /**
  * Sort orders.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),

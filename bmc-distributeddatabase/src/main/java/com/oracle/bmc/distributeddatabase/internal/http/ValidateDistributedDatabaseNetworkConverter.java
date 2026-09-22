@@ -10,7 +10,7 @@ import com.oracle.bmc.distributeddatabase.requests.*;
 import com.oracle.bmc.distributeddatabase.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class ValidateDistributedDatabaseNetworkConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -39,7 +39,7 @@ public class ValidateDistributedDatabaseNetworkConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20250101")
+                        .path("/20260101")
                         .path("distributedDatabases")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
@@ -53,22 +53,6 @@ public class ValidateDistributedDatabaseNetworkConverter {
                             "isSurrogate",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getIsSurrogate()));
-        }
-
-        if (request.getResourceName() != null) {
-            target =
-                    target.queryParam(
-                            "resourceName",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getResourceName()));
-        }
-
-        if (request.getShardGroup() != null) {
-            target =
-                    target.queryParam(
-                            "shardGroup",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getShardGroup()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
