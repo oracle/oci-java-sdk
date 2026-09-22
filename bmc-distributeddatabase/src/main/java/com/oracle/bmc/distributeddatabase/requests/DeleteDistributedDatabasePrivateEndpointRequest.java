@@ -11,7 +11,7 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteDistributedDatabasePrivateEndpointRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DeleteDistributedDatabasePrivateEndpointRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

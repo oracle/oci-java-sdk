@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbPrivateEndpointServiceClient
         extends com.oracle.bmc.http.internal.BaseSyncClient
         implements DistributedDbPrivateEndpointService {
@@ -145,10 +145,10 @@ public class DistributedDbPrivateEndpointServiceClient
                 .serviceDetails(
                         "DistributedDbPrivateEndpointService",
                         "ChangeDistributedDatabasePrivateEndpointCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/ChangeDistributedDatabasePrivateEndpointCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/ChangeDistributedDatabasePrivateEndpointCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDistributedDatabasePrivateEndpointCompartmentRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabasePrivateEndpoints")
                 .appendPathParam(request.getDistributedDatabasePrivateEndpointId())
                 .appendPathParam("actions")
@@ -186,7 +186,7 @@ public class DistributedDbPrivateEndpointServiceClient
                         "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDistributedDatabasePrivateEndpointRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabasePrivateEndpoints")
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -223,10 +223,10 @@ public class DistributedDbPrivateEndpointServiceClient
                 .serviceDetails(
                         "DistributedDbPrivateEndpointService",
                         "DeleteDistributedDatabasePrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/DeleteDistributedDatabasePrivateEndpoint")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/DeleteDistributedDatabasePrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDistributedDatabasePrivateEndpointRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabasePrivateEndpoints")
                 .appendPathParam(request.getDistributedDatabasePrivateEndpointId())
                 .accept("application/json")
@@ -256,10 +256,10 @@ public class DistributedDbPrivateEndpointServiceClient
                 .serviceDetails(
                         "DistributedDbPrivateEndpointService",
                         "GetDistributedDatabasePrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/GetDistributedDatabasePrivateEndpoint")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/GetDistributedDatabasePrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDistributedDatabasePrivateEndpointRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabasePrivateEndpoints")
                 .appendPathParam(request.getDistributedDatabasePrivateEndpointId())
                 .accept("application/json")
@@ -289,12 +289,13 @@ public class DistributedDbPrivateEndpointServiceClient
                 .serviceDetails(
                         "DistributedDbPrivateEndpointService",
                         "ListDistributedDatabasePrivateEndpoints",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpointCollection/ListDistributedDatabasePrivateEndpoints")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpointCollection/ListDistributedDatabasePrivateEndpoints")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDistributedDatabasePrivateEndpointsRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabasePrivateEndpoints")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -319,6 +320,43 @@ public class DistributedDbPrivateEndpointServiceClient
     }
 
     @Override
+    public PatchDistributedDatabasePrivateEndpointResponse patchDistributedDatabasePrivateEndpoint(
+            PatchDistributedDatabasePrivateEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getDistributedDatabasePrivateEndpointId(),
+                "distributedDatabasePrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getPatchDistributedDatabasePrivateEndpointDetails(),
+                "patchDistributedDatabasePrivateEndpointDetails is required");
+
+        return clientCall(request, PatchDistributedDatabasePrivateEndpointResponse::builder)
+                .logger(LOG, "patchDistributedDatabasePrivateEndpoint")
+                .serviceDetails(
+                        "DistributedDbPrivateEndpointService",
+                        "PatchDistributedDatabasePrivateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/PatchDistributedDatabasePrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchDistributedDatabasePrivateEndpointRequest::builder)
+                .basePath("/20260101")
+                .appendPathParam("distributedDatabasePrivateEndpoints")
+                .appendPathParam(request.getDistributedDatabasePrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchDistributedDatabasePrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchDistributedDatabasePrivateEndpointResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ReinstateProxyInstanceResponse reinstateProxyInstance(
             ReinstateProxyInstanceRequest request) {
 
@@ -331,10 +369,10 @@ public class DistributedDbPrivateEndpointServiceClient
                 .serviceDetails(
                         "DistributedDbPrivateEndpointService",
                         "ReinstateProxyInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/ReinstateProxyInstance")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/ReinstateProxyInstance")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ReinstateProxyInstanceRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabasePrivateEndpoints")
                 .appendPathParam(request.getDistributedDatabasePrivateEndpointId())
                 .appendPathParam("actions")
@@ -369,10 +407,10 @@ public class DistributedDbPrivateEndpointServiceClient
                 .serviceDetails(
                         "DistributedDbPrivateEndpointService",
                         "UpdateDistributedDatabasePrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/UpdateDistributedDatabasePrivateEndpoint")
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/UpdateDistributedDatabasePrivateEndpoint")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDistributedDatabasePrivateEndpointRequest::builder)
-                .basePath("/20250101")
+                .basePath("/20260101")
                 .appendPathParam("distributedDatabasePrivateEndpoints")
                 .appendPathParam(request.getDistributedDatabasePrivateEndpointId())
                 .accept("application/json")

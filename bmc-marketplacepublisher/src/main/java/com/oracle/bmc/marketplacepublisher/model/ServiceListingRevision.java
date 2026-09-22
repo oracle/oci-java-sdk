@@ -189,6 +189,15 @@ public final class ServiceListingRevision extends ListingRevision {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("banner")
+        private ListingRevisionBannerAttachment banner;
+
+        public Builder banner(ListingRevisionBannerAttachment banner) {
+            this.banner = banner;
+            this.__explicitlySet__.add("banner");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -377,6 +386,7 @@ public final class ServiceListingRevision extends ListingRevision {
                             this.supportContacts,
                             this.supportLinks,
                             this.icon,
+                            this.banner,
                             this.status,
                             this.statusNotes,
                             this.lifecycleState,
@@ -453,6 +463,9 @@ public final class ServiceListingRevision extends ListingRevision {
             if (model.wasPropertyExplicitlySet("icon")) {
                 this.icon(model.getIcon());
             }
+            if (model.wasPropertyExplicitlySet("banner")) {
+                this.banner(model.getBanner());
+            }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
             }
@@ -528,6 +541,7 @@ public final class ServiceListingRevision extends ListingRevision {
             java.util.List<SupportContact> supportContacts,
             java.util.List<NamedLink> supportLinks,
             ListingRevisionIconAttachment icon,
+            ListingRevisionBannerAttachment banner,
             Status status,
             String statusNotes,
             LifecycleState lifecycleState,
@@ -561,6 +575,7 @@ public final class ServiceListingRevision extends ListingRevision {
                 supportContacts,
                 supportLinks,
                 icon,
+                banner,
                 status,
                 statusNotes,
                 lifecycleState,

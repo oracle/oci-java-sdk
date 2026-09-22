@@ -2310,6 +2310,1161 @@ public class DataSafePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentBackupSets operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentBackupSetsResponse>
+            listCryptoAssessmentBackupSetsResponseIterator(
+                    final ListCryptoAssessmentBackupSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentBackupSetsRequest.Builder,
+                ListCryptoAssessmentBackupSetsRequest,
+                ListCryptoAssessmentBackupSetsResponse>(
+                new java.util.function.Supplier<ListCryptoAssessmentBackupSetsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentBackupSetsRequest.Builder get() {
+                        return ListCryptoAssessmentBackupSetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentBackupSetsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentBackupSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentBackupSetsRequest.Builder>,
+                        ListCryptoAssessmentBackupSetsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentBackupSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentBackupSetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentBackupSetsRequest,
+                        ListCryptoAssessmentBackupSetsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentBackupSetsResponse apply(
+                            ListCryptoAssessmentBackupSetsRequest request) {
+                        return client.listCryptoAssessmentBackupSets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentBackupSetSummary} objects contained in
+     * responses from the listCryptoAssessmentBackupSets operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentBackupSetSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentBackupSetSummary>
+            listCryptoAssessmentBackupSetsRecordIterator(
+                    final ListCryptoAssessmentBackupSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentBackupSetsRequest.Builder,
+                ListCryptoAssessmentBackupSetsRequest,
+                ListCryptoAssessmentBackupSetsResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentBackupSetSummary>(
+                new java.util.function.Supplier<ListCryptoAssessmentBackupSetsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentBackupSetsRequest.Builder get() {
+                        return ListCryptoAssessmentBackupSetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentBackupSetsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentBackupSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentBackupSetsRequest.Builder>,
+                        ListCryptoAssessmentBackupSetsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentBackupSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentBackupSetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentBackupSetsRequest,
+                        ListCryptoAssessmentBackupSetsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentBackupSetsResponse apply(
+                            ListCryptoAssessmentBackupSetsRequest request) {
+                        return client.listCryptoAssessmentBackupSets(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentBackupSetsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.CryptoAssessmentBackupSetSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.CryptoAssessmentBackupSetSummary>
+                            apply(ListCryptoAssessmentBackupSetsResponse response) {
+                        return response.getCryptoAssessmentBackupSetCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentCertificates operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentCertificatesResponse>
+            listCryptoAssessmentCertificatesResponseIterator(
+                    final ListCryptoAssessmentCertificatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentCertificatesRequest.Builder,
+                ListCryptoAssessmentCertificatesRequest,
+                ListCryptoAssessmentCertificatesResponse>(
+                new java.util.function.Supplier<ListCryptoAssessmentCertificatesRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentCertificatesRequest.Builder get() {
+                        return ListCryptoAssessmentCertificatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentCertificatesResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentCertificatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentCertificatesRequest.Builder>,
+                        ListCryptoAssessmentCertificatesRequest>() {
+                    @Override
+                    public ListCryptoAssessmentCertificatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentCertificatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentCertificatesRequest,
+                        ListCryptoAssessmentCertificatesResponse>() {
+                    @Override
+                    public ListCryptoAssessmentCertificatesResponse apply(
+                            ListCryptoAssessmentCertificatesRequest request) {
+                        return client.listCryptoAssessmentCertificates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentCertificateSummary} objects contained in
+     * responses from the listCryptoAssessmentCertificates operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentCertificateSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentCertificateSummary>
+            listCryptoAssessmentCertificatesRecordIterator(
+                    final ListCryptoAssessmentCertificatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentCertificatesRequest.Builder,
+                ListCryptoAssessmentCertificatesRequest,
+                ListCryptoAssessmentCertificatesResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentCertificateSummary>(
+                new java.util.function.Supplier<ListCryptoAssessmentCertificatesRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentCertificatesRequest.Builder get() {
+                        return ListCryptoAssessmentCertificatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentCertificatesResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentCertificatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentCertificatesRequest.Builder>,
+                        ListCryptoAssessmentCertificatesRequest>() {
+                    @Override
+                    public ListCryptoAssessmentCertificatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentCertificatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentCertificatesRequest,
+                        ListCryptoAssessmentCertificatesResponse>() {
+                    @Override
+                    public ListCryptoAssessmentCertificatesResponse apply(
+                            ListCryptoAssessmentCertificatesRequest request) {
+                        return client.listCryptoAssessmentCertificates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentCertificatesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .CryptoAssessmentCertificateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .CryptoAssessmentCertificateSummary>
+                            apply(ListCryptoAssessmentCertificatesResponse response) {
+                        return response.getCryptoAssessmentCertificateCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentFindingAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentFindingAnalyticsResponse>
+            listCryptoAssessmentFindingAnalyticsResponseIterator(
+                    final ListCryptoAssessmentFindingAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentFindingAnalyticsRequest.Builder,
+                ListCryptoAssessmentFindingAnalyticsRequest,
+                ListCryptoAssessmentFindingAnalyticsResponse>(
+                new java.util.function.Supplier<
+                        ListCryptoAssessmentFindingAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentFindingAnalyticsRequest.Builder get() {
+                        return ListCryptoAssessmentFindingAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentFindingAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentFindingAnalyticsRequest.Builder>,
+                        ListCryptoAssessmentFindingAnalyticsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentFindingAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentFindingAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingAnalyticsRequest,
+                        ListCryptoAssessmentFindingAnalyticsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentFindingAnalyticsResponse apply(
+                            ListCryptoAssessmentFindingAnalyticsRequest request) {
+                        return client.listCryptoAssessmentFindingAnalytics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentFindingAnalyticsSummary} objects contained in
+     * responses from the listCryptoAssessmentFindingAnalytics operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentFindingAnalyticsSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentFindingAnalyticsSummary>
+            listCryptoAssessmentFindingAnalyticsRecordIterator(
+                    final ListCryptoAssessmentFindingAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentFindingAnalyticsRequest.Builder,
+                ListCryptoAssessmentFindingAnalyticsRequest,
+                ListCryptoAssessmentFindingAnalyticsResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentFindingAnalyticsSummary>(
+                new java.util.function.Supplier<
+                        ListCryptoAssessmentFindingAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentFindingAnalyticsRequest.Builder get() {
+                        return ListCryptoAssessmentFindingAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentFindingAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentFindingAnalyticsRequest.Builder>,
+                        ListCryptoAssessmentFindingAnalyticsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentFindingAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentFindingAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingAnalyticsRequest,
+                        ListCryptoAssessmentFindingAnalyticsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentFindingAnalyticsResponse apply(
+                            ListCryptoAssessmentFindingAnalyticsRequest request) {
+                        return client.listCryptoAssessmentFindingAnalytics(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingAnalyticsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .CryptoAssessmentFindingAnalyticsSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .CryptoAssessmentFindingAnalyticsSummary>
+                            apply(ListCryptoAssessmentFindingAnalyticsResponse response) {
+                        return response.getCryptoAssessmentFindingAnalyticsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentFindingTargets operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentFindingTargetsResponse>
+            listCryptoAssessmentFindingTargetsResponseIterator(
+                    final ListCryptoAssessmentFindingTargetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentFindingTargetsRequest.Builder,
+                ListCryptoAssessmentFindingTargetsRequest,
+                ListCryptoAssessmentFindingTargetsResponse>(
+                new java.util.function.Supplier<
+                        ListCryptoAssessmentFindingTargetsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentFindingTargetsRequest.Builder get() {
+                        return ListCryptoAssessmentFindingTargetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingTargetsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentFindingTargetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentFindingTargetsRequest.Builder>,
+                        ListCryptoAssessmentFindingTargetsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentFindingTargetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentFindingTargetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingTargetsRequest,
+                        ListCryptoAssessmentFindingTargetsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentFindingTargetsResponse apply(
+                            ListCryptoAssessmentFindingTargetsRequest request) {
+                        return client.listCryptoAssessmentFindingTargets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentFindingTargetSummary} objects contained in
+     * responses from the listCryptoAssessmentFindingTargets operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentFindingTargetSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentFindingTargetSummary>
+            listCryptoAssessmentFindingTargetsRecordIterator(
+                    final ListCryptoAssessmentFindingTargetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentFindingTargetsRequest.Builder,
+                ListCryptoAssessmentFindingTargetsRequest,
+                ListCryptoAssessmentFindingTargetsResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentFindingTargetSummary>(
+                new java.util.function.Supplier<
+                        ListCryptoAssessmentFindingTargetsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentFindingTargetsRequest.Builder get() {
+                        return ListCryptoAssessmentFindingTargetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingTargetsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentFindingTargetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentFindingTargetsRequest.Builder>,
+                        ListCryptoAssessmentFindingTargetsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentFindingTargetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentFindingTargetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingTargetsRequest,
+                        ListCryptoAssessmentFindingTargetsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentFindingTargetsResponse apply(
+                            ListCryptoAssessmentFindingTargetsRequest request) {
+                        return client.listCryptoAssessmentFindingTargets(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingTargetsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .CryptoAssessmentFindingTargetSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .CryptoAssessmentFindingTargetSummary>
+                            apply(ListCryptoAssessmentFindingTargetsResponse response) {
+                        return response.getCryptoAssessmentFindingTargetCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentFindings operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentFindingsResponse>
+            listCryptoAssessmentFindingsResponseIterator(
+                    final ListCryptoAssessmentFindingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentFindingsRequest.Builder,
+                ListCryptoAssessmentFindingsRequest,
+                ListCryptoAssessmentFindingsResponse>(
+                new java.util.function.Supplier<ListCryptoAssessmentFindingsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentFindingsRequest.Builder get() {
+                        return ListCryptoAssessmentFindingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentFindingsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentFindingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentFindingsRequest.Builder>,
+                        ListCryptoAssessmentFindingsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentFindingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentFindingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingsRequest,
+                        ListCryptoAssessmentFindingsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentFindingsResponse apply(
+                            ListCryptoAssessmentFindingsRequest request) {
+                        return client.listCryptoAssessmentFindings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentFindingSummary} objects contained in responses
+     * from the listCryptoAssessmentFindings operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentFindingSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentFindingSummary>
+            listCryptoAssessmentFindingsRecordIterator(
+                    final ListCryptoAssessmentFindingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentFindingsRequest.Builder,
+                ListCryptoAssessmentFindingsRequest,
+                ListCryptoAssessmentFindingsResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentFindingSummary>(
+                new java.util.function.Supplier<ListCryptoAssessmentFindingsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentFindingsRequest.Builder get() {
+                        return ListCryptoAssessmentFindingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentFindingsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentFindingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentFindingsRequest.Builder>,
+                        ListCryptoAssessmentFindingsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentFindingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentFindingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingsRequest,
+                        ListCryptoAssessmentFindingsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentFindingsResponse apply(
+                            ListCryptoAssessmentFindingsRequest request) {
+                        return client.listCryptoAssessmentFindings(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentFindingsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.CryptoAssessmentFindingSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.CryptoAssessmentFindingSummary>
+                            apply(ListCryptoAssessmentFindingsResponse response) {
+                        return response.getCryptoAssessmentFindingCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentKeys operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentKeysResponse> listCryptoAssessmentKeysResponseIterator(
+            final ListCryptoAssessmentKeysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentKeysRequest.Builder,
+                ListCryptoAssessmentKeysRequest,
+                ListCryptoAssessmentKeysResponse>(
+                new java.util.function.Supplier<ListCryptoAssessmentKeysRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentKeysRequest.Builder get() {
+                        return ListCryptoAssessmentKeysRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentKeysResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentKeysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentKeysRequest.Builder>,
+                        ListCryptoAssessmentKeysRequest>() {
+                    @Override
+                    public ListCryptoAssessmentKeysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentKeysRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentKeysRequest, ListCryptoAssessmentKeysResponse>() {
+                    @Override
+                    public ListCryptoAssessmentKeysResponse apply(
+                            ListCryptoAssessmentKeysRequest request) {
+                        return client.listCryptoAssessmentKeys(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentKeySummary} objects contained in responses from
+     * the listCryptoAssessmentKeys operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentKeySummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentKeySummary>
+            listCryptoAssessmentKeysRecordIterator(final ListCryptoAssessmentKeysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentKeysRequest.Builder,
+                ListCryptoAssessmentKeysRequest,
+                ListCryptoAssessmentKeysResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentKeySummary>(
+                new java.util.function.Supplier<ListCryptoAssessmentKeysRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentKeysRequest.Builder get() {
+                        return ListCryptoAssessmentKeysRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentKeysResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentKeysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentKeysRequest.Builder>,
+                        ListCryptoAssessmentKeysRequest>() {
+                    @Override
+                    public ListCryptoAssessmentKeysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentKeysRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentKeysRequest, ListCryptoAssessmentKeysResponse>() {
+                    @Override
+                    public ListCryptoAssessmentKeysResponse apply(
+                            ListCryptoAssessmentKeysRequest request) {
+                        return client.listCryptoAssessmentKeys(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentKeysResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.CryptoAssessmentKeySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.CryptoAssessmentKeySummary>
+                            apply(ListCryptoAssessmentKeysResponse response) {
+                        return response.getCryptoAssessmentKeyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentTdeObjects operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentTdeObjectsResponse>
+            listCryptoAssessmentTdeObjectsResponseIterator(
+                    final ListCryptoAssessmentTdeObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentTdeObjectsRequest.Builder,
+                ListCryptoAssessmentTdeObjectsRequest,
+                ListCryptoAssessmentTdeObjectsResponse>(
+                new java.util.function.Supplier<ListCryptoAssessmentTdeObjectsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentTdeObjectsRequest.Builder get() {
+                        return ListCryptoAssessmentTdeObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentTdeObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentTdeObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentTdeObjectsRequest.Builder>,
+                        ListCryptoAssessmentTdeObjectsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentTdeObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentTdeObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentTdeObjectsRequest,
+                        ListCryptoAssessmentTdeObjectsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentTdeObjectsResponse apply(
+                            ListCryptoAssessmentTdeObjectsRequest request) {
+                        return client.listCryptoAssessmentTdeObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentTdeObjectSummary} objects contained in
+     * responses from the listCryptoAssessmentTdeObjects operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentTdeObjectSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentTdeObjectSummary>
+            listCryptoAssessmentTdeObjectsRecordIterator(
+                    final ListCryptoAssessmentTdeObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentTdeObjectsRequest.Builder,
+                ListCryptoAssessmentTdeObjectsRequest,
+                ListCryptoAssessmentTdeObjectsResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentTdeObjectSummary>(
+                new java.util.function.Supplier<ListCryptoAssessmentTdeObjectsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentTdeObjectsRequest.Builder get() {
+                        return ListCryptoAssessmentTdeObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentTdeObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentTdeObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentTdeObjectsRequest.Builder>,
+                        ListCryptoAssessmentTdeObjectsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentTdeObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentTdeObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentTdeObjectsRequest,
+                        ListCryptoAssessmentTdeObjectsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentTdeObjectsResponse apply(
+                            ListCryptoAssessmentTdeObjectsRequest request) {
+                        return client.listCryptoAssessmentTdeObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentTdeObjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.CryptoAssessmentTdeObjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.CryptoAssessmentTdeObjectSummary>
+                            apply(ListCryptoAssessmentTdeObjectsResponse response) {
+                        return response.getCryptoAssessmentTdeObjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessmentWallets operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentWalletsResponse>
+            listCryptoAssessmentWalletsResponseIterator(
+                    final ListCryptoAssessmentWalletsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentWalletsRequest.Builder,
+                ListCryptoAssessmentWalletsRequest,
+                ListCryptoAssessmentWalletsResponse>(
+                new java.util.function.Supplier<ListCryptoAssessmentWalletsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentWalletsRequest.Builder get() {
+                        return ListCryptoAssessmentWalletsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentWalletsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentWalletsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentWalletsRequest.Builder>,
+                        ListCryptoAssessmentWalletsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentWalletsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentWalletsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentWalletsRequest, ListCryptoAssessmentWalletsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentWalletsResponse apply(
+                            ListCryptoAssessmentWalletsRequest request) {
+                        return client.listCryptoAssessmentWallets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentWalletSummary} objects contained in responses
+     * from the listCryptoAssessmentWallets operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentWalletSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentWalletSummary>
+            listCryptoAssessmentWalletsRecordIterator(
+                    final ListCryptoAssessmentWalletsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentWalletsRequest.Builder,
+                ListCryptoAssessmentWalletsRequest,
+                ListCryptoAssessmentWalletsResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentWalletSummary>(
+                new java.util.function.Supplier<ListCryptoAssessmentWalletsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentWalletsRequest.Builder get() {
+                        return ListCryptoAssessmentWalletsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentWalletsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentWalletsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentWalletsRequest.Builder>,
+                        ListCryptoAssessmentWalletsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentWalletsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentWalletsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentWalletsRequest, ListCryptoAssessmentWalletsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentWalletsResponse apply(
+                            ListCryptoAssessmentWalletsRequest request) {
+                        return client.listCryptoAssessmentWallets(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentWalletsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.CryptoAssessmentWalletSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.CryptoAssessmentWalletSummary>
+                            apply(ListCryptoAssessmentWalletsResponse response) {
+                        return response.getCryptoAssessmentWalletCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listCryptoAssessments operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListCryptoAssessmentsResponse> listCryptoAssessmentsResponseIterator(
+            final ListCryptoAssessmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCryptoAssessmentsRequest.Builder,
+                ListCryptoAssessmentsRequest,
+                ListCryptoAssessmentsResponse>(
+                new java.util.function.Supplier<ListCryptoAssessmentsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentsRequest.Builder get() {
+                        return ListCryptoAssessmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentsRequest.Builder>,
+                        ListCryptoAssessmentsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentsRequest, ListCryptoAssessmentsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentsResponse apply(
+                            ListCryptoAssessmentsRequest request) {
+                        return client.listCryptoAssessments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.CryptoAssessmentSummary} objects contained in responses from
+     * the listCryptoAssessments operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.CryptoAssessmentSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.CryptoAssessmentSummary>
+            listCryptoAssessmentsRecordIterator(final ListCryptoAssessmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCryptoAssessmentsRequest.Builder,
+                ListCryptoAssessmentsRequest,
+                ListCryptoAssessmentsResponse,
+                com.oracle.bmc.datasafe.model.CryptoAssessmentSummary>(
+                new java.util.function.Supplier<ListCryptoAssessmentsRequest.Builder>() {
+                    @Override
+                    public ListCryptoAssessmentsRequest.Builder get() {
+                        return ListCryptoAssessmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCryptoAssessmentsResponse, String>() {
+                    @Override
+                    public String apply(ListCryptoAssessmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCryptoAssessmentsRequest.Builder>,
+                        ListCryptoAssessmentsRequest>() {
+                    @Override
+                    public ListCryptoAssessmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCryptoAssessmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentsRequest, ListCryptoAssessmentsResponse>() {
+                    @Override
+                    public ListCryptoAssessmentsResponse apply(
+                            ListCryptoAssessmentsRequest request) {
+                        return client.listCryptoAssessments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCryptoAssessmentsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.CryptoAssessmentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.CryptoAssessmentSummary>
+                            apply(ListCryptoAssessmentsResponse response) {
+                        return response.getCryptoAssessmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDataSafePrivateEndpoints operation. This iterable will fetch more data from the server as
      * needed.
      *

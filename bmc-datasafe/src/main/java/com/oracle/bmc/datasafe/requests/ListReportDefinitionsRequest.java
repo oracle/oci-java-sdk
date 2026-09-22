@@ -275,6 +275,7 @@ public class ListReportDefinitionsRequest
         CustomReports("CUSTOM_REPORTS"),
         Summary("SUMMARY"),
         ActivityAuditing("ACTIVITY_AUDITING"),
+        CryptoAssessment("CRYPTO_ASSESSMENT"),
         ;
 
         private final String value;

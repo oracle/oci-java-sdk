@@ -117,6 +117,21 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
             this.__explicitlySet__.add("type");
             return this;
         }
+        /** The specified attachment type is Internal or External. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private ListingRevisionAttachment.SourceType sourceType;
+
+        /**
+         * The specified attachment type is Internal or External.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(ListingRevisionAttachment.SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -131,7 +146,8 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
                             this.definedTags,
                             this.serviceName,
                             this.url,
-                            this.type);
+                            this.type,
+                            this.sourceType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -164,6 +180,9 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
             }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
             return this;
         }
     }
@@ -186,11 +205,13 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String serviceName,
             String url,
-            SupportedServiceAttachment.Type type) {
+            SupportedServiceAttachment.Type type,
+            ListingRevisionAttachment.SourceType sourceType) {
         super(listingRevisionId, displayName, description, freeformTags, definedTags);
         this.serviceName = serviceName;
         this.url = url;
         this.type = type;
+        this.sourceType = sourceType;
     }
 
     /** Name of the service */
@@ -232,6 +253,19 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
         return type;
     }
 
+    /** The specified attachment type is Internal or External. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final ListingRevisionAttachment.SourceType sourceType;
+
+    /**
+     * The specified attachment type is Internal or External.
+     *
+     * @return the value
+     */
+    public ListingRevisionAttachment.SourceType getSourceType() {
+        return sourceType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -250,6 +284,7 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", url=").append(String.valueOf(this.url));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -267,6 +302,7 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
         return java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.url, other.url)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && super.equals(other);
     }
 
@@ -277,6 +313,7 @@ public final class CreateSupportedServiceAttachment extends CreateListingRevisio
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         return result;
     }
 }

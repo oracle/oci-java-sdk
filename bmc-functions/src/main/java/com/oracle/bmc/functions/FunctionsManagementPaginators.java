@@ -33,7 +33,7 @@ import com.oracle.bmc.functions.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class FunctionsManagementPaginators {
     private final FunctionsManagement client;
 
@@ -267,6 +267,256 @@ public class FunctionsManagementPaginators {
                     public java.util.List<com.oracle.bmc.functions.model.FunctionSummary> apply(
                             ListFunctionsResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listFunctionsRuntimeVersions operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListFunctionsRuntimeVersionsResponse>
+            listFunctionsRuntimeVersionsResponseIterator(
+                    final ListFunctionsRuntimeVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListFunctionsRuntimeVersionsRequest.Builder,
+                ListFunctionsRuntimeVersionsRequest,
+                ListFunctionsRuntimeVersionsResponse>(
+                new java.util.function.Supplier<ListFunctionsRuntimeVersionsRequest.Builder>() {
+                    @Override
+                    public ListFunctionsRuntimeVersionsRequest.Builder get() {
+                        return ListFunctionsRuntimeVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFunctionsRuntimeVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListFunctionsRuntimeVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFunctionsRuntimeVersionsRequest.Builder>,
+                        ListFunctionsRuntimeVersionsRequest>() {
+                    @Override
+                    public ListFunctionsRuntimeVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFunctionsRuntimeVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFunctionsRuntimeVersionsRequest,
+                        ListFunctionsRuntimeVersionsResponse>() {
+                    @Override
+                    public ListFunctionsRuntimeVersionsResponse apply(
+                            ListFunctionsRuntimeVersionsRequest request) {
+                        return client.listFunctionsRuntimeVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.functions.model.FunctionsRuntimeVersionSummary} objects contained in responses
+     * from the listFunctionsRuntimeVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.functions.model.FunctionsRuntimeVersionSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.functions.model.FunctionsRuntimeVersionSummary>
+            listFunctionsRuntimeVersionsRecordIterator(
+                    final ListFunctionsRuntimeVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListFunctionsRuntimeVersionsRequest.Builder,
+                ListFunctionsRuntimeVersionsRequest,
+                ListFunctionsRuntimeVersionsResponse,
+                com.oracle.bmc.functions.model.FunctionsRuntimeVersionSummary>(
+                new java.util.function.Supplier<ListFunctionsRuntimeVersionsRequest.Builder>() {
+                    @Override
+                    public ListFunctionsRuntimeVersionsRequest.Builder get() {
+                        return ListFunctionsRuntimeVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFunctionsRuntimeVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListFunctionsRuntimeVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFunctionsRuntimeVersionsRequest.Builder>,
+                        ListFunctionsRuntimeVersionsRequest>() {
+                    @Override
+                    public ListFunctionsRuntimeVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFunctionsRuntimeVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFunctionsRuntimeVersionsRequest,
+                        ListFunctionsRuntimeVersionsResponse>() {
+                    @Override
+                    public ListFunctionsRuntimeVersionsResponse apply(
+                            ListFunctionsRuntimeVersionsRequest request) {
+                        return client.listFunctionsRuntimeVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListFunctionsRuntimeVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.functions.model.FunctionsRuntimeVersionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.functions.model.FunctionsRuntimeVersionSummary>
+                            apply(ListFunctionsRuntimeVersionsResponse response) {
+                        return response.getFunctionsRuntimeVersionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listFunctionsRuntimes operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListFunctionsRuntimesResponse> listFunctionsRuntimesResponseIterator(
+            final ListFunctionsRuntimesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListFunctionsRuntimesRequest.Builder,
+                ListFunctionsRuntimesRequest,
+                ListFunctionsRuntimesResponse>(
+                new java.util.function.Supplier<ListFunctionsRuntimesRequest.Builder>() {
+                    @Override
+                    public ListFunctionsRuntimesRequest.Builder get() {
+                        return ListFunctionsRuntimesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFunctionsRuntimesResponse, String>() {
+                    @Override
+                    public String apply(ListFunctionsRuntimesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFunctionsRuntimesRequest.Builder>,
+                        ListFunctionsRuntimesRequest>() {
+                    @Override
+                    public ListFunctionsRuntimesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFunctionsRuntimesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFunctionsRuntimesRequest, ListFunctionsRuntimesResponse>() {
+                    @Override
+                    public ListFunctionsRuntimesResponse apply(
+                            ListFunctionsRuntimesRequest request) {
+                        return client.listFunctionsRuntimes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.functions.model.FunctionsRuntimeSummary} objects contained in responses from
+     * the listFunctionsRuntimes operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.functions.model.FunctionsRuntimeSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.functions.model.FunctionsRuntimeSummary>
+            listFunctionsRuntimesRecordIterator(final ListFunctionsRuntimesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListFunctionsRuntimesRequest.Builder,
+                ListFunctionsRuntimesRequest,
+                ListFunctionsRuntimesResponse,
+                com.oracle.bmc.functions.model.FunctionsRuntimeSummary>(
+                new java.util.function.Supplier<ListFunctionsRuntimesRequest.Builder>() {
+                    @Override
+                    public ListFunctionsRuntimesRequest.Builder get() {
+                        return ListFunctionsRuntimesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListFunctionsRuntimesResponse, String>() {
+                    @Override
+                    public String apply(ListFunctionsRuntimesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFunctionsRuntimesRequest.Builder>,
+                        ListFunctionsRuntimesRequest>() {
+                    @Override
+                    public ListFunctionsRuntimesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFunctionsRuntimesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListFunctionsRuntimesRequest, ListFunctionsRuntimesResponse>() {
+                    @Override
+                    public ListFunctionsRuntimesResponse apply(
+                            ListFunctionsRuntimesRequest request) {
+                        return client.listFunctionsRuntimes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListFunctionsRuntimesResponse,
+                        java.util.List<com.oracle.bmc.functions.model.FunctionsRuntimeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.functions.model.FunctionsRuntimeSummary>
+                            apply(ListFunctionsRuntimesResponse response) {
+                        return response.getFunctionsRuntimeCollection().getItems();
                     }
                 });
     }

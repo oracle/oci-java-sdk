@@ -11,7 +11,7 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ListDistributedDatabasesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class ListDistributedDatabasesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -22,6 +22,19 @@ public class ListDistributedDatabasesRequest
     public String getCompartmentId() {
         return compartmentId;
     }
+    /**
+     * When set to true, returns resources in the specified compartment and in all of its child
+     * compartments recursively. Defaults to false.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * When set to true, returns resources in the specified compartment and in all of its child
+     * compartments recursively. Defaults to false.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
     /** A filter to return only resources that are associated with the given privateEndpointId. */
     private String privateEndpointId;
 
@@ -29,11 +42,11 @@ public class ListDistributedDatabasesRequest
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the specified value. */
     private com.oracle.bmc.distributeddatabase.model.DistributedDatabase.LifecycleState
             lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the specified value. */
     public com.oracle.bmc.distributeddatabase.model.DistributedDatabase.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -123,6 +136,21 @@ public class ListDistributedDatabasesRequest
         return opcRequestId;
     }
     /**
+     * A filter to return only resources where autoResourceManagement is enabled when set to {@code
+     * true}, or disabled when set to {@code false}. If omitted, no autoResourceManagement-based
+     * filtering is applied.
+     */
+    private Boolean isAutoResourceManagementEnabled;
+
+    /**
+     * A filter to return only resources where autoResourceManagement is enabled when set to {@code
+     * true}, or disabled when set to {@code false}. If omitted, no autoResourceManagement-based
+     * filtering is applied.
+     */
+    public Boolean getIsAutoResourceManagementEnabled() {
+        return isAutoResourceManagementEnabled;
+    }
+    /**
      * A filter to return only Globally distributed databases that match the entire name given. The
      * match is not case sensitive.
      */
@@ -135,23 +163,17 @@ public class ListDistributedDatabasesRequest
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
-     */
-    private com.oracle.bmc.distributeddatabase.model.DistributedDatabase.DbDeploymentType
-            dbDeploymentType;
+    /** A filter to return only resources whose dbDeploymentType matches the specified value. */
+    private String dbDeploymentType;
 
-    /**
-     * A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
-     */
-    public com.oracle.bmc.distributeddatabase.model.DistributedDatabase.DbDeploymentType
-            getDbDeploymentType() {
+    /** A filter to return only resources whose dbDeploymentType matches the specified value. */
+    public String getDbDeploymentType() {
         return dbDeploymentType;
     }
-    /** Comma separated names of argument corresponding to which metadata need to be retrived. */
+    /** Comma-separated argument names for which metadata should be retrieved. */
     private String metadata;
 
-    /** Comma separated names of argument corresponding to which metadata need to be retrived. */
+    /** Comma-separated argument names for which metadata should be retrieved. */
     public String getMetadata() {
         return metadata;
     }
@@ -177,6 +199,24 @@ public class ListDistributedDatabasesRequest
         }
 
         /**
+         * When set to true, returns resources in the specified compartment and in all of its child
+         * compartments recursively. Defaults to false.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * When set to true, returns resources in the specified compartment and in all of its child
+         * compartments recursively. Defaults to false.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * A filter to return only resources that are associated with the given privateEndpointId.
          */
         private String privateEndpointId = null;
@@ -192,14 +232,12 @@ public class ListDistributedDatabasesRequest
             return this;
         }
 
-        /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         */
+        /** A filter to return only resources whose lifecycleState matches the specified value. */
         private com.oracle.bmc.distributeddatabase.model.DistributedDatabase.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the specified value.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -290,6 +328,26 @@ public class ListDistributedDatabasesRequest
         }
 
         /**
+         * A filter to return only resources where autoResourceManagement is enabled when set to
+         * {@code true}, or disabled when set to {@code false}. If omitted, no
+         * autoResourceManagement-based filtering is applied.
+         */
+        private Boolean isAutoResourceManagementEnabled = null;
+
+        /**
+         * A filter to return only resources where autoResourceManagement is enabled when set to
+         * {@code true}, or disabled when set to {@code false}. If omitted, no
+         * autoResourceManagement-based filtering is applied.
+         *
+         * @param isAutoResourceManagementEnabled the value to set
+         * @return this builder instance
+         */
+        public Builder isAutoResourceManagementEnabled(Boolean isAutoResourceManagementEnabled) {
+            this.isAutoResourceManagementEnabled = isAutoResourceManagementEnabled;
+            return this;
+        }
+
+        /**
          * A filter to return only Globally distributed databases that match the entire name given.
          * The match is not case sensitive.
          */
@@ -307,34 +365,25 @@ public class ListDistributedDatabasesRequest
             return this;
         }
 
-        /**
-         * A filter to return only resources their dbDeploymentType matches the given
-         * dbDeploymentType.
-         */
-        private com.oracle.bmc.distributeddatabase.model.DistributedDatabase.DbDeploymentType
-                dbDeploymentType = null;
+        /** A filter to return only resources whose dbDeploymentType matches the specified value. */
+        private String dbDeploymentType = null;
 
         /**
-         * A filter to return only resources their dbDeploymentType matches the given
-         * dbDeploymentType.
+         * A filter to return only resources whose dbDeploymentType matches the specified value.
          *
          * @param dbDeploymentType the value to set
          * @return this builder instance
          */
-        public Builder dbDeploymentType(
-                com.oracle.bmc.distributeddatabase.model.DistributedDatabase.DbDeploymentType
-                        dbDeploymentType) {
+        public Builder dbDeploymentType(String dbDeploymentType) {
             this.dbDeploymentType = dbDeploymentType;
             return this;
         }
 
-        /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
-         */
+        /** Comma-separated argument names for which metadata should be retrieved. */
         private String metadata = null;
 
         /**
-         * Comma separated names of argument corresponding to which metadata need to be retrived.
+         * Comma-separated argument names for which metadata should be retrieved.
          *
          * @param metadata the value to set
          * @return this builder instance
@@ -375,6 +424,7 @@ public class ListDistributedDatabasesRequest
          */
         public Builder copy(ListDistributedDatabasesRequest o) {
             compartmentId(o.getCompartmentId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             privateEndpointId(o.getPrivateEndpointId());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
@@ -382,6 +432,7 @@ public class ListDistributedDatabasesRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            isAutoResourceManagementEnabled(o.getIsAutoResourceManagementEnabled());
             displayName(o.getDisplayName());
             dbDeploymentType(o.getDbDeploymentType());
             metadata(o.getMetadata());
@@ -420,6 +471,7 @@ public class ListDistributedDatabasesRequest
         public ListDistributedDatabasesRequest buildWithoutInvocationCallback() {
             ListDistributedDatabasesRequest request = new ListDistributedDatabasesRequest();
             request.compartmentId = compartmentId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.privateEndpointId = privateEndpointId;
             request.lifecycleState = lifecycleState;
             request.limit = limit;
@@ -427,13 +479,14 @@ public class ListDistributedDatabasesRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.isAutoResourceManagementEnabled = isAutoResourceManagementEnabled;
             request.displayName = displayName;
             request.dbDeploymentType = dbDeploymentType;
             request.metadata = metadata;
             return request;
-            // new ListDistributedDatabasesRequest(compartmentId, privateEndpointId, lifecycleState,
-            // limit, page, sortOrder, sortBy, opcRequestId, displayName, dbDeploymentType,
-            // metadata);
+            // new ListDistributedDatabasesRequest(compartmentId, compartmentIdInSubtree,
+            // privateEndpointId, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId,
+            // isAutoResourceManagementEnabled, displayName, dbDeploymentType, metadata);
         }
     }
 
@@ -445,6 +498,7 @@ public class ListDistributedDatabasesRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .privateEndpointId(privateEndpointId)
                 .lifecycleState(lifecycleState)
                 .limit(limit)
@@ -452,6 +506,7 @@ public class ListDistributedDatabasesRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
+                .isAutoResourceManagementEnabled(isAutoResourceManagementEnabled)
                 .displayName(displayName)
                 .dbDeploymentType(dbDeploymentType)
                 .metadata(metadata);
@@ -472,6 +527,7 @@ public class ListDistributedDatabasesRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -479,6 +535,8 @@ public class ListDistributedDatabasesRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isAutoResourceManagementEnabled=")
+                .append(String.valueOf(this.isAutoResourceManagementEnabled));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",dbDeploymentType=").append(String.valueOf(this.dbDeploymentType));
         sb.append(",metadata=").append(String.valueOf(this.metadata));
@@ -498,6 +556,8 @@ public class ListDistributedDatabasesRequest
         ListDistributedDatabasesRequest other = (ListDistributedDatabasesRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -505,6 +565,8 @@ public class ListDistributedDatabasesRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.isAutoResourceManagementEnabled, other.isAutoResourceManagementEnabled)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dbDeploymentType, other.dbDeploymentType)
                 && java.util.Objects.equals(this.metadata, other.metadata);
@@ -519,6 +581,11 @@ public class ListDistributedDatabasesRequest
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
         result =
                 (result * PRIME)
@@ -528,6 +595,11 @@ public class ListDistributedDatabasesRequest
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoResourceManagementEnabled == null
+                                ? 43
+                                : this.isAutoResourceManagementEnabled.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

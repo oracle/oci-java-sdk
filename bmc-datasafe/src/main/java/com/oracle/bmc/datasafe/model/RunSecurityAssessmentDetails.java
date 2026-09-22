@@ -43,12 +43,12 @@ public final class RunSecurityAssessmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that contains the security assessment. */
+        /** This field is ignored when refreshing a security assessment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the security assessment.
+         * This field is ignored when refreshing a security assessment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -166,12 +166,12 @@ public final class RunSecurityAssessmentDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that contains the security assessment. */
+    /** This field is ignored when refreshing a security assessment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the security assessment.
+     * This field is ignored when refreshing a security assessment.
      *
      * @return the value
      */

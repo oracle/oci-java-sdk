@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class FunctionsInvokeClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements FunctionsInvoke {
     /** Service instance for FunctionsInvoke. */
@@ -122,10 +122,10 @@ public class FunctionsInvokeClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "FunctionsInvoke",
                         "InvokeFunction",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/InvokeFunction")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InvokeFunctionRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("functions")
                 .appendPathParam(request.getFunctionId())
                 .appendPathParam("actions")

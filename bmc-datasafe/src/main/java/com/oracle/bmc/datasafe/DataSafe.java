@@ -431,6 +431,24 @@ public interface DataSafe extends AutoCloseable {
             ChangeAuditProfileCompartmentRequest request);
 
     /**
+     * Moves the specified saved crypto assessment into a different compartment. Only `SAVED` crypto
+     * assessments are supported.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeCryptoAssessmentCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeCryptoAssessmentCompartment API.
+     */
+    ChangeCryptoAssessmentCompartmentResponse changeCryptoAssessmentCompartment(
+            ChangeCryptoAssessmentCompartmentRequest request);
+
+    /**
      * Moves the Data Safe private endpoint and its dependent resources to the specified
      * compartment.
      *
@@ -1652,6 +1670,23 @@ public interface DataSafe extends AutoCloseable {
     DeleteAuditTrailResponse deleteAuditTrail(DeleteAuditTrailRequest request);
 
     /**
+     * Deletes the specified saved crypto assessment. Only assessments of type `SAVED` can be
+     * deleted. Attempts to delete a `LATEST` assessment return `400 InvalidParameter`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteCryptoAssessmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteCryptoAssessment API.
+     */
+    DeleteCryptoAssessmentResponse deleteCryptoAssessment(DeleteCryptoAssessmentRequest request);
+
+    /**
      * Deletes the specified Data Safe private endpoint.
      *
      * @param request The request object containing the details to send
@@ -2212,6 +2247,25 @@ public interface DataSafe extends AutoCloseable {
     DiscoverAuditTrailsResponse discoverAuditTrails(DiscoverAuditTrailsRequest request);
 
     /**
+     * Downloads the report of the specified crypto assessment. To download the crypto assessment
+     * report, it needs to be generated first. Please use GenerateCryptoAssessmentReport to generate
+     * a downloadable report in the preferred format (PDF, XLS).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadCryptoAssessmentReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DownloadCryptoAssessmentReport API.
+     */
+    DownloadCryptoAssessmentReportResponse downloadCryptoAssessmentReport(
+            DownloadCryptoAssessmentReportRequest request);
+
+    /**
      * Downloads an already-generated discovery report. Note that the
      * GenerateDiscoveryReportForDownload operation is a prerequisite for the
      * DownloadDiscoveryReport operation. Use GenerateDiscoveryReportForDownload to generate a
@@ -2398,6 +2452,24 @@ public interface DataSafe extends AutoCloseable {
      */
     EnableDataSafeConfigurationResponse enableDataSafeConfiguration(
             EnableDataSafeConfigurationRequest request);
+
+    /**
+     * Generates the report of the specified crypto assessment. Supported output formats are PDF and
+     * XLS.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateCryptoAssessmentReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateCryptoAssessmentReport API.
+     */
+    GenerateCryptoAssessmentReportResponse generateCryptoAssessmentReport(
+            GenerateCryptoAssessmentReportRequest request);
 
     /**
      * Generates a downloadable discovery report. It's a prerequisite for the
@@ -2749,6 +2821,40 @@ public interface DataSafe extends AutoCloseable {
      */
     GetCompatibleFormatsForSensitiveTypesResponse getCompatibleFormatsForSensitiveTypes(
             GetCompatibleFormatsForSensitiveTypesRequest request);
+
+    /**
+     * Gets the details of the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetCryptoAssessmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCryptoAssessment
+     *     API.
+     */
+    GetCryptoAssessmentResponse getCryptoAssessment(GetCryptoAssessmentRequest request);
+
+    /**
+     * Gets SQLNET.ORA parameter values and quantum-readiness evaluation for the specified crypto
+     * assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetCryptoAssessmentSqlnetParametersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCryptoAssessmentSqlnetParameters API.
+     */
+    GetCryptoAssessmentSqlnetParametersResponse getCryptoAssessmentSqlnetParameters(
+            GetCryptoAssessmentSqlnetParametersRequest request);
 
     /**
      * Gets the details of the Data Safe configuration.
@@ -3944,6 +4050,182 @@ public interface DataSafe extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListColumns API.
      */
     ListColumnsResponse listColumns(ListColumnsRequest request);
+
+    /**
+     * Gets backup set summaries across targets in a compartment. Use assessmentId to narrow results
+     * to one crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentBackupSetsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentBackupSets API.
+     */
+    ListCryptoAssessmentBackupSetsResponse listCryptoAssessmentBackupSets(
+            ListCryptoAssessmentBackupSetsRequest request);
+
+    /**
+     * Lists the CBOM items for the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentCbomItemsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentCbomItems API.
+     */
+    ListCryptoAssessmentCbomItemsResponse listCryptoAssessmentCbomItems(
+            ListCryptoAssessmentCbomItemsRequest request);
+
+    /**
+     * Lists certificates discovered across targets in a compartment, including target, wallet
+     * location, issuer, subject, validity window, expiry bucket, public key type, and status so
+     * expiring or weak certificates can be identified and prioritized.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentCertificatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentCertificates API.
+     */
+    ListCryptoAssessmentCertificatesResponse listCryptoAssessmentCertificates(
+            ListCryptoAssessmentCertificatesRequest request);
+
+    /**
+     * Lists findings in a compartment with the number of affected targets.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentFindingAnalyticsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentFindingAnalytics API.
+     */
+    ListCryptoAssessmentFindingAnalyticsResponse listCryptoAssessmentFindingAnalytics(
+            ListCryptoAssessmentFindingAnalyticsRequest request);
+
+    /**
+     * For a selected finding, lists targets where it occurs in assessments.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentFindingTargetsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentFindingTargets API.
+     */
+    ListCryptoAssessmentFindingTargetsResponse listCryptoAssessmentFindingTargets(
+            ListCryptoAssessmentFindingTargetsRequest request);
+
+    /**
+     * Lists crypto deviation findings for the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentFindingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentFindings API.
+     */
+    ListCryptoAssessmentFindingsResponse listCryptoAssessmentFindings(
+            ListCryptoAssessmentFindingsRequest request);
+
+    /**
+     * Gets a paginated list of cryptographic keys across targets in a compartment. Use assessmentId
+     * to narrow results to one crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentKeysExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentKeys API.
+     */
+    ListCryptoAssessmentKeysResponse listCryptoAssessmentKeys(
+            ListCryptoAssessmentKeysRequest request);
+
+    /**
+     * Lists TDE object encryption summaries across targets in a compartment. Use assessmentId to
+     * narrow results to one crypto assessment, and objectType to return either tablespace-level or
+     * column-level TDE observations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentTdeObjectsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentTdeObjects API.
+     */
+    ListCryptoAssessmentTdeObjectsResponse listCryptoAssessmentTdeObjects(
+            ListCryptoAssessmentTdeObjectsRequest request);
+
+    /**
+     * Gets wallet details across targets in a compartment. Use assessmentId to narrow results to
+     * one crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentWalletsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessmentWallets API.
+     */
+    ListCryptoAssessmentWalletsResponse listCryptoAssessmentWallets(
+            ListCryptoAssessmentWalletsRequest request);
+
+    /**
+     * Gets a list of crypto assessments with filtering and pagination support.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListCryptoAssessmentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCryptoAssessments API.
+     */
+    ListCryptoAssessmentsResponse listCryptoAssessments(ListCryptoAssessmentsRequest request);
 
     /**
      * Gets a list of Data Safe private endpoints.
@@ -5899,6 +6181,25 @@ public interface DataSafe extends AutoCloseable {
     PurgeSqlCollectionLogsResponse purgeSqlCollectionLogs(PurgeSqlCollectionLogsRequest request);
 
     /**
+     * Runs a crypto assessment, refreshes the latest assessment, and saves it for future reference.
+     * This operation runs with a cryptoAssessmentId of type LATEST. Before you start, first call
+     * the ListCryptoAssessments operation with filter \"type = latest\" to get the crypto
+     * assessment ID for the target's latest assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RefreshCryptoAssessmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RefreshCryptoAssessment API.
+     */
+    RefreshCryptoAssessmentResponse refreshCryptoAssessment(RefreshCryptoAssessmentRequest request);
+
+    /**
      * Refreshes the specified database security configuration.
      *
      * @param request The request object containing the details to send
@@ -6388,6 +6689,22 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     UpdateAuditTrailResponse updateAuditTrail(UpdateAuditTrailRequest request);
+
+    /**
+     * Updates one or more attributes of the specified crypto assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateCryptoAssessmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateCryptoAssessment API.
+     */
+    UpdateCryptoAssessmentResponse updateCryptoAssessment(UpdateCryptoAssessmentRequest request);
 
     /**
      * Updates one or more attributes of the specified Data Safe private endpoint.

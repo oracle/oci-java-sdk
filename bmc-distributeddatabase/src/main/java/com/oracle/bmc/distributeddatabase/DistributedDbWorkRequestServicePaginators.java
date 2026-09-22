@@ -33,7 +33,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
  * handled so we can iterate until there are no more responses or no more resources/records
  * available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbWorkRequestServicePaginators {
     private final DistributedDbWorkRequestService client;
 

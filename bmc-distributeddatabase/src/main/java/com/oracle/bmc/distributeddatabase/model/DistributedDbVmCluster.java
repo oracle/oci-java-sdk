@@ -5,7 +5,7 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /**
- * The Exadata VM cluster for Distributed Database Resource <br>
+ * The Exadata VM cluster for Distributed Database Resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = DistributedDbVmCluster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -24,6 +24,7 @@ public final class DistributedDbVmCluster
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "compartmentId",
         "vmClusterId",
         "displayName",
         "subnetId",
@@ -39,9 +40,11 @@ public final class DistributedDbVmCluster
         "backupNetworkNsgIds",
         "isDiagnosticsEventsEnabled",
         "isHealthMonitoringEnabled",
-        "isIncidentLogsEnabled"
+        "isIncidentLogsEnabled",
+        "subscriptionId"
     })
     public DistributedDbVmCluster(
+            String compartmentId,
             String vmClusterId,
             String displayName,
             String subnetId,
@@ -57,8 +60,10 @@ public final class DistributedDbVmCluster
             java.util.List<String> backupNetworkNsgIds,
             Boolean isDiagnosticsEventsEnabled,
             Boolean isHealthMonitoringEnabled,
-            Boolean isIncidentLogsEnabled) {
+            Boolean isIncidentLogsEnabled,
+            String subscriptionId) {
         super();
+        this.compartmentId = compartmentId;
         this.vmClusterId = vmClusterId;
         this.displayName = displayName;
         this.subnetId = subnetId;
@@ -75,20 +80,40 @@ public final class DistributedDbVmCluster
         this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
         this.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
         this.isIncidentLogsEnabled = isIncidentLogsEnabled;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata VM cluster on Exascale Infrastructure.
+         * compartment for VM Cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment for VM Cluster.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * VM cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata VM cluster on Exascale Infrastructure.
+         * VM cluster.
          *
          * @param vmClusterId the value to set
          * @return this builder
@@ -413,6 +438,25 @@ public final class DistributedDbVmCluster
             this.__explicitlySet__.add("isIncidentLogsEnabled");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -420,6 +464,7 @@ public final class DistributedDbVmCluster
         public DistributedDbVmCluster build() {
             DistributedDbVmCluster model =
                     new DistributedDbVmCluster(
+                            this.compartmentId,
                             this.vmClusterId,
                             this.displayName,
                             this.subnetId,
@@ -435,7 +480,8 @@ public final class DistributedDbVmCluster
                             this.backupNetworkNsgIds,
                             this.isDiagnosticsEventsEnabled,
                             this.isHealthMonitoringEnabled,
-                            this.isIncidentLogsEnabled);
+                            this.isIncidentLogsEnabled,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -444,6 +490,9 @@ public final class DistributedDbVmCluster
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DistributedDbVmCluster model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("vmClusterId")) {
                 this.vmClusterId(model.getVmClusterId());
             }
@@ -492,6 +541,9 @@ public final class DistributedDbVmCluster
             if (model.wasPropertyExplicitlySet("isIncidentLogsEnabled")) {
                 this.isIncidentLogsEnabled(model.getIsIncidentLogsEnabled());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             return this;
         }
     }
@@ -507,14 +559,31 @@ public final class DistributedDbVmCluster
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata VM cluster on Exascale Infrastructure.
+     * compartment for VM Cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment for VM Cluster.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
     private final String vmClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata VM cluster on Exascale Infrastructure.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
+     * cluster.
      *
      * @return the value
      */
@@ -848,6 +917,23 @@ public final class DistributedDbVmCluster
         return isIncidentLogsEnabled;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -863,7 +949,8 @@ public final class DistributedDbVmCluster
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DistributedDbVmCluster(");
         sb.append("super=").append(super.toString());
-        sb.append("vmClusterId=").append(String.valueOf(this.vmClusterId));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
@@ -882,6 +969,7 @@ public final class DistributedDbVmCluster
         sb.append(", isHealthMonitoringEnabled=")
                 .append(String.valueOf(this.isHealthMonitoringEnabled));
         sb.append(", isIncidentLogsEnabled=").append(String.valueOf(this.isIncidentLogsEnabled));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -896,7 +984,8 @@ public final class DistributedDbVmCluster
         }
 
         DistributedDbVmCluster other = (DistributedDbVmCluster) o;
-        return java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
@@ -915,6 +1004,7 @@ public final class DistributedDbVmCluster
                 && java.util.Objects.equals(
                         this.isHealthMonitoringEnabled, other.isHealthMonitoringEnabled)
                 && java.util.Objects.equals(this.isIncidentLogsEnabled, other.isIncidentLogsEnabled)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -922,6 +1012,9 @@ public final class DistributedDbVmCluster
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
@@ -968,6 +1061,9 @@ public final class DistributedDbVmCluster
                         + (this.isIncidentLogsEnabled == null
                                 ? 43
                                 : this.isIncidentLogsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -28,20 +28,23 @@ public final class InstanceConfiguration
         "modelDeploymentInstanceShapeConfigDetails",
         "subnetId",
         "privateEndpointId",
-        "networkAccessType"
+        "networkAccessType",
+        "capacityReservationIds"
     })
     public InstanceConfiguration(
             String instanceShapeName,
             ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails,
             String subnetId,
             String privateEndpointId,
-            NetworkAccessType networkAccessType) {
+            NetworkAccessType networkAccessType,
+            java.util.List<String> capacityReservationIds) {
         super();
         this.instanceShapeName = instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
         this.subnetId = subnetId;
         this.privateEndpointId = privateEndpointId;
         this.networkAccessType = networkAccessType;
+        this.capacityReservationIds = capacityReservationIds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -132,6 +135,29 @@ public final class InstanceConfiguration
             this.__explicitlySet__.add("networkAccessType");
             return this;
         }
+        /**
+         * This specifies the list of
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customer-managed capacity reservation to be used for launching model deployment
+         * instances.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+        private java.util.List<String> capacityReservationIds;
+
+        /**
+         * This specifies the list of
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * customer-managed capacity reservation to be used for launching model deployment
+         * instances.
+         *
+         * @param capacityReservationIds the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationIds(java.util.List<String> capacityReservationIds) {
+            this.capacityReservationIds = capacityReservationIds;
+            this.__explicitlySet__.add("capacityReservationIds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -143,7 +169,8 @@ public final class InstanceConfiguration
                             this.modelDeploymentInstanceShapeConfigDetails,
                             this.subnetId,
                             this.privateEndpointId,
-                            this.networkAccessType);
+                            this.networkAccessType,
+                            this.capacityReservationIds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -167,6 +194,9 @@ public final class InstanceConfiguration
             }
             if (model.wasPropertyExplicitlySet("networkAccessType")) {
                 this.networkAccessType(model.getNetworkAccessType());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationIds")) {
+                this.capacityReservationIds(model.getCapacityReservationIds());
             }
             return this;
         }
@@ -301,6 +331,25 @@ public final class InstanceConfiguration
         return networkAccessType;
     }
 
+    /**
+     * This specifies the list of
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customer-managed capacity reservation to be used for launching model deployment instances.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+    private final java.util.List<String> capacityReservationIds;
+
+    /**
+     * This specifies the list of
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * customer-managed capacity reservation to be used for launching model deployment instances.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getCapacityReservationIds() {
+        return capacityReservationIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -322,6 +371,7 @@ public final class InstanceConfiguration
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(", networkAccessType=").append(String.valueOf(this.networkAccessType));
+        sb.append(", capacityReservationIds=").append(String.valueOf(this.capacityReservationIds));
         sb.append(")");
         return sb.toString();
     }
@@ -343,6 +393,8 @@ public final class InstanceConfiguration
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(this.networkAccessType, other.networkAccessType)
+                && java.util.Objects.equals(
+                        this.capacityReservationIds, other.capacityReservationIds)
                 && super.equals(other);
     }
 
@@ -365,6 +417,11 @@ public final class InstanceConfiguration
         result =
                 (result * PRIME)
                         + (this.networkAccessType == null ? 43 : this.networkAccessType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationIds == null
+                                ? 43
+                                : this.capacityReservationIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

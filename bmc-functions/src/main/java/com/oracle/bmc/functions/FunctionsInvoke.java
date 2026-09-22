@@ -13,7 +13,7 @@ import com.oracle.bmc.functions.responses.*;
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public interface FunctionsInvoke extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -65,7 +65,7 @@ public interface FunctionsInvoke extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Note: Deprecated. Use the new operation instead. \"Invokes a function\"
+     * Invokes a function
      *
      * <p>Note: This operation consumes a stream.
      *

@@ -15,7 +15,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = DistributedDatabasePrivateEndpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -31,9 +31,7 @@ public final class DistributedDatabasePrivateEndpoint
         "displayName",
         "description",
         "privateIp",
-        "nsgIds",
-        "globallyDistributedDatabases",
-        "globallyDistributedAutonomousDatabases",
+        "vcnNsgIds",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -51,11 +49,7 @@ public final class DistributedDatabasePrivateEndpoint
             String displayName,
             String description,
             String privateIp,
-            java.util.List<String> nsgIds,
-            java.util.List<DistributedDatabaseAssociatedWithPrivateEndpoint>
-                    globallyDistributedDatabases,
-            java.util.List<DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint>
-                    globallyDistributedAutonomousDatabases,
+            java.util.List<VcnNsgIdsDetails> vcnNsgIds,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -72,9 +66,7 @@ public final class DistributedDatabasePrivateEndpoint
         this.displayName = displayName;
         this.description = description;
         this.privateIp = privateIp;
-        this.nsgIds = nsgIds;
-        this.globallyDistributedDatabases = globallyDistributedDatabases;
-        this.globallyDistributedAutonomousDatabases = globallyDistributedAutonomousDatabases;
+        this.vcnNsgIds = vcnNsgIds;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -192,63 +184,21 @@ public final class DistributedDatabasePrivateEndpoint
             this.__explicitlySet__.add("privateIp");
             return this;
         }
-        /** The OCIDs of the network security groups that the private endpoint belongs to. */
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
+        /**
+         * The list of network security group (NSG) details associated with the private endpoint.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+        private java.util.List<VcnNsgIdsDetails> vcnNsgIds;
 
         /**
-         * The OCIDs of the network security groups that the private endpoint belongs to.
+         * The list of network security group (NSG) details associated with the private endpoint.
          *
-         * @param nsgIds the value to set
+         * @param vcnNsgIds the value to set
          * @return this builder
          */
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
-            return this;
-        }
-        /**
-         * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-         * 00:00:00 GMT.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("globallyDistributedDatabases")
-        private java.util.List<DistributedDatabaseAssociatedWithPrivateEndpoint>
-                globallyDistributedDatabases;
-
-        /**
-         * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-         * 00:00:00 GMT.
-         *
-         * @param globallyDistributedDatabases the value to set
-         * @return this builder
-         */
-        public Builder globallyDistributedDatabases(
-                java.util.List<DistributedDatabaseAssociatedWithPrivateEndpoint>
-                        globallyDistributedDatabases) {
-            this.globallyDistributedDatabases = globallyDistributedDatabases;
-            this.__explicitlySet__.add("globallyDistributedDatabases");
-            return this;
-        }
-        /**
-         * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-         * 00:00:00 GMT.
-         */
-        @com.fasterxml.jackson.annotation.JsonProperty("globallyDistributedAutonomousDatabases")
-        private java.util.List<DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint>
-                globallyDistributedAutonomousDatabases;
-
-        /**
-         * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-         * 00:00:00 GMT.
-         *
-         * @param globallyDistributedAutonomousDatabases the value to set
-         * @return this builder
-         */
-        public Builder globallyDistributedAutonomousDatabases(
-                java.util.List<DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint>
-                        globallyDistributedAutonomousDatabases) {
-            this.globallyDistributedAutonomousDatabases = globallyDistributedAutonomousDatabases;
-            this.__explicitlySet__.add("globallyDistributedAutonomousDatabases");
+        public Builder vcnNsgIds(java.util.List<VcnNsgIdsDetails> vcnNsgIds) {
+            this.vcnNsgIds = vcnNsgIds;
+            this.__explicitlySet__.add("vcnNsgIds");
             return this;
         }
         /**
@@ -402,9 +352,7 @@ public final class DistributedDatabasePrivateEndpoint
                             this.displayName,
                             this.description,
                             this.privateIp,
-                            this.nsgIds,
-                            this.globallyDistributedDatabases,
-                            this.globallyDistributedAutonomousDatabases,
+                            this.vcnNsgIds,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -442,15 +390,8 @@ public final class DistributedDatabasePrivateEndpoint
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
-            if (model.wasPropertyExplicitlySet("nsgIds")) {
-                this.nsgIds(model.getNsgIds());
-            }
-            if (model.wasPropertyExplicitlySet("globallyDistributedDatabases")) {
-                this.globallyDistributedDatabases(model.getGloballyDistributedDatabases());
-            }
-            if (model.wasPropertyExplicitlySet("globallyDistributedAutonomousDatabases")) {
-                this.globallyDistributedAutonomousDatabases(
-                        model.getGloballyDistributedAutonomousDatabases());
+            if (model.wasPropertyExplicitlySet("vcnNsgIds")) {
+                this.vcnNsgIds(model.getVcnNsgIds());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -580,55 +521,17 @@ public final class DistributedDatabasePrivateEndpoint
         return privateIp;
     }
 
-    /** The OCIDs of the network security groups that the private endpoint belongs to. */
-    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    private final java.util.List<String> nsgIds;
+    /** The list of network security group (NSG) details associated with the private endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+    private final java.util.List<VcnNsgIdsDetails> vcnNsgIds;
 
     /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
+     * The list of network security group (NSG) details associated with the private endpoint.
      *
      * @return the value
      */
-    public java.util.List<String> getNsgIds() {
-        return nsgIds;
-    }
-
-    /**
-     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-     * 00:00:00 GMT.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("globallyDistributedDatabases")
-    private final java.util.List<DistributedDatabaseAssociatedWithPrivateEndpoint>
-            globallyDistributedDatabases;
-
-    /**
-     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-     * 00:00:00 GMT.
-     *
-     * @return the value
-     */
-    public java.util.List<DistributedDatabaseAssociatedWithPrivateEndpoint>
-            getGloballyDistributedDatabases() {
-        return globallyDistributedDatabases;
-    }
-
-    /**
-     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-     * 00:00:00 GMT.
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("globallyDistributedAutonomousDatabases")
-    private final java.util.List<DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint>
-            globallyDistributedAutonomousDatabases;
-
-    /**
-     * This field is deprecated. Support for this field will be removed after Mon, 1 Mar 2027
-     * 00:00:00 GMT.
-     *
-     * @return the value
-     */
-    public java.util.List<DistributedAutonomousDatabaseAssociatedWithPrivateEndpoint>
-            getGloballyDistributedAutonomousDatabases() {
-        return globallyDistributedAutonomousDatabases;
+    public java.util.List<VcnNsgIdsDetails> getVcnNsgIds() {
+        return vcnNsgIds;
     }
 
     /**
@@ -824,11 +727,7 @@ public final class DistributedDatabasePrivateEndpoint
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
-        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
-        sb.append(", globallyDistributedDatabases=")
-                .append(String.valueOf(this.globallyDistributedDatabases));
-        sb.append(", globallyDistributedAutonomousDatabases=")
-                .append(String.valueOf(this.globallyDistributedAutonomousDatabases));
+        sb.append(", vcnNsgIds=").append(String.valueOf(this.vcnNsgIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -858,12 +757,7 @@ public final class DistributedDatabasePrivateEndpoint
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
-                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
-                && java.util.Objects.equals(
-                        this.globallyDistributedDatabases, other.globallyDistributedDatabases)
-                && java.util.Objects.equals(
-                        this.globallyDistributedAutonomousDatabases,
-                        other.globallyDistributedAutonomousDatabases)
+                && java.util.Objects.equals(this.vcnNsgIds, other.vcnNsgIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -889,17 +783,7 @@ public final class DistributedDatabasePrivateEndpoint
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
-        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.globallyDistributedDatabases == null
-                                ? 43
-                                : this.globallyDistributedDatabases.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.globallyDistributedAutonomousDatabases == null
-                                ? 43
-                                : this.globallyDistributedAutonomousDatabases.hashCode());
+        result = (result * PRIME) + (this.vcnNsgIds == null ? 43 : this.vcnNsgIds.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

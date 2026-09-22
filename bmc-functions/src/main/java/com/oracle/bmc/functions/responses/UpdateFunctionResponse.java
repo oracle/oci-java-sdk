@@ -6,26 +6,8 @@ package com.oracle.bmc.functions.responses;
 
 import com.oracle.bmc.functions.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a PUT
-     * or DELETE operation. The resource will be updated only if the value you provide matches the
-     * {@code etag} on the resource.
-     */
-    private String etag;
-
-    /**
-     * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a PUT
-     * or DELETE operation. The resource will be updated only if the value you provide matches the
-     * {@code etag} on the resource.
-     *
-     * @return the value
-     */
-    public String getEtag() {
-        return etag;
-    }
-
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -42,35 +24,38 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned {@code Function} instance. */
-    private com.oracle.bmc.functions.model.Function function;
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * request.
+     */
+    private String opcWorkRequestId;
 
     /**
-     * The returned {@code Function} instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * request.
      *
      * @return the value
      */
-    public com.oracle.bmc.functions.model.Function getFunction() {
-        return function;
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
     }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
-        "etag",
         "opcRequestId",
-        "function"
+        "opcWorkRequestId"
     })
     private UpdateFunctionResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
-            String etag,
             String opcRequestId,
-            com.oracle.bmc.functions.model.Function function) {
+            String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
-        this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.function = function;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder
@@ -92,26 +77,6 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a
-         * PUT or DELETE operation. The resource will be updated only if the value you provide
-         * matches the {@code etag} on the resource.
-         */
-        private String etag;
-
-        /**
-         * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a
-         * PUT or DELETE operation. The resource will be updated only if the value you provide
-         * matches the {@code etag} on the resource.
-         *
-         * @param etag the value to set
-         * @return this builder
-         */
-        public Builder etag(String etag) {
-            this.etag = etag;
-            return this;
-        }
-
-        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          */
@@ -129,17 +94,23 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code Function} instance. */
-        private com.oracle.bmc.functions.model.Function function;
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
+         */
+        private String opcWorkRequestId;
 
         /**
-         * The returned {@code Function} instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
          *
-         * @param function the value to set
+         * @param opcWorkRequestId the value to set
          * @return this builder
          */
-        public Builder function(com.oracle.bmc.functions.model.Function function) {
-            this.function = function;
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -152,9 +123,8 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         public Builder copy(UpdateFunctionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
-            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            function(o.getFunction());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
@@ -167,7 +137,7 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         @Override
         public UpdateFunctionResponse build() {
             return new UpdateFunctionResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, function);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 
@@ -185,9 +155,8 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",function=").append(String.valueOf(function));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -203,18 +172,18 @@ public class UpdateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
 
         UpdateFunctionResponse other = (UpdateFunctionResponse) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.function, other.function);
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.function == null ? 43 : this.function.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         return result;
     }
 }

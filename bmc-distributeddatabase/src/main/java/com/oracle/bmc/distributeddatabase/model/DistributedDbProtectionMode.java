@@ -5,7 +5,7 @@
 package com.oracle.bmc.distributeddatabase.model;
 
 /** The protection mode to set up between the primary and standby databases. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum DistributedDbProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
     MaximumAvailability("MAXIMUM_AVAILABILITY"),
     MaximumPerformance("MAXIMUM_PERFORMANCE"),

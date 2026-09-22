@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.96.0</version>
+    <version>3.97.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-examples</artifactId>
@@ -71,14 +71,14 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.96.0</version>
+        <version>3.97.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        <version>3.96.0</version>
+        <version>3.97.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -727,10 +727,6 @@
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-distributeddatabase</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-apiaccesscontrol</artifactId>
     </dependency>
     <dependency>
@@ -823,11 +819,11 @@
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-distributeddatabasev26</artifactId>
+      <artifactId>oci-java-sdk-clusterhealth</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-clusterhealth</artifactId>
+      <artifactId>oci-java-sdk-distributeddatabase</artifactId>
     </dependency>
   </dependencies>
 </project>

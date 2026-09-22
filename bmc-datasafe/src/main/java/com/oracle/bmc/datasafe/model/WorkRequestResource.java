@@ -53,18 +53,20 @@ public final class WorkRequestResource
         }
         /**
          * The way in which this resource was affected by the operation that spawned the work
-         * request. A resource being created, updated, or deleted will remain in the IN_PROGRESS
-         * state until work is complete for that resource at which point it will transition to
-         * CREATED, UPDATED, or DELETED, respectively.
+         * request. A resource being created, updated, deleted, or tracked by a nested operation
+         * will remain in the IN_PROGRESS state until work is complete for that resource at which
+         * point it will transition to CREATED, UPDATED, DELETED, SUCCEEDED, FAILED, or CANCELED as
+         * appropriate.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
 
         /**
          * The way in which this resource was affected by the operation that spawned the work
-         * request. A resource being created, updated, or deleted will remain in the IN_PROGRESS
-         * state until work is complete for that resource at which point it will transition to
-         * CREATED, UPDATED, or DELETED, respectively.
+         * request. A resource being created, updated, deleted, or tracked by a nested operation
+         * will remain in the IN_PROGRESS state until work is complete for that resource at which
+         * point it will transition to CREATED, UPDATED, DELETED, SUCCEEDED, FAILED, or CANCELED as
+         * appropriate.
          *
          * @param actionType the value to set
          * @return this builder
@@ -160,16 +162,18 @@ public final class WorkRequestResource
 
     /**
      * The way in which this resource was affected by the operation that spawned the work request. A
-     * resource being created, updated, or deleted will remain in the IN_PROGRESS state until work
-     * is complete for that resource at which point it will transition to CREATED, UPDATED, or
-     * DELETED, respectively.
+     * resource being created, updated, deleted, or tracked by a nested operation will remain in the
+     * IN_PROGRESS state until work is complete for that resource at which point it will transition
+     * to CREATED, UPDATED, DELETED, SUCCEEDED, FAILED, or CANCELED as appropriate.
      */
     public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
         Created("CREATED"),
         Updated("UPDATED"),
         Deleted("DELETED"),
         InProgress("IN_PROGRESS"),
+        Succeeded("SUCCEEDED"),
         Failed("FAILED"),
+        Canceled("CANCELED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -214,18 +218,18 @@ public final class WorkRequestResource
     };
     /**
      * The way in which this resource was affected by the operation that spawned the work request. A
-     * resource being created, updated, or deleted will remain in the IN_PROGRESS state until work
-     * is complete for that resource at which point it will transition to CREATED, UPDATED, or
-     * DELETED, respectively.
+     * resource being created, updated, deleted, or tracked by a nested operation will remain in the
+     * IN_PROGRESS state until work is complete for that resource at which point it will transition
+     * to CREATED, UPDATED, DELETED, SUCCEEDED, FAILED, or CANCELED as appropriate.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
     /**
      * The way in which this resource was affected by the operation that spawned the work request. A
-     * resource being created, updated, or deleted will remain in the IN_PROGRESS state until work
-     * is complete for that resource at which point it will transition to CREATED, UPDATED, or
-     * DELETED, respectively.
+     * resource being created, updated, deleted, or tracked by a nested operation will remain in the
+     * IN_PROGRESS state until work is complete for that resource at which point it will transition
+     * to CREATED, UPDATED, DELETED, SUCCEEDED, FAILED, or CANCELED as appropriate.
      *
      * @return the value
      */

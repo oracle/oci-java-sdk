@@ -26,15 +26,18 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceShape",
+        "capacityReservationIds",
         "bootVolumeSizeInGBs",
         "instanceShapeDetails"
     })
     public ManagedComputeClusterInstanceConfigurationDetails(
             String instanceShape,
+            java.util.List<String> capacityReservationIds,
             Integer bootVolumeSizeInGBs,
             ManagedComputeClusterInstanceShapeDetails instanceShapeDetails) {
         super();
         this.instanceShape = instanceShape;
+        this.capacityReservationIds = capacityReservationIds;
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.instanceShapeDetails = instanceShapeDetails;
     }
@@ -58,6 +61,25 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
+            return this;
+        }
+        /**
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compute capacity reservation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+        private java.util.List<String> capacityReservationIds;
+
+        /**
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compute capacity reservation.
+         *
+         * @param capacityReservationIds the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationIds(java.util.List<String> capacityReservationIds) {
+            this.capacityReservationIds = capacityReservationIds;
+            this.__explicitlySet__.add("capacityReservationIds");
             return this;
         }
         /** The size of the boot volume to attach to the instance. */
@@ -93,6 +115,7 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
             ManagedComputeClusterInstanceConfigurationDetails model =
                     new ManagedComputeClusterInstanceConfigurationDetails(
                             this.instanceShape,
+                            this.capacityReservationIds,
                             this.bootVolumeSizeInGBs,
                             this.instanceShapeDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -105,6 +128,9 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         public Builder copy(ManagedComputeClusterInstanceConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("instanceShape")) {
                 this.instanceShape(model.getInstanceShape());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationIds")) {
+                this.capacityReservationIds(model.getCapacityReservationIds());
             }
             if (model.wasPropertyExplicitlySet("bootVolumeSizeInGBs")) {
                 this.bootVolumeSizeInGBs(model.getBootVolumeSizeInGBs());
@@ -140,6 +166,23 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
      */
     public String getInstanceShape() {
         return instanceShape;
+    }
+
+    /**
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compute capacity reservation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+    private final java.util.List<String> capacityReservationIds;
+
+    /**
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compute capacity reservation.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getCapacityReservationIds() {
+        return capacityReservationIds;
     }
 
     /** The size of the boot volume to attach to the instance. */
@@ -178,6 +221,7 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         sb.append("ManagedComputeClusterInstanceConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("instanceShape=").append(String.valueOf(this.instanceShape));
+        sb.append(", capacityReservationIds=").append(String.valueOf(this.capacityReservationIds));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(", instanceShapeDetails=").append(String.valueOf(this.instanceShapeDetails));
         sb.append(")");
@@ -196,6 +240,8 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         ManagedComputeClusterInstanceConfigurationDetails other =
                 (ManagedComputeClusterInstanceConfigurationDetails) o;
         return java.util.Objects.equals(this.instanceShape, other.instanceShape)
+                && java.util.Objects.equals(
+                        this.capacityReservationIds, other.capacityReservationIds)
                 && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && java.util.Objects.equals(this.instanceShapeDetails, other.instanceShapeDetails)
                 && super.equals(other);
@@ -208,6 +254,11 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         result =
                 (result * PRIME)
                         + (this.instanceShape == null ? 43 : this.instanceShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationIds == null
+                                ? 43
+                                : this.capacityReservationIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.bootVolumeSizeInGBs == null

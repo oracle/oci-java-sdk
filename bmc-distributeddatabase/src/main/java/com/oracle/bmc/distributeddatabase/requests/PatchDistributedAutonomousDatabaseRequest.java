@@ -11,16 +11,16 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * PatchDistributedAutonomousDatabaseRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class PatchDistributedAutonomousDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.distributeddatabase.model
                         .PatchDistributedAutonomousDatabaseDetails> {
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     private String distributedAutonomousDatabaseId;
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     public String getDistributedAutonomousDatabaseId() {
         return distributedAutonomousDatabaseId;
     }
@@ -101,11 +101,11 @@ public class PatchDistributedAutonomousDatabaseRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Globally distributed autonomous database identifier */
+        /** Globally distributed autonomous database identifier. */
         private String distributedAutonomousDatabaseId = null;
 
         /**
-         * Globally distributed autonomous database identifier
+         * Globally distributed autonomous database identifier.
          *
          * @param distributedAutonomousDatabaseId the value to set
          * @return this builder instance

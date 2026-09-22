@@ -10,7 +10,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
  * in the Oracle Data Guard documentation.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum DistributedAutonomousDbProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
     MaximumAvailability("MAXIMUM_AVAILABILITY"),
     MaximumPerformance("MAXIMUM_PERFORMANCE"),

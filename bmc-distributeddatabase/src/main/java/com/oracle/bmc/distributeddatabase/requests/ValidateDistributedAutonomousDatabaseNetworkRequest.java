@@ -11,14 +11,14 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * ValidateDistributedAutonomousDatabaseNetworkRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class ValidateDistributedAutonomousDatabaseNetworkRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     private String distributedAutonomousDatabaseId;
 
-    /** Globally distributed autonomous database identifier */
+    /** Globally distributed autonomous database identifier. */
     public String getDistributedAutonomousDatabaseId() {
         return distributedAutonomousDatabaseId;
     }
@@ -28,20 +28,6 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
     /** Determines the surrogates check. Default is true. */
     public Boolean getIsSurrogate() {
         return isSurrogate;
-    }
-    /** Specify the name of shard or catalog. */
-    private String resourceName;
-
-    /** Specify the name of shard or catalog. */
-    public String getResourceName() {
-        return resourceName;
-    }
-    /** The shardGroup name example Shardgroupa, Shardgroupb. */
-    private String shardGroup;
-
-    /** The shardGroup name example Shardgroupa, Shardgroupb. */
-    public String getShardGroup() {
-        return shardGroup;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
@@ -93,11 +79,11 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Globally distributed autonomous database identifier */
+        /** Globally distributed autonomous database identifier. */
         private String distributedAutonomousDatabaseId = null;
 
         /**
-         * Globally distributed autonomous database identifier
+         * Globally distributed autonomous database identifier.
          *
          * @param distributedAutonomousDatabaseId the value to set
          * @return this builder instance
@@ -118,34 +104,6 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
          */
         public Builder isSurrogate(Boolean isSurrogate) {
             this.isSurrogate = isSurrogate;
-            return this;
-        }
-
-        /** Specify the name of shard or catalog. */
-        private String resourceName = null;
-
-        /**
-         * Specify the name of shard or catalog.
-         *
-         * @param resourceName the value to set
-         * @return this builder instance
-         */
-        public Builder resourceName(String resourceName) {
-            this.resourceName = resourceName;
-            return this;
-        }
-
-        /** The shardGroup name example Shardgroupa, Shardgroupb. */
-        private String shardGroup = null;
-
-        /**
-         * The shardGroup name example Shardgroupa, Shardgroupb.
-         *
-         * @param shardGroup the value to set
-         * @return this builder instance
-         */
-        public Builder shardGroup(String shardGroup) {
-            this.shardGroup = shardGroup;
             return this;
         }
 
@@ -241,8 +199,6 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
         public Builder copy(ValidateDistributedAutonomousDatabaseNetworkRequest o) {
             distributedAutonomousDatabaseId(o.getDistributedAutonomousDatabaseId());
             isSurrogate(o.getIsSurrogate());
-            resourceName(o.getResourceName());
-            shardGroup(o.getShardGroup());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
@@ -287,15 +243,13 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
                     new ValidateDistributedAutonomousDatabaseNetworkRequest();
             request.distributedAutonomousDatabaseId = distributedAutonomousDatabaseId;
             request.isSurrogate = isSurrogate;
-            request.resourceName = resourceName;
-            request.shardGroup = shardGroup;
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
             // new
             // ValidateDistributedAutonomousDatabaseNetworkRequest(distributedAutonomousDatabaseId,
-            // isSurrogate, resourceName, shardGroup, ifMatch, opcRetryToken, opcRequestId);
+            // isSurrogate, ifMatch, opcRetryToken, opcRequestId);
         }
     }
 
@@ -308,8 +262,6 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
         return new Builder()
                 .distributedAutonomousDatabaseId(distributedAutonomousDatabaseId)
                 .isSurrogate(isSurrogate)
-                .resourceName(resourceName)
-                .shardGroup(shardGroup)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId);
@@ -332,8 +284,6 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
         sb.append(",distributedAutonomousDatabaseId=")
                 .append(String.valueOf(this.distributedAutonomousDatabaseId));
         sb.append(",isSurrogate=").append(String.valueOf(this.isSurrogate));
-        sb.append(",resourceName=").append(String.valueOf(this.resourceName));
-        sb.append(",shardGroup=").append(String.valueOf(this.shardGroup));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -356,8 +306,6 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
                 && java.util.Objects.equals(
                         this.distributedAutonomousDatabaseId, other.distributedAutonomousDatabaseId)
                 && java.util.Objects.equals(this.isSurrogate, other.isSurrogate)
-                && java.util.Objects.equals(this.resourceName, other.resourceName)
-                && java.util.Objects.equals(this.shardGroup, other.shardGroup)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -373,8 +321,6 @@ public class ValidateDistributedAutonomousDatabaseNetworkRequest
                                 ? 43
                                 : this.distributedAutonomousDatabaseId.hashCode());
         result = (result * PRIME) + (this.isSurrogate == null ? 43 : this.isSurrogate.hashCode());
-        result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
-        result = (result * PRIME) + (this.shardGroup == null ? 43 : this.shardGroup.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result =
                 (result * PRIME)

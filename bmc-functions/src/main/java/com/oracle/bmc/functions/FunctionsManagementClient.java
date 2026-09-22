@@ -12,7 +12,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 
 import java.util.Objects;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class FunctionsManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
         implements FunctionsManagement {
     /** Service instance for FunctionsManagement. */
@@ -139,10 +139,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "ChangeApplicationCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/ChangeApplicationCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeApplicationCompartmentRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("applications")
                 .appendPathParam(request.getApplicationId())
                 .appendPathParam("actions")
@@ -155,6 +155,9 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeApplicationCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeApplicationCompartmentResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -165,13 +168,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CreateApplicationResponse::builder)
                 .logger(LOG, "createApplication")
-                .serviceDetails(
-                        "FunctionsManagement",
-                        "CreateApplication",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication")
+                .serviceDetails("FunctionsManagement", "CreateApplication", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateApplicationRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("applications")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -183,6 +183,8 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", CreateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateApplicationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateApplicationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -193,13 +195,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CreateFunctionResponse::builder)
                 .logger(LOG, "createFunction")
-                .serviceDetails(
-                        "FunctionsManagement",
-                        "CreateFunction",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction")
+                .serviceDetails("FunctionsManagement", "CreateFunction", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFunctionRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("functions")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -211,6 +210,8 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", CreateFunctionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateFunctionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateFunctionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -224,10 +225,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "DeleteApplication",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/DeleteApplication")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteApplicationRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("applications")
                 .appendPathParam(request.getApplicationId())
                 .accept("application/json")
@@ -236,6 +237,8 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteApplicationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteApplicationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -249,10 +252,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "DeleteFunction",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/DeleteFunction")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFunctionRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("functions")
                 .appendPathParam(request.getFunctionId())
                 .accept("application/json")
@@ -261,6 +264,8 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteFunctionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteFunctionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -274,10 +279,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "GetApplication",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/GetApplication")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetApplicationRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("applications")
                 .appendPathParam(request.getApplicationId())
                 .accept("application/json")
@@ -302,10 +307,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "GetFunction",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/GetFunction")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFunctionRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("functions")
                 .appendPathParam(request.getFunctionId())
                 .accept("application/json")
@@ -321,6 +326,66 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public GetFunctionsRuntimeResponse getFunctionsRuntime(GetFunctionsRuntimeRequest request) {
+
+        Validate.notBlank(request.getFunctionsRuntimeId(), "functionsRuntimeId must not be blank");
+
+        return clientCall(request, GetFunctionsRuntimeResponse::builder)
+                .logger(LOG, "getFunctionsRuntime")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "GetFunctionsRuntime",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntime/GetFunctionsRuntime")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFunctionsRuntimeRequest::builder)
+                .basePath("/20260325")
+                .appendPathParam("functionsRuntimes")
+                .appendPathParam(request.getFunctionsRuntimeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.functions.model.FunctionsRuntime.class,
+                        GetFunctionsRuntimeResponse.Builder::functionsRuntime)
+                .handleResponseHeaderString("etag", GetFunctionsRuntimeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFunctionsRuntimeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetFunctionsRuntimeVersionResponse getFunctionsRuntimeVersion(
+            GetFunctionsRuntimeVersionRequest request) {
+
+        Validate.notBlank(
+                request.getFunctionsRuntimeVersionId(),
+                "functionsRuntimeVersionId must not be blank");
+
+        return clientCall(request, GetFunctionsRuntimeVersionResponse::builder)
+                .logger(LOG, "getFunctionsRuntimeVersion")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "GetFunctionsRuntimeVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntimeVersion/GetFunctionsRuntimeVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFunctionsRuntimeVersionRequest::builder)
+                .basePath("/20260325")
+                .appendPathParam("functionsRuntimeVersions")
+                .appendPathParam(request.getFunctionsRuntimeVersionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.functions.model.FunctionsRuntimeVersion.class,
+                        GetFunctionsRuntimeVersionResponse.Builder::functionsRuntimeVersion)
+                .handleResponseHeaderString(
+                        "etag", GetFunctionsRuntimeVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFunctionsRuntimeVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetPbfListingResponse getPbfListing(GetPbfListingRequest request) {
 
         Validate.notBlank(request.getPbfListingId(), "pbfListingId must not be blank");
@@ -330,10 +395,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "GetPbfListing",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/GetPbfListing")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListing/GetPbfListing")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPbfListingRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("pbfListings")
                 .appendPathParam(request.getPbfListingId())
                 .accept("application/json")
@@ -359,10 +424,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "GetPbfListingVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/GetPbfListingVersion")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListingVersion/GetPbfListingVersion")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPbfListingVersionRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("pbfListingVersions")
                 .appendPathParam(request.getPbfListingVersionId())
                 .accept("application/json")
@@ -386,10 +451,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "ListApplications",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/ApplicationSummary/ListApplications")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApplicationsRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("applications")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
@@ -421,10 +486,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "ListFunctions",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionSummary/ListFunctions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFunctionsRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("functions")
                 .appendQueryParam("applicationId", request.getApplicationId())
                 .appendQueryParam("limit", request.getLimit())
@@ -448,6 +513,86 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public ListFunctionsRuntimeVersionsResponse listFunctionsRuntimeVersions(
+            ListFunctionsRuntimeVersionsRequest request) {
+
+        return clientCall(request, ListFunctionsRuntimeVersionsResponse::builder)
+                .logger(LOG, "listFunctionsRuntimeVersions")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "ListFunctionsRuntimeVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntimeVersion/ListFunctionsRuntimeVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFunctionsRuntimeVersionsRequest::builder)
+                .basePath("/20260325")
+                .appendPathParam("functionsRuntimeVersions")
+                .appendQueryParam("functionsRuntimeId", request.getFunctionsRuntimeId())
+                .appendQueryParam("functionsRuntimeName", request.getFunctionsRuntimeName())
+                .appendQueryParam(
+                        "functionsRuntimeVersionId", request.getFunctionsRuntimeVersionId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("osVersion", request.getOsVersion())
+                .appendQueryParam("languageVersion", request.getLanguageVersion())
+                .appendQueryParam("isCurrentVersion", request.getIsCurrentVersion())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.functions.model.FunctionsRuntimeVersionCollection.class,
+                        ListFunctionsRuntimeVersionsResponse.Builder
+                                ::functionsRuntimeVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListFunctionsRuntimeVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFunctionsRuntimeVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListFunctionsRuntimesResponse listFunctionsRuntimes(
+            ListFunctionsRuntimesRequest request) {
+
+        return clientCall(request, ListFunctionsRuntimesResponse::builder)
+                .logger(LOG, "listFunctionsRuntimes")
+                .serviceDetails(
+                        "FunctionsManagement",
+                        "ListFunctionsRuntimes",
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntime/ListFunctionsRuntimes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFunctionsRuntimesRequest::builder)
+                .basePath("/20260325")
+                .appendPathParam("functionsRuntimes")
+                .appendQueryParam("functionsRuntimeId", request.getFunctionsRuntimeId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendQueryParam("nameStartsWith", request.getNameStartsWith())
+                .appendQueryParam("os", request.getOs())
+                .appendQueryParam("language", request.getLanguage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.functions.model.FunctionsRuntimeCollection.class,
+                        ListFunctionsRuntimesResponse.Builder::functionsRuntimeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFunctionsRuntimesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFunctionsRuntimesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListPbfListingVersionsResponse listPbfListingVersions(
             ListPbfListingVersionsRequest request) {
         Objects.requireNonNull(request.getPbfListingId(), "pbfListingId is required");
@@ -457,10 +602,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "ListPbfListingVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/ListPbfListingVersions")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListingVersion/ListPbfListingVersions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPbfListingVersionsRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("pbfListingVersions")
                 .appendQueryParam("pbfListingId", request.getPbfListingId())
                 .appendQueryParam("pbfListingVersionId", request.getPbfListingVersionId())
@@ -492,10 +637,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "ListPbfListings",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/ListPbfListings")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListing/ListPbfListings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPbfListingsRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("pbfListings")
                 .appendQueryParam("pbfListingId", request.getPbfListingId())
                 .appendQueryParam("name", request.getName())
@@ -531,10 +676,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "ListTriggers",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/TriggersCollection/ListTriggers")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/TriggersCollection/ListTriggers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTriggersRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("pbfListings")
                 .appendPathParam("triggers")
                 .appendQueryParam("name", request.getName())
@@ -566,10 +711,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "UpdateApplication",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/UpdateApplication")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateApplicationRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("applications")
                 .appendPathParam(request.getApplicationId())
                 .accept("application/json")
@@ -577,12 +722,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
                 .hasBody()
-                .handleBody(
-                        com.oracle.bmc.functions.model.Application.class,
-                        UpdateApplicationResponse.Builder::application)
-                .handleResponseHeaderString("etag", UpdateApplicationResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateApplicationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateApplicationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -598,10 +741,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "FunctionsManagement",
                         "UpdateFunction",
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction")
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/UpdateFunction")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFunctionRequest::builder)
-                .basePath("/20181201")
+                .basePath("/20260325")
                 .appendPathParam("functions")
                 .appendPathParam(request.getFunctionId())
                 .accept("application/json")
@@ -609,12 +752,10 @@ public class FunctionsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
                 .hasBody()
-                .handleBody(
-                        com.oracle.bmc.functions.model.Function.class,
-                        UpdateFunctionResponse.Builder::function)
-                .handleResponseHeaderString("etag", UpdateFunctionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateFunctionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateFunctionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

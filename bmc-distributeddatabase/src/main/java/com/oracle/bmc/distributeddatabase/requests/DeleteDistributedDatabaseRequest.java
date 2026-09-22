@@ -11,29 +11,16 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * DeleteDistributedDatabaseRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DeleteDistributedDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Globally distributed database identifier */
+    /** Globally distributed database identifier. */
     private String distributedDatabaseId;
 
-    /** Globally distributed database identifier */
+    /** Globally distributed database identifier. */
     public String getDistributedDatabaseId() {
         return distributedDatabaseId;
-    }
-    /**
-     * The flag to indicate if infra like VmCluster & DbStorageVault associated with the resource
-     * should be deleted.
-     */
-    private Boolean mustDeleteInfra;
-
-    /**
-     * The flag to indicate if infra like VmCluster & DbStorageVault associated with the resource
-     * should be deleted.
-     */
-    public Boolean getMustDeleteInfra() {
-        return mustDeleteInfra;
     }
     /** The client request ID for tracing. */
     private String opcRequestId;
@@ -85,35 +72,17 @@ public class DeleteDistributedDatabaseRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Globally distributed database identifier */
+        /** Globally distributed database identifier. */
         private String distributedDatabaseId = null;
 
         /**
-         * Globally distributed database identifier
+         * Globally distributed database identifier.
          *
          * @param distributedDatabaseId the value to set
          * @return this builder instance
          */
         public Builder distributedDatabaseId(String distributedDatabaseId) {
             this.distributedDatabaseId = distributedDatabaseId;
-            return this;
-        }
-
-        /**
-         * The flag to indicate if infra like VmCluster & DbStorageVault associated with the
-         * resource should be deleted.
-         */
-        private Boolean mustDeleteInfra = null;
-
-        /**
-         * The flag to indicate if infra like VmCluster & DbStorageVault associated with the
-         * resource should be deleted.
-         *
-         * @param mustDeleteInfra the value to set
-         * @return this builder instance
-         */
-        public Builder mustDeleteInfra(Boolean mustDeleteInfra) {
-            this.mustDeleteInfra = mustDeleteInfra;
             return this;
         }
 
@@ -208,7 +177,6 @@ public class DeleteDistributedDatabaseRequest
          */
         public Builder copy(DeleteDistributedDatabaseRequest o) {
             distributedDatabaseId(o.getDistributedDatabaseId());
-            mustDeleteInfra(o.getMustDeleteInfra());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
@@ -247,13 +215,12 @@ public class DeleteDistributedDatabaseRequest
         public DeleteDistributedDatabaseRequest buildWithoutInvocationCallback() {
             DeleteDistributedDatabaseRequest request = new DeleteDistributedDatabaseRequest();
             request.distributedDatabaseId = distributedDatabaseId;
-            request.mustDeleteInfra = mustDeleteInfra;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             return request;
-            // new DeleteDistributedDatabaseRequest(distributedDatabaseId, mustDeleteInfra,
-            // opcRequestId, opcRetryToken, ifMatch);
+            // new DeleteDistributedDatabaseRequest(distributedDatabaseId, opcRequestId,
+            // opcRetryToken, ifMatch);
         }
     }
 
@@ -265,7 +232,6 @@ public class DeleteDistributedDatabaseRequest
     public Builder toBuilder() {
         return new Builder()
                 .distributedDatabaseId(distributedDatabaseId)
-                .mustDeleteInfra(mustDeleteInfra)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken)
                 .ifMatch(ifMatch);
@@ -286,7 +252,6 @@ public class DeleteDistributedDatabaseRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",distributedDatabaseId=").append(String.valueOf(this.distributedDatabaseId));
-        sb.append(",mustDeleteInfra=").append(String.valueOf(this.mustDeleteInfra));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
@@ -306,7 +271,6 @@ public class DeleteDistributedDatabaseRequest
         DeleteDistributedDatabaseRequest other = (DeleteDistributedDatabaseRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.distributedDatabaseId, other.distributedDatabaseId)
-                && java.util.Objects.equals(this.mustDeleteInfra, other.mustDeleteInfra)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch);
@@ -321,9 +285,6 @@ public class DeleteDistributedDatabaseRequest
                         + (this.distributedDatabaseId == null
                                 ? 43
                                 : this.distributedDatabaseId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.mustDeleteInfra == null ? 43 : this.mustDeleteInfra.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

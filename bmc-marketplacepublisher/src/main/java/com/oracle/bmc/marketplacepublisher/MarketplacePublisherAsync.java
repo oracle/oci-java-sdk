@@ -247,8 +247,8 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
      *
      * <p>You must also specify a *name* for the listing and cannot be updated later.
      *
-     * <p>You must also specify a *packageType* for the listing. Allowed values are CONTAINER_IMAGE
-     * and HELM_CHART
+     * <p>You must also specify a *packageType* for the listing. Allowed values are CONTAINER_IMAGE,
+     * HELM_CHART, COMPUTE_IMAGE, TERRAFORM_STACK and SAAS
      *
      * <p>After you send your request, the new object's `lifecycleState` will be CREATING. Before
      * using the object, first make sure its `lifecycleState` has changed to ACTIVE.
@@ -333,6 +333,21 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new publisher
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePublisherResponse> createPublisher(
+            CreatePublisherRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePublisherRequest, CreatePublisherResponse>
+                    handler);
+
+    /**
      * Creates a new Term.
      *
      * @param request The request object containing the details to send
@@ -376,6 +391,24 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
             DeleteArtifactRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteArtifactRequest, DeleteArtifactResponse>
                     handler);
+
+    /**
+     * Deletes a generated Customer Instance Report export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCustomerInstanceReportExportResponse>
+            deleteCustomerInstanceReportExport(
+                    DeleteCustomerInstanceReportExportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCustomerInstanceReportExportRequest,
+                                    DeleteCustomerInstanceReportExportResponse>
+                            handler);
 
     /**
      * Deletes a listing by the identifier
@@ -490,6 +523,24 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates a new asynchronous Customer Instance Report export for the selected filters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateCustomerInstanceReportExportResponse>
+            generateCustomerInstanceReportExport(
+                    GenerateCustomerInstanceReportExportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateCustomerInstanceReportExportRequest,
+                                    GenerateCustomerInstanceReportExportResponse>
+                            handler);
+
+    /**
      * Gets the specified artifact's information.
      *
      * @param request The request object containing the details to send
@@ -516,6 +567,42 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
     java.util.concurrent.Future<GetCategoryResponse> getCategory(
             GetCategoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetCategoryRequest, GetCategoryResponse> handler);
+
+    /**
+     * Gets details for a specific Customer Instance Report export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCustomerInstanceReportExportResponse>
+            getCustomerInstanceReportExport(
+                    GetCustomerInstanceReportExportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCustomerInstanceReportExportRequest,
+                                    GetCustomerInstanceReportExportResponse>
+                            handler);
+
+    /**
+     * Downloads the generated Customer Instance Report CSV for the specified export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCustomerInstanceReportExportContentResponse>
+            getCustomerInstanceReportExportContent(
+                    GetCustomerInstanceReportExportContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCustomerInstanceReportExportContentRequest,
+                                    GetCustomerInstanceReportExportContentResponse>
+                            handler);
 
     /**
      * Gets the details for a lead.
@@ -831,6 +918,24 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists existing Customer Instance Report exports for the caller.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCustomerInstanceReportExportsResponse>
+            listCustomerInstanceReportExports(
+                    ListCustomerInstanceReportExportsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCustomerInstanceReportExportsRequest,
+                                    ListCustomerInstanceReportExportsResponse>
+                            handler);
+
+    /**
      * List customer instance report records
      *
      * @param request The request object containing the details to send
@@ -934,10 +1039,9 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
 
     /**
      * Lists the list of listing revisions for a specific listing ID, compartment ID or listing
-     * revision status.
-     *
-     * <p>You can specify your compartment's OCID as the value for the compartment ID. For
-     * information about OCIDs, see Resource Identifiers (Content/General/Concepts/identifiers.htm).
+     * revision status. You can specify your compartment's OCID as the value for the compartment ID.
+     * For information about OCIDs, see Resource Identifiers
+     * (Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1330,6 +1434,24 @@ public interface MarketplacePublisherAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateListingRevisionAttachmentContentRequest,
                                     UpdateListingRevisionAttachmentContentResponse>
+                            handler);
+
+    /**
+     * Updates the Listing Revision
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateListingRevisionBannerContentResponse>
+            updateListingRevisionBannerContent(
+                    UpdateListingRevisionBannerContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateListingRevisionBannerContentRequest,
+                                    UpdateListingRevisionBannerContentResponse>
                             handler);
 
     /**

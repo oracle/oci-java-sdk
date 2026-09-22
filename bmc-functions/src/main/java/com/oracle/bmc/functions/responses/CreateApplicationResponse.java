@@ -6,7 +6,7 @@ package com.oracle.bmc.functions.responses;
 
 import com.oracle.bmc.functions.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. Add this value to the {@code if-match} parameter in a PUT
@@ -42,6 +42,24 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * request.
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+     * request.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
     /** The returned {@code Application} instance. */
     private com.oracle.bmc.functions.model.Application application;
 
@@ -59,6 +77,7 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
         "headers",
         "etag",
         "opcRequestId",
+        "opcWorkRequestId",
         "application"
     })
     private CreateApplicationResponse(
@@ -66,10 +85,12 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
+            String opcWorkRequestId,
             com.oracle.bmc.functions.model.Application application) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.application = application;
     }
 
@@ -129,6 +150,26 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
+         * request.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
         /** The returned {@code Application} instance. */
         private com.oracle.bmc.functions.model.Application application;
 
@@ -154,6 +195,7 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             application(o.getApplication());
 
             return this;
@@ -167,7 +209,7 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
         @Override
         public CreateApplicationResponse build() {
             return new CreateApplicationResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, application);
+                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId, application);
         }
     }
 
@@ -187,6 +229,7 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",application=").append(String.valueOf(application));
         sb.append(")");
         return sb.toString();
@@ -205,6 +248,7 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.application, other.application);
     }
 
@@ -214,6 +258,9 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.application == null ? 43 : this.application.hashCode());
         return result;
     }

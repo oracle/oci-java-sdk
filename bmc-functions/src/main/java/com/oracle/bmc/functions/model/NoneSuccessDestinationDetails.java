@@ -5,7 +5,7 @@
 package com.oracle.bmc.functions.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead. Specifies no success destination
+ * Specifies no success destination
  *
  * <p>Example: {@code {"kind": "NONE"}} <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
@@ -17,7 +17,7 @@ package com.oracle.bmc.functions.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = NoneSuccessDestinationDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(

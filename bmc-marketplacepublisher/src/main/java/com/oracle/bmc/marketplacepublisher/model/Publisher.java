@@ -24,8 +24,10 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
     @java.beans.ConstructorProperties({
         "publisherStatus",
         "notificationEmail",
+        "enrollmentStatus",
         "opnMembership",
         "privateOfferAccountDetails",
+        "isFxEnabled",
         "id",
         "compartmentId",
         "registryNamespace",
@@ -44,6 +46,14 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         "publisherType",
         "timeCreated",
         "timeUpdated",
+        "email",
+        "businessPhoneNumber",
+        "employeeCount",
+        "solutionDescription",
+        "opnNumber",
+        "country",
+        "city",
+        "state",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -51,8 +61,10 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
     public Publisher(
             PublisherStatus publisherStatus,
             String notificationEmail,
+            String enrollmentStatus,
             OpnMembership opnMembership,
             PrivateOfferAccountDetails privateOfferAccountDetails,
+            Boolean isFxEnabled,
             String id,
             String compartmentId,
             String registryNamespace,
@@ -71,14 +83,24 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             PublisherType publisherType,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String email,
+            String businessPhoneNumber,
+            Long employeeCount,
+            String solutionDescription,
+            String opnNumber,
+            String country,
+            String city,
+            String state,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.publisherStatus = publisherStatus;
         this.notificationEmail = notificationEmail;
+        this.enrollmentStatus = enrollmentStatus;
         this.opnMembership = opnMembership;
         this.privateOfferAccountDetails = privateOfferAccountDetails;
+        this.isFxEnabled = isFxEnabled;
         this.id = id;
         this.compartmentId = compartmentId;
         this.registryNamespace = registryNamespace;
@@ -97,6 +119,14 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         this.publisherType = publisherType;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.email = email;
+        this.businessPhoneNumber = businessPhoneNumber;
+        this.employeeCount = employeeCount;
+        this.solutionDescription = solutionDescription;
+        this.opnNumber = opnNumber;
+        this.country = country;
+        this.city = city;
+        this.state = state;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -134,6 +164,21 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("notificationEmail");
             return this;
         }
+        /** Oracle Cloud Marketplace agreement status */
+        @com.fasterxml.jackson.annotation.JsonProperty("enrollmentStatus")
+        private String enrollmentStatus;
+
+        /**
+         * Oracle Cloud Marketplace agreement status
+         *
+         * @param enrollmentStatus the value to set
+         * @return this builder
+         */
+        public Builder enrollmentStatus(String enrollmentStatus) {
+            this.enrollmentStatus = enrollmentStatus;
+            this.__explicitlySet__.add("enrollmentStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("opnMembership")
         private OpnMembership opnMembership;
@@ -151,6 +196,21 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
                 PrivateOfferAccountDetails privateOfferAccountDetails) {
             this.privateOfferAccountDetails = privateOfferAccountDetails;
             this.__explicitlySet__.add("privateOfferAccountDetails");
+            return this;
+        }
+        /** Whether automatic FX conversion is enabled for the publisher. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isFxEnabled")
+        private Boolean isFxEnabled;
+
+        /**
+         * Whether automatic FX conversion is enabled for the publisher.
+         *
+         * @param isFxEnabled the value to set
+         * @return this builder
+         */
+        public Builder isFxEnabled(Boolean isFxEnabled) {
+            this.isFxEnabled = isFxEnabled;
+            this.__explicitlySet__.add("isFxEnabled");
             return this;
         }
         /** Unique OCID identifier for the publisher. */
@@ -417,6 +477,126 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** Email address of the publisher. */
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
+
+        /**
+         * Email address of the publisher.
+         *
+         * @param email the value to set
+         * @return this builder
+         */
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
+            return this;
+        }
+        /** The business phone number of the publisher. */
+        @com.fasterxml.jackson.annotation.JsonProperty("businessPhoneNumber")
+        private String businessPhoneNumber;
+
+        /**
+         * The business phone number of the publisher.
+         *
+         * @param businessPhoneNumber the value to set
+         * @return this builder
+         */
+        public Builder businessPhoneNumber(String businessPhoneNumber) {
+            this.businessPhoneNumber = businessPhoneNumber;
+            this.__explicitlySet__.add("businessPhoneNumber");
+            return this;
+        }
+        /** Count of employees in publisher's company */
+        @com.fasterxml.jackson.annotation.JsonProperty("employeeCount")
+        private Long employeeCount;
+
+        /**
+         * Count of employees in publisher's company
+         *
+         * @param employeeCount the value to set
+         * @return this builder
+         */
+        public Builder employeeCount(Long employeeCount) {
+            this.employeeCount = employeeCount;
+            this.__explicitlySet__.add("employeeCount");
+            return this;
+        }
+        /** A description of the publisher solutions. */
+        @com.fasterxml.jackson.annotation.JsonProperty("solutionDescription")
+        private String solutionDescription;
+
+        /**
+         * A description of the publisher solutions.
+         *
+         * @param solutionDescription the value to set
+         * @return this builder
+         */
+        public Builder solutionDescription(String solutionDescription) {
+            this.solutionDescription = solutionDescription;
+            this.__explicitlySet__.add("solutionDescription");
+            return this;
+        }
+        /** OPN membership number of the publisher */
+        @com.fasterxml.jackson.annotation.JsonProperty("opnNumber")
+        private String opnNumber;
+
+        /**
+         * OPN membership number of the publisher
+         *
+         * @param opnNumber the value to set
+         * @return this builder
+         */
+        public Builder opnNumber(String opnNumber) {
+            this.opnNumber = opnNumber;
+            this.__explicitlySet__.add("opnNumber");
+            return this;
+        }
+        /** Country in which partner company resides */
+        @com.fasterxml.jackson.annotation.JsonProperty("country")
+        private String country;
+
+        /**
+         * Country in which partner company resides
+         *
+         * @param country the value to set
+         * @return this builder
+         */
+        public Builder country(String country) {
+            this.country = country;
+            this.__explicitlySet__.add("country");
+            return this;
+        }
+        /** City in which partner company resides */
+        @com.fasterxml.jackson.annotation.JsonProperty("city")
+        private String city;
+
+        /**
+         * City in which partner company resides
+         *
+         * @param city the value to set
+         * @return this builder
+         */
+        public Builder city(String city) {
+            this.city = city;
+            this.__explicitlySet__.add("city");
+            return this;
+        }
+        /** State in which partner company resides */
+        @com.fasterxml.jackson.annotation.JsonProperty("state")
+        private String state;
+
+        /**
+         * State in which partner company resides
+         *
+         * @param state the value to set
+         * @return this builder
+         */
+        public Builder state(String state) {
+            this.state = state;
+            this.__explicitlySet__.add("state");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -484,8 +664,10 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
                     new Publisher(
                             this.publisherStatus,
                             this.notificationEmail,
+                            this.enrollmentStatus,
                             this.opnMembership,
                             this.privateOfferAccountDetails,
+                            this.isFxEnabled,
                             this.id,
                             this.compartmentId,
                             this.registryNamespace,
@@ -504,6 +686,14 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
                             this.publisherType,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.email,
+                            this.businessPhoneNumber,
+                            this.employeeCount,
+                            this.solutionDescription,
+                            this.opnNumber,
+                            this.country,
+                            this.city,
+                            this.state,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -521,11 +711,17 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("notificationEmail")) {
                 this.notificationEmail(model.getNotificationEmail());
             }
+            if (model.wasPropertyExplicitlySet("enrollmentStatus")) {
+                this.enrollmentStatus(model.getEnrollmentStatus());
+            }
             if (model.wasPropertyExplicitlySet("opnMembership")) {
                 this.opnMembership(model.getOpnMembership());
             }
             if (model.wasPropertyExplicitlySet("privateOfferAccountDetails")) {
                 this.privateOfferAccountDetails(model.getPrivateOfferAccountDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isFxEnabled")) {
+                this.isFxEnabled(model.getIsFxEnabled());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -581,6 +777,30 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            if (model.wasPropertyExplicitlySet("businessPhoneNumber")) {
+                this.businessPhoneNumber(model.getBusinessPhoneNumber());
+            }
+            if (model.wasPropertyExplicitlySet("employeeCount")) {
+                this.employeeCount(model.getEmployeeCount());
+            }
+            if (model.wasPropertyExplicitlySet("solutionDescription")) {
+                this.solutionDescription(model.getSolutionDescription());
+            }
+            if (model.wasPropertyExplicitlySet("opnNumber")) {
+                this.opnNumber(model.getOpnNumber());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("city")) {
+                this.city(model.getCity());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -603,56 +823,6 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** publisher status. */
-    public enum PublisherStatus implements com.oracle.bmc.http.internal.BmcEnum {
-        New("NEW"),
-        Approved("APPROVED"),
-        Suspended("SUSPENDED"),
-        Removed("REMOVED"),
-        Rejected("REJECTED"),
-        Contacted("CONTACTED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(PublisherStatus.class);
-
-        private final String value;
-        private static java.util.Map<String, PublisherStatus> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (PublisherStatus v : PublisherStatus.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        PublisherStatus(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static PublisherStatus create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'PublisherStatus', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
     /** publisher status. */
     @com.fasterxml.jackson.annotation.JsonProperty("publisherStatus")
     private final PublisherStatus publisherStatus;
@@ -679,6 +849,19 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         return notificationEmail;
     }
 
+    /** Oracle Cloud Marketplace agreement status */
+    @com.fasterxml.jackson.annotation.JsonProperty("enrollmentStatus")
+    private final String enrollmentStatus;
+
+    /**
+     * Oracle Cloud Marketplace agreement status
+     *
+     * @return the value
+     */
+    public String getEnrollmentStatus() {
+        return enrollmentStatus;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("opnMembership")
     private final OpnMembership opnMembership;
 
@@ -691,6 +874,19 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
 
     public PrivateOfferAccountDetails getPrivateOfferAccountDetails() {
         return privateOfferAccountDetails;
+    }
+
+    /** Whether automatic FX conversion is enabled for the publisher. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isFxEnabled")
+    private final Boolean isFxEnabled;
+
+    /**
+     * Whether automatic FX conversion is enabled for the publisher.
+     *
+     * @return the value
+     */
+    public Boolean getIsFxEnabled() {
+        return isFxEnabled;
     }
 
     /** Unique OCID identifier for the publisher. */
@@ -967,6 +1163,110 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         return timeUpdated;
     }
 
+    /** Email address of the publisher. */
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    private final String email;
+
+    /**
+     * Email address of the publisher.
+     *
+     * @return the value
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /** The business phone number of the publisher. */
+    @com.fasterxml.jackson.annotation.JsonProperty("businessPhoneNumber")
+    private final String businessPhoneNumber;
+
+    /**
+     * The business phone number of the publisher.
+     *
+     * @return the value
+     */
+    public String getBusinessPhoneNumber() {
+        return businessPhoneNumber;
+    }
+
+    /** Count of employees in publisher's company */
+    @com.fasterxml.jackson.annotation.JsonProperty("employeeCount")
+    private final Long employeeCount;
+
+    /**
+     * Count of employees in publisher's company
+     *
+     * @return the value
+     */
+    public Long getEmployeeCount() {
+        return employeeCount;
+    }
+
+    /** A description of the publisher solutions. */
+    @com.fasterxml.jackson.annotation.JsonProperty("solutionDescription")
+    private final String solutionDescription;
+
+    /**
+     * A description of the publisher solutions.
+     *
+     * @return the value
+     */
+    public String getSolutionDescription() {
+        return solutionDescription;
+    }
+
+    /** OPN membership number of the publisher */
+    @com.fasterxml.jackson.annotation.JsonProperty("opnNumber")
+    private final String opnNumber;
+
+    /**
+     * OPN membership number of the publisher
+     *
+     * @return the value
+     */
+    public String getOpnNumber() {
+        return opnNumber;
+    }
+
+    /** Country in which partner company resides */
+    @com.fasterxml.jackson.annotation.JsonProperty("country")
+    private final String country;
+
+    /**
+     * Country in which partner company resides
+     *
+     * @return the value
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /** City in which partner company resides */
+    @com.fasterxml.jackson.annotation.JsonProperty("city")
+    private final String city;
+
+    /**
+     * City in which partner company resides
+     *
+     * @return the value
+     */
+    public String getCity() {
+        return city;
+    }
+
+    /** State in which partner company resides */
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
+    private final String state;
+
+    /**
+     * State in which partner company resides
+     *
+     * @return the value
+     */
+    public String getState() {
+        return state;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -1035,9 +1335,11 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         sb.append("super=").append(super.toString());
         sb.append("publisherStatus=").append(String.valueOf(this.publisherStatus));
         sb.append(", notificationEmail=").append(String.valueOf(this.notificationEmail));
+        sb.append(", enrollmentStatus=").append(String.valueOf(this.enrollmentStatus));
         sb.append(", opnMembership=").append(String.valueOf(this.opnMembership));
         sb.append(", privateOfferAccountDetails=")
                 .append(String.valueOf(this.privateOfferAccountDetails));
+        sb.append(", isFxEnabled=").append(String.valueOf(this.isFxEnabled));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", registryNamespace=").append(String.valueOf(this.registryNamespace));
@@ -1056,6 +1358,14 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", publisherType=").append(String.valueOf(this.publisherType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", email=").append(String.valueOf(this.email));
+        sb.append(", businessPhoneNumber=").append(String.valueOf(this.businessPhoneNumber));
+        sb.append(", employeeCount=").append(String.valueOf(this.employeeCount));
+        sb.append(", solutionDescription=").append(String.valueOf(this.solutionDescription));
+        sb.append(", opnNumber=").append(String.valueOf(this.opnNumber));
+        sb.append(", country=").append(String.valueOf(this.country));
+        sb.append(", city=").append(String.valueOf(this.city));
+        sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1075,9 +1385,11 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         Publisher other = (Publisher) o;
         return java.util.Objects.equals(this.publisherStatus, other.publisherStatus)
                 && java.util.Objects.equals(this.notificationEmail, other.notificationEmail)
+                && java.util.Objects.equals(this.enrollmentStatus, other.enrollmentStatus)
                 && java.util.Objects.equals(this.opnMembership, other.opnMembership)
                 && java.util.Objects.equals(
                         this.privateOfferAccountDetails, other.privateOfferAccountDetails)
+                && java.util.Objects.equals(this.isFxEnabled, other.isFxEnabled)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.registryNamespace, other.registryNamespace)
@@ -1096,6 +1408,14 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.publisherType, other.publisherType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.email, other.email)
+                && java.util.Objects.equals(this.businessPhoneNumber, other.businessPhoneNumber)
+                && java.util.Objects.equals(this.employeeCount, other.employeeCount)
+                && java.util.Objects.equals(this.solutionDescription, other.solutionDescription)
+                && java.util.Objects.equals(this.opnNumber, other.opnNumber)
+                && java.util.Objects.equals(this.country, other.country)
+                && java.util.Objects.equals(this.city, other.city)
+                && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1114,12 +1434,16 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
                         + (this.notificationEmail == null ? 43 : this.notificationEmail.hashCode());
         result =
                 (result * PRIME)
+                        + (this.enrollmentStatus == null ? 43 : this.enrollmentStatus.hashCode());
+        result =
+                (result * PRIME)
                         + (this.opnMembership == null ? 43 : this.opnMembership.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateOfferAccountDetails == null
                                 ? 43
                                 : this.privateOfferAccountDetails.hashCode());
+        result = (result * PRIME) + (this.isFxEnabled == null ? 43 : this.isFxEnabled.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)
@@ -1144,6 +1468,24 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
                         + (this.publisherType == null ? 43 : this.publisherType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.businessPhoneNumber == null
+                                ? 43
+                                : this.businessPhoneNumber.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.employeeCount == null ? 43 : this.employeeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.solutionDescription == null
+                                ? 43
+                                : this.solutionDescription.hashCode());
+        result = (result * PRIME) + (this.opnNumber == null ? 43 : this.opnNumber.hashCode());
+        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
+        result = (result * PRIME) + (this.city == null ? 43 : this.city.hashCode());
+        result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

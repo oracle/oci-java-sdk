@@ -1271,6 +1271,124 @@ public class GenerativeAiPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModelDiscovery operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListModelDiscoveryResponse> listModelDiscoveryResponseIterator(
+            final ListModelDiscoveryRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelDiscoveryRequest.Builder,
+                ListModelDiscoveryRequest,
+                ListModelDiscoveryResponse>(
+                new java.util.function.Supplier<ListModelDiscoveryRequest.Builder>() {
+                    @Override
+                    public ListModelDiscoveryRequest.Builder get() {
+                        return ListModelDiscoveryRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelDiscoveryResponse, String>() {
+                    @Override
+                    public String apply(ListModelDiscoveryResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDiscoveryRequest.Builder>,
+                        ListModelDiscoveryRequest>() {
+                    @Override
+                    public ListModelDiscoveryRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDiscoveryRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelDiscoveryRequest, ListModelDiscoveryResponse>() {
+                    @Override
+                    public ListModelDiscoveryResponse apply(ListModelDiscoveryRequest request) {
+                        return client.listModelDiscovery(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.ModelDiscovery} objects contained in responses from the
+     * listModelDiscovery operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.ModelDiscovery} objects contained in responses received
+     *     from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.ModelDiscovery>
+            listModelDiscoveryRecordIterator(final ListModelDiscoveryRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelDiscoveryRequest.Builder,
+                ListModelDiscoveryRequest,
+                ListModelDiscoveryResponse,
+                com.oracle.bmc.generativeai.model.ModelDiscovery>(
+                new java.util.function.Supplier<ListModelDiscoveryRequest.Builder>() {
+                    @Override
+                    public ListModelDiscoveryRequest.Builder get() {
+                        return ListModelDiscoveryRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelDiscoveryResponse, String>() {
+                    @Override
+                    public String apply(ListModelDiscoveryResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelDiscoveryRequest.Builder>,
+                        ListModelDiscoveryRequest>() {
+                    @Override
+                    public ListModelDiscoveryRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelDiscoveryRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelDiscoveryRequest, ListModelDiscoveryResponse>() {
+                    @Override
+                    public ListModelDiscoveryResponse apply(ListModelDiscoveryRequest request) {
+                        return client.listModelDiscovery(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelDiscoveryResponse,
+                        java.util.List<com.oracle.bmc.generativeai.model.ModelDiscovery>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.ModelDiscovery> apply(
+                            ListModelDiscoveryResponse response) {
+                        return response.getModelDiscoveryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listModels
      * operation. This iterable will fetch more data from the server as needed.
      *
@@ -1380,6 +1498,125 @@ public class GenerativeAiPaginators {
                     public java.util.List<com.oracle.bmc.generativeai.model.ModelSummary> apply(
                             ListModelsResponse response) {
                         return response.getModelCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listRoutingProfiles operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRoutingProfilesResponse> listRoutingProfilesResponseIterator(
+            final ListRoutingProfilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRoutingProfilesRequest.Builder,
+                ListRoutingProfilesRequest,
+                ListRoutingProfilesResponse>(
+                new java.util.function.Supplier<ListRoutingProfilesRequest.Builder>() {
+                    @Override
+                    public ListRoutingProfilesRequest.Builder get() {
+                        return ListRoutingProfilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRoutingProfilesResponse, String>() {
+                    @Override
+                    public String apply(ListRoutingProfilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRoutingProfilesRequest.Builder>,
+                        ListRoutingProfilesRequest>() {
+                    @Override
+                    public ListRoutingProfilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRoutingProfilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRoutingProfilesRequest, ListRoutingProfilesResponse>() {
+                    @Override
+                    public ListRoutingProfilesResponse apply(ListRoutingProfilesRequest request) {
+                        return client.listRoutingProfiles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.RoutingProfileSummary} objects contained in responses from
+     * the listRoutingProfiles operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.RoutingProfileSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.RoutingProfileSummary>
+            listRoutingProfilesRecordIterator(final ListRoutingProfilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRoutingProfilesRequest.Builder,
+                ListRoutingProfilesRequest,
+                ListRoutingProfilesResponse,
+                com.oracle.bmc.generativeai.model.RoutingProfileSummary>(
+                new java.util.function.Supplier<ListRoutingProfilesRequest.Builder>() {
+                    @Override
+                    public ListRoutingProfilesRequest.Builder get() {
+                        return ListRoutingProfilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRoutingProfilesResponse, String>() {
+                    @Override
+                    public String apply(ListRoutingProfilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRoutingProfilesRequest.Builder>,
+                        ListRoutingProfilesRequest>() {
+                    @Override
+                    public ListRoutingProfilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRoutingProfilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRoutingProfilesRequest, ListRoutingProfilesResponse>() {
+                    @Override
+                    public ListRoutingProfilesResponse apply(ListRoutingProfilesRequest request) {
+                        return client.listRoutingProfiles(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRoutingProfilesResponse,
+                        java.util.List<com.oracle.bmc.generativeai.model.RoutingProfileSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.RoutingProfileSummary>
+                            apply(ListRoutingProfilesResponse response) {
+                        return response.getRoutingProfileCollection().getItems();
                     }
                 });
     }

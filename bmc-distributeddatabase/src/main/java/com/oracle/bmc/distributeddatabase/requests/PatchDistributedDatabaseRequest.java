@@ -11,15 +11,15 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * PatchDistributedDatabaseRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class PatchDistributedDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.distributeddatabase.model.PatchDistributedDatabaseDetails> {
 
-    /** Globally distributed database identifier */
+    /** Globally distributed database identifier. */
     private String distributedDatabaseId;
 
-    /** Globally distributed database identifier */
+    /** Globally distributed database identifier. */
     public String getDistributedDatabaseId() {
         return distributedDatabaseId;
     }
@@ -94,11 +94,11 @@ public class PatchDistributedDatabaseRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Globally distributed database identifier */
+        /** Globally distributed database identifier. */
         private String distributedDatabaseId = null;
 
         /**
-         * Globally distributed database identifier
+         * Globally distributed database identifier.
          *
          * @param distributedDatabaseId the value to set
          * @return this builder instance

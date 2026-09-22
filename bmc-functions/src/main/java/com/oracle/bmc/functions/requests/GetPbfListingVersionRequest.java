@@ -10,7 +10,7 @@ import com.oracle.bmc.functions.model.*;
  * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetPbfListingVersionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPbfListingVersionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class GetPbfListingVersionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

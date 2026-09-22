@@ -16,7 +16,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VmClusterDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -24,6 +24,7 @@ public final class VmClusterDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "compartmentId",
         "subnetId",
         "backupSubnetId",
         "enabledECpuCount",
@@ -37,9 +38,11 @@ public final class VmClusterDetails
         "isHealthMonitoringEnabled",
         "isIncidentLogsEnabled",
         "nsgIds",
-        "backupNetworkNsgIds"
+        "backupNetworkNsgIds",
+        "subscriptionId"
     })
     public VmClusterDetails(
+            String compartmentId,
             String subnetId,
             String backupSubnetId,
             Integer enabledECpuCount,
@@ -53,8 +56,10 @@ public final class VmClusterDetails
             Boolean isHealthMonitoringEnabled,
             Boolean isIncidentLogsEnabled,
             java.util.List<String> nsgIds,
-            java.util.List<String> backupNetworkNsgIds) {
+            java.util.List<String> backupNetworkNsgIds,
+            String subscriptionId) {
         super();
+        this.compartmentId = compartmentId;
         this.subnetId = subnetId;
         this.backupSubnetId = backupSubnetId;
         this.enabledECpuCount = enabledECpuCount;
@@ -69,10 +74,30 @@ public final class VmClusterDetails
         this.isIncidentLogsEnabled = isIncidentLogsEnabled;
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
+        this.subscriptionId = subscriptionId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment for VM Cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * compartment for VM Cluster.
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * subnet associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -369,6 +394,25 @@ public final class VmClusterDetails
             this.__explicitlySet__.add("backupNetworkNsgIds");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -376,6 +420,7 @@ public final class VmClusterDetails
         public VmClusterDetails build() {
             VmClusterDetails model =
                     new VmClusterDetails(
+                            this.compartmentId,
                             this.subnetId,
                             this.backupSubnetId,
                             this.enabledECpuCount,
@@ -389,7 +434,8 @@ public final class VmClusterDetails
                             this.isHealthMonitoringEnabled,
                             this.isIncidentLogsEnabled,
                             this.nsgIds,
-                            this.backupNetworkNsgIds);
+                            this.backupNetworkNsgIds,
+                            this.subscriptionId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -398,6 +444,9 @@ public final class VmClusterDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VmClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
@@ -440,6 +489,9 @@ public final class VmClusterDetails
             if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
                 this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             return this;
         }
     }
@@ -451,6 +503,23 @@ public final class VmClusterDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment for VM Cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * compartment for VM Cluster.
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /**
@@ -749,6 +818,23 @@ public final class VmClusterDetails
         return backupNetworkNsgIds;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -764,7 +850,8 @@ public final class VmClusterDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VmClusterDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("subnetId=").append(String.valueOf(this.subnetId));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
         sb.append(", enabledECpuCount=").append(String.valueOf(this.enabledECpuCount));
         sb.append(", totalECpuCount=").append(String.valueOf(this.totalECpuCount));
@@ -781,6 +868,7 @@ public final class VmClusterDetails
         sb.append(", isIncidentLogsEnabled=").append(String.valueOf(this.isIncidentLogsEnabled));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -795,7 +883,8 @@ public final class VmClusterDetails
         }
 
         VmClusterDetails other = (VmClusterDetails) o;
-        return java.util.Objects.equals(this.subnetId, other.subnetId)
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
                 && java.util.Objects.equals(this.enabledECpuCount, other.enabledECpuCount)
                 && java.util.Objects.equals(this.totalECpuCount, other.totalECpuCount)
@@ -812,6 +901,7 @@ public final class VmClusterDetails
                 && java.util.Objects.equals(this.isIncidentLogsEnabled, other.isIncidentLogsEnabled)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && super.equals(other);
     }
 
@@ -819,6 +909,9 @@ public final class VmClusterDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)
@@ -863,6 +956,9 @@ public final class VmClusterDetails
                         + (this.backupNetworkNsgIds == null
                                 ? 43
                                 : this.backupNetworkNsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

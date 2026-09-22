@@ -52,6 +52,7 @@ public class ListingRevisionAttachment
         "listingRevisionId",
         "displayName",
         "description",
+        "sourceType",
         "lifecycleState",
         "timeCreated",
         "timeUpdated",
@@ -65,6 +66,7 @@ public class ListingRevisionAttachment
             String listingRevisionId,
             String displayName,
             String description,
+            SourceType sourceType,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -77,6 +79,7 @@ public class ListingRevisionAttachment
         this.listingRevisionId = listingRevisionId;
         this.displayName = displayName;
         this.description = description;
+        this.sourceType = sourceType;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -148,6 +151,72 @@ public class ListingRevisionAttachment
      */
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * Possible values for the publisher listing revision attachments. The source type informs
+     * whether the type of attachment for the listing revision is external or internal.
+     */
+    public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
+        External("EXTERNAL"),
+        Internal("INTERNAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SourceType.class);
+
+        private final String value;
+        private static java.util.Map<String, SourceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SourceType v : SourceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SourceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SourceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Possible values for the publisher listing revision attachments. The source type informs
+     * whether the type of attachment for the listing revision is external or internal.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Possible values for the publisher listing revision attachments. The source type informs
+     * whether the type of attachment for the listing revision is external or internal.
+     *
+     * @return the value
+     */
+    public SourceType getSourceType() {
+        return sourceType;
     }
 
     /** The current state of the attachment. */
@@ -307,6 +376,7 @@ public class ListingRevisionAttachment
         sb.append(", listingRevisionId=").append(String.valueOf(this.listingRevisionId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -332,6 +402,7 @@ public class ListingRevisionAttachment
                 && java.util.Objects.equals(this.listingRevisionId, other.listingRevisionId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -354,6 +425,7 @@ public class ListingRevisionAttachment
                         + (this.listingRevisionId == null ? 43 : this.listingRevisionId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

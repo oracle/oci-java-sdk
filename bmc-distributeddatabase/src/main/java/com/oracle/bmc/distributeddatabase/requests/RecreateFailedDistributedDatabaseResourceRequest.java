@@ -11,30 +11,23 @@ import com.oracle.bmc.distributeddatabase.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RecreateFailedDistributedDatabaseResourceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class RecreateFailedDistributedDatabaseResourceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Globally distributed database identifier */
+    /** Globally distributed database identifier. */
     private String distributedDatabaseId;
 
-    /** Globally distributed database identifier */
+    /** Globally distributed database identifier. */
     public String getDistributedDatabaseId() {
         return distributedDatabaseId;
     }
-    /** Specify the name of Shard, Catalog or GSM. */
+    /** Specify the name of the shard, catalog, or GSM. */
     private String resourceName;
 
-    /** Specify the name of Shard, Catalog or GSM. */
+    /** Specify the name of the shard, catalog, or GSM. */
     public String getResourceName() {
         return resourceName;
-    }
-    /** The shardGroup name example Shardgroupa, Shardgroupb. */
-    private String shardGroup;
-
-    /** The shardGroup name example Shardgroupa, Shardgroupb. */
-    public String getShardGroup() {
-        return shardGroup;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
@@ -86,11 +79,11 @@ public class RecreateFailedDistributedDatabaseResourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Globally distributed database identifier */
+        /** Globally distributed database identifier. */
         private String distributedDatabaseId = null;
 
         /**
-         * Globally distributed database identifier
+         * Globally distributed database identifier.
          *
          * @param distributedDatabaseId the value to set
          * @return this builder instance
@@ -100,31 +93,17 @@ public class RecreateFailedDistributedDatabaseResourceRequest
             return this;
         }
 
-        /** Specify the name of Shard, Catalog or GSM. */
+        /** Specify the name of the shard, catalog, or GSM. */
         private String resourceName = null;
 
         /**
-         * Specify the name of Shard, Catalog or GSM.
+         * Specify the name of the shard, catalog, or GSM.
          *
          * @param resourceName the value to set
          * @return this builder instance
          */
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
-            return this;
-        }
-
-        /** The shardGroup name example Shardgroupa, Shardgroupb. */
-        private String shardGroup = null;
-
-        /**
-         * The shardGroup name example Shardgroupa, Shardgroupb.
-         *
-         * @param shardGroup the value to set
-         * @return this builder instance
-         */
-        public Builder shardGroup(String shardGroup) {
-            this.shardGroup = shardGroup;
             return this;
         }
 
@@ -220,7 +199,6 @@ public class RecreateFailedDistributedDatabaseResourceRequest
         public Builder copy(RecreateFailedDistributedDatabaseResourceRequest o) {
             distributedDatabaseId(o.getDistributedDatabaseId());
             resourceName(o.getResourceName());
-            shardGroup(o.getShardGroup());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
@@ -264,13 +242,12 @@ public class RecreateFailedDistributedDatabaseResourceRequest
                     new RecreateFailedDistributedDatabaseResourceRequest();
             request.distributedDatabaseId = distributedDatabaseId;
             request.resourceName = resourceName;
-            request.shardGroup = shardGroup;
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
             // new RecreateFailedDistributedDatabaseResourceRequest(distributedDatabaseId,
-            // resourceName, shardGroup, ifMatch, opcRetryToken, opcRequestId);
+            // resourceName, ifMatch, opcRetryToken, opcRequestId);
         }
     }
 
@@ -283,7 +260,6 @@ public class RecreateFailedDistributedDatabaseResourceRequest
         return new Builder()
                 .distributedDatabaseId(distributedDatabaseId)
                 .resourceName(resourceName)
-                .shardGroup(shardGroup)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId);
@@ -305,7 +281,6 @@ public class RecreateFailedDistributedDatabaseResourceRequest
         sb.append("super=").append(super.toString());
         sb.append(",distributedDatabaseId=").append(String.valueOf(this.distributedDatabaseId));
         sb.append(",resourceName=").append(String.valueOf(this.resourceName));
-        sb.append(",shardGroup=").append(String.valueOf(this.shardGroup));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -327,7 +302,6 @@ public class RecreateFailedDistributedDatabaseResourceRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.distributedDatabaseId, other.distributedDatabaseId)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
-                && java.util.Objects.equals(this.shardGroup, other.shardGroup)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -343,7 +317,6 @@ public class RecreateFailedDistributedDatabaseResourceRequest
                                 ? 43
                                 : this.distributedDatabaseId.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
-        result = (result * PRIME) + (this.shardGroup == null ? 43 : this.shardGroup.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result =
                 (result * PRIME)

@@ -11,7 +11,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
  * Use the Globally Distributed Database service APIs to create and manage the Globally distributed
  * databases.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public interface DistributedDbPrivateEndpointServiceAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -150,6 +150,25 @@ public interface DistributedDbPrivateEndpointServiceAsync extends AutoCloseable 
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListDistributedDatabasePrivateEndpointsRequest,
                                     ListDistributedDatabasePrivateEndpointsResponse>
+                            handler);
+
+    /**
+     * Patch operation to update VCN network security group (NSG) IDs associated with the
+     * DistributedDatabasePrivateEndpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchDistributedDatabasePrivateEndpointResponse>
+            patchDistributedDatabasePrivateEndpoint(
+                    PatchDistributedDatabasePrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    PatchDistributedDatabasePrivateEndpointRequest,
+                                    PatchDistributedDatabasePrivateEndpointResponse>
                             handler);
 
     /**

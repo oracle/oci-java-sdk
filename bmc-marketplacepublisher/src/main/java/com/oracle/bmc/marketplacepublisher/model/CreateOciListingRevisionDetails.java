@@ -231,6 +231,36 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
             this.__explicitlySet__.add("pricingPlans");
             return this;
         }
+        /** The url provided by partner for the registration of subscription. */
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerRegistrationUrl")
+        private String partnerRegistrationUrl;
+
+        /**
+         * The url provided by partner for the registration of subscription.
+         *
+         * @param partnerRegistrationUrl the value to set
+         * @return this builder
+         */
+        public Builder partnerRegistrationUrl(String partnerRegistrationUrl) {
+            this.partnerRegistrationUrl = partnerRegistrationUrl;
+            this.__explicitlySet__.add("partnerRegistrationUrl");
+            return this;
+        }
+        /** The unique id of the term attached to the listing. */
+        @com.fasterxml.jackson.annotation.JsonProperty("termId")
+        private String termId;
+
+        /**
+         * The unique id of the term attached to the listing.
+         *
+         * @param termId the value to set
+         * @return this builder
+         */
+        public Builder termId(String termId) {
+            this.termId = termId;
+            this.__explicitlySet__.add("termId");
+            return this;
+        }
         /** Custom link to the listing */
         @com.fasterxml.jackson.annotation.JsonProperty("vanityUrl")
         private String vanityUrl;
@@ -292,6 +322,36 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
             this.__explicitlySet__.add("isRoverExportable");
             return this;
         }
+        /** Url to demo of the listing */
+        @com.fasterxml.jackson.annotation.JsonProperty("demoUrl")
+        private String demoUrl;
+
+        /**
+         * Url to demo of the listing
+         *
+         * @param demoUrl the value to set
+         * @return this builder
+         */
+        public Builder demoUrl(String demoUrl) {
+            this.demoUrl = demoUrl;
+            this.__explicitlySet__.add("demoUrl");
+            return this;
+        }
+        /** Url to training resources of the listing */
+        @com.fasterxml.jackson.annotation.JsonProperty("selfPacedTrainingUrl")
+        private String selfPacedTrainingUrl;
+
+        /**
+         * Url to training resources of the listing
+         *
+         * @param selfPacedTrainingUrl the value to set
+         * @return this builder
+         */
+        public Builder selfPacedTrainingUrl(String selfPacedTrainingUrl) {
+            this.selfPacedTrainingUrl = selfPacedTrainingUrl;
+            this.__explicitlySet__.add("selfPacedTrainingUrl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -319,10 +379,14 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
                             this.pricingType,
                             this.products,
                             this.pricingPlans,
+                            this.partnerRegistrationUrl,
+                            this.termId,
                             this.vanityUrl,
                             this.recommendedServiceProviderListingIds,
                             this.availabilityAndPricingPolicy,
-                            this.isRoverExportable);
+                            this.isRoverExportable,
+                            this.demoUrl,
+                            this.selfPacedTrainingUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -391,6 +455,12 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
             if (model.wasPropertyExplicitlySet("pricingPlans")) {
                 this.pricingPlans(model.getPricingPlans());
             }
+            if (model.wasPropertyExplicitlySet("partnerRegistrationUrl")) {
+                this.partnerRegistrationUrl(model.getPartnerRegistrationUrl());
+            }
+            if (model.wasPropertyExplicitlySet("termId")) {
+                this.termId(model.getTermId());
+            }
             if (model.wasPropertyExplicitlySet("vanityUrl")) {
                 this.vanityUrl(model.getVanityUrl());
             }
@@ -403,6 +473,12 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
             }
             if (model.wasPropertyExplicitlySet("isRoverExportable")) {
                 this.isRoverExportable(model.getIsRoverExportable());
+            }
+            if (model.wasPropertyExplicitlySet("demoUrl")) {
+                this.demoUrl(model.getDemoUrl());
+            }
+            if (model.wasPropertyExplicitlySet("selfPacedTrainingUrl")) {
+                this.selfPacedTrainingUrl(model.getSelfPacedTrainingUrl());
             }
             return this;
         }
@@ -439,10 +515,14 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
             OciListingRevision.PricingType pricingType,
             java.util.List<ListingProduct> products,
             java.util.List<PricingPlan> pricingPlans,
+            String partnerRegistrationUrl,
+            String termId,
             String vanityUrl,
             java.util.List<String> recommendedServiceProviderListingIds,
             String availabilityAndPricingPolicy,
-            Boolean isRoverExportable) {
+            Boolean isRoverExportable,
+            String demoUrl,
+            String selfPacedTrainingUrl) {
         super(
                 displayName,
                 listingId,
@@ -464,10 +544,14 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
         this.pricingType = pricingType;
         this.products = products;
         this.pricingPlans = pricingPlans;
+        this.partnerRegistrationUrl = partnerRegistrationUrl;
+        this.termId = termId;
         this.vanityUrl = vanityUrl;
         this.recommendedServiceProviderListingIds = recommendedServiceProviderListingIds;
         this.availabilityAndPricingPolicy = availabilityAndPricingPolicy;
         this.isRoverExportable = isRoverExportable;
+        this.demoUrl = demoUrl;
+        this.selfPacedTrainingUrl = selfPacedTrainingUrl;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("versionDetails")
@@ -529,6 +613,32 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
         return pricingPlans;
     }
 
+    /** The url provided by partner for the registration of subscription. */
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerRegistrationUrl")
+    private final String partnerRegistrationUrl;
+
+    /**
+     * The url provided by partner for the registration of subscription.
+     *
+     * @return the value
+     */
+    public String getPartnerRegistrationUrl() {
+        return partnerRegistrationUrl;
+    }
+
+    /** The unique id of the term attached to the listing. */
+    @com.fasterxml.jackson.annotation.JsonProperty("termId")
+    private final String termId;
+
+    /**
+     * The unique id of the term attached to the listing.
+     *
+     * @return the value
+     */
+    public String getTermId() {
+        return termId;
+    }
+
     /** Custom link to the listing */
     @com.fasterxml.jackson.annotation.JsonProperty("vanityUrl")
     private final String vanityUrl;
@@ -581,6 +691,32 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
         return isRoverExportable;
     }
 
+    /** Url to demo of the listing */
+    @com.fasterxml.jackson.annotation.JsonProperty("demoUrl")
+    private final String demoUrl;
+
+    /**
+     * Url to demo of the listing
+     *
+     * @return the value
+     */
+    public String getDemoUrl() {
+        return demoUrl;
+    }
+
+    /** Url to training resources of the listing */
+    @com.fasterxml.jackson.annotation.JsonProperty("selfPacedTrainingUrl")
+    private final String selfPacedTrainingUrl;
+
+    /**
+     * Url to training resources of the listing
+     *
+     * @return the value
+     */
+    public String getSelfPacedTrainingUrl() {
+        return selfPacedTrainingUrl;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -601,12 +737,16 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
         sb.append(", pricingType=").append(String.valueOf(this.pricingType));
         sb.append(", products=").append(String.valueOf(this.products));
         sb.append(", pricingPlans=").append(String.valueOf(this.pricingPlans));
+        sb.append(", partnerRegistrationUrl=").append(String.valueOf(this.partnerRegistrationUrl));
+        sb.append(", termId=").append(String.valueOf(this.termId));
         sb.append(", vanityUrl=").append(String.valueOf(this.vanityUrl));
         sb.append(", recommendedServiceProviderListingIds=")
                 .append(String.valueOf(this.recommendedServiceProviderListingIds));
         sb.append(", availabilityAndPricingPolicy=")
                 .append(String.valueOf(this.availabilityAndPricingPolicy));
         sb.append(", isRoverExportable=").append(String.valueOf(this.isRoverExportable));
+        sb.append(", demoUrl=").append(String.valueOf(this.demoUrl));
+        sb.append(", selfPacedTrainingUrl=").append(String.valueOf(this.selfPacedTrainingUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -626,6 +766,9 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
                 && java.util.Objects.equals(this.pricingType, other.pricingType)
                 && java.util.Objects.equals(this.products, other.products)
                 && java.util.Objects.equals(this.pricingPlans, other.pricingPlans)
+                && java.util.Objects.equals(
+                        this.partnerRegistrationUrl, other.partnerRegistrationUrl)
+                && java.util.Objects.equals(this.termId, other.termId)
                 && java.util.Objects.equals(this.vanityUrl, other.vanityUrl)
                 && java.util.Objects.equals(
                         this.recommendedServiceProviderListingIds,
@@ -633,6 +776,8 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
                 && java.util.Objects.equals(
                         this.availabilityAndPricingPolicy, other.availabilityAndPricingPolicy)
                 && java.util.Objects.equals(this.isRoverExportable, other.isRoverExportable)
+                && java.util.Objects.equals(this.demoUrl, other.demoUrl)
+                && java.util.Objects.equals(this.selfPacedTrainingUrl, other.selfPacedTrainingUrl)
                 && super.equals(other);
     }
 
@@ -651,6 +796,12 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
         result = (result * PRIME) + (this.pricingType == null ? 43 : this.pricingType.hashCode());
         result = (result * PRIME) + (this.products == null ? 43 : this.products.hashCode());
         result = (result * PRIME) + (this.pricingPlans == null ? 43 : this.pricingPlans.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.partnerRegistrationUrl == null
+                                ? 43
+                                : this.partnerRegistrationUrl.hashCode());
+        result = (result * PRIME) + (this.termId == null ? 43 : this.termId.hashCode());
         result = (result * PRIME) + (this.vanityUrl == null ? 43 : this.vanityUrl.hashCode());
         result =
                 (result * PRIME)
@@ -665,6 +816,12 @@ public final class CreateOciListingRevisionDetails extends CreateListingRevision
         result =
                 (result * PRIME)
                         + (this.isRoverExportable == null ? 43 : this.isRoverExportable.hashCode());
+        result = (result * PRIME) + (this.demoUrl == null ? 43 : this.demoUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selfPacedTrainingUrl == null
+                                ? 43
+                                : this.selfPacedTrainingUrl.hashCode());
         return result;
     }
 }

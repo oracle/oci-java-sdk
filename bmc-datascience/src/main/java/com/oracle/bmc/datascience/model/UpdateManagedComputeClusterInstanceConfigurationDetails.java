@@ -25,15 +25,18 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "capacityReservationIds",
         "instanceShape",
         "bootVolumeSizeInGBs",
         "instanceShapeDetails"
     })
     public UpdateManagedComputeClusterInstanceConfigurationDetails(
+            java.util.List<String> capacityReservationIds,
             String instanceShape,
             Integer bootVolumeSizeInGBs,
             ManagedComputeClusterInstanceShapeDetails instanceShapeDetails) {
         super();
+        this.capacityReservationIds = capacityReservationIds;
         this.instanceShape = instanceShape;
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.instanceShapeDetails = instanceShapeDetails;
@@ -41,6 +44,25 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compute capacity reservation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+        private java.util.List<String> capacityReservationIds;
+
+        /**
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compute capacity reservation.
+         *
+         * @param capacityReservationIds the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationIds(java.util.List<String> capacityReservationIds) {
+            this.capacityReservationIds = capacityReservationIds;
+            this.__explicitlySet__.add("capacityReservationIds");
+            return this;
+        }
         /**
          * The shape used to launch the instances in compute target. Supported shapes can be
          * retrieved using compute target shapes api.
@@ -92,6 +114,7 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
         public UpdateManagedComputeClusterInstanceConfigurationDetails build() {
             UpdateManagedComputeClusterInstanceConfigurationDetails model =
                     new UpdateManagedComputeClusterInstanceConfigurationDetails(
+                            this.capacityReservationIds,
                             this.instanceShape,
                             this.bootVolumeSizeInGBs,
                             this.instanceShapeDetails);
@@ -103,6 +126,9 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateManagedComputeClusterInstanceConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("capacityReservationIds")) {
+                this.capacityReservationIds(model.getCapacityReservationIds());
+            }
             if (model.wasPropertyExplicitlySet("instanceShape")) {
                 this.instanceShape(model.getInstanceShape());
             }
@@ -123,6 +149,23 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compute capacity reservation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationIds")
+    private final java.util.List<String> capacityReservationIds;
+
+    /**
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compute capacity reservation.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getCapacityReservationIds() {
+        return capacityReservationIds;
     }
 
     /**
@@ -177,7 +220,8 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateManagedComputeClusterInstanceConfigurationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("instanceShape=").append(String.valueOf(this.instanceShape));
+        sb.append("capacityReservationIds=").append(String.valueOf(this.capacityReservationIds));
+        sb.append(", instanceShape=").append(String.valueOf(this.instanceShape));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(", instanceShapeDetails=").append(String.valueOf(this.instanceShapeDetails));
         sb.append(")");
@@ -195,7 +239,8 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
 
         UpdateManagedComputeClusterInstanceConfigurationDetails other =
                 (UpdateManagedComputeClusterInstanceConfigurationDetails) o;
-        return java.util.Objects.equals(this.instanceShape, other.instanceShape)
+        return java.util.Objects.equals(this.capacityReservationIds, other.capacityReservationIds)
+                && java.util.Objects.equals(this.instanceShape, other.instanceShape)
                 && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && java.util.Objects.equals(this.instanceShapeDetails, other.instanceShapeDetails)
                 && super.equals(other);
@@ -205,6 +250,11 @@ public final class UpdateManagedComputeClusterInstanceConfigurationDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationIds == null
+                                ? 43
+                                : this.capacityReservationIds.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceShape == null ? 43 : this.instanceShape.hashCode());
