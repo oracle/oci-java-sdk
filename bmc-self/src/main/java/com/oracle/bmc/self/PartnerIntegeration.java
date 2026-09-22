@@ -73,6 +73,21 @@ public interface PartnerIntegeration extends AutoCloseable {
     ActivateSubscriptionResponse activateSubscription(ActivateSubscriptionRequest request);
 
     /**
+     * Deprecated. This endpoint has moved permanently to
+     * `/partners/subscriptions/{subscriptionId}/actions/activate`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/self/ActivateSubscriptionDeprecatedExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateSubscriptionDeprecated API.
+     */
+    ActivateSubscriptionDeprecatedResponse activateSubscriptionDeprecated(
+            ActivateSubscriptionDeprecatedRequest request);
+
+    /**
      * Lists marketplace publisher partner info for a compartment.
      *
      * @param request The request object containing the details to send
@@ -98,6 +113,19 @@ public interface PartnerIntegeration extends AutoCloseable {
     ListingSubscriptionsResponse listingSubscriptions(ListingSubscriptionsRequest request);
 
     /**
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions`.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/self/ListingSubscriptionsDeprecatedExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListingSubscriptionsDeprecated API.
+     */
+    ListingSubscriptionsDeprecatedResponse listingSubscriptionsDeprecated(
+            ListingSubscriptionsDeprecatedRequest request);
+
+    /**
      * This API returns the subscription details by resolving JWT token to corresponding subscription and move its state to Pending Activation state.
      *
      * @param request The request object containing the details to send
@@ -111,8 +139,23 @@ public interface PartnerIntegeration extends AutoCloseable {
     ResolveSubscriptionResponse resolveSubscription(ResolveSubscriptionRequest request);
 
     /**
+     * Deprecated. This endpoint has moved permanently to `/partners/subscriptions/actions/resolve`.
+     * It returns a 301 response and does not resolve a subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/self/ResolveSubscriptionDeprecatedExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResolveSubscriptionDeprecated API.
+     */
+    ResolveSubscriptionDeprecatedResponse resolveSubscriptionDeprecated(
+            ResolveSubscriptionDeprecatedRequest request);
+
+    /**
      * Asynchronously submits a UTF-8 CSV usage file for marketplace offers. The file
-     * must not exceed 50 MB or 10,000 rows and must include required usage columns.
+     * must not exceed 50 MB or 30,000 rows and must include required usage columns.
      *
      *
      * Note: This operation consumes a stream.

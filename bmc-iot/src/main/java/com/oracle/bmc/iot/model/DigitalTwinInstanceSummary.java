@@ -114,13 +114,13 @@ public final class DigitalTwinInstanceSummary
             return this;
         }
         /**
-         * Connectivity type of the digital twin instance
+         * Connectivity type of the digital twin instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
         private DigitalTwinInstanceConnectivityType connectivityType;
 
         /**
-         * Connectivity type of the digital twin instance
+         * Connectivity type of the digital twin instance.
          * @param connectivityType the value to set
          * @return this builder
          **/
@@ -521,13 +521,13 @@ public final class DigitalTwinInstanceSummary
     }
 
     /**
-     * Connectivity type of the digital twin instance
+     * Connectivity type of the digital twin instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectivityType")
     private final DigitalTwinInstanceConnectivityType connectivityType;
 
     /**
-     * Connectivity type of the digital twin instance
+     * Connectivity type of the digital twin instance.
      * @return the value
      **/
     public DigitalTwinInstanceConnectivityType getConnectivityType() {

@@ -37,8 +37,8 @@ public final class CustomerInstanceReportRecord
         "realm",
         "shape",
         "ociTenancy",
-        "tenantAdminName",
-        "tenantAdminEmail",
+        "tenantAdminDomain",
+        "legacyListingId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -58,8 +58,8 @@ public final class CustomerInstanceReportRecord
             String realm,
             String shape,
             String ociTenancy,
-            String tenantAdminName,
-            String tenantAdminEmail,
+            String tenantAdminDomain,
+            String legacyListingId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -78,8 +78,8 @@ public final class CustomerInstanceReportRecord
         this.realm = realm;
         this.shape = shape;
         this.ociTenancy = ociTenancy;
-        this.tenantAdminName = tenantAdminName;
-        this.tenantAdminEmail = tenantAdminEmail;
+        this.tenantAdminDomain = tenantAdminDomain;
+        this.legacyListingId = legacyListingId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -324,35 +324,35 @@ public final class CustomerInstanceReportRecord
             return this;
         }
         /**
-         * The name of the tenant adminstrator
+         * The domain of the tenant administrator email address
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("tenantAdminName")
-        private String tenantAdminName;
+        @com.fasterxml.jackson.annotation.JsonProperty("tenantAdminDomain")
+        private String tenantAdminDomain;
 
         /**
-         * The name of the tenant adminstrator
-         * @param tenantAdminName the value to set
+         * The domain of the tenant administrator email address
+         * @param tenantAdminDomain the value to set
          * @return this builder
          **/
-        public Builder tenantAdminName(String tenantAdminName) {
-            this.tenantAdminName = tenantAdminName;
-            this.__explicitlySet__.add("tenantAdminName");
+        public Builder tenantAdminDomain(String tenantAdminDomain) {
+            this.tenantAdminDomain = tenantAdminDomain;
+            this.__explicitlySet__.add("tenantAdminDomain");
             return this;
         }
         /**
-         * The email of the tenant adminstrator
+         * The legacy listing id of the listing
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("tenantAdminEmail")
-        private String tenantAdminEmail;
+        @com.fasterxml.jackson.annotation.JsonProperty("legacyListingId")
+        private String legacyListingId;
 
         /**
-         * The email of the tenant adminstrator
-         * @param tenantAdminEmail the value to set
+         * The legacy listing id of the listing
+         * @param legacyListingId the value to set
          * @return this builder
          **/
-        public Builder tenantAdminEmail(String tenantAdminEmail) {
-            this.tenantAdminEmail = tenantAdminEmail;
-            this.__explicitlySet__.add("tenantAdminEmail");
+        public Builder legacyListingId(String legacyListingId) {
+            this.legacyListingId = legacyListingId;
+            this.__explicitlySet__.add("legacyListingId");
             return this;
         }
         /**
@@ -437,8 +437,8 @@ public final class CustomerInstanceReportRecord
                             this.realm,
                             this.shape,
                             this.ociTenancy,
-                            this.tenantAdminName,
-                            this.tenantAdminEmail,
+                            this.tenantAdminDomain,
+                            this.legacyListingId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -492,11 +492,11 @@ public final class CustomerInstanceReportRecord
             if (model.wasPropertyExplicitlySet("ociTenancy")) {
                 this.ociTenancy(model.getOciTenancy());
             }
-            if (model.wasPropertyExplicitlySet("tenantAdminName")) {
-                this.tenantAdminName(model.getTenantAdminName());
+            if (model.wasPropertyExplicitlySet("tenantAdminDomain")) {
+                this.tenantAdminDomain(model.getTenantAdminDomain());
             }
-            if (model.wasPropertyExplicitlySet("tenantAdminEmail")) {
-                this.tenantAdminEmail(model.getTenantAdminEmail());
+            if (model.wasPropertyExplicitlySet("legacyListingId")) {
+                this.legacyListingId(model.getLegacyListingId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -731,31 +731,31 @@ public final class CustomerInstanceReportRecord
     }
 
     /**
-     * The name of the tenant adminstrator
+     * The domain of the tenant administrator email address
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("tenantAdminName")
-    private final String tenantAdminName;
+    @com.fasterxml.jackson.annotation.JsonProperty("tenantAdminDomain")
+    private final String tenantAdminDomain;
 
     /**
-     * The name of the tenant adminstrator
+     * The domain of the tenant administrator email address
      * @return the value
      **/
-    public String getTenantAdminName() {
-        return tenantAdminName;
+    public String getTenantAdminDomain() {
+        return tenantAdminDomain;
     }
 
     /**
-     * The email of the tenant adminstrator
+     * The legacy listing id of the listing
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("tenantAdminEmail")
-    private final String tenantAdminEmail;
+    @com.fasterxml.jackson.annotation.JsonProperty("legacyListingId")
+    private final String legacyListingId;
 
     /**
-     * The email of the tenant adminstrator
+     * The legacy listing id of the listing
      * @return the value
      **/
-    public String getTenantAdminEmail() {
-        return tenantAdminEmail;
+    public String getLegacyListingId() {
+        return legacyListingId;
     }
 
     /**
@@ -841,8 +841,8 @@ public final class CustomerInstanceReportRecord
         sb.append(", realm=").append(String.valueOf(this.realm));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", ociTenancy=").append(String.valueOf(this.ociTenancy));
-        sb.append(", tenantAdminName=").append(String.valueOf(this.tenantAdminName));
-        sb.append(", tenantAdminEmail=").append(String.valueOf(this.tenantAdminEmail));
+        sb.append(", tenantAdminDomain=").append(String.valueOf(this.tenantAdminDomain));
+        sb.append(", legacyListingId=").append(String.valueOf(this.legacyListingId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -875,8 +875,8 @@ public final class CustomerInstanceReportRecord
                 && java.util.Objects.equals(this.realm, other.realm)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.ociTenancy, other.ociTenancy)
-                && java.util.Objects.equals(this.tenantAdminName, other.tenantAdminName)
-                && java.util.Objects.equals(this.tenantAdminEmail, other.tenantAdminEmail)
+                && java.util.Objects.equals(this.tenantAdminDomain, other.tenantAdminDomain)
+                && java.util.Objects.equals(this.legacyListingId, other.legacyListingId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -917,10 +917,10 @@ public final class CustomerInstanceReportRecord
         result = (result * PRIME) + (this.ociTenancy == null ? 43 : this.ociTenancy.hashCode());
         result =
                 (result * PRIME)
-                        + (this.tenantAdminName == null ? 43 : this.tenantAdminName.hashCode());
+                        + (this.tenantAdminDomain == null ? 43 : this.tenantAdminDomain.hashCode());
         result =
                 (result * PRIME)
-                        + (this.tenantAdminEmail == null ? 43 : this.tenantAdminEmail.hashCode());
+                        + (this.legacyListingId == null ? 43 : this.legacyListingId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

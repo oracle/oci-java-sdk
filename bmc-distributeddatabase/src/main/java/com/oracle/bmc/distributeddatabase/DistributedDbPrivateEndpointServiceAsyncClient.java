@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbPrivateEndpointServiceAsyncClient
         implements DistributedDbPrivateEndpointServiceAsync {
     /**
@@ -492,7 +492,7 @@ public class DistributedDbPrivateEndpointServiceAsyncClient
                         "DistributedDbPrivateEndpointService",
                         "ChangeDistributedDatabasePrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/ChangeDistributedDatabasePrivateEndpointCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/ChangeDistributedDatabasePrivateEndpointCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDistributedDatabasePrivateEndpointCompartmentResponse>
@@ -617,7 +617,7 @@ public class DistributedDbPrivateEndpointServiceAsyncClient
                         "DistributedDbPrivateEndpointService",
                         "DeleteDistributedDatabasePrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/DeleteDistributedDatabasePrivateEndpoint");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/DeleteDistributedDatabasePrivateEndpoint");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDistributedDatabasePrivateEndpointResponse>
                 transformer =
@@ -672,7 +672,7 @@ public class DistributedDbPrivateEndpointServiceAsyncClient
                         "DistributedDbPrivateEndpointService",
                         "GetDistributedDatabasePrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/GetDistributedDatabasePrivateEndpoint");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/GetDistributedDatabasePrivateEndpoint");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDistributedDatabasePrivateEndpointResponse>
                 transformer =
@@ -726,7 +726,7 @@ public class DistributedDbPrivateEndpointServiceAsyncClient
                         "DistributedDbPrivateEndpointService",
                         "ListDistributedDatabasePrivateEndpoints",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpointCollection/ListDistributedDatabasePrivateEndpoints");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpointCollection/ListDistributedDatabasePrivateEndpoints");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDistributedDatabasePrivateEndpointsResponse>
                 transformer =
@@ -763,6 +763,68 @@ public class DistributedDbPrivateEndpointServiceAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<PatchDistributedDatabasePrivateEndpointResponse>
+            patchDistributedDatabasePrivateEndpoint(
+                    PatchDistributedDatabasePrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchDistributedDatabasePrivateEndpointRequest,
+                                    PatchDistributedDatabasePrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async patchDistributedDatabasePrivateEndpoint");
+        final PatchDistributedDatabasePrivateEndpointRequest interceptedRequest =
+                PatchDistributedDatabasePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchDistributedDatabasePrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedDbPrivateEndpointService",
+                        "PatchDistributedDatabasePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/PatchDistributedDatabasePrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchDistributedDatabasePrivateEndpointResponse>
+                transformer =
+                        PatchDistributedDatabasePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PatchDistributedDatabasePrivateEndpointRequest,
+                        PatchDistributedDatabasePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PatchDistributedDatabasePrivateEndpointRequest,
+                                PatchDistributedDatabasePrivateEndpointResponse>,
+                        java.util.concurrent.Future<
+                                PatchDistributedDatabasePrivateEndpointResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getPatchDistributedDatabasePrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchDistributedDatabasePrivateEndpointRequest,
+                    PatchDistributedDatabasePrivateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ReinstateProxyInstanceResponse> reinstateProxyInstance(
             ReinstateProxyInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -779,7 +841,7 @@ public class DistributedDbPrivateEndpointServiceAsyncClient
                         "DistributedDbPrivateEndpointService",
                         "ReinstateProxyInstance",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/ReinstateProxyInstance");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/ReinstateProxyInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, ReinstateProxyInstanceResponse>
                 transformer =
                         ReinstateProxyInstanceConverter.fromResponse(
@@ -830,7 +892,7 @@ public class DistributedDbPrivateEndpointServiceAsyncClient
                         "DistributedDbPrivateEndpointService",
                         "UpdateDistributedDatabasePrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabasePrivateEndpoint/UpdateDistributedDatabasePrivateEndpoint");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabasePrivateEndpoint/UpdateDistributedDatabasePrivateEndpoint");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDistributedDatabasePrivateEndpointResponse>
                 transformer =

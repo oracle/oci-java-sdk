@@ -11,7 +11,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class FunctionsManagementClient implements FunctionsManagement {
     /**
      * Service instance for FunctionsManagement.
@@ -577,7 +577,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "ChangeApplicationCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/ChangeApplicationCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer =
                         ChangeApplicationCompartmentConverter.fromResponse(
@@ -619,7 +619,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "CreateApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication");
+                        "");
         java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer =
                         CreateApplicationConverter.fromResponse(
@@ -657,10 +657,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "FunctionsManagement",
-                        "CreateFunction",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction");
+                        "FunctionsManagement", "CreateFunction", ib.getRequestUri().toString(), "");
         java.util.function.Function<javax.ws.rs.core.Response, CreateFunctionResponse> transformer =
                 CreateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -699,7 +696,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "DeleteApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/DeleteApplication");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer =
                         DeleteApplicationConverter.fromResponse(
@@ -737,7 +734,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "DeleteFunction",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/DeleteFunction");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFunctionResponse> transformer =
                 DeleteFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -773,7 +770,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "GetApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/GetApplication");
         java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse> transformer =
                 GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -808,9 +805,84 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "GetFunction",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/GetFunction");
         java.util.function.Function<javax.ws.rs.core.Response, GetFunctionResponse> transformer =
                 GetFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetFunctionsRuntimeResponse getFunctionsRuntime(GetFunctionsRuntimeRequest request) {
+        LOG.trace("Called getFunctionsRuntime");
+        final GetFunctionsRuntimeRequest interceptedRequest =
+                GetFunctionsRuntimeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFunctionsRuntimeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "GetFunctionsRuntime",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntime/GetFunctionsRuntime");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFunctionsRuntimeResponse>
+                transformer =
+                        GetFunctionsRuntimeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetFunctionsRuntimeVersionResponse getFunctionsRuntimeVersion(
+            GetFunctionsRuntimeVersionRequest request) {
+        LOG.trace("Called getFunctionsRuntimeVersion");
+        final GetFunctionsRuntimeVersionRequest interceptedRequest =
+                GetFunctionsRuntimeVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFunctionsRuntimeVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "GetFunctionsRuntimeVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntimeVersion/GetFunctionsRuntimeVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFunctionsRuntimeVersionResponse>
+                transformer =
+                        GetFunctionsRuntimeVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -843,7 +915,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "GetPbfListing",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/GetPbfListing");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListing/GetPbfListing");
         java.util.function.Function<javax.ws.rs.core.Response, GetPbfListingResponse> transformer =
                 GetPbfListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -878,7 +950,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "GetPbfListingVersion",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/GetPbfListingVersion");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListingVersion/GetPbfListingVersion");
         java.util.function.Function<javax.ws.rs.core.Response, GetPbfListingVersionResponse>
                 transformer =
                         GetPbfListingVersionConverter.fromResponse(
@@ -915,7 +987,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "ListApplications",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/ApplicationSummary/ListApplications");
         java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer =
                         ListApplicationsConverter.fromResponse(
@@ -952,9 +1024,85 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "ListFunctions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionSummary/ListFunctions");
         java.util.function.Function<javax.ws.rs.core.Response, ListFunctionsResponse> transformer =
                 ListFunctionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListFunctionsRuntimeVersionsResponse listFunctionsRuntimeVersions(
+            ListFunctionsRuntimeVersionsRequest request) {
+        LOG.trace("Called listFunctionsRuntimeVersions");
+        final ListFunctionsRuntimeVersionsRequest interceptedRequest =
+                ListFunctionsRuntimeVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFunctionsRuntimeVersionsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "ListFunctionsRuntimeVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntimeVersion/ListFunctionsRuntimeVersions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFunctionsRuntimeVersionsResponse>
+                transformer =
+                        ListFunctionsRuntimeVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListFunctionsRuntimesResponse listFunctionsRuntimes(
+            ListFunctionsRuntimesRequest request) {
+        LOG.trace("Called listFunctionsRuntimes");
+        final ListFunctionsRuntimesRequest interceptedRequest =
+                ListFunctionsRuntimesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFunctionsRuntimesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FunctionsManagement",
+                        "ListFunctionsRuntimes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/FunctionsRuntime/ListFunctionsRuntimes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFunctionsRuntimesResponse>
+                transformer =
+                        ListFunctionsRuntimesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -988,7 +1136,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "ListPbfListingVersions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/ListPbfListingVersions");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListingVersion/ListPbfListingVersions");
         java.util.function.Function<javax.ws.rs.core.Response, ListPbfListingVersionsResponse>
                 transformer =
                         ListPbfListingVersionsConverter.fromResponse(
@@ -1025,7 +1173,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "ListPbfListings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/ListPbfListings");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/PbfListing/ListPbfListings");
         java.util.function.Function<javax.ws.rs.core.Response, ListPbfListingsResponse>
                 transformer =
                         ListPbfListingsConverter.fromResponse(
@@ -1062,7 +1210,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "ListTriggers",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/TriggersCollection/ListTriggers");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/TriggersCollection/ListTriggers");
         java.util.function.Function<javax.ws.rs.core.Response, ListTriggersResponse> transformer =
                 ListTriggersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1097,7 +1245,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "UpdateApplication",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Application/UpdateApplication");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer =
                         UpdateApplicationConverter.fromResponse(
@@ -1138,7 +1286,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
                         "FunctionsManagement",
                         "UpdateFunction",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction");
+                        "https://docs.oracle.com/iaas/api/#/en/functions/20260325/Function/UpdateFunction");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateFunctionResponse> transformer =
                 UpdateFunctionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

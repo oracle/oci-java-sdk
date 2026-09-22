@@ -97,13 +97,13 @@ public final class CreateHostedApplicationStorageDetails
             return this;
         }
         /**
-         * type like Cache, Postgresql and ADB.
+         * The managed storage type for the application.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageType")
         private HostedApplicationStorage.StorageType storageType;
 
         /**
-         * type like Cache, Postgresql and ADB.
+         * The managed storage type for the application.
          * @param storageType the value to set
          * @return this builder
          **/
@@ -258,13 +258,13 @@ public final class CreateHostedApplicationStorageDetails
     }
 
     /**
-     * type like Cache, Postgresql and ADB.
+     * The managed storage type for the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageType")
     private final HostedApplicationStorage.StorageType storageType;
 
     /**
-     * type like Cache, Postgresql and ADB.
+     * The managed storage type for the application.
      * @return the value
      **/
     public HostedApplicationStorage.StorageType getStorageType() {

@@ -10,7 +10,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * in the Oracle Data Guard documentation.
  *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum DistributedAutonomousDbProtectionMode {
     MaximumAvailability("MAXIMUM_AVAILABILITY"),
     MaximumPerformance("MAXIMUM_PERFORMANCE"),

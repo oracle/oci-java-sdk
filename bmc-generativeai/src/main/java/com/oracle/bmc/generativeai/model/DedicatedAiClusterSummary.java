@@ -266,13 +266,13 @@ public final class DedicatedAiClusterSummary
             return this;
         }
         /**
-         * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+         * The shape of dedicated unit in this AI cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
         private DedicatedAiCluster.UnitShape unitShape;
 
         /**
-         * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+         * The shape of dedicated unit in this AI cluster.
          * @param unitShape the value to set
          * @return this builder
          **/
@@ -622,13 +622,13 @@ public final class DedicatedAiClusterSummary
     }
 
     /**
-     * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+     * The shape of dedicated unit in this AI cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
 
     /**
-     * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+     * The shape of dedicated unit in this AI cluster.
      * @return the value
      **/
     public DedicatedAiCluster.UnitShape getUnitShape() {

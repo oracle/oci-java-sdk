@@ -37,6 +37,7 @@ public final class InitialClusterConfiguration
         "capacityReservationId",
         "datastores",
         "datastoreClusterIds",
+        "initialFaultDomainHostDistribution",
         "clusterByolAllocationDetails",
         "initialVcfByolAllocationId"
     })
@@ -55,6 +56,7 @@ public final class InitialClusterConfiguration
             String capacityReservationId,
             java.util.List<DatastoreInfo> datastores,
             java.util.List<String> datastoreClusterIds,
+            FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
             ClusterByolAllocationDetails clusterByolAllocationDetails,
             String initialVcfByolAllocationId) {
         super();
@@ -72,6 +74,7 @@ public final class InitialClusterConfiguration
         this.capacityReservationId = capacityReservationId;
         this.datastores = datastores;
         this.datastoreClusterIds = datastoreClusterIds;
+        this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.clusterByolAllocationDetails = clusterByolAllocationDetails;
         this.initialVcfByolAllocationId = initialVcfByolAllocationId;
     }
@@ -355,6 +358,25 @@ public final class InitialClusterConfiguration
             this.__explicitlySet__.add("datastoreClusterIds");
             return this;
         }
+        /**
+         * Initial Fault Domain Host distribution mode for the Cluster.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+        private FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+        /**
+         * Initial Fault Domain Host distribution mode for the Cluster.
+         *
+         * @param initialFaultDomainHostDistribution the value to set
+         * @return this builder
+         **/
+        public Builder initialFaultDomainHostDistribution(
+                FaultDomainHostDistributionModes initialFaultDomainHostDistribution) {
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            this.__explicitlySet__.add("initialFaultDomainHostDistribution");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
         private ClusterByolAllocationDetails clusterByolAllocationDetails;
@@ -404,6 +426,7 @@ public final class InitialClusterConfiguration
                             this.capacityReservationId,
                             this.datastores,
                             this.datastoreClusterIds,
+                            this.initialFaultDomainHostDistribution,
                             this.clusterByolAllocationDetails,
                             this.initialVcfByolAllocationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -455,6 +478,10 @@ public final class InitialClusterConfiguration
             }
             if (model.wasPropertyExplicitlySet("datastoreClusterIds")) {
                 this.datastoreClusterIds(model.getDatastoreClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
+                this.initialFaultDomainHostDistribution(
+                        model.getInitialFaultDomainHostDistribution());
             }
             if (model.wasPropertyExplicitlySet("clusterByolAllocationDetails")) {
                 this.clusterByolAllocationDetails(model.getClusterByolAllocationDetails());
@@ -726,6 +753,22 @@ public final class InitialClusterConfiguration
         return datastoreClusterIds;
     }
 
+    /**
+     * Initial Fault Domain Host distribution mode for the Cluster.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+    private final FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+    /**
+     * Initial Fault Domain Host distribution mode for the Cluster.
+     *
+     * @return the value
+     **/
+    public FaultDomainHostDistributionModes getInitialFaultDomainHostDistribution() {
+        return initialFaultDomainHostDistribution;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
     private final ClusterByolAllocationDetails clusterByolAllocationDetails;
 
@@ -780,6 +823,8 @@ public final class InitialClusterConfiguration
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", datastores=").append(String.valueOf(this.datastores));
         sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
+        sb.append(", initialFaultDomainHostDistribution=")
+                .append(String.valueOf(this.initialFaultDomainHostDistribution));
         sb.append(", clusterByolAllocationDetails=")
                 .append(String.valueOf(this.clusterByolAllocationDetails));
         sb.append(", initialVcfByolAllocationId=")
@@ -815,6 +860,9 @@ public final class InitialClusterConfiguration
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.datastores, other.datastores)
                 && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
+                && java.util.Objects.equals(
+                        this.initialFaultDomainHostDistribution,
+                        other.initialFaultDomainHostDistribution)
                 && java.util.Objects.equals(
                         this.clusterByolAllocationDetails, other.clusterByolAllocationDetails)
                 && java.util.Objects.equals(
@@ -880,6 +928,11 @@ public final class InitialClusterConfiguration
                         + (this.datastoreClusterIds == null
                                 ? 43
                                 : this.datastoreClusterIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialFaultDomainHostDistribution == null
+                                ? 43
+                                : this.initialFaultDomainHostDistribution.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterByolAllocationDetails == null

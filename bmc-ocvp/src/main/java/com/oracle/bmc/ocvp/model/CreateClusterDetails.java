@@ -38,6 +38,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         "datastoreClusterIds",
         "vmwareSoftwareVersion",
         "esxiSoftwareVersion",
+        "initialFaultDomainHostDistribution",
         "clusterByolAllocationDetails",
         "initialVcfByolAllocationId",
         "freeformTags",
@@ -60,6 +61,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
             java.util.List<String> datastoreClusterIds,
             String vmwareSoftwareVersion,
             String esxiSoftwareVersion,
+            FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
             ClusterByolAllocationDetails clusterByolAllocationDetails,
             String initialVcfByolAllocationId,
             java.util.Map<String, String> freeformTags,
@@ -81,6 +83,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         this.datastoreClusterIds = datastoreClusterIds;
         this.vmwareSoftwareVersion = vmwareSoftwareVersion;
         this.esxiSoftwareVersion = esxiSoftwareVersion;
+        this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.clusterByolAllocationDetails = clusterByolAllocationDetails;
         this.initialVcfByolAllocationId = initialVcfByolAllocationId;
         this.freeformTags = freeformTags;
@@ -410,6 +413,25 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
+        /**
+         * The initial fault domain host distribution mode for the Cluster.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+        private FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+        /**
+         * The initial fault domain host distribution mode for the Cluster.
+         *
+         * @param initialFaultDomainHostDistribution the value to set
+         * @return this builder
+         **/
+        public Builder initialFaultDomainHostDistribution(
+                FaultDomainHostDistributionModes initialFaultDomainHostDistribution) {
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            this.__explicitlySet__.add("initialFaultDomainHostDistribution");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
         private ClusterByolAllocationDetails clusterByolAllocationDetails;
@@ -510,6 +532,7 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
                             this.datastoreClusterIds,
                             this.vmwareSoftwareVersion,
                             this.esxiSoftwareVersion,
+                            this.initialFaultDomainHostDistribution,
                             this.clusterByolAllocationDetails,
                             this.initialVcfByolAllocationId,
                             this.freeformTags,
@@ -569,6 +592,10 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
                 this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
+                this.initialFaultDomainHostDistribution(
+                        model.getInitialFaultDomainHostDistribution());
             }
             if (model.wasPropertyExplicitlySet("clusterByolAllocationDetails")) {
                 this.clusterByolAllocationDetails(model.getClusterByolAllocationDetails());
@@ -886,6 +913,22 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         return esxiSoftwareVersion;
     }
 
+    /**
+     * The initial fault domain host distribution mode for the Cluster.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+    private final FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+    /**
+     * The initial fault domain host distribution mode for the Cluster.
+     *
+     * @return the value
+     **/
+    public FaultDomainHostDistributionModes getInitialFaultDomainHostDistribution() {
+        return initialFaultDomainHostDistribution;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("clusterByolAllocationDetails")
     private final ClusterByolAllocationDetails clusterByolAllocationDetails;
 
@@ -986,6 +1029,8 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
         sb.append(", datastoreClusterIds=").append(String.valueOf(this.datastoreClusterIds));
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
         sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
+        sb.append(", initialFaultDomainHostDistribution=")
+                .append(String.valueOf(this.initialFaultDomainHostDistribution));
         sb.append(", clusterByolAllocationDetails=")
                 .append(String.valueOf(this.clusterByolAllocationDetails));
         sb.append(", initialVcfByolAllocationId=")
@@ -1025,6 +1070,9 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.datastoreClusterIds, other.datastoreClusterIds)
                 && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
                 && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
+                && java.util.Objects.equals(
+                        this.initialFaultDomainHostDistribution,
+                        other.initialFaultDomainHostDistribution)
                 && java.util.Objects.equals(
                         this.clusterByolAllocationDetails, other.clusterByolAllocationDetails)
                 && java.util.Objects.equals(
@@ -1102,6 +1150,11 @@ public final class CreateClusterDetails extends com.oracle.bmc.http.internal.Exp
                         + (this.esxiSoftwareVersion == null
                                 ? 43
                                 : this.esxiSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.initialFaultDomainHostDistribution == null
+                                ? 43
+                                : this.initialFaultDomainHostDistribution.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterByolAllocationDetails == null

@@ -29,16 +29,17 @@ public class ListProtectedDatabasesConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.recovery.requests.ListProtectedDatabasesRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20210216").path("protectedDatabases");
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
 
         if (request.getLifecycleState() != null) {
             target =
@@ -78,6 +79,14 @@ public class ListProtectedDatabasesConverter {
                             "recoveryServiceSubnetId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getRecoveryServiceSubnetId()));
+        }
+
+        if (request.getBackupCloudLocation() != null) {
+            target =
+                    target.queryParam(
+                            "backupCloudLocation",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBackupCloudLocation().getValue()));
         }
 
         if (request.getLimit() != null) {

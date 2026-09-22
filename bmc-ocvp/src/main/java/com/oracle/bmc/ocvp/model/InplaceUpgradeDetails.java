@@ -23,14 +23,36 @@ package com.oracle.bmc.ocvp.model;
 public final class InplaceUpgradeDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"vcfByolAllocationId"})
-    public InplaceUpgradeDetails(String vcfByolAllocationId) {
+    @java.beans.ConstructorProperties({"initialFaultDomainHostDistribution", "vcfByolAllocationId"})
+    public InplaceUpgradeDetails(
+            FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
+            String vcfByolAllocationId) {
         super();
+        this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.vcfByolAllocationId = vcfByolAllocationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Initial Fault Domain Host distribution mode for the ESXi host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+        private FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+        /**
+         * Initial Fault Domain Host distribution mode for the ESXi host.
+         *
+         * @param initialFaultDomainHostDistribution the value to set
+         * @return this builder
+         **/
+        public Builder initialFaultDomainHostDistribution(
+                FaultDomainHostDistributionModes initialFaultDomainHostDistribution) {
+            this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
+            this.__explicitlySet__.add("initialFaultDomainHostDistribution");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol Allocation for VCF (VMware Cloud Foundation) deployment.
          *
@@ -54,7 +76,9 @@ public final class InplaceUpgradeDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InplaceUpgradeDetails build() {
-            InplaceUpgradeDetails model = new InplaceUpgradeDetails(this.vcfByolAllocationId);
+            InplaceUpgradeDetails model =
+                    new InplaceUpgradeDetails(
+                            this.initialFaultDomainHostDistribution, this.vcfByolAllocationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +87,10 @@ public final class InplaceUpgradeDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InplaceUpgradeDetails model) {
+            if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
+                this.initialFaultDomainHostDistribution(
+                        model.getInitialFaultDomainHostDistribution());
+            }
             if (model.wasPropertyExplicitlySet("vcfByolAllocationId")) {
                 this.vcfByolAllocationId(model.getVcfByolAllocationId());
             }
@@ -79,6 +107,22 @@ public final class InplaceUpgradeDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Initial Fault Domain Host distribution mode for the ESXi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
+    private final FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
+
+    /**
+     * Initial Fault Domain Host distribution mode for the ESXi host.
+     *
+     * @return the value
+     **/
+    public FaultDomainHostDistributionModes getInitialFaultDomainHostDistribution() {
+        return initialFaultDomainHostDistribution;
     }
 
     /**
@@ -111,7 +155,9 @@ public final class InplaceUpgradeDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InplaceUpgradeDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
+        sb.append("initialFaultDomainHostDistribution=")
+                .append(String.valueOf(this.initialFaultDomainHostDistribution));
+        sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
         sb.append(")");
         return sb.toString();
     }
@@ -126,7 +172,10 @@ public final class InplaceUpgradeDetails
         }
 
         InplaceUpgradeDetails other = (InplaceUpgradeDetails) o;
-        return java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
+        return java.util.Objects.equals(
+                        this.initialFaultDomainHostDistribution,
+                        other.initialFaultDomainHostDistribution)
+                && java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
                 && super.equals(other);
     }
 
@@ -134,6 +183,11 @@ public final class InplaceUpgradeDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.initialFaultDomainHostDistribution == null
+                                ? 43
+                                : this.initialFaultDomainHostDistribution.hashCode());
         result =
                 (result * PRIME)
                         + (this.vcfByolAllocationId == null

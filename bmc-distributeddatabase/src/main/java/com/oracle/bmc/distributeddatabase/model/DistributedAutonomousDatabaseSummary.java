@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedAutonomousDatabaseSummary.Builder.class
 )
@@ -31,23 +31,23 @@ public final class DistributedAutonomousDatabaseSummary
         "databaseVersion",
         "lifecycleState",
         "lifecycleDetails",
-        "connectionStrings",
         "prefix",
         "privateEndpointIds",
-        "shardingMethod",
-        "dbWorkload",
+        "notificationTopicIds",
+        "dbWorkloadType",
         "characterSet",
         "ncharacterSet",
-        "chunks",
         "listenerPort",
         "listenerPortTls",
         "onsPortLocal",
         "onsPortRemote",
-        "replicationMethod",
-        "replicationFactor",
-        "replicationUnit",
-        "dbDeploymentType",
+        "systemChunkCount",
+        "autoResourceManagementConfig",
+        "systemRaftReplicationUnitCount",
         "metadata",
+        "shardingMethod",
+        "replicationMethod",
+        "dbDeploymentType",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -61,23 +61,23 @@ public final class DistributedAutonomousDatabaseSummary
             String databaseVersion,
             DistributedAutonomousDatabase.LifecycleState lifecycleState,
             String lifecycleDetails,
-            DistributedAutonomousDatabaseConnectionString connectionStrings,
             String prefix,
             java.util.List<String> privateEndpointIds,
-            DistributedAutonomousDatabase.ShardingMethod shardingMethod,
-            DistributedAutonomousDatabase.DbWorkload dbWorkload,
+            java.util.List<String> notificationTopicIds,
+            DistributedAutonomousDatabase.DbWorkloadType dbWorkloadType,
             String characterSet,
             String ncharacterSet,
-            Integer chunks,
             Integer listenerPort,
             Integer listenerPortTls,
             Integer onsPortLocal,
             Integer onsPortRemote,
-            DistributedAutonomousDatabase.ReplicationMethod replicationMethod,
-            Integer replicationFactor,
-            Integer replicationUnit,
-            DbDeploymentType dbDeploymentType,
+            Integer systemChunkCount,
+            AutoResourceManagementConfigurationDetails autoResourceManagementConfig,
+            Integer systemRaftReplicationUnitCount,
             DistributedAutonomousDbMetadata metadata,
+            ShardingMethod shardingMethod,
+            ReplicationMethod replicationMethod,
+            DbDeploymentType dbDeploymentType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -90,23 +90,23 @@ public final class DistributedAutonomousDatabaseSummary
         this.databaseVersion = databaseVersion;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
-        this.connectionStrings = connectionStrings;
         this.prefix = prefix;
         this.privateEndpointIds = privateEndpointIds;
-        this.shardingMethod = shardingMethod;
-        this.dbWorkload = dbWorkload;
+        this.notificationTopicIds = notificationTopicIds;
+        this.dbWorkloadType = dbWorkloadType;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
-        this.chunks = chunks;
         this.listenerPort = listenerPort;
         this.listenerPortTls = listenerPortTls;
         this.onsPortLocal = onsPortLocal;
         this.onsPortRemote = onsPortRemote;
-        this.replicationMethod = replicationMethod;
-        this.replicationFactor = replicationFactor;
-        this.replicationUnit = replicationUnit;
-        this.dbDeploymentType = dbDeploymentType;
+        this.systemChunkCount = systemChunkCount;
+        this.autoResourceManagementConfig = autoResourceManagementConfig;
+        this.systemRaftReplicationUnitCount = systemRaftReplicationUnitCount;
         this.metadata = metadata;
+        this.shardingMethod = shardingMethod;
+        this.replicationMethod = replicationMethod;
+        this.dbDeploymentType = dbDeploymentType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -242,16 +242,6 @@ public final class DistributedAutonomousDatabaseSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
-        private DistributedAutonomousDatabaseConnectionString connectionStrings;
-
-        public Builder connectionStrings(
-                DistributedAutonomousDatabaseConnectionString connectionStrings) {
-            this.connectionStrings = connectionStrings;
-            this.__explicitlySet__.add("connectionStrings");
-            return this;
-        }
         /**
          * Unique name prefix for the Globally distributed autonomous databases. Only alpha-numeric values are allowed. First character
          * has to be a letter followed by any combination of letter and number.
@@ -289,35 +279,35 @@ public final class DistributedAutonomousDatabaseSummary
             return this;
         }
         /**
-         * Sharding Methods for the Globally distributed autonomous database.
+         * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed autonomous database.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
-        private DistributedAutonomousDatabase.ShardingMethod shardingMethod;
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicIds")
+        private java.util.List<String> notificationTopicIds;
 
         /**
-         * Sharding Methods for the Globally distributed autonomous database.
-         * @param shardingMethod the value to set
+         * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed autonomous database.
+         * @param notificationTopicIds the value to set
          * @return this builder
          **/
-        public Builder shardingMethod(DistributedAutonomousDatabase.ShardingMethod shardingMethod) {
-            this.shardingMethod = shardingMethod;
-            this.__explicitlySet__.add("shardingMethod");
+        public Builder notificationTopicIds(java.util.List<String> notificationTopicIds) {
+            this.notificationTopicIds = notificationTopicIds;
+            this.__explicitlySet__.add("notificationTopicIds");
             return this;
         }
         /**
          * The workload type for the database.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-        private DistributedAutonomousDatabase.DbWorkload dbWorkload;
+        @com.fasterxml.jackson.annotation.JsonProperty("dbWorkloadType")
+        private DistributedAutonomousDatabase.DbWorkloadType dbWorkloadType;
 
         /**
          * The workload type for the database.
-         * @param dbWorkload the value to set
+         * @param dbWorkloadType the value to set
          * @return this builder
          **/
-        public Builder dbWorkload(DistributedAutonomousDatabase.DbWorkload dbWorkload) {
-            this.dbWorkload = dbWorkload;
-            this.__explicitlySet__.add("dbWorkload");
+        public Builder dbWorkloadType(DistributedAutonomousDatabase.DbWorkloadType dbWorkloadType) {
+            this.dbWorkloadType = dbWorkloadType;
+            this.__explicitlySet__.add("dbWorkloadType");
             return this;
         }
         /**
@@ -350,26 +340,6 @@ public final class DistributedAutonomousDatabaseSummary
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             this.__explicitlySet__.add("ncharacterSet");
-            return this;
-        }
-        /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be
-         * greater than 2 times the size of the largest shardgroup in any shardspace.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("chunks")
-        private Integer chunks;
-
-        /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be
-         * greater than 2 times the size of the largest shardgroup in any shardspace.
-         *
-         * @param chunks the value to set
-         * @return this builder
-         **/
-        public Builder chunks(Integer chunks) {
-            this.chunks = chunks;
-            this.__explicitlySet__.add("chunks");
             return this;
         }
         /**
@@ -437,62 +407,94 @@ public final class DistributedAutonomousDatabaseSummary
             return this;
         }
         /**
-         * The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for
-         * DataGuard. If replicationMethod is not provided, it defaults to DG.
+         * Count of chunks associated with system raft clusters or system data guard databases.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemChunkCount")
+        private Integer systemChunkCount;
+
+        /**
+         * Count of chunks associated with system raft clusters or system data guard databases.
+         * @param systemChunkCount the value to set
+         * @return this builder
+         **/
+        public Builder systemChunkCount(Integer systemChunkCount) {
+            this.systemChunkCount = systemChunkCount;
+            this.__explicitlySet__.add("systemChunkCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoResourceManagementConfig")
+        private AutoResourceManagementConfigurationDetails autoResourceManagementConfig;
+
+        public Builder autoResourceManagementConfig(
+                AutoResourceManagementConfigurationDetails autoResourceManagementConfig) {
+            this.autoResourceManagementConfig = autoResourceManagementConfig;
+            this.__explicitlySet__.add("autoResourceManagementConfig");
+            return this;
+        }
+        /**
+         * Number of replication units associated with system raft clusters.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemRaftReplicationUnitCount")
+        private Integer systemRaftReplicationUnitCount;
+
+        /**
+         * Number of replication units associated with system raft clusters.
+         * @param systemRaftReplicationUnitCount the value to set
+         * @return this builder
+         **/
+        public Builder systemRaftReplicationUnitCount(Integer systemRaftReplicationUnitCount) {
+            this.systemRaftReplicationUnitCount = systemRaftReplicationUnitCount;
+            this.__explicitlySet__.add("systemRaftReplicationUnitCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private DistributedAutonomousDbMetadata metadata;
+
+        public Builder metadata(DistributedAutonomousDbMetadata metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+        /**
+         * Sharding methods for the Globally distributed autonomous database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
+        private ShardingMethod shardingMethod;
+
+        /**
+         * Sharding methods for the Globally distributed autonomous database.
+         * @param shardingMethod the value to set
+         * @return this builder
+         **/
+        public Builder shardingMethod(ShardingMethod shardingMethod) {
+            this.shardingMethod = shardingMethod;
+            this.__explicitlySet__.add("shardingMethod");
+            return this;
+        }
+        /**
+         * The Replication method for Globally distributed Autonomous database. Use RAFT for Raft based replication.
+         * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+         * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+         * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
-        private DistributedAutonomousDatabase.ReplicationMethod replicationMethod;
+        private ReplicationMethod replicationMethod;
 
         /**
-         * The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for
-         * DataGuard. If replicationMethod is not provided, it defaults to DG.
+         * The Replication method for Globally distributed Autonomous database. Use RAFT for Raft based replication.
+         * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+         * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+         * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
          *
          * @param replicationMethod the value to set
          * @return this builder
          **/
-        public Builder replicationMethod(
-                DistributedAutonomousDatabase.ReplicationMethod replicationMethod) {
+        public Builder replicationMethod(ReplicationMethod replicationMethod) {
             this.replicationMethod = replicationMethod;
             this.__explicitlySet__.add("replicationMethod");
-            return this;
-        }
-        /**
-         * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
-        private Integer replicationFactor;
-
-        /**
-         * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
-         *
-         * @param replicationFactor the value to set
-         * @return this builder
-         **/
-        public Builder replicationFactor(Integer replicationFactor) {
-            this.replicationFactor = replicationFactor;
-            this.__explicitlySet__.add("replicationFactor");
-            return this;
-        }
-        /**
-         * The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
-         * Globally distributed autonomous database, the value should be at least twice the number of shards.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
-        private Integer replicationUnit;
-
-        /**
-         * The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
-         * Globally distributed autonomous database, the value should be at least twice the number of shards.
-         *
-         * @param replicationUnit the value to set
-         * @return this builder
-         **/
-        public Builder replicationUnit(Integer replicationUnit) {
-            this.replicationUnit = replicationUnit;
-            this.__explicitlySet__.add("replicationUnit");
             return this;
         }
         /**
@@ -511,15 +513,6 @@ public final class DistributedAutonomousDatabaseSummary
         public Builder dbDeploymentType(DbDeploymentType dbDeploymentType) {
             this.dbDeploymentType = dbDeploymentType;
             this.__explicitlySet__.add("dbDeploymentType");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-        private DistributedAutonomousDbMetadata metadata;
-
-        public Builder metadata(DistributedAutonomousDbMetadata metadata) {
-            this.metadata = metadata;
-            this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
@@ -598,23 +591,23 @@ public final class DistributedAutonomousDatabaseSummary
                             this.databaseVersion,
                             this.lifecycleState,
                             this.lifecycleDetails,
-                            this.connectionStrings,
                             this.prefix,
                             this.privateEndpointIds,
-                            this.shardingMethod,
-                            this.dbWorkload,
+                            this.notificationTopicIds,
+                            this.dbWorkloadType,
                             this.characterSet,
                             this.ncharacterSet,
-                            this.chunks,
                             this.listenerPort,
                             this.listenerPortTls,
                             this.onsPortLocal,
                             this.onsPortRemote,
-                            this.replicationMethod,
-                            this.replicationFactor,
-                            this.replicationUnit,
-                            this.dbDeploymentType,
+                            this.systemChunkCount,
+                            this.autoResourceManagementConfig,
+                            this.systemRaftReplicationUnitCount,
                             this.metadata,
+                            this.shardingMethod,
+                            this.replicationMethod,
+                            this.dbDeploymentType,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -650,29 +643,23 @@ public final class DistributedAutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
-            if (model.wasPropertyExplicitlySet("connectionStrings")) {
-                this.connectionStrings(model.getConnectionStrings());
-            }
             if (model.wasPropertyExplicitlySet("prefix")) {
                 this.prefix(model.getPrefix());
             }
             if (model.wasPropertyExplicitlySet("privateEndpointIds")) {
                 this.privateEndpointIds(model.getPrivateEndpointIds());
             }
-            if (model.wasPropertyExplicitlySet("shardingMethod")) {
-                this.shardingMethod(model.getShardingMethod());
+            if (model.wasPropertyExplicitlySet("notificationTopicIds")) {
+                this.notificationTopicIds(model.getNotificationTopicIds());
             }
-            if (model.wasPropertyExplicitlySet("dbWorkload")) {
-                this.dbWorkload(model.getDbWorkload());
+            if (model.wasPropertyExplicitlySet("dbWorkloadType")) {
+                this.dbWorkloadType(model.getDbWorkloadType());
             }
             if (model.wasPropertyExplicitlySet("characterSet")) {
                 this.characterSet(model.getCharacterSet());
             }
             if (model.wasPropertyExplicitlySet("ncharacterSet")) {
                 this.ncharacterSet(model.getNcharacterSet());
-            }
-            if (model.wasPropertyExplicitlySet("chunks")) {
-                this.chunks(model.getChunks());
             }
             if (model.wasPropertyExplicitlySet("listenerPort")) {
                 this.listenerPort(model.getListenerPort());
@@ -686,20 +673,26 @@ public final class DistributedAutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("onsPortRemote")) {
                 this.onsPortRemote(model.getOnsPortRemote());
             }
-            if (model.wasPropertyExplicitlySet("replicationMethod")) {
-                this.replicationMethod(model.getReplicationMethod());
+            if (model.wasPropertyExplicitlySet("systemChunkCount")) {
+                this.systemChunkCount(model.getSystemChunkCount());
             }
-            if (model.wasPropertyExplicitlySet("replicationFactor")) {
-                this.replicationFactor(model.getReplicationFactor());
+            if (model.wasPropertyExplicitlySet("autoResourceManagementConfig")) {
+                this.autoResourceManagementConfig(model.getAutoResourceManagementConfig());
             }
-            if (model.wasPropertyExplicitlySet("replicationUnit")) {
-                this.replicationUnit(model.getReplicationUnit());
-            }
-            if (model.wasPropertyExplicitlySet("dbDeploymentType")) {
-                this.dbDeploymentType(model.getDbDeploymentType());
+            if (model.wasPropertyExplicitlySet("systemRaftReplicationUnitCount")) {
+                this.systemRaftReplicationUnitCount(model.getSystemRaftReplicationUnitCount());
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("shardingMethod")) {
+                this.shardingMethod(model.getShardingMethod());
+            }
+            if (model.wasPropertyExplicitlySet("replicationMethod")) {
+                this.replicationMethod(model.getReplicationMethod());
+            }
+            if (model.wasPropertyExplicitlySet("dbDeploymentType")) {
+                this.dbDeploymentType(model.getDbDeploymentType());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -837,13 +830,6 @@ public final class DistributedAutonomousDatabaseSummary
         return lifecycleDetails;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
-    private final DistributedAutonomousDatabaseConnectionString connectionStrings;
-
-    public DistributedAutonomousDatabaseConnectionString getConnectionStrings() {
-        return connectionStrings;
-    }
-
     /**
      * Unique name prefix for the Globally distributed autonomous databases. Only alpha-numeric values are allowed. First character
      * has to be a letter followed by any combination of letter and number.
@@ -877,31 +863,31 @@ public final class DistributedAutonomousDatabaseSummary
     }
 
     /**
-     * Sharding Methods for the Globally distributed autonomous database.
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed autonomous database.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
-    private final DistributedAutonomousDatabase.ShardingMethod shardingMethod;
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicIds")
+    private final java.util.List<String> notificationTopicIds;
 
     /**
-     * Sharding Methods for the Globally distributed autonomous database.
+     * The collection of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the notification topics associated with the globally distributed autonomous database.
      * @return the value
      **/
-    public DistributedAutonomousDatabase.ShardingMethod getShardingMethod() {
-        return shardingMethod;
+    public java.util.List<String> getNotificationTopicIds() {
+        return notificationTopicIds;
     }
 
     /**
      * The workload type for the database.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
-    private final DistributedAutonomousDatabase.DbWorkload dbWorkload;
+    @com.fasterxml.jackson.annotation.JsonProperty("dbWorkloadType")
+    private final DistributedAutonomousDatabase.DbWorkloadType dbWorkloadType;
 
     /**
      * The workload type for the database.
      * @return the value
      **/
-    public DistributedAutonomousDatabase.DbWorkload getDbWorkload() {
-        return dbWorkload;
+    public DistributedAutonomousDatabase.DbWorkloadType getDbWorkloadType() {
+        return dbWorkloadType;
     }
 
     /**
@@ -930,24 +916,6 @@ public final class DistributedAutonomousDatabaseSummary
      **/
     public String getNcharacterSet() {
         return ncharacterSet;
-    }
-
-    /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be
-     * greater than 2 times the size of the largest shardgroup in any shardspace.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("chunks")
-    private final Integer chunks;
-
-    /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be
-     * greater than 2 times the size of the largest shardgroup in any shardspace.
-     *
-     * @return the value
-     **/
-    public Integer getChunks() {
-        return chunks;
     }
 
     /**
@@ -1007,55 +975,182 @@ public final class DistributedAutonomousDatabaseSummary
     }
 
     /**
-     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for
-     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * Count of chunks associated with system raft clusters or system data guard databases.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemChunkCount")
+    private final Integer systemChunkCount;
+
+    /**
+     * Count of chunks associated with system raft clusters or system data guard databases.
+     * @return the value
+     **/
+    public Integer getSystemChunkCount() {
+        return systemChunkCount;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autoResourceManagementConfig")
+    private final AutoResourceManagementConfigurationDetails autoResourceManagementConfig;
+
+    public AutoResourceManagementConfigurationDetails getAutoResourceManagementConfig() {
+        return autoResourceManagementConfig;
+    }
+
+    /**
+     * Number of replication units associated with system raft clusters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemRaftReplicationUnitCount")
+    private final Integer systemRaftReplicationUnitCount;
+
+    /**
+     * Number of replication units associated with system raft clusters.
+     * @return the value
+     **/
+    public Integer getSystemRaftReplicationUnitCount() {
+        return systemRaftReplicationUnitCount;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final DistributedAutonomousDbMetadata metadata;
+
+    public DistributedAutonomousDbMetadata getMetadata() {
+        return metadata;
+    }
+
+    /**
+     * Sharding methods for the Globally distributed autonomous database.
+     **/
+    public enum ShardingMethod {
+        User("USER"),
+        System("SYSTEM"),
+        Composite("COMPOSITE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ShardingMethod.class);
+
+        private final String value;
+        private static java.util.Map<String, ShardingMethod> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ShardingMethod v : ShardingMethod.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ShardingMethod(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ShardingMethod create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ShardingMethod', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Sharding methods for the Globally distributed autonomous database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
+    private final ShardingMethod shardingMethod;
+
+    /**
+     * Sharding methods for the Globally distributed autonomous database.
+     * @return the value
+     **/
+    public ShardingMethod getShardingMethod() {
+        return shardingMethod;
+    }
+
+    /**
+     * The Replication method for Globally distributed Autonomous database. Use RAFT for Raft based replication.
+     * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+     * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+     * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
+     *
+     **/
+    public enum ReplicationMethod {
+        Raft("RAFT"),
+        Dg("DG"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ReplicationMethod.class);
+
+        private final String value;
+        private static java.util.Map<String, ReplicationMethod> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReplicationMethod v : ReplicationMethod.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ReplicationMethod(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReplicationMethod create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ReplicationMethod', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The Replication method for Globally distributed Autonomous database. Use RAFT for Raft based replication.
+     * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+     * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+     * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
-    private final DistributedAutonomousDatabase.ReplicationMethod replicationMethod;
+    private final ReplicationMethod replicationMethod;
 
     /**
-     * The Replication method for Globally distributed autonomous database. Use RAFT for Raft replication, and DG for
-     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     * The Replication method for Globally distributed Autonomous database. Use RAFT for Raft based replication.
+     * With RAFT replication, shards cannot have peers details set on them. In case shards need to
+     * have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or
+     * without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      *
      * @return the value
      **/
-    public DistributedAutonomousDatabase.ReplicationMethod getReplicationMethod() {
+    public ReplicationMethod getReplicationMethod() {
         return replicationMethod;
-    }
-
-    /**
-     * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
-    private final Integer replicationFactor;
-
-    /**
-     * The Replication factor for RAFT replication based Globally distributed autonomous database. Currently supported values are 3, 5 and 7.
-     *
-     * @return the value
-     **/
-    public Integer getReplicationFactor() {
-        return replicationFactor;
-    }
-
-    /**
-     * The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
-     * Globally distributed autonomous database, the value should be at least twice the number of shards.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
-    private final Integer replicationUnit;
-
-    /**
-     * The replication unit count for RAFT based distributed autonomous database. For RAFT replication based
-     * Globally distributed autonomous database, the value should be at least twice the number of shards.
-     *
-     * @return the value
-     **/
-    public Integer getReplicationUnit() {
-        return replicationUnit;
     }
 
     /**
@@ -1120,13 +1215,6 @@ public final class DistributedAutonomousDatabaseSummary
      **/
     public DbDeploymentType getDbDeploymentType() {
         return dbDeploymentType;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    private final DistributedAutonomousDbMetadata metadata;
-
-    public DistributedAutonomousDbMetadata getMetadata() {
-        return metadata;
     }
 
     /**
@@ -1205,23 +1293,25 @@ public final class DistributedAutonomousDatabaseSummary
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
         sb.append(", privateEndpointIds=").append(String.valueOf(this.privateEndpointIds));
-        sb.append(", shardingMethod=").append(String.valueOf(this.shardingMethod));
-        sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", notificationTopicIds=").append(String.valueOf(this.notificationTopicIds));
+        sb.append(", dbWorkloadType=").append(String.valueOf(this.dbWorkloadType));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
-        sb.append(", chunks=").append(String.valueOf(this.chunks));
         sb.append(", listenerPort=").append(String.valueOf(this.listenerPort));
         sb.append(", listenerPortTls=").append(String.valueOf(this.listenerPortTls));
         sb.append(", onsPortLocal=").append(String.valueOf(this.onsPortLocal));
         sb.append(", onsPortRemote=").append(String.valueOf(this.onsPortRemote));
-        sb.append(", replicationMethod=").append(String.valueOf(this.replicationMethod));
-        sb.append(", replicationFactor=").append(String.valueOf(this.replicationFactor));
-        sb.append(", replicationUnit=").append(String.valueOf(this.replicationUnit));
-        sb.append(", dbDeploymentType=").append(String.valueOf(this.dbDeploymentType));
+        sb.append(", systemChunkCount=").append(String.valueOf(this.systemChunkCount));
+        sb.append(", autoResourceManagementConfig=")
+                .append(String.valueOf(this.autoResourceManagementConfig));
+        sb.append(", systemRaftReplicationUnitCount=")
+                .append(String.valueOf(this.systemRaftReplicationUnitCount));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
+        sb.append(", shardingMethod=").append(String.valueOf(this.shardingMethod));
+        sb.append(", replicationMethod=").append(String.valueOf(this.replicationMethod));
+        sb.append(", dbDeploymentType=").append(String.valueOf(this.dbDeploymentType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1247,23 +1337,25 @@ public final class DistributedAutonomousDatabaseSummary
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
                 && java.util.Objects.equals(this.prefix, other.prefix)
                 && java.util.Objects.equals(this.privateEndpointIds, other.privateEndpointIds)
-                && java.util.Objects.equals(this.shardingMethod, other.shardingMethod)
-                && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(this.notificationTopicIds, other.notificationTopicIds)
+                && java.util.Objects.equals(this.dbWorkloadType, other.dbWorkloadType)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
-                && java.util.Objects.equals(this.chunks, other.chunks)
                 && java.util.Objects.equals(this.listenerPort, other.listenerPort)
                 && java.util.Objects.equals(this.listenerPortTls, other.listenerPortTls)
                 && java.util.Objects.equals(this.onsPortLocal, other.onsPortLocal)
                 && java.util.Objects.equals(this.onsPortRemote, other.onsPortRemote)
-                && java.util.Objects.equals(this.replicationMethod, other.replicationMethod)
-                && java.util.Objects.equals(this.replicationFactor, other.replicationFactor)
-                && java.util.Objects.equals(this.replicationUnit, other.replicationUnit)
-                && java.util.Objects.equals(this.dbDeploymentType, other.dbDeploymentType)
+                && java.util.Objects.equals(this.systemChunkCount, other.systemChunkCount)
+                && java.util.Objects.equals(
+                        this.autoResourceManagementConfig, other.autoResourceManagementConfig)
+                && java.util.Objects.equals(
+                        this.systemRaftReplicationUnitCount, other.systemRaftReplicationUnitCount)
                 && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.shardingMethod, other.shardingMethod)
+                && java.util.Objects.equals(this.replicationMethod, other.replicationMethod)
+                && java.util.Objects.equals(this.dbDeploymentType, other.dbDeploymentType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1290,9 +1382,6 @@ public final class DistributedAutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.connectionStrings == null ? 43 : this.connectionStrings.hashCode());
         result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
         result =
                 (result * PRIME)
@@ -1301,13 +1390,16 @@ public final class DistributedAutonomousDatabaseSummary
                                 : this.privateEndpointIds.hashCode());
         result =
                 (result * PRIME)
-                        + (this.shardingMethod == null ? 43 : this.shardingMethod.hashCode());
-        result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+                        + (this.notificationTopicIds == null
+                                ? 43
+                                : this.notificationTopicIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbWorkloadType == null ? 43 : this.dbWorkloadType.hashCode());
         result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
         result =
                 (result * PRIME)
                         + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
-        result = (result * PRIME) + (this.chunks == null ? 43 : this.chunks.hashCode());
         result = (result * PRIME) + (this.listenerPort == null ? 43 : this.listenerPort.hashCode());
         result =
                 (result * PRIME)
@@ -1318,17 +1410,27 @@ public final class DistributedAutonomousDatabaseSummary
                         + (this.onsPortRemote == null ? 43 : this.onsPortRemote.hashCode());
         result =
                 (result * PRIME)
+                        + (this.systemChunkCount == null ? 43 : this.systemChunkCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoResourceManagementConfig == null
+                                ? 43
+                                : this.autoResourceManagementConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemRaftReplicationUnitCount == null
+                                ? 43
+                                : this.systemRaftReplicationUnitCount.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shardingMethod == null ? 43 : this.shardingMethod.hashCode());
+        result =
+                (result * PRIME)
                         + (this.replicationMethod == null ? 43 : this.replicationMethod.hashCode());
         result =
                 (result * PRIME)
-                        + (this.replicationFactor == null ? 43 : this.replicationFactor.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.replicationUnit == null ? 43 : this.replicationUnit.hashCode());
-        result =
-                (result * PRIME)
                         + (this.dbDeploymentType == null ? 43 : this.dbDeploymentType.hashCode());
-        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

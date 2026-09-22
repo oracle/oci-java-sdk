@@ -8,19 +8,19 @@ import com.oracle.bmc.distributeddatabase.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/MoveDistributedDatabaseReplicationUnitExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use MoveDistributedDatabaseReplicationUnitRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class MoveDistributedDatabaseReplicationUnitRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.distributeddatabase.model
                         .MoveDistributedDatabaseReplicationUnitDetails> {
 
     /**
-     * Globally distributed database identifier
+     * Globally distributed database identifier.
      */
     private String distributedDatabaseId;
 
     /**
-     * Globally distributed database identifier
+     * Globally distributed database identifier.
      */
     public String getDistributedDatabaseId() {
         return distributedDatabaseId;
@@ -115,12 +115,12 @@ public class MoveDistributedDatabaseReplicationUnitRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Globally distributed database identifier
+         * Globally distributed database identifier.
          */
         private String distributedDatabaseId = null;
 
         /**
-         * Globally distributed database identifier
+         * Globally distributed database identifier.
          * @param distributedDatabaseId the value to set
          * @return this builder instance
          */

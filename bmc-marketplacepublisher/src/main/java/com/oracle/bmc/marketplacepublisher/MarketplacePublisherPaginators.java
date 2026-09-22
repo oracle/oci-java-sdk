@@ -376,6 +376,135 @@ public class MarketplacePublisherPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCustomerInstanceReportExports operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCustomerInstanceReportExportsResponse>
+            listCustomerInstanceReportExportsResponseIterator(
+                    final ListCustomerInstanceReportExportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCustomerInstanceReportExportsRequest.Builder,
+                ListCustomerInstanceReportExportsRequest,
+                ListCustomerInstanceReportExportsResponse>(
+                new java.util.function.Supplier<
+                        ListCustomerInstanceReportExportsRequest.Builder>() {
+                    @Override
+                    public ListCustomerInstanceReportExportsRequest.Builder get() {
+                        return ListCustomerInstanceReportExportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportExportsResponse, String>() {
+                    @Override
+                    public String apply(ListCustomerInstanceReportExportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomerInstanceReportExportsRequest.Builder>,
+                        ListCustomerInstanceReportExportsRequest>() {
+                    @Override
+                    public ListCustomerInstanceReportExportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomerInstanceReportExportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportExportsRequest,
+                        ListCustomerInstanceReportExportsResponse>() {
+                    @Override
+                    public ListCustomerInstanceReportExportsResponse apply(
+                            ListCustomerInstanceReportExportsRequest request) {
+                        return client.listCustomerInstanceReportExports(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportExportSummary} objects
+     * contained in responses from the listCustomerInstanceReportExports operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportExportSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportExportSummary>
+            listCustomerInstanceReportExportsRecordIterator(
+                    final ListCustomerInstanceReportExportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCustomerInstanceReportExportsRequest.Builder,
+                ListCustomerInstanceReportExportsRequest, ListCustomerInstanceReportExportsResponse,
+                com.oracle.bmc.marketplacepublisher.model.CustomerInstanceReportExportSummary>(
+                new java.util.function.Supplier<
+                        ListCustomerInstanceReportExportsRequest.Builder>() {
+                    @Override
+                    public ListCustomerInstanceReportExportsRequest.Builder get() {
+                        return ListCustomerInstanceReportExportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportExportsResponse, String>() {
+                    @Override
+                    public String apply(ListCustomerInstanceReportExportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomerInstanceReportExportsRequest.Builder>,
+                        ListCustomerInstanceReportExportsRequest>() {
+                    @Override
+                    public ListCustomerInstanceReportExportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomerInstanceReportExportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportExportsRequest,
+                        ListCustomerInstanceReportExportsResponse>() {
+                    @Override
+                    public ListCustomerInstanceReportExportsResponse apply(
+                            ListCustomerInstanceReportExportsRequest request) {
+                        return client.listCustomerInstanceReportExports(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomerInstanceReportExportsResponse,
+                        java.util.List<
+                                com.oracle.bmc.marketplacepublisher.model
+                                        .CustomerInstanceReportExportSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.marketplacepublisher.model
+                                            .CustomerInstanceReportExportSummary>
+                            apply(ListCustomerInstanceReportExportsResponse response) {
+                        return response.getCustomerInstanceReportExportCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCustomerInstanceReportRecords operation. This iterable
      * will fetch more data from the server as needed.
      *

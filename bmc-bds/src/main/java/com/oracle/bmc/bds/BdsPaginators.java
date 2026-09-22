@@ -265,6 +265,396 @@ public class BdsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBdsCapacityReservationAssociatedConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBdsCapacityReservationAssociatedConfigurationsResponse>
+            listBdsCapacityReservationAssociatedConfigurationsResponseIterator(
+                    final ListBdsCapacityReservationAssociatedConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder,
+                ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                ListBdsCapacityReservationAssociatedConfigurationsResponse>(
+                new java.util.function.Supplier<
+                        ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder get() {
+                        return ListBdsCapacityReservationAssociatedConfigurationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListBdsCapacityReservationAssociatedConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder>,
+                        ListBdsCapacityReservationAssociatedConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCapacityReservationAssociatedConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCapacityReservationAssociatedConfigurationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCapacityReservationAssociatedConfigurationsResponse apply(
+                            ListBdsCapacityReservationAssociatedConfigurationsRequest request) {
+                        return client.listBdsCapacityReservationAssociatedConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsCapacityReservationAssociatedConfigurationSummary} objects
+     * contained in responses from the listBdsCapacityReservationAssociatedConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsCapacityReservationAssociatedConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsCapacityReservationAssociatedConfigurationSummary>
+            listBdsCapacityReservationAssociatedConfigurationsRecordIterator(
+                    final ListBdsCapacityReservationAssociatedConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder,
+                ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                ListBdsCapacityReservationAssociatedConfigurationsResponse,
+                com.oracle.bmc.bds.model.BdsCapacityReservationAssociatedConfigurationSummary>(
+                new java.util.function.Supplier<
+                        ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder get() {
+                        return ListBdsCapacityReservationAssociatedConfigurationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListBdsCapacityReservationAssociatedConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCapacityReservationAssociatedConfigurationsRequest.Builder>,
+                        ListBdsCapacityReservationAssociatedConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCapacityReservationAssociatedConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCapacityReservationAssociatedConfigurationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationAssociatedConfigurationsRequest,
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCapacityReservationAssociatedConfigurationsResponse apply(
+                            ListBdsCapacityReservationAssociatedConfigurationsRequest request) {
+                        return client.listBdsCapacityReservationAssociatedConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationAssociatedConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model
+                                        .BdsCapacityReservationAssociatedConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.bds.model
+                                            .BdsCapacityReservationAssociatedConfigurationSummary>
+                            apply(
+                                    ListBdsCapacityReservationAssociatedConfigurationsResponse
+                                            response) {
+                        return response.getBdsCapacityReservationAssociatedConfigurationCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listBdsCapacityReservationConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBdsCapacityReservationConfigurationsResponse>
+            listBdsCapacityReservationConfigurationsResponseIterator(
+                    final ListBdsCapacityReservationConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsCapacityReservationConfigurationsRequest.Builder,
+                ListBdsCapacityReservationConfigurationsRequest,
+                ListBdsCapacityReservationConfigurationsResponse>(
+                new java.util.function.Supplier<
+                        ListBdsCapacityReservationConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCapacityReservationConfigurationsRequest.Builder get() {
+                        return ListBdsCapacityReservationConfigurationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCapacityReservationConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCapacityReservationConfigurationsRequest.Builder>,
+                        ListBdsCapacityReservationConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCapacityReservationConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCapacityReservationConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationConfigurationsRequest,
+                        ListBdsCapacityReservationConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCapacityReservationConfigurationsResponse apply(
+                            ListBdsCapacityReservationConfigurationsRequest request) {
+                        return client.listBdsCapacityReservationConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsCapacityReservationConfigurationSummary} objects
+     * contained in responses from the listBdsCapacityReservationConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsCapacityReservationConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsCapacityReservationConfigurationSummary>
+            listBdsCapacityReservationConfigurationsRecordIterator(
+                    final ListBdsCapacityReservationConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsCapacityReservationConfigurationsRequest.Builder,
+                ListBdsCapacityReservationConfigurationsRequest,
+                ListBdsCapacityReservationConfigurationsResponse,
+                com.oracle.bmc.bds.model.BdsCapacityReservationConfigurationSummary>(
+                new java.util.function.Supplier<
+                        ListBdsCapacityReservationConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCapacityReservationConfigurationsRequest.Builder get() {
+                        return ListBdsCapacityReservationConfigurationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCapacityReservationConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCapacityReservationConfigurationsRequest.Builder>,
+                        ListBdsCapacityReservationConfigurationsRequest>() {
+                    @Override
+                    public ListBdsCapacityReservationConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCapacityReservationConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationConfigurationsRequest,
+                        ListBdsCapacityReservationConfigurationsResponse>() {
+                    @Override
+                    public ListBdsCapacityReservationConfigurationsResponse apply(
+                            ListBdsCapacityReservationConfigurationsRequest request) {
+                        return client.listBdsCapacityReservationConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model
+                                        .BdsCapacityReservationConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.bds.model
+                                            .BdsCapacityReservationConfigurationSummary>
+                            apply(ListBdsCapacityReservationConfigurationsResponse response) {
+                        return response.getBdsCapacityReservationConfigurationCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listBdsCapacityReservations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBdsCapacityReservationsResponse>
+            listBdsCapacityReservationsResponseIterator(
+                    final ListBdsCapacityReservationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsCapacityReservationsRequest.Builder, ListBdsCapacityReservationsRequest,
+                ListBdsCapacityReservationsResponse>(
+                new java.util.function.Supplier<ListBdsCapacityReservationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCapacityReservationsRequest.Builder get() {
+                        return ListBdsCapacityReservationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBdsCapacityReservationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCapacityReservationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCapacityReservationsRequest.Builder>,
+                        ListBdsCapacityReservationsRequest>() {
+                    @Override
+                    public ListBdsCapacityReservationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCapacityReservationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationsRequest, ListBdsCapacityReservationsResponse>() {
+                    @Override
+                    public ListBdsCapacityReservationsResponse apply(
+                            ListBdsCapacityReservationsRequest request) {
+                        return client.listBdsCapacityReservations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsCapacityReservationSummary} objects
+     * contained in responses from the listBdsCapacityReservations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsCapacityReservationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsCapacityReservationSummary>
+            listBdsCapacityReservationsRecordIterator(
+                    final ListBdsCapacityReservationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsCapacityReservationsRequest.Builder, ListBdsCapacityReservationsRequest,
+                ListBdsCapacityReservationsResponse,
+                com.oracle.bmc.bds.model.BdsCapacityReservationSummary>(
+                new java.util.function.Supplier<ListBdsCapacityReservationsRequest.Builder>() {
+                    @Override
+                    public ListBdsCapacityReservationsRequest.Builder get() {
+                        return ListBdsCapacityReservationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBdsCapacityReservationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsCapacityReservationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsCapacityReservationsRequest.Builder>,
+                        ListBdsCapacityReservationsRequest>() {
+                    @Override
+                    public ListBdsCapacityReservationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsCapacityReservationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationsRequest, ListBdsCapacityReservationsResponse>() {
+                    @Override
+                    public ListBdsCapacityReservationsResponse apply(
+                            ListBdsCapacityReservationsRequest request) {
+                        return client.listBdsCapacityReservations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBdsCapacityReservationsResponse,
+                        java.util.List<com.oracle.bmc.bds.model.BdsCapacityReservationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.BdsCapacityReservationSummary>
+                            apply(ListBdsCapacityReservationsResponse response) {
+                        return response.getBdsCapacityReservationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBdsCertificateConfigurations operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -11,7 +11,7 @@ import com.oracle.bmc.functions.responses.*;
  * API for the Functions service.
  *
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public interface FunctionsManagementAsync extends AutoCloseable {
 
     /**
@@ -170,6 +170,40 @@ public interface FunctionsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetFunctionRequest, GetFunctionResponse> handler);
 
     /**
+     * Fetches a FunctionsRuntime by ID. Returns a FunctionsRuntime response model.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFunctionsRuntimeResponse> getFunctionsRuntime(
+            GetFunctionsRuntimeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetFunctionsRuntimeRequest, GetFunctionsRuntimeResponse>
+                    handler);
+
+    /**
+     * Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFunctionsRuntimeVersionResponse> getFunctionsRuntimeVersion(
+            GetFunctionsRuntimeVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetFunctionsRuntimeVersionRequest, GetFunctionsRuntimeVersionResponse>
+                    handler);
+
+    /**
      * Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
      *
      *
@@ -229,6 +263,43 @@ public interface FunctionsManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<ListFunctionsResponse> listFunctions(
             ListFunctionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFunctionsRequest, ListFunctionsResponse>
+                    handler);
+
+    /**
+     * Fetches a wrapped list of all FunctionsRuntimeVersions. Returns a FunctionsRuntimeVersionCollection containing
+     * an array of FunctionsRuntimeVersionSummary response models.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFunctionsRuntimeVersionsResponse> listFunctionsRuntimeVersions(
+            ListFunctionsRuntimeVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFunctionsRuntimeVersionsRequest,
+                            ListFunctionsRuntimeVersionsResponse>
+                    handler);
+
+    /**
+     * Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
+     * an array of FunctionsRuntimeSummary response models.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFunctionsRuntimesResponse> listFunctionsRuntimes(
+            ListFunctionsRuntimesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFunctionsRuntimesRequest, ListFunctionsRuntimesResponse>
                     handler);
 
     /**

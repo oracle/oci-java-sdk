@@ -24,59 +24,6 @@ public class ListCustomerInstanceReportRecordsRequest
         return compartmentId;
     }
     /**
-     * The date range of the report
-     *
-     */
-    private DateRange dateRange;
-
-    /**
-     * The date range of the report
-     *
-     **/
-    public enum DateRange {
-        ThisWeek("THIS_WEEK"),
-        LastWeek("LAST_WEEK"),
-        ThisMonth("THIS_MONTH"),
-        LastMonth("LAST_MONTH"),
-        LastThreeMonths("LAST_THREE_MONTHS"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, DateRange> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (DateRange v : DateRange.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        DateRange(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static DateRange create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid DateRange: " + key);
-        }
-    };
-
-    /**
-     * The date range of the report
-     *
-     */
-    public DateRange getDateRange() {
-        return dateRange;
-    }
-    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -121,18 +68,17 @@ public class ListCustomerInstanceReportRecordsRequest
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for instance_id is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for instance_id is ascending.
      *
      **/
     public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
+        InstanceId("INSTANCE_ID"),
         ;
 
         private final String value;
@@ -164,7 +110,7 @@ public class ListCustomerInstanceReportRecordsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for instance_id is ascending.
      *
      */
     public SortBy getSortBy() {
@@ -180,6 +126,181 @@ public class ListCustomerInstanceReportRecordsRequest
      */
     public String getName() {
         return name;
+    }
+    /**
+     * Listing OCID to query resource against.
+     */
+    private String listingId;
+
+    /**
+     * Listing OCID to query resource against.
+     */
+    public String getListingId() {
+        return listingId;
+    }
+    /**
+     * A filter to return only report records that match the instance status.
+     */
+    private Status status;
+
+    /**
+     * A filter to return only report records that match the instance status.
+     **/
+    public enum Status {
+        Provisioning("PROVISIONING"),
+        Running("RUNNING"),
+        Stopped("STOPPED"),
+        Terminating("TERMINATING"),
+        Terminated("TERMINATED"),
+        Disabled("DISABLED"),
+        Starting("STARTING"),
+        Stopping("STOPPING"),
+        Snapshotting("SNAPSHOTTING"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Status> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Status v : Status.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Status(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Status create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Status: " + key);
+        }
+    };
+
+    /**
+     * A filter to return only report records that match the instance status.
+     */
+    public Status getStatus() {
+        return status;
+    }
+    /**
+     * A filter to return only report records that match the instance shape.
+     */
+    private String shape;
+
+    /**
+     * A filter to return only report records that match the instance shape.
+     */
+    public String getShape() {
+        return shape;
+    }
+    /**
+     * A filter to return only report records that match the instance region.
+     */
+    private String region;
+
+    /**
+     * A filter to return only report records that match the instance region.
+     */
+    public String getRegion() {
+        return region;
+    }
+    /**
+     * A filter to return only report records that match the instance realm.
+     */
+    private String realm;
+
+    /**
+     * A filter to return only report records that match the instance realm.
+     */
+    public String getRealm() {
+        return realm;
+    }
+    /**
+     * A filter to return only report records that match the tenant administrator domain.
+     */
+    private String tenantAdminDomain;
+
+    /**
+     * A filter to return only report records that match the tenant administrator domain.
+     */
+    public String getTenantAdminDomain() {
+        return tenantAdminDomain;
+    }
+    /**
+     * A filter to return only report records that match the package version.
+     */
+    private String packageVersion;
+
+    /**
+     * A filter to return only report records that match the package version.
+     */
+    public String getPackageVersion() {
+        return packageVersion;
+    }
+    /**
+     * A filter to return only report records that match the instance OCID.
+     */
+    private String instanceOcid;
+
+    /**
+     * A filter to return only report records that match the instance OCID.
+     */
+    public String getInstanceOcid() {
+        return instanceOcid;
+    }
+    /**
+     * The inclusive earliest instance creation time, in RFC 3339 format.
+     */
+    private java.util.Date timeInstanceCreationFromDate;
+
+    /**
+     * The inclusive earliest instance creation time, in RFC 3339 format.
+     */
+    public java.util.Date getTimeInstanceCreationFromDate() {
+        return timeInstanceCreationFromDate;
+    }
+    /**
+     * The inclusive latest instance creation time, in RFC 3339 format.
+     */
+    private java.util.Date timeInstanceCreationToDate;
+
+    /**
+     * The inclusive latest instance creation time, in RFC 3339 format.
+     */
+    public java.util.Date getTimeInstanceCreationToDate() {
+        return timeInstanceCreationToDate;
+    }
+    /**
+     * The inclusive earliest instance termination time, in RFC 3339 format.
+     */
+    private java.util.Date timeInstanceTerminationFromDate;
+
+    /**
+     * The inclusive earliest instance termination time, in RFC 3339 format.
+     */
+    public java.util.Date getTimeInstanceTerminationFromDate() {
+        return timeInstanceTerminationFromDate;
+    }
+    /**
+     * The inclusive latest instance termination time, in RFC 3339 format.
+     */
+    private java.util.Date timeInstanceTerminationToDate;
+
+    /**
+     * The inclusive latest instance termination time, in RFC 3339 format.
+     */
+    public java.util.Date getTimeInstanceTerminationToDate() {
+        return timeInstanceTerminationToDate;
     }
 
     public static class Builder
@@ -201,23 +322,6 @@ public class ListCustomerInstanceReportRecordsRequest
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
-            return this;
-        }
-
-        /**
-         * The date range of the report
-         *
-         */
-        private DateRange dateRange = null;
-
-        /**
-         * The date range of the report
-         *
-         * @param dateRange the value to set
-         * @return this builder instance
-         */
-        public Builder dateRange(DateRange dateRange) {
-            this.dateRange = dateRange;
             return this;
         }
 
@@ -282,13 +386,13 @@ public class ListCustomerInstanceReportRecordsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for instance_id is ascending.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for instance_id is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -310,6 +414,187 @@ public class ListCustomerInstanceReportRecordsRequest
          */
         public Builder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        /**
+         * Listing OCID to query resource against.
+         */
+        private String listingId = null;
+
+        /**
+         * Listing OCID to query resource against.
+         * @param listingId the value to set
+         * @return this builder instance
+         */
+        public Builder listingId(String listingId) {
+            this.listingId = listingId;
+            return this;
+        }
+
+        /**
+         * A filter to return only report records that match the instance status.
+         */
+        private Status status = null;
+
+        /**
+         * A filter to return only report records that match the instance status.
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * A filter to return only report records that match the instance shape.
+         */
+        private String shape = null;
+
+        /**
+         * A filter to return only report records that match the instance shape.
+         * @param shape the value to set
+         * @return this builder instance
+         */
+        public Builder shape(String shape) {
+            this.shape = shape;
+            return this;
+        }
+
+        /**
+         * A filter to return only report records that match the instance region.
+         */
+        private String region = null;
+
+        /**
+         * A filter to return only report records that match the instance region.
+         * @param region the value to set
+         * @return this builder instance
+         */
+        public Builder region(String region) {
+            this.region = region;
+            return this;
+        }
+
+        /**
+         * A filter to return only report records that match the instance realm.
+         */
+        private String realm = null;
+
+        /**
+         * A filter to return only report records that match the instance realm.
+         * @param realm the value to set
+         * @return this builder instance
+         */
+        public Builder realm(String realm) {
+            this.realm = realm;
+            return this;
+        }
+
+        /**
+         * A filter to return only report records that match the tenant administrator domain.
+         */
+        private String tenantAdminDomain = null;
+
+        /**
+         * A filter to return only report records that match the tenant administrator domain.
+         * @param tenantAdminDomain the value to set
+         * @return this builder instance
+         */
+        public Builder tenantAdminDomain(String tenantAdminDomain) {
+            this.tenantAdminDomain = tenantAdminDomain;
+            return this;
+        }
+
+        /**
+         * A filter to return only report records that match the package version.
+         */
+        private String packageVersion = null;
+
+        /**
+         * A filter to return only report records that match the package version.
+         * @param packageVersion the value to set
+         * @return this builder instance
+         */
+        public Builder packageVersion(String packageVersion) {
+            this.packageVersion = packageVersion;
+            return this;
+        }
+
+        /**
+         * A filter to return only report records that match the instance OCID.
+         */
+        private String instanceOcid = null;
+
+        /**
+         * A filter to return only report records that match the instance OCID.
+         * @param instanceOcid the value to set
+         * @return this builder instance
+         */
+        public Builder instanceOcid(String instanceOcid) {
+            this.instanceOcid = instanceOcid;
+            return this;
+        }
+
+        /**
+         * The inclusive earliest instance creation time, in RFC 3339 format.
+         */
+        private java.util.Date timeInstanceCreationFromDate = null;
+
+        /**
+         * The inclusive earliest instance creation time, in RFC 3339 format.
+         * @param timeInstanceCreationFromDate the value to set
+         * @return this builder instance
+         */
+        public Builder timeInstanceCreationFromDate(java.util.Date timeInstanceCreationFromDate) {
+            this.timeInstanceCreationFromDate = timeInstanceCreationFromDate;
+            return this;
+        }
+
+        /**
+         * The inclusive latest instance creation time, in RFC 3339 format.
+         */
+        private java.util.Date timeInstanceCreationToDate = null;
+
+        /**
+         * The inclusive latest instance creation time, in RFC 3339 format.
+         * @param timeInstanceCreationToDate the value to set
+         * @return this builder instance
+         */
+        public Builder timeInstanceCreationToDate(java.util.Date timeInstanceCreationToDate) {
+            this.timeInstanceCreationToDate = timeInstanceCreationToDate;
+            return this;
+        }
+
+        /**
+         * The inclusive earliest instance termination time, in RFC 3339 format.
+         */
+        private java.util.Date timeInstanceTerminationFromDate = null;
+
+        /**
+         * The inclusive earliest instance termination time, in RFC 3339 format.
+         * @param timeInstanceTerminationFromDate the value to set
+         * @return this builder instance
+         */
+        public Builder timeInstanceTerminationFromDate(
+                java.util.Date timeInstanceTerminationFromDate) {
+            this.timeInstanceTerminationFromDate = timeInstanceTerminationFromDate;
+            return this;
+        }
+
+        /**
+         * The inclusive latest instance termination time, in RFC 3339 format.
+         */
+        private java.util.Date timeInstanceTerminationToDate = null;
+
+        /**
+         * The inclusive latest instance termination time, in RFC 3339 format.
+         * @param timeInstanceTerminationToDate the value to set
+         * @return this builder instance
+         */
+        public Builder timeInstanceTerminationToDate(java.util.Date timeInstanceTerminationToDate) {
+            this.timeInstanceTerminationToDate = timeInstanceTerminationToDate;
             return this;
         }
 
@@ -342,13 +627,24 @@ public class ListCustomerInstanceReportRecordsRequest
          */
         public Builder copy(ListCustomerInstanceReportRecordsRequest o) {
             compartmentId(o.getCompartmentId());
-            dateRange(o.getDateRange());
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             name(o.getName());
+            listingId(o.getListingId());
+            status(o.getStatus());
+            shape(o.getShape());
+            region(o.getRegion());
+            realm(o.getRealm());
+            tenantAdminDomain(o.getTenantAdminDomain());
+            packageVersion(o.getPackageVersion());
+            instanceOcid(o.getInstanceOcid());
+            timeInstanceCreationFromDate(o.getTimeInstanceCreationFromDate());
+            timeInstanceCreationToDate(o.getTimeInstanceCreationToDate());
+            timeInstanceTerminationFromDate(o.getTimeInstanceTerminationFromDate());
+            timeInstanceTerminationToDate(o.getTimeInstanceTerminationToDate());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -383,15 +679,26 @@ public class ListCustomerInstanceReportRecordsRequest
             ListCustomerInstanceReportRecordsRequest request =
                     new ListCustomerInstanceReportRecordsRequest();
             request.compartmentId = compartmentId;
-            request.dateRange = dateRange;
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.name = name;
+            request.listingId = listingId;
+            request.status = status;
+            request.shape = shape;
+            request.region = region;
+            request.realm = realm;
+            request.tenantAdminDomain = tenantAdminDomain;
+            request.packageVersion = packageVersion;
+            request.instanceOcid = instanceOcid;
+            request.timeInstanceCreationFromDate = timeInstanceCreationFromDate;
+            request.timeInstanceCreationToDate = timeInstanceCreationToDate;
+            request.timeInstanceTerminationFromDate = timeInstanceTerminationFromDate;
+            request.timeInstanceTerminationToDate = timeInstanceTerminationToDate;
             return request;
-            // new ListCustomerInstanceReportRecordsRequest(compartmentId, dateRange, opcRequestId, limit, page, sortOrder, sortBy, name);
+            // new ListCustomerInstanceReportRecordsRequest(compartmentId, opcRequestId, limit, page, sortOrder, sortBy, name, listingId, status, shape, region, realm, tenantAdminDomain, packageVersion, instanceOcid, timeInstanceCreationFromDate, timeInstanceCreationToDate, timeInstanceTerminationFromDate, timeInstanceTerminationToDate);
         }
     }
 
@@ -402,13 +709,24 @@ public class ListCustomerInstanceReportRecordsRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
-                .dateRange(dateRange)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .name(name);
+                .name(name)
+                .listingId(listingId)
+                .status(status)
+                .shape(shape)
+                .region(region)
+                .realm(realm)
+                .tenantAdminDomain(tenantAdminDomain)
+                .packageVersion(packageVersion)
+                .instanceOcid(instanceOcid)
+                .timeInstanceCreationFromDate(timeInstanceCreationFromDate)
+                .timeInstanceCreationToDate(timeInstanceCreationToDate)
+                .timeInstanceTerminationFromDate(timeInstanceTerminationFromDate)
+                .timeInstanceTerminationToDate(timeInstanceTerminationToDate);
     }
 
     /**
@@ -425,13 +743,28 @@ public class ListCustomerInstanceReportRecordsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(",dateRange=").append(String.valueOf(this.dateRange));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",listingId=").append(String.valueOf(this.listingId));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",shape=").append(String.valueOf(this.shape));
+        sb.append(",region=").append(String.valueOf(this.region));
+        sb.append(",realm=").append(String.valueOf(this.realm));
+        sb.append(",tenantAdminDomain=").append(String.valueOf(this.tenantAdminDomain));
+        sb.append(",packageVersion=").append(String.valueOf(this.packageVersion));
+        sb.append(",instanceOcid=").append(String.valueOf(this.instanceOcid));
+        sb.append(",timeInstanceCreationFromDate=")
+                .append(String.valueOf(this.timeInstanceCreationFromDate));
+        sb.append(",timeInstanceCreationToDate=")
+                .append(String.valueOf(this.timeInstanceCreationToDate));
+        sb.append(",timeInstanceTerminationFromDate=")
+                .append(String.valueOf(this.timeInstanceTerminationFromDate));
+        sb.append(",timeInstanceTerminationToDate=")
+                .append(String.valueOf(this.timeInstanceTerminationToDate));
         sb.append(")");
         return sb.toString();
     }
@@ -449,13 +782,28 @@ public class ListCustomerInstanceReportRecordsRequest
                 (ListCustomerInstanceReportRecordsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.dateRange, other.dateRange)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.name, other.name);
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.listingId, other.listingId)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.realm, other.realm)
+                && java.util.Objects.equals(this.tenantAdminDomain, other.tenantAdminDomain)
+                && java.util.Objects.equals(this.packageVersion, other.packageVersion)
+                && java.util.Objects.equals(this.instanceOcid, other.instanceOcid)
+                && java.util.Objects.equals(
+                        this.timeInstanceCreationFromDate, other.timeInstanceCreationFromDate)
+                && java.util.Objects.equals(
+                        this.timeInstanceCreationToDate, other.timeInstanceCreationToDate)
+                && java.util.Objects.equals(
+                        this.timeInstanceTerminationFromDate, other.timeInstanceTerminationFromDate)
+                && java.util.Objects.equals(
+                        this.timeInstanceTerminationToDate, other.timeInstanceTerminationToDate);
     }
 
     @Override
@@ -465,13 +813,44 @@ public class ListCustomerInstanceReportRecordsRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.dateRange == null ? 43 : this.dateRange.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.realm == null ? 43 : this.realm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tenantAdminDomain == null ? 43 : this.tenantAdminDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
+        result = (result * PRIME) + (this.instanceOcid == null ? 43 : this.instanceOcid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeInstanceCreationFromDate == null
+                                ? 43
+                                : this.timeInstanceCreationFromDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeInstanceCreationToDate == null
+                                ? 43
+                                : this.timeInstanceCreationToDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeInstanceTerminationFromDate == null
+                                ? 43
+                                : this.timeInstanceTerminationFromDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeInstanceTerminationToDate == null
+                                ? 43
+                                : this.timeInstanceTerminationToDate.hashCode());
         return result;
     }
 }

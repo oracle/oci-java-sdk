@@ -6,7 +6,7 @@ package com.oracle.bmc.distributeddatabase.responses;
 
 import com.oracle.bmc.distributeddatabase.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class RotateDistributedAutonomousDatabasePasswordsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**

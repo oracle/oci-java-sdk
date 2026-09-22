@@ -528,6 +528,50 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
     }
 
     @Override
+    public ActivateSubscriptionDeprecatedResponse activateSubscriptionDeprecated(
+            ActivateSubscriptionDeprecatedRequest request) {
+        LOG.trace("Called activateSubscriptionDeprecated");
+        final ActivateSubscriptionDeprecatedRequest interceptedRequest =
+                ActivateSubscriptionDeprecatedConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateSubscriptionDeprecatedConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ActivateSubscriptionDeprecated",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ActivateSubscriptionDeprecated");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ActivateSubscriptionDeprecatedResponse>
+                transformer =
+                        ActivateSubscriptionDeprecatedConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getActivateSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListPartnersResponse listPartners(ListPartnersRequest request) {
         LOG.trace("Called listPartners");
         final ListPartnersRequest interceptedRequest =
@@ -600,6 +644,45 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
     }
 
     @Override
+    public ListingSubscriptionsDeprecatedResponse listingSubscriptionsDeprecated(
+            ListingSubscriptionsDeprecatedRequest request) {
+        LOG.trace("Called listingSubscriptionsDeprecated");
+        final ListingSubscriptionsDeprecatedRequest interceptedRequest =
+                ListingSubscriptionsDeprecatedConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListingSubscriptionsDeprecatedConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ListingSubscriptionsDeprecated",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/ListingSubscriptionsCollection/ListingSubscriptionsDeprecated");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListingSubscriptionsDeprecatedResponse>
+                transformer =
+                        ListingSubscriptionsDeprecatedConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ResolveSubscriptionResponse resolveSubscription(ResolveSubscriptionRequest request) {
         LOG.trace("Called resolveSubscription");
         final ResolveSubscriptionRequest interceptedRequest =
@@ -621,6 +704,50 @@ public class PartnerIntegerationClient implements PartnerIntegeration {
         java.util.function.Function<javax.ws.rs.core.Response, ResolveSubscriptionResponse>
                 transformer =
                         ResolveSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getResolveSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ResolveSubscriptionDeprecatedResponse resolveSubscriptionDeprecated(
+            ResolveSubscriptionDeprecatedRequest request) {
+        LOG.trace("Called resolveSubscriptionDeprecated");
+        final ResolveSubscriptionDeprecatedRequest interceptedRequest =
+                ResolveSubscriptionDeprecatedConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResolveSubscriptionDeprecatedConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "PartnerIntegeration",
+                        "ResolveSubscriptionDeprecated",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/self/20260129/PartnerSubscription/ResolveSubscriptionDeprecated");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ResolveSubscriptionDeprecatedResponse>
+                transformer =
+                        ResolveSubscriptionDeprecatedConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

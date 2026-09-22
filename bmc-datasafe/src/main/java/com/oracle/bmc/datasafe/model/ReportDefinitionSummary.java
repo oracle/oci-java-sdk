@@ -480,6 +480,7 @@ public final class ReportDefinitionSummary
         Summary("SUMMARY"),
         ActivityAuditing("ACTIVITY_AUDITING"),
         SecurityAssessment("SECURITY_ASSESSMENT"),
+        CryptoAssessment("CRYPTO_ASSESSMENT"),
         FirewallViolations("FIREWALL_VIOLATIONS"),
         AllowedSql("ALLOWED_SQL"),
 

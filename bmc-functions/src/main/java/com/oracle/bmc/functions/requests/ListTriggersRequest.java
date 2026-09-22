@@ -8,7 +8,7 @@ import com.oracle.bmc.functions.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListTriggersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTriggersRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

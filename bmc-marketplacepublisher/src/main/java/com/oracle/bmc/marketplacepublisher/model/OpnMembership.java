@@ -29,7 +29,7 @@ public final class OpnMembership extends com.oracle.bmc.http.internal.Explicitly
     public OpnMembership(
             java.util.Date timeStart,
             java.util.Date timeEnd,
-            OpnStatus opnStatus,
+            AdminOpnPartnerSummary.MembershipStatus opnStatus,
             String opnNumber,
             String opnMembershipType) {
         super();
@@ -78,14 +78,14 @@ public final class OpnMembership extends com.oracle.bmc.http.internal.Explicitly
          * OPN status
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("opnStatus")
-        private OpnStatus opnStatus;
+        private AdminOpnPartnerSummary.MembershipStatus opnStatus;
 
         /**
          * OPN status
          * @param opnStatus the value to set
          * @return this builder
          **/
-        public Builder opnStatus(OpnStatus opnStatus) {
+        public Builder opnStatus(AdminOpnPartnerSummary.MembershipStatus opnStatus) {
             this.opnStatus = opnStatus;
             this.__explicitlySet__.add("opnStatus");
             return this;
@@ -203,63 +203,14 @@ public final class OpnMembership extends com.oracle.bmc.http.internal.Explicitly
     /**
      * OPN status
      **/
-    public enum OpnStatus {
-        Active("ACTIVE"),
-        Inactive("INACTIVE"),
-        RenewalInProgress("RENEWAL_IN_PROGRESS"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(OpnStatus.class);
-
-        private final String value;
-        private static java.util.Map<String, OpnStatus> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (OpnStatus v : OpnStatus.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        OpnStatus(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static OpnStatus create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'OpnStatus', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * OPN status
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opnStatus")
-    private final OpnStatus opnStatus;
+    private final AdminOpnPartnerSummary.MembershipStatus opnStatus;
 
     /**
      * OPN status
      * @return the value
      **/
-    public OpnStatus getOpnStatus() {
+    public AdminOpnPartnerSummary.MembershipStatus getOpnStatus() {
         return opnStatus;
     }
 

@@ -11,7 +11,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedDbServiceClient implements DistributedDbService {
     /**
      * Service instance for DistributedDbService.
@@ -387,8 +387,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
         if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
-                            "DistributedDbServiceClient",
-                            "downloadDistributedDatabaseGsmCertificateSigningRequest,generateDistributedDatabaseWallet"));
+                            "DistributedDbServiceClient", "generateDistributedDatabaseWallet"));
         }
     }
 
@@ -585,7 +584,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "AddDistributedDatabaseGdsControlNode",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/AddDistributedDatabaseGdsControlNode");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/AddDistributedDatabaseGdsControlNode");
         java.util.function.Function<
                         javax.ws.rs.core.Response, AddDistributedDatabaseGdsControlNodeResponse>
                 transformer =
@@ -631,7 +630,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "ChangeDistributedDatabaseCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ChangeDistributedDatabaseCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ChangeDistributedDatabaseCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDistributedDatabaseCompartmentResponse>
                 transformer =
@@ -676,7 +675,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "ChangeDistributedDbBackupConfig",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ChangeDistributedDbBackupConfig");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ChangeDistributedDbBackupConfig");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDistributedDbBackupConfigResponse>
                 transformer =
@@ -703,6 +702,55 @@ public class DistributedDbServiceClient implements DistributedDbService {
     }
 
     @Override
+    public ConfigureDistributedDatabaseAutoResourceManagementResponse
+            configureDistributedDatabaseAutoResourceManagement(
+                    ConfigureDistributedDatabaseAutoResourceManagementRequest request) {
+        LOG.trace("Called configureDistributedDatabaseAutoResourceManagement");
+        final ConfigureDistributedDatabaseAutoResourceManagementRequest interceptedRequest =
+                ConfigureDistributedDatabaseAutoResourceManagementConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureDistributedDatabaseAutoResourceManagementConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedDbService",
+                        "ConfigureDistributedDatabaseAutoResourceManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ConfigureDistributedDatabaseAutoResourceManagement");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ConfigureDistributedDatabaseAutoResourceManagementResponse>
+                transformer =
+                        ConfigureDistributedDatabaseAutoResourceManagementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getConfigureDistributedDatabaseAutoResourceManagementDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ConfigureDistributedDatabaseGsmsResponse configureDistributedDatabaseGsms(
             ConfigureDistributedDatabaseGsmsRequest request) {
         LOG.trace("Called configureDistributedDatabaseGsms");
@@ -721,7 +769,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "ConfigureDistributedDatabaseGsms",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ConfigureDistributedDatabaseGsms");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ConfigureDistributedDatabaseGsms");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ConfigureDistributedDatabaseGsmsResponse>
                 transformer =
@@ -767,7 +815,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "ConfigureDistributedDatabaseSharding",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ConfigureDistributedDatabaseSharding");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ConfigureDistributedDatabaseSharding");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ConfigureDistributedDatabaseShardingResponse>
                 transformer =
@@ -852,7 +900,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "DeleteDistributedDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/DeleteDistributedDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/DeleteDistributedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDistributedDatabaseResponse>
                 transformer =
                         DeleteDistributedDatabaseConverter.fromResponse(
@@ -868,96 +916,6 @@ public class DistributedDbServiceClient implements DistributedDbService {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public DownloadDistributedDatabaseGsmCertificateSigningRequestResponse
-            downloadDistributedDatabaseGsmCertificateSigningRequest(
-                    DownloadDistributedDatabaseGsmCertificateSigningRequestRequest request) {
-        LOG.trace("Called downloadDistributedDatabaseGsmCertificateSigningRequest");
-        final DownloadDistributedDatabaseGsmCertificateSigningRequestRequest interceptedRequest =
-                DownloadDistributedDatabaseGsmCertificateSigningRequestConverter.interceptRequest(
-                        request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DownloadDistributedDatabaseGsmCertificateSigningRequestConverter.fromRequest(
-                        client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedDbService",
-                        "DownloadDistributedDatabaseGsmCertificateSigningRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/DownloadDistributedDatabaseGsmCertificateSigningRequest");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestResponse>
-                transformer =
-                        DownloadDistributedDatabaseGsmCertificateSigningRequestConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GenerateDistributedDatabaseGsmCertificateSigningRequestResponse
-            generateDistributedDatabaseGsmCertificateSigningRequest(
-                    GenerateDistributedDatabaseGsmCertificateSigningRequestRequest request) {
-        LOG.trace("Called generateDistributedDatabaseGsmCertificateSigningRequest");
-        final GenerateDistributedDatabaseGsmCertificateSigningRequestRequest interceptedRequest =
-                GenerateDistributedDatabaseGsmCertificateSigningRequestConverter.interceptRequest(
-                        request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GenerateDistributedDatabaseGsmCertificateSigningRequestConverter.fromRequest(
-                        client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedDbService",
-                        "GenerateDistributedDatabaseGsmCertificateSigningRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GenerateDistributedDatabaseGsmCertificateSigningRequest");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        GenerateDistributedDatabaseGsmCertificateSigningRequestResponse>
-                transformer =
-                        GenerateDistributedDatabaseGsmCertificateSigningRequestConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -982,7 +940,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "GenerateDistributedDatabaseWallet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GenerateDistributedDatabaseWallet");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GenerateDistributedDatabaseWallet");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateDistributedDatabaseWalletResponse>
                 transformer =
@@ -1026,7 +984,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "GetDistributedDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, GetDistributedDatabaseResponse>
                 transformer =
                         GetDistributedDatabaseConverter.fromResponse(
@@ -1064,11 +1022,50 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "GetDistributedDatabaseRaftMetric",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedDatabaseRaftMetric");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedDatabaseRaftMetric");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetDistributedDatabaseRaftMetricResponse>
                 transformer =
                         GetDistributedDatabaseRaftMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDistributedDatabaseRuChangeLogResponse getDistributedDatabaseRuChangeLog(
+            GetDistributedDatabaseRuChangeLogRequest request) {
+        LOG.trace("Called getDistributedDatabaseRuChangeLog");
+        final GetDistributedDatabaseRuChangeLogRequest interceptedRequest =
+                GetDistributedDatabaseRuChangeLogConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDistributedDatabaseRuChangeLogConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedDbService",
+                        "GetDistributedDatabaseRuChangeLog",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedDatabaseRuChangeLog");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDistributedDatabaseRuChangeLogResponse>
+                transformer =
+                        GetDistributedDatabaseRuChangeLogConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1103,7 +1100,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "ListDistributedDatabases",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabaseCollection/ListDistributedDatabases");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabaseCollection/ListDistributedDatabases");
         java.util.function.Function<javax.ws.rs.core.Response, ListDistributedDatabasesResponse>
                 transformer =
                         ListDistributedDatabasesConverter.fromResponse(
@@ -1143,7 +1140,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "MoveDistributedDatabaseReplicationUnit",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/MoveDistributedDatabaseReplicationUnit");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/MoveDistributedDatabaseReplicationUnit");
         java.util.function.Function<
                         javax.ws.rs.core.Response, MoveDistributedDatabaseReplicationUnitResponse>
                 transformer =
@@ -1188,7 +1185,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "PatchDistributedDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/PatchDistributedDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/PatchDistributedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, PatchDistributedDatabaseResponse>
                 transformer =
                         PatchDistributedDatabaseConverter.fromResponse(
@@ -1233,7 +1230,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "RecreateFailedDistributedDatabaseResource",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/RecreateFailedDistributedDatabaseResource");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/RecreateFailedDistributedDatabaseResource");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RecreateFailedDistributedDatabaseResourceResponse>
@@ -1275,7 +1272,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "RotateDistributedDatabasePasswords",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/RotateDistributedDatabasePasswords");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/RotateDistributedDatabasePasswords");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RotateDistributedDatabasePasswordsResponse>
                 transformer =
@@ -1291,7 +1288,55 @@ public class DistributedDbServiceClient implements DistributedDbService {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRotateDistributedDatabasePasswordsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ScaleDistributedDatabaseGsmsResponse scaleDistributedDatabaseGsms(
+            ScaleDistributedDatabaseGsmsRequest request) {
+        LOG.trace("Called scaleDistributedDatabaseGsms");
+        final ScaleDistributedDatabaseGsmsRequest interceptedRequest =
+                ScaleDistributedDatabaseGsmsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScaleDistributedDatabaseGsmsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedDbService",
+                        "ScaleDistributedDatabaseGsms",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ScaleDistributedDatabaseGsms");
+        java.util.function.Function<javax.ws.rs.core.Response, ScaleDistributedDatabaseGsmsResponse>
+                transformer =
+                        ScaleDistributedDatabaseGsmsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getScaleDistributedDatabaseGsmsDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1316,7 +1361,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "StartDistributedDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/StartDistributedDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/StartDistributedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, StartDistributedDatabaseResponse>
                 transformer =
                         StartDistributedDatabaseConverter.fromResponse(
@@ -1356,7 +1401,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "StopDistributedDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/StopDistributedDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/StopDistributedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, StopDistributedDatabaseResponse>
                 transformer =
                         StopDistributedDatabaseConverter.fromResponse(
@@ -1395,7 +1440,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "UpdateDistributedDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/UpdateDistributedDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/UpdateDistributedDatabase");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDistributedDatabaseResponse>
                 transformer =
                         UpdateDistributedDatabaseConverter.fromResponse(
@@ -1421,56 +1466,6 @@ public class DistributedDbServiceClient implements DistributedDbService {
     }
 
     @Override
-    public UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse
-            uploadDistributedDatabaseSignedCertificateAndGenerateWallet(
-                    UploadDistributedDatabaseSignedCertificateAndGenerateWalletRequest request) {
-        LOG.trace("Called uploadDistributedDatabaseSignedCertificateAndGenerateWallet");
-        final UploadDistributedDatabaseSignedCertificateAndGenerateWalletRequest
-                interceptedRequest =
-                        UploadDistributedDatabaseSignedCertificateAndGenerateWalletConverter
-                                .interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UploadDistributedDatabaseSignedCertificateAndGenerateWalletConverter.fromRequest(
-                        client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedDbService",
-                        "UploadDistributedDatabaseSignedCertificateAndGenerateWallet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/UploadDistributedDatabaseSignedCertificateAndGenerateWallet");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        UploadDistributedDatabaseSignedCertificateAndGenerateWalletResponse>
-                transformer =
-                        UploadDistributedDatabaseSignedCertificateAndGenerateWalletConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getUploadDistributedDatabaseSignedCertificateAndGenerateWalletDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public ValidateDistributedDatabaseNetworkResponse validateDistributedDatabaseNetwork(
             ValidateDistributedDatabaseNetworkRequest request) {
         LOG.trace("Called validateDistributedDatabaseNetwork");
@@ -1489,7 +1484,7 @@ public class DistributedDbServiceClient implements DistributedDbService {
                         "DistributedDbService",
                         "ValidateDistributedDatabaseNetwork",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/ValidateDistributedDatabaseNetwork");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/ValidateDistributedDatabaseNetwork");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDistributedDatabaseNetworkResponse>
                 transformer =

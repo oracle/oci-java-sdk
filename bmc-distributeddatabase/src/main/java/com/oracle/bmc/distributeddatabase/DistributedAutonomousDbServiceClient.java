@@ -11,7 +11,7 @@ import com.oracle.bmc.util.CircuitBreakerUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class DistributedAutonomousDbServiceClient implements DistributedAutonomousDbService {
     /**
      * Service instance for DistributedAutonomousDbService.
@@ -388,7 +388,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DistributedAutonomousDbServiceClient",
-                            "downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest,generateDistributedAutonomousDatabaseWallet"));
+                            "generateDistributedAutonomousDatabaseWallet"));
         }
     }
 
@@ -586,7 +586,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "AddDistributedAutonomousDatabaseGdsControlNode",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/AddDistributedAutonomousDatabaseGdsControlNode");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/AddDistributedAutonomousDatabaseGdsControlNode");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AddDistributedAutonomousDatabaseGdsControlNodeResponse>
@@ -634,7 +634,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ChangeDistributedAutonomousDatabaseCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDatabaseCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDatabaseCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDistributedAutonomousDatabaseCompartmentResponse>
@@ -682,7 +682,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ChangeDistributedAutonomousDbBackupConfig",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDbBackupConfig");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ChangeDistributedAutonomousDbBackupConfig");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDistributedAutonomousDbBackupConfigResponse>
@@ -710,6 +710,56 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
     }
 
     @Override
+    public ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse
+            configureDistributedAutonomousDatabaseAutoResourceManagement(
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest request) {
+        LOG.trace("Called configureDistributedAutonomousDatabaseAutoResourceManagement");
+        final ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest
+                interceptedRequest =
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementConverter
+                                .interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureDistributedAutonomousDatabaseAutoResourceManagementConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedAutonomousDbService",
+                        "ConfigureDistributedAutonomousDatabaseAutoResourceManagement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseAutoResourceManagement");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>
+                transformer =
+                        ConfigureDistributedAutonomousDatabaseAutoResourceManagementConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getConfigureDistributedAutonomousDatabaseAutoResourceManagementDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ConfigureDistributedAutonomousDatabaseGsmWalletResponse
             configureDistributedAutonomousDatabaseGsmWallet(
                     ConfigureDistributedAutonomousDatabaseGsmWalletRequest request) {
@@ -730,7 +780,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseGsmWallet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsmWallet");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsmWallet");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ConfigureDistributedAutonomousDatabaseGsmWalletResponse>
@@ -778,7 +828,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseGsms",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsms");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseGsms");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ConfigureDistributedAutonomousDatabaseGsmsResponse>
@@ -826,7 +876,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ConfigureDistributedAutonomousDatabaseSharding",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseSharding");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ConfigureDistributedAutonomousDatabaseSharding");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ConfigureDistributedAutonomousDatabaseShardingResponse>
@@ -915,7 +965,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "DeleteDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/DeleteDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/DeleteDistributedAutonomousDatabase");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -932,100 +982,6 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse
-            downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request) {
-        LOG.trace("Called downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        final DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                interceptedRequest =
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                        .fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedAutonomousDbService",
-                        "DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                transformer =
-                        DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse
-            generateDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request) {
-        LOG.trace("Called generateDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        final GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                interceptedRequest =
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                        .fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedAutonomousDbService",
-                        "GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                transformer =
-                        GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1052,7 +1008,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "GenerateDistributedAutonomousDatabaseWallet",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseWallet");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/GenerateDistributedAutonomousDatabaseWallet");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GenerateDistributedAutonomousDatabaseWalletResponse>
@@ -1097,7 +1053,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "GetDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/GetDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/GetDistributedAutonomousDatabase");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1138,12 +1094,54 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "GetDistributedAutonomousDatabaseRaftMetric",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedDatabase/GetDistributedAutonomousDatabaseRaftMetric");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedAutonomousDatabaseRaftMetric");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetDistributedAutonomousDatabaseRaftMetricResponse>
                 transformer =
                         GetDistributedAutonomousDatabaseRaftMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDistributedAutonomousDatabaseRuChangeLogResponse
+            getDistributedAutonomousDatabaseRuChangeLog(
+                    GetDistributedAutonomousDatabaseRuChangeLogRequest request) {
+        LOG.trace("Called getDistributedAutonomousDatabaseRuChangeLog");
+        final GetDistributedAutonomousDatabaseRuChangeLogRequest interceptedRequest =
+                GetDistributedAutonomousDatabaseRuChangeLogConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDistributedAutonomousDatabaseRuChangeLogConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedAutonomousDbService",
+                        "GetDistributedAutonomousDatabaseRuChangeLog",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedDatabase/GetDistributedAutonomousDatabaseRuChangeLog");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetDistributedAutonomousDatabaseRuChangeLogResponse>
+                transformer =
+                        GetDistributedAutonomousDatabaseRuChangeLogConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1178,7 +1176,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ListDistributedAutonomousDatabases",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabaseCollection/ListDistributedAutonomousDatabases");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabaseCollection/ListDistributedAutonomousDatabases");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListDistributedAutonomousDatabasesResponse>
                 transformer =
@@ -1220,7 +1218,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "MoveDistributedAutonomousDatabaseReplicationUnit",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/MoveDistributedAutonomousDatabaseReplicationUnit");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/MoveDistributedAutonomousDatabaseReplicationUnit");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         MoveDistributedAutonomousDatabaseReplicationUnitResponse>
@@ -1266,7 +1264,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "PatchDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/PatchDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/PatchDistributedAutonomousDatabase");
         java.util.function.Function<
                         javax.ws.rs.core.Response, PatchDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1314,7 +1312,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "RecreateFailedDistributedAutonomousDatabaseResource",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/RecreateFailedDistributedAutonomousDatabaseResource");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/RecreateFailedDistributedAutonomousDatabaseResource");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RecreateFailedDistributedAutonomousDatabaseResourceResponse>
@@ -1358,7 +1356,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "RotateDistributedAutonomousDatabasePasswords",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/RotateDistributedAutonomousDatabasePasswords");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/RotateDistributedAutonomousDatabasePasswords");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RotateDistributedAutonomousDatabasePasswordsResponse>
@@ -1375,7 +1373,57 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRotateDistributedAutonomousDatabasePasswordsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ScaleDistributedAutonomousDatabaseGsmsResponse scaleDistributedAutonomousDatabaseGsms(
+            ScaleDistributedAutonomousDatabaseGsmsRequest request) {
+        LOG.trace("Called scaleDistributedAutonomousDatabaseGsms");
+        final ScaleDistributedAutonomousDatabaseGsmsRequest interceptedRequest =
+                ScaleDistributedAutonomousDatabaseGsmsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScaleDistributedAutonomousDatabaseGsmsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DistributedAutonomousDbService",
+                        "ScaleDistributedAutonomousDatabaseGsms",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ScaleDistributedAutonomousDatabaseGsms");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ScaleDistributedAutonomousDatabaseGsmsResponse>
+                transformer =
+                        ScaleDistributedAutonomousDatabaseGsmsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getScaleDistributedAutonomousDatabaseGsmsDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1400,7 +1448,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "StartDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/StartDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/StartDistributedAutonomousDatabase");
         java.util.function.Function<
                         javax.ws.rs.core.Response, StartDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1441,7 +1489,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "StopDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/StopDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/StopDistributedAutonomousDatabase");
         java.util.function.Function<
                         javax.ws.rs.core.Response, StopDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1482,7 +1530,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "UpdateDistributedAutonomousDatabase",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/UpdateDistributedAutonomousDatabase");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/UpdateDistributedAutonomousDatabase");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDistributedAutonomousDatabaseResponse>
                 transformer =
@@ -1502,57 +1550,6 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateDistributedAutonomousDatabaseDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse
-            uploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet(
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest
-                            request) {
-        LOG.trace("Called uploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet");
-        final UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest
-                interceptedRequest =
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletConverter
-                                .interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletConverter
-                        .fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DistributedAutonomousDbService",
-                        "UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>
-                transformer =
-                        UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletConverter
-                                .fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getUploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1580,7 +1577,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ValidateDistributedAutonomousDatabaseCaBundle",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseCaBundle");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseCaBundle");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ValidateDistributedAutonomousDatabaseCaBundleResponse>
@@ -1624,7 +1621,7 @@ public class DistributedAutonomousDbServiceClient implements DistributedAutonomo
                         "DistributedAutonomousDbService",
                         "ValidateDistributedAutonomousDatabaseNetwork",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20250101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseNetwork");
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-database/20260101/DistributedAutonomousDatabase/ValidateDistributedAutonomousDatabaseNetwork");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ValidateDistributedAutonomousDatabaseNetworkResponse>

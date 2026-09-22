@@ -1260,6 +1260,58 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePublisherResponse> createPublisher(
+            CreatePublisherRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePublisherRequest, CreatePublisherResponse>
+                    handler) {
+        LOG.trace("Called async createPublisher");
+        final CreatePublisherRequest interceptedRequest =
+                CreatePublisherConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePublisherConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "CreatePublisher",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/Publisher/CreatePublisher");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreatePublisherResponse>
+                transformer =
+                        CreatePublisherConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreatePublisherRequest, CreatePublisherResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreatePublisherRequest, CreatePublisherResponse>,
+                        java.util.concurrent.Future<CreatePublisherResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePublisherDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreatePublisherRequest, CreatePublisherResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTermResponse> createTerm(
             CreateTermRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateTermRequest, CreateTermResponse>
@@ -1406,6 +1458,59 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteArtifactRequest, DeleteArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomerInstanceReportExportResponse>
+            deleteCustomerInstanceReportExport(
+                    DeleteCustomerInstanceReportExportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCustomerInstanceReportExportRequest,
+                                    DeleteCustomerInstanceReportExportResponse>
+                            handler) {
+        LOG.trace("Called async deleteCustomerInstanceReportExport");
+        final DeleteCustomerInstanceReportExportRequest interceptedRequest =
+                DeleteCustomerInstanceReportExportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCustomerInstanceReportExportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "DeleteCustomerInstanceReportExport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/DeleteCustomerInstanceReportExport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteCustomerInstanceReportExportResponse>
+                transformer =
+                        DeleteCustomerInstanceReportExportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCustomerInstanceReportExportRequest,
+                        DeleteCustomerInstanceReportExportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCustomerInstanceReportExportRequest,
+                                DeleteCustomerInstanceReportExportResponse>,
+                        java.util.concurrent.Future<DeleteCustomerInstanceReportExportResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCustomerInstanceReportExportRequest,
+                    DeleteCustomerInstanceReportExportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1752,6 +1857,66 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateCustomerInstanceReportExportResponse>
+            generateCustomerInstanceReportExport(
+                    GenerateCustomerInstanceReportExportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateCustomerInstanceReportExportRequest,
+                                    GenerateCustomerInstanceReportExportResponse>
+                            handler) {
+        LOG.trace("Called async generateCustomerInstanceReportExport");
+        final GenerateCustomerInstanceReportExportRequest interceptedRequest =
+                GenerateCustomerInstanceReportExportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateCustomerInstanceReportExportConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GenerateCustomerInstanceReportExport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GenerateCustomerInstanceReportExport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateCustomerInstanceReportExportResponse>
+                transformer =
+                        GenerateCustomerInstanceReportExportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateCustomerInstanceReportExportRequest,
+                        GenerateCustomerInstanceReportExportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateCustomerInstanceReportExportRequest,
+                                GenerateCustomerInstanceReportExportResponse>,
+                        java.util.concurrent.Future<GenerateCustomerInstanceReportExportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateCustomerInstanceReportExportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateCustomerInstanceReportExportRequest,
+                    GenerateCustomerInstanceReportExportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetArtifactResponse> getArtifact(
             GetArtifactRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetArtifactRequest, GetArtifactResponse>
@@ -1827,6 +1992,113 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetCategoryRequest, GetCategoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomerInstanceReportExportResponse>
+            getCustomerInstanceReportExport(
+                    GetCustomerInstanceReportExportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCustomerInstanceReportExportRequest,
+                                    GetCustomerInstanceReportExportResponse>
+                            handler) {
+        LOG.trace("Called async getCustomerInstanceReportExport");
+        final GetCustomerInstanceReportExportRequest interceptedRequest =
+                GetCustomerInstanceReportExportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCustomerInstanceReportExportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetCustomerInstanceReportExport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GetCustomerInstanceReportExport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCustomerInstanceReportExportResponse>
+                transformer =
+                        GetCustomerInstanceReportExportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCustomerInstanceReportExportRequest,
+                        GetCustomerInstanceReportExportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCustomerInstanceReportExportRequest,
+                                GetCustomerInstanceReportExportResponse>,
+                        java.util.concurrent.Future<GetCustomerInstanceReportExportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCustomerInstanceReportExportRequest,
+                    GetCustomerInstanceReportExportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomerInstanceReportExportContentResponse>
+            getCustomerInstanceReportExportContent(
+                    GetCustomerInstanceReportExportContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCustomerInstanceReportExportContentRequest,
+                                    GetCustomerInstanceReportExportContentResponse>
+                            handler) {
+        LOG.trace("Called async getCustomerInstanceReportExportContent");
+        final GetCustomerInstanceReportExportContentRequest interceptedRequest =
+                GetCustomerInstanceReportExportContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCustomerInstanceReportExportContentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "GetCustomerInstanceReportExportContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExport/GetCustomerInstanceReportExportContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCustomerInstanceReportExportContentResponse>
+                transformer =
+                        GetCustomerInstanceReportExportContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCustomerInstanceReportExportContentRequest,
+                        GetCustomerInstanceReportExportContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCustomerInstanceReportExportContentRequest,
+                                GetCustomerInstanceReportExportContentResponse>,
+                        java.util.concurrent.Future<GetCustomerInstanceReportExportContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCustomerInstanceReportExportContentRequest,
+                    GetCustomerInstanceReportExportContentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2741,6 +3013,59 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListCategoriesRequest, ListCategoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomerInstanceReportExportsResponse>
+            listCustomerInstanceReportExports(
+                    ListCustomerInstanceReportExportsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCustomerInstanceReportExportsRequest,
+                                    ListCustomerInstanceReportExportsResponse>
+                            handler) {
+        LOG.trace("Called async listCustomerInstanceReportExports");
+        final ListCustomerInstanceReportExportsRequest interceptedRequest =
+                ListCustomerInstanceReportExportsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCustomerInstanceReportExportsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "ListCustomerInstanceReportExports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/CustomerInstanceReportExportCollection/ListCustomerInstanceReportExports");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCustomerInstanceReportExportsResponse>
+                transformer =
+                        ListCustomerInstanceReportExportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCustomerInstanceReportExportsRequest,
+                        ListCustomerInstanceReportExportsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCustomerInstanceReportExportsRequest,
+                                ListCustomerInstanceReportExportsResponse>,
+                        java.util.concurrent.Future<ListCustomerInstanceReportExportsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCustomerInstanceReportExportsRequest,
+                    ListCustomerInstanceReportExportsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4242,6 +4567,76 @@ public class MarketplacePublisherAsyncClient implements MarketplacePublisherAsyn
                     LOG.debug("Resetting stream");
                     com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
                             interceptedRequest.getUpdateListingRevisionAttachmentContent(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListingRevisionBannerContentResponse>
+            updateListingRevisionBannerContent(
+                    UpdateListingRevisionBannerContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateListingRevisionBannerContentRequest,
+                                    UpdateListingRevisionBannerContentResponse>
+                            handler) {
+        LOG.trace("Called async updateListingRevisionBannerContent");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, UpdateListingRevisionBannerContentRequest.builder());
+        }
+        final UpdateListingRevisionBannerContentRequest interceptedRequest =
+                UpdateListingRevisionBannerContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateListingRevisionBannerContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MarketplacePublisher",
+                        "UpdateListingRevisionBannerContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/publisher/20241201/ListingRevision/UpdateListingRevisionBannerContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateListingRevisionBannerContentResponse>
+                transformer =
+                        UpdateListingRevisionBannerContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateListingRevisionBannerContentRequest,
+                        UpdateListingRevisionBannerContentResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateListingRevisionBannerContentRequest,
+                                UpdateListingRevisionBannerContentResponse>,
+                        java.util.concurrent.Future<UpdateListingRevisionBannerContentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateListingRevisionBannerContent(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateListingRevisionBannerContentRequest,
+                    UpdateListingRevisionBannerContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getUpdateListingRevisionBannerContent(), true);
                 }
             };
         } else {

@@ -1705,6 +1705,55 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataVerificationDetailResponse> getDataVerificationDetail(
+            GetDataVerificationDetailRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDataVerificationDetailRequest, GetDataVerificationDetailResponse>
+                    handler) {
+        LOG.trace("Called async getDataVerificationDetail");
+        final GetDataVerificationDetailRequest interceptedRequest =
+                GetDataVerificationDetailConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataVerificationDetailConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "GetDataVerificationDetail",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationDetail/GetDataVerificationDetail");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDataVerificationDetailResponse>
+                transformer =
+                        GetDataVerificationDetailConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDataVerificationDetailRequest, GetDataVerificationDetailResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDataVerificationDetailRequest,
+                                GetDataVerificationDetailResponse>,
+                        java.util.concurrent.Future<GetDataVerificationDetailResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDataVerificationDetailRequest, GetDataVerificationDetailResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobResponse> getJob(
             GetJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler) {
@@ -2379,6 +2428,166 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListConnectionsRequest, ListConnectionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataVerificationObjectStatusesResponse>
+            listDataVerificationObjectStatuses(
+                    ListDataVerificationObjectStatusesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationObjectStatusesRequest,
+                                    ListDataVerificationObjectStatusesResponse>
+                            handler) {
+        LOG.trace("Called async listDataVerificationObjectStatuses");
+        final ListDataVerificationObjectStatusesRequest interceptedRequest =
+                ListDataVerificationObjectStatusesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataVerificationObjectStatusesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationObjectStatuses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationObjectStatusCollection/ListDataVerificationObjectStatuses");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDataVerificationObjectStatusesResponse>
+                transformer =
+                        ListDataVerificationObjectStatusesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDataVerificationObjectStatusesRequest,
+                        ListDataVerificationObjectStatusesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataVerificationObjectStatusesRequest,
+                                ListDataVerificationObjectStatusesResponse>,
+                        java.util.concurrent.Future<ListDataVerificationObjectStatusesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataVerificationObjectStatusesRequest,
+                    ListDataVerificationObjectStatusesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataVerificationObjectTypeCountsResponse>
+            listDataVerificationObjectTypeCounts(
+                    ListDataVerificationObjectTypeCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationObjectTypeCountsRequest,
+                                    ListDataVerificationObjectTypeCountsResponse>
+                            handler) {
+        LOG.trace("Called async listDataVerificationObjectTypeCounts");
+        final ListDataVerificationObjectTypeCountsRequest interceptedRequest =
+                ListDataVerificationObjectTypeCountsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataVerificationObjectTypeCountsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationObjectTypeCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationObjectTypeCountCollection/ListDataVerificationObjectTypeCounts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDataVerificationObjectTypeCountsResponse>
+                transformer =
+                        ListDataVerificationObjectTypeCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDataVerificationObjectTypeCountsRequest,
+                        ListDataVerificationObjectTypeCountsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataVerificationObjectTypeCountsRequest,
+                                ListDataVerificationObjectTypeCountsResponse>,
+                        java.util.concurrent.Future<ListDataVerificationObjectTypeCountsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataVerificationObjectTypeCountsRequest,
+                    ListDataVerificationObjectTypeCountsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataVerificationTableRowCountsResponse>
+            listDataVerificationTableRowCounts(
+                    ListDataVerificationTableRowCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataVerificationTableRowCountsRequest,
+                                    ListDataVerificationTableRowCountsResponse>
+                            handler) {
+        LOG.trace("Called async listDataVerificationTableRowCounts");
+        final ListDataVerificationTableRowCountsRequest interceptedRequest =
+                ListDataVerificationTableRowCountsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataVerificationTableRowCountsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationTableRowCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationTableRowCountCollection/ListDataVerificationTableRowCounts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDataVerificationTableRowCountsResponse>
+                transformer =
+                        ListDataVerificationTableRowCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDataVerificationTableRowCountsRequest,
+                        ListDataVerificationTableRowCountsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataVerificationTableRowCountsRequest,
+                                ListDataVerificationTableRowCountsResponse>,
+                        java.util.concurrent.Future<ListDataVerificationTableRowCountsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataVerificationTableRowCountsRequest,
+                    ListDataVerificationTableRowCountsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3358,6 +3567,59 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RetrieveSupportedPhasesRequest, RetrieveSupportedPhasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RunDataVerificationResponse> runDataVerification(
+            RunDataVerificationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RunDataVerificationRequest, RunDataVerificationResponse>
+                    handler) {
+        LOG.trace("Called async runDataVerification");
+        final RunDataVerificationRequest interceptedRequest =
+                RunDataVerificationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RunDataVerificationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "RunDataVerification",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/RunDataVerification");
+        final java.util.function.Function<javax.ws.rs.core.Response, RunDataVerificationResponse>
+                transformer =
+                        RunDataVerificationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RunDataVerificationRequest, RunDataVerificationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RunDataVerificationRequest, RunDataVerificationResponse>,
+                        java.util.concurrent.Future<RunDataVerificationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRunDataVerificationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RunDataVerificationRequest, RunDataVerificationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

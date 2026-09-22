@@ -487,7 +487,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "AddDatabaseToolsConnectionLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/AddDatabaseToolsConnectionLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsConnectionLockResponse>
                 transformer =
@@ -545,7 +545,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "AddDatabaseToolsDatabaseApiGatewayConfigLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/AddDatabaseToolsDatabaseApiGatewayConfigLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AddDatabaseToolsDatabaseApiGatewayConfigLockResponse>
@@ -605,7 +605,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "AddDatabaseToolsIdentityLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/AddDatabaseToolsIdentityLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsIdentityLockResponse>
                 transformer =
@@ -661,7 +661,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "AddDatabaseToolsMcpServerLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/AddDatabaseToolsMcpServerLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsMcpServerLockResponse>
                 transformer =
@@ -717,7 +717,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "AddDatabaseToolsMcpToolsetLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/AddDatabaseToolsMcpToolsetLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsMcpToolsetLockResponse>
                 transformer =
@@ -775,7 +775,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "AddDatabaseToolsPrivateEndpointLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/AddDatabaseToolsPrivateEndpointLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsPrivateEndpointLockResponse>
                 transformer =
@@ -833,7 +833,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "AddDatabaseToolsSqlReportLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/AddDatabaseToolsSqlReportLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AddDatabaseToolsSqlReportLockResponse>
                 transformer =
@@ -890,7 +890,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "CascadingDeleteDatabaseToolsMcpServer",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/CascadingDeleteDatabaseToolsMcpServer");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CascadingDeleteDatabaseToolsMcpServerResponse>
                 transformer =
@@ -944,7 +944,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ChangeDatabaseToolsConnectionCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsConnectionCompartmentResponse>
                 transformer =
@@ -1007,7 +1007,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/ChangeDatabaseToolsDatabaseApiGatewayConfigCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDatabaseToolsDatabaseApiGatewayConfigCompartmentResponse>
@@ -1069,7 +1069,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ChangeDatabaseToolsIdentityCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ChangeDatabaseToolsIdentityCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsIdentityCompartmentResponse>
                 transformer =
@@ -1129,7 +1129,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ChangeDatabaseToolsMcpServerCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/ChangeDatabaseToolsMcpServerCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsMcpServerCompartmentResponse>
                 transformer =
@@ -1190,7 +1190,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ChangeDatabaseToolsMcpToolsetCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/ChangeDatabaseToolsMcpToolsetCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsMcpToolsetCompartmentResponse>
                 transformer =
@@ -1251,7 +1251,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ChangeDatabaseToolsPrivateEndpointCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeDatabaseToolsPrivateEndpointCompartmentResponse>
@@ -1313,7 +1313,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ChangeDatabaseToolsSqlReportCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/ChangeDatabaseToolsSqlReportCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseToolsSqlReportCompartmentResponse>
                 transformer =
@@ -1432,7 +1432,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "CreateDatabaseToolsDatabaseApiGatewayConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/CreateDatabaseToolsDatabaseApiGatewayConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         CreateDatabaseToolsDatabaseApiGatewayConfigResponse>
@@ -1724,7 +1724,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "CreateDatabaseToolsSqlReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/CreateDatabaseToolsSqlReport");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateDatabaseToolsSqlReportResponse>
                 transformer =
@@ -1780,7 +1780,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "DeleteDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsConnectionResponse>
                 transformer =
@@ -1832,7 +1832,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "DeleteDatabaseToolsDatabaseApiGatewayConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DeleteDatabaseToolsDatabaseApiGatewayConfigResponse>
@@ -1887,7 +1887,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "DeleteDatabaseToolsIdentity",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/DeleteDatabaseToolsIdentity");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsIdentityResponse>
                 transformer =
@@ -1938,7 +1938,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "DeleteDatabaseToolsMcpServer",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/DeleteDatabaseToolsMcpServer");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsMcpServerResponse>
                 transformer =
@@ -1989,7 +1989,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "DeleteDatabaseToolsMcpToolset",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/DeleteDatabaseToolsMcpToolset");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsMcpToolsetResponse>
                 transformer =
@@ -2040,7 +2040,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "DeleteDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsPrivateEndpointResponse>
                 transformer =
@@ -2093,7 +2093,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "DeleteDatabaseToolsSqlReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/DeleteDatabaseToolsSqlReport");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsSqlReportResponse>
                 transformer =
@@ -2144,7 +2144,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsConnectionResponse>
                 transformer =
@@ -2196,7 +2196,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsDatabaseApiGatewayConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/GetDatabaseToolsDatabaseApiGatewayConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsDatabaseApiGatewayConfigResponse>
                 transformer =
@@ -2250,7 +2250,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsEndpointService",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsEndpointServiceResponse>
                 transformer =
@@ -2301,7 +2301,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsIdentity",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/GetDatabaseToolsIdentity");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsIdentityResponse>
                 transformer =
@@ -2349,7 +2349,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsMcpServer",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/GetDatabaseToolsMcpServer");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsMcpServerResponse>
                 transformer =
@@ -2400,7 +2400,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsMcpToolset",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/GetDatabaseToolsMcpToolset");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsMcpToolsetResponse>
                 transformer =
@@ -2451,7 +2451,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsPrivateEndpointResponse>
                 transformer =
@@ -2502,7 +2502,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "GetDatabaseToolsSqlReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/GetDatabaseToolsSqlReport");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsSqlReportResponse>
                 transformer =
@@ -2548,7 +2548,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseTools", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "DatabaseTools",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -2595,7 +2598,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsConnections",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsConnectionsResponse>
                 transformer =
@@ -2647,7 +2650,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsDatabaseApiGatewayConfigs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigs");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListDatabaseToolsDatabaseApiGatewayConfigsResponse>
@@ -2702,7 +2705,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsEndpointServices",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsEndpointServicesResponse>
                 transformer =
@@ -2755,7 +2758,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsIdentities",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ListDatabaseToolsIdentities");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsIdentitiesResponse>
                 transformer =
@@ -2806,7 +2809,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsMcpServers",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/ListDatabaseToolsMcpServers");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsMcpServersResponse>
                 transformer =
@@ -2858,7 +2861,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsMcpToolsetVersions",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolsetVersionCollection/ListDatabaseToolsMcpToolsetVersions");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsMcpToolsetVersionsResponse>
                 transformer =
@@ -2911,7 +2914,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsMcpToolsets",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/ListDatabaseToolsMcpToolsets");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsMcpToolsetsResponse>
                 transformer =
@@ -2962,7 +2965,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsPrivateEndpoints",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsPrivateEndpointsResponse>
                 transformer =
@@ -3015,7 +3018,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListDatabaseToolsSqlReports",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/ListDatabaseToolsSqlReports");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsSqlReportsResponse>
                 transformer =
@@ -3064,7 +3067,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -3108,7 +3111,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseTools", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "DatabaseTools",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -3152,7 +3158,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "DatabaseTools", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "DatabaseTools",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -3201,7 +3210,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RefreshDatabaseToolsIdentityCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RefreshDatabaseToolsIdentityCredential");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RefreshDatabaseToolsIdentityCredentialResponse>
                 transformer =
@@ -3260,7 +3269,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RemoveDatabaseToolsConnectionLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/RemoveDatabaseToolsConnectionLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsConnectionLockResponse>
                 transformer =
@@ -3319,7 +3328,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RemoveDatabaseToolsDatabaseApiGatewayConfigLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/RemoveDatabaseToolsDatabaseApiGatewayConfigLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RemoveDatabaseToolsDatabaseApiGatewayConfigLockResponse>
@@ -3379,7 +3388,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RemoveDatabaseToolsIdentityLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/RemoveDatabaseToolsIdentityLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsIdentityLockResponse>
                 transformer =
@@ -3437,7 +3446,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RemoveDatabaseToolsMcpServerLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/RemoveDatabaseToolsMcpServerLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsMcpServerLockResponse>
                 transformer =
@@ -3495,7 +3504,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RemoveDatabaseToolsMcpToolsetLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/RemoveDatabaseToolsMcpToolsetLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsMcpToolsetLockResponse>
                 transformer =
@@ -3554,7 +3563,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RemoveDatabaseToolsPrivateEndpointLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/RemoveDatabaseToolsPrivateEndpointLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsPrivateEndpointLockResponse>
                 transformer =
@@ -3612,7 +3621,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "RemoveDatabaseToolsSqlReportLock",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/RemoveDatabaseToolsSqlReportLock");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RemoveDatabaseToolsSqlReportLockResponse>
                 transformer =
@@ -3670,7 +3679,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "UpdateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsConnectionResponse>
                 transformer =
@@ -3727,7 +3736,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "UpdateDatabaseToolsDatabaseApiGatewayConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsDatabaseApiGatewayConfig/UpdateDatabaseToolsDatabaseApiGatewayConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         UpdateDatabaseToolsDatabaseApiGatewayConfigResponse>
@@ -3788,7 +3797,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "UpdateDatabaseToolsIdentity",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/UpdateDatabaseToolsIdentity");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsIdentityResponse>
                 transformer =
@@ -3844,7 +3853,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "UpdateDatabaseToolsMcpServer",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpServer/UpdateDatabaseToolsMcpServer");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsMcpServerResponse>
                 transformer =
@@ -3900,7 +3909,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "UpdateDatabaseToolsMcpToolset",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsMcpToolset/UpdateDatabaseToolsMcpToolset");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsMcpToolsetResponse>
                 transformer =
@@ -3956,7 +3965,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "UpdateDatabaseToolsPrivateEndpoint",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsPrivateEndpointResponse>
                 transformer =
@@ -4014,7 +4023,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "UpdateDatabaseToolsSqlReport",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsSqlReport/UpdateDatabaseToolsSqlReport");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsSqlReportResponse>
                 transformer =
@@ -4070,7 +4079,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ValidateDatabaseToolsConnection",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsConnectionResponse>
                 transformer =
@@ -4129,7 +4138,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         "DatabaseTools",
                         "ValidateDatabaseToolsIdentityCredential",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsIdentityCredentialResponse>
                 transformer =

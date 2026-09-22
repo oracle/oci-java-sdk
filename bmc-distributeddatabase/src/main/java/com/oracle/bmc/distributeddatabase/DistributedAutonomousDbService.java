@@ -11,7 +11,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
  * Use the Globally Distributed Database service APIs to create and manage the Globally distributed databases.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public interface DistributedAutonomousDbService extends AutoCloseable {
 
     /**
@@ -104,6 +104,21 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
             ChangeDistributedAutonomousDbBackupConfigRequest request);
 
     /**
+     * Configure autoResourceManagement options for the Globally distributed autonomous database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/ConfigureDistributedAutonomousDatabaseAutoResourceManagementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureDistributedAutonomousDatabaseAutoResourceManagement API.
+     */
+    ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse
+            configureDistributedAutonomousDatabaseAutoResourceManagement(
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest request);
+
+    /**
      * Configure wallets on Global Service Manager(GSM) instances for a Globally distributed autonomous database.
      *
      * @param request The request object containing the details to send
@@ -180,43 +195,6 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
             DeleteDistributedAutonomousDatabaseRequest request);
 
     /**
-     * Generate the common certificate signing request for GSMs. Download the <globalautonomousdb-prefix>.csr file from
-     * API response. Users can use this .csr file to generate the CA signed certificate, and as a next step
-     * use 'uploadSignedCertificateAndGenerateWallet' API to upload the CA signed certificate to GSM, and
-     * generate wallets for the GSM instances of the Globally distributed autonomous database.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequest API.
-     */
-    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse
-            downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request);
-
-    /**
-     * Generate the certificate signing request for GSM instances of the Globally distributed autonomous database. Once certificate signing
-     * request is generated, then customers can download the certificate signing request using
-     * 'downloadGsmCertificateSigningRequest' api call.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequest API.
-     */
-    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse
-            generateDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request);
-
-    /**
      * Generate the wallet associated with Globally distributed autonomous database.
      *
      * @param request The request object containing the details to send
@@ -258,6 +236,21 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
      */
     GetDistributedAutonomousDatabaseRaftMetricResponse getDistributedAutonomousDatabaseRaftMetric(
             GetDistributedAutonomousDatabaseRaftMetricRequest request);
+
+    /**
+     * Operation to retrieve move RU invocation history and status for the Globally distributed autonomous database.
+     * Results are ordered by created timestamp in descending order.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/GetDistributedAutonomousDatabaseRuChangeLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDistributedAutonomousDatabaseRuChangeLog API.
+     */
+    GetDistributedAutonomousDatabaseRuChangeLogResponse getDistributedAutonomousDatabaseRuChangeLog(
+            GetDistributedAutonomousDatabaseRuChangeLogRequest request);
 
     /**
      * List of Globally distributed autonomous databases.
@@ -334,7 +327,21 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
                     RotateDistributedAutonomousDatabasePasswordsRequest request);
 
     /**
-     * Start the shards, catalog and GSMs of Globally distributed autonomous database.
+     * Scale global service manager(GSM aka shard director) instances for the Globally distributed autonomous database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/ScaleDistributedAutonomousDatabaseGsmsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScaleDistributedAutonomousDatabaseGsms API.
+     */
+    ScaleDistributedAutonomousDatabaseGsmsResponse scaleDistributedAutonomousDatabaseGsms(
+            ScaleDistributedAutonomousDatabaseGsmsRequest request);
+
+    /**
+     * Start the shards, catalog, GSMs and GDSCTL instances of Globally distributed autonomous database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -347,7 +354,7 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
             StartDistributedAutonomousDatabaseRequest request);
 
     /**
-     * Stop the shards, catalog and GSM instances for the Globally distributed autonomous database.
+     * Stop the shards, catalog, GSMs and GDSCTL instances for the Globally distributed autonomous database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -372,24 +379,6 @@ public interface DistributedAutonomousDbService extends AutoCloseable {
      */
     UpdateDistributedAutonomousDatabaseResponse updateDistributedAutonomousDatabase(
             UpdateDistributedAutonomousDatabaseRequest request);
-
-    /**
-     * Upload the CA signed certificate to the GSM instances and generate wallets for GSM instances of the
-     * Globally distributed autonomous database. Customer shall provide the CA signed certificate key details by adding the certificate
-     * in request body.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet API.
-     */
-    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse
-            uploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet(
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest
-                            request);
 
     /**
      * Validate the CA Bundles consistency of the globally distributed autonomous database.

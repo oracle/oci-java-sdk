@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = DistributedDatabasePrivateEndpointSummary.Builder.class
 )
@@ -29,7 +29,7 @@ public final class DistributedDatabasePrivateEndpointSummary
         "subnetId",
         "vcnId",
         "displayName",
-        "nsgIds",
+        "vcnNsgIds",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -45,7 +45,7 @@ public final class DistributedDatabasePrivateEndpointSummary
             String subnetId,
             String vcnId,
             String displayName,
-            java.util.List<String> nsgIds,
+            java.util.List<VcnNsgIdsDetails> vcnNsgIds,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             DistributedDatabasePrivateEndpoint.LifecycleState lifecycleState,
@@ -60,7 +60,7 @@ public final class DistributedDatabasePrivateEndpointSummary
         this.subnetId = subnetId;
         this.vcnId = vcnId;
         this.displayName = displayName;
-        this.nsgIds = nsgIds;
+        this.vcnNsgIds = vcnNsgIds;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -169,21 +169,19 @@ public final class DistributedDatabasePrivateEndpointSummary
             return this;
         }
         /**
-         * The OCIDs of the network security groups that the private endpoint belongs to.
-         *
+         * The list of network security group (NSG) details associated with the private endpoint.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+        private java.util.List<VcnNsgIdsDetails> vcnNsgIds;
 
         /**
-         * The OCIDs of the network security groups that the private endpoint belongs to.
-         *
-         * @param nsgIds the value to set
+         * The list of network security group (NSG) details associated with the private endpoint.
+         * @param vcnNsgIds the value to set
          * @return this builder
          **/
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
+        public Builder vcnNsgIds(java.util.List<VcnNsgIdsDetails> vcnNsgIds) {
+            this.vcnNsgIds = vcnNsgIds;
+            this.__explicitlySet__.add("vcnNsgIds");
             return this;
         }
         /**
@@ -325,7 +323,7 @@ public final class DistributedDatabasePrivateEndpointSummary
                             this.subnetId,
                             this.vcnId,
                             this.displayName,
-                            this.nsgIds,
+                            this.vcnNsgIds,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -359,8 +357,8 @@ public final class DistributedDatabasePrivateEndpointSummary
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
-            if (model.wasPropertyExplicitlySet("nsgIds")) {
-                this.nsgIds(model.getNsgIds());
+            if (model.wasPropertyExplicitlySet("vcnNsgIds")) {
+                this.vcnNsgIds(model.getVcnNsgIds());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -483,19 +481,17 @@ public final class DistributedDatabasePrivateEndpointSummary
     }
 
     /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
-     *
+     * The list of network security group (NSG) details associated with the private endpoint.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    private final java.util.List<String> nsgIds;
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnNsgIds")
+    private final java.util.List<VcnNsgIdsDetails> vcnNsgIds;
 
     /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
-     *
+     * The list of network security group (NSG) details associated with the private endpoint.
      * @return the value
      **/
-    public java.util.List<String> getNsgIds() {
-        return nsgIds;
+    public java.util.List<VcnNsgIdsDetails> getVcnNsgIds() {
+        return vcnNsgIds;
     }
 
     /**
@@ -628,7 +624,7 @@ public final class DistributedDatabasePrivateEndpointSummary
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
-        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", vcnNsgIds=").append(String.valueOf(this.vcnNsgIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -657,7 +653,7 @@ public final class DistributedDatabasePrivateEndpointSummary
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.vcnNsgIds, other.vcnNsgIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -680,7 +676,7 @@ public final class DistributedDatabasePrivateEndpointSummary
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.vcnNsgIds == null ? 43 : this.vcnNsgIds.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

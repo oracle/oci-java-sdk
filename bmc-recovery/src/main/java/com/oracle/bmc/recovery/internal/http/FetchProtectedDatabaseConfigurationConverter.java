@@ -47,6 +47,10 @@ public class FetchProtectedDatabaseConfigurationConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
+
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
         }

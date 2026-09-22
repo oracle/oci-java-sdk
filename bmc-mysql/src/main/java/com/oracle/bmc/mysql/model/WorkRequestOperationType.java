@@ -37,6 +37,11 @@ public enum WorkRequestOperationType {
     DeleteBackup("DELETE_BACKUP"),
     UpdateBackup("UPDATE_BACKUP"),
     ExportBackup("EXPORT_BACKUP"),
+    CreateBlueGreenDeployment("CREATE_BLUE_GREEN_DEPLOYMENT"),
+    UpdateBlueGreenDeployment("UPDATE_BLUE_GREEN_DEPLOYMENT"),
+    DeleteBlueGreenDeployment("DELETE_BLUE_GREEN_DEPLOYMENT"),
+    ChangeBlueGreenDeploymentCompartment("CHANGE_BLUE_GREEN_DEPLOYMENT_COMPARTMENT"),
+    SwitchoverBlueGreenDeployment("SWITCHOVER_BLUE_GREEN_DEPLOYMENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

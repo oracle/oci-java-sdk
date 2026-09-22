@@ -14,7 +14,7 @@ package com.oracle.bmc.distributeddatabase.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDistributedDatabasePrivateEndpointDetails.Builder.class
 )
@@ -22,23 +22,15 @@ package com.oracle.bmc.distributeddatabase.model;
 public final class UpdateDistributedDatabasePrivateEndpointDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({
-        "displayName",
-        "description",
-        "nsgIds",
-        "freeformTags",
-        "definedTags"
-    })
+    @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
     public UpdateDistributedDatabasePrivateEndpointDetails(
             String displayName,
             String description,
-            java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
-        this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -75,24 +67,6 @@ public final class UpdateDistributedDatabasePrivateEndpointDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
-            return this;
-        }
-        /**
-         * The OCIDs of the network security groups that the private endpoint belongs to.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
-
-        /**
-         * The OCIDs of the network security groups that the private endpoint belongs to.
-         *
-         * @param nsgIds the value to set
-         * @return this builder
-         **/
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
@@ -145,7 +119,6 @@ public final class UpdateDistributedDatabasePrivateEndpointDetails
                     new UpdateDistributedDatabasePrivateEndpointDetails(
                             this.displayName,
                             this.description,
-                            this.nsgIds,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -161,9 +134,6 @@ public final class UpdateDistributedDatabasePrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
-            }
-            if (model.wasPropertyExplicitlySet("nsgIds")) {
-                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -212,22 +182,6 @@ public final class UpdateDistributedDatabasePrivateEndpointDetails
      **/
     public String getDescription() {
         return description;
-    }
-
-    /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    private final java.util.List<String> nsgIds;
-
-    /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
-     *
-     * @return the value
-     **/
-    public java.util.List<String> getNsgIds() {
-        return nsgIds;
     }
 
     /**
@@ -282,7 +236,6 @@ public final class UpdateDistributedDatabasePrivateEndpointDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -302,7 +255,6 @@ public final class UpdateDistributedDatabasePrivateEndpointDetails
                 (UpdateDistributedDatabasePrivateEndpointDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -314,7 +266,6 @@ public final class UpdateDistributedDatabasePrivateEndpointDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

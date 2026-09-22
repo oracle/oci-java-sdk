@@ -10,7 +10,7 @@ import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260325")
 public class ListTriggersConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -31,7 +31,7 @@ public class ListTriggersConverter {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20181201").path("pbfListings").path("triggers");
+                client.getBaseTarget().path("/20260325").path("pbfListings").path("triggers");
 
         if (request.getName() != null) {
             target =

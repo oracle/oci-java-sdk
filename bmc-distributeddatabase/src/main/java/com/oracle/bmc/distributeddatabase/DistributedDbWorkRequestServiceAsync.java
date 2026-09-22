@@ -10,7 +10,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
 /**
  * Use the Globally Distributed Database service APIs to create and manage the Globally distributed databases.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public interface DistributedDbWorkRequestServiceAsync extends AutoCloseable {
 
     /**

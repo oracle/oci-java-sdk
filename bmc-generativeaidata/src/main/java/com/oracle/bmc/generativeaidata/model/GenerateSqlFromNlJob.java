@@ -6,7 +6,7 @@ package com.oracle.bmc.generativeaidata.model;
 
 /**
  * Object representing to GenerateSqlFromNlJob.
- * ocidEntityType: generativeaiGenerateSqlFromNlJob
+ * ocidEntityType: generativeaisemanticstorejob
  * adLocality: regional
  *
  * <br/>
@@ -35,6 +35,7 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
         "lifecycleState",
         "lifecycleDetails",
         "inputNaturalLanguageQuery",
+        "modelId",
         "jobOutput",
         "freeformTags",
         "definedTags",
@@ -51,6 +52,7 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String inputNaturalLanguageQuery,
+            String modelId,
             JobOutput jobOutput,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -66,6 +68,7 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.inputNaturalLanguageQuery = inputNaturalLanguageQuery;
+        this.modelId = modelId;
         this.jobOutput = jobOutput;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -75,13 +78,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation.
+         * The OCID of the Semantic Store job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation.
+         * The OCID of the Semantic Store job.
          * @param id the value to set
          * @return this builder
          **/
@@ -139,13 +142,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The date and time that the enrichment job was accepted in the format of an RFC3339 datetime string.
+         * The date and time that the GenerateSqlFromNlJob was accepted in the format of an RFC3339 datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
-         * The date and time that the enrichment job was accepted in the format of an RFC3339 datetime string.
+         * The date and time that the GenerateSqlFromNlJob was accepted in the format of an RFC3339 datetime string.
          * @param timeAccepted the value to set
          * @return this builder
          **/
@@ -155,13 +158,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The date and time that the enrichment job was started in the format of an RFC3339 datetime string.
+         * The date and time that the GenerateSqlFromNlJob was started in the format of an RFC3339 datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The date and time that the enrichment job was started in the format of an RFC3339 datetime string.
+         * The date and time that the GenerateSqlFromNlJob was started in the format of an RFC3339 datetime string.
          * @param timeStarted the value to set
          * @return this builder
          **/
@@ -171,13 +174,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The date and time that the enrichment job was finished in the format of an RFC3339 datetime string.
+         * The date and time that the GenerateSqlFromNlJob was finished in the format of an RFC3339 datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time that the enrichment job was finished in the format of an RFC3339 datetime string.
+         * The date and time that the GenerateSqlFromNlJob was finished in the format of an RFC3339 datetime string.
          * @param timeFinished the value to set
          * @return this builder
          **/
@@ -187,13 +190,25 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The lifecycleState of GenerateSqlFromNlJob.
+         * The current state of GenerateSqlFromNlJob.
+         * <p>
+         * - ACCEPTED: Job has been created but not yet started.
+         * - IN_PROGRESS: Job is currently running.
+         * - SUCCEEDED: Job completed successfully. The result is available in jobOutput.
+         * - FAILED: Job failed. See lifecycleDetails for error information.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycleState of GenerateSqlFromNlJob.
+         * The current state of GenerateSqlFromNlJob.
+         * <p>
+         * - ACCEPTED: Job has been created but not yet started.
+         * - IN_PROGRESS: Job is currently running.
+         * - SUCCEEDED: Job completed successfully. The result is available in jobOutput.
+         * - FAILED: Job failed. See lifecycleDetails for error information.
+         *
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -238,6 +253,22 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
         public Builder inputNaturalLanguageQuery(String inputNaturalLanguageQuery) {
             this.inputNaturalLanguageQuery = inputNaturalLanguageQuery;
             this.__explicitlySet__.add("inputNaturalLanguageQuery");
+            return this;
+        }
+        /**
+         * The generative AI modelId used for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+        private String modelId;
+
+        /**
+         * The generative AI modelId used for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+         * @param modelId the value to set
+         * @return this builder
+         **/
+        public Builder modelId(String modelId) {
+            this.modelId = modelId;
+            this.__explicitlySet__.add("modelId");
             return this;
         }
 
@@ -327,6 +358,7 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.inputNaturalLanguageQuery,
+                            this.modelId,
                             this.jobOutput,
                             this.freeformTags,
                             this.definedTags,
@@ -369,6 +401,9 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("inputNaturalLanguageQuery")) {
                 this.inputNaturalLanguageQuery(model.getInputNaturalLanguageQuery());
             }
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
             if (model.wasPropertyExplicitlySet("jobOutput")) {
                 this.jobOutput(model.getJobOutput());
             }
@@ -397,13 +432,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Unique identifier that is immutable on creation.
+     * The OCID of the Semantic Store job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation.
+     * The OCID of the Semantic Store job.
      * @return the value
      **/
     public String getId() {
@@ -453,13 +488,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The date and time that the enrichment job was accepted in the format of an RFC3339 datetime string.
+     * The date and time that the GenerateSqlFromNlJob was accepted in the format of an RFC3339 datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
-     * The date and time that the enrichment job was accepted in the format of an RFC3339 datetime string.
+     * The date and time that the GenerateSqlFromNlJob was accepted in the format of an RFC3339 datetime string.
      * @return the value
      **/
     public java.util.Date getTimeAccepted() {
@@ -467,13 +502,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The date and time that the enrichment job was started in the format of an RFC3339 datetime string.
+     * The date and time that the GenerateSqlFromNlJob was started in the format of an RFC3339 datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time that the enrichment job was started in the format of an RFC3339 datetime string.
+     * The date and time that the GenerateSqlFromNlJob was started in the format of an RFC3339 datetime string.
      * @return the value
      **/
     public java.util.Date getTimeStarted() {
@@ -481,13 +516,13 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The date and time that the enrichment job was finished in the format of an RFC3339 datetime string.
+     * The date and time that the GenerateSqlFromNlJob was finished in the format of an RFC3339 datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time that the enrichment job was finished in the format of an RFC3339 datetime string.
+     * The date and time that the GenerateSqlFromNlJob was finished in the format of an RFC3339 datetime string.
      * @return the value
      **/
     public java.util.Date getTimeFinished() {
@@ -495,13 +530,25 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The lifecycleState of GenerateSqlFromNlJob.
+     * The current state of GenerateSqlFromNlJob.
+     * <p>
+     * - ACCEPTED: Job has been created but not yet started.
+     * - IN_PROGRESS: Job is currently running.
+     * - SUCCEEDED: Job completed successfully. The result is available in jobOutput.
+     * - FAILED: Job failed. See lifecycleDetails for error information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycleState of GenerateSqlFromNlJob.
+     * The current state of GenerateSqlFromNlJob.
+     * <p>
+     * - ACCEPTED: Job has been created but not yet started.
+     * - IN_PROGRESS: Job is currently running.
+     * - SUCCEEDED: Job completed successfully. The result is available in jobOutput.
+     * - FAILED: Job failed. See lifecycleDetails for error information.
+     *
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -540,6 +587,20 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
      **/
     public String getInputNaturalLanguageQuery() {
         return inputNaturalLanguageQuery;
+    }
+
+    /**
+     * The generative AI modelId used for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("modelId")
+    private final String modelId;
+
+    /**
+     * The generative AI modelId used for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+     * @return the value
+     **/
+    public String getModelId() {
+        return modelId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jobOutput")
@@ -628,6 +689,7 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", inputNaturalLanguageQuery=")
                 .append(String.valueOf(this.inputNaturalLanguageQuery));
+        sb.append(", modelId=").append(String.valueOf(this.modelId));
         sb.append(", jobOutput=").append(String.valueOf(this.jobOutput));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -657,6 +719,7 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
                         this.inputNaturalLanguageQuery, other.inputNaturalLanguageQuery)
+                && java.util.Objects.equals(this.modelId, other.modelId)
                 && java.util.Objects.equals(this.jobOutput, other.jobOutput)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -688,6 +751,7 @@ public final class GenerateSqlFromNlJob extends com.oracle.bmc.http.internal.Exp
                         + (this.inputNaturalLanguageQuery == null
                                 ? 43
                                 : this.inputNaturalLanguageQuery.hashCode());
+        result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
         result = (result * PRIME) + (this.jobOutput == null ? 43 : this.jobOutput.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

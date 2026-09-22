@@ -1548,6 +1548,44 @@ public class DatabaseMigrationClient implements DatabaseMigration {
     }
 
     @Override
+    public GetDataVerificationDetailResponse getDataVerificationDetail(
+            GetDataVerificationDetailRequest request) {
+        LOG.trace("Called getDataVerificationDetail");
+        final GetDataVerificationDetailRequest interceptedRequest =
+                GetDataVerificationDetailConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataVerificationDetailConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "GetDataVerificationDetail",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationDetail/GetDataVerificationDetail");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDataVerificationDetailResponse>
+                transformer =
+                        GetDataVerificationDetailConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetJobResponse getJob(GetJobRequest request) {
         LOG.trace("Called getJob");
         final GetJobRequest interceptedRequest = GetJobConverter.interceptRequest(request);
@@ -2078,6 +2116,124 @@ public class DatabaseMigrationClient implements DatabaseMigration {
         java.util.function.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer =
                         ListConnectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDataVerificationObjectStatusesResponse listDataVerificationObjectStatuses(
+            ListDataVerificationObjectStatusesRequest request) {
+        LOG.trace("Called listDataVerificationObjectStatuses");
+        final ListDataVerificationObjectStatusesRequest interceptedRequest =
+                ListDataVerificationObjectStatusesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataVerificationObjectStatusesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationObjectStatuses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationObjectStatusCollection/ListDataVerificationObjectStatuses");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDataVerificationObjectStatusesResponse>
+                transformer =
+                        ListDataVerificationObjectStatusesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDataVerificationObjectTypeCountsResponse listDataVerificationObjectTypeCounts(
+            ListDataVerificationObjectTypeCountsRequest request) {
+        LOG.trace("Called listDataVerificationObjectTypeCounts");
+        final ListDataVerificationObjectTypeCountsRequest interceptedRequest =
+                ListDataVerificationObjectTypeCountsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataVerificationObjectTypeCountsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationObjectTypeCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationObjectTypeCountCollection/ListDataVerificationObjectTypeCounts");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDataVerificationObjectTypeCountsResponse>
+                transformer =
+                        ListDataVerificationObjectTypeCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDataVerificationTableRowCountsResponse listDataVerificationTableRowCounts(
+            ListDataVerificationTableRowCountsRequest request) {
+        LOG.trace("Called listDataVerificationTableRowCounts");
+        final ListDataVerificationTableRowCountsRequest interceptedRequest =
+                ListDataVerificationTableRowCountsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataVerificationTableRowCountsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "ListDataVerificationTableRowCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/DataVerificationTableRowCountCollection/ListDataVerificationTableRowCounts");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDataVerificationTableRowCountsResponse>
+                transformer =
+                        ListDataVerificationTableRowCountsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2861,6 +3017,48 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RunDataVerificationResponse runDataVerification(RunDataVerificationRequest request) {
+        LOG.trace("Called runDataVerification");
+        final RunDataVerificationRequest interceptedRequest =
+                RunDataVerificationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RunDataVerificationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseMigration",
+                        "RunDataVerification",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Migration/RunDataVerification");
+        java.util.function.Function<javax.ws.rs.core.Response, RunDataVerificationResponse>
+                transformer =
+                        RunDataVerificationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRunDataVerificationDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

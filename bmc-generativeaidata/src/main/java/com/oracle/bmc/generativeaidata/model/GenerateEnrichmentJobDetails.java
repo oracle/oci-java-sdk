@@ -81,13 +81,13 @@ public final class GenerateEnrichmentJobDetails
             return this;
         }
         /**
-         * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+         * Deprecated. Use EnrichmentJobConfiguration.enrichmentJobType instead.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("enrichmentJobType")
         private EnrichmentJobType enrichmentJobType;
 
         /**
-         * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+         * Deprecated. Use EnrichmentJobConfiguration.enrichmentJobType instead.
          * @param enrichmentJobType the value to set
          * @return this builder
          **/
@@ -230,13 +230,13 @@ public final class GenerateEnrichmentJobDetails
     }
 
     /**
-     * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+     * Deprecated. Use EnrichmentJobConfiguration.enrichmentJobType instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enrichmentJobType")
     private final EnrichmentJobType enrichmentJobType;
 
     /**
-     * Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+     * Deprecated. Use EnrichmentJobConfiguration.enrichmentJobType instead.
      * @return the value
      **/
     public EnrichmentJobType getEnrichmentJobType() {

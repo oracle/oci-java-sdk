@@ -61,6 +61,19 @@ public interface Bds extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Activates the BDS capacity reservation configuration identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateBdsCapacityReservationConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateBdsCapacityReservationConfiguration API.
+     */
+    ActivateBdsCapacityReservationConfigurationResponse activateBdsCapacityReservationConfiguration(
+            ActivateBdsCapacityReservationConfigurationRequest request);
+
+    /**
      * Activate specified metastore configuration.
      *
      * @param request The request object containing the details to send
@@ -233,6 +246,19 @@ public interface Bds extends AutoCloseable {
     CertificateServiceInfoResponse certificateServiceInfo(CertificateServiceInfoRequest request);
 
     /**
+     * Moves a BDS capacity reservation into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ChangeBdsCapacityReservationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBdsCapacityReservationCompartment API.
+     */
+    ChangeBdsCapacityReservationCompartmentResponse changeBdsCapacityReservationCompartment(
+            ChangeBdsCapacityReservationCompartmentRequest request);
+
+    /**
      * Moves a Big Data Service cluster into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -284,6 +310,34 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsCapacityReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsCapacityReport API.
      */
     CreateBdsCapacityReportResponse createBdsCapacityReport(CreateBdsCapacityReportRequest request);
+
+    /**
+     * Creates a reusable BDS capacity reservation resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsCapacityReservation API.
+     */
+    CreateBdsCapacityReservationResponse createBdsCapacityReservation(
+            CreateBdsCapacityReservationRequest request);
+
+    /**
+     * Creates a configuration between the specified BDS cluster and a BDS capacity reservation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsCapacityReservationConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsCapacityReservationConfiguration API.
+     */
+    CreateBdsCapacityReservationConfigurationResponse createBdsCapacityReservationConfiguration(
+            CreateBdsCapacityReservationConfigurationRequest request);
 
     /**
      * Create a BDS certificate configuration for the cluster.
@@ -382,6 +436,20 @@ public interface Bds extends AutoCloseable {
             CreateResourcePrincipalConfigurationRequest request);
 
     /**
+     * Deactivates the BDS capacity reservation configuration identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeactivateBdsCapacityReservationConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateBdsCapacityReservationConfiguration API.
+     */
+    DeactivateBdsCapacityReservationConfigurationResponse
+            deactivateBdsCapacityReservationConfiguration(
+                    DeactivateBdsCapacityReservationConfigurationRequest request);
+
+    /**
      * Deactivate the IAM user sync configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -418,6 +486,32 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsApiKey API.
      */
     DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request);
+
+    /**
+     * Deletes the BDS capacity reservation identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsCapacityReservation API.
+     */
+    DeleteBdsCapacityReservationResponse deleteBdsCapacityReservation(
+            DeleteBdsCapacityReservationRequest request);
+
+    /**
+     * Deletes the BDS capacity reservation configuration identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsCapacityReservationConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsCapacityReservationConfiguration API.
+     */
+    DeleteBdsCapacityReservationConfigurationResponse deleteBdsCapacityReservationConfiguration(
+            DeleteBdsCapacityReservationConfigurationRequest request);
 
     /**
      * Delete the BDS certificate configuration for the given ID.
@@ -586,6 +680,32 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsApiKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsApiKey API.
      */
     GetBdsApiKeyResponse getBdsApiKey(GetBdsApiKeyRequest request);
+
+    /**
+     * Returns information about the BDS capacity reservation identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsCapacityReservation API.
+     */
+    GetBdsCapacityReservationResponse getBdsCapacityReservation(
+            GetBdsCapacityReservationRequest request);
+
+    /**
+     * Returns information about the BDS capacity reservation configuration identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsCapacityReservationConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsCapacityReservationConfiguration API.
+     */
+    GetBdsCapacityReservationConfigurationResponse getBdsCapacityReservationConfiguration(
+            GetBdsCapacityReservationConfigurationRequest request);
 
     /**
      * Returns details of the BdsCertificateConfiguration identified by the given ID.
@@ -796,6 +916,49 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsApiKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsApiKeys API.
      */
     ListBdsApiKeysResponse listBdsApiKeys(ListBdsApiKeysRequest request);
+
+    /**
+     * Returns a list of BDS capacity reservation configurations associated with the specified BDS capacity reservation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsCapacityReservationAssociatedConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsCapacityReservationAssociatedConfigurations API.
+     */
+    ListBdsCapacityReservationAssociatedConfigurationsResponse
+            listBdsCapacityReservationAssociatedConfigurations(
+                    ListBdsCapacityReservationAssociatedConfigurationsRequest request);
+
+    /**
+     * Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsCapacityReservationConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsCapacityReservationConfigurations API.
+     */
+    ListBdsCapacityReservationConfigurationsResponse listBdsCapacityReservationConfigurations(
+            ListBdsCapacityReservationConfigurationsRequest request);
+
+    /**
+     * Returns a list of BDS capacity reservations in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsCapacityReservationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsCapacityReservations API.
+     */
+    ListBdsCapacityReservationsResponse listBdsCapacityReservations(
+            ListBdsCapacityReservationsRequest request);
 
     /**
      * Returns a list of BDS certificate configurations associated with this Big Data Service cluster.
@@ -1261,6 +1424,32 @@ public interface Bds extends AutoCloseable {
      */
     UpdateAutoScalingConfigurationResponse updateAutoScalingConfiguration(
             UpdateAutoScalingConfigurationRequest request);
+
+    /**
+     * Updates the BDS capacity reservation identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsCapacityReservation API.
+     */
+    UpdateBdsCapacityReservationResponse updateBdsCapacityReservation(
+            UpdateBdsCapacityReservationRequest request);
+
+    /**
+     * Updates the BDS capacity reservation configuration identified by the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsCapacityReservationConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsCapacityReservationConfiguration API.
+     */
+    UpdateBdsCapacityReservationConfigurationResponse updateBdsCapacityReservationConfiguration(
+            UpdateBdsCapacityReservationConfigurationRequest request);
 
     /**
      * Updates the Big Data Service cluster identified by the given ID.

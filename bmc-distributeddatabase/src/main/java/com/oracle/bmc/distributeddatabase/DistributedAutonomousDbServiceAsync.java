@@ -10,7 +10,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
 /**
  * Use the Globally Distributed Database service APIs to create and manage the Globally distributed databases.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
 
     /**
@@ -116,6 +116,26 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Configure autoResourceManagement options for the Globally distributed autonomous database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>
+            configureDistributedAutonomousDatabaseAutoResourceManagement(
+                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementRequest,
+                                    ConfigureDistributedAutonomousDatabaseAutoResourceManagementResponse>
+                            handler);
+
+    /**
      * Configure wallets on Global Service Manager(GSM) instances for a Globally distributed autonomous database.
      *
      *
@@ -215,53 +235,6 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generate the common certificate signing request for GSMs. Download the <globalautonomousdb-prefix>.csr file from
-     * API response. Users can use this .csr file to generate the CA signed certificate, and as a next step
-     * use 'uploadSignedCertificateAndGenerateWallet' API to upload the CA signed certificate to GSM, and
-     * generate wallets for the GSM instances of the Globally distributed autonomous database.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-            downloadDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                                    DownloadDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                            handler);
-
-    /**
-     * Generate the certificate signing request for GSM instances of the Globally distributed autonomous database. Once certificate signing
-     * request is generated, then customers can download the certificate signing request using
-     * 'downloadGsmCertificateSigningRequest' api call.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-            generateDistributedAutonomousDatabaseGsmCertificateSigningRequest(
-                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest
-                            request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestRequest,
-                                    GenerateDistributedAutonomousDatabaseGsmCertificateSigningRequestResponse>
-                            handler);
-
-    /**
      * Generate the wallet associated with Globally distributed autonomous database.
      *
      *
@@ -317,6 +290,26 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     GetDistributedAutonomousDatabaseRaftMetricRequest,
                                     GetDistributedAutonomousDatabaseRaftMetricResponse>
+                            handler);
+
+    /**
+     * Operation to retrieve move RU invocation history and status for the Globally distributed autonomous database.
+     * Results are ordered by created timestamp in descending order.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDistributedAutonomousDatabaseRuChangeLogResponse>
+            getDistributedAutonomousDatabaseRuChangeLog(
+                    GetDistributedAutonomousDatabaseRuChangeLogRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDistributedAutonomousDatabaseRuChangeLogRequest,
+                                    GetDistributedAutonomousDatabaseRuChangeLogResponse>
                             handler);
 
     /**
@@ -416,7 +409,26 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Start the shards, catalog and GSMs of Globally distributed autonomous database.
+     * Scale global service manager(GSM aka shard director) instances for the Globally distributed autonomous database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ScaleDistributedAutonomousDatabaseGsmsResponse>
+            scaleDistributedAutonomousDatabaseGsms(
+                    ScaleDistributedAutonomousDatabaseGsmsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ScaleDistributedAutonomousDatabaseGsmsRequest,
+                                    ScaleDistributedAutonomousDatabaseGsmsResponse>
+                            handler);
+
+    /**
+     * Start the shards, catalog, GSMs and GDSCTL instances of Globally distributed autonomous database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -434,7 +446,7 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Stop the shards, catalog and GSM instances for the Globally distributed autonomous database.
+     * Stop the shards, catalog, GSMs and GDSCTL instances for the Globally distributed autonomous database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -468,29 +480,6 @@ public interface DistributedAutonomousDbServiceAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateDistributedAutonomousDatabaseRequest,
                                     UpdateDistributedAutonomousDatabaseResponse>
-                            handler);
-
-    /**
-     * Upload the CA signed certificate to the GSM instances and generate wallets for GSM instances of the
-     * Globally distributed autonomous database. Customer shall provide the CA signed certificate key details by adding the certificate
-     * in request body.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>
-            uploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWallet(
-                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest
-                            request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletRequest,
-                                    UploadDistributedAutonomousDatabaseSignedCertificateAndGenerateWalletResponse>
                             handler);
 
     /**

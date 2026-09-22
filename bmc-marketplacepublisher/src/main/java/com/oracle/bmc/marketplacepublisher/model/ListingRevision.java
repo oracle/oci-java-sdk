@@ -57,6 +57,7 @@ public class ListingRevision extends com.oracle.bmc.http.internal.ExplicitlySetB
         "supportContacts",
         "supportLinks",
         "icon",
+        "banner",
         "status",
         "statusNotes",
         "lifecycleState",
@@ -85,6 +86,7 @@ public class ListingRevision extends com.oracle.bmc.http.internal.ExplicitlySetB
             java.util.List<SupportContact> supportContacts,
             java.util.List<NamedLink> supportLinks,
             ListingRevisionIconAttachment icon,
+            ListingRevisionBannerAttachment banner,
             Status status,
             String statusNotes,
             LifecycleState lifecycleState,
@@ -112,6 +114,7 @@ public class ListingRevision extends com.oracle.bmc.http.internal.ExplicitlySetB
         this.supportContacts = supportContacts;
         this.supportLinks = supportLinks;
         this.icon = icon;
+        this.banner = banner;
         this.status = status;
         this.statusNotes = statusNotes;
         this.lifecycleState = lifecycleState;
@@ -358,6 +361,13 @@ public class ListingRevision extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     public ListingRevisionIconAttachment getIcon() {
         return icon;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("banner")
+    private final ListingRevisionBannerAttachment banner;
+
+    public ListingRevisionBannerAttachment getBanner() {
+        return banner;
     }
 
     /**
@@ -628,6 +638,7 @@ public class ListingRevision extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append(", supportContacts=").append(String.valueOf(this.supportContacts));
         sb.append(", supportLinks=").append(String.valueOf(this.supportLinks));
         sb.append(", icon=").append(String.valueOf(this.icon));
+        sb.append(", banner=").append(String.valueOf(this.banner));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", statusNotes=").append(String.valueOf(this.statusNotes));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -668,6 +679,7 @@ public class ListingRevision extends com.oracle.bmc.http.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.supportContacts, other.supportContacts)
                 && java.util.Objects.equals(this.supportLinks, other.supportLinks)
                 && java.util.Objects.equals(this.icon, other.icon)
+                && java.util.Objects.equals(this.banner, other.banner)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.statusNotes, other.statusNotes)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -719,6 +731,7 @@ public class ListingRevision extends com.oracle.bmc.http.internal.ExplicitlySetB
                         + (this.supportContacts == null ? 43 : this.supportContacts.hashCode());
         result = (result * PRIME) + (this.supportLinks == null ? 43 : this.supportLinks.hashCode());
         result = (result * PRIME) + (this.icon == null ? 43 : this.icon.hashCode());
+        result = (result * PRIME) + (this.banner == null ? 43 : this.banner.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.statusNotes == null ? 43 : this.statusNotes.hashCode());
         result =

@@ -61,6 +61,23 @@ public interface IotAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Activates the IoT flow runtime identified by the specified OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateIotFlowRuntimeResponse> activateIotFlowRuntime(
+            ActivateIotFlowRuntimeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ActivateIotFlowRuntimeRequest, ActivateIotFlowRuntimeResponse>
+                    handler);
+
+    /**
      * Moves an IoT domain to a different compartment within the same tenancy. For information about moving resources between
      * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
@@ -115,6 +132,26 @@ public interface IotAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeIotDomainGroupCompartmentRequest,
                                     ChangeIotDomainGroupCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves an IoT flow runtime to a different compartment within the same tenancy. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeIotFlowRuntimeCompartmentResponse>
+            changeIotFlowRuntimeCompartment(
+                    ChangeIotFlowRuntimeCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeIotFlowRuntimeCompartmentRequest,
+                                    ChangeIotFlowRuntimeCompartmentResponse>
                             handler);
 
     /**
@@ -257,6 +294,40 @@ public interface IotAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an IoT flow runtime.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateIotFlowRuntimeResponse> createIotFlowRuntime(
+            CreateIotFlowRuntimeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateIotFlowRuntimeRequest, CreateIotFlowRuntimeResponse>
+                    handler);
+
+    /**
+     * Deactivates the IoT flow runtime identified by the specified OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateIotFlowRuntimeResponse> deactivateIotFlowRuntime(
+            DeactivateIotFlowRuntimeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateIotFlowRuntimeRequest, DeactivateIotFlowRuntimeResponse>
+                    handler);
+
+    /**
      * Deletes the digital twin adapter identified by the specified OCID.
      *
      * @param request The request object containing the details to send
@@ -351,6 +422,22 @@ public interface IotAsync extends AutoCloseable {
             DeleteIotDomainGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteIotDomainGroupRequest, DeleteIotDomainGroupResponse>
+                    handler);
+
+    /**
+     * Deletes the IoT flow runtime identified by the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteIotFlowRuntimeResponse> deleteIotFlowRuntime(
+            DeleteIotFlowRuntimeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIotFlowRuntimeRequest, DeleteIotFlowRuntimeResponse>
                     handler);
 
     /**
@@ -485,6 +572,38 @@ public interface IotAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the IoT flow runtime identified by the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIotFlowRuntimeResponse> getIotFlowRuntime(
+            GetIotFlowRuntimeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIotFlowRuntimeRequest, GetIotFlowRuntimeResponse>
+                    handler);
+
+    /**
+     * Gets the opaque flows document for the IoT flow runtime identified by the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIotFlowRuntimeFlowsResponse> getIotFlowRuntimeFlows(
+            GetIotFlowRuntimeFlowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIotFlowRuntimeFlowsRequest, GetIotFlowRuntimeFlowsResponse>
+                    handler);
+
+    /**
      * Retrieves the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -615,6 +734,23 @@ public interface IotAsync extends AutoCloseable {
     java.util.concurrent.Future<ListIotDomainsResponse> listIotDomains(
             ListIotDomainsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListIotDomainsRequest, ListIotDomainsResponse>
+                    handler);
+
+    /**
+     * Lists IoT flow runtimes in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIotFlowRuntimesResponse> listIotFlowRuntimes(
+            ListIotFlowRuntimesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIotFlowRuntimesRequest, ListIotFlowRuntimesResponse>
                     handler);
 
     /**
@@ -762,5 +898,38 @@ public interface IotAsync extends AutoCloseable {
             UpdateIotDomainGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateIotDomainGroupRequest, UpdateIotDomainGroupResponse>
+                    handler);
+
+    /**
+     * Updates the IoT flow runtime identified by the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateIotFlowRuntimeResponse> updateIotFlowRuntime(
+            UpdateIotFlowRuntimeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIotFlowRuntimeRequest, UpdateIotFlowRuntimeResponse>
+                    handler);
+
+    /**
+     * Replaces the complete flows document for the IoT flow runtime identified by the specified OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateIotFlowRuntimeFlowsResponse> updateIotFlowRuntimeFlows(
+            UpdateIotFlowRuntimeFlowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIotFlowRuntimeFlowsRequest, UpdateIotFlowRuntimeFlowsResponse>
                     handler);
 }

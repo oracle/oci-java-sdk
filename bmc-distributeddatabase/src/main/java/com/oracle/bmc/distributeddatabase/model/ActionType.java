@@ -7,7 +7,7 @@ package com.oracle.bmc.distributeddatabase.model;
 /**
  * Possible types of actions.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public enum ActionType {
     Created("CREATED"),
     Updated("UPDATED"),

@@ -34,6 +34,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         "networkConfig",
         "clusterDetails",
         "nodes",
+        "bdsCapacityReservationConfigurations",
         "cloudSqlDetails",
         "createdBy",
         "timeCreated",
@@ -63,6 +64,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             NetworkConfig networkConfig,
             ClusterDetails clusterDetails,
             java.util.List<Node> nodes,
+            java.util.List<BdsCapacityReservationConfiguration>
+                    bdsCapacityReservationConfigurations,
             CloudSqlDetails cloudSqlDetails,
             String createdBy,
             java.util.Date timeCreated,
@@ -91,6 +94,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         this.networkConfig = networkConfig;
         this.clusterDetails = clusterDetails;
         this.nodes = nodes;
+        this.bdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
         this.cloudSqlDetails = cloudSqlDetails;
         this.createdBy = createdBy;
         this.timeCreated = timeCreated;
@@ -316,6 +320,25 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder nodes(java.util.List<Node> nodes) {
             this.nodes = nodes;
             this.__explicitlySet__.add("nodes");
+            return this;
+        }
+        /**
+         * The list of BDS capacity reservation configurations associated with the cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("bdsCapacityReservationConfigurations")
+        private java.util.List<BdsCapacityReservationConfiguration>
+                bdsCapacityReservationConfigurations;
+
+        /**
+         * The list of BDS capacity reservation configurations associated with the cluster.
+         * @param bdsCapacityReservationConfigurations the value to set
+         * @return this builder
+         **/
+        public Builder bdsCapacityReservationConfigurations(
+                java.util.List<BdsCapacityReservationConfiguration>
+                        bdsCapacityReservationConfigurations) {
+            this.bdsCapacityReservationConfigurations = bdsCapacityReservationConfigurations;
+            this.__explicitlySet__.add("bdsCapacityReservationConfigurations");
             return this;
         }
 
@@ -544,6 +567,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.networkConfig,
                             this.clusterDetails,
                             this.nodes,
+                            this.bdsCapacityReservationConfigurations,
                             this.cloudSqlDetails,
                             this.createdBy,
                             this.timeCreated,
@@ -606,6 +630,10 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("nodes")) {
                 this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("bdsCapacityReservationConfigurations")) {
+                this.bdsCapacityReservationConfigurations(
+                        model.getBdsCapacityReservationConfigurations());
             }
             if (model.wasPropertyExplicitlySet("cloudSqlDetails")) {
                 this.cloudSqlDetails(model.getCloudSqlDetails());
@@ -952,6 +980,22 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         return nodes;
     }
 
+    /**
+     * The list of BDS capacity reservation configurations associated with the cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bdsCapacityReservationConfigurations")
+    private final java.util.List<BdsCapacityReservationConfiguration>
+            bdsCapacityReservationConfigurations;
+
+    /**
+     * The list of BDS capacity reservation configurations associated with the cluster.
+     * @return the value
+     **/
+    public java.util.List<BdsCapacityReservationConfiguration>
+            getBdsCapacityReservationConfigurations() {
+        return bdsCapacityReservationConfigurations;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("cloudSqlDetails")
     private final CloudSqlDetails cloudSqlDetails;
 
@@ -1209,6 +1253,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", networkConfig=").append(String.valueOf(this.networkConfig));
         sb.append(", clusterDetails=").append(String.valueOf(this.clusterDetails));
         sb.append(", nodes=").append(String.valueOf(this.nodes));
+        sb.append(", bdsCapacityReservationConfigurations=")
+                .append(String.valueOf(this.bdsCapacityReservationConfigurations));
         sb.append(", cloudSqlDetails=").append(String.valueOf(this.cloudSqlDetails));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1253,6 +1299,9 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.networkConfig, other.networkConfig)
                 && java.util.Objects.equals(this.clusterDetails, other.clusterDetails)
                 && java.util.Objects.equals(this.nodes, other.nodes)
+                && java.util.Objects.equals(
+                        this.bdsCapacityReservationConfigurations,
+                        other.bdsCapacityReservationConfigurations)
                 && java.util.Objects.equals(this.cloudSqlDetails, other.cloudSqlDetails)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -1314,6 +1363,11 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                 (result * PRIME)
                         + (this.clusterDetails == null ? 43 : this.clusterDetails.hashCode());
         result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bdsCapacityReservationConfigurations == null
+                                ? 43
+                                : this.bdsCapacityReservationConfigurations.hashCode());
         result =
                 (result * PRIME)
                         + (this.cloudSqlDetails == null ? 43 : this.cloudSqlDetails.hashCode());

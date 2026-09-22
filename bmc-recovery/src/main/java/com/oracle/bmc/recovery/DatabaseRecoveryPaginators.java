@@ -34,6 +34,119 @@ public class DatabaseRecoveryPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listLongTermBackups operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListLongTermBackupsResponse> listLongTermBackupsResponseIterator(
+            final ListLongTermBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListLongTermBackupsRequest.Builder, ListLongTermBackupsRequest,
+                ListLongTermBackupsResponse>(
+                new java.util.function.Supplier<ListLongTermBackupsRequest.Builder>() {
+                    @Override
+                    public ListLongTermBackupsRequest.Builder get() {
+                        return ListLongTermBackupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListLongTermBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListLongTermBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLongTermBackupsRequest.Builder>,
+                        ListLongTermBackupsRequest>() {
+                    @Override
+                    public ListLongTermBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLongTermBackupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListLongTermBackupsRequest, ListLongTermBackupsResponse>() {
+                    @Override
+                    public ListLongTermBackupsResponse apply(ListLongTermBackupsRequest request) {
+                        return client.listLongTermBackups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.recovery.model.LongTermBackupSummary} objects
+     * contained in responses from the listLongTermBackups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.recovery.model.LongTermBackupSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.recovery.model.LongTermBackupSummary>
+            listLongTermBackupsRecordIterator(final ListLongTermBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListLongTermBackupsRequest.Builder, ListLongTermBackupsRequest,
+                ListLongTermBackupsResponse, com.oracle.bmc.recovery.model.LongTermBackupSummary>(
+                new java.util.function.Supplier<ListLongTermBackupsRequest.Builder>() {
+                    @Override
+                    public ListLongTermBackupsRequest.Builder get() {
+                        return ListLongTermBackupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListLongTermBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListLongTermBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLongTermBackupsRequest.Builder>,
+                        ListLongTermBackupsRequest>() {
+                    @Override
+                    public ListLongTermBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLongTermBackupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListLongTermBackupsRequest, ListLongTermBackupsResponse>() {
+                    @Override
+                    public ListLongTermBackupsResponse apply(ListLongTermBackupsRequest request) {
+                        return client.listLongTermBackups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListLongTermBackupsResponse,
+                        java.util.List<com.oracle.bmc.recovery.model.LongTermBackupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.recovery.model.LongTermBackupSummary>
+                            apply(ListLongTermBackupsResponse response) {
+                        return response.getLongTermBackupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listProtectedDatabases operation. This iterable
      * will fetch more data from the server as needed.
      *

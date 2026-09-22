@@ -2705,6 +2705,131 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAvailableMaintenanceWindows operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAvailableMaintenanceWindowsResponse>
+            listAvailableMaintenanceWindowsResponseIterator(
+                    final ListAvailableMaintenanceWindowsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAvailableMaintenanceWindowsRequest.Builder,
+                ListAvailableMaintenanceWindowsRequest, ListAvailableMaintenanceWindowsResponse>(
+                new java.util.function.Supplier<ListAvailableMaintenanceWindowsRequest.Builder>() {
+                    @Override
+                    public ListAvailableMaintenanceWindowsRequest.Builder get() {
+                        return ListAvailableMaintenanceWindowsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAvailableMaintenanceWindowsResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableMaintenanceWindowsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableMaintenanceWindowsRequest.Builder>,
+                        ListAvailableMaintenanceWindowsRequest>() {
+                    @Override
+                    public ListAvailableMaintenanceWindowsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableMaintenanceWindowsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableMaintenanceWindowsRequest,
+                        ListAvailableMaintenanceWindowsResponse>() {
+                    @Override
+                    public ListAvailableMaintenanceWindowsResponse apply(
+                            ListAvailableMaintenanceWindowsRequest request) {
+                        return client.listAvailableMaintenanceWindows(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.AutonomousDatabaseMaintenanceWindowSummary} objects
+     * contained in responses from the listAvailableMaintenanceWindows operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.AutonomousDatabaseMaintenanceWindowSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousDatabaseMaintenanceWindowSummary>
+            listAvailableMaintenanceWindowsRecordIterator(
+                    final ListAvailableMaintenanceWindowsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAvailableMaintenanceWindowsRequest.Builder,
+                ListAvailableMaintenanceWindowsRequest, ListAvailableMaintenanceWindowsResponse,
+                com.oracle.bmc.database.model.AutonomousDatabaseMaintenanceWindowSummary>(
+                new java.util.function.Supplier<ListAvailableMaintenanceWindowsRequest.Builder>() {
+                    @Override
+                    public ListAvailableMaintenanceWindowsRequest.Builder get() {
+                        return ListAvailableMaintenanceWindowsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAvailableMaintenanceWindowsResponse, String>() {
+                    @Override
+                    public String apply(ListAvailableMaintenanceWindowsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableMaintenanceWindowsRequest.Builder>,
+                        ListAvailableMaintenanceWindowsRequest>() {
+                    @Override
+                    public ListAvailableMaintenanceWindowsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableMaintenanceWindowsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableMaintenanceWindowsRequest,
+                        ListAvailableMaintenanceWindowsResponse>() {
+                    @Override
+                    public ListAvailableMaintenanceWindowsResponse apply(
+                            ListAvailableMaintenanceWindowsRequest request) {
+                        return client.listAvailableMaintenanceWindows(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAvailableMaintenanceWindowsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousDatabaseMaintenanceWindowSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .AutonomousDatabaseMaintenanceWindowSummary>
+                            apply(ListAvailableMaintenanceWindowsResponse response) {
+                        return response.getAutonomousDatabaseMaintenanceWindowCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBackupDestination operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -8018,6 +8143,116 @@ public class DatabasePaginators {
                     public java.util.List<com.oracle.bmc.database.model.FlexComponentSummary> apply(
                             ListFlexComponentsResponse response) {
                         return response.getFlexComponentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listGiHomes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListGiHomesResponse> listGiHomesResponseIterator(
+            final ListGiHomesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListGiHomesRequest.Builder, ListGiHomesRequest, ListGiHomesResponse>(
+                new java.util.function.Supplier<ListGiHomesRequest.Builder>() {
+                    @Override
+                    public ListGiHomesRequest.Builder get() {
+                        return ListGiHomesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGiHomesResponse, String>() {
+                    @Override
+                    public String apply(ListGiHomesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGiHomesRequest.Builder>,
+                        ListGiHomesRequest>() {
+                    @Override
+                    public ListGiHomesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGiHomesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListGiHomesRequest, ListGiHomesResponse>() {
+                    @Override
+                    public ListGiHomesResponse apply(ListGiHomesRequest request) {
+                        return client.listGiHomes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.GiHomeSummary} objects
+     * contained in responses from the listGiHomes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.GiHomeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.GiHomeSummary> listGiHomesRecordIterator(
+            final ListGiHomesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListGiHomesRequest.Builder, ListGiHomesRequest, ListGiHomesResponse,
+                com.oracle.bmc.database.model.GiHomeSummary>(
+                new java.util.function.Supplier<ListGiHomesRequest.Builder>() {
+                    @Override
+                    public ListGiHomesRequest.Builder get() {
+                        return ListGiHomesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGiHomesResponse, String>() {
+                    @Override
+                    public String apply(ListGiHomesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGiHomesRequest.Builder>,
+                        ListGiHomesRequest>() {
+                    @Override
+                    public ListGiHomesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGiHomesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListGiHomesRequest, ListGiHomesResponse>() {
+                    @Override
+                    public ListGiHomesResponse apply(ListGiHomesRequest request) {
+                        return client.listGiHomes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListGiHomesResponse,
+                        java.util.List<com.oracle.bmc.database.model.GiHomeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.GiHomeSummary> apply(
+                            ListGiHomesResponse response) {
+                        return response.getGiHomeCollection().getItems();
                     }
                 });
     }

@@ -8,6 +8,8 @@ import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @SdkClients({
+    BlueGreenDeploymentsAsyncClient.class,
+    BlueGreenDeploymentsClient.class,
     ChannelsAsyncClient.class,
     ChannelsClient.class,
     DbBackupsAsyncClient.class,

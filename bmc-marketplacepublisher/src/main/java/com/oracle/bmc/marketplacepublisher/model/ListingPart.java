@@ -21,6 +21,8 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
     @Deprecated
     @java.beans.ConstructorProperties({
         "sku",
+        "pricingPlanKey",
+        "billingModel",
         "metricType",
         "rateAllocation",
         "hasGovSku",
@@ -28,12 +30,16 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
     })
     public ListingPart(
             String sku,
+            String pricingPlanKey,
+            BillingModel billingModel,
             MetricType metricType,
             Float rateAllocation,
             Boolean hasGovSku,
             java.util.List<ListingMeter> meters) {
         super();
         this.sku = sku;
+        this.pricingPlanKey = pricingPlanKey;
+        this.billingModel = billingModel;
         this.metricType = metricType;
         this.rateAllocation = rateAllocation;
         this.hasGovSku = hasGovSku;
@@ -56,6 +62,38 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder sku(String sku) {
             this.sku = sku;
             this.__explicitlySet__.add("sku");
+            return this;
+        }
+        /**
+         * Unique identifier of the pricing plan.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pricingPlanKey")
+        private String pricingPlanKey;
+
+        /**
+         * Unique identifier of the pricing plan.
+         * @param pricingPlanKey the value to set
+         * @return this builder
+         **/
+        public Builder pricingPlanKey(String pricingPlanKey) {
+            this.pricingPlanKey = pricingPlanKey;
+            this.__explicitlySet__.add("pricingPlanKey");
+            return this;
+        }
+        /**
+         * The billing model for SaaS paid listing parts.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
+        private BillingModel billingModel;
+
+        /**
+         * The billing model for SaaS paid listing parts.
+         * @param billingModel the value to set
+         * @return this builder
+         **/
+        public Builder billingModel(BillingModel billingModel) {
+            this.billingModel = billingModel;
+            this.__explicitlySet__.add("billingModel");
             return this;
         }
         /**
@@ -130,6 +168,8 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
             ListingPart model =
                     new ListingPart(
                             this.sku,
+                            this.pricingPlanKey,
+                            this.billingModel,
                             this.metricType,
                             this.rateAllocation,
                             this.hasGovSku,
@@ -144,6 +184,12 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder copy(ListingPart model) {
             if (model.wasPropertyExplicitlySet("sku")) {
                 this.sku(model.getSku());
+            }
+            if (model.wasPropertyExplicitlySet("pricingPlanKey")) {
+                this.pricingPlanKey(model.getPricingPlanKey());
+            }
+            if (model.wasPropertyExplicitlySet("billingModel")) {
+                this.billingModel(model.getBillingModel());
             }
             if (model.wasPropertyExplicitlySet("metricType")) {
                 this.metricType(model.getMetricType());
@@ -187,25 +233,48 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The part's metric.
+     * Unique identifier of the pricing plan.
      **/
-    public enum MetricType {
-        OcpuHours("OCPU_HOURS"),
-        InstanceHours("INSTANCE_HOURS"),
-        CoreHours("CORE_HOURS"),
-        ;
+    @com.fasterxml.jackson.annotation.JsonProperty("pricingPlanKey")
+    private final String pricingPlanKey;
+
+    /**
+     * Unique identifier of the pricing plan.
+     * @return the value
+     **/
+    public String getPricingPlanKey() {
+        return pricingPlanKey;
+    }
+
+    /**
+     * The billing model for SaaS paid listing parts.
+     **/
+    public enum BillingModel {
+        FlatRate("FLAT_RATE"),
+        UsageBased("USAGE_BASED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BillingModel.class);
 
         private final String value;
-        private static java.util.Map<String, MetricType> map;
+        private static java.util.Map<String, BillingModel> map;
 
         static {
             map = new java.util.HashMap<>();
-            for (MetricType v : MetricType.values()) {
-                map.put(v.getValue(), v);
+            for (BillingModel v : BillingModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
-        MetricType(String value) {
+        BillingModel(String value) {
             this.value = value;
         }
 
@@ -215,13 +284,30 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
         }
 
         @com.fasterxml.jackson.annotation.JsonCreator
-        public static MetricType create(String key) {
+        public static BillingModel create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid MetricType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BillingModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
+    /**
+     * The billing model for SaaS paid listing parts.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
+    private final BillingModel billingModel;
+
+    /**
+     * The billing model for SaaS paid listing parts.
+     * @return the value
+     **/
+    public BillingModel getBillingModel() {
+        return billingModel;
+    }
+
     /**
      * The part's metric.
      **/
@@ -293,6 +379,8 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append("ListingPart(");
         sb.append("super=").append(super.toString());
         sb.append("sku=").append(String.valueOf(this.sku));
+        sb.append(", pricingPlanKey=").append(String.valueOf(this.pricingPlanKey));
+        sb.append(", billingModel=").append(String.valueOf(this.billingModel));
         sb.append(", metricType=").append(String.valueOf(this.metricType));
         sb.append(", rateAllocation=").append(String.valueOf(this.rateAllocation));
         sb.append(", hasGovSku=").append(String.valueOf(this.hasGovSku));
@@ -312,6 +400,8 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
 
         ListingPart other = (ListingPart) o;
         return java.util.Objects.equals(this.sku, other.sku)
+                && java.util.Objects.equals(this.pricingPlanKey, other.pricingPlanKey)
+                && java.util.Objects.equals(this.billingModel, other.billingModel)
                 && java.util.Objects.equals(this.metricType, other.metricType)
                 && java.util.Objects.equals(this.rateAllocation, other.rateAllocation)
                 && java.util.Objects.equals(this.hasGovSku, other.hasGovSku)
@@ -324,6 +414,10 @@ public final class ListingPart extends com.oracle.bmc.http.internal.ExplicitlySe
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.sku == null ? 43 : this.sku.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pricingPlanKey == null ? 43 : this.pricingPlanKey.hashCode());
+        result = (result * PRIME) + (this.billingModel == null ? 43 : this.billingModel.hashCode());
         result = (result * PRIME) + (this.metricType == null ? 43 : this.metricType.hashCode());
         result =
                 (result * PRIME)

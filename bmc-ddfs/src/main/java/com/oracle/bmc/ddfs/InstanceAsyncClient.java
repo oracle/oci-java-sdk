@@ -482,7 +482,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -525,7 +528,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 ChangeInstanceCompartmentConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ChangeInstanceCompartment", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ChangeInstanceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/ChangeInstanceCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeInstanceCompartmentResponse>
                 transformer =
@@ -577,7 +583,10 @@ public class InstanceAsyncClient implements InstanceAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "CreateInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "CreateInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/CreateInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateInstanceResponse>
                 transformer =
                         CreateInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -624,7 +633,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 DeleteInstanceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "DeleteInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "DeleteInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/DeleteInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteInstanceResponse>
                 transformer =
                         DeleteInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -665,7 +677,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 GetInstanceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "GetInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "GetInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/GetInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, GetInstanceResponse>
                 transformer =
                         GetInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -707,7 +722,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -748,7 +766,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 ListInstancesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListInstances", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListInstances",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/InstanceCollection/ListInstances");
         final java.util.function.Function<javax.ws.rs.core.Response, ListInstancesResponse>
                 transformer =
                         ListInstancesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -790,7 +811,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -834,7 +858,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -878,7 +905,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -921,7 +951,10 @@ public class InstanceAsyncClient implements InstanceAsync {
                 UpdateInstanceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Instance", "UpdateInstance", ib.getRequestUri().toString(), "");
+                        "Instance",
+                        "UpdateInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/UpdateInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
                 transformer =
                         UpdateInstanceConverter.fromResponse(java.util.Optional.of(serviceDetails));

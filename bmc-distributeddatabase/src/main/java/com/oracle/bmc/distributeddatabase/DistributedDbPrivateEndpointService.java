@@ -11,7 +11,7 @@ import com.oracle.bmc.distributeddatabase.responses.*;
  * Use the Globally Distributed Database service APIs to create and manage the Globally distributed databases.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public interface DistributedDbPrivateEndpointService extends AutoCloseable {
 
     /**
@@ -129,6 +129,20 @@ public interface DistributedDbPrivateEndpointService extends AutoCloseable {
      */
     ListDistributedDatabasePrivateEndpointsResponse listDistributedDatabasePrivateEndpoints(
             ListDistributedDatabasePrivateEndpointsRequest request);
+
+    /**
+     * Patch operation to update VCN network security group (NSG) IDs associated with the DistributedDatabasePrivateEndpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/distributeddatabase/PatchDistributedDatabasePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchDistributedDatabasePrivateEndpoint API.
+     */
+    PatchDistributedDatabasePrivateEndpointResponse patchDistributedDatabasePrivateEndpoint(
+            PatchDistributedDatabasePrivateEndpointRequest request);
 
     /**
      * Reinstates the proxy instance associated with the DistributedDatabasePrivateEndpoint.

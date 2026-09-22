@@ -388,7 +388,7 @@ public class DataSafeClient implements DataSafe {
             LOG.warn(
                     com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "DataSafeClient",
-                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
+                            "downloadCryptoAssessmentReport,downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
         }
     }
 
@@ -1415,6 +1415,51 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeAuditProfileCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeCryptoAssessmentCompartmentResponse changeCryptoAssessmentCompartment(
+            ChangeCryptoAssessmentCompartmentRequest request) {
+        LOG.trace("Called changeCryptoAssessmentCompartment");
+        final ChangeCryptoAssessmentCompartmentRequest interceptedRequest =
+                ChangeCryptoAssessmentCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCryptoAssessmentCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeCryptoAssessmentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ChangeCryptoAssessmentCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCryptoAssessmentCompartmentResponse>
+                transformer =
+                        ChangeCryptoAssessmentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeCryptoAssessmentCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -4342,6 +4387,45 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public DeleteCryptoAssessmentResponse deleteCryptoAssessment(
+            DeleteCryptoAssessmentRequest request) {
+        LOG.trace("Called deleteCryptoAssessment");
+        final DeleteCryptoAssessmentRequest interceptedRequest =
+                DeleteCryptoAssessmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/DeleteCryptoAssessment");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCryptoAssessmentResponse>
+                transformer =
+                        DeleteCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDataSafePrivateEndpointResponse deleteDataSafePrivateEndpoint(
             DeleteDataSafePrivateEndpointRequest request) {
         LOG.trace("Called deleteDataSafePrivateEndpoint");
@@ -5628,6 +5712,51 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public DownloadCryptoAssessmentReportResponse downloadCryptoAssessmentReport(
+            DownloadCryptoAssessmentReportRequest request) {
+        LOG.trace("Called downloadCryptoAssessmentReport");
+        final DownloadCryptoAssessmentReportRequest interceptedRequest =
+                DownloadCryptoAssessmentReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadCryptoAssessmentReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DownloadCryptoAssessmentReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/DownloadCryptoAssessmentReport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DownloadCryptoAssessmentReportResponse>
+                transformer =
+                        DownloadCryptoAssessmentReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDownloadCryptoAssessmentReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DownloadDiscoveryReportResponse downloadDiscoveryReport(
             DownloadDiscoveryReportRequest request) {
         LOG.trace("Called downloadDiscoveryReport");
@@ -6046,6 +6175,51 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getEnableDataSafeConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GenerateCryptoAssessmentReportResponse generateCryptoAssessmentReport(
+            GenerateCryptoAssessmentReportRequest request) {
+        LOG.trace("Called generateCryptoAssessmentReport");
+        final GenerateCryptoAssessmentReportRequest interceptedRequest =
+                GenerateCryptoAssessmentReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateCryptoAssessmentReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GenerateCryptoAssessmentReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GenerateCryptoAssessmentReport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateCryptoAssessmentReportResponse>
+                transformer =
+                        GenerateCryptoAssessmentReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getGenerateCryptoAssessmentReportDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -6837,6 +7011,83 @@ public class DataSafeClient implements DataSafe {
                         javax.ws.rs.core.Response, GetCompatibleFormatsForSensitiveTypesResponse>
                 transformer =
                         GetCompatibleFormatsForSensitiveTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetCryptoAssessmentResponse getCryptoAssessment(GetCryptoAssessmentRequest request) {
+        LOG.trace("Called getCryptoAssessment");
+        final GetCryptoAssessmentRequest interceptedRequest =
+                GetCryptoAssessmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GetCryptoAssessment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCryptoAssessmentResponse>
+                transformer =
+                        GetCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetCryptoAssessmentSqlnetParametersResponse getCryptoAssessmentSqlnetParameters(
+            GetCryptoAssessmentSqlnetParametersRequest request) {
+        LOG.trace("Called getCryptoAssessmentSqlnetParameters");
+        final GetCryptoAssessmentSqlnetParametersRequest interceptedRequest =
+                GetCryptoAssessmentSqlnetParametersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCryptoAssessmentSqlnetParametersConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetCryptoAssessmentSqlnetParameters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/GetCryptoAssessmentSqlnetParameters");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCryptoAssessmentSqlnetParametersResponse>
+                transformer =
+                        GetCryptoAssessmentSqlnetParametersConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -9270,6 +9521,393 @@ public class DataSafeClient implements DataSafe {
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListColumns");
         java.util.function.Function<javax.ws.rs.core.Response, ListColumnsResponse> transformer =
                 ListColumnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentBackupSetsResponse listCryptoAssessmentBackupSets(
+            ListCryptoAssessmentBackupSetsRequest request) {
+        LOG.trace("Called listCryptoAssessmentBackupSets");
+        final ListCryptoAssessmentBackupSetsRequest interceptedRequest =
+                ListCryptoAssessmentBackupSetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentBackupSetsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentBackupSets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentBackupSets");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentBackupSetsResponse>
+                transformer =
+                        ListCryptoAssessmentBackupSetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentCbomItemsResponse listCryptoAssessmentCbomItems(
+            ListCryptoAssessmentCbomItemsRequest request) {
+        LOG.trace("Called listCryptoAssessmentCbomItems");
+        final ListCryptoAssessmentCbomItemsRequest interceptedRequest =
+                ListCryptoAssessmentCbomItemsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentCbomItemsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentCbomItems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentCbomItems");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentCbomItemsResponse>
+                transformer =
+                        ListCryptoAssessmentCbomItemsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentCertificatesResponse listCryptoAssessmentCertificates(
+            ListCryptoAssessmentCertificatesRequest request) {
+        LOG.trace("Called listCryptoAssessmentCertificates");
+        final ListCryptoAssessmentCertificatesRequest interceptedRequest =
+                ListCryptoAssessmentCertificatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentCertificatesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentCertificates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentCertificates");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentCertificatesResponse>
+                transformer =
+                        ListCryptoAssessmentCertificatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentFindingAnalyticsResponse listCryptoAssessmentFindingAnalytics(
+            ListCryptoAssessmentFindingAnalyticsRequest request) {
+        LOG.trace("Called listCryptoAssessmentFindingAnalytics");
+        final ListCryptoAssessmentFindingAnalyticsRequest interceptedRequest =
+                ListCryptoAssessmentFindingAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentFindingAnalyticsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindingAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindingAnalytics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentFindingAnalyticsResponse>
+                transformer =
+                        ListCryptoAssessmentFindingAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentFindingTargetsResponse listCryptoAssessmentFindingTargets(
+            ListCryptoAssessmentFindingTargetsRequest request) {
+        LOG.trace("Called listCryptoAssessmentFindingTargets");
+        final ListCryptoAssessmentFindingTargetsRequest interceptedRequest =
+                ListCryptoAssessmentFindingTargetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentFindingTargetsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindingTargets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindingTargets");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentFindingTargetsResponse>
+                transformer =
+                        ListCryptoAssessmentFindingTargetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentFindingsResponse listCryptoAssessmentFindings(
+            ListCryptoAssessmentFindingsRequest request) {
+        LOG.trace("Called listCryptoAssessmentFindings");
+        final ListCryptoAssessmentFindingsRequest interceptedRequest =
+                ListCryptoAssessmentFindingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentFindingsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentFindings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentFindings");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCryptoAssessmentFindingsResponse>
+                transformer =
+                        ListCryptoAssessmentFindingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentKeysResponse listCryptoAssessmentKeys(
+            ListCryptoAssessmentKeysRequest request) {
+        LOG.trace("Called listCryptoAssessmentKeys");
+        final ListCryptoAssessmentKeysRequest interceptedRequest =
+                ListCryptoAssessmentKeysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentKeysConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentKeys");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCryptoAssessmentKeysResponse>
+                transformer =
+                        ListCryptoAssessmentKeysConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentTdeObjectsResponse listCryptoAssessmentTdeObjects(
+            ListCryptoAssessmentTdeObjectsRequest request) {
+        LOG.trace("Called listCryptoAssessmentTdeObjects");
+        final ListCryptoAssessmentTdeObjectsRequest interceptedRequest =
+                ListCryptoAssessmentTdeObjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentTdeObjectsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentTdeObjects",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentTdeObjects");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCryptoAssessmentTdeObjectsResponse>
+                transformer =
+                        ListCryptoAssessmentTdeObjectsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentWalletsResponse listCryptoAssessmentWallets(
+            ListCryptoAssessmentWalletsRequest request) {
+        LOG.trace("Called listCryptoAssessmentWallets");
+        final ListCryptoAssessmentWalletsRequest interceptedRequest =
+                ListCryptoAssessmentWalletsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentWalletsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessmentWallets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessmentWallets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCryptoAssessmentWalletsResponse>
+                transformer =
+                        ListCryptoAssessmentWalletsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCryptoAssessmentsResponse listCryptoAssessments(
+            ListCryptoAssessmentsRequest request) {
+        LOG.trace("Called listCryptoAssessments");
+        final ListCryptoAssessmentsRequest interceptedRequest =
+                ListCryptoAssessmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCryptoAssessmentsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListCryptoAssessments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/ListCryptoAssessments");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCryptoAssessmentsResponse>
+                transformer =
+                        ListCryptoAssessmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -12877,6 +13515,49 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public RefreshCryptoAssessmentResponse refreshCryptoAssessment(
+            RefreshCryptoAssessmentRequest request) {
+        LOG.trace("Called refreshCryptoAssessment");
+        final RefreshCryptoAssessmentRequest interceptedRequest =
+                RefreshCryptoAssessmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/RefreshCryptoAssessment");
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshCryptoAssessmentResponse>
+                transformer =
+                        RefreshCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRunCryptoAssessmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RefreshDatabaseSecurityConfigurationResponse refreshDatabaseSecurityConfiguration(
             RefreshDatabaseSecurityConfigurationRequest request) {
         LOG.trace("Called refreshDatabaseSecurityConfiguration");
@@ -14057,6 +14738,48 @@ public class DataSafeClient implements DataSafe {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateAuditTrailDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateCryptoAssessmentResponse updateCryptoAssessment(
+            UpdateCryptoAssessmentRequest request) {
+        LOG.trace("Called updateCryptoAssessment");
+        final UpdateCryptoAssessmentRequest interceptedRequest =
+                UpdateCryptoAssessmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCryptoAssessmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateCryptoAssessment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/CryptoAssessment/UpdateCryptoAssessment");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCryptoAssessmentResponse>
+                transformer =
+                        UpdateCryptoAssessmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateCryptoAssessmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

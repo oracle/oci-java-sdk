@@ -10,7 +10,7 @@ import com.oracle.bmc.distributeddatabase.requests.*;
 import com.oracle.bmc.distributeddatabase.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20260101")
 public class ListDistributedDatabasesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -34,13 +34,21 @@ public class ListDistributedDatabasesConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20250101").path("distributedDatabases");
+                client.getBaseTarget().path("/20260101").path("distributedDatabases");
 
         target =
                 target.queryParam(
                         "compartmentId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
+
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
 
         if (request.getPrivateEndpointId() != null) {
             target =
@@ -90,6 +98,14 @@ public class ListDistributedDatabasesConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getIsAutoResourceManagementEnabled() != null) {
+            target =
+                    target.queryParam(
+                            "isAutoResourceManagementEnabled",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsAutoResourceManagementEnabled()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(
@@ -103,7 +119,7 @@ public class ListDistributedDatabasesConverter {
                     target.queryParam(
                             "dbDeploymentType",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDbDeploymentType().getValue()));
+                                    request.getDbDeploymentType()));
         }
 
         if (request.getMetadata() != null) {

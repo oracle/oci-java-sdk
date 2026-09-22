@@ -35,6 +35,22 @@ public final class SaaSPricingPlan extends PricingPlan {
             return this;
         }
         /**
+         * Unique identifier of the pricing plan.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pricingPlanKey")
+        private String pricingPlanKey;
+
+        /**
+         * Unique identifier of the pricing plan.
+         * @param pricingPlanKey the value to set
+         * @return this builder
+         **/
+        public Builder pricingPlanKey(String pricingPlanKey) {
+            this.pricingPlanKey = pricingPlanKey;
+            this.__explicitlySet__.add("pricingPlanKey");
+            return this;
+        }
+        /**
          * The plan name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -83,6 +99,22 @@ public final class SaaSPricingPlan extends PricingPlan {
             return this;
         }
         /**
+         * The plan duration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("planDuration")
+        private PlanDuration planDuration;
+
+        /**
+         * The plan duration.
+         * @param planDuration the value to set
+         * @return this builder
+         **/
+        public Builder planDuration(PlanDuration planDuration) {
+            this.planDuration = planDuration;
+            this.__explicitlySet__.add("planDuration");
+            return this;
+        }
+        /**
          * Additional metadata key/value pairs for the saas pricing.
          *
          **/
@@ -108,9 +140,11 @@ public final class SaaSPricingPlan extends PricingPlan {
             SaaSPricingPlan model =
                     new SaaSPricingPlan(
                             this.rates,
+                            this.pricingPlanKey,
                             this.name,
                             this.planDescription,
                             this.billingFrequency,
+                            this.planDuration,
                             this.extendedMetadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -123,6 +157,9 @@ public final class SaaSPricingPlan extends PricingPlan {
             if (model.wasPropertyExplicitlySet("rates")) {
                 this.rates(model.getRates());
             }
+            if (model.wasPropertyExplicitlySet("pricingPlanKey")) {
+                this.pricingPlanKey(model.getPricingPlanKey());
+            }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
             }
@@ -131,6 +168,9 @@ public final class SaaSPricingPlan extends PricingPlan {
             }
             if (model.wasPropertyExplicitlySet("billingFrequency")) {
                 this.billingFrequency(model.getBillingFrequency());
+            }
+            if (model.wasPropertyExplicitlySet("planDuration")) {
+                this.planDuration(model.getPlanDuration());
             }
             if (model.wasPropertyExplicitlySet("extendedMetadata")) {
                 this.extendedMetadata(model.getExtendedMetadata());
@@ -153,15 +193,33 @@ public final class SaaSPricingPlan extends PricingPlan {
     @Deprecated
     public SaaSPricingPlan(
             java.util.List<PricingRate> rates,
+            String pricingPlanKey,
             String name,
             String planDescription,
             BillingFrequency billingFrequency,
+            PlanDuration planDuration,
             java.util.Map<String, String> extendedMetadata) {
         super(rates);
+        this.pricingPlanKey = pricingPlanKey;
         this.name = name;
         this.planDescription = planDescription;
         this.billingFrequency = billingFrequency;
+        this.planDuration = planDuration;
         this.extendedMetadata = extendedMetadata;
+    }
+
+    /**
+     * Unique identifier of the pricing plan.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pricingPlanKey")
+    private final String pricingPlanKey;
+
+    /**
+     * Unique identifier of the pricing plan.
+     * @return the value
+     **/
+    public String getPricingPlanKey() {
+        return pricingPlanKey;
     }
 
     /**
@@ -198,7 +256,10 @@ public final class SaaSPricingPlan extends PricingPlan {
     public enum BillingFrequency {
         Monthly("MONTHLY"),
         Quarterly("QUARTERLY"),
-        Yearly("YEARLY"),
+        SemiAnnual("SEMI_ANNUAL"),
+        Annual("ANNUAL"),
+        Biennial("BIENNIAL"),
+        Triennial("TRIENNIAL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -256,6 +317,72 @@ public final class SaaSPricingPlan extends PricingPlan {
     }
 
     /**
+     * The plan duration.
+     **/
+    public enum PlanDuration {
+        Monthly("MONTHLY"),
+        Quarterly("QUARTERLY"),
+        SemiAnnual("SEMI_ANNUAL"),
+        Annual("ANNUAL"),
+        Biennial("BIENNIAL"),
+        Triennial("TRIENNIAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlanDuration.class);
+
+        private final String value;
+        private static java.util.Map<String, PlanDuration> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlanDuration v : PlanDuration.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PlanDuration(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlanDuration create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PlanDuration', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The plan duration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("planDuration")
+    private final PlanDuration planDuration;
+
+    /**
+     * The plan duration.
+     * @return the value
+     **/
+    public PlanDuration getPlanDuration() {
+        return planDuration;
+    }
+
+    /**
      * Additional metadata key/value pairs for the saas pricing.
      *
      **/
@@ -285,9 +412,11 @@ public final class SaaSPricingPlan extends PricingPlan {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SaaSPricingPlan(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", pricingPlanKey=").append(String.valueOf(this.pricingPlanKey));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", planDescription=").append(String.valueOf(this.planDescription));
         sb.append(", billingFrequency=").append(String.valueOf(this.billingFrequency));
+        sb.append(", planDuration=").append(String.valueOf(this.planDuration));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(")");
         return sb.toString();
@@ -303,9 +432,11 @@ public final class SaaSPricingPlan extends PricingPlan {
         }
 
         SaaSPricingPlan other = (SaaSPricingPlan) o;
-        return java.util.Objects.equals(this.name, other.name)
+        return java.util.Objects.equals(this.pricingPlanKey, other.pricingPlanKey)
+                && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.planDescription, other.planDescription)
                 && java.util.Objects.equals(this.billingFrequency, other.billingFrequency)
+                && java.util.Objects.equals(this.planDuration, other.planDuration)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && super.equals(other);
     }
@@ -314,6 +445,9 @@ public final class SaaSPricingPlan extends PricingPlan {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.pricingPlanKey == null ? 43 : this.pricingPlanKey.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result =
                 (result * PRIME)
@@ -321,6 +455,7 @@ public final class SaaSPricingPlan extends PricingPlan {
         result =
                 (result * PRIME)
                         + (this.billingFrequency == null ? 43 : this.billingFrequency.hashCode());
+        result = (result * PRIME) + (this.planDuration == null ? 43 : this.planDuration.hashCode());
         result =
                 (result * PRIME)
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());

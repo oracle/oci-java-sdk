@@ -29,9 +29,6 @@ public class ActivateTargetDatabaseConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.datasafe.requests.ActivateTargetDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(
-                request.getActivateTargetDatabaseDetails(),
-                "activateTargetDatabaseDetails is required");
         Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
