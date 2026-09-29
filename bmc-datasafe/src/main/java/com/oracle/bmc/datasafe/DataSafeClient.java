@@ -71,7 +71,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataSafeClient",
-                            "downloadCryptoAssessmentReport,downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
+                            "downloadCryptoAssessmentReport,downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadSubsettingLog,downloadSubsettingPolicy,downloadSubsettingReport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
         }
     }
 
@@ -1101,6 +1101,49 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeRegistrationPolicyCompartmentResponse changeRegistrationPolicyCompartment(
+            ChangeRegistrationPolicyCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getRegistrationPolicyId(), "registrationPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRegistrationPolicyCompartmentDetails(),
+                "changeRegistrationPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeRegistrationPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeRegistrationPolicyCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeRegistrationPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RegistrationPolicy/ChangeRegistrationPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRegistrationPolicyCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("registrationPolicies")
+                .appendPathParam(request.getRegistrationPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.RegistrationPolicy.class,
+                        ChangeRegistrationPolicyCompartmentResponse.Builder::registrationPolicy)
+                .handleResponseHeaderString(
+                        "etag", ChangeRegistrationPolicyCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRegistrationPolicyCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeRegistrationPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeReportCompartmentResponse changeReportCompartment(
             ChangeReportCompartmentRequest request) {
 
@@ -1604,6 +1647,75 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeSqlFirewallPolicyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeSubsettingPolicyCompartmentResponse changeSubsettingPolicyCompartment(
+            ChangeSubsettingPolicyCompartmentRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSubsettingPolicyCompartmentDetails(),
+                "changeSubsettingPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeSubsettingPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeSubsettingPolicyCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSubsettingPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/ChangeSubsettingPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSubsettingPolicyCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSubsettingPolicyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeSubsettingPolicyHealthReportCompartmentResponse
+            changeSubsettingPolicyHealthReportCompartment(
+                    ChangeSubsettingPolicyHealthReportCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getSubsettingPolicyHealthReportId(),
+                "subsettingPolicyHealthReportId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSubsettingPolicyHealthReportCompartmentDetails(),
+                "changeSubsettingPolicyHealthReportCompartmentDetails is required");
+
+        return clientCall(request, ChangeSubsettingPolicyHealthReportCompartmentResponse::builder)
+                .logger(LOG, "changeSubsettingPolicyHealthReportCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSubsettingPolicyHealthReportCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicyHealthReport/ChangeSubsettingPolicyHealthReportCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSubsettingPolicyHealthReportCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicyHealthReports")
+                .appendPathParam(request.getSubsettingPolicyHealthReportId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSubsettingPolicyHealthReportCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2391,6 +2503,42 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateRegistrationPolicyResponse createRegistrationPolicy(
+            CreateRegistrationPolicyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateRegistrationPolicyDetails(),
+                "createRegistrationPolicyDetails is required");
+
+        return clientCall(request, CreateRegistrationPolicyResponse::builder)
+                .logger(LOG, "createRegistrationPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateRegistrationPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RegistrationPolicy/CreateRegistrationPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRegistrationPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("registrationPolicies")
+                .accept("application/json")
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
+                .appendHeader("x-cluster-id", request.getXClusterId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.RegistrationPolicy.class,
+                        CreateRegistrationPolicyResponse.Builder::registrationPolicy)
+                .handleResponseHeaderString("etag", CreateRegistrationPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateRegistrationPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRegistrationPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateReportDefinitionResponse createReportDefinition(
             CreateReportDefinitionRequest request) {
         Objects.requireNonNull(
@@ -2809,6 +2957,108 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateSqlCollectionResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateSqlCollectionResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreateSubsettingPolicyResponse createSubsettingPolicy(
+            CreateSubsettingPolicyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSubsettingPolicyDetails(),
+                "createSubsettingPolicyDetails is required");
+
+        return clientCall(request, CreateSubsettingPolicyResponse::builder)
+                .logger(LOG, "createSubsettingPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSubsettingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/CreateSubsettingPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSubsettingPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingPolicy.class,
+                        CreateSubsettingPolicyResponse.Builder::subsettingPolicy)
+                .handleResponseHeaderString("etag", CreateSubsettingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSubsettingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSubsettingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateSubsettingRuleResponse createSubsettingRule(CreateSubsettingRuleRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSubsettingRuleDetails(),
+                "createSubsettingRuleDetails is required");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, CreateSubsettingRuleResponse::builder)
+                .logger(LOG, "createSubsettingRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSubsettingRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRule/CreateSubsettingRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSubsettingRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSubsettingRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSubsettingRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateSubsettingSchemaRelationResponse createSubsettingSchemaRelation(
+            CreateSubsettingSchemaRelationRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSubsettingSchemaRelationDetails(),
+                "createSubsettingSchemaRelationDetails is required");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, CreateSubsettingSchemaRelationResponse::builder)
+                .logger(LOG, "createSubsettingSchemaRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSubsettingSchemaRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingSchemaRelationSummary/CreateSubsettingSchemaRelation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSubsettingSchemaRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingSchemaRelations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSubsettingSchemaRelationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateSubsettingSchemaRelationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3549,6 +3799,36 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteRegistrationPolicyResponse deleteRegistrationPolicy(
+            DeleteRegistrationPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getRegistrationPolicyId(), "registrationPolicyId must not be blank");
+
+        return clientCall(request, DeleteRegistrationPolicyResponse::builder)
+                .logger(LOG, "deleteRegistrationPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteRegistrationPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RegistrationPolicy/DeleteRegistrationPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRegistrationPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("registrationPolicies")
+                .appendPathParam(request.getRegistrationPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteRegistrationPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRegistrationPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteReportDefinitionResponse deleteReportDefinition(
             DeleteReportDefinitionRequest request) {
 
@@ -3957,6 +4237,164 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         DeleteSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSqlFirewallPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSubsettingPolicyResponse deleteSubsettingPolicy(
+            DeleteSubsettingPolicyRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, DeleteSubsettingPolicyResponse::builder)
+                .logger(LOG, "deleteSubsettingPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSubsettingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/DeleteSubsettingPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSubsettingPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSubsettingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSubsettingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSubsettingPolicyHealthReportResponse deleteSubsettingPolicyHealthReport(
+            DeleteSubsettingPolicyHealthReportRequest request) {
+
+        Validate.notBlank(
+                request.getSubsettingPolicyHealthReportId(),
+                "subsettingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, DeleteSubsettingPolicyHealthReportResponse::builder)
+                .logger(LOG, "deleteSubsettingPolicyHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSubsettingPolicyHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicyHealthReport/DeleteSubsettingPolicyHealthReport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSubsettingPolicyHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicyHealthReports")
+                .appendPathParam(request.getSubsettingPolicyHealthReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSubsettingPolicyHealthReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteSubsettingPolicyHealthReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSubsettingReportResponse deleteSubsettingReport(
+            DeleteSubsettingReportRequest request) {
+
+        Validate.notBlank(request.getSubsettingReportId(), "subsettingReportId must not be blank");
+
+        return clientCall(request, DeleteSubsettingReportResponse::builder)
+                .logger(LOG, "deleteSubsettingReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSubsettingReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingReport/DeleteSubsettingReport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSubsettingReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingReports")
+                .appendPathParam(request.getSubsettingReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSubsettingReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSubsettingReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSubsettingRuleResponse deleteSubsettingRule(DeleteSubsettingRuleRequest request) {
+
+        Validate.notBlank(request.getSubsettingRuleKey(), "subsettingRuleKey must not be blank");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, DeleteSubsettingRuleResponse::builder)
+                .logger(LOG, "deleteSubsettingRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSubsettingRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRule/DeleteSubsettingRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSubsettingRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .appendPathParam(request.getSubsettingRuleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSubsettingRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSubsettingRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSubsettingSchemaRelationResponse deleteSubsettingSchemaRelation(
+            DeleteSubsettingSchemaRelationRequest request) {
+
+        Validate.notBlank(
+                request.getSubsettingSchemaRelationKey(),
+                "subsettingSchemaRelationKey must not be blank");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, DeleteSubsettingSchemaRelationResponse::builder)
+                .logger(LOG, "deleteSubsettingSchemaRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSubsettingSchemaRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingSchemaRelation/DeleteSubsettingSchemaRelation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSubsettingSchemaRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingSchemaRelations")
+                .appendPathParam(request.getSubsettingSchemaRelationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSubsettingSchemaRelationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteSubsettingSchemaRelationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4549,6 +4987,117 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DownloadSubsettingLogResponse downloadSubsettingLog(
+            DownloadSubsettingLogRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getDownloadSubsettingLogDetails(),
+                "downloadSubsettingLogDetails is required");
+
+        return clientCall(request, DownloadSubsettingLogResponse::builder)
+                .logger(LOG, "downloadSubsettingLog")
+                .serviceDetails(
+                        "DataSafe",
+                        "DownloadSubsettingLog",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/DownloadSubsettingLog")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadSubsettingLogRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("downloadLog")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        DownloadSubsettingLogResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", DownloadSubsettingLogResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DownloadSubsettingLogResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", DownloadSubsettingLogResponse.Builder::contentLength)
+                .callSync();
+    }
+
+    @Override
+    public DownloadSubsettingPolicyResponse downloadSubsettingPolicy(
+            DownloadSubsettingPolicyRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getDownloadSubsettingPolicyDetails(),
+                "downloadSubsettingPolicyDetails is required");
+
+        return clientCall(request, DownloadSubsettingPolicyResponse::builder)
+                .logger(LOG, "downloadSubsettingPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "DownloadSubsettingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/DownloadSubsettingPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadSubsettingPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("download")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        DownloadSubsettingPolicyResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", DownloadSubsettingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DownloadSubsettingPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", DownloadSubsettingPolicyResponse.Builder::contentLength)
+                .callSync();
+    }
+
+    @Override
+    public DownloadSubsettingReportResponse downloadSubsettingReport(
+            DownloadSubsettingReportRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getDownloadSubsettingReportDetails(),
+                "downloadSubsettingReportDetails is required");
+
+        return clientCall(request, DownloadSubsettingReportResponse::builder)
+                .logger(LOG, "downloadSubsettingReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DownloadSubsettingReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/DownloadSubsettingReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadSubsettingReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("downloadReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        DownloadSubsettingReportResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", DownloadSubsettingReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DownloadSubsettingReportResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", DownloadSubsettingReportResponse.Builder::contentLength)
+                .callSync();
+    }
+
+    @Override
     public DownloadUserAssessmentReportResponse downloadUserAssessmentReport(
             DownloadUserAssessmentReportRequest request) {
 
@@ -4618,6 +5167,38 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         EnableDataSafeConfigurationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", EnableDataSafeConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EstimateTableSizesResponse estimateTableSizes(EstimateTableSizesRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getEstimateTableSizesDetails(), "estimateTableSizesDetails is required");
+
+        return clientCall(request, EstimateTableSizesResponse::builder)
+                .logger(LOG, "estimateTableSizes")
+                .serviceDetails(
+                        "DataSafe",
+                        "EstimateTableSizes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/EstimateTableSizes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EstimateTableSizesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("estimateTableSizes")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", EstimateTableSizesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", EstimateTableSizesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4978,6 +5559,112 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         GenerateSqlFirewallPolicyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateSqlFirewallPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GenerateSubsettingHealthReportResponse generateSubsettingHealthReport(
+            GenerateSubsettingHealthReportRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateSubsettingHealthReportDetails(),
+                "generateSubsettingHealthReportDetails is required");
+
+        return clientCall(request, GenerateSubsettingHealthReportResponse::builder)
+                .logger(LOG, "generateSubsettingHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GenerateSubsettingHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicyHealthReport/GenerateSubsettingHealthReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateSubsettingHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("generateHealthReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateSubsettingHealthReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateSubsettingHealthReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GenerateSubsettingPolicyForDownloadResponse generateSubsettingPolicyForDownload(
+            GenerateSubsettingPolicyForDownloadRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateSubsettingPolicyForDownloadDetails(),
+                "generateSubsettingPolicyForDownloadDetails is required");
+
+        return clientCall(request, GenerateSubsettingPolicyForDownloadResponse::builder)
+                .logger(LOG, "generateSubsettingPolicyForDownload")
+                .serviceDetails(
+                        "DataSafe",
+                        "GenerateSubsettingPolicyForDownload",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/GenerateSubsettingPolicyForDownload")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateSubsettingPolicyForDownloadRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("generatePolicyForDownload")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateSubsettingPolicyForDownloadResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateSubsettingPolicyForDownloadResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GenerateSubsettingReportForDownloadResponse generateSubsettingReportForDownload(
+            GenerateSubsettingReportForDownloadRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateSubsettingReportForDownloadDetails(),
+                "generateSubsettingReportForDownloadDetails is required");
+
+        return clientCall(request, GenerateSubsettingReportForDownloadResponse::builder)
+                .logger(LOG, "generateSubsettingReportForDownload")
+                .serviceDetails(
+                        "DataSafe",
+                        "GenerateSubsettingReportForDownload",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/GenerateSubsettingReportForDownload")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateSubsettingReportForDownloadRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("generateReportForDownload")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateSubsettingReportForDownloadResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GenerateSubsettingReportForDownloadResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -5966,6 +6653,36 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetRegistrationPolicyResponse getRegistrationPolicy(
+            GetRegistrationPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getRegistrationPolicyId(), "registrationPolicyId must not be blank");
+
+        return clientCall(request, GetRegistrationPolicyResponse::builder)
+                .logger(LOG, "getRegistrationPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetRegistrationPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RegistrationPolicy/GetRegistrationPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRegistrationPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("registrationPolicies")
+                .appendPathParam(request.getRegistrationPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.RegistrationPolicy.class,
+                        GetRegistrationPolicyResponse.Builder::registrationPolicy)
+                .handleResponseHeaderString("etag", GetRegistrationPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRegistrationPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetReportResponse getReport(GetReportRequest request) {
 
         Validate.notBlank(request.getReportId(), "reportId must not be blank");
@@ -6548,6 +7265,164 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetSqlFirewallPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSqlFirewallPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSubsettingPolicyResponse getSubsettingPolicy(GetSubsettingPolicyRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, GetSubsettingPolicyResponse::builder)
+                .logger(LOG, "getSubsettingPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSubsettingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/GetSubsettingPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubsettingPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingPolicy.class,
+                        GetSubsettingPolicyResponse.Builder::subsettingPolicy)
+                .handleResponseHeaderString("etag", GetSubsettingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubsettingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSubsettingPolicyHealthReportResponse getSubsettingPolicyHealthReport(
+            GetSubsettingPolicyHealthReportRequest request) {
+
+        Validate.notBlank(
+                request.getSubsettingPolicyHealthReportId(),
+                "subsettingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, GetSubsettingPolicyHealthReportResponse::builder)
+                .logger(LOG, "getSubsettingPolicyHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSubsettingPolicyHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicyHealthReport/GetSubsettingPolicyHealthReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubsettingPolicyHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicyHealthReports")
+                .appendPathParam(request.getSubsettingPolicyHealthReportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReport.class,
+                        GetSubsettingPolicyHealthReportResponse.Builder
+                                ::subsettingPolicyHealthReport)
+                .handleResponseHeaderString(
+                        "etag", GetSubsettingPolicyHealthReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetSubsettingPolicyHealthReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSubsettingReportResponse getSubsettingReport(GetSubsettingReportRequest request) {
+
+        Validate.notBlank(request.getSubsettingReportId(), "subsettingReportId must not be blank");
+
+        return clientCall(request, GetSubsettingReportResponse::builder)
+                .logger(LOG, "getSubsettingReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSubsettingReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingReport/GetSubsettingReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubsettingReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingReports")
+                .appendPathParam(request.getSubsettingReportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingReport.class,
+                        GetSubsettingReportResponse.Builder::subsettingReport)
+                .handleResponseHeaderString("etag", GetSubsettingReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubsettingReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSubsettingRuleResponse getSubsettingRule(GetSubsettingRuleRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSubsettingRuleKey(), "subsettingRuleKey must not be blank");
+
+        return clientCall(request, GetSubsettingRuleResponse::builder)
+                .logger(LOG, "getSubsettingRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSubsettingRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRule/GetSubsettingRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubsettingRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .appendPathParam(request.getSubsettingRuleKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingRule.class,
+                        GetSubsettingRuleResponse.Builder::subsettingRule)
+                .handleResponseHeaderString("etag", GetSubsettingRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubsettingRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSubsettingSchemaRelationResponse getSubsettingSchemaRelation(
+            GetSubsettingSchemaRelationRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        Validate.notBlank(
+                request.getSubsettingSchemaRelationKey(),
+                "subsettingSchemaRelationKey must not be blank");
+
+        return clientCall(request, GetSubsettingSchemaRelationResponse::builder)
+                .logger(LOG, "getSubsettingSchemaRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSubsettingSchemaRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingSchemaRelation/GetSubsettingSchemaRelation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubsettingSchemaRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingSchemaRelations")
+                .appendPathParam(request.getSubsettingSchemaRelationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingSchemaRelation.class,
+                        GetSubsettingSchemaRelationResponse.Builder::subsettingSchemaRelation)
+                .handleResponseHeaderString(
+                        "etag", GetSubsettingSchemaRelationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubsettingSchemaRelationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -9667,6 +10542,96 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListRegistrationPoliciesResponse listRegistrationPolicies(
+            ListRegistrationPoliciesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRegistrationPoliciesResponse::builder)
+                .logger(LOG, "listRegistrationPolicies")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListRegistrationPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RegistrationPolicySummary/ListRegistrationPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRegistrationPoliciesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("registrationPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("enablementLevel", request.getEnablementLevel())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("registrationPolicyId", request.getRegistrationPolicyId())
+                .appendEnumQueryParam("connectionType", request.getConnectionType())
+                .appendQueryParam("connectionId", request.getConnectionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.RegistrationPolicyCollection.class,
+                        ListRegistrationPoliciesResponse.Builder::registrationPolicyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRegistrationPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRegistrationPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListRegistrationPoliciesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListRegistrationPolicyTargetDatabasesResponse listRegistrationPolicyTargetDatabases(
+            ListRegistrationPolicyTargetDatabasesRequest request) {
+
+        Validate.notBlank(
+                request.getRegistrationPolicyId(), "registrationPolicyId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRegistrationPolicyTargetDatabasesResponse::builder)
+                .logger(LOG, "listRegistrationPolicyTargetDatabases")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListRegistrationPolicyTargetDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RegistrationPolicy/ListRegistrationPolicyTargetDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRegistrationPolicyTargetDatabasesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("registrationPolicies")
+                .appendPathParam(request.getRegistrationPolicyId())
+                .appendPathParam("targetDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("targetDatabaseId", request.getTargetDatabaseId())
+                .appendEnumQueryParam("membershipStatus", request.getMembershipStatus())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model
+                                .RegistrationPolicyTargetDatabaseSummaryCollection.class,
+                        ListRegistrationPolicyTargetDatabasesResponse.Builder
+                                ::registrationPolicyTargetDatabaseSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListRegistrationPolicyTargetDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListRegistrationPolicyTargetDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListReportDefinitionsResponse listReportDefinitions(
             ListReportDefinitionsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -11153,6 +12118,584 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListSubsettedObjectsResponse listSubsettedObjects(ListSubsettedObjectsRequest request) {
+
+        Validate.notBlank(request.getSubsettingReportId(), "subsettingReportId must not be blank");
+
+        return clientCall(request, ListSubsettedObjectsResponse::builder)
+                .logger(LOG, "listSubsettedObjects")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettedObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettedObjectSummary/ListSubsettedObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettedObjectsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingReports")
+                .appendPathParam(request.getSubsettingReportId())
+                .appendPathParam("subsettedObjects")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettedObjectCollection.class,
+                        ListSubsettedObjectsResponse.Builder::subsettedObjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettedObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettedObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettedObjectsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingAnalyticsResponse listSubsettingAnalytics(
+            ListSubsettingAnalyticsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSubsettingAnalyticsResponse::builder)
+                .logger(LOG, "listSubsettingAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/ListSubsettingAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("groupBy", request.getGroupBy())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("subsettingPolicyId", request.getSubsettingPolicyId())
+                .appendQueryParam("targetDatabaseGroupId", request.getTargetDatabaseGroupId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingAnalyticsCollection.class,
+                        ListSubsettingAnalyticsResponse.Builder::subsettingAnalyticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettingAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingAnalyticsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingAnalyticsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingErrorsResponse listSubsettingErrors(ListSubsettingErrorsRequest request) {
+
+        Validate.notBlank(request.getSubsettingReportId(), "subsettingReportId must not be blank");
+
+        return clientCall(request, ListSubsettingErrorsResponse::builder)
+                .logger(LOG, "listSubsettingErrors")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingErrorSummary/ListSubsettingErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingErrorsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingReports")
+                .appendPathParam(request.getSubsettingReportId())
+                .appendPathParam("subsettingErrors")
+                .appendEnumQueryParam("stepName", request.getStepName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingErrorCollection.class,
+                        ListSubsettingErrorsResponse.Builder::subsettingErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettingErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingErrorsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingPoliciesResponse listSubsettingPolicies(
+            ListSubsettingPoliciesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSubsettingPoliciesResponse::builder)
+                .logger(LOG, "listSubsettingPolicies")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/ListSubsettingPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingPoliciesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendQueryParam("subsettingPolicyId", request.getSubsettingPolicyId())
+                .appendQueryParam("maskingPolicyId", request.getMaskingPolicyId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("sensitiveDataModelId", request.getSensitiveDataModelId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingPolicyCollection.class,
+                        ListSubsettingPoliciesResponse.Builder::subsettingPolicyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettingPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingPoliciesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingPolicyHealthReportLogsResponse listSubsettingPolicyHealthReportLogs(
+            ListSubsettingPolicyHealthReportLogsRequest request) {
+
+        Validate.notBlank(
+                request.getSubsettingPolicyHealthReportId(),
+                "subsettingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, ListSubsettingPolicyHealthReportLogsResponse::builder)
+                .logger(LOG, "listSubsettingPolicyHealthReportLogs")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingPolicyHealthReportLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicyHealthReport/ListSubsettingPolicyHealthReportLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingPolicyHealthReportLogsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicyHealthReports")
+                .appendPathParam(request.getSubsettingPolicyHealthReportId())
+                .appendPathParam("logs")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("messageType", request.getMessageType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportLogCollection
+                                .class,
+                        ListSubsettingPolicyHealthReportLogsResponse.Builder
+                                ::subsettingPolicyHealthReportLogCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSubsettingPolicyHealthReportLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSubsettingPolicyHealthReportLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSubsettingPolicyHealthReportLogsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingPolicyHealthReportsResponse listSubsettingPolicyHealthReports(
+            ListSubsettingPolicyHealthReportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSubsettingPolicyHealthReportsResponse::builder)
+                .logger(LOG, "listSubsettingPolicyHealthReports")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingPolicyHealthReports",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicyHealthReport/ListSubsettingPolicyHealthReports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingPolicyHealthReportsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicyHealthReports")
+                .appendQueryParam(
+                        "subsettingPolicyHealthReportId",
+                        request.getSubsettingPolicyHealthReportId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("subsettingPolicyId", request.getSubsettingPolicyId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportCollection.class,
+                        ListSubsettingPolicyHealthReportsResponse.Builder
+                                ::subsettingPolicyHealthReportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSubsettingPolicyHealthReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSubsettingPolicyHealthReportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSubsettingPolicyHealthReportsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingReportsResponse listSubsettingReports(
+            ListSubsettingReportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSubsettingReportsResponse::builder)
+                .logger(LOG, "listSubsettingReports")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingReports",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingReport/ListSubsettingReports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingReportsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingReports")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("subsettingPolicyId", request.getSubsettingPolicyId())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetDatabaseGroupId", request.getTargetDatabaseGroupId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingReportCollection.class,
+                        ListSubsettingReportsResponse.Builder::subsettingReportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettingReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingReportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingReportsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingRuleProcessingChainObjectsResponse
+            listSubsettingRuleProcessingChainObjects(
+                    ListSubsettingRuleProcessingChainObjectsRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSubsettingRuleKey(), "subsettingRuleKey must not be blank");
+
+        return clientCall(request, ListSubsettingRuleProcessingChainObjectsResponse::builder)
+                .logger(LOG, "listSubsettingRuleProcessingChainObjects")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingRuleProcessingChainObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRuleProcessingChainObjectSummary/ListSubsettingRuleProcessingChainObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingRuleProcessingChainObjectsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .appendPathParam(request.getSubsettingRuleKey())
+                .appendPathParam("processingChainObjects")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("isEnabledForProcessing", request.getIsEnabledForProcessing())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingRuleProcessingChainObjectsCollection
+                                .class,
+                        ListSubsettingRuleProcessingChainObjectsResponse.Builder
+                                ::subsettingRuleProcessingChainObjectsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSubsettingRuleProcessingChainObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSubsettingRuleProcessingChainObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSubsettingRuleProcessingChainObjectsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingRulesResponse listSubsettingRules(ListSubsettingRulesRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, ListSubsettingRulesResponse::builder)
+                .logger(LOG, "listSubsettingRules")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingRules",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRule/ListSubsettingRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingRulesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingRuleCollection.class,
+                        ListSubsettingRulesResponse.Builder::subsettingRuleCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettingRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingRulesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingSchemaObjectsResponse listSubsettingSchemaObjects(
+            ListSubsettingSchemaObjectsRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, ListSubsettingSchemaObjectsResponse::builder)
+                .logger(LOG, "listSubsettingSchemaObjects")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingSchemaObjects",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingSchemaObjectSummary/ListSubsettingSchemaObjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingSchemaObjectsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingSchemaObjects")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingSchemaObjectCollection.class,
+                        ListSubsettingSchemaObjectsResponse.Builder
+                                ::subsettingSchemaObjectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettingSchemaObjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingSchemaObjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingSchemaObjectsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingSchemaRelationsResponse listSubsettingSchemaRelations(
+            ListSubsettingSchemaRelationsRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, ListSubsettingSchemaRelationsResponse::builder)
+                .logger(LOG, "listSubsettingSchemaRelations")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingSchemaRelations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingSchemaRelationSummary/ListSubsettingSchemaRelations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingSchemaRelationsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingSchemaRelations")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("relationType", request.getRelationType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingSchemaRelationCollection.class,
+                        ListSubsettingSchemaRelationsResponse.Builder
+                                ::subsettingSchemaRelationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSubsettingSchemaRelationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingSchemaRelationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingSchemaRelationsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSubsettingSchemasResponse listSubsettingSchemas(
+            ListSubsettingSchemasRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, ListSubsettingSchemasResponse::builder)
+                .logger(LOG, "listSubsettingSchemas")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSubsettingSchemas",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingSchemaCollection/ListSubsettingSchemas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubsettingSchemasRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingSchemas")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isDerivedSchema", request.getIsDerivedSchema())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SubsettingSchemaCollection.class,
+                        ListSubsettingSchemasResponse.Builder::subsettingSchemaCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubsettingSchemasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubsettingSchemasResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSubsettingSchemasResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListTableEstimatesResponse listTableEstimates(ListTableEstimatesRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, ListTableEstimatesResponse::builder)
+                .logger(LOG, "listTableEstimates")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListTableEstimates",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TableEstimateSummary/ListTableEstimates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTableEstimatesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("tableEstimates")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.TableEstimateCollection.class,
+                        ListTableEstimatesResponse.Builder::tableEstimateCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTableEstimatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTableEstimatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTableEstimatesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
     public ListTablesResponse listTables(ListTablesRequest request) {
 
         Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
@@ -11357,6 +12900,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendPathParam("targetDatabases")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("associatedResourceId", request.getAssociatedResourceId())
+                .appendQueryParam("enablementResourceOcid", request.getEnablementResourceOcid())
                 .appendQueryParam("targetDatabaseId", request.getTargetDatabaseId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -11929,6 +13473,39 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ManagePrivilegesResponse managePrivileges(ManagePrivilegesRequest request) {
+
+        Validate.notBlank(request.getTargetDatabaseId(), "targetDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getManagePrivilegesDetails(), "managePrivilegesDetails is required");
+
+        return clientCall(request, ManagePrivilegesResponse::builder)
+                .logger(LOG, "managePrivileges")
+                .serviceDetails(
+                        "DataSafe",
+                        "ManagePrivileges",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ManagePrivileges")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ManagePrivilegesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("targetDatabases")
+                .appendPathParam(request.getTargetDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("managePrivileges")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ManagePrivilegesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ManagePrivilegesResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public MaskDataResponse maskData(MaskDataRequest request) {
 
         Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
@@ -12285,6 +13862,39 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         PatchSqlFirewallAllowedSqlResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchSqlFirewallAllowedSqlResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public PatchSubsettingRulesResponse patchSubsettingRules(PatchSubsettingRulesRequest request) {
+        Objects.requireNonNull(
+                request.getPatchSubsettingRulesDetails(),
+                "patchSubsettingRulesDetails is required");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, PatchSubsettingRulesResponse::builder)
+                .logger(LOG, "patchSubsettingRules")
+                .serviceDetails(
+                        "DataSafe",
+                        "PatchSubsettingRules",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRule/PatchSubsettingRules")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSubsettingRulesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchSubsettingRulesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSubsettingRulesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -13008,6 +14618,37 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public SubsetDataResponse subsetData(SubsetDataRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(request.getSubsetDataDetails(), "subsetDataDetails is required");
+
+        return clientCall(request, SubsetDataResponse::builder)
+                .logger(LOG, "subsetData")
+                .serviceDetails(
+                        "DataSafe",
+                        "SubsetData",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/SubsetData")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SubsetDataRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("subset")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SubsetDataResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SubsetDataResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public SuspendWorkRequestResponse suspendWorkRequest(SuspendWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -13704,6 +15345,88 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public UpdateProcessingChainObjectResponse updateProcessingChainObject(
+            UpdateProcessingChainObjectRequest request) {
+
+        Validate.notBlank(
+                request.getProcessingChainObjectKey(),
+                "processingChainObjectKey must not be blank");
+
+        Validate.notBlank(request.getSubsettingRuleKey(), "subsettingRuleKey must not be blank");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProcessingChainObjectDetails(),
+                "updateProcessingChainObjectDetails is required");
+
+        return clientCall(request, UpdateProcessingChainObjectResponse::builder)
+                .logger(LOG, "updateProcessingChainObject")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateProcessingChainObject",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRuleProcessingChainObjectSummary/UpdateProcessingChainObject")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProcessingChainObjectRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .appendPathParam(request.getSubsettingRuleKey())
+                .appendPathParam("processingChainObjects")
+                .appendPathParam(request.getProcessingChainObjectKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateProcessingChainObjectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProcessingChainObjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateRegistrationPolicyResponse updateRegistrationPolicy(
+            UpdateRegistrationPolicyRequest request) {
+
+        Validate.notBlank(
+                request.getRegistrationPolicyId(), "registrationPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRegistrationPolicyDetails(),
+                "updateRegistrationPolicyDetails is required");
+
+        return clientCall(request, UpdateRegistrationPolicyResponse::builder)
+                .logger(LOG, "updateRegistrationPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateRegistrationPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RegistrationPolicy/UpdateRegistrationPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRegistrationPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("registrationPolicies")
+                .appendPathParam(request.getRegistrationPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.RegistrationPolicy.class,
+                        UpdateRegistrationPolicyResponse.Builder::registrationPolicy)
+                .handleResponseHeaderString("etag", UpdateRegistrationPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateRegistrationPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRegistrationPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateReportResponse updateReport(UpdateReportRequest request) {
 
         Validate.notBlank(request.getReportId(), "reportId must not be blank");
@@ -14176,6 +15899,75 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public UpdateSubsettingPolicyResponse updateSubsettingPolicy(
+            UpdateSubsettingPolicyRequest request) {
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSubsettingPolicyDetails(),
+                "updateSubsettingPolicyDetails is required");
+
+        return clientCall(request, UpdateSubsettingPolicyResponse::builder)
+                .logger(LOG, "updateSubsettingPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSubsettingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/UpdateSubsettingPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSubsettingPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSubsettingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSubsettingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSubsettingRuleResponse updateSubsettingRule(UpdateSubsettingRuleRequest request) {
+
+        Validate.notBlank(request.getSubsettingRuleKey(), "subsettingRuleKey must not be blank");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSubsettingRuleDetails(),
+                "updateSubsettingRuleDetails is required");
+
+        return clientCall(request, UpdateSubsettingRuleResponse::builder)
+                .logger(LOG, "updateSubsettingRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSubsettingRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingRule/UpdateSubsettingRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSubsettingRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("subsettingRules")
+                .appendPathParam(request.getSubsettingRuleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSubsettingRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSubsettingRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateTargetAlertPolicyAssociationResponse updateTargetAlertPolicyAssociation(
             UpdateTargetAlertPolicyAssociationRequest request) {
 
@@ -14449,6 +16241,42 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         UploadSensitiveDataModelResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UploadSensitiveDataModelResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UploadSubsettingPolicyResponse uploadSubsettingPolicy(
+            UploadSubsettingPolicyRequest request) {
+        Objects.requireNonNull(
+                request.getUploadSubsettingPolicyDetails(),
+                "uploadSubsettingPolicyDetails is required");
+
+        Validate.notBlank(request.getSubsettingPolicyId(), "subsettingPolicyId must not be blank");
+
+        return clientCall(request, UploadSubsettingPolicyResponse::builder)
+                .logger(LOG, "uploadSubsettingPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "UploadSubsettingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SubsettingPolicy/UploadSubsettingPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UploadSubsettingPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("subsettingPolicies")
+                .appendPathParam(request.getSubsettingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("upload")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UploadSubsettingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UploadSubsettingPolicyResponse.Builder::opcRequestId)
                 .callSync();
     }
 

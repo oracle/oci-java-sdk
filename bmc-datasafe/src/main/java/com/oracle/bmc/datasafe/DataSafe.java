@@ -571,6 +571,23 @@ public interface DataSafe extends AutoCloseable {
             ChangeOnPremConnectorCompartmentRequest request);
 
     /**
+     * Moves the registration policy to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeRegistrationPolicyCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeRegistrationPolicyCompartment API.
+     */
+    ChangeRegistrationPolicyCompartmentResponse changeRegistrationPolicyCompartment(
+            ChangeRegistrationPolicyCompartmentRequest request);
+
+    /**
      * Moves a resource into a different compartment. When provided, If-Match is checked against
      * ETag values of the resource.
      *
@@ -819,6 +836,43 @@ public interface DataSafe extends AutoCloseable {
      */
     ChangeSqlFirewallPolicyCompartmentResponse changeSqlFirewallPolicyCompartment(
             ChangeSqlFirewallPolicyCompartmentRequest request);
+
+    /**
+     * Moves the specified subsetting policy and its dependent resources into a different
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeSubsettingPolicyCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeSubsettingPolicyCompartment API.
+     */
+    ChangeSubsettingPolicyCompartmentResponse changeSubsettingPolicyCompartment(
+            ChangeSubsettingPolicyCompartmentRequest request);
+
+    /**
+     * Moves the specified subsetting policy health report and its dependent resources into a
+     * different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeSubsettingPolicyHealthReportCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeSubsettingPolicyHealthReportCompartment API.
+     */
+    ChangeSubsettingPolicyHealthReportCompartmentResponse
+            changeSubsettingPolicyHealthReportCompartment(
+                    ChangeSubsettingPolicyHealthReportCompartmentRequest request);
 
     /**
      * Moves the specified target-alert policy Association into a different compartment.
@@ -1250,6 +1304,23 @@ public interface DataSafe extends AutoCloseable {
             CreateReferentialRelationRequest request);
 
     /**
+     * Creates a new OptIn/Registration Policy
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateRegistrationPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateRegistrationPolicy API.
+     */
+    CreateRegistrationPolicyResponse createRegistrationPolicy(
+            CreateRegistrationPolicyRequest request);
+
+    /**
      * Creates a new report definition with parameters specified in the body. The report definition
      * is stored in the specified compartment.
      *
@@ -1464,6 +1535,69 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     CreateSqlCollectionResponse createSqlCollection(CreateSqlCollectionRequest request);
+
+    /**
+     * Creates a new subsetting policy and associates it with a sensitive data model or a target
+     * database.
+     *
+     * <p>To use a sensitive data model as the source of subsetting schemas, set the schemaSource
+     * attribute to SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. In this
+     * case, the target database associated with the sensitive data model is used for subsetting
+     * rules validations.
+     *
+     * <p>You can also create a subsetting policy without using a sensitive data model. In this
+     * case, you need to associate your subsetting policy with a target database by setting the
+     * schemaSource attribute to TARGET and providing the targetId attribute. The specified target
+     * database is used for subsetting rules validations.
+     *
+     * <p>After creating a subsetting policy, you can use the CreateSubsettingRule operation to
+     * manually add subsetting rules to the policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSubsettingPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateSubsettingPolicy API.
+     */
+    CreateSubsettingPolicyResponse createSubsettingPolicy(CreateSubsettingPolicyRequest request);
+
+    /**
+     * Details to create a new subsetting rule
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSubsettingRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateSubsettingRule API.
+     */
+    CreateSubsettingRuleResponse createSubsettingRule(CreateSubsettingRuleRequest request);
+
+    /**
+     * Details to create a new referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSubsettingSchemaRelationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateSubsettingSchemaRelation API.
+     */
+    CreateSubsettingSchemaRelationResponse createSubsettingSchemaRelation(
+            CreateSubsettingSchemaRelationRequest request);
 
     /**
      * Creates a new target-alert policy association to track a alert policy applied on target.
@@ -1869,6 +2003,23 @@ public interface DataSafe extends AutoCloseable {
             DeleteReferentialRelationRequest request);
 
     /**
+     * Deletes the specified registration policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteRegistrationPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteRegistrationPolicy API.
+     */
+    DeleteRegistrationPolicyResponse deleteRegistrationPolicy(
+            DeleteRegistrationPolicyRequest request);
+
+    /**
      * Deletes the specified report definition. Only the user created report definition can be
      * deleted. The seeded report definitions cannot be deleted.
      *
@@ -2104,6 +2255,89 @@ public interface DataSafe extends AutoCloseable {
      *     DeleteSqlFirewallPolicy API.
      */
     DeleteSqlFirewallPolicyResponse deleteSqlFirewallPolicy(DeleteSqlFirewallPolicyRequest request);
+
+    /**
+     * Deletes the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSubsettingPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSubsettingPolicy API.
+     */
+    DeleteSubsettingPolicyResponse deleteSubsettingPolicy(DeleteSubsettingPolicyRequest request);
+
+    /**
+     * Deletes the specified subsetting policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSubsettingPolicyHealthReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSubsettingPolicyHealthReport API.
+     */
+    DeleteSubsettingPolicyHealthReportResponse deleteSubsettingPolicyHealthReport(
+            DeleteSubsettingPolicyHealthReportRequest request);
+
+    /**
+     * Deletes the specified subsetting report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSubsettingReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSubsettingReport API.
+     */
+    DeleteSubsettingReportResponse deleteSubsettingReport(DeleteSubsettingReportRequest request);
+
+    /**
+     * Deletes the specified subsetting rule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSubsettingRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSubsettingRule API.
+     */
+    DeleteSubsettingRuleResponse deleteSubsettingRule(DeleteSubsettingRuleRequest request);
+
+    /**
+     * Deletes the specified referential relation. Note that only the relation created by the user
+     * can be deleted
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSubsettingSchemaRelationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSubsettingSchemaRelation API.
+     */
+    DeleteSubsettingSchemaRelationResponse deleteSubsettingSchemaRelation(
+            DeleteSubsettingSchemaRelationRequest request);
 
     /**
      * Deletes the specified target-alert policy Association.
@@ -2418,6 +2652,63 @@ public interface DataSafe extends AutoCloseable {
             DownloadSensitiveTypesExportRequest request);
 
     /**
+     * Downloads the subsetting log generated by the last subsetting operation on a target database
+     * using the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSubsettingLogExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DownloadSubsettingLog API.
+     */
+    DownloadSubsettingLogResponse downloadSubsettingLog(DownloadSubsettingLogRequest request);
+
+    /**
+     * Downloads an already-generated file corresponding to the specified subsetting policy. Note
+     * that the GenerateSubsettingPolicyForDownload operation is a prerequisite for the
+     * DownloadSubsettingPolicy operation. Use GenerateSubsettingPolicyForDownload to generate a
+     * subsetting policy file and then use DownloadSubsettingPolicy to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSubsettingPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DownloadSubsettingPolicy API.
+     */
+    DownloadSubsettingPolicyResponse downloadSubsettingPolicy(
+            DownloadSubsettingPolicyRequest request);
+
+    /**
+     * Downloads an already-generated subsetting report. Note that the
+     * GenerateSubsettingReportForDownload operation is a prerequisite for the
+     * DownloadSubsettingReport operation. Use GenerateSubsettingReportForDownload to generate a
+     * subsetting report file and then use DownloadSubsettingReport to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSubsettingReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DownloadSubsettingReport API.
+     */
+    DownloadSubsettingReportResponse downloadSubsettingReport(
+            DownloadSubsettingReportRequest request);
+
+    /**
      * Downloads the report of the specified user assessment. To download the user assessment
      * report, it needs to be generated first. Please use GenerateUserAssessmentReport to generate a
      * downloadable report in the preferred format (PDF, XLS).
@@ -2452,6 +2743,22 @@ public interface DataSafe extends AutoCloseable {
      */
     EnableDataSafeConfigurationResponse enableDataSafeConfiguration(
             EnableDataSafeConfigurationRequest request);
+
+    /**
+     * Estimates table sizes for the specified subsetting policy and target database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/EstimateTableSizesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use EstimateTableSizes
+     *     API.
+     */
+    EstimateTableSizesResponse estimateTableSizes(EstimateTableSizesRequest request);
 
     /**
      * Generates the report of the specified crypto assessment. Supported output formats are PDF and
@@ -2636,6 +2943,63 @@ public interface DataSafe extends AutoCloseable {
      */
     GenerateSqlFirewallPolicyResponse generateSqlFirewallPolicy(
             GenerateSqlFirewallPolicyRequest request);
+
+    /**
+     * Performs health check on the subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateSubsettingHealthReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateSubsettingHealthReport API.
+     */
+    GenerateSubsettingHealthReportResponse generateSubsettingHealthReport(
+            GenerateSubsettingHealthReportRequest request);
+
+    /**
+     * Generates a downloadable file corresponding to the specified subsetting policy. It's a
+     * prerequisite for the DownloadSubsettingPolicy operation. Use this operation to generate a
+     * subsetting policy file and then use DownloadSubsettingPolicy to download the generated file.
+     * Note that file generation and download are serial operations. The download operation can't be
+     * invoked while the generate operation is in progress.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateSubsettingPolicyForDownloadExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateSubsettingPolicyForDownload API.
+     */
+    GenerateSubsettingPolicyForDownloadResponse generateSubsettingPolicyForDownload(
+            GenerateSubsettingPolicyForDownloadRequest request);
+
+    /**
+     * Generates a downloadable subsetting report. It's a prerequisite for the
+     * DownloadSubsettingReport operation. Use this endpoint to generate a subsetting report file
+     * and then use DownloadSubsettingReport to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateSubsettingReportForDownloadExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateSubsettingReportForDownload API.
+     */
+    GenerateSubsettingReportForDownloadResponse generateSubsettingReportForDownload(
+            GenerateSubsettingReportForDownloadRequest request);
 
     /**
      * Generates the report of the specified user assessment. The report is available in PDF or XLS
@@ -3153,6 +3517,22 @@ public interface DataSafe extends AutoCloseable {
     GetReferentialRelationResponse getReferentialRelation(GetReferentialRelationRequest request);
 
     /**
+     * Returns the details of the specified Registration Policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetRegistrationPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetRegistrationPolicy API.
+     */
+    GetRegistrationPolicyResponse getRegistrationPolicy(GetRegistrationPolicyRequest request);
+
+    /**
      * Gets a report by identifier
      *
      * @param request The request object containing the details to send
@@ -3460,6 +3840,88 @@ public interface DataSafe extends AutoCloseable {
      *     GetSqlFirewallPolicy API.
      */
     GetSqlFirewallPolicyResponse getSqlFirewallPolicy(GetSqlFirewallPolicyRequest request);
+
+    /**
+     * Gets the details of the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSubsettingPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubsettingPolicy
+     *     API.
+     */
+    GetSubsettingPolicyResponse getSubsettingPolicy(GetSubsettingPolicyRequest request);
+
+    /**
+     * Gets the details of the specified subsetting policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSubsettingPolicyHealthReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSubsettingPolicyHealthReport API.
+     */
+    GetSubsettingPolicyHealthReportResponse getSubsettingPolicyHealthReport(
+            GetSubsettingPolicyHealthReportRequest request);
+
+    /**
+     * Gets the details of the specified subsetting report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSubsettingReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubsettingReport
+     *     API.
+     */
+    GetSubsettingReportResponse getSubsettingReport(GetSubsettingReportRequest request);
+
+    /**
+     * Gets the details of the specified subsetting rule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSubsettingRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubsettingRule
+     *     API.
+     */
+    GetSubsettingRuleResponse getSubsettingRule(GetSubsettingRuleRequest request);
+
+    /**
+     * Gets the details of the specified referential relation in the subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSubsettingSchemaRelationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSubsettingSchemaRelation API.
+     */
+    GetSubsettingSchemaRelationResponse getSubsettingSchemaRelation(
+            GetSubsettingSchemaRelationRequest request);
 
     /**
      * Gets the details of target-alert policy association by its ID.
@@ -4838,6 +5300,42 @@ public interface DataSafe extends AutoCloseable {
             ListReferentialRelationsRequest request);
 
     /**
+     * Retrieves a list of registration policies according to the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListRegistrationPoliciesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListRegistrationPolicies API.
+     */
+    ListRegistrationPoliciesResponse listRegistrationPolicies(
+            ListRegistrationPoliciesRequest request);
+
+    /**
+     * Retrieves the OCIDs of target databases registered via the specified registration policy.
+     * Supports optional filtering by registration status (OPTIN/OPTOUT) and by target database
+     * OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListRegistrationPolicyTargetDatabasesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListRegistrationPolicyTargetDatabases API.
+     */
+    ListRegistrationPolicyTargetDatabasesResponse listRegistrationPolicyTargetDatabases(
+            ListRegistrationPolicyTargetDatabasesRequest request);
+
+    /**
      * Gets a list of report definitions. The ListReportDefinitions operation returns only the
      * report definitions in the specified `compartmentId`. It also returns the seeded report
      * definitions which are available to all the compartments.
@@ -5563,6 +6061,233 @@ public interface DataSafe extends AutoCloseable {
             ListSqlFirewallViolationsRequest request);
 
     /**
+     * Gets a list of subsetted tables present in the specified subsetting report and based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettedObjectsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettedObjects API.
+     */
+    ListSubsettedObjectsResponse listSubsettedObjects(ListSubsettedObjectsRequest request);
+
+    /**
+     * Gets consolidated subsetting analytics data based on the specified query parameters. If
+     * CompartmentIdInSubtreeQueryParam is specified as true, the behaviour is equivalent to
+     * accessLevel \"ACCESSIBLE\" by default.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingAnalyticsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingAnalytics API.
+     */
+    ListSubsettingAnalyticsResponse listSubsettingAnalytics(ListSubsettingAnalyticsRequest request);
+
+    /**
+     * Gets a list of subsetting errors in a subsetting run based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingErrors API.
+     */
+    ListSubsettingErrorsResponse listSubsettingErrors(ListSubsettingErrorsRequest request);
+
+    /**
+     * Gets a list of subsetting policies based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingPoliciesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingPolicies API.
+     */
+    ListSubsettingPoliciesResponse listSubsettingPolicies(ListSubsettingPoliciesRequest request);
+
+    /**
+     * Gets a list of errors and warnings from a subsetting policy health check.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingPolicyHealthReportLogsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingPolicyHealthReportLogs API.
+     */
+    ListSubsettingPolicyHealthReportLogsResponse listSubsettingPolicyHealthReportLogs(
+            ListSubsettingPolicyHealthReportLogsRequest request);
+
+    /**
+     * Gets a list of subsetting policy health reports based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingPolicyHealthReportsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingPolicyHealthReports API.
+     */
+    ListSubsettingPolicyHealthReportsResponse listSubsettingPolicyHealthReports(
+            ListSubsettingPolicyHealthReportsRequest request);
+
+    /**
+     * Gets a list of subsetting reports based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingReportsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingReports API.
+     */
+    ListSubsettingReportsResponse listSubsettingReports(ListSubsettingReportsRequest request);
+
+    /**
+     * Gets a list of objects of processing chain based on the specified query parameters generated
+     * for a subsetting rule. A processing chain is the relationship path that determines how a
+     * subsetting rule is applied across related tables. It is built from the selected subsetting
+     * table, subsetting rule, the chosen relatedTablesPropagation direction, and the referential
+     * relationships in the schema.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingRuleProcessingChainObjectsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingRuleProcessingChainObjects API.
+     */
+    ListSubsettingRuleProcessingChainObjectsResponse listSubsettingRuleProcessingChainObjects(
+            ListSubsettingRuleProcessingChainObjectsRequest request);
+
+    /**
+     * Gets a list of subsetting rules present in the specified subsetting policy and based on the
+     * specified query parameters. A subsetting rule is the criteria that tells Data Safe which rows
+     * to retain from the selected starting table for a subsetting operation. It is the entry point
+     * for the subset. Data Safe uses this rule, along with the propagation setting, to determine
+     * the related rows that must also be retained across parent and child tables.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingRulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSubsettingRules
+     *     API.
+     */
+    ListSubsettingRulesResponse listSubsettingRules(ListSubsettingRulesRequest request);
+
+    /**
+     * Gets a list of objects/tables present in the specified subsetting policy schemas based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingSchemaObjectsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingSchemaObjects API.
+     */
+    ListSubsettingSchemaObjectsResponse listSubsettingSchemaObjects(
+            ListSubsettingSchemaObjectsRequest request);
+
+    /**
+     * Gets a list of referential relations present in the specified subsetting policy schemas based
+     * on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingSchemaRelationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingSchemaRelations API.
+     */
+    ListSubsettingSchemaRelationsResponse listSubsettingSchemaRelations(
+            ListSubsettingSchemaRelationsRequest request);
+
+    /**
+     * Gets a list of subsetting schemas present in the specified subsetting policy and based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSubsettingSchemasExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSubsettingSchemas API.
+     */
+    ListSubsettingSchemasResponse listSubsettingSchemas(ListSubsettingSchemasRequest request);
+
+    /**
+     * Gets table size estimates for the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTableEstimatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTableEstimates
+     *     API.
+     */
+    ListTableEstimatesResponse listTableEstimates(ListTableEstimatesRequest request);
+
+    /**
      * Returns a list of table metadata objects.
      *
      * @param request The request object containing the details to send
@@ -5943,6 +6668,22 @@ public interface DataSafe extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Updates the Data Safe target database Privileges.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ManagePrivilegesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManagePrivileges
+     *     API.
+     */
+    ManagePrivilegesResponse managePrivileges(ManagePrivilegesRequest request);
+
+    /**
      * Masks data using the specified masking policy.
      *
      * @param request The request object containing the details to send
@@ -6130,6 +6871,25 @@ public interface DataSafe extends AutoCloseable {
      */
     PatchSqlFirewallAllowedSqlResponse patchSqlFirewallAllowedSql(
             PatchSqlFirewallAllowedSqlRequest request);
+
+    /**
+     * Patches one or more subsetting rules in the specified subsetting policy. Use INSERT to add a
+     * new rule with CreateSubsettingRuleDetails as the patch value, and MERGE to update an existing
+     * rule with UpdateSubsettingRuleDetails as the patch value. To delete a rule, use the existing
+     * DeleteSubsettingRule API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/PatchSubsettingRulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchSubsettingRules API.
+     */
+    PatchSubsettingRulesResponse patchSubsettingRules(PatchSubsettingRulesRequest request);
 
     /**
      * Creates new target-alert policy associations that will be applied on the target database.
@@ -6504,6 +7264,21 @@ public interface DataSafe extends AutoCloseable {
     StopSqlCollectionResponse stopSqlCollection(StopSqlCollectionRequest request);
 
     /**
+     * Subsets data using the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/SubsetDataExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SubsetData API.
+     */
+    SubsetDataResponse subsetData(SubsetDataRequest request);
+
+    /**
      * Suspend the given work request. Issuing a suspend does not guarantee of a immediate suspend
      * of the work request.
      *
@@ -6859,6 +7634,40 @@ public interface DataSafe extends AutoCloseable {
             UpdatePeerTargetDatabaseRequest request);
 
     /**
+     * Updates one or more attributes of the specified processing chain object.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateProcessingChainObjectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateProcessingChainObject API.
+     */
+    UpdateProcessingChainObjectResponse updateProcessingChainObject(
+            UpdateProcessingChainObjectRequest request);
+
+    /**
+     * Updates one or more attributes of the specified registration policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateRegistrationPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateRegistrationPolicy API.
+     */
+    UpdateRegistrationPolicyResponse updateRegistrationPolicy(
+            UpdateRegistrationPolicyRequest request);
+
+    /**
      * Updates the specified report. Only tags can be updated.
      *
      * @param request The request object containing the details to send
@@ -7092,6 +7901,39 @@ public interface DataSafe extends AutoCloseable {
     UpdateSqlFirewallPolicyResponse updateSqlFirewallPolicy(UpdateSqlFirewallPolicyRequest request);
 
     /**
+     * Updates one or more attributes of the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSubsettingPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateSubsettingPolicy API.
+     */
+    UpdateSubsettingPolicyResponse updateSubsettingPolicy(UpdateSubsettingPolicyRequest request);
+
+    /**
+     * Updates one or more attributes of the specified subsetting rule. Note that updating the
+     * subsettingRuleEntry attribute replaces the currently assigned subsettingRuleEntry
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSubsettingRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateSubsettingRule API.
+     */
+    UpdateSubsettingRuleResponse updateSubsettingRule(UpdateSubsettingRuleRequest request);
+
+    /**
      * Updates the specified target-alert policy association.
      *
      * @param request The request object containing the details to send
@@ -7293,6 +8135,56 @@ public interface DataSafe extends AutoCloseable {
      */
     UploadSensitiveDataModelResponse uploadSensitiveDataModel(
             UploadSensitiveDataModelRequest request);
+
+    /**
+     * Uploads a subsetting policy file (also called template) to update the specified subsetting
+     * policy. To create a new subsetting policy using a file, first use the CreateSubsettingPolicy
+     * operation to create an empty subsetting policy and then use this operation to upload the
+     * subsetting policy file. Note that the upload operation replaces the content of the specified
+     * subsetting policy, including all the subsetting rules, with the content of the file.
+     *
+     * <p>Note: This operation consumes a stream.
+     *
+     * <p>If the stream supports {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, when a retry is necessary, the stream is reset so it starts at
+     * the beginning (or whatever the stream's position was at the time this operation is called}.
+     *
+     * <p>Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before,
+     * then the mark will not be the same anymore after this operation, and a subsequent call to
+     * {@link java.io.InputStream#reset()} by the caller will reset the stream not to the caller's
+     * mark, but to the position the stream was in when this operation was called.
+     *
+     * <p>If the stream is a {@link java.io.FileInputStream}, and the stream's {@link
+     * java.nio.channels.FileChannel} position can be changed (like for a regular file), the stream
+     * will be wrapped in such a way that it does provide support for {@link
+     * java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same
+     * procedure as above is followed. If the stream's {@link java.nio.channels.FileChannel}
+     * position cannot be changed (like for a named pipe), then the stream's contents will be
+     * buffered in memory, as described below.
+     *
+     * <p>If the stream does not support {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, then the stream is wrapped in a {@link
+     * java.io.BufferedInputStream}, which means the entire contents may be buffered in memory. Then
+     * the same procedure as above is followed.
+     *
+     * <p>The contents of the stream, except when the stream is a {@link java.io.FileInputStream}
+     * whose {@link java.nio.channels.FileChannel} position can be changed, should be less than 2
+     * GiB in size if retries are used. This is because streams 2 GiB in size or larger do no
+     * guarantee that mark-and-reset can be performed. If the stream is larger, do not use built-in
+     * retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UploadSubsettingPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UploadSubsettingPolicy API.
+     */
+    UploadSubsettingPolicyResponse uploadSubsettingPolicy(UploadSubsettingPolicyRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

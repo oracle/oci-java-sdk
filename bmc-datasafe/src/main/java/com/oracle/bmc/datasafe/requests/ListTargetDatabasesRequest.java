@@ -33,6 +33,19 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
     public String getAssociatedResourceId() {
         return associatedResourceId;
     }
+    /**
+     * A filter to return target databases filtered by the enablementResourceOcid column (always a
+     * DbaasDatabase OCID).
+     */
+    private String enablementResourceOcid;
+
+    /**
+     * A filter to return target databases filtered by the enablementResourceOcid column (always a
+     * DbaasDatabase OCID).
+     */
+    public String getEnablementResourceOcid() {
+        return enablementResourceOcid;
+    }
     /** A filter to return the target database that matches the specified OCID. */
     private String targetDatabaseId;
 
@@ -311,6 +324,24 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return target databases filtered by the enablementResourceOcid column (always
+         * a DbaasDatabase OCID).
+         */
+        private String enablementResourceOcid = null;
+
+        /**
+         * A filter to return target databases filtered by the enablementResourceOcid column (always
+         * a DbaasDatabase OCID).
+         *
+         * @param enablementResourceOcid the value to set
+         * @return this builder instance
+         */
+        public Builder enablementResourceOcid(String enablementResourceOcid) {
+            this.enablementResourceOcid = enablementResourceOcid;
+            return this;
+        }
+
         /** A filter to return the target database that matches the specified OCID. */
         private String targetDatabaseId = null;
 
@@ -549,6 +580,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(ListTargetDatabasesRequest o) {
             compartmentId(o.getCompartmentId());
             associatedResourceId(o.getAssociatedResourceId());
+            enablementResourceOcid(o.getEnablementResourceOcid());
             targetDatabaseId(o.getTargetDatabaseId());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
@@ -597,6 +629,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             ListTargetDatabasesRequest request = new ListTargetDatabasesRequest();
             request.compartmentId = compartmentId;
             request.associatedResourceId = associatedResourceId;
+            request.enablementResourceOcid = enablementResourceOcid;
             request.targetDatabaseId = targetDatabaseId;
             request.displayName = displayName;
             request.lifecycleState = lifecycleState;
@@ -610,9 +643,10 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListTargetDatabasesRequest(compartmentId, associatedResourceId, targetDatabaseId,
-            // displayName, lifecycleState, databaseType, infrastructureType, limit, page,
-            // compartmentIdInSubtree, accessLevel, sortOrder, sortBy, opcRequestId);
+            // new ListTargetDatabasesRequest(compartmentId, associatedResourceId,
+            // enablementResourceOcid, targetDatabaseId, displayName, lifecycleState, databaseType,
+            // infrastructureType, limit, page, compartmentIdInSubtree, accessLevel, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
@@ -625,6 +659,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         return new Builder()
                 .compartmentId(compartmentId)
                 .associatedResourceId(associatedResourceId)
+                .enablementResourceOcid(enablementResourceOcid)
                 .targetDatabaseId(targetDatabaseId)
                 .displayName(displayName)
                 .lifecycleState(lifecycleState)
@@ -655,6 +690,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",associatedResourceId=").append(String.valueOf(this.associatedResourceId));
+        sb.append(",enablementResourceOcid=").append(String.valueOf(this.enablementResourceOcid));
         sb.append(",targetDatabaseId=").append(String.valueOf(this.targetDatabaseId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -684,6 +720,8 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.associatedResourceId, other.associatedResourceId)
+                && java.util.Objects.equals(
+                        this.enablementResourceOcid, other.enablementResourceOcid)
                 && java.util.Objects.equals(this.targetDatabaseId, other.targetDatabaseId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -711,6 +749,11 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.associatedResourceId == null
                                 ? 43
                                 : this.associatedResourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enablementResourceOcid == null
+                                ? 43
+                                : this.enablementResourceOcid.hashCode());
         result =
                 (result * PRIME)
                         + (this.targetDatabaseId == null ? 43 : this.targetDatabaseId.hashCode());

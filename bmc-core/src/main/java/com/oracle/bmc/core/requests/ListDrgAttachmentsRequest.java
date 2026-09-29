@@ -84,6 +84,19 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
     }
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * DrgNatPolicy.
+     */
+    private String drgNatPolicyId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * DrgNatPolicy.
+     */
+    public String getDrgNatPolicyId() {
+        return drgNatPolicyId;
+    }
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the
      * DRG.
      */
@@ -399,6 +412,24 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DrgNatPolicy.
+         */
+        private String drgNatPolicyId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DrgNatPolicy.
+         *
+         * @param drgNatPolicyId the value to set
+         * @return this builder instance
+         */
+        public Builder drgNatPolicyId(String drgNatPolicyId) {
+            this.drgNatPolicyId = drgNatPolicyId;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to
          * the DRG.
          */
@@ -567,6 +598,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             drgId(o.getDrgId());
             limit(o.getLimit());
             page(o.getPage());
+            drgNatPolicyId(o.getDrgNatPolicyId());
             networkId(o.getNetworkId());
             attachmentType(o.getAttachmentType());
             drgRouteTableId(o.getDrgRouteTableId());
@@ -613,6 +645,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             request.drgId = drgId;
             request.limit = limit;
             request.page = page;
+            request.drgNatPolicyId = drgNatPolicyId;
             request.networkId = networkId;
             request.attachmentType = attachmentType;
             request.drgRouteTableId = drgRouteTableId;
@@ -621,8 +654,9 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListDrgAttachmentsRequest(compartmentId, vcnId, drgId, limit, page, networkId,
-            // attachmentType, drgRouteTableId, displayName, sortBy, sortOrder, lifecycleState);
+            // new ListDrgAttachmentsRequest(compartmentId, vcnId, drgId, limit, page,
+            // drgNatPolicyId, networkId, attachmentType, drgRouteTableId, displayName, sortBy,
+            // sortOrder, lifecycleState);
         }
     }
 
@@ -638,6 +672,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
                 .drgId(drgId)
                 .limit(limit)
                 .page(page)
+                .drgNatPolicyId(drgNatPolicyId)
                 .networkId(networkId)
                 .attachmentType(attachmentType)
                 .drgRouteTableId(drgRouteTableId)
@@ -666,6 +701,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",drgId=").append(String.valueOf(this.drgId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",drgNatPolicyId=").append(String.valueOf(this.drgNatPolicyId));
         sb.append(",networkId=").append(String.valueOf(this.networkId));
         sb.append(",attachmentType=").append(String.valueOf(this.attachmentType));
         sb.append(",drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
@@ -693,6 +729,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.drgId, other.drgId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.drgNatPolicyId, other.drgNatPolicyId)
                 && java.util.Objects.equals(this.networkId, other.networkId)
                 && java.util.Objects.equals(this.attachmentType, other.attachmentType)
                 && java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
@@ -713,6 +750,9 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         result = (result * PRIME) + (this.drgId == null ? 43 : this.drgId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drgNatPolicyId == null ? 43 : this.drgNatPolicyId.hashCode());
         result = (result * PRIME) + (this.networkId == null ? 43 : this.networkId.hashCode());
         result =
                 (result * PRIME)

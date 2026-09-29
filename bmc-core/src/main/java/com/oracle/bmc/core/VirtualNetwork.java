@@ -82,6 +82,21 @@ public interface VirtualNetwork extends AutoCloseable {
     void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
 
     /**
+     * Adds DRG NAT rules to the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgNatRulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDrgNatRules API.
+     */
+    AddDrgNatRulesResponse addDrgNatRules(AddDrgNatRulesRequest request);
+
+    /**
      * Adds one or more route distribution statements to the specified route distribution.
      *
      * @param request The request object containing the details to send
@@ -585,6 +600,25 @@ public interface VirtualNetwork extends AutoCloseable {
      *     ChangeDrgCompartment API.
      */
     ChangeDrgCompartmentResponse changeDrgCompartment(ChangeDrgCompartmentRequest request);
+
+    /**
+     * Moves a DrgNatPolicy into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDrgNatPolicyCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeDrgNatPolicyCompartment API.
+     */
+    ChangeDrgNatPolicyCompartmentResponse changeDrgNatPolicyCompartment(
+            ChangeDrgNatPolicyCompartmentRequest request);
 
     /**
      * Moves an IPSec connection into a different compartment within the same tenancy. For
@@ -1185,6 +1219,23 @@ public interface VirtualNetwork extends AutoCloseable {
      *     API.
      */
     CreateDrgAttachmentResponse createDrgAttachment(CreateDrgAttachmentRequest request);
+
+    /**
+     * Creates a new DRG NAT policy. Assign the DRG NAT policy to a DRG attachment using the
+     * `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgNatPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrgNatPolicy
+     *     API.
+     */
+    CreateDrgNatPolicyResponse createDrgNatPolicy(CreateDrgNatPolicyRequest request);
 
     /**
      * Creates a new route distribution for the specified DRG. Assign the route distribution as an
@@ -1911,6 +1962,22 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteDrgAttachmentResponse deleteDrgAttachment(DeleteDrgAttachmentRequest request);
 
     /**
+     * Deletes the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgNatPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrgNatPolicy
+     *     API.
+     */
+    DeleteDrgNatPolicyResponse deleteDrgNatPolicy(DeleteDrgNatPolicyRequest request);
+
+    /**
      * Deletes the specified route distribution. You can't delete a route distribution currently in
      * use by a DRG attachment or DRG route table.
      *
@@ -2606,6 +2673,22 @@ public interface VirtualNetwork extends AutoCloseable {
      *     API.
      */
     GetDrgAttachmentResponse getDrgAttachment(GetDrgAttachmentRequest request);
+
+    /**
+     * Gets the specified DRG NAT policy's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgNatPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrgNatPolicy
+     *     API.
+     */
+    GetDrgNatPolicyResponse getDrgNatPolicy(GetDrgNatPolicyRequest request);
 
     /**
      * Gets the redundancy status for the specified DRG. For more information, see [Redundancy
@@ -3705,6 +3788,38 @@ public interface VirtualNetwork extends AutoCloseable {
     ListDrgAttachmentsResponse listDrgAttachments(ListDrgAttachmentsRequest request);
 
     /**
+     * The list of DRG NAT policies in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgNatPoliciesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgNatPolicies
+     *     API.
+     */
+    ListDrgNatPoliciesResponse listDrgNatPolicies(ListDrgNatPoliciesRequest request);
+
+    /**
+     * Lists the rules for the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgNatRulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrgNatRules
+     *     API.
+     */
+    ListDrgNatRulesResponse listDrgNatRules(ListDrgNatRulesRequest request);
+
+    /**
      * Lists the statements for the specified route distribution.
      *
      * @param request The request object containing the details to send
@@ -4484,6 +4599,39 @@ public interface VirtualNetwork extends AutoCloseable {
     PrivateIpVnicDetachResponse privateIpVnicDetach(PrivateIpVnicDetachRequest request);
 
     /**
+     * Dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to
+     * it.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgNatPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgNatPolicy
+     *     API.
+     */
+    RemoveDrgNatPolicyResponse removeDrgNatPolicy(RemoveDrgNatPolicyRequest request);
+
+    /**
+     * Request with DRG NAT rules to remove from the DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveDrgNatRulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDrgNatRules
+     *     API.
+     */
+    RemoveDrgNatRulesResponse removeDrgNatRules(RemoveDrgNatRulesRequest request);
+
+    /**
      * Removes one or more route distribution statements from the specified route distribution's
      * map.
      *
@@ -4849,6 +4997,38 @@ public interface VirtualNetwork extends AutoCloseable {
      *     API.
      */
     UpdateDrgAttachmentResponse updateDrgAttachment(UpdateDrgAttachmentRequest request);
+
+    /**
+     * Updates the specified DRG NAT policy
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgNatPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgNatPolicy
+     *     API.
+     */
+    UpdateDrgNatPolicyResponse updateDrgNatPolicy(UpdateDrgNatPolicyRequest request);
+
+    /**
+     * Updates DRG NAT rules in the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgNatRulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrgNatRules
+     *     API.
+     */
+    UpdateDrgNatRulesResponse updateDrgNatRules(UpdateDrgNatRulesRequest request);
 
     /**
      * Updates the specified route distribution

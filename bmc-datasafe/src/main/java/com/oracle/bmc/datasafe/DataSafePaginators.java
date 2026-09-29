@@ -7120,6 +7120,263 @@ public class DataSafePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listRegistrationPolicies operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRegistrationPoliciesResponse> listRegistrationPoliciesResponseIterator(
+            final ListRegistrationPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRegistrationPoliciesRequest.Builder,
+                ListRegistrationPoliciesRequest,
+                ListRegistrationPoliciesResponse>(
+                new java.util.function.Supplier<ListRegistrationPoliciesRequest.Builder>() {
+                    @Override
+                    public ListRegistrationPoliciesRequest.Builder get() {
+                        return ListRegistrationPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRegistrationPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListRegistrationPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRegistrationPoliciesRequest.Builder>,
+                        ListRegistrationPoliciesRequest>() {
+                    @Override
+                    public ListRegistrationPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRegistrationPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPoliciesRequest, ListRegistrationPoliciesResponse>() {
+                    @Override
+                    public ListRegistrationPoliciesResponse apply(
+                            ListRegistrationPoliciesRequest request) {
+                        return client.listRegistrationPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.RegistrationPolicySummary} objects contained in responses from
+     * the listRegistrationPolicies operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.RegistrationPolicySummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.RegistrationPolicySummary>
+            listRegistrationPoliciesRecordIterator(final ListRegistrationPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRegistrationPoliciesRequest.Builder,
+                ListRegistrationPoliciesRequest,
+                ListRegistrationPoliciesResponse,
+                com.oracle.bmc.datasafe.model.RegistrationPolicySummary>(
+                new java.util.function.Supplier<ListRegistrationPoliciesRequest.Builder>() {
+                    @Override
+                    public ListRegistrationPoliciesRequest.Builder get() {
+                        return ListRegistrationPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRegistrationPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListRegistrationPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRegistrationPoliciesRequest.Builder>,
+                        ListRegistrationPoliciesRequest>() {
+                    @Override
+                    public ListRegistrationPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRegistrationPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPoliciesRequest, ListRegistrationPoliciesResponse>() {
+                    @Override
+                    public ListRegistrationPoliciesResponse apply(
+                            ListRegistrationPoliciesRequest request) {
+                        return client.listRegistrationPolicies(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPoliciesResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.RegistrationPolicySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.RegistrationPolicySummary>
+                            apply(ListRegistrationPoliciesResponse response) {
+                        return response.getRegistrationPolicyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listRegistrationPolicyTargetDatabases operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListRegistrationPolicyTargetDatabasesResponse>
+            listRegistrationPolicyTargetDatabasesResponseIterator(
+                    final ListRegistrationPolicyTargetDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRegistrationPolicyTargetDatabasesRequest.Builder,
+                ListRegistrationPolicyTargetDatabasesRequest,
+                ListRegistrationPolicyTargetDatabasesResponse>(
+                new java.util.function.Supplier<
+                        ListRegistrationPolicyTargetDatabasesRequest.Builder>() {
+                    @Override
+                    public ListRegistrationPolicyTargetDatabasesRequest.Builder get() {
+                        return ListRegistrationPolicyTargetDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPolicyTargetDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListRegistrationPolicyTargetDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRegistrationPolicyTargetDatabasesRequest.Builder>,
+                        ListRegistrationPolicyTargetDatabasesRequest>() {
+                    @Override
+                    public ListRegistrationPolicyTargetDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRegistrationPolicyTargetDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPolicyTargetDatabasesRequest,
+                        ListRegistrationPolicyTargetDatabasesResponse>() {
+                    @Override
+                    public ListRegistrationPolicyTargetDatabasesResponse apply(
+                            ListRegistrationPolicyTargetDatabasesRequest request) {
+                        return client.listRegistrationPolicyTargetDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.RegistrationPolicyTargetDatabaseSummary} objects contained in
+     * responses from the listRegistrationPolicyTargetDatabases operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.RegistrationPolicyTargetDatabaseSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.RegistrationPolicyTargetDatabaseSummary>
+            listRegistrationPolicyTargetDatabasesRecordIterator(
+                    final ListRegistrationPolicyTargetDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRegistrationPolicyTargetDatabasesRequest.Builder,
+                ListRegistrationPolicyTargetDatabasesRequest,
+                ListRegistrationPolicyTargetDatabasesResponse,
+                com.oracle.bmc.datasafe.model.RegistrationPolicyTargetDatabaseSummary>(
+                new java.util.function.Supplier<
+                        ListRegistrationPolicyTargetDatabasesRequest.Builder>() {
+                    @Override
+                    public ListRegistrationPolicyTargetDatabasesRequest.Builder get() {
+                        return ListRegistrationPolicyTargetDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPolicyTargetDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListRegistrationPolicyTargetDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRegistrationPolicyTargetDatabasesRequest.Builder>,
+                        ListRegistrationPolicyTargetDatabasesRequest>() {
+                    @Override
+                    public ListRegistrationPolicyTargetDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRegistrationPolicyTargetDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPolicyTargetDatabasesRequest,
+                        ListRegistrationPolicyTargetDatabasesResponse>() {
+                    @Override
+                    public ListRegistrationPolicyTargetDatabasesResponse apply(
+                            ListRegistrationPolicyTargetDatabasesRequest request) {
+                        return client.listRegistrationPolicyTargetDatabases(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRegistrationPolicyTargetDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .RegistrationPolicyTargetDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .RegistrationPolicyTargetDatabaseSummary>
+                            apply(ListRegistrationPolicyTargetDatabasesResponse response) {
+                        return response.getRegistrationPolicyTargetDatabaseSummaryCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listReportDefinitions operation. This iterable will fetch more data from the server as
      * needed.
      *
@@ -10919,6 +11176,1626 @@ public class DataSafePaginators {
                     public java.util.List<com.oracle.bmc.datasafe.model.SqlFirewallViolationSummary>
                             apply(ListSqlFirewallViolationsResponse response) {
                         return response.getSqlFirewallViolationsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettedObjects operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettedObjectsResponse> listSubsettedObjectsResponseIterator(
+            final ListSubsettedObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettedObjectsRequest.Builder,
+                ListSubsettedObjectsRequest,
+                ListSubsettedObjectsResponse>(
+                new java.util.function.Supplier<ListSubsettedObjectsRequest.Builder>() {
+                    @Override
+                    public ListSubsettedObjectsRequest.Builder get() {
+                        return ListSubsettedObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettedObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettedObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettedObjectsRequest.Builder>,
+                        ListSubsettedObjectsRequest>() {
+                    @Override
+                    public ListSubsettedObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettedObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettedObjectsRequest, ListSubsettedObjectsResponse>() {
+                    @Override
+                    public ListSubsettedObjectsResponse apply(ListSubsettedObjectsRequest request) {
+                        return client.listSubsettedObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettedObjectSummary} objects contained in responses from the
+     * listSubsettedObjects operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettedObjectSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettedObjectSummary>
+            listSubsettedObjectsRecordIterator(final ListSubsettedObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettedObjectsRequest.Builder,
+                ListSubsettedObjectsRequest,
+                ListSubsettedObjectsResponse,
+                com.oracle.bmc.datasafe.model.SubsettedObjectSummary>(
+                new java.util.function.Supplier<ListSubsettedObjectsRequest.Builder>() {
+                    @Override
+                    public ListSubsettedObjectsRequest.Builder get() {
+                        return ListSubsettedObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettedObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettedObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettedObjectsRequest.Builder>,
+                        ListSubsettedObjectsRequest>() {
+                    @Override
+                    public ListSubsettedObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettedObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettedObjectsRequest, ListSubsettedObjectsResponse>() {
+                    @Override
+                    public ListSubsettedObjectsResponse apply(ListSubsettedObjectsRequest request) {
+                        return client.listSubsettedObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettedObjectsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SubsettedObjectSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SubsettedObjectSummary>
+                            apply(ListSubsettedObjectsResponse response) {
+                        return response.getSubsettedObjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingAnalytics operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingAnalyticsResponse> listSubsettingAnalyticsResponseIterator(
+            final ListSubsettingAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingAnalyticsRequest.Builder,
+                ListSubsettingAnalyticsRequest,
+                ListSubsettingAnalyticsResponse>(
+                new java.util.function.Supplier<ListSubsettingAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingAnalyticsRequest.Builder get() {
+                        return ListSubsettingAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingAnalyticsRequest.Builder>,
+                        ListSubsettingAnalyticsRequest>() {
+                    @Override
+                    public ListSubsettingAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingAnalyticsRequest, ListSubsettingAnalyticsResponse>() {
+                    @Override
+                    public ListSubsettingAnalyticsResponse apply(
+                            ListSubsettingAnalyticsRequest request) {
+                        return client.listSubsettingAnalytics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingAnalyticsSummary} objects contained in responses from
+     * the listSubsettingAnalytics operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingAnalyticsSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingAnalyticsSummary>
+            listSubsettingAnalyticsRecordIterator(final ListSubsettingAnalyticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingAnalyticsRequest.Builder,
+                ListSubsettingAnalyticsRequest,
+                ListSubsettingAnalyticsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingAnalyticsSummary>(
+                new java.util.function.Supplier<ListSubsettingAnalyticsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingAnalyticsRequest.Builder get() {
+                        return ListSubsettingAnalyticsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingAnalyticsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingAnalyticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingAnalyticsRequest.Builder>,
+                        ListSubsettingAnalyticsRequest>() {
+                    @Override
+                    public ListSubsettingAnalyticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingAnalyticsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingAnalyticsRequest, ListSubsettingAnalyticsResponse>() {
+                    @Override
+                    public ListSubsettingAnalyticsResponse apply(
+                            ListSubsettingAnalyticsRequest request) {
+                        return client.listSubsettingAnalytics(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingAnalyticsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.SubsettingAnalyticsSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SubsettingAnalyticsSummary>
+                            apply(ListSubsettingAnalyticsResponse response) {
+                        return response.getSubsettingAnalyticsCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingErrors operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingErrorsResponse> listSubsettingErrorsResponseIterator(
+            final ListSubsettingErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingErrorsRequest.Builder,
+                ListSubsettingErrorsRequest,
+                ListSubsettingErrorsResponse>(
+                new java.util.function.Supplier<ListSubsettingErrorsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingErrorsRequest.Builder get() {
+                        return ListSubsettingErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingErrorsRequest.Builder>,
+                        ListSubsettingErrorsRequest>() {
+                    @Override
+                    public ListSubsettingErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingErrorsRequest, ListSubsettingErrorsResponse>() {
+                    @Override
+                    public ListSubsettingErrorsResponse apply(ListSubsettingErrorsRequest request) {
+                        return client.listSubsettingErrors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingErrorSummary} objects contained in responses from the
+     * listSubsettingErrors operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingErrorSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingErrorSummary>
+            listSubsettingErrorsRecordIterator(final ListSubsettingErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingErrorsRequest.Builder,
+                ListSubsettingErrorsRequest,
+                ListSubsettingErrorsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingErrorSummary>(
+                new java.util.function.Supplier<ListSubsettingErrorsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingErrorsRequest.Builder get() {
+                        return ListSubsettingErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingErrorsRequest.Builder>,
+                        ListSubsettingErrorsRequest>() {
+                    @Override
+                    public ListSubsettingErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingErrorsRequest, ListSubsettingErrorsResponse>() {
+                    @Override
+                    public ListSubsettingErrorsResponse apply(ListSubsettingErrorsRequest request) {
+                        return client.listSubsettingErrors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingErrorsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SubsettingErrorSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SubsettingErrorSummary>
+                            apply(ListSubsettingErrorsResponse response) {
+                        return response.getSubsettingErrorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingPolicies operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingPoliciesResponse> listSubsettingPoliciesResponseIterator(
+            final ListSubsettingPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingPoliciesRequest.Builder,
+                ListSubsettingPoliciesRequest,
+                ListSubsettingPoliciesResponse>(
+                new java.util.function.Supplier<ListSubsettingPoliciesRequest.Builder>() {
+                    @Override
+                    public ListSubsettingPoliciesRequest.Builder get() {
+                        return ListSubsettingPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingPoliciesRequest.Builder>,
+                        ListSubsettingPoliciesRequest>() {
+                    @Override
+                    public ListSubsettingPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPoliciesRequest, ListSubsettingPoliciesResponse>() {
+                    @Override
+                    public ListSubsettingPoliciesResponse apply(
+                            ListSubsettingPoliciesRequest request) {
+                        return client.listSubsettingPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingPolicySummary} objects contained in responses from
+     * the listSubsettingPolicies operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingPolicySummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingPolicySummary>
+            listSubsettingPoliciesRecordIterator(final ListSubsettingPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingPoliciesRequest.Builder,
+                ListSubsettingPoliciesRequest,
+                ListSubsettingPoliciesResponse,
+                com.oracle.bmc.datasafe.model.SubsettingPolicySummary>(
+                new java.util.function.Supplier<ListSubsettingPoliciesRequest.Builder>() {
+                    @Override
+                    public ListSubsettingPoliciesRequest.Builder get() {
+                        return ListSubsettingPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingPoliciesRequest.Builder>,
+                        ListSubsettingPoliciesRequest>() {
+                    @Override
+                    public ListSubsettingPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPoliciesRequest, ListSubsettingPoliciesResponse>() {
+                    @Override
+                    public ListSubsettingPoliciesResponse apply(
+                            ListSubsettingPoliciesRequest request) {
+                        return client.listSubsettingPolicies(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPoliciesResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SubsettingPolicySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SubsettingPolicySummary>
+                            apply(ListSubsettingPoliciesResponse response) {
+                        return response.getSubsettingPolicyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingPolicyHealthReportLogs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingPolicyHealthReportLogsResponse>
+            listSubsettingPolicyHealthReportLogsResponseIterator(
+                    final ListSubsettingPolicyHealthReportLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingPolicyHealthReportLogsRequest.Builder,
+                ListSubsettingPolicyHealthReportLogsRequest,
+                ListSubsettingPolicyHealthReportLogsResponse>(
+                new java.util.function.Supplier<
+                        ListSubsettingPolicyHealthReportLogsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportLogsRequest.Builder get() {
+                        return ListSubsettingPolicyHealthReportLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportLogsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingPolicyHealthReportLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingPolicyHealthReportLogsRequest.Builder>,
+                        ListSubsettingPolicyHealthReportLogsRequest>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingPolicyHealthReportLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportLogsRequest,
+                        ListSubsettingPolicyHealthReportLogsResponse>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportLogsResponse apply(
+                            ListSubsettingPolicyHealthReportLogsRequest request) {
+                        return client.listSubsettingPolicyHealthReportLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportLogSummary} objects contained in
+     * responses from the listSubsettingPolicyHealthReportLogs operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportLogSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportLogSummary>
+            listSubsettingPolicyHealthReportLogsRecordIterator(
+                    final ListSubsettingPolicyHealthReportLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingPolicyHealthReportLogsRequest.Builder,
+                ListSubsettingPolicyHealthReportLogsRequest,
+                ListSubsettingPolicyHealthReportLogsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportLogSummary>(
+                new java.util.function.Supplier<
+                        ListSubsettingPolicyHealthReportLogsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportLogsRequest.Builder get() {
+                        return ListSubsettingPolicyHealthReportLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportLogsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingPolicyHealthReportLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingPolicyHealthReportLogsRequest.Builder>,
+                        ListSubsettingPolicyHealthReportLogsRequest>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingPolicyHealthReportLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportLogsRequest,
+                        ListSubsettingPolicyHealthReportLogsResponse>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportLogsResponse apply(
+                            ListSubsettingPolicyHealthReportLogsRequest request) {
+                        return client.listSubsettingPolicyHealthReportLogs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportLogsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .SubsettingPolicyHealthReportLogSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .SubsettingPolicyHealthReportLogSummary>
+                            apply(ListSubsettingPolicyHealthReportLogsResponse response) {
+                        return response.getSubsettingPolicyHealthReportLogCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingPolicyHealthReports operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingPolicyHealthReportsResponse>
+            listSubsettingPolicyHealthReportsResponseIterator(
+                    final ListSubsettingPolicyHealthReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingPolicyHealthReportsRequest.Builder,
+                ListSubsettingPolicyHealthReportsRequest,
+                ListSubsettingPolicyHealthReportsResponse>(
+                new java.util.function.Supplier<
+                        ListSubsettingPolicyHealthReportsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportsRequest.Builder get() {
+                        return ListSubsettingPolicyHealthReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingPolicyHealthReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingPolicyHealthReportsRequest.Builder>,
+                        ListSubsettingPolicyHealthReportsRequest>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingPolicyHealthReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportsRequest,
+                        ListSubsettingPolicyHealthReportsResponse>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportsResponse apply(
+                            ListSubsettingPolicyHealthReportsRequest request) {
+                        return client.listSubsettingPolicyHealthReports(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportSummary} objects contained in
+     * responses from the listSubsettingPolicyHealthReports operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportSummary>
+            listSubsettingPolicyHealthReportsRecordIterator(
+                    final ListSubsettingPolicyHealthReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingPolicyHealthReportsRequest.Builder,
+                ListSubsettingPolicyHealthReportsRequest,
+                ListSubsettingPolicyHealthReportsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReportSummary>(
+                new java.util.function.Supplier<
+                        ListSubsettingPolicyHealthReportsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportsRequest.Builder get() {
+                        return ListSubsettingPolicyHealthReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingPolicyHealthReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingPolicyHealthReportsRequest.Builder>,
+                        ListSubsettingPolicyHealthReportsRequest>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingPolicyHealthReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportsRequest,
+                        ListSubsettingPolicyHealthReportsResponse>() {
+                    @Override
+                    public ListSubsettingPolicyHealthReportsResponse apply(
+                            ListSubsettingPolicyHealthReportsRequest request) {
+                        return client.listSubsettingPolicyHealthReports(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingPolicyHealthReportsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .SubsettingPolicyHealthReportSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .SubsettingPolicyHealthReportSummary>
+                            apply(ListSubsettingPolicyHealthReportsResponse response) {
+                        return response.getSubsettingPolicyHealthReportCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingReports operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingReportsResponse> listSubsettingReportsResponseIterator(
+            final ListSubsettingReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingReportsRequest.Builder,
+                ListSubsettingReportsRequest,
+                ListSubsettingReportsResponse>(
+                new java.util.function.Supplier<ListSubsettingReportsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingReportsRequest.Builder get() {
+                        return ListSubsettingReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingReportsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingReportsRequest.Builder>,
+                        ListSubsettingReportsRequest>() {
+                    @Override
+                    public ListSubsettingReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingReportsRequest, ListSubsettingReportsResponse>() {
+                    @Override
+                    public ListSubsettingReportsResponse apply(
+                            ListSubsettingReportsRequest request) {
+                        return client.listSubsettingReports(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingReportSummary} objects contained in responses from
+     * the listSubsettingReports operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingReportSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingReportSummary>
+            listSubsettingReportsRecordIterator(final ListSubsettingReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingReportsRequest.Builder,
+                ListSubsettingReportsRequest,
+                ListSubsettingReportsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingReportSummary>(
+                new java.util.function.Supplier<ListSubsettingReportsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingReportsRequest.Builder get() {
+                        return ListSubsettingReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingReportsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingReportsRequest.Builder>,
+                        ListSubsettingReportsRequest>() {
+                    @Override
+                    public ListSubsettingReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingReportsRequest, ListSubsettingReportsResponse>() {
+                    @Override
+                    public ListSubsettingReportsResponse apply(
+                            ListSubsettingReportsRequest request) {
+                        return client.listSubsettingReports(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingReportsResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SubsettingReportSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SubsettingReportSummary>
+                            apply(ListSubsettingReportsResponse response) {
+                        return response.getSubsettingReportCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingRuleProcessingChainObjects operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingRuleProcessingChainObjectsResponse>
+            listSubsettingRuleProcessingChainObjectsResponseIterator(
+                    final ListSubsettingRuleProcessingChainObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingRuleProcessingChainObjectsRequest.Builder,
+                ListSubsettingRuleProcessingChainObjectsRequest,
+                ListSubsettingRuleProcessingChainObjectsResponse>(
+                new java.util.function.Supplier<
+                        ListSubsettingRuleProcessingChainObjectsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingRuleProcessingChainObjectsRequest.Builder get() {
+                        return ListSubsettingRuleProcessingChainObjectsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRuleProcessingChainObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingRuleProcessingChainObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingRuleProcessingChainObjectsRequest.Builder>,
+                        ListSubsettingRuleProcessingChainObjectsRequest>() {
+                    @Override
+                    public ListSubsettingRuleProcessingChainObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingRuleProcessingChainObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRuleProcessingChainObjectsRequest,
+                        ListSubsettingRuleProcessingChainObjectsResponse>() {
+                    @Override
+                    public ListSubsettingRuleProcessingChainObjectsResponse apply(
+                            ListSubsettingRuleProcessingChainObjectsRequest request) {
+                        return client.listSubsettingRuleProcessingChainObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingRuleProcessingChainObjectSummary} objects contained
+     * in responses from the listSubsettingRuleProcessingChainObjects operation. This iterable will
+     * fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingRuleProcessingChainObjectSummary} objects
+     *     contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingRuleProcessingChainObjectSummary>
+            listSubsettingRuleProcessingChainObjectsRecordIterator(
+                    final ListSubsettingRuleProcessingChainObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingRuleProcessingChainObjectsRequest.Builder,
+                ListSubsettingRuleProcessingChainObjectsRequest,
+                ListSubsettingRuleProcessingChainObjectsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingRuleProcessingChainObjectSummary>(
+                new java.util.function.Supplier<
+                        ListSubsettingRuleProcessingChainObjectsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingRuleProcessingChainObjectsRequest.Builder get() {
+                        return ListSubsettingRuleProcessingChainObjectsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRuleProcessingChainObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingRuleProcessingChainObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingRuleProcessingChainObjectsRequest.Builder>,
+                        ListSubsettingRuleProcessingChainObjectsRequest>() {
+                    @Override
+                    public ListSubsettingRuleProcessingChainObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingRuleProcessingChainObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRuleProcessingChainObjectsRequest,
+                        ListSubsettingRuleProcessingChainObjectsResponse>() {
+                    @Override
+                    public ListSubsettingRuleProcessingChainObjectsResponse apply(
+                            ListSubsettingRuleProcessingChainObjectsRequest request) {
+                        return client.listSubsettingRuleProcessingChainObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRuleProcessingChainObjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .SubsettingRuleProcessingChainObjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .SubsettingRuleProcessingChainObjectSummary>
+                            apply(ListSubsettingRuleProcessingChainObjectsResponse response) {
+                        return response.getSubsettingRuleProcessingChainObjectsCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingRules operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingRulesResponse> listSubsettingRulesResponseIterator(
+            final ListSubsettingRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingRulesRequest.Builder,
+                ListSubsettingRulesRequest,
+                ListSubsettingRulesResponse>(
+                new java.util.function.Supplier<ListSubsettingRulesRequest.Builder>() {
+                    @Override
+                    public ListSubsettingRulesRequest.Builder get() {
+                        return ListSubsettingRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingRulesResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingRulesRequest.Builder>,
+                        ListSubsettingRulesRequest>() {
+                    @Override
+                    public ListSubsettingRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRulesRequest, ListSubsettingRulesResponse>() {
+                    @Override
+                    public ListSubsettingRulesResponse apply(ListSubsettingRulesRequest request) {
+                        return client.listSubsettingRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingRuleSummary} objects contained in responses from the
+     * listSubsettingRules operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingRuleSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingRuleSummary>
+            listSubsettingRulesRecordIterator(final ListSubsettingRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingRulesRequest.Builder,
+                ListSubsettingRulesRequest,
+                ListSubsettingRulesResponse,
+                com.oracle.bmc.datasafe.model.SubsettingRuleSummary>(
+                new java.util.function.Supplier<ListSubsettingRulesRequest.Builder>() {
+                    @Override
+                    public ListSubsettingRulesRequest.Builder get() {
+                        return ListSubsettingRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingRulesResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingRulesRequest.Builder>,
+                        ListSubsettingRulesRequest>() {
+                    @Override
+                    public ListSubsettingRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRulesRequest, ListSubsettingRulesResponse>() {
+                    @Override
+                    public ListSubsettingRulesResponse apply(ListSubsettingRulesRequest request) {
+                        return client.listSubsettingRules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingRulesResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SubsettingRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SubsettingRuleSummary>
+                            apply(ListSubsettingRulesResponse response) {
+                        return response.getSubsettingRuleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingSchemaObjects operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingSchemaObjectsResponse>
+            listSubsettingSchemaObjectsResponseIterator(
+                    final ListSubsettingSchemaObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingSchemaObjectsRequest.Builder,
+                ListSubsettingSchemaObjectsRequest,
+                ListSubsettingSchemaObjectsResponse>(
+                new java.util.function.Supplier<ListSubsettingSchemaObjectsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingSchemaObjectsRequest.Builder get() {
+                        return ListSubsettingSchemaObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingSchemaObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingSchemaObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingSchemaObjectsRequest.Builder>,
+                        ListSubsettingSchemaObjectsRequest>() {
+                    @Override
+                    public ListSubsettingSchemaObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingSchemaObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemaObjectsRequest, ListSubsettingSchemaObjectsResponse>() {
+                    @Override
+                    public ListSubsettingSchemaObjectsResponse apply(
+                            ListSubsettingSchemaObjectsRequest request) {
+                        return client.listSubsettingSchemaObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingSchemaObjectSummary} objects contained in responses
+     * from the listSubsettingSchemaObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingSchemaObjectSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingSchemaObjectSummary>
+            listSubsettingSchemaObjectsRecordIterator(
+                    final ListSubsettingSchemaObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingSchemaObjectsRequest.Builder,
+                ListSubsettingSchemaObjectsRequest,
+                ListSubsettingSchemaObjectsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingSchemaObjectSummary>(
+                new java.util.function.Supplier<ListSubsettingSchemaObjectsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingSchemaObjectsRequest.Builder get() {
+                        return ListSubsettingSchemaObjectsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingSchemaObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingSchemaObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingSchemaObjectsRequest.Builder>,
+                        ListSubsettingSchemaObjectsRequest>() {
+                    @Override
+                    public ListSubsettingSchemaObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingSchemaObjectsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemaObjectsRequest, ListSubsettingSchemaObjectsResponse>() {
+                    @Override
+                    public ListSubsettingSchemaObjectsResponse apply(
+                            ListSubsettingSchemaObjectsRequest request) {
+                        return client.listSubsettingSchemaObjects(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemaObjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.SubsettingSchemaObjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.SubsettingSchemaObjectSummary>
+                            apply(ListSubsettingSchemaObjectsResponse response) {
+                        return response.getSubsettingSchemaObjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingSchemaRelations operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingSchemaRelationsResponse>
+            listSubsettingSchemaRelationsResponseIterator(
+                    final ListSubsettingSchemaRelationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingSchemaRelationsRequest.Builder,
+                ListSubsettingSchemaRelationsRequest,
+                ListSubsettingSchemaRelationsResponse>(
+                new java.util.function.Supplier<ListSubsettingSchemaRelationsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingSchemaRelationsRequest.Builder get() {
+                        return ListSubsettingSchemaRelationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingSchemaRelationsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingSchemaRelationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingSchemaRelationsRequest.Builder>,
+                        ListSubsettingSchemaRelationsRequest>() {
+                    @Override
+                    public ListSubsettingSchemaRelationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingSchemaRelationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemaRelationsRequest,
+                        ListSubsettingSchemaRelationsResponse>() {
+                    @Override
+                    public ListSubsettingSchemaRelationsResponse apply(
+                            ListSubsettingSchemaRelationsRequest request) {
+                        return client.listSubsettingSchemaRelations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingSchemaRelationSummary} objects contained in responses
+     * from the listSubsettingSchemaRelations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingSchemaRelationSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingSchemaRelationSummary>
+            listSubsettingSchemaRelationsRecordIterator(
+                    final ListSubsettingSchemaRelationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingSchemaRelationsRequest.Builder,
+                ListSubsettingSchemaRelationsRequest,
+                ListSubsettingSchemaRelationsResponse,
+                com.oracle.bmc.datasafe.model.SubsettingSchemaRelationSummary>(
+                new java.util.function.Supplier<ListSubsettingSchemaRelationsRequest.Builder>() {
+                    @Override
+                    public ListSubsettingSchemaRelationsRequest.Builder get() {
+                        return ListSubsettingSchemaRelationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingSchemaRelationsResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingSchemaRelationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingSchemaRelationsRequest.Builder>,
+                        ListSubsettingSchemaRelationsRequest>() {
+                    @Override
+                    public ListSubsettingSchemaRelationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingSchemaRelationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemaRelationsRequest,
+                        ListSubsettingSchemaRelationsResponse>() {
+                    @Override
+                    public ListSubsettingSchemaRelationsResponse apply(
+                            ListSubsettingSchemaRelationsRequest request) {
+                        return client.listSubsettingSchemaRelations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemaRelationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.SubsettingSchemaRelationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.SubsettingSchemaRelationSummary>
+                            apply(ListSubsettingSchemaRelationsResponse response) {
+                        return response.getSubsettingSchemaRelationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSubsettingSchemas operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSubsettingSchemasResponse> listSubsettingSchemasResponseIterator(
+            final ListSubsettingSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSubsettingSchemasRequest.Builder,
+                ListSubsettingSchemasRequest,
+                ListSubsettingSchemasResponse>(
+                new java.util.function.Supplier<ListSubsettingSchemasRequest.Builder>() {
+                    @Override
+                    public ListSubsettingSchemasRequest.Builder get() {
+                        return ListSubsettingSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingSchemasRequest.Builder>,
+                        ListSubsettingSchemasRequest>() {
+                    @Override
+                    public ListSubsettingSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemasRequest, ListSubsettingSchemasResponse>() {
+                    @Override
+                    public ListSubsettingSchemasResponse apply(
+                            ListSubsettingSchemasRequest request) {
+                        return client.listSubsettingSchemas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.SubsettingSchemaSummary} objects contained in responses from
+     * the listSubsettingSchemas operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.SubsettingSchemaSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SubsettingSchemaSummary>
+            listSubsettingSchemasRecordIterator(final ListSubsettingSchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSubsettingSchemasRequest.Builder,
+                ListSubsettingSchemasRequest,
+                ListSubsettingSchemasResponse,
+                com.oracle.bmc.datasafe.model.SubsettingSchemaSummary>(
+                new java.util.function.Supplier<ListSubsettingSchemasRequest.Builder>() {
+                    @Override
+                    public ListSubsettingSchemasRequest.Builder get() {
+                        return ListSubsettingSchemasRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSubsettingSchemasResponse, String>() {
+                    @Override
+                    public String apply(ListSubsettingSchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSubsettingSchemasRequest.Builder>,
+                        ListSubsettingSchemasRequest>() {
+                    @Override
+                    public ListSubsettingSchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSubsettingSchemasRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemasRequest, ListSubsettingSchemasResponse>() {
+                    @Override
+                    public ListSubsettingSchemasResponse apply(
+                            ListSubsettingSchemasRequest request) {
+                        return client.listSubsettingSchemas(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSubsettingSchemasResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.SubsettingSchemaSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.SubsettingSchemaSummary>
+                            apply(ListSubsettingSchemasResponse response) {
+                        return response.getSubsettingSchemaCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listTableEstimates operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListTableEstimatesResponse> listTableEstimatesResponseIterator(
+            final ListTableEstimatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTableEstimatesRequest.Builder,
+                ListTableEstimatesRequest,
+                ListTableEstimatesResponse>(
+                new java.util.function.Supplier<ListTableEstimatesRequest.Builder>() {
+                    @Override
+                    public ListTableEstimatesRequest.Builder get() {
+                        return ListTableEstimatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTableEstimatesResponse, String>() {
+                    @Override
+                    public String apply(ListTableEstimatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTableEstimatesRequest.Builder>,
+                        ListTableEstimatesRequest>() {
+                    @Override
+                    public ListTableEstimatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTableEstimatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTableEstimatesRequest, ListTableEstimatesResponse>() {
+                    @Override
+                    public ListTableEstimatesResponse apply(ListTableEstimatesRequest request) {
+                        return client.listTableEstimates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.TableEstimateSummary} objects contained in responses from the
+     * listTableEstimates operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.TableEstimateSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.TableEstimateSummary>
+            listTableEstimatesRecordIterator(final ListTableEstimatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTableEstimatesRequest.Builder,
+                ListTableEstimatesRequest,
+                ListTableEstimatesResponse,
+                com.oracle.bmc.datasafe.model.TableEstimateSummary>(
+                new java.util.function.Supplier<ListTableEstimatesRequest.Builder>() {
+                    @Override
+                    public ListTableEstimatesRequest.Builder get() {
+                        return ListTableEstimatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTableEstimatesResponse, String>() {
+                    @Override
+                    public String apply(ListTableEstimatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTableEstimatesRequest.Builder>,
+                        ListTableEstimatesRequest>() {
+                    @Override
+                    public ListTableEstimatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTableEstimatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTableEstimatesRequest, ListTableEstimatesResponse>() {
+                    @Override
+                    public ListTableEstimatesResponse apply(ListTableEstimatesRequest request) {
+                        return client.listTableEstimates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTableEstimatesResponse,
+                        java.util.List<com.oracle.bmc.datasafe.model.TableEstimateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datasafe.model.TableEstimateSummary> apply(
+                            ListTableEstimatesResponse response) {
+                        return response.getTableEstimateCollection().getItems();
                     }
                 });
     }

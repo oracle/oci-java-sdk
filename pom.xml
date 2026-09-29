@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.97.0</version>
+  <version>3.97.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -38,9 +38,9 @@
     <jackson.version>2.21.5</jackson.version>
     <jackson.databind.version>2.21.5</jackson.databind.version>
     <jersey.version>2.47</jersey.version>
-    <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
-    <apache-httpcomponents.httpclient.version>4.5.13</apache-httpcomponents.httpclient.version>
-    <apache-httpcomponents.httpcore.version>4.4.13</apache-httpcomponents.httpcore.version>
+    <apache-httpcomponents.version>4.5.14</apache-httpcomponents.version>
+    <apache-httpcomponents.httpclient.version>4.5.14</apache-httpcomponents.httpclient.version>
+    <apache-httpcomponents.httpcore.version>4.4.16</apache-httpcomponents.httpcore.version>
     <common-codec>1.18.0</common-codec>
     <junit.version>4.13.2</junit.version>
     <slf4j.version>1.7.33</slf4j.version>

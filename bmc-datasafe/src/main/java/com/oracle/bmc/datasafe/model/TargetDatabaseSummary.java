@@ -34,6 +34,7 @@ public final class TargetDatabaseSummary
         "lifecycleState",
         "lifecycleDetails",
         "timeCreated",
+        "features",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -49,6 +50,7 @@ public final class TargetDatabaseSummary
             TargetDatabaseLifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeCreated,
+            java.util.List<String> features,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -63,6 +65,7 @@ public final class TargetDatabaseSummary
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
+        this.features = features;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -224,6 +227,21 @@ public final class TargetDatabaseSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** List of enabled features based on granted ORA_DSCS_* roles in target database */
+        @com.fasterxml.jackson.annotation.JsonProperty("features")
+        private java.util.List<String> features;
+
+        /**
+         * List of enabled features based on granted ORA_DSCS_* roles in target database
+         *
+         * @param features the value to set
+         * @return this builder
+         */
+        public Builder features(java.util.List<String> features) {
+            this.features = features;
+            this.__explicitlySet__.add("features");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -311,6 +329,7 @@ public final class TargetDatabaseSummary
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeCreated,
+                            this.features,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -351,6 +370,9 @@ public final class TargetDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("features")) {
+                this.features(model.getFeatures());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -508,6 +530,19 @@ public final class TargetDatabaseSummary
         return timeCreated;
     }
 
+    /** List of enabled features based on granted ORA_DSCS_* roles in target database */
+    @com.fasterxml.jackson.annotation.JsonProperty("features")
+    private final java.util.List<String> features;
+
+    /**
+     * List of enabled features based on granted ORA_DSCS_* roles in target database
+     *
+     * @return the value
+     */
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -596,6 +631,7 @@ public final class TargetDatabaseSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", features=").append(String.valueOf(this.features));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -623,6 +659,7 @@ public final class TargetDatabaseSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.features, other.features)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -657,6 +694,7 @@ public final class TargetDatabaseSummary
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

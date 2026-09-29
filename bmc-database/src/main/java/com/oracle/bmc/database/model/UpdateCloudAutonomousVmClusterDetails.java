@@ -30,6 +30,8 @@ public final class UpdateCloudAutonomousVmClusterDetails
         "autonomousDataStorageSizeInTBs",
         "cpuCoreCountPerNode",
         "totalContainerDatabases",
+        "memoryPerOracleComputeUnitInGBs",
+        "sgaPercentage",
         "licenseModel",
         "nsgIds",
         "freeformTags",
@@ -48,6 +50,8 @@ public final class UpdateCloudAutonomousVmClusterDetails
             Double autonomousDataStorageSizeInTBs,
             Integer cpuCoreCountPerNode,
             Integer totalContainerDatabases,
+            Integer memoryPerOracleComputeUnitInGBs,
+            Float sgaPercentage,
             LicenseModel licenseModel,
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
@@ -65,6 +69,8 @@ public final class UpdateCloudAutonomousVmClusterDetails
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.cpuCoreCountPerNode = cpuCoreCountPerNode;
         this.totalContainerDatabases = totalContainerDatabases;
+        this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.sgaPercentage = sgaPercentage;
         this.licenseModel = licenseModel;
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
@@ -167,6 +173,36 @@ public final class UpdateCloudAutonomousVmClusterDetails
         public Builder totalContainerDatabases(Integer totalContainerDatabases) {
             this.totalContainerDatabases = totalContainerDatabases;
             this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
+         * @param memoryPerOracleComputeUnitInGBs the value to set
+         * @return this builder
+         */
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+        /** The new value of percentage of ECPU memory allocated for SGA(System Global Area). */
+        @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+        private Float sgaPercentage;
+
+        /**
+         * The new value of percentage of ECPU memory allocated for SGA(System Global Area).
+         *
+         * @param sgaPercentage the value to set
+         * @return this builder
+         */
+        public Builder sgaPercentage(Float sgaPercentage) {
+            this.sgaPercentage = sgaPercentage;
+            this.__explicitlySet__.add("sgaPercentage");
             return this;
         }
         /**
@@ -414,6 +450,8 @@ public final class UpdateCloudAutonomousVmClusterDetails
                             this.autonomousDataStorageSizeInTBs,
                             this.cpuCoreCountPerNode,
                             this.totalContainerDatabases,
+                            this.memoryPerOracleComputeUnitInGBs,
+                            this.sgaPercentage,
                             this.licenseModel,
                             this.nsgIds,
                             this.freeformTags,
@@ -449,6 +487,12 @@ public final class UpdateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("totalContainerDatabases")) {
                 this.totalContainerDatabases(model.getTotalContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
+                this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("sgaPercentage")) {
+                this.sgaPercentage(model.getSgaPercentage());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -567,6 +611,32 @@ public final class UpdateCloudAutonomousVmClusterDetails
      */
     public Integer getTotalContainerDatabases() {
         return totalContainerDatabases;
+    }
+
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    private final Integer memoryPerOracleComputeUnitInGBs;
+
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     *
+     * @return the value
+     */
+    public Integer getMemoryPerOracleComputeUnitInGBs() {
+        return memoryPerOracleComputeUnitInGBs;
+    }
+
+    /** The new value of percentage of ECPU memory allocated for SGA(System Global Area). */
+    @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+    private final Float sgaPercentage;
+
+    /**
+     * The new value of percentage of ECPU memory allocated for SGA(System Global Area).
+     *
+     * @return the value
+     */
+    public Float getSgaPercentage() {
+        return sgaPercentage;
     }
 
     /**
@@ -882,6 +952,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
         sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
         sb.append(", totalContainerDatabases=")
                 .append(String.valueOf(this.totalContainerDatabases));
+        sb.append(", memoryPerOracleComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", sgaPercentage=").append(String.valueOf(this.sgaPercentage));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -915,6 +988,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
                 && java.util.Objects.equals(
                         this.totalContainerDatabases, other.totalContainerDatabases)
+                && java.util.Objects.equals(
+                        this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(this.sgaPercentage, other.sgaPercentage)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -956,6 +1032,14 @@ public final class UpdateCloudAutonomousVmClusterDetails
                         + (this.totalContainerDatabases == null
                                 ? 43
                                 : this.totalContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerOracleComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sgaPercentage == null ? 43 : this.sgaPercentage.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
