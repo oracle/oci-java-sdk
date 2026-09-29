@@ -79,6 +79,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void enableDualStackEndpoints(boolean dualStackEndpointTemplateEnabled);
 
     /**
+     * Adds DRG NAT rules to the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDrgNatRulesResponse> addDrgNatRules(
+            AddDrgNatRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddDrgNatRulesRequest, AddDrgNatRulesResponse>
+                    handler);
+
+    /**
      * Adds one or more route distribution statements to the specified route distribution.
      *
      * @param request The request object containing the details to send
@@ -581,6 +596,26 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>
                     handler);
+
+    /**
+     * Moves a DrgNatPolicy into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDrgNatPolicyCompartmentResponse>
+            changeDrgNatPolicyCompartment(
+                    ChangeDrgNatPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDrgNatPolicyCompartmentRequest,
+                                    ChangeDrgNatPolicyCompartmentResponse>
+                            handler);
 
     /**
      * Moves an IPSec connection into a different compartment within the same tenancy. For
@@ -1183,6 +1218,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             CreateDrgAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>
+                    handler);
+
+    /**
+     * Creates a new DRG NAT policy. Assign the DRG NAT policy to a DRG attachment using the
+     * `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDrgNatPolicyResponse> createDrgNatPolicy(
+            CreateDrgNatPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDrgNatPolicyRequest, CreateDrgNatPolicyResponse>
                     handler);
 
     /**
@@ -1898,6 +1950,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDrgNatPolicyResponse> deleteDrgNatPolicy(
+            DeleteDrgNatPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDrgNatPolicyRequest, DeleteDrgNatPolicyResponse>
+                    handler);
+
+    /**
      * Deletes the specified route distribution. You can't delete a route distribution currently in
      * use by a DRG attachment or DRG route table.
      *
@@ -2578,6 +2646,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<GetDrgAttachmentResponse> getDrgAttachment(
             GetDrgAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse>
+                    handler);
+
+    /**
+     * Gets the specified DRG NAT policy's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDrgNatPolicyResponse> getDrgNatPolicy(
+            GetDrgNatPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDrgNatPolicyRequest, GetDrgNatPolicyResponse>
                     handler);
 
     /**
@@ -3670,6 +3753,37 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * The list of DRG NAT policies in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrgNatPoliciesResponse> listDrgNatPolicies(
+            ListDrgNatPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgNatPoliciesRequest, ListDrgNatPoliciesResponse>
+                    handler);
+
+    /**
+     * Lists the rules for the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDrgNatRulesResponse> listDrgNatRules(
+            ListDrgNatRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDrgNatRulesRequest, ListDrgNatRulesResponse>
+                    handler);
+
+    /**
      * Lists the statements for the specified route distribution.
      *
      * @param request The request object containing the details to send
@@ -4441,6 +4555,39 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Dissociates the DRG NAT policy from the DRG attachment so no DRG NAT rules are advertised to
+     * it.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDrgNatPolicyResponse> removeDrgNatPolicy(
+            RemoveDrgNatPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDrgNatPolicyRequest, RemoveDrgNatPolicyResponse>
+                    handler);
+
+    /**
+     * Request with DRG NAT rules to remove from the DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDrgNatRulesResponse> removeDrgNatRules(
+            RemoveDrgNatRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDrgNatRulesRequest, RemoveDrgNatRulesResponse>
+                    handler);
+
+    /**
      * Removes one or more route distribution statements from the specified route distribution's
      * map.
      *
@@ -4806,6 +4953,38 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             UpdateDrgAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>
+                    handler);
+
+    /**
+     * Updates the specified DRG NAT policy
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrgNatPolicyResponse> updateDrgNatPolicy(
+            UpdateDrgNatPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgNatPolicyRequest, UpdateDrgNatPolicyResponse>
+                    handler);
+
+    /**
+     * Updates DRG NAT rules in the specified DRG NAT policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDrgNatRulesResponse> updateDrgNatRules(
+            UpdateDrgNatRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgNatRulesRequest, UpdateDrgNatRulesResponse>
                     handler);
 
     /**

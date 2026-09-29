@@ -155,6 +155,43 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public AddDrgNatRulesResponse addDrgNatRules(AddDrgNatRulesRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getAddDrgNatRulesDetails(), "addDrgNatRulesDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, AddDrgNatRulesResponse::builder)
+                .logger(LOG, "addDrgNatRules")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "AddDrgNatRules",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatRule/AddDrgNatRules")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDrgNatRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("addDrgNatRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddDrgNatRulesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDrgNatRulesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public AddDrgRouteDistributionStatementsResponse addDrgRouteDistributionStatements(
             AddDrgRouteDistributionStatementsRequest request) {
 
@@ -1146,6 +1183,43 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public ChangeDrgNatPolicyCompartmentResponse changeDrgNatPolicyCompartment(
+            ChangeDrgNatPolicyCompartmentRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDrgNatPolicyCompartmentDetails(),
+                "changeDrgNatPolicyCompartmentDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, ChangeDrgNatPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeDrgNatPolicyCompartment")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ChangeDrgNatPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatPolicy/ChangeDrgNatPolicyCompartment")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDrgNatPolicyCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDrgNatPolicyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeIPSecConnectionCompartmentResponse changeIPSecConnectionCompartment(
             ChangeIPSecConnectionCompartmentRequest request) {
 
@@ -2104,6 +2178,42 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public CreateDrgNatPolicyResponse createDrgNatPolicy(CreateDrgNatPolicyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateDrgNatPolicyDetails(), "createDrgNatPolicyDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+
+        return clientCall(request, CreateDrgNatPolicyResponse::builder)
+                .logger(LOG, "createDrgNatPolicy")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "CreateDrgNatPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatPolicy/CreateDrgNatPolicy")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgNatPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgNatPolicy.class,
+                        CreateDrgNatPolicyResponse.Builder::drgNatPolicy)
+                .handleResponseHeaderString("etag", CreateDrgNatPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgNatPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateDrgNatPolicyResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateDrgNatPolicyResponse.Builder::contentLocation)
+                .callSync();
+    }
+
+    @Override
     public CreateDrgRouteDistributionResponse createDrgRouteDistribution(
             CreateDrgRouteDistributionRequest request) {
         Objects.requireNonNull(
@@ -2946,6 +3056,37 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDrgAttachmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteDrgNatPolicyResponse deleteDrgNatPolicy(DeleteDrgNatPolicyRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, DeleteDrgNatPolicyResponse::builder)
+                .logger(LOG, "deleteDrgNatPolicy")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "DeleteDrgNatPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatPolicy/DeleteDrgNatPolicy")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgNatPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteDrgNatPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgNatPolicyResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3971,6 +4112,38 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", GetDrgAttachmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetDrgAttachmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetDrgNatPolicyResponse getDrgNatPolicy(GetDrgNatPolicyRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, GetDrgNatPolicyResponse::builder)
+                .logger(LOG, "getDrgNatPolicy")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetDrgNatPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatPolicy/GetDrgNatPolicy")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgNatPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgNatPolicy.class,
+                        GetDrgNatPolicyResponse.Builder::drgNatPolicy)
+                .handleResponseHeaderString("etag", GetDrgNatPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgNatPolicyResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -5950,6 +6123,7 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendQueryParam("drgId", request.getDrgId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("drgNatPolicyId", request.getDrgNatPolicyId())
                 .appendQueryParam("networkId", request.getNetworkId())
                 .appendEnumQueryParam("attachmentType", request.getAttachmentType())
                 .appendQueryParam("drgRouteTableId", request.getDrgRouteTableId())
@@ -5965,6 +6139,80 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                         "opc-next-page", ListDrgAttachmentsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListDrgAttachmentsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListDrgNatPoliciesResponse listDrgNatPolicies(ListDrgNatPoliciesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+
+        return clientCall(request, ListDrgNatPoliciesResponse::builder)
+                .logger(LOG, "listDrgNatPolicies")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ListDrgNatPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatPolicy/ListDrgNatPolicies")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgNatPoliciesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgNatPolicy.class,
+                        ListDrgNatPoliciesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgNatPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgNatPoliciesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListDrgNatRulesResponse listDrgNatRules(ListDrgNatRulesRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, ListDrgNatRulesResponse::builder)
+                .logger(LOG, "listDrgNatRules")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ListDrgNatRules",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatRule/ListDrgNatRules")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgNatRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .appendPathParam("drgNatRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgNatRule.class,
+                        ListDrgNatRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgNatRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgNatRulesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -7490,6 +7738,77 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public RemoveDrgNatPolicyResponse removeDrgNatPolicy(RemoveDrgNatPolicyRequest request) {
+
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgAttachmentId", request.getDrgAttachmentId());
+
+        return clientCall(request, RemoveDrgNatPolicyResponse::builder)
+                .logger(LOG, "removeDrgNatPolicy")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "RemoveDrgNatPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveDrgNatPolicy")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDrgNatPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .appendPathParam("actions")
+                .appendPathParam("removeDrgNatPolicy")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        RemoveDrgNatPolicyResponse.Builder::drgAttachment)
+                .handleResponseHeaderString("etag", RemoveDrgNatPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDrgNatPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveDrgNatRulesResponse removeDrgNatRules(RemoveDrgNatRulesRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDrgNatRulesDetails(), "removeDrgNatRulesDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, RemoveDrgNatRulesResponse::builder)
+                .logger(LOG, "removeDrgNatRules")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "RemoveDrgNatRules",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatRule/RemoveDrgNatRules")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDrgNatRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("removeDrgNatRules")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveDrgNatRulesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDrgNatRulesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RemoveDrgRouteDistributionStatementsResponse removeDrgRouteDistributionStatements(
             RemoveDrgRouteDistributionStatementsRequest request) {
 
@@ -8266,6 +8585,79 @@ public class VirtualNetworkClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .handleResponseHeaderString("etag", UpdateDrgAttachmentResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDrgAttachmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateDrgNatPolicyResponse updateDrgNatPolicy(UpdateDrgNatPolicyRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgNatPolicyDetails(), "updateDrgNatPolicyDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, UpdateDrgNatPolicyResponse::builder)
+                .logger(LOG, "updateDrgNatPolicy")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "UpdateDrgNatPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatPolicy/UpdateDrgNatPolicy")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgNatPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgNatPolicy.class,
+                        UpdateDrgNatPolicyResponse.Builder::drgNatPolicy)
+                .handleResponseHeaderString("etag", UpdateDrgNatPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgNatPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateDrgNatRulesResponse updateDrgNatRules(UpdateDrgNatRulesRequest request) {
+
+        Validate.notBlank(request.getDrgNatPolicyId(), "drgNatPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgNatRulesDetails(), "updateDrgNatRulesDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("drgNatPolicyId", request.getDrgNatPolicyId());
+
+        return clientCall(request, UpdateDrgNatRulesResponse::builder)
+                .logger(LOG, "updateDrgNatRules")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "UpdateDrgNatRules",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgNatRule/UpdateDrgNatRules")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateDrgNatRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgNatPolicies")
+                .appendPathParam(request.getDrgNatPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("updateDrgNatRules")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateDrgNatRulesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgNatRulesResponse.Builder::opcRequestId)
                 .callSync();
     }
 

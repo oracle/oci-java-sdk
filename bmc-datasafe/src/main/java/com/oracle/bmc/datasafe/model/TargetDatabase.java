@@ -36,6 +36,7 @@ public final class TargetDatabase
         "lifecycleDetails",
         "timeCreated",
         "timeUpdated",
+        "features",
         "peerTargetDatabases",
         "freeformTags",
         "definedTags",
@@ -55,6 +56,7 @@ public final class TargetDatabase
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<String> features,
             java.util.List<PeerTargetDatabase> peerTargetDatabases,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -73,6 +75,7 @@ public final class TargetDatabase
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.features = features;
         this.peerTargetDatabases = peerTargetDatabases;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -252,6 +255,21 @@ public final class TargetDatabase
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** List of enabled features based on granted ORA_DSCS_* roles in target database */
+        @com.fasterxml.jackson.annotation.JsonProperty("features")
+        private java.util.List<String> features;
+
+        /**
+         * List of enabled features based on granted ORA_DSCS_* roles in target database
+         *
+         * @param features the value to set
+         * @return this builder
+         */
+        public Builder features(java.util.List<String> features) {
+            this.features = features;
+            this.__explicitlySet__.add("features");
+            return this;
+        }
         /** The OCIDs of associated resources like database, Data Safe private endpoint, etc. */
         @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabases")
         private java.util.List<PeerTargetDatabase> peerTargetDatabases;
@@ -357,6 +375,7 @@ public final class TargetDatabase
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.features,
                             this.peerTargetDatabases,
                             this.freeformTags,
                             this.definedTags,
@@ -407,6 +426,9 @@ public final class TargetDatabase
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("features")) {
+                this.features(model.getFeatures());
             }
             if (model.wasPropertyExplicitlySet("peerTargetDatabases")) {
                 this.peerTargetDatabases(model.getPeerTargetDatabases());
@@ -578,6 +600,19 @@ public final class TargetDatabase
         return timeUpdated;
     }
 
+    /** List of enabled features based on granted ORA_DSCS_* roles in target database */
+    @com.fasterxml.jackson.annotation.JsonProperty("features")
+    private final java.util.List<String> features;
+
+    /**
+     * List of enabled features based on granted ORA_DSCS_* roles in target database
+     *
+     * @return the value
+     */
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
+
     /** The OCIDs of associated resources like database, Data Safe private endpoint, etc. */
     @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabases")
     private final java.util.List<PeerTargetDatabase> peerTargetDatabases;
@@ -682,6 +717,7 @@ public final class TargetDatabase
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", features=").append(String.valueOf(this.features));
         sb.append(", peerTargetDatabases=").append(String.valueOf(this.peerTargetDatabases));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -713,6 +749,7 @@ public final class TargetDatabase
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.features, other.features)
                 && java.util.Objects.equals(this.peerTargetDatabases, other.peerTargetDatabases)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -751,6 +788,7 @@ public final class TargetDatabase
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.features == null ? 43 : this.features.hashCode());
         result =
                 (result * PRIME)
                         + (this.peerTargetDatabases == null

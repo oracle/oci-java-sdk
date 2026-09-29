@@ -38,6 +38,8 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
         "freeformTags",
         "routeTableId",
         "vcnId",
+        "drgNatPolicyId",
+        "doesPreserveOriginalRoutesWithNat",
         "exportDrgRouteDistributionId",
         "isCrossTenancy"
     })
@@ -54,6 +56,8 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
             java.util.Map<String, String> freeformTags,
             String routeTableId,
             String vcnId,
+            String drgNatPolicyId,
+            Boolean doesPreserveOriginalRoutesWithNat,
             String exportDrgRouteDistributionId,
             Boolean isCrossTenancy) {
         super();
@@ -69,6 +73,8 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
         this.freeformTags = freeformTags;
         this.routeTableId = routeTableId;
         this.vcnId = vcnId;
+        this.drgNatPolicyId = drgNatPolicyId;
+        this.doesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
         this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
         this.isCrossTenancy = isCrossTenancy;
     }
@@ -340,6 +346,49 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG attachment's DRG NAT policy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("drgNatPolicyId")
+        private String drgNatPolicyId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG attachment's DRG NAT policy.
+         *
+         * @param drgNatPolicyId the value to set
+         * @return this builder
+         */
+        public Builder drgNatPolicyId(String drgNatPolicyId) {
+            this.drgNatPolicyId = drgNatPolicyId;
+            this.__explicitlySet__.add("drgNatPolicyId");
+            return this;
+        }
+        /**
+         * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to
+         * prevent routing complications. Enable this option to also preserve original CIDRs. The
+         * original source CIDRs is not advertised if this value is set to false, else it is
+         * advertised. default: {@code false}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("doesPreserveOriginalRoutesWithNat")
+        private Boolean doesPreserveOriginalRoutesWithNat;
+
+        /**
+         * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to
+         * prevent routing complications. Enable this option to also preserve original CIDRs. The
+         * original source CIDRs is not advertised if this value is set to false, else it is
+         * advertised. default: {@code false}
+         *
+         * @param doesPreserveOriginalRoutesWithNat the value to set
+         * @return this builder
+         */
+        public Builder doesPreserveOriginalRoutesWithNat(
+                Boolean doesPreserveOriginalRoutesWithNat) {
+            this.doesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
+            this.__explicitlySet__.add("doesPreserveOriginalRoutesWithNat");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * export route distribution used to specify how routes in the assigned DRG route table are
          * advertised to the attachment. If this value is null, no routes are advertised through
          * this attachment.
@@ -403,6 +452,8 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
                             this.freeformTags,
                             this.routeTableId,
                             this.vcnId,
+                            this.drgNatPolicyId,
+                            this.doesPreserveOriginalRoutesWithNat,
                             this.exportDrgRouteDistributionId,
                             this.isCrossTenancy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -448,6 +499,13 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("drgNatPolicyId")) {
+                this.drgNatPolicyId(model.getDrgNatPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("doesPreserveOriginalRoutesWithNat")) {
+                this.doesPreserveOriginalRoutesWithNat(
+                        model.getDoesPreserveOriginalRoutesWithNat());
             }
             if (model.wasPropertyExplicitlySet("exportDrgRouteDistributionId")) {
                 this.exportDrgRouteDistributionId(model.getExportDrgRouteDistributionId());
@@ -751,6 +809,44 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * attachment's DRG NAT policy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("drgNatPolicyId")
+    private final String drgNatPolicyId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * attachment's DRG NAT policy.
+     *
+     * @return the value
+     */
+    public String getDrgNatPolicyId() {
+        return drgNatPolicyId;
+    }
+
+    /**
+     * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+     * routing complications. Enable this option to also preserve original CIDRs. The original
+     * source CIDRs is not advertised if this value is set to false, else it is advertised. default:
+     * {@code false}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("doesPreserveOriginalRoutesWithNat")
+    private final Boolean doesPreserveOriginalRoutesWithNat;
+
+    /**
+     * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+     * routing complications. Enable this option to also preserve original CIDRs. The original
+     * source CIDRs is not advertised if this value is set to false, else it is advertised. default:
+     * {@code false}
+     *
+     * @return the value
+     */
+    public Boolean getDoesPreserveOriginalRoutesWithNat() {
+        return doesPreserveOriginalRoutesWithNat;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * export route distribution used to specify how routes in the assigned DRG route table are
      * advertised to the attachment. If this value is null, no routes are advertised through this
@@ -819,6 +915,9 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", drgNatPolicyId=").append(String.valueOf(this.drgNatPolicyId));
+        sb.append(", doesPreserveOriginalRoutesWithNat=")
+                .append(String.valueOf(this.doesPreserveOriginalRoutesWithNat));
         sb.append(", exportDrgRouteDistributionId=")
                 .append(String.valueOf(this.exportDrgRouteDistributionId));
         sb.append(", isCrossTenancy=").append(String.valueOf(this.isCrossTenancy));
@@ -848,6 +947,10 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.drgNatPolicyId, other.drgNatPolicyId)
+                && java.util.Objects.equals(
+                        this.doesPreserveOriginalRoutesWithNat,
+                        other.doesPreserveOriginalRoutesWithNat)
                 && java.util.Objects.equals(
                         this.exportDrgRouteDistributionId, other.exportDrgRouteDistributionId)
                 && java.util.Objects.equals(this.isCrossTenancy, other.isCrossTenancy)
@@ -878,6 +981,14 @@ public final class DrgAttachment extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drgNatPolicyId == null ? 43 : this.drgNatPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.doesPreserveOriginalRoutesWithNat == null
+                                ? 43
+                                : this.doesPreserveOriginalRoutesWithNat.hashCode());
         result =
                 (result * PRIME)
                         + (this.exportDrgRouteDistributionId == null

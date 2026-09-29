@@ -6,8 +6,9 @@ package com.oracle.bmc.datasafe.model;
 
 /**
  * Criteria to determine whether a target database should be included in the target database group.
- * If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags or
- * systemTags criteria then it qualifies for inclusion in the target database group. <br>
+ * If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags,
+ * freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database
+ * group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,18 +28,24 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
         "compartments",
         "targetDatabaseIds",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "freeformTagsIn",
+        "systemTags"
     })
     public Include(
             java.util.List<Compartments> compartments,
             java.util.List<String> targetDatabaseIds,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, Object> freeformTagsIn,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.compartments = compartments;
         this.targetDatabaseIds = targetDatabaseIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.freeformTagsIn = freeformTagsIn;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -128,6 +135,44 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Map of freeform tag filters. Each key maps to an array of strings. Target database
+         * matches the key if it's tag value equals any of the values in the array.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTagsIn")
+        private java.util.Map<String, Object> freeformTagsIn;
+
+        /**
+         * Map of freeform tag filters. Each key maps to an array of strings. Target database
+         * matches the key if it's tag value equals any of the values in the array.
+         *
+         * @param freeformTagsIn the value to set
+         * @return this builder
+         */
+        public Builder freeformTagsIn(java.util.Map<String, Object> freeformTagsIn) {
+            this.freeformTagsIn = freeformTagsIn;
+            this.__explicitlySet__.add("freeformTagsIn");
+            return this;
+        }
+        /**
+         * Map of system tag filters. Target database matches when for each specified namespace.key
+         * and the tag value equals any of the values in the array.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Map of system tag filters. Target database matches when for each specified namespace.key
+         * and the tag value equals any of the values in the array.
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -138,7 +183,9 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
                             this.compartments,
                             this.targetDatabaseIds,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.freeformTagsIn,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -158,6 +205,12 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTagsIn")) {
+                this.freeformTagsIn(model.getFreeformTagsIn());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -248,6 +301,40 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
         return definedTags;
     }
 
+    /**
+     * Map of freeform tag filters. Each key maps to an array of strings. Target database matches
+     * the key if it's tag value equals any of the values in the array.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTagsIn")
+    private final java.util.Map<String, Object> freeformTagsIn;
+
+    /**
+     * Map of freeform tag filters. Each key maps to an array of strings. Target database matches
+     * the key if it's tag value equals any of the values in the array.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, Object> getFreeformTagsIn() {
+        return freeformTagsIn;
+    }
+
+    /**
+     * Map of system tag filters. Target database matches when for each specified namespace.key and
+     * the tag value equals any of the values in the array.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Map of system tag filters. Target database matches when for each specified namespace.key and
+     * the tag value equals any of the values in the array.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -267,6 +354,8 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", targetDatabaseIds=").append(String.valueOf(this.targetDatabaseIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTagsIn=").append(String.valueOf(this.freeformTagsIn));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -285,6 +374,8 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.targetDatabaseIds, other.targetDatabaseIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTagsIn, other.freeformTagsIn)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -298,6 +389,10 @@ public final class Include extends com.oracle.bmc.http.client.internal.Explicitl
                         + (this.targetDatabaseIds == null ? 43 : this.targetDatabaseIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.freeformTagsIn == null ? 43 : this.freeformTagsIn.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

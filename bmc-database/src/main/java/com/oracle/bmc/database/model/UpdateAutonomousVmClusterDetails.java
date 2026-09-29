@@ -31,6 +31,8 @@ public final class UpdateAutonomousVmClusterDetails
         "autonomousDataStorageSizeInTBs",
         "cpuCoreCountPerNode",
         "totalContainerDatabases",
+        "memoryPerOracleComputeUnitInGBs",
+        "sgaPercentage",
         "timeZone",
         "scanListenerPortTls",
         "scanListenerPortNonTls",
@@ -45,6 +47,8 @@ public final class UpdateAutonomousVmClusterDetails
             Double autonomousDataStorageSizeInTBs,
             Integer cpuCoreCountPerNode,
             Integer totalContainerDatabases,
+            Integer memoryPerOracleComputeUnitInGBs,
+            Float sgaPercentage,
             String timeZone,
             Integer scanListenerPortTls,
             Integer scanListenerPortNonTls,
@@ -58,6 +62,8 @@ public final class UpdateAutonomousVmClusterDetails
         this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
         this.cpuCoreCountPerNode = cpuCoreCountPerNode;
         this.totalContainerDatabases = totalContainerDatabases;
+        this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+        this.sgaPercentage = sgaPercentage;
         this.timeZone = timeZone;
         this.scanListenerPortTls = scanListenerPortTls;
         this.scanListenerPortNonTls = scanListenerPortNonTls;
@@ -189,6 +195,36 @@ public final class UpdateAutonomousVmClusterDetails
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
+        /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        /**
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
+         * @param memoryPerOracleComputeUnitInGBs the value to set
+         * @return this builder
+         */
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+        /** The new value of percentage of ECPU memory allocated for SGA(System Global Area). */
+        @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+        private Float sgaPercentage;
+
+        /**
+         * The new value of percentage of ECPU memory allocated for SGA(System Global Area).
+         *
+         * @param sgaPercentage the value to set
+         * @return this builder
+         */
+        public Builder sgaPercentage(Float sgaPercentage) {
+            this.sgaPercentage = sgaPercentage;
+            this.__explicitlySet__.add("sgaPercentage");
+            return this;
+        }
         /**
          * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
          * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -282,6 +318,8 @@ public final class UpdateAutonomousVmClusterDetails
                             this.autonomousDataStorageSizeInTBs,
                             this.cpuCoreCountPerNode,
                             this.totalContainerDatabases,
+                            this.memoryPerOracleComputeUnitInGBs,
+                            this.sgaPercentage,
                             this.timeZone,
                             this.scanListenerPortTls,
                             this.scanListenerPortNonTls,
@@ -315,6 +353,12 @@ public final class UpdateAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("totalContainerDatabases")) {
                 this.totalContainerDatabases(model.getTotalContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
+                this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("sgaPercentage")) {
+                this.sgaPercentage(model.getSgaPercentage());
             }
             if (model.wasPropertyExplicitlySet("timeZone")) {
                 this.timeZone(model.getTimeZone());
@@ -485,6 +529,32 @@ public final class UpdateAutonomousVmClusterDetails
         return totalContainerDatabases;
     }
 
+    /** The amount of memory (in GBs) to be enabled per OCPU or ECPU. */
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    private final Integer memoryPerOracleComputeUnitInGBs;
+
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     *
+     * @return the value
+     */
+    public Integer getMemoryPerOracleComputeUnitInGBs() {
+        return memoryPerOracleComputeUnitInGBs;
+    }
+
+    /** The new value of percentage of ECPU memory allocated for SGA(System Global Area). */
+    @com.fasterxml.jackson.annotation.JsonProperty("sgaPercentage")
+    private final Float sgaPercentage;
+
+    /**
+     * The new value of percentage of ECPU memory allocated for SGA(System Global Area).
+     *
+     * @return the value
+     */
+    public Float getSgaPercentage() {
+        return sgaPercentage;
+    }
+
     /**
      * The time zone to use for the Autonomous VM cluster. For details, see [DB System Time
      * Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -612,6 +682,9 @@ public final class UpdateAutonomousVmClusterDetails
         sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
         sb.append(", totalContainerDatabases=")
                 .append(String.valueOf(this.totalContainerDatabases));
+        sb.append(", memoryPerOracleComputeUnitInGBs=")
+                .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
+        sb.append(", sgaPercentage=").append(String.valueOf(this.sgaPercentage));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
         sb.append(", scanListenerPortTls=").append(String.valueOf(this.scanListenerPortTls));
         sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
@@ -641,6 +714,9 @@ public final class UpdateAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
                 && java.util.Objects.equals(
                         this.totalContainerDatabases, other.totalContainerDatabases)
+                && java.util.Objects.equals(
+                        this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
+                && java.util.Objects.equals(this.sgaPercentage, other.sgaPercentage)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
                 && java.util.Objects.equals(this.scanListenerPortTls, other.scanListenerPortTls)
                 && java.util.Objects.equals(
@@ -677,6 +753,14 @@ public final class UpdateAutonomousVmClusterDetails
                         + (this.totalContainerDatabases == null
                                 ? 43
                                 : this.totalContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.memoryPerOracleComputeUnitInGBs == null
+                                ? 43
+                                : this.memoryPerOracleComputeUnitInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sgaPercentage == null ? 43 : this.sgaPercentage.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
         result =
                 (result * PRIME)

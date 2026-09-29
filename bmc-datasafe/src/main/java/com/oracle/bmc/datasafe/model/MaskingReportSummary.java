@@ -28,6 +28,7 @@ public final class MaskingReportSummary
         "compartmentId",
         "maskingWorkRequestId",
         "maskingPolicyId",
+        "subsettingReportId",
         "targetId",
         "totalMaskedSensitiveTypes",
         "totalMaskedSchemas",
@@ -52,6 +53,7 @@ public final class MaskingReportSummary
             String compartmentId,
             String maskingWorkRequestId,
             String maskingPolicyId,
+            String subsettingReportId,
             String targetId,
             Long totalMaskedSensitiveTypes,
             Long totalMaskedSchemas,
@@ -75,6 +77,7 @@ public final class MaskingReportSummary
         this.compartmentId = compartmentId;
         this.maskingWorkRequestId = maskingWorkRequestId;
         this.maskingPolicyId = maskingPolicyId;
+        this.subsettingReportId = subsettingReportId;
         this.targetId = targetId;
         this.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
         this.totalMaskedSchemas = totalMaskedSchemas;
@@ -155,6 +158,21 @@ public final class MaskingReportSummary
         public Builder maskingPolicyId(String maskingPolicyId) {
             this.maskingPolicyId = maskingPolicyId;
             this.__explicitlySet__.add("maskingPolicyId");
+            return this;
+        }
+        /** The OCID of the subsetting report associated with this masking report */
+        @com.fasterxml.jackson.annotation.JsonProperty("subsettingReportId")
+        private String subsettingReportId;
+
+        /**
+         * The OCID of the subsetting report associated with this masking report
+         *
+         * @param subsettingReportId the value to set
+         * @return this builder
+         */
+        public Builder subsettingReportId(String subsettingReportId) {
+            this.subsettingReportId = subsettingReportId;
+            this.__explicitlySet__.add("subsettingReportId");
             return this;
         }
         /** The OCID of the target database masked. */
@@ -458,6 +476,7 @@ public final class MaskingReportSummary
                             this.compartmentId,
                             this.maskingWorkRequestId,
                             this.maskingPolicyId,
+                            this.subsettingReportId,
                             this.targetId,
                             this.totalMaskedSensitiveTypes,
                             this.totalMaskedSchemas,
@@ -495,6 +514,9 @@ public final class MaskingReportSummary
             }
             if (model.wasPropertyExplicitlySet("maskingPolicyId")) {
                 this.maskingPolicyId(model.getMaskingPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("subsettingReportId")) {
+                this.subsettingReportId(model.getSubsettingReportId());
             }
             if (model.wasPropertyExplicitlySet("targetId")) {
                 this.targetId(model.getTargetId());
@@ -613,6 +635,19 @@ public final class MaskingReportSummary
      */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
+    }
+
+    /** The OCID of the subsetting report associated with this masking report */
+    @com.fasterxml.jackson.annotation.JsonProperty("subsettingReportId")
+    private final String subsettingReportId;
+
+    /**
+     * The OCID of the subsetting report associated with this masking report
+     *
+     * @return the value
+     */
+    public String getSubsettingReportId() {
+        return subsettingReportId;
     }
 
     /** The OCID of the target database masked. */
@@ -934,6 +969,7 @@ public final class MaskingReportSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", maskingWorkRequestId=").append(String.valueOf(this.maskingWorkRequestId));
         sb.append(", maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
+        sb.append(", subsettingReportId=").append(String.valueOf(this.subsettingReportId));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
         sb.append(", totalMaskedSensitiveTypes=")
                 .append(String.valueOf(this.totalMaskedSensitiveTypes));
@@ -974,6 +1010,7 @@ public final class MaskingReportSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.maskingWorkRequestId, other.maskingWorkRequestId)
                 && java.util.Objects.equals(this.maskingPolicyId, other.maskingPolicyId)
+                && java.util.Objects.equals(this.subsettingReportId, other.subsettingReportId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(
                         this.totalMaskedSensitiveTypes, other.totalMaskedSensitiveTypes)
@@ -1015,6 +1052,11 @@ public final class MaskingReportSummary
         result =
                 (result * PRIME)
                         + (this.maskingPolicyId == null ? 43 : this.maskingPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subsettingReportId == null
+                                ? 43
+                                : this.subsettingReportId.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result =
                 (result * PRIME)

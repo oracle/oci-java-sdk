@@ -1579,6 +1579,238 @@ public class VirtualNetworkPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listDrgNatPolicies operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDrgNatPoliciesResponse> listDrgNatPoliciesResponseIterator(
+            final ListDrgNatPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDrgNatPoliciesRequest.Builder,
+                ListDrgNatPoliciesRequest,
+                ListDrgNatPoliciesResponse>(
+                new java.util.function.Supplier<ListDrgNatPoliciesRequest.Builder>() {
+                    @Override
+                    public ListDrgNatPoliciesRequest.Builder get() {
+                        return ListDrgNatPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDrgNatPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListDrgNatPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDrgNatPoliciesRequest.Builder>,
+                        ListDrgNatPoliciesRequest>() {
+                    @Override
+                    public ListDrgNatPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDrgNatPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDrgNatPoliciesRequest, ListDrgNatPoliciesResponse>() {
+                    @Override
+                    public ListDrgNatPoliciesResponse apply(ListDrgNatPoliciesRequest request) {
+                        return client.listDrgNatPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.core.model.DrgNatPolicy} objects contained in responses from the
+     * listDrgNatPolicies operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.core.model.DrgNatPolicy} objects contained in responses received from the
+     *     service.
+     */
+    public Iterable<com.oracle.bmc.core.model.DrgNatPolicy> listDrgNatPoliciesRecordIterator(
+            final ListDrgNatPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDrgNatPoliciesRequest.Builder,
+                ListDrgNatPoliciesRequest,
+                ListDrgNatPoliciesResponse,
+                com.oracle.bmc.core.model.DrgNatPolicy>(
+                new java.util.function.Supplier<ListDrgNatPoliciesRequest.Builder>() {
+                    @Override
+                    public ListDrgNatPoliciesRequest.Builder get() {
+                        return ListDrgNatPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDrgNatPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListDrgNatPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDrgNatPoliciesRequest.Builder>,
+                        ListDrgNatPoliciesRequest>() {
+                    @Override
+                    public ListDrgNatPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDrgNatPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDrgNatPoliciesRequest, ListDrgNatPoliciesResponse>() {
+                    @Override
+                    public ListDrgNatPoliciesResponse apply(ListDrgNatPoliciesRequest request) {
+                        return client.listDrgNatPolicies(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDrgNatPoliciesResponse,
+                        java.util.List<com.oracle.bmc.core.model.DrgNatPolicy>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.DrgNatPolicy> apply(
+                            ListDrgNatPoliciesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDrgNatRules operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDrgNatRulesResponse> listDrgNatRulesResponseIterator(
+            final ListDrgNatRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDrgNatRulesRequest.Builder, ListDrgNatRulesRequest, ListDrgNatRulesResponse>(
+                new java.util.function.Supplier<ListDrgNatRulesRequest.Builder>() {
+                    @Override
+                    public ListDrgNatRulesRequest.Builder get() {
+                        return ListDrgNatRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDrgNatRulesResponse, String>() {
+                    @Override
+                    public String apply(ListDrgNatRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDrgNatRulesRequest.Builder>,
+                        ListDrgNatRulesRequest>() {
+                    @Override
+                    public ListDrgNatRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDrgNatRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDrgNatRulesRequest, ListDrgNatRulesResponse>() {
+                    @Override
+                    public ListDrgNatRulesResponse apply(ListDrgNatRulesRequest request) {
+                        return client.listDrgNatRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.core.model.DrgNatRule} objects contained in responses from the listDrgNatRules
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.core.model.DrgNatRule} objects contained in responses received from the
+     *     service.
+     */
+    public Iterable<com.oracle.bmc.core.model.DrgNatRule> listDrgNatRulesRecordIterator(
+            final ListDrgNatRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDrgNatRulesRequest.Builder,
+                ListDrgNatRulesRequest,
+                ListDrgNatRulesResponse,
+                com.oracle.bmc.core.model.DrgNatRule>(
+                new java.util.function.Supplier<ListDrgNatRulesRequest.Builder>() {
+                    @Override
+                    public ListDrgNatRulesRequest.Builder get() {
+                        return ListDrgNatRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDrgNatRulesResponse, String>() {
+                    @Override
+                    public String apply(ListDrgNatRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDrgNatRulesRequest.Builder>,
+                        ListDrgNatRulesRequest>() {
+                    @Override
+                    public ListDrgNatRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDrgNatRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDrgNatRulesRequest, ListDrgNatRulesResponse>() {
+                    @Override
+                    public ListDrgNatRulesResponse apply(ListDrgNatRulesRequest request) {
+                        return client.listDrgNatRules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDrgNatRulesResponse,
+                        java.util.List<com.oracle.bmc.core.model.DrgNatRule>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.DrgNatRule> apply(
+                            ListDrgNatRulesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDrgRouteDistributionStatements operation. This iterable will fetch more data from the
      * server as needed.
      *

@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.97.1 - 2026-09-29
+### Added 
+- Support for data subsetting in the Data Safe service 
+- Support for seamless registration of Exadata databases in the Data Safe service 
+- Support for changing the memory-to-CPU ratio of autonomous VM clusters in the Database service 
+- Support for network address translation on dynamic routing gateways in the Networking service
+
 ## 3.97.0 - 2026-09-22
 ### Added 
 - Support for recurring maintenance windows in the Application Performance Monitoring Synthetics service 

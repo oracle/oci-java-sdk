@@ -551,6 +551,24 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the registration policy to the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRegistrationPolicyCompartmentResponse>
+            changeRegistrationPolicyCompartment(
+                    ChangeRegistrationPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRegistrationPolicyCompartmentRequest,
+                                    ChangeRegistrationPolicyCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a resource into a different compartment. When provided, If-Match is checked against
      * ETag values of the resource.
      *
@@ -809,6 +827,44 @@ public interface DataSafeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeSqlFirewallPolicyCompartmentRequest,
                                     ChangeSqlFirewallPolicyCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified subsetting policy and its dependent resources into a different
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSubsettingPolicyCompartmentResponse>
+            changeSubsettingPolicyCompartment(
+                    ChangeSubsettingPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSubsettingPolicyCompartmentRequest,
+                                    ChangeSubsettingPolicyCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves the specified subsetting policy health report and its dependent resources into a
+     * different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSubsettingPolicyHealthReportCompartmentResponse>
+            changeSubsettingPolicyHealthReportCompartment(
+                    ChangeSubsettingPolicyHealthReportCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSubsettingPolicyHealthReportCompartmentRequest,
+                                    ChangeSubsettingPolicyHealthReportCompartmentResponse>
                             handler);
 
     /**
@@ -1240,6 +1296,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new OptIn/Registration Policy
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRegistrationPolicyResponse> createRegistrationPolicy(
+            CreateRegistrationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRegistrationPolicyRequest, CreateRegistrationPolicyResponse>
+                    handler);
+
+    /**
      * Creates a new report definition with parameters specified in the body. The report definition
      * is stored in the specified compartment.
      *
@@ -1451,6 +1523,70 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateSqlCollectionRequest, CreateSqlCollectionResponse>
                     handler);
+
+    /**
+     * Creates a new subsetting policy and associates it with a sensitive data model or a target
+     * database.
+     *
+     * <p>To use a sensitive data model as the source of subsetting schemas, set the schemaSource
+     * attribute to SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. In this
+     * case, the target database associated with the sensitive data model is used for subsetting
+     * rules validations.
+     *
+     * <p>You can also create a subsetting policy without using a sensitive data model. In this
+     * case, you need to associate your subsetting policy with a target database by setting the
+     * schemaSource attribute to TARGET and providing the targetId attribute. The specified target
+     * database is used for subsetting rules validations.
+     *
+     * <p>After creating a subsetting policy, you can use the CreateSubsettingRule operation to
+     * manually add subsetting rules to the policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSubsettingPolicyResponse> createSubsettingPolicy(
+            CreateSubsettingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSubsettingPolicyRequest, CreateSubsettingPolicyResponse>
+                    handler);
+
+    /**
+     * Details to create a new subsetting rule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSubsettingRuleResponse> createSubsettingRule(
+            CreateSubsettingRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSubsettingRuleRequest, CreateSubsettingRuleResponse>
+                    handler);
+
+    /**
+     * Details to create a new referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSubsettingSchemaRelationResponse>
+            createSubsettingSchemaRelation(
+                    CreateSubsettingSchemaRelationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSubsettingSchemaRelationRequest,
+                                    CreateSubsettingSchemaRelationResponse>
+                            handler);
 
     /**
      * Creates a new target-alert policy association to track a alert policy applied on target.
@@ -1850,6 +1986,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified registration policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRegistrationPolicyResponse> deleteRegistrationPolicy(
+            DeleteRegistrationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRegistrationPolicyRequest, DeleteRegistrationPolicyResponse>
+                    handler);
+
+    /**
      * Deletes the specified report definition. Only the user created report definition can be
      * deleted. The seeded report definitions cannot be deleted.
      *
@@ -2081,6 +2233,91 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteSqlFirewallPolicyRequest, DeleteSqlFirewallPolicyResponse>
                     handler);
+
+    /**
+     * Deletes the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSubsettingPolicyResponse> deleteSubsettingPolicy(
+            DeleteSubsettingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSubsettingPolicyRequest, DeleteSubsettingPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified subsetting policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSubsettingPolicyHealthReportResponse>
+            deleteSubsettingPolicyHealthReport(
+                    DeleteSubsettingPolicyHealthReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSubsettingPolicyHealthReportRequest,
+                                    DeleteSubsettingPolicyHealthReportResponse>
+                            handler);
+
+    /**
+     * Deletes the specified subsetting report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSubsettingReportResponse> deleteSubsettingReport(
+            DeleteSubsettingReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSubsettingReportRequest, DeleteSubsettingReportResponse>
+                    handler);
+
+    /**
+     * Deletes the specified subsetting rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSubsettingRuleResponse> deleteSubsettingRule(
+            DeleteSubsettingRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSubsettingRuleRequest, DeleteSubsettingRuleResponse>
+                    handler);
+
+    /**
+     * Deletes the specified referential relation. Note that only the relation created by the user
+     * can be deleted
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSubsettingSchemaRelationResponse>
+            deleteSubsettingSchemaRelation(
+                    DeleteSubsettingSchemaRelationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSubsettingSchemaRelationRequest,
+                                    DeleteSubsettingSchemaRelationResponse>
+                            handler);
 
     /**
      * Deletes the specified target-alert policy Association.
@@ -2397,6 +2634,61 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Downloads the subsetting log generated by the last subsetting operation on a target database
+     * using the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadSubsettingLogResponse> downloadSubsettingLog(
+            DownloadSubsettingLogRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadSubsettingLogRequest, DownloadSubsettingLogResponse>
+                    handler);
+
+    /**
+     * Downloads an already-generated file corresponding to the specified subsetting policy. Note
+     * that the GenerateSubsettingPolicyForDownload operation is a prerequisite for the
+     * DownloadSubsettingPolicy operation. Use GenerateSubsettingPolicyForDownload to generate a
+     * subsetting policy file and then use DownloadSubsettingPolicy to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadSubsettingPolicyResponse> downloadSubsettingPolicy(
+            DownloadSubsettingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadSubsettingPolicyRequest, DownloadSubsettingPolicyResponse>
+                    handler);
+
+    /**
+     * Downloads an already-generated subsetting report. Note that the
+     * GenerateSubsettingReportForDownload operation is a prerequisite for the
+     * DownloadSubsettingReport operation. Use GenerateSubsettingReportForDownload to generate a
+     * subsetting report file and then use DownloadSubsettingReport to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadSubsettingReportResponse> downloadSubsettingReport(
+            DownloadSubsettingReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadSubsettingReportRequest, DownloadSubsettingReportResponse>
+                    handler);
+
+    /**
      * Downloads the report of the specified user assessment. To download the user assessment
      * report, it needs to be generated first. Please use GenerateUserAssessmentReport to generate a
      * downloadable report in the preferred format (PDF, XLS).
@@ -2429,6 +2721,22 @@ public interface DataSafeAsync extends AutoCloseable {
             EnableDataSafeConfigurationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             EnableDataSafeConfigurationRequest, EnableDataSafeConfigurationResponse>
+                    handler);
+
+    /**
+     * Estimates table sizes for the specified subsetting policy and target database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EstimateTableSizesResponse> estimateTableSizes(
+            EstimateTableSizesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EstimateTableSizesRequest, EstimateTableSizesResponse>
                     handler);
 
     /**
@@ -2620,6 +2928,66 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GenerateSqlFirewallPolicyRequest, GenerateSqlFirewallPolicyResponse>
                     handler);
+
+    /**
+     * Performs health check on the subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateSubsettingHealthReportResponse>
+            generateSubsettingHealthReport(
+                    GenerateSubsettingHealthReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateSubsettingHealthReportRequest,
+                                    GenerateSubsettingHealthReportResponse>
+                            handler);
+
+    /**
+     * Generates a downloadable file corresponding to the specified subsetting policy. It's a
+     * prerequisite for the DownloadSubsettingPolicy operation. Use this operation to generate a
+     * subsetting policy file and then use DownloadSubsettingPolicy to download the generated file.
+     * Note that file generation and download are serial operations. The download operation can't be
+     * invoked while the generate operation is in progress.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateSubsettingPolicyForDownloadResponse>
+            generateSubsettingPolicyForDownload(
+                    GenerateSubsettingPolicyForDownloadRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateSubsettingPolicyForDownloadRequest,
+                                    GenerateSubsettingPolicyForDownloadResponse>
+                            handler);
+
+    /**
+     * Generates a downloadable subsetting report. It's a prerequisite for the
+     * DownloadSubsettingReport operation. Use this endpoint to generate a subsetting report file
+     * and then use DownloadSubsettingReport to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateSubsettingReportForDownloadResponse>
+            generateSubsettingReportForDownload(
+                    GenerateSubsettingReportForDownloadRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateSubsettingReportForDownloadRequest,
+                                    GenerateSubsettingReportForDownloadResponse>
+                            handler);
 
     /**
      * Generates the report of the specified user assessment. The report is available in PDF or XLS
@@ -3125,6 +3493,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the details of the specified Registration Policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRegistrationPolicyResponse> getRegistrationPolicy(
+            GetRegistrationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRegistrationPolicyRequest, GetRegistrationPolicyResponse>
+                    handler);
+
+    /**
      * Gets a report by identifier
      *
      * @param request The request object containing the details to send
@@ -3426,6 +3810,88 @@ public interface DataSafeAsync extends AutoCloseable {
             GetSqlFirewallPolicyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetSqlFirewallPolicyRequest, GetSqlFirewallPolicyResponse>
+                    handler);
+
+    /**
+     * Gets the details of the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubsettingPolicyResponse> getSubsettingPolicy(
+            GetSubsettingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubsettingPolicyRequest, GetSubsettingPolicyResponse>
+                    handler);
+
+    /**
+     * Gets the details of the specified subsetting policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubsettingPolicyHealthReportResponse>
+            getSubsettingPolicyHealthReport(
+                    GetSubsettingPolicyHealthReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetSubsettingPolicyHealthReportRequest,
+                                    GetSubsettingPolicyHealthReportResponse>
+                            handler);
+
+    /**
+     * Gets the details of the specified subsetting report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubsettingReportResponse> getSubsettingReport(
+            GetSubsettingReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubsettingReportRequest, GetSubsettingReportResponse>
+                    handler);
+
+    /**
+     * Gets the details of the specified subsetting rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubsettingRuleResponse> getSubsettingRule(
+            GetSubsettingRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubsettingRuleRequest, GetSubsettingRuleResponse>
+                    handler);
+
+    /**
+     * Gets the details of the specified referential relation in the subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubsettingSchemaRelationResponse> getSubsettingSchemaRelation(
+            GetSubsettingSchemaRelationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubsettingSchemaRelationRequest, GetSubsettingSchemaRelationResponse>
                     handler);
 
     /**
@@ -4801,6 +5267,42 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a list of registration policies according to the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRegistrationPoliciesResponse> listRegistrationPolicies(
+            ListRegistrationPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRegistrationPoliciesRequest, ListRegistrationPoliciesResponse>
+                    handler);
+
+    /**
+     * Retrieves the OCIDs of target databases registered via the specified registration policy.
+     * Supports optional filtering by registration status (OPTIN/OPTOUT) and by target database
+     * OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRegistrationPolicyTargetDatabasesResponse>
+            listRegistrationPolicyTargetDatabases(
+                    ListRegistrationPolicyTargetDatabasesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListRegistrationPolicyTargetDatabasesRequest,
+                                    ListRegistrationPolicyTargetDatabasesResponse>
+                            handler);
+
+    /**
      * Gets a list of report definitions. The ListReportDefinitions operation returns only the
      * report definitions in the specified `compartmentId`. It also returns the seeded report
      * definitions which are available to all the compartments.
@@ -5524,6 +6026,236 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of subsetted tables present in the specified subsetting report and based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettedObjectsResponse> listSubsettedObjects(
+            ListSubsettedObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettedObjectsRequest, ListSubsettedObjectsResponse>
+                    handler);
+
+    /**
+     * Gets consolidated subsetting analytics data based on the specified query parameters. If
+     * CompartmentIdInSubtreeQueryParam is specified as true, the behaviour is equivalent to
+     * accessLevel \"ACCESSIBLE\" by default.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingAnalyticsResponse> listSubsettingAnalytics(
+            ListSubsettingAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettingAnalyticsRequest, ListSubsettingAnalyticsResponse>
+                    handler);
+
+    /**
+     * Gets a list of subsetting errors in a subsetting run based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingErrorsResponse> listSubsettingErrors(
+            ListSubsettingErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettingErrorsRequest, ListSubsettingErrorsResponse>
+                    handler);
+
+    /**
+     * Gets a list of subsetting policies based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingPoliciesResponse> listSubsettingPolicies(
+            ListSubsettingPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettingPoliciesRequest, ListSubsettingPoliciesResponse>
+                    handler);
+
+    /**
+     * Gets a list of errors and warnings from a subsetting policy health check.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingPolicyHealthReportLogsResponse>
+            listSubsettingPolicyHealthReportLogs(
+                    ListSubsettingPolicyHealthReportLogsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSubsettingPolicyHealthReportLogsRequest,
+                                    ListSubsettingPolicyHealthReportLogsResponse>
+                            handler);
+
+    /**
+     * Gets a list of subsetting policy health reports based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingPolicyHealthReportsResponse>
+            listSubsettingPolicyHealthReports(
+                    ListSubsettingPolicyHealthReportsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSubsettingPolicyHealthReportsRequest,
+                                    ListSubsettingPolicyHealthReportsResponse>
+                            handler);
+
+    /**
+     * Gets a list of subsetting reports based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingReportsResponse> listSubsettingReports(
+            ListSubsettingReportsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettingReportsRequest, ListSubsettingReportsResponse>
+                    handler);
+
+    /**
+     * Gets a list of objects of processing chain based on the specified query parameters generated
+     * for a subsetting rule. A processing chain is the relationship path that determines how a
+     * subsetting rule is applied across related tables. It is built from the selected subsetting
+     * table, subsetting rule, the chosen relatedTablesPropagation direction, and the referential
+     * relationships in the schema.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingRuleProcessingChainObjectsResponse>
+            listSubsettingRuleProcessingChainObjects(
+                    ListSubsettingRuleProcessingChainObjectsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSubsettingRuleProcessingChainObjectsRequest,
+                                    ListSubsettingRuleProcessingChainObjectsResponse>
+                            handler);
+
+    /**
+     * Gets a list of subsetting rules present in the specified subsetting policy and based on the
+     * specified query parameters. A subsetting rule is the criteria that tells Data Safe which rows
+     * to retain from the selected starting table for a subsetting operation. It is the entry point
+     * for the subset. Data Safe uses this rule, along with the propagation setting, to determine
+     * the related rows that must also be retained across parent and child tables.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingRulesResponse> listSubsettingRules(
+            ListSubsettingRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettingRulesRequest, ListSubsettingRulesResponse>
+                    handler);
+
+    /**
+     * Gets a list of objects/tables present in the specified subsetting policy schemas based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingSchemaObjectsResponse> listSubsettingSchemaObjects(
+            ListSubsettingSchemaObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettingSchemaObjectsRequest, ListSubsettingSchemaObjectsResponse>
+                    handler);
+
+    /**
+     * Gets a list of referential relations present in the specified subsetting policy schemas based
+     * on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingSchemaRelationsResponse>
+            listSubsettingSchemaRelations(
+                    ListSubsettingSchemaRelationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSubsettingSchemaRelationsRequest,
+                                    ListSubsettingSchemaRelationsResponse>
+                            handler);
+
+    /**
+     * Gets a list of subsetting schemas present in the specified subsetting policy and based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSubsettingSchemasResponse> listSubsettingSchemas(
+            ListSubsettingSchemasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSubsettingSchemasRequest, ListSubsettingSchemasResponse>
+                    handler);
+
+    /**
+     * Gets table size estimates for the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTableEstimatesResponse> listTableEstimates(
+            ListTableEstimatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTableEstimatesRequest, ListTableEstimatesResponse>
+                    handler);
+
+    /**
      * Returns a list of table metadata objects.
      *
      * @param request The request object containing the details to send
@@ -5903,6 +6635,21 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the Data Safe target database Privileges.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ManagePrivilegesResponse> managePrivileges(
+            ManagePrivilegesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ManagePrivilegesRequest, ManagePrivilegesResponse>
+                    handler);
+
+    /**
      * Masks data using the specified masking policy.
      *
      * @param request The request object containing the details to send
@@ -6084,6 +6831,25 @@ public interface DataSafeAsync extends AutoCloseable {
             PatchSqlFirewallAllowedSqlRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             PatchSqlFirewallAllowedSqlRequest, PatchSqlFirewallAllowedSqlResponse>
+                    handler);
+
+    /**
+     * Patches one or more subsetting rules in the specified subsetting policy. Use INSERT to add a
+     * new rule with CreateSubsettingRuleDetails as the patch value, and MERGE to update an existing
+     * rule with UpdateSubsettingRuleDetails as the patch value. To delete a rule, use the existing
+     * DeleteSubsettingRule API.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSubsettingRulesResponse> patchSubsettingRules(
+            PatchSubsettingRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchSubsettingRulesRequest, PatchSubsettingRulesResponse>
                     handler);
 
     /**
@@ -6461,6 +7227,20 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Subsets data using the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SubsetDataResponse> subsetData(
+            SubsetDataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SubsetDataRequest, SubsetDataResponse> handler);
+
+    /**
      * Suspend the given work request. Issuing a suspend does not guarantee of a immediate suspend
      * of the work request.
      *
@@ -6811,6 +7591,38 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates one or more attributes of the specified processing chain object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateProcessingChainObjectResponse> updateProcessingChainObject(
+            UpdateProcessingChainObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateProcessingChainObjectRequest, UpdateProcessingChainObjectResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified registration policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRegistrationPolicyResponse> updateRegistrationPolicy(
+            UpdateRegistrationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRegistrationPolicyRequest, UpdateRegistrationPolicyResponse>
+                    handler);
+
+    /**
      * Updates the specified report. Only tags can be updated.
      *
      * @param request The request object containing the details to send
@@ -7041,6 +7853,39 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates one or more attributes of the specified subsetting policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSubsettingPolicyResponse> updateSubsettingPolicy(
+            UpdateSubsettingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSubsettingPolicyRequest, UpdateSubsettingPolicyResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified subsetting rule. Note that updating the
+     * subsettingRuleEntry attribute replaces the currently assigned subsettingRuleEntry
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSubsettingRuleResponse> updateSubsettingRule(
+            UpdateSubsettingRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSubsettingRuleRequest, UpdateSubsettingRuleResponse>
+                    handler);
+
+    /**
      * Updates the specified target-alert policy association.
      *
      * @param request The request object containing the details to send
@@ -7180,5 +8025,25 @@ public interface DataSafeAsync extends AutoCloseable {
             UploadSensitiveDataModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UploadSensitiveDataModelRequest, UploadSensitiveDataModelResponse>
+                    handler);
+
+    /**
+     * Uploads a subsetting policy file (also called template) to update the specified subsetting
+     * policy. To create a new subsetting policy using a file, first use the CreateSubsettingPolicy
+     * operation to create an empty subsetting policy and then use this operation to upload the
+     * subsetting policy file. Note that the upload operation replaces the content of the specified
+     * subsetting policy, including all the subsetting rules, with the content of the file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UploadSubsettingPolicyResponse> uploadSubsettingPolicy(
+            UploadSubsettingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UploadSubsettingPolicyRequest, UploadSubsettingPolicyResponse>
                     handler);
 }

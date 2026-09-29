@@ -48,6 +48,66 @@ public class VirtualNetworkWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<AddDrgNatRulesRequest, AddDrgNatRulesResponse>
+            forAddDrgNatRules(AddDrgNatRulesRequest request) {
+        return forAddDrgNatRules(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<AddDrgNatRulesRequest, AddDrgNatRulesResponse>
+            forAddDrgNatRules(
+                    AddDrgNatRulesRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<AddDrgNatRulesResponse>() {
+                    @Override
+                    public AddDrgNatRulesResponse call() throws Exception {
+                        final AddDrgNatRulesResponse response = client.addDrgNatRules(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<AddIpv4SubnetCidrRequest, AddIpv4SubnetCidrResponse>
             forAddIpv4SubnetCidr(AddIpv4SubnetCidrRequest request) {
         return forAddIpv4SubnetCidr(
@@ -1203,6 +1263,67 @@ public class VirtualNetworkWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<DeleteDrgNatPolicyRequest, DeleteDrgNatPolicyResponse>
+            forDeleteDrgNatPolicy(DeleteDrgNatPolicyRequest request) {
+        return forDeleteDrgNatPolicy(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<DeleteDrgNatPolicyRequest, DeleteDrgNatPolicyResponse>
+            forDeleteDrgNatPolicy(
+                    DeleteDrgNatPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<DeleteDrgNatPolicyResponse>() {
+                    @Override
+                    public DeleteDrgNatPolicyResponse call() throws Exception {
+                        final DeleteDrgNatPolicyResponse response =
+                                client.deleteDrgNatPolicy(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<DeleteVtapRequest, DeleteVtapResponse> forDeleteVtap(
             DeleteVtapRequest request) {
         return forDeleteVtap(
@@ -2072,6 +2193,110 @@ public class VirtualNetworkWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.core.model.DrgAttachment.LifecycleState.Detached)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDrgNatPolicyRequest, GetDrgNatPolicyResponse>
+            forDrgNatPolicy(
+                    GetDrgNatPolicyRequest request,
+                    com.oracle.bmc.core.model.DrgNatPolicy.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDrgNatPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDrgNatPolicyRequest, GetDrgNatPolicyResponse>
+            forDrgNatPolicy(
+                    GetDrgNatPolicyRequest request,
+                    com.oracle.bmc.core.model.DrgNatPolicy.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forDrgNatPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDrgNatPolicyRequest, GetDrgNatPolicyResponse>
+            forDrgNatPolicy(
+                    GetDrgNatPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.DrgNatPolicy.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forDrgNatPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for DrgNatPolicy.
+    private com.oracle.bmc.waiter.Waiter<GetDrgNatPolicyRequest, GetDrgNatPolicyResponse>
+            forDrgNatPolicy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDrgNatPolicyRequest request,
+                    final com.oracle.bmc.core.model.DrgNatPolicy.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.DrgNatPolicy.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetDrgNatPolicyRequest, GetDrgNatPolicyResponse>() {
+                            @Override
+                            public GetDrgNatPolicyResponse apply(GetDrgNatPolicyRequest request) {
+                                return client.getDrgNatPolicy(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetDrgNatPolicyResponse>() {
+                            @Override
+                            public boolean test(GetDrgNatPolicyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDrgNatPolicy().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.core.model.DrgNatPolicy.LifecycleState.Deleted)),
                 request);
     }
 
@@ -4962,6 +5187,67 @@ public class VirtualNetworkWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<RemoveDrgNatRulesRequest, RemoveDrgNatRulesResponse>
+            forRemoveDrgNatRules(RemoveDrgNatRulesRequest request) {
+        return forRemoveDrgNatRules(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<RemoveDrgNatRulesRequest, RemoveDrgNatRulesResponse>
+            forRemoveDrgNatRules(
+                    RemoveDrgNatRulesRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RemoveDrgNatRulesResponse>() {
+                    @Override
+                    public RemoveDrgNatRulesResponse call() throws Exception {
+                        final RemoveDrgNatRulesResponse response =
+                                client.removeDrgNatRules(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<RemoveIpv4SubnetCidrRequest, RemoveIpv4SubnetCidrResponse>
             forRemoveIpv4SubnetCidr(RemoveIpv4SubnetCidrRequest request) {
         return forRemoveIpv4SubnetCidr(
@@ -5236,6 +5522,67 @@ public class VirtualNetworkWaiters {
                     @Override
                     public SetOriginAsnResponse call() throws Exception {
                         final SetOriginAsnResponse response = client.setOriginAsn(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateDrgNatRulesRequest, UpdateDrgNatRulesResponse>
+            forUpdateDrgNatRules(UpdateDrgNatRulesRequest request) {
+        return forUpdateDrgNatRules(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpdateDrgNatRulesRequest, UpdateDrgNatRulesResponse>
+            forUpdateDrgNatRules(
+                    UpdateDrgNatRulesRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpdateDrgNatRulesResponse>() {
+                    @Override
+                    public UpdateDrgNatRulesResponse call() throws Exception {
+                        final UpdateDrgNatRulesResponse response =
+                                client.updateDrgNatRules(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest

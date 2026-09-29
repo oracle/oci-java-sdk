@@ -2267,6 +2267,114 @@ public class DataSafeWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetRegistrationPolicyRequest, GetRegistrationPolicyResponse>
+            forRegistrationPolicy(
+                    GetRegistrationPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.RegistrationPolicy.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forRegistrationPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetRegistrationPolicyRequest, GetRegistrationPolicyResponse>
+            forRegistrationPolicy(
+                    GetRegistrationPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.RegistrationPolicy.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forRegistrationPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetRegistrationPolicyRequest, GetRegistrationPolicyResponse>
+            forRegistrationPolicy(
+                    GetRegistrationPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.RegistrationPolicy.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forRegistrationPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for RegistrationPolicy.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetRegistrationPolicyRequest, GetRegistrationPolicyResponse>
+            forRegistrationPolicy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetRegistrationPolicyRequest request,
+                    final com.oracle.bmc.datasafe.model.RegistrationPolicy.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.RegistrationPolicy.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetRegistrationPolicyRequest, GetRegistrationPolicyResponse>() {
+                            @Override
+                            public GetRegistrationPolicyResponse apply(
+                                    GetRegistrationPolicyRequest request) {
+                                return client.getRegistrationPolicy(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetRegistrationPolicyResponse>() {
+                            @Override
+                            public boolean test(GetRegistrationPolicyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getRegistrationPolicy().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
      * @param targetState the desired states to wait for. If multiple states are provided then the
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
@@ -4121,6 +4229,337 @@ public class DataSafeWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.datasafe.model.SqlFirewallPolicyLifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSubsettingPolicyRequest, GetSubsettingPolicyResponse>
+            forSubsettingPolicy(
+                    GetSubsettingPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.SubsettingPolicy.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSubsettingPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSubsettingPolicyRequest, GetSubsettingPolicyResponse>
+            forSubsettingPolicy(
+                    GetSubsettingPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.SubsettingPolicy.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forSubsettingPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSubsettingPolicyRequest, GetSubsettingPolicyResponse>
+            forSubsettingPolicy(
+                    GetSubsettingPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.SubsettingPolicy.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forSubsettingPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SubsettingPolicy.
+    private com.oracle.bmc.waiter.Waiter<GetSubsettingPolicyRequest, GetSubsettingPolicyResponse>
+            forSubsettingPolicy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSubsettingPolicyRequest request,
+                    final com.oracle.bmc.datasafe.model.SubsettingPolicy.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.SubsettingPolicy.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetSubsettingPolicyRequest, GetSubsettingPolicyResponse>() {
+                            @Override
+                            public GetSubsettingPolicyResponse apply(
+                                    GetSubsettingPolicyRequest request) {
+                                return client.getSubsettingPolicy(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetSubsettingPolicyResponse>() {
+                            @Override
+                            public boolean test(GetSubsettingPolicyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSubsettingPolicy().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.SubsettingPolicy.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetSubsettingPolicyHealthReportRequest, GetSubsettingPolicyHealthReportResponse>
+            forSubsettingPolicyHealthReport(
+                    GetSubsettingPolicyHealthReportRequest request,
+                    com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReport.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSubsettingPolicyHealthReport(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetSubsettingPolicyHealthReportRequest, GetSubsettingPolicyHealthReportResponse>
+            forSubsettingPolicyHealthReport(
+                    GetSubsettingPolicyHealthReportRequest request,
+                    com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReport.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forSubsettingPolicyHealthReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetSubsettingPolicyHealthReportRequest, GetSubsettingPolicyHealthReportResponse>
+            forSubsettingPolicyHealthReport(
+                    GetSubsettingPolicyHealthReportRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReport.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forSubsettingPolicyHealthReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SubsettingPolicyHealthReport.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetSubsettingPolicyHealthReportRequest, GetSubsettingPolicyHealthReportResponse>
+            forSubsettingPolicyHealthReport(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSubsettingPolicyHealthReportRequest request,
+                    final com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReport.LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.datasafe.model.SubsettingPolicyHealthReport.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetSubsettingPolicyHealthReportRequest,
+                                GetSubsettingPolicyHealthReportResponse>() {
+                            @Override
+                            public GetSubsettingPolicyHealthReportResponse apply(
+                                    GetSubsettingPolicyHealthReportRequest request) {
+                                return client.getSubsettingPolicyHealthReport(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetSubsettingPolicyHealthReportResponse>() {
+                            @Override
+                            public boolean test(GetSubsettingPolicyHealthReportResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSubsettingPolicyHealthReport()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSubsettingReportRequest, GetSubsettingReportResponse>
+            forSubsettingReport(
+                    GetSubsettingReportRequest request,
+                    com.oracle.bmc.datasafe.model.SubsettingReport.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSubsettingReport(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSubsettingReportRequest, GetSubsettingReportResponse>
+            forSubsettingReport(
+                    GetSubsettingReportRequest request,
+                    com.oracle.bmc.datasafe.model.SubsettingReport.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forSubsettingReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSubsettingReportRequest, GetSubsettingReportResponse>
+            forSubsettingReport(
+                    GetSubsettingReportRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.SubsettingReport.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forSubsettingReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SubsettingReport.
+    private com.oracle.bmc.waiter.Waiter<GetSubsettingReportRequest, GetSubsettingReportResponse>
+            forSubsettingReport(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSubsettingReportRequest request,
+                    final com.oracle.bmc.datasafe.model.SubsettingReport.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.SubsettingReport.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetSubsettingReportRequest, GetSubsettingReportResponse>() {
+                            @Override
+                            public GetSubsettingReportResponse apply(
+                                    GetSubsettingReportRequest request) {
+                                return client.getSubsettingReport(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetSubsettingReportResponse>() {
+                            @Override
+                            public boolean test(GetSubsettingReportResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSubsettingReport().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.SubsettingReport.LifecycleState
                                         .Deleted)),
                 request);
     }

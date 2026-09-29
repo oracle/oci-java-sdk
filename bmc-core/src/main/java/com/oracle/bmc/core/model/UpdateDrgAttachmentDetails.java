@@ -25,6 +25,8 @@ public final class UpdateDrgAttachmentDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "drgNatPolicyId",
+        "doesPreserveOriginalRoutesWithNat",
         "drgRouteTableId",
         "networkDetails",
         "definedTags",
@@ -34,6 +36,8 @@ public final class UpdateDrgAttachmentDetails
     })
     public UpdateDrgAttachmentDetails(
             String displayName,
+            String drgNatPolicyId,
+            Boolean doesPreserveOriginalRoutesWithNat,
             String drgRouteTableId,
             DrgAttachmentNetworkUpdateDetails networkDetails,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -42,6 +46,8 @@ public final class UpdateDrgAttachmentDetails
             String routeTableId) {
         super();
         this.displayName = displayName;
+        this.drgNatPolicyId = drgNatPolicyId;
+        this.doesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
         this.drgRouteTableId = drgRouteTableId;
         this.networkDetails = networkDetails;
         this.definedTags = definedTags;
@@ -69,6 +75,49 @@ public final class UpdateDrgAttachmentDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG attachment's DRG NAT policy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("drgNatPolicyId")
+        private String drgNatPolicyId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * DRG attachment's DRG NAT policy.
+         *
+         * @param drgNatPolicyId the value to set
+         * @return this builder
+         */
+        public Builder drgNatPolicyId(String drgNatPolicyId) {
+            this.drgNatPolicyId = drgNatPolicyId;
+            this.__explicitlySet__.add("drgNatPolicyId");
+            return this;
+        }
+        /**
+         * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to
+         * prevent routing complications. Enable this option to also preserve original CIDRs. The
+         * original source CIDRs is not advertised if this value is set to false, else it is
+         * advertised. default: {@code false}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("doesPreserveOriginalRoutesWithNat")
+        private Boolean doesPreserveOriginalRoutesWithNat;
+
+        /**
+         * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to
+         * prevent routing complications. Enable this option to also preserve original CIDRs. The
+         * original source CIDRs is not advertised if this value is set to false, else it is
+         * advertised. default: {@code false}
+         *
+         * @param doesPreserveOriginalRoutesWithNat the value to set
+         * @return this builder
+         */
+        public Builder doesPreserveOriginalRoutesWithNat(
+                Boolean doesPreserveOriginalRoutesWithNat) {
+            this.doesPreserveOriginalRoutesWithNat = doesPreserveOriginalRoutesWithNat;
+            this.__explicitlySet__.add("doesPreserveOriginalRoutesWithNat");
             return this;
         }
         /**
@@ -228,6 +277,8 @@ public final class UpdateDrgAttachmentDetails
             UpdateDrgAttachmentDetails model =
                     new UpdateDrgAttachmentDetails(
                             this.displayName,
+                            this.drgNatPolicyId,
+                            this.doesPreserveOriginalRoutesWithNat,
                             this.drgRouteTableId,
                             this.networkDetails,
                             this.definedTags,
@@ -244,6 +295,13 @@ public final class UpdateDrgAttachmentDetails
         public Builder copy(UpdateDrgAttachmentDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("drgNatPolicyId")) {
+                this.drgNatPolicyId(model.getDrgNatPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("doesPreserveOriginalRoutesWithNat")) {
+                this.doesPreserveOriginalRoutesWithNat(
+                        model.getDoesPreserveOriginalRoutesWithNat());
             }
             if (model.wasPropertyExplicitlySet("drgRouteTableId")) {
                 this.drgRouteTableId(model.getDrgRouteTableId());
@@ -291,6 +349,44 @@ public final class UpdateDrgAttachmentDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * attachment's DRG NAT policy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("drgNatPolicyId")
+    private final String drgNatPolicyId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
+     * attachment's DRG NAT policy.
+     *
+     * @return the value
+     */
+    public String getDrgNatPolicyId() {
+        return drgNatPolicyId;
+    }
+
+    /**
+     * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+     * routing complications. Enable this option to also preserve original CIDRs. The original
+     * source CIDRs is not advertised if this value is set to false, else it is advertised. default:
+     * {@code false}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("doesPreserveOriginalRoutesWithNat")
+    private final Boolean doesPreserveOriginalRoutesWithNat;
+
+    /**
+     * By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+     * routing complications. Enable this option to also preserve original CIDRs. The original
+     * source CIDRs is not advertised if this value is set to false, else it is advertised. default:
+     * {@code false}
+     *
+     * @return the value
+     */
+    public Boolean getDoesPreserveOriginalRoutesWithNat() {
+        return doesPreserveOriginalRoutesWithNat;
     }
 
     /**
@@ -441,6 +537,9 @@ public final class UpdateDrgAttachmentDetails
         sb.append("UpdateDrgAttachmentDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", drgNatPolicyId=").append(String.valueOf(this.drgNatPolicyId));
+        sb.append(", doesPreserveOriginalRoutesWithNat=")
+                .append(String.valueOf(this.doesPreserveOriginalRoutesWithNat));
         sb.append(", drgRouteTableId=").append(String.valueOf(this.drgRouteTableId));
         sb.append(", networkDetails=").append(String.valueOf(this.networkDetails));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -463,6 +562,10 @@ public final class UpdateDrgAttachmentDetails
 
         UpdateDrgAttachmentDetails other = (UpdateDrgAttachmentDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.drgNatPolicyId, other.drgNatPolicyId)
+                && java.util.Objects.equals(
+                        this.doesPreserveOriginalRoutesWithNat,
+                        other.doesPreserveOriginalRoutesWithNat)
                 && java.util.Objects.equals(this.drgRouteTableId, other.drgRouteTableId)
                 && java.util.Objects.equals(this.networkDetails, other.networkDetails)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -478,6 +581,14 @@ public final class UpdateDrgAttachmentDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drgNatPolicyId == null ? 43 : this.drgNatPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.doesPreserveOriginalRoutesWithNat == null
+                                ? 43
+                                : this.doesPreserveOriginalRoutesWithNat.hashCode());
         result =
                 (result * PRIME)
                         + (this.drgRouteTableId == null ? 43 : this.drgRouteTableId.hashCode());
