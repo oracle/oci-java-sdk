@@ -36,6 +36,9 @@ package com.oracle.bmc.core.model;
             value = EmulatedVolumeAttachment.class,
             name = "emulated"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = NvmeVolumeAttachment.class,
+            name = "nvme"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ParavirtualizedVolumeAttachment.class,
             name = "paravirtualized")
 })
@@ -56,6 +59,7 @@ public class VolumeAttachment extends com.oracle.bmc.http.client.internal.Explic
         "timeCreated",
         "volumeId",
         "isPvEncryptionInTransitEnabled",
+        "isEncryptionInTransitEnabled",
         "isMultipath",
         "iscsiLoginState",
         "isVolumeCreatedDuringLaunch"
@@ -73,6 +77,7 @@ public class VolumeAttachment extends com.oracle.bmc.http.client.internal.Explic
             java.util.Date timeCreated,
             String volumeId,
             Boolean isPvEncryptionInTransitEnabled,
+            Boolean isEncryptionInTransitEnabled,
             Boolean isMultipath,
             IscsiLoginState iscsiLoginState,
             Boolean isVolumeCreatedDuringLaunch) {
@@ -89,6 +94,7 @@ public class VolumeAttachment extends com.oracle.bmc.http.client.internal.Explic
         this.timeCreated = timeCreated;
         this.volumeId = volumeId;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
         this.isMultipath = isMultipath;
         this.iscsiLoginState = iscsiLoginState;
         this.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
@@ -311,21 +317,30 @@ public class VolumeAttachment extends com.oracle.bmc.http.client.internal.Explic
         return volumeId;
     }
 
-    /**
-     * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or
-     * not.
-     */
+    /** Deprecated. Use {@code isEncryptionInTransitEnabled} instead. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or
-     * not.
+     * Deprecated. Use {@code isEncryptionInTransitEnabled} instead.
      *
      * @return the value
      */
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
+    }
+
+    /** Whether in-transit encryption for the data volume's attachment is enabled or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isEncryptionInTransitEnabled")
+    private final Boolean isEncryptionInTransitEnabled;
+
+    /**
+     * Whether in-transit encryption for the data volume's attachment is enabled or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsEncryptionInTransitEnabled() {
+        return isEncryptionInTransitEnabled;
     }
 
     /**
@@ -461,6 +476,8 @@ public class VolumeAttachment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", volumeId=").append(String.valueOf(this.volumeId));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", isEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isEncryptionInTransitEnabled));
         sb.append(", isMultipath=").append(String.valueOf(this.isMultipath));
         sb.append(", iscsiLoginState=").append(String.valueOf(this.iscsiLoginState));
         sb.append(", isVolumeCreatedDuringLaunch=")
@@ -492,6 +509,8 @@ public class VolumeAttachment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.volumeId, other.volumeId)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(
+                        this.isEncryptionInTransitEnabled, other.isEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.isMultipath, other.isMultipath)
                 && java.util.Objects.equals(this.iscsiLoginState, other.iscsiLoginState)
                 && java.util.Objects.equals(
@@ -527,6 +546,11 @@ public class VolumeAttachment extends com.oracle.bmc.http.client.internal.Explic
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isEncryptionInTransitEnabled.hashCode());
         result = (result * PRIME) + (this.isMultipath == null ? 43 : this.isMultipath.hashCode());
         result =
                 (result * PRIME)

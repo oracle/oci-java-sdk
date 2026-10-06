@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.97.2 - 2026-10-06
+### Added 
+- Support for OCI Product Catalog service 
+- Support for Non-Volatile Memory Express (NVMe) volume attachments, including attachments created during instance launch in the Compute service 
+- Support for OAuth 2.1 authorization for hosted applications in the Generative AI service
+
 ## 3.97.1 - 2026-09-29
 ### Added 
 - Support for data subsetting in the Data Safe service 

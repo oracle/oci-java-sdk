@@ -43,7 +43,8 @@ public final class UpdateLaunchOptions
         /**
          * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage
          * device. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot
-         * volumes and remote block storage volumes on platform images.
+         * volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+         * attached remote block storage device.
          *
          * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
          * except for the boot volume and the primary VNIC.
@@ -62,7 +63,8 @@ public final class UpdateLaunchOptions
         /**
          * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage
          * device. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot
-         * volumes and remote block storage volumes on platform images.
+         * volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+         * attached remote block storage device.
          *
          * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
          * except for the boot volume and the primary VNIC.
@@ -220,7 +222,8 @@ public final class UpdateLaunchOptions
     /**
      * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage device. *
      * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and
-     * remote block storage volumes on platform images.
+     * remote block storage volumes on platform images. * {@code NVME} - NVMe attached remote block
+     * storage device.
      *
      * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
      * except for the boot volume and the primary VNIC.
@@ -236,6 +239,7 @@ public final class UpdateLaunchOptions
     public enum BootVolumeType implements com.oracle.bmc.http.internal.BmcEnum {
         Iscsi("ISCSI"),
         Paravirtualized("PARAVIRTUALIZED"),
+        Nvme("NVME"),
         ;
 
         private final String value;
@@ -268,7 +272,8 @@ public final class UpdateLaunchOptions
     /**
      * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage device. *
      * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and
-     * remote block storage volumes on platform images.
+     * remote block storage volumes on platform images. * {@code NVME} - NVMe attached remote block
+     * storage device.
      *
      * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
      * except for the boot volume and the primary VNIC.
@@ -287,7 +292,8 @@ public final class UpdateLaunchOptions
     /**
      * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage device. *
      * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and
-     * remote block storage volumes on platform images.
+     * remote block storage volumes on platform images. * {@code NVME} - NVMe attached remote block
+     * storage device.
      *
      * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
      * except for the boot volume and the primary VNIC.

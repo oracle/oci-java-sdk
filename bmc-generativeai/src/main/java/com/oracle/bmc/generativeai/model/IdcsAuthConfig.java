@@ -6,8 +6,10 @@ package com.oracle.bmc.generativeai.model;
 
 /**
  * Oracle Identity Cloud Service (IDCS) configuration used when inboundAuthConfigType is set to
- * IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
- * <br>
+ * IDCS_AUTH_CONFIG or IDCS_SESSION_AUTH_CONFIG. This object must be specified when
+ * inboundAuthConfigType is IDCS_AUTH_CONFIG or IDCS_SESSION_AUTH_CONFIG. When inboundAuthConfigType
+ * is IDCS_SESSION_AUTH_CONFIG, this configuration supports OAuth 2.1 Authorization Code flow with
+ * PKCE. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -24,12 +26,25 @@ package com.oracle.bmc.generativeai.model;
 public final class IdcsAuthConfig
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"domainUrl", "scope", "audience"})
-    public IdcsAuthConfig(String domainUrl, String scope, String audience) {
+    @java.beans.ConstructorProperties({
+        "domainUrl",
+        "scope",
+        "audience",
+        "clientId",
+        "clientSecretVaultId"
+    })
+    public IdcsAuthConfig(
+            String domainUrl,
+            String scope,
+            String audience,
+            String clientId,
+            String clientSecretVaultId) {
         super();
         this.domainUrl = domainUrl;
         this.scope = scope;
         this.audience = audience;
+        this.clientId = clientId;
+        this.clientSecretVaultId = clientSecretVaultId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -79,12 +94,56 @@ public final class IdcsAuthConfig
             this.__explicitlySet__.add("audience");
             return this;
         }
+        /**
+         * Optional OAuth client ID for the IDCS application. Applicable only when
+         * inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clientId")
+        private String clientId;
+
+        /**
+         * Optional OAuth client ID for the IDCS application. Applicable only when
+         * inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+         *
+         * @param clientId the value to set
+         * @return this builder
+         */
+        public Builder clientId(String clientId) {
+            this.clientId = clientId;
+            this.__explicitlySet__.add("clientId");
+            return this;
+        }
+        /**
+         * Optional OCI Vault secret OCID containing the OAuth client secret. Applicable only when
+         * inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clientSecretVaultId")
+        private String clientSecretVaultId;
+
+        /**
+         * Optional OCI Vault secret OCID containing the OAuth client secret. Applicable only when
+         * inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+         *
+         * @param clientSecretVaultId the value to set
+         * @return this builder
+         */
+        public Builder clientSecretVaultId(String clientSecretVaultId) {
+            this.clientSecretVaultId = clientSecretVaultId;
+            this.__explicitlySet__.add("clientSecretVaultId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IdcsAuthConfig build() {
-            IdcsAuthConfig model = new IdcsAuthConfig(this.domainUrl, this.scope, this.audience);
+            IdcsAuthConfig model =
+                    new IdcsAuthConfig(
+                            this.domainUrl,
+                            this.scope,
+                            this.audience,
+                            this.clientId,
+                            this.clientSecretVaultId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +160,12 @@ public final class IdcsAuthConfig
             }
             if (model.wasPropertyExplicitlySet("audience")) {
                 this.audience(model.getAudience());
+            }
+            if (model.wasPropertyExplicitlySet("clientId")) {
+                this.clientId(model.getClientId());
+            }
+            if (model.wasPropertyExplicitlySet("clientSecretVaultId")) {
+                this.clientSecretVaultId(model.getClientSecretVaultId());
             }
             return this;
         }
@@ -154,6 +219,40 @@ public final class IdcsAuthConfig
         return audience;
     }
 
+    /**
+     * Optional OAuth client ID for the IDCS application. Applicable only when inboundAuthConfigType
+     * is IDCS_SESSION_AUTH_CONFIG.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clientId")
+    private final String clientId;
+
+    /**
+     * Optional OAuth client ID for the IDCS application. Applicable only when inboundAuthConfigType
+     * is IDCS_SESSION_AUTH_CONFIG.
+     *
+     * @return the value
+     */
+    public String getClientId() {
+        return clientId;
+    }
+
+    /**
+     * Optional OCI Vault secret OCID containing the OAuth client secret. Applicable only when
+     * inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecretVaultId")
+    private final String clientSecretVaultId;
+
+    /**
+     * Optional OCI Vault secret OCID containing the OAuth client secret. Applicable only when
+     * inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+     *
+     * @return the value
+     */
+    public String getClientSecretVaultId() {
+        return clientSecretVaultId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -172,6 +271,8 @@ public final class IdcsAuthConfig
         sb.append("domainUrl=").append(String.valueOf(this.domainUrl));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", audience=").append(String.valueOf(this.audience));
+        sb.append(", clientId=").append(String.valueOf(this.clientId));
+        sb.append(", clientSecretVaultId=").append(String.valueOf(this.clientSecretVaultId));
         sb.append(")");
         return sb.toString();
     }
@@ -189,6 +290,8 @@ public final class IdcsAuthConfig
         return java.util.Objects.equals(this.domainUrl, other.domainUrl)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.audience, other.audience)
+                && java.util.Objects.equals(this.clientId, other.clientId)
+                && java.util.Objects.equals(this.clientSecretVaultId, other.clientSecretVaultId)
                 && super.equals(other);
     }
 
@@ -199,6 +302,12 @@ public final class IdcsAuthConfig
         result = (result * PRIME) + (this.domainUrl == null ? 43 : this.domainUrl.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.audience == null ? 43 : this.audience.hashCode());
+        result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientSecretVaultId == null
+                                ? 43
+                                : this.clientSecretVaultId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

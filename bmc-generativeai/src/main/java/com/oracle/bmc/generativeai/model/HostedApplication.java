@@ -33,6 +33,8 @@ public final class HostedApplication
     @Deprecated
     @java.beans.ConstructorProperties({
         "inboundAuthConfig",
+        "applicationEndpoint",
+        "publicAccessPathPatterns",
         "id",
         "displayName",
         "description",
@@ -51,6 +53,8 @@ public final class HostedApplication
     })
     public HostedApplication(
             InboundAuthConfig inboundAuthConfig,
+            String applicationEndpoint,
+            java.util.List<String> publicAccessPathPatterns,
             String id,
             String displayName,
             String description,
@@ -68,6 +72,8 @@ public final class HostedApplication
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.inboundAuthConfig = inboundAuthConfig;
+        this.applicationEndpoint = applicationEndpoint;
+        this.publicAccessPathPatterns = publicAccessPathPatterns;
         this.id = id;
         this.displayName = displayName;
         this.description = description;
@@ -94,6 +100,48 @@ public final class HostedApplication
         public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
             this.inboundAuthConfig = inboundAuthConfig;
             this.__explicitlySet__.add("inboundAuthConfig");
+            return this;
+        }
+        /**
+         * Fully qualified domain name for invoking the hosted application over the dual-stack
+         * endpoint. This value is output-only and is present only after the service has generated
+         * an application DNS label.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationEndpoint")
+        private String applicationEndpoint;
+
+        /**
+         * Fully qualified domain name for invoking the hosted application over the dual-stack
+         * endpoint. This value is output-only and is present only after the service has generated
+         * an application DNS label.
+         *
+         * @param applicationEndpoint the value to set
+         * @return this builder
+         */
+        public Builder applicationEndpoint(String applicationEndpoint) {
+            this.applicationEndpoint = applicationEndpoint;
+            this.__explicitlySet__.add("applicationEndpoint");
+            return this;
+        }
+        /**
+         * A list of hosted application path patterns that can be accessed without inbound
+         * authentication. Values can be exact paths such as {@code /health} or {@code /callback},
+         * or wildcard paths such as {@code /assets/*} or {@code /public/*}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("publicAccessPathPatterns")
+        private java.util.List<String> publicAccessPathPatterns;
+
+        /**
+         * A list of hosted application path patterns that can be accessed without inbound
+         * authentication. Values can be exact paths such as {@code /health} or {@code /callback},
+         * or wildcard paths such as {@code /assets/*} or {@code /public/*}.
+         *
+         * @param publicAccessPathPatterns the value to set
+         * @return this builder
+         */
+        public Builder publicAccessPathPatterns(java.util.List<String> publicAccessPathPatterns) {
+            this.publicAccessPathPatterns = publicAccessPathPatterns;
+            this.__explicitlySet__.add("publicAccessPathPatterns");
             return this;
         }
         /**
@@ -361,6 +409,8 @@ public final class HostedApplication
             HostedApplication model =
                     new HostedApplication(
                             this.inboundAuthConfig,
+                            this.applicationEndpoint,
+                            this.publicAccessPathPatterns,
                             this.id,
                             this.displayName,
                             this.description,
@@ -386,6 +436,12 @@ public final class HostedApplication
         public Builder copy(HostedApplication model) {
             if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
                 this.inboundAuthConfig(model.getInboundAuthConfig());
+            }
+            if (model.wasPropertyExplicitlySet("applicationEndpoint")) {
+                this.applicationEndpoint(model.getApplicationEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("publicAccessPathPatterns")) {
+                this.publicAccessPathPatterns(model.getPublicAccessPathPatterns());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -450,6 +506,44 @@ public final class HostedApplication
 
     public InboundAuthConfig getInboundAuthConfig() {
         return inboundAuthConfig;
+    }
+
+    /**
+     * Fully qualified domain name for invoking the hosted application over the dual-stack endpoint.
+     * This value is output-only and is present only after the service has generated an application
+     * DNS label.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationEndpoint")
+    private final String applicationEndpoint;
+
+    /**
+     * Fully qualified domain name for invoking the hosted application over the dual-stack endpoint.
+     * This value is output-only and is present only after the service has generated an application
+     * DNS label.
+     *
+     * @return the value
+     */
+    public String getApplicationEndpoint() {
+        return applicationEndpoint;
+    }
+
+    /**
+     * A list of hosted application path patterns that can be accessed without inbound
+     * authentication. Values can be exact paths such as {@code /health} or {@code /callback}, or
+     * wildcard paths such as {@code /assets/*} or {@code /public/*}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("publicAccessPathPatterns")
+    private final java.util.List<String> publicAccessPathPatterns;
+
+    /**
+     * A list of hosted application path patterns that can be accessed without inbound
+     * authentication. Values can be exact paths such as {@code /health} or {@code /callback}, or
+     * wildcard paths such as {@code /assets/*} or {@code /public/*}.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPublicAccessPathPatterns() {
+        return publicAccessPathPatterns;
     }
 
     /**
@@ -739,6 +833,9 @@ public final class HostedApplication
         sb.append("HostedApplication(");
         sb.append("super=").append(super.toString());
         sb.append("inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
+        sb.append(", applicationEndpoint=").append(String.valueOf(this.applicationEndpoint));
+        sb.append(", publicAccessPathPatterns=")
+                .append(String.valueOf(this.publicAccessPathPatterns));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -769,6 +866,9 @@ public final class HostedApplication
 
         HostedApplication other = (HostedApplication) o;
         return java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
+                && java.util.Objects.equals(this.applicationEndpoint, other.applicationEndpoint)
+                && java.util.Objects.equals(
+                        this.publicAccessPathPatterns, other.publicAccessPathPatterns)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
@@ -794,6 +894,16 @@ public final class HostedApplication
         result =
                 (result * PRIME)
                         + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationEndpoint == null
+                                ? 43
+                                : this.applicationEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicAccessPathPatterns == null
+                                ? 43
+                                : this.publicAccessPathPatterns.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());

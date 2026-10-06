@@ -32,6 +32,9 @@ package com.oracle.bmc.core.model;
             value = AttachIScsiVolumeDetails.class,
             name = "iscsi"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AttachNvmeVolumeDetails.class,
+            name = "nvme"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AttachParavirtualizedVolumeDetails.class,
             name = "paravirtualized")
 })

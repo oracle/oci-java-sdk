@@ -47,6 +47,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "networkingBandwidthOptions",
         "maxVnicAttachmentOptions",
         "platformConfigOptions",
+        "bsNvmeAttachmentsConfig",
         "isBilledForStoppedInstance",
         "billingType",
         "quotaNames",
@@ -79,6 +80,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             ShapeNetworkingBandwidthOptions networkingBandwidthOptions,
             ShapeMaxVnicAttachmentOptions maxVnicAttachmentOptions,
             ShapePlatformConfigOptions platformConfigOptions,
+            BsNvmeAttachmentsConfig bsNvmeAttachmentsConfig,
             Boolean isBilledForStoppedInstance,
             BillingType billingType,
             java.util.List<String> quotaNames,
@@ -110,6 +112,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.networkingBandwidthOptions = networkingBandwidthOptions;
         this.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
         this.platformConfigOptions = platformConfigOptions;
+        this.bsNvmeAttachmentsConfig = bsNvmeAttachmentsConfig;
         this.isBilledForStoppedInstance = isBilledForStoppedInstance;
         this.billingType = billingType;
         this.quotaNames = quotaNames;
@@ -468,6 +471,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("platformConfigOptions");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bsNvmeAttachmentsConfig")
+        private BsNvmeAttachmentsConfig bsNvmeAttachmentsConfig;
+
+        public Builder bsNvmeAttachmentsConfig(BsNvmeAttachmentsConfig bsNvmeAttachmentsConfig) {
+            this.bsNvmeAttachmentsConfig = bsNvmeAttachmentsConfig;
+            this.__explicitlySet__.add("bsNvmeAttachmentsConfig");
+            return this;
+        }
         /**
          * Whether billing continues when the instances that use this shape are in the stopped
          * state.
@@ -648,6 +660,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.networkingBandwidthOptions,
                             this.maxVnicAttachmentOptions,
                             this.platformConfigOptions,
+                            this.bsNvmeAttachmentsConfig,
                             this.isBilledForStoppedInstance,
                             this.billingType,
                             this.quotaNames,
@@ -729,6 +742,9 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("platformConfigOptions")) {
                 this.platformConfigOptions(model.getPlatformConfigOptions());
+            }
+            if (model.wasPropertyExplicitlySet("bsNvmeAttachmentsConfig")) {
+                this.bsNvmeAttachmentsConfig(model.getBsNvmeAttachmentsConfig());
             }
             if (model.wasPropertyExplicitlySet("isBilledForStoppedInstance")) {
                 this.isBilledForStoppedInstance(model.getIsBilledForStoppedInstance());
@@ -1110,6 +1126,13 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return platformConfigOptions;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("bsNvmeAttachmentsConfig")
+    private final BsNvmeAttachmentsConfig bsNvmeAttachmentsConfig;
+
+    public BsNvmeAttachmentsConfig getBsNvmeAttachmentsConfig() {
+        return bsNvmeAttachmentsConfig;
+    }
+
     /**
      * Whether billing continues when the instances that use this shape are in the stopped state.
      */
@@ -1333,6 +1356,8 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", maxVnicAttachmentOptions=")
                 .append(String.valueOf(this.maxVnicAttachmentOptions));
         sb.append(", platformConfigOptions=").append(String.valueOf(this.platformConfigOptions));
+        sb.append(", bsNvmeAttachmentsConfig=")
+                .append(String.valueOf(this.bsNvmeAttachmentsConfig));
         sb.append(", isBilledForStoppedInstance=")
                 .append(String.valueOf(this.isBilledForStoppedInstance));
         sb.append(", billingType=").append(String.valueOf(this.billingType));
@@ -1386,6 +1411,8 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(
                         this.maxVnicAttachmentOptions, other.maxVnicAttachmentOptions)
                 && java.util.Objects.equals(this.platformConfigOptions, other.platformConfigOptions)
+                && java.util.Objects.equals(
+                        this.bsNvmeAttachmentsConfig, other.bsNvmeAttachmentsConfig)
                 && java.util.Objects.equals(
                         this.isBilledForStoppedInstance, other.isBilledForStoppedInstance)
                 && java.util.Objects.equals(this.billingType, other.billingType)
@@ -1478,6 +1505,11 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
                         + (this.platformConfigOptions == null
                                 ? 43
                                 : this.platformConfigOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bsNvmeAttachmentsConfig == null
+                                ? 43
+                                : this.bsNvmeAttachmentsConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.isBilledForStoppedInstance == null

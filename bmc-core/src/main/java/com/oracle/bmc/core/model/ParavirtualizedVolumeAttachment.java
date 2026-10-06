@@ -135,6 +135,15 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEncryptionInTransitEnabled")
+        private Boolean isEncryptionInTransitEnabled;
+
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isMultipath")
         private Boolean isMultipath;
 
@@ -180,6 +189,7 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                             this.timeCreated,
                             this.volumeId,
                             this.isPvEncryptionInTransitEnabled,
+                            this.isEncryptionInTransitEnabled,
                             this.isMultipath,
                             this.iscsiLoginState,
                             this.isVolumeCreatedDuringLaunch);
@@ -227,6 +237,9 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isEncryptionInTransitEnabled")) {
+                this.isEncryptionInTransitEnabled(model.getIsEncryptionInTransitEnabled());
+            }
             if (model.wasPropertyExplicitlySet("isMultipath")) {
                 this.isMultipath(model.getIsMultipath());
             }
@@ -263,6 +276,7 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             java.util.Date timeCreated,
             String volumeId,
             Boolean isPvEncryptionInTransitEnabled,
+            Boolean isEncryptionInTransitEnabled,
             Boolean isMultipath,
             IscsiLoginState iscsiLoginState,
             Boolean isVolumeCreatedDuringLaunch) {
@@ -279,6 +293,7 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                 timeCreated,
                 volumeId,
                 isPvEncryptionInTransitEnabled,
+                isEncryptionInTransitEnabled,
                 isMultipath,
                 iscsiLoginState,
                 isVolumeCreatedDuringLaunch);
