@@ -95,6 +95,7 @@ public final class InboundAuthConfig
     /** The inbound authentication configuration type for the Hosted Application. */
     public enum InboundAuthConfigType implements com.oracle.bmc.http.internal.BmcEnum {
         IdcsAuthConfig("IDCS_AUTH_CONFIG"),
+        IdcsSessionAuthConfig("IDCS_SESSION_AUTH_CONFIG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -27,7 +27,10 @@ package com.oracle.bmc.core.model;
             name = "iscsi"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = InstanceConfigurationParavirtualizedAttachVolumeDetails.class,
-            name = "paravirtualized")
+            name = "paravirtualized"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = InstanceConfigurationNvmeAttachVolumeDetails.class,
+            name = "nvme")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

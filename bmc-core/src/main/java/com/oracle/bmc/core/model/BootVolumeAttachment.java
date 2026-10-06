@@ -37,6 +37,7 @@ public final class BootVolumeAttachment
         "timeCreated",
         "timeUpdated",
         "isPvEncryptionInTransitEnabled",
+        "isEncryptionInTransitEnabled",
         "encryptionInTransitType"
     })
     public BootVolumeAttachment(
@@ -50,6 +51,7 @@ public final class BootVolumeAttachment
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             Boolean isPvEncryptionInTransitEnabled,
+            Boolean isEncryptionInTransitEnabled,
             EncryptionInTransitType encryptionInTransitType) {
         super();
         this.availabilityDomain = availabilityDomain;
@@ -62,6 +64,7 @@ public final class BootVolumeAttachment
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
         this.encryptionInTransitType = encryptionInTransitType;
     }
 
@@ -228,16 +231,12 @@ public final class BootVolumeAttachment
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled
-         * or not.
-         */
+        /** Deprecated. Use {@code isEncryptionInTransitEnabled} instead. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
         /**
-         * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled
-         * or not.
+         * Deprecated. Use {@code isEncryptionInTransitEnabled} instead.
          *
          * @param isPvEncryptionInTransitEnabled the value to set
          * @return this builder
@@ -247,12 +246,27 @@ public final class BootVolumeAttachment
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
             return this;
         }
-        /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+        /** Specifies whether in-transit encryption is enabled for the boot volume's attachment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isEncryptionInTransitEnabled")
+        private Boolean isEncryptionInTransitEnabled;
+
+        /**
+         * Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+         *
+         * @param isEncryptionInTransitEnabled the value to set
+         * @return this builder
+         */
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isEncryptionInTransitEnabled");
+            return this;
+        }
+        /** Deprecated. Use {@code isEncryptionInTransitEnabled} instead. */
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
         private EncryptionInTransitType encryptionInTransitType;
 
         /**
-         * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+         * Deprecated. Use {@code isEncryptionInTransitEnabled} instead.
          *
          * @param encryptionInTransitType the value to set
          * @return this builder
@@ -279,6 +293,7 @@ public final class BootVolumeAttachment
                             this.timeCreated,
                             this.timeUpdated,
                             this.isPvEncryptionInTransitEnabled,
+                            this.isEncryptionInTransitEnabled,
                             this.encryptionInTransitType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -317,6 +332,9 @@ public final class BootVolumeAttachment
             }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isEncryptionInTransitEnabled")) {
+                this.isEncryptionInTransitEnabled(model.getIsEncryptionInTransitEnabled());
             }
             if (model.wasPropertyExplicitlySet("encryptionInTransitType")) {
                 this.encryptionInTransitType(model.getEncryptionInTransitType());
@@ -525,16 +543,12 @@ public final class BootVolumeAttachment
         return timeUpdated;
     }
 
-    /**
-     * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or
-     * not.
-     */
+    /** Deprecated. Use {@code isEncryptionInTransitEnabled} instead. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or
-     * not.
+     * Deprecated. Use {@code isEncryptionInTransitEnabled} instead.
      *
      * @return the value
      */
@@ -542,12 +556,25 @@ public final class BootVolumeAttachment
         return isPvEncryptionInTransitEnabled;
     }
 
-    /** Refer the top-level definition of encryptionInTransitType. The default value is NONE. */
+    /** Specifies whether in-transit encryption is enabled for the boot volume's attachment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isEncryptionInTransitEnabled")
+    private final Boolean isEncryptionInTransitEnabled;
+
+    /**
+     * Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+     *
+     * @return the value
+     */
+    public Boolean getIsEncryptionInTransitEnabled() {
+        return isEncryptionInTransitEnabled;
+    }
+
+    /** Deprecated. Use {@code isEncryptionInTransitEnabled} instead. */
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionInTransitType")
     private final EncryptionInTransitType encryptionInTransitType;
 
     /**
-     * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
+     * Deprecated. Use {@code isEncryptionInTransitEnabled} instead.
      *
      * @return the value
      */
@@ -581,6 +608,8 @@ public final class BootVolumeAttachment
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", isEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isEncryptionInTransitEnabled));
         sb.append(", encryptionInTransitType=")
                 .append(String.valueOf(this.encryptionInTransitType));
         sb.append(")");
@@ -608,6 +637,8 @@ public final class BootVolumeAttachment
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(
+                        this.isEncryptionInTransitEnabled, other.isEncryptionInTransitEnabled)
                 && java.util.Objects.equals(
                         this.encryptionInTransitType, other.encryptionInTransitType)
                 && super.equals(other);
@@ -639,6 +670,11 @@ public final class BootVolumeAttachment
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isEncryptionInTransitEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.encryptionInTransitType == null

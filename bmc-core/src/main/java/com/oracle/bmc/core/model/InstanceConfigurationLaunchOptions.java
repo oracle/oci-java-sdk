@@ -30,6 +30,7 @@ public final class InstanceConfigurationLaunchOptions
         "networkType",
         "remoteDataVolumeType",
         "isPvEncryptionInTransitEnabled",
+        "isEncryptionInTransitEnabled",
         "isConsistentVolumeNamingEnabled"
     })
     public InstanceConfigurationLaunchOptions(
@@ -38,6 +39,7 @@ public final class InstanceConfigurationLaunchOptions
             NetworkType networkType,
             RemoteDataVolumeType remoteDataVolumeType,
             Boolean isPvEncryptionInTransitEnabled,
+            Boolean isEncryptionInTransitEnabled,
             Boolean isConsistentVolumeNamingEnabled) {
         super();
         this.bootVolumeType = bootVolumeType;
@@ -45,6 +47,7 @@ public final class InstanceConfigurationLaunchOptions
         this.networkType = networkType;
         this.remoteDataVolumeType = remoteDataVolumeType;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+        this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
         this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
     }
 
@@ -55,7 +58,8 @@ public final class InstanceConfigurationLaunchOptions
          * device. * {@code SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code
          * VFIO} - Direct attached Virtual Function storage. This is the default option for local
          * data volumes on platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This
-         * is the default for boot volumes and remote block storage volumes on platform images.
+         * is the default for boot volumes and remote block storage volumes on platform images. *
+         * {@code NVME} - NVMe attached remote block storage device.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
         private BootVolumeType bootVolumeType;
@@ -65,7 +69,8 @@ public final class InstanceConfigurationLaunchOptions
          * device. * {@code SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code
          * VFIO} - Direct attached Virtual Function storage. This is the default option for local
          * data volumes on platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This
-         * is the default for boot volumes and remote block storage volumes on platform images.
+         * is the default for boot volumes and remote block storage volumes on platform images. *
+         * {@code NVME} - NVMe attached remote block storage device.
          *
          * @param bootVolumeType the value to set
          * @return this builder
@@ -132,7 +137,8 @@ public final class InstanceConfigurationLaunchOptions
          * {@code SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} -
          * Direct attached Virtual Function storage. This is the default option for local data
          * volumes on platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the
-         * default for boot volumes and remote block storage volumes on platform images.
+         * default for boot volumes and remote block storage volumes on platform images. * {@code
+         * NVME} - NVMe attached remote block storage device.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")
         private RemoteDataVolumeType remoteDataVolumeType;
@@ -142,7 +148,8 @@ public final class InstanceConfigurationLaunchOptions
          * {@code SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} -
          * Direct attached Virtual Function storage. This is the default option for local data
          * volumes on platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the
-         * default for boot volumes and remote block storage volumes on platform images.
+         * default for boot volumes and remote block storage volumes on platform images. * {@code
+         * NVME} - NVMe attached remote block storage device.
          *
          * @param remoteDataVolumeType the value to set
          * @return this builder
@@ -152,18 +159,12 @@ public final class InstanceConfigurationLaunchOptions
             this.__explicitlySet__.add("remoteDataVolumeType");
             return this;
         }
-        /**
-         * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in {@link
-         * #instanceConfigurationLaunchInstanceDetails(InstanceConfigurationLaunchInstanceDetailsRequest)
-         * instanceConfigurationLaunchInstanceDetails}.
-         */
+        /** Deprecated. Use {@code isEncryptionInTransitEnabled} instead. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
         /**
-         * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in {@link
-         * #instanceConfigurationLaunchInstanceDetails(InstanceConfigurationLaunchInstanceDetailsRequest)
-         * instanceConfigurationLaunchInstanceDetails}.
+         * Deprecated. Use {@code isEncryptionInTransitEnabled} instead.
          *
          * @param isPvEncryptionInTransitEnabled the value to set
          * @return this builder
@@ -171,6 +172,21 @@ public final class InstanceConfigurationLaunchOptions
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+        /** Whether in-transit encryption for the data volume's attachment is enabled or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isEncryptionInTransitEnabled")
+        private Boolean isEncryptionInTransitEnabled;
+
+        /**
+         * Whether in-transit encryption for the data volume's attachment is enabled or not.
+         *
+         * @param isEncryptionInTransitEnabled the value to set
+         * @return this builder
+         */
+        public Builder isEncryptionInTransitEnabled(Boolean isEncryptionInTransitEnabled) {
+            this.isEncryptionInTransitEnabled = isEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isEncryptionInTransitEnabled");
             return this;
         }
         /** Whether to enable consistent volume naming feature. Defaults to false. */
@@ -200,6 +216,7 @@ public final class InstanceConfigurationLaunchOptions
                             this.networkType,
                             this.remoteDataVolumeType,
                             this.isPvEncryptionInTransitEnabled,
+                            this.isEncryptionInTransitEnabled,
                             this.isConsistentVolumeNamingEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -224,6 +241,9 @@ public final class InstanceConfigurationLaunchOptions
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isEncryptionInTransitEnabled")) {
+                this.isEncryptionInTransitEnabled(model.getIsEncryptionInTransitEnabled());
+            }
             if (model.wasPropertyExplicitlySet("isConsistentVolumeNamingEnabled")) {
                 this.isConsistentVolumeNamingEnabled(model.getIsConsistentVolumeNamingEnabled());
             }
@@ -245,7 +265,8 @@ public final class InstanceConfigurationLaunchOptions
      * {@code SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} - Direct
      * attached Virtual Function storage. This is the default option for local data volumes on
      * platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for
-     * boot volumes and remote block storage volumes on platform images.
+     * boot volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+     * attached remote block storage device.
      */
     public enum BootVolumeType implements com.oracle.bmc.http.internal.BmcEnum {
         Iscsi("ISCSI"),
@@ -253,6 +274,7 @@ public final class InstanceConfigurationLaunchOptions
         Ide("IDE"),
         Vfio("VFIO"),
         Paravirtualized("PARAVIRTUALIZED"),
+        Nvme("NVME"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -300,7 +322,8 @@ public final class InstanceConfigurationLaunchOptions
      * {@code SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} - Direct
      * attached Virtual Function storage. This is the default option for local data volumes on
      * platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for
-     * boot volumes and remote block storage volumes on platform images.
+     * boot volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+     * attached remote block storage device.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
     private final BootVolumeType bootVolumeType;
@@ -310,7 +333,8 @@ public final class InstanceConfigurationLaunchOptions
      * {@code SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} - Direct
      * attached Virtual Function storage. This is the default option for local data volumes on
      * platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for
-     * boot volumes and remote block storage volumes on platform images.
+     * boot volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+     * attached remote block storage device.
      *
      * @return the value
      */
@@ -478,7 +502,8 @@ public final class InstanceConfigurationLaunchOptions
      * SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} - Direct
      * attached Virtual Function storage. This is the default option for local data volumes on
      * platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for
-     * boot volumes and remote block storage volumes on platform images.
+     * boot volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+     * attached remote block storage device.
      */
     public enum RemoteDataVolumeType implements com.oracle.bmc.http.internal.BmcEnum {
         Iscsi("ISCSI"),
@@ -486,6 +511,7 @@ public final class InstanceConfigurationLaunchOptions
         Ide("IDE"),
         Vfio("VFIO"),
         Paravirtualized("PARAVIRTUALIZED"),
+        Nvme("NVME"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -533,7 +559,8 @@ public final class InstanceConfigurationLaunchOptions
      * SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} - Direct
      * attached Virtual Function storage. This is the default option for local data volumes on
      * platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for
-     * boot volumes and remote block storage volumes on platform images.
+     * boot volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+     * attached remote block storage device.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")
     private final RemoteDataVolumeType remoteDataVolumeType;
@@ -543,7 +570,8 @@ public final class InstanceConfigurationLaunchOptions
      * SCSI} - Emulated SCSI disk. * {@code IDE} - Emulated IDE disk. * {@code VFIO} - Direct
      * attached Virtual Function storage. This is the default option for local data volumes on
      * platform images. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for
-     * boot volumes and remote block storage volumes on platform images.
+     * boot volumes and remote block storage volumes on platform images. * {@code NVME} - NVMe
+     * attached remote block storage device.
      *
      * @return the value
      */
@@ -551,23 +579,30 @@ public final class InstanceConfigurationLaunchOptions
         return remoteDataVolumeType;
     }
 
-    /**
-     * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in {@link
-     * #instanceConfigurationLaunchInstanceDetails(InstanceConfigurationLaunchInstanceDetailsRequest)
-     * instanceConfigurationLaunchInstanceDetails}.
-     */
+    /** Deprecated. Use {@code isEncryptionInTransitEnabled} instead. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Deprecated. Instead use {@code isPvEncryptionInTransitEnabled} in {@link
-     * #instanceConfigurationLaunchInstanceDetails(InstanceConfigurationLaunchInstanceDetailsRequest)
-     * instanceConfigurationLaunchInstanceDetails}.
+     * Deprecated. Use {@code isEncryptionInTransitEnabled} instead.
      *
      * @return the value
      */
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
+    }
+
+    /** Whether in-transit encryption for the data volume's attachment is enabled or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isEncryptionInTransitEnabled")
+    private final Boolean isEncryptionInTransitEnabled;
+
+    /**
+     * Whether in-transit encryption for the data volume's attachment is enabled or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsEncryptionInTransitEnabled() {
+        return isEncryptionInTransitEnabled;
     }
 
     /** Whether to enable consistent volume naming feature. Defaults to false. */
@@ -604,6 +639,8 @@ public final class InstanceConfigurationLaunchOptions
         sb.append(", remoteDataVolumeType=").append(String.valueOf(this.remoteDataVolumeType));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
+        sb.append(", isEncryptionInTransitEnabled=")
+                .append(String.valueOf(this.isEncryptionInTransitEnabled));
         sb.append(", isConsistentVolumeNamingEnabled=")
                 .append(String.valueOf(this.isConsistentVolumeNamingEnabled));
         sb.append(")");
@@ -626,6 +663,8 @@ public final class InstanceConfigurationLaunchOptions
                 && java.util.Objects.equals(this.remoteDataVolumeType, other.remoteDataVolumeType)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
+                && java.util.Objects.equals(
+                        this.isEncryptionInTransitEnabled, other.isEncryptionInTransitEnabled)
                 && java.util.Objects.equals(
                         this.isConsistentVolumeNamingEnabled, other.isConsistentVolumeNamingEnabled)
                 && super.equals(other);
@@ -650,6 +689,11 @@ public final class InstanceConfigurationLaunchOptions
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isEncryptionInTransitEnabled == null
+                                ? 43
+                                : this.isEncryptionInTransitEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.isConsistentVolumeNamingEnabled == null

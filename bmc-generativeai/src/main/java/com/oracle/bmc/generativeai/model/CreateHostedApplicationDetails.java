@@ -25,6 +25,7 @@ public final class CreateHostedApplicationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "inboundAuthConfig",
+        "publicAccessPathPatterns",
         "displayName",
         "compartmentId",
         "description",
@@ -37,6 +38,7 @@ public final class CreateHostedApplicationDetails
     })
     public CreateHostedApplicationDetails(
             InboundAuthConfig inboundAuthConfig,
+            java.util.List<String> publicAccessPathPatterns,
             String displayName,
             String compartmentId,
             String description,
@@ -48,6 +50,7 @@ public final class CreateHostedApplicationDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.inboundAuthConfig = inboundAuthConfig;
+        this.publicAccessPathPatterns = publicAccessPathPatterns;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.description = description;
@@ -68,6 +71,27 @@ public final class CreateHostedApplicationDetails
         public Builder inboundAuthConfig(InboundAuthConfig inboundAuthConfig) {
             this.inboundAuthConfig = inboundAuthConfig;
             this.__explicitlySet__.add("inboundAuthConfig");
+            return this;
+        }
+        /**
+         * A list of hosted application path patterns that can be accessed without inbound
+         * authentication. Values can be exact paths such as {@code /health} or {@code /callback},
+         * or wildcard paths such as {@code /assets/*} or {@code /public/*}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("publicAccessPathPatterns")
+        private java.util.List<String> publicAccessPathPatterns;
+
+        /**
+         * A list of hosted application path patterns that can be accessed without inbound
+         * authentication. Values can be exact paths such as {@code /health} or {@code /callback},
+         * or wildcard paths such as {@code /assets/*} or {@code /public/*}.
+         *
+         * @param publicAccessPathPatterns the value to set
+         * @return this builder
+         */
+        public Builder publicAccessPathPatterns(java.util.List<String> publicAccessPathPatterns) {
+            this.publicAccessPathPatterns = publicAccessPathPatterns;
+            this.__explicitlySet__.add("publicAccessPathPatterns");
             return this;
         }
         /**
@@ -231,6 +255,7 @@ public final class CreateHostedApplicationDetails
             CreateHostedApplicationDetails model =
                     new CreateHostedApplicationDetails(
                             this.inboundAuthConfig,
+                            this.publicAccessPathPatterns,
                             this.displayName,
                             this.compartmentId,
                             this.description,
@@ -250,6 +275,9 @@ public final class CreateHostedApplicationDetails
         public Builder copy(CreateHostedApplicationDetails model) {
             if (model.wasPropertyExplicitlySet("inboundAuthConfig")) {
                 this.inboundAuthConfig(model.getInboundAuthConfig());
+            }
+            if (model.wasPropertyExplicitlySet("publicAccessPathPatterns")) {
+                this.publicAccessPathPatterns(model.getPublicAccessPathPatterns());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -296,6 +324,25 @@ public final class CreateHostedApplicationDetails
 
     public InboundAuthConfig getInboundAuthConfig() {
         return inboundAuthConfig;
+    }
+
+    /**
+     * A list of hosted application path patterns that can be accessed without inbound
+     * authentication. Values can be exact paths such as {@code /health} or {@code /callback}, or
+     * wildcard paths such as {@code /assets/*} or {@code /public/*}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("publicAccessPathPatterns")
+    private final java.util.List<String> publicAccessPathPatterns;
+
+    /**
+     * A list of hosted application path patterns that can be accessed without inbound
+     * authentication. Values can be exact paths such as {@code /health} or {@code /callback}, or
+     * wildcard paths such as {@code /assets/*} or {@code /public/*}.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPublicAccessPathPatterns() {
+        return publicAccessPathPatterns;
     }
 
     /**
@@ -447,6 +494,8 @@ public final class CreateHostedApplicationDetails
         sb.append("CreateHostedApplicationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("inboundAuthConfig=").append(String.valueOf(this.inboundAuthConfig));
+        sb.append(", publicAccessPathPatterns=")
+                .append(String.valueOf(this.publicAccessPathPatterns));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -471,6 +520,8 @@ public final class CreateHostedApplicationDetails
 
         CreateHostedApplicationDetails other = (CreateHostedApplicationDetails) o;
         return java.util.Objects.equals(this.inboundAuthConfig, other.inboundAuthConfig)
+                && java.util.Objects.equals(
+                        this.publicAccessPathPatterns, other.publicAccessPathPatterns)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
@@ -490,6 +541,11 @@ public final class CreateHostedApplicationDetails
         result =
                 (result * PRIME)
                         + (this.inboundAuthConfig == null ? 43 : this.inboundAuthConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicAccessPathPatterns == null
+                                ? 43
+                                : this.publicAccessPathPatterns.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
