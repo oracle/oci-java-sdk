@@ -1145,8 +1145,8 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * Indicates whether auto scaling is enabled for the Autonomous AI Database CPU core count.
          * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto
-         * scaling. The default value is {@code TRUE}. Auto scaling is only available for
-         * [Autonomous AI Database Serverless
+         * scaling. The default value is null. Auto scaling is only available for [Autonomous AI
+         * Database Serverless
          * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
@@ -1155,8 +1155,8 @@ public final class UpdateAutonomousDatabaseDetails
         /**
          * Indicates whether auto scaling is enabled for the Autonomous AI Database CPU core count.
          * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto
-         * scaling. The default value is {@code TRUE}. Auto scaling is only available for
-         * [Autonomous AI Database Serverless
+         * scaling. The default value is null. Auto scaling is only available for [Autonomous AI
+         * Database Serverless
          * instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
          *
          * @param isAutoScalingEnabled the value to set
@@ -1348,6 +1348,11 @@ public final class UpdateAutonomousDatabaseDetails
          * When you specify 26ai for dbversion, the system will provision and display a 26ai
          * database as expected. For new databases, it is recommended to use either 19c or 26ai.
          *
+         * <p>The default database version is the Oracle-recommended version. You can retrieve the
+         * default DB version by calling the {@link
+         * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+         * operation.
+         *
          * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
          * parameter.
          */
@@ -1359,6 +1364,11 @@ public final class UpdateAutonomousDatabaseDetails
          * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
          * When you specify 26ai for dbversion, the system will provision and display a 26ai
          * database as expected. For new databases, it is recommended to use either 19c or 26ai.
+         *
+         * <p>The default database version is the Oracle-recommended version. You can retrieve the
+         * default DB version by calling the {@link
+         * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+         * operation.
          *
          * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
          * parameter.
@@ -3351,7 +3361,7 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * Indicates whether auto scaling is enabled for the Autonomous AI Database CPU core count.
      * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto scaling.
-     * The default value is {@code TRUE}. Auto scaling is only available for [Autonomous AI Database
+     * The default value is null. Auto scaling is only available for [Autonomous AI Database
      * Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
@@ -3360,7 +3370,7 @@ public final class UpdateAutonomousDatabaseDetails
     /**
      * Indicates whether auto scaling is enabled for the Autonomous AI Database CPU core count.
      * Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto scaling.
-     * The default value is {@code TRUE}. Auto scaling is only available for [Autonomous AI Database
+     * The default value is null. Auto scaling is only available for [Autonomous AI Database
      * Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      *
      * @return the value
@@ -3572,6 +3582,11 @@ public final class UpdateAutonomousDatabaseDetails
      * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
      * expected. For new databases, it is recommended to use either 19c or 26ai.
      *
+     * <p>The default database version is the Oracle-recommended version. You can retrieve the
+     * default DB version by calling the {@link
+     * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+     * operation.
+     *
      * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
      * parameter.
      */
@@ -3583,6 +3598,11 @@ public final class UpdateAutonomousDatabaseDetails
      * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
      * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
      * expected. For new databases, it is recommended to use either 19c or 26ai.
+     *
+     * <p>The default database version is the Oracle-recommended version. You can retrieve the
+     * default DB version by calling the {@link
+     * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+     * operation.
      *
      * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
      * parameter.

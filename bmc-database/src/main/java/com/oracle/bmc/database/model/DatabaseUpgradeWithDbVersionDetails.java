@@ -27,6 +27,15 @@ package com.oracle.bmc.database.model;
 public final class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSourceBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private String options;
 
@@ -72,7 +81,8 @@ public final class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSo
 
         public DatabaseUpgradeWithDbVersionDetails build() {
             DatabaseUpgradeWithDbVersionDetails model =
-                    new DatabaseUpgradeWithDbVersionDetails(this.options, this.dbVersion);
+                    new DatabaseUpgradeWithDbVersionDetails(
+                            this.isOlderVersionAcknowledged, this.options, this.dbVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,6 +91,9 @@ public final class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSo
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseUpgradeWithDbVersionDetails model) {
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("options")) {
                 this.options(model.getOptions());
             }
@@ -101,8 +114,9 @@ public final class DatabaseUpgradeWithDbVersionDetails extends DatabaseUpgradeSo
     }
 
     @Deprecated
-    public DatabaseUpgradeWithDbVersionDetails(String options, String dbVersion) {
-        super(options);
+    public DatabaseUpgradeWithDbVersionDetails(
+            Boolean isOlderVersionAcknowledged, String options, String dbVersion) {
+        super(isOlderVersionAcknowledged, options);
         this.dbVersion = dbVersion;
     }
 

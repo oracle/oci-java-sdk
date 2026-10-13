@@ -38,7 +38,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             DatabaseStorageSizeDetails storageSizeDetails,
             ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
             String vmClusterId,
-            String recoveryApplianceVpcPassword) {
+            String recoveryApplianceVpcPassword,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.databaseId = databaseId;
         this.backupTDEPassword = backupTDEPassword;
@@ -58,6 +59,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                 recoveryApplianceVpcPassword != null
                         ? recoveryApplianceVpcPassword.toCharArray()
                         : null;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -77,7 +79,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         "storageSizeDetails",
         "managedSoftwareUpdateDetails",
         "vmClusterId",
-        "recoveryApplianceVpcPassword"
+        "recoveryApplianceVpcPassword",
+        "dataSafeRegistrationDetails"
     })
     public CreateDatabaseFromAnotherDatabaseDetails(
             String databaseId,
@@ -94,7 +97,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             DatabaseStorageSizeDetails storageSizeDetails,
             ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
             String vmClusterId,
-            char[] recoveryApplianceVpcPassword) {
+            char[] recoveryApplianceVpcPassword,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.databaseId = databaseId;
         this.backupTDEPassword = backupTDEPassword;
@@ -111,6 +115,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.vmClusterId = vmClusterId;
         this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -380,6 +385,16 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+        private DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+        public Builder dataSafeRegistrationDetails(
+                DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
+            this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
+            this.__explicitlySet__.add("dataSafeRegistrationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -400,7 +415,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                             this.storageSizeDetails,
                             this.managedSoftwareUpdateDetails,
                             this.vmClusterId,
-                            this.recoveryApplianceVpcPassword);
+                            this.recoveryApplianceVpcPassword,
+                            this.dataSafeRegistrationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -454,6 +470,9 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("recoveryApplianceVpcPassword")) {
                 this.recoveryApplianceVpcPassword(model.getRecoveryApplianceVpcPassword());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeRegistrationDetails")) {
+                this.dataSafeRegistrationDetails(model.getDataSafeRegistrationDetails());
             }
             return this;
         }
@@ -703,6 +722,13 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         return recoveryApplianceVpcPassword;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+    private final DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+    public DataSafeRegistrationRequestDetails getDataSafeRegistrationDetails() {
+        return dataSafeRegistrationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -736,6 +762,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                 .append(String.valueOf(this.managedSoftwareUpdateDetails));
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(", recoveryApplianceVpcPassword=").append("<redacted>");
+        sb.append(", dataSafeRegistrationDetails=")
+                .append(String.valueOf(this.dataSafeRegistrationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -771,6 +799,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                 && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && java.util.Objects.equals(
                         this.recoveryApplianceVpcPassword, other.recoveryApplianceVpcPassword)
+                && java.util.Objects.equals(
+                        this.dataSafeRegistrationDetails, other.dataSafeRegistrationDetails)
                 && super.equals(other);
     }
 
@@ -821,6 +851,11 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                         + (this.recoveryApplianceVpcPassword == null
                                 ? 43
                                 : this.recoveryApplianceVpcPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeRegistrationDetails == null
+                                ? 43
+                                : this.dataSafeRegistrationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -23,13 +23,20 @@ package com.oracle.bmc.dbmulticloud.model;
 public final class UpdateOracleDbAwsKeyDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "oracleDbAwsKeyPoolId",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateOracleDbAwsKeyDetails(
             String displayName,
+            String oracleDbAwsKeyPoolId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -49,6 +56,25 @@ public final class UpdateOracleDbAwsKeyDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB AWS Key Pool resource.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAwsKeyPoolId")
+        private String oracleDbAwsKeyPoolId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB AWS Key Pool resource.
+         *
+         * @param oracleDbAwsKeyPoolId the value to set
+         * @return this builder
+         */
+        public Builder oracleDbAwsKeyPoolId(String oracleDbAwsKeyPoolId) {
+            this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            this.__explicitlySet__.add("oracleDbAwsKeyPoolId");
             return this;
         }
         /**
@@ -109,7 +135,10 @@ public final class UpdateOracleDbAwsKeyDetails
         public UpdateOracleDbAwsKeyDetails build() {
             UpdateOracleDbAwsKeyDetails model =
                     new UpdateOracleDbAwsKeyDetails(
-                            this.displayName, this.freeformTags, this.definedTags);
+                            this.displayName,
+                            this.oracleDbAwsKeyPoolId,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -120,6 +149,9 @@ public final class UpdateOracleDbAwsKeyDetails
         public Builder copy(UpdateOracleDbAwsKeyDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("oracleDbAwsKeyPoolId")) {
+                this.oracleDbAwsKeyPoolId(model.getOracleDbAwsKeyPoolId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -151,6 +183,23 @@ public final class UpdateOracleDbAwsKeyDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB AWS Key Pool resource.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAwsKeyPoolId")
+    private final String oracleDbAwsKeyPoolId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB AWS Key Pool resource.
+     *
+     * @return the value
+     */
+    public String getOracleDbAwsKeyPoolId() {
+        return oracleDbAwsKeyPoolId;
     }
 
     /**
@@ -215,6 +264,7 @@ public final class UpdateOracleDbAwsKeyDetails
         sb.append("UpdateOracleDbAwsKeyDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", oracleDbAwsKeyPoolId=").append(String.valueOf(this.oracleDbAwsKeyPoolId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -232,6 +282,7 @@ public final class UpdateOracleDbAwsKeyDetails
 
         UpdateOracleDbAwsKeyDetails other = (UpdateOracleDbAwsKeyDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.oracleDbAwsKeyPoolId, other.oracleDbAwsKeyPoolId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -242,6 +293,11 @@ public final class UpdateOracleDbAwsKeyDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleDbAwsKeyPoolId == null
+                                ? 43
+                                : this.oracleDbAwsKeyPoolId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

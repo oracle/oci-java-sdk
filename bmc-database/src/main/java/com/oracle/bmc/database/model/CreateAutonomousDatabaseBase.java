@@ -968,14 +968,14 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
-     * default value is {@code TRUE}.
+     * default value is {@code FALSE}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
      * Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The
-     * default value is {@code TRUE}.
+     * default value is {@code FALSE}.
      *
      * @return the value
      */
@@ -1454,6 +1454,11 @@ public class CreateAutonomousDatabaseBase
      * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
      * expected. For new databases, it is recommended to use either 19c or 26ai.
      *
+     * <p>The default database version is the Oracle-recommended version. You can retrieve the
+     * default DB version by calling the {@link
+     * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+     * operation.
+     *
      * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
      * parameter.
      */
@@ -1465,6 +1470,11 @@ public class CreateAutonomousDatabaseBase
      * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
      * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
      * expected. For new databases, it is recommended to use either 19c or 26ai.
+     *
+     * <p>The default database version is the Oracle-recommended version. You can retrieve the
+     * default DB version by calling the {@link
+     * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+     * operation.
      *
      * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
      * parameter.

@@ -183,6 +183,48 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeOracleDbAwsKeyPoolCompartmentResponse>
+            changeOracleDbAwsKeyPoolCompartment(
+                    ChangeOracleDbAwsKeyPoolCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOracleDbAwsKeyPoolCompartmentRequest,
+                                    ChangeOracleDbAwsKeyPoolCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOracleDbAwsKeyPoolId(), "oracleDbAwsKeyPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeOracleDbAwsKeyPoolCompartmentDetails(),
+                "changeOracleDbAwsKeyPoolCompartmentDetails is required");
+
+        return clientCall(request, ChangeOracleDbAwsKeyPoolCompartmentResponse::builder)
+                .logger(LOG, "changeOracleDbAwsKeyPoolCompartment")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "ChangeOracleDbAwsKeyPoolCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKeyPool/ChangeOracleDbAwsKeyPoolCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeOracleDbAwsKeyPoolCompartmentRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKeyPool")
+                .appendPathParam(request.getOracleDbAwsKeyPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeOracleDbAwsKeyPoolCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeOracleDbAwsKeyPoolCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOracleDbAwsIdentityConnectorResponse>
             createOracleDbAwsIdentityConnector(
                     CreateOracleDbAwsIdentityConnectorRequest request,
@@ -270,6 +312,47 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOracleDbAwsKeyPoolResponse> createOracleDbAwsKeyPool(
+            CreateOracleDbAwsKeyPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateOracleDbAwsKeyPoolRequest, CreateOracleDbAwsKeyPoolResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateOracleDbAwsKeyPoolDetails(),
+                "createOracleDbAwsKeyPoolDetails is required");
+
+        return clientCall(request, CreateOracleDbAwsKeyPoolResponse::builder)
+                .logger(LOG, "createOracleDbAwsKeyPool")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "CreateOracleDbAwsKeyPool",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKeyPool/CreateOracleDbAwsKeyPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOracleDbAwsKeyPoolRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKeyPool")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPool.class,
+                        CreateOracleDbAwsKeyPoolResponse.Builder::oracleDbAwsKeyPool)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateOracleDbAwsKeyPoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOracleDbAwsKeyPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateOracleDbAwsKeyPoolResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateOracleDbAwsKeyPoolResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateOracleDbAwsKeyPoolResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOracleDbAwsIdentityConnectorResponse>
             deleteOracleDbAwsIdentityConnector(
                     DeleteOracleDbAwsIdentityConnectorRequest request,
@@ -333,6 +416,38 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteOracleDbAwsKeyResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOracleDbAwsKeyPoolResponse> deleteOracleDbAwsKeyPool(
+            DeleteOracleDbAwsKeyPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOracleDbAwsKeyPoolRequest, DeleteOracleDbAwsKeyPoolResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getOracleDbAwsKeyPoolId(), "oracleDbAwsKeyPoolId must not be blank");
+
+        return clientCall(request, DeleteOracleDbAwsKeyPoolResponse::builder)
+                .logger(LOG, "deleteOracleDbAwsKeyPool")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "DeleteOracleDbAwsKeyPool",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKeyPool/DeleteOracleDbAwsKeyPool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOracleDbAwsKeyPoolRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKeyPool")
+                .appendPathParam(request.getOracleDbAwsKeyPoolId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOracleDbAwsKeyPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteOracleDbAwsKeyPoolResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -409,6 +524,38 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
     }
 
     @Override
+    public java.util.concurrent.Future<GetOracleDbAwsKeyPoolResponse> getOracleDbAwsKeyPool(
+            GetOracleDbAwsKeyPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOracleDbAwsKeyPoolRequest, GetOracleDbAwsKeyPoolResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getOracleDbAwsKeyPoolId(), "oracleDbAwsKeyPoolId must not be blank");
+
+        return clientCall(request, GetOracleDbAwsKeyPoolResponse::builder)
+                .logger(LOG, "getOracleDbAwsKeyPool")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "GetOracleDbAwsKeyPool",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKeyPool/GetOracleDbAwsKeyPool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOracleDbAwsKeyPoolRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKeyPool")
+                .appendPathParam(request.getOracleDbAwsKeyPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPool.class,
+                        GetOracleDbAwsKeyPoolResponse.Builder::oracleDbAwsKeyPool)
+                .handleResponseHeaderString("etag", GetOracleDbAwsKeyPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOracleDbAwsKeyPoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOracleDbAwsIdentityConnectorsResponse>
             listOracleDbAwsIdentityConnectors(
                     ListOracleDbAwsIdentityConnectorsRequest request,
@@ -453,6 +600,44 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
     }
 
     @Override
+    public java.util.concurrent.Future<ListOracleDbAwsKeyPoolsResponse> listOracleDbAwsKeyPools(
+            ListOracleDbAwsKeyPoolsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOracleDbAwsKeyPoolsRequest, ListOracleDbAwsKeyPoolsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOracleDbAwsKeyPoolsResponse::builder)
+                .logger(LOG, "listOracleDbAwsKeyPools")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "ListOracleDbAwsKeyPools",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKeyPool/ListOracleDbAwsKeyPools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOracleDbAwsKeyPoolsRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKeyPool")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("oracleDbAwsKeyPoolId", request.getOracleDbAwsKeyPoolId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPoolCollection.class,
+                        ListOracleDbAwsKeyPoolsResponse.Builder::oracleDbAwsKeyPoolCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOracleDbAwsKeyPoolsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOracleDbAwsKeyPoolsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOracleDbAwsKeysResponse> listOracleDbAwsKeys(
             ListOracleDbAwsKeysRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -475,6 +660,7 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
                 .appendQueryParam("oracleDbAwsKeyId", request.getOracleDbAwsKeyId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("oracleDbAwsConnectorId", request.getOracleDbAwsConnectorId())
+                .appendQueryParam("oracleDbAwsKeyPoolId", request.getOracleDbAwsKeyPoolId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -607,6 +793,47 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
     }
 
     @Override
+    public java.util.concurrent.Future<ReplicateOracleDbAwsKeyPoolResponse>
+            replicateOracleDbAwsKeyPool(
+                    ReplicateOracleDbAwsKeyPoolRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReplicateOracleDbAwsKeyPoolRequest,
+                                    ReplicateOracleDbAwsKeyPoolResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getOracleDbAwsKeyPoolId(), "oracleDbAwsKeyPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getReplicateOracleDbAwsKeyPoolDetails(),
+                "replicateOracleDbAwsKeyPoolDetails is required");
+
+        return clientCall(request, ReplicateOracleDbAwsKeyPoolResponse::builder)
+                .logger(LOG, "replicateOracleDbAwsKeyPool")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "ReplicateOracleDbAwsKeyPool",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKeyPool/ReplicateOracleDbAwsKeyPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplicateOracleDbAwsKeyPoolRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKeyPool")
+                .appendPathParam(request.getOracleDbAwsKeyPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("replicate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplicateOracleDbAwsKeyPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReplicateOracleDbAwsKeyPoolResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOracleDbAwsIdentityConnectorResponse>
             updateOracleDbAwsIdentityConnector(
                     UpdateOracleDbAwsIdentityConnectorRequest request,
@@ -669,6 +896,7 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
                 .basePath("/20240501")
                 .appendPathParam("oracleDbAwsKey")
                 .appendPathParam(request.getOracleDbAwsKeyId())
+                .appendQueryParam("isForceDeleteFromKeyPool", request.getIsForceDeleteFromKeyPool())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -678,6 +906,42 @@ public class DbMulticloudAwsProviderAsyncClient extends com.oracle.bmc.http.inte
                         UpdateOracleDbAwsKeyResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOracleDbAwsKeyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOracleDbAwsKeyPoolResponse> updateOracleDbAwsKeyPool(
+            UpdateOracleDbAwsKeyPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOracleDbAwsKeyPoolRequest, UpdateOracleDbAwsKeyPoolResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getOracleDbAwsKeyPoolId(), "oracleDbAwsKeyPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateOracleDbAwsKeyPoolDetails(),
+                "updateOracleDbAwsKeyPoolDetails is required");
+
+        return clientCall(request, UpdateOracleDbAwsKeyPoolResponse::builder)
+                .logger(LOG, "updateOracleDbAwsKeyPool")
+                .serviceDetails(
+                        "DbMulticloudAwsProvider",
+                        "UpdateOracleDbAwsKeyPool",
+                        "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAwsKeyPool/UpdateOracleDbAwsKeyPool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOracleDbAwsKeyPoolRequest::builder)
+                .basePath("/20240501")
+                .appendPathParam("oracleDbAwsKeyPool")
+                .appendPathParam(request.getOracleDbAwsKeyPoolId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateOracleDbAwsKeyPoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOracleDbAwsKeyPoolResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -31,6 +31,7 @@ public final class DbVersionSummary
         "version",
         "isLatestForMajorVersion",
         "supportsPdb",
+        "isOlderVersionAcknowledgmentRequired",
         "isPreviewDbVersion",
         "isUpgradeSupported"
     })
@@ -38,12 +39,14 @@ public final class DbVersionSummary
             String version,
             Boolean isLatestForMajorVersion,
             Boolean supportsPdb,
+            Boolean isOlderVersionAcknowledgmentRequired,
             Boolean isPreviewDbVersion,
             Boolean isUpgradeSupported) {
         super();
         this.version = version;
         this.isLatestForMajorVersion = isLatestForMajorVersion;
         this.supportsPdb = supportsPdb;
+        this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
         this.isPreviewDbVersion = isPreviewDbVersion;
         this.isUpgradeSupported = isUpgradeSupported;
     }
@@ -97,6 +100,26 @@ public final class DbVersionSummary
             this.__explicitlySet__.add("supportsPdb");
             return this;
         }
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+        private Boolean isOlderVersionAcknowledgmentRequired;
+
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         *
+         * @param isOlderVersionAcknowledgmentRequired the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledgmentRequired(
+                Boolean isOlderVersionAcknowledgmentRequired) {
+            this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
+            this.__explicitlySet__.add("isOlderVersionAcknowledgmentRequired");
+            return this;
+        }
         /** True if this version of the Oracle Database software is the preview version. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPreviewDbVersion")
         private Boolean isPreviewDbVersion;
@@ -137,6 +160,7 @@ public final class DbVersionSummary
                             this.version,
                             this.isLatestForMajorVersion,
                             this.supportsPdb,
+                            this.isOlderVersionAcknowledgmentRequired,
                             this.isPreviewDbVersion,
                             this.isUpgradeSupported);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -155,6 +179,10 @@ public final class DbVersionSummary
             }
             if (model.wasPropertyExplicitlySet("supportsPdb")) {
                 this.supportsPdb(model.getSupportsPdb());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledgmentRequired")) {
+                this.isOlderVersionAcknowledgmentRequired(
+                        model.getIsOlderVersionAcknowledgmentRequired());
             }
             if (model.wasPropertyExplicitlySet("isPreviewDbVersion")) {
                 this.isPreviewDbVersion(model.getIsPreviewDbVersion());
@@ -214,6 +242,23 @@ public final class DbVersionSummary
         return supportsPdb;
     }
 
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+    private final Boolean isOlderVersionAcknowledgmentRequired;
+
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledgmentRequired() {
+        return isOlderVersionAcknowledgmentRequired;
+    }
+
     /** True if this version of the Oracle Database software is the preview version. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewDbVersion")
     private final Boolean isPreviewDbVersion;
@@ -259,6 +304,8 @@ public final class DbVersionSummary
         sb.append(", isLatestForMajorVersion=")
                 .append(String.valueOf(this.isLatestForMajorVersion));
         sb.append(", supportsPdb=").append(String.valueOf(this.supportsPdb));
+        sb.append(", isOlderVersionAcknowledgmentRequired=")
+                .append(String.valueOf(this.isOlderVersionAcknowledgmentRequired));
         sb.append(", isPreviewDbVersion=").append(String.valueOf(this.isPreviewDbVersion));
         sb.append(", isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
         sb.append(")");
@@ -279,6 +326,9 @@ public final class DbVersionSummary
                 && java.util.Objects.equals(
                         this.isLatestForMajorVersion, other.isLatestForMajorVersion)
                 && java.util.Objects.equals(this.supportsPdb, other.supportsPdb)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledgmentRequired,
+                        other.isOlderVersionAcknowledgmentRequired)
                 && java.util.Objects.equals(this.isPreviewDbVersion, other.isPreviewDbVersion)
                 && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported)
                 && super.equals(other);
@@ -295,6 +345,11 @@ public final class DbVersionSummary
                                 ? 43
                                 : this.isLatestForMajorVersion.hashCode());
         result = (result * PRIME) + (this.supportsPdb == null ? 43 : this.supportsPdb.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledgmentRequired == null
+                                ? 43
+                                : this.isOlderVersionAcknowledgmentRequired.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPreviewDbVersion == null

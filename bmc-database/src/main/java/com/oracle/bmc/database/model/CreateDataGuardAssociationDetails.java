@@ -42,6 +42,7 @@ public class CreateDataGuardAssociationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseSoftwareImageId",
+        "isOlderVersionAcknowledged",
         "databaseAdminPassword",
         "sourceEncryptionKeyLocationDetails",
         "protectionMode",
@@ -52,6 +53,7 @@ public class CreateDataGuardAssociationDetails
     })
     protected CreateDataGuardAssociationDetails(
             String databaseSoftwareImageId,
+            Boolean isOlderVersionAcknowledged,
             String databaseAdminPassword,
             EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
@@ -61,6 +63,7 @@ public class CreateDataGuardAssociationDetails
             String peerSidPrefix) {
         super();
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.databaseAdminPassword = databaseAdminPassword;
         this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
         this.protectionMode = protectionMode;
@@ -85,6 +88,23 @@ public class CreateDataGuardAssociationDetails
      */
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
+    }
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
     }
 
     /**
@@ -343,6 +363,8 @@ public class CreateDataGuardAssociationDetails
         sb.append("CreateDataGuardAssociationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("databaseSoftwareImageId=").append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
         sb.append(", sourceEncryptionKeyLocationDetails=")
                 .append(String.valueOf(this.sourceEncryptionKeyLocationDetails));
@@ -367,6 +389,8 @@ public class CreateDataGuardAssociationDetails
 
         CreateDataGuardAssociationDetails other = (CreateDataGuardAssociationDetails) o;
         return java.util.Objects.equals(this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && java.util.Objects.equals(this.databaseAdminPassword, other.databaseAdminPassword)
                 && java.util.Objects.equals(
                         this.sourceEncryptionKeyLocationDetails,
@@ -389,6 +413,11 @@ public class CreateDataGuardAssociationDetails
                         + (this.databaseSoftwareImageId == null
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseAdminPassword == null

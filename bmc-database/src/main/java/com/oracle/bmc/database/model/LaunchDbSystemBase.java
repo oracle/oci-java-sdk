@@ -78,7 +78,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         "subscriptionId",
         "dataCollectionOptions",
         "computeModel",
-        "computeCount"
+        "computeCount",
+        "isOlderVersionAcknowledged"
     })
     protected LaunchDbSystemBase(
             String compartmentId,
@@ -113,7 +114,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
             String subscriptionId,
             DataCollectionOptions dataCollectionOptions,
             ComputeModel computeModel,
-            Integer computeCount) {
+            Integer computeCount,
+            Boolean isOlderVersionAcknowledged) {
         super();
         this.compartmentId = compartmentId;
         this.faultDomains = faultDomains;
@@ -148,6 +150,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         this.dataCollectionOptions = dataCollectionOptions;
         this.computeModel = computeModel;
         this.computeCount = computeCount;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
     }
 
     /**
@@ -913,6 +916,23 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         return computeCount;
     }
 
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -964,6 +984,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(")");
         return sb.toString();
     }
@@ -1014,6 +1036,8 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && super.equals(other);
     }
 
@@ -1100,6 +1124,11 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                                 : this.dataCollectionOptions.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

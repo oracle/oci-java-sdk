@@ -84,14 +84,16 @@ public final class BackupDestinationDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
+         * backup destination. Not applicable for Autonomous Container Databases on Cloud Autonomous
+         * VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
+         * backup destination. Not applicable for Autonomous Container Databases on Cloud Autonomous
+         * VM Cluster.
          *
          * @param id the value to set
          * @return this builder
@@ -103,14 +105,16 @@ public final class BackupDestinationDetails
         }
         /**
          * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that
-         * is used to access the Recovery Appliance.
+         * is used to access the Recovery Appliance. Not applicable for Autonomous Container
+         * Databases on Cloud Autonomous VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
         private String vpcUser;
 
         /**
          * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that
-         * is used to access the Recovery Appliance.
+         * is used to access the Recovery Appliance. Not applicable for Autonomous Container
+         * Databases on Cloud Autonomous VM Cluster.
          *
          * @param vpcUser the value to set
          * @return this builder
@@ -122,14 +126,16 @@ public final class BackupDestinationDetails
         }
         /**
          * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used
-         * to access the Recovery Appliance.
+         * to access the Recovery Appliance. Not applicable for Autonomous Container Databases on
+         * Cloud Autonomous VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
         private String vpcPassword;
 
         /**
          * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used
-         * to access the Recovery Appliance.
+         * to access the Recovery Appliance. Not applicable for Autonomous Container Databases on
+         * Cloud Autonomous VM Cluster.
          *
          * @param vpcPassword the value to set
          * @return this builder
@@ -143,7 +149,8 @@ public final class BackupDestinationDetails
          * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
          * destination in an Autonomous Container Database. When enabled, the database automatically
          * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
-         * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+         * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given. Not applicable for
+         * Autonomous Container Databases on Cloud Autonomous VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
         private Boolean isZeroDataLossEnabled;
@@ -152,7 +159,8 @@ public final class BackupDestinationDetails
          * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
          * destination in an Autonomous Container Database. When enabled, the database automatically
          * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
-         * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+         * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given. Not applicable for
+         * Autonomous Container Databases on Cloud Autonomous VM Cluster.
          *
          * @param isZeroDataLossEnabled the value to set
          * @return this builder
@@ -162,12 +170,16 @@ public final class BackupDestinationDetails
             this.__explicitlySet__.add("isZeroDataLossEnabled");
             return this;
         }
-        /** Proxy URL to connect to object store. */
+        /**
+         * Proxy URL to connect to object store. Not applicable for Autonomous Container Databases
+         * on Cloud Autonomous VM Cluster.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
         private String internetProxy;
 
         /**
-         * Proxy URL to connect to object store.
+         * Proxy URL to connect to object store. Not applicable for Autonomous Container Databases
+         * on Cloud Autonomous VM Cluster.
          *
          * @param internetProxy the value to set
          * @return this builder
@@ -179,14 +191,16 @@ public final class BackupDestinationDetails
         }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DBRS policy used for backup.
+         * DBRS policy used for backup. Not applicable for Autonomous Container Databases on Cloud
+         * Autonomous VM Cluster and Autonomous VM Cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
         private String dbrsPolicyId;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DBRS policy used for backup.
+         * DBRS policy used for backup. Not applicable for Autonomous Container Databases on Cloud
+         * Autonomous VM Cluster and Autonomous VM Cluster.
          *
          * @param dbrsPolicyId the value to set
          * @return this builder
@@ -438,14 +452,16 @@ public final class BackupDestinationDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
+     * backup destination. Not applicable for Autonomous Container Databases on Cloud Autonomous VM
+     * Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
+     * backup destination. Not applicable for Autonomous Container Databases on Cloud Autonomous VM
+     * Cluster.
      *
      * @return the value
      */
@@ -455,14 +471,16 @@ public final class BackupDestinationDetails
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is
-     * used to access the Recovery Appliance.
+     * used to access the Recovery Appliance. Not applicable for Autonomous Container Databases on
+     * Cloud Autonomous VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
     private final String vpcUser;
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is
-     * used to access the Recovery Appliance.
+     * used to access the Recovery Appliance. Not applicable for Autonomous Container Databases on
+     * Cloud Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -472,14 +490,16 @@ public final class BackupDestinationDetails
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to
-     * access the Recovery Appliance.
+     * access the Recovery Appliance. Not applicable for Autonomous Container Databases on Cloud
+     * Autonomous VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
     private final String vpcPassword;
 
     /**
      * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to
-     * access the Recovery Appliance.
+     * access the Recovery Appliance. Not applicable for Autonomous Container Databases on Cloud
+     * Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -491,7 +511,8 @@ public final class BackupDestinationDetails
      * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
      * destination in an Autonomous Container Database. When enabled, the database automatically
      * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
-     * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+     * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given. Not applicable for
+     * Autonomous Container Databases on Cloud Autonomous VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isZeroDataLossEnabled")
     private final Boolean isZeroDataLossEnabled;
@@ -500,7 +521,8 @@ public final class BackupDestinationDetails
      * Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup
      * destination in an Autonomous Container Database. When enabled, the database automatically
      * ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery
-     * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given.
+     * setup (sub-second RPO). Defaults to {@code TRUE} if no value is given. Not applicable for
+     * Autonomous Container Databases on Cloud Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -508,12 +530,16 @@ public final class BackupDestinationDetails
         return isZeroDataLossEnabled;
     }
 
-    /** Proxy URL to connect to object store. */
+    /**
+     * Proxy URL to connect to object store. Not applicable for Autonomous Container Databases on
+     * Cloud Autonomous VM Cluster.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
     private final String internetProxy;
 
     /**
-     * Proxy URL to connect to object store.
+     * Proxy URL to connect to object store. Not applicable for Autonomous Container Databases on
+     * Cloud Autonomous VM Cluster.
      *
      * @return the value
      */
@@ -523,14 +549,16 @@ public final class BackupDestinationDetails
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS
-     * policy used for backup.
+     * policy used for backup. Not applicable for Autonomous Container Databases on Cloud Autonomous
+     * VM Cluster and Autonomous VM Cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
     private final String dbrsPolicyId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS
-     * policy used for backup.
+     * policy used for backup. Not applicable for Autonomous Container Databases on Cloud Autonomous
+     * VM Cluster and Autonomous VM Cluster.
      *
      * @return the value
      */

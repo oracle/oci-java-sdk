@@ -335,6 +335,24 @@ public interface DataScienceAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a model artifact signature into a different compartment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeModelArtifactSignatureCompartmentResponse>
+            changeModelArtifactSignatureCompartment(
+                    ChangeModelArtifactSignatureCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelArtifactSignatureCompartmentRequest,
+                                    ChangeModelArtifactSignatureCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a model resource into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -664,6 +682,23 @@ public interface DataScienceAsync extends AutoCloseable {
             CreateModelArtifactRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateModelArtifactRequest, CreateModelArtifactResponse>
+                    handler);
+
+    /**
+     * Create model artifact signature for the specified model
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateModelArtifactSignatureResponse> createModelArtifactSignature(
+            CreateModelArtifactSignatureRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateModelArtifactSignatureRequest,
+                            CreateModelArtifactSignatureResponse>
                     handler);
 
     /**
@@ -1097,6 +1132,23 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteModelResponse> deleteModel(
             DeleteModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
+
+    /**
+     * Deletes the specified artifact signature for a model
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteModelArtifactSignatureResponse> deleteModelArtifactSignature(
+            DeleteModelArtifactSignatureRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteModelArtifactSignatureRequest,
+                            DeleteModelArtifactSignatureResponse>
+                    handler);
 
     /**
      * Deletes model custom metadata artifact for specified model metadata key.
@@ -1555,6 +1607,22 @@ public interface DataScienceAsync extends AutoCloseable {
             GetModelArtifactContentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetModelArtifactContentRequest, GetModelArtifactContentResponse>
+                    handler);
+
+    /**
+     * Gets the specified artifact signature for a model
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetModelArtifactSignatureResponse> getModelArtifactSignature(
+            GetModelArtifactSignatureRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetModelArtifactSignatureRequest, GetModelArtifactSignatureResponse>
                     handler);
 
     /**
@@ -2122,6 +2190,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List model artifact signatures of a model in the specified compartment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListModelArtifactSignaturesResponse> listModelArtifactSignatures(
+            ListModelArtifactSignaturesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListModelArtifactSignaturesRequest, ListModelArtifactSignaturesResponse>
+                    handler);
+
+    /**
      * Lists the status of models in a model group deployment.
      *
      * @param request The request object containing the details to send
@@ -2668,6 +2752,23 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse> handler);
 
     /**
+     * Update model artifact signature for the specified model
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateModelArtifactSignatureResponse> updateModelArtifactSignature(
+            UpdateModelArtifactSignatureRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateModelArtifactSignatureRequest,
+                            UpdateModelArtifactSignatureResponse>
+                    handler);
+
+    /**
      * Updates model custom metadata artifact for specified model metadata key.
      *
      * @param request The request object containing the details to send
@@ -2871,5 +2972,22 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateScheduleResponse> updateSchedule(
             UpdateScheduleRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
+                    handler);
+
+    /**
+     * Verifies the specified artifact signature for a model
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<VerifyModelArtifactSignatureResponse> verifyModelArtifactSignature(
+            VerifyModelArtifactSignatureRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            VerifyModelArtifactSignatureRequest,
+                            VerifyModelArtifactSignatureResponse>
                     handler);
 }

@@ -30,6 +30,7 @@ public final class CreateDatabaseForStandbyDbSystemDetails
             String adminPassword,
             String tdeWalletPassword,
             String databaseSoftwareImageId,
+            Boolean isOlderVersionAcknowledged,
             Boolean isActiveDataGuardEnabled,
             String dbDomain,
             String sidPrefix,
@@ -44,6 +45,7 @@ public final class CreateDatabaseForStandbyDbSystemDetails
         this.adminPassword = adminPassword;
         this.tdeWalletPassword = tdeWalletPassword != null ? tdeWalletPassword.toCharArray() : null;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
         this.dbDomain = dbDomain;
         this.sidPrefix = sidPrefix;
@@ -62,6 +64,7 @@ public final class CreateDatabaseForStandbyDbSystemDetails
         "adminPassword",
         "tdeWalletPassword",
         "databaseSoftwareImageId",
+        "isOlderVersionAcknowledged",
         "isActiveDataGuardEnabled",
         "dbDomain",
         "sidPrefix",
@@ -77,6 +80,7 @@ public final class CreateDatabaseForStandbyDbSystemDetails
             String adminPassword,
             char[] tdeWalletPassword,
             String databaseSoftwareImageId,
+            Boolean isOlderVersionAcknowledged,
             Boolean isActiveDataGuardEnabled,
             String dbDomain,
             String sidPrefix,
@@ -91,6 +95,7 @@ public final class CreateDatabaseForStandbyDbSystemDetails
         this.adminPassword = adminPassword;
         this.tdeWalletPassword = tdeWalletPassword;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
         this.dbDomain = dbDomain;
         this.sidPrefix = sidPrefix;
@@ -161,6 +166,25 @@ public final class CreateDatabaseForStandbyDbSystemDetails
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
             return this;
         }
         /** True if active Data Guard is enabled. */
@@ -365,6 +389,7 @@ public final class CreateDatabaseForStandbyDbSystemDetails
                             this.adminPassword,
                             this.tdeWalletPassword,
                             this.databaseSoftwareImageId,
+                            this.isOlderVersionAcknowledged,
                             this.isActiveDataGuardEnabled,
                             this.dbDomain,
                             this.sidPrefix,
@@ -391,6 +416,9 @@ public final class CreateDatabaseForStandbyDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("isActiveDataGuardEnabled")) {
                 this.isActiveDataGuardEnabled(model.getIsActiveDataGuardEnabled());
@@ -490,6 +518,23 @@ public final class CreateDatabaseForStandbyDbSystemDetails
      */
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
+    }
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
     }
 
     /** True if active Data Guard is enabled. */
@@ -767,6 +812,8 @@ public final class CreateDatabaseForStandbyDbSystemDetails
         sb.append(", tdeWalletPassword=").append("<redacted>");
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", isActiveDataGuardEnabled=")
                 .append(String.valueOf(this.isActiveDataGuardEnabled));
         sb.append(", dbDomain=").append(String.valueOf(this.dbDomain));
@@ -798,6 +845,8 @@ public final class CreateDatabaseForStandbyDbSystemDetails
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
+                && java.util.Objects.equals(
                         this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
                 && java.util.Objects.equals(this.dbDomain, other.dbDomain)
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
@@ -828,6 +877,11 @@ public final class CreateDatabaseForStandbyDbSystemDetails
                         + (this.databaseSoftwareImageId == null
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result =
                 (result * PRIME)
                         + (this.isActiveDataGuardEnabled == null

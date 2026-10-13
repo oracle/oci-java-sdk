@@ -697,6 +697,49 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeModelArtifactSignatureCompartmentResponse>
+            changeModelArtifactSignatureCompartment(
+                    ChangeModelArtifactSignatureCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeModelArtifactSignatureCompartmentRequest,
+                                    ChangeModelArtifactSignatureCompartmentResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeModelArtifactSignatureCompartmentDetails(),
+                "changeModelArtifactSignatureCompartmentDetails is required");
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(
+                request.getArtifactSignatureId(), "artifactSignatureId must not be blank");
+
+        return clientCall(request, ChangeModelArtifactSignatureCompartmentResponse::builder)
+                .logger(LOG, "changeModelArtifactSignatureCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeModelArtifactSignatureCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelArtifactSignature/ChangeModelArtifactSignatureCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeModelArtifactSignatureCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifactSignatures")
+                .appendPathParam(request.getArtifactSignatureId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeModelArtifactSignatureCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeModelCompartmentResponse> changeModelCompartment(
             ChangeModelCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1420,6 +1463,50 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString("etag", CreateModelArtifactResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateModelArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelArtifactSignatureResponse>
+            createModelArtifactSignature(
+                    CreateModelArtifactSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateModelArtifactSignatureRequest,
+                                    CreateModelArtifactSignatureResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getCreateModelArtifactSignatureDetails(),
+                "createModelArtifactSignatureDetails is required");
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, CreateModelArtifactSignatureResponse::builder)
+                .logger(LOG, "createModelArtifactSignature")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateModelArtifactSignature",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelArtifactSignature/CreateModelArtifactSignature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelArtifactSignatureRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifactSignatures")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelArtifactSignature.class,
+                        CreateModelArtifactSignatureResponse.Builder::modelArtifactSignature)
+                .handleResponseHeaderString(
+                        "etag", CreateModelArtifactSignatureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateModelArtifactSignatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateModelArtifactSignatureResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
@@ -2357,6 +2444,42 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelArtifactSignatureResponse>
+            deleteModelArtifactSignature(
+                    DeleteModelArtifactSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteModelArtifactSignatureRequest,
+                                    DeleteModelArtifactSignatureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(
+                request.getArtifactSignatureId(), "artifactSignatureId must not be blank");
+
+        return clientCall(request, DeleteModelArtifactSignatureResponse::builder)
+                .logger(LOG, "deleteModelArtifactSignature")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteModelArtifactSignature",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelArtifactSignature/DeleteModelArtifactSignature")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelArtifactSignatureRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifactSignatures")
+                .appendPathParam(request.getArtifactSignatureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteModelArtifactSignatureResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3333,6 +3456,43 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         "content-md5", GetModelArtifactContentResponse.Builder::contentMd5)
                 .handleResponseHeaderDate(
                         "last-modified", GetModelArtifactContentResponse.Builder::lastModified)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelArtifactSignatureResponse> getModelArtifactSignature(
+            GetModelArtifactSignatureRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetModelArtifactSignatureRequest, GetModelArtifactSignatureResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(
+                request.getArtifactSignatureId(), "artifactSignatureId must not be blank");
+
+        return clientCall(request, GetModelArtifactSignatureResponse::builder)
+                .logger(LOG, "getModelArtifactSignature")
+                .serviceDetails(
+                        "DataScience",
+                        "GetModelArtifactSignature",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelArtifactSignature/GetModelArtifactSignature")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelArtifactSignatureRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifactSignatures")
+                .appendPathParam(request.getArtifactSignatureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelArtifactSignature.class,
+                        GetModelArtifactSignatureResponse.Builder::modelArtifactSignature)
+                .handleResponseHeaderString("etag", GetModelArtifactSignatureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelArtifactSignatureResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4707,6 +4867,52 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ListModelArtifactSignaturesResponse>
+            listModelArtifactSignatures(
+                    ListModelArtifactSignaturesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListModelArtifactSignaturesRequest,
+                                    ListModelArtifactSignaturesResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelArtifactSignaturesResponse::builder)
+                .logger(LOG, "listModelArtifactSignatures")
+                .serviceDetails(
+                        "DataScience",
+                        "ListModelArtifactSignatures",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelArtifactSignatureSummary/ListModelArtifactSignatures")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelArtifactSignaturesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifactSignatures")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("digest", request.getDigest())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelArtifactSignatureSummary.class,
+                        ListModelArtifactSignaturesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelArtifactSignaturesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListModelArtifactSignaturesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelArtifactSignaturesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelDeploymentModelStatesResponse>
             listModelDeploymentModelStates(
                     ListModelDeploymentModelStatesRequest request,
@@ -6028,6 +6234,54 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateModelArtifactSignatureResponse>
+            updateModelArtifactSignature(
+                    UpdateModelArtifactSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateModelArtifactSignatureRequest,
+                                    UpdateModelArtifactSignatureResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getUpdateModelArtifactSignatureDetails(),
+                "updateModelArtifactSignatureDetails is required");
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(
+                request.getArtifactSignatureId(), "artifactSignatureId must not be blank");
+
+        return clientCall(request, UpdateModelArtifactSignatureResponse::builder)
+                .logger(LOG, "updateModelArtifactSignature")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateModelArtifactSignature",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelArtifactSignature/UpdateModelArtifactSignature")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelArtifactSignatureRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifactSignatures")
+                .appendPathParam(request.getArtifactSignatureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelArtifactSignature.class,
+                        UpdateModelArtifactSignatureResponse.Builder::modelArtifactSignature)
+                .handleResponseHeaderString(
+                        "etag", UpdateModelArtifactSignatureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateModelArtifactSignatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateModelArtifactSignatureResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateModelCustomMetadatumArtifactResponse>
             updateModelCustomMetadatumArtifact(
                     UpdateModelCustomMetadatumArtifactRequest request,
@@ -6474,6 +6728,53 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         "opc-request-id", UpdateScheduleResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateScheduleResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyModelArtifactSignatureResponse>
+            verifyModelArtifactSignature(
+                    VerifyModelArtifactSignatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    VerifyModelArtifactSignatureRequest,
+                                    VerifyModelArtifactSignatureResponse>
+                            handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        Validate.notBlank(
+                request.getArtifactSignatureId(), "artifactSignatureId must not be blank");
+
+        return clientCall(request, VerifyModelArtifactSignatureResponse::builder)
+                .logger(LOG, "verifyModelArtifactSignature")
+                .serviceDetails(
+                        "DataScience",
+                        "VerifyModelArtifactSignature",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelArtifactSignature/VerifyModelArtifactSignature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(VerifyModelArtifactSignatureRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifactSignatures")
+                .appendPathParam(request.getArtifactSignatureId())
+                .appendPathParam("actions")
+                .appendPathParam("verify")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelArtifactSignature.class,
+                        VerifyModelArtifactSignatureResponse.Builder::modelArtifactSignature)
+                .handleResponseHeaderString(
+                        "etag", VerifyModelArtifactSignatureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        VerifyModelArtifactSignatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        VerifyModelArtifactSignatureResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

@@ -59,7 +59,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         "storageSizeDetails",
         "managedSoftwareUpdateDetails",
         "homeType",
-        "patchVersion"
+        "patchVersion",
+        "dataSafeState",
+        "dataSafeRegistrationDetails"
     })
     public Database(
             String id,
@@ -99,7 +101,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             DatabaseStorageSizeResponseDetails storageSizeDetails,
             ManagedSoftwareUpdateDetails managedSoftwareUpdateDetails,
             HomeType homeType,
-            String patchVersion) {
+            String patchVersion,
+            DataSafeState dataSafeState,
+            DataSafeRegistrationDetails dataSafeRegistrationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -140,6 +144,8 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.homeType = homeType;
         this.patchVersion = patchVersion;
+        this.dataSafeState = dataSafeState;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -786,6 +792,31 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("patchVersion");
             return this;
         }
+        /** The Data Safe status of the database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeState")
+        private DataSafeState dataSafeState;
+
+        /**
+         * The Data Safe status of the database.
+         *
+         * @param dataSafeState the value to set
+         * @return this builder
+         */
+        public Builder dataSafeState(DataSafeState dataSafeState) {
+            this.dataSafeState = dataSafeState;
+            this.__explicitlySet__.add("dataSafeState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+        private DataSafeRegistrationDetails dataSafeRegistrationDetails;
+
+        public Builder dataSafeRegistrationDetails(
+                DataSafeRegistrationDetails dataSafeRegistrationDetails) {
+            this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
+            this.__explicitlySet__.add("dataSafeRegistrationDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -830,7 +861,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                             this.storageSizeDetails,
                             this.managedSoftwareUpdateDetails,
                             this.homeType,
-                            this.patchVersion);
+                            this.patchVersion,
+                            this.dataSafeState,
+                            this.dataSafeRegistrationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -953,6 +986,12 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("patchVersion")) {
                 this.patchVersion(model.getPatchVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeState")) {
+                this.dataSafeState(model.getDataSafeState());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeRegistrationDetails")) {
+                this.dataSafeRegistrationDetails(model.getDataSafeRegistrationDetails());
             }
             return this;
         }
@@ -1627,6 +1666,73 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         return patchVersion;
     }
 
+    /** The Data Safe status of the database. */
+    public enum DataSafeState implements com.oracle.bmc.http.internal.BmcEnum {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataSafeState.class);
+
+        private final String value;
+        private static java.util.Map<String, DataSafeState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataSafeState v : DataSafeState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataSafeState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataSafeState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataSafeState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The Data Safe status of the database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeState")
+    private final DataSafeState dataSafeState;
+
+    /**
+     * The Data Safe status of the database.
+     *
+     * @return the value
+     */
+    public DataSafeState getDataSafeState() {
+        return dataSafeState;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+    private final DataSafeRegistrationDetails dataSafeRegistrationDetails;
+
+    public DataSafeRegistrationDetails getDataSafeRegistrationDetails() {
+        return dataSafeRegistrationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1687,6 +1793,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.managedSoftwareUpdateDetails));
         sb.append(", homeType=").append(String.valueOf(this.homeType));
         sb.append(", patchVersion=").append(String.valueOf(this.patchVersion));
+        sb.append(", dataSafeState=").append(String.valueOf(this.dataSafeState));
+        sb.append(", dataSafeRegistrationDetails=")
+                .append(String.valueOf(this.dataSafeRegistrationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1747,6 +1856,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                         this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
                 && java.util.Objects.equals(this.homeType, other.homeType)
                 && java.util.Objects.equals(this.patchVersion, other.patchVersion)
+                && java.util.Objects.equals(this.dataSafeState, other.dataSafeState)
+                && java.util.Objects.equals(
+                        this.dataSafeRegistrationDetails, other.dataSafeRegistrationDetails)
                 && super.equals(other);
     }
 
@@ -1848,6 +1960,14 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                                 : this.managedSoftwareUpdateDetails.hashCode());
         result = (result * PRIME) + (this.homeType == null ? 43 : this.homeType.hashCode());
         result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeState == null ? 43 : this.dataSafeState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeRegistrationDetails == null
+                                ? 43
+                                : this.dataSafeRegistrationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -46,6 +46,7 @@ public final class CreateVmClusterDetails
         "isLocalBackupEnabled",
         "timeZone",
         "giVersion",
+        "isOlderVersionAcknowledged",
         "dbServers",
         "freeformTags",
         "definedTags",
@@ -78,6 +79,7 @@ public final class CreateVmClusterDetails
             Boolean isLocalBackupEnabled,
             String timeZone,
             String giVersion,
+            Boolean isOlderVersionAcknowledged,
             java.util.List<String> dbServers,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -109,6 +111,7 @@ public final class CreateVmClusterDetails
         this.isLocalBackupEnabled = isLocalBackupEnabled;
         this.timeZone = timeZone;
         this.giVersion = giVersion;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.dbServers = dbServers;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -473,6 +476,25 @@ public final class CreateVmClusterDetails
             this.__explicitlySet__.add("giVersion");
             return this;
         }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
         /** The list of Db server. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
         private java.util.List<String> dbServers;
@@ -687,6 +709,7 @@ public final class CreateVmClusterDetails
                             this.isLocalBackupEnabled,
                             this.timeZone,
                             this.giVersion,
+                            this.isOlderVersionAcknowledged,
                             this.dbServers,
                             this.freeformTags,
                             this.definedTags,
@@ -762,6 +785,9 @@ public final class CreateVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("giVersion")) {
                 this.giVersion(model.getGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
@@ -1154,6 +1180,23 @@ public final class CreateVmClusterDetails
         return giVersion;
     }
 
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
     /** The list of Db server. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
     private final java.util.List<String> dbServers;
@@ -1461,6 +1504,8 @@ public final class CreateVmClusterDetails
         sb.append(", isLocalBackupEnabled=").append(String.valueOf(this.isLocalBackupEnabled));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1513,6 +1558,8 @@ public final class CreateVmClusterDetails
                 && java.util.Objects.equals(this.isLocalBackupEnabled, other.isLocalBackupEnabled)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1600,6 +1647,11 @@ public final class CreateVmClusterDetails
                                 : this.isLocalBackupEnabled.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
         result = (result * PRIME) + (this.giVersion == null ? 43 : this.giVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

@@ -40,7 +40,8 @@ public final class UpdateExadbVmClusterDetails
         "dataCollectionOptions",
         "systemVersion",
         "gridImageId",
-        "updateAction"
+        "updateAction",
+        "isOlderVersionAcknowledged"
     })
     public UpdateExadbVmClusterDetails(
             String displayName,
@@ -58,7 +59,8 @@ public final class UpdateExadbVmClusterDetails
             DataCollectionOptions dataCollectionOptions,
             String systemVersion,
             String gridImageId,
-            UpdateAction updateAction) {
+            UpdateAction updateAction,
+            Boolean isOlderVersionAcknowledged) {
         super();
         this.displayName = displayName;
         this.totalECpuCount = totalECpuCount;
@@ -76,6 +78,7 @@ public final class UpdateExadbVmClusterDetails
         this.systemVersion = systemVersion;
         this.gridImageId = gridImageId;
         this.updateAction = updateAction;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -388,6 +391,25 @@ public final class UpdateExadbVmClusterDetails
             this.__explicitlySet__.add("updateAction");
             return this;
         }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -410,7 +432,8 @@ public final class UpdateExadbVmClusterDetails
                             this.dataCollectionOptions,
                             this.systemVersion,
                             this.gridImageId,
-                            this.updateAction);
+                            this.updateAction,
+                            this.isOlderVersionAcknowledged);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -466,6 +489,9 @@ public final class UpdateExadbVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("updateAction")) {
                 this.updateAction(model.getUpdateAction());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             return this;
         }
@@ -819,6 +845,23 @@ public final class UpdateExadbVmClusterDetails
         return updateAction;
     }
 
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -850,6 +893,8 @@ public final class UpdateExadbVmClusterDetails
         sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
         sb.append(", gridImageId=").append(String.valueOf(this.gridImageId));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(")");
         return sb.toString();
     }
@@ -880,6 +925,8 @@ public final class UpdateExadbVmClusterDetails
                 && java.util.Objects.equals(this.systemVersion, other.systemVersion)
                 && java.util.Objects.equals(this.gridImageId, other.gridImageId)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && super.equals(other);
     }
 
@@ -927,6 +974,11 @@ public final class UpdateExadbVmClusterDetails
                         + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
         result = (result * PRIME) + (this.gridImageId == null ? 43 : this.gridImageId.hashCode());
         result = (result * PRIME) + (this.updateAction == null ? 43 : this.updateAction.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

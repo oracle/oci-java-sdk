@@ -200,6 +200,25 @@ Configure an HTTP or HTTPS proxy as follows:
 ## Example
 An example of configuring a proxy can be found [here](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/HttpProxyExample.java).
 
+# Idle connection monitor lifecycle
+
+The idle connection monitor is shared by clients using the same SDK classloader. Closing the last
+registered client stops its monitor and removes its JVM shutdown hook. Calling
+`com.oracle.bmc.http.client.jersey.internal.IdleConnectionMonitor.shutdown()` (Jersey) or
+`com.oracle.bmc.http.client.jersey3.internal.IdleConnectionMonitor.shutdown()` (Jersey 3) explicitly also stops monitoring for
+all clients sharing that classloader and removes the hook. A later client can start a new monitor.
+
+Applications that manage their own lifecycle, such as Flink jobs, must close clients and response
+streams during job teardown. They can explicitly call `IdleConnectionMonitor.shutdown()` to stop the
+monitor. Stopping the monitor does not close clients or their connection pools.
+
+Shutdown does not wait for the monitor thread to terminate. An already-running connection-manager
+callback can delay termination, particularly if a custom manager blocks or ignores interruption.
+Classloader collection requires that the worker terminates and other references are released. If a
+security manager denies shutdown-hook removal, cleanup logs a warning, but the registered hook can
+still retain the classloader. During JVM shutdown, hook removal is no longer permitted; monitor
+cleanup still completes.
+
 # Known Issues
 
 ## Program hangs for an indefinite time

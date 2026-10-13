@@ -56,6 +56,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         "freeformTags",
         "definedTags",
         "isDesupportedVersion",
+        "isOlderVersionAcknowledged",
         "isUnifiedAuditingEnabled"
     })
     protected CreateDbHomeBase(
@@ -66,6 +67,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isDesupportedVersion,
+            Boolean isOlderVersionAcknowledged,
             Boolean isUnifiedAuditingEnabled) {
         super();
         this.displayName = displayName;
@@ -75,6 +77,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isDesupportedVersion = isDesupportedVersion;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
 
@@ -208,6 +211,23 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
+    /**
      * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing
      * on respective DBHome.
      */
@@ -247,6 +267,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isDesupportedVersion=").append(String.valueOf(this.isDesupportedVersion));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", isUnifiedAuditingEnabled=")
                 .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(")");
@@ -271,6 +293,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isDesupportedVersion, other.isDesupportedVersion)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && java.util.Objects.equals(
                         this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
                 && super.equals(other);
@@ -297,6 +321,11 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
                         + (this.isDesupportedVersion == null
                                 ? 43
                                 : this.isDesupportedVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result =
                 (result * PRIME)
                         + (this.isUnifiedAuditingEnabled == null

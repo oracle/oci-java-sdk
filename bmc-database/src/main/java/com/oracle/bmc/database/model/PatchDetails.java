@@ -26,17 +26,20 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
     @java.beans.ConstructorProperties({
         "patchId",
         "databaseSoftwareImageId",
+        "isOlderVersionAcknowledged",
         "action",
         "patchOptions"
     })
     public PatchDetails(
             String patchId,
             String databaseSoftwareImageId,
+            Boolean isOlderVersionAcknowledged,
             Action action,
             PatchOptions patchOptions) {
         super();
         this.patchId = patchId;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.action = action;
         this.patchOptions = patchOptions;
     }
@@ -81,6 +84,25 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("databaseSoftwareImageId");
             return this;
         }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
         /** The action to perform on the patch. */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
@@ -114,6 +136,7 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
                     new PatchDetails(
                             this.patchId,
                             this.databaseSoftwareImageId,
+                            this.isOlderVersionAcknowledged,
                             this.action,
                             this.patchOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -129,6 +152,9 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("action")) {
                 this.action(model.getAction());
@@ -181,6 +207,23 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
      */
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
+    }
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
     }
 
     /** The action to perform on the patch. */
@@ -254,6 +297,8 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
         sb.append("patchId=").append(String.valueOf(this.patchId));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", patchOptions=").append(String.valueOf(this.patchOptions));
         sb.append(")");
@@ -273,6 +318,8 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
         return java.util.Objects.equals(this.patchId, other.patchId)
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.patchOptions, other.patchOptions)
                 && super.equals(other);
@@ -288,6 +335,11 @@ public final class PatchDetails extends com.oracle.bmc.http.client.internal.Expl
                         + (this.databaseSoftwareImageId == null
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.patchOptions == null ? 43 : this.patchOptions.hashCode());
         result = (result * PRIME) + super.hashCode();

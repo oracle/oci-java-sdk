@@ -9,6 +9,7 @@ import com.oracle.bmc.http.client.jersey.internal.IdleConnectionMonitor;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,6 +23,11 @@ public class IdleConnectionMonitorTest {
 
     @Before
     public void setup() {
+        IdleConnectionMonitor.shutdown();
+    }
+
+    @After
+    public void tearDown() {
         IdleConnectionMonitor.shutdown();
     }
 

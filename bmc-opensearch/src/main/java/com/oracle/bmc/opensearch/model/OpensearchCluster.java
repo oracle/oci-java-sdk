@@ -98,7 +98,8 @@ public final class OpensearchCluster
         "inboundClusterIds",
         "maintenanceDetails",
         "loadBalancerConfig",
-        "certificateConfig"
+        "certificateConfig",
+        "remoteReindexTrustConfig"
     })
     public OpensearchCluster(
             String id,
@@ -171,7 +172,8 @@ public final class OpensearchCluster
             java.util.List<String> inboundClusterIds,
             MaintenanceDetails maintenanceDetails,
             LoadBalancerConfig loadBalancerConfig,
-            CertificateConfig certificateConfig) {
+            CertificateConfig certificateConfig,
+            RemoteReindexTrustConfig remoteReindexTrustConfig) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -244,6 +246,7 @@ public final class OpensearchCluster
         this.maintenanceDetails = maintenanceDetails;
         this.loadBalancerConfig = loadBalancerConfig;
         this.certificateConfig = certificateConfig;
+        this.remoteReindexTrustConfig = remoteReindexTrustConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1310,6 +1313,15 @@ public final class OpensearchCluster
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+        private RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+        public Builder remoteReindexTrustConfig(RemoteReindexTrustConfig remoteReindexTrustConfig) {
+            this.remoteReindexTrustConfig = remoteReindexTrustConfig;
+            this.__explicitlySet__.add("remoteReindexTrustConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -1386,7 +1398,8 @@ public final class OpensearchCluster
                             this.inboundClusterIds,
                             this.maintenanceDetails,
                             this.loadBalancerConfig,
-                            this.certificateConfig);
+                            this.certificateConfig,
+                            this.remoteReindexTrustConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1608,6 +1621,9 @@ public final class OpensearchCluster
             }
             if (model.wasPropertyExplicitlySet("certificateConfig")) {
                 this.certificateConfig(model.getCertificateConfig());
+            }
+            if (model.wasPropertyExplicitlySet("remoteReindexTrustConfig")) {
+                this.remoteReindexTrustConfig(model.getRemoteReindexTrustConfig());
             }
             return this;
         }
@@ -2583,6 +2599,13 @@ public final class OpensearchCluster
         return certificateConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+    private final RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+    public RemoteReindexTrustConfig getRemoteReindexTrustConfig() {
+        return remoteReindexTrustConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2683,6 +2706,8 @@ public final class OpensearchCluster
         sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
         sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
         sb.append(", certificateConfig=").append(String.valueOf(this.certificateConfig));
+        sb.append(", remoteReindexTrustConfig=")
+                .append(String.valueOf(this.remoteReindexTrustConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -2788,6 +2813,8 @@ public final class OpensearchCluster
                 && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
                 && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
                 && java.util.Objects.equals(this.certificateConfig, other.certificateConfig)
+                && java.util.Objects.equals(
+                        this.remoteReindexTrustConfig, other.remoteReindexTrustConfig)
                 && super.equals(other);
     }
 
@@ -3052,6 +3079,11 @@ public final class OpensearchCluster
         result =
                 (result * PRIME)
                         + (this.certificateConfig == null ? 43 : this.certificateConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteReindexTrustConfig == null
+                                ? 43
+                                : this.remoteReindexTrustConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

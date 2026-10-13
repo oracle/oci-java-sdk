@@ -23,13 +23,22 @@ package com.oracle.bmc.database.model;
 public final class SystemVersionSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"shape", "giVersion", "systemVersions"})
+    @java.beans.ConstructorProperties({
+        "shape",
+        "giVersion",
+        "systemVersions",
+        "systemVersionDetails"
+    })
     public SystemVersionSummary(
-            String shape, String giVersion, java.util.List<String> systemVersions) {
+            String shape,
+            String giVersion,
+            java.util.List<String> systemVersions,
+            java.util.List<SystemVersionMinorVersionSummary> systemVersionDetails) {
         super();
         this.shape = shape;
         this.giVersion = giVersion;
         this.systemVersions = systemVersions;
+        this.systemVersionDetails = systemVersionDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -79,13 +88,37 @@ public final class SystemVersionSummary
             this.__explicitlySet__.add("systemVersions");
             return this;
         }
+        /**
+         * Compatible Exadata system versions with their individual older-version acknowledgment
+         * requirements.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersionDetails")
+        private java.util.List<SystemVersionMinorVersionSummary> systemVersionDetails;
+
+        /**
+         * Compatible Exadata system versions with their individual older-version acknowledgment
+         * requirements.
+         *
+         * @param systemVersionDetails the value to set
+         * @return this builder
+         */
+        public Builder systemVersionDetails(
+                java.util.List<SystemVersionMinorVersionSummary> systemVersionDetails) {
+            this.systemVersionDetails = systemVersionDetails;
+            this.__explicitlySet__.add("systemVersionDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SystemVersionSummary build() {
             SystemVersionSummary model =
-                    new SystemVersionSummary(this.shape, this.giVersion, this.systemVersions);
+                    new SystemVersionSummary(
+                            this.shape,
+                            this.giVersion,
+                            this.systemVersions,
+                            this.systemVersionDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +135,9 @@ public final class SystemVersionSummary
             }
             if (model.wasPropertyExplicitlySet("systemVersions")) {
                 this.systemVersions(model.getSystemVersions());
+            }
+            if (model.wasPropertyExplicitlySet("systemVersionDetails")) {
+                this.systemVersionDetails(model.getSystemVersionDetails());
             }
             return this;
         }
@@ -155,6 +191,23 @@ public final class SystemVersionSummary
         return systemVersions;
     }
 
+    /**
+     * Compatible Exadata system versions with their individual older-version acknowledgment
+     * requirements.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersionDetails")
+    private final java.util.List<SystemVersionMinorVersionSummary> systemVersionDetails;
+
+    /**
+     * Compatible Exadata system versions with their individual older-version acknowledgment
+     * requirements.
+     *
+     * @return the value
+     */
+    public java.util.List<SystemVersionMinorVersionSummary> getSystemVersionDetails() {
+        return systemVersionDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -173,6 +226,7 @@ public final class SystemVersionSummary
         sb.append("shape=").append(String.valueOf(this.shape));
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
         sb.append(", systemVersions=").append(String.valueOf(this.systemVersions));
+        sb.append(", systemVersionDetails=").append(String.valueOf(this.systemVersionDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +244,7 @@ public final class SystemVersionSummary
         return java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
                 && java.util.Objects.equals(this.systemVersions, other.systemVersions)
+                && java.util.Objects.equals(this.systemVersionDetails, other.systemVersionDetails)
                 && super.equals(other);
     }
 
@@ -202,6 +257,11 @@ public final class SystemVersionSummary
         result =
                 (result * PRIME)
                         + (this.systemVersions == null ? 43 : this.systemVersions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersionDetails == null
+                                ? 43
+                                : this.systemVersionDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

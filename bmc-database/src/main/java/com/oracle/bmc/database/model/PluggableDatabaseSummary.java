@@ -50,7 +50,8 @@ public final class PluggableDatabaseSummary
         "kmsKeyVersionId",
         "refreshableCloneConfig",
         "pdbNodeLevelDetails",
-        "patchVersion"
+        "patchVersion",
+        "dataSafeState"
     })
     public PluggableDatabaseSummary(
             String id,
@@ -71,7 +72,8 @@ public final class PluggableDatabaseSummary
             String kmsKeyVersionId,
             PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig,
             java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails,
-            String patchVersion) {
+            String patchVersion,
+            DataSafeState dataSafeState) {
         super();
         this.id = id;
         this.containerDatabaseId = containerDatabaseId;
@@ -92,6 +94,7 @@ public final class PluggableDatabaseSummary
         this.refreshableCloneConfig = refreshableCloneConfig;
         this.pdbNodeLevelDetails = pdbNodeLevelDetails;
         this.patchVersion = patchVersion;
+        this.dataSafeState = dataSafeState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -443,6 +446,21 @@ public final class PluggableDatabaseSummary
             this.__explicitlySet__.add("patchVersion");
             return this;
         }
+        /** The Data Safe status of the pluggable database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeState")
+        private DataSafeState dataSafeState;
+
+        /**
+         * The Data Safe status of the pluggable database.
+         *
+         * @param dataSafeState the value to set
+         * @return this builder
+         */
+        public Builder dataSafeState(DataSafeState dataSafeState) {
+            this.dataSafeState = dataSafeState;
+            this.__explicitlySet__.add("dataSafeState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -468,7 +486,8 @@ public final class PluggableDatabaseSummary
                             this.kmsKeyVersionId,
                             this.refreshableCloneConfig,
                             this.pdbNodeLevelDetails,
-                            this.patchVersion);
+                            this.patchVersion,
+                            this.dataSafeState);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -534,6 +553,9 @@ public final class PluggableDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("patchVersion")) {
                 this.patchVersion(model.getPatchVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeState")) {
+                this.dataSafeState(model.getDataSafeState());
             }
             return this;
         }
@@ -962,6 +984,66 @@ public final class PluggableDatabaseSummary
         return patchVersion;
     }
 
+    /** The Data Safe status of the pluggable database. */
+    public enum DataSafeState implements com.oracle.bmc.http.internal.BmcEnum {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataSafeState.class);
+
+        private final String value;
+        private static java.util.Map<String, DataSafeState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataSafeState v : DataSafeState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataSafeState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataSafeState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataSafeState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The Data Safe status of the pluggable database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeState")
+    private final DataSafeState dataSafeState;
+
+    /**
+     * The Data Safe status of the pluggable database.
+     *
+     * @return the value
+     */
+    public DataSafeState getDataSafeState() {
+        return dataSafeState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -997,6 +1079,7 @@ public final class PluggableDatabaseSummary
         sb.append(", refreshableCloneConfig=").append(String.valueOf(this.refreshableCloneConfig));
         sb.append(", pdbNodeLevelDetails=").append(String.valueOf(this.pdbNodeLevelDetails));
         sb.append(", patchVersion=").append(String.valueOf(this.patchVersion));
+        sb.append(", dataSafeState=").append(String.valueOf(this.dataSafeState));
         sb.append(")");
         return sb.toString();
     }
@@ -1033,6 +1116,7 @@ public final class PluggableDatabaseSummary
                         this.refreshableCloneConfig, other.refreshableCloneConfig)
                 && java.util.Objects.equals(this.pdbNodeLevelDetails, other.pdbNodeLevelDetails)
                 && java.util.Objects.equals(this.patchVersion, other.patchVersion)
+                && java.util.Objects.equals(this.dataSafeState, other.dataSafeState)
                 && super.equals(other);
     }
 
@@ -1085,6 +1169,9 @@ public final class PluggableDatabaseSummary
                                 ? 43
                                 : this.pdbNodeLevelDetails.hashCode());
         result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeState == null ? 43 : this.dataSafeState.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

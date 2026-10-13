@@ -41,7 +41,8 @@ public final class OpensearchClusterSummary
         "securityMode",
         "backupPolicy",
         "outboundClusterConfig",
-        "loadBalancerConfig"
+        "loadBalancerConfig",
+        "remoteReindexTrustConfig"
     })
     public OpensearchClusterSummary(
             String id,
@@ -61,7 +62,8 @@ public final class OpensearchClusterSummary
             SecurityMode securityMode,
             BackupPolicy backupPolicy,
             OutboundClusterConfig outboundClusterConfig,
-            LoadBalancerConfig loadBalancerConfig) {
+            LoadBalancerConfig loadBalancerConfig,
+            RemoteReindexTrustConfig remoteReindexTrustConfig) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -81,6 +83,7 @@ public final class OpensearchClusterSummary
         this.backupPolicy = backupPolicy;
         this.outboundClusterConfig = outboundClusterConfig;
         this.loadBalancerConfig = loadBalancerConfig;
+        this.remoteReindexTrustConfig = remoteReindexTrustConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -372,6 +375,15 @@ public final class OpensearchClusterSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+        private RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+        public Builder remoteReindexTrustConfig(RemoteReindexTrustConfig remoteReindexTrustConfig) {
+            this.remoteReindexTrustConfig = remoteReindexTrustConfig;
+            this.__explicitlySet__.add("remoteReindexTrustConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -395,7 +407,8 @@ public final class OpensearchClusterSummary
                             this.securityMode,
                             this.backupPolicy,
                             this.outboundClusterConfig,
-                            this.loadBalancerConfig);
+                            this.loadBalancerConfig,
+                            this.remoteReindexTrustConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -457,6 +470,9 @@ public final class OpensearchClusterSummary
             }
             if (model.wasPropertyExplicitlySet("loadBalancerConfig")) {
                 this.loadBalancerConfig(model.getLoadBalancerConfig());
+            }
+            if (model.wasPropertyExplicitlySet("remoteReindexTrustConfig")) {
+                this.remoteReindexTrustConfig(model.getRemoteReindexTrustConfig());
             }
             return this;
         }
@@ -717,6 +733,13 @@ public final class OpensearchClusterSummary
         return loadBalancerConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+    private final RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+    public RemoteReindexTrustConfig getRemoteReindexTrustConfig() {
+        return remoteReindexTrustConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -750,6 +773,8 @@ public final class OpensearchClusterSummary
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
         sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
+        sb.append(", remoteReindexTrustConfig=")
+                .append(String.valueOf(this.remoteReindexTrustConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -782,6 +807,8 @@ public final class OpensearchClusterSummary
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
                 && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
+                && java.util.Objects.equals(
+                        this.remoteReindexTrustConfig, other.remoteReindexTrustConfig)
                 && super.equals(other);
     }
 
@@ -833,6 +860,11 @@ public final class OpensearchClusterSummary
                         + (this.loadBalancerConfig == null
                                 ? 43
                                 : this.loadBalancerConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteReindexTrustConfig == null
+                                ? 43
+                                : this.remoteReindexTrustConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

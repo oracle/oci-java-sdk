@@ -53,7 +53,8 @@ public final class DatabaseSoftwareImageSummary
         "includedPatchesSummary",
         "databaseSoftwareImageOneOffPatches",
         "lsInventory",
-        "isUpgradeSupported"
+        "isUpgradeSupported",
+        "isOlderVersionAcknowledgmentRequired"
     })
     public DatabaseSoftwareImageSummary(
             String id,
@@ -73,7 +74,8 @@ public final class DatabaseSoftwareImageSummary
             String includedPatchesSummary,
             java.util.List<String> databaseSoftwareImageOneOffPatches,
             String lsInventory,
-            Boolean isUpgradeSupported) {
+            Boolean isUpgradeSupported,
+            Boolean isOlderVersionAcknowledgmentRequired) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -93,6 +95,7 @@ public final class DatabaseSoftwareImageSummary
         this.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
         this.lsInventory = lsInventory;
         this.isUpgradeSupported = isUpgradeSupported;
+        this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -408,6 +411,26 @@ public final class DatabaseSoftwareImageSummary
             this.__explicitlySet__.add("isUpgradeSupported");
             return this;
         }
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+        private Boolean isOlderVersionAcknowledgmentRequired;
+
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         *
+         * @param isOlderVersionAcknowledgmentRequired the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledgmentRequired(
+                Boolean isOlderVersionAcknowledgmentRequired) {
+            this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
+            this.__explicitlySet__.add("isOlderVersionAcknowledgmentRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -432,7 +455,8 @@ public final class DatabaseSoftwareImageSummary
                             this.includedPatchesSummary,
                             this.databaseSoftwareImageOneOffPatches,
                             this.lsInventory,
-                            this.isUpgradeSupported);
+                            this.isUpgradeSupported,
+                            this.isOlderVersionAcknowledgmentRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -496,6 +520,10 @@ public final class DatabaseSoftwareImageSummary
             }
             if (model.wasPropertyExplicitlySet("isUpgradeSupported")) {
                 this.isUpgradeSupported(model.getIsUpgradeSupported());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledgmentRequired")) {
+                this.isOlderVersionAcknowledgmentRequired(
+                        model.getIsOlderVersionAcknowledgmentRequired());
             }
             return this;
         }
@@ -927,6 +955,23 @@ public final class DatabaseSoftwareImageSummary
         return isUpgradeSupported;
     }
 
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+    private final Boolean isOlderVersionAcknowledgmentRequired;
+
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledgmentRequired() {
+        return isOlderVersionAcknowledgmentRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -962,6 +1007,8 @@ public final class DatabaseSoftwareImageSummary
                 .append(String.valueOf(this.databaseSoftwareImageOneOffPatches));
         sb.append(", lsInventory=").append(String.valueOf(this.lsInventory));
         sb.append(", isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
+        sb.append(", isOlderVersionAcknowledgmentRequired=")
+                .append(String.valueOf(this.isOlderVersionAcknowledgmentRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -999,6 +1046,9 @@ public final class DatabaseSoftwareImageSummary
                         other.databaseSoftwareImageOneOffPatches)
                 && java.util.Objects.equals(this.lsInventory, other.lsInventory)
                 && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledgmentRequired,
+                        other.isOlderVersionAcknowledgmentRequired)
                 && super.equals(other);
     }
 
@@ -1050,6 +1100,11 @@ public final class DatabaseSoftwareImageSummary
                         + (this.isUpgradeSupported == null
                                 ? 43
                                 : this.isUpgradeSupported.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledgmentRequired == null
+                                ? 43
+                                : this.isOlderVersionAcknowledgmentRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

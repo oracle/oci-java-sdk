@@ -83,6 +83,25 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
             this.__explicitlySet__.add("versionPreference");
             return this;
         }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -90,7 +109,9 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
         public VersionSchemeFromVersionSeriesDetails build() {
             VersionSchemeFromVersionSeriesDetails model =
                     new VersionSchemeFromVersionSeriesDetails(
-                            this.majorVersion, this.versionPreference);
+                            this.majorVersion,
+                            this.versionPreference,
+                            this.isOlderVersionAcknowledged);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -104,6 +125,9 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
             }
             if (model.wasPropertyExplicitlySet("versionPreference")) {
                 this.versionPreference(model.getVersionPreference());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             return this;
         }
@@ -120,10 +144,13 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
 
     @Deprecated
     public VersionSchemeFromVersionSeriesDetails(
-            String majorVersion, VersionPreference versionPreference) {
+            String majorVersion,
+            VersionPreference versionPreference,
+            Boolean isOlderVersionAcknowledged) {
         super();
         this.majorVersion = majorVersion;
         this.versionPreference = versionPreference;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
     }
 
     /**
@@ -235,6 +262,23 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
         return versionPreference;
     }
 
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -252,6 +296,8 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", majorVersion=").append(String.valueOf(this.majorVersion));
         sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(")");
         return sb.toString();
     }
@@ -268,6 +314,8 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
         VersionSchemeFromVersionSeriesDetails other = (VersionSchemeFromVersionSeriesDetails) o;
         return java.util.Objects.equals(this.majorVersion, other.majorVersion)
                 && java.util.Objects.equals(this.versionPreference, other.versionPreference)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && super.equals(other);
     }
 
@@ -279,6 +327,11 @@ public final class VersionSchemeFromVersionSeriesDetails extends VersionSchemeDe
         result =
                 (result * PRIME)
                         + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         return result;
     }
 }

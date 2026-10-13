@@ -327,6 +327,15 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
         private CreateDbHomeFromDatabaseDetails dbHome;
 
@@ -434,6 +443,7 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
                             this.dataCollectionOptions,
                             this.computeModel,
                             this.computeCount,
+                            this.isOlderVersionAcknowledged,
                             this.dbHome,
                             this.databaseEdition,
                             this.diskRedundancy,
@@ -545,6 +555,9 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
             }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("dbHome")) {
                 this.dbHome(model.getDbHome());
             }
@@ -605,6 +618,7 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
             DataCollectionOptions dataCollectionOptions,
             ComputeModel computeModel,
             Integer computeCount,
+            Boolean isOlderVersionAcknowledged,
             CreateDbHomeFromDatabaseDetails dbHome,
             DatabaseEdition databaseEdition,
             DiskRedundancy diskRedundancy,
@@ -642,7 +656,8 @@ public final class LaunchDbSystemFromDatabaseDetails extends LaunchDbSystemBase 
                 subscriptionId,
                 dataCollectionOptions,
                 computeModel,
-                computeCount);
+                computeCount,
+                isOlderVersionAcknowledged);
         this.dbHome = dbHome;
         this.databaseEdition = databaseEdition;
         this.diskRedundancy = diskRedundancy;

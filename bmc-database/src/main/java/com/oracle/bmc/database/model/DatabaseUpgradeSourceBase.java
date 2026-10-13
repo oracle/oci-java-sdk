@@ -37,10 +37,28 @@ package com.oracle.bmc.database.model;
 public class DatabaseUpgradeSourceBase
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"options"})
-    protected DatabaseUpgradeSourceBase(String options) {
+    @java.beans.ConstructorProperties({"isOlderVersionAcknowledged", "options"})
+    protected DatabaseUpgradeSourceBase(Boolean isOlderVersionAcknowledged, String options) {
         super();
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.options = options;
+    }
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
     }
 
     /**
@@ -75,7 +93,9 @@ public class DatabaseUpgradeSourceBase
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseUpgradeSourceBase(");
         sb.append("super=").append(super.toString());
-        sb.append("options=").append(String.valueOf(this.options));
+        sb.append("isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
+        sb.append(", options=").append(String.valueOf(this.options));
         sb.append(")");
         return sb.toString();
     }
@@ -90,13 +110,21 @@ public class DatabaseUpgradeSourceBase
         }
 
         DatabaseUpgradeSourceBase other = (DatabaseUpgradeSourceBase) o;
-        return java.util.Objects.equals(this.options, other.options) && super.equals(other);
+        return java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
+                && java.util.Objects.equals(this.options, other.options)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

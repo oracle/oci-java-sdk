@@ -27,6 +27,15 @@ package com.oracle.bmc.database.model;
 public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourceBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private String options;
 
@@ -60,7 +69,8 @@ public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourc
 
         public DatabaseUpgradeWithDbHomeDetails build() {
             DatabaseUpgradeWithDbHomeDetails model =
-                    new DatabaseUpgradeWithDbHomeDetails(this.options, this.dbHomeId);
+                    new DatabaseUpgradeWithDbHomeDetails(
+                            this.isOlderVersionAcknowledged, this.options, this.dbHomeId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -69,6 +79,9 @@ public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourc
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseUpgradeWithDbHomeDetails model) {
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("options")) {
                 this.options(model.getOptions());
             }
@@ -89,8 +102,9 @@ public final class DatabaseUpgradeWithDbHomeDetails extends DatabaseUpgradeSourc
     }
 
     @Deprecated
-    public DatabaseUpgradeWithDbHomeDetails(String options, String dbHomeId) {
-        super(options);
+    public DatabaseUpgradeWithDbHomeDetails(
+            Boolean isOlderVersionAcknowledged, String options, String dbHomeId) {
+        super(isOlderVersionAcknowledged, options);
         this.dbHomeId = dbHomeId;
     }
 

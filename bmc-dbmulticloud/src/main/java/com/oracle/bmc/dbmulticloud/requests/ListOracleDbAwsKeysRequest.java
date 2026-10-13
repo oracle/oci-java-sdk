@@ -74,6 +74,19 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
     public String getOracleDbAwsConnectorId() {
         return oracleDbAwsConnectorId;
     }
+    /**
+     * A filter to return only resources that match the given
+     * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    private String oracleDbAwsKeyPoolId;
+
+    /**
+     * A filter to return only resources that match the given
+     * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    public String getOracleDbAwsKeyPoolId() {
+        return oracleDbAwsKeyPoolId;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -258,6 +271,24 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /**
+         * A filter to return only resources that match the given
+         * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         */
+        private String oracleDbAwsKeyPoolId = null;
+
+        /**
+         * A filter to return only resources that match the given
+         * OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         *
+         * @param oracleDbAwsKeyPoolId the value to set
+         * @return this builder instance
+         */
+        public Builder oracleDbAwsKeyPoolId(String oracleDbAwsKeyPoolId) {
+            this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            return this;
+        }
+
         /** The maximum number of items to return. */
         private Integer limit = null;
 
@@ -373,6 +404,7 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
             oracleDbAwsKeyId(o.getOracleDbAwsKeyId());
             lifecycleState(o.getLifecycleState());
             oracleDbAwsConnectorId(o.getOracleDbAwsConnectorId());
+            oracleDbAwsKeyPoolId(o.getOracleDbAwsKeyPoolId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -417,6 +449,7 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
             request.oracleDbAwsKeyId = oracleDbAwsKeyId;
             request.lifecycleState = lifecycleState;
             request.oracleDbAwsConnectorId = oracleDbAwsConnectorId;
+            request.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
@@ -424,8 +457,8 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
             request.opcRequestId = opcRequestId;
             return request;
             // new ListOracleDbAwsKeysRequest(compartmentId, displayName, oracleDbAwsKeyId,
-            // lifecycleState, oracleDbAwsConnectorId, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // lifecycleState, oracleDbAwsConnectorId, oracleDbAwsKeyPoolId, limit, page, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
@@ -441,6 +474,7 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
                 .oracleDbAwsKeyId(oracleDbAwsKeyId)
                 .lifecycleState(lifecycleState)
                 .oracleDbAwsConnectorId(oracleDbAwsConnectorId)
+                .oracleDbAwsKeyPoolId(oracleDbAwsKeyPoolId)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -467,6 +501,7 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",oracleDbAwsKeyId=").append(String.valueOf(this.oracleDbAwsKeyId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",oracleDbAwsConnectorId=").append(String.valueOf(this.oracleDbAwsConnectorId));
+        sb.append(",oracleDbAwsKeyPoolId=").append(String.valueOf(this.oracleDbAwsKeyPoolId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -493,6 +528,7 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(
                         this.oracleDbAwsConnectorId, other.oracleDbAwsConnectorId)
+                && java.util.Objects.equals(this.oracleDbAwsKeyPoolId, other.oracleDbAwsKeyPoolId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -519,6 +555,11 @@ public class ListOracleDbAwsKeysRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.oracleDbAwsConnectorId == null
                                 ? 43
                                 : this.oracleDbAwsConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleDbAwsKeyPoolId == null
+                                ? 43
+                                : this.oracleDbAwsKeyPoolId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
