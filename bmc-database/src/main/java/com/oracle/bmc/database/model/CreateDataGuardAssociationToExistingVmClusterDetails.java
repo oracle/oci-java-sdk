@@ -39,6 +39,15 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
@@ -152,6 +161,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             CreateDataGuardAssociationToExistingVmClusterDetails model =
                     new CreateDataGuardAssociationToExistingVmClusterDetails(
                             this.databaseSoftwareImageId,
+                            this.isOlderVersionAcknowledged,
                             this.databaseAdminPassword,
                             this.sourceEncryptionKeyLocationDetails,
                             this.protectionMode,
@@ -171,6 +181,9 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         public Builder copy(CreateDataGuardAssociationToExistingVmClusterDetails model) {
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
                 this.databaseAdminPassword(model.getDatabaseAdminPassword());
@@ -216,6 +229,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     @Deprecated
     public CreateDataGuardAssociationToExistingVmClusterDetails(
             String databaseSoftwareImageId,
+            Boolean isOlderVersionAcknowledged,
             String databaseAdminPassword,
             EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
@@ -227,6 +241,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             String peerDbHomeId) {
         super(
                 databaseSoftwareImageId,
+                isOlderVersionAcknowledged,
                 databaseAdminPassword,
                 sourceEncryptionKeyLocationDetails,
                 protectionMode,

@@ -26,6 +26,7 @@ public final class CreateOracleDbAwsKeyDetails
     @java.beans.ConstructorProperties({
         "compartmentId",
         "oracleDbConnectorId",
+        "oracleDbAwsKeyPoolId",
         "displayName",
         "awsKeyArn",
         "awsAccountId",
@@ -39,6 +40,7 @@ public final class CreateOracleDbAwsKeyDetails
     public CreateOracleDbAwsKeyDetails(
             String compartmentId,
             String oracleDbConnectorId,
+            String oracleDbAwsKeyPoolId,
             String displayName,
             String awsKeyArn,
             String awsAccountId,
@@ -51,6 +53,7 @@ public final class CreateOracleDbAwsKeyDetails
         super();
         this.compartmentId = compartmentId;
         this.oracleDbConnectorId = oracleDbConnectorId;
+        this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
         this.displayName = displayName;
         this.awsKeyArn = awsKeyArn;
         this.awsAccountId = awsAccountId;
@@ -100,6 +103,25 @@ public final class CreateOracleDbAwsKeyDetails
         public Builder oracleDbConnectorId(String oracleDbConnectorId) {
             this.oracleDbConnectorId = oracleDbConnectorId;
             this.__explicitlySet__.add("oracleDbConnectorId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB AWS Key Pool resource.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAwsKeyPoolId")
+        private String oracleDbAwsKeyPoolId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB AWS Key Pool resource.
+         *
+         * @param oracleDbAwsKeyPoolId the value to set
+         * @return this builder
+         */
+        public Builder oracleDbAwsKeyPoolId(String oracleDbAwsKeyPoolId) {
+            this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            this.__explicitlySet__.add("oracleDbAwsKeyPoolId");
             return this;
         }
         /** Oracle DB AWS Key resource name. */
@@ -267,6 +289,7 @@ public final class CreateOracleDbAwsKeyDetails
                     new CreateOracleDbAwsKeyDetails(
                             this.compartmentId,
                             this.oracleDbConnectorId,
+                            this.oracleDbAwsKeyPoolId,
                             this.displayName,
                             this.awsKeyArn,
                             this.awsAccountId,
@@ -289,6 +312,9 @@ public final class CreateOracleDbAwsKeyDetails
             }
             if (model.wasPropertyExplicitlySet("oracleDbConnectorId")) {
                 this.oracleDbConnectorId(model.getOracleDbConnectorId());
+            }
+            if (model.wasPropertyExplicitlySet("oracleDbAwsKeyPoolId")) {
+                this.oracleDbAwsKeyPoolId(model.getOracleDbAwsKeyPoolId());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -362,6 +388,23 @@ public final class CreateOracleDbAwsKeyDetails
      */
     public String getOracleDbConnectorId() {
         return oracleDbConnectorId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB AWS Key Pool resource.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAwsKeyPoolId")
+    private final String oracleDbAwsKeyPoolId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB AWS Key Pool resource.
+     *
+     * @return the value
+     */
+    public String getOracleDbAwsKeyPoolId() {
+        return oracleDbAwsKeyPoolId;
     }
 
     /** Oracle DB AWS Key resource name. */
@@ -518,6 +561,7 @@ public final class CreateOracleDbAwsKeyDetails
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", oracleDbConnectorId=").append(String.valueOf(this.oracleDbConnectorId));
+        sb.append(", oracleDbAwsKeyPoolId=").append(String.valueOf(this.oracleDbAwsKeyPoolId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", awsKeyArn=").append(String.valueOf(this.awsKeyArn));
         sb.append(", awsAccountId=").append(String.valueOf(this.awsAccountId));
@@ -543,6 +587,7 @@ public final class CreateOracleDbAwsKeyDetails
         CreateOracleDbAwsKeyDetails other = (CreateOracleDbAwsKeyDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.oracleDbConnectorId, other.oracleDbConnectorId)
+                && java.util.Objects.equals(this.oracleDbAwsKeyPoolId, other.oracleDbAwsKeyPoolId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.awsKeyArn, other.awsKeyArn)
                 && java.util.Objects.equals(this.awsAccountId, other.awsAccountId)
@@ -567,6 +612,11 @@ public final class CreateOracleDbAwsKeyDetails
                         + (this.oracleDbConnectorId == null
                                 ? 43
                                 : this.oracleDbConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleDbAwsKeyPoolId == null
+                                ? 43
+                                : this.oracleDbAwsKeyPoolId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.awsKeyArn == null ? 43 : this.awsKeyArn.hashCode());
         result = (result * PRIME) + (this.awsAccountId == null ? 43 : this.awsAccountId.hashCode());

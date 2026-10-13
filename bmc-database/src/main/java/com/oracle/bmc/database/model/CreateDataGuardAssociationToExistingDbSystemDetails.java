@@ -44,6 +44,15 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
@@ -157,6 +166,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             CreateDataGuardAssociationToExistingDbSystemDetails model =
                     new CreateDataGuardAssociationToExistingDbSystemDetails(
                             this.databaseSoftwareImageId,
+                            this.isOlderVersionAcknowledged,
                             this.databaseAdminPassword,
                             this.sourceEncryptionKeyLocationDetails,
                             this.protectionMode,
@@ -176,6 +186,9 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
         public Builder copy(CreateDataGuardAssociationToExistingDbSystemDetails model) {
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
                 this.databaseAdminPassword(model.getDatabaseAdminPassword());
@@ -221,6 +234,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     @Deprecated
     public CreateDataGuardAssociationToExistingDbSystemDetails(
             String databaseSoftwareImageId,
+            Boolean isOlderVersionAcknowledged,
             String databaseAdminPassword,
             EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
@@ -232,6 +246,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             String peerDbHomeId) {
         super(
                 databaseSoftwareImageId,
+                isOlderVersionAcknowledged,
                 databaseAdminPassword,
                 sourceEncryptionKeyLocationDetails,
                 protectionMode,

@@ -29,6 +29,7 @@ public final class UpgradeDbSystemDetails
         "snapshotRetentionPeriodInDays",
         "newGiVersion",
         "newOsVersion",
+        "isOlderVersionAcknowledged",
         "isSnapshotRetentionDaysForceUpdated"
     })
     public UpgradeDbSystemDetails(
@@ -36,12 +37,14 @@ public final class UpgradeDbSystemDetails
             Integer snapshotRetentionPeriodInDays,
             String newGiVersion,
             String newOsVersion,
+            Boolean isOlderVersionAcknowledged,
             Boolean isSnapshotRetentionDaysForceUpdated) {
         super();
         this.action = action;
         this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
         this.newGiVersion = newGiVersion;
         this.newOsVersion = newOsVersion;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.isSnapshotRetentionDaysForceUpdated = isSnapshotRetentionDaysForceUpdated;
     }
 
@@ -114,6 +117,25 @@ public final class UpgradeDbSystemDetails
             return this;
         }
         /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+        /**
          * If true, rollback time is updated even if operating system upgrade history contains
          * errors.
          */
@@ -144,6 +166,7 @@ public final class UpgradeDbSystemDetails
                             this.snapshotRetentionPeriodInDays,
                             this.newGiVersion,
                             this.newOsVersion,
+                            this.isOlderVersionAcknowledged,
                             this.isSnapshotRetentionDaysForceUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -164,6 +187,9 @@ public final class UpgradeDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("newOsVersion")) {
                 this.newOsVersion(model.getNewOsVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("isSnapshotRetentionDaysForceUpdated")) {
                 this.isSnapshotRetentionDaysForceUpdated(
@@ -274,6 +300,23 @@ public final class UpgradeDbSystemDetails
     }
 
     /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
+    /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotRetentionDaysForceUpdated")
@@ -308,6 +351,8 @@ public final class UpgradeDbSystemDetails
                 .append(String.valueOf(this.snapshotRetentionPeriodInDays));
         sb.append(", newGiVersion=").append(String.valueOf(this.newGiVersion));
         sb.append(", newOsVersion=").append(String.valueOf(this.newOsVersion));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", isSnapshotRetentionDaysForceUpdated=")
                 .append(String.valueOf(this.isSnapshotRetentionDaysForceUpdated));
         sb.append(")");
@@ -330,6 +375,8 @@ public final class UpgradeDbSystemDetails
                 && java.util.Objects.equals(this.newGiVersion, other.newGiVersion)
                 && java.util.Objects.equals(this.newOsVersion, other.newOsVersion)
                 && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
+                && java.util.Objects.equals(
                         this.isSnapshotRetentionDaysForceUpdated,
                         other.isSnapshotRetentionDaysForceUpdated)
                 && super.equals(other);
@@ -347,6 +394,11 @@ public final class UpgradeDbSystemDetails
                                 : this.snapshotRetentionPeriodInDays.hashCode());
         result = (result * PRIME) + (this.newGiVersion == null ? 43 : this.newGiVersion.hashCode());
         result = (result * PRIME) + (this.newOsVersion == null ? 43 : this.newOsVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSnapshotRetentionDaysForceUpdated == null

@@ -59,6 +59,7 @@ public final class CreateCloudVmClusterDetails
         "securityAttributes",
         "dataCollectionOptions",
         "systemVersion",
+        "isOlderVersionAcknowledged",
         "fileSystemConfigurationDetails",
         "cloudAutomationUpdateDetails",
         "exascaleDbStorageVaultId",
@@ -101,6 +102,7 @@ public final class CreateCloudVmClusterDetails
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             DataCollectionOptions dataCollectionOptions,
             String systemVersion,
+            Boolean isOlderVersionAcknowledged,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
             CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
             String exascaleDbStorageVaultId,
@@ -142,6 +144,7 @@ public final class CreateCloudVmClusterDetails
         this.securityAttributes = securityAttributes;
         this.dataCollectionOptions = dataCollectionOptions;
         this.systemVersion = systemVersion;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
         this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
@@ -864,6 +867,25 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("systemVersion");
             return this;
         }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
         /** Details of the file system configuration of the VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
         private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
@@ -1007,6 +1029,7 @@ public final class CreateCloudVmClusterDetails
                             this.securityAttributes,
                             this.dataCollectionOptions,
                             this.systemVersion,
+                            this.isOlderVersionAcknowledged,
                             this.fileSystemConfigurationDetails,
                             this.cloudAutomationUpdateDetails,
                             this.exascaleDbStorageVaultId,
@@ -1122,6 +1145,9 @@ public final class CreateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("systemVersion")) {
                 this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
                 this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
@@ -1822,6 +1848,23 @@ public final class CreateCloudVmClusterDetails
         return systemVersion;
     }
 
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
     /** Details of the file system configuration of the VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
     private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
@@ -2069,6 +2112,8 @@ public final class CreateCloudVmClusterDetails
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(", cloudAutomationUpdateDetails=")
@@ -2132,6 +2177,8 @@ public final class CreateCloudVmClusterDetails
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && java.util.Objects.equals(
@@ -2249,6 +2296,11 @@ public final class CreateCloudVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result =
                 (result * PRIME)
                         + (this.fileSystemConfigurationDetails == null

@@ -1,0 +1,166 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.opensearch.model;
+
+/**
+ * Password-source details for a plaintext master-user password. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = PlainPasswordSecurityUserPasswordDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public final class PlainPasswordSecurityUserPasswordDetails extends SecurityUserPasswordDetails {
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /** The plaintext password for the master user. */
+        @com.fasterxml.jackson.annotation.JsonProperty("plainPassword")
+        private char[] plainPassword;
+
+        /**
+         * The plaintext password for the master user.
+         *
+         * @param plainPassword the value to set
+         * @return this builder
+         */
+        public Builder plainPassword(char[] plainPassword) {
+            this.plainPassword = plainPassword;
+            this.__explicitlySet__.add("plainPassword");
+            return this;
+        }
+
+        public Builder plainPassword(String plainPassword) {
+            this.plainPassword = plainPassword != null ? plainPassword.toCharArray() : null;
+            this.__explicitlySet__.add("plainPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public PlainPasswordSecurityUserPasswordDetails build() {
+            PlainPasswordSecurityUserPasswordDetails model =
+                    new PlainPasswordSecurityUserPasswordDetails(this.plainPassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(PlainPasswordSecurityUserPasswordDetails model) {
+            if (model.wasPropertyExplicitlySet("plainPassword")) {
+                this.plainPassword(model.getPlainPassword());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    @Deprecated
+    public PlainPasswordSecurityUserPasswordDetails(String plainPassword) {
+        super();
+        this.plainPassword = plainPassword != null ? plainPassword.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public PlainPasswordSecurityUserPasswordDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("plainPassword") char[] plainPassword) {
+        super();
+        this.plainPassword = plainPassword;
+    }
+
+    /** The plaintext password for the master user. */
+    @com.fasterxml.jackson.annotation.JsonProperty("plainPassword")
+    private final char[] plainPassword;
+
+    /**
+     * The plaintext password for the master user.
+     *
+     * @return the value
+     * @deprecated Use getPlainPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPlainPassword() {
+        return plainPassword != null ? new String(plainPassword) : null;
+    }
+
+    /**
+     * The plaintext password for the master user.
+     *
+     * @return the value
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("plainPassword")
+    public char[] getPlainPassword__AsCharArray() {
+        return plainPassword;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("PlainPasswordSecurityUserPasswordDetails(");
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", plainPassword=").append("<redacted>");
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PlainPasswordSecurityUserPasswordDetails)) {
+            return false;
+        }
+
+        PlainPasswordSecurityUserPasswordDetails other =
+                (PlainPasswordSecurityUserPasswordDetails) o;
+        return java.util.Objects.equals(this.plainPassword, other.plainPassword)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.plainPassword == null ? 43 : this.plainPassword.hashCode());
+        return result;
+    }
+}

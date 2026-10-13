@@ -5,11 +5,9 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Oracle Grid Infrastructure (GI) version.
- *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
+ * The Oracle Grid Infrastructure (GI) version. To use any of the API operations, you must be
+ * authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an
+ * administrator who needs to write policies to give users access, see [Getting Started with
  * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -27,10 +25,11 @@ package com.oracle.bmc.database.model;
 public final class GiVersionSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"version"})
-    public GiVersionSummary(String version) {
+    @java.beans.ConstructorProperties({"version", "isOlderVersionAcknowledgmentRequired"})
+    public GiVersionSummary(String version, Boolean isOlderVersionAcknowledgmentRequired) {
         super();
         this.version = version;
+        this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -50,12 +49,33 @@ public final class GiVersionSummary
             this.__explicitlySet__.add("version");
             return this;
         }
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+        private Boolean isOlderVersionAcknowledgmentRequired;
+
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         *
+         * @param isOlderVersionAcknowledgmentRequired the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledgmentRequired(
+                Boolean isOlderVersionAcknowledgmentRequired) {
+            this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
+            this.__explicitlySet__.add("isOlderVersionAcknowledgmentRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GiVersionSummary build() {
-            GiVersionSummary model = new GiVersionSummary(this.version);
+            GiVersionSummary model =
+                    new GiVersionSummary(this.version, this.isOlderVersionAcknowledgmentRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -66,6 +86,10 @@ public final class GiVersionSummary
         public Builder copy(GiVersionSummary model) {
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledgmentRequired")) {
+                this.isOlderVersionAcknowledgmentRequired(
+                        model.getIsOlderVersionAcknowledgmentRequired());
             }
             return this;
         }
@@ -93,6 +117,23 @@ public final class GiVersionSummary
         return version;
     }
 
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+    private final Boolean isOlderVersionAcknowledgmentRequired;
+
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledgmentRequired() {
+        return isOlderVersionAcknowledgmentRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -109,6 +150,8 @@ public final class GiVersionSummary
         sb.append("GiVersionSummary(");
         sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", isOlderVersionAcknowledgmentRequired=")
+                .append(String.valueOf(this.isOlderVersionAcknowledgmentRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -123,7 +166,11 @@ public final class GiVersionSummary
         }
 
         GiVersionSummary other = (GiVersionSummary) o;
-        return java.util.Objects.equals(this.version, other.version) && super.equals(other);
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledgmentRequired,
+                        other.isOlderVersionAcknowledgmentRequired)
+                && super.equals(other);
     }
 
     @Override
@@ -131,6 +178,11 @@ public final class GiVersionSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledgmentRequired == null
+                                ? 43
+                                : this.isOlderVersionAcknowledgmentRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

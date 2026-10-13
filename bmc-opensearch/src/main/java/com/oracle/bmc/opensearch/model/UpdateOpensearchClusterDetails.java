@@ -30,6 +30,7 @@ public final class UpdateOpensearchClusterDetails
         "securityMode",
         "securityMasterUserName",
         "securityMasterUserPasswordHash",
+        "securityMasterUserAuthDetails",
         "securitySamlConfig",
         "backupPolicy",
         "nsgId",
@@ -38,6 +39,7 @@ public final class UpdateOpensearchClusterDetails
         "maintenanceDetails",
         "loadBalancerConfig",
         "certificateConfig",
+        "remoteReindexTrustConfig",
         "freeformTags",
         "definedTags",
         "securityAttributes"
@@ -48,6 +50,7 @@ public final class UpdateOpensearchClusterDetails
             SecurityMode securityMode,
             String securityMasterUserName,
             String securityMasterUserPasswordHash,
+            SecurityUserAuthenticationDetails securityMasterUserAuthDetails,
             SecuritySamlConfig securitySamlConfig,
             BackupPolicy backupPolicy,
             String nsgId,
@@ -56,6 +59,7 @@ public final class UpdateOpensearchClusterDetails
             UpdateMaintenanceDetails maintenanceDetails,
             LoadBalancerConfig loadBalancerConfig,
             CertificateConfig certificateConfig,
+            RemoteReindexTrustConfig remoteReindexTrustConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
@@ -65,6 +69,7 @@ public final class UpdateOpensearchClusterDetails
         this.securityMode = securityMode;
         this.securityMasterUserName = securityMasterUserName;
         this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+        this.securityMasterUserAuthDetails = securityMasterUserAuthDetails;
         this.securitySamlConfig = securitySamlConfig;
         this.backupPolicy = backupPolicy;
         this.nsgId = nsgId;
@@ -73,6 +78,7 @@ public final class UpdateOpensearchClusterDetails
         this.maintenanceDetails = maintenanceDetails;
         this.loadBalancerConfig = loadBalancerConfig;
         this.certificateConfig = certificateConfig;
+        this.remoteReindexTrustConfig = remoteReindexTrustConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
@@ -147,6 +153,16 @@ public final class UpdateOpensearchClusterDetails
         public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
             this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             this.__explicitlySet__.add("securityMasterUserPasswordHash");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserAuthDetails")
+        private SecurityUserAuthenticationDetails securityMasterUserAuthDetails;
+
+        public Builder securityMasterUserAuthDetails(
+                SecurityUserAuthenticationDetails securityMasterUserAuthDetails) {
+            this.securityMasterUserAuthDetails = securityMasterUserAuthDetails;
+            this.__explicitlySet__.add("securityMasterUserAuthDetails");
             return this;
         }
 
@@ -234,6 +250,15 @@ public final class UpdateOpensearchClusterDetails
             this.__explicitlySet__.add("certificateConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+        private RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+        public Builder remoteReindexTrustConfig(RemoteReindexTrustConfig remoteReindexTrustConfig) {
+            this.remoteReindexTrustConfig = remoteReindexTrustConfig;
+            this.__explicitlySet__.add("remoteReindexTrustConfig");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -313,6 +338,7 @@ public final class UpdateOpensearchClusterDetails
                             this.securityMode,
                             this.securityMasterUserName,
                             this.securityMasterUserPasswordHash,
+                            this.securityMasterUserAuthDetails,
                             this.securitySamlConfig,
                             this.backupPolicy,
                             this.nsgId,
@@ -321,6 +347,7 @@ public final class UpdateOpensearchClusterDetails
                             this.maintenanceDetails,
                             this.loadBalancerConfig,
                             this.certificateConfig,
+                            this.remoteReindexTrustConfig,
                             this.freeformTags,
                             this.definedTags,
                             this.securityAttributes);
@@ -347,6 +374,9 @@ public final class UpdateOpensearchClusterDetails
             if (model.wasPropertyExplicitlySet("securityMasterUserPasswordHash")) {
                 this.securityMasterUserPasswordHash(model.getSecurityMasterUserPasswordHash());
             }
+            if (model.wasPropertyExplicitlySet("securityMasterUserAuthDetails")) {
+                this.securityMasterUserAuthDetails(model.getSecurityMasterUserAuthDetails());
+            }
             if (model.wasPropertyExplicitlySet("securitySamlConfig")) {
                 this.securitySamlConfig(model.getSecuritySamlConfig());
             }
@@ -371,6 +401,9 @@ public final class UpdateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("certificateConfig")) {
                 this.certificateConfig(model.getCertificateConfig());
+            }
+            if (model.wasPropertyExplicitlySet("remoteReindexTrustConfig")) {
+                this.remoteReindexTrustConfig(model.getRemoteReindexTrustConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -453,6 +486,13 @@ public final class UpdateOpensearchClusterDetails
         return securityMasterUserPasswordHash;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserAuthDetails")
+    private final SecurityUserAuthenticationDetails securityMasterUserAuthDetails;
+
+    public SecurityUserAuthenticationDetails getSecurityMasterUserAuthDetails() {
+        return securityMasterUserAuthDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
     private final SecuritySamlConfig securitySamlConfig;
 
@@ -519,6 +559,13 @@ public final class UpdateOpensearchClusterDetails
 
     public CertificateConfig getCertificateConfig() {
         return certificateConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+    private final RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+    public RemoteReindexTrustConfig getRemoteReindexTrustConfig() {
+        return remoteReindexTrustConfig;
     }
 
     /**
@@ -599,6 +646,8 @@ public final class UpdateOpensearchClusterDetails
         sb.append(", securityMasterUserName=").append(String.valueOf(this.securityMasterUserName));
         sb.append(", securityMasterUserPasswordHash=")
                 .append(String.valueOf(this.securityMasterUserPasswordHash));
+        sb.append(", securityMasterUserAuthDetails=")
+                .append(String.valueOf(this.securityMasterUserAuthDetails));
         sb.append(", securitySamlConfig=").append(String.valueOf(this.securitySamlConfig));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", nsgId=").append(String.valueOf(this.nsgId));
@@ -608,6 +657,8 @@ public final class UpdateOpensearchClusterDetails
         sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
         sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
         sb.append(", certificateConfig=").append(String.valueOf(this.certificateConfig));
+        sb.append(", remoteReindexTrustConfig=")
+                .append(String.valueOf(this.remoteReindexTrustConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
@@ -632,6 +683,8 @@ public final class UpdateOpensearchClusterDetails
                         this.securityMasterUserName, other.securityMasterUserName)
                 && java.util.Objects.equals(
                         this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
+                && java.util.Objects.equals(
+                        this.securityMasterUserAuthDetails, other.securityMasterUserAuthDetails)
                 && java.util.Objects.equals(this.securitySamlConfig, other.securitySamlConfig)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.nsgId, other.nsgId)
@@ -642,6 +695,8 @@ public final class UpdateOpensearchClusterDetails
                 && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
                 && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
                 && java.util.Objects.equals(this.certificateConfig, other.certificateConfig)
+                && java.util.Objects.equals(
+                        this.remoteReindexTrustConfig, other.remoteReindexTrustConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
@@ -667,6 +722,11 @@ public final class UpdateOpensearchClusterDetails
                         + (this.securityMasterUserPasswordHash == null
                                 ? 43
                                 : this.securityMasterUserPasswordHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityMasterUserAuthDetails == null
+                                ? 43
+                                : this.securityMasterUserAuthDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.securitySamlConfig == null
@@ -697,6 +757,11 @@ public final class UpdateOpensearchClusterDetails
         result =
                 (result * PRIME)
                         + (this.certificateConfig == null ? 43 : this.certificateConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteReindexTrustConfig == null
+                                ? 43
+                                : this.remoteReindexTrustConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

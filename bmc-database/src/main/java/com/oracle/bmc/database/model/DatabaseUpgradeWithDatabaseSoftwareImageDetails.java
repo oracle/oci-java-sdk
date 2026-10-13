@@ -28,6 +28,15 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
         extends DatabaseUpgradeSourceBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private String options;
 
@@ -64,7 +73,9 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
         public DatabaseUpgradeWithDatabaseSoftwareImageDetails build() {
             DatabaseUpgradeWithDatabaseSoftwareImageDetails model =
                     new DatabaseUpgradeWithDatabaseSoftwareImageDetails(
-                            this.options, this.databaseSoftwareImageId);
+                            this.isOlderVersionAcknowledged,
+                            this.options,
+                            this.databaseSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -73,6 +84,9 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseUpgradeWithDatabaseSoftwareImageDetails model) {
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("options")) {
                 this.options(model.getOptions());
             }
@@ -94,8 +108,8 @@ public final class DatabaseUpgradeWithDatabaseSoftwareImageDetails
 
     @Deprecated
     public DatabaseUpgradeWithDatabaseSoftwareImageDetails(
-            String options, String databaseSoftwareImageId) {
-        super(options);
+            Boolean isOlderVersionAcknowledged, String options, String databaseSoftwareImageId) {
+        super(isOlderVersionAcknowledged, options);
         this.databaseSoftwareImageId = databaseSoftwareImageId;
     }
 

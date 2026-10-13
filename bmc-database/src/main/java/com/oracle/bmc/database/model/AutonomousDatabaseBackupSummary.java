@@ -445,6 +445,11 @@ public final class AutonomousDatabaseBackupSummary
          * When you specify 26ai for dbversion, the system will provision and display a 26ai
          * database as expected. For new databases, it is recommended to use either 19c or 26ai.
          *
+         * <p>The default database version is the Oracle-recommended version. You can retrieve the
+         * default DB version by calling the {@link
+         * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+         * operation.
+         *
          * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
          * parameter.
          */
@@ -456,6 +461,11 @@ public final class AutonomousDatabaseBackupSummary
          * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
          * When you specify 26ai for dbversion, the system will provision and display a 26ai
          * database as expected. For new databases, it is recommended to use either 19c or 26ai.
+         *
+         * <p>The default database version is the Oracle-recommended version. You can retrieve the
+         * default DB version by calling the {@link
+         * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+         * operation.
          *
          * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
          * parameter.
@@ -1050,6 +1060,11 @@ public final class AutonomousDatabaseBackupSummary
      * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
      * expected. For new databases, it is recommended to use either 19c or 26ai.
      *
+     * <p>The default database version is the Oracle-recommended version. You can retrieve the
+     * default DB version by calling the {@link
+     * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+     * operation.
+     *
      * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
      * parameter.
      */
@@ -1061,6 +1076,11 @@ public final class AutonomousDatabaseBackupSummary
      * dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
      * When you specify 26ai for dbversion, the system will provision and display a 26ai database as
      * expected. For new databases, it is recommended to use either 19c or 26ai.
+     *
+     * <p>The default database version is the Oracle-recommended version. You can retrieve the
+     * default DB version by calling the {@link
+     * #listAutonomousDbVersions(ListAutonomousDbVersionsRequest) listAutonomousDbVersions}
+     * operation.
      *
      * <p>*Note** Starting December 2026, 23ai will not be supported as a valid value for this
      * parameter.

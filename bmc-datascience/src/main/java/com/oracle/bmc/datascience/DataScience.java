@@ -334,6 +334,23 @@ public interface DataScience extends AutoCloseable {
             ChangeMlApplicationInstanceViewCompartmentRequest request);
 
     /**
+     * Moves a model artifact signature into a different compartment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeModelArtifactSignatureCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeModelArtifactSignatureCompartment API.
+     */
+    ChangeModelArtifactSignatureCompartmentResponse changeModelArtifactSignatureCompartment(
+            ChangeModelArtifactSignatureCompartmentRequest request);
+
+    /**
      * Moves a model resource into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -725,6 +742,23 @@ public interface DataScience extends AutoCloseable {
      *     API.
      */
     CreateModelArtifactResponse createModelArtifact(CreateModelArtifactRequest request);
+
+    /**
+     * Create model artifact signature for the specified model
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateModelArtifactSignatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateModelArtifactSignature API.
+     */
+    CreateModelArtifactSignatureResponse createModelArtifactSignature(
+            CreateModelArtifactSignatureRequest request);
 
     /**
      * Creates model custom metadata artifact for specified model.
@@ -1282,6 +1316,23 @@ public interface DataScience extends AutoCloseable {
     DeleteModelResponse deleteModel(DeleteModelRequest request);
 
     /**
+     * Deletes the specified artifact signature for a model
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteModelArtifactSignatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteModelArtifactSignature API.
+     */
+    DeleteModelArtifactSignatureResponse deleteModelArtifactSignature(
+            DeleteModelArtifactSignatureRequest request);
+
+    /**
      * Deletes model custom metadata artifact for specified model metadata key.
      *
      * @param request The request object containing the details to send
@@ -1736,6 +1787,23 @@ public interface DataScience extends AutoCloseable {
      *     GetModelArtifactContent API.
      */
     GetModelArtifactContentResponse getModelArtifactContent(GetModelArtifactContentRequest request);
+
+    /**
+     * Gets the specified artifact signature for a model
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetModelArtifactSignatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetModelArtifactSignature API.
+     */
+    GetModelArtifactSignatureResponse getModelArtifactSignature(
+            GetModelArtifactSignatureRequest request);
 
     /**
      * Downloads model custom metadata artifact content for specified model metadata key.
@@ -2302,6 +2370,23 @@ public interface DataScience extends AutoCloseable {
      *     API.
      */
     ListMlApplicationsResponse listMlApplications(ListMlApplicationsRequest request);
+
+    /**
+     * List model artifact signatures of a model in the specified compartment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListModelArtifactSignaturesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListModelArtifactSignatures API.
+     */
+    ListModelArtifactSignaturesResponse listModelArtifactSignatures(
+            ListModelArtifactSignaturesRequest request);
 
     /**
      * Lists the status of models in a model group deployment.
@@ -2879,6 +2964,23 @@ public interface DataScience extends AutoCloseable {
     UpdateModelResponse updateModel(UpdateModelRequest request);
 
     /**
+     * Update model artifact signature for the specified model
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateModelArtifactSignatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateModelArtifactSignature API.
+     */
+    UpdateModelArtifactSignatureResponse updateModelArtifactSignature(
+            UpdateModelArtifactSignatureRequest request);
+
+    /**
      * Updates model custom metadata artifact for specified model metadata key.
      *
      * <p>Note: This operation consumes a stream.
@@ -3141,6 +3243,23 @@ public interface DataScience extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
      */
     UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
+
+    /**
+     * Verifies the specified artifact signature for a model
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/VerifyModelArtifactSignatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     VerifyModelArtifactSignature API.
+     */
+    VerifyModelArtifactSignatureResponse verifyModelArtifactSignature(
+            VerifyModelArtifactSignatureRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

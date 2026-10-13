@@ -42,12 +42,29 @@ public final class AwsEncryptionKeyDetails extends EncryptionKeyLocationDetails 
             this.__explicitlySet__.add("awsEncryptionKeyId");
             return this;
         }
+        /** Provide the key pool OCID of a registered AWS key. */
+        @com.fasterxml.jackson.annotation.JsonProperty("awsEncryptionKeyPoolId")
+        private String awsEncryptionKeyPoolId;
+
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         *
+         * @param awsEncryptionKeyPoolId the value to set
+         * @return this builder
+         */
+        public Builder awsEncryptionKeyPoolId(String awsEncryptionKeyPoolId) {
+            this.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
+            this.__explicitlySet__.add("awsEncryptionKeyPoolId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwsEncryptionKeyDetails build() {
-            AwsEncryptionKeyDetails model = new AwsEncryptionKeyDetails(this.awsEncryptionKeyId);
+            AwsEncryptionKeyDetails model =
+                    new AwsEncryptionKeyDetails(
+                            this.awsEncryptionKeyId, this.awsEncryptionKeyPoolId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -58,6 +75,9 @@ public final class AwsEncryptionKeyDetails extends EncryptionKeyLocationDetails 
         public Builder copy(AwsEncryptionKeyDetails model) {
             if (model.wasPropertyExplicitlySet("awsEncryptionKeyId")) {
                 this.awsEncryptionKeyId(model.getAwsEncryptionKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("awsEncryptionKeyPoolId")) {
+                this.awsEncryptionKeyPoolId(model.getAwsEncryptionKeyPoolId());
             }
             return this;
         }
@@ -73,9 +93,10 @@ public final class AwsEncryptionKeyDetails extends EncryptionKeyLocationDetails 
     }
 
     @Deprecated
-    public AwsEncryptionKeyDetails(String awsEncryptionKeyId) {
+    public AwsEncryptionKeyDetails(String awsEncryptionKeyId, String awsEncryptionKeyPoolId) {
         super();
         this.awsEncryptionKeyId = awsEncryptionKeyId;
+        this.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
     }
 
     /** Provide the key OCID of a registered AWS key. */
@@ -89,6 +110,19 @@ public final class AwsEncryptionKeyDetails extends EncryptionKeyLocationDetails 
      */
     public String getAwsEncryptionKeyId() {
         return awsEncryptionKeyId;
+    }
+
+    /** Provide the key pool OCID of a registered AWS key. */
+    @com.fasterxml.jackson.annotation.JsonProperty("awsEncryptionKeyPoolId")
+    private final String awsEncryptionKeyPoolId;
+
+    /**
+     * Provide the key pool OCID of a registered AWS key.
+     *
+     * @return the value
+     */
+    public String getAwsEncryptionKeyPoolId() {
+        return awsEncryptionKeyPoolId;
     }
 
     @Override
@@ -107,6 +141,7 @@ public final class AwsEncryptionKeyDetails extends EncryptionKeyLocationDetails 
         sb.append("AwsEncryptionKeyDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", awsEncryptionKeyId=").append(String.valueOf(this.awsEncryptionKeyId));
+        sb.append(", awsEncryptionKeyPoolId=").append(String.valueOf(this.awsEncryptionKeyPoolId));
         sb.append(")");
         return sb.toString();
     }
@@ -122,6 +157,8 @@ public final class AwsEncryptionKeyDetails extends EncryptionKeyLocationDetails 
 
         AwsEncryptionKeyDetails other = (AwsEncryptionKeyDetails) o;
         return java.util.Objects.equals(this.awsEncryptionKeyId, other.awsEncryptionKeyId)
+                && java.util.Objects.equals(
+                        this.awsEncryptionKeyPoolId, other.awsEncryptionKeyPoolId)
                 && super.equals(other);
     }
 
@@ -134,6 +171,11 @@ public final class AwsEncryptionKeyDetails extends EncryptionKeyLocationDetails 
                         + (this.awsEncryptionKeyId == null
                                 ? 43
                                 : this.awsEncryptionKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.awsEncryptionKeyPoolId == null
+                                ? 43
+                                : this.awsEncryptionKeyPoolId.hashCode());
         return result;
     }
 }

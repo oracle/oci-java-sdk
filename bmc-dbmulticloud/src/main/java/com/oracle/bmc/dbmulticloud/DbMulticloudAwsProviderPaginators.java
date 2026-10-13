@@ -178,6 +178,130 @@ public class DbMulticloudAwsProviderPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listOracleDbAwsKeyPools operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListOracleDbAwsKeyPoolsResponse> listOracleDbAwsKeyPoolsResponseIterator(
+            final ListOracleDbAwsKeyPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOracleDbAwsKeyPoolsRequest.Builder,
+                ListOracleDbAwsKeyPoolsRequest,
+                ListOracleDbAwsKeyPoolsResponse>(
+                new java.util.function.Supplier<ListOracleDbAwsKeyPoolsRequest.Builder>() {
+                    @Override
+                    public ListOracleDbAwsKeyPoolsRequest.Builder get() {
+                        return ListOracleDbAwsKeyPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOracleDbAwsKeyPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListOracleDbAwsKeyPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOracleDbAwsKeyPoolsRequest.Builder>,
+                        ListOracleDbAwsKeyPoolsRequest>() {
+                    @Override
+                    public ListOracleDbAwsKeyPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOracleDbAwsKeyPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOracleDbAwsKeyPoolsRequest, ListOracleDbAwsKeyPoolsResponse>() {
+                    @Override
+                    public ListOracleDbAwsKeyPoolsResponse apply(
+                            ListOracleDbAwsKeyPoolsRequest request) {
+                        return client.listOracleDbAwsKeyPools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPoolSummary} objects contained in responses
+     * from the listOracleDbAwsKeyPools operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPoolSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPoolSummary>
+            listOracleDbAwsKeyPoolsRecordIterator(final ListOracleDbAwsKeyPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOracleDbAwsKeyPoolsRequest.Builder,
+                ListOracleDbAwsKeyPoolsRequest,
+                ListOracleDbAwsKeyPoolsResponse,
+                com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPoolSummary>(
+                new java.util.function.Supplier<ListOracleDbAwsKeyPoolsRequest.Builder>() {
+                    @Override
+                    public ListOracleDbAwsKeyPoolsRequest.Builder get() {
+                        return ListOracleDbAwsKeyPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOracleDbAwsKeyPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListOracleDbAwsKeyPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOracleDbAwsKeyPoolsRequest.Builder>,
+                        ListOracleDbAwsKeyPoolsRequest>() {
+                    @Override
+                    public ListOracleDbAwsKeyPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOracleDbAwsKeyPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOracleDbAwsKeyPoolsRequest, ListOracleDbAwsKeyPoolsResponse>() {
+                    @Override
+                    public ListOracleDbAwsKeyPoolsResponse apply(
+                            ListOracleDbAwsKeyPoolsRequest request) {
+                        return client.listOracleDbAwsKeyPools(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOracleDbAwsKeyPoolsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPoolSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dbmulticloud.model.OracleDbAwsKeyPoolSummary>
+                            apply(ListOracleDbAwsKeyPoolsResponse response) {
+                        return response.getOracleDbAwsKeyPoolCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listOracleDbAwsKeys operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

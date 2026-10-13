@@ -23,10 +23,11 @@ package com.oracle.bmc.datascience.model;
 public final class UpdateSingleModelConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"modelId"})
-    public UpdateSingleModelConfigurationDetails(String modelId) {
+    @java.beans.ConstructorProperties({"modelId", "modelArtifactSignatureId"})
+    public UpdateSingleModelConfigurationDetails(String modelId, String modelArtifactSignatureId) {
         super();
         this.modelId = modelId;
+        this.modelArtifactSignatureId = modelArtifactSignatureId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -50,13 +51,33 @@ public final class UpdateSingleModelConfigurationDetails
             this.__explicitlySet__.add("modelId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * model artifact signature.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelArtifactSignatureId")
+        private String modelArtifactSignatureId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * model artifact signature.
+         *
+         * @param modelArtifactSignatureId the value to set
+         * @return this builder
+         */
+        public Builder modelArtifactSignatureId(String modelArtifactSignatureId) {
+            this.modelArtifactSignatureId = modelArtifactSignatureId;
+            this.__explicitlySet__.add("modelArtifactSignatureId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSingleModelConfigurationDetails build() {
             UpdateSingleModelConfigurationDetails model =
-                    new UpdateSingleModelConfigurationDetails(this.modelId);
+                    new UpdateSingleModelConfigurationDetails(
+                            this.modelId, this.modelArtifactSignatureId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -67,6 +88,9 @@ public final class UpdateSingleModelConfigurationDetails
         public Builder copy(UpdateSingleModelConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("modelArtifactSignatureId")) {
+                this.modelArtifactSignatureId(model.getModelArtifactSignatureId());
             }
             return this;
         }
@@ -96,6 +120,23 @@ public final class UpdateSingleModelConfigurationDetails
         return modelId;
     }
 
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model
+     * artifact signature.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelArtifactSignatureId")
+    private final String modelArtifactSignatureId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model
+     * artifact signature.
+     *
+     * @return the value
+     */
+    public String getModelArtifactSignatureId() {
+        return modelArtifactSignatureId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -112,6 +153,8 @@ public final class UpdateSingleModelConfigurationDetails
         sb.append("UpdateSingleModelConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("modelId=").append(String.valueOf(this.modelId));
+        sb.append(", modelArtifactSignatureId=")
+                .append(String.valueOf(this.modelArtifactSignatureId));
         sb.append(")");
         return sb.toString();
     }
@@ -126,7 +169,10 @@ public final class UpdateSingleModelConfigurationDetails
         }
 
         UpdateSingleModelConfigurationDetails other = (UpdateSingleModelConfigurationDetails) o;
-        return java.util.Objects.equals(this.modelId, other.modelId) && super.equals(other);
+        return java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(
+                        this.modelArtifactSignatureId, other.modelArtifactSignatureId)
+                && super.equals(other);
     }
 
     @Override
@@ -134,6 +180,11 @@ public final class UpdateSingleModelConfigurationDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelArtifactSignatureId == null
+                                ? 43
+                                : this.modelArtifactSignatureId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

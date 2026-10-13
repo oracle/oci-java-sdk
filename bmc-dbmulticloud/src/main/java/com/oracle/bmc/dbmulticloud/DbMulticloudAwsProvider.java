@@ -155,6 +155,24 @@ public interface DbMulticloudAwsProvider extends AutoCloseable {
             ChangeOracleDbAwsKeyCompartmentRequest request);
 
     /**
+     * Moves the AWS Key Pool resource into a different compartment. When provided, 'If-Match' is
+     * checked against 'ETag' values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/ChangeOracleDbAwsKeyPoolCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeOracleDbAwsKeyPoolCompartment API.
+     */
+    ChangeOracleDbAwsKeyPoolCompartmentResponse changeOracleDbAwsKeyPoolCompartment(
+            ChangeOracleDbAwsKeyPoolCompartmentRequest request);
+
+    /**
      * Creates Oracle DB AWS Identity Connector resource.
      *
      * @param request The request object containing the details to send
@@ -188,6 +206,23 @@ public interface DbMulticloudAwsProvider extends AutoCloseable {
     CreateOracleDbAwsKeyResponse createOracleDbAwsKey(CreateOracleDbAwsKeyRequest request);
 
     /**
+     * Create DB AWS Key Pool resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/CreateOracleDbAwsKeyPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateOracleDbAwsKeyPool API.
+     */
+    CreateOracleDbAwsKeyPoolResponse createOracleDbAwsKeyPool(
+            CreateOracleDbAwsKeyPoolRequest request);
+
+    /**
      * Deletes a Oracle DB AWS Identity Connector resource.
      *
      * @param request The request object containing the details to send
@@ -219,6 +254,23 @@ public interface DbMulticloudAwsProvider extends AutoCloseable {
      *     DeleteOracleDbAwsKey API.
      */
     DeleteOracleDbAwsKeyResponse deleteOracleDbAwsKey(DeleteOracleDbAwsKeyRequest request);
+
+    /**
+     * Delete AWS Key Pool resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/DeleteOracleDbAwsKeyPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteOracleDbAwsKeyPool API.
+     */
+    DeleteOracleDbAwsKeyPoolResponse deleteOracleDbAwsKeyPool(
+            DeleteOracleDbAwsKeyPoolRequest request);
 
     /**
      * Retrieves detailed information about a Oracle DB AWS Identity Connector resource by
@@ -257,6 +309,23 @@ public interface DbMulticloudAwsProvider extends AutoCloseable {
     GetOracleDbAwsKeyResponse getOracleDbAwsKey(GetOracleDbAwsKeyRequest request);
 
     /**
+     * Retrieves detailed information about a Oracle AWS Key Pool resource by specifying its unique
+     * resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/GetOracleDbAwsKeyPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetOracleDbAwsKeyPool API.
+     */
+    GetOracleDbAwsKeyPoolResponse getOracleDbAwsKeyPool(GetOracleDbAwsKeyPoolRequest request);
+
+    /**
      * Lists all Oracle DB AWS Identity Connectors based on the specified filters.
      *
      * @param request The request object containing the details to send
@@ -272,6 +341,22 @@ public interface DbMulticloudAwsProvider extends AutoCloseable {
      */
     ListOracleDbAwsIdentityConnectorsResponse listOracleDbAwsIdentityConnectors(
             ListOracleDbAwsIdentityConnectorsRequest request);
+
+    /**
+     * Lists all DB AWS Key Pools based on the specified filters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/ListOracleDbAwsKeyPoolsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListOracleDbAwsKeyPools API.
+     */
+    ListOracleDbAwsKeyPoolsResponse listOracleDbAwsKeyPools(ListOracleDbAwsKeyPoolsRequest request);
 
     /**
      * Lists all DB AWS Keys based on the specified filters.
@@ -339,6 +424,23 @@ public interface DbMulticloudAwsProvider extends AutoCloseable {
     ReplicateOracleDbAwsKeyResponse replicateOracleDbAwsKey(ReplicateOracleDbAwsKeyRequest request);
 
     /**
+     * Replicate Oracle AWS Key Pool resource to target region.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/ReplicateOracleDbAwsKeyPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ReplicateOracleDbAwsKeyPool API.
+     */
+    ReplicateOracleDbAwsKeyPoolResponse replicateOracleDbAwsKeyPool(
+            ReplicateOracleDbAwsKeyPoolRequest request);
+
+    /**
      * Modifies the existing Oracle DB AWS Identity Connector resource for a given
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
@@ -372,6 +474,24 @@ public interface DbMulticloudAwsProvider extends AutoCloseable {
      *     UpdateOracleDbAwsKey API.
      */
     UpdateOracleDbAwsKeyResponse updateOracleDbAwsKey(UpdateOracleDbAwsKeyRequest request);
+
+    /**
+     * Modifies the existing Oracle AWS Key Pool Details for a given
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dbmulticloud/UpdateOracleDbAwsKeyPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateOracleDbAwsKeyPool API.
+     */
+    UpdateOracleDbAwsKeyPoolResponse updateOracleDbAwsKeyPool(
+            UpdateOracleDbAwsKeyPoolRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

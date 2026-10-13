@@ -5,10 +5,11 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser
- * from a Compute instance within your VCN or that has a direct connection to your VCN. Note that
- * these URLs are provided by the console only for databases on [dedicated Exadata
- * infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+ * The URLs for accessing various Autonomous AI Database built-in tools (like Oracle Application
+ * Express (APEX), SQL Developer Web etc) with a browser from a Compute instance within your VCN or
+ * that has a direct connection to your VCN. Note that these URLs are also available through the
+ * [Autonomous AI Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html)
+ * console.
  *
  * <p>Example: {@code {"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl",
  * "https://<hostname>/ords..."}} <br>
@@ -38,6 +39,7 @@ public final class AutonomousDatabaseConnectionUrls
         "machineLearningNotebookUrl",
         "ordsUrl",
         "databaseTransformsUrl",
+        "essbaseUrl",
         "spatialStudioUrl"
     })
     public AutonomousDatabaseConnectionUrls(
@@ -49,6 +51,7 @@ public final class AutonomousDatabaseConnectionUrls
             String machineLearningNotebookUrl,
             String ordsUrl,
             String databaseTransformsUrl,
+            String essbaseUrl,
             String spatialStudioUrl) {
         super();
         this.sqlDevWebUrl = sqlDevWebUrl;
@@ -59,6 +62,7 @@ public final class AutonomousDatabaseConnectionUrls
         this.machineLearningNotebookUrl = machineLearningNotebookUrl;
         this.ordsUrl = ordsUrl;
         this.databaseTransformsUrl = databaseTransformsUrl;
+        this.essbaseUrl = essbaseUrl;
         this.spatialStudioUrl = spatialStudioUrl;
     }
 
@@ -94,12 +98,16 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("apexUrl");
             return this;
         }
-        /** Oracle Machine Learning user management URL. */
+        /**
+         * Oracle Machine Learning user management URL. Applicable to Autonomous AI Database
+         * Serverless only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
         private String machineLearningUserManagementUrl;
 
         /**
-         * Oracle Machine Learning user management URL.
+         * Oracle Machine Learning user management URL. Applicable to Autonomous AI Database
+         * Serverless only.
          *
          * @param machineLearningUserManagementUrl the value to set
          * @return this builder
@@ -109,12 +117,16 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("machineLearningUserManagementUrl");
             return this;
         }
-        /** The URL of the Graph Studio for the Autonomous AI Database. */
+        /**
+         * The URL of the Graph Studio for the Autonomous AI Database. Applicable to Autonomous AI
+         * Database Serverless only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
         private String graphStudioUrl;
 
         /**
-         * The URL of the Graph Studio for the Autonomous AI Database.
+         * The URL of the Graph Studio for the Autonomous AI Database. Applicable to Autonomous AI
+         * Database Serverless only.
          *
          * @param graphStudioUrl the value to set
          * @return this builder
@@ -139,12 +151,16 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("mongoDbUrl");
             return this;
         }
-        /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database. */
+        /**
+         * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
+         * Applicable to Autonomous AI Database Serverless only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
         private String machineLearningNotebookUrl;
 
         /**
          * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
+         * Applicable to Autonomous AI Database Serverless only.
          *
          * @param machineLearningNotebookUrl the value to set
          * @return this builder
@@ -173,12 +189,16 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("ordsUrl");
             return this;
         }
-        /** The URL of the Database Transforms for the Autonomous AI Database. */
+        /**
+         * The URL of the Database Transforms for the Autonomous AI Database. Applicable to
+         * Autonomous AI Database Serverless only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
         private String databaseTransformsUrl;
 
         /**
-         * The URL of the Database Transforms for the Autonomous AI Database.
+         * The URL of the Database Transforms for the Autonomous AI Database. Applicable to
+         * Autonomous AI Database Serverless only.
          *
          * @param databaseTransformsUrl the value to set
          * @return this builder
@@ -188,12 +208,35 @@ public final class AutonomousDatabaseConnectionUrls
             this.__explicitlySet__.add("databaseTransformsUrl");
             return this;
         }
-        /** The URL of the Spatial Studio for the Autonomous AI Database. */
+        /**
+         * Essbase URL for the Autonomous AI Database. Applicable to Autonomous AI Database
+         * Serverless only.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("essbaseUrl")
+        private String essbaseUrl;
+
+        /**
+         * Essbase URL for the Autonomous AI Database. Applicable to Autonomous AI Database
+         * Serverless only.
+         *
+         * @param essbaseUrl the value to set
+         * @return this builder
+         */
+        public Builder essbaseUrl(String essbaseUrl) {
+            this.essbaseUrl = essbaseUrl;
+            this.__explicitlySet__.add("essbaseUrl");
+            return this;
+        }
+        /**
+         * The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI
+         * Database Serverless only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("spatialStudioUrl")
         private String spatialStudioUrl;
 
         /**
-         * The URL of the Spatial Studio for the Autonomous AI Database.
+         * The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI
+         * Database Serverless only.
          *
          * @param spatialStudioUrl the value to set
          * @return this builder
@@ -218,6 +261,7 @@ public final class AutonomousDatabaseConnectionUrls
                             this.machineLearningNotebookUrl,
                             this.ordsUrl,
                             this.databaseTransformsUrl,
+                            this.essbaseUrl,
                             this.spatialStudioUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -250,6 +294,9 @@ public final class AutonomousDatabaseConnectionUrls
             }
             if (model.wasPropertyExplicitlySet("databaseTransformsUrl")) {
                 this.databaseTransformsUrl(model.getDatabaseTransformsUrl());
+            }
+            if (model.wasPropertyExplicitlySet("essbaseUrl")) {
+                this.essbaseUrl(model.getEssbaseUrl());
             }
             if (model.wasPropertyExplicitlySet("spatialStudioUrl")) {
                 this.spatialStudioUrl(model.getSpatialStudioUrl());
@@ -293,12 +340,16 @@ public final class AutonomousDatabaseConnectionUrls
         return apexUrl;
     }
 
-    /** Oracle Machine Learning user management URL. */
+    /**
+     * Oracle Machine Learning user management URL. Applicable to Autonomous AI Database Serverless
+     * only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
     private final String machineLearningUserManagementUrl;
 
     /**
-     * Oracle Machine Learning user management URL.
+     * Oracle Machine Learning user management URL. Applicable to Autonomous AI Database Serverless
+     * only.
      *
      * @return the value
      */
@@ -306,12 +357,16 @@ public final class AutonomousDatabaseConnectionUrls
         return machineLearningUserManagementUrl;
     }
 
-    /** The URL of the Graph Studio for the Autonomous AI Database. */
+    /**
+     * The URL of the Graph Studio for the Autonomous AI Database. Applicable to Autonomous AI
+     * Database Serverless only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("graphStudioUrl")
     private final String graphStudioUrl;
 
     /**
-     * The URL of the Graph Studio for the Autonomous AI Database.
+     * The URL of the Graph Studio for the Autonomous AI Database. Applicable to Autonomous AI
+     * Database Serverless only.
      *
      * @return the value
      */
@@ -332,12 +387,16 @@ public final class AutonomousDatabaseConnectionUrls
         return mongoDbUrl;
     }
 
-    /** The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database. */
+    /**
+     * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
+     * Applicable to Autonomous AI Database Serverless only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningNotebookUrl")
     private final String machineLearningNotebookUrl;
 
     /**
      * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
+     * Applicable to Autonomous AI Database Serverless only.
      *
      * @return the value
      */
@@ -360,12 +419,16 @@ public final class AutonomousDatabaseConnectionUrls
         return ordsUrl;
     }
 
-    /** The URL of the Database Transforms for the Autonomous AI Database. */
+    /**
+     * The URL of the Database Transforms for the Autonomous AI Database. Applicable to Autonomous
+     * AI Database Serverless only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseTransformsUrl")
     private final String databaseTransformsUrl;
 
     /**
-     * The URL of the Database Transforms for the Autonomous AI Database.
+     * The URL of the Database Transforms for the Autonomous AI Database. Applicable to Autonomous
+     * AI Database Serverless only.
      *
      * @return the value
      */
@@ -373,12 +436,33 @@ public final class AutonomousDatabaseConnectionUrls
         return databaseTransformsUrl;
     }
 
-    /** The URL of the Spatial Studio for the Autonomous AI Database. */
+    /**
+     * Essbase URL for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless
+     * only.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("essbaseUrl")
+    private final String essbaseUrl;
+
+    /**
+     * Essbase URL for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless
+     * only.
+     *
+     * @return the value
+     */
+    public String getEssbaseUrl() {
+        return essbaseUrl;
+    }
+
+    /**
+     * The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI
+     * Database Serverless only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("spatialStudioUrl")
     private final String spatialStudioUrl;
 
     /**
-     * The URL of the Spatial Studio for the Autonomous AI Database.
+     * The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI
+     * Database Serverless only.
      *
      * @return the value
      */
@@ -411,6 +495,7 @@ public final class AutonomousDatabaseConnectionUrls
                 .append(String.valueOf(this.machineLearningNotebookUrl));
         sb.append(", ordsUrl=").append(String.valueOf(this.ordsUrl));
         sb.append(", databaseTransformsUrl=").append(String.valueOf(this.databaseTransformsUrl));
+        sb.append(", essbaseUrl=").append(String.valueOf(this.essbaseUrl));
         sb.append(", spatialStudioUrl=").append(String.valueOf(this.spatialStudioUrl));
         sb.append(")");
         return sb.toString();
@@ -437,6 +522,7 @@ public final class AutonomousDatabaseConnectionUrls
                         this.machineLearningNotebookUrl, other.machineLearningNotebookUrl)
                 && java.util.Objects.equals(this.ordsUrl, other.ordsUrl)
                 && java.util.Objects.equals(this.databaseTransformsUrl, other.databaseTransformsUrl)
+                && java.util.Objects.equals(this.essbaseUrl, other.essbaseUrl)
                 && java.util.Objects.equals(this.spatialStudioUrl, other.spatialStudioUrl)
                 && super.equals(other);
     }
@@ -467,6 +553,7 @@ public final class AutonomousDatabaseConnectionUrls
                         + (this.databaseTransformsUrl == null
                                 ? 43
                                 : this.databaseTransformsUrl.hashCode());
+        result = (result * PRIME) + (this.essbaseUrl == null ? 43 : this.essbaseUrl.hashCode());
         result =
                 (result * PRIME)
                         + (this.spatialStudioUrl == null ? 43 : this.spatialStudioUrl.hashCode());

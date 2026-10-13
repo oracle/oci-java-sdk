@@ -61,6 +61,19 @@ public class UpdateOracleDbAwsKeyRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * If true, removes the key from its key pool even when it is currently in use; otherwise the
+     * request is rejected.
+     */
+    private Boolean isForceDeleteFromKeyPool;
+
+    /**
+     * If true, removes the key from its key pool even when it is currently in use; otherwise the
+     * request is rejected.
+     */
+    public Boolean getIsForceDeleteFromKeyPool() {
+        return isForceDeleteFromKeyPool;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -152,6 +165,24 @@ public class UpdateOracleDbAwsKeyRequest
         }
 
         /**
+         * If true, removes the key from its key pool even when it is currently in use; otherwise
+         * the request is rejected.
+         */
+        private Boolean isForceDeleteFromKeyPool = null;
+
+        /**
+         * If true, removes the key from its key pool even when it is currently in use; otherwise
+         * the request is rejected.
+         *
+         * @param isForceDeleteFromKeyPool the value to set
+         * @return this builder instance
+         */
+        public Builder isForceDeleteFromKeyPool(Boolean isForceDeleteFromKeyPool) {
+            this.isForceDeleteFromKeyPool = isForceDeleteFromKeyPool;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -185,6 +216,7 @@ public class UpdateOracleDbAwsKeyRequest
             updateOracleDbAwsKeyDetails(o.getUpdateOracleDbAwsKeyDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isForceDeleteFromKeyPool(o.getIsForceDeleteFromKeyPool());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -235,9 +267,10 @@ public class UpdateOracleDbAwsKeyRequest
             request.updateOracleDbAwsKeyDetails = updateOracleDbAwsKeyDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isForceDeleteFromKeyPool = isForceDeleteFromKeyPool;
             return request;
             // new UpdateOracleDbAwsKeyRequest(oracleDbAwsKeyId, updateOracleDbAwsKeyDetails,
-            // ifMatch, opcRequestId);
+            // ifMatch, opcRequestId, isForceDeleteFromKeyPool);
         }
     }
 
@@ -251,7 +284,8 @@ public class UpdateOracleDbAwsKeyRequest
                 .oracleDbAwsKeyId(oracleDbAwsKeyId)
                 .updateOracleDbAwsKeyDetails(updateOracleDbAwsKeyDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isForceDeleteFromKeyPool(isForceDeleteFromKeyPool);
     }
 
     /**
@@ -273,6 +307,8 @@ public class UpdateOracleDbAwsKeyRequest
                 .append(String.valueOf(this.updateOracleDbAwsKeyDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isForceDeleteFromKeyPool=")
+                .append(String.valueOf(this.isForceDeleteFromKeyPool));
         sb.append(")");
         return sb.toString();
     }
@@ -292,7 +328,9 @@ public class UpdateOracleDbAwsKeyRequest
                 && java.util.Objects.equals(
                         this.updateOracleDbAwsKeyDetails, other.updateOracleDbAwsKeyDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.isForceDeleteFromKeyPool, other.isForceDeleteFromKeyPool);
     }
 
     @Override
@@ -309,6 +347,11 @@ public class UpdateOracleDbAwsKeyRequest
                                 : this.updateOracleDbAwsKeyDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceDeleteFromKeyPool == null
+                                ? 43
+                                : this.isForceDeleteFromKeyPool.hashCode());
         return result;
     }
 }

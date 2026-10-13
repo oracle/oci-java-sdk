@@ -28,6 +28,9 @@ public final class OracleDbAwsKeySummary
         "displayName",
         "compartmentId",
         "oracleDbConnectorId",
+        "oracleDbAwsKeyPoolId",
+        "isOracleAwsKeyUsed",
+        "refCount",
         "awsKeyArn",
         "awsAccountId",
         "type",
@@ -48,6 +51,9 @@ public final class OracleDbAwsKeySummary
             String displayName,
             String compartmentId,
             String oracleDbConnectorId,
+            String oracleDbAwsKeyPoolId,
+            Boolean isOracleAwsKeyUsed,
+            Integer refCount,
             String awsKeyArn,
             String awsAccountId,
             String type,
@@ -67,6 +73,9 @@ public final class OracleDbAwsKeySummary
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.oracleDbConnectorId = oracleDbConnectorId;
+        this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+        this.isOracleAwsKeyUsed = isOracleAwsKeyUsed;
+        this.refCount = refCount;
         this.awsKeyArn = awsKeyArn;
         this.awsAccountId = awsAccountId;
         this.type = type;
@@ -155,6 +164,55 @@ public final class OracleDbAwsKeySummary
         public Builder oracleDbConnectorId(String oracleDbConnectorId) {
             this.oracleDbConnectorId = oracleDbConnectorId;
             this.__explicitlySet__.add("oracleDbConnectorId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB AWS Key Pool resource.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAwsKeyPoolId")
+        private String oracleDbAwsKeyPoolId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Oracle DB AWS Key Pool resource.
+         *
+         * @param oracleDbAwsKeyPoolId the value to set
+         * @return this builder
+         */
+        public Builder oracleDbAwsKeyPoolId(String oracleDbAwsKeyPoolId) {
+            this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            this.__explicitlySet__.add("oracleDbAwsKeyPoolId");
+            return this;
+        }
+        /** Indicates whether the Oracle AWS Key resource is currently in use. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOracleAwsKeyUsed")
+        private Boolean isOracleAwsKeyUsed;
+
+        /**
+         * Indicates whether the Oracle AWS Key resource is currently in use.
+         *
+         * @param isOracleAwsKeyUsed the value to set
+         * @return this builder
+         */
+        public Builder isOracleAwsKeyUsed(Boolean isOracleAwsKeyUsed) {
+            this.isOracleAwsKeyUsed = isOracleAwsKeyUsed;
+            this.__explicitlySet__.add("isOracleAwsKeyUsed");
+            return this;
+        }
+        /** The number of active references to the Oracle AWS Key resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("refCount")
+        private Integer refCount;
+
+        /**
+         * The number of active references to the Oracle AWS Key resource.
+         *
+         * @param refCount the value to set
+         * @return this builder
+         */
+        public Builder refCount(Integer refCount) {
+            this.refCount = refCount;
+            this.__explicitlySet__.add("refCount");
             return this;
         }
         /** Amazon resource name of AWS Key. */
@@ -411,6 +469,9 @@ public final class OracleDbAwsKeySummary
                             this.displayName,
                             this.compartmentId,
                             this.oracleDbConnectorId,
+                            this.oracleDbAwsKeyPoolId,
+                            this.isOracleAwsKeyUsed,
+                            this.refCount,
                             this.awsKeyArn,
                             this.awsAccountId,
                             this.type,
@@ -444,6 +505,15 @@ public final class OracleDbAwsKeySummary
             }
             if (model.wasPropertyExplicitlySet("oracleDbConnectorId")) {
                 this.oracleDbConnectorId(model.getOracleDbConnectorId());
+            }
+            if (model.wasPropertyExplicitlySet("oracleDbAwsKeyPoolId")) {
+                this.oracleDbAwsKeyPoolId(model.getOracleDbAwsKeyPoolId());
+            }
+            if (model.wasPropertyExplicitlySet("isOracleAwsKeyUsed")) {
+                this.isOracleAwsKeyUsed(model.getIsOracleAwsKeyUsed());
+            }
+            if (model.wasPropertyExplicitlySet("refCount")) {
+                this.refCount(model.getRefCount());
             }
             if (model.wasPropertyExplicitlySet("awsKeyArn")) {
                 this.awsKeyArn(model.getAwsKeyArn());
@@ -562,6 +632,49 @@ public final class OracleDbAwsKeySummary
      */
     public String getOracleDbConnectorId() {
         return oracleDbConnectorId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB AWS Key Pool resource.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleDbAwsKeyPoolId")
+    private final String oracleDbAwsKeyPoolId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Oracle DB AWS Key Pool resource.
+     *
+     * @return the value
+     */
+    public String getOracleDbAwsKeyPoolId() {
+        return oracleDbAwsKeyPoolId;
+    }
+
+    /** Indicates whether the Oracle AWS Key resource is currently in use. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOracleAwsKeyUsed")
+    private final Boolean isOracleAwsKeyUsed;
+
+    /**
+     * Indicates whether the Oracle AWS Key resource is currently in use.
+     *
+     * @return the value
+     */
+    public Boolean getIsOracleAwsKeyUsed() {
+        return isOracleAwsKeyUsed;
+    }
+
+    /** The number of active references to the Oracle AWS Key resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("refCount")
+    private final Integer refCount;
+
+    /**
+     * The number of active references to the Oracle AWS Key resource.
+     *
+     * @return the value
+     */
+    public Integer getRefCount() {
+        return refCount;
     }
 
     /** Amazon resource name of AWS Key. */
@@ -793,6 +906,9 @@ public final class OracleDbAwsKeySummary
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", oracleDbConnectorId=").append(String.valueOf(this.oracleDbConnectorId));
+        sb.append(", oracleDbAwsKeyPoolId=").append(String.valueOf(this.oracleDbAwsKeyPoolId));
+        sb.append(", isOracleAwsKeyUsed=").append(String.valueOf(this.isOracleAwsKeyUsed));
+        sb.append(", refCount=").append(String.valueOf(this.refCount));
         sb.append(", awsKeyArn=").append(String.valueOf(this.awsKeyArn));
         sb.append(", awsAccountId=").append(String.valueOf(this.awsAccountId));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -825,6 +941,9 @@ public final class OracleDbAwsKeySummary
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.oracleDbConnectorId, other.oracleDbConnectorId)
+                && java.util.Objects.equals(this.oracleDbAwsKeyPoolId, other.oracleDbAwsKeyPoolId)
+                && java.util.Objects.equals(this.isOracleAwsKeyUsed, other.isOracleAwsKeyUsed)
+                && java.util.Objects.equals(this.refCount, other.refCount)
                 && java.util.Objects.equals(this.awsKeyArn, other.awsKeyArn)
                 && java.util.Objects.equals(this.awsAccountId, other.awsAccountId)
                 && java.util.Objects.equals(this.type, other.type)
@@ -856,6 +975,17 @@ public final class OracleDbAwsKeySummary
                         + (this.oracleDbConnectorId == null
                                 ? 43
                                 : this.oracleDbConnectorId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.oracleDbAwsKeyPoolId == null
+                                ? 43
+                                : this.oracleDbAwsKeyPoolId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOracleAwsKeyUsed == null
+                                ? 43
+                                : this.isOracleAwsKeyUsed.hashCode());
+        result = (result * PRIME) + (this.refCount == null ? 43 : this.refCount.hashCode());
         result = (result * PRIME) + (this.awsKeyArn == null ? 43 : this.awsKeyArn.hashCode());
         result = (result * PRIME) + (this.awsAccountId == null ? 43 : this.awsAccountId.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());

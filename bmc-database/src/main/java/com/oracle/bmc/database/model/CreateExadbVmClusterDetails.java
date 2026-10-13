@@ -49,6 +49,7 @@ public final class CreateExadbVmClusterDetails
         "backupNetworkNsgIds",
         "gridImageId",
         "systemVersion",
+        "isOlderVersionAcknowledged",
         "freeformTags",
         "definedTags",
         "securityAttributes",
@@ -81,6 +82,7 @@ public final class CreateExadbVmClusterDetails
             java.util.List<String> backupNetworkNsgIds,
             String gridImageId,
             String systemVersion,
+            Boolean isOlderVersionAcknowledged,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
@@ -112,6 +114,7 @@ public final class CreateExadbVmClusterDetails
         this.backupNetworkNsgIds = backupNetworkNsgIds;
         this.gridImageId = gridImageId;
         this.systemVersion = systemVersion;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
@@ -593,6 +596,25 @@ public final class CreateExadbVmClusterDetails
             return this;
         }
         /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -741,6 +763,7 @@ public final class CreateExadbVmClusterDetails
                             this.backupNetworkNsgIds,
                             this.gridImageId,
                             this.systemVersion,
+                            this.isOlderVersionAcknowledged,
                             this.freeformTags,
                             this.definedTags,
                             this.securityAttributes,
@@ -826,6 +849,9 @@ public final class CreateExadbVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("systemVersion")) {
                 this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1309,6 +1335,23 @@ public final class CreateExadbVmClusterDetails
     }
 
     /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -1488,6 +1531,8 @@ public final class CreateExadbVmClusterDetails
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
         sb.append(", gridImageId=").append(String.valueOf(this.gridImageId));
         sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
@@ -1534,6 +1579,8 @@ public final class CreateExadbVmClusterDetails
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
                 && java.util.Objects.equals(this.gridImageId, other.gridImageId)
                 && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
@@ -1609,6 +1656,11 @@ public final class CreateExadbVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

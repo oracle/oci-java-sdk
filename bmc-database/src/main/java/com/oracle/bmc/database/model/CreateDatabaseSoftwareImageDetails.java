@@ -33,6 +33,7 @@ public final class CreateDatabaseSoftwareImageDetails
         "imageShapeFamily",
         "imageType",
         "patchSet",
+        "isOlderVersionAcknowledged",
         "databaseSoftwareImageOneOffPatches",
         "lsInventory",
         "freeformTags",
@@ -47,6 +48,7 @@ public final class CreateDatabaseSoftwareImageDetails
             ImageShapeFamily imageShapeFamily,
             ImageType imageType,
             String patchSet,
+            Boolean isOlderVersionAcknowledged,
             java.util.List<String> databaseSoftwareImageOneOffPatches,
             String lsInventory,
             java.util.Map<String, String> freeformTags,
@@ -60,6 +62,7 @@ public final class CreateDatabaseSoftwareImageDetails
         this.imageShapeFamily = imageShapeFamily;
         this.imageType = imageType;
         this.patchSet = patchSet;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
         this.lsInventory = lsInventory;
         this.freeformTags = freeformTags;
@@ -170,6 +173,25 @@ public final class CreateDatabaseSoftwareImageDetails
         public Builder patchSet(String patchSet) {
             this.patchSet = patchSet;
             this.__explicitlySet__.add("patchSet");
+            return this;
+        }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
             return this;
         }
         /** List of one-off patches for Database Homes. */
@@ -301,6 +323,7 @@ public final class CreateDatabaseSoftwareImageDetails
                             this.imageShapeFamily,
                             this.imageType,
                             this.patchSet,
+                            this.isOlderVersionAcknowledged,
                             this.databaseSoftwareImageOneOffPatches,
                             this.lsInventory,
                             this.freeformTags,
@@ -332,6 +355,9 @@ public final class CreateDatabaseSoftwareImageDetails
             }
             if (model.wasPropertyExplicitlySet("patchSet")) {
                 this.patchSet(model.getPatchSet());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageOneOffPatches")) {
                 this.databaseSoftwareImageOneOffPatches(
@@ -522,6 +548,23 @@ public final class CreateDatabaseSoftwareImageDetails
         return patchSet;
     }
 
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
     /** List of one-off patches for Database Homes. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageOneOffPatches")
     private final java.util.List<String> databaseSoftwareImageOneOffPatches;
@@ -645,6 +688,8 @@ public final class CreateDatabaseSoftwareImageDetails
         sb.append(", imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
         sb.append(", imageType=").append(String.valueOf(this.imageType));
         sb.append(", patchSet=").append(String.valueOf(this.patchSet));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", databaseSoftwareImageOneOffPatches=")
                 .append(String.valueOf(this.databaseSoftwareImageOneOffPatches));
         sb.append(", lsInventory=").append(String.valueOf(this.lsInventory));
@@ -673,6 +718,8 @@ public final class CreateDatabaseSoftwareImageDetails
                 && java.util.Objects.equals(this.imageType, other.imageType)
                 && java.util.Objects.equals(this.patchSet, other.patchSet)
                 && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
+                && java.util.Objects.equals(
                         this.databaseSoftwareImageOneOffPatches,
                         other.databaseSoftwareImageOneOffPatches)
                 && java.util.Objects.equals(this.lsInventory, other.lsInventory)
@@ -699,6 +746,11 @@ public final class CreateDatabaseSoftwareImageDetails
                         + (this.imageShapeFamily == null ? 43 : this.imageShapeFamily.hashCode());
         result = (result * PRIME) + (this.imageType == null ? 43 : this.imageType.hashCode());
         result = (result * PRIME) + (this.patchSet == null ? 43 : this.patchSet.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseSoftwareImageOneOffPatches == null

@@ -68,6 +68,7 @@ public final class CreateOpensearchClusterDetails
         "securityMode",
         "securityMasterUserName",
         "securityMasterUserPasswordHash",
+        "securityMasterUserAuthDetails",
         "securitySamlConfig",
         "backupPolicy",
         "nsgId",
@@ -77,6 +78,7 @@ public final class CreateOpensearchClusterDetails
         "maintenanceDetails",
         "loadBalancerConfig",
         "certificateConfig",
+        "remoteReindexTrustConfig",
         "freeformTags",
         "definedTags",
         "systemTags",
@@ -127,6 +129,7 @@ public final class CreateOpensearchClusterDetails
             SecurityMode securityMode,
             String securityMasterUserName,
             String securityMasterUserPasswordHash,
+            SecurityUserAuthenticationDetails securityMasterUserAuthDetails,
             SecuritySamlConfig securitySamlConfig,
             BackupPolicy backupPolicy,
             String nsgId,
@@ -136,6 +139,7 @@ public final class CreateOpensearchClusterDetails
             CreateMaintenanceDetails maintenanceDetails,
             LoadBalancerConfig loadBalancerConfig,
             CertificateConfig certificateConfig,
+            RemoteReindexTrustConfig remoteReindexTrustConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -185,6 +189,7 @@ public final class CreateOpensearchClusterDetails
         this.securityMode = securityMode;
         this.securityMasterUserName = securityMasterUserName;
         this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+        this.securityMasterUserAuthDetails = securityMasterUserAuthDetails;
         this.securitySamlConfig = securitySamlConfig;
         this.backupPolicy = backupPolicy;
         this.nsgId = nsgId;
@@ -194,6 +199,7 @@ public final class CreateOpensearchClusterDetails
         this.maintenanceDetails = maintenanceDetails;
         this.loadBalancerConfig = loadBalancerConfig;
         this.certificateConfig = certificateConfig;
+        this.remoteReindexTrustConfig = remoteReindexTrustConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -865,6 +871,16 @@ public final class CreateOpensearchClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserAuthDetails")
+        private SecurityUserAuthenticationDetails securityMasterUserAuthDetails;
+
+        public Builder securityMasterUserAuthDetails(
+                SecurityUserAuthenticationDetails securityMasterUserAuthDetails) {
+            this.securityMasterUserAuthDetails = securityMasterUserAuthDetails;
+            this.__explicitlySet__.add("securityMasterUserAuthDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
         private SecuritySamlConfig securitySamlConfig;
 
@@ -962,6 +978,15 @@ public final class CreateOpensearchClusterDetails
         public Builder certificateConfig(CertificateConfig certificateConfig) {
             this.certificateConfig = certificateConfig;
             this.__explicitlySet__.add("certificateConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+        private RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+        public Builder remoteReindexTrustConfig(RemoteReindexTrustConfig remoteReindexTrustConfig) {
+            this.remoteReindexTrustConfig = remoteReindexTrustConfig;
+            this.__explicitlySet__.add("remoteReindexTrustConfig");
             return this;
         }
         /**
@@ -1101,6 +1126,7 @@ public final class CreateOpensearchClusterDetails
                             this.securityMode,
                             this.securityMasterUserName,
                             this.securityMasterUserPasswordHash,
+                            this.securityMasterUserAuthDetails,
                             this.securitySamlConfig,
                             this.backupPolicy,
                             this.nsgId,
@@ -1110,6 +1136,7 @@ public final class CreateOpensearchClusterDetails
                             this.maintenanceDetails,
                             this.loadBalancerConfig,
                             this.certificateConfig,
+                            this.remoteReindexTrustConfig,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -1254,6 +1281,9 @@ public final class CreateOpensearchClusterDetails
             if (model.wasPropertyExplicitlySet("securityMasterUserPasswordHash")) {
                 this.securityMasterUserPasswordHash(model.getSecurityMasterUserPasswordHash());
             }
+            if (model.wasPropertyExplicitlySet("securityMasterUserAuthDetails")) {
+                this.securityMasterUserAuthDetails(model.getSecurityMasterUserAuthDetails());
+            }
             if (model.wasPropertyExplicitlySet("securitySamlConfig")) {
                 this.securitySamlConfig(model.getSecuritySamlConfig());
             }
@@ -1281,6 +1311,9 @@ public final class CreateOpensearchClusterDetails
             }
             if (model.wasPropertyExplicitlySet("certificateConfig")) {
                 this.certificateConfig(model.getCertificateConfig());
+            }
+            if (model.wasPropertyExplicitlySet("remoteReindexTrustConfig")) {
+                this.remoteReindexTrustConfig(model.getRemoteReindexTrustConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1879,6 +1912,13 @@ public final class CreateOpensearchClusterDetails
         return securityMasterUserPasswordHash;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserAuthDetails")
+    private final SecurityUserAuthenticationDetails securityMasterUserAuthDetails;
+
+    public SecurityUserAuthenticationDetails getSecurityMasterUserAuthDetails() {
+        return securityMasterUserAuthDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
     private final SecuritySamlConfig securitySamlConfig;
 
@@ -1958,6 +1998,13 @@ public final class CreateOpensearchClusterDetails
 
     public CertificateConfig getCertificateConfig() {
         return certificateConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteReindexTrustConfig")
+    private final RemoteReindexTrustConfig remoteReindexTrustConfig;
+
+    public RemoteReindexTrustConfig getRemoteReindexTrustConfig() {
+        return remoteReindexTrustConfig;
     }
 
     /**
@@ -2105,6 +2152,8 @@ public final class CreateOpensearchClusterDetails
         sb.append(", securityMasterUserName=").append(String.valueOf(this.securityMasterUserName));
         sb.append(", securityMasterUserPasswordHash=")
                 .append(String.valueOf(this.securityMasterUserPasswordHash));
+        sb.append(", securityMasterUserAuthDetails=")
+                .append(String.valueOf(this.securityMasterUserAuthDetails));
         sb.append(", securitySamlConfig=").append(String.valueOf(this.securitySamlConfig));
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", nsgId=").append(String.valueOf(this.nsgId));
@@ -2115,6 +2164,8 @@ public final class CreateOpensearchClusterDetails
         sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
         sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
         sb.append(", certificateConfig=").append(String.valueOf(this.certificateConfig));
+        sb.append(", remoteReindexTrustConfig=")
+                .append(String.valueOf(this.remoteReindexTrustConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -2193,6 +2244,8 @@ public final class CreateOpensearchClusterDetails
                         this.securityMasterUserName, other.securityMasterUserName)
                 && java.util.Objects.equals(
                         this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
+                && java.util.Objects.equals(
+                        this.securityMasterUserAuthDetails, other.securityMasterUserAuthDetails)
                 && java.util.Objects.equals(this.securitySamlConfig, other.securitySamlConfig)
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.nsgId, other.nsgId)
@@ -2204,6 +2257,8 @@ public final class CreateOpensearchClusterDetails
                 && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
                 && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
                 && java.util.Objects.equals(this.certificateConfig, other.certificateConfig)
+                && java.util.Objects.equals(
+                        this.remoteReindexTrustConfig, other.remoteReindexTrustConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -2393,6 +2448,11 @@ public final class CreateOpensearchClusterDetails
                                 : this.securityMasterUserPasswordHash.hashCode());
         result =
                 (result * PRIME)
+                        + (this.securityMasterUserAuthDetails == null
+                                ? 43
+                                : this.securityMasterUserAuthDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.securitySamlConfig == null
                                 ? 43
                                 : this.securitySamlConfig.hashCode());
@@ -2424,6 +2484,11 @@ public final class CreateOpensearchClusterDetails
         result =
                 (result * PRIME)
                         + (this.certificateConfig == null ? 43 : this.certificateConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.remoteReindexTrustConfig == null
+                                ? 43
+                                : this.remoteReindexTrustConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

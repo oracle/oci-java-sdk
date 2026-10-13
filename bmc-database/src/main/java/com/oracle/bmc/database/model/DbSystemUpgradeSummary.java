@@ -24,12 +24,22 @@ package com.oracle.bmc.database.model;
 public final class DbSystemUpgradeSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"component", "osVersion", "giVersion"})
-    public DbSystemUpgradeSummary(Component component, String osVersion, String giVersion) {
+    @java.beans.ConstructorProperties({
+        "component",
+        "osVersion",
+        "giVersion",
+        "isOlderVersionAcknowledgmentRequired"
+    })
+    public DbSystemUpgradeSummary(
+            Component component,
+            String osVersion,
+            String giVersion,
+            Boolean isOlderVersionAcknowledgmentRequired) {
         super();
         this.component = component;
         this.osVersion = osVersion;
         this.giVersion = giVersion;
+        this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -87,13 +97,37 @@ public final class DbSystemUpgradeSummary
             this.__explicitlySet__.add("giVersion");
             return this;
         }
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+        private Boolean isOlderVersionAcknowledgmentRequired;
+
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         *
+         * @param isOlderVersionAcknowledgmentRequired the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledgmentRequired(
+                Boolean isOlderVersionAcknowledgmentRequired) {
+            this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
+            this.__explicitlySet__.add("isOlderVersionAcknowledgmentRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemUpgradeSummary build() {
             DbSystemUpgradeSummary model =
-                    new DbSystemUpgradeSummary(this.component, this.osVersion, this.giVersion);
+                    new DbSystemUpgradeSummary(
+                            this.component,
+                            this.osVersion,
+                            this.giVersion,
+                            this.isOlderVersionAcknowledgmentRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -110,6 +144,10 @@ public final class DbSystemUpgradeSummary
             }
             if (model.wasPropertyExplicitlySet("giVersion")) {
                 this.giVersion(model.getGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledgmentRequired")) {
+                this.isOlderVersionAcknowledgmentRequired(
+                        model.getIsOlderVersionAcknowledgmentRequired());
             }
             return this;
         }
@@ -221,6 +259,23 @@ public final class DbSystemUpgradeSummary
         return giVersion;
     }
 
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+    private final Boolean isOlderVersionAcknowledgmentRequired;
+
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledgmentRequired() {
+        return isOlderVersionAcknowledgmentRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -239,6 +294,8 @@ public final class DbSystemUpgradeSummary
         sb.append("component=").append(String.valueOf(this.component));
         sb.append(", osVersion=").append(String.valueOf(this.osVersion));
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
+        sb.append(", isOlderVersionAcknowledgmentRequired=")
+                .append(String.valueOf(this.isOlderVersionAcknowledgmentRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -256,6 +313,9 @@ public final class DbSystemUpgradeSummary
         return java.util.Objects.equals(this.component, other.component)
                 && java.util.Objects.equals(this.osVersion, other.osVersion)
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledgmentRequired,
+                        other.isOlderVersionAcknowledgmentRequired)
                 && super.equals(other);
     }
 
@@ -266,6 +326,11 @@ public final class DbSystemUpgradeSummary
         result = (result * PRIME) + (this.component == null ? 43 : this.component.hashCode());
         result = (result * PRIME) + (this.osVersion == null ? 43 : this.osVersion.hashCode());
         result = (result * PRIME) + (this.giVersion == null ? 43 : this.giVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledgmentRequired == null
+                                ? 43
+                                : this.isOlderVersionAcknowledgmentRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

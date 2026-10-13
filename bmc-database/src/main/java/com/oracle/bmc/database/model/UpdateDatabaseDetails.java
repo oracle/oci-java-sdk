@@ -41,7 +41,8 @@ public final class UpdateDatabaseDetails
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
-            AutoFailoverConfiguration autoFailoverConfiguration) {
+            AutoFailoverConfiguration autoFailoverConfiguration,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.dbBackupConfig = dbBackupConfig;
         this.dbHomeId = dbHomeId;
@@ -61,6 +62,7 @@ public final class UpdateDatabaseDetails
         this.transportType = transportType;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
         this.autoFailoverConfiguration = autoFailoverConfiguration;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -80,7 +82,8 @@ public final class UpdateDatabaseDetails
         "protectionMode",
         "transportType",
         "isActiveDataGuardEnabled",
-        "autoFailoverConfiguration"
+        "autoFailoverConfiguration",
+        "dataSafeRegistrationDetails"
     })
     public UpdateDatabaseDetails(
             DbBackupConfig dbBackupConfig,
@@ -97,7 +100,8 @@ public final class UpdateDatabaseDetails
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
-            AutoFailoverConfiguration autoFailoverConfiguration) {
+            AutoFailoverConfiguration autoFailoverConfiguration,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.dbBackupConfig = dbBackupConfig;
         this.dbHomeId = dbHomeId;
@@ -114,6 +118,7 @@ public final class UpdateDatabaseDetails
         this.transportType = transportType;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
         this.autoFailoverConfiguration = autoFailoverConfiguration;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -421,6 +426,16 @@ public final class UpdateDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+        private DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+        public Builder dataSafeRegistrationDetails(
+                DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
+            this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
+            this.__explicitlySet__.add("dataSafeRegistrationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -441,7 +456,8 @@ public final class UpdateDatabaseDetails
                             this.protectionMode,
                             this.transportType,
                             this.isActiveDataGuardEnabled,
-                            this.autoFailoverConfiguration);
+                            this.autoFailoverConfiguration,
+                            this.dataSafeRegistrationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -494,6 +510,9 @@ public final class UpdateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("autoFailoverConfiguration")) {
                 this.autoFailoverConfiguration(model.getAutoFailoverConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeRegistrationDetails")) {
+                this.dataSafeRegistrationDetails(model.getDataSafeRegistrationDetails());
             }
             return this;
         }
@@ -890,6 +909,13 @@ public final class UpdateDatabaseDetails
         return autoFailoverConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+    private final DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+    public DataSafeRegistrationRequestDetails getDataSafeRegistrationDetails() {
+        return dataSafeRegistrationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -923,6 +949,8 @@ public final class UpdateDatabaseDetails
                 .append(String.valueOf(this.isActiveDataGuardEnabled));
         sb.append(", autoFailoverConfiguration=")
                 .append(String.valueOf(this.autoFailoverConfiguration));
+        sb.append(", dataSafeRegistrationDetails=")
+                .append(String.valueOf(this.dataSafeRegistrationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -955,6 +983,8 @@ public final class UpdateDatabaseDetails
                         this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
                 && java.util.Objects.equals(
                         this.autoFailoverConfiguration, other.autoFailoverConfiguration)
+                && java.util.Objects.equals(
+                        this.dataSafeRegistrationDetails, other.dataSafeRegistrationDetails)
                 && super.equals(other);
     }
 
@@ -1013,6 +1043,11 @@ public final class UpdateDatabaseDetails
                         + (this.autoFailoverConfiguration == null
                                 ? 43
                                 : this.autoFailoverConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeRegistrationDetails == null
+                                ? 43
+                                : this.dataSafeRegistrationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

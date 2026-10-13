@@ -36,7 +36,8 @@ public final class CreateStandbyDetails
             DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            AutoFailoverConfiguration autoFailoverConfiguration) {
+            AutoFailoverConfiguration autoFailoverConfiguration,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.sourceDatabaseId = sourceDatabaseId;
         this.databaseAdminPassword =
@@ -53,6 +54,7 @@ public final class CreateStandbyDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.autoFailoverConfiguration = autoFailoverConfiguration;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -70,7 +72,8 @@ public final class CreateStandbyDetails
         "storageSizeDetails",
         "freeformTags",
         "definedTags",
-        "autoFailoverConfiguration"
+        "autoFailoverConfiguration",
+        "dataSafeRegistrationDetails"
     })
     public CreateStandbyDetails(
             String sourceDatabaseId,
@@ -85,7 +88,8 @@ public final class CreateStandbyDetails
             DatabaseStorageSizeDetails storageSizeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            AutoFailoverConfiguration autoFailoverConfiguration) {
+            AutoFailoverConfiguration autoFailoverConfiguration,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.sourceDatabaseId = sourceDatabaseId;
         this.databaseAdminPassword = databaseAdminPassword;
@@ -100,6 +104,7 @@ public final class CreateStandbyDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.autoFailoverConfiguration = autoFailoverConfiguration;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -357,6 +362,16 @@ public final class CreateStandbyDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+        private DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+        public Builder dataSafeRegistrationDetails(
+                DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
+            this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
+            this.__explicitlySet__.add("dataSafeRegistrationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -375,7 +390,8 @@ public final class CreateStandbyDetails
                             this.storageSizeDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.autoFailoverConfiguration);
+                            this.autoFailoverConfiguration,
+                            this.dataSafeRegistrationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -423,6 +439,9 @@ public final class CreateStandbyDetails
             }
             if (model.wasPropertyExplicitlySet("autoFailoverConfiguration")) {
                 this.autoFailoverConfiguration(model.getAutoFailoverConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeRegistrationDetails")) {
+                this.dataSafeRegistrationDetails(model.getDataSafeRegistrationDetails());
             }
             return this;
         }
@@ -759,6 +778,13 @@ public final class CreateStandbyDetails
         return autoFailoverConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+    private final DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+    public DataSafeRegistrationRequestDetails getDataSafeRegistrationDetails() {
+        return dataSafeRegistrationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -790,6 +816,8 @@ public final class CreateStandbyDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", autoFailoverConfiguration=")
                 .append(String.valueOf(this.autoFailoverConfiguration));
+        sb.append(", dataSafeRegistrationDetails=")
+                .append(String.valueOf(this.dataSafeRegistrationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -822,6 +850,8 @@ public final class CreateStandbyDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
                         this.autoFailoverConfiguration, other.autoFailoverConfiguration)
+                && java.util.Objects.equals(
+                        this.dataSafeRegistrationDetails, other.dataSafeRegistrationDetails)
                 && super.equals(other);
     }
 
@@ -872,6 +902,11 @@ public final class CreateStandbyDetails
                         + (this.autoFailoverConfiguration == null
                                 ? 43
                                 : this.autoFailoverConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeRegistrationDetails == null
+                                ? 43
+                                : this.dataSafeRegistrationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -22,6 +22,13 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 
 public class IdleConnectionMonitorConcurrencyTest {
     private static final long TEST_TIMEOUT_MILLIS = TimeUnit.SECONDS.toMillis(5);
@@ -119,6 +126,7 @@ public class IdleConnectionMonitorConcurrencyTest {
                 IdleConnectionMonitor.registerConnectionManager(existingConnectionManager, 60, 60));
         IdleConnectionMonitor originalMonitor = IdleConnectionMonitor.getInstance();
         assertNotNull(originalMonitor);
+        Thread originalShutdownHook = originalMonitor.getShutdownHook();
         awaitMonitorThreadToEnterSleep(originalMonitor);
 
         CountDownLatch interruptCleanupStarted = new CountDownLatch(1);
@@ -152,6 +160,159 @@ public class IdleConnectionMonitorConcurrencyTest {
                 "An old interrupted monitor thread must not clear a replacement instance",
                 replacementMonitor,
                 IdleConnectionMonitor.getInstance());
+        assertFalse(Runtime.getRuntime().removeShutdownHook(originalShutdownHook));
+        assertNotNull(replacementMonitor.getShutdownHook());
+        assertNotSame(originalShutdownHook, replacementMonitor.getShutdownHook());
+    }
+
+    @Test
+    public void shutdownWaitsForInFlightRegistration() throws Exception {
+        HttpClientConnectionManager manager = new BasicHttpClientConnectionManager();
+        CountDownLatch registrationStarted = new CountDownLatch(1);
+        CountDownLatch allowRegistration = new CountDownLatch(1);
+        CountDownLatch shutdownStarted = new CountDownLatch(1);
+        CountDownLatch shutdownCompleted = new CountDownLatch(1);
+        AtomicReference<Throwable> registerFailure = new AtomicReference<>();
+        AtomicReference<Throwable> shutdownFailure = new AtomicReference<>();
+        IdleConnectionMonitor.setBeforeRegisterConnectionManagerPutHookForTest(
+                () ->
+                        awaitLatchAtHook(
+                                registrationStarted, allowRegistration, "Registration blocked"));
+        Thread registerThread = new Thread(() -> runRegister(manager, registerFailure));
+        Thread shutdownThread =
+                new Thread(
+                        () -> {
+                            shutdownStarted.countDown();
+                            try {
+                                assertTrue(IdleConnectionMonitor.shutdown());
+                            } catch (Throwable t) {
+                                shutdownFailure.set(t);
+                            } finally {
+                                shutdownCompleted.countDown();
+                            }
+                        });
+        IdleConnectionMonitor monitor = null;
+        try {
+            registerThread.start();
+            assertTrue(registrationStarted.await(TEST_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS));
+            monitor = IdleConnectionMonitor.getInstance();
+            shutdownThread.start();
+            assertTrue(shutdownStarted.await(TEST_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS));
+            assertFalse(
+                    shutdownCompleted.await(
+                            BLOCKED_REMOVE_ASSERTION_MILLIS, TimeUnit.MILLISECONDS));
+        } finally {
+            allowRegistration.countDown();
+            joinThread(registerThread);
+            joinThread(shutdownThread);
+            joinThread(monitor);
+            manager.shutdown();
+        }
+        assertNull(registerFailure.get());
+        assertNull(shutdownFailure.get());
+        assertNull(IdleConnectionMonitor.getInstance());
+        assertEquals(0, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
+        assertNull(monitor.getShutdownHook());
+    }
+
+    @Test
+    public void shutdownDoesNotWaitForBlockedExpiredConnectionCleanup() throws Exception {
+        HttpClientConnectionManager manager = mock(HttpClientConnectionManager.class);
+        CountDownLatch callbackStarted = new CountDownLatch(1);
+        CountDownLatch releaseCallback = new CountDownLatch(1);
+        CountDownLatch shutdownCompleted = new CountDownLatch(1);
+        AtomicReference<Throwable> callbackFailure = new AtomicReference<>();
+        AtomicReference<Throwable> shutdownFailure = new AtomicReference<>();
+        doAnswer(
+                        invocation -> {
+                            callbackStarted.countDown();
+                            long deadline =
+                                    System.nanoTime()
+                                            + TimeUnit.MILLISECONDS.toNanos(TEST_TIMEOUT_MILLIS);
+                            // Simulate a custom manager that consumes interruption while a callback
+                            // is in progress.
+                            while (releaseCallback.getCount() != 0) {
+                                long remaining = deadline - System.nanoTime();
+                                if (remaining <= 0) {
+                                    callbackFailure.set(
+                                            new AssertionError("Callback was not released"));
+                                    break;
+                                }
+                                try {
+                                    releaseCallback.await(remaining, TimeUnit.NANOSECONDS);
+                                } catch (InterruptedException ignored) {
+                                    // Deliberately ignored to exercise shutdown independently of
+                                    // interruption.
+                                }
+                            }
+                            return null;
+                        })
+                .when(manager)
+                .closeExpiredConnections();
+        // Populate the manager before starting this worker so the callback does not depend on sleep
+        // timing.
+        IdleConnectionMonitor monitor = new IdleConnectionMonitor(1);
+        IdleConnectionMonitor.instance = monitor;
+        IdleConnectionMonitor.registerConnectionManager(manager, 1, 60);
+        IdleConnectionMonitor.startMonitor(monitor, Runtime.getRuntime());
+        Thread hook = monitor.getShutdownHook();
+        Thread shutdownThread =
+                new Thread(
+                        () -> {
+                            try {
+                                assertTrue(IdleConnectionMonitor.shutdown());
+                            } catch (Throwable t) {
+                                shutdownFailure.set(t);
+                            } finally {
+                                shutdownCompleted.countDown();
+                            }
+                        });
+        try {
+            assertTrue(callbackStarted.await(TEST_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS));
+            shutdownThread.start();
+            assertTrue(shutdownCompleted.await(TEST_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS));
+            assertTrue(monitor.isAlive());
+            assertTrue(monitor.isIdleMonitorThreadShutdown());
+            assertFalse(Runtime.getRuntime().removeShutdownHook(hook));
+        } finally {
+            releaseCallback.countDown();
+            joinThread(shutdownThread);
+            joinThread(monitor);
+        }
+        assertNull(callbackFailure.get());
+        assertNull(shutdownFailure.get());
+        verify(manager, never()).closeIdleConnections(anyLong(), eq(TimeUnit.SECONDS));
+        verify(manager, never()).shutdown();
+    }
+
+    @Test
+    public void failingManagersDoNotPreventOtherManagersFromBeingProcessed() throws Exception {
+        HttpClientConnectionManager initial = new BasicHttpClientConnectionManager();
+        IdleConnectionMonitor.registerConnectionManager(initial, 60, 60);
+        IdleConnectionMonitor monitor = IdleConnectionMonitor.getInstance();
+        awaitMonitorThreadToEnterSleep(monitor);
+        HttpClientConnectionManager expiredFailure = mock(HttpClientConnectionManager.class);
+        HttpClientConnectionManager idleFailure = mock(HttpClientConnectionManager.class);
+        HttpClientConnectionManager healthy = mock(HttpClientConnectionManager.class);
+        doThrow(new IllegalStateException("Expired cleanup failed"))
+                .when(expiredFailure)
+                .closeExpiredConnections();
+        doThrow(new IllegalStateException("Idle cleanup failed"))
+                .when(idleFailure)
+                .closeIdleConnections(60, TimeUnit.SECONDS);
+        IdleConnectionMonitor.registerConnectionManager(expiredFailure, 60, 60);
+        IdleConnectionMonitor.registerConnectionManager(idleFailure, 60, 60);
+        IdleConnectionMonitor.registerConnectionManager(healthy, 60, 60);
+
+        monitor.closeIdleConnections();
+
+        verify(expiredFailure).closeExpiredConnections();
+        verify(idleFailure).closeIdleConnections(60, TimeUnit.SECONDS);
+        verify(healthy).closeExpiredConnections();
+        verify(healthy).closeIdleConnections(60, TimeUnit.SECONDS);
+        IdleConnectionMonitor.shutdown();
+        joinThread(monitor);
+        initial.shutdown();
     }
 
     private static void runRegister(

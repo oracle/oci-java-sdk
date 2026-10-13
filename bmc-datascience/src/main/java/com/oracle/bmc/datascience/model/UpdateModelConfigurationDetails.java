@@ -25,6 +25,7 @@ public final class UpdateModelConfigurationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "modelId",
+        "modelArtifactSignatureId",
         "instanceConfiguration",
         "scalingPolicy",
         "bandwidthMbps",
@@ -32,12 +33,14 @@ public final class UpdateModelConfigurationDetails
     })
     public UpdateModelConfigurationDetails(
             String modelId,
+            String modelArtifactSignatureId,
             InstanceConfiguration instanceConfiguration,
             ScalingPolicy scalingPolicy,
             Integer bandwidthMbps,
             Integer maximumBandwidthMbps) {
         super();
         this.modelId = modelId;
+        this.modelArtifactSignatureId = modelArtifactSignatureId;
         this.instanceConfiguration = instanceConfiguration;
         this.scalingPolicy = scalingPolicy;
         this.bandwidthMbps = bandwidthMbps;
@@ -59,6 +62,25 @@ public final class UpdateModelConfigurationDetails
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * model artifact signature.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("modelArtifactSignatureId")
+        private String modelArtifactSignatureId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+         * model artifact signature.
+         *
+         * @param modelArtifactSignatureId the value to set
+         * @return this builder
+         */
+        public Builder modelArtifactSignatureId(String modelArtifactSignatureId) {
+            this.modelArtifactSignatureId = modelArtifactSignatureId;
+            this.__explicitlySet__.add("modelArtifactSignatureId");
             return this;
         }
 
@@ -117,6 +139,7 @@ public final class UpdateModelConfigurationDetails
             UpdateModelConfigurationDetails model =
                     new UpdateModelConfigurationDetails(
                             this.modelId,
+                            this.modelArtifactSignatureId,
                             this.instanceConfiguration,
                             this.scalingPolicy,
                             this.bandwidthMbps,
@@ -131,6 +154,9 @@ public final class UpdateModelConfigurationDetails
         public Builder copy(UpdateModelConfigurationDetails model) {
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("modelArtifactSignatureId")) {
+                this.modelArtifactSignatureId(model.getModelArtifactSignatureId());
             }
             if (model.wasPropertyExplicitlySet("instanceConfiguration")) {
                 this.instanceConfiguration(model.getInstanceConfiguration());
@@ -168,6 +194,23 @@ public final class UpdateModelConfigurationDetails
      */
     public String getModelId() {
         return modelId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model
+     * artifact signature.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("modelArtifactSignatureId")
+    private final String modelArtifactSignatureId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model
+     * artifact signature.
+     *
+     * @return the value
+     */
+    public String getModelArtifactSignatureId() {
+        return modelArtifactSignatureId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfiguration")
@@ -226,6 +269,8 @@ public final class UpdateModelConfigurationDetails
         sb.append("UpdateModelConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("modelId=").append(String.valueOf(this.modelId));
+        sb.append(", modelArtifactSignatureId=")
+                .append(String.valueOf(this.modelArtifactSignatureId));
         sb.append(", instanceConfiguration=").append(String.valueOf(this.instanceConfiguration));
         sb.append(", scalingPolicy=").append(String.valueOf(this.scalingPolicy));
         sb.append(", bandwidthMbps=").append(String.valueOf(this.bandwidthMbps));
@@ -245,6 +290,8 @@ public final class UpdateModelConfigurationDetails
 
         UpdateModelConfigurationDetails other = (UpdateModelConfigurationDetails) o;
         return java.util.Objects.equals(this.modelId, other.modelId)
+                && java.util.Objects.equals(
+                        this.modelArtifactSignatureId, other.modelArtifactSignatureId)
                 && java.util.Objects.equals(this.instanceConfiguration, other.instanceConfiguration)
                 && java.util.Objects.equals(this.scalingPolicy, other.scalingPolicy)
                 && java.util.Objects.equals(this.bandwidthMbps, other.bandwidthMbps)
@@ -257,6 +304,11 @@ public final class UpdateModelConfigurationDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelArtifactSignatureId == null
+                                ? 43
+                                : this.modelArtifactSignatureId.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceConfiguration == null

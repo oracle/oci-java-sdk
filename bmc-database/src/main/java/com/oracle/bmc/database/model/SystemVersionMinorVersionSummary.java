@@ -23,10 +23,12 @@ package com.oracle.bmc.database.model;
 public final class SystemVersionMinorVersionSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"version"})
-    public SystemVersionMinorVersionSummary(String version) {
+    @java.beans.ConstructorProperties({"version", "isOlderVersionAcknowledgmentRequired"})
+    public SystemVersionMinorVersionSummary(
+            String version, Boolean isOlderVersionAcknowledgmentRequired) {
         super();
         this.version = version;
+        this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -46,13 +48,34 @@ public final class SystemVersionMinorVersionSummary
             this.__explicitlySet__.add("version");
             return this;
         }
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+        private Boolean isOlderVersionAcknowledgmentRequired;
+
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         *
+         * @param isOlderVersionAcknowledgmentRequired the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledgmentRequired(
+                Boolean isOlderVersionAcknowledgmentRequired) {
+            this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
+            this.__explicitlySet__.add("isOlderVersionAcknowledgmentRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SystemVersionMinorVersionSummary build() {
             SystemVersionMinorVersionSummary model =
-                    new SystemVersionMinorVersionSummary(this.version);
+                    new SystemVersionMinorVersionSummary(
+                            this.version, this.isOlderVersionAcknowledgmentRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -63,6 +86,10 @@ public final class SystemVersionMinorVersionSummary
         public Builder copy(SystemVersionMinorVersionSummary model) {
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledgmentRequired")) {
+                this.isOlderVersionAcknowledgmentRequired(
+                        model.getIsOlderVersionAcknowledgmentRequired());
             }
             return this;
         }
@@ -90,6 +117,23 @@ public final class SystemVersionMinorVersionSummary
         return version;
     }
 
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+    private final Boolean isOlderVersionAcknowledgmentRequired;
+
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledgmentRequired() {
+        return isOlderVersionAcknowledgmentRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -106,6 +150,8 @@ public final class SystemVersionMinorVersionSummary
         sb.append("SystemVersionMinorVersionSummary(");
         sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
+        sb.append(", isOlderVersionAcknowledgmentRequired=")
+                .append(String.valueOf(this.isOlderVersionAcknowledgmentRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +166,11 @@ public final class SystemVersionMinorVersionSummary
         }
 
         SystemVersionMinorVersionSummary other = (SystemVersionMinorVersionSummary) o;
-        return java.util.Objects.equals(this.version, other.version) && super.equals(other);
+        return java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledgmentRequired,
+                        other.isOlderVersionAcknowledgmentRequired)
+                && super.equals(other);
     }
 
     @Override
@@ -128,6 +178,11 @@ public final class SystemVersionMinorVersionSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledgmentRequired == null
+                                ? 43
+                                : this.isOlderVersionAcknowledgmentRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

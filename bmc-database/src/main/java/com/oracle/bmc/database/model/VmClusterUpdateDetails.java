@@ -29,20 +29,23 @@ public final class VmClusterUpdateDetails
         "giHomeId",
         "updateMode",
         "updateAction",
-        "giSoftwareImageId"
+        "giSoftwareImageId",
+        "isOlderVersionAcknowledged"
     })
     public VmClusterUpdateDetails(
             String updateId,
             String giHomeId,
             UpdateMode updateMode,
             UpdateAction updateAction,
-            String giSoftwareImageId) {
+            String giSoftwareImageId,
+            Boolean isOlderVersionAcknowledged) {
         super();
         this.updateId = updateId;
         this.giHomeId = giHomeId;
         this.updateMode = updateMode;
         this.updateAction = updateAction;
         this.giSoftwareImageId = giSoftwareImageId;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -142,6 +145,25 @@ public final class VmClusterUpdateDetails
             this.__explicitlySet__.add("giSoftwareImageId");
             return this;
         }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -153,7 +175,8 @@ public final class VmClusterUpdateDetails
                             this.giHomeId,
                             this.updateMode,
                             this.updateAction,
-                            this.giSoftwareImageId);
+                            this.giSoftwareImageId,
+                            this.isOlderVersionAcknowledged);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -176,6 +199,9 @@ public final class VmClusterUpdateDetails
             }
             if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
                 this.giSoftwareImageId(model.getGiSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             return this;
         }
@@ -345,6 +371,23 @@ public final class VmClusterUpdateDetails
         return giSoftwareImageId;
     }
 
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -365,6 +408,8 @@ public final class VmClusterUpdateDetails
         sb.append(", updateMode=").append(String.valueOf(this.updateMode));
         sb.append(", updateAction=").append(String.valueOf(this.updateAction));
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(")");
         return sb.toString();
     }
@@ -384,6 +429,8 @@ public final class VmClusterUpdateDetails
                 && java.util.Objects.equals(this.updateMode, other.updateMode)
                 && java.util.Objects.equals(this.updateAction, other.updateAction)
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && super.equals(other);
     }
 
@@ -398,6 +445,11 @@ public final class VmClusterUpdateDetails
         result =
                 (result * PRIME)
                         + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

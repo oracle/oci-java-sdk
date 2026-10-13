@@ -47,7 +47,8 @@ public final class CreateDatabaseDetails
             EncryptionKeyLocationDetails encryptionKeyLocationDetails,
             DatabaseStorageSizeDetails storageSizeDetails,
             ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
-            String vmClusterId) {
+            String vmClusterId,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -70,6 +71,7 @@ public final class CreateDatabaseDetails
         this.storageSizeDetails = storageSizeDetails;
         this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.vmClusterId = vmClusterId;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -95,7 +97,8 @@ public final class CreateDatabaseDetails
         "encryptionKeyLocationDetails",
         "storageSizeDetails",
         "managedSoftwareUpdateDetails",
-        "vmClusterId"
+        "vmClusterId",
+        "dataSafeRegistrationDetails"
     })
     public CreateDatabaseDetails(
             String dbName,
@@ -118,7 +121,8 @@ public final class CreateDatabaseDetails
             EncryptionKeyLocationDetails encryptionKeyLocationDetails,
             DatabaseStorageSizeDetails storageSizeDetails,
             ManagedSoftwareUpdateInputDetails managedSoftwareUpdateDetails,
-            String vmClusterId) {
+            String vmClusterId,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -141,6 +145,7 @@ public final class CreateDatabaseDetails
         this.storageSizeDetails = storageSizeDetails;
         this.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
         this.vmClusterId = vmClusterId;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -573,6 +578,16 @@ public final class CreateDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+        private DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+        public Builder dataSafeRegistrationDetails(
+                DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
+            this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
+            this.__explicitlySet__.add("dataSafeRegistrationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -599,7 +614,8 @@ public final class CreateDatabaseDetails
                             this.encryptionKeyLocationDetails,
                             this.storageSizeDetails,
                             this.managedSoftwareUpdateDetails,
-                            this.vmClusterId);
+                            this.vmClusterId,
+                            this.dataSafeRegistrationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -670,6 +686,9 @@ public final class CreateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("vmClusterId")) {
                 this.vmClusterId(model.getVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeRegistrationDetails")) {
+                this.dataSafeRegistrationDetails(model.getDataSafeRegistrationDetails());
             }
             return this;
         }
@@ -1113,6 +1132,13 @@ public final class CreateDatabaseDetails
         return vmClusterId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+    private final DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+    public DataSafeRegistrationRequestDetails getDataSafeRegistrationDetails() {
+        return dataSafeRegistrationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1152,6 +1178,8 @@ public final class CreateDatabaseDetails
         sb.append(", managedSoftwareUpdateDetails=")
                 .append(String.valueOf(this.managedSoftwareUpdateDetails));
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
+        sb.append(", dataSafeRegistrationDetails=")
+                .append(String.valueOf(this.dataSafeRegistrationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1190,6 +1218,8 @@ public final class CreateDatabaseDetails
                 && java.util.Objects.equals(
                         this.managedSoftwareUpdateDetails, other.managedSoftwareUpdateDetails)
                 && java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
+                && java.util.Objects.equals(
+                        this.dataSafeRegistrationDetails, other.dataSafeRegistrationDetails)
                 && super.equals(other);
     }
 
@@ -1244,6 +1274,11 @@ public final class CreateDatabaseDetails
                                 ? 43
                                 : this.managedSoftwareUpdateDetails.hashCode());
         result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeRegistrationDetails == null
+                                ? 43
+                                : this.dataSafeRegistrationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

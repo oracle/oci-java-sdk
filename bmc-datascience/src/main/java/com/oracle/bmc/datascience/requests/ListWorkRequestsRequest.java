@@ -116,6 +116,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         ModelGroupUpdate("MODEL_GROUP_UPDATE"),
         ModelGroupDelete("MODEL_GROUP_DELETE"),
         ModelGroupVersionHistoryDelete("MODEL_GROUP_VERSION_HISTORY_DELETE"),
+        CreateModelArtifactSignature("CREATE_MODEL_ARTIFACT_SIGNATURE"),
+        VerifyModelArtifactSignature("VERIFY_MODEL_ARTIFACT_SIGNATURE"),
         ;
 
         private final String value;

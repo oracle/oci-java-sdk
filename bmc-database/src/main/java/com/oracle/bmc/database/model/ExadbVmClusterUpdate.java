@@ -32,7 +32,8 @@ public final class ExadbVmClusterUpdate
         "lifecycleDetails",
         "lifecycleState",
         "timeReleased",
-        "version"
+        "version",
+        "isOlderVersionAcknowledgmentRequired"
     })
     public ExadbVmClusterUpdate(
             String id,
@@ -43,7 +44,8 @@ public final class ExadbVmClusterUpdate
             String lifecycleDetails,
             LifecycleState lifecycleState,
             java.util.Date timeReleased,
-            String version) {
+            String version,
+            Boolean isOlderVersionAcknowledgmentRequired) {
         super();
         this.id = id;
         this.description = description;
@@ -54,6 +56,7 @@ public final class ExadbVmClusterUpdate
         this.lifecycleState = lifecycleState;
         this.timeReleased = timeReleased;
         this.version = version;
+        this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -201,6 +204,26 @@ public final class ExadbVmClusterUpdate
             this.__explicitlySet__.add("version");
             return this;
         }
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+        private Boolean isOlderVersionAcknowledgmentRequired;
+
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         *
+         * @param isOlderVersionAcknowledgmentRequired the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledgmentRequired(
+                Boolean isOlderVersionAcknowledgmentRequired) {
+            this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
+            this.__explicitlySet__.add("isOlderVersionAcknowledgmentRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -216,7 +239,8 @@ public final class ExadbVmClusterUpdate
                             this.lifecycleDetails,
                             this.lifecycleState,
                             this.timeReleased,
-                            this.version);
+                            this.version,
+                            this.isOlderVersionAcknowledgmentRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -251,6 +275,10 @@ public final class ExadbVmClusterUpdate
             }
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledgmentRequired")) {
+                this.isOlderVersionAcknowledgmentRequired(
+                        model.getIsOlderVersionAcknowledgmentRequired());
             }
             return this;
         }
@@ -577,6 +605,23 @@ public final class ExadbVmClusterUpdate
         return version;
     }
 
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+    private final Boolean isOlderVersionAcknowledgmentRequired;
+
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledgmentRequired() {
+        return isOlderVersionAcknowledgmentRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -601,6 +646,8 @@ public final class ExadbVmClusterUpdate
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
         sb.append(", version=").append(String.valueOf(this.version));
+        sb.append(", isOlderVersionAcknowledgmentRequired=")
+                .append(String.valueOf(this.isOlderVersionAcknowledgmentRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -624,6 +671,9 @@ public final class ExadbVmClusterUpdate
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeReleased, other.timeReleased)
                 && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledgmentRequired,
+                        other.isOlderVersionAcknowledgmentRequired)
                 && super.equals(other);
     }
 
@@ -646,6 +696,11 @@ public final class ExadbVmClusterUpdate
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeReleased == null ? 43 : this.timeReleased.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledgmentRequired == null
+                                ? 43
+                                : this.isOlderVersionAcknowledgmentRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

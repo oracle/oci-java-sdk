@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.97.2</version>
+  <version>3.98.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -35,8 +35,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jackson.annotation.version>2.21</jackson.annotation.version>
-    <jackson.version>2.21.5</jackson.version>
-    <jackson.databind.version>2.21.6</jackson.databind.version>
+    <jackson.version>2.21.7</jackson.version>
+    <jackson.databind.version>2.21.7</jackson.databind.version>
     <jersey.version>2.47</jersey.version>
     <apache-httpcomponents.version>4.5.14</apache-httpcomponents.version>
     <apache-httpcomponents.httpclient.version>4.5.14</apache-httpcomponents.httpclient.version>
@@ -684,6 +684,7 @@
     <module>bmc-clusterhealth</module>
     <module>bmc-distributeddatabase</module>
     <module>bmc-ociproductcatalog</module>
+    <module>bmc-ccdoffers</module>
     <module>bmc-containerengine</module>
     <module>bmc-keymanagement</module>
     <module>bmc-resourcesearch</module>

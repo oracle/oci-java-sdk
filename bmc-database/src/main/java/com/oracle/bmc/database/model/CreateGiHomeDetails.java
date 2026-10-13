@@ -27,6 +27,7 @@ public final class CreateGiHomeDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "giImageId",
+        "isOlderVersionAcknowledged",
         "dbSystemId",
         "freeformTags",
         "definedTags"
@@ -34,12 +35,14 @@ public final class CreateGiHomeDetails
     public CreateGiHomeDetails(
             String displayName,
             String giImageId,
+            Boolean isOlderVersionAcknowledged,
             String dbSystemId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.giImageId = giImageId;
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.dbSystemId = dbSystemId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -83,6 +86,25 @@ public final class CreateGiHomeDetails
         public Builder giImageId(String giImageId) {
             this.giImageId = giImageId;
             this.__explicitlySet__.add("giImageId");
+            return this;
+        }
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        /**
+         * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure,
+         * or operating system software version that is outside the latest default version window.
+         *
+         * @param isOlderVersionAcknowledged the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
             return this;
         }
         /**
@@ -160,6 +182,7 @@ public final class CreateGiHomeDetails
                     new CreateGiHomeDetails(
                             this.displayName,
                             this.giImageId,
+                            this.isOlderVersionAcknowledged,
                             this.dbSystemId,
                             this.freeformTags,
                             this.definedTags);
@@ -176,6 +199,9 @@ public final class CreateGiHomeDetails
             }
             if (model.wasPropertyExplicitlySet("giImageId")) {
                 this.giImageId(model.getGiImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
             }
             if (model.wasPropertyExplicitlySet("dbSystemId")) {
                 this.dbSystemId(model.getDbSystemId());
@@ -231,6 +257,23 @@ public final class CreateGiHomeDetails
      */
     public String getGiImageId() {
         return giImageId;
+    }
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or
+     * operating system software version that is outside the latest default version window.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
     }
 
     /**
@@ -309,6 +352,8 @@ public final class CreateGiHomeDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", giImageId=").append(String.valueOf(this.giImageId));
+        sb.append(", isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -328,6 +373,8 @@ public final class CreateGiHomeDetails
         CreateGiHomeDetails other = (CreateGiHomeDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.giImageId, other.giImageId)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -340,6 +387,11 @@ public final class CreateGiHomeDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.giImageId == null ? 43 : this.giImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

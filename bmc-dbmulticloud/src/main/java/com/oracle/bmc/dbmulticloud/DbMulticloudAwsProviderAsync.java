@@ -153,6 +153,25 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the AWS Key Pool resource into a different compartment. When provided, 'If-Match' is
+     * checked against 'ETag' values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOracleDbAwsKeyPoolCompartmentResponse>
+            changeOracleDbAwsKeyPoolCompartment(
+                    ChangeOracleDbAwsKeyPoolCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOracleDbAwsKeyPoolCompartmentRequest,
+                                    ChangeOracleDbAwsKeyPoolCompartmentResponse>
+                            handler);
+
+    /**
      * Creates Oracle DB AWS Identity Connector resource.
      *
      * @param request The request object containing the details to send
@@ -187,6 +206,22 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create DB AWS Key Pool resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOracleDbAwsKeyPoolResponse> createOracleDbAwsKeyPool(
+            CreateOracleDbAwsKeyPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOracleDbAwsKeyPoolRequest, CreateOracleDbAwsKeyPoolResponse>
+                    handler);
+
+    /**
      * Deletes a Oracle DB AWS Identity Connector resource.
      *
      * @param request The request object containing the details to send
@@ -218,6 +253,22 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
             DeleteOracleDbAwsKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteOracleDbAwsKeyRequest, DeleteOracleDbAwsKeyResponse>
+                    handler);
+
+    /**
+     * Delete AWS Key Pool resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOracleDbAwsKeyPoolResponse> deleteOracleDbAwsKeyPool(
+            DeleteOracleDbAwsKeyPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOracleDbAwsKeyPoolRequest, DeleteOracleDbAwsKeyPoolResponse>
                     handler);
 
     /**
@@ -258,6 +309,23 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves detailed information about a Oracle AWS Key Pool resource by specifying its unique
+     * resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOracleDbAwsKeyPoolResponse> getOracleDbAwsKeyPool(
+            GetOracleDbAwsKeyPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOracleDbAwsKeyPoolRequest, GetOracleDbAwsKeyPoolResponse>
+                    handler);
+
+    /**
      * Lists all Oracle DB AWS Identity Connectors based on the specified filters.
      *
      * @param request The request object containing the details to send
@@ -274,6 +342,22 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
                                     ListOracleDbAwsIdentityConnectorsRequest,
                                     ListOracleDbAwsIdentityConnectorsResponse>
                             handler);
+
+    /**
+     * Lists all DB AWS Key Pools based on the specified filters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOracleDbAwsKeyPoolsResponse> listOracleDbAwsKeyPools(
+            ListOracleDbAwsKeyPoolsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOracleDbAwsKeyPoolsRequest, ListOracleDbAwsKeyPoolsResponse>
+                    handler);
 
     /**
      * Lists all DB AWS Keys based on the specified filters.
@@ -342,6 +426,22 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Replicate Oracle AWS Key Pool resource to target region.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplicateOracleDbAwsKeyPoolResponse> replicateOracleDbAwsKeyPool(
+            ReplicateOracleDbAwsKeyPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReplicateOracleDbAwsKeyPoolRequest, ReplicateOracleDbAwsKeyPoolResponse>
+                    handler);
+
+    /**
      * Modifies the existing Oracle DB AWS Identity Connector resource for a given
      * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
@@ -375,5 +475,22 @@ public interface DbMulticloudAwsProviderAsync extends AutoCloseable {
             UpdateOracleDbAwsKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateOracleDbAwsKeyRequest, UpdateOracleDbAwsKeyResponse>
+                    handler);
+
+    /**
+     * Modifies the existing Oracle AWS Key Pool Details for a given
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOracleDbAwsKeyPoolResponse> updateOracleDbAwsKeyPool(
+            UpdateOracleDbAwsKeyPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOracleDbAwsKeyPoolRequest, UpdateOracleDbAwsKeyPoolResponse>
                     handler);
 }

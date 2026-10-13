@@ -37,7 +37,8 @@ public final class CreateDatabaseFromBackupDetails
             String vmClusterId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String recoveryApplianceVpcPassword) {
+            String recoveryApplianceVpcPassword,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.backupId = backupId;
         this.backupTDEPassword = backupTDEPassword;
@@ -56,6 +57,7 @@ public final class CreateDatabaseFromBackupDetails
                 recoveryApplianceVpcPassword != null
                         ? recoveryApplianceVpcPassword.toCharArray()
                         : null;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.annotation.JsonCreator
@@ -74,7 +76,8 @@ public final class CreateDatabaseFromBackupDetails
         "vmClusterId",
         "freeformTags",
         "definedTags",
-        "recoveryApplianceVpcPassword"
+        "recoveryApplianceVpcPassword",
+        "dataSafeRegistrationDetails"
     })
     public CreateDatabaseFromBackupDetails(
             String backupId,
@@ -90,7 +93,8 @@ public final class CreateDatabaseFromBackupDetails
             String vmClusterId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            char[] recoveryApplianceVpcPassword) {
+            char[] recoveryApplianceVpcPassword,
+            DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
         super();
         this.backupId = backupId;
         this.backupTDEPassword = backupTDEPassword;
@@ -106,6 +110,7 @@ public final class CreateDatabaseFromBackupDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+        this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -353,6 +358,16 @@ public final class CreateDatabaseFromBackupDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+        private DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+        public Builder dataSafeRegistrationDetails(
+                DataSafeRegistrationRequestDetails dataSafeRegistrationDetails) {
+            this.dataSafeRegistrationDetails = dataSafeRegistrationDetails;
+            this.__explicitlySet__.add("dataSafeRegistrationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -372,7 +387,8 @@ public final class CreateDatabaseFromBackupDetails
                             this.vmClusterId,
                             this.freeformTags,
                             this.definedTags,
-                            this.recoveryApplianceVpcPassword);
+                            this.recoveryApplianceVpcPassword,
+                            this.dataSafeRegistrationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -423,6 +439,9 @@ public final class CreateDatabaseFromBackupDetails
             }
             if (model.wasPropertyExplicitlySet("recoveryApplianceVpcPassword")) {
                 this.recoveryApplianceVpcPassword(model.getRecoveryApplianceVpcPassword());
+            }
+            if (model.wasPropertyExplicitlySet("dataSafeRegistrationDetails")) {
+                this.dataSafeRegistrationDetails(model.getDataSafeRegistrationDetails());
             }
             return this;
         }
@@ -653,6 +672,13 @@ public final class CreateDatabaseFromBackupDetails
         return recoveryApplianceVpcPassword;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeRegistrationDetails")
+    private final DataSafeRegistrationRequestDetails dataSafeRegistrationDetails;
+
+    public DataSafeRegistrationRequestDetails getDataSafeRegistrationDetails() {
+        return dataSafeRegistrationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -684,6 +710,8 @@ public final class CreateDatabaseFromBackupDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", recoveryApplianceVpcPassword=").append("<redacted>");
+        sb.append(", dataSafeRegistrationDetails=")
+                .append(String.valueOf(this.dataSafeRegistrationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -716,6 +744,8 @@ public final class CreateDatabaseFromBackupDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
                         this.recoveryApplianceVpcPassword, other.recoveryApplianceVpcPassword)
+                && java.util.Objects.equals(
+                        this.dataSafeRegistrationDetails, other.dataSafeRegistrationDetails)
                 && super.equals(other);
     }
 
@@ -761,6 +791,11 @@ public final class CreateDatabaseFromBackupDetails
                         + (this.recoveryApplianceVpcPassword == null
                                 ? 43
                                 : this.recoveryApplianceVpcPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSafeRegistrationDetails == null
+                                ? 43
+                                : this.dataSafeRegistrationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

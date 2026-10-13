@@ -326,6 +326,15 @@ public final class LaunchStandbyDbSystemDetails extends LaunchDbSystemBase {
             this.__explicitlySet__.add("computeCount");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * DB system.
@@ -413,6 +422,7 @@ public final class LaunchStandbyDbSystemDetails extends LaunchDbSystemBase {
                             this.dataCollectionOptions,
                             this.computeModel,
                             this.computeCount,
+                            this.isOlderVersionAcknowledged,
                             this.primaryDbSystemId,
                             this.dbHome,
                             this.licenseModel);
@@ -523,6 +533,9 @@ public final class LaunchStandbyDbSystemDetails extends LaunchDbSystemBase {
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
             }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("primaryDbSystemId")) {
                 this.primaryDbSystemId(model.getPrimaryDbSystemId());
             }
@@ -580,6 +593,7 @@ public final class LaunchStandbyDbSystemDetails extends LaunchDbSystemBase {
             DataCollectionOptions dataCollectionOptions,
             ComputeModel computeModel,
             Integer computeCount,
+            Boolean isOlderVersionAcknowledged,
             String primaryDbSystemId,
             CreateDbHomeForStandbyDbSystem dbHome,
             LicenseModel licenseModel) {
@@ -616,7 +630,8 @@ public final class LaunchStandbyDbSystemDetails extends LaunchDbSystemBase {
                 subscriptionId,
                 dataCollectionOptions,
                 computeModel,
-                computeCount);
+                computeCount,
+                isOlderVersionAcknowledged);
         this.primaryDbSystemId = primaryDbSystemId;
         this.dbHome = dbHome;
         this.licenseModel = licenseModel;

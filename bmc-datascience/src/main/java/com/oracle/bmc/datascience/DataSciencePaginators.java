@@ -1638,6 +1638,132 @@ public class DataSciencePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listModelArtifactSignatures operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListModelArtifactSignaturesResponse>
+            listModelArtifactSignaturesResponseIterator(
+                    final ListModelArtifactSignaturesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListModelArtifactSignaturesRequest.Builder,
+                ListModelArtifactSignaturesRequest,
+                ListModelArtifactSignaturesResponse>(
+                new java.util.function.Supplier<ListModelArtifactSignaturesRequest.Builder>() {
+                    @Override
+                    public ListModelArtifactSignaturesRequest.Builder get() {
+                        return ListModelArtifactSignaturesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelArtifactSignaturesResponse, String>() {
+                    @Override
+                    public String apply(ListModelArtifactSignaturesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelArtifactSignaturesRequest.Builder>,
+                        ListModelArtifactSignaturesRequest>() {
+                    @Override
+                    public ListModelArtifactSignaturesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelArtifactSignaturesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelArtifactSignaturesRequest, ListModelArtifactSignaturesResponse>() {
+                    @Override
+                    public ListModelArtifactSignaturesResponse apply(
+                            ListModelArtifactSignaturesRequest request) {
+                        return client.listModelArtifactSignatures(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datascience.model.ModelArtifactSignatureSummary} objects contained in
+     * responses from the listModelArtifactSignatures operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datascience.model.ModelArtifactSignatureSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.ModelArtifactSignatureSummary>
+            listModelArtifactSignaturesRecordIterator(
+                    final ListModelArtifactSignaturesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListModelArtifactSignaturesRequest.Builder,
+                ListModelArtifactSignaturesRequest,
+                ListModelArtifactSignaturesResponse,
+                com.oracle.bmc.datascience.model.ModelArtifactSignatureSummary>(
+                new java.util.function.Supplier<ListModelArtifactSignaturesRequest.Builder>() {
+                    @Override
+                    public ListModelArtifactSignaturesRequest.Builder get() {
+                        return ListModelArtifactSignaturesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListModelArtifactSignaturesResponse, String>() {
+                    @Override
+                    public String apply(ListModelArtifactSignaturesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListModelArtifactSignaturesRequest.Builder>,
+                        ListModelArtifactSignaturesRequest>() {
+                    @Override
+                    public ListModelArtifactSignaturesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListModelArtifactSignaturesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelArtifactSignaturesRequest, ListModelArtifactSignaturesResponse>() {
+                    @Override
+                    public ListModelArtifactSignaturesResponse apply(
+                            ListModelArtifactSignaturesRequest request) {
+                        return client.listModelArtifactSignatures(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListModelArtifactSignaturesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datascience.model.ModelArtifactSignatureSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datascience.model.ModelArtifactSignatureSummary>
+                            apply(ListModelArtifactSignaturesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listModelDeploymentModelStates operation. This iterable will fetch more data from the server
      * as needed.
      *

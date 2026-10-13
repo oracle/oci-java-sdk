@@ -28,11 +28,17 @@ package com.oracle.bmc.database.model;
 public final class GiMinorVersionSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"version", "gridImageId"})
-    public GiMinorVersionSummary(String version, String gridImageId) {
+    @java.beans.ConstructorProperties({
+        "version",
+        "gridImageId",
+        "isOlderVersionAcknowledgmentRequired"
+    })
+    public GiMinorVersionSummary(
+            String version, String gridImageId, Boolean isOlderVersionAcknowledgmentRequired) {
         super();
         this.version = version;
         this.gridImageId = gridImageId;
+        this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -67,12 +73,36 @@ public final class GiMinorVersionSummary
             this.__explicitlySet__.add("gridImageId");
             return this;
         }
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+        private Boolean isOlderVersionAcknowledgmentRequired;
+
+        /**
+         * True when selecting or applying this DB, Grid Infrastructure, or operating system
+         * software version requires older-version acknowledgment.
+         *
+         * @param isOlderVersionAcknowledgmentRequired the value to set
+         * @return this builder
+         */
+        public Builder isOlderVersionAcknowledgmentRequired(
+                Boolean isOlderVersionAcknowledgmentRequired) {
+            this.isOlderVersionAcknowledgmentRequired = isOlderVersionAcknowledgmentRequired;
+            this.__explicitlySet__.add("isOlderVersionAcknowledgmentRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GiMinorVersionSummary build() {
-            GiMinorVersionSummary model = new GiMinorVersionSummary(this.version, this.gridImageId);
+            GiMinorVersionSummary model =
+                    new GiMinorVersionSummary(
+                            this.version,
+                            this.gridImageId,
+                            this.isOlderVersionAcknowledgmentRequired);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -86,6 +116,10 @@ public final class GiMinorVersionSummary
             }
             if (model.wasPropertyExplicitlySet("gridImageId")) {
                 this.gridImageId(model.getGridImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledgmentRequired")) {
+                this.isOlderVersionAcknowledgmentRequired(
+                        model.getIsOlderVersionAcknowledgmentRequired());
             }
             return this;
         }
@@ -126,6 +160,23 @@ public final class GiMinorVersionSummary
         return gridImageId;
     }
 
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledgmentRequired")
+    private final Boolean isOlderVersionAcknowledgmentRequired;
+
+    /**
+     * True when selecting or applying this DB, Grid Infrastructure, or operating system software
+     * version requires older-version acknowledgment.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledgmentRequired() {
+        return isOlderVersionAcknowledgmentRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -143,6 +194,8 @@ public final class GiMinorVersionSummary
         sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", gridImageId=").append(String.valueOf(this.gridImageId));
+        sb.append(", isOlderVersionAcknowledgmentRequired=")
+                .append(String.valueOf(this.isOlderVersionAcknowledgmentRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -159,6 +212,9 @@ public final class GiMinorVersionSummary
         GiMinorVersionSummary other = (GiMinorVersionSummary) o;
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.gridImageId, other.gridImageId)
+                && java.util.Objects.equals(
+                        this.isOlderVersionAcknowledgmentRequired,
+                        other.isOlderVersionAcknowledgmentRequired)
                 && super.equals(other);
     }
 
@@ -168,6 +224,11 @@ public final class GiMinorVersionSummary
         int result = 1;
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.gridImageId == null ? 43 : this.gridImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledgmentRequired == null
+                                ? 43
+                                : this.isOlderVersionAcknowledgmentRequired.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
