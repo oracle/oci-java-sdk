@@ -44,6 +44,7 @@ public final class DedicatedAiCluster
         "lifecycleDetails",
         "unitCount",
         "unitShape",
+        "capacityReservationId",
         "capacity",
         "previousState",
         "freeformTags",
@@ -62,6 +63,7 @@ public final class DedicatedAiCluster
             String lifecycleDetails,
             Integer unitCount,
             UnitShape unitShape,
+            String capacityReservationId,
             DedicatedAiClusterCapacity capacity,
             DedicatedAiCluster previousState,
             java.util.Map<String, String> freeformTags,
@@ -79,6 +81,7 @@ public final class DedicatedAiCluster
         this.lifecycleDetails = lifecycleDetails;
         this.unitCount = unitCount;
         this.unitShape = unitShape;
+        this.capacityReservationId = capacityReservationId;
         this.capacity = capacity;
         this.previousState = previousState;
         this.freeformTags = freeformTags;
@@ -269,6 +272,21 @@ public final class DedicatedAiCluster
             this.__explicitlySet__.add("unitShape");
             return this;
         }
+        /** The OCID of the capacity reservation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * The OCID of the capacity reservation.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private DedicatedAiClusterCapacity capacity;
@@ -377,6 +395,7 @@ public final class DedicatedAiCluster
                             this.lifecycleDetails,
                             this.unitCount,
                             this.unitShape,
+                            this.capacityReservationId,
                             this.capacity,
                             this.previousState,
                             this.freeformTags,
@@ -422,6 +441,9 @@ public final class DedicatedAiCluster
             }
             if (model.wasPropertyExplicitlySet("unitShape")) {
                 this.unitShape(model.getUnitShape());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
             }
             if (model.wasPropertyExplicitlySet("capacity")) {
                 this.capacity(model.getCapacity());
@@ -777,6 +799,7 @@ public final class DedicatedAiCluster
         H200X2("H200_X2"),
         H200X4("H200_X4"),
         H200X8("H200_X8"),
+        OaiH100X4("OAI_H100_X4"),
         OaiA10X2("OAI_A10_X2"),
         OaiH100X1("OAI_H100_X1"),
         OaiH100X2("OAI_H100_X2"),
@@ -867,6 +890,19 @@ public final class DedicatedAiCluster
      */
     public UnitShape getUnitShape() {
         return unitShape;
+    }
+
+    /** The OCID of the capacity reservation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * The OCID of the capacity reservation.
+     *
+     * @return the value
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
@@ -974,6 +1010,7 @@ public final class DedicatedAiCluster
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", unitCount=").append(String.valueOf(this.unitCount));
         sb.append(", unitShape=").append(String.valueOf(this.unitShape));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", previousState=").append(String.valueOf(this.previousState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1004,6 +1041,7 @@ public final class DedicatedAiCluster
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.unitCount, other.unitCount)
                 && java.util.Objects.equals(this.unitShape, other.unitShape)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.previousState, other.previousState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1033,6 +1071,11 @@ public final class DedicatedAiCluster
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.unitCount == null ? 43 : this.unitCount.hashCode());
         result = (result * PRIME) + (this.unitShape == null ? 43 : this.unitShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
         result =
                 (result * PRIME)

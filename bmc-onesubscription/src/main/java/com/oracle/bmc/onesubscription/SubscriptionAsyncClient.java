@@ -96,6 +96,35 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetSubscriptionDetailsResponse> getSubscriptionDetails(
+            GetSubscriptionDetailsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSubscriptionDetailsRequest, GetSubscriptionDetailsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getSubscriptionId(), "subscriptionId is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetSubscriptionDetailsResponse::builder)
+                .logger(LOG, "getSubscriptionDetails")
+                .serviceDetails("Subscription", "GetSubscriptionDetails", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubscriptionDetailsRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("subscriptionDetails")
+                .appendQueryParam("subscriptionId", request.getSubscriptionId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.onesubscription.model.SubscriptionDetails.class,
+                        GetSubscriptionDetailsResponse.Builder::subscriptionDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubscriptionDetailsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsResponse> listSubscriptions(
             ListSubscriptionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -128,6 +157,46 @@ public class SubscriptionAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-next-page", ListSubscriptionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSubscriptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsageLedgersResponse> listUsageLedgers(
+            ListUsageLedgersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListUsageLedgersRequest, ListUsageLedgersResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListUsageLedgersResponse::builder)
+                .logger(LOG, "listUsageLedgers")
+                .serviceDetails("Subscription", "ListUsageLedgers", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUsageLedgersRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("subscriptionDetails")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("usageLedger")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam(
+                        "timeConsumptionGreaterThanOrEqualTo",
+                        request.getTimeConsumptionGreaterThanOrEqualTo())
+                .appendQueryParam("timeConsumptionLessThan", request.getTimeConsumptionLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.onesubscription.model.UsageLedgerSummary.class,
+                        ListUsageLedgersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListUsageLedgersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListUsageLedgersResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

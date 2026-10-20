@@ -65,7 +65,7 @@ public interface SubscribedService extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This API returns the subscribed service details corresponding to the id provided
+     * Returns the subscribed service details corresponding to the provided ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,7 +81,7 @@ public interface SubscribedService extends AutoCloseable {
     GetSubscribedServiceResponse getSubscribedService(GetSubscribedServiceRequest request);
 
     /**
-     * This list API returns all subscribed services for given Subscription ID
+     * Returns all subscribed services for a given Subscription ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

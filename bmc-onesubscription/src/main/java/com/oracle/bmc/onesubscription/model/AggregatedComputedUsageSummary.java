@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Subscribed Service Contract details <br>
+ * Subscribed service contract details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -62,15 +62,15 @@ public final class AggregatedComputedUsageSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM
+         * Subscription ID is an identifier associated with the service used for filtering the
+         * computed usage in SPM (Subscription Plan Management).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM
+         * Subscription ID is an identifier associated with the service used for filtering the
+         * computed usage in SPM (Subscription Plan Management).
          *
          * @param subscriptionId the value to set
          * @return this builder
@@ -80,12 +80,12 @@ public final class AggregatedComputedUsageSummary
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-        /** Subscribed service line parent id */
+        /** Subscribed service line parent ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
         private String parentSubscribedServiceId;
 
         /**
-         * Subscribed service line parent id
+         * Subscribed service line parent ID.
          *
          * @param parentSubscribedServiceId the value to set
          * @return this builder
@@ -149,12 +149,12 @@ public final class AggregatedComputedUsageSummary
             this.__explicitlySet__.add("planNumber");
             return this;
         }
-        /** Currency code */
+        /** Currency code. */
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
         /**
-         * Currency code
+         * Currency code.
          *
          * @param currencyCode the value to set
          * @return this builder
@@ -164,12 +164,12 @@ public final class AggregatedComputedUsageSummary
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-        /** Inernal SPM Ratecard Id at line level */
+        /** Inernal SPM rate card ID at line level. */
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
         private String rateCardId;
 
         /**
-         * Inernal SPM Ratecard Id at line level
+         * Inernal SPM rate card ID at line level.
          *
          * @param rateCardId the value to set
          * @return this builder
@@ -179,12 +179,12 @@ public final class AggregatedComputedUsageSummary
             this.__explicitlySet__.add("rateCardId");
             return this;
         }
-        /** Subscribed services pricing model */
+        /** Subscribed services pricing model. */
         @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
         private PricingModel pricingModel;
 
         /**
-         * Subscribed services pricing model
+         * Subscribed services pricing model.
          *
          * @param pricingModel the value to set
          * @return this builder
@@ -279,15 +279,15 @@ public final class AggregatedComputedUsageSummary
     }
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM
+     * Subscription ID is an identifier associated with the service used for filtering the computed
+     * usage in SPM (Subscription Plan Management).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM
+     * Subscription ID is an identifier associated with the service used for filtering the computed
+     * usage in SPM (Subscription Plan Management).
      *
      * @return the value
      */
@@ -295,12 +295,12 @@ public final class AggregatedComputedUsageSummary
         return subscriptionId;
     }
 
-    /** Subscribed service line parent id */
+    /** Subscribed service line parent ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
     private final String parentSubscribedServiceId;
 
     /**
-     * Subscribed service line parent id
+     * Subscribed service line parent ID.
      *
      * @return the value
      */
@@ -354,12 +354,12 @@ public final class AggregatedComputedUsageSummary
         return planNumber;
     }
 
-    /** Currency code */
+    /** Currency code. */
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
     /**
-     * Currency code
+     * Currency code.
      *
      * @return the value
      */
@@ -367,12 +367,12 @@ public final class AggregatedComputedUsageSummary
         return currencyCode;
     }
 
-    /** Inernal SPM Ratecard Id at line level */
+    /** Inernal SPM rate card ID at line level. */
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
     private final String rateCardId;
 
     /**
-     * Inernal SPM Ratecard Id at line level
+     * Inernal SPM rate card ID at line level.
      *
      * @return the value
      */
@@ -380,7 +380,7 @@ public final class AggregatedComputedUsageSummary
         return rateCardId;
     }
 
-    /** Subscribed services pricing model */
+    /** Subscribed services pricing model. */
     public enum PricingModel implements com.oracle.bmc.http.internal.BmcEnum {
         PayAsYouGo("PAY_AS_YOU_GO"),
         Monthly("MONTHLY"),
@@ -429,12 +429,12 @@ public final class AggregatedComputedUsageSummary
             return UnknownEnumValue;
         }
     };
-    /** Subscribed services pricing model */
+    /** Subscribed services pricing model. */
     @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
     private final PricingModel pricingModel;
 
     /**
-     * Subscribed services pricing model
+     * Subscribed services pricing model.
      *
      * @return the value
      */

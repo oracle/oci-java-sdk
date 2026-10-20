@@ -50,6 +50,9 @@ package com.oracle.bmc.disasterrecovery.model;
             value = UpdateDrProtectionGroupMemberDatabaseDetails.class,
             name = "DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDrProtectionGroupMemberPostgresqlDbSystemDetails.class,
+            name = "POSTGRESQL_DB_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDrProtectionGroupMemberOkeClusterDetails.class,
             name = "OKE_CLUSTER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

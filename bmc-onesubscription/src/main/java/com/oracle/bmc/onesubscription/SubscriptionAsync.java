@@ -60,11 +60,27 @@ public interface SubscriptionAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This list API returns all subscriptions for a given plan number or subscription id or buyer
-     * email and provides additional parameters to include ratecard and commitment details. This API
-     * expects exactly one of the above mentioned parameters as input. If more than one parameters
-     * are provided the API will throw a 400 - invalid parameters exception and if no parameters are
-     * provided it will throw a 400 - missing parameter exception
+     * Returns the commitment summary for a subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubscriptionDetailsResponse> getSubscriptionDetails(
+            GetSubscriptionDetailsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubscriptionDetailsRequest, GetSubscriptionDetailsResponse>
+                    handler);
+
+    /**
+     * Returns all subscriptions for a given plan number, subscription ID, or buyer email, and
+     * provides additional parameters, to include rate card and commitment details. Exactly one of
+     * the these parameters is expected as input. If more than one parameter is provided, a 400 -
+     * invalid parameters exception is thrown, and if no parameters are provided, a 400 - missing
+     * parameter exception is thrown.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -77,5 +93,22 @@ public interface SubscriptionAsync extends AutoCloseable {
             ListSubscriptionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSubscriptionsRequest, ListSubscriptionsResponse>
+                    handler);
+
+    /**
+     * Returns revenue invoice consumption details for authorization orders that draw down from the
+     * requested subscription. It includes authorization-order subscription IDs but excludes the
+     * requested subscription ID itself.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUsageLedgersResponse> listUsageLedgers(
+            ListUsageLedgersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListUsageLedgersRequest, ListUsageLedgersResponse>
                     handler);
 }

@@ -35,6 +35,9 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateAmazonRedshiftConnectionDetails.class,
             name = "AMAZON_REDSHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateSparkConnectionDetails.class,
+            name = "SPARK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateOciObjectStorageConnectionDetails.class,
             name = "OCI_OBJECT_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -74,6 +77,12 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateKafkaConnectionDetails.class,
             name = "KAFKA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateAiProviderConnectionDetails.class,
+            name = "AI_PROVIDER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDatabricksEngineConnectionDetails.class,
+            name = "DATABRICKS_ENGINE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateAzureDataLakeStorageConnectionDetails.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -109,6 +118,9 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateGenericConnectionDetails.class,
             name = "GENERIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleAiDataPlatformEngineConnectionDetails.class,
+            name = "ORACLE_AI_DATA_PLATFORM_ENGINE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateAzureSynapseConnectionDetails.class,
             name = "AZURE_SYNAPSE_ANALYTICS")

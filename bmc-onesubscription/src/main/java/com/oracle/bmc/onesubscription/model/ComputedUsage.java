@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Computed Usage Summary object <br>
+ * Computed usage summary object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -104,12 +104,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Computed Usage created time, expressed in RFC 3339 timestamp format. */
+        /** Computed usage created time, expressed in RFC 3339 timestamp format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Computed Usage created time, expressed in RFC 3339 timestamp format.
+         * Computed usage created time, expressed in RFC 3339 timestamp format.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -119,12 +119,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Computed Usage updated time, expressed in RFC 3339 timestamp format. */
+        /** Computed usage updated time, expressed in RFC 3339 timestamp format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+         * Computed usage updated time, expressed in RFC 3339 timestamp format.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -134,12 +134,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Subscribed service line parent id */
+        /** Subscribed service line parent ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
         private String parentSubscribedServiceId;
 
         /**
-         * Subscribed service line parent id
+         * Subscribed service line parent ID.
          *
          * @param parentSubscribedServiceId the value to set
          * @return this builder
@@ -158,12 +158,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("parentProduct");
             return this;
         }
-        /** Subscription plan number */
+        /** Subscription plan number. */
         @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
         private String planNumber;
 
         /**
-         * Subscription plan number
+         * Subscription plan number.
          *
          * @param planNumber the value to set
          * @return this builder
@@ -173,12 +173,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("planNumber");
             return this;
         }
-        /** Currency code */
+        /** Currency code. */
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
         /**
-         * Currency code
+         * Currency code.
          *
          * @param currencyCode the value to set
          * @return this builder
@@ -189,17 +189,17 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * References the tier in the ratecard for that usage (OCI will be using the same reference
-         * to cross-reference for correctness on the usage csv report), comes from Entity
-         * OBSCNTR_IPT_PRODUCTTIER.
+         * References the tier in the rate card for the associated usage (OCI uses the same
+         * reference to cross-reference for correctness in CSV Usage Reports), obtained from the
+         * OBSCNTR_IPT_PRODUCTTIER entity.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardTierdId")
         private String rateCardTierdId;
 
         /**
-         * References the tier in the ratecard for that usage (OCI will be using the same reference
-         * to cross-reference for correctness on the usage csv report), comes from Entity
-         * OBSCNTR_IPT_PRODUCTTIER.
+         * References the tier in the rate card for the associated usage (OCI uses the same
+         * reference to cross-reference for correctness in CSV Usage Reports), obtained from the
+         * OBSCNTR_IPT_PRODUCTTIER entity.
          *
          * @param rateCardTierdId the value to set
          * @return this builder
@@ -209,12 +209,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("rateCardTierdId");
             return this;
         }
-        /** Ratecard Id at subscribed service level */
+        /** Ratecard ID at subscribed service level. */
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
         private String rateCardId;
 
         /**
-         * Ratecard Id at subscribed service level
+         * Ratecard ID at subscribed service level.
          *
          * @param rateCardId the value to set
          * @return this builder
@@ -224,12 +224,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("rateCardId");
             return this;
         }
-        /** SPM Internal compute records source . */
+        /** SPM (Subscription Plan Management) internal compute records source. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeSource")
         private String computeSource;
 
         /**
-         * SPM Internal compute records source .
+         * SPM (Subscription Plan Management) internal compute records source.
          *
          * @param computeSource the value to set
          * @return this builder
@@ -239,12 +239,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("computeSource");
             return this;
         }
-        /** Data Center Attribute as sent by MQS to SPM. */
+        /** Data center attribute as sent by the meterering system to SPM. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
         /**
-         * Data Center Attribute as sent by MQS to SPM.
+         * Data center attribute as sent by the meterering system to SPM.
          *
          * @param dataCenter the value to set
          * @return this builder
@@ -255,13 +255,15 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+         * The meterering system identfier sent to SPM. SPM does not transform this attribute and is
+         * received as-is.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("mqsMessageId")
         private String mqsMessageId;
 
         /**
-         * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+         * The meterering system identfier sent to SPM. SPM does not transform this attribute and is
+         * received as-is.
          *
          * @param mqsMessageId the value to set
          * @return this builder
@@ -271,12 +273,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("mqsMessageId");
             return this;
         }
-        /** SPM Internal computed usage Id , 32 character string */
+        /** SPM internal computed usage ID, which is a 32-character string. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * SPM Internal computed usage Id , 32 character string
+         * SPM internal computed usage ID, which is a 32-character string.
          *
          * @param id the value to set
          * @return this builder
@@ -286,12 +288,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Total Quantity that was used for computation */
+        /** Total quantity that was used for computation. */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
         /**
-         * Total Quantity that was used for computation
+         * Total quantity that was used for computation.
          *
          * @param quantity the value to set
          * @return this builder
@@ -301,12 +303,16 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /** SPM Internal usage Line number identifier in SPM coming from Metered Services entity. */
+        /**
+         * SPM internal usage line number identifier in SPM, originating from the metered services
+         * entity.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("usageNumber")
         private String usageNumber;
 
         /**
-         * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+         * SPM internal usage line number identifier in SPM, originating from the metered services
+         * entity.
          *
          * @param usageNumber the value to set
          * @return this builder
@@ -317,15 +323,15 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-         * entity.
+         * SPM internal original usage line number identifier in SPM, originating from the metered
+         * services entity.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("originalUsageNumber")
         private String originalUsageNumber;
 
         /**
-         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-         * entity.
+         * SPM internal original usage line number identifier in SPM, originating from the metered
+         * services entity.
          *
          * @param originalUsageNumber the value to set
          * @return this builder
@@ -335,12 +341,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("originalUsageNumber");
             return this;
         }
-        /** Subscribed service commitmentId. */
+        /** Subscribed service commitment ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("commitmentServiceId")
         private String commitmentServiceId;
 
         /**
-         * Subscribed service commitmentId.
+         * Subscribed service commitment ID.
          *
          * @param commitmentServiceId the value to set
          * @return this builder
@@ -350,12 +356,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("commitmentServiceId");
             return this;
         }
-        /** Invoicing status for the aggregated compute usage */
+        /** Invoicing status for the aggregated compute usage. */
         @com.fasterxml.jackson.annotation.JsonProperty("isInvoiced")
         private Boolean isInvoiced;
 
         /**
-         * Invoicing status for the aggregated compute usage
+         * Invoicing status for the aggregated compute usage.
          *
          * @param isInvoiced the value to set
          * @return this builder
@@ -380,12 +386,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Usae computation date, expressed in RFC 3339 timestamp format. */
+        /** Usage computation date, expressed in RFC 3339 timestamp format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfArrival")
         private java.util.Date timeOfArrival;
 
         /**
-         * Usae computation date, expressed in RFC 3339 timestamp format.
+         * Usage computation date, expressed in RFC 3339 timestamp format.
          *
          * @param timeOfArrival the value to set
          * @return this builder
@@ -395,12 +401,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeOfArrival");
             return this;
         }
-        /** Metered Service date, expressed in RFC 3339 timestamp format. */
+        /** Metered service date, expressed in RFC 3339 timestamp format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
         private java.util.Date timeMeteredOn;
 
         /**
-         * Metered Service date, expressed in RFC 3339 timestamp format.
+         * Metered service date, expressed in RFC 3339 timestamp format.
          *
          * @param timeMeteredOn the value to set
          * @return this builder
@@ -410,12 +416,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeMeteredOn");
             return this;
         }
-        /** Net Unit Price for the product in consideration, price actual. */
+        /** Net unit price for the product in consideration, price actual. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
         /**
-         * Net Unit Price for the product in consideration, price actual.
+         * Net unit price for the product in consideration, price actual.
          *
          * @param netUnitPrice the value to set
          * @return this builder
@@ -425,12 +431,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Computed Line Amount rounded. */
+        /** Computed rounded line amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
         private String costRounded;
 
         /**
-         * Computed Line Amount rounded.
+         * Computed rounded line amount.
          *
          * @param costRounded the value to set
          * @return this builder
@@ -440,12 +446,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("costRounded");
             return this;
         }
-        /** Computed Line Amount not rounded */
+        /** Computed unrounded line Amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private String cost;
 
         /**
-         * Computed Line Amount not rounded
+         * Computed unrounded line Amount.
          *
          * @param cost the value to set
          * @return this builder
@@ -464,12 +470,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Unit of Messure */
+        /** Unit of measure. */
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
         /**
-         * Unit of Messure
+         * Unit of measure.
          *
          * @param unitOfMeasure the value to set
          * @return this builder
@@ -607,12 +613,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Computed Usage created time, expressed in RFC 3339 timestamp format. */
+    /** Computed usage created time, expressed in RFC 3339 timestamp format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Computed Usage created time, expressed in RFC 3339 timestamp format.
+     * Computed usage created time, expressed in RFC 3339 timestamp format.
      *
      * @return the value
      */
@@ -620,12 +626,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return timeCreated;
     }
 
-    /** Computed Usage updated time, expressed in RFC 3339 timestamp format. */
+    /** Computed usage updated time, expressed in RFC 3339 timestamp format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+     * Computed usage updated time, expressed in RFC 3339 timestamp format.
      *
      * @return the value
      */
@@ -633,12 +639,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return timeUpdated;
     }
 
-    /** Subscribed service line parent id */
+    /** Subscribed service line parent ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
     private final String parentSubscribedServiceId;
 
     /**
-     * Subscribed service line parent id
+     * Subscribed service line parent ID.
      *
      * @return the value
      */
@@ -653,12 +659,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return parentProduct;
     }
 
-    /** Subscription plan number */
+    /** Subscription plan number. */
     @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
     private final String planNumber;
 
     /**
-     * Subscription plan number
+     * Subscription plan number.
      *
      * @return the value
      */
@@ -666,12 +672,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return planNumber;
     }
 
-    /** Currency code */
+    /** Currency code. */
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
     /**
-     * Currency code
+     * Currency code.
      *
      * @return the value
      */
@@ -680,17 +686,17 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * References the tier in the ratecard for that usage (OCI will be using the same reference to
-     * cross-reference for correctness on the usage csv report), comes from Entity
-     * OBSCNTR_IPT_PRODUCTTIER.
+     * References the tier in the rate card for the associated usage (OCI uses the same reference to
+     * cross-reference for correctness in CSV Usage Reports), obtained from the
+     * OBSCNTR_IPT_PRODUCTTIER entity.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardTierdId")
     private final String rateCardTierdId;
 
     /**
-     * References the tier in the ratecard for that usage (OCI will be using the same reference to
-     * cross-reference for correctness on the usage csv report), comes from Entity
-     * OBSCNTR_IPT_PRODUCTTIER.
+     * References the tier in the rate card for the associated usage (OCI uses the same reference to
+     * cross-reference for correctness in CSV Usage Reports), obtained from the
+     * OBSCNTR_IPT_PRODUCTTIER entity.
      *
      * @return the value
      */
@@ -698,12 +704,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return rateCardTierdId;
     }
 
-    /** Ratecard Id at subscribed service level */
+    /** Ratecard ID at subscribed service level. */
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
     private final String rateCardId;
 
     /**
-     * Ratecard Id at subscribed service level
+     * Ratecard ID at subscribed service level.
      *
      * @return the value
      */
@@ -711,12 +717,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return rateCardId;
     }
 
-    /** SPM Internal compute records source . */
+    /** SPM (Subscription Plan Management) internal compute records source. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeSource")
     private final String computeSource;
 
     /**
-     * SPM Internal compute records source .
+     * SPM (Subscription Plan Management) internal compute records source.
      *
      * @return the value
      */
@@ -724,12 +730,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return computeSource;
     }
 
-    /** Data Center Attribute as sent by MQS to SPM. */
+    /** Data center attribute as sent by the meterering system to SPM. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
     /**
-     * Data Center Attribute as sent by MQS to SPM.
+     * Data center attribute as sent by the meterering system to SPM.
      *
      * @return the value
      */
@@ -737,12 +743,16 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return dataCenter;
     }
 
-    /** MQS Identfier send to SPM , SPM does not transform this attribute and is received as is. */
+    /**
+     * The meterering system identfier sent to SPM. SPM does not transform this attribute and is
+     * received as-is.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mqsMessageId")
     private final String mqsMessageId;
 
     /**
-     * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+     * The meterering system identfier sent to SPM. SPM does not transform this attribute and is
+     * received as-is.
      *
      * @return the value
      */
@@ -750,12 +760,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return mqsMessageId;
     }
 
-    /** SPM Internal computed usage Id , 32 character string */
+    /** SPM internal computed usage ID, which is a 32-character string. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * SPM Internal computed usage Id , 32 character string
+     * SPM internal computed usage ID, which is a 32-character string.
      *
      * @return the value
      */
@@ -763,12 +773,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return id;
     }
 
-    /** Total Quantity that was used for computation */
+    /** Total quantity that was used for computation. */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
     /**
-     * Total Quantity that was used for computation
+     * Total quantity that was used for computation.
      *
      * @return the value
      */
@@ -776,12 +786,16 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return quantity;
     }
 
-    /** SPM Internal usage Line number identifier in SPM coming from Metered Services entity. */
+    /**
+     * SPM internal usage line number identifier in SPM, originating from the metered services
+     * entity.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("usageNumber")
     private final String usageNumber;
 
     /**
-     * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+     * SPM internal usage line number identifier in SPM, originating from the metered services
+     * entity.
      *
      * @return the value
      */
@@ -790,15 +804,15 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-     * entity.
+     * SPM internal original usage line number identifier in SPM, originating from the metered
+     * services entity.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("originalUsageNumber")
     private final String originalUsageNumber;
 
     /**
-     * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-     * entity.
+     * SPM internal original usage line number identifier in SPM, originating from the metered
+     * services entity.
      *
      * @return the value
      */
@@ -806,12 +820,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return originalUsageNumber;
     }
 
-    /** Subscribed service commitmentId. */
+    /** Subscribed service commitment ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("commitmentServiceId")
     private final String commitmentServiceId;
 
     /**
-     * Subscribed service commitmentId.
+     * Subscribed service commitment ID.
      *
      * @return the value
      */
@@ -819,12 +833,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return commitmentServiceId;
     }
 
-    /** Invoicing status for the aggregated compute usage */
+    /** Invoicing status for the aggregated compute usage. */
     @com.fasterxml.jackson.annotation.JsonProperty("isInvoiced")
     private final Boolean isInvoiced;
 
     /**
-     * Invoicing status for the aggregated compute usage
+     * Invoicing status for the aggregated compute usage.
      *
      * @return the value
      */
@@ -902,12 +916,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return type;
     }
 
-    /** Usae computation date, expressed in RFC 3339 timestamp format. */
+    /** Usage computation date, expressed in RFC 3339 timestamp format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfArrival")
     private final java.util.Date timeOfArrival;
 
     /**
-     * Usae computation date, expressed in RFC 3339 timestamp format.
+     * Usage computation date, expressed in RFC 3339 timestamp format.
      *
      * @return the value
      */
@@ -915,12 +929,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return timeOfArrival;
     }
 
-    /** Metered Service date, expressed in RFC 3339 timestamp format. */
+    /** Metered service date, expressed in RFC 3339 timestamp format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
     private final java.util.Date timeMeteredOn;
 
     /**
-     * Metered Service date, expressed in RFC 3339 timestamp format.
+     * Metered service date, expressed in RFC 3339 timestamp format.
      *
      * @return the value
      */
@@ -928,12 +942,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return timeMeteredOn;
     }
 
-    /** Net Unit Price for the product in consideration, price actual. */
+    /** Net unit price for the product in consideration, price actual. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
     /**
-     * Net Unit Price for the product in consideration, price actual.
+     * Net unit price for the product in consideration, price actual.
      *
      * @return the value
      */
@@ -941,12 +955,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return netUnitPrice;
     }
 
-    /** Computed Line Amount rounded. */
+    /** Computed rounded line amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
     private final String costRounded;
 
     /**
-     * Computed Line Amount rounded.
+     * Computed rounded line amount.
      *
      * @return the value
      */
@@ -954,12 +968,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return costRounded;
     }
 
-    /** Computed Line Amount not rounded */
+    /** Computed unrounded line Amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final String cost;
 
     /**
-     * Computed Line Amount not rounded
+     * Computed unrounded line Amount.
      *
      * @return the value
      */
@@ -974,12 +988,12 @@ public final class ComputedUsage extends com.oracle.bmc.http.client.internal.Exp
         return product;
     }
 
-    /** Unit of Messure */
+    /** Unit of measure. */
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
     /**
-     * Unit of Messure
+     * Unit of measure.
      *
      * @return the value
      */

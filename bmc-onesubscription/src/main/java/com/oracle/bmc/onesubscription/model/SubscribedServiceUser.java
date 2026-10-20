@@ -70,12 +70,12 @@ public final class SubscribedServiceUser
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Username. */
+        /** User name. */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * Username.
+         * User name.
          *
          * @param username the value to set
          * @return this builder
@@ -130,12 +130,12 @@ public final class SubscribedServiceUser
             this.__explicitlySet__.add("email");
             return this;
         }
-        /** TCA contact ID. */
+        /** TCA (Trading Community Architecture) contact ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaContactId")
         private Long tcaContactId;
 
         /**
-         * TCA contact ID.
+         * TCA (Trading Community Architecture) contact ID.
          *
          * @param tcaContactId the value to set
          * @return this builder
@@ -248,12 +248,12 @@ public final class SubscribedServiceUser
         return name;
     }
 
-    /** Username. */
+    /** User name. */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * Username.
+     * User name.
      *
      * @return the value
      */
@@ -300,12 +300,12 @@ public final class SubscribedServiceUser
         return email;
     }
 
-    /** TCA contact ID. */
+    /** TCA (Trading Community Architecture) contact ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaContactId")
     private final Long tcaContactId;
 
     /**
-     * TCA contact ID.
+     * TCA (Trading Community Architecture) contact ID.
      *
      * @return the value
      */

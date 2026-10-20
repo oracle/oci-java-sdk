@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Product description <br>
+ * Product description. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class BillingScheduleProduct
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Indicates the associated AR Invoice Number */
+        /** Indicates the associated accounts receivable invoice number. */
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
         /**
-         * Indicates the associated AR Invoice Number
+         * Indicates the associated accounts receivable invoice number.
          *
          * @param partNumber the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class BillingScheduleProduct
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-        /** Product name */
+        /** Product name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Product name
+         * Product name.
          *
          * @param name the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class BillingScheduleProduct
         return new Builder().copy(this);
     }
 
-    /** Indicates the associated AR Invoice Number */
+    /** Indicates the associated accounts receivable invoice number. */
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
     /**
-     * Indicates the associated AR Invoice Number
+     * Indicates the associated accounts receivable invoice number.
      *
      * @return the value
      */
@@ -108,12 +108,12 @@ public final class BillingScheduleProduct
         return partNumber;
     }
 
-    /** Product name */
+    /** Product name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Product name
+     * Product name.
      *
      * @return the value
      */

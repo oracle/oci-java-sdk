@@ -9189,6 +9189,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.core.model.Shape$SupportedResourceManagement",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.core.model.ShapeAccessControlServiceEnabledPlatformOptions",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

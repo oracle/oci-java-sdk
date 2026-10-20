@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Payment Term details <br>
+ * Payment term details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,12 +55,12 @@ public final class InvoicingPaymentTerm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Payment Term name */
+        /** Payment term name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Payment Term name
+         * Payment term name.
          *
          * @param name the value to set
          * @return this builder
@@ -70,12 +70,12 @@ public final class InvoicingPaymentTerm
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Payment Term value */
+        /** Payment term value. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Payment Term value
+         * Payment term value.
          *
          * @param value the value to set
          * @return this builder
@@ -85,12 +85,12 @@ public final class InvoicingPaymentTerm
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Payment term Description */
+        /** Payment term description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Payment term Description
+         * Payment term description.
          *
          * @param description the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class InvoicingPaymentTerm
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Payment term active flag */
+        /** Payment term active parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("isActive")
         private Boolean isActive;
 
         /**
-         * Payment term active flag
+         * Payment term active parameter.
          *
          * @param isActive the value to set
          * @return this builder
@@ -115,12 +115,12 @@ public final class InvoicingPaymentTerm
             this.__explicitlySet__.add("isActive");
             return this;
         }
-        /** Payment term last update date */
+        /** Payment term last update date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Payment term last update date
+         * Payment term last update date.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -130,12 +130,12 @@ public final class InvoicingPaymentTerm
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** User that created the Payment term */
+        /** User that created the payment term. */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * User that created the Payment term
+         * User that created the payment term.
          *
          * @param createdBy the value to set
          * @return this builder
@@ -145,12 +145,12 @@ public final class InvoicingPaymentTerm
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** Payment term last update date */
+        /** Payment term last update date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Payment term last update date
+         * Payment term last update date.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -160,12 +160,12 @@ public final class InvoicingPaymentTerm
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** User that updated the Payment term */
+        /** User that updated the payment term. */
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
         /**
-         * User that updated the Payment term
+         * User that updated the payment term.
          *
          * @param updatedBy the value to set
          * @return this builder
@@ -235,12 +235,12 @@ public final class InvoicingPaymentTerm
         return new Builder().copy(this);
     }
 
-    /** Payment Term name */
+    /** Payment term name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Payment Term name
+     * Payment term name.
      *
      * @return the value
      */
@@ -248,12 +248,12 @@ public final class InvoicingPaymentTerm
         return name;
     }
 
-    /** Payment Term value */
+    /** Payment term value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Payment Term value
+     * Payment term value.
      *
      * @return the value
      */
@@ -261,12 +261,12 @@ public final class InvoicingPaymentTerm
         return value;
     }
 
-    /** Payment term Description */
+    /** Payment term description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Payment term Description
+     * Payment term description.
      *
      * @return the value
      */
@@ -274,12 +274,12 @@ public final class InvoicingPaymentTerm
         return description;
     }
 
-    /** Payment term active flag */
+    /** Payment term active parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     private final Boolean isActive;
 
     /**
-     * Payment term active flag
+     * Payment term active parameter.
      *
      * @return the value
      */
@@ -287,12 +287,12 @@ public final class InvoicingPaymentTerm
         return isActive;
     }
 
-    /** Payment term last update date */
+    /** Payment term last update date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Payment term last update date
+     * Payment term last update date.
      *
      * @return the value
      */
@@ -300,12 +300,12 @@ public final class InvoicingPaymentTerm
         return timeCreated;
     }
 
-    /** User that created the Payment term */
+    /** User that created the payment term. */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * User that created the Payment term
+     * User that created the payment term.
      *
      * @return the value
      */
@@ -313,12 +313,12 @@ public final class InvoicingPaymentTerm
         return createdBy;
     }
 
-    /** Payment term last update date */
+    /** Payment term last update date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Payment term last update date
+     * Payment term last update date.
      *
      * @return the value
      */
@@ -326,12 +326,12 @@ public final class InvoicingPaymentTerm
         return timeUpdated;
     }
 
-    /** User that updated the Payment term */
+    /** User that updated the payment term. */
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
-     * User that updated the Payment term
+     * User that updated the payment term.
      *
      * @return the value
      */

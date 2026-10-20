@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Billing schedule details related to Subscription Id <br>
+ * Billing schedule details related to subscription ID. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -70,12 +70,12 @@ public final class BillingScheduleSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SPM internal Subscribed Service ID */
+        /** SPM (Subscription Plan Management) internal subscribed service ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
         private String subscribedServiceId;
 
         /**
-         * SPM internal Subscribed Service ID
+         * SPM (Subscription Plan Management) internal subscribed service ID.
          *
          * @param subscribedServiceId the value to set
          * @return this builder
@@ -85,12 +85,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("subscribedServiceId");
             return this;
         }
-        /** Billing schedule start date */
+        /** Billing schedule start date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * Billing schedule start date
+         * Billing schedule start date.
          *
          * @param timeStart the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Billing schedule end date */
+        /** Billing schedule end date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * Billing schedule end date
+         * Billing schedule end date.
          *
          * @param timeEnd the value to set
          * @return this builder
@@ -115,12 +115,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** Billing schedule invoicing date */
+        /** Billing schedule invoicing date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeInvoicing")
         private java.util.Date timeInvoicing;
 
         /**
-         * Billing schedule invoicing date
+         * Billing schedule invoicing date.
          *
          * @param timeInvoicing the value to set
          * @return this builder
@@ -130,12 +130,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("timeInvoicing");
             return this;
         }
-        /** Billing schedule invoice status */
+        /** Billing schedule invoice status. */
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceStatus")
         private InvoiceStatus invoiceStatus;
 
         /**
-         * Billing schedule invoice status
+         * Billing schedule invoice status.
          *
          * @param invoiceStatus the value to set
          * @return this builder
@@ -145,12 +145,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("invoiceStatus");
             return this;
         }
-        /** Billing schedule quantity */
+        /** Billing schedule quantity. */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
         /**
-         * Billing schedule quantity
+         * Billing schedule quantity.
          *
          * @param quantity the value to set
          * @return this builder
@@ -160,12 +160,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /** Billing schedule net unit price */
+        /** Billing schedule net unit price. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
         /**
-         * Billing schedule net unit price
+         * Billing schedule net unit price.
          *
          * @param netUnitPrice the value to set
          * @return this builder
@@ -175,12 +175,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Billing schedule line net amount */
+        /** Billing schedule line net amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("amount")
         private String amount;
 
         /**
-         * Billing schedule line net amount
+         * Billing schedule line net amount.
          *
          * @param amount the value to set
          * @return this builder
@@ -190,12 +190,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("amount");
             return this;
         }
-        /** Billing frequency */
+        /** Billing frequency. */
         @com.fasterxml.jackson.annotation.JsonProperty("billingFrequency")
         private String billingFrequency;
 
         /**
-         * Billing frequency
+         * Billing frequency.
          *
          * @param billingFrequency the value to set
          * @return this builder
@@ -205,12 +205,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("billingFrequency");
             return this;
         }
-        /** Indicates the associated AR Invoice Number */
+        /** Indicates the associated accounts receivable invoice number. */
         @com.fasterxml.jackson.annotation.JsonProperty("arInvoiceNumber")
         private String arInvoiceNumber;
 
         /**
-         * Indicates the associated AR Invoice Number
+         * Indicates the associated accounts receivable invoice number.
          *
          * @param arInvoiceNumber the value to set
          * @return this builder
@@ -221,13 +221,15 @@ public final class BillingScheduleSummary
             return this;
         }
         /**
-         * Indicates the associated AR Customer transaction id a unique identifier existing on AR.
+         * Indicates the associated accounts receivable customer transaction ID, which is a unique
+         * identifier existing on the accounts receivable.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("arCustomerTransactionId")
         private String arCustomerTransactionId;
 
         /**
-         * Indicates the associated AR Customer transaction id a unique identifier existing on AR.
+         * Indicates the associated accounts receivable customer transaction ID, which is a unique
+         * identifier existing on the accounts receivable.
          *
          * @param arCustomerTransactionId the value to set
          * @return this builder
@@ -237,12 +239,12 @@ public final class BillingScheduleSummary
             this.__explicitlySet__.add("arCustomerTransactionId");
             return this;
         }
-        /** Order number associated with the Subscribed Service */
+        /** Order number associated with the subscribed service. */
         @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
         private String orderNumber;
 
         /**
-         * Order number associated with the Subscribed Service
+         * Order number associated with the subscribed service.
          *
          * @param orderNumber the value to set
          * @return this builder
@@ -341,12 +343,12 @@ public final class BillingScheduleSummary
         return new Builder().copy(this);
     }
 
-    /** SPM internal Subscribed Service ID */
+    /** SPM (Subscription Plan Management) internal subscribed service ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
     private final String subscribedServiceId;
 
     /**
-     * SPM internal Subscribed Service ID
+     * SPM (Subscription Plan Management) internal subscribed service ID.
      *
      * @return the value
      */
@@ -354,12 +356,12 @@ public final class BillingScheduleSummary
         return subscribedServiceId;
     }
 
-    /** Billing schedule start date */
+    /** Billing schedule start date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * Billing schedule start date
+     * Billing schedule start date.
      *
      * @return the value
      */
@@ -367,12 +369,12 @@ public final class BillingScheduleSummary
         return timeStart;
     }
 
-    /** Billing schedule end date */
+    /** Billing schedule end date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * Billing schedule end date
+     * Billing schedule end date.
      *
      * @return the value
      */
@@ -380,12 +382,12 @@ public final class BillingScheduleSummary
         return timeEnd;
     }
 
-    /** Billing schedule invoicing date */
+    /** Billing schedule invoicing date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeInvoicing")
     private final java.util.Date timeInvoicing;
 
     /**
-     * Billing schedule invoicing date
+     * Billing schedule invoicing date.
      *
      * @return the value
      */
@@ -393,7 +395,7 @@ public final class BillingScheduleSummary
         return timeInvoicing;
     }
 
-    /** Billing schedule invoice status */
+    /** Billing schedule invoice status. */
     public enum InvoiceStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Invoiced("INVOICED"),
         NotInvoiced("NOT_INVOICED"),
@@ -439,12 +441,12 @@ public final class BillingScheduleSummary
             return UnknownEnumValue;
         }
     };
-    /** Billing schedule invoice status */
+    /** Billing schedule invoice status. */
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceStatus")
     private final InvoiceStatus invoiceStatus;
 
     /**
-     * Billing schedule invoice status
+     * Billing schedule invoice status.
      *
      * @return the value
      */
@@ -452,12 +454,12 @@ public final class BillingScheduleSummary
         return invoiceStatus;
     }
 
-    /** Billing schedule quantity */
+    /** Billing schedule quantity. */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
     /**
-     * Billing schedule quantity
+     * Billing schedule quantity.
      *
      * @return the value
      */
@@ -465,12 +467,12 @@ public final class BillingScheduleSummary
         return quantity;
     }
 
-    /** Billing schedule net unit price */
+    /** Billing schedule net unit price. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
     /**
-     * Billing schedule net unit price
+     * Billing schedule net unit price.
      *
      * @return the value
      */
@@ -478,12 +480,12 @@ public final class BillingScheduleSummary
         return netUnitPrice;
     }
 
-    /** Billing schedule line net amount */
+    /** Billing schedule line net amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
     private final String amount;
 
     /**
-     * Billing schedule line net amount
+     * Billing schedule line net amount.
      *
      * @return the value
      */
@@ -491,12 +493,12 @@ public final class BillingScheduleSummary
         return amount;
     }
 
-    /** Billing frequency */
+    /** Billing frequency. */
     @com.fasterxml.jackson.annotation.JsonProperty("billingFrequency")
     private final String billingFrequency;
 
     /**
-     * Billing frequency
+     * Billing frequency.
      *
      * @return the value
      */
@@ -504,12 +506,12 @@ public final class BillingScheduleSummary
         return billingFrequency;
     }
 
-    /** Indicates the associated AR Invoice Number */
+    /** Indicates the associated accounts receivable invoice number. */
     @com.fasterxml.jackson.annotation.JsonProperty("arInvoiceNumber")
     private final String arInvoiceNumber;
 
     /**
-     * Indicates the associated AR Invoice Number
+     * Indicates the associated accounts receivable invoice number.
      *
      * @return the value
      */
@@ -517,12 +519,16 @@ public final class BillingScheduleSummary
         return arInvoiceNumber;
     }
 
-    /** Indicates the associated AR Customer transaction id a unique identifier existing on AR. */
+    /**
+     * Indicates the associated accounts receivable customer transaction ID, which is a unique
+     * identifier existing on the accounts receivable.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("arCustomerTransactionId")
     private final String arCustomerTransactionId;
 
     /**
-     * Indicates the associated AR Customer transaction id a unique identifier existing on AR.
+     * Indicates the associated accounts receivable customer transaction ID, which is a unique
+     * identifier existing on the accounts receivable.
      *
      * @return the value
      */
@@ -530,12 +536,12 @@ public final class BillingScheduleSummary
         return arCustomerTransactionId;
     }
 
-    /** Order number associated with the Subscribed Service */
+    /** Order number associated with the subscribed service. */
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
     private final String orderNumber;
 
     /**
-     * Order number associated with the Subscribed Service
+     * Order number associated with the subscribed service.
      *
      * @return the value
      */

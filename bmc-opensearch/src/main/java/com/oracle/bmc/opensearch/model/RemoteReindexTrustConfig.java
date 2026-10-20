@@ -31,12 +31,18 @@ public final class RemoteReindexTrustConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Remote cluster sources to trust for reindexing. */
+        /**
+         * Remote sources trusted for reindexing. When creating a cluster with this configuration,
+         * provide at least one source. When updating a cluster, this list replaces the existing
+         * sources. Specify an empty list to remove all remote-reindex trust configuration.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("remoteSources")
         private java.util.List<RemoteReindexSourceDetails> remoteSources;
 
         /**
-         * Remote cluster sources to trust for reindexing.
+         * Remote sources trusted for reindexing. When creating a cluster with this configuration,
+         * provide at least one source. When updating a cluster, this list replaces the existing
+         * sources. Specify an empty list to remove all remote-reindex trust configuration.
          *
          * @param remoteSources the value to set
          * @return this builder
@@ -76,12 +82,18 @@ public final class RemoteReindexTrustConfig
         return new Builder().copy(this);
     }
 
-    /** Remote cluster sources to trust for reindexing. */
+    /**
+     * Remote sources trusted for reindexing. When creating a cluster with this configuration,
+     * provide at least one source. When updating a cluster, this list replaces the existing
+     * sources. Specify an empty list to remove all remote-reindex trust configuration.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("remoteSources")
     private final java.util.List<RemoteReindexSourceDetails> remoteSources;
 
     /**
-     * Remote cluster sources to trust for reindexing.
+     * Remote sources trusted for reindexing. When creating a cluster with this configuration,
+     * provide at least one source. When updating a cluster, this list replaces the existing
+     * sources. Specify an empty list to remove all remote-reindex trust configuration.
      *
      * @return the value
      */

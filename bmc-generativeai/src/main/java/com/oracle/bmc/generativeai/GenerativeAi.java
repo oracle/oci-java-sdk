@@ -553,6 +553,36 @@ public interface GenerativeAi extends AutoCloseable {
     CreateRoutingProfileResponse createRoutingProfile(CreateRoutingProfileRequest request);
 
     /**
+     * Creates a named MANAGED or CUSTOM pool. MANAGED uses the service-provided python-3.11 runtime
+     * and requires containerImage to be omitted. CUSTOM requires a digest-pinned containerImage.
+     * Project-wide shape capacity limits include named pools of both types and reserved default
+     * pools. Type, image, shape and name are immutable. The CP atomically persists CREATING and a
+     * Work Request, then its workflow prepares an immutable pool-owned template and applies the
+     * pool configuration. Each MANAGED pool has a distinct template based on the service runtime
+     * configuration, isolated from other pools of the same shape. ACTIVE means configuration was
+     * applied and verified; it does not require ready members, a successful image boot or available
+     * cluster capacity. Zero capacity pauses idle prewarming. An ACTIVE named pool can still create
+     * Sandboxes through cold fallback when its applied template is available. Retry identity and
+     * configuration are persisted atomically. Within the 24-hour retry-token validity period, the
+     * same token and input identify the original pool id, including after name reuse. A retry never
+     * creates or selects a replacement pool. A retry after the original pool is deleted returns
+     * 409; changed input with the same token conflicts. Reserved default names cannot be reused for
+     * either type.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/CreateSandboxWarmPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateSandboxWarmPool API.
+     */
+    CreateSandboxWarmPoolResponse createSandboxWarmPool(CreateSandboxWarmPoolRequest request);
+
+    /**
      * Creates a SemanticStore.
      *
      * @param request The request object containing the details to send
@@ -840,6 +870,32 @@ public interface GenerativeAi extends AutoCloseable {
     DeleteRoutingProfileResponse deleteRoutingProfile(DeleteRoutingProfileRequest request);
 
     /**
+     * Deletes a named MANAGED or CUSTOM pool through a CP Work Request. Reserved MANAGED default
+     * entries cannot be deleted and return 409. CP persists DELETING and closes admission as the
+     * new configuration propagates, drains idle members and deletes the pool resource. The
+     * management response does not promise immediate global admission closure or completed cleanup.
+     * Already-adopted customer Sandboxes survive and retain required template dependencies. Get and
+     * List continue to show DELETING until pool cleanup completes. The CP then records DELETED and
+     * releases the name. Name reuse always allocates a new id and materialized names. Retained
+     * templates may outlive the pool while customer Sandboxes still depend on them. A repeated
+     * delete during DELETING returns the existing Work Request. A missing name returns 404. After
+     * name reuse, the path identifies the new pool; use the original if-match ETag to prevent
+     * deleting it. Conflicting operations return 409 and stale if-match returns 412.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/DeleteSandboxWarmPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSandboxWarmPool API.
+     */
+    DeleteSandboxWarmPoolResponse deleteSandboxWarmPool(DeleteSandboxWarmPoolRequest request);
+
+    /**
      * Deletes a semanticStore.
      *
      * @param request The request object containing the details to send
@@ -1064,6 +1120,28 @@ public interface GenerativeAi extends AutoCloseable {
     GetRoutingProfileResponse getRoutingProfile(GetRoutingProfileRequest request);
 
     /**
+     * Gets authoritative CP configuration and management lifecycle for the current pool
+     * incarnation, including DELETING until pool cleanup completes. Returns 404 after deletion
+     * completes unless the name has been reused for a new id. A best-effort runtime observation may
+     * report ready idle capacity. A runtime read failure returns UNAVAILABLE without failing the
+     * configuration read. ACTIVE does not imply runtime capacity is ready. The configuration ETag
+     * excludes runtime changes; it must not be used to suppress runtime observations with a
+     * conditional not-modified response.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/GetSandboxWarmPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSandboxWarmPool
+     *     API.
+     */
+    GetSandboxWarmPoolResponse getSandboxWarmPool(GetSandboxWarmPoolRequest request);
+
+    /**
      * Gets information about a semanticStore.
      *
      * @param request The request object containing the details to send
@@ -1174,6 +1252,24 @@ public interface GenerativeAi extends AutoCloseable {
      *     ListDedicatedAiClusters API.
      */
     ListDedicatedAiClustersResponse listDedicatedAiClusters(ListDedicatedAiClustersRequest request);
+
+    /**
+     * Lists the allocatable GPUs for launching dedicated AI clusters tied to a specific capacity
+     * reservation id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListDedicatedAiClustersAllocatableGpusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDedicatedAiClustersAllocatableGpus API.
+     */
+    ListDedicatedAiClustersAllocatableGpusResponse listDedicatedAiClustersAllocatableGpus(
+            ListDedicatedAiClustersAllocatableGpusRequest request);
 
     /**
      * Lists the endpoints of a specific compartment.
@@ -1356,6 +1452,25 @@ public interface GenerativeAi extends AutoCloseable {
      *     API.
      */
     ListRoutingProfilesResponse listRoutingProfiles(ListRoutingProfilesRequest request);
+
+    /**
+     * Lists named MANAGED and CUSTOM pools for Sandbox-enabled Projects, including zero targets and
+     * in-progress management operations. Reserved defaults can be resized but cannot be created or
+     * deleted by customers. DELETED resources are excluded. Responses include CP management
+     * lifecycle but do not perform runtime reads or return ready capacity.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/ListSandboxWarmPoolsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSandboxWarmPools API.
+     */
+    ListSandboxWarmPoolsResponse listSandboxWarmPools(ListSandboxWarmPoolsRequest request);
 
     /**
      * Lists the SemanticStores given specific filter.
@@ -1698,6 +1813,33 @@ public interface GenerativeAi extends AutoCloseable {
      *     UpdateRoutingProfile API.
      */
     UpdateRoutingProfileResponse updateRoutingProfile(UpdateRoutingProfileRequest request);
+
+    /**
+     * Only desiredCapacity may change. If desiredCapacity is omitted, the current desired capacity
+     * is preserved. An empty update object is allowed; an explicit null value for desiredCapacity
+     * is not allowed. Named MANAGED and CUSTOM pools and reserved MANAGED defaults can be resized.
+     * Default-pool updates use the existing Project configuration workflow; no separate desired
+     * configuration is created for those entries. CP persists UPDATING and a Work Request, applies
+     * the desired replica count, then returns the pool to ACTIVE after verifying the configuration.
+     * The workflow does not wait for ready members. Zero pauses idle prewarming. Once the pool is
+     * ACTIVE, named-pool Sandbox creation can still cold-start from its available applied template
+     * when no eligible warm member is available, regardless of the capacity target.
+     * Already-admitted Sandboxes continue. Unnamed Sandbox creation retains its existing behavior.
+     * Concurrent management operations return 409. If provided, if-match must match the current
+     * configuration ETag; otherwise this operation returns 412.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeai/UpdateSandboxWarmPoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateSandboxWarmPool API.
+     */
+    UpdateSandboxWarmPoolResponse updateSandboxWarmPool(UpdateSandboxWarmPoolRequest request);
 
     /**
      * Updates the properties of a SemanticStore.

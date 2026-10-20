@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Product description <br>
+ * Product description. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -48,12 +48,12 @@ public final class InvoicingProduct
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Product part number */
+        /** Product part number. */
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
         /**
-         * Product part number
+         * Product part number.
          *
          * @param partNumber the value to set
          * @return this builder
@@ -63,12 +63,12 @@ public final class InvoicingProduct
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-        /** Product name */
+        /** Product name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Product name
+         * Product name.
          *
          * @param name the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class InvoicingProduct
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Unit of Measure */
+        /** Unit of measure. */
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
         /**
-         * Unit of Measure
+         * Unit of measure.
          *
          * @param unitOfMeasure the value to set
          * @return this builder
@@ -93,12 +93,12 @@ public final class InvoicingProduct
             this.__explicitlySet__.add("unitOfMeasure");
             return this;
         }
-        /** Metered service billing category */
+        /** Metered service billing category. */
         @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
         private String billingCategory;
 
         /**
-         * Metered service billing category
+         * Metered service billing category.
          *
          * @param billingCategory the value to set
          * @return this builder
@@ -108,12 +108,12 @@ public final class InvoicingProduct
             this.__explicitlySet__.add("billingCategory");
             return this;
         }
-        /** Product category */
+        /** Product category. */
         @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
         private String productCategory;
 
         /**
-         * Product category
+         * Product category.
          *
          * @param productCategory the value to set
          * @return this builder
@@ -123,12 +123,12 @@ public final class InvoicingProduct
             this.__explicitlySet__.add("productCategory");
             return this;
         }
-        /** Rate card part type of Product */
+        /** Rate card part type of product. */
         @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
         private String ucmRateCardPartType;
 
         /**
-         * Rate card part type of Product
+         * Rate card part type of product.
          *
          * @param ucmRateCardPartType the value to set
          * @return this builder
@@ -190,12 +190,12 @@ public final class InvoicingProduct
         return new Builder().copy(this);
     }
 
-    /** Product part number */
+    /** Product part number. */
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
     /**
-     * Product part number
+     * Product part number.
      *
      * @return the value
      */
@@ -203,12 +203,12 @@ public final class InvoicingProduct
         return partNumber;
     }
 
-    /** Product name */
+    /** Product name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Product name
+     * Product name.
      *
      * @return the value
      */
@@ -216,12 +216,12 @@ public final class InvoicingProduct
         return name;
     }
 
-    /** Unit of Measure */
+    /** Unit of measure. */
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
     /**
-     * Unit of Measure
+     * Unit of measure.
      *
      * @return the value
      */
@@ -229,12 +229,12 @@ public final class InvoicingProduct
         return unitOfMeasure;
     }
 
-    /** Metered service billing category */
+    /** Metered service billing category. */
     @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
     private final String billingCategory;
 
     /**
-     * Metered service billing category
+     * Metered service billing category.
      *
      * @return the value
      */
@@ -242,12 +242,12 @@ public final class InvoicingProduct
         return billingCategory;
     }
 
-    /** Product category */
+    /** Product category. */
     @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
     private final String productCategory;
 
     /**
-     * Product category
+     * Product category.
      *
      * @return the value
      */
@@ -255,12 +255,12 @@ public final class InvoicingProduct
         return productCategory;
     }
 
-    /** Rate card part type of Product */
+    /** Rate card part type of product. */
     @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
     private final String ucmRateCardPartType;
 
     /**
-     * Rate card part type of Product
+     * Rate card part type of product.
      *
      * @return the value
      */

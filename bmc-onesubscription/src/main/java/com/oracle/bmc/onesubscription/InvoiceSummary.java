@@ -65,8 +65,7 @@ public interface InvoiceSummary extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This is a collection API which returns a list of Invoiced Computed Usages for given
-     * Invoiceline id.
+     * Collection API that returns a list of invoiced computed usages for the given invoice line ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,7 +82,7 @@ public interface InvoiceSummary extends AutoCloseable {
             ListInvoicelineComputedUsagesRequest request);
 
     /**
-     * This is a collection API which returns a list of Invoices for given filters.
+     * Collection API that returns a list of invoices according to the given filters.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

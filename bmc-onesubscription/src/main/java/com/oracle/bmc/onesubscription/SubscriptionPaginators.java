@@ -160,4 +160,120 @@ public class SubscriptionPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listUsageLedgers operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListUsageLedgersResponse> listUsageLedgersResponseIterator(
+            final ListUsageLedgersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListUsageLedgersRequest.Builder, ListUsageLedgersRequest, ListUsageLedgersResponse>(
+                new java.util.function.Supplier<ListUsageLedgersRequest.Builder>() {
+                    @Override
+                    public ListUsageLedgersRequest.Builder get() {
+                        return ListUsageLedgersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListUsageLedgersResponse, String>() {
+                    @Override
+                    public String apply(ListUsageLedgersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsageLedgersRequest.Builder>,
+                        ListUsageLedgersRequest>() {
+                    @Override
+                    public ListUsageLedgersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsageLedgersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageLedgersRequest, ListUsageLedgersResponse>() {
+                    @Override
+                    public ListUsageLedgersResponse apply(ListUsageLedgersRequest request) {
+                        return client.listUsageLedgers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.onesubscription.model.UsageLedgerSummary} objects contained in responses from
+     * the listUsageLedgers operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.onesubscription.model.UsageLedgerSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.onesubscription.model.UsageLedgerSummary>
+            listUsageLedgersRecordIterator(final ListUsageLedgersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListUsageLedgersRequest.Builder,
+                ListUsageLedgersRequest,
+                ListUsageLedgersResponse,
+                com.oracle.bmc.onesubscription.model.UsageLedgerSummary>(
+                new java.util.function.Supplier<ListUsageLedgersRequest.Builder>() {
+                    @Override
+                    public ListUsageLedgersRequest.Builder get() {
+                        return ListUsageLedgersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListUsageLedgersResponse, String>() {
+                    @Override
+                    public String apply(ListUsageLedgersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsageLedgersRequest.Builder>,
+                        ListUsageLedgersRequest>() {
+                    @Override
+                    public ListUsageLedgersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsageLedgersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageLedgersRequest, ListUsageLedgersResponse>() {
+                    @Override
+                    public ListUsageLedgersResponse apply(ListUsageLedgersRequest request) {
+                        return client.listUsageLedgers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageLedgersResponse,
+                        java.util.List<com.oracle.bmc.onesubscription.model.UsageLedgerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.onesubscription.model.UsageLedgerSummary>
+                            apply(ListUsageLedgersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
 }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * Connection and certificate details for a remote cluster. <br>
+ * Connection and CA bundle trust details for a remote cluster. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,13 +23,13 @@ package com.oracle.bmc.opensearch.model;
 public final class RemoteReindexSourceDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"endpoint", "endpointResolutionIp", "certificateId"})
+    @java.beans.ConstructorProperties({"endpoint", "endpointResolutionIp", "caBundleId"})
     public RemoteReindexSourceDetails(
-            String endpoint, String endpointResolutionIp, String certificateId) {
+            String endpoint, String endpointResolutionIp, String caBundleId) {
         super();
         this.endpoint = endpoint;
         this.endpointResolutionIp = endpointResolutionIp;
-        this.certificateId = certificateId;
+        this.caBundleId = caBundleId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -77,22 +77,22 @@ public final class RemoteReindexSourceDetails
             return this;
         }
         /**
-         * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS
-         * certificate.
+         * OCID of the OCI Certificates service CA bundle containing the trusted CA certificates
+         * used to verify the remote cluster's HTTPS certificate.
          */
-        @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
-        private String certificateId;
+        @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
+        private String caBundleId;
 
         /**
-         * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS
-         * certificate.
+         * OCID of the OCI Certificates service CA bundle containing the trusted CA certificates
+         * used to verify the remote cluster's HTTPS certificate.
          *
-         * @param certificateId the value to set
+         * @param caBundleId the value to set
          * @return this builder
          */
-        public Builder certificateId(String certificateId) {
-            this.certificateId = certificateId;
-            this.__explicitlySet__.add("certificateId");
+        public Builder caBundleId(String caBundleId) {
+            this.caBundleId = caBundleId;
+            this.__explicitlySet__.add("caBundleId");
             return this;
         }
 
@@ -102,7 +102,7 @@ public final class RemoteReindexSourceDetails
         public RemoteReindexSourceDetails build() {
             RemoteReindexSourceDetails model =
                     new RemoteReindexSourceDetails(
-                            this.endpoint, this.endpointResolutionIp, this.certificateId);
+                            this.endpoint, this.endpointResolutionIp, this.caBundleId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -117,8 +117,8 @@ public final class RemoteReindexSourceDetails
             if (model.wasPropertyExplicitlySet("endpointResolutionIp")) {
                 this.endpointResolutionIp(model.getEndpointResolutionIp());
             }
-            if (model.wasPropertyExplicitlySet("certificateId")) {
-                this.certificateId(model.getCertificateId());
+            if (model.wasPropertyExplicitlySet("caBundleId")) {
+                this.caBundleId(model.getCaBundleId());
             }
             return this;
         }
@@ -172,18 +172,20 @@ public final class RemoteReindexSourceDetails
     }
 
     /**
-     * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+     * OCID of the OCI Certificates service CA bundle containing the trusted CA certificates used to
+     * verify the remote cluster's HTTPS certificate.
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
-    private final String certificateId;
+    @com.fasterxml.jackson.annotation.JsonProperty("caBundleId")
+    private final String caBundleId;
 
     /**
-     * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+     * OCID of the OCI Certificates service CA bundle containing the trusted CA certificates used to
+     * verify the remote cluster's HTTPS certificate.
      *
      * @return the value
      */
-    public String getCertificateId() {
-        return certificateId;
+    public String getCaBundleId() {
+        return caBundleId;
     }
 
     @Override
@@ -203,7 +205,7 @@ public final class RemoteReindexSourceDetails
         sb.append("super=").append(super.toString());
         sb.append("endpoint=").append(String.valueOf(this.endpoint));
         sb.append(", endpointResolutionIp=").append(String.valueOf(this.endpointResolutionIp));
-        sb.append(", certificateId=").append(String.valueOf(this.certificateId));
+        sb.append(", caBundleId=").append(String.valueOf(this.caBundleId));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +222,7 @@ public final class RemoteReindexSourceDetails
         RemoteReindexSourceDetails other = (RemoteReindexSourceDetails) o;
         return java.util.Objects.equals(this.endpoint, other.endpoint)
                 && java.util.Objects.equals(this.endpointResolutionIp, other.endpointResolutionIp)
-                && java.util.Objects.equals(this.certificateId, other.certificateId)
+                && java.util.Objects.equals(this.caBundleId, other.caBundleId)
                 && super.equals(other);
     }
 
@@ -234,9 +236,7 @@ public final class RemoteReindexSourceDetails
                         + (this.endpointResolutionIp == null
                                 ? 43
                                 : this.endpointResolutionIp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.certificateId == null ? 43 : this.certificateId.hashCode());
+        result = (result * PRIME) + (this.caBundleId == null ? 43 : this.caBundleId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

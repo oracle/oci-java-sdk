@@ -62,6 +62,9 @@ package com.oracle.bmc.goldengate.model;
             value = GooglePubSubConnectionSummary.class,
             name = "GOOGLE_PUBSUB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OracleAiDataPlatformEngineConnectionSummary.class,
+            name = "ORACLE_AI_DATA_PLATFORM_ENGINE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoogleCloudStorageConnectionSummary.class,
             name = "GOOGLE_CLOUD_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -80,8 +83,14 @@ package com.oracle.bmc.goldengate.model;
             value = RedisConnectionSummary.class,
             name = "REDIS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = SparkConnectionSummary.class,
+            name = "SPARK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureDataLakeStorageConnectionSummary.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AiProviderConnectionSummary.class,
+            name = "AI_PROVIDER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoogleBigQueryConnectionSummary.class,
             name = "GOOGLE_BIGQUERY"),
@@ -111,7 +120,10 @@ package com.oracle.bmc.goldengate.model;
             name = "DATABRICKS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HdfsConnectionSummary.class,
-            name = "HDFS")
+            name = "HDFS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DatabricksEngineConnectionSummary.class,
+            name = "DATABRICKS_ENGINE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

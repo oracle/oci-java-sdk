@@ -1472,6 +1472,22 @@ public interface Database extends AutoCloseable {
     CreateDatabaseResponse createDatabase(CreateDatabaseRequest request);
 
     /**
+     * Creates a Database Snapshot
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDatabaseSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateDatabaseSnapshot API.
+     */
+    CreateDatabaseSnapshotResponse createDatabaseSnapshot(CreateDatabaseSnapshotRequest request);
+
+    /**
      * create database software image in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -2168,6 +2184,22 @@ public interface Database extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDatabase API.
      */
     DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request);
+
+    /**
+     * Deletes the specified Exadata Database Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDatabaseSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteDatabaseSnapshot API.
+     */
+    DeleteDatabaseSnapshotResponse deleteDatabaseSnapshot(DeleteDatabaseSnapshotRequest request);
 
     /**
      * Delete a database software image
@@ -3896,6 +3928,22 @@ public interface Database extends AutoCloseable {
     GetDatabaseResponse getDatabase(GetDatabaseRequest request);
 
     /**
+     * Gets information about the specified Exadata Database Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDatabaseSnapshot
+     *     API.
+     */
+    GetDatabaseSnapshotResponse getDatabaseSnapshot(GetDatabaseSnapshotRequest request);
+
+    /**
      * Gets information about the specified database software image.
      *
      * @param request The request object containing the details to send
@@ -5476,6 +5524,22 @@ public interface Database extends AutoCloseable {
      */
     ListDataGuardAssociationsResponse listDataGuardAssociations(
             ListDataGuardAssociationsRequest request);
+
+    /**
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabaseSnapshotsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDatabaseSnapshots API.
+     */
+    ListDatabaseSnapshotsResponse listDatabaseSnapshots(ListDatabaseSnapshotsRequest request);
 
     /**
      * Gets a list of the database software images in the specified compartment.
@@ -8087,6 +8151,22 @@ public interface Database extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDatabase API.
      */
     UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request);
+
+    /**
+     * Updates a Database Snapshot
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseSnapshotExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateDatabaseSnapshot API.
+     */
+    UpdateDatabaseSnapshotResponse updateDatabaseSnapshot(UpdateDatabaseSnapshotRequest request);
 
     /**
      * Updates the properties of a Database Software Image, like Display Nmae

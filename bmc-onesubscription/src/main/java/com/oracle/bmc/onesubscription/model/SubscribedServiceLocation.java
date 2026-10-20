@@ -142,12 +142,12 @@ public final class SubscribedServiceLocation
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Region. */
+        /** TCA (Trading Community Architecture) location identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaLocationId")
         private Long tcaLocationId;
 
         /**
-         * Region.
+         * TCA (Trading Community Architecture) location identifier.
          *
          * @param tcaLocationId the value to set
          * @return this builder
@@ -291,12 +291,12 @@ public final class SubscribedServiceLocation
         return region;
     }
 
-    /** Region. */
+    /** TCA (Trading Community Architecture) location identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaLocationId")
     private final Long tcaLocationId;
 
     /**
-     * Region.
+     * TCA (Trading Community Architecture) location identifier.
      *
      * @return the value
      */

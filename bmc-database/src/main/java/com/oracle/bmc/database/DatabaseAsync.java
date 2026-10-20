@@ -1501,6 +1501,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a Database Snapshot
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDatabaseSnapshotResponse> createDatabaseSnapshot(
+            CreateDatabaseSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDatabaseSnapshotRequest, CreateDatabaseSnapshotResponse>
+                    handler);
+
+    /**
      * create database software image in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -2205,6 +2221,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteDatabaseResponse> deleteDatabase(
             DeleteDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteDatabaseRequest, DeleteDatabaseResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Exadata Database Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDatabaseSnapshotResponse> deleteDatabaseSnapshot(
+            DeleteDatabaseSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDatabaseSnapshotRequest, DeleteDatabaseSnapshotResponse>
                     handler);
 
     /**
@@ -3949,6 +3981,22 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDatabaseRequest, GetDatabaseResponse> handler);
 
     /**
+     * Gets information about the specified Exadata Database Snapshot.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseSnapshotResponse> getDatabaseSnapshot(
+            GetDatabaseSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseSnapshotRequest, GetDatabaseSnapshotResponse>
+                    handler);
+
+    /**
      * Gets information about the specified database software image.
      *
      * @param request The request object containing the details to send
@@ -5541,6 +5589,22 @@ public interface DatabaseAsync extends AutoCloseable {
             ListDataGuardAssociationsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDataGuardAssociationsRequest, ListDataGuardAssociationsResponse>
+                    handler);
+
+    /**
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseSnapshotsResponse> listDatabaseSnapshots(
+            ListDatabaseSnapshotsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseSnapshotsRequest, ListDatabaseSnapshotsResponse>
                     handler);
 
     /**
@@ -8181,6 +8245,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateDatabaseResponse> updateDatabase(
             UpdateDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateDatabaseRequest, UpdateDatabaseResponse>
+                    handler);
+
+    /**
+     * Updates a Database Snapshot
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseSnapshotResponse> updateDatabaseSnapshot(
+            UpdateDatabaseSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDatabaseSnapshotRequest, UpdateDatabaseSnapshotResponse>
                     handler);
 
     /**

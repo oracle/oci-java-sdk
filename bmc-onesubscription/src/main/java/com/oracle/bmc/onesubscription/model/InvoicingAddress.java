@@ -126,12 +126,12 @@ public final class InvoicingAddress
             this.__explicitlySet__.add("isShipTo");
             return this;
         }
-        /** Bill to site use Id. */
+        /** Bill to site use ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("billSiteUseId")
         private Long billSiteUseId;
 
         /**
-         * Bill to site use Id.
+         * Bill to site use ID.
          *
          * @param billSiteUseId the value to set
          * @return this builder
@@ -141,12 +141,12 @@ public final class InvoicingAddress
             this.__explicitlySet__.add("billSiteUseId");
             return this;
         }
-        /** Service to site use Id. */
+        /** Service to site use ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("service2SiteUseId")
         private Long service2SiteUseId;
 
         /**
-         * Service to site use Id.
+         * Service to site use ID.
          *
          * @param service2SiteUseId the value to set
          * @return this builder
@@ -156,12 +156,12 @@ public final class InvoicingAddress
             this.__explicitlySet__.add("service2SiteUseId");
             return this;
         }
-        /** TCA customer account site Id. */
+        /** TCA (Trading Community Architecture) customer account site ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAcctSiteId")
         private Long tcaCustAcctSiteId;
 
         /**
-         * TCA customer account site Id.
+         * TCA (Trading Community Architecture) customer account site ID.
          *
          * @param tcaCustAcctSiteId the value to set
          * @return this builder
@@ -309,12 +309,12 @@ public final class InvoicingAddress
         return isShipTo;
     }
 
-    /** Bill to site use Id. */
+    /** Bill to site use ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("billSiteUseId")
     private final Long billSiteUseId;
 
     /**
-     * Bill to site use Id.
+     * Bill to site use ID.
      *
      * @return the value
      */
@@ -322,12 +322,12 @@ public final class InvoicingAddress
         return billSiteUseId;
     }
 
-    /** Service to site use Id. */
+    /** Service to site use ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("service2SiteUseId")
     private final Long service2SiteUseId;
 
     /**
-     * Service to site use Id.
+     * Service to site use ID.
      *
      * @return the value
      */
@@ -335,12 +335,12 @@ public final class InvoicingAddress
         return service2SiteUseId;
     }
 
-    /** TCA customer account site Id. */
+    /** TCA (Trading Community Architecture) customer account site ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAcctSiteId")
     private final Long tcaCustAcctSiteId;
 
     /**
-     * TCA customer account site Id.
+     * TCA (Trading Community Architecture) customer account site ID.
      *
      * @return the value
      */

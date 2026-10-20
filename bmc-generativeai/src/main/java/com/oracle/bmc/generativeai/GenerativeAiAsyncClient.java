@@ -1157,6 +1157,52 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSandboxWarmPoolResponse> createSandboxWarmPool(
+            CreateSandboxWarmPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSandboxWarmPoolRequest, CreateSandboxWarmPoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateSandboxWarmPoolDetails(),
+                "createSandboxWarmPoolDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("projectId", request.getProjectId());
+
+        return clientCall(request, CreateSandboxWarmPoolResponse::builder)
+                .logger(LOG, "createSandboxWarmPool")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "CreateSandboxWarmPool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SandboxWarmPool/CreateSandboxWarmPool")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSandboxWarmPoolRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("sandboxWarmPools")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SandboxWarmPool.class,
+                        CreateSandboxWarmPoolResponse.Builder::sandboxWarmPool)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSandboxWarmPoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSandboxWarmPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateSandboxWarmPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateSandboxWarmPoolResponse.Builder::location)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSemanticStoreResponse> createSemanticStore(
             CreateSemanticStoreRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1752,6 +1798,46 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSandboxWarmPoolResponse> deleteSandboxWarmPool(
+            DeleteSandboxWarmPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSandboxWarmPoolRequest, DeleteSandboxWarmPoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("projectId", request.getProjectId());
+        requiredParametersMap.put("name", request.getName());
+
+        return clientCall(request, DeleteSandboxWarmPoolResponse::builder)
+                .logger(LOG, "deleteSandboxWarmPool")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "DeleteSandboxWarmPool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SandboxWarmPool/DeleteSandboxWarmPool")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSandboxWarmPoolRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("sandboxWarmPools")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSandboxWarmPoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSandboxWarmPoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSemanticStoreResponse> deleteSemanticStore(
             DeleteSemanticStoreRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2259,6 +2345,46 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetSandboxWarmPoolResponse> getSandboxWarmPool(
+            GetSandboxWarmPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSandboxWarmPoolRequest, GetSandboxWarmPoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("projectId", request.getProjectId());
+        requiredParametersMap.put("name", request.getName());
+
+        return clientCall(request, GetSandboxWarmPoolResponse::builder)
+                .logger(LOG, "getSandboxWarmPool")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "GetSandboxWarmPool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SandboxWarmPool/GetSandboxWarmPool")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSandboxWarmPoolRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("sandboxWarmPools")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SandboxWarmPool.class,
+                        GetSandboxWarmPoolResponse.Builder::sandboxWarmPool)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSandboxWarmPoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetSandboxWarmPoolResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSemanticStoreResponse> getSemanticStore(
             GetSemanticStoreRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2521,6 +2647,7 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("capacityReservationId", request.getCapacityReservationId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2530,6 +2657,55 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", ListDedicatedAiClustersResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDedicatedAiClustersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDedicatedAiClustersAllocatableGpusResponse>
+            listDedicatedAiClustersAllocatableGpus(
+                    ListDedicatedAiClustersAllocatableGpusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDedicatedAiClustersAllocatableGpusRequest,
+                                    ListDedicatedAiClustersAllocatableGpusResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getCapacityReservationId(), "capacityReservationId is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("capacityReservationId", request.getCapacityReservationId());
+
+        return clientCall(request, ListDedicatedAiClustersAllocatableGpusResponse::builder)
+                .logger(LOG, "listDedicatedAiClustersAllocatableGpus")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListDedicatedAiClustersAllocatableGpus",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/AllocatableGpuCollection/ListDedicatedAiClustersAllocatableGpus")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDedicatedAiClustersAllocatableGpusRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("dedicatedAiClusters")
+                .appendPathParam("allocatableGpus")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("capacityReservationId", request.getCapacityReservationId())
+                .appendQueryParam("computeShape", request.getComputeShape())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.AllocatableGpuCollection.class,
+                        ListDedicatedAiClustersAllocatableGpusResponse.Builder
+                                ::allocatableGpuCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDedicatedAiClustersAllocatableGpusResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDedicatedAiClustersAllocatableGpusResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3039,6 +3215,50 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         "opc-request-id", ListRoutingProfilesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListRoutingProfilesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSandboxWarmPoolsResponse> listSandboxWarmPools(
+            ListSandboxWarmPoolsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSandboxWarmPoolsRequest, ListSandboxWarmPoolsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("projectId", request.getProjectId());
+
+        return clientCall(request, ListSandboxWarmPoolsResponse::builder)
+                .logger(LOG, "listSandboxWarmPools")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "ListSandboxWarmPools",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SandboxWarmPoolCollection/ListSandboxWarmPools")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSandboxWarmPoolsRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("sandboxWarmPools")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("shape", request.getShape())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SandboxWarmPoolCollection.class,
+                        ListSandboxWarmPoolsResponse.Builder::sandboxWarmPoolCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSandboxWarmPoolsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSandboxWarmPoolsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -3944,6 +4164,54 @@ public class GenerativeAiAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateRoutingProfileResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateRoutingProfileResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSandboxWarmPoolResponse> updateSandboxWarmPool(
+            UpdateSandboxWarmPoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSandboxWarmPoolRequest, UpdateSandboxWarmPoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        Validate.notBlank(request.getName(), "name must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSandboxWarmPoolDetails(),
+                "updateSandboxWarmPoolDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("projectId", request.getProjectId());
+        requiredParametersMap.put("name", request.getName());
+
+        return clientCall(request, UpdateSandboxWarmPoolResponse::builder)
+                .logger(LOG, "updateSandboxWarmPool")
+                .serviceDetails(
+                        "GenerativeAi",
+                        "UpdateSandboxWarmPool",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/SandboxWarmPool/UpdateSandboxWarmPool")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSandboxWarmPoolRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("generativeAiProjects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("sandboxWarmPools")
+                .appendPathParam(request.getName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeai.model.SandboxWarmPool.class,
+                        UpdateSandboxWarmPoolResponse.Builder::sandboxWarmPool)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSandboxWarmPoolResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateSandboxWarmPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSandboxWarmPoolResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

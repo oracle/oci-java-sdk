@@ -13,10 +13,10 @@ import com.oracle.bmc.onesubscription.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** This param is used to get the commitments for a particular subscribed service */
+    /** Obtains the commitments for a particular subscribed service. */
     private String subscribedServiceId;
 
-    /** This param is used to get the commitments for a particular subscribed service */
+    /** Obtains the commitments for a particular subscribed service. */
     public String getSubscribedServiceId() {
         return subscribedServiceId;
     }
@@ -151,11 +151,11 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** This param is used to get the commitments for a particular subscribed service */
+        /** Obtains the commitments for a particular subscribed service. */
         private String subscribedServiceId = null;
 
         /**
-         * This param is used to get the commitments for a particular subscribed service
+         * Obtains the commitments for a particular subscribed service.
          *
          * @param subscribedServiceId the value to set
          * @return this builder instance

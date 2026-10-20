@@ -21,49 +21,49 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         return compartmentId;
     }
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription ID is an identifier associated with the service, used for filtering the computed
+     * usage in SPM.
      */
     private String subscriptionId;
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription ID is an identifier associated with the service, used for filtering the computed
+     * usage in SPM.
      */
     public String getSubscriptionId() {
         return subscriptionId;
     }
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter computed usage data in SPM. For non-aggregated data, the time period
+     * between fromDate and toDate, expressed in RFC 3339 timestamp format.
      */
     private java.util.Date timeFrom;
 
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter computed usage data in SPM. For non-aggregated data, the time period
+     * between fromDate and toDate, expressed in RFC 3339 timestamp format.
      */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /** Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format. */
     private java.util.Date timeTo;
 
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /** Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format. */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
-    /** Product part number for subscribed service line, called parent product. */
+    /** Product part number for the subscribed service line, called the parent product. */
     private String parentProduct;
 
-    /** Product part number for subscribed service line, called parent product. */
+    /** Product part number for the subscribed service line, called the parent product. */
     public String getParentProduct() {
         return parentProduct;
     }
-    /** Product part number for Computed Usage . */
+    /** Product part number for the computed usage. */
     private String computedProduct;
 
-    /** Product part number for Computed Usage . */
+    /** Product part number for the computed usage. */
     public String getComputedProduct() {
         return computedProduct;
     }
@@ -207,14 +207,14 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription ID is an identifier associated with the service, used for filtering the
+         * computed usage in SPM.
          */
         private String subscriptionId = null;
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription ID is an identifier associated with the service, used for filtering the
+         * computed usage in SPM.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -225,14 +225,14 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter computed usage data in SPM. For non-aggregated data, the time
+         * period between fromDate and toDate, expressed in RFC 3339 timestamp format.
          */
         private java.util.Date timeFrom = null;
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter computed usage data in SPM. For non-aggregated data, the time
+         * period between fromDate and toDate, expressed in RFC 3339 timestamp format.
          *
          * @param timeFrom the value to set
          * @return this builder instance
@@ -243,12 +243,12 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+         * Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format.
          */
         private java.util.Date timeTo = null;
 
         /**
-         * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+         * Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format.
          *
          * @param timeTo the value to set
          * @return this builder instance
@@ -258,11 +258,11 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Product part number for subscribed service line, called parent product. */
+        /** Product part number for the subscribed service line, called the parent product. */
         private String parentProduct = null;
 
         /**
-         * Product part number for subscribed service line, called parent product.
+         * Product part number for the subscribed service line, called the parent product.
          *
          * @param parentProduct the value to set
          * @return this builder instance
@@ -272,11 +272,11 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Product part number for Computed Usage . */
+        /** Product part number for the computed usage. */
         private String computedProduct = null;
 
         /**
-         * Product part number for Computed Usage .
+         * Product part number for the computed usage.
          *
          * @param computedProduct the value to set
          * @return this builder instance

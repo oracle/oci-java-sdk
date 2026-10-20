@@ -53,6 +53,9 @@ package com.oracle.bmc.disasterrecovery.model;
             value = DrProtectionGroupMemberIntegrationInstance.class,
             name = "INTEGRATION_INSTANCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberPostgresqlDbSystem.class,
+            name = "POSTGRESQL_DB_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberComputeInstanceMovable.class,
             name = "COMPUTE_INSTANCE_MOVABLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

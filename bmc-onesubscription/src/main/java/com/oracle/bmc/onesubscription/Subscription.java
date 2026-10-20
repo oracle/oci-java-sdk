@@ -65,11 +65,27 @@ public interface Subscription extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This list API returns all subscriptions for a given plan number or subscription id or buyer
-     * email and provides additional parameters to include ratecard and commitment details. This API
-     * expects exactly one of the above mentioned parameters as input. If more than one parameters
-     * are provided the API will throw a 400 - invalid parameters exception and if no parameters are
-     * provided it will throw a 400 - missing parameter exception
+     * Returns the commitment summary for a subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/GetSubscriptionDetailsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSubscriptionDetails API.
+     */
+    GetSubscriptionDetailsResponse getSubscriptionDetails(GetSubscriptionDetailsRequest request);
+
+    /**
+     * Returns all subscriptions for a given plan number, subscription ID, or buyer email, and
+     * provides additional parameters, to include rate card and commitment details. Exactly one of
+     * the these parameters is expected as input. If more than one parameter is provided, a 400 -
+     * invalid parameters exception is thrown, and if no parameters are provided, a 400 - missing
+     * parameter exception is thrown.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,6 +99,24 @@ public interface Subscription extends AutoCloseable {
      *     API.
      */
     ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request);
+
+    /**
+     * Returns revenue invoice consumption details for authorization orders that draw down from the
+     * requested subscription. It includes authorization-order subscription IDs but excludes the
+     * requested subscription ID itself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListUsageLedgersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsageLedgers
+     *     API.
+     */
+    ListUsageLedgersResponse listUsageLedgers(ListUsageLedgersRequest request);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may

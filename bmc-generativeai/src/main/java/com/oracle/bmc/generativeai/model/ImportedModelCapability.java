@@ -20,6 +20,9 @@ public enum ImportedModelCapability implements com.oracle.bmc.http.internal.BmcE
     AudioToText("AUDIO_TO_TEXT"),
     TextToAudio("TEXT_TO_AUDIO"),
     TextToVideo("TEXT_TO_VIDEO"),
+    AudioTextToText("AUDIO_TEXT_TO_TEXT"),
+    AudioTranslation("AUDIO_TRANSLATION"),
+    VideoTextToText("VIDEO_TEXT_TO_TEXT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

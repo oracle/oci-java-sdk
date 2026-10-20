@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Product description <br>
+ * Product description. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,12 +35,12 @@ public final class SubscriptionProduct
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Product part numner */
+        /** Product part number. */
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
         /**
-         * Product part numner
+         * Product part number.
          *
          * @param partNumber the value to set
          * @return this builder
@@ -50,12 +50,12 @@ public final class SubscriptionProduct
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-        /** Product name */
+        /** Product name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Product name
+         * Product name.
          *
          * @param name the value to set
          * @return this builder
@@ -65,12 +65,12 @@ public final class SubscriptionProduct
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Unit of measure */
+        /** Unit of measure. */
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
         /**
-         * Unit of measure
+         * Unit of measure.
          *
          * @param unitOfMeasure the value to set
          * @return this builder
@@ -80,12 +80,12 @@ public final class SubscriptionProduct
             this.__explicitlySet__.add("unitOfMeasure");
             return this;
         }
-        /** Product provisioning group */
+        /** Product provisioning group. */
         @com.fasterxml.jackson.annotation.JsonProperty("provisioningGroup")
         private String provisioningGroup;
 
         /**
-         * Product provisioning group
+         * Product provisioning group.
          *
          * @param provisioningGroup the value to set
          * @return this builder
@@ -136,12 +136,12 @@ public final class SubscriptionProduct
         return new Builder().copy(this);
     }
 
-    /** Product part numner */
+    /** Product part number. */
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
     /**
-     * Product part numner
+     * Product part number.
      *
      * @return the value
      */
@@ -149,12 +149,12 @@ public final class SubscriptionProduct
         return partNumber;
     }
 
-    /** Product name */
+    /** Product name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Product name
+     * Product name.
      *
      * @return the value
      */
@@ -162,12 +162,12 @@ public final class SubscriptionProduct
         return name;
     }
 
-    /** Unit of measure */
+    /** Unit of measure. */
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
     /**
-     * Unit of measure
+     * Unit of measure.
      *
      * @return the value
      */
@@ -175,12 +175,12 @@ public final class SubscriptionProduct
         return unitOfMeasure;
     }
 
-    /** Product provisioning group */
+    /** Product provisioning group. */
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningGroup")
     private final String provisioningGroup;
 
     /**
-     * Product provisioning group
+     * Product provisioning group.
      *
      * @return the value
      */

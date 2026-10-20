@@ -170,8 +170,13 @@ package com.oracle.bmc.disasterrecovery.model;
  * MySQL DB System start drill. - MYSQL_DB_SYSTEM_START_DRILL - A DR plan step to perform a HeatWave
  * MySQL DB System start drill. - MYSQL_DB_SYSTEM_STOP_DRILL_PRECHECK - A precheck step for
  * validating HeatWave MySQL DB System stop drill. - MYSQL_DB_SYSTEM_STOP_DRILL - A DR plan step to
- * perform a HeatWave MySQL DB System stop drill. - INTEGRATION_INSTANCE_SWITCHOVER_PRECHECK - A
- * precheck step for validating an integration instance (OIC) for switchover. -
+ * perform a HeatWave MySQL DB System stop drill. - POSTGRESQL_DB_SYSTEM_SWITCHOVER_PRECHECK - A
+ * precheck step for validating OCI Database with PostgreSQL switchover. -
+ * POSTGRESQL_DB_SYSTEM_SWITCHOVER - A DR plan step to perform an OCI Database with PostgreSQL
+ * switchover. - POSTGRESQL_DB_SYSTEM_FAILOVER_PRECHECK - A precheck step for validating OCI
+ * Database with PostgreSQL failover. - POSTGRESQL_DB_SYSTEM_FAILOVER - A DR plan step to perform an
+ * OCI Database with PostgreSQL failover. - INTEGRATION_INSTANCE_SWITCHOVER_PRECHECK - A precheck
+ * step for validating an integration instance (OIC) for switchover. -
  * INTEGRATION_INSTANCE_SWITCHOVER - A DR plan step to perform a switchover operation for an
  * integration instance (OIC). - INTEGRATION_INSTANCE_FAILOVER_PRECHECK -A precheck step for
  * validating an integration instance (OIC) for failover. - INTEGRATION_INSTANCE_FAILOVER - A DR
@@ -330,6 +335,10 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
     MysqlDbSystemStartDrill("MYSQL_DB_SYSTEM_START_DRILL"),
     MysqlDbSystemStopDrillPrecheck("MYSQL_DB_SYSTEM_STOP_DRILL_PRECHECK"),
     MysqlDbSystemStopDrill("MYSQL_DB_SYSTEM_STOP_DRILL"),
+    PostgresqlDbSystemSwitchoverPrecheck("POSTGRESQL_DB_SYSTEM_SWITCHOVER_PRECHECK"),
+    PostgresqlDbSystemSwitchover("POSTGRESQL_DB_SYSTEM_SWITCHOVER"),
+    PostgresqlDbSystemFailoverPrecheck("POSTGRESQL_DB_SYSTEM_FAILOVER_PRECHECK"),
+    PostgresqlDbSystemFailover("POSTGRESQL_DB_SYSTEM_FAILOVER"),
     IntegrationInstanceSwitchoverPrecheck("INTEGRATION_INSTANCE_SWITCHOVER_PRECHECK"),
     IntegrationInstanceSwitchover("INTEGRATION_INSTANCE_SWITCHOVER"),
     IntegrationInstanceFailoverPrecheck("INTEGRATION_INSTANCE_FAILOVER_PRECHECK"),

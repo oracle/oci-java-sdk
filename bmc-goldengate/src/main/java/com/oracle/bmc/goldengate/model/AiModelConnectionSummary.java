@@ -256,6 +256,35 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("providerType");
             return this;
         }
+        /**
+         * Optional identifier of the AI Provider Connection backing this AI Model Connection. When
+         * provided, it must reference an existing Active connection of type {@code AI_PROVIDER}.
+         * When {@code providerId} is set, {@code providerType} and {@code authDetails} must not be
+         * provided on the AI Model Connection, because provider metadata is resolved from the
+         * referenced AI Provider Connection. When {@code providerId} is not set, the AI Model
+         * Connection must provide inline provider metadata using {@code providerType} and {@code
+         * authDetails}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("providerId")
+        private String providerId;
+
+        /**
+         * Optional identifier of the AI Provider Connection backing this AI Model Connection. When
+         * provided, it must reference an existing Active connection of type {@code AI_PROVIDER}.
+         * When {@code providerId} is set, {@code providerType} and {@code authDetails} must not be
+         * provided on the AI Model Connection, because provider metadata is resolved from the
+         * referenced AI Provider Connection. When {@code providerId} is not set, the AI Model
+         * Connection must provide inline provider metadata using {@code providerType} and {@code
+         * authDetails}.
+         *
+         * @param providerId the value to set
+         * @return this builder
+         */
+        public Builder providerId(String providerId) {
+            this.providerId = providerId;
+            this.__explicitlySet__.add("providerId");
+            return this;
+        }
         /** AI model identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelKey")
         private String modelKey;
@@ -326,6 +355,7 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
                             this.securityAttributes,
                             this.technologyType,
                             this.providerType,
+                            this.providerId,
                             this.modelKey,
                             this.maxInputChars,
                             this.authDetails);
@@ -409,6 +439,9 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("providerType")) {
                 this.providerType(model.getProviderType());
             }
+            if (model.wasPropertyExplicitlySet("providerId")) {
+                this.providerId(model.getProviderId());
+            }
             if (model.wasPropertyExplicitlySet("modelKey")) {
                 this.modelKey(model.getModelKey());
             }
@@ -457,6 +490,7 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             AiModelConnection.TechnologyType technologyType,
             ProviderType providerType,
+            String providerId,
             String modelKey,
             Integer maxInputChars,
             AiModelAuthDetailsSummary authDetails) {
@@ -485,6 +519,7 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
                 securityAttributes);
         this.technologyType = technologyType;
         this.providerType = providerType;
+        this.providerId = providerId;
         this.modelKey = modelKey;
         this.maxInputChars = maxInputChars;
         this.authDetails = authDetails;
@@ -564,6 +599,31 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
         return providerType;
     }
 
+    /**
+     * Optional identifier of the AI Provider Connection backing this AI Model Connection. When
+     * provided, it must reference an existing Active connection of type {@code AI_PROVIDER}. When
+     * {@code providerId} is set, {@code providerType} and {@code authDetails} must not be provided
+     * on the AI Model Connection, because provider metadata is resolved from the referenced AI
+     * Provider Connection. When {@code providerId} is not set, the AI Model Connection must provide
+     * inline provider metadata using {@code providerType} and {@code authDetails}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("providerId")
+    private final String providerId;
+
+    /**
+     * Optional identifier of the AI Provider Connection backing this AI Model Connection. When
+     * provided, it must reference an existing Active connection of type {@code AI_PROVIDER}. When
+     * {@code providerId} is set, {@code providerType} and {@code authDetails} must not be provided
+     * on the AI Model Connection, because provider metadata is resolved from the referenced AI
+     * Provider Connection. When {@code providerId} is not set, the AI Model Connection must provide
+     * inline provider metadata using {@code providerType} and {@code authDetails}.
+     *
+     * @return the value
+     */
+    public String getProviderId() {
+        return providerId;
+    }
+
     /** AI model identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelKey")
     private final String modelKey;
@@ -614,6 +674,7 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", providerType=").append(String.valueOf(this.providerType));
+        sb.append(", providerId=").append(String.valueOf(this.providerId));
         sb.append(", modelKey=").append(String.valueOf(this.modelKey));
         sb.append(", maxInputChars=").append(String.valueOf(this.maxInputChars));
         sb.append(", authDetails=").append(String.valueOf(this.authDetails));
@@ -633,6 +694,7 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
         AiModelConnectionSummary other = (AiModelConnectionSummary) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.providerType, other.providerType)
+                && java.util.Objects.equals(this.providerId, other.providerId)
                 && java.util.Objects.equals(this.modelKey, other.modelKey)
                 && java.util.Objects.equals(this.maxInputChars, other.maxInputChars)
                 && java.util.Objects.equals(this.authDetails, other.authDetails)
@@ -647,6 +709,7 @@ public final class AiModelConnectionSummary extends ConnectionSummary {
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
         result = (result * PRIME) + (this.providerType == null ? 43 : this.providerType.hashCode());
+        result = (result * PRIME) + (this.providerId == null ? 43 : this.providerId.hashCode());
         result = (result * PRIME) + (this.modelKey == null ? 43 : this.modelKey.hashCode());
         result =
                 (result * PRIME)

@@ -22,30 +22,30 @@ public class ListSubscribedServicesRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Line level Subscription Id */
+    /** Line level subscription ID. */
     private String subscriptionId;
 
-    /** Line level Subscription Id */
+    /** Line level subscription ID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
     /**
-     * Order Line identifier at subscribed service level . This identifier is originated in Order
-     * Management module. Default is null.
+     * Order line identifier at subscribed service level. This identifier originates from the order
+     * management module. Default is null.
      */
     private Long orderLineId;
 
     /**
-     * Order Line identifier at subscribed service level . This identifier is originated in Order
-     * Management module. Default is null.
+     * Order line identifier at subscribed service level. This identifier originates from the order
+     * management module. Default is null.
      */
     public Long getOrderLineId() {
         return orderLineId;
     }
-    /** This param is used to filter subscribed services based on its status */
+    /** This parameter filters subscribed services based on its status. */
     private String status;
 
-    /** This param is used to filter subscribed services based on its status */
+    /** This parameter filters subscribed services based on its status. */
     public String getStatus() {
         return status;
     }
@@ -187,11 +187,11 @@ public class ListSubscribedServicesRequest
             return this;
         }
 
-        /** Line level Subscription Id */
+        /** Line level subscription ID. */
         private String subscriptionId = null;
 
         /**
-         * Line level Subscription Id
+         * Line level subscription ID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -202,14 +202,14 @@ public class ListSubscribedServicesRequest
         }
 
         /**
-         * Order Line identifier at subscribed service level . This identifier is originated in
-         * Order Management module. Default is null.
+         * Order line identifier at subscribed service level. This identifier originates from the
+         * order management module. Default is null.
          */
         private Long orderLineId = null;
 
         /**
-         * Order Line identifier at subscribed service level . This identifier is originated in
-         * Order Management module. Default is null.
+         * Order line identifier at subscribed service level. This identifier originates from the
+         * order management module. Default is null.
          *
          * @param orderLineId the value to set
          * @return this builder instance
@@ -219,11 +219,11 @@ public class ListSubscribedServicesRequest
             return this;
         }
 
-        /** This param is used to filter subscribed services based on its status */
+        /** This parameter filters subscribed services based on its status. */
         private String status = null;
 
         /**
-         * This param is used to filter subscribed services based on its status
+         * This parameter filters subscribed services based on its status.
          *
          * @param status the value to set
          * @return this builder instance

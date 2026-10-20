@@ -90,6 +90,32 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetSubscriptionDetailsResponse getSubscriptionDetails(
+            GetSubscriptionDetailsRequest request) {
+        Objects.requireNonNull(request.getSubscriptionId(), "subscriptionId is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetSubscriptionDetailsResponse::builder)
+                .logger(LOG, "getSubscriptionDetails")
+                .serviceDetails("Subscription", "GetSubscriptionDetails", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubscriptionDetailsRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("subscriptionDetails")
+                .appendQueryParam("subscriptionId", request.getSubscriptionId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.onesubscription.model.SubscriptionDetails.class,
+                        GetSubscriptionDetailsResponse.Builder::subscriptionDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubscriptionDetailsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -118,6 +144,42 @@ public class SubscriptionClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-next-page", ListSubscriptionsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListSubscriptionsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListUsageLedgersResponse listUsageLedgers(ListUsageLedgersRequest request) {
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListUsageLedgersResponse::builder)
+                .logger(LOG, "listUsageLedgers")
+                .serviceDetails("Subscription", "ListUsageLedgers", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUsageLedgersRequest::builder)
+                .basePath("/20190111")
+                .appendPathParam("subscriptionDetails")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("usageLedger")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam(
+                        "timeConsumptionGreaterThanOrEqualTo",
+                        request.getTimeConsumptionGreaterThanOrEqualTo())
+                .appendQueryParam("timeConsumptionLessThan", request.getTimeConsumptionLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.onesubscription.model.UsageLedgerSummary.class,
+                        ListUsageLedgersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListUsageLedgersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListUsageLedgersResponse.Builder::opcRequestId)
                 .callSync();
     }
 

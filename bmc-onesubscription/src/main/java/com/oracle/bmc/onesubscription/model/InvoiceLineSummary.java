@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Invoice Line <br>
+ * Invoice line. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,12 +49,12 @@ public final class InvoiceLineSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SPM Invoice Line internal identifier */
+        /** SPM (Subscription Plan Management) invoice line internal identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * SPM Invoice Line internal identifier
+         * SPM (Subscription Plan Management) invoice line internal identifier.
          *
          * @param id the value to set
          * @return this builder
@@ -73,12 +73,12 @@ public final class InvoiceLineSummary
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** AR Invoice Number for Invoice Line */
+        /** Accounts receivable invoice number for invoice line. */
         @com.fasterxml.jackson.annotation.JsonProperty("arInvoiceNumber")
         private String arInvoiceNumber;
 
         /**
-         * AR Invoice Number for Invoice Line
+         * Accounts receivable invoice number for invoice line.
          *
          * @param arInvoiceNumber the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class InvoiceLineSummary
             this.__explicitlySet__.add("arInvoiceNumber");
             return this;
         }
-        /** Data Center Attribute. */
+        /** Data center attribute. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
         /**
-         * Data Center Attribute.
+         * Data center attribute.
          *
          * @param dataCenter the value to set
          * @return this builder
@@ -103,12 +103,12 @@ public final class InvoiceLineSummary
             this.__explicitlySet__.add("dataCenter");
             return this;
         }
-        /** Usage start time */
+        /** Usage start time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * Usage start time
+         * Usage start time.
          *
          * @param timeStart the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class InvoiceLineSummary
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Usage end time */
+        /** Usage end time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * Usage end time
+         * Usage end time.
          *
          * @param timeEnd the value to set
          * @return this builder
@@ -185,12 +185,12 @@ public final class InvoiceLineSummary
         return new Builder().copy(this);
     }
 
-    /** SPM Invoice Line internal identifier */
+    /** SPM (Subscription Plan Management) invoice line internal identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * SPM Invoice Line internal identifier
+     * SPM (Subscription Plan Management) invoice line internal identifier.
      *
      * @return the value
      */
@@ -205,12 +205,12 @@ public final class InvoiceLineSummary
         return product;
     }
 
-    /** AR Invoice Number for Invoice Line */
+    /** Accounts receivable invoice number for invoice line. */
     @com.fasterxml.jackson.annotation.JsonProperty("arInvoiceNumber")
     private final String arInvoiceNumber;
 
     /**
-     * AR Invoice Number for Invoice Line
+     * Accounts receivable invoice number for invoice line.
      *
      * @return the value
      */
@@ -218,12 +218,12 @@ public final class InvoiceLineSummary
         return arInvoiceNumber;
     }
 
-    /** Data Center Attribute. */
+    /** Data center attribute. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
     /**
-     * Data Center Attribute.
+     * Data center attribute.
      *
      * @return the value
      */
@@ -231,12 +231,12 @@ public final class InvoiceLineSummary
         return dataCenter;
     }
 
-    /** Usage start time */
+    /** Usage start time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * Usage start time
+     * Usage start time.
      *
      * @return the value
      */
@@ -244,12 +244,12 @@ public final class InvoiceLineSummary
         return timeStart;
     }
 
-    /** Usage end time */
+    /** Usage end time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * Usage end time
+     * Usage end time.
      *
      * @return the value
      */

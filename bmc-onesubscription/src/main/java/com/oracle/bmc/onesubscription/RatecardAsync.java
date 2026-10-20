@@ -60,8 +60,8 @@ public interface RatecardAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * List API that returns all ratecards for given Subscription Id and Account ID (if provided)
-     * and for a particular date range
+     * Returns all rate cards for a given subscription ID and account ID (if provided), and for a
+     * particular date range.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

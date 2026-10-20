@@ -3276,6 +3276,39 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDatabaseSnapshotResponse> createDatabaseSnapshot(
+            CreateDatabaseSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDatabaseSnapshotRequest, CreateDatabaseSnapshotResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateDatabaseSnapshotDetails(),
+                "createDatabaseSnapshotDetails is required");
+
+        return clientCall(request, CreateDatabaseSnapshotResponse::builder)
+                .logger(LOG, "createDatabaseSnapshot")
+                .serviceDetails("Database", "CreateDatabaseSnapshot", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDatabaseSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databaseSnapshots")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.DatabaseSnapshot.class,
+                        CreateDatabaseSnapshotResponse.Builder::databaseSnapshot)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateDatabaseSnapshotResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateDatabaseSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDatabaseSnapshotResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDatabaseSoftwareImageResponse>
             createDatabaseSoftwareImage(
                     CreateDatabaseSoftwareImageRequest request,
@@ -4679,6 +4712,37 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-work-request-id", DeleteDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDatabaseSnapshotResponse> deleteDatabaseSnapshot(
+            DeleteDatabaseSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDatabaseSnapshotRequest, DeleteDatabaseSnapshotResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseSnapshotId(), "databaseSnapshotId must not be blank");
+
+        return clientCall(request, DeleteDatabaseSnapshotResponse::builder)
+                .logger(LOG, "deleteDatabaseSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "DeleteDatabaseSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSnapshot/DeleteDatabaseSnapshot")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDatabaseSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databaseSnapshots")
+                .appendPathParam(request.getDatabaseSnapshotId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteDatabaseSnapshotResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDatabaseSnapshotResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -8420,6 +8484,37 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<GetDatabaseSnapshotResponse> getDatabaseSnapshot(
+            GetDatabaseSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseSnapshotRequest, GetDatabaseSnapshotResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseSnapshotId(), "databaseSnapshotId must not be blank");
+
+        return clientCall(request, GetDatabaseSnapshotResponse::builder)
+                .logger(LOG, "getDatabaseSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "GetDatabaseSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSnapshot/GetDatabaseSnapshot")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databaseSnapshots")
+                .appendPathParam(request.getDatabaseSnapshotId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.DatabaseSnapshot.class,
+                        GetDatabaseSnapshotResponse.Builder::databaseSnapshot)
+                .handleResponseHeaderString("etag", GetDatabaseSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseSnapshotResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDatabaseSoftwareImageResponse> getDatabaseSoftwareImage(
             GetDatabaseSoftwareImageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -11739,6 +11834,44 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", ListDataGuardAssociationsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDataGuardAssociationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabaseSnapshotsResponse> listDatabaseSnapshots(
+            ListDatabaseSnapshotsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseSnapshotsRequest, ListDatabaseSnapshotsResponse>
+                    handler) {
+
+        return clientCall(request, ListDatabaseSnapshotsResponse::builder)
+                .logger(LOG, "listDatabaseSnapshots")
+                .serviceDetails(
+                        "Database",
+                        "ListDatabaseSnapshots",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSnapshot/ListDatabaseSnapshots")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseSnapshotsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databaseSnapshots")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("clusterId", request.getClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.DatabaseSnapshotCollection.class,
+                        ListDatabaseSnapshotsResponse.Builder::databaseSnapshotCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDatabaseSnapshotsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDatabaseSnapshotsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -17833,6 +17966,43 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", UpdateDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDatabaseSnapshotResponse> updateDatabaseSnapshot(
+            UpdateDatabaseSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDatabaseSnapshotRequest, UpdateDatabaseSnapshotResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDatabaseSnapshotId(), "databaseSnapshotId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDatabaseSnapshotDetails(),
+                "updateDatabaseSnapshotDetails is required");
+
+        return clientCall(request, UpdateDatabaseSnapshotResponse::builder)
+                .logger(LOG, "updateDatabaseSnapshot")
+                .serviceDetails(
+                        "Database",
+                        "UpdateDatabaseSnapshot",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSnapshot/UpdateDatabaseSnapshot")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDatabaseSnapshotRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databaseSnapshots")
+                .appendPathParam(request.getDatabaseSnapshotId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.DatabaseSnapshot.class,
+                        UpdateDatabaseSnapshotResponse.Builder::databaseSnapshot)
+                .handleResponseHeaderString("etag", UpdateDatabaseSnapshotResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDatabaseSnapshotResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

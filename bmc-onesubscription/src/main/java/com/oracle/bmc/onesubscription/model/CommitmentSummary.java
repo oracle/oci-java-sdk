@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Subscribed Service commitment summary <br>
+ * Subscribed service commitment summary. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,12 +55,12 @@ public final class CommitmentSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SPM internal Commitment ID */
+        /** SPM (Subscription Plan Management) internal commitment ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * SPM internal Commitment ID
+         * SPM (Subscription Plan Management) internal commitment ID.
          *
          * @param id the value to set
          * @return this builder
@@ -70,12 +70,12 @@ public final class CommitmentSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** SPM internal Subscribed Service ID */
+        /** SPM internal subscribed service ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
         private String subscribedServiceId;
 
         /**
-         * SPM internal Subscribed Service ID
+         * SPM internal subscribed service ID.
          *
          * @param subscribedServiceId the value to set
          * @return this builder
@@ -85,12 +85,12 @@ public final class CommitmentSummary
             this.__explicitlySet__.add("subscribedServiceId");
             return this;
         }
-        /** Commitment start date */
+        /** Commitment start date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * Commitment start date
+         * Commitment start date.
          *
          * @param timeStart the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class CommitmentSummary
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Commitment end date */
+        /** Commitment end date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * Commitment end date
+         * Commitment end date.
          *
          * @param timeEnd the value to set
          * @return this builder
@@ -115,12 +115,12 @@ public final class CommitmentSummary
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** Commitment quantity */
+        /** Commitment quantity. */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
         /**
-         * Commitment quantity
+         * Commitment quantity.
          *
          * @param quantity the value to set
          * @return this builder
@@ -130,12 +130,12 @@ public final class CommitmentSummary
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /** Commitment used amount */
+        /** Commitment used amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("usedAmount")
         private String usedAmount;
 
         /**
-         * Commitment used amount
+         * Commitment used amount.
          *
          * @param usedAmount the value to set
          * @return this builder
@@ -145,12 +145,12 @@ public final class CommitmentSummary
             this.__explicitlySet__.add("usedAmount");
             return this;
         }
-        /** Commitment available amount */
+        /** Commitment available amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("availableAmount")
         private String availableAmount;
 
         /**
-         * Commitment available amount
+         * Commitment available amount.
          *
          * @param availableAmount the value to set
          * @return this builder
@@ -160,12 +160,12 @@ public final class CommitmentSummary
             this.__explicitlySet__.add("availableAmount");
             return this;
         }
-        /** Funded Allocation line value example: 12000.00 */
+        /** Funded allocation line value. Example: 12000.00 */
         @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
         private String fundedAllocationValue;
 
         /**
-         * Funded Allocation line value example: 12000.00
+         * Funded allocation line value. Example: 12000.00
          *
          * @param fundedAllocationValue the value to set
          * @return this builder
@@ -235,12 +235,12 @@ public final class CommitmentSummary
         return new Builder().copy(this);
     }
 
-    /** SPM internal Commitment ID */
+    /** SPM (Subscription Plan Management) internal commitment ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * SPM internal Commitment ID
+     * SPM (Subscription Plan Management) internal commitment ID.
      *
      * @return the value
      */
@@ -248,12 +248,12 @@ public final class CommitmentSummary
         return id;
     }
 
-    /** SPM internal Subscribed Service ID */
+    /** SPM internal subscribed service ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
     private final String subscribedServiceId;
 
     /**
-     * SPM internal Subscribed Service ID
+     * SPM internal subscribed service ID.
      *
      * @return the value
      */
@@ -261,12 +261,12 @@ public final class CommitmentSummary
         return subscribedServiceId;
     }
 
-    /** Commitment start date */
+    /** Commitment start date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * Commitment start date
+     * Commitment start date.
      *
      * @return the value
      */
@@ -274,12 +274,12 @@ public final class CommitmentSummary
         return timeStart;
     }
 
-    /** Commitment end date */
+    /** Commitment end date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * Commitment end date
+     * Commitment end date.
      *
      * @return the value
      */
@@ -287,12 +287,12 @@ public final class CommitmentSummary
         return timeEnd;
     }
 
-    /** Commitment quantity */
+    /** Commitment quantity. */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
     /**
-     * Commitment quantity
+     * Commitment quantity.
      *
      * @return the value
      */
@@ -300,12 +300,12 @@ public final class CommitmentSummary
         return quantity;
     }
 
-    /** Commitment used amount */
+    /** Commitment used amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("usedAmount")
     private final String usedAmount;
 
     /**
-     * Commitment used amount
+     * Commitment used amount.
      *
      * @return the value
      */
@@ -313,12 +313,12 @@ public final class CommitmentSummary
         return usedAmount;
     }
 
-    /** Commitment available amount */
+    /** Commitment available amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("availableAmount")
     private final String availableAmount;
 
     /**
-     * Commitment available amount
+     * Commitment available amount.
      *
      * @return the value
      */
@@ -326,12 +326,12 @@ public final class CommitmentSummary
         return availableAmount;
     }
 
-    /** Funded Allocation line value example: 12000.00 */
+    /** Funded allocation line value. Example: 12000.00 */
     @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
     private final String fundedAllocationValue;
 
     /**
-     * Funded Allocation line value example: 12000.00
+     * Funded allocation line value. Example: 12000.00
      *
      * @return the value
      */

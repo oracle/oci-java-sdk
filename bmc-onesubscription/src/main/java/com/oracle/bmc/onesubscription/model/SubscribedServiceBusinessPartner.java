@@ -58,12 +58,12 @@ public final class SubscribedServiceBusinessPartner
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Commercial name also called customer name. */
+        /** Commercial name, also referred to as customer name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Commercial name also called customer name.
+         * Commercial name, also referred to as customer name.
          *
          * @param name the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class SubscribedServiceBusinessPartner
             this.__explicitlySet__.add("namePhonetic");
             return this;
         }
-        /** TCA customer account number. */
+        /** TCA (Trading Community Architecture) customer account number. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAccountNumber")
         private String tcaCustAccountNumber;
 
         /**
-         * TCA customer account number.
+         * TCA (Trading Community Architecture) customer account number.
          *
          * @param tcaCustAccountNumber the value to set
          * @return this builder
@@ -103,12 +103,12 @@ public final class SubscribedServiceBusinessPartner
             this.__explicitlySet__.add("tcaCustAccountNumber");
             return this;
         }
-        /** The business partner is part of the public sector or not. */
+        /** Specifies whether or not the business partner is part of the public sector. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPublicSector")
         private Boolean isPublicSector;
 
         /**
-         * The business partner is part of the public sector or not.
+         * Specifies whether or not the business partner is part of the public sector.
          *
          * @param isPublicSector the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class SubscribedServiceBusinessPartner
             this.__explicitlySet__.add("isPublicSector");
             return this;
         }
-        /** The business partner is chain customer or not. */
+        /** Specifies whether or not the business partner is a chain customer. */
         @com.fasterxml.jackson.annotation.JsonProperty("isChainCustomer")
         private Boolean isChainCustomer;
 
         /**
-         * The business partner is chain customer or not.
+         * Specifies whether or not the business partner is a chain customer.
          *
          * @param isChainCustomer the value to set
          * @return this builder
@@ -257,12 +257,12 @@ public final class SubscribedServiceBusinessPartner
         return new Builder().copy(this);
     }
 
-    /** Commercial name also called customer name. */
+    /** Commercial name, also referred to as customer name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Commercial name also called customer name.
+     * Commercial name, also referred to as customer name.
      *
      * @return the value
      */
@@ -283,12 +283,12 @@ public final class SubscribedServiceBusinessPartner
         return namePhonetic;
     }
 
-    /** TCA customer account number. */
+    /** TCA (Trading Community Architecture) customer account number. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAccountNumber")
     private final String tcaCustAccountNumber;
 
     /**
-     * TCA customer account number.
+     * TCA (Trading Community Architecture) customer account number.
      *
      * @return the value
      */
@@ -296,12 +296,12 @@ public final class SubscribedServiceBusinessPartner
         return tcaCustAccountNumber;
     }
 
-    /** The business partner is part of the public sector or not. */
+    /** Specifies whether or not the business partner is part of the public sector. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPublicSector")
     private final Boolean isPublicSector;
 
     /**
-     * The business partner is part of the public sector or not.
+     * Specifies whether or not the business partner is part of the public sector.
      *
      * @return the value
      */
@@ -309,12 +309,12 @@ public final class SubscribedServiceBusinessPartner
         return isPublicSector;
     }
 
-    /** The business partner is chain customer or not. */
+    /** Specifies whether or not the business partner is a chain customer. */
     @com.fasterxml.jackson.annotation.JsonProperty("isChainCustomer")
     private final Boolean isChainCustomer;
 
     /**
-     * The business partner is chain customer or not.
+     * Specifies whether or not the business partner is a chain customer.
      *
      * @return the value
      */

@@ -28,6 +28,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
         "destinationSubnetId",
         "destinationPrimaryPrivateIpAddress",
         "destinationPrimaryPrivateIpHostnameLabel",
+        "destinationReservedPrimaryPrivateIpId",
         "destinationReservedPublicIpId",
         "destinationNsgIdList"
     })
@@ -36,6 +37,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
             String destinationSubnetId,
             String destinationPrimaryPrivateIpAddress,
             String destinationPrimaryPrivateIpHostnameLabel,
+            String destinationReservedPrimaryPrivateIpId,
             String destinationReservedPublicIpId,
             java.util.List<String> destinationNsgIdList) {
         super();
@@ -43,6 +45,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
         this.destinationSubnetId = destinationSubnetId;
         this.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
         this.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+        this.destinationReservedPrimaryPrivateIpId = destinationReservedPrimaryPrivateIpId;
         this.destinationReservedPublicIpId = destinationReservedPublicIpId;
         this.destinationNsgIdList = destinationNsgIdList;
     }
@@ -92,6 +95,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
             return this;
         }
         /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
          * The primary private IP address to be assigned to the source VNIC in the destination
          * subnet. This IP address must belong to the destination subnet.
          *
@@ -101,6 +105,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
         private String destinationPrimaryPrivateIpAddress;
 
         /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
          * The primary private IP address to be assigned to the source VNIC in the destination
          * subnet. This IP address must belong to the destination subnet.
          *
@@ -116,6 +121,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
             return this;
         }
         /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
          * The hostname label to be assigned in the destination subnet for the primary private IP of
          * the source VNIC. This label is the hostname portion of the private IP's fully qualified
          * domain name (FQDN) (for example, 'myhost1' in the FQDN
@@ -127,6 +133,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
         private String destinationPrimaryPrivateIpHostnameLabel;
 
         /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
          * The hostname label to be assigned in the destination subnet for the primary private IP of
          * the source VNIC. This label is the hostname portion of the private IP's fully qualified
          * domain name (FQDN) (for example, 'myhost1' in the FQDN
@@ -142,6 +149,42 @@ public final class ComputeInstanceMovableVnicMappingDetails
             this.destinationPrimaryPrivateIpHostnameLabel =
                     destinationPrimaryPrivateIpHostnameLabel;
             this.__explicitlySet__.add("destinationPrimaryPrivateIpHostnameLabel");
+            return this;
+        }
+        /**
+         * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the
+         * destination region. Do not specify this attribute together with {@code
+         * destinationPrimaryPrivateIpAddress}, {@code destinationPrimaryPrivateIpHostnameLabel}, or
+         * the {@code FsdrDestinationReservedPrimaryPrivateIpId} freeform tag on the source VNIC.
+         *
+         * <p>For legacy compatibility, omit this attribute and use either the legacy explicit
+         * private-IP fields or the freeform tag, but not both configuration mechanisms for the same
+         * source VNIC.
+         *
+         * <p>Example: {@code ocid1.privateip.oc1..uniqueID}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationReservedPrimaryPrivateIpId")
+        private String destinationReservedPrimaryPrivateIpId;
+
+        /**
+         * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the
+         * destination region. Do not specify this attribute together with {@code
+         * destinationPrimaryPrivateIpAddress}, {@code destinationPrimaryPrivateIpHostnameLabel}, or
+         * the {@code FsdrDestinationReservedPrimaryPrivateIpId} freeform tag on the source VNIC.
+         *
+         * <p>For legacy compatibility, omit this attribute and use either the legacy explicit
+         * private-IP fields or the freeform tag, but not both configuration mechanisms for the same
+         * source VNIC.
+         *
+         * <p>Example: {@code ocid1.privateip.oc1..uniqueID}
+         *
+         * @param destinationReservedPrimaryPrivateIpId the value to set
+         * @return this builder
+         */
+        public Builder destinationReservedPrimaryPrivateIpId(
+                String destinationReservedPrimaryPrivateIpId) {
+            this.destinationReservedPrimaryPrivateIpId = destinationReservedPrimaryPrivateIpId;
+            this.__explicitlySet__.add("destinationReservedPrimaryPrivateIpId");
             return this;
         }
         /**
@@ -203,6 +246,7 @@ public final class ComputeInstanceMovableVnicMappingDetails
                             this.destinationSubnetId,
                             this.destinationPrimaryPrivateIpAddress,
                             this.destinationPrimaryPrivateIpHostnameLabel,
+                            this.destinationReservedPrimaryPrivateIpId,
                             this.destinationReservedPublicIpId,
                             this.destinationNsgIdList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -226,6 +270,10 @@ public final class ComputeInstanceMovableVnicMappingDetails
             if (model.wasPropertyExplicitlySet("destinationPrimaryPrivateIpHostnameLabel")) {
                 this.destinationPrimaryPrivateIpHostnameLabel(
                         model.getDestinationPrimaryPrivateIpHostnameLabel());
+            }
+            if (model.wasPropertyExplicitlySet("destinationReservedPrimaryPrivateIpId")) {
+                this.destinationReservedPrimaryPrivateIpId(
+                        model.getDestinationReservedPrimaryPrivateIpId());
             }
             if (model.wasPropertyExplicitlySet("destinationReservedPublicIpId")) {
                 this.destinationReservedPublicIpId(model.getDestinationReservedPublicIpId());
@@ -285,8 +333,9 @@ public final class ComputeInstanceMovableVnicMappingDetails
     }
 
     /**
-     * The primary private IP address to be assigned to the source VNIC in the destination subnet.
-     * This IP address must belong to the destination subnet.
+     * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The
+     * primary private IP address to be assigned to the source VNIC in the destination subnet. This
+     * IP address must belong to the destination subnet.
      *
      * <p>Example: {@code 10.0.3.3}
      */
@@ -294,8 +343,9 @@ public final class ComputeInstanceMovableVnicMappingDetails
     private final String destinationPrimaryPrivateIpAddress;
 
     /**
-     * The primary private IP address to be assigned to the source VNIC in the destination subnet.
-     * This IP address must belong to the destination subnet.
+     * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The
+     * primary private IP address to be assigned to the source VNIC in the destination subnet. This
+     * IP address must belong to the destination subnet.
      *
      * <p>Example: {@code 10.0.3.3}
      *
@@ -306,7 +356,8 @@ public final class ComputeInstanceMovableVnicMappingDetails
     }
 
     /**
-     * The hostname label to be assigned in the destination subnet for the primary private IP of the
+     * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The
+     * hostname label to be assigned in the destination subnet for the primary private IP of the
      * source VNIC. This label is the hostname portion of the private IP's fully qualified domain
      * name (FQDN) (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').
      *
@@ -316,7 +367,8 @@ public final class ComputeInstanceMovableVnicMappingDetails
     private final String destinationPrimaryPrivateIpHostnameLabel;
 
     /**
-     * The hostname label to be assigned in the destination subnet for the primary private IP of the
+     * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The
+     * hostname label to be assigned in the destination subnet for the primary private IP of the
      * source VNIC. This label is the hostname portion of the private IP's fully qualified domain
      * name (FQDN) (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').
      *
@@ -326,6 +378,39 @@ public final class ComputeInstanceMovableVnicMappingDetails
      */
     public String getDestinationPrimaryPrivateIpHostnameLabel() {
         return destinationPrimaryPrivateIpHostnameLabel;
+    }
+
+    /**
+     * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the
+     * destination region. Do not specify this attribute together with {@code
+     * destinationPrimaryPrivateIpAddress}, {@code destinationPrimaryPrivateIpHostnameLabel}, or the
+     * {@code FsdrDestinationReservedPrimaryPrivateIpId} freeform tag on the source VNIC.
+     *
+     * <p>For legacy compatibility, omit this attribute and use either the legacy explicit
+     * private-IP fields or the freeform tag, but not both configuration mechanisms for the same
+     * source VNIC.
+     *
+     * <p>Example: {@code ocid1.privateip.oc1..uniqueID}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationReservedPrimaryPrivateIpId")
+    private final String destinationReservedPrimaryPrivateIpId;
+
+    /**
+     * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the
+     * destination region. Do not specify this attribute together with {@code
+     * destinationPrimaryPrivateIpAddress}, {@code destinationPrimaryPrivateIpHostnameLabel}, or the
+     * {@code FsdrDestinationReservedPrimaryPrivateIpId} freeform tag on the source VNIC.
+     *
+     * <p>For legacy compatibility, omit this attribute and use either the legacy explicit
+     * private-IP fields or the freeform tag, but not both configuration mechanisms for the same
+     * source VNIC.
+     *
+     * <p>Example: {@code ocid1.privateip.oc1..uniqueID}
+     *
+     * @return the value
+     */
+    public String getDestinationReservedPrimaryPrivateIpId() {
+        return destinationReservedPrimaryPrivateIpId;
     }
 
     /**
@@ -393,6 +478,8 @@ public final class ComputeInstanceMovableVnicMappingDetails
                 .append(String.valueOf(this.destinationPrimaryPrivateIpAddress));
         sb.append(", destinationPrimaryPrivateIpHostnameLabel=")
                 .append(String.valueOf(this.destinationPrimaryPrivateIpHostnameLabel));
+        sb.append(", destinationReservedPrimaryPrivateIpId=")
+                .append(String.valueOf(this.destinationReservedPrimaryPrivateIpId));
         sb.append(", destinationReservedPublicIpId=")
                 .append(String.valueOf(this.destinationReservedPublicIpId));
         sb.append(", destinationNsgIdList=").append(String.valueOf(this.destinationNsgIdList));
@@ -420,6 +507,9 @@ public final class ComputeInstanceMovableVnicMappingDetails
                         this.destinationPrimaryPrivateIpHostnameLabel,
                         other.destinationPrimaryPrivateIpHostnameLabel)
                 && java.util.Objects.equals(
+                        this.destinationReservedPrimaryPrivateIpId,
+                        other.destinationReservedPrimaryPrivateIpId)
+                && java.util.Objects.equals(
                         this.destinationReservedPublicIpId, other.destinationReservedPublicIpId)
                 && java.util.Objects.equals(this.destinationNsgIdList, other.destinationNsgIdList)
                 && super.equals(other);
@@ -445,6 +535,11 @@ public final class ComputeInstanceMovableVnicMappingDetails
                         + (this.destinationPrimaryPrivateIpHostnameLabel == null
                                 ? 43
                                 : this.destinationPrimaryPrivateIpHostnameLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationReservedPrimaryPrivateIpId == null
+                                ? 43
+                                : this.destinationReservedPrimaryPrivateIpId.hashCode());
         result =
                 (result * PRIME)
                         + (this.destinationReservedPublicIpId == null

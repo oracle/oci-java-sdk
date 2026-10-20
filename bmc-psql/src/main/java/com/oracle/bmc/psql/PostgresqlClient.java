@@ -1473,6 +1473,39 @@ public class PostgresqlClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public UpgradeDbSystemResponse upgradeDbSystem(UpgradeDbSystemRequest request) {
+
+        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getUpgradeDbSystemDetails(), "upgradeDbSystemDetails is required");
+
+        return clientCall(request, UpgradeDbSystemResponse::builder)
+                .logger(LOG, "upgradeDbSystem")
+                .serviceDetails(
+                        "Postgresql",
+                        "UpgradeDbSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/UpgradeDbSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpgradeDbSystemRequest::builder)
+                .basePath("/20220915")
+                .appendPathParam("dbSystems")
+                .appendPathParam(request.getDbSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("upgrade")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpgradeDbSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpgradeDbSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public PostgresqlWaiters getWaiters() {
         return waiters;
     }

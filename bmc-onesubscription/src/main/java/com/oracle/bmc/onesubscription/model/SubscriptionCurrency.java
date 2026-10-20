@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Currency details <br>
+ * Currency details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,12 @@ public final class SubscriptionCurrency
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Currency name */
+        /** Currency name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Currency name
+         * Currency name.
          *
          * @param name the value to set
          * @return this builder
@@ -48,12 +48,12 @@ public final class SubscriptionCurrency
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Currency Code */
+        /** Currency code. */
         @com.fasterxml.jackson.annotation.JsonProperty("isoCode")
         private String isoCode;
 
         /**
-         * Currency Code
+         * Currency code.
          *
          * @param isoCode the value to set
          * @return this builder
@@ -63,12 +63,12 @@ public final class SubscriptionCurrency
             this.__explicitlySet__.add("isoCode");
             return this;
         }
-        /** Standard Precision of the Currency */
+        /** Standard precision of the currency. */
         @com.fasterxml.jackson.annotation.JsonProperty("stdPrecision")
         private Long stdPrecision;
 
         /**
-         * Standard Precision of the Currency
+         * Standard precision of the currency.
          *
          * @param stdPrecision the value to set
          * @return this builder
@@ -115,12 +115,12 @@ public final class SubscriptionCurrency
         return new Builder().copy(this);
     }
 
-    /** Currency name */
+    /** Currency name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Currency name
+     * Currency name.
      *
      * @return the value
      */
@@ -128,12 +128,12 @@ public final class SubscriptionCurrency
         return name;
     }
 
-    /** Currency Code */
+    /** Currency code. */
     @com.fasterxml.jackson.annotation.JsonProperty("isoCode")
     private final String isoCode;
 
     /**
-     * Currency Code
+     * Currency code.
      *
      * @return the value
      */
@@ -141,12 +141,12 @@ public final class SubscriptionCurrency
         return isoCode;
     }
 
-    /** Standard Precision of the Currency */
+    /** Standard precision of the currency. */
     @com.fasterxml.jackson.annotation.JsonProperty("stdPrecision")
     private final Long stdPrecision;
 
     /**
-     * Standard Precision of the Currency
+     * Standard precision of the currency.
      *
      * @return the value
      */

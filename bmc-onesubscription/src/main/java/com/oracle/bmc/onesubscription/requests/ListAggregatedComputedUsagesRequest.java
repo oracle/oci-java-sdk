@@ -23,56 +23,56 @@ public class ListAggregatedComputedUsagesRequest
         return compartmentId;
     }
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription ID is an identifier associated with the service, used for filtering the computed
+     * usage in SPM.
      */
     private String subscriptionId;
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription ID is an identifier associated with the service, used for filtering the computed
+     * usage in SPM.
      */
     public String getSubscriptionId() {
         return subscriptionId;
     }
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter computed usage data in SPM. For non-aggregated data, the time period
+     * between fromDate and toDate, expressed in RFC 3339 timestamp format.
      */
     private java.util.Date timeFrom;
 
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter computed usage data in SPM. For non-aggregated data, the time period
+     * between fromDate and toDate, expressed in RFC 3339 timestamp format.
      */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /** Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format. */
     private java.util.Date timeTo;
 
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /** Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format. */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
-    /** Product part number for subscribed service line, called parent product. */
+    /** Product part number for the subscribed service line, referred to as the parent product. */
     private String parentProduct;
 
-    /** Product part number for subscribed service line, called parent product. */
+    /** Product part number for the subscribed service line, referred to as the parent product. */
     public String getParentProduct() {
         return parentProduct;
     }
     /**
-     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}),
-     * daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a
-     * grouping criteria by date.
+     * Grouping criteria to use for aggregating the computed usage, whether hourly ({@code HOURLY}),
+     * daily ({@code DAILY}), monthly ({@code MONTHLY}), or none ({@code NONE}), so as not to follow
+     * a grouping criteria by date.
      */
     private Grouping grouping;
 
     /**
-     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}),
-     * daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a
-     * grouping criteria by date.
+     * Grouping criteria to use for aggregating the computed usage, whether hourly ({@code HOURLY}),
+     * daily ({@code DAILY}), monthly ({@code MONTHLY}), or none ({@code NONE}), so as not to follow
+     * a grouping criteria by date.
      */
     public enum Grouping implements com.oracle.bmc.http.internal.BmcEnum {
         Hourly("HOURLY"),
@@ -110,22 +110,22 @@ public class ListAggregatedComputedUsagesRequest
     };
 
     /**
-     * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code HOURLY}),
-     * daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not follow a
-     * grouping criteria by date.
+     * Grouping criteria to use for aggregating the computed usage, whether hourly ({@code HOURLY}),
+     * daily ({@code DAILY}), monthly ({@code MONTHLY}), or none ({@code NONE}), so as not to follow
+     * a grouping criteria by date.
      */
     public Grouping getGrouping() {
         return grouping;
     }
     /**
-     * The maximum number aggregatedComputedUsages of items to return within the Subscription "List"
-     * call, this counts the overall count across all items Example: {@code 500}
+     * The maximum number of aggregatedComputedUsages items to return within the Subscription "List"
+     * call, this counts the overall count across all items. Example: {@code 500}
      */
     private Integer limit;
 
     /**
-     * The maximum number aggregatedComputedUsages of items to return within the Subscription "List"
-     * call, this counts the overall count across all items Example: {@code 500}
+     * The maximum number of aggregatedComputedUsages items to return within the Subscription "List"
+     * call, this counts the overall count across all items. Example: {@code 500}
      */
     public Integer getLimit() {
         return limit;
@@ -172,14 +172,14 @@ public class ListAggregatedComputedUsagesRequest
         }
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription ID is an identifier associated with the service, used for filtering the
+         * computed usage in SPM.
          */
         private String subscriptionId = null;
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription ID is an identifier associated with the service, used for filtering the
+         * computed usage in SPM.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -190,14 +190,14 @@ public class ListAggregatedComputedUsagesRequest
         }
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter computed usage data in SPM. For non-aggregated data, the time
+         * period between fromDate and toDate, expressed in RFC 3339 timestamp format.
          */
         private java.util.Date timeFrom = null;
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter computed usage data in SPM. For non-aggregated data, the time
+         * period between fromDate and toDate, expressed in RFC 3339 timestamp format.
          *
          * @param timeFrom the value to set
          * @return this builder instance
@@ -208,12 +208,12 @@ public class ListAggregatedComputedUsagesRequest
         }
 
         /**
-         * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+         * Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format.
          */
         private java.util.Date timeTo = null;
 
         /**
-         * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+         * Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format.
          *
          * @param timeTo the value to set
          * @return this builder instance
@@ -223,11 +223,13 @@ public class ListAggregatedComputedUsagesRequest
             return this;
         }
 
-        /** Product part number for subscribed service line, called parent product. */
+        /**
+         * Product part number for the subscribed service line, referred to as the parent product.
+         */
         private String parentProduct = null;
 
         /**
-         * Product part number for subscribed service line, called parent product.
+         * Product part number for the subscribed service line, referred to as the parent product.
          *
          * @param parentProduct the value to set
          * @return this builder instance
@@ -238,16 +240,16 @@ public class ListAggregatedComputedUsagesRequest
         }
 
         /**
-         * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code
-         * HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not
-         * follow a grouping criteria by date.
+         * Grouping criteria to use for aggregating the computed usage, whether hourly ({@code
+         * HOURLY}), daily ({@code DAILY}), monthly ({@code MONTHLY}), or none ({@code NONE}), so as
+         * not to follow a grouping criteria by date.
          */
         private Grouping grouping = null;
 
         /**
-         * Grouping criteria to use for aggregate the computed Usage, either hourly ({@code
-         * HOURLY}), daily ({@code DAILY}), monthly({@code MONTHLY}) or none ({@code NONE}) to not
-         * follow a grouping criteria by date.
+         * Grouping criteria to use for aggregating the computed usage, whether hourly ({@code
+         * HOURLY}), daily ({@code DAILY}), monthly ({@code MONTHLY}), or none ({@code NONE}), so as
+         * not to follow a grouping criteria by date.
          *
          * @param grouping the value to set
          * @return this builder instance
@@ -258,14 +260,14 @@ public class ListAggregatedComputedUsagesRequest
         }
 
         /**
-         * The maximum number aggregatedComputedUsages of items to return within the Subscription
-         * "List" call, this counts the overall count across all items Example: {@code 500}
+         * The maximum number of aggregatedComputedUsages items to return within the Subscription
+         * "List" call, this counts the overall count across all items. Example: {@code 500}
          */
         private Integer limit = null;
 
         /**
-         * The maximum number aggregatedComputedUsages of items to return within the Subscription
-         * "List" call, this counts the overall count across all items Example: {@code 500}
+         * The maximum number of aggregatedComputedUsages items to return within the Subscription
+         * "List" call, this counts the overall count across all items. Example: {@code 500}
          *
          * @param limit the value to set
          * @return this builder instance

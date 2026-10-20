@@ -13,10 +13,10 @@ import com.oracle.bmc.onesubscription.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Computed Usage Id */
+    /** The computed usage ID. */
     private String computedUsageId;
 
-    /** The Computed Usage Id */
+    /** The computed usage ID. */
     public String getComputedUsageId() {
         return computedUsageId;
     }
@@ -28,16 +28,16 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         return compartmentId;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+     * return only the information (fields) required by the client. This parameter controls which
+     * fields to return.
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+     * return only the information (fields) required by the client. This parameter controls which
+     * fields to return.
      */
     public java.util.List<String> getFields() {
         return fields;
@@ -62,11 +62,11 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Computed Usage Id */
+        /** The computed usage ID. */
         private String computedUsageId = null;
 
         /**
-         * The Computed Usage Id
+         * The computed usage ID.
          *
          * @param computedUsageId the value to set
          * @return this builder instance
@@ -91,16 +91,16 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+         * return only the information (fields) required by the client. This parameter controls
+         * which fields to return.
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+         * return only the information (fields) required by the client. This parameter controls
+         * which fields to return.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -112,8 +112,8 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs to return only the information (fields) required by the client. This
-         * parameter is used to control what fields to return.
+         * RESTful web APIs, to return only the information (fields) required by the client. This
+         * parameter controls which fields to return.
          *
          * @param singularValue the singular value to set
          * @return this builder instance

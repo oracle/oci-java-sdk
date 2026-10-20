@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Organization details <br>
+ * Organization details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class InvoicingOrganization
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Organization name */
+        /** Organization name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Organization name
+         * Organization name.
          *
          * @param name the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class InvoicingOrganization
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Organization ID */
+        /** Organization ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("number")
         private Double number;
 
         /**
-         * Organization ID
+         * Organization ID.
          *
          * @param number the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class InvoicingOrganization
         return new Builder().copy(this);
     }
 
-    /** Organization name */
+    /** Organization name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Organization name
+     * Organization name.
      *
      * @return the value
      */
@@ -108,12 +108,12 @@ public final class InvoicingOrganization
         return name;
     }
 
-    /** Organization ID */
+    /** Organization ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("number")
     private final Double number;
 
     /**
-     * Organization ID
+     * Organization ID.
      *
      * @return the value
      */

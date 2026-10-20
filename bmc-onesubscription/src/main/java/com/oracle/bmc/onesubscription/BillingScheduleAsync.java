@@ -60,8 +60,8 @@ public interface BillingScheduleAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This list API returns all billing schedules for given subscription id and for a particular
-     * Subscribed Service if provided
+     * This list API returns all billing schedules for a given subscription ID, and for a particular
+     * subscribed service if provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

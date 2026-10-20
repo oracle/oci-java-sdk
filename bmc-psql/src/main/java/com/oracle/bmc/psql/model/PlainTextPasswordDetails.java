@@ -29,7 +29,7 @@ public final class PlainTextPasswordDetails extends PasswordDetails {
     public static class Builder {
         /** The database system password. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
-        private String password;
+        private char[] password;
 
         /**
          * The database system password.
@@ -37,8 +37,14 @@ public final class PlainTextPasswordDetails extends PasswordDetails {
          * @param password the value to set
          * @return this builder
          */
-        public Builder password(String password) {
+        public Builder password(char[] password) {
             this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
             this.__explicitlySet__.add("password");
             return this;
         }
@@ -75,19 +81,40 @@ public final class PlainTextPasswordDetails extends PasswordDetails {
     @Deprecated
     public PlainTextPasswordDetails(String password) {
         super();
+        this.password = password != null ? password.toCharArray() : null;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public PlainTextPasswordDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password) {
+        super();
         this.password = password;
     }
 
     /** The database system password. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    private final String password;
+    private final char[] password;
+
+    /**
+     * The database system password.
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
 
     /**
      * The database system password.
      *
      * @return the value
      */
-    public String getPassword() {
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
         return password;
     }
 
@@ -106,7 +133,7 @@ public final class PlainTextPasswordDetails extends PasswordDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PlainTextPasswordDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

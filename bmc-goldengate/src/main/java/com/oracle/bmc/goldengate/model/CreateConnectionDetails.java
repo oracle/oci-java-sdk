@@ -38,6 +38,9 @@ package com.oracle.bmc.goldengate.model;
             value = CreateAzureDataLakeStorageConnectionDetails.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOracleAiDataPlatformEngineConnectionDetails.class,
+            name = "ORACLE_AI_DATA_PLATFORM_ENGINE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateGooglePubSubConnectionDetails.class,
             name = "GOOGLE_PUBSUB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -46,6 +49,9 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateOciObjectStorageConnectionDetails.class,
             name = "OCI_OBJECT_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAiProviderConnectionDetails.class,
+            name = "AI_PROVIDER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateRedisConnectionDetails.class,
             name = "REDIS"),
@@ -58,6 +64,9 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateKafkaConnectionDetails.class,
             name = "KAFKA"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateSparkConnectionDetails.class,
+            name = "SPARK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateOracleNosqlConnectionDetails.class,
             name = "ORACLE_NOSQL"),
@@ -94,6 +103,9 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAzureSynapseConnectionDetails.class,
             name = "AZURE_SYNAPSE_ANALYTICS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDatabricksEngineConnectionDetails.class,
+            name = "DATABRICKS_ENGINE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateIcebergConnectionDetails.class,
             name = "ICEBERG"),

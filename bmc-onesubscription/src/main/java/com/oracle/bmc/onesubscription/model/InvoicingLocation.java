@@ -142,12 +142,12 @@ public final class InvoicingLocation
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** TCA Location identifier. */
+        /** TCA (Trading Community Architecture) location identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaLocationId")
         private Long tcaLocationId;
 
         /**
-         * TCA Location identifier.
+         * TCA (Trading Community Architecture) location identifier.
          *
          * @param tcaLocationId the value to set
          * @return this builder
@@ -291,12 +291,12 @@ public final class InvoicingLocation
         return region;
     }
 
-    /** TCA Location identifier. */
+    /** TCA (Trading Community Architecture) location identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaLocationId")
     private final Long tcaLocationId;
 
     /**
-     * TCA Location identifier.
+     * TCA (Trading Community Architecture) location identifier.
      *
      * @return the value
      */

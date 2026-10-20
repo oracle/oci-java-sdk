@@ -73,18 +73,20 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
         }
         /**
          * The entire path and arguments for the script that is stored in object store, or inside a
-         * compressed archive in object store. Example: {@code /usr/bin/python3.7
-         * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
-         * "INFO"}
+         * compressed archive in object store.
+         *
+         * <p>Example: {@code /usr/bin/python3.7 scripts/start_server.py --port 8080 --env
+         * "production" --max-connections 200 --log-level "INFO"}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("scriptCommand")
         private String scriptCommand;
 
         /**
          * The entire path and arguments for the script that is stored in object store, or inside a
-         * compressed archive in object store. Example: {@code /usr/bin/python3.7
-         * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
-         * "INFO"}
+         * compressed archive in object store.
+         *
+         * <p>Example: {@code /usr/bin/python3.7 scripts/start_server.py --port 8080 --env
+         * "production" --max-connections 200 --log-level "INFO"}
          *
          * @param scriptCommand the value to set
          * @return this builder
@@ -96,14 +98,18 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
         }
         /**
          * The user ID on the instance that will be used to execute the script specified in
-         * 'scriptCommand'. Example: {@code opc}
+         * 'scriptCommand'.
+         *
+         * <p>Example: {@code opc}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
         private String runAsUser;
 
         /**
          * The user ID on the instance that will be used to execute the script specified in
-         * 'scriptCommand'. Example: {@code opc}
+         * 'scriptCommand'.
+         *
+         * <p>Example: {@code opc}
          *
          * @param runAsUser the value to set
          * @return this builder
@@ -210,18 +216,20 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
 
     /**
      * The entire path and arguments for the script that is stored in object store, or inside a
-     * compressed archive in object store. Example: {@code /usr/bin/python3.7
-     * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
-     * "INFO"}
+     * compressed archive in object store.
+     *
+     * <p>Example: {@code /usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production"
+     * --max-connections 200 --log-level "INFO"}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("scriptCommand")
     private final String scriptCommand;
 
     /**
      * The entire path and arguments for the script that is stored in object store, or inside a
-     * compressed archive in object store. Example: {@code /usr/bin/python3.7
-     * scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level
-     * "INFO"}
+     * compressed archive in object store.
+     *
+     * <p>Example: {@code /usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production"
+     * --max-connections 200 --log-level "INFO"}
      *
      * @return the value
      */
@@ -231,14 +239,18 @@ public final class UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetail
 
     /**
      * The user ID on the instance that will be used to execute the script specified in
-     * 'scriptCommand'. Example: {@code opc}
+     * 'scriptCommand'.
+     *
+     * <p>Example: {@code opc}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
     private final String runAsUser;
 
     /**
      * The user ID on the instance that will be used to execute the script specified in
-     * 'scriptCommand'. Example: {@code opc}
+     * 'scriptCommand'.
+     *
+     * <p>Example: {@code opc}
      *
      * @return the value
      */

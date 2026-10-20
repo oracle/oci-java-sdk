@@ -5,8 +5,14 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * The inbound authentication configuration for the Hosted Application. When unspecified, the
- * service applies the default inbound authentication configuration type. <br>
+ * The inbound authentication configuration for the Hosted Application. Specify the authentication
+ * type when creating an application. Omitting this object from an update leaves the current
+ * authentication configuration unchanged. Set inboundAuthConfigType to NO_AUTH_CONFIG to explicitly
+ * disable platform-managed caller authentication for this application. This mode requires no
+ * separate tenancy enrollment. The application is responsible for authenticating and authorizing
+ * its callers. TLS, the configured public or private endpoint, service limits, and IAM
+ * authorization for management operations still apply. Omit idcsConfig when selecting
+ * NO_AUTH_CONFIG. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -96,6 +102,7 @@ public final class InboundAuthConfig
     public enum InboundAuthConfigType implements com.oracle.bmc.http.internal.BmcEnum {
         IdcsAuthConfig("IDCS_AUTH_CONFIG"),
         IdcsSessionAuthConfig("IDCS_SESSION_AUTH_CONFIG"),
+        NoAuthConfig("NO_AUTH_CONFIG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
