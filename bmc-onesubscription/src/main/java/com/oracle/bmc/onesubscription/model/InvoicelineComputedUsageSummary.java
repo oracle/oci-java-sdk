@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Computed Usage Summary object <br>
+ * Computed usage summary object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -73,12 +73,12 @@ public final class InvoicelineComputedUsageSummary
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Total Quantity that was used for computation */
+        /** Total quantity that was used for computation. */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private Double quantity;
 
         /**
-         * Total Quantity that was used for computation
+         * Total quantity that was used for computation.
          *
          * @param quantity the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class InvoicelineComputedUsageSummary
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /** Net Unit Price for the product in consideration, price actual. */
+        /** Net unit price for the product in consideration, price actual. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private Double netUnitPrice;
 
         /**
-         * Net Unit Price for the product in consideration, price actual.
+         * Net unit price for the product in consideration, price actual.
          *
          * @param netUnitPrice the value to set
          * @return this builder
@@ -103,12 +103,12 @@ public final class InvoicelineComputedUsageSummary
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Metered Service date. */
+        /** Metered service date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
         private java.util.Date timeMeteredOn;
 
         /**
-         * Metered Service date.
+         * Metered service date.
          *
          * @param timeMeteredOn the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class InvoicelineComputedUsageSummary
             this.__explicitlySet__.add("timeMeteredOn");
             return this;
         }
-        /** Usage compute type in SPM. */
+        /** Usage compute type in SPM (Subscription Plan Management). */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * Usage compute type in SPM.
+         * Usage compute type in SPM (Subscription Plan Management).
          *
          * @param type the value to set
          * @return this builder
@@ -133,12 +133,12 @@ public final class InvoicelineComputedUsageSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Sum of Usage/Service Billing Line net Amount */
+        /** Sum of usage/service billing line net amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private Double cost;
 
         /**
-         * Sum of Usage/Service Billing Line net Amount
+         * Sum of usage/service billing line net amount.
          *
          * @param cost the value to set
          * @return this builder
@@ -148,12 +148,12 @@ public final class InvoicelineComputedUsageSummary
             this.__explicitlySet__.add("cost");
             return this;
         }
-        /** Computed Line Amount rounded. */
+        /** Computed rounded line amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
         private Double costRounded;
 
         /**
-         * Computed Line Amount rounded.
+         * Computed rounded line amount.
          *
          * @param costRounded the value to set
          * @return this builder
@@ -237,12 +237,12 @@ public final class InvoicelineComputedUsageSummary
         return product;
     }
 
-    /** Total Quantity that was used for computation */
+    /** Total quantity that was used for computation. */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final Double quantity;
 
     /**
-     * Total Quantity that was used for computation
+     * Total quantity that was used for computation.
      *
      * @return the value
      */
@@ -250,12 +250,12 @@ public final class InvoicelineComputedUsageSummary
         return quantity;
     }
 
-    /** Net Unit Price for the product in consideration, price actual. */
+    /** Net unit price for the product in consideration, price actual. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final Double netUnitPrice;
 
     /**
-     * Net Unit Price for the product in consideration, price actual.
+     * Net unit price for the product in consideration, price actual.
      *
      * @return the value
      */
@@ -263,12 +263,12 @@ public final class InvoicelineComputedUsageSummary
         return netUnitPrice;
     }
 
-    /** Metered Service date. */
+    /** Metered service date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
     private final java.util.Date timeMeteredOn;
 
     /**
-     * Metered Service date.
+     * Metered service date.
      *
      * @return the value
      */
@@ -276,7 +276,7 @@ public final class InvoicelineComputedUsageSummary
         return timeMeteredOn;
     }
 
-    /** Usage compute type in SPM. */
+    /** Usage compute type in SPM (Subscription Plan Management). */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Promotion("PROMOTION"),
         DoNotBill("DO_NOT_BILL"),
@@ -329,12 +329,12 @@ public final class InvoicelineComputedUsageSummary
             return UnknownEnumValue;
         }
     };
-    /** Usage compute type in SPM. */
+    /** Usage compute type in SPM (Subscription Plan Management). */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * Usage compute type in SPM.
+     * Usage compute type in SPM (Subscription Plan Management).
      *
      * @return the value
      */
@@ -342,12 +342,12 @@ public final class InvoicelineComputedUsageSummary
         return type;
     }
 
-    /** Sum of Usage/Service Billing Line net Amount */
+    /** Sum of usage/service billing line net amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final Double cost;
 
     /**
-     * Sum of Usage/Service Billing Line net Amount
+     * Sum of usage/service billing line net amount.
      *
      * @return the value
      */
@@ -355,12 +355,12 @@ public final class InvoicelineComputedUsageSummary
         return cost;
     }
 
-    /** Computed Line Amount rounded. */
+    /** Computed rounded line amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
     private final Double costRounded;
 
     /**
-     * Computed Line Amount rounded.
+     * Computed rounded line amount.
      *
      * @return the value
      */

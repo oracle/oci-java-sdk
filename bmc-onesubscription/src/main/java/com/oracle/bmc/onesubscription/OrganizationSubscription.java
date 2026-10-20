@@ -65,7 +65,7 @@ public interface OrganizationSubscription extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * API that returns data for the list of subscription ids returned from Organizations API
+     * Returns data for the list of subscription IDs returned from the Organizations API.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Computed Usage Aggregation object <br>
+ * Computed usage aggregation object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,12 +55,12 @@ public final class ComputedUsageAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total Quantity that was used for computation */
+        /** Total quantity that was used for computation. */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
         /**
-         * Total Quantity that was used for computation
+         * Total quantity that was used for computation.
          *
          * @param quantity the value to set
          * @return this builder
@@ -79,12 +79,16 @@ public final class ComputedUsageAggregation
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Data Center Attribute as sent by MQS to SPM. */
+        /**
+         * Data center attribute as sent by the meterering system to SPM (Subscription Plan
+         * Management).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
         /**
-         * Data Center Attribute as sent by MQS to SPM.
+         * Data center attribute as sent by the meterering system to SPM (Subscription Plan
+         * Management).
          *
          * @param dataCenter the value to set
          * @return this builder
@@ -94,12 +98,12 @@ public final class ComputedUsageAggregation
             this.__explicitlySet__.add("dataCenter");
             return this;
         }
-        /** Metered Service date , expressed in RFC 3339 timestamp format. */
+        /** Metered service date, expressed in RFC 3339 timestamp format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
         private java.util.Date timeMeteredOn;
 
         /**
-         * Metered Service date , expressed in RFC 3339 timestamp format.
+         * Metered service date, expressed in RFC 3339 timestamp format.
          *
          * @param timeMeteredOn the value to set
          * @return this builder
@@ -109,12 +113,12 @@ public final class ComputedUsageAggregation
             this.__explicitlySet__.add("timeMeteredOn");
             return this;
         }
-        /** Net Unit Price for the product in consideration. */
+        /** Net unit price for the product in consideration. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
         /**
-         * Net Unit Price for the product in consideration.
+         * Net unit price for the product in consideration.
          *
          * @param netUnitPrice the value to set
          * @return this builder
@@ -124,12 +128,12 @@ public final class ComputedUsageAggregation
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Sum of Computed Line Amount unrounded */
+        /** Sum of unrounded computed line amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("costUnrounded")
         private String costUnrounded;
 
         /**
-         * Sum of Computed Line Amount unrounded
+         * Sum of unrounded computed line amount.
          *
          * @param costUnrounded the value to set
          * @return this builder
@@ -139,12 +143,12 @@ public final class ComputedUsageAggregation
             this.__explicitlySet__.add("costUnrounded");
             return this;
         }
-        /** Sum of Computed Line Amount rounded */
+        /** Sum of rounded computed line amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private String cost;
 
         /**
-         * Sum of Computed Line Amount rounded
+         * Sum of rounded computed line amount.
          *
          * @param cost the value to set
          * @return this builder
@@ -229,12 +233,12 @@ public final class ComputedUsageAggregation
         return new Builder().copy(this);
     }
 
-    /** Total Quantity that was used for computation */
+    /** Total quantity that was used for computation. */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
     /**
-     * Total Quantity that was used for computation
+     * Total quantity that was used for computation.
      *
      * @return the value
      */
@@ -249,12 +253,14 @@ public final class ComputedUsageAggregation
         return product;
     }
 
-    /** Data Center Attribute as sent by MQS to SPM. */
+    /**
+     * Data center attribute as sent by the meterering system to SPM (Subscription Plan Management).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
     /**
-     * Data Center Attribute as sent by MQS to SPM.
+     * Data center attribute as sent by the meterering system to SPM (Subscription Plan Management).
      *
      * @return the value
      */
@@ -262,12 +268,12 @@ public final class ComputedUsageAggregation
         return dataCenter;
     }
 
-    /** Metered Service date , expressed in RFC 3339 timestamp format. */
+    /** Metered service date, expressed in RFC 3339 timestamp format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
     private final java.util.Date timeMeteredOn;
 
     /**
-     * Metered Service date , expressed in RFC 3339 timestamp format.
+     * Metered service date, expressed in RFC 3339 timestamp format.
      *
      * @return the value
      */
@@ -275,12 +281,12 @@ public final class ComputedUsageAggregation
         return timeMeteredOn;
     }
 
-    /** Net Unit Price for the product in consideration. */
+    /** Net unit price for the product in consideration. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
     /**
-     * Net Unit Price for the product in consideration.
+     * Net unit price for the product in consideration.
      *
      * @return the value
      */
@@ -288,12 +294,12 @@ public final class ComputedUsageAggregation
         return netUnitPrice;
     }
 
-    /** Sum of Computed Line Amount unrounded */
+    /** Sum of unrounded computed line amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("costUnrounded")
     private final String costUnrounded;
 
     /**
-     * Sum of Computed Line Amount unrounded
+     * Sum of unrounded computed line amount.
      *
      * @return the value
      */
@@ -301,12 +307,12 @@ public final class ComputedUsageAggregation
         return costUnrounded;
     }
 
-    /** Sum of Computed Line Amount rounded */
+    /** Sum of rounded computed line amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final String cost;
 
     /**
-     * Sum of Computed Line Amount rounded
+     * Sum of rounded computed line amount.
      *
      * @return the value
      */

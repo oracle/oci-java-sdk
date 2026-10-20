@@ -35,6 +35,7 @@ public final class DedicatedAiClusterSummary
         "lifecycleDetails",
         "unitCount",
         "unitShape",
+        "capacityReservationId",
         "capacity",
         "freeformTags",
         "definedTags",
@@ -52,6 +53,7 @@ public final class DedicatedAiClusterSummary
             String lifecycleDetails,
             Integer unitCount,
             DedicatedAiCluster.UnitShape unitShape,
+            String capacityReservationId,
             DedicatedAiClusterCapacity capacity,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -68,6 +70,7 @@ public final class DedicatedAiClusterSummary
         this.lifecycleDetails = lifecycleDetails;
         this.unitCount = unitCount;
         this.unitShape = unitShape;
+        this.capacityReservationId = capacityReservationId;
         this.capacity = capacity;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -273,6 +276,21 @@ public final class DedicatedAiClusterSummary
             this.__explicitlySet__.add("unitShape");
             return this;
         }
+        /** The OCID of the capacity reservation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * The OCID of the capacity reservation.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private DedicatedAiClusterCapacity capacity;
@@ -372,6 +390,7 @@ public final class DedicatedAiClusterSummary
                             this.lifecycleDetails,
                             this.unitCount,
                             this.unitShape,
+                            this.capacityReservationId,
                             this.capacity,
                             this.freeformTags,
                             this.definedTags,
@@ -416,6 +435,9 @@ public final class DedicatedAiClusterSummary
             }
             if (model.wasPropertyExplicitlySet("unitShape")) {
                 this.unitShape(model.getUnitShape());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
             }
             if (model.wasPropertyExplicitlySet("capacity")) {
                 this.capacity(model.getCapacity());
@@ -613,6 +635,19 @@ public final class DedicatedAiClusterSummary
         return unitShape;
     }
 
+    /** The OCID of the capacity reservation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * The OCID of the capacity reservation.
+     *
+     * @return the value
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final DedicatedAiClusterCapacity capacity;
 
@@ -711,6 +746,7 @@ public final class DedicatedAiClusterSummary
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", unitCount=").append(String.valueOf(this.unitCount));
         sb.append(", unitShape=").append(String.valueOf(this.unitShape));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -740,6 +776,7 @@ public final class DedicatedAiClusterSummary
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.unitCount, other.unitCount)
                 && java.util.Objects.equals(this.unitShape, other.unitShape)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -768,6 +805,11 @@ public final class DedicatedAiClusterSummary
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.unitCount == null ? 43 : this.unitCount.hashCode());
         result = (result * PRIME) + (this.unitShape == null ? 43 : this.unitShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

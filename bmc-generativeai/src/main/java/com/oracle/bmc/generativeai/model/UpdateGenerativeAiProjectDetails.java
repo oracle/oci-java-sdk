@@ -29,6 +29,7 @@ public final class UpdateGenerativeAiProjectDetails
         "conversationConfig",
         "longTermMemoryConfig",
         "shortTermMemoryOptimizationConfig",
+        "sandboxConfig",
         "freeformTags",
         "definedTags"
     })
@@ -38,6 +39,7 @@ public final class UpdateGenerativeAiProjectDetails
             ConversationConfig conversationConfig,
             LongTermMemoryConfig longTermMemoryConfig,
             ShortTermMemoryOptimizationConfig shortTermMemoryOptimizationConfig,
+            SandboxConfig sandboxConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -46,6 +48,7 @@ public final class UpdateGenerativeAiProjectDetails
         this.conversationConfig = conversationConfig;
         this.longTermMemoryConfig = longTermMemoryConfig;
         this.shortTermMemoryOptimizationConfig = shortTermMemoryOptimizationConfig;
+        this.sandboxConfig = sandboxConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -108,6 +111,15 @@ public final class UpdateGenerativeAiProjectDetails
                 ShortTermMemoryOptimizationConfig shortTermMemoryOptimizationConfig) {
             this.shortTermMemoryOptimizationConfig = shortTermMemoryOptimizationConfig;
             this.__explicitlySet__.add("shortTermMemoryOptimizationConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sandboxConfig")
+        private SandboxConfig sandboxConfig;
+
+        public Builder sandboxConfig(SandboxConfig sandboxConfig) {
+            this.sandboxConfig = sandboxConfig;
+            this.__explicitlySet__.add("sandboxConfig");
             return this;
         }
         /**
@@ -173,6 +185,7 @@ public final class UpdateGenerativeAiProjectDetails
                             this.conversationConfig,
                             this.longTermMemoryConfig,
                             this.shortTermMemoryOptimizationConfig,
+                            this.sandboxConfig,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -198,6 +211,9 @@ public final class UpdateGenerativeAiProjectDetails
             if (model.wasPropertyExplicitlySet("shortTermMemoryOptimizationConfig")) {
                 this.shortTermMemoryOptimizationConfig(
                         model.getShortTermMemoryOptimizationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("sandboxConfig")) {
+                this.sandboxConfig(model.getSandboxConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -263,6 +279,13 @@ public final class UpdateGenerativeAiProjectDetails
 
     public ShortTermMemoryOptimizationConfig getShortTermMemoryOptimizationConfig() {
         return shortTermMemoryOptimizationConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sandboxConfig")
+    private final SandboxConfig sandboxConfig;
+
+    public SandboxConfig getSandboxConfig() {
+        return sandboxConfig;
     }
 
     /**
@@ -332,6 +355,7 @@ public final class UpdateGenerativeAiProjectDetails
         sb.append(", longTermMemoryConfig=").append(String.valueOf(this.longTermMemoryConfig));
         sb.append(", shortTermMemoryOptimizationConfig=")
                 .append(String.valueOf(this.shortTermMemoryOptimizationConfig));
+        sb.append(", sandboxConfig=").append(String.valueOf(this.sandboxConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -355,6 +379,7 @@ public final class UpdateGenerativeAiProjectDetails
                 && java.util.Objects.equals(
                         this.shortTermMemoryOptimizationConfig,
                         other.shortTermMemoryOptimizationConfig)
+                && java.util.Objects.equals(this.sandboxConfig, other.sandboxConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -381,6 +406,9 @@ public final class UpdateGenerativeAiProjectDetails
                         + (this.shortTermMemoryOptimizationConfig == null
                                 ? 43
                                 : this.shortTermMemoryOptimizationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sandboxConfig == null ? 43 : this.sandboxConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

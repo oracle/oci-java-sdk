@@ -30,6 +30,7 @@ public final class CreateDedicatedAiClusterDetails
         "compartmentId",
         "unitCount",
         "unitShape",
+        "capacityReservationId",
         "freeformTags",
         "definedTags"
     })
@@ -40,6 +41,7 @@ public final class CreateDedicatedAiClusterDetails
             String compartmentId,
             Integer unitCount,
             DedicatedAiCluster.UnitShape unitShape,
+            String capacityReservationId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -49,6 +51,7 @@ public final class CreateDedicatedAiClusterDetails
         this.compartmentId = compartmentId;
         this.unitCount = unitCount;
         this.unitShape = unitShape;
+        this.capacityReservationId = capacityReservationId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -154,10 +157,10 @@ public final class CreateDedicatedAiClusterDetails
          * A100_80G_X4, A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H100_X16, H100_X32 -
          * H200_X1, H200_X2, H200_X4, H200_X8 - B200_X16, B200_X32 - B300_X1, B300_X2, B300_X4,
          * B300_X8, B300_X16, B300_X32 - L40S_X1, L40S_X2, L40S_X4, L40S_X8, L40S_X16, L40S_X32 -
-         * MI300X_X1, MI300X_X2, MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_A10_X2 -
-         * OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 -
-         * OAI_A100_40G_X1 - OAI_A100_40G_X4 - B200_X1 - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1 -
-         * OAI_B200_X2 - OAI_B200_X4 - OAI_B200_X8 - SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 -
+         * MI300X_X1, MI300X_X2, MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_H100_X4 -
+         * OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2
+         * - OAI_A100_40G_X1 - OAI_A100_40G_X4 - B200_X1 - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1
+         * - OAI_B200_X2 - OAI_B200_X4 - OAI_B200_X8 - SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 -
          * B300_X2 - B300_X4 - B300_X8 - B300_X16 - B300_X32 - L40S_X1 - L40S_X2 - L40S_X4 - L40S_X8
          * - L40S_X16 - L40S_X32 - MI300X_X1 - MI300X_X2 - MI300X_X4 - MI300X_X8 - MI300X_X16 -
          * MI300X_X32 - COHERE_B300_X1 - META_B300_X1 - OAI_B300_X1
@@ -181,10 +184,10 @@ public final class CreateDedicatedAiClusterDetails
          * A100_80G_X4, A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H100_X16, H100_X32 -
          * H200_X1, H200_X2, H200_X4, H200_X8 - B200_X16, B200_X32 - B300_X1, B300_X2, B300_X4,
          * B300_X8, B300_X16, B300_X32 - L40S_X1, L40S_X2, L40S_X4, L40S_X8, L40S_X16, L40S_X32 -
-         * MI300X_X1, MI300X_X2, MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_A10_X2 -
-         * OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 -
-         * OAI_A100_40G_X1 - OAI_A100_40G_X4 - B200_X1 - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1 -
-         * OAI_B200_X2 - OAI_B200_X4 - OAI_B200_X8 - SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 -
+         * MI300X_X1, MI300X_X2, MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_H100_X4 -
+         * OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2
+         * - OAI_A100_40G_X1 - OAI_A100_40G_X4 - B200_X1 - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1
+         * - OAI_B200_X2 - OAI_B200_X4 - OAI_B200_X8 - SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 -
          * B300_X2 - B300_X4 - B300_X8 - B300_X16 - B300_X32 - L40S_X1 - L40S_X2 - L40S_X4 - L40S_X8
          * - L40S_X16 - L40S_X32 - MI300X_X1 - MI300X_X2 - MI300X_X4 - MI300X_X8 - MI300X_X16 -
          * MI300X_X32 - COHERE_B300_X1 - META_B300_X1 - OAI_B300_X1
@@ -195,6 +198,21 @@ public final class CreateDedicatedAiClusterDetails
         public Builder unitShape(DedicatedAiCluster.UnitShape unitShape) {
             this.unitShape = unitShape;
             this.__explicitlySet__.add("unitShape");
+            return this;
+        }
+        /** The OCID of the capacity reservation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * The OCID of the capacity reservation.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
         /**
@@ -261,6 +279,7 @@ public final class CreateDedicatedAiClusterDetails
                             this.compartmentId,
                             this.unitCount,
                             this.unitShape,
+                            this.capacityReservationId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -288,6 +307,9 @@ public final class CreateDedicatedAiClusterDetails
             }
             if (model.wasPropertyExplicitlySet("unitShape")) {
                 this.unitShape(model.getUnitShape());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -397,13 +419,13 @@ public final class CreateDedicatedAiClusterDetails
      * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H100_X16, H100_X32 - H200_X1, H200_X2,
      * H200_X4, H200_X8 - B200_X16, B200_X32 - B300_X1, B300_X2, B300_X4, B300_X8, B300_X16,
      * B300_X32 - L40S_X1, L40S_X2, L40S_X4, L40S_X8, L40S_X16, L40S_X32 - MI300X_X1, MI300X_X2,
-     * MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 -
-     * OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 - OAI_A100_40G_X1 - OAI_A100_40G_X4 - B200_X1
-     * - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1 - OAI_B200_X2 - OAI_B200_X4 - OAI_B200_X8 -
-     * SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 - B300_X2 - B300_X4 - B300_X8 - B300_X16 -
-     * B300_X32 - L40S_X1 - L40S_X2 - L40S_X4 - L40S_X8 - L40S_X16 - L40S_X32 - MI300X_X1 -
-     * MI300X_X2 - MI300X_X4 - MI300X_X8 - MI300X_X16 - MI300X_X32 - COHERE_B300_X1 - META_B300_X1 -
-     * OAI_B300_X1
+     * MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_H100_X4 - OAI_A10_X2 - OAI_H100_X1 -
+     * OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 - OAI_A100_40G_X1 -
+     * OAI_A100_40G_X4 - B200_X1 - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1 - OAI_B200_X2 -
+     * OAI_B200_X4 - OAI_B200_X8 - SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 - B300_X2 - B300_X4 -
+     * B300_X8 - B300_X16 - B300_X32 - L40S_X1 - L40S_X2 - L40S_X4 - L40S_X8 - L40S_X16 - L40S_X32 -
+     * MI300X_X1 - MI300X_X2 - MI300X_X4 - MI300X_X8 - MI300X_X16 - MI300X_X32 - COHERE_B300_X1 -
+     * META_B300_X1 - OAI_B300_X1
      */
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
@@ -424,18 +446,31 @@ public final class CreateDedicatedAiClusterDetails
      * A100_80G_X8 - H100_X1, H100_X2, H100_X4, H100_X8 - H100_X16, H100_X32 - H200_X1, H200_X2,
      * H200_X4, H200_X8 - B200_X16, B200_X32 - B300_X1, B300_X2, B300_X4, B300_X8, B300_X16,
      * B300_X32 - L40S_X1, L40S_X2, L40S_X4, L40S_X8, L40S_X16, L40S_X32 - MI300X_X1, MI300X_X2,
-     * MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_A10_X2 - OAI_H100_X1 - OAI_H100_X2 -
-     * OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 - OAI_A100_40G_X1 - OAI_A100_40G_X4 - B200_X1
-     * - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1 - OAI_B200_X2 - OAI_B200_X4 - OAI_B200_X8 -
-     * SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 - B300_X2 - B300_X4 - B300_X8 - B300_X16 -
-     * B300_X32 - L40S_X1 - L40S_X2 - L40S_X4 - L40S_X8 - L40S_X16 - L40S_X32 - MI300X_X1 -
-     * MI300X_X2 - MI300X_X4 - MI300X_X8 - MI300X_X16 - MI300X_X32 - COHERE_B300_X1 - META_B300_X1 -
-     * OAI_B300_X1
+     * MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32 - OAI_H100_X4 - OAI_A10_X2 - OAI_H100_X1 -
+     * OAI_H100_X2 - OAI_H200_X1 - OAI_A100_80G_X1 - OAI_A100_80G_X2 - OAI_A100_40G_X1 -
+     * OAI_A100_40G_X4 - B200_X1 - B200_X2 - B200_X4 - B200_X8 - OAI_B200_X1 - OAI_B200_X2 -
+     * OAI_B200_X4 - OAI_B200_X8 - SB_B200_X1 - B200_X16 - B200_X32 - B300_X1 - B300_X2 - B300_X4 -
+     * B300_X8 - B300_X16 - B300_X32 - L40S_X1 - L40S_X2 - L40S_X4 - L40S_X8 - L40S_X16 - L40S_X32 -
+     * MI300X_X1 - MI300X_X2 - MI300X_X4 - MI300X_X8 - MI300X_X16 - MI300X_X32 - COHERE_B300_X1 -
+     * META_B300_X1 - OAI_B300_X1
      *
      * @return the value
      */
     public DedicatedAiCluster.UnitShape getUnitShape() {
         return unitShape;
+    }
+
+    /** The OCID of the capacity reservation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * The OCID of the capacity reservation.
+     *
+     * @return the value
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
     }
 
     /**
@@ -505,6 +540,7 @@ public final class CreateDedicatedAiClusterDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", unitCount=").append(String.valueOf(this.unitCount));
         sb.append(", unitShape=").append(String.valueOf(this.unitShape));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -527,6 +563,7 @@ public final class CreateDedicatedAiClusterDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.unitCount, other.unitCount)
                 && java.util.Objects.equals(this.unitShape, other.unitShape)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -544,6 +581,11 @@ public final class CreateDedicatedAiClusterDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.unitCount == null ? 43 : this.unitCount.hashCode());
         result = (result * PRIME) + (this.unitShape == null ? 43 : this.unitShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

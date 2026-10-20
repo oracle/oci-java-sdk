@@ -20,24 +20,24 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** AR Unique identifier for an invoice . */
+    /** Accounts receivable unique identifier for an invoice. */
     private String arCustomerTransactionId;
 
-    /** AR Unique identifier for an invoice . */
+    /** Accounts receivable unique identifier for an invoice. */
     public String getArCustomerTransactionId() {
         return arCustomerTransactionId;
     }
-    /** Initial date to filter Invoice data in SPM. */
+    /** Initial date to filter invoice data in SPM (Subscription Plan Management). */
     private java.util.Date timeFrom;
 
-    /** Initial date to filter Invoice data in SPM. */
+    /** Initial date to filter invoice data in SPM (Subscription Plan Management). */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
-    /** Final date to filter Invoice data in SPM. */
+    /** Final date to filter invoice data in SPM (Subscription Plan Management). */
     private java.util.Date timeTo;
 
-    /** Final date to filter Invoice data in SPM. */
+    /** Final date to filter invoice data in SPM (Subscription Plan Management). */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
@@ -146,16 +146,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return page;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+     * return only the information (fields) required by the client. This parameter controls which
+     * fields to return.
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+     * return only the information (fields) required by the client. This parameter controls which
+     * fields to return.
      */
     public java.util.List<String> getFields() {
         return fields;
@@ -194,11 +194,11 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** AR Unique identifier for an invoice . */
+        /** Accounts receivable unique identifier for an invoice. */
         private String arCustomerTransactionId = null;
 
         /**
-         * AR Unique identifier for an invoice .
+         * Accounts receivable unique identifier for an invoice.
          *
          * @param arCustomerTransactionId the value to set
          * @return this builder instance
@@ -208,11 +208,11 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Initial date to filter Invoice data in SPM. */
+        /** Initial date to filter invoice data in SPM (Subscription Plan Management). */
         private java.util.Date timeFrom = null;
 
         /**
-         * Initial date to filter Invoice data in SPM.
+         * Initial date to filter invoice data in SPM (Subscription Plan Management).
          *
          * @param timeFrom the value to set
          * @return this builder instance
@@ -222,11 +222,11 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Final date to filter Invoice data in SPM. */
+        /** Final date to filter invoice data in SPM (Subscription Plan Management). */
         private java.util.Date timeTo = null;
 
         /**
-         * Final date to filter Invoice data in SPM.
+         * Final date to filter invoice data in SPM (Subscription Plan Management).
          *
          * @param timeTo the value to set
          * @return this builder instance
@@ -299,16 +299,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+         * return only the information (fields) required by the client. This parameter controls
+         * which fields to return.
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+         * return only the information (fields) required by the client. This parameter controls
+         * which fields to return.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -320,8 +320,8 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs to return only the information (fields) required by the client. This
-         * parameter is used to control what fields to return.
+         * RESTful web APIs, to return only the information (fields) required by the client. This
+         * parameter controls which fields to return.
          *
          * @param singularValue the singular value to set
          * @return this builder instance

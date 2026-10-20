@@ -4,7 +4,13 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The storage type used in the Iceberg connection. */
+/**
+ * The storage type used in the Iceberg connection. Supported storage types by catalog type: * GLUE:
+ * AMAZON_S3. * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or
+ * OCI_OBJECT_STORAGE_S3_API. * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+ * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE. * REST: AMAZON_S3,
+ * GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum IcebergStorageType implements com.oracle.bmc.http.internal.BmcEnum {
     AmazonS3("AMAZON_S3"),

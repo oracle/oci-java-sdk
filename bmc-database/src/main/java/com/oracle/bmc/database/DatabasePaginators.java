@@ -4703,6 +4703,128 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listDatabaseSnapshots operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDatabaseSnapshotsResponse> listDatabaseSnapshotsResponseIterator(
+            final ListDatabaseSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDatabaseSnapshotsRequest.Builder,
+                ListDatabaseSnapshotsRequest,
+                ListDatabaseSnapshotsResponse>(
+                new java.util.function.Supplier<ListDatabaseSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListDatabaseSnapshotsRequest.Builder get() {
+                        return ListDatabaseSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabaseSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseSnapshotsRequest.Builder>,
+                        ListDatabaseSnapshotsRequest>() {
+                    @Override
+                    public ListDatabaseSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseSnapshotsRequest, ListDatabaseSnapshotsResponse>() {
+                    @Override
+                    public ListDatabaseSnapshotsResponse apply(
+                            ListDatabaseSnapshotsRequest request) {
+                        return client.listDatabaseSnapshots(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.DatabaseSnapshotSummary} objects contained in responses from
+     * the listDatabaseSnapshots operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.DatabaseSnapshotSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.DatabaseSnapshotSummary>
+            listDatabaseSnapshotsRecordIterator(final ListDatabaseSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDatabaseSnapshotsRequest.Builder,
+                ListDatabaseSnapshotsRequest,
+                ListDatabaseSnapshotsResponse,
+                com.oracle.bmc.database.model.DatabaseSnapshotSummary>(
+                new java.util.function.Supplier<ListDatabaseSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListDatabaseSnapshotsRequest.Builder get() {
+                        return ListDatabaseSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDatabaseSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseSnapshotsRequest.Builder>,
+                        ListDatabaseSnapshotsRequest>() {
+                    @Override
+                    public ListDatabaseSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseSnapshotsRequest, ListDatabaseSnapshotsResponse>() {
+                    @Override
+                    public ListDatabaseSnapshotsResponse apply(
+                            ListDatabaseSnapshotsRequest request) {
+                        return client.listDatabaseSnapshots(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDatabaseSnapshotsResponse,
+                        java.util.List<com.oracle.bmc.database.model.DatabaseSnapshotSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.DatabaseSnapshotSummary>
+                            apply(ListDatabaseSnapshotsResponse response) {
+                        return response.getDatabaseSnapshotCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDatabaseSoftwareImages operation. This iterable will fetch more data from the server as
      * needed.
      *

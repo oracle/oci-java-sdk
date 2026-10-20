@@ -63,7 +63,10 @@ package com.oracle.bmc.disasterrecovery.model;
             name = "VOLUME_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberOkeClusterDetails.class,
-            name = "OKE_CLUSTER")
+            name = "OKE_CLUSTER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberPostgresqlDbSystemDetails.class,
+            name = "POSTGRESQL_DB_SYSTEM")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

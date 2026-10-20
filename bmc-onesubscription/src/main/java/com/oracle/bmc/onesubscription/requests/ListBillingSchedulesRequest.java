@@ -21,17 +21,17 @@ public class ListBillingSchedulesRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** This param is used to get only the billing schedules for a particular Subscription Id */
+    /** This parameter gets the billing schedules for a particular subscription ID. */
     private String subscriptionId;
 
-    /** This param is used to get only the billing schedules for a particular Subscription Id */
+    /** This parameter gets the billing schedules for a particular subscription ID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /** This param is used to get only the billing schedules for a particular Subscribed Service */
+    /** This parameter gets the billing schedules for a particular subscribed service. */
     private String subscribedServiceId;
 
-    /** This param is used to get only the billing schedules for a particular Subscribed Service */
+    /** This parameter gets the billing schedules for a particular subscribed service. */
     public String getSubscribedServiceId() {
         return subscribedServiceId;
     }
@@ -173,11 +173,11 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
-        /** This param is used to get only the billing schedules for a particular Subscription Id */
+        /** This parameter gets the billing schedules for a particular subscription ID. */
         private String subscriptionId = null;
 
         /**
-         * This param is used to get only the billing schedules for a particular Subscription Id
+         * This parameter gets the billing schedules for a particular subscription ID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -187,13 +187,11 @@ public class ListBillingSchedulesRequest
             return this;
         }
 
-        /**
-         * This param is used to get only the billing schedules for a particular Subscribed Service
-         */
+        /** This parameter gets the billing schedules for a particular subscribed service. */
         private String subscribedServiceId = null;
 
         /**
-         * This param is used to get only the billing schedules for a particular Subscribed Service
+         * This parameter gets the billing schedules for a particular subscribed service.
          *
          * @param subscribedServiceId the value to set
          * @return this builder instance

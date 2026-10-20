@@ -555,6 +555,36 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a named MANAGED or CUSTOM pool. MANAGED uses the service-provided python-3.11 runtime
+     * and requires containerImage to be omitted. CUSTOM requires a digest-pinned containerImage.
+     * Project-wide shape capacity limits include named pools of both types and reserved default
+     * pools. Type, image, shape and name are immutable. The CP atomically persists CREATING and a
+     * Work Request, then its workflow prepares an immutable pool-owned template and applies the
+     * pool configuration. Each MANAGED pool has a distinct template based on the service runtime
+     * configuration, isolated from other pools of the same shape. ACTIVE means configuration was
+     * applied and verified; it does not require ready members, a successful image boot or available
+     * cluster capacity. Zero capacity pauses idle prewarming. An ACTIVE named pool can still create
+     * Sandboxes through cold fallback when its applied template is available. Retry identity and
+     * configuration are persisted atomically. Within the 24-hour retry-token validity period, the
+     * same token and input identify the original pool id, including after name reuse. A retry never
+     * creates or selects a replacement pool. A retry after the original pool is deleted returns
+     * 409; changed input with the same token conflicts. Reserved default names cannot be reused for
+     * either type.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSandboxWarmPoolResponse> createSandboxWarmPool(
+            CreateSandboxWarmPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSandboxWarmPoolRequest, CreateSandboxWarmPoolResponse>
+                    handler);
+
+    /**
      * Creates a SemanticStore.
      *
      * @param request The request object containing the details to send
@@ -841,6 +871,32 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a named MANAGED or CUSTOM pool through a CP Work Request. Reserved MANAGED default
+     * entries cannot be deleted and return 409. CP persists DELETING and closes admission as the
+     * new configuration propagates, drains idle members and deletes the pool resource. The
+     * management response does not promise immediate global admission closure or completed cleanup.
+     * Already-adopted customer Sandboxes survive and retain required template dependencies. Get and
+     * List continue to show DELETING until pool cleanup completes. The CP then records DELETED and
+     * releases the name. Name reuse always allocates a new id and materialized names. Retained
+     * templates may outlive the pool while customer Sandboxes still depend on them. A repeated
+     * delete during DELETING returns the existing Work Request. A missing name returns 404. After
+     * name reuse, the path identifies the new pool; use the original if-match ETag to prevent
+     * deleting it. Conflicting operations return 409 and stale if-match returns 412.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSandboxWarmPoolResponse> deleteSandboxWarmPool(
+            DeleteSandboxWarmPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSandboxWarmPoolRequest, DeleteSandboxWarmPoolResponse>
+                    handler);
+
+    /**
      * Deletes a semanticStore.
      *
      * @param request The request object containing the details to send
@@ -1060,6 +1116,28 @@ public interface GenerativeAiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets authoritative CP configuration and management lifecycle for the current pool
+     * incarnation, including DELETING until pool cleanup completes. Returns 404 after deletion
+     * completes unless the name has been reused for a new id. A best-effort runtime observation may
+     * report ready idle capacity. A runtime read failure returns UNAVAILABLE without failing the
+     * configuration read. ACTIVE does not imply runtime capacity is ready. The configuration ETag
+     * excludes runtime changes; it must not be used to suppress runtime observations with a
+     * conditional not-modified response.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSandboxWarmPoolResponse> getSandboxWarmPool(
+            GetSandboxWarmPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSandboxWarmPoolRequest, GetSandboxWarmPoolResponse>
+                    handler);
+
+    /**
      * Gets information about a semanticStore.
      *
      * @param request The request object containing the details to send
@@ -1169,6 +1247,25 @@ public interface GenerativeAiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListDedicatedAiClustersRequest, ListDedicatedAiClustersResponse>
                     handler);
+
+    /**
+     * Lists the allocatable GPUs for launching dedicated AI clusters tied to a specific capacity
+     * reservation id.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDedicatedAiClustersAllocatableGpusResponse>
+            listDedicatedAiClustersAllocatableGpus(
+                    ListDedicatedAiClustersAllocatableGpusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDedicatedAiClustersAllocatableGpusRequest,
+                                    ListDedicatedAiClustersAllocatableGpusResponse>
+                            handler);
 
     /**
      * Lists the endpoints of a specific compartment.
@@ -1349,6 +1446,25 @@ public interface GenerativeAiAsync extends AutoCloseable {
             ListRoutingProfilesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListRoutingProfilesRequest, ListRoutingProfilesResponse>
+                    handler);
+
+    /**
+     * Lists named MANAGED and CUSTOM pools for Sandbox-enabled Projects, including zero targets and
+     * in-progress management operations. Reserved defaults can be resized but cannot be created or
+     * deleted by customers. DELETED resources are excluded. Responses include CP management
+     * lifecycle but do not perform runtime reads or return ready capacity.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSandboxWarmPoolsResponse> listSandboxWarmPools(
+            ListSandboxWarmPoolsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSandboxWarmPoolsRequest, ListSandboxWarmPoolsResponse>
                     handler);
 
     /**
@@ -1687,6 +1803,33 @@ public interface GenerativeAiAsync extends AutoCloseable {
             UpdateRoutingProfileRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateRoutingProfileRequest, UpdateRoutingProfileResponse>
+                    handler);
+
+    /**
+     * Only desiredCapacity may change. If desiredCapacity is omitted, the current desired capacity
+     * is preserved. An empty update object is allowed; an explicit null value for desiredCapacity
+     * is not allowed. Named MANAGED and CUSTOM pools and reserved MANAGED defaults can be resized.
+     * Default-pool updates use the existing Project configuration workflow; no separate desired
+     * configuration is created for those entries. CP persists UPDATING and a Work Request, applies
+     * the desired replica count, then returns the pool to ACTIVE after verifying the configuration.
+     * The workflow does not wait for ready members. Zero pauses idle prewarming. Once the pool is
+     * ACTIVE, named-pool Sandbox creation can still cold-start from its available applied template
+     * when no eligible warm member is available, regardless of the capacity target.
+     * Already-admitted Sandboxes continue. Unnamed Sandbox creation retains its existing behavior.
+     * Concurrent management operations return 409. If provided, if-match must match the current
+     * configuration ETag; otherwise this operation returns 412.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSandboxWarmPoolResponse> updateSandboxWarmPool(
+            UpdateSandboxWarmPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSandboxWarmPoolRequest, UpdateSandboxWarmPoolResponse>
                     handler);
 
     /**

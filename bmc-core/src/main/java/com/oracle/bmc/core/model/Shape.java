@@ -53,6 +53,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "quotaNames",
         "isSubcore",
         "isFlexible",
+        "supportedResourceManagement",
         "resizeCompatibleShapes",
         "recommendedAlternatives",
         "platformNames"
@@ -86,6 +87,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             java.util.List<String> quotaNames,
             Boolean isSubcore,
             Boolean isFlexible,
+            java.util.List<SupportedResourceManagement> supportedResourceManagement,
             java.util.List<String> resizeCompatibleShapes,
             java.util.List<ShapeAlternativeObject> recommendedAlternatives,
             java.util.List<String> platformNames) {
@@ -118,6 +120,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.quotaNames = quotaNames;
         this.isSubcore = isSubcore;
         this.isFlexible = isFlexible;
+        this.supportedResourceManagement = supportedResourceManagement;
         this.resizeCompatibleShapes = resizeCompatibleShapes;
         this.recommendedAlternatives = recommendedAlternatives;
         this.platformNames = platformNames;
@@ -575,6 +578,22 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("isFlexible");
             return this;
         }
+        /** The resource management modes supported by this shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedResourceManagement")
+        private java.util.List<SupportedResourceManagement> supportedResourceManagement;
+
+        /**
+         * The resource management modes supported by this shape.
+         *
+         * @param supportedResourceManagement the value to set
+         * @return this builder
+         */
+        public Builder supportedResourceManagement(
+                java.util.List<SupportedResourceManagement> supportedResourceManagement) {
+            this.supportedResourceManagement = supportedResourceManagement;
+            this.__explicitlySet__.add("supportedResourceManagement");
+            return this;
+        }
         /**
          * The list of compatible shapes that this shape can be changed to. For more information,
          * see [Changing the Shape of an
@@ -666,6 +685,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.quotaNames,
                             this.isSubcore,
                             this.isFlexible,
+                            this.supportedResourceManagement,
                             this.resizeCompatibleShapes,
                             this.recommendedAlternatives,
                             this.platformNames);
@@ -760,6 +780,9 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("isFlexible")) {
                 this.isFlexible(model.getIsFlexible());
+            }
+            if (model.wasPropertyExplicitlySet("supportedResourceManagement")) {
+                this.supportedResourceManagement(model.getSupportedResourceManagement());
             }
             if (model.wasPropertyExplicitlySet("resizeCompatibleShapes")) {
                 this.resizeCompatibleShapes(model.getResizeCompatibleShapes());
@@ -1263,6 +1286,65 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return isFlexible;
     }
 
+    /** */
+    public enum SupportedResourceManagement implements com.oracle.bmc.http.internal.BmcEnum {
+        Dynamic("DYNAMIC"),
+        Static("STATIC"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SupportedResourceManagement.class);
+
+        private final String value;
+        private static java.util.Map<String, SupportedResourceManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SupportedResourceManagement v : SupportedResourceManagement.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SupportedResourceManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SupportedResourceManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SupportedResourceManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The resource management modes supported by this shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedResourceManagement")
+    private final java.util.List<SupportedResourceManagement> supportedResourceManagement;
+
+    /**
+     * The resource management modes supported by this shape.
+     *
+     * @return the value
+     */
+    public java.util.List<SupportedResourceManagement> getSupportedResourceManagement() {
+        return supportedResourceManagement;
+    }
+
     /**
      * The list of compatible shapes that this shape can be changed to. For more information, see
      * [Changing the Shape of an
@@ -1364,6 +1446,8 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", quotaNames=").append(String.valueOf(this.quotaNames));
         sb.append(", isSubcore=").append(String.valueOf(this.isSubcore));
         sb.append(", isFlexible=").append(String.valueOf(this.isFlexible));
+        sb.append(", supportedResourceManagement=")
+                .append(String.valueOf(this.supportedResourceManagement));
         sb.append(", resizeCompatibleShapes=").append(String.valueOf(this.resizeCompatibleShapes));
         sb.append(", recommendedAlternatives=")
                 .append(String.valueOf(this.recommendedAlternatives));
@@ -1419,6 +1503,8 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.quotaNames, other.quotaNames)
                 && java.util.Objects.equals(this.isSubcore, other.isSubcore)
                 && java.util.Objects.equals(this.isFlexible, other.isFlexible)
+                && java.util.Objects.equals(
+                        this.supportedResourceManagement, other.supportedResourceManagement)
                 && java.util.Objects.equals(
                         this.resizeCompatibleShapes, other.resizeCompatibleShapes)
                 && java.util.Objects.equals(
@@ -1519,6 +1605,11 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         result = (result * PRIME) + (this.quotaNames == null ? 43 : this.quotaNames.hashCode());
         result = (result * PRIME) + (this.isSubcore == null ? 43 : this.isSubcore.hashCode());
         result = (result * PRIME) + (this.isFlexible == null ? 43 : this.isFlexible.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedResourceManagement == null
+                                ? 43
+                                : this.supportedResourceManagement.hashCode());
         result =
                 (result * PRIME)
                         + (this.resizeCompatibleShapes == null

@@ -280,6 +280,138 @@ public class GenerativeAiPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDedicatedAiClustersAllocatableGpus operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDedicatedAiClustersAllocatableGpusResponse>
+            listDedicatedAiClustersAllocatableGpusResponseIterator(
+                    final ListDedicatedAiClustersAllocatableGpusRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDedicatedAiClustersAllocatableGpusRequest.Builder,
+                ListDedicatedAiClustersAllocatableGpusRequest,
+                ListDedicatedAiClustersAllocatableGpusResponse>(
+                new java.util.function.Supplier<
+                        ListDedicatedAiClustersAllocatableGpusRequest.Builder>() {
+                    @Override
+                    public ListDedicatedAiClustersAllocatableGpusRequest.Builder get() {
+                        return ListDedicatedAiClustersAllocatableGpusRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDedicatedAiClustersAllocatableGpusResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedAiClustersAllocatableGpusResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedAiClustersAllocatableGpusRequest.Builder>,
+                        ListDedicatedAiClustersAllocatableGpusRequest>() {
+                    @Override
+                    public ListDedicatedAiClustersAllocatableGpusRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedAiClustersAllocatableGpusRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDedicatedAiClustersAllocatableGpusRequest,
+                        ListDedicatedAiClustersAllocatableGpusResponse>() {
+                    @Override
+                    public ListDedicatedAiClustersAllocatableGpusResponse apply(
+                            ListDedicatedAiClustersAllocatableGpusRequest request) {
+                        return client.listDedicatedAiClustersAllocatableGpus(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.AllocatableGpuSummary} objects contained in responses from
+     * the listDedicatedAiClustersAllocatableGpus operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.AllocatableGpuSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.AllocatableGpuSummary>
+            listDedicatedAiClustersAllocatableGpusRecordIterator(
+                    final ListDedicatedAiClustersAllocatableGpusRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDedicatedAiClustersAllocatableGpusRequest.Builder,
+                ListDedicatedAiClustersAllocatableGpusRequest,
+                ListDedicatedAiClustersAllocatableGpusResponse,
+                com.oracle.bmc.generativeai.model.AllocatableGpuSummary>(
+                new java.util.function.Supplier<
+                        ListDedicatedAiClustersAllocatableGpusRequest.Builder>() {
+                    @Override
+                    public ListDedicatedAiClustersAllocatableGpusRequest.Builder get() {
+                        return ListDedicatedAiClustersAllocatableGpusRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDedicatedAiClustersAllocatableGpusResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedAiClustersAllocatableGpusResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedAiClustersAllocatableGpusRequest.Builder>,
+                        ListDedicatedAiClustersAllocatableGpusRequest>() {
+                    @Override
+                    public ListDedicatedAiClustersAllocatableGpusRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedAiClustersAllocatableGpusRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDedicatedAiClustersAllocatableGpusRequest,
+                        ListDedicatedAiClustersAllocatableGpusResponse>() {
+                    @Override
+                    public ListDedicatedAiClustersAllocatableGpusResponse apply(
+                            ListDedicatedAiClustersAllocatableGpusRequest request) {
+                        return client.listDedicatedAiClustersAllocatableGpus(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDedicatedAiClustersAllocatableGpusResponse,
+                        java.util.List<com.oracle.bmc.generativeai.model.AllocatableGpuSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.AllocatableGpuSummary>
+                            apply(ListDedicatedAiClustersAllocatableGpusResponse response) {
+                        return response.getAllocatableGpuCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listEndpoints
      * operation. This iterable will fetch more data from the server as needed.
      *
@@ -1617,6 +1749,126 @@ public class GenerativeAiPaginators {
                     public java.util.List<com.oracle.bmc.generativeai.model.RoutingProfileSummary>
                             apply(ListRoutingProfilesResponse response) {
                         return response.getRoutingProfileCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSandboxWarmPools operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSandboxWarmPoolsResponse> listSandboxWarmPoolsResponseIterator(
+            final ListSandboxWarmPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSandboxWarmPoolsRequest.Builder,
+                ListSandboxWarmPoolsRequest,
+                ListSandboxWarmPoolsResponse>(
+                new java.util.function.Supplier<ListSandboxWarmPoolsRequest.Builder>() {
+                    @Override
+                    public ListSandboxWarmPoolsRequest.Builder get() {
+                        return ListSandboxWarmPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSandboxWarmPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListSandboxWarmPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSandboxWarmPoolsRequest.Builder>,
+                        ListSandboxWarmPoolsRequest>() {
+                    @Override
+                    public ListSandboxWarmPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSandboxWarmPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSandboxWarmPoolsRequest, ListSandboxWarmPoolsResponse>() {
+                    @Override
+                    public ListSandboxWarmPoolsResponse apply(ListSandboxWarmPoolsRequest request) {
+                        return client.listSandboxWarmPools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.generativeai.model.SandboxWarmPoolSummary} objects contained in responses from
+     * the listSandboxWarmPools operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.generativeai.model.SandboxWarmPoolSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.generativeai.model.SandboxWarmPoolSummary>
+            listSandboxWarmPoolsRecordIterator(final ListSandboxWarmPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSandboxWarmPoolsRequest.Builder,
+                ListSandboxWarmPoolsRequest,
+                ListSandboxWarmPoolsResponse,
+                com.oracle.bmc.generativeai.model.SandboxWarmPoolSummary>(
+                new java.util.function.Supplier<ListSandboxWarmPoolsRequest.Builder>() {
+                    @Override
+                    public ListSandboxWarmPoolsRequest.Builder get() {
+                        return ListSandboxWarmPoolsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSandboxWarmPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListSandboxWarmPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSandboxWarmPoolsRequest.Builder>,
+                        ListSandboxWarmPoolsRequest>() {
+                    @Override
+                    public ListSandboxWarmPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSandboxWarmPoolsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSandboxWarmPoolsRequest, ListSandboxWarmPoolsResponse>() {
+                    @Override
+                    public ListSandboxWarmPoolsResponse apply(ListSandboxWarmPoolsRequest request) {
+                        return client.listSandboxWarmPools(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSandboxWarmPoolsResponse,
+                        java.util.List<
+                                com.oracle.bmc.generativeai.model.SandboxWarmPoolSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.generativeai.model.SandboxWarmPoolSummary>
+                            apply(ListSandboxWarmPoolsResponse response) {
+                        return response.getSandboxWarmPoolCollection().getItems();
                     }
                 });
     }

@@ -42,6 +42,7 @@ public final class GenerativeAiProject
         "conversationConfig",
         "longTermMemoryConfig",
         "shortTermMemoryOptimizationConfig",
+        "sandboxConfig",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -58,6 +59,7 @@ public final class GenerativeAiProject
             ConversationConfig conversationConfig,
             LongTermMemoryConfig longTermMemoryConfig,
             ShortTermMemoryOptimizationConfig shortTermMemoryOptimizationConfig,
+            SandboxConfig sandboxConfig,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -73,6 +75,7 @@ public final class GenerativeAiProject
         this.conversationConfig = conversationConfig;
         this.longTermMemoryConfig = longTermMemoryConfig;
         this.shortTermMemoryOptimizationConfig = shortTermMemoryOptimizationConfig;
+        this.sandboxConfig = sandboxConfig;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -240,6 +243,15 @@ public final class GenerativeAiProject
             this.__explicitlySet__.add("shortTermMemoryOptimizationConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sandboxConfig")
+        private SandboxConfig sandboxConfig;
+
+        public Builder sandboxConfig(SandboxConfig sandboxConfig) {
+            this.sandboxConfig = sandboxConfig;
+            this.__explicitlySet__.add("sandboxConfig");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -330,6 +342,7 @@ public final class GenerativeAiProject
                             this.conversationConfig,
                             this.longTermMemoryConfig,
                             this.shortTermMemoryOptimizationConfig,
+                            this.sandboxConfig,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -374,6 +387,9 @@ public final class GenerativeAiProject
             if (model.wasPropertyExplicitlySet("shortTermMemoryOptimizationConfig")) {
                 this.shortTermMemoryOptimizationConfig(
                         model.getShortTermMemoryOptimizationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("sandboxConfig")) {
+                this.sandboxConfig(model.getSandboxConfig());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -584,6 +600,13 @@ public final class GenerativeAiProject
         return shortTermMemoryOptimizationConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sandboxConfig")
+    private final SandboxConfig sandboxConfig;
+
+    public SandboxConfig getSandboxConfig() {
+        return sandboxConfig;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -676,6 +699,7 @@ public final class GenerativeAiProject
         sb.append(", longTermMemoryConfig=").append(String.valueOf(this.longTermMemoryConfig));
         sb.append(", shortTermMemoryOptimizationConfig=")
                 .append(String.valueOf(this.shortTermMemoryOptimizationConfig));
+        sb.append(", sandboxConfig=").append(String.valueOf(this.sandboxConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -706,6 +730,7 @@ public final class GenerativeAiProject
                 && java.util.Objects.equals(
                         this.shortTermMemoryOptimizationConfig,
                         other.shortTermMemoryOptimizationConfig)
+                && java.util.Objects.equals(this.sandboxConfig, other.sandboxConfig)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -745,6 +770,9 @@ public final class GenerativeAiProject
                         + (this.shortTermMemoryOptimizationConfig == null
                                 ? 43
                                 : this.shortTermMemoryOptimizationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sandboxConfig == null ? 43 : this.sandboxConfig.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -32,8 +32,14 @@ package com.oracle.bmc.database.model;
             value = CreateStandByDatabaseDetails.class,
             name = "DATAGUARD"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateCloneDatabaseFromDatabase.class,
+            name = "DB_CLONE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDatabaseFromDatabase.class,
             name = "DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDatabaseFromSnapshot.class,
+            name = "DB_SNAPSHOT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDatabaseFromBackup.class,
             name = "DB_BACKUP")
@@ -195,13 +201,17 @@ public class CreateDatabaseBase extends com.oracle.bmc.http.client.internal.Expl
     /**
      * The source of the database: Use {@code NONE} for creating a new database. Use {@code
      * DB_BACKUP} for creating a new database by restoring from a backup. Use {@code DATAGUARD} for
-     * creating a new STANDBY database for a Data Guard setup.. The default is {@code NONE}.
+     * creating a new STANDBY database for a Data Guard setup.. Use {@code DB_SNAPSHOT} for creating
+     * a new database by cloning from snapshot. Use {@code DB_CLONE} for creating a new database by
+     * cloning from another database. The default is {@code NONE}.
      */
     public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         DbBackup("DB_BACKUP"),
         Database("DATABASE"),
         Dataguard("DATAGUARD"),
+        DbSnapshot("DB_SNAPSHOT"),
+        DbClone("DB_CLONE"),
         ;
 
         private final String value;

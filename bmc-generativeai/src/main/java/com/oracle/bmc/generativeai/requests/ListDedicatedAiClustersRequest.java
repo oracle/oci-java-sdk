@@ -150,6 +150,19 @@ public class ListDedicatedAiClustersRequest
         return sortBy;
     }
     /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * capacity reservation.
+     */
+    private String capacityReservationId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * capacity reservation.
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID. The only valid characters for request IDs
      * are letters, numbers, underscore, and dash.
@@ -315,6 +328,24 @@ public class ListDedicatedAiClustersRequest
         }
 
         /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * capacity reservation.
+         */
+        private String capacityReservationId = null;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * capacity reservation.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder instance
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            return this;
+        }
+
+        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID. The only valid characters for request
          * IDs are letters, numbers, underscore, and dash.
@@ -372,6 +403,7 @@ public class ListDedicatedAiClustersRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            capacityReservationId(o.getCapacityReservationId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -415,10 +447,11 @@ public class ListDedicatedAiClustersRequest
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.capacityReservationId = capacityReservationId;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListDedicatedAiClustersRequest(compartmentId, lifecycleState, displayName, id,
-            // limit, page, sortOrder, sortBy, opcRequestId);
+            // limit, page, sortOrder, sortBy, capacityReservationId, opcRequestId);
         }
     }
 
@@ -437,6 +470,7 @@ public class ListDedicatedAiClustersRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .capacityReservationId(capacityReservationId)
                 .opcRequestId(opcRequestId);
     }
 
@@ -462,6 +496,7 @@ public class ListDedicatedAiClustersRequest
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -486,6 +521,7 @@ public class ListDedicatedAiClustersRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -505,6 +541,11 @@ public class ListDedicatedAiClustersRequest
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

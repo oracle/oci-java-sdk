@@ -65,7 +65,7 @@ public interface Commitment extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This API returns the commitment details corresponding to the id provided
+     * Returns the commitment details corresponding to the provided ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -80,7 +80,7 @@ public interface Commitment extends AutoCloseable {
     GetCommitmentResponse getCommitment(GetCommitmentRequest request);
 
     /**
-     * This list API returns all commitments for a particular Subscribed Service
+     * Returns all commitments for a particular subscribed service.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

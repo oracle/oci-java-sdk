@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Rate Card Summary <br>
+ * Rate card summary. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -60,12 +60,12 @@ public final class RateCardSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SPM internal Subscribed Service ID */
+        /** SPM (Subscription Plan Management) internal subscribed service ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
         private String subscribedServiceId;
 
         /**
-         * SPM internal Subscribed Service ID
+         * SPM (Subscription Plan Management) internal subscribed service ID.
          *
          * @param subscribedServiceId the value to set
          * @return this builder
@@ -84,12 +84,12 @@ public final class RateCardSummary
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Rate card start date */
+        /** Rate card start date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
-         * Rate card start date
+         * Rate card start date.
          *
          * @param timeStart the value to set
          * @return this builder
@@ -99,12 +99,12 @@ public final class RateCardSummary
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Rate card end date */
+        /** Rate card end date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
-         * Rate card end date
+         * Rate card end date.
          *
          * @param timeEnd the value to set
          * @return this builder
@@ -114,12 +114,12 @@ public final class RateCardSummary
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** Rate card net unit price */
+        /** Rate card net unit price. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
         /**
-         * Rate card net unit price
+         * Rate card net unit price.
          *
          * @param netUnitPrice the value to set
          * @return this builder
@@ -129,12 +129,12 @@ public final class RateCardSummary
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Rate card discretionary discount percentage */
+        /** Rate card discretionary discount percentage. */
         @com.fasterxml.jackson.annotation.JsonProperty("discretionaryDiscountPercentage")
         private String discretionaryDiscountPercentage;
 
         /**
-         * Rate card discretionary discount percentage
+         * Rate card discretionary discount percentage.
          *
          * @param discretionaryDiscountPercentage the value to set
          * @return this builder
@@ -144,12 +144,12 @@ public final class RateCardSummary
             this.__explicitlySet__.add("discretionaryDiscountPercentage");
             return this;
         }
-        /** Rate card overage price */
+        /** Rate card overage price. */
         @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
         private String overagePrice;
 
         /**
-         * Rate card overage price
+         * Rate card overage price.
          *
          * @param overagePrice the value to set
          * @return this builder
@@ -159,12 +159,12 @@ public final class RateCardSummary
             this.__explicitlySet__.add("overagePrice");
             return this;
         }
-        /** Rate card price tier flag */
+        /** Rate card price tier parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("isTier")
         private Boolean isTier;
 
         /**
-         * Rate card price tier flag
+         * Rate card price tier parameter.
          *
          * @param isTier the value to set
          * @return this builder
@@ -183,12 +183,12 @@ public final class RateCardSummary
             this.__explicitlySet__.add("currency");
             return this;
         }
-        /** List of tiered rate card prices */
+        /** List of tiered rate card prices. */
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardTiers")
         private java.util.List<RateCardTier> rateCardTiers;
 
         /**
-         * List of tiered rate card prices
+         * List of tiered rate card prices.
          *
          * @param rateCardTiers the value to set
          * @return this builder
@@ -266,12 +266,12 @@ public final class RateCardSummary
         return new Builder().copy(this);
     }
 
-    /** SPM internal Subscribed Service ID */
+    /** SPM (Subscription Plan Management) internal subscribed service ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscribedServiceId")
     private final String subscribedServiceId;
 
     /**
-     * SPM internal Subscribed Service ID
+     * SPM (Subscription Plan Management) internal subscribed service ID.
      *
      * @return the value
      */
@@ -286,12 +286,12 @@ public final class RateCardSummary
         return product;
     }
 
-    /** Rate card start date */
+    /** Rate card start date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
-     * Rate card start date
+     * Rate card start date.
      *
      * @return the value
      */
@@ -299,12 +299,12 @@ public final class RateCardSummary
         return timeStart;
     }
 
-    /** Rate card end date */
+    /** Rate card end date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
-     * Rate card end date
+     * Rate card end date.
      *
      * @return the value
      */
@@ -312,12 +312,12 @@ public final class RateCardSummary
         return timeEnd;
     }
 
-    /** Rate card net unit price */
+    /** Rate card net unit price. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
     /**
-     * Rate card net unit price
+     * Rate card net unit price.
      *
      * @return the value
      */
@@ -325,12 +325,12 @@ public final class RateCardSummary
         return netUnitPrice;
     }
 
-    /** Rate card discretionary discount percentage */
+    /** Rate card discretionary discount percentage. */
     @com.fasterxml.jackson.annotation.JsonProperty("discretionaryDiscountPercentage")
     private final String discretionaryDiscountPercentage;
 
     /**
-     * Rate card discretionary discount percentage
+     * Rate card discretionary discount percentage.
      *
      * @return the value
      */
@@ -338,12 +338,12 @@ public final class RateCardSummary
         return discretionaryDiscountPercentage;
     }
 
-    /** Rate card overage price */
+    /** Rate card overage price. */
     @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
     private final String overagePrice;
 
     /**
-     * Rate card overage price
+     * Rate card overage price.
      *
      * @return the value
      */
@@ -351,12 +351,12 @@ public final class RateCardSummary
         return overagePrice;
     }
 
-    /** Rate card price tier flag */
+    /** Rate card price tier parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("isTier")
     private final Boolean isTier;
 
     /**
-     * Rate card price tier flag
+     * Rate card price tier parameter.
      *
      * @return the value
      */
@@ -371,12 +371,12 @@ public final class RateCardSummary
         return currency;
     }
 
-    /** List of tiered rate card prices */
+    /** List of tiered rate card prices. */
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardTiers")
     private final java.util.List<RateCardTier> rateCardTiers;
 
     /**
-     * List of tiered rate card prices
+     * List of tiered rate card prices.
      *
      * @return the value
      */

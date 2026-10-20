@@ -32,12 +32,18 @@ public final class CreateOkeClusterResourceModifierMappingDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OKE namespace where the config map resides. Example: {@code namespace_string_5} */
+        /**
+         * The OKE namespace where the config map resides.
+         *
+         * <p>Example: {@code namespace_string_5}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The OKE namespace where the config map resides. Example: {@code namespace_string_5}
+         * The OKE namespace where the config map resides.
+         *
+         * <p>Example: {@code namespace_string_5}
          *
          * @param namespace the value to set
          * @return this builder
@@ -48,15 +54,17 @@ public final class CreateOkeClusterResourceModifierMappingDetails
             return this;
         }
         /**
-         * The name of the config map containing resource modification details. Example: {@code
-         * resource-modifier}
+         * The name of the config map containing resource modification details.
+         *
+         * <p>Example: {@code resource-modifier}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("configMap")
         private String configMap;
 
         /**
-         * The name of the config map containing resource modification details. Example: {@code
-         * resource-modifier}
+         * The name of the config map containing resource modification details.
+         *
+         * <p>Example: {@code resource-modifier}
          *
          * @param configMap the value to set
          * @return this builder
@@ -101,12 +109,18 @@ public final class CreateOkeClusterResourceModifierMappingDetails
         return new Builder().copy(this);
     }
 
-    /** The OKE namespace where the config map resides. Example: {@code namespace_string_5} */
+    /**
+     * The OKE namespace where the config map resides.
+     *
+     * <p>Example: {@code namespace_string_5}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The OKE namespace where the config map resides. Example: {@code namespace_string_5}
+     * The OKE namespace where the config map resides.
+     *
+     * <p>Example: {@code namespace_string_5}
      *
      * @return the value
      */
@@ -115,15 +129,17 @@ public final class CreateOkeClusterResourceModifierMappingDetails
     }
 
     /**
-     * The name of the config map containing resource modification details. Example: {@code
-     * resource-modifier}
+     * The name of the config map containing resource modification details.
+     *
+     * <p>Example: {@code resource-modifier}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("configMap")
     private final String configMap;
 
     /**
-     * The name of the config map containing resource modification details. Example: {@code
-     * resource-modifier}
+     * The name of the config map containing resource modification details.
+     *
+     * <p>Example: {@code resource-modifier}
      *
      * @return the value
      */

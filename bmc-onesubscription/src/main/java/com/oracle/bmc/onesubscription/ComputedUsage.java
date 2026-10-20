@@ -65,7 +65,7 @@ public interface ComputedUsage extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This is an API which returns Computed Usage corresponding to the id passed
+     * Returns computed usage corresponding to the passed ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,9 +81,9 @@ public interface ComputedUsage extends AutoCloseable {
     GetComputedUsageResponse getComputedUsage(GetComputedUsageRequest request);
 
     /**
-     * This is a collection API which returns a list of aggregated computed usage details (there can
-     * be multiple Parent Products under a given SubID each of which is represented under
-     * Subscription Service Line # in SPM).
+     * Collection API that returns a list of aggregated computed usage details (there can be
+     * multiple parent products under a given SubID, each of which is represented under the
+     * subscription service line # in SPM).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,7 +100,7 @@ public interface ComputedUsage extends AutoCloseable {
             ListAggregatedComputedUsagesRequest request);
 
     /**
-     * This is a collection API which returns a list of Computed Usages for given filters.
+     * Collection API that returns a list of computed usages for the given filters.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

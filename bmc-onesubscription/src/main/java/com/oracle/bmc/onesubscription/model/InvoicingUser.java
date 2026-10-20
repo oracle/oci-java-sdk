@@ -68,12 +68,12 @@ public final class InvoicingUser extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** userName. */
+        /** User name. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * userName.
+         * User name.
          *
          * @param userName the value to set
          * @return this builder
@@ -128,12 +128,12 @@ public final class InvoicingUser extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("email");
             return this;
         }
-        /** TCA contact ID. */
+        /** TCA (Trading Community Architecture) contact ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaContactId")
         private Long tcaContactId;
 
         /**
-         * TCA contact ID.
+         * TCA (Trading Community Architecture) contact ID.
          *
          * @param tcaContactId the value to set
          * @return this builder
@@ -246,12 +246,12 @@ public final class InvoicingUser extends com.oracle.bmc.http.client.internal.Exp
         return name;
     }
 
-    /** userName. */
+    /** User name. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * userName.
+     * User name.
      *
      * @return the value
      */
@@ -298,12 +298,12 @@ public final class InvoicingUser extends com.oracle.bmc.http.client.internal.Exp
         return email;
     }
 
-    /** TCA contact ID. */
+    /** TCA (Trading Community Architecture) contact ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaContactId")
     private final Long tcaContactId;
 
     /**
-     * TCA contact ID.
+     * TCA (Trading Community Architecture) contact ID.
      *
      * @return the value
      */

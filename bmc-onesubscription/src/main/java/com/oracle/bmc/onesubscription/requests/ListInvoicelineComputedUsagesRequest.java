@@ -22,10 +22,10 @@ public class ListInvoicelineComputedUsagesRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Invoice Line Identifier - Primary Key SPM */
+    /** Invoice line identifier - Primary Key SPM (Subscription Plan Management). */
     private String invoiceLineId;
 
-    /** Invoice Line Identifier - Primary Key SPM */
+    /** Invoice line identifier - Primary Key SPM (Subscription Plan Management). */
     public String getInvoiceLineId() {
         return invoiceLineId;
     }
@@ -71,13 +71,13 @@ public class ListInvoicelineComputedUsagesRequest
         return sortOrder;
     }
     /**
-     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
+     * The field to sort by invoiced computed usages. You can provide one sort order ({@code
      * sortOrder}).
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
+     * The field to sort by invoiced computed usages. You can provide one sort order ({@code
      * sortOrder}).
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
@@ -114,7 +114,7 @@ public class ListInvoicelineComputedUsagesRequest
     };
 
     /**
-     * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
+     * The field to sort by invoiced computed usages. You can provide one sort order ({@code
      * sortOrder}).
      */
     public SortBy getSortBy() {
@@ -143,16 +143,16 @@ public class ListInvoicelineComputedUsagesRequest
         return page;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+     * return only the information (fields) required by the client. This parameter controls which
+     * fields to return.
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+     * return only the information (fields) required by the client. This parameter controls which
+     * fields to return.
      */
     public java.util.List<String> getFields() {
         return fields;
@@ -191,11 +191,11 @@ public class ListInvoicelineComputedUsagesRequest
             return this;
         }
 
-        /** Invoice Line Identifier - Primary Key SPM */
+        /** Invoice line identifier - Primary Key SPM (Subscription Plan Management). */
         private String invoiceLineId = null;
 
         /**
-         * Invoice Line Identifier - Primary Key SPM
+         * Invoice line identifier - Primary Key SPM (Subscription Plan Management).
          *
          * @param invoiceLineId the value to set
          * @return this builder instance
@@ -220,13 +220,13 @@ public class ListInvoicelineComputedUsagesRequest
         }
 
         /**
-         * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
+         * The field to sort by invoiced computed usages. You can provide one sort order ({@code
          * sortOrder}).
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by Invoiced Computed Usages. You can provide one sort order ({@code
+         * The field to sort by invoiced computed usages. You can provide one sort order ({@code
          * sortOrder}).
          *
          * @param sortBy the value to set
@@ -272,16 +272,16 @@ public class ListInvoicelineComputedUsagesRequest
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+         * return only the information (fields) required by the client. This parameter controls
+         * which fields to return.
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
+         * return only the information (fields) required by the client. This parameter controls
+         * which fields to return.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -293,8 +293,8 @@ public class ListInvoicelineComputedUsagesRequest
 
         /**
          * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs to return only the information (fields) required by the client. This
-         * parameter is used to control what fields to return.
+         * RESTful web APIs, to return only the information (fields) required by the client. This
+         * parameter controls which fields to return.
          *
          * @param singularValue the singular value to set
          * @return this builder instance

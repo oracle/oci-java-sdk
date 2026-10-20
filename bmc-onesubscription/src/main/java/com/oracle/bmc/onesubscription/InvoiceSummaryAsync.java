@@ -60,8 +60,7 @@ public interface InvoiceSummaryAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * This is a collection API which returns a list of Invoiced Computed Usages for given
-     * Invoiceline id.
+     * Collection API that returns a list of invoiced computed usages for the given invoice line ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -79,7 +78,7 @@ public interface InvoiceSummaryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * This is a collection API which returns a list of Invoices for given filters.
+     * Collection API that returns a list of invoices according to the given filters.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

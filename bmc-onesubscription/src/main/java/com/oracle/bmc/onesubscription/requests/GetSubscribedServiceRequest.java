@@ -14,30 +14,30 @@ import com.oracle.bmc.onesubscription.model.*;
 public class GetSubscribedServiceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Subscribed Service Id */
+    /** The subscribed service ID. */
     private String subscribedServiceId;
 
-    /** The Subscribed Service Id */
+    /** The subscribed service ID. */
     public String getSubscribedServiceId() {
         return subscribedServiceId;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
      * return only the information (fields) required by the client. In this mechanism, the client
      * sends the required field names as the query parameters for an API to the server, and the
      * server trims down the default response content by removing the fields that are not required
-     * by the client. The parameter used to control what fields to return should be a query string
-     * parameter called "fields" of type array, and usecollectionFormat
+     * by the client. The parameter used to control which fields to return should be a query string
+     * parameter called "fields", of an array type, and use collectionFormat.
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
+     * Partial response refers to an optimization technique offered by the RESTful web APIs, to
      * return only the information (fields) required by the client. In this mechanism, the client
      * sends the required field names as the query parameters for an API to the server, and the
      * server trims down the default response content by removing the fields that are not required
-     * by the client. The parameter used to control what fields to return should be a query string
-     * parameter called "fields" of type array, and usecollectionFormat
+     * by the client. The parameter used to control which fields to return should be a query string
+     * parameter called "fields", of an array type, and use collectionFormat.
      */
     public java.util.List<String> getFields() {
         return fields;
@@ -62,11 +62,11 @@ public class GetSubscribedServiceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Subscribed Service Id */
+        /** The subscribed service ID. */
         private String subscribedServiceId = null;
 
         /**
-         * The Subscribed Service Id
+         * The subscribed service ID.
          *
          * @param subscribedServiceId the value to set
          * @return this builder instance
@@ -77,22 +77,22 @@ public class GetSubscribedServiceRequest
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
          * return only the information (fields) required by the client. In this mechanism, the
          * client sends the required field names as the query parameters for an API to the server,
          * and the server trims down the default response content by removing the fields that are
-         * not required by the client. The parameter used to control what fields to return should be
-         * a query string parameter called "fields" of type array, and usecollectionFormat
+         * not required by the client. The parameter used to control which fields to return should
+         * be a query string parameter called "fields", of an array type, and use collectionFormat.
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
+         * Partial response refers to an optimization technique offered by the RESTful web APIs, to
          * return only the information (fields) required by the client. In this mechanism, the
          * client sends the required field names as the query parameters for an API to the server,
          * and the server trims down the default response content by removing the fields that are
-         * not required by the client. The parameter used to control what fields to return should be
-         * a query string parameter called "fields" of type array, and usecollectionFormat
+         * not required by the client. The parameter used to control which fields to return should
+         * be a query string parameter called "fields", of an array type, and use collectionFormat.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -104,12 +104,12 @@ public class GetSubscribedServiceRequest
 
         /**
          * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs to return only the information (fields) required by the client. In this
+         * RESTful web APIs, to return only the information (fields) required by the client. In this
          * mechanism, the client sends the required field names as the query parameters for an API
          * to the server, and the server trims down the default response content by removing the
-         * fields that are not required by the client. The parameter used to control what fields to
-         * return should be a query string parameter called "fields" of type array, and
-         * usecollectionFormat
+         * fields that are not required by the client. The parameter used to control which fields to
+         * return should be a query string parameter called "fields", of an array type, and use
+         * collectionFormat.
          *
          * @param singularValue the singular value to set
          * @return this builder instance

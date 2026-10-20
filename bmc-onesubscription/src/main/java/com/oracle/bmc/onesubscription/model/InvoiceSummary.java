@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Invoice details <br>
+ * Invoice details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -87,12 +87,16 @@ public final class InvoiceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SPM Document Number is an functional identifier for invoice in SPM */
+        /**
+         * SPM (Subscription Plan Management) document number is a functional identifier for
+         * invoicing in SPM.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("spmInvoiceNumber")
         private String spmInvoiceNumber;
 
         /**
-         * SPM Document Number is an functional identifier for invoice in SPM
+         * SPM (Subscription Plan Management) document number is a functional identifier for
+         * invoicing in SPM.
          *
          * @param spmInvoiceNumber the value to set
          * @return this builder
@@ -102,12 +106,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("spmInvoiceNumber");
             return this;
         }
-        /** AR Invoice Numbers comma separated under one invoice */
+        /** Accounts receivable invoice numbers, comma-separated under one invoice. */
         @com.fasterxml.jackson.annotation.JsonProperty("arInvoices")
         private String arInvoices;
 
         /**
-         * AR Invoice Numbers comma separated under one invoice
+         * Accounts receivable invoice numbers, comma-separated under one invoice.
          *
          * @param arInvoices the value to set
          * @return this builder
@@ -144,12 +148,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("billToAddress");
             return this;
         }
-        /** Payment Method */
+        /** Payment method. */
         @com.fasterxml.jackson.annotation.JsonProperty("paymentMethod")
         private String paymentMethod;
 
         /**
-         * Payment Method
+         * Payment method.
          *
          * @param paymentMethod the value to set
          * @return this builder
@@ -168,12 +172,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("paymentTerm");
             return this;
         }
-        /** Receipt Method of Payment Mode */
+        /** Receipt method of payment mode. */
         @com.fasterxml.jackson.annotation.JsonProperty("receiptMethod")
         private String receiptMethod;
 
         /**
-         * Receipt Method of Payment Mode
+         * Receipt method of payment mode.
          *
          * @param receiptMethod the value to set
          * @return this builder
@@ -201,12 +205,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("organization");
             return this;
         }
-        /** Document Type in SPM like SPM Invoice,SPM Credit Memo etc., */
+        /** Document type in SPM, such as SPM Invoice, SPM Credit Memo, and so on. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
+         * Document type in SPM, such as SPM Invoice, SPM Credit Memo, and so on.
          *
          * @param type the value to set
          * @return this builder
@@ -216,12 +220,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Document Status in SPM which depicts current state of invoice */
+        /** Document status in SPM, which depicts the current invoice state. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
-         * Document Status in SPM which depicts current state of invoice
+         * Document status in SPM, which depicts the current invoice state.
          *
          * @param status the value to set
          * @return this builder
@@ -246,12 +250,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("subscriptionNumber");
             return this;
         }
-        /** Invoice Date */
+        /** Invoice date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiceDate")
         private java.util.Date timeInvoiceDate;
 
         /**
-         * Invoice Date
+         * Invoice date.
          *
          * @param timeInvoiceDate the value to set
          * @return this builder
@@ -261,12 +265,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("timeInvoiceDate");
             return this;
         }
-        /** SPM Invocie creation date */
+        /** SPM invocie creation date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * SPM Invocie creation date
+         * SPM invocie creation date.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -276,12 +280,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** User that executed SPM Invoice process */
+        /** User that executed the SPM invoice process. */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
-         * User that executed SPM Invoice process
+         * User that executed the SPM invoice process.
          *
          * @param createdBy the value to set
          * @return this builder
@@ -291,12 +295,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** SPM Invoice updated date */
+        /** SPM invoice updated date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * SPM Invoice updated date
+         * SPM invoice updated date.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -306,12 +310,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** User that updated SPM Invoice */
+        /** User that updated the SPM invoice. */
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
         /**
-         * User that updated SPM Invoice
+         * User that updated the SPM invoice.
          *
          * @param updatedBy the value to set
          * @return this builder
@@ -321,12 +325,12 @@ public final class InvoiceSummary
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-        /** Invoice Lines under particular invoice. */
+        /** Invoice lines under a particular invoice. */
         @com.fasterxml.jackson.annotation.JsonProperty("invoiceLines")
         private java.util.List<InvoiceLineSummary> invoiceLines;
 
         /**
-         * Invoice Lines under particular invoice.
+         * Invoice lines under a particular invoice.
          *
          * @param invoiceLines the value to set
          * @return this builder
@@ -440,12 +444,16 @@ public final class InvoiceSummary
         return new Builder().copy(this);
     }
 
-    /** SPM Document Number is an functional identifier for invoice in SPM */
+    /**
+     * SPM (Subscription Plan Management) document number is a functional identifier for invoicing
+     * in SPM.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("spmInvoiceNumber")
     private final String spmInvoiceNumber;
 
     /**
-     * SPM Document Number is an functional identifier for invoice in SPM
+     * SPM (Subscription Plan Management) document number is a functional identifier for invoicing
+     * in SPM.
      *
      * @return the value
      */
@@ -453,12 +461,12 @@ public final class InvoiceSummary
         return spmInvoiceNumber;
     }
 
-    /** AR Invoice Numbers comma separated under one invoice */
+    /** Accounts receivable invoice numbers, comma-separated under one invoice. */
     @com.fasterxml.jackson.annotation.JsonProperty("arInvoices")
     private final String arInvoices;
 
     /**
-     * AR Invoice Numbers comma separated under one invoice
+     * Accounts receivable invoice numbers, comma-separated under one invoice.
      *
      * @return the value
      */
@@ -487,12 +495,12 @@ public final class InvoiceSummary
         return billToAddress;
     }
 
-    /** Payment Method */
+    /** Payment method. */
     @com.fasterxml.jackson.annotation.JsonProperty("paymentMethod")
     private final String paymentMethod;
 
     /**
-     * Payment Method
+     * Payment method.
      *
      * @return the value
      */
@@ -507,12 +515,12 @@ public final class InvoiceSummary
         return paymentTerm;
     }
 
-    /** Receipt Method of Payment Mode */
+    /** Receipt method of payment mode. */
     @com.fasterxml.jackson.annotation.JsonProperty("receiptMethod")
     private final String receiptMethod;
 
     /**
-     * Receipt Method of Payment Mode
+     * Receipt method of payment mode.
      *
      * @return the value
      */
@@ -534,12 +542,12 @@ public final class InvoiceSummary
         return organization;
     }
 
-    /** Document Type in SPM like SPM Invoice,SPM Credit Memo etc., */
+    /** Document type in SPM, such as SPM Invoice, SPM Credit Memo, and so on. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
+     * Document type in SPM, such as SPM Invoice, SPM Credit Memo, and so on.
      *
      * @return the value
      */
@@ -547,12 +555,12 @@ public final class InvoiceSummary
         return type;
     }
 
-    /** Document Status in SPM which depicts current state of invoice */
+    /** Document status in SPM, which depicts the current invoice state. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
-     * Document Status in SPM which depicts current state of invoice
+     * Document status in SPM, which depicts the current invoice state.
      *
      * @return the value
      */
@@ -573,12 +581,12 @@ public final class InvoiceSummary
         return subscriptionNumber;
     }
 
-    /** Invoice Date */
+    /** Invoice date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeInvoiceDate")
     private final java.util.Date timeInvoiceDate;
 
     /**
-     * Invoice Date
+     * Invoice date.
      *
      * @return the value
      */
@@ -586,12 +594,12 @@ public final class InvoiceSummary
         return timeInvoiceDate;
     }
 
-    /** SPM Invocie creation date */
+    /** SPM invocie creation date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * SPM Invocie creation date
+     * SPM invocie creation date.
      *
      * @return the value
      */
@@ -599,12 +607,12 @@ public final class InvoiceSummary
         return timeCreated;
     }
 
-    /** User that executed SPM Invoice process */
+    /** User that executed the SPM invoice process. */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
-     * User that executed SPM Invoice process
+     * User that executed the SPM invoice process.
      *
      * @return the value
      */
@@ -612,12 +620,12 @@ public final class InvoiceSummary
         return createdBy;
     }
 
-    /** SPM Invoice updated date */
+    /** SPM invoice updated date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * SPM Invoice updated date
+     * SPM invoice updated date.
      *
      * @return the value
      */
@@ -625,12 +633,12 @@ public final class InvoiceSummary
         return timeUpdated;
     }
 
-    /** User that updated SPM Invoice */
+    /** User that updated the SPM invoice. */
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
-     * User that updated SPM Invoice
+     * User that updated the SPM invoice.
      *
      * @return the value
      */
@@ -638,12 +646,12 @@ public final class InvoiceSummary
         return updatedBy;
     }
 
-    /** Invoice Lines under particular invoice. */
+    /** Invoice lines under a particular invoice. */
     @com.fasterxml.jackson.annotation.JsonProperty("invoiceLines")
     private final java.util.List<InvoiceLineSummary> invoiceLines;
 
     /**
-     * Invoice Lines under particular invoice.
+     * Invoice lines under a particular invoice.
      *
      * @return the value
      */

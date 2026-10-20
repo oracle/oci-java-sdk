@@ -165,17 +165,19 @@ public final class CreateOkeClusterBackupConfigDetails
             return this;
         }
         /**
-         * Controls the behaviour of image replication across regions. Image replication is enabled
-         * by default for DR Protection Groups with a primary role. This property applies to the OKE
-         * cluster member in primary region.
+         * Controls the behavior of image replication across regions. Image replication is enabled
+         * by default for DR Protection Groups. This setting applies to the OKE cluster member in
+         * the primary region, and to the standby region only if the image replication secret is
+         * stored in a vault instead of using the default secret.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicateImages")
         private OkeClusterImageReplication replicateImages;
 
         /**
-         * Controls the behaviour of image replication across regions. Image replication is enabled
-         * by default for DR Protection Groups with a primary role. This property applies to the OKE
-         * cluster member in primary region.
+         * Controls the behavior of image replication across regions. Image replication is enabled
+         * by default for DR Protection Groups. This setting applies to the OKE cluster member in
+         * the primary region, and to the standby region only if the image replication secret is
+         * stored in a vault instead of using the default secret.
          *
          * @param replicateImages the value to set
          * @return this builder
@@ -385,17 +387,19 @@ public final class CreateOkeClusterBackupConfigDetails
     }
 
     /**
-     * Controls the behaviour of image replication across regions. Image replication is enabled by
-     * default for DR Protection Groups with a primary role. This property applies to the OKE
-     * cluster member in primary region.
+     * Controls the behavior of image replication across regions. Image replication is enabled by
+     * default for DR Protection Groups. This setting applies to the OKE cluster member in the
+     * primary region, and to the standby region only if the image replication secret is stored in a
+     * vault instead of using the default secret.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicateImages")
     private final OkeClusterImageReplication replicateImages;
 
     /**
-     * Controls the behaviour of image replication across regions. Image replication is enabled by
-     * default for DR Protection Groups with a primary role. This property applies to the OKE
-     * cluster member in primary region.
+     * Controls the behavior of image replication across regions. Image replication is enabled by
+     * default for DR Protection Groups. This setting applies to the OKE cluster member in the
+     * primary region, and to the standby region only if the image replication secret is stored in a
+     * vault instead of using the default secret.
      *
      * @return the value
      */

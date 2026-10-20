@@ -199,14 +199,14 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
         }
         /**
          * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-         * default to the default region.
+         * default to the current region.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-         * default to the default region.
+         * default to the current region.
          *
          * @param region the value to set
          * @return this builder
@@ -671,14 +671,14 @@ public final class CreateOciObjectStorageConnectionDetails extends CreateConnect
 
     /**
      * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-     * default to the default region.
+     * default to the current region.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-     * default to the default region.
+     * default to the current region.
      *
      * @return the value
      */

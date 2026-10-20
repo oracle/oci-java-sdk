@@ -13,10 +13,10 @@ import com.oracle.bmc.onesubscription.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Line level Subscription Id */
+    /** Line-level subscription ID. */
     private String subscriptionId;
 
-    /** Line level Subscription Id */
+    /** Line-level subscription ID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
@@ -27,36 +27,24 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * This param is used to get the rate card(s) whose effective start date starts on or after a
-     * particular date
-     */
+    /** Gets the rate cards whose effective start date starts on or after a particular date. */
     private java.util.Date timeFrom;
 
-    /**
-     * This param is used to get the rate card(s) whose effective start date starts on or after a
-     * particular date
-     */
+    /** Gets the rate cards whose effective start date starts on or after a particular date. */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
-    /**
-     * This param is used to get the rate card(s) whose effective end date ends on or before a
-     * particular date
-     */
+    /** Gets the rate cards whose effective end date ends on or before a particular date. */
     private java.util.Date timeTo;
 
-    /**
-     * This param is used to get the rate card(s) whose effective end date ends on or before a
-     * particular date
-     */
+    /** Gets the rate cards whose effective end date ends on or before a particular date. */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
-    /** This param is used to get the rate card(s) filterd by the partNumber */
+    /** Gets the rate cards filterd by the part number. */
     private String partNumber;
 
-    /** This param is used to get the rate card(s) filterd by the partNumber */
+    /** Gets the rate cards filterd by the part number. */
     public String getPartNumber() {
         return partNumber;
     }
@@ -184,11 +172,11 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Line level Subscription Id */
+        /** Line-level subscription ID. */
         private String subscriptionId = null;
 
         /**
-         * Line level Subscription Id
+         * Line-level subscription ID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -212,15 +200,11 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * This param is used to get the rate card(s) whose effective start date starts on or after
-         * a particular date
-         */
+        /** Gets the rate cards whose effective start date starts on or after a particular date. */
         private java.util.Date timeFrom = null;
 
         /**
-         * This param is used to get the rate card(s) whose effective start date starts on or after
-         * a particular date
+         * Gets the rate cards whose effective start date starts on or after a particular date.
          *
          * @param timeFrom the value to set
          * @return this builder instance
@@ -230,15 +214,11 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * This param is used to get the rate card(s) whose effective end date ends on or before a
-         * particular date
-         */
+        /** Gets the rate cards whose effective end date ends on or before a particular date. */
         private java.util.Date timeTo = null;
 
         /**
-         * This param is used to get the rate card(s) whose effective end date ends on or before a
-         * particular date
+         * Gets the rate cards whose effective end date ends on or before a particular date.
          *
          * @param timeTo the value to set
          * @return this builder instance
@@ -248,11 +228,11 @@ public class ListRateCardsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** This param is used to get the rate card(s) filterd by the partNumber */
+        /** Gets the rate cards filterd by the part number. */
         private String partNumber = null;
 
         /**
-         * This param is used to get the rate card(s) filterd by the partNumber
+         * Gets the rate cards filterd by the part number.
          *
          * @param partNumber the value to set
          * @return this builder instance

@@ -5,7 +5,7 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Rate Card Tier details <br>
+ * Rate card tier details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class RateCardTier extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Rate card tier quantity range */
+        /** Rate card tier quantity range. */
         @com.fasterxml.jackson.annotation.JsonProperty("upToQuantity")
         private String upToQuantity;
 
         /**
-         * Rate card tier quantity range
+         * Rate card tier quantity range.
          *
          * @param upToQuantity the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class RateCardTier extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("upToQuantity");
             return this;
         }
-        /** Rate card tier net unit price */
+        /** Rate card tier net unit price. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
         /**
-         * Rate card tier net unit price
+         * Rate card tier net unit price.
          *
          * @param netUnitPrice the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class RateCardTier extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Rate card tier overage price */
+        /** Rate card tier overage price. */
         @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
         private String overagePrice;
 
         /**
-         * Rate card tier overage price
+         * Rate card tier overage price.
          *
          * @param overagePrice the value to set
          * @return this builder
@@ -113,12 +113,12 @@ public final class RateCardTier extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Rate card tier quantity range */
+    /** Rate card tier quantity range. */
     @com.fasterxml.jackson.annotation.JsonProperty("upToQuantity")
     private final String upToQuantity;
 
     /**
-     * Rate card tier quantity range
+     * Rate card tier quantity range.
      *
      * @return the value
      */
@@ -126,12 +126,12 @@ public final class RateCardTier extends com.oracle.bmc.http.client.internal.Expl
         return upToQuantity;
     }
 
-    /** Rate card tier net unit price */
+    /** Rate card tier net unit price. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
     /**
-     * Rate card tier net unit price
+     * Rate card tier net unit price.
      *
      * @return the value
      */
@@ -139,12 +139,12 @@ public final class RateCardTier extends com.oracle.bmc.http.client.internal.Expl
         return netUnitPrice;
     }
 
-    /** Rate card tier overage price */
+    /** Rate card tier overage price. */
     @com.fasterxml.jackson.annotation.JsonProperty("overagePrice")
     private final String overagePrice;
 
     /**
-     * Rate card tier overage price
+     * Rate card tier overage price.
      *
      * @return the value
      */

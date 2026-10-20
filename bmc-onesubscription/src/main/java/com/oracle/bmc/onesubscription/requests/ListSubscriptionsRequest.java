@@ -20,31 +20,31 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The Plan Number */
+    /** The plan number. */
     private String planNumber;
 
-    /** The Plan Number */
+    /** The plan number. */
     public String getPlanNumber() {
         return planNumber;
     }
-    /** Line level Subscription Id */
+    /** Line level subscription ID. */
     private String subscriptionId;
 
-    /** Line level Subscription Id */
+    /** Line level subscription ID. */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /** Buyer Email Id */
+    /** Buyer email ID. */
     private String buyerEmail;
 
-    /** Buyer Email Id */
+    /** Buyer email ID. */
     public String getBuyerEmail() {
         return buyerEmail;
     }
-    /** Boolean value to decide whether commitment services will be shown */
+    /** Boolean value to determine whether commitment services are shown. */
     private Boolean isCommitInfoRequired;
 
-    /** Boolean value to decide whether commitment services will be shown */
+    /** Boolean value to determine whether commitment services are shown. */
     public Boolean getIsCommitInfoRequired() {
         return isCommitInfoRequired;
     }
@@ -186,11 +186,11 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The Plan Number */
+        /** The plan number. */
         private String planNumber = null;
 
         /**
-         * The Plan Number
+         * The plan number.
          *
          * @param planNumber the value to set
          * @return this builder instance
@@ -200,11 +200,11 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Line level Subscription Id */
+        /** Line level subscription ID. */
         private String subscriptionId = null;
 
         /**
-         * Line level Subscription Id
+         * Line level subscription ID.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -214,11 +214,11 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Buyer Email Id */
+        /** Buyer email ID. */
         private String buyerEmail = null;
 
         /**
-         * Buyer Email Id
+         * Buyer email ID.
          *
          * @param buyerEmail the value to set
          * @return this builder instance
@@ -228,11 +228,11 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Boolean value to decide whether commitment services will be shown */
+        /** Boolean value to determine whether commitment services are shown. */
         private Boolean isCommitInfoRequired = null;
 
         /**
-         * Boolean value to decide whether commitment services will be shown
+         * Boolean value to determine whether commitment services are shown.
          *
          * @param isCommitInfoRequired the value to set
          * @return this builder instance

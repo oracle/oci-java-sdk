@@ -186,6 +186,10 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
          * field is deprecated and replaced by "passwordSecretId". This change follows the
          * GoldenGate "Plain Text Fields in Connections" deprecation:
          * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         * Snowflake is phasing out password authentication for legacy service users. Oracle
+         * GoldenGate Snowflake connections will support only key-pair authentication. See the
+         * Snowflake documentation for details:
+         * https://docs.snowflake.com/en/user-guide/security-mfa-rollout
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private char[] password;
@@ -195,6 +199,10 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
          * field is deprecated and replaced by "passwordSecretId". This change follows the
          * GoldenGate "Plain Text Fields in Connections" deprecation:
          * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         * Snowflake is phasing out password authentication for legacy service users. Oracle
+         * GoldenGate Snowflake connections will support only key-pair authentication. See the
+         * Snowflake documentation for details:
+         * https://docs.snowflake.com/en/user-guide/security-mfa-rollout
          *
          * @param password the value to set
          * @return this builder
@@ -213,7 +221,10 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
-         * Note: When provided, 'password' field must not be provided.
+         * Note: When provided, 'password' field must not be provided. Deprecated: Snowflake is
+         * phasing out password authentication for legacy service users. Oracle GoldenGate Snowflake
+         * connections will support only key-pair authentication. See the Snowflake documentation
+         * for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
          */
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
@@ -221,7 +232,10 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
          * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
-         * Note: When provided, 'password' field must not be provided.
+         * Note: When provided, 'password' field must not be provided. Deprecated: Snowflake is
+         * phasing out password authentication for legacy service users. Oracle GoldenGate Snowflake
+         * connections will support only key-pair authentication. See the Snowflake documentation
+         * for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
          *
          * @param passwordSecretId the value to set
          * @return this builder
@@ -598,6 +612,9 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
      * is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain
      * Text Fields in Connections" deprecation:
      * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * Snowflake is phasing out password authentication for legacy service users. Oracle GoldenGate
+     * Snowflake connections will support only key-pair authentication. See the Snowflake
+     * documentation for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final char[] password;
@@ -607,6 +624,9 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
      * is deprecated and replaced by &quot;passwordSecretId&quot;. This change follows the
      * GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
      * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * Snowflake is phasing out password authentication for legacy service users. Oracle GoldenGate
+     * Snowflake connections will support only key-pair authentication. See the Snowflake
+     * documentation for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      *
      * @return the value
      * @deprecated Use getPassword__AsCharArray() instead.
@@ -622,6 +642,9 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
      * is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain
      * Text Fields in Connections" deprecation:
      * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * Snowflake is phasing out password authentication for legacy service users. Oracle GoldenGate
+     * Snowflake connections will support only key-pair authentication. See the Snowflake
+     * documentation for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      *
      * @return the value
      */
@@ -633,7 +656,10 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
-     * Note: When provided, 'password' field must not be provided.
+     * Note: When provided, 'password' field must not be provided. Deprecated: Snowflake is phasing
+     * out password authentication for legacy service users. Oracle GoldenGate Snowflake connections
+     * will support only key-pair authentication. See the Snowflake documentation for details:
+     * https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      */
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
@@ -641,7 +667,10 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
      * Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
-     * Note: When provided, 'password' field must not be provided.
+     * Note: When provided, 'password' field must not be provided. Deprecated: Snowflake is phasing
+     * out password authentication for legacy service users. Oracle GoldenGate Snowflake connections
+     * will support only key-pair authentication. See the Snowflake documentation for details:
+     * https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      *
      * @return the value
      */

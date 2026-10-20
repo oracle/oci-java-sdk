@@ -99,6 +99,16 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
             this.__explicitlySet__.add("vnicMappings");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("drDrillProperties")
+        private DrProtectionGroupMemberComputeInstanceDrillProperties drDrillProperties;
+
+        public Builder drDrillProperties(
+                DrProtectionGroupMemberComputeInstanceDrillProperties drDrillProperties) {
+            this.drDrillProperties = drDrillProperties;
+            this.__explicitlySet__.add("drDrillProperties");
+            return this;
+        }
         /**
          * The OCID of a compartment in the destination region in which the compute instance should
          * be launched.
@@ -172,6 +182,7 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
                             this.isRetainFaultDomain,
                             this.destinationCapacityReservationId,
                             this.vnicMappings,
+                            this.drDrillProperties,
                             this.destinationCompartmentId,
                             this.destinationDedicatedVmHostId,
                             this.fileSystemOperations);
@@ -194,6 +205,9 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
             }
             if (model.wasPropertyExplicitlySet("vnicMappings")) {
                 this.vnicMappings(model.getVnicMappings());
+            }
+            if (model.wasPropertyExplicitlySet("drDrillProperties")) {
+                this.drDrillProperties(model.getDrDrillProperties());
             }
             if (model.wasPropertyExplicitlySet("destinationCompartmentId")) {
                 this.destinationCompartmentId(model.getDestinationCompartmentId());
@@ -223,6 +237,7 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
             Boolean isRetainFaultDomain,
             String destinationCapacityReservationId,
             java.util.List<ComputeInstanceMovableVnicMapping> vnicMappings,
+            DrProtectionGroupMemberComputeInstanceDrillProperties drDrillProperties,
             String destinationCompartmentId,
             String destinationDedicatedVmHostId,
             java.util.List<ComputeInstanceMovableFileSystemOperation> fileSystemOperations) {
@@ -230,6 +245,7 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
         this.isRetainFaultDomain = isRetainFaultDomain;
         this.destinationCapacityReservationId = destinationCapacityReservationId;
         this.vnicMappings = vnicMappings;
+        this.drDrillProperties = drDrillProperties;
         this.destinationCompartmentId = destinationCompartmentId;
         this.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
         this.fileSystemOperations = fileSystemOperations;
@@ -290,6 +306,13 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
      */
     public java.util.List<ComputeInstanceMovableVnicMapping> getVnicMappings() {
         return vnicMappings;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("drDrillProperties")
+    private final DrProtectionGroupMemberComputeInstanceDrillProperties drDrillProperties;
+
+    public DrProtectionGroupMemberComputeInstanceDrillProperties getDrDrillProperties() {
+        return drDrillProperties;
     }
 
     /**
@@ -366,6 +389,7 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
         sb.append(", destinationCapacityReservationId=")
                 .append(String.valueOf(this.destinationCapacityReservationId));
         sb.append(", vnicMappings=").append(String.valueOf(this.vnicMappings));
+        sb.append(", drDrillProperties=").append(String.valueOf(this.drDrillProperties));
         sb.append(", destinationCompartmentId=")
                 .append(String.valueOf(this.destinationCompartmentId));
         sb.append(", destinationDedicatedVmHostId=")
@@ -391,6 +415,7 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
                         this.destinationCapacityReservationId,
                         other.destinationCapacityReservationId)
                 && java.util.Objects.equals(this.vnicMappings, other.vnicMappings)
+                && java.util.Objects.equals(this.drDrillProperties, other.drDrillProperties)
                 && java.util.Objects.equals(
                         this.destinationCompartmentId, other.destinationCompartmentId)
                 && java.util.Objects.equals(
@@ -414,6 +439,9 @@ public final class DrProtectionGroupMemberComputeInstanceMovable extends DrProte
                                 ? 43
                                 : this.destinationCapacityReservationId.hashCode());
         result = (result * PRIME) + (this.vnicMappings == null ? 43 : this.vnicMappings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.drDrillProperties == null ? 43 : this.drDrillProperties.hashCode());
         result =
                 (result * PRIME)
                         + (this.destinationCompartmentId == null

@@ -55,6 +55,9 @@ package com.oracle.bmc.goldengate.model;
             value = MicrosoftSqlserverConnection.class,
             name = "MICROSOFT_SQLSERVER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AiProviderConnection.class,
+            name = "AI_PROVIDER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = IcebergConnection.class,
             name = "ICEBERG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -73,8 +76,14 @@ package com.oracle.bmc.goldengate.model;
             value = JavaMessageServiceConnection.class,
             name = "JAVA_MESSAGE_SERVICE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = SparkConnection.class,
+            name = "SPARK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = SnowflakeConnection.class,
             name = "SNOWFLAKE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DatabricksEngineConnection.class,
+            name = "DATABRICKS_ENGINE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoldenGateConnection.class,
             name = "GOLDENGATE"),
@@ -93,6 +102,9 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoogleCloudStorageConnection.class,
             name = "GOOGLE_CLOUD_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OracleAiDataPlatformEngineConnection.class,
+            name = "ORACLE_AI_DATA_PLATFORM_ENGINE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OracleAiDataPlatformConnection.class,
             name = "ORACLE_AI_DATA_PLATFORM"),

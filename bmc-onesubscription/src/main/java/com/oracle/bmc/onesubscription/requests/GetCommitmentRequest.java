@@ -13,10 +13,10 @@ import com.oracle.bmc.onesubscription.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Commitment Id */
+    /** The commitment ID. */
     private String commitmentId;
 
-    /** The Commitment Id */
+    /** The commitment ID. */
     public String getCommitmentId() {
         return commitmentId;
     }
@@ -40,11 +40,11 @@ public class GetCommitmentRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Commitment Id */
+        /** The commitment ID. */
         private String commitmentId = null;
 
         /**
-         * The Commitment Id
+         * The commitment ID.
          *
          * @param commitmentId the value to set
          * @return this builder instance

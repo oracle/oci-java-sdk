@@ -36,6 +36,18 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
             this.__explicitlySet__.add("memberId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("drDrillProperties")
+        private UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails
+                drDrillProperties;
+
+        public Builder drDrillProperties(
+                UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails
+                        drDrillProperties) {
+            this.drDrillProperties = drDrillProperties;
+            this.__explicitlySet__.add("drDrillProperties");
+            return this;
+        }
         /**
          * A flag indicating if the compute instance should be moved to the same fault domain in the
          * destination region. The compute instance launch will fail if this flag is set to true and
@@ -172,6 +184,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
             UpdateDrProtectionGroupMemberComputeInstanceMovableDetails model =
                     new UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(
                             this.memberId,
+                            this.drDrillProperties,
                             this.isRetainFaultDomain,
                             this.destinationCapacityReservationId,
                             this.vnicMappings,
@@ -188,6 +201,9 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
         public Builder copy(UpdateDrProtectionGroupMemberComputeInstanceMovableDetails model) {
             if (model.wasPropertyExplicitlySet("memberId")) {
                 this.memberId(model.getMemberId());
+            }
+            if (model.wasPropertyExplicitlySet("drDrillProperties")) {
+                this.drDrillProperties(model.getDrDrillProperties());
             }
             if (model.wasPropertyExplicitlySet("isRetainFaultDomain")) {
                 this.isRetainFaultDomain(model.getIsRetainFaultDomain());
@@ -223,6 +239,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
     @Deprecated
     public UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(
             String memberId,
+            UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails drDrillProperties,
             Boolean isRetainFaultDomain,
             String destinationCapacityReservationId,
             java.util.List<ComputeInstanceMovableVnicMappingDetails> vnicMappings,
@@ -231,12 +248,22 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
             java.util.List<UpdateComputeInstanceMovableFileSystemOperationDetails>
                     fileSystemOperations) {
         super(memberId);
+        this.drDrillProperties = drDrillProperties;
         this.isRetainFaultDomain = isRetainFaultDomain;
         this.destinationCapacityReservationId = destinationCapacityReservationId;
         this.vnicMappings = vnicMappings;
         this.destinationCompartmentId = destinationCompartmentId;
         this.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
         this.fileSystemOperations = fileSystemOperations;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("drDrillProperties")
+    private final UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails
+            drDrillProperties;
+
+    public UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails
+            getDrDrillProperties() {
+        return drDrillProperties;
     }
 
     /**
@@ -368,6 +395,7 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", drDrillProperties=").append(String.valueOf(this.drDrillProperties));
         sb.append(", isRetainFaultDomain=").append(String.valueOf(this.isRetainFaultDomain));
         sb.append(", destinationCapacityReservationId=")
                 .append(String.valueOf(this.destinationCapacityReservationId));
@@ -392,7 +420,8 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
 
         UpdateDrProtectionGroupMemberComputeInstanceMovableDetails other =
                 (UpdateDrProtectionGroupMemberComputeInstanceMovableDetails) o;
-        return java.util.Objects.equals(this.isRetainFaultDomain, other.isRetainFaultDomain)
+        return java.util.Objects.equals(this.drDrillProperties, other.drDrillProperties)
+                && java.util.Objects.equals(this.isRetainFaultDomain, other.isRetainFaultDomain)
                 && java.util.Objects.equals(
                         this.destinationCapacityReservationId,
                         other.destinationCapacityReservationId)
@@ -409,6 +438,9 @@ public final class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.drDrillProperties == null ? 43 : this.drDrillProperties.hashCode());
         result =
                 (result * PRIME)
                         + (this.isRetainFaultDomain == null

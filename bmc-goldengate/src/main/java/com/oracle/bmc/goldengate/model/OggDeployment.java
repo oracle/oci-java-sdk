@@ -5,7 +5,7 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Deployment Data for an OggDeployment <br>
+ * Deployment Data for an OggDeployment. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -58,14 +58,22 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
     public static class Builder {
         /**
          * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-         * long, must contain only alphanumeric characters and must start with a letter.
+         * long, must contain only alphanumeric characters and must start with a letter. For
+         * non-data-replication deployment types that do not use a GoldenGate deployment name, this
+         * property is {@code NONE}. Deprecated: This field is deprecated and will be removed after
+         * the date provided in the announcement:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
         private String deploymentName;
 
         /**
          * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-         * long, must contain only alphanumeric characters and must start with a letter.
+         * long, must contain only alphanumeric characters and must start with a letter. For
+         * non-data-replication deployment types that do not use a GoldenGate deployment name, this
+         * property is {@code NONE}. Deprecated: This field is deprecated and will be removed after
+         * the date provided in the announcement:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @param deploymentName the value to set
          * @return this builder
@@ -267,14 +275,22 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-     * long, must contain only alphanumeric characters and must start with a letter.
+     * long, must contain only alphanumeric characters and must start with a letter. For
+     * non-data-replication deployment types that do not use a GoldenGate deployment name, this
+     * property is {@code NONE}. Deprecated: This field is deprecated and will be removed after the
+     * date provided in the announcement:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
     private final String deploymentName;
 
     /**
      * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-     * long, must contain only alphanumeric characters and must start with a letter.
+     * long, must contain only alphanumeric characters and must start with a letter. For
+     * non-data-replication deployment types that do not use a GoldenGate deployment name, this
+     * property is {@code NONE}. Deprecated: This field is deprecated and will be removed after the
+     * date provided in the announcement:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @return the value
      */
