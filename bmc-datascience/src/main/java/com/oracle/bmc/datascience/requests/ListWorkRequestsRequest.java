@@ -161,6 +161,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
         Succeeded("SUCCEEDED"),
+        PartiallySucceeded("PARTIALLY_SUCCEEDED"),
         Canceling("CANCELING"),
         Canceled("CANCELED"),
         ;

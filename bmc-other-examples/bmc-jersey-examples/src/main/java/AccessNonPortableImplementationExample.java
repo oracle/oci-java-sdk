@@ -16,6 +16,8 @@ import com.oracle.bmc.identity.responses.ListRegionsResponse;
 
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.client.ClientResponseContext;
+import javax.ws.rs.client.ClientResponseFilter;
 
 /**
  * A sample to demonstrate how to access the underlying Jersey 2 implementation.
@@ -25,6 +27,7 @@ import javax.ws.rs.client.ClientRequestFilter;
 public class AccessNonPortableImplementationExample {
     private static final String CONFIG_FILE_PATH = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
+    private static final String START_NANOS_PROPERTY = "example.startNanos";
 
     private static final ListRegionsRequest LIST_REGIONS_REQUEST =
             ListRegionsRequest.builder().build();
@@ -52,6 +55,26 @@ public class AccessNonPortableImplementationExample {
                                             @Override
                                             public void filter(ClientRequestContext requestContext) throws IOException {
                                                 requestContext.getHeaders().putSingle("my-header", "my-value");
+                                                requestContext.setProperty(START_NANOS_PROPERTY, System.nanoTime());
+                                            }
+                                        });
+                                        jerseyClientBuilder.register(new ClientResponseFilter() {
+                                            @Override
+                                            public void filter(
+                                                    ClientRequestContext requestContext,
+                                                    ClientResponseContext responseContext)
+                                                    throws IOException {
+                                                Long startNanos =
+                                                        (Long) requestContext.getProperty(START_NANOS_PROPERTY);
+                                                long latencyMillis =
+                                                        startNanos == null
+                                                                ? -1
+                                                                : (System.nanoTime() - startNanos) / 1_000_000;
+                                                System.out.println(
+                                                        "Response status: "
+                                                                + responseContext.getStatus()
+                                                                + ", latencyMillis: "
+                                                                + latencyMillis);
                                             }
                                         });
 

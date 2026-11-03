@@ -11,6 +11,7 @@ public enum WorkRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
+    PartiallySucceeded("PARTIALLY_SUCCEEDED"),
     Canceling("CANCELING"),
     Canceled("CANCELED"),
 

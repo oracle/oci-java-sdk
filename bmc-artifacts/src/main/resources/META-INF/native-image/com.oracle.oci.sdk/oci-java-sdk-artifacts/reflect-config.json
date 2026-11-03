@@ -185,6 +185,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.artifacts.model.ContainerRepository$RepositoryType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.artifacts.model.ContainerRepositoryCollection",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

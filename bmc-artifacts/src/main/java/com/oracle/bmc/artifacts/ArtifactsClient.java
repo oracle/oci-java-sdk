@@ -775,6 +775,8 @@ public class ArtifactsClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("repositoryId", request.getRepositoryId())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("repositoryType", request.getRepositoryType())
+                .appendQueryParam("isTopLevel", request.getIsTopLevel())
                 .appendQueryParam("isPublic", request.getIsPublic())
                 .appendQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())

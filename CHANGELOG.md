@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## 3.100.0 - 2026-11-03
+### Added 
+- Support for pull-through caching of container images in the Container Registry service 
+- Support for multi-region container repositories in the Container Registry service 
+- Support for top-level container repositories in the Container Registry service 
+- Support for a global endpoint for US multi-region access in the Container Registry service 
+- Support for filtering container repositories by repository type and top-level status in the Container Registry service 
+- Support for listing-level usage reporting within SaaS private offers and subscriptions in the Service Enablement Lifecycle Framework service 
+- Support for partially succeeded work requests and filtering by this status in the Data Science service  
+
+### Fixed 
+- Fixed propagation of custom HTTP request attributes to request context properties in Jersey and Jersey 3 HTTP clients  
+
+### Changed 
+- Updated transitive Guava dependencies to version 33.7.2-jre to address a deserialization vulnerability  
+
+### Breaking Changes 
+- Method getOpcWorkRequestId() has been removed from the response UpdateModelArtifactSignatureResponse in the Data Science service 
+- The ListingId column is now required in subscription usage batch CSV submissions in the Service Enablement Lifecycle Framework service
+
 ## 3.99.0 - 2026-10-20
 ### Added 
 - Support for the OCI Public Safety and Security service 
