@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.client.CompletionStageRxInvoker;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
@@ -230,8 +231,11 @@ final class JerseyHttpRequest implements HttpRequest {
         for (RequestInterceptor interceptor : client.requestInterceptors) {
             interceptor.intercept(this);
         }
-        CompletionStageRxInvoker invoker =
-                webTarget.request().headers(new MultivaluedHashMap<String, Object>(headers)).rx();
+
+        Invocation.Builder invocationBuilder =
+                webTarget.request().headers(new MultivaluedHashMap<String, Object>(headers));
+        attributes.forEach(invocationBuilder::property);
+        CompletionStageRxInvoker invoker = invocationBuilder.rx();
         CompletionStage<Response> stage;
         if (processedBody == null) {
             stage = invoker.method(method.name());

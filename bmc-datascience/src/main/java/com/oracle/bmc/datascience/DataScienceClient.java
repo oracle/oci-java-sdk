@@ -5783,9 +5783,6 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateModelArtifactSignatureResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateModelArtifactSignatureResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

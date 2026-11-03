@@ -6275,9 +6275,6 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateModelArtifactSignatureResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateModelArtifactSignatureResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

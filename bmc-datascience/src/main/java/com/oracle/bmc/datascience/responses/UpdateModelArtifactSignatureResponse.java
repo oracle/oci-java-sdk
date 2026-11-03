@@ -40,26 +40,6 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
-     * with this ID to track the status of the request.
-     */
-    private String opcWorkRequestId;
-
-    /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
-     * with this ID to track the status of the request.
-     *
-     * @return the value
-     */
-    public String getOpcWorkRequestId() {
-        return opcWorkRequestId;
-    }
-
     /** The returned {@code ModelArtifactSignature} instance. */
     private com.oracle.bmc.datascience.model.ModelArtifactSignature modelArtifactSignature;
 
@@ -77,7 +57,6 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
         "headers",
         "etag",
         "opcRequestId",
-        "opcWorkRequestId",
         "modelArtifactSignature"
     })
     private UpdateModelArtifactSignatureResponse(
@@ -85,12 +64,10 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
-            String opcWorkRequestId,
             com.oracle.bmc.datascience.model.ModelArtifactSignature modelArtifactSignature) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
-        this.opcWorkRequestId = opcWorkRequestId;
         this.modelArtifactSignature = modelArtifactSignature;
     }
 
@@ -149,28 +126,6 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-         * request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
-         * with this ID to track the status of the request.
-         */
-        private String opcWorkRequestId;
-
-        /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the work
-         * request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
-         * with this ID to track the status of the request.
-         *
-         * @param opcWorkRequestId the value to set
-         * @return this builder
-         */
-        public Builder opcWorkRequestId(String opcWorkRequestId) {
-            this.opcWorkRequestId = opcWorkRequestId;
-            return this;
-        }
-
         /** The returned {@code ModelArtifactSignature} instance. */
         private com.oracle.bmc.datascience.model.ModelArtifactSignature modelArtifactSignature;
 
@@ -197,7 +152,6 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
             headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
-            opcWorkRequestId(o.getOpcWorkRequestId());
             modelArtifactSignature(o.getModelArtifactSignature());
 
             return this;
@@ -211,12 +165,7 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
         @Override
         public UpdateModelArtifactSignatureResponse build() {
             return new UpdateModelArtifactSignatureResponse(
-                    __httpStatusCode__,
-                    headers,
-                    etag,
-                    opcRequestId,
-                    opcWorkRequestId,
-                    modelArtifactSignature);
+                    __httpStatusCode__, headers, etag, opcRequestId, modelArtifactSignature);
         }
     }
 
@@ -236,7 +185,6 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",modelArtifactSignature=").append(String.valueOf(modelArtifactSignature));
         sb.append(")");
         return sb.toString();
@@ -255,7 +203,6 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(
                         this.modelArtifactSignature, other.modelArtifactSignature);
     }
@@ -266,9 +213,6 @@ public class UpdateModelArtifactSignatureResponse extends com.oracle.bmc.respons
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.modelArtifactSignature == null

@@ -39,6 +39,12 @@ public final class ContainerRepository
         "timeLastPushed",
         "billableSizeInGBs",
         "namespace",
+        "repositoryType",
+        "isTopLevel",
+        "upstreamUrl",
+        "upstreamUsername",
+        "upstreamSecretId",
+        "multiRegionPeers",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -59,6 +65,12 @@ public final class ContainerRepository
             java.util.Date timeLastPushed,
             Long billableSizeInGBs,
             String namespace,
+            RepositoryType repositoryType,
+            Boolean isTopLevel,
+            String upstreamUrl,
+            String upstreamUsername,
+            String upstreamSecretId,
+            java.util.List<String> multiRegionPeers,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -78,6 +90,12 @@ public final class ContainerRepository
         this.timeLastPushed = timeLastPushed;
         this.billableSizeInGBs = billableSizeInGBs;
         this.namespace = namespace;
+        this.repositoryType = repositoryType;
+        this.isTopLevel = isTopLevel;
+        this.upstreamUrl = upstreamUrl;
+        this.upstreamUsername = upstreamUsername;
+        this.upstreamSecretId = upstreamSecretId;
+        this.multiRegionPeers = multiRegionPeers;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -317,6 +335,118 @@ public final class ContainerRepository
             return this;
         }
         /**
+         * The type of container repository. This determines the repository behavior and required
+         * settings.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
+        private RepositoryType repositoryType;
+
+        /**
+         * The type of container repository. This determines the repository behavior and required
+         * settings.
+         *
+         * @param repositoryType the value to set
+         * @return this builder
+         */
+        public Builder repositoryType(RepositoryType repositoryType) {
+            this.repositoryType = repositoryType;
+            this.__explicitlySet__.add("repositoryType");
+            return this;
+        }
+        /**
+         * Whether the repository is top-level. A top-level repository reserves its name in
+         * namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isTopLevel")
+        private Boolean isTopLevel;
+
+        /**
+         * Whether the repository is top-level. A top-level repository reserves its name in
+         * namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         *
+         * @param isTopLevel the value to set
+         * @return this builder
+         */
+        public Builder isTopLevel(Boolean isTopLevel) {
+            this.isTopLevel = isTopLevel;
+            this.__explicitlySet__.add("isTopLevel");
+            return this;
+        }
+        /** The upstream registry URL for a pull-through cache repository. */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamUrl")
+        private String upstreamUrl;
+
+        /**
+         * The upstream registry URL for a pull-through cache repository.
+         *
+         * @param upstreamUrl the value to set
+         * @return this builder
+         */
+        public Builder upstreamUrl(String upstreamUrl) {
+            this.upstreamUrl = upstreamUrl;
+            this.__explicitlySet__.add("upstreamUrl");
+            return this;
+        }
+        /** The upstream registry username for a pull-through cache repository. */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamUsername")
+        private String upstreamUsername;
+
+        /**
+         * The upstream registry username for a pull-through cache repository.
+         *
+         * @param upstreamUsername the value to set
+         * @return this builder
+         */
+        public Builder upstreamUsername(String upstreamUsername) {
+            this.upstreamUsername = upstreamUsername;
+            this.__explicitlySet__.add("upstreamUsername");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret that contains the upstream registry password as base64 encoded string
+         * for a pull-through cache repository.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamSecretId")
+        private String upstreamSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret that contains the upstream registry password as base64 encoded string
+         * for a pull-through cache repository.
+         *
+         * @param upstreamSecretId the value to set
+         * @return this builder
+         */
+        public Builder upstreamSecretId(String upstreamSecretId) {
+            this.upstreamSecretId = upstreamSecretId;
+            this.__explicitlySet__.add("upstreamSecretId");
+            return this;
+        }
+        /**
+         * List of peer regions that define the multi-region group. Peer regions must be specified
+         * using canonical region names (for example, us-phoenix-1). The peer set must match a
+         * supported multi-region endpoint group and MUST include the local OCIR region where the
+         * repository is created.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("multiRegionPeers")
+        private java.util.List<String> multiRegionPeers;
+
+        /**
+         * List of peer regions that define the multi-region group. Peer regions must be specified
+         * using canonical region names (for example, us-phoenix-1). The peer set must match a
+         * supported multi-region endpoint group and MUST include the local OCIR region where the
+         * repository is created.
+         *
+         * @param multiRegionPeers the value to set
+         * @return this builder
+         */
+        public Builder multiRegionPeers(java.util.List<String> multiRegionPeers) {
+            this.multiRegionPeers = multiRegionPeers;
+            this.__explicitlySet__.add("multiRegionPeers");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -408,6 +538,12 @@ public final class ContainerRepository
                             this.timeLastPushed,
                             this.billableSizeInGBs,
                             this.namespace,
+                            this.repositoryType,
+                            this.isTopLevel,
+                            this.upstreamUrl,
+                            this.upstreamUsername,
+                            this.upstreamSecretId,
+                            this.multiRegionPeers,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -463,6 +599,24 @@ public final class ContainerRepository
             }
             if (model.wasPropertyExplicitlySet("namespace")) {
                 this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryType")) {
+                this.repositoryType(model.getRepositoryType());
+            }
+            if (model.wasPropertyExplicitlySet("isTopLevel")) {
+                this.isTopLevel(model.getIsTopLevel());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamUrl")) {
+                this.upstreamUrl(model.getUpstreamUrl());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamUsername")) {
+                this.upstreamUsername(model.getUpstreamUsername());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamSecretId")) {
+                this.upstreamSecretId(model.getUpstreamSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("multiRegionPeers")) {
+                this.multiRegionPeers(model.getMultiRegionPeers());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -733,6 +887,156 @@ public final class ContainerRepository
     }
 
     /**
+     * The type of container repository. This determines the repository behavior and required
+     * settings.
+     */
+    public enum RepositoryType implements com.oracle.bmc.http.internal.BmcEnum {
+        Standard("STANDARD"),
+        PullThrough("PULL_THROUGH"),
+        MultiRegion("MULTI_REGION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RepositoryType.class);
+
+        private final String value;
+        private static java.util.Map<String, RepositoryType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RepositoryType v : RepositoryType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RepositoryType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RepositoryType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RepositoryType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of container repository. This determines the repository behavior and required
+     * settings.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
+    private final RepositoryType repositoryType;
+
+    /**
+     * The type of container repository. This determines the repository behavior and required
+     * settings.
+     *
+     * @return the value
+     */
+    public RepositoryType getRepositoryType() {
+        return repositoryType;
+    }
+
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as
+     * a prefix and allows images to be hosted under child paths of that prefix.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isTopLevel")
+    private final Boolean isTopLevel;
+
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as
+     * a prefix and allows images to be hosted under child paths of that prefix.
+     *
+     * @return the value
+     */
+    public Boolean getIsTopLevel() {
+        return isTopLevel;
+    }
+
+    /** The upstream registry URL for a pull-through cache repository. */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamUrl")
+    private final String upstreamUrl;
+
+    /**
+     * The upstream registry URL for a pull-through cache repository.
+     *
+     * @return the value
+     */
+    public String getUpstreamUrl() {
+        return upstreamUrl;
+    }
+
+    /** The upstream registry username for a pull-through cache repository. */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamUsername")
+    private final String upstreamUsername;
+
+    /**
+     * The upstream registry username for a pull-through cache repository.
+     *
+     * @return the value
+     */
+    public String getUpstreamUsername() {
+        return upstreamUsername;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret that contains the upstream registry password as base64 encoded string for a
+     * pull-through cache repository.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamSecretId")
+    private final String upstreamSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret that contains the upstream registry password as base64 encoded string for a
+     * pull-through cache repository.
+     *
+     * @return the value
+     */
+    public String getUpstreamSecretId() {
+        return upstreamSecretId;
+    }
+
+    /**
+     * List of peer regions that define the multi-region group. Peer regions must be specified using
+     * canonical region names (for example, us-phoenix-1). The peer set must match a supported
+     * multi-region endpoint group and MUST include the local OCIR region where the repository is
+     * created.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("multiRegionPeers")
+    private final java.util.List<String> multiRegionPeers;
+
+    /**
+     * List of peer regions that define the multi-region group. Peer regions must be specified using
+     * canonical region names (for example, us-phoenix-1). The peer set must match a supported
+     * multi-region endpoint group and MUST include the local OCIR region where the repository is
+     * created.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getMultiRegionPeers() {
+        return multiRegionPeers;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -825,6 +1129,12 @@ public final class ContainerRepository
         sb.append(", timeLastPushed=").append(String.valueOf(this.timeLastPushed));
         sb.append(", billableSizeInGBs=").append(String.valueOf(this.billableSizeInGBs));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
+        sb.append(", repositoryType=").append(String.valueOf(this.repositoryType));
+        sb.append(", isTopLevel=").append(String.valueOf(this.isTopLevel));
+        sb.append(", upstreamUrl=").append(String.valueOf(this.upstreamUrl));
+        sb.append(", upstreamUsername=").append(String.valueOf(this.upstreamUsername));
+        sb.append(", upstreamSecretId=").append(String.valueOf(this.upstreamSecretId));
+        sb.append(", multiRegionPeers=").append(String.valueOf(this.multiRegionPeers));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -857,6 +1167,12 @@ public final class ContainerRepository
                 && java.util.Objects.equals(this.timeLastPushed, other.timeLastPushed)
                 && java.util.Objects.equals(this.billableSizeInGBs, other.billableSizeInGBs)
                 && java.util.Objects.equals(this.namespace, other.namespace)
+                && java.util.Objects.equals(this.repositoryType, other.repositoryType)
+                && java.util.Objects.equals(this.isTopLevel, other.isTopLevel)
+                && java.util.Objects.equals(this.upstreamUrl, other.upstreamUrl)
+                && java.util.Objects.equals(this.upstreamUsername, other.upstreamUsername)
+                && java.util.Objects.equals(this.upstreamSecretId, other.upstreamSecretId)
+                && java.util.Objects.equals(this.multiRegionPeers, other.multiRegionPeers)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -892,6 +1208,20 @@ public final class ContainerRepository
                 (result * PRIME)
                         + (this.billableSizeInGBs == null ? 43 : this.billableSizeInGBs.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryType == null ? 43 : this.repositoryType.hashCode());
+        result = (result * PRIME) + (this.isTopLevel == null ? 43 : this.isTopLevel.hashCode());
+        result = (result * PRIME) + (this.upstreamUrl == null ? 43 : this.upstreamUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upstreamUsername == null ? 43 : this.upstreamUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upstreamSecretId == null ? 43 : this.upstreamSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multiRegionPeers == null ? 43 : this.multiRegionPeers.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

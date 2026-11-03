@@ -26,6 +26,12 @@ public final class CreateContainerRepositoryDetails
     @java.beans.ConstructorProperties({
         "compartmentId",
         "displayName",
+        "repositoryType",
+        "isTopLevel",
+        "upstreamUrl",
+        "upstreamUsername",
+        "upstreamSecretId",
+        "multiRegionPeers",
         "isImmutable",
         "isPublic",
         "readme",
@@ -35,6 +41,12 @@ public final class CreateContainerRepositoryDetails
     public CreateContainerRepositoryDetails(
             String compartmentId,
             String displayName,
+            ContainerRepository.RepositoryType repositoryType,
+            Boolean isTopLevel,
+            String upstreamUrl,
+            String upstreamUsername,
+            String upstreamSecretId,
+            java.util.List<String> multiRegionPeers,
             Boolean isImmutable,
             Boolean isPublic,
             ContainerRepositoryReadme readme,
@@ -43,6 +55,12 @@ public final class CreateContainerRepositoryDetails
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
+        this.repositoryType = repositoryType;
+        this.isTopLevel = isTopLevel;
+        this.upstreamUrl = upstreamUrl;
+        this.upstreamUsername = upstreamUsername;
+        this.upstreamSecretId = upstreamSecretId;
+        this.multiRegionPeers = multiRegionPeers;
         this.isImmutable = isImmutable;
         this.isPublic = isPublic;
         this.readme = readme;
@@ -87,15 +105,157 @@ public final class CreateContainerRepositoryDetails
             return this;
         }
         /**
+         * The type of container repository. This determines the repository behavior and required
+         * settings.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
+        private ContainerRepository.RepositoryType repositoryType;
+
+        /**
+         * The type of container repository. This determines the repository behavior and required
+         * settings.
+         *
+         * @param repositoryType the value to set
+         * @return this builder
+         */
+        public Builder repositoryType(ContainerRepository.RepositoryType repositoryType) {
+            this.repositoryType = repositoryType;
+            this.__explicitlySet__.add("repositoryType");
+            return this;
+        }
+        /**
+         * Whether the repository is top-level. A top-level repository reserves its name in
+         * namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isTopLevel")
+        private Boolean isTopLevel;
+
+        /**
+         * Whether the repository is top-level. A top-level repository reserves its name in
+         * namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         *
+         * @param isTopLevel the value to set
+         * @return this builder
+         */
+        public Builder isTopLevel(Boolean isTopLevel) {
+            this.isTopLevel = isTopLevel;
+            this.__explicitlySet__.add("isTopLevel");
+            return this;
+        }
+        /**
+         * The upstream registry URL for a pull-through cache repository. Required when
+         * repositoryType is PULL_THROUGH. The value must include the registry endpoint and
+         * repository path, and must not include a tag or digest.
+         *
+         * <p>If isTopLevel is false, the value must be an exact upstream image full path. Example:
+         * {@code iad.ocir.io/<upstreamNamespace>/library/ubuntu}
+         *
+         * <p>If isTopLevel is true, the value must be an upstream repository path prefix, allowing
+         * OCIR to pull multiple repositories under that prefix. Example: {@code
+         * iad.ocir.io/<upstreamNamespace>/library} or {@code iad.ocir.io/<upstreamNamespace>}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamUrl")
+        private String upstreamUrl;
+
+        /**
+         * The upstream registry URL for a pull-through cache repository. Required when
+         * repositoryType is PULL_THROUGH. The value must include the registry endpoint and
+         * repository path, and must not include a tag or digest.
+         *
+         * <p>If isTopLevel is false, the value must be an exact upstream image full path. Example:
+         * {@code iad.ocir.io/<upstreamNamespace>/library/ubuntu}
+         *
+         * <p>If isTopLevel is true, the value must be an upstream repository path prefix, allowing
+         * OCIR to pull multiple repositories under that prefix. Example: {@code
+         * iad.ocir.io/<upstreamNamespace>/library} or {@code iad.ocir.io/<upstreamNamespace>}
+         *
+         * @param upstreamUrl the value to set
+         * @return this builder
+         */
+        public Builder upstreamUrl(String upstreamUrl) {
+            this.upstreamUrl = upstreamUrl;
+            this.__explicitlySet__.add("upstreamUrl");
+            return this;
+        }
+        /**
+         * The upstream registry username for a pull-through cache repository. Required when
+         * repositoryType is PULL_THROUGH.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamUsername")
+        private String upstreamUsername;
+
+        /**
+         * The upstream registry username for a pull-through cache repository. Required when
+         * repositoryType is PULL_THROUGH.
+         *
+         * @param upstreamUsername the value to set
+         * @return this builder
+         */
+        public Builder upstreamUsername(String upstreamUsername) {
+            this.upstreamUsername = upstreamUsername;
+            this.__explicitlySet__.add("upstreamUsername");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret that contains the upstream registry password as base64 encoded string
+         * for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+         *
+         * <p>Example: {@code ocid1.vaultsecret.oc1..exampleuniqueID}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamSecretId")
+        private String upstreamSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret that contains the upstream registry password as base64 encoded string
+         * for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+         *
+         * <p>Example: {@code ocid1.vaultsecret.oc1..exampleuniqueID}
+         *
+         * @param upstreamSecretId the value to set
+         * @return this builder
+         */
+        public Builder upstreamSecretId(String upstreamSecretId) {
+            this.upstreamSecretId = upstreamSecretId;
+            this.__explicitlySet__.add("upstreamSecretId");
+            return this;
+        }
+        /**
+         * List of peer regions that define the multi-region group. Peer regions must be specified
+         * using canonical region names (for example, {@code us-phoenix-1}). The peer set must match
+         * a supported multi-region endpoint group and MUST include the local OCIR region where the
+         * repository is created. Required when repositoryType is MULTI_REGION.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("multiRegionPeers")
+        private java.util.List<String> multiRegionPeers;
+
+        /**
+         * List of peer regions that define the multi-region group. Peer regions must be specified
+         * using canonical region names (for example, {@code us-phoenix-1}). The peer set must match
+         * a supported multi-region endpoint group and MUST include the local OCIR region where the
+         * repository is created. Required when repositoryType is MULTI_REGION.
+         *
+         * @param multiRegionPeers the value to set
+         * @return this builder
+         */
+        public Builder multiRegionPeers(java.util.List<String> multiRegionPeers) {
+            this.multiRegionPeers = multiRegionPeers;
+            this.__explicitlySet__.add("multiRegionPeers");
+            return this;
+        }
+        /**
          * Whether the repository is immutable. Images cannot be overwritten in an immutable
-         * repository.
+         * repository. Currently, setting this flag is not supported yet and is set to false by
+         * default.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
         private Boolean isImmutable;
 
         /**
          * Whether the repository is immutable. Images cannot be overwritten in an immutable
-         * repository.
+         * repository. Currently, setting this flag is not supported yet and is set to false by
+         * default.
          *
          * @param isImmutable the value to set
          * @return this builder
@@ -189,6 +349,12 @@ public final class CreateContainerRepositoryDetails
                     new CreateContainerRepositoryDetails(
                             this.compartmentId,
                             this.displayName,
+                            this.repositoryType,
+                            this.isTopLevel,
+                            this.upstreamUrl,
+                            this.upstreamUsername,
+                            this.upstreamSecretId,
+                            this.multiRegionPeers,
                             this.isImmutable,
                             this.isPublic,
                             this.readme,
@@ -207,6 +373,24 @@ public final class CreateContainerRepositoryDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryType")) {
+                this.repositoryType(model.getRepositoryType());
+            }
+            if (model.wasPropertyExplicitlySet("isTopLevel")) {
+                this.isTopLevel(model.getIsTopLevel());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamUrl")) {
+                this.upstreamUrl(model.getUpstreamUrl());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamUsername")) {
+                this.upstreamUsername(model.getUpstreamUsername());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamSecretId")) {
+                this.upstreamSecretId(model.getUpstreamSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("multiRegionPeers")) {
+                this.multiRegionPeers(model.getMultiRegionPeers());
             }
             if (model.wasPropertyExplicitlySet("isImmutable")) {
                 this.isImmutable(model.getIsImmutable());
@@ -267,13 +451,143 @@ public final class CreateContainerRepositoryDetails
     }
 
     /**
+     * The type of container repository. This determines the repository behavior and required
+     * settings.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
+    private final ContainerRepository.RepositoryType repositoryType;
+
+    /**
+     * The type of container repository. This determines the repository behavior and required
+     * settings.
+     *
+     * @return the value
+     */
+    public ContainerRepository.RepositoryType getRepositoryType() {
+        return repositoryType;
+    }
+
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as
+     * a prefix and allows images to be hosted under child paths of that prefix.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isTopLevel")
+    private final Boolean isTopLevel;
+
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as
+     * a prefix and allows images to be hosted under child paths of that prefix.
+     *
+     * @return the value
+     */
+    public Boolean getIsTopLevel() {
+        return isTopLevel;
+    }
+
+    /**
+     * The upstream registry URL for a pull-through cache repository. Required when repositoryType
+     * is PULL_THROUGH. The value must include the registry endpoint and repository path, and must
+     * not include a tag or digest.
+     *
+     * <p>If isTopLevel is false, the value must be an exact upstream image full path. Example:
+     * {@code iad.ocir.io/<upstreamNamespace>/library/ubuntu}
+     *
+     * <p>If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR
+     * to pull multiple repositories under that prefix. Example: {@code
+     * iad.ocir.io/<upstreamNamespace>/library} or {@code iad.ocir.io/<upstreamNamespace>}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamUrl")
+    private final String upstreamUrl;
+
+    /**
+     * The upstream registry URL for a pull-through cache repository. Required when repositoryType
+     * is PULL_THROUGH. The value must include the registry endpoint and repository path, and must
+     * not include a tag or digest.
+     *
+     * <p>If isTopLevel is false, the value must be an exact upstream image full path. Example:
+     * {@code iad.ocir.io/<upstreamNamespace>/library/ubuntu}
+     *
+     * <p>If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR
+     * to pull multiple repositories under that prefix. Example: {@code
+     * iad.ocir.io/<upstreamNamespace>/library} or {@code iad.ocir.io/<upstreamNamespace>}
+     *
+     * @return the value
+     */
+    public String getUpstreamUrl() {
+        return upstreamUrl;
+    }
+
+    /**
+     * The upstream registry username for a pull-through cache repository. Required when
+     * repositoryType is PULL_THROUGH.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamUsername")
+    private final String upstreamUsername;
+
+    /**
+     * The upstream registry username for a pull-through cache repository. Required when
+     * repositoryType is PULL_THROUGH.
+     *
+     * @return the value
+     */
+    public String getUpstreamUsername() {
+        return upstreamUsername;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret that contains the upstream registry password as base64 encoded string for a
+     * pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+     *
+     * <p>Example: {@code ocid1.vaultsecret.oc1..exampleuniqueID}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamSecretId")
+    private final String upstreamSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret that contains the upstream registry password as base64 encoded string for a
+     * pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+     *
+     * <p>Example: {@code ocid1.vaultsecret.oc1..exampleuniqueID}
+     *
+     * @return the value
+     */
+    public String getUpstreamSecretId() {
+        return upstreamSecretId;
+    }
+
+    /**
+     * List of peer regions that define the multi-region group. Peer regions must be specified using
+     * canonical region names (for example, {@code us-phoenix-1}). The peer set must match a
+     * supported multi-region endpoint group and MUST include the local OCIR region where the
+     * repository is created. Required when repositoryType is MULTI_REGION.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("multiRegionPeers")
+    private final java.util.List<String> multiRegionPeers;
+
+    /**
+     * List of peer regions that define the multi-region group. Peer regions must be specified using
+     * canonical region names (for example, {@code us-phoenix-1}). The peer set must match a
+     * supported multi-region endpoint group and MUST include the local OCIR region where the
+     * repository is created. Required when repositoryType is MULTI_REGION.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getMultiRegionPeers() {
+        return multiRegionPeers;
+    }
+
+    /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * Currently, setting this flag is not supported yet and is set to false by default.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
     private final Boolean isImmutable;
 
     /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * Currently, setting this flag is not supported yet and is set to false by default.
      *
      * @return the value
      */
@@ -364,6 +678,12 @@ public final class CreateContainerRepositoryDetails
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", repositoryType=").append(String.valueOf(this.repositoryType));
+        sb.append(", isTopLevel=").append(String.valueOf(this.isTopLevel));
+        sb.append(", upstreamUrl=").append(String.valueOf(this.upstreamUrl));
+        sb.append(", upstreamUsername=").append(String.valueOf(this.upstreamUsername));
+        sb.append(", upstreamSecretId=").append(String.valueOf(this.upstreamSecretId));
+        sb.append(", multiRegionPeers=").append(String.valueOf(this.multiRegionPeers));
         sb.append(", isImmutable=").append(String.valueOf(this.isImmutable));
         sb.append(", isPublic=").append(String.valueOf(this.isPublic));
         sb.append(", readme=").append(String.valueOf(this.readme));
@@ -385,6 +705,12 @@ public final class CreateContainerRepositoryDetails
         CreateContainerRepositoryDetails other = (CreateContainerRepositoryDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.repositoryType, other.repositoryType)
+                && java.util.Objects.equals(this.isTopLevel, other.isTopLevel)
+                && java.util.Objects.equals(this.upstreamUrl, other.upstreamUrl)
+                && java.util.Objects.equals(this.upstreamUsername, other.upstreamUsername)
+                && java.util.Objects.equals(this.upstreamSecretId, other.upstreamSecretId)
+                && java.util.Objects.equals(this.multiRegionPeers, other.multiRegionPeers)
                 && java.util.Objects.equals(this.isImmutable, other.isImmutable)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
                 && java.util.Objects.equals(this.readme, other.readme)
@@ -401,6 +727,20 @@ public final class CreateContainerRepositoryDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryType == null ? 43 : this.repositoryType.hashCode());
+        result = (result * PRIME) + (this.isTopLevel == null ? 43 : this.isTopLevel.hashCode());
+        result = (result * PRIME) + (this.upstreamUrl == null ? 43 : this.upstreamUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upstreamUsername == null ? 43 : this.upstreamUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upstreamSecretId == null ? 43 : this.upstreamSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.multiRegionPeers == null ? 43 : this.multiRegionPeers.hashCode());
         result = (result * PRIME) + (this.isImmutable == null ? 43 : this.isImmutable.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
         result = (result * PRIME) + (this.readme == null ? 43 : this.readme.hashCode());

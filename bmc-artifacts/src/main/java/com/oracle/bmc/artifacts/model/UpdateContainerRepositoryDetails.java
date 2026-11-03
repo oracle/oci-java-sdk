@@ -26,6 +26,8 @@ public final class UpdateContainerRepositoryDetails
     @java.beans.ConstructorProperties({
         "isImmutable",
         "isPublic",
+        "upstreamUsername",
+        "upstreamSecretId",
         "readme",
         "freeformTags",
         "definedTags"
@@ -33,12 +35,16 @@ public final class UpdateContainerRepositoryDetails
     public UpdateContainerRepositoryDetails(
             Boolean isImmutable,
             Boolean isPublic,
+            String upstreamUsername,
+            String upstreamSecretId,
             ContainerRepositoryReadme readme,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.isImmutable = isImmutable;
         this.isPublic = isPublic;
+        this.upstreamUsername = upstreamUsername;
+        this.upstreamSecretId = upstreamSecretId;
         this.readme = readme;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -78,6 +84,42 @@ public final class UpdateContainerRepositoryDetails
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
+            return this;
+        }
+        /** The upstream registry username for a pull-through cache repository. */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamUsername")
+        private String upstreamUsername;
+
+        /**
+         * The upstream registry username for a pull-through cache repository.
+         *
+         * @param upstreamUsername the value to set
+         * @return this builder
+         */
+        public Builder upstreamUsername(String upstreamUsername) {
+            this.upstreamUsername = upstreamUsername;
+            this.__explicitlySet__.add("upstreamUsername");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret that contains the upstream registry password as base64 encoded string
+         * for a pull-through cache repository
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("upstreamSecretId")
+        private String upstreamSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * OCI Vault secret that contains the upstream registry password as base64 encoded string
+         * for a pull-through cache repository
+         *
+         * @param upstreamSecretId the value to set
+         * @return this builder
+         */
+        public Builder upstreamSecretId(String upstreamSecretId) {
+            this.upstreamSecretId = upstreamSecretId;
+            this.__explicitlySet__.add("upstreamSecretId");
             return this;
         }
 
@@ -149,6 +191,8 @@ public final class UpdateContainerRepositoryDetails
                     new UpdateContainerRepositoryDetails(
                             this.isImmutable,
                             this.isPublic,
+                            this.upstreamUsername,
+                            this.upstreamSecretId,
                             this.readme,
                             this.freeformTags,
                             this.definedTags);
@@ -165,6 +209,12 @@ public final class UpdateContainerRepositoryDetails
             }
             if (model.wasPropertyExplicitlySet("isPublic")) {
                 this.isPublic(model.getIsPublic());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamUsername")) {
+                this.upstreamUsername(model.getUpstreamUsername());
+            }
+            if (model.wasPropertyExplicitlySet("upstreamSecretId")) {
+                this.upstreamSecretId(model.getUpstreamSecretId());
             }
             if (model.wasPropertyExplicitlySet("readme")) {
                 this.readme(model.getReadme());
@@ -214,6 +264,38 @@ public final class UpdateContainerRepositoryDetails
      */
     public Boolean getIsPublic() {
         return isPublic;
+    }
+
+    /** The upstream registry username for a pull-through cache repository. */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamUsername")
+    private final String upstreamUsername;
+
+    /**
+     * The upstream registry username for a pull-through cache repository.
+     *
+     * @return the value
+     */
+    public String getUpstreamUsername() {
+        return upstreamUsername;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret that contains the upstream registry password as base64 encoded string for a
+     * pull-through cache repository
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("upstreamSecretId")
+    private final String upstreamSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
+     * Vault secret that contains the upstream registry password as base64 encoded string for a
+     * pull-through cache repository
+     *
+     * @return the value
+     */
+    public String getUpstreamSecretId() {
+        return upstreamSecretId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("readme")
@@ -286,6 +368,8 @@ public final class UpdateContainerRepositoryDetails
         sb.append("super=").append(super.toString());
         sb.append("isImmutable=").append(String.valueOf(this.isImmutable));
         sb.append(", isPublic=").append(String.valueOf(this.isPublic));
+        sb.append(", upstreamUsername=").append(String.valueOf(this.upstreamUsername));
+        sb.append(", upstreamSecretId=").append(String.valueOf(this.upstreamSecretId));
         sb.append(", readme=").append(String.valueOf(this.readme));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -305,6 +389,8 @@ public final class UpdateContainerRepositoryDetails
         UpdateContainerRepositoryDetails other = (UpdateContainerRepositoryDetails) o;
         return java.util.Objects.equals(this.isImmutable, other.isImmutable)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
+                && java.util.Objects.equals(this.upstreamUsername, other.upstreamUsername)
+                && java.util.Objects.equals(this.upstreamSecretId, other.upstreamSecretId)
                 && java.util.Objects.equals(this.readme, other.readme)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -317,6 +403,12 @@ public final class UpdateContainerRepositoryDetails
         int result = 1;
         result = (result * PRIME) + (this.isImmutable == null ? 43 : this.isImmutable.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upstreamUsername == null ? 43 : this.upstreamUsername.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.upstreamSecretId == null ? 43 : this.upstreamSecretId.hashCode());
         result = (result * PRIME) + (this.readme == null ? 43 : this.readme.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

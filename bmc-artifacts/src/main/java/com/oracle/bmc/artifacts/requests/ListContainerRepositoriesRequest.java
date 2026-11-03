@@ -59,6 +59,20 @@ public class ListContainerRepositoriesRequest
     public String getDisplayName() {
         return displayName;
     }
+    /** A filter to return only resources that match the given repository type exactly. */
+    private String repositoryType;
+
+    /** A filter to return only resources that match the given repository type exactly. */
+    public String getRepositoryType() {
+        return repositoryType;
+    }
+    /** A filter to return resources that match the isTopLevel value. */
+    private Boolean isTopLevel;
+
+    /** A filter to return resources that match the isTopLevel value. */
+    public Boolean getIsTopLevel() {
+        return isTopLevel;
+    }
     /** A filter to return resources that match the isPublic value. */
     private Boolean isPublic;
 
@@ -313,6 +327,34 @@ public class ListContainerRepositoriesRequest
             return this;
         }
 
+        /** A filter to return only resources that match the given repository type exactly. */
+        private String repositoryType = null;
+
+        /**
+         * A filter to return only resources that match the given repository type exactly.
+         *
+         * @param repositoryType the value to set
+         * @return this builder instance
+         */
+        public Builder repositoryType(String repositoryType) {
+            this.repositoryType = repositoryType;
+            return this;
+        }
+
+        /** A filter to return resources that match the isTopLevel value. */
+        private Boolean isTopLevel = null;
+
+        /**
+         * A filter to return resources that match the isTopLevel value.
+         *
+         * @param isTopLevel the value to set
+         * @return this builder instance
+         */
+        public Builder isTopLevel(Boolean isTopLevel) {
+            this.isTopLevel = isTopLevel;
+            return this;
+        }
+
         /** A filter to return resources that match the isPublic value. */
         private Boolean isPublic = null;
 
@@ -487,6 +529,8 @@ public class ListContainerRepositoriesRequest
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             repositoryId(o.getRepositoryId());
             displayName(o.getDisplayName());
+            repositoryType(o.getRepositoryType());
+            isTopLevel(o.getIsTopLevel());
             isPublic(o.getIsPublic());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
@@ -532,6 +576,8 @@ public class ListContainerRepositoriesRequest
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.repositoryId = repositoryId;
             request.displayName = displayName;
+            request.repositoryType = repositoryType;
+            request.isTopLevel = isTopLevel;
             request.isPublic = isPublic;
             request.lifecycleState = lifecycleState;
             request.limit = limit;
@@ -541,8 +587,8 @@ public class ListContainerRepositoriesRequest
             request.sortOrder = sortOrder;
             return request;
             // new ListContainerRepositoriesRequest(compartmentId, compartmentIdInSubtree,
-            // repositoryId, displayName, isPublic, lifecycleState, limit, page, opcRequestId,
-            // sortBy, sortOrder);
+            // repositoryId, displayName, repositoryType, isTopLevel, isPublic, lifecycleState,
+            // limit, page, opcRequestId, sortBy, sortOrder);
         }
     }
 
@@ -557,6 +603,8 @@ public class ListContainerRepositoriesRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .repositoryId(repositoryId)
                 .displayName(displayName)
+                .repositoryType(repositoryType)
+                .isTopLevel(isTopLevel)
                 .isPublic(isPublic)
                 .lifecycleState(lifecycleState)
                 .limit(limit)
@@ -584,6 +632,8 @@ public class ListContainerRepositoriesRequest
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",repositoryType=").append(String.valueOf(this.repositoryType));
+        sb.append(",isTopLevel=").append(String.valueOf(this.isTopLevel));
         sb.append(",isPublic=").append(String.valueOf(this.isPublic));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -611,6 +661,8 @@ public class ListContainerRepositoriesRequest
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.repositoryId, other.repositoryId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.repositoryType, other.repositoryType)
+                && java.util.Objects.equals(this.isTopLevel, other.isTopLevel)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -634,6 +686,10 @@ public class ListContainerRepositoriesRequest
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryType == null ? 43 : this.repositoryType.hashCode());
+        result = (result * PRIME) + (this.isTopLevel == null ? 43 : this.isTopLevel.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
         result =
                 (result * PRIME)

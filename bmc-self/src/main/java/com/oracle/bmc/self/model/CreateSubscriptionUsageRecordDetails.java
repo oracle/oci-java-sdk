@@ -27,6 +27,7 @@ public final class CreateSubscriptionUsageRecordDetails
     @java.beans.ConstructorProperties({
         "id",
         "marketplaceOfferId",
+        "listingId",
         "billingType",
         "usageDimensionName",
         "consumedQuantity",
@@ -46,6 +47,7 @@ public final class CreateSubscriptionUsageRecordDetails
     public CreateSubscriptionUsageRecordDetails(
             String id,
             String marketplaceOfferId,
+            String listingId,
             BillingType billingType,
             String usageDimensionName,
             Double consumedQuantity,
@@ -64,6 +66,7 @@ public final class CreateSubscriptionUsageRecordDetails
         super();
         this.id = id;
         this.marketplaceOfferId = marketplaceOfferId;
+        this.listingId = listingId;
         this.billingType = billingType;
         this.usageDimensionName = usageDimensionName;
         this.consumedQuantity = consumedQuantity;
@@ -121,6 +124,25 @@ public final class CreateSubscriptionUsageRecordDetails
         public Builder marketplaceOfferId(String marketplaceOfferId) {
             this.marketplaceOfferId = marketplaceOfferId;
             this.__explicitlySet__.add("marketplaceOfferId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * listing that generated this usage.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("listingId")
+        private String listingId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * listing that generated this usage.
+         *
+         * @param listingId the value to set
+         * @return this builder
+         */
+        public Builder listingId(String listingId) {
+            this.listingId = listingId;
+            this.__explicitlySet__.add("listingId");
             return this;
         }
         /** The billing type this usage record applies to. */
@@ -369,6 +391,7 @@ public final class CreateSubscriptionUsageRecordDetails
                     new CreateSubscriptionUsageRecordDetails(
                             this.id,
                             this.marketplaceOfferId,
+                            this.listingId,
                             this.billingType,
                             this.usageDimensionName,
                             this.consumedQuantity,
@@ -397,6 +420,9 @@ public final class CreateSubscriptionUsageRecordDetails
             }
             if (model.wasPropertyExplicitlySet("marketplaceOfferId")) {
                 this.marketplaceOfferId(model.getMarketplaceOfferId());
+            }
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
             }
             if (model.wasPropertyExplicitlySet("billingType")) {
                 this.billingType(model.getBillingType());
@@ -490,6 +516,23 @@ public final class CreateSubscriptionUsageRecordDetails
      */
     public String getMarketplaceOfferId() {
         return marketplaceOfferId;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * listing that generated this usage.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("listingId")
+    private final String listingId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * listing that generated this usage.
+     *
+     * @return the value
+     */
+    public String getListingId() {
+        return listingId;
     }
 
     /** The billing type this usage record applies to. */
@@ -749,6 +792,7 @@ public final class CreateSubscriptionUsageRecordDetails
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", marketplaceOfferId=").append(String.valueOf(this.marketplaceOfferId));
+        sb.append(", listingId=").append(String.valueOf(this.listingId));
         sb.append(", billingType=").append(String.valueOf(this.billingType));
         sb.append(", usageDimensionName=").append(String.valueOf(this.usageDimensionName));
         sb.append(", consumedQuantity=").append(String.valueOf(this.consumedQuantity));
@@ -780,6 +824,7 @@ public final class CreateSubscriptionUsageRecordDetails
         CreateSubscriptionUsageRecordDetails other = (CreateSubscriptionUsageRecordDetails) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.marketplaceOfferId, other.marketplaceOfferId)
+                && java.util.Objects.equals(this.listingId, other.listingId)
                 && java.util.Objects.equals(this.billingType, other.billingType)
                 && java.util.Objects.equals(this.usageDimensionName, other.usageDimensionName)
                 && java.util.Objects.equals(this.consumedQuantity, other.consumedQuantity)
@@ -808,6 +853,7 @@ public final class CreateSubscriptionUsageRecordDetails
                         + (this.marketplaceOfferId == null
                                 ? 43
                                 : this.marketplaceOfferId.hashCode());
+        result = (result * PRIME) + (this.listingId == null ? 43 : this.listingId.hashCode());
         result = (result * PRIME) + (this.billingType == null ? 43 : this.billingType.hashCode());
         result =
                 (result * PRIME)

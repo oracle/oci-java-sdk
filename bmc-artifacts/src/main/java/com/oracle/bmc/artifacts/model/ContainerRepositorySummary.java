@@ -27,6 +27,8 @@ public final class ContainerRepositorySummary
         "compartmentId",
         "displayName",
         "id",
+        "repositoryType",
+        "isTopLevel",
         "imageCount",
         "isPublic",
         "layerCount",
@@ -43,6 +45,8 @@ public final class ContainerRepositorySummary
             String compartmentId,
             String displayName,
             String id,
+            ContainerRepository.RepositoryType repositoryType,
+            Boolean isTopLevel,
             Integer imageCount,
             Boolean isPublic,
             Integer layerCount,
@@ -58,6 +62,8 @@ public final class ContainerRepositorySummary
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.id = id;
+        this.repositoryType = repositoryType;
+        this.isTopLevel = isTopLevel;
         this.imageCount = imageCount;
         this.isPublic = isPublic;
         this.layerCount = layerCount;
@@ -124,6 +130,44 @@ public final class ContainerRepositorySummary
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * The type of container repository. This determines the repository behavior and required
+         * settings.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
+        private ContainerRepository.RepositoryType repositoryType;
+
+        /**
+         * The type of container repository. This determines the repository behavior and required
+         * settings.
+         *
+         * @param repositoryType the value to set
+         * @return this builder
+         */
+        public Builder repositoryType(ContainerRepository.RepositoryType repositoryType) {
+            this.repositoryType = repositoryType;
+            this.__explicitlySet__.add("repositoryType");
+            return this;
+        }
+        /**
+         * Whether the repository is top-level. A top-level repository reserves its name in
+         * namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isTopLevel")
+        private Boolean isTopLevel;
+
+        /**
+         * Whether the repository is top-level. A top-level repository reserves its name in
+         * namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         *
+         * @param isTopLevel the value to set
+         * @return this builder
+         */
+        public Builder isTopLevel(Boolean isTopLevel) {
+            this.isTopLevel = isTopLevel;
+            this.__explicitlySet__.add("isTopLevel");
             return this;
         }
         /** Total number of images. */
@@ -326,6 +370,8 @@ public final class ContainerRepositorySummary
                             this.compartmentId,
                             this.displayName,
                             this.id,
+                            this.repositoryType,
+                            this.isTopLevel,
                             this.imageCount,
                             this.isPublic,
                             this.layerCount,
@@ -353,6 +399,12 @@ public final class ContainerRepositorySummary
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryType")) {
+                this.repositoryType(model.getRepositoryType());
+            }
+            if (model.wasPropertyExplicitlySet("isTopLevel")) {
+                this.isTopLevel(model.getIsTopLevel());
             }
             if (model.wasPropertyExplicitlySet("imageCount")) {
                 this.imageCount(model.getImageCount());
@@ -445,6 +497,40 @@ public final class ContainerRepositorySummary
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * The type of container repository. This determines the repository behavior and required
+     * settings.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
+    private final ContainerRepository.RepositoryType repositoryType;
+
+    /**
+     * The type of container repository. This determines the repository behavior and required
+     * settings.
+     *
+     * @return the value
+     */
+    public ContainerRepository.RepositoryType getRepositoryType() {
+        return repositoryType;
+    }
+
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as
+     * a prefix and allows images to be hosted under child paths of that prefix.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isTopLevel")
+    private final Boolean isTopLevel;
+
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as
+     * a prefix and allows images to be hosted under child paths of that prefix.
+     *
+     * @return the value
+     */
+    public Boolean getIsTopLevel() {
+        return isTopLevel;
     }
 
     /** Total number of images. */
@@ -632,6 +718,8 @@ public final class ContainerRepositorySummary
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", id=").append(String.valueOf(this.id));
+        sb.append(", repositoryType=").append(String.valueOf(this.repositoryType));
+        sb.append(", isTopLevel=").append(String.valueOf(this.isTopLevel));
         sb.append(", imageCount=").append(String.valueOf(this.imageCount));
         sb.append(", isPublic=").append(String.valueOf(this.isPublic));
         sb.append(", layerCount=").append(String.valueOf(this.layerCount));
@@ -660,6 +748,8 @@ public final class ContainerRepositorySummary
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.repositoryType, other.repositoryType)
+                && java.util.Objects.equals(this.isTopLevel, other.isTopLevel)
                 && java.util.Objects.equals(this.imageCount, other.imageCount)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
                 && java.util.Objects.equals(this.layerCount, other.layerCount)
@@ -683,6 +773,10 @@ public final class ContainerRepositorySummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.repositoryType == null ? 43 : this.repositoryType.hashCode());
+        result = (result * PRIME) + (this.isTopLevel == null ? 43 : this.isTopLevel.hashCode());
         result = (result * PRIME) + (this.imageCount == null ? 43 : this.imageCount.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
         result = (result * PRIME) + (this.layerCount == null ? 43 : this.layerCount.hashCode());

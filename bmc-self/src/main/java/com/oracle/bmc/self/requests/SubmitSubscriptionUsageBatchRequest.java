@@ -30,25 +30,25 @@ public class SubmitSubscriptionUsageBatchRequest
     }
     /**
      * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB. Required
-     * columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code CurrencyCode},
-     * {@code UsageStartTime}, {@code UsageEndTime}, and {@code UsageDimensionName}. Optional
-     * columns are {@code ConsumedQuantity}, {@code CustomerTenancyId}, {@code BillingIdentifier},
-     * {@code ProductSku}, {@code UnitOfMeasure}, {@code UnitPrice}, {@code ContractDuration}, and
-     * {@code AdditionalMetadata}. When provided in CSV, {@code AdditionalMetadata} must be a JSON
-     * array of {@code ExtendedMetadata} objects. {@code MarketplaceOfferId} must be a subscription
-     * or private offer OCID.
+     * columns are {@code MarketplaceOfferId}, {@code ListingId}, {@code Id}, {@code Amount}, {@code
+     * CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code UsageDimensionName}.
+     * Optional columns are {@code ConsumedQuantity}, {@code CustomerTenancyId}, {@code
+     * BillingIdentifier}, {@code ProductSku}, {@code UnitOfMeasure}, {@code UnitPrice}, {@code
+     * ContractDuration}, and {@code AdditionalMetadata}. When provided in CSV, {@code
+     * AdditionalMetadata} must be a JSON array of {@code ExtendedMetadata} objects. {@code
+     * MarketplaceOfferId} must be a subscription or private offer OCID.
      */
     private java.io.InputStream submitSubscriptionUsageBatchDetails;
 
     /**
      * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB. Required
-     * columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code CurrencyCode},
-     * {@code UsageStartTime}, {@code UsageEndTime}, and {@code UsageDimensionName}. Optional
-     * columns are {@code ConsumedQuantity}, {@code CustomerTenancyId}, {@code BillingIdentifier},
-     * {@code ProductSku}, {@code UnitOfMeasure}, {@code UnitPrice}, {@code ContractDuration}, and
-     * {@code AdditionalMetadata}. When provided in CSV, {@code AdditionalMetadata} must be a JSON
-     * array of {@code ExtendedMetadata} objects. {@code MarketplaceOfferId} must be a subscription
-     * or private offer OCID.
+     * columns are {@code MarketplaceOfferId}, {@code ListingId}, {@code Id}, {@code Amount}, {@code
+     * CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code UsageDimensionName}.
+     * Optional columns are {@code ConsumedQuantity}, {@code CustomerTenancyId}, {@code
+     * BillingIdentifier}, {@code ProductSku}, {@code UnitOfMeasure}, {@code UnitPrice}, {@code
+     * ContractDuration}, and {@code AdditionalMetadata}. When provided in CSV, {@code
+     * AdditionalMetadata} must be a JSON array of {@code ExtendedMetadata} objects. {@code
+     * MarketplaceOfferId} must be a subscription or private offer OCID.
      */
     public java.io.InputStream getSubmitSubscriptionUsageBatchDetails() {
         return submitSubscriptionUsageBatchDetails;
@@ -125,8 +125,8 @@ public class SubmitSubscriptionUsageBatchRequest
 
         /**
          * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB.
-         * Required columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code
-         * CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code
+         * Required columns are {@code MarketplaceOfferId}, {@code ListingId}, {@code Id}, {@code
+         * Amount}, {@code CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code
          * UsageDimensionName}. Optional columns are {@code ConsumedQuantity}, {@code
          * CustomerTenancyId}, {@code BillingIdentifier}, {@code ProductSku}, {@code UnitOfMeasure},
          * {@code UnitPrice}, {@code ContractDuration}, and {@code AdditionalMetadata}. When
@@ -138,8 +138,8 @@ public class SubmitSubscriptionUsageBatchRequest
 
         /**
          * UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB.
-         * Required columns are {@code MarketplaceOfferId}, {@code Id}, {@code Amount}, {@code
-         * CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code
+         * Required columns are {@code MarketplaceOfferId}, {@code ListingId}, {@code Id}, {@code
+         * Amount}, {@code CurrencyCode}, {@code UsageStartTime}, {@code UsageEndTime}, and {@code
          * UsageDimensionName}. Optional columns are {@code ConsumedQuantity}, {@code
          * CustomerTenancyId}, {@code BillingIdentifier}, {@code ProductSku}, {@code UnitOfMeasure},
          * {@code UnitPrice}, {@code ContractDuration}, and {@code AdditionalMetadata}. When
