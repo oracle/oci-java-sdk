@@ -108,7 +108,7 @@ public class ApiGatewayExample {
         }
 
         final String compartmentId = args[0];
-        final Region region = args.length == 1 ? Region.US_PHOENIX_1 : Region.fromRegionId(args[2]);
+        final Region region = args.length == 1 ? Region.US_PHOENIX_1 : Region.fromRegionId(args[1]);
 
         // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
         // config file
