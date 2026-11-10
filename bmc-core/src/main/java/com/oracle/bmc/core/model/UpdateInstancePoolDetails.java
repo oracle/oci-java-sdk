@@ -5,7 +5,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to update an instance pool. <br>
+ * The data to update an instance pool. If {@code overridePolicy} is omitted, the stored launch
+ * override policy remains unchanged. A non-null {@code overridePolicy} replaces the stored policy
+ * as a whole, and {@code null} clears it for future launches. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,6 +32,7 @@ public final class UpdateInstancePoolDetails
         "instanceConfigurationId",
         "placementConfigurations",
         "size",
+        "overridePolicy",
         "instanceDisplayNameFormatter",
         "instanceHostnameFormatter",
         "lifecycleManagement"
@@ -41,6 +44,7 @@ public final class UpdateInstancePoolDetails
             String instanceConfigurationId,
             java.util.List<UpdateInstancePoolPlacementConfigurationDetails> placementConfigurations,
             Integer size,
+            InstancePoolLaunchOverridePolicy overridePolicy,
             String instanceDisplayNameFormatter,
             String instanceHostnameFormatter,
             InstancePoolLifecycleManagementDetails lifecycleManagement) {
@@ -51,6 +55,7 @@ public final class UpdateInstancePoolDetails
         this.instanceConfigurationId = instanceConfigurationId;
         this.placementConfigurations = placementConfigurations;
         this.size = size;
+        this.overridePolicy = overridePolicy;
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
         this.lifecycleManagement = lifecycleManagement;
@@ -206,6 +211,15 @@ public final class UpdateInstancePoolDetails
             this.__explicitlySet__.add("size");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+        private InstancePoolLaunchOverridePolicy overridePolicy;
+
+        public Builder overridePolicy(InstancePoolLaunchOverridePolicy overridePolicy) {
+            this.overridePolicy = overridePolicy;
+            this.__explicitlySet__.add("overridePolicy");
+            return this;
+        }
         /**
          * A user-friendly formatter for the instance pool's instances. Instance displaynames follow
          * the format. The formatter does not retroactively change instance's displaynames, only
@@ -271,6 +285,7 @@ public final class UpdateInstancePoolDetails
                             this.instanceConfigurationId,
                             this.placementConfigurations,
                             this.size,
+                            this.overridePolicy,
                             this.instanceDisplayNameFormatter,
                             this.instanceHostnameFormatter,
                             this.lifecycleManagement);
@@ -299,6 +314,9 @@ public final class UpdateInstancePoolDetails
             }
             if (model.wasPropertyExplicitlySet("size")) {
                 this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("overridePolicy")) {
+                this.overridePolicy(model.getOverridePolicy());
             }
             if (model.wasPropertyExplicitlySet("instanceDisplayNameFormatter")) {
                 this.instanceDisplayNameFormatter(model.getInstanceDisplayNameFormatter());
@@ -454,6 +472,13 @@ public final class UpdateInstancePoolDetails
         return size;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+    private final InstancePoolLaunchOverridePolicy overridePolicy;
+
+    public InstancePoolLaunchOverridePolicy getOverridePolicy() {
+        return overridePolicy;
+    }
+
     /**
      * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the
      * format. The formatter does not retroactively change instance's displaynames, only instance
@@ -522,6 +547,7 @@ public final class UpdateInstancePoolDetails
         sb.append(", placementConfigurations=")
                 .append(String.valueOf(this.placementConfigurations));
         sb.append(", size=").append(String.valueOf(this.size));
+        sb.append(", overridePolicy=").append(String.valueOf(this.overridePolicy));
         sb.append(", instanceDisplayNameFormatter=")
                 .append(String.valueOf(this.instanceDisplayNameFormatter));
         sb.append(", instanceHostnameFormatter=")
@@ -549,6 +575,7 @@ public final class UpdateInstancePoolDetails
                 && java.util.Objects.equals(
                         this.placementConfigurations, other.placementConfigurations)
                 && java.util.Objects.equals(this.size, other.size)
+                && java.util.Objects.equals(this.overridePolicy, other.overridePolicy)
                 && java.util.Objects.equals(
                         this.instanceDisplayNameFormatter, other.instanceDisplayNameFormatter)
                 && java.util.Objects.equals(
@@ -575,6 +602,9 @@ public final class UpdateInstancePoolDetails
                                 ? 43
                                 : this.placementConfigurations.hashCode());
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overridePolicy == null ? 43 : this.overridePolicy.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceDisplayNameFormatter == null

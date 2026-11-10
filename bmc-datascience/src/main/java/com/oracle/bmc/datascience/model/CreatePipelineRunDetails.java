@@ -28,6 +28,7 @@ public final class CreatePipelineRunDetails
         "compartmentId",
         "pipelineId",
         "displayName",
+        "pipelineRunRetentionPeriodInDaysOverride",
         "configurationOverrideDetails",
         "logConfigurationOverrideDetails",
         "infrastructureConfigurationOverrideDetails",
@@ -43,6 +44,7 @@ public final class CreatePipelineRunDetails
             String compartmentId,
             String pipelineId,
             String displayName,
+            Integer pipelineRunRetentionPeriodInDaysOverride,
             PipelineConfigurationDetails configurationOverrideDetails,
             PipelineLogConfigurationDetails logConfigurationOverrideDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationOverrideDetails,
@@ -58,6 +60,7 @@ public final class CreatePipelineRunDetails
         this.compartmentId = compartmentId;
         this.pipelineId = pipelineId;
         this.displayName = displayName;
+        this.pipelineRunRetentionPeriodInDaysOverride = pipelineRunRetentionPeriodInDaysOverride;
         this.configurationOverrideDetails = configurationOverrideDetails;
         this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
         this.infrastructureConfigurationOverrideDetails =
@@ -143,6 +146,23 @@ public final class CreatePipelineRunDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** Retention period in days for pipeline run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineRunRetentionPeriodInDaysOverride")
+        private Integer pipelineRunRetentionPeriodInDaysOverride;
+
+        /**
+         * Retention period in days for pipeline run.
+         *
+         * @param pipelineRunRetentionPeriodInDaysOverride the value to set
+         * @return this builder
+         */
+        public Builder pipelineRunRetentionPeriodInDaysOverride(
+                Integer pipelineRunRetentionPeriodInDaysOverride) {
+            this.pipelineRunRetentionPeriodInDaysOverride =
+                    pipelineRunRetentionPeriodInDaysOverride;
+            this.__explicitlySet__.add("pipelineRunRetentionPeriodInDaysOverride");
             return this;
         }
 
@@ -306,6 +326,7 @@ public final class CreatePipelineRunDetails
                             this.compartmentId,
                             this.pipelineId,
                             this.displayName,
+                            this.pipelineRunRetentionPeriodInDaysOverride,
                             this.configurationOverrideDetails,
                             this.logConfigurationOverrideDetails,
                             this.infrastructureConfigurationOverrideDetails,
@@ -334,6 +355,10 @@ public final class CreatePipelineRunDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("pipelineRunRetentionPeriodInDaysOverride")) {
+                this.pipelineRunRetentionPeriodInDaysOverride(
+                        model.getPipelineRunRetentionPeriodInDaysOverride());
             }
             if (model.wasPropertyExplicitlySet("configurationOverrideDetails")) {
                 this.configurationOverrideDetails(model.getConfigurationOverrideDetails());
@@ -439,6 +464,19 @@ public final class CreatePipelineRunDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** Retention period in days for pipeline run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineRunRetentionPeriodInDaysOverride")
+    private final Integer pipelineRunRetentionPeriodInDaysOverride;
+
+    /**
+     * Retention period in days for pipeline run.
+     *
+     * @return the value
+     */
+    public Integer getPipelineRunRetentionPeriodInDaysOverride() {
+        return pipelineRunRetentionPeriodInDaysOverride;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configurationOverrideDetails")
@@ -581,6 +619,8 @@ public final class CreatePipelineRunDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", pipelineId=").append(String.valueOf(this.pipelineId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", pipelineRunRetentionPeriodInDaysOverride=")
+                .append(String.valueOf(this.pipelineRunRetentionPeriodInDaysOverride));
         sb.append(", configurationOverrideDetails=")
                 .append(String.valueOf(this.configurationOverrideDetails));
         sb.append(", logConfigurationOverrideDetails=")
@@ -613,6 +653,9 @@ public final class CreatePipelineRunDetails
                 && java.util.Objects.equals(this.pipelineId, other.pipelineId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
+                        this.pipelineRunRetentionPeriodInDaysOverride,
+                        other.pipelineRunRetentionPeriodInDaysOverride)
+                && java.util.Objects.equals(
                         this.configurationOverrideDetails, other.configurationOverrideDetails)
                 && java.util.Objects.equals(
                         this.logConfigurationOverrideDetails, other.logConfigurationOverrideDetails)
@@ -640,6 +683,11 @@ public final class CreatePipelineRunDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.pipelineId == null ? 43 : this.pipelineId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pipelineRunRetentionPeriodInDaysOverride == null
+                                ? 43
+                                : this.pipelineRunRetentionPeriodInDaysOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.configurationOverrideDetails == null

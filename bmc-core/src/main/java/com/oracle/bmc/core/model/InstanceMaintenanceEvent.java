@@ -1171,6 +1171,7 @@ public final class InstanceMaintenanceEvent
     /** The current state of the maintenance event. */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Scheduled("SCHEDULED"),
+        Queued("QUEUED"),
         Started("STARTED"),
         Processing("PROCESSING"),
         Succeeded("SUCCEEDED"),

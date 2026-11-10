@@ -109,7 +109,10 @@ public class CcdCommitmentsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CreateCcdCommitmentResponse::builder)
                 .logger(LOG, "createCcdCommitment")
-                .serviceDetails("CcdCommitments", "CreateCcdCommitment", "")
+                .serviceDetails(
+                        "CcdCommitments",
+                        "CreateCcdCommitment",
+                        "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/CreateCcdCommitment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateCcdCommitmentRequest::builder)
                 .basePath("/20240601")
@@ -139,7 +142,10 @@ public class CcdCommitmentsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, DeleteCcdCommitmentResponse::builder)
                 .logger(LOG, "deleteCcdCommitment")
-                .serviceDetails("CcdCommitments", "DeleteCcdCommitment", "")
+                .serviceDetails(
+                        "CcdCommitments",
+                        "DeleteCcdCommitment",
+                        "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/DeleteCcdCommitment")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCcdCommitmentRequest::builder)
                 .basePath("/20240601")
@@ -164,7 +170,10 @@ public class CcdCommitmentsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetCcdCommitmentResponse::builder)
                 .logger(LOG, "getCcdCommitment")
-                .serviceDetails("CcdCommitments", "GetCcdCommitment", "")
+                .serviceDetails(
+                        "CcdCommitments",
+                        "GetCcdCommitment",
+                        "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/GetCcdCommitment")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCcdCommitmentRequest::builder)
                 .basePath("/20240601")
@@ -193,7 +202,10 @@ public class CcdCommitmentsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListCcdCommitmentsResponse::builder)
                 .logger(LOG, "listCcdCommitments")
-                .serviceDetails("CcdCommitments", "ListCcdCommitments", "")
+                .serviceDetails(
+                        "CcdCommitments",
+                        "ListCcdCommitments",
+                        "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitmentCollection/ListCcdCommitments")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCcdCommitmentsRequest::builder)
                 .basePath("/20240601")
@@ -233,7 +245,10 @@ public class CcdCommitmentsAsyncClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, UpdateCcdCommitmentResponse::builder)
                 .logger(LOG, "updateCcdCommitment")
-                .serviceDetails("CcdCommitments", "UpdateCcdCommitment", "")
+                .serviceDetails(
+                        "CcdCommitments",
+                        "UpdateCcdCommitment",
+                        "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/UpdateCcdCommitment")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateCcdCommitmentRequest::builder)
                 .basePath("/20240601")

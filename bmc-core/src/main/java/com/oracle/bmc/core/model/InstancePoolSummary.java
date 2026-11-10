@@ -31,6 +31,7 @@ public final class InstancePoolSummary
         "poolType",
         "lifecycleState",
         "availabilityDomains",
+        "overridePolicy",
         "size",
         "timeCreated",
         "definedTags",
@@ -45,6 +46,7 @@ public final class InstancePoolSummary
             InstancePool.PoolType poolType,
             LifecycleState lifecycleState,
             java.util.List<String> availabilityDomains,
+            InstancePoolLaunchOverridePolicy overridePolicy,
             Integer size,
             java.util.Date timeCreated,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -58,6 +60,7 @@ public final class InstancePoolSummary
         this.poolType = poolType;
         this.lifecycleState = lifecycleState;
         this.availabilityDomains = availabilityDomains;
+        this.overridePolicy = overridePolicy;
         this.size = size;
         this.timeCreated = timeCreated;
         this.definedTags = definedTags;
@@ -176,6 +179,15 @@ public final class InstancePoolSummary
             this.__explicitlySet__.add("availabilityDomains");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+        private InstancePoolLaunchOverridePolicy overridePolicy;
+
+        public Builder overridePolicy(InstancePoolLaunchOverridePolicy overridePolicy) {
+            this.overridePolicy = overridePolicy;
+            this.__explicitlySet__.add("overridePolicy");
+            return this;
+        }
         /** The number of instances that should be in the instance pool. */
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Integer size;
@@ -290,6 +302,7 @@ public final class InstancePoolSummary
                             this.poolType,
                             this.lifecycleState,
                             this.availabilityDomains,
+                            this.overridePolicy,
                             this.size,
                             this.timeCreated,
                             this.definedTags,
@@ -323,6 +336,9 @@ public final class InstancePoolSummary
             }
             if (model.wasPropertyExplicitlySet("availabilityDomains")) {
                 this.availabilityDomains(model.getAvailabilityDomains());
+            }
+            if (model.wasPropertyExplicitlySet("overridePolicy")) {
+                this.overridePolicy(model.getOverridePolicy());
             }
             if (model.wasPropertyExplicitlySet("size")) {
                 this.size(model.getSize());
@@ -499,6 +515,13 @@ public final class InstancePoolSummary
         return availabilityDomains;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+    private final InstancePoolLaunchOverridePolicy overridePolicy;
+
+    public InstancePoolLaunchOverridePolicy getOverridePolicy() {
+        return overridePolicy;
+    }
+
     /** The number of instances that should be in the instance pool. */
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Integer size;
@@ -611,6 +634,7 @@ public final class InstancePoolSummary
         sb.append(", poolType=").append(String.valueOf(this.poolType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", availabilityDomains=").append(String.valueOf(this.availabilityDomains));
+        sb.append(", overridePolicy=").append(String.valueOf(this.overridePolicy));
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -638,6 +662,7 @@ public final class InstancePoolSummary
                 && java.util.Objects.equals(this.poolType, other.poolType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.availabilityDomains, other.availabilityDomains)
+                && java.util.Objects.equals(this.overridePolicy, other.overridePolicy)
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -669,6 +694,9 @@ public final class InstancePoolSummary
                         + (this.availabilityDomains == null
                                 ? 43
                                 : this.availabilityDomains.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overridePolicy == null ? 43 : this.overridePolicy.hashCode());
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

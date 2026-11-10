@@ -31,6 +31,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         "compartmentId",
         "jobId",
         "displayName",
+        "jobRunRetentionPeriodInDaysOverride",
         "jobConfigurationOverrideDetails",
         "jobInfrastructureConfigurationDetails",
         "jobEnvironmentConfigurationOverrideDetails",
@@ -56,6 +57,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             String compartmentId,
             String jobId,
             String displayName,
+            Integer jobRunRetentionPeriodInDaysOverride,
             JobConfigurationDetails jobConfigurationOverrideDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
             JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails,
@@ -82,6 +84,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         this.compartmentId = compartmentId;
         this.jobId = jobId;
         this.displayName = displayName;
+        this.jobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
         this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
         this.jobEnvironmentConfigurationOverrideDetails =
@@ -268,6 +271,22 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** Retention period in days for job run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("jobRunRetentionPeriodInDaysOverride")
+        private Integer jobRunRetentionPeriodInDaysOverride;
+
+        /**
+         * Retention period in days for job run.
+         *
+         * @param jobRunRetentionPeriodInDaysOverride the value to set
+         * @return this builder
+         */
+        public Builder jobRunRetentionPeriodInDaysOverride(
+                Integer jobRunRetentionPeriodInDaysOverride) {
+            this.jobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
+            this.__explicitlySet__.add("jobRunRetentionPeriodInDaysOverride");
             return this;
         }
 
@@ -487,6 +506,7 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                             this.compartmentId,
                             this.jobId,
                             this.displayName,
+                            this.jobRunRetentionPeriodInDaysOverride,
                             this.jobConfigurationOverrideDetails,
                             this.jobInfrastructureConfigurationDetails,
                             this.jobEnvironmentConfigurationOverrideDetails,
@@ -535,6 +555,10 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("jobRunRetentionPeriodInDaysOverride")) {
+                this.jobRunRetentionPeriodInDaysOverride(
+                        model.getJobRunRetentionPeriodInDaysOverride());
             }
             if (model.wasPropertyExplicitlySet("jobConfigurationOverrideDetails")) {
                 this.jobConfigurationOverrideDetails(model.getJobConfigurationOverrideDetails());
@@ -745,6 +769,19 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         return displayName;
     }
 
+    /** Retention period in days for job run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("jobRunRetentionPeriodInDaysOverride")
+    private final Integer jobRunRetentionPeriodInDaysOverride;
+
+    /**
+     * Retention period in days for job run.
+     *
+     * @return the value
+     */
+    public Integer getJobRunRetentionPeriodInDaysOverride() {
+        return jobRunRetentionPeriodInDaysOverride;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jobConfigurationOverrideDetails")
     private final JobConfigurationDetails jobConfigurationOverrideDetails;
 
@@ -930,6 +967,8 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", jobId=").append(String.valueOf(this.jobId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", jobRunRetentionPeriodInDaysOverride=")
+                .append(String.valueOf(this.jobRunRetentionPeriodInDaysOverride));
         sb.append(", jobConfigurationOverrideDetails=")
                 .append(String.valueOf(this.jobConfigurationOverrideDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
@@ -975,6 +1014,9 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.jobId, other.jobId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.jobRunRetentionPeriodInDaysOverride,
+                        other.jobRunRetentionPeriodInDaysOverride)
                 && java.util.Objects.equals(
                         this.jobConfigurationOverrideDetails, other.jobConfigurationOverrideDetails)
                 && java.util.Objects.equals(
@@ -1022,6 +1064,11 @@ public final class JobRun extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobRunRetentionPeriodInDaysOverride == null
+                                ? 43
+                                : this.jobRunRetentionPeriodInDaysOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobConfigurationOverrideDetails == null

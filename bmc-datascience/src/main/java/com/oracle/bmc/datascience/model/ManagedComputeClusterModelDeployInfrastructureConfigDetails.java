@@ -70,6 +70,16 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+        private ManagedComputeClusterModelDeploymentNetworkConfiguration networkConfiguration;
+
+        public Builder networkConfiguration(
+                ManagedComputeClusterModelDeploymentNetworkConfiguration networkConfiguration) {
+            this.networkConfiguration = networkConfiguration;
+            this.__explicitlySet__.add("networkConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -78,7 +88,8 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
                     new ManagedComputeClusterModelDeployInfrastructureConfigDetails(
                             this.computeTargetId,
                             this.modelDeploymentResourceConfiguration,
-                            this.scalingPolicy);
+                            this.scalingPolicy,
+                            this.networkConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -96,6 +107,9 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
             }
             if (model.wasPropertyExplicitlySet("scalingPolicy")) {
                 this.scalingPolicy(model.getScalingPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfiguration")) {
+                this.networkConfiguration(model.getNetworkConfiguration());
             }
             return this;
         }
@@ -115,11 +129,13 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
             String computeTargetId,
             ManagedComputeClusterModelDeploymentResourceConfiguration
                     modelDeploymentResourceConfiguration,
-            ManagedComputeClusterWorkloadScalingPolicy scalingPolicy) {
+            ManagedComputeClusterWorkloadScalingPolicy scalingPolicy,
+            ManagedComputeClusterModelDeploymentNetworkConfiguration networkConfiguration) {
         super();
         this.computeTargetId = computeTargetId;
         this.modelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
         this.scalingPolicy = scalingPolicy;
+        this.networkConfiguration = networkConfiguration;
     }
 
     /**
@@ -155,6 +171,13 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
         return scalingPolicy;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+    private final ManagedComputeClusterModelDeploymentNetworkConfiguration networkConfiguration;
+
+    public ManagedComputeClusterModelDeploymentNetworkConfiguration getNetworkConfiguration() {
+        return networkConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -174,6 +197,7 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
         sb.append(", modelDeploymentResourceConfiguration=")
                 .append(String.valueOf(this.modelDeploymentResourceConfiguration));
         sb.append(", scalingPolicy=").append(String.valueOf(this.scalingPolicy));
+        sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -194,6 +218,7 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
                         this.modelDeploymentResourceConfiguration,
                         other.modelDeploymentResourceConfiguration)
                 && java.util.Objects.equals(this.scalingPolicy, other.scalingPolicy)
+                && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && super.equals(other);
     }
 
@@ -212,6 +237,11 @@ public final class ManagedComputeClusterModelDeployInfrastructureConfigDetails
         result =
                 (result * PRIME)
                         + (this.scalingPolicy == null ? 43 : this.scalingPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkConfiguration == null
+                                ? 43
+                                : this.networkConfiguration.hashCode());
         return result;
     }
 }

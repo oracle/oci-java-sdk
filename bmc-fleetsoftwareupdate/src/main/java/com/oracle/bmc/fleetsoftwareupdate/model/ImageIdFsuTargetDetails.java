@@ -30,6 +30,15 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("homePolicy")
         private HomePolicy homePolicy;
 
@@ -73,7 +82,10 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
         public ImageIdFsuTargetDetails build() {
             ImageIdFsuTargetDetails model =
                     new ImageIdFsuTargetDetails(
-                            this.homePolicy, this.newHomePrefix, this.softwareImageId);
+                            this.isOlderVersionAcknowledged,
+                            this.homePolicy,
+                            this.newHomePrefix,
+                            this.softwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +94,9 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImageIdFsuTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("homePolicy")) {
                 this.homePolicy(model.getHomePolicy());
             }
@@ -106,8 +121,11 @@ public final class ImageIdFsuTargetDetails extends FsuGoalVersionDetails {
 
     @Deprecated
     public ImageIdFsuTargetDetails(
-            HomePolicy homePolicy, String newHomePrefix, String softwareImageId) {
-        super(homePolicy, newHomePrefix);
+            Boolean isOlderVersionAcknowledged,
+            HomePolicy homePolicy,
+            String newHomePrefix,
+            String softwareImageId) {
+        super(isOlderVersionAcknowledged, homePolicy, newHomePrefix);
         this.softwareImageId = softwareImageId;
     }
 

@@ -36,6 +36,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         "size",
         "timeCreated",
         "loadBalancers",
+        "overridePolicy",
         "instanceDisplayNameFormatter",
         "instanceHostnameFormatter",
         "lifecycleManagement",
@@ -54,6 +55,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             Integer size,
             java.util.Date timeCreated,
             java.util.List<InstancePoolLoadBalancerAttachment> loadBalancers,
+            InstancePoolLaunchOverridePolicy overridePolicy,
             String instanceDisplayNameFormatter,
             String instanceHostnameFormatter,
             InstancePoolLifecycleManagementDetails lifecycleManagement,
@@ -71,6 +73,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         this.size = size;
         this.timeCreated = timeCreated;
         this.loadBalancers = loadBalancers;
+        this.overridePolicy = overridePolicy;
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
         this.lifecycleManagement = lifecycleManagement;
@@ -302,6 +305,15 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("loadBalancers");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+        private InstancePoolLaunchOverridePolicy overridePolicy;
+
+        public Builder overridePolicy(InstancePoolLaunchOverridePolicy overridePolicy) {
+            this.overridePolicy = overridePolicy;
+            this.__explicitlySet__.add("overridePolicy");
+            return this;
+        }
         /**
          * A user-friendly formatter for the instance pool's instances. Instance displaynames follow
          * the format. The formatter does not retroactively change instance's displaynames, only
@@ -388,6 +400,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                             this.size,
                             this.timeCreated,
                             this.loadBalancers,
+                            this.overridePolicy,
                             this.instanceDisplayNameFormatter,
                             this.instanceHostnameFormatter,
                             this.lifecycleManagement,
@@ -435,6 +448,9 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("loadBalancers")) {
                 this.loadBalancers(model.getLoadBalancers());
+            }
+            if (model.wasPropertyExplicitlySet("overridePolicy")) {
+                this.overridePolicy(model.getOverridePolicy());
             }
             if (model.wasPropertyExplicitlySet("instanceDisplayNameFormatter")) {
                 this.instanceDisplayNameFormatter(model.getInstanceDisplayNameFormatter());
@@ -755,6 +771,13 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         return loadBalancers;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+    private final InstancePoolLaunchOverridePolicy overridePolicy;
+
+    public InstancePoolLaunchOverridePolicy getOverridePolicy() {
+        return overridePolicy;
+    }
+
     /**
      * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the
      * format. The formatter does not retroactively change instance's displaynames, only instance
@@ -842,6 +865,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", loadBalancers=").append(String.valueOf(this.loadBalancers));
+        sb.append(", overridePolicy=").append(String.valueOf(this.overridePolicy));
         sb.append(", instanceDisplayNameFormatter=")
                 .append(String.valueOf(this.instanceDisplayNameFormatter));
         sb.append(", instanceHostnameFormatter=")
@@ -876,6 +900,7 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.loadBalancers, other.loadBalancers)
+                && java.util.Objects.equals(this.overridePolicy, other.overridePolicy)
                 && java.util.Objects.equals(
                         this.instanceDisplayNameFormatter, other.instanceDisplayNameFormatter)
                 && java.util.Objects.equals(
@@ -915,6 +940,9 @@ public final class InstancePool extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.loadBalancers == null ? 43 : this.loadBalancers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overridePolicy == null ? 43 : this.overridePolicy.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceDisplayNameFormatter == null

@@ -250,7 +250,8 @@ public interface ComputeManagement extends AutoCloseable {
      * <p>To determine whether capacity is available for a specific shape before you create an
      * instance pool, use the {@link
      * #createComputeCapacityReport(CreateComputeCapacityReportRequest) createComputeCapacityReport}
-     * operation.
+     * operation. You can optionally include `overridePolicy` to define availability domain-scoped
+     * launch overrides for future launches. Existing pool members are not modified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -704,6 +705,10 @@ public interface ComputeManagement extends AutoCloseable {
      * Update the specified instance pool.
      *
      * <p>The OCID of the instance pool remains the same.
+     *
+     * <p>If `overridePolicy` is omitted, the stored policy remains unchanged. Provide a non-null
+     * `overridePolicy` to replace the stored policy as a whole. Provide `null` to clear the stored
+     * policy for future launches.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

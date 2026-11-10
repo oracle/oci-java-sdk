@@ -106,7 +106,10 @@ public class CcdOffersAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
 
         return clientCall(request, GetCcdOfferResponse::builder)
                 .logger(LOG, "getCcdOffer")
-                .serviceDetails("CcdOffers", "GetCcdOffer", "")
+                .serviceDetails(
+                        "CcdOffers",
+                        "GetCcdOffer",
+                        "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdOffer/GetCcdOffer")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCcdOfferRequest::builder)
                 .basePath("/20240601")
@@ -135,7 +138,10 @@ public class CcdOffersAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
 
         return clientCall(request, ListCcdOffersResponse::builder)
                 .logger(LOG, "listCcdOffers")
-                .serviceDetails("CcdOffers", "ListCcdOffers", "")
+                .serviceDetails(
+                        "CcdOffers",
+                        "ListCcdOffers",
+                        "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdOfferCollection/ListCcdOffers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCcdOffersRequest::builder)
                 .basePath("/20240601")

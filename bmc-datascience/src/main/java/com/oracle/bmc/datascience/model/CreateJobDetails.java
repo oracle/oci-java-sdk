@@ -27,6 +27,7 @@ public final class CreateJobDetails
         "compartmentId",
         "displayName",
         "description",
+        "jobRunRetentionPeriodInDays",
         "jobConfigurationDetails",
         "jobInfrastructureConfigurationDetails",
         "jobEnvironmentConfigurationDetails",
@@ -41,6 +42,7 @@ public final class CreateJobDetails
             String compartmentId,
             String displayName,
             String description,
+            Integer jobRunRetentionPeriodInDays,
             JobConfigurationDetails jobConfigurationDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
             JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails,
@@ -55,6 +57,7 @@ public final class CreateJobDetails
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.description = description;
+        this.jobRunRetentionPeriodInDays = jobRunRetentionPeriodInDays;
         this.jobConfigurationDetails = jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
         this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
@@ -133,6 +136,21 @@ public final class CreateJobDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /** Retention period in days for job runs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("jobRunRetentionPeriodInDays")
+        private Integer jobRunRetentionPeriodInDays;
+
+        /**
+         * Retention period in days for job runs.
+         *
+         * @param jobRunRetentionPeriodInDays the value to set
+         * @return this builder
+         */
+        public Builder jobRunRetentionPeriodInDays(Integer jobRunRetentionPeriodInDays) {
+            this.jobRunRetentionPeriodInDays = jobRunRetentionPeriodInDays;
+            this.__explicitlySet__.add("jobRunRetentionPeriodInDays");
             return this;
         }
 
@@ -258,6 +276,7 @@ public final class CreateJobDetails
                             this.compartmentId,
                             this.displayName,
                             this.description,
+                            this.jobRunRetentionPeriodInDays,
                             this.jobConfigurationDetails,
                             this.jobInfrastructureConfigurationDetails,
                             this.jobEnvironmentConfigurationDetails,
@@ -285,6 +304,9 @@ public final class CreateJobDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("jobRunRetentionPeriodInDays")) {
+                this.jobRunRetentionPeriodInDays(model.getJobRunRetentionPeriodInDays());
             }
             if (model.wasPropertyExplicitlySet("jobConfigurationDetails")) {
                 this.jobConfigurationDetails(model.getJobConfigurationDetails());
@@ -384,6 +406,19 @@ public final class CreateJobDetails
      */
     public String getDescription() {
         return description;
+    }
+
+    /** Retention period in days for job runs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("jobRunRetentionPeriodInDays")
+    private final Integer jobRunRetentionPeriodInDays;
+
+    /**
+     * Retention period in days for job runs.
+     *
+     * @return the value
+     */
+    public Integer getJobRunRetentionPeriodInDays() {
+        return jobRunRetentionPeriodInDays;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jobConfigurationDetails")
@@ -495,6 +530,8 @@ public final class CreateJobDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", jobRunRetentionPeriodInDays=")
+                .append(String.valueOf(this.jobRunRetentionPeriodInDays));
         sb.append(", jobConfigurationDetails=")
                 .append(String.valueOf(this.jobConfigurationDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
@@ -528,6 +565,8 @@ public final class CreateJobDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
+                        this.jobRunRetentionPeriodInDays, other.jobRunRetentionPeriodInDays)
+                && java.util.Objects.equals(
                         this.jobConfigurationDetails, other.jobConfigurationDetails)
                 && java.util.Objects.equals(
                         this.jobInfrastructureConfigurationDetails,
@@ -557,6 +596,11 @@ public final class CreateJobDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobRunRetentionPeriodInDays == null
+                                ? 43
+                                : this.jobRunRetentionPeriodInDays.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobConfigurationDetails == null

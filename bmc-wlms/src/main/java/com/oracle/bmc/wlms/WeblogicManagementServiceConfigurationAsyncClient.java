@@ -110,10 +110,7 @@ public class WeblogicManagementServiceConfigurationAsyncClient
 
         return clientCall(request, GetConfigurationResponse::builder)
                 .logger(LOG, "getConfiguration")
-                .serviceDetails(
-                        "WeblogicManagementServiceConfiguration",
-                        "GetConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/Configuration/GetConfiguration")
+                .serviceDetails("WeblogicManagementServiceConfiguration", "GetConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConfigurationRequest::builder)
                 .basePath("/20241101")
@@ -143,10 +140,7 @@ public class WeblogicManagementServiceConfigurationAsyncClient
 
         return clientCall(request, UpdateConfigurationResponse::builder)
                 .logger(LOG, "updateConfiguration")
-                .serviceDetails(
-                        "WeblogicManagementServiceConfiguration",
-                        "UpdateConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/Configuration/UpdateConfiguration")
+                .serviceDetails("WeblogicManagementServiceConfiguration", "UpdateConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateConfigurationRequest::builder)
                 .basePath("/20241101")
