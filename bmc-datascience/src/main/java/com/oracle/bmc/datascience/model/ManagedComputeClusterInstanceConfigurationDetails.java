@@ -28,18 +28,21 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         "instanceShape",
         "capacityReservationIds",
         "bootVolumeSizeInGBs",
-        "instanceShapeDetails"
+        "instanceShapeDetails",
+        "networkConfigurationDetails"
     })
     public ManagedComputeClusterInstanceConfigurationDetails(
             String instanceShape,
             java.util.List<String> capacityReservationIds,
             Integer bootVolumeSizeInGBs,
-            ManagedComputeClusterInstanceShapeDetails instanceShapeDetails) {
+            ManagedComputeClusterInstanceShapeDetails instanceShapeDetails,
+            ManagedComputeClusterNetworkConfigurationDetails networkConfigurationDetails) {
         super();
         this.instanceShape = instanceShape;
         this.capacityReservationIds = capacityReservationIds;
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.instanceShapeDetails = instanceShapeDetails;
+        this.networkConfigurationDetails = networkConfigurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -108,6 +111,16 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfigurationDetails")
+        private ManagedComputeClusterNetworkConfigurationDetails networkConfigurationDetails;
+
+        public Builder networkConfigurationDetails(
+                ManagedComputeClusterNetworkConfigurationDetails networkConfigurationDetails) {
+            this.networkConfigurationDetails = networkConfigurationDetails;
+            this.__explicitlySet__.add("networkConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -117,7 +130,8 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
                             this.instanceShape,
                             this.capacityReservationIds,
                             this.bootVolumeSizeInGBs,
-                            this.instanceShapeDetails);
+                            this.instanceShapeDetails,
+                            this.networkConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -137,6 +151,9 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("instanceShapeDetails")) {
                 this.instanceShapeDetails(model.getInstanceShapeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfigurationDetails")) {
+                this.networkConfigurationDetails(model.getNetworkConfigurationDetails());
             }
             return this;
         }
@@ -205,6 +222,13 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         return instanceShapeDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfigurationDetails")
+    private final ManagedComputeClusterNetworkConfigurationDetails networkConfigurationDetails;
+
+    public ManagedComputeClusterNetworkConfigurationDetails getNetworkConfigurationDetails() {
+        return networkConfigurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -224,6 +248,8 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
         sb.append(", capacityReservationIds=").append(String.valueOf(this.capacityReservationIds));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
         sb.append(", instanceShapeDetails=").append(String.valueOf(this.instanceShapeDetails));
+        sb.append(", networkConfigurationDetails=")
+                .append(String.valueOf(this.networkConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -244,6 +270,8 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
                         this.capacityReservationIds, other.capacityReservationIds)
                 && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
                 && java.util.Objects.equals(this.instanceShapeDetails, other.instanceShapeDetails)
+                && java.util.Objects.equals(
+                        this.networkConfigurationDetails, other.networkConfigurationDetails)
                 && super.equals(other);
     }
 
@@ -269,6 +297,11 @@ public final class ManagedComputeClusterInstanceConfigurationDetails
                         + (this.instanceShapeDetails == null
                                 ? 43
                                 : this.instanceShapeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkConfigurationDetails == null
+                                ? 43
+                                : this.networkConfigurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

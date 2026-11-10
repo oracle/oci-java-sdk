@@ -32,6 +32,7 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         "compartmentId",
         "pipelineId",
         "displayName",
+        "pipelineRunRetentionPeriodInDaysOverride",
         "configurationDetails",
         "configurationOverrideDetails",
         "logConfigurationOverrideDetails",
@@ -58,6 +59,7 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
             String compartmentId,
             String pipelineId,
             String displayName,
+            Integer pipelineRunRetentionPeriodInDaysOverride,
             PipelineConfigurationDetails configurationDetails,
             PipelineConfigurationDetails configurationOverrideDetails,
             PipelineLogConfigurationDetails logConfigurationOverrideDetails,
@@ -84,6 +86,7 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         this.compartmentId = compartmentId;
         this.pipelineId = pipelineId;
         this.displayName = displayName;
+        this.pipelineRunRetentionPeriodInDaysOverride = pipelineRunRetentionPeriodInDaysOverride;
         this.configurationDetails = configurationDetails;
         this.configurationOverrideDetails = configurationOverrideDetails;
         this.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
@@ -288,6 +291,23 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** Retention period in days for pipeline run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineRunRetentionPeriodInDaysOverride")
+        private Integer pipelineRunRetentionPeriodInDaysOverride;
+
+        /**
+         * Retention period in days for pipeline run.
+         *
+         * @param pipelineRunRetentionPeriodInDaysOverride the value to set
+         * @return this builder
+         */
+        public Builder pipelineRunRetentionPeriodInDaysOverride(
+                Integer pipelineRunRetentionPeriodInDaysOverride) {
+            this.pipelineRunRetentionPeriodInDaysOverride =
+                    pipelineRunRetentionPeriodInDaysOverride;
+            this.__explicitlySet__.add("pipelineRunRetentionPeriodInDaysOverride");
             return this;
         }
 
@@ -524,6 +544,7 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
                             this.compartmentId,
                             this.pipelineId,
                             this.displayName,
+                            this.pipelineRunRetentionPeriodInDaysOverride,
                             this.configurationDetails,
                             this.configurationOverrideDetails,
                             this.logConfigurationOverrideDetails,
@@ -575,6 +596,10 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("pipelineRunRetentionPeriodInDaysOverride")) {
+                this.pipelineRunRetentionPeriodInDaysOverride(
+                        model.getPipelineRunRetentionPeriodInDaysOverride());
             }
             if (model.wasPropertyExplicitlySet("configurationDetails")) {
                 this.configurationDetails(model.getConfigurationDetails());
@@ -799,6 +824,19 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         return displayName;
     }
 
+    /** Retention period in days for pipeline run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineRunRetentionPeriodInDaysOverride")
+    private final Integer pipelineRunRetentionPeriodInDaysOverride;
+
+    /**
+     * Retention period in days for pipeline run.
+     *
+     * @return the value
+     */
+    public Integer getPipelineRunRetentionPeriodInDaysOverride() {
+        return pipelineRunRetentionPeriodInDaysOverride;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
     private final PipelineConfigurationDetails configurationDetails;
 
@@ -1002,6 +1040,8 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", pipelineId=").append(String.valueOf(this.pipelineId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", pipelineRunRetentionPeriodInDaysOverride=")
+                .append(String.valueOf(this.pipelineRunRetentionPeriodInDaysOverride));
         sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
         sb.append(", configurationOverrideDetails=")
                 .append(String.valueOf(this.configurationOverrideDetails));
@@ -1044,6 +1084,9 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.pipelineId, other.pipelineId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.pipelineRunRetentionPeriodInDaysOverride,
+                        other.pipelineRunRetentionPeriodInDaysOverride)
                 && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
                 && java.util.Objects.equals(
                         this.configurationOverrideDetails, other.configurationOverrideDetails)
@@ -1083,6 +1126,11 @@ public final class PipelineRun extends com.oracle.bmc.http.client.internal.Expli
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.pipelineId == null ? 43 : this.pipelineId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pipelineRunRetentionPeriodInDaysOverride == null
+                                ? 43
+                                : this.pipelineRunRetentionPeriodInDaysOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.configurationDetails == null

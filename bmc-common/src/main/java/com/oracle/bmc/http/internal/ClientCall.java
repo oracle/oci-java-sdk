@@ -1075,7 +1075,14 @@ public final class ClientCall<
         }
         firstAttempt = false;
 
-        String requestId = generateRequestId();
+        String generatedRequestId;
+        try {
+            generatedRequestId = generateRequestId();
+        } catch (RuntimeException failure) {
+            logger.error("Failed to generate request ID: {}", failure.getMessage(), failure);
+            generatedRequestId = null;
+        }
+        final String requestId = generatedRequestId;
         if (sendRetryToken) {
             RetryTokenUtils.addRetryToken(httpRequest);
         }

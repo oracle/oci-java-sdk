@@ -37,11 +37,32 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 public class FsuGoalVersionDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"homePolicy", "newHomePrefix"})
-    protected FsuGoalVersionDetails(HomePolicy homePolicy, String newHomePrefix) {
+    @java.beans.ConstructorProperties({"isOlderVersionAcknowledged", "homePolicy", "newHomePrefix"})
+    protected FsuGoalVersionDetails(
+            Boolean isOlderVersionAcknowledged, HomePolicy homePolicy, String newHomePrefix) {
         super();
+        this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
         this.homePolicy = homePolicy;
         this.newHomePrefix = newHomePrefix;
+    }
+
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible software
+     * version for this Exadata Fleet Update Cycle. This value is used for downstream Database
+     * service APIs that requires older-version acknowledgement.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+    private final Boolean isOlderVersionAcknowledged;
+
+    /**
+     * Indicates whether the customer acknowledged the risk of selecting an older eligible software
+     * version for this Exadata Fleet Update Cycle. This value is used for downstream Database
+     * service APIs that requires older-version acknowledgement.
+     *
+     * @return the value
+     */
+    public Boolean getIsOlderVersionAcknowledged() {
+        return isOlderVersionAcknowledged;
     }
 
     /**
@@ -159,7 +180,9 @@ public class FsuGoalVersionDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FsuGoalVersionDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("homePolicy=").append(String.valueOf(this.homePolicy));
+        sb.append("isOlderVersionAcknowledged=")
+                .append(String.valueOf(this.isOlderVersionAcknowledged));
+        sb.append(", homePolicy=").append(String.valueOf(this.homePolicy));
         sb.append(", newHomePrefix=").append(String.valueOf(this.newHomePrefix));
         sb.append(")");
         return sb.toString();
@@ -175,7 +198,9 @@ public class FsuGoalVersionDetails
         }
 
         FsuGoalVersionDetails other = (FsuGoalVersionDetails) o;
-        return java.util.Objects.equals(this.homePolicy, other.homePolicy)
+        return java.util.Objects.equals(
+                        this.isOlderVersionAcknowledged, other.isOlderVersionAcknowledged)
+                && java.util.Objects.equals(this.homePolicy, other.homePolicy)
                 && java.util.Objects.equals(this.newHomePrefix, other.newHomePrefix)
                 && super.equals(other);
     }
@@ -184,6 +209,11 @@ public class FsuGoalVersionDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isOlderVersionAcknowledged == null
+                                ? 43
+                                : this.isOlderVersionAcknowledged.hashCode());
         result = (result * PRIME) + (this.homePolicy == null ? 43 : this.homePolicy.hashCode());
         result =
                 (result * PRIME)

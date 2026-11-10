@@ -7,7 +7,9 @@ package com.oracle.bmc.core.model;
 /**
  * The data to create an instance pool. For a GMC-enabled resource pool, the referenced instance
  * configuration must be a GMC configuration and the placement configuration must identify the
- * availability domain and compute cluster for the pool. <br>
+ * availability domain and compute cluster for the pool. Optionally include {@code overridePolicy}
+ * to define availability domain-scoped launch overrides for future launches. Existing pool members
+ * are not modified. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,6 +36,7 @@ public final class CreateInstancePoolDetails
         "placementConfigurations",
         "size",
         "loadBalancers",
+        "overridePolicy",
         "instanceDisplayNameFormatter",
         "instanceHostnameFormatter",
         "lifecycleManagement"
@@ -47,6 +50,7 @@ public final class CreateInstancePoolDetails
             java.util.List<CreateInstancePoolPlacementConfigurationDetails> placementConfigurations,
             Integer size,
             java.util.List<AttachLoadBalancerDetails> loadBalancers,
+            InstancePoolLaunchOverridePolicy overridePolicy,
             String instanceDisplayNameFormatter,
             String instanceHostnameFormatter,
             InstancePoolLifecycleManagementDetails lifecycleManagement) {
@@ -59,6 +63,7 @@ public final class CreateInstancePoolDetails
         this.placementConfigurations = placementConfigurations;
         this.size = size;
         this.loadBalancers = loadBalancers;
+        this.overridePolicy = overridePolicy;
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
         this.lifecycleManagement = lifecycleManagement;
@@ -240,6 +245,15 @@ public final class CreateInstancePoolDetails
             this.__explicitlySet__.add("loadBalancers");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+        private InstancePoolLaunchOverridePolicy overridePolicy;
+
+        public Builder overridePolicy(InstancePoolLaunchOverridePolicy overridePolicy) {
+            this.overridePolicy = overridePolicy;
+            this.__explicitlySet__.add("overridePolicy");
+            return this;
+        }
         /**
          * A user-friendly formatter for the instance pool's instances. Instance displaynames follow
          * the format. The formatter does not retroactively change instance's displaynames, only
@@ -307,6 +321,7 @@ public final class CreateInstancePoolDetails
                             this.placementConfigurations,
                             this.size,
                             this.loadBalancers,
+                            this.overridePolicy,
                             this.instanceDisplayNameFormatter,
                             this.instanceHostnameFormatter,
                             this.lifecycleManagement);
@@ -341,6 +356,9 @@ public final class CreateInstancePoolDetails
             }
             if (model.wasPropertyExplicitlySet("loadBalancers")) {
                 this.loadBalancers(model.getLoadBalancers());
+            }
+            if (model.wasPropertyExplicitlySet("overridePolicy")) {
+                this.overridePolicy(model.getOverridePolicy());
             }
             if (model.wasPropertyExplicitlySet("instanceDisplayNameFormatter")) {
                 this.instanceDisplayNameFormatter(model.getInstanceDisplayNameFormatter());
@@ -518,6 +536,13 @@ public final class CreateInstancePoolDetails
         return loadBalancers;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("overridePolicy")
+    private final InstancePoolLaunchOverridePolicy overridePolicy;
+
+    public InstancePoolLaunchOverridePolicy getOverridePolicy() {
+        return overridePolicy;
+    }
+
     /**
      * A user-friendly formatter for the instance pool's instances. Instance displaynames follow the
      * format. The formatter does not retroactively change instance's displaynames, only instance
@@ -588,6 +613,7 @@ public final class CreateInstancePoolDetails
                 .append(String.valueOf(this.placementConfigurations));
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", loadBalancers=").append(String.valueOf(this.loadBalancers));
+        sb.append(", overridePolicy=").append(String.valueOf(this.overridePolicy));
         sb.append(", instanceDisplayNameFormatter=")
                 .append(String.valueOf(this.instanceDisplayNameFormatter));
         sb.append(", instanceHostnameFormatter=")
@@ -617,6 +643,7 @@ public final class CreateInstancePoolDetails
                         this.placementConfigurations, other.placementConfigurations)
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.loadBalancers, other.loadBalancers)
+                && java.util.Objects.equals(this.overridePolicy, other.overridePolicy)
                 && java.util.Objects.equals(
                         this.instanceDisplayNameFormatter, other.instanceDisplayNameFormatter)
                 && java.util.Objects.equals(
@@ -649,6 +676,9 @@ public final class CreateInstancePoolDetails
         result =
                 (result * PRIME)
                         + (this.loadBalancers == null ? 43 : this.loadBalancers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.overridePolicy == null ? 43 : this.overridePolicy.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceDisplayNameFormatter == null

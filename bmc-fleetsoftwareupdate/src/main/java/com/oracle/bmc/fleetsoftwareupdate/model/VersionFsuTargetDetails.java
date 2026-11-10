@@ -27,6 +27,15 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 public final class VersionFsuTargetDetails extends FsuGoalVersionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("homePolicy")
         private HomePolicy homePolicy;
 
@@ -69,7 +78,11 @@ public final class VersionFsuTargetDetails extends FsuGoalVersionDetails {
 
         public VersionFsuTargetDetails build() {
             VersionFsuTargetDetails model =
-                    new VersionFsuTargetDetails(this.homePolicy, this.newHomePrefix, this.version);
+                    new VersionFsuTargetDetails(
+                            this.isOlderVersionAcknowledged,
+                            this.homePolicy,
+                            this.newHomePrefix,
+                            this.version);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +91,9 @@ public final class VersionFsuTargetDetails extends FsuGoalVersionDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VersionFsuTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("homePolicy")) {
                 this.homePolicy(model.getHomePolicy());
             }
@@ -101,8 +117,12 @@ public final class VersionFsuTargetDetails extends FsuGoalVersionDetails {
     }
 
     @Deprecated
-    public VersionFsuTargetDetails(HomePolicy homePolicy, String newHomePrefix, String version) {
-        super(homePolicy, newHomePrefix);
+    public VersionFsuTargetDetails(
+            Boolean isOlderVersionAcknowledged,
+            HomePolicy homePolicy,
+            String newHomePrefix,
+            String version) {
+        super(isOlderVersionAcknowledged, homePolicy, newHomePrefix);
         this.version = version;
     }
 

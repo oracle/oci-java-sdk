@@ -28,6 +28,7 @@ public final class CreatePipelineDetails
         "compartmentId",
         "displayName",
         "description",
+        "pipelineRunRetentionPeriodInDays",
         "configurationDetails",
         "logConfigurationDetails",
         "infrastructureConfigurationDetails",
@@ -42,6 +43,7 @@ public final class CreatePipelineDetails
             String compartmentId,
             String displayName,
             String description,
+            Integer pipelineRunRetentionPeriodInDays,
             PipelineConfigurationDetails configurationDetails,
             PipelineLogConfigurationDetails logConfigurationDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
@@ -55,6 +57,7 @@ public final class CreatePipelineDetails
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.description = description;
+        this.pipelineRunRetentionPeriodInDays = pipelineRunRetentionPeriodInDays;
         this.configurationDetails = configurationDetails;
         this.logConfigurationDetails = logConfigurationDetails;
         this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
@@ -133,6 +136,21 @@ public final class CreatePipelineDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /** Retention period in days for pipeline runs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pipelineRunRetentionPeriodInDays")
+        private Integer pipelineRunRetentionPeriodInDays;
+
+        /**
+         * Retention period in days for pipeline runs.
+         *
+         * @param pipelineRunRetentionPeriodInDays the value to set
+         * @return this builder
+         */
+        public Builder pipelineRunRetentionPeriodInDays(Integer pipelineRunRetentionPeriodInDays) {
+            this.pipelineRunRetentionPeriodInDays = pipelineRunRetentionPeriodInDays;
+            this.__explicitlySet__.add("pipelineRunRetentionPeriodInDays");
             return this;
         }
 
@@ -268,6 +286,7 @@ public final class CreatePipelineDetails
                             this.compartmentId,
                             this.displayName,
                             this.description,
+                            this.pipelineRunRetentionPeriodInDays,
                             this.configurationDetails,
                             this.logConfigurationDetails,
                             this.infrastructureConfigurationDetails,
@@ -295,6 +314,9 @@ public final class CreatePipelineDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("pipelineRunRetentionPeriodInDays")) {
+                this.pipelineRunRetentionPeriodInDays(model.getPipelineRunRetentionPeriodInDays());
             }
             if (model.wasPropertyExplicitlySet("configurationDetails")) {
                 this.configurationDetails(model.getConfigurationDetails());
@@ -393,6 +415,19 @@ public final class CreatePipelineDetails
      */
     public String getDescription() {
         return description;
+    }
+
+    /** Retention period in days for pipeline runs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pipelineRunRetentionPeriodInDays")
+    private final Integer pipelineRunRetentionPeriodInDays;
+
+    /**
+     * Retention period in days for pipeline runs.
+     *
+     * @return the value
+     */
+    public Integer getPipelineRunRetentionPeriodInDays() {
+        return pipelineRunRetentionPeriodInDays;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
@@ -516,6 +551,8 @@ public final class CreatePipelineDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", pipelineRunRetentionPeriodInDays=")
+                .append(String.valueOf(this.pipelineRunRetentionPeriodInDays));
         sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
         sb.append(", logConfigurationDetails=")
                 .append(String.valueOf(this.logConfigurationDetails));
@@ -545,6 +582,9 @@ public final class CreatePipelineDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.pipelineRunRetentionPeriodInDays,
+                        other.pipelineRunRetentionPeriodInDays)
                 && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
                 && java.util.Objects.equals(
                         this.logConfigurationDetails, other.logConfigurationDetails)
@@ -571,6 +611,11 @@ public final class CreatePipelineDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pipelineRunRetentionPeriodInDays == null
+                                ? 43
+                                : this.pipelineRunRetentionPeriodInDays.hashCode());
         result =
                 (result * PRIME)
                         + (this.configurationDetails == null

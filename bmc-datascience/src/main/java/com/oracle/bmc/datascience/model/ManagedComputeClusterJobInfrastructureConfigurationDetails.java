@@ -58,13 +58,25 @@ public final class ManagedComputeClusterJobInfrastructureConfigurationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+        private ManagedComputeClusterJobNetworkConfiguration networkConfiguration;
+
+        public Builder networkConfiguration(
+                ManagedComputeClusterJobNetworkConfiguration networkConfiguration) {
+            this.networkConfiguration = networkConfiguration;
+            this.__explicitlySet__.add("networkConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagedComputeClusterJobInfrastructureConfigurationDetails build() {
             ManagedComputeClusterJobInfrastructureConfigurationDetails model =
                     new ManagedComputeClusterJobInfrastructureConfigurationDetails(
-                            this.computeTargetId, this.resourceConfiguration);
+                            this.computeTargetId,
+                            this.resourceConfiguration,
+                            this.networkConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +90,9 @@ public final class ManagedComputeClusterJobInfrastructureConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("resourceConfiguration")) {
                 this.resourceConfiguration(model.getResourceConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfiguration")) {
+                this.networkConfiguration(model.getNetworkConfiguration());
             }
             return this;
         }
@@ -95,10 +110,12 @@ public final class ManagedComputeClusterJobInfrastructureConfigurationDetails
     @Deprecated
     public ManagedComputeClusterJobInfrastructureConfigurationDetails(
             String computeTargetId,
-            ManagedComputeClusterJobResourceConfiguration resourceConfiguration) {
+            ManagedComputeClusterJobResourceConfiguration resourceConfiguration,
+            ManagedComputeClusterJobNetworkConfiguration networkConfiguration) {
         super();
         this.computeTargetId = computeTargetId;
         this.resourceConfiguration = resourceConfiguration;
+        this.networkConfiguration = networkConfiguration;
     }
 
     /**
@@ -125,6 +142,13 @@ public final class ManagedComputeClusterJobInfrastructureConfigurationDetails
         return resourceConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+    private final ManagedComputeClusterJobNetworkConfiguration networkConfiguration;
+
+    public ManagedComputeClusterJobNetworkConfiguration getNetworkConfiguration() {
+        return networkConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -142,6 +166,7 @@ public final class ManagedComputeClusterJobInfrastructureConfigurationDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", computeTargetId=").append(String.valueOf(this.computeTargetId));
         sb.append(", resourceConfiguration=").append(String.valueOf(this.resourceConfiguration));
+        sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -159,6 +184,7 @@ public final class ManagedComputeClusterJobInfrastructureConfigurationDetails
                 (ManagedComputeClusterJobInfrastructureConfigurationDetails) o;
         return java.util.Objects.equals(this.computeTargetId, other.computeTargetId)
                 && java.util.Objects.equals(this.resourceConfiguration, other.resourceConfiguration)
+                && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && super.equals(other);
     }
 
@@ -174,6 +200,11 @@ public final class ManagedComputeClusterJobInfrastructureConfigurationDetails
                         + (this.resourceConfiguration == null
                                 ? 43
                                 : this.resourceConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkConfiguration == null
+                                ? 43
+                                : this.networkConfiguration.hashCode());
         return result;
     }
 }

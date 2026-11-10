@@ -28,6 +28,7 @@ public final class CreateJobRunDetails
         "compartmentId",
         "displayName",
         "jobId",
+        "jobRunRetentionPeriodInDaysOverride",
         "jobConfigurationOverrideDetails",
         "jobLogConfigurationOverrideDetails",
         "jobEnvironmentConfigurationOverrideDetails",
@@ -42,6 +43,7 @@ public final class CreateJobRunDetails
             String compartmentId,
             String displayName,
             String jobId,
+            Integer jobRunRetentionPeriodInDaysOverride,
             JobConfigurationDetails jobConfigurationOverrideDetails,
             JobLogConfigurationDetails jobLogConfigurationOverrideDetails,
             JobEnvironmentConfigurationDetails jobEnvironmentConfigurationOverrideDetails,
@@ -56,6 +58,7 @@ public final class CreateJobRunDetails
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.jobId = jobId;
+        this.jobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
         this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
         this.jobEnvironmentConfigurationOverrideDetails =
@@ -141,6 +144,22 @@ public final class CreateJobRunDetails
         public Builder jobId(String jobId) {
             this.jobId = jobId;
             this.__explicitlySet__.add("jobId");
+            return this;
+        }
+        /** Retention period in days for job run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("jobRunRetentionPeriodInDaysOverride")
+        private Integer jobRunRetentionPeriodInDaysOverride;
+
+        /**
+         * Retention period in days for job run.
+         *
+         * @param jobRunRetentionPeriodInDaysOverride the value to set
+         * @return this builder
+         */
+        public Builder jobRunRetentionPeriodInDaysOverride(
+                Integer jobRunRetentionPeriodInDaysOverride) {
+            this.jobRunRetentionPeriodInDaysOverride = jobRunRetentionPeriodInDaysOverride;
+            this.__explicitlySet__.add("jobRunRetentionPeriodInDaysOverride");
             return this;
         }
 
@@ -273,6 +292,7 @@ public final class CreateJobRunDetails
                             this.compartmentId,
                             this.displayName,
                             this.jobId,
+                            this.jobRunRetentionPeriodInDaysOverride,
                             this.jobConfigurationOverrideDetails,
                             this.jobLogConfigurationOverrideDetails,
                             this.jobEnvironmentConfigurationOverrideDetails,
@@ -300,6 +320,10 @@ public final class CreateJobRunDetails
             }
             if (model.wasPropertyExplicitlySet("jobId")) {
                 this.jobId(model.getJobId());
+            }
+            if (model.wasPropertyExplicitlySet("jobRunRetentionPeriodInDaysOverride")) {
+                this.jobRunRetentionPeriodInDaysOverride(
+                        model.getJobRunRetentionPeriodInDaysOverride());
             }
             if (model.wasPropertyExplicitlySet("jobConfigurationOverrideDetails")) {
                 this.jobConfigurationOverrideDetails(model.getJobConfigurationOverrideDetails());
@@ -405,6 +429,19 @@ public final class CreateJobRunDetails
      */
     public String getJobId() {
         return jobId;
+    }
+
+    /** Retention period in days for job run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("jobRunRetentionPeriodInDaysOverride")
+    private final Integer jobRunRetentionPeriodInDaysOverride;
+
+    /**
+     * Retention period in days for job run.
+     *
+     * @return the value
+     */
+    public Integer getJobRunRetentionPeriodInDaysOverride() {
+        return jobRunRetentionPeriodInDaysOverride;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jobConfigurationOverrideDetails")
@@ -519,6 +556,8 @@ public final class CreateJobRunDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", jobId=").append(String.valueOf(this.jobId));
+        sb.append(", jobRunRetentionPeriodInDaysOverride=")
+                .append(String.valueOf(this.jobRunRetentionPeriodInDaysOverride));
         sb.append(", jobConfigurationOverrideDetails=")
                 .append(String.valueOf(this.jobConfigurationOverrideDetails));
         sb.append(", jobLogConfigurationOverrideDetails=")
@@ -552,6 +591,9 @@ public final class CreateJobRunDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.jobId, other.jobId)
                 && java.util.Objects.equals(
+                        this.jobRunRetentionPeriodInDaysOverride,
+                        other.jobRunRetentionPeriodInDaysOverride)
+                && java.util.Objects.equals(
                         this.jobConfigurationOverrideDetails, other.jobConfigurationOverrideDetails)
                 && java.util.Objects.equals(
                         this.jobLogConfigurationOverrideDetails,
@@ -583,6 +625,11 @@ public final class CreateJobRunDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.jobId == null ? 43 : this.jobId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobRunRetentionPeriodInDaysOverride == null
+                                ? 43
+                                : this.jobRunRetentionPeriodInDaysOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobConfigurationOverrideDetails == null

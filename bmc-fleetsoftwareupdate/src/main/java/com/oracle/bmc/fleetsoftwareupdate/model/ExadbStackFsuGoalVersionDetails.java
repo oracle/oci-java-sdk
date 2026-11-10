@@ -29,6 +29,15 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
 public final class ExadbStackFsuGoalVersionDetails extends FsuGoalVersionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isOlderVersionAcknowledged")
+        private Boolean isOlderVersionAcknowledged;
+
+        public Builder isOlderVersionAcknowledged(Boolean isOlderVersionAcknowledged) {
+            this.isOlderVersionAcknowledged = isOlderVersionAcknowledged;
+            this.__explicitlySet__.add("isOlderVersionAcknowledged");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("homePolicy")
         private HomePolicy homePolicy;
 
@@ -68,7 +77,10 @@ public final class ExadbStackFsuGoalVersionDetails extends FsuGoalVersionDetails
         public ExadbStackFsuGoalVersionDetails build() {
             ExadbStackFsuGoalVersionDetails model =
                     new ExadbStackFsuGoalVersionDetails(
-                            this.homePolicy, this.newHomePrefix, this.components);
+                            this.isOlderVersionAcknowledged,
+                            this.homePolicy,
+                            this.newHomePrefix,
+                            this.components);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -77,6 +89,9 @@ public final class ExadbStackFsuGoalVersionDetails extends FsuGoalVersionDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExadbStackFsuGoalVersionDetails model) {
+            if (model.wasPropertyExplicitlySet("isOlderVersionAcknowledged")) {
+                this.isOlderVersionAcknowledged(model.getIsOlderVersionAcknowledged());
+            }
             if (model.wasPropertyExplicitlySet("homePolicy")) {
                 this.homePolicy(model.getHomePolicy());
             }
@@ -101,10 +116,11 @@ public final class ExadbStackFsuGoalVersionDetails extends FsuGoalVersionDetails
 
     @Deprecated
     public ExadbStackFsuGoalVersionDetails(
+            Boolean isOlderVersionAcknowledged,
             HomePolicy homePolicy,
             String newHomePrefix,
             java.util.List<GoalSoftwareComponentDetails> components) {
-        super(homePolicy, newHomePrefix);
+        super(isOlderVersionAcknowledged, homePolicy, newHomePrefix);
         this.components = components;
     }
 

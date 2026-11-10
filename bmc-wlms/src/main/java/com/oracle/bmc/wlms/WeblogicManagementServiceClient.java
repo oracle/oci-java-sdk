@@ -137,10 +137,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ChangeWlsDomainCompartmentResponse::builder)
                 .logger(LOG, "changeWlsDomainCompartment")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ChangeWlsDomainCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ChangeWlsDomainCompartment")
+                .serviceDetails("WeblogicManagementService", "ChangeWlsDomainCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeWlsDomainCompartmentRequest::builder)
                 .basePath("/20241101")
@@ -170,10 +167,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, CreateAgreementRecordResponse::builder)
                 .logger(LOG, "createAgreementRecord")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "CreateAgreementRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/CreateAgreementRecord")
+                .serviceDetails("WeblogicManagementService", "CreateAgreementRecord", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateAgreementRecordRequest::builder)
                 .basePath("/20241101")
@@ -202,10 +196,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, DeleteWlsDomainResponse::builder)
                 .logger(LOG, "deleteWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "DeleteWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/DeleteWlsDomain")
+                .serviceDetails("WeblogicManagementService", "DeleteWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -226,10 +217,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetAgreementResponse::builder)
                 .logger(LOG, "getAgreement")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetAgreement",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/Agreement/GetAgreement")
+                .serviceDetails("WeblogicManagementService", "GetAgreement", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAgreementRequest::builder)
                 .basePath("/20241101")
@@ -253,10 +241,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetManagedInstanceResponse::builder)
                 .logger(LOG, "getManagedInstance")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/GetManagedInstance")
+                .serviceDetails("WeblogicManagementService", "GetManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceRequest::builder)
                 .basePath("/20241101")
@@ -284,10 +269,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetManagedInstanceServerResponse::builder)
                 .logger(LOG, "getManagedInstanceServer")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetManagedInstanceServer",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/GetManagedInstanceServer")
+                .serviceDetails("WeblogicManagementService", "GetManagedInstanceServer", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetManagedInstanceServerRequest::builder)
                 .basePath("/20241101")
@@ -314,10 +296,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetWlsDomainResponse::builder)
                 .logger(LOG, "getWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomain")
+                .serviceDetails("WeblogicManagementService", "GetWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -346,10 +325,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetWlsDomainCredentialResponse::builder)
                 .logger(LOG, "getWlsDomainCredential")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetWlsDomainCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainCredential")
+                .serviceDetails("WeblogicManagementService", "GetWlsDomainCredential", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWlsDomainCredentialRequest::builder)
                 .basePath("/20241101")
@@ -378,10 +354,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetWlsDomainServerResponse::builder)
                 .logger(LOG, "getWlsDomainServer")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetWlsDomainServer",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainServer")
+                .serviceDetails("WeblogicManagementService", "GetWlsDomainServer", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWlsDomainServerRequest::builder)
                 .basePath("/20241101")
@@ -413,10 +386,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetWlsDomainServerBackupResponse::builder)
                 .logger(LOG, "getWlsDomainServerBackup")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetWlsDomainServerBackup",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainServerBackup")
+                .serviceDetails("WeblogicManagementService", "GetWlsDomainServerBackup", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWlsDomainServerBackupRequest::builder)
                 .basePath("/20241101")
@@ -450,10 +420,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetWlsDomainServerBackupContentResponse::builder)
                 .logger(LOG, "getWlsDomainServerBackupContent")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetWlsDomainServerBackupContent",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainServerBackupContent")
+                .serviceDetails("WeblogicManagementService", "GetWlsDomainServerBackupContent", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWlsDomainServerBackupContentRequest::builder)
                 .basePath("/20241101")
@@ -485,10 +452,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/GetWorkRequest")
+                .serviceDetails("WeblogicManagementService", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20241101")
@@ -519,10 +483,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, InstallLatestPatchesOnWlsDomainResponse::builder)
                 .logger(LOG, "installLatestPatchesOnWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "InstallLatestPatchesOnWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/InstallLatestPatchesOnWlsDomain")
+                .serviceDetails("WeblogicManagementService", "InstallLatestPatchesOnWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallLatestPatchesOnWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -552,10 +513,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListAgreementRecordsResponse::builder)
                 .logger(LOG, "listAgreementRecords")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListAgreementRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListAgreementRecords")
+                .serviceDetails("WeblogicManagementService", "ListAgreementRecords", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAgreementRecordsRequest::builder)
                 .basePath("/20241101")
@@ -587,10 +545,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListApplicablePatchesResponse::builder)
                 .logger(LOG, "listApplicablePatches")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListApplicablePatches",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListApplicablePatches")
+                .serviceDetails("WeblogicManagementService", "ListApplicablePatches", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListApplicablePatchesRequest::builder)
                 .basePath("/20241101")
@@ -623,10 +578,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListManagedInstanceScanResultsResponse::builder)
                 .logger(LOG, "listManagedInstanceScanResults")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListManagedInstanceScanResults",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstanceScanResults")
+                .serviceDetails("WeblogicManagementService", "ListManagedInstanceScanResults", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceScanResultsRequest::builder)
                 .basePath("/20241101")
@@ -668,7 +620,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
                 .serviceDetails(
                         "WeblogicManagementService",
                         "ListManagedInstanceServerInstalledPatches",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstanceServerInstalledPatches")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceServerInstalledPatchesRequest::builder)
                 .basePath("/20241101")
@@ -705,10 +657,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListManagedInstanceServersResponse::builder)
                 .logger(LOG, "listManagedInstanceServers")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListManagedInstanceServers",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstanceServers")
+                .serviceDetails("WeblogicManagementService", "ListManagedInstanceServers", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstanceServersRequest::builder)
                 .basePath("/20241101")
@@ -739,10 +688,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListManagedInstancesResponse::builder)
                 .logger(LOG, "listManagedInstances")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListManagedInstances",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstances")
+                .serviceDetails("WeblogicManagementService", "ListManagedInstances", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListManagedInstancesRequest::builder)
                 .basePath("/20241101")
@@ -774,10 +720,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListRequiredPoliciesResponse::builder)
                 .logger(LOG, "listRequiredPolicies")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListRequiredPolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/RequiredPolicyCollection/ListRequiredPolicies")
+                .serviceDetails("WeblogicManagementService", "ListRequiredPolicies", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRequiredPoliciesRequest::builder)
                 .basePath("/20241101")
@@ -803,10 +746,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWlsDomainCredentialsResponse::builder)
                 .logger(LOG, "listWlsDomainCredentials")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWlsDomainCredentials",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainCredentials")
+                .serviceDetails("WeblogicManagementService", "ListWlsDomainCredentials", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWlsDomainCredentialsRequest::builder)
                 .basePath("/20241101")
@@ -835,10 +775,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWlsDomainScanResultsResponse::builder)
                 .logger(LOG, "listWlsDomainScanResults")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWlsDomainScanResults",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainScanResults")
+                .serviceDetails("WeblogicManagementService", "ListWlsDomainScanResults", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWlsDomainScanResultsRequest::builder)
                 .basePath("/20241101")
@@ -873,10 +810,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWlsDomainServerBackupsResponse::builder)
                 .logger(LOG, "listWlsDomainServerBackups")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWlsDomainServerBackups",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainServerBackups")
+                .serviceDetails("WeblogicManagementService", "ListWlsDomainServerBackups", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWlsDomainServerBackupsRequest::builder)
                 .basePath("/20241101")
@@ -913,9 +847,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
         return clientCall(request, ListWlsDomainServerInstalledPatchesResponse::builder)
                 .logger(LOG, "listWlsDomainServerInstalledPatches")
                 .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWlsDomainServerInstalledPatches",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainServerInstalledPatches")
+                        "WeblogicManagementService", "ListWlsDomainServerInstalledPatches", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWlsDomainServerInstalledPatchesRequest::builder)
                 .basePath("/20241101")
@@ -951,10 +883,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWlsDomainServersResponse::builder)
                 .logger(LOG, "listWlsDomainServers")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWlsDomainServers",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainServers")
+                .serviceDetails("WeblogicManagementService", "ListWlsDomainServers", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWlsDomainServersRequest::builder)
                 .basePath("/20241101")
@@ -985,10 +914,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWlsDomainsResponse::builder)
                 .logger(LOG, "listWlsDomains")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWlsDomains",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomains")
+                .serviceDetails("WeblogicManagementService", "ListWlsDomains", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWlsDomainsRequest::builder)
                 .basePath("/20241101")
@@ -1026,10 +952,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWlsDomainsSharingMiddlewaresResponse::builder)
                 .logger(LOG, "listWlsDomainsSharingMiddlewares")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWlsDomainsSharingMiddlewares",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainsSharingMiddlewares")
+                .serviceDetails("WeblogicManagementService", "ListWlsDomainsSharingMiddlewares", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWlsDomainsSharingMiddlewaresRequest::builder)
                 .basePath("/20241101")
@@ -1063,10 +986,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/ListWorkRequestErrors")
+                .serviceDetails("WeblogicManagementService", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20241101")
@@ -1097,10 +1017,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/ListWorkRequestLogs")
+                .serviceDetails("WeblogicManagementService", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20241101")
@@ -1129,10 +1046,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/ListWorkRequests")
+                .serviceDetails("WeblogicManagementService", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20241101")
@@ -1167,10 +1081,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, RestartWlsDomainResponse::builder)
                 .logger(LOG, "restartWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "RestartWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/RestartWlsDomain")
+                .serviceDetails("WeblogicManagementService", "RestartWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestartWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -1200,10 +1111,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, RestoreWlsDomainResponse::builder)
                 .logger(LOG, "restoreWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "RestoreWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/RestoreWlsDomain")
+                .serviceDetails("WeblogicManagementService", "RestoreWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RestoreWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -1231,10 +1139,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ScanManagedInstanceResponse::builder)
                 .logger(LOG, "scanManagedInstance")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ScanManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ScanManagedInstance")
+                .serviceDetails("WeblogicManagementService", "ScanManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScanManagedInstanceRequest::builder)
                 .basePath("/20241101")
@@ -1262,10 +1167,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, ScanWlsDomainResponse::builder)
                 .logger(LOG, "scanWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "ScanWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ScanWlsDomain")
+                .serviceDetails("WeblogicManagementService", "ScanWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScanWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -1294,10 +1196,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, SetRestartOrderResponse::builder)
                 .logger(LOG, "setRestartOrder")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "SetRestartOrder",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/SetRestartOrder")
+                .serviceDetails("WeblogicManagementService", "SetRestartOrder", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SetRestartOrderRequest::builder)
                 .basePath("/20241101")
@@ -1327,10 +1226,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, StartWlsDomainResponse::builder)
                 .logger(LOG, "startWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "StartWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/StartWlsDomain")
+                .serviceDetails("WeblogicManagementService", "StartWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -1359,10 +1255,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, StopWlsDomainResponse::builder)
                 .logger(LOG, "stopWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "StopWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/StopWlsDomain")
+                .serviceDetails("WeblogicManagementService", "StopWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -1390,10 +1283,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, SummarizeResourceInventoryResponse::builder)
                 .logger(LOG, "summarizeResourceInventory")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "SummarizeResourceInventory",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ResourceInventory/SummarizeResourceInventory")
+                .serviceDetails("WeblogicManagementService", "SummarizeResourceInventory", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeResourceInventoryRequest::builder)
                 .basePath("/20241101")
@@ -1421,10 +1311,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, UpdateManagedInstanceResponse::builder)
                 .logger(LOG, "updateManagedInstance")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "UpdateManagedInstance",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/UpdateManagedInstance")
+                .serviceDetails("WeblogicManagementService", "UpdateManagedInstance", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateManagedInstanceRequest::builder)
                 .basePath("/20241101")
@@ -1454,10 +1341,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, UpdateWlsDomainResponse::builder)
                 .logger(LOG, "updateWlsDomain")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "UpdateWlsDomain",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/UpdateWlsDomain")
+                .serviceDetails("WeblogicManagementService", "UpdateWlsDomain", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateWlsDomainRequest::builder)
                 .basePath("/20241101")
@@ -1491,10 +1375,7 @@ public class WeblogicManagementServiceClient extends com.oracle.bmc.http.interna
 
         return clientCall(request, UpdateWlsDomainCredentialResponse::builder)
                 .logger(LOG, "updateWlsDomainCredential")
-                .serviceDetails(
-                        "WeblogicManagementService",
-                        "UpdateWlsDomainCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/UpdateWlsDomainCredential")
+                .serviceDetails("WeblogicManagementService", "UpdateWlsDomainCredential", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateWlsDomainCredentialRequest::builder)
                 .basePath("/20241101")
