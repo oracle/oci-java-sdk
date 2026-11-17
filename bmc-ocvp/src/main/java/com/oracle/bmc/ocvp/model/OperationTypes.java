@@ -42,6 +42,7 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     ManagementApplianceEsxiHostDeletion("MANAGEMENT_APPLIANCE_ESXI_HOST_DELETION"),
     ManagementApplianceDatastoreProvisioning("MANAGEMENT_APPLIANCE_DATASTORE_PROVISIONING"),
     ManagementApplianceDatastoreDelete("MANAGEMENT_APPLIANCE_DATASTORE_DELETE"),
+    ManagementApplianceRenameResource("MANAGEMENT_APPLIANCE_RENAME_RESOURCE"),
     CreateByol("CREATE_BYOL"),
     UpdateByol("UPDATE_BYOL"),
     DeleteByol("DELETE_BYOL"),

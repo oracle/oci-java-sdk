@@ -294,6 +294,48 @@ public class EsxiHostAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<RetrieveEsxiHostOperationStatusResponse>
+            retrieveEsxiHostOperationStatus(
+                    RetrieveEsxiHostOperationStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RetrieveEsxiHostOperationStatusRequest,
+                                    RetrieveEsxiHostOperationStatusResponse>
+                            handler) {
+
+        Validate.notBlank(request.getEsxiHostId(), "esxiHostId must not be blank");
+
+        Validate.notBlank(request.getOperationName(), "operationName must not be blank");
+
+        return clientCall(request, RetrieveEsxiHostOperationStatusResponse::builder)
+                .logger(LOG, "retrieveEsxiHostOperationStatus")
+                .serviceDetails(
+                        "EsxiHost",
+                        "RetrieveEsxiHostOperationStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Esxihost/RetrieveEsxiHostOperationStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetrieveEsxiHostOperationStatusRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("esxiHosts")
+                .appendPathParam(request.getEsxiHostId())
+                .appendPathParam("actions")
+                .appendPathParam("retrieveOperationStatus")
+                .appendPathParam(request.getOperationName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.ResourceOperation.class,
+                        RetrieveEsxiHostOperationStatusResponse.Builder::resourceOperation)
+                .handleResponseHeaderString(
+                        "etag", RetrieveEsxiHostOperationStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RetrieveEsxiHostOperationStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SwapBillingResponse> swapBilling(
             SwapBillingRequest request,
             final com.oracle.bmc.responses.AsyncHandler<SwapBillingRequest, SwapBillingResponse>

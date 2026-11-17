@@ -101,6 +101,9 @@ public final class ParamEncoder {
         keepSet.clear('}');
         PATH_PARAM_KEEP_SET = (BitSet) keepSet.clone();
         PATH_PARAM_KEEP_SET.clear('/');
+        // also encode characters that are not allowed in URI path segments
+        PATH_PARAM_KEEP_SET.clear('[', '^' + 1);
+        PATH_PARAM_KEEP_SET.clear('|');
 
         // userinfo percent-encode set
         keepSet.clear('/');

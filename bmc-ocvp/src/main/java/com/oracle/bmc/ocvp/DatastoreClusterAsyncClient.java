@@ -435,7 +435,6 @@ public class DatastoreClusterAsyncClient extends com.oracle.bmc.http.internal.Ba
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDatastoreClustersRequest, ListDatastoreClustersResponse>
                     handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListDatastoreClustersResponse::builder)
                 .logger(LOG, "listDatastoreClusters")

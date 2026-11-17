@@ -40,6 +40,8 @@ public final class AutonomousDatabaseConnectionUrls
         "ordsUrl",
         "databaseTransformsUrl",
         "essbaseUrl",
+        "a2aUrl",
+        "mcpUrl",
         "spatialStudioUrl"
     })
     public AutonomousDatabaseConnectionUrls(
@@ -52,6 +54,8 @@ public final class AutonomousDatabaseConnectionUrls
             String ordsUrl,
             String databaseTransformsUrl,
             String essbaseUrl,
+            String a2aUrl,
+            String mcpUrl,
             String spatialStudioUrl) {
         super();
         this.sqlDevWebUrl = sqlDevWebUrl;
@@ -63,6 +67,8 @@ public final class AutonomousDatabaseConnectionUrls
         this.ordsUrl = ordsUrl;
         this.databaseTransformsUrl = databaseTransformsUrl;
         this.essbaseUrl = essbaseUrl;
+        this.a2aUrl = a2aUrl;
+        this.mcpUrl = mcpUrl;
         this.spatialStudioUrl = spatialStudioUrl;
     }
 
@@ -228,6 +234,44 @@ public final class AutonomousDatabaseConnectionUrls
             return this;
         }
         /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to
+         * Autonomous AI Database Serverless only.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("a2aUrl")
+        private String a2aUrl;
+
+        /**
+         * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to
+         * Autonomous AI Database Serverless only.
+         *
+         * @param a2aUrl the value to set
+         * @return this builder
+         */
+        public Builder a2aUrl(String a2aUrl) {
+            this.a2aUrl = a2aUrl;
+            this.__explicitlySet__.add("a2aUrl");
+            return this;
+        }
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database.
+         * Applicable to Autonomous AI Database Serverless only.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("mcpUrl")
+        private String mcpUrl;
+
+        /**
+         * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database.
+         * Applicable to Autonomous AI Database Serverless only.
+         *
+         * @param mcpUrl the value to set
+         * @return this builder
+         */
+        public Builder mcpUrl(String mcpUrl) {
+            this.mcpUrl = mcpUrl;
+            this.__explicitlySet__.add("mcpUrl");
+            return this;
+        }
+        /**
          * The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI
          * Database Serverless only.
          */
@@ -262,6 +306,8 @@ public final class AutonomousDatabaseConnectionUrls
                             this.ordsUrl,
                             this.databaseTransformsUrl,
                             this.essbaseUrl,
+                            this.a2aUrl,
+                            this.mcpUrl,
                             this.spatialStudioUrl);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -297,6 +343,12 @@ public final class AutonomousDatabaseConnectionUrls
             }
             if (model.wasPropertyExplicitlySet("essbaseUrl")) {
                 this.essbaseUrl(model.getEssbaseUrl());
+            }
+            if (model.wasPropertyExplicitlySet("a2aUrl")) {
+                this.a2aUrl(model.getA2aUrl());
+            }
+            if (model.wasPropertyExplicitlySet("mcpUrl")) {
+                this.mcpUrl(model.getMcpUrl());
             }
             if (model.wasPropertyExplicitlySet("spatialStudioUrl")) {
                 this.spatialStudioUrl(model.getSpatialStudioUrl());
@@ -454,6 +506,40 @@ public final class AutonomousDatabaseConnectionUrls
     }
 
     /**
+     * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to
+     * Autonomous AI Database Serverless only.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("a2aUrl")
+    private final String a2aUrl;
+
+    /**
+     * The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to
+     * Autonomous AI Database Serverless only.
+     *
+     * @return the value
+     */
+    public String getA2aUrl() {
+        return a2aUrl;
+    }
+
+    /**
+     * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable
+     * to Autonomous AI Database Serverless only.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("mcpUrl")
+    private final String mcpUrl;
+
+    /**
+     * The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable
+     * to Autonomous AI Database Serverless only.
+     *
+     * @return the value
+     */
+    public String getMcpUrl() {
+        return mcpUrl;
+    }
+
+    /**
      * The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI
      * Database Serverless only.
      */
@@ -496,6 +582,8 @@ public final class AutonomousDatabaseConnectionUrls
         sb.append(", ordsUrl=").append(String.valueOf(this.ordsUrl));
         sb.append(", databaseTransformsUrl=").append(String.valueOf(this.databaseTransformsUrl));
         sb.append(", essbaseUrl=").append(String.valueOf(this.essbaseUrl));
+        sb.append(", a2aUrl=").append(String.valueOf(this.a2aUrl));
+        sb.append(", mcpUrl=").append(String.valueOf(this.mcpUrl));
         sb.append(", spatialStudioUrl=").append(String.valueOf(this.spatialStudioUrl));
         sb.append(")");
         return sb.toString();
@@ -523,6 +611,8 @@ public final class AutonomousDatabaseConnectionUrls
                 && java.util.Objects.equals(this.ordsUrl, other.ordsUrl)
                 && java.util.Objects.equals(this.databaseTransformsUrl, other.databaseTransformsUrl)
                 && java.util.Objects.equals(this.essbaseUrl, other.essbaseUrl)
+                && java.util.Objects.equals(this.a2aUrl, other.a2aUrl)
+                && java.util.Objects.equals(this.mcpUrl, other.mcpUrl)
                 && java.util.Objects.equals(this.spatialStudioUrl, other.spatialStudioUrl)
                 && super.equals(other);
     }
@@ -554,6 +644,8 @@ public final class AutonomousDatabaseConnectionUrls
                                 ? 43
                                 : this.databaseTransformsUrl.hashCode());
         result = (result * PRIME) + (this.essbaseUrl == null ? 43 : this.essbaseUrl.hashCode());
+        result = (result * PRIME) + (this.a2aUrl == null ? 43 : this.a2aUrl.hashCode());
+        result = (result * PRIME) + (this.mcpUrl == null ? 43 : this.mcpUrl.hashCode());
         result =
                 (result * PRIME)
                         + (this.spatialStudioUrl == null ? 43 : this.spatialStudioUrl.hashCode());

@@ -428,7 +428,6 @@ public class DatastoreClusterClient extends com.oracle.bmc.http.internal.BaseSyn
     @Override
     public ListDatastoreClustersResponse listDatastoreClusters(
             ListDatastoreClustersRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListDatastoreClustersResponse::builder)
                 .logger(LOG, "listDatastoreClusters")

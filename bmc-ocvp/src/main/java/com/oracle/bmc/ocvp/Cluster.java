@@ -155,6 +155,24 @@ public interface Cluster extends AutoCloseable {
     ListClustersResponse listClusters(ListClustersRequest request);
 
     /**
+     * Retrieves status of the operation performed on the Cluster. For each type of operation, only
+     * status of the latest operation is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RetrieveClusterOperationStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RetrieveClusterOperationStatus API.
+     */
+    RetrieveClusterOperationStatusResponse retrieveClusterOperationStatus(
+            RetrieveClusterOperationStatusRequest request);
+
+    /**
      * Updates the specified Cluster.
      *
      * <p>*Important:** Updating a Cluster affects only certain attributes in the `Cluster` object

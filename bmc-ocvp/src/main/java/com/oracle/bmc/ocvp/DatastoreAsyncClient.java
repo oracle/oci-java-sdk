@@ -266,7 +266,6 @@ public class DatastoreAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDatastoresRequest, ListDatastoresResponse>
                     handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListDatastoresResponse::builder)
                 .logger(LOG, "listDatastores")

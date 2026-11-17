@@ -20,6 +20,8 @@ import java.util.stream.Collectors;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerOpenEvent;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerEventListener;
 import com.oracle.bmc.circuitbreaker.OciCircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
@@ -31,9 +33,18 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
     private final int numberOfRecordedHistoryResponses;
     private Deque<ErrorHistoryItem> historyQueue;
     private volatile long openedTimestampMillis;
+    private final CircuitBreakerDiagnostics diagnostics;
+    private volatile CircuitBreaker.Metrics historyClosedWindow;
 
     public OciCircuitBreakerImpl(
             CircuitBreaker r4jCircuitBreaker, int numberOfRecordedHistoryResponses) {
+        this(r4jCircuitBreaker, numberOfRecordedHistoryResponses, null);
+    }
+
+    private OciCircuitBreakerImpl(
+            CircuitBreaker r4jCircuitBreaker,
+            int numberOfRecordedHistoryResponses,
+            CircuitBreakerEventListener circuitBreakerEventListener) {
         if (r4jCircuitBreaker == null) {
             throw new IllegalArgumentException("r4jCircuitBreaker must be non-null");
         }
@@ -43,8 +54,15 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
                     CircuitBreaker.of(
                             circuitBreakerName, r4jCircuitBreaker.getCircuitBreakerConfig());
         }
+        this.r4jCircuitBreaker = r4jCircuitBreaker;
+        this.historyQueue = new ArrayDeque<>();
+        this.numberOfRecordedHistoryResponses = numberOfRecordedHistoryResponses;
+        this.diagnostics = new CircuitBreakerDiagnostics(r4jCircuitBreaker);
+        this.historyClosedWindow = r4jCircuitBreaker.getMetrics();
         r4jCircuitBreaker
                 .getEventPublisher()
+                .onError(event -> refreshHistory())
+                .onSuccess(event -> refreshHistory())
                 .onStateTransition(
                         event -> {
                             CircuitBreaker.StateTransition transition = event.getStateTransition();
@@ -53,15 +71,32 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
                                     getName(),
                                     transition.getFromState(),
                                     transition.getToState());
-                            if (transition.getFromState() == CircuitBreaker.State.CLOSED
-                                    && transition.getToState() == CircuitBreaker.State.OPEN) {
+                            if (transition.getToState() == CircuitBreaker.State.OPEN) {
                                 openedTimestampMillis = System.currentTimeMillis();
                             }
-                        });
+                            if (transition.getToState() == CircuitBreaker.State.CLOSED) {
+                                refreshHistory();
+                            }
+                        })
+                .onReset(event -> refreshHistory());
 
-        this.r4jCircuitBreaker = r4jCircuitBreaker;
-        this.historyQueue = new ArrayDeque<>();
-        this.numberOfRecordedHistoryResponses = numberOfRecordedHistoryResponses;
+        if (circuitBreakerEventListener != null) {
+            r4jCircuitBreaker
+                    .getEventPublisher()
+                    .onError(event -> circuitBreakerEventListener.onError(event.getThrowable()))
+                    .onSuccess(
+                            event ->
+                                    circuitBreakerEventListener.onSuccess(
+                                            event.getElapsedDuration()))
+                    .onStateTransition(
+                            event ->
+                                    circuitBreakerEventListener.onStateTransition(
+                                            event.getStateTransition()))
+                    .onCallNotPermitted(event -> circuitBreakerEventListener.onCallNotPermitted())
+                    .onReset(event -> circuitBreakerEventListener.onReset())
+                    .onFailureRateExceeded(
+                            event -> circuitBreakerEventListener.onFailureRateExceeded());
+        }
     }
 
     public OciCircuitBreakerImpl(
@@ -83,6 +118,9 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
                                 .permittedNumberOfCallsInHalfOpenState(
                                         circuitBreakerConfiguration
                                                 .getPermittedNumberOfCallsInHalfOpenState())
+                                .maxWaitDurationInHalfOpenState(
+                                        circuitBreakerConfiguration
+                                                .getMaxWaitDurationInHalfOpenState())
                                 .slidingWindowSize(
                                         circuitBreakerConfiguration.getSlidingWindowSize())
                                 .minimumNumberOfCalls(
@@ -97,7 +135,8 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
                                                 .toArray(new Class[0]))
                                 .recordException(recordExceptionPredicate)
                                 .build()),
-                circuitBreakerConfiguration.getNumberOfRecordedHistoryResponses());
+                circuitBreakerConfiguration.getNumberOfRecordedHistoryResponses(),
+                circuitBreakerConfiguration.getCircuitBreakerEventListener());
     }
 
     @Override
@@ -118,6 +157,11 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
     @Override
     public boolean tryAcquirePermission() {
         return r4jCircuitBreaker.tryAcquirePermission();
+    }
+
+    @Override
+    public void acquirePermissionOrThrow() {
+        diagnostics.withRejectionCapture(OciCircuitBreaker.super::acquirePermissionOrThrow);
     }
 
     @Override
@@ -184,14 +228,7 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
 
     @Override
     public CallNotAllowedException createCallNotAllowedException() {
-        return CallNotAllowedException.createCallNotAllowedException(
-                // message is identical to that from resilience4j CallNotPermittedException
-                "CircuitBreaker '"
-                        + this.getName()
-                        + "' is "
-                        + this.getState()
-                        + " and does not permit further calls",
-                this.getCircuitBreakerConfig().isWritableStackTraceEnabled());
+        return diagnostics.createRejection();
     }
 
     /**
@@ -202,6 +239,17 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
      */
     @Override
     public String circuitBreakerCallNotPermittedErrorMessage(String requestUri) {
+        return circuitBreakerCallNotPermittedErrorMessage(requestUri, null);
+    }
+
+    @Override
+    public CircuitBreakerOpenEvent getOpenEvent() {
+        return diagnostics.getOpenEvent();
+    }
+
+    @Override
+    public String circuitBreakerCallNotPermittedErrorMessage(
+            String requestUri, CallNotAllowedException rejection) {
         StringBuilder messageBuilder = new StringBuilder();
         messageBuilder
                 .append("CircuitBreaker has been OPEN for ")
@@ -220,15 +268,18 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
                     .append(requestUri + "\n");
         }
 
-        String historyAsString = getHistoryAsString();
-        int numberOfCurrentRecordsinHistory =
-                Math.min(numberOfRecordedHistoryResponses, historyQueue.size());
-        if (historyAsString != null && !historyAsString.trim().isEmpty()) {
+        CircuitBreakerOpenEvent event =
+                rejection == null ? getOpenEvent() : rejection.getOpenEvent();
+        if (event != null && CircuitBreakerConfiguration.isDiagnosticSummaryEnabled()) {
             messageBuilder
-                    .append(
-                            "The CircuitBreaker was opened because requests failed too frequently. Here are the last ")
-                    .append(numberOfCurrentRecordsinHistory)
-                    .append(" failed requests:\n")
+                    .append("Diagnostic summary for this opening:\n")
+                    .append(event)
+                    .append("\n");
+        }
+        String historyAsString = getHistoryAsString();
+        if (!historyAsString.trim().isEmpty()) {
+            messageBuilder
+                    .append("Recent failure history since last close:\n")
                     .append(historyAsString);
         }
 
@@ -250,6 +301,10 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
     @Override
     public synchronized void addToHistory(
             Throwable throwable, Integer status, Map<String, String> messages) {
+        refreshHistory();
+        if (numberOfRecordedHistoryResponses <= 0) {
+            return;
+        }
         if (historyQueue.size() >= numberOfRecordedHistoryResponses) {
             historyQueue.removeFirst();
         }
@@ -257,13 +312,31 @@ public class OciCircuitBreakerImpl implements OciCircuitBreaker {
         historyQueue.add(new ErrorHistoryItem(throwable, status, messages));
     }
 
+    private void refreshHistory() {
+        if (r4jCircuitBreaker.getState() != CircuitBreaker.State.CLOSED
+                || r4jCircuitBreaker.getMetrics() == historyClosedWindow) {
+            return;
+        }
+        synchronized (this) {
+            // Recheck after acquiring the monitor: a new failure may have refreshed it first.
+            CircuitBreaker.Metrics metrics = r4jCircuitBreaker.getMetrics();
+            if (r4jCircuitBreaker.getState() == CircuitBreaker.State.CLOSED
+                    && metrics != historyClosedWindow) {
+                historyQueue.clear();
+                historyClosedWindow = metrics;
+            }
+        }
+    }
+
     @Override
     public synchronized List<ErrorHistoryItem> getHistory() {
+        refreshHistory();
         return Collections.unmodifiableList(new ArrayList<>(historyQueue));
     }
 
     @Override
     public synchronized String getHistoryAsString() {
+        refreshHistory();
         StringBuilder sb = new StringBuilder();
         int index = 1;
         for (ErrorHistoryItem item : historyQueue) {

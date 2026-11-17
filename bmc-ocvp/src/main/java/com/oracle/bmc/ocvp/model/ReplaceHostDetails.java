@@ -25,15 +25,18 @@ public final class ReplaceHostDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "esxiSoftwareVersion",
+        "capacityReservationId",
         "initialFaultDomainHostDistribution",
         "vcfByolAllocationId"
     })
     public ReplaceHostDetails(
             String esxiSoftwareVersion,
+            String capacityReservationId,
             FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
             String vcfByolAllocationId) {
         super();
         this.esxiSoftwareVersion = esxiSoftwareVersion;
+        this.capacityReservationId = capacityReservationId;
         this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.vcfByolAllocationId = vcfByolAllocationId;
     }
@@ -63,6 +66,25 @@ public final class ReplaceHostDetails
         public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
             this.esxiSoftwareVersion = esxiSoftwareVersion;
             this.__explicitlySet__.add("esxiSoftwareVersion");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Capacity Reservation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Capacity Reservation.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
         /** Initial Fault Domain Host distribution mode for the ESXi host. */
@@ -108,6 +130,7 @@ public final class ReplaceHostDetails
             ReplaceHostDetails model =
                     new ReplaceHostDetails(
                             this.esxiSoftwareVersion,
+                            this.capacityReservationId,
                             this.initialFaultDomainHostDistribution,
                             this.vcfByolAllocationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -120,6 +143,9 @@ public final class ReplaceHostDetails
         public Builder copy(ReplaceHostDetails model) {
             if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
                 this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
             }
             if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
                 this.initialFaultDomainHostDistribution(
@@ -162,6 +188,23 @@ public final class ReplaceHostDetails
      */
     public String getEsxiSoftwareVersion() {
         return esxiSoftwareVersion;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Capacity Reservation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Capacity Reservation.
+     *
+     * @return the value
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
     }
 
     /** Initial Fault Domain Host distribution mode for the ESXi host. */
@@ -210,6 +253,7 @@ public final class ReplaceHostDetails
         sb.append("ReplaceHostDetails(");
         sb.append("super=").append(super.toString());
         sb.append("esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
+        sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", initialFaultDomainHostDistribution=")
                 .append(String.valueOf(this.initialFaultDomainHostDistribution));
         sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
@@ -228,6 +272,7 @@ public final class ReplaceHostDetails
 
         ReplaceHostDetails other = (ReplaceHostDetails) o;
         return java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
+                && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(
                         this.initialFaultDomainHostDistribution,
                         other.initialFaultDomainHostDistribution)
@@ -244,6 +289,11 @@ public final class ReplaceHostDetails
                         + (this.esxiSoftwareVersion == null
                                 ? 43
                                 : this.esxiSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result =
                 (result * PRIME)
                         + (this.initialFaultDomainHostDistribution == null

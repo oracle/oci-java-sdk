@@ -10,7 +10,15 @@ public enum FaultDomainHostDistributionState implements com.oracle.bmc.http.inte
     EvenlyDistributed("EVENLY_DISTRIBUTED"),
     UnevenlyDistributed("UNEVENLY_DISTRIBUTED"),
     Unsupported("UNSUPPORTED"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(FaultDomainHostDistributionState.class);
 
     private final String value;
     private static java.util.Map<String, FaultDomainHostDistributionState> map;
@@ -18,7 +26,9 @@ public enum FaultDomainHostDistributionState implements com.oracle.bmc.http.inte
     static {
         map = new java.util.HashMap<>();
         for (FaultDomainHostDistributionState v : FaultDomainHostDistributionState.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -36,6 +46,9 @@ public enum FaultDomainHostDistributionState implements com.oracle.bmc.http.inte
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid FaultDomainHostDistributionState: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'FaultDomainHostDistributionState', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

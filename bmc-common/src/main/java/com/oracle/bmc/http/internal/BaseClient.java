@@ -364,6 +364,7 @@ abstract class BaseClient implements AutoCloseable {
                         .registerRequestInterceptor(Priorities.USER, LOG_HEADERS_FILTER);
         clientConfigurator.customizeClient(builder);
         HttpClient oldClient = this.httpClient;
+        stopOwnedCircuitBreaker();
         if (oldClient != null) {
             oldClient.close();
         }
@@ -469,9 +470,18 @@ abstract class BaseClient implements AutoCloseable {
     }
 
     @Override
-    public final void close() {
+    public final synchronized void close() {
+        stopOwnedCircuitBreaker();
         if (httpClient != null) {
             httpClient.close();
+        }
+    }
+
+    private void stopOwnedCircuitBreaker() {
+        if (circuitBreaker != null && clientConfigurationToUse.getCircuitBreaker() == null) {
+            // Leaving OPEN or HALF_OPEN cancels its scheduled transition and releases the task's
+            // references to the breaker and HTTP client. Caller-supplied breakers may be shared.
+            circuitBreaker.getR4jCircuitBreaker().transitionToDisabledState();
         }
     }
 

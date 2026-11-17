@@ -26,6 +26,9 @@ package com.oracle.bmc.fusionapps.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpgradeAction.class,
             name = "QUARTERLY_UPGRADE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ApplicationMigrationAction.class,
+            name = "APPLICATION_MIGRATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VertexAction.class, name = "VERTEX")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -185,6 +188,7 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         QuarterlyUpgrade("QUARTERLY_UPGRADE"),
         Patch("PATCH"),
         Vertex("VERTEX"),
+        ApplicationMigration("APPLICATION_MIGRATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

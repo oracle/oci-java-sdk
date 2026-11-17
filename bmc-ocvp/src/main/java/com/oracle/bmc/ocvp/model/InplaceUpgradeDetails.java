@@ -23,17 +23,42 @@ package com.oracle.bmc.ocvp.model;
 public final class InplaceUpgradeDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"initialFaultDomainHostDistribution", "vcfByolAllocationId"})
+    @java.beans.ConstructorProperties({
+        "capacityReservationId",
+        "initialFaultDomainHostDistribution",
+        "vcfByolAllocationId"
+    })
     public InplaceUpgradeDetails(
+            String capacityReservationId,
             FaultDomainHostDistributionModes initialFaultDomainHostDistribution,
             String vcfByolAllocationId) {
         super();
+        this.capacityReservationId = capacityReservationId;
         this.initialFaultDomainHostDistribution = initialFaultDomainHostDistribution;
         this.vcfByolAllocationId = vcfByolAllocationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Capacity Reservation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Capacity Reservation.
+         *
+         * @param capacityReservationId the value to set
+         * @return this builder
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
         /** Initial Fault Domain Host distribution mode for the ESXi host. */
         @com.fasterxml.jackson.annotation.JsonProperty("initialFaultDomainHostDistribution")
         private FaultDomainHostDistributionModes initialFaultDomainHostDistribution;
@@ -76,7 +101,9 @@ public final class InplaceUpgradeDetails
         public InplaceUpgradeDetails build() {
             InplaceUpgradeDetails model =
                     new InplaceUpgradeDetails(
-                            this.initialFaultDomainHostDistribution, this.vcfByolAllocationId);
+                            this.capacityReservationId,
+                            this.initialFaultDomainHostDistribution,
+                            this.vcfByolAllocationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +112,9 @@ public final class InplaceUpgradeDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InplaceUpgradeDetails model) {
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
+            }
             if (model.wasPropertyExplicitlySet("initialFaultDomainHostDistribution")) {
                 this.initialFaultDomainHostDistribution(
                         model.getInitialFaultDomainHostDistribution());
@@ -103,6 +133,23 @@ public final class InplaceUpgradeDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Capacity Reservation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    private final String capacityReservationId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Capacity Reservation.
+     *
+     * @return the value
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
     }
 
     /** Initial Fault Domain Host distribution mode for the ESXi host. */
@@ -150,7 +197,8 @@ public final class InplaceUpgradeDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InplaceUpgradeDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("initialFaultDomainHostDistribution=")
+        sb.append("capacityReservationId=").append(String.valueOf(this.capacityReservationId));
+        sb.append(", initialFaultDomainHostDistribution=")
                 .append(String.valueOf(this.initialFaultDomainHostDistribution));
         sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
         sb.append(")");
@@ -167,7 +215,8 @@ public final class InplaceUpgradeDetails
         }
 
         InplaceUpgradeDetails other = (InplaceUpgradeDetails) o;
-        return java.util.Objects.equals(
+        return java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
+                && java.util.Objects.equals(
                         this.initialFaultDomainHostDistribution,
                         other.initialFaultDomainHostDistribution)
                 && java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
@@ -178,6 +227,11 @@ public final class InplaceUpgradeDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.capacityReservationId == null
+                                ? 43
+                                : this.capacityReservationId.hashCode());
         result =
                 (result * PRIME)
                         + (this.initialFaultDomainHostDistribution == null

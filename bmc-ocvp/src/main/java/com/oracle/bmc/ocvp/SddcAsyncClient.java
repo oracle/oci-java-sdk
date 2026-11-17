@@ -542,6 +542,47 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
     }
 
     @Override
+    public java.util.concurrent.Future<RetrieveSddcOperationStatusResponse>
+            retrieveSddcOperationStatus(
+                    RetrieveSddcOperationStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RetrieveSddcOperationStatusRequest,
+                                    RetrieveSddcOperationStatusResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
+
+        Validate.notBlank(request.getOperationName(), "operationName must not be blank");
+
+        return clientCall(request, RetrieveSddcOperationStatusResponse::builder)
+                .logger(LOG, "retrieveSddcOperationStatus")
+                .serviceDetails(
+                        "Sddc",
+                        "RetrieveSddcOperationStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RetrieveSddcOperationStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetrieveSddcOperationStatusRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("sddcs")
+                .appendPathParam(request.getSddcId())
+                .appendPathParam("actions")
+                .appendPathParam("retrieveOperationStatus")
+                .appendPathParam(request.getOperationName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.ResourceOperation.class,
+                        RetrieveSddcOperationStatusResponse.Builder::resourceOperation)
+                .handleResponseHeaderString(
+                        "etag", RetrieveSddcOperationStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RetrieveSddcOperationStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RetrieveVmwareBinariesResponse> retrieveVmwareBinaries(
             RetrieveVmwareBinariesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

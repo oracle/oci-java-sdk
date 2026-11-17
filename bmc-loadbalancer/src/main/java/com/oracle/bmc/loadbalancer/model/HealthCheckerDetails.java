@@ -32,6 +32,8 @@ public final class HealthCheckerDetails
         "timeoutInMillis",
         "intervalInMillis",
         "responseBodyRegex",
+        "isDynamicBackendWeightEnabled",
+        "defaultWeight",
         "isForcePlainText"
     })
     public HealthCheckerDetails(
@@ -43,6 +45,8 @@ public final class HealthCheckerDetails
             Integer timeoutInMillis,
             Integer intervalInMillis,
             String responseBodyRegex,
+            Boolean isDynamicBackendWeightEnabled,
+            Integer defaultWeight,
             Boolean isForcePlainText) {
         super();
         this.protocol = protocol;
@@ -53,6 +57,8 @@ public final class HealthCheckerDetails
         this.timeoutInMillis = timeoutInMillis;
         this.intervalInMillis = intervalInMillis;
         this.responseBodyRegex = responseBodyRegex;
+        this.isDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
+        this.defaultWeight = defaultWeight;
         this.isForcePlainText = isForcePlainText;
     }
 
@@ -233,6 +239,102 @@ public final class HealthCheckerDetails
             return this;
         }
         /**
+         * You can enable dynamic backend weights for HTTP health checks.
+         *
+         * <p>When enabled, the load balancer reads the {@code X-Dynamic-Backend-Weight} header from
+         * each backend's HTTP health check response. The load balancer uses that value as the
+         * backend's effective weight when distributing traffic.
+         *
+         * <p>A valid header value is an integer from {@code 0} through {@code 100}.
+         *
+         * <p>If the backend response does not include this header, or includes an invalid value,
+         * the load balancer uses {@code defaultWeight}.
+         *
+         * <p>If omitted during create, the default is {@code false}.
+         *
+         * <p>For TCP health checks, this field is accepted and stored, but it has no runtime
+         * effect.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDynamicBackendWeightEnabled")
+        private Boolean isDynamicBackendWeightEnabled;
+
+        /**
+         * You can enable dynamic backend weights for HTTP health checks.
+         *
+         * <p>When enabled, the load balancer reads the {@code X-Dynamic-Backend-Weight} header from
+         * each backend's HTTP health check response. The load balancer uses that value as the
+         * backend's effective weight when distributing traffic.
+         *
+         * <p>A valid header value is an integer from {@code 0} through {@code 100}.
+         *
+         * <p>If the backend response does not include this header, or includes an invalid value,
+         * the load balancer uses {@code defaultWeight}.
+         *
+         * <p>If omitted during create, the default is {@code false}.
+         *
+         * <p>For TCP health checks, this field is accepted and stored, but it has no runtime
+         * effect.
+         *
+         * @param isDynamicBackendWeightEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDynamicBackendWeightEnabled(Boolean isDynamicBackendWeightEnabled) {
+            this.isDynamicBackendWeightEnabled = isDynamicBackendWeightEnabled;
+            this.__explicitlySet__.add("isDynamicBackendWeightEnabled");
+            return this;
+        }
+        /**
+         * You can configure this fallback backend weight when dynamic backend weights are enabled
+         * and the backend's HTTP health check response does not include a valid {@code
+         * X-Dynamic-Backend-Weight} header value.
+         *
+         * <p>This value must be an integer from {@code 1} through {@code 100}.
+         *
+         * <p>Setting {@code defaultWeight} does not enable dynamic backend weights. To enable
+         * dynamic backend weights, set {@code isDynamicBackendWeightEnabled} to {@code true}. If
+         * your request includes {@code defaultWeight}, you must also set {@code
+         * isDynamicBackendWeightEnabled} to {@code true}; otherwise, the request is rejected.
+         *
+         * <p>On create, if dynamic backend weights are enabled and this field is omitted or null,
+         * the service uses {@code 1}.
+         *
+         * <p>For TCP health checks, this field is accepted and stored, but it has no runtime
+         * effect.
+         *
+         * <p>Example: {@code 1}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultWeight")
+        private Integer defaultWeight;
+
+        /**
+         * You can configure this fallback backend weight when dynamic backend weights are enabled
+         * and the backend's HTTP health check response does not include a valid {@code
+         * X-Dynamic-Backend-Weight} header value.
+         *
+         * <p>This value must be an integer from {@code 1} through {@code 100}.
+         *
+         * <p>Setting {@code defaultWeight} does not enable dynamic backend weights. To enable
+         * dynamic backend weights, set {@code isDynamicBackendWeightEnabled} to {@code true}. If
+         * your request includes {@code defaultWeight}, you must also set {@code
+         * isDynamicBackendWeightEnabled} to {@code true}; otherwise, the request is rejected.
+         *
+         * <p>On create, if dynamic backend weights are enabled and this field is omitted or null,
+         * the service uses {@code 1}.
+         *
+         * <p>For TCP health checks, this field is accepted and stored, but it has no runtime
+         * effect.
+         *
+         * <p>Example: {@code 1}
+         *
+         * @param defaultWeight the value to set
+         * @return this builder
+         */
+        public Builder defaultWeight(Integer defaultWeight) {
+            this.defaultWeight = defaultWeight;
+            this.__explicitlySet__.add("defaultWeight");
+            return this;
+        }
+        /**
          * Specifies if health checks should always be done using plain text instead of depending on
          * whether or not the associated backend set is using SSL.
          *
@@ -284,6 +386,8 @@ public final class HealthCheckerDetails
                             this.timeoutInMillis,
                             this.intervalInMillis,
                             this.responseBodyRegex,
+                            this.isDynamicBackendWeightEnabled,
+                            this.defaultWeight,
                             this.isForcePlainText);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -316,6 +420,12 @@ public final class HealthCheckerDetails
             }
             if (model.wasPropertyExplicitlySet("responseBodyRegex")) {
                 this.responseBodyRegex(model.getResponseBodyRegex());
+            }
+            if (model.wasPropertyExplicitlySet("isDynamicBackendWeightEnabled")) {
+                this.isDynamicBackendWeightEnabled(model.getIsDynamicBackendWeightEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("defaultWeight")) {
+                this.defaultWeight(model.getDefaultWeight());
             }
             if (model.wasPropertyExplicitlySet("isForcePlainText")) {
                 this.isForcePlainText(model.getIsForcePlainText());
@@ -492,6 +602,94 @@ public final class HealthCheckerDetails
     }
 
     /**
+     * You can enable dynamic backend weights for HTTP health checks.
+     *
+     * <p>When enabled, the load balancer reads the {@code X-Dynamic-Backend-Weight} header from
+     * each backend's HTTP health check response. The load balancer uses that value as the backend's
+     * effective weight when distributing traffic.
+     *
+     * <p>A valid header value is an integer from {@code 0} through {@code 100}.
+     *
+     * <p>If the backend response does not include this header, or includes an invalid value, the
+     * load balancer uses {@code defaultWeight}.
+     *
+     * <p>If omitted during create, the default is {@code false}.
+     *
+     * <p>For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDynamicBackendWeightEnabled")
+    private final Boolean isDynamicBackendWeightEnabled;
+
+    /**
+     * You can enable dynamic backend weights for HTTP health checks.
+     *
+     * <p>When enabled, the load balancer reads the {@code X-Dynamic-Backend-Weight} header from
+     * each backend's HTTP health check response. The load balancer uses that value as the backend's
+     * effective weight when distributing traffic.
+     *
+     * <p>A valid header value is an integer from {@code 0} through {@code 100}.
+     *
+     * <p>If the backend response does not include this header, or includes an invalid value, the
+     * load balancer uses {@code defaultWeight}.
+     *
+     * <p>If omitted during create, the default is {@code false}.
+     *
+     * <p>For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     *
+     * @return the value
+     */
+    public Boolean getIsDynamicBackendWeightEnabled() {
+        return isDynamicBackendWeightEnabled;
+    }
+
+    /**
+     * You can configure this fallback backend weight when dynamic backend weights are enabled and
+     * the backend's HTTP health check response does not include a valid {@code
+     * X-Dynamic-Backend-Weight} header value.
+     *
+     * <p>This value must be an integer from {@code 1} through {@code 100}.
+     *
+     * <p>Setting {@code defaultWeight} does not enable dynamic backend weights. To enable dynamic
+     * backend weights, set {@code isDynamicBackendWeightEnabled} to {@code true}. If your request
+     * includes {@code defaultWeight}, you must also set {@code isDynamicBackendWeightEnabled} to
+     * {@code true}; otherwise, the request is rejected.
+     *
+     * <p>On create, if dynamic backend weights are enabled and this field is omitted or null, the
+     * service uses {@code 1}.
+     *
+     * <p>For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     *
+     * <p>Example: {@code 1}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultWeight")
+    private final Integer defaultWeight;
+
+    /**
+     * You can configure this fallback backend weight when dynamic backend weights are enabled and
+     * the backend's HTTP health check response does not include a valid {@code
+     * X-Dynamic-Backend-Weight} header value.
+     *
+     * <p>This value must be an integer from {@code 1} through {@code 100}.
+     *
+     * <p>Setting {@code defaultWeight} does not enable dynamic backend weights. To enable dynamic
+     * backend weights, set {@code isDynamicBackendWeightEnabled} to {@code true}. If your request
+     * includes {@code defaultWeight}, you must also set {@code isDynamicBackendWeightEnabled} to
+     * {@code true}; otherwise, the request is rejected.
+     *
+     * <p>On create, if dynamic backend weights are enabled and this field is omitted or null, the
+     * service uses {@code 1}.
+     *
+     * <p>For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+     *
+     * <p>Example: {@code 1}
+     *
+     * @return the value
+     */
+    public Integer getDefaultWeight() {
+        return defaultWeight;
+    }
+
+    /**
      * Specifies if health checks should always be done using plain text instead of depending on
      * whether or not the associated backend set is using SSL.
      *
@@ -549,6 +747,9 @@ public final class HealthCheckerDetails
         sb.append(", timeoutInMillis=").append(String.valueOf(this.timeoutInMillis));
         sb.append(", intervalInMillis=").append(String.valueOf(this.intervalInMillis));
         sb.append(", responseBodyRegex=").append(String.valueOf(this.responseBodyRegex));
+        sb.append(", isDynamicBackendWeightEnabled=")
+                .append(String.valueOf(this.isDynamicBackendWeightEnabled));
+        sb.append(", defaultWeight=").append(String.valueOf(this.defaultWeight));
         sb.append(", isForcePlainText=").append(String.valueOf(this.isForcePlainText));
         sb.append(")");
         return sb.toString();
@@ -572,6 +773,9 @@ public final class HealthCheckerDetails
                 && java.util.Objects.equals(this.timeoutInMillis, other.timeoutInMillis)
                 && java.util.Objects.equals(this.intervalInMillis, other.intervalInMillis)
                 && java.util.Objects.equals(this.responseBodyRegex, other.responseBodyRegex)
+                && java.util.Objects.equals(
+                        this.isDynamicBackendWeightEnabled, other.isDynamicBackendWeightEnabled)
+                && java.util.Objects.equals(this.defaultWeight, other.defaultWeight)
                 && java.util.Objects.equals(this.isForcePlainText, other.isForcePlainText)
                 && super.equals(other);
     }
@@ -594,6 +798,14 @@ public final class HealthCheckerDetails
         result =
                 (result * PRIME)
                         + (this.responseBodyRegex == null ? 43 : this.responseBodyRegex.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDynamicBackendWeightEnabled == null
+                                ? 43
+                                : this.isDynamicBackendWeightEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultWeight == null ? 43 : this.defaultWeight.hashCode());
         result =
                 (result * PRIME)
                         + (this.isForcePlainText == null ? 43 : this.isForcePlainText.hashCode());

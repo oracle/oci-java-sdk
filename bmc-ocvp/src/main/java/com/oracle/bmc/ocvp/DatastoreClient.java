@@ -276,7 +276,6 @@ public class DatastoreClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
     @Override
     public ListDatastoresResponse listDatastores(ListDatastoresRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListDatastoresResponse::builder)
                 .logger(LOG, "listDatastores")

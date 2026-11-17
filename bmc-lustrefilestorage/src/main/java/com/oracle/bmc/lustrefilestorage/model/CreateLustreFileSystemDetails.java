@@ -38,7 +38,8 @@ public final class CreateLustreFileSystemDetails
         "performanceTier",
         "clusterPlacementGroupId",
         "rootSquashConfiguration",
-        "maintenanceWindow"
+        "maintenanceWindow",
+        "tieringConfiguration"
     })
     public CreateLustreFileSystemDetails(
             String compartmentId,
@@ -55,7 +56,8 @@ public final class CreateLustreFileSystemDetails
             PerformanceTier performanceTier,
             String clusterPlacementGroupId,
             RootSquashConfiguration rootSquashConfiguration,
-            MaintenanceWindow maintenanceWindow) {
+            MaintenanceWindow maintenanceWindow,
+            TieringConfigurationDetails tieringConfiguration) {
         super();
         this.compartmentId = compartmentId;
         this.availabilityDomain = availabilityDomain;
@@ -72,6 +74,7 @@ public final class CreateLustreFileSystemDetails
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.rootSquashConfiguration = rootSquashConfiguration;
         this.maintenanceWindow = maintenanceWindow;
+        this.tieringConfiguration = tieringConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -371,6 +374,15 @@ public final class CreateLustreFileSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tieringConfiguration")
+        private TieringConfigurationDetails tieringConfiguration;
+
+        public Builder tieringConfiguration(TieringConfigurationDetails tieringConfiguration) {
+            this.tieringConfiguration = tieringConfiguration;
+            this.__explicitlySet__.add("tieringConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -391,7 +403,8 @@ public final class CreateLustreFileSystemDetails
                             this.performanceTier,
                             this.clusterPlacementGroupId,
                             this.rootSquashConfiguration,
-                            this.maintenanceWindow);
+                            this.maintenanceWindow,
+                            this.tieringConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -444,6 +457,9 @@ public final class CreateLustreFileSystemDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("tieringConfiguration")) {
+                this.tieringConfiguration(model.getTieringConfiguration());
             }
             return this;
         }
@@ -757,6 +773,13 @@ public final class CreateLustreFileSystemDetails
         return maintenanceWindow;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("tieringConfiguration")
+    private final TieringConfigurationDetails tieringConfiguration;
+
+    public TieringConfigurationDetails getTieringConfiguration() {
+        return tieringConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -789,6 +812,7 @@ public final class CreateLustreFileSystemDetails
         sb.append(", rootSquashConfiguration=")
                 .append(String.valueOf(this.rootSquashConfiguration));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", tieringConfiguration=").append(String.valueOf(this.tieringConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -820,6 +844,7 @@ public final class CreateLustreFileSystemDetails
                 && java.util.Objects.equals(
                         this.rootSquashConfiguration, other.rootSquashConfiguration)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(this.tieringConfiguration, other.tieringConfiguration)
                 && super.equals(other);
     }
 
@@ -868,6 +893,11 @@ public final class CreateLustreFileSystemDetails
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tieringConfiguration == null
+                                ? 43
+                                : this.tieringConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

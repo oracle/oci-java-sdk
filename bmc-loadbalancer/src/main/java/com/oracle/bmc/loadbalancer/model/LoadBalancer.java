@@ -39,6 +39,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         "lifecycleState",
         "timeCreated",
         "ipAddresses",
+        "reservedIpAddresses",
         "shapeName",
         "shapeDetails",
         "isPrivate",
@@ -68,6 +69,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.List<IpAddress> ipAddresses,
+            java.util.List<ReservedIP> reservedIpAddresses,
             String shapeName,
             ShapeDetails shapeDetails,
             Boolean isPrivate,
@@ -96,6 +98,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.ipAddresses = ipAddresses;
+        this.reservedIpAddresses = reservedIpAddresses;
         this.shapeName = shapeName;
         this.shapeDetails = shapeDetails;
         this.isPrivate = isPrivate;
@@ -229,6 +232,21 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         public Builder ipAddresses(java.util.List<IpAddress> ipAddresses) {
             this.ipAddresses = ipAddresses;
             this.__explicitlySet__.add("ipAddresses");
+            return this;
+        }
+        /** An array of reservedIP addresses. */
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedIpAddresses")
+        private java.util.List<ReservedIP> reservedIpAddresses;
+
+        /**
+         * An array of reservedIP addresses.
+         *
+         * @param reservedIpAddresses the value to set
+         * @return this builder
+         */
+        public Builder reservedIpAddresses(java.util.List<ReservedIP> reservedIpAddresses) {
+            this.reservedIpAddresses = reservedIpAddresses;
+            this.__explicitlySet__.add("reservedIpAddresses");
             return this;
         }
         /**
@@ -701,6 +719,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
                             this.lifecycleState,
                             this.timeCreated,
                             this.ipAddresses,
+                            this.reservedIpAddresses,
                             this.shapeName,
                             this.shapeDetails,
                             this.isPrivate,
@@ -747,6 +766,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("ipAddresses")) {
                 this.ipAddresses(model.getIpAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("reservedIpAddresses")) {
+                this.reservedIpAddresses(model.getReservedIpAddresses());
             }
             if (model.wasPropertyExplicitlySet("shapeName")) {
                 this.shapeName(model.getShapeName());
@@ -969,6 +991,19 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
      */
     public java.util.List<IpAddress> getIpAddresses() {
         return ipAddresses;
+    }
+
+    /** An array of reservedIP addresses. */
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedIpAddresses")
+    private final java.util.List<ReservedIP> reservedIpAddresses;
+
+    /**
+     * An array of reservedIP addresses.
+     *
+     * @return the value
+     */
+    public java.util.List<ReservedIP> getReservedIpAddresses() {
+        return reservedIpAddresses;
     }
 
     /**
@@ -1454,6 +1489,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", ipAddresses=").append(String.valueOf(this.ipAddresses));
+        sb.append(", reservedIpAddresses=").append(String.valueOf(this.reservedIpAddresses));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", shapeDetails=").append(String.valueOf(this.shapeDetails));
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
@@ -1497,6 +1533,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.ipAddresses, other.ipAddresses)
+                && java.util.Objects.equals(this.reservedIpAddresses, other.reservedIpAddresses)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.shapeDetails, other.shapeDetails)
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
@@ -1537,6 +1574,11 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.ipAddresses == null ? 43 : this.ipAddresses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reservedIpAddresses == null
+                                ? 43
+                                : this.reservedIpAddresses.hashCode());
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.shapeDetails == null ? 43 : this.shapeDetails.hashCode());
         result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
