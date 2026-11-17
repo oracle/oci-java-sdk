@@ -79,7 +79,8 @@ public final class ExadataInfrastructure
         "exascaleConfig",
         "databaseServerType",
         "storageServerType",
-        "computeModel"
+        "computeModel",
+        "sslInspectionConfiguration"
     })
     public ExadataInfrastructure(
             String id,
@@ -137,7 +138,8 @@ public final class ExadataInfrastructure
             ExascaleConfigDetails exascaleConfig,
             String databaseServerType,
             String storageServerType,
-            ComputeModel computeModel) {
+            ComputeModel computeModel,
+            SslInspectionConfiguration sslInspectionConfiguration) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -195,6 +197,7 @@ public final class ExadataInfrastructure
         this.databaseServerType = databaseServerType;
         this.storageServerType = storageServerType;
         this.computeModel = computeModel;
+        this.sslInspectionConfiguration = sslInspectionConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1113,6 +1116,16 @@ public final class ExadataInfrastructure
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sslInspectionConfiguration")
+        private SslInspectionConfiguration sslInspectionConfiguration;
+
+        public Builder sslInspectionConfiguration(
+                SslInspectionConfiguration sslInspectionConfiguration) {
+            this.sslInspectionConfiguration = sslInspectionConfiguration;
+            this.__explicitlySet__.add("sslInspectionConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -1174,7 +1187,8 @@ public final class ExadataInfrastructure
                             this.exascaleConfig,
                             this.databaseServerType,
                             this.storageServerType,
-                            this.computeModel);
+                            this.computeModel,
+                            this.sslInspectionConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1350,6 +1364,9 @@ public final class ExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("sslInspectionConfiguration")) {
+                this.sslInspectionConfiguration(model.getSslInspectionConfiguration());
             }
             return this;
         }
@@ -2368,6 +2385,13 @@ public final class ExadataInfrastructure
         return computeModel;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sslInspectionConfiguration")
+    private final SslInspectionConfiguration sslInspectionConfiguration;
+
+    public SslInspectionConfiguration getSslInspectionConfiguration() {
+        return sslInspectionConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2456,6 +2480,8 @@ public final class ExadataInfrastructure
         sb.append(", databaseServerType=").append(String.valueOf(this.databaseServerType));
         sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", sslInspectionConfiguration=")
+                .append(String.valueOf(this.sslInspectionConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -2539,6 +2565,8 @@ public final class ExadataInfrastructure
                 && java.util.Objects.equals(this.databaseServerType, other.databaseServerType)
                 && java.util.Objects.equals(this.storageServerType, other.storageServerType)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(
+                        this.sslInspectionConfiguration, other.sslInspectionConfiguration)
                 && super.equals(other);
     }
 
@@ -2722,6 +2750,11 @@ public final class ExadataInfrastructure
                 (result * PRIME)
                         + (this.storageServerType == null ? 43 : this.storageServerType.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslInspectionConfiguration == null
+                                ? 43
+                                : this.sslInspectionConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

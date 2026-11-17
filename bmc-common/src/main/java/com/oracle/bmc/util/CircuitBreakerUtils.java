@@ -20,6 +20,7 @@ public class CircuitBreakerUtils {
     private static final int DEFAULT_MINIMUM_NUMBER_OF_CALLS_FOR_AUTH_CLIENT_CB = 3;
     private static final int DEFAULT_MINIMUM_WAIT_DURATION_IN_OPEN_STATE_FOR_AUTH_CLIENT_CB = 30;
     private static final int DEFAULT_MAXIMUM_WAIT_DURATION_IN_OPEN_STATE_FOR_AUTH_CLIENT_CB = 49;
+    private static final int DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE_FOR_AUTH_CLIENT_CB = 1;
 
     public static CircuitBreakerConfiguration getNoCircuitBreakerConfiguration() {
         return new NoCircuitBreakerConfiguration();
@@ -88,6 +89,8 @@ public class CircuitBreakerUtils {
         return CircuitBreakerConfiguration.builder()
                 .minimumNumberOfCalls(DEFAULT_MINIMUM_NUMBER_OF_CALLS_FOR_AUTH_CLIENT_CB)
                 .failureRateThreshold(DEFAULT_FAILURE_RATE_THRESHOLD_FOR_AUTH_CLIENT_CB)
+                .permittedNumberOfCallsInHalfOpenState(
+                        DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE_FOR_AUTH_CLIENT_CB)
                 .waitDurationInOpenState(
                         Duration.ofSeconds(
                                 ThreadLocalRandom.current()

@@ -21,14 +21,25 @@ package com.oracle.bmc.database.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class DatabaseTool extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "isEnabled", "computeCount", "maxIdleTimeInMinutes"})
+    @java.beans.ConstructorProperties({
+        "name",
+        "isEnabled",
+        "computeCount",
+        "maxIdleTimeInMinutes",
+        "estimatedConcurrentSessions"
+    })
     public DatabaseTool(
-            Name name, Boolean isEnabled, Float computeCount, Integer maxIdleTimeInMinutes) {
+            Name name,
+            Boolean isEnabled,
+            Float computeCount,
+            Integer maxIdleTimeInMinutes,
+            Integer estimatedConcurrentSessions) {
         super();
         this.name = name;
         this.isEnabled = isEnabled;
         this.computeCount = computeCount;
         this.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
+        this.estimatedConcurrentSessions = estimatedConcurrentSessions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -97,6 +108,27 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("maxIdleTimeInMinutes");
             return this;
         }
+        /**
+         * Specifies the estimated number of concurrent user sessions (range 1\u201364 for Graph,
+         * 1\u2013256 for OML, default 1). applies only to OML and Graph tools\u2014not applicable
+         * to DLA, Data Transforms, or Spatial.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("estimatedConcurrentSessions")
+        private Integer estimatedConcurrentSessions;
+
+        /**
+         * Specifies the estimated number of concurrent user sessions (range 1\u201364 for Graph,
+         * 1\u2013256 for OML, default 1). applies only to OML and Graph tools\u2014not applicable
+         * to DLA, Data Transforms, or Spatial.
+         *
+         * @param estimatedConcurrentSessions the value to set
+         * @return this builder
+         */
+        public Builder estimatedConcurrentSessions(Integer estimatedConcurrentSessions) {
+            this.estimatedConcurrentSessions = estimatedConcurrentSessions;
+            this.__explicitlySet__.add("estimatedConcurrentSessions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -107,7 +139,8 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
                             this.name,
                             this.isEnabled,
                             this.computeCount,
-                            this.maxIdleTimeInMinutes);
+                            this.maxIdleTimeInMinutes,
+                            this.estimatedConcurrentSessions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -127,6 +160,9 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("maxIdleTimeInMinutes")) {
                 this.maxIdleTimeInMinutes(model.getMaxIdleTimeInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedConcurrentSessions")) {
+                this.estimatedConcurrentSessions(model.getEstimatedConcurrentSessions());
             }
             return this;
         }
@@ -152,6 +188,8 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         MongodbApi("MONGODB_API"),
         SpatialStudio("SPATIAL_STUDIO"),
         Essbase("ESSBASE"),
+        A2A("A2A"),
+        Mcp("MCP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -246,6 +284,25 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         return maxIdleTimeInMinutes;
     }
 
+    /**
+     * Specifies the estimated number of concurrent user sessions (range 1\u201364 for Graph,
+     * 1\u2013256 for OML, default 1). applies only to OML and Graph tools\u2014not applicable to
+     * DLA, Data Transforms, or Spatial.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("estimatedConcurrentSessions")
+    private final Integer estimatedConcurrentSessions;
+
+    /**
+     * Specifies the estimated number of concurrent user sessions (range 1\u201364 for Graph,
+     * 1\u2013256 for OML, default 1). applies only to OML and Graph tools\u2014not applicable to
+     * DLA, Data Transforms, or Spatial.
+     *
+     * @return the value
+     */
+    public Integer getEstimatedConcurrentSessions() {
+        return estimatedConcurrentSessions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -265,6 +322,8 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", maxIdleTimeInMinutes=").append(String.valueOf(this.maxIdleTimeInMinutes));
+        sb.append(", estimatedConcurrentSessions=")
+                .append(String.valueOf(this.estimatedConcurrentSessions));
         sb.append(")");
         return sb.toString();
     }
@@ -283,6 +342,8 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.maxIdleTimeInMinutes, other.maxIdleTimeInMinutes)
+                && java.util.Objects.equals(
+                        this.estimatedConcurrentSessions, other.estimatedConcurrentSessions)
                 && super.equals(other);
     }
 
@@ -298,6 +359,11 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
                         + (this.maxIdleTimeInMinutes == null
                                 ? 43
                                 : this.maxIdleTimeInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.estimatedConcurrentSessions == null
+                                ? 43
+                                : this.estimatedConcurrentSessions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

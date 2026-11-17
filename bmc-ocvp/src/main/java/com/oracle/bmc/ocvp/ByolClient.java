@@ -189,7 +189,7 @@ public class ByolClient extends com.oracle.bmc.http.internal.BaseSyncClient impl
                 .serviceDetails(
                         "Byol",
                         "DeleteByol",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/BYOL/DeleteByol")
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Byol/DeleteByol")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteByolRequest::builder)
                 .basePath("/20230701")

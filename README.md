@@ -28,6 +28,23 @@ For details on compatibility, advanced configurations, and add-ons, see [Configu
     ```
     export OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=FALSE
     ```
+- *Circuit Breaker Diagnostic Summary*: Printing the diagnostic summary in circuit breaker rejection messages is disabled by default. To opt in, start the JVM with:
+
+    ```text
+    -Doci.javasdk.circuitbreaker.diagnostic.summary.enabled=true
+    ```
+
+    Alternatively, use the `CircuitBreakerConfiguration.DIAGNOSTIC_SUMMARY_ENABLED_PROPERTY` constant to set the system property before making SDK calls:
+
+    ```java
+    import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+
+    System.setProperty(
+            CircuitBreakerConfiguration.DIAGNOSTIC_SUMMARY_ENABLED_PROPERTY, "true");
+    ```
+
+    This setting controls only summary printing. Diagnostic snapshots and recent failure history continue to be recorded when summary printing is disabled.
+
 - *Token Refresh Retries*: By default, the token refresh retires are enabled for 401s and processing exceptions. You have the flexibility to disable these retries if needed. This can be achieved by setting the system property
     ```
     System.setProperty("oci.javasdk.token.refresh.enabled", "false");

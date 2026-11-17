@@ -5,6 +5,7 @@
 package com.oracle.bmc.http.internal;
 
 import com.oracle.bmc.ServiceDetails;
+import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.internal.resilience4j.OciCircuitBreakerImpl;
 import com.oracle.bmc.http.client.HttpClient;
@@ -12,36 +13,43 @@ import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.Serializer;
-import com.oracle.bmc.http.internal.ClientCallTest.TestErrorModel;
-import com.oracle.bmc.http.internal.ClientCallTest.TestRuntimeSdkException;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.model.SdkRuntimeException;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 
-import org.junit.Test;
 import org.junit.Before;
+import org.junit.Test;
 import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.ConnectException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -108,6 +116,113 @@ public class ClientCallTest {
             assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
         }
         verify(mockResponse).close();
+    }
+
+    @Test
+    public void test_callSync_halfOpenTimeoutPreservesPendingResponse() throws Exception {
+        newTestResponseHelper().assertHalfOpenTimeoutPreservesPendingResponse(false);
+    }
+
+    @Test
+    public void test_callAsync_halfOpenTimeoutPreservesPendingResponse() throws Exception {
+        newTestResponseHelper().assertHalfOpenTimeoutPreservesPendingResponse(true);
+    }
+
+    private static TestResponseHelper newTestResponseHelper() throws Exception {
+        TestResponseHelper helper = new TestResponseHelper();
+        helper.setup();
+        return helper;
+    }
+
+    @Test
+    public void test_callAsync_halfOpenTimeoutRecoversAfterConnectionFailure() throws Exception {
+        TestResponseHelper helper = newTestResponseHelper();
+        OciCircuitBreakerImpl circuitBreaker =
+                new OciCircuitBreakerImpl(
+                        CircuitBreakerConfiguration.builder()
+                                .waitDurationInOpenState(Duration.ofSeconds(3))
+                                .maxWaitDurationInHalfOpenState(Duration.ofSeconds(2))
+                                .permittedNumberOfCallsInHalfOpenState(1)
+                                .build(),
+                        t -> true);
+        BlockingQueue<CircuitBreaker.StateTransition> transitions = new LinkedBlockingQueue<>();
+        circuitBreaker
+                .getR4jCircuitBreaker()
+                .getEventPublisher()
+                .onStateTransition(event -> transitions.add(event.getStateTransition()));
+        CompletableFuture<HttpResponse> failedHttpResponse = new CompletableFuture<>();
+        CompletableFuture<HttpResponse> healthyHttpResponse = new CompletableFuture<>();
+        ConnectException connectionFailure = new ConnectException("Backend unavailable");
+        CompletionException transportFailure = new CompletionException(connectionFailure);
+        when(helper.mockClient.isProcessingException(any())).thenReturn(false);
+        when(helper.mockRequest.execute()).thenReturn(failedHttpResponse, healthyHttpResponse);
+        when(helper.mockResponse.header("Content-Type"))
+                .thenReturn(TestResponseHelper.JSON_MEDIA_TYPE);
+        when(helper.mockResponse.status()).thenReturn(200);
+        when(helper.mockResponse.textBody())
+                .thenReturn(CompletableFuture.completedFuture("\"recovered\""));
+        Future<TestResponse> failedCall = null;
+        Future<TestResponse> recoveredCall = null;
+        try {
+            circuitBreaker.getR4jCircuitBreaker().transitionToOpenState();
+            assertEquals(
+                    CircuitBreaker.StateTransition.CLOSED_TO_OPEN,
+                    transitions.poll(5, TimeUnit.SECONDS));
+            assertEquals(
+                    CircuitBreaker.StateTransition.OPEN_TO_HALF_OPEN,
+                    transitions.poll(5, TimeUnit.SECONDS));
+            failedCall = helper.callWithCircuitBreaker(circuitBreaker, true, null);
+            assertTrue(failedHttpResponse.completeExceptionally(transportFailure));
+            try {
+                failedCall.get(1, TimeUnit.SECONDS);
+                fail("Expected connection failure from HALF_OPEN probe");
+            } catch (ExecutionException e) {
+                Throwable cause = e.getCause();
+                while (cause.getCause() != null) {
+                    cause = cause.getCause();
+                }
+                assertEquals(connectionFailure, cause);
+            }
+            verify(helper.mockClient).isProcessingException(transportFailure);
+            verify(helper.mockClient).isProcessingException(connectionFailure);
+            assertEquals(CircuitBreaker.State.HALF_OPEN, circuitBreaker.getState());
+            assertEquals(
+                    "Unrecorded transport failure leaves HALF_OPEN completion accounting pending",
+                    0,
+                    circuitBreaker.getR4jCircuitBreaker().getMetrics().getNumberOfBufferedCalls());
+            verify(helper.mockRequest, times(1)).execute();
+
+            // The backend recovers while the consumed HALF_OPEN permission is still pending.
+            assertTrue(healthyHttpResponse.complete(helper.mockResponse));
+            assertEquals(
+                    CircuitBreaker.StateTransition.HALF_OPEN_TO_OPEN,
+                    transitions.poll(5, TimeUnit.SECONDS));
+            assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
+            helper.assertCallRejected(circuitBreaker, true, null);
+            verify(helper.mockRequest, times(1)).execute();
+            assertEquals(
+                    CircuitBreaker.StateTransition.OPEN_TO_HALF_OPEN,
+                    transitions.poll(5, TimeUnit.SECONDS));
+            recoveredCall = helper.callWithCircuitBreaker(circuitBreaker, true, null);
+            TestResponse response = recoveredCall.get(2, TimeUnit.SECONDS);
+            assertEquals(200, response.get__httpStatusCode__());
+            assertEquals("recovered", response.getValue());
+            assertEquals(
+                    CircuitBreaker.StateTransition.HALF_OPEN_TO_CLOSED,
+                    transitions.poll(2, TimeUnit.SECONDS));
+            assertEquals(CircuitBreaker.State.CLOSED, circuitBreaker.getState());
+            verify(helper.mockRequest, times(2)).execute();
+        } finally {
+            circuitBreaker.getR4jCircuitBreaker().transitionToDisabledState();
+            failedHttpResponse.cancel(true);
+            healthyHttpResponse.cancel(true);
+            if (failedCall != null) {
+                failedCall.cancel(true);
+            }
+            if (recoveredCall != null) {
+                recoveredCall.cancel(true);
+            }
+        }
     }
 
     public static class TestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
@@ -1008,6 +1123,112 @@ public class ClientCallTest {
                 fail("Expected to throw");
             } catch (BmcException e) {
                 assertEquals("foo", e.getCause().getMessage());
+            }
+        }
+
+        private void assertHalfOpenTimeoutPreservesPendingResponse(boolean async) throws Exception {
+            OciCircuitBreakerImpl circuitBreaker =
+                    new OciCircuitBreakerImpl(
+                            CircuitBreakerConfiguration.builder()
+                                    // Allow time to check rejection and late completion before the
+                                    // next automatic OPEN -> HALF_OPEN transition.
+                                    .waitDurationInOpenState(Duration.ofSeconds(10))
+                                    .maxWaitDurationInHalfOpenState(Duration.ofSeconds(2))
+                                    .permittedNumberOfCallsInHalfOpenState(1)
+                                    .build(),
+                            t -> true);
+            CountDownLatch halfOpen = new CountDownLatch(1);
+            CountDownLatch reopened = new CountDownLatch(1);
+            CountDownLatch httpExecuted = new CountDownLatch(1);
+            circuitBreaker
+                    .getR4jCircuitBreaker()
+                    .getEventPublisher()
+                    .onStateTransition(
+                            event -> {
+                                if (event.getStateTransition()
+                                        == CircuitBreaker.StateTransition.OPEN_TO_HALF_OPEN) {
+                                    halfOpen.countDown();
+                                } else if (event.getStateTransition()
+                                        == CircuitBreaker.StateTransition.HALF_OPEN_TO_OPEN) {
+                                    reopened.countDown();
+                                }
+                            });
+            CompletableFuture<HttpResponse> pendingHttpResponse = new CompletableFuture<>();
+            when(mockRequest.execute())
+                    .thenAnswer(
+                            invocation -> {
+                                httpExecuted.countDown();
+                                return pendingHttpResponse;
+                            });
+            when(mockResponse.header("Content-Type")).thenReturn(JSON_MEDIA_TYPE);
+            when(mockResponse.status()).thenReturn(200);
+            when(mockResponse.textBody())
+                    .thenReturn(CompletableFuture.completedFuture("\"late success\""));
+            ExecutorService executor = Executors.newFixedThreadPool(2);
+            Future<TestResponse> pendingCall = null;
+            try {
+                circuitBreaker.getR4jCircuitBreaker().transitionToOpenState();
+                assertTrue(
+                        "Expected automatic HALF_OPEN transition",
+                        halfOpen.await(15, TimeUnit.SECONDS));
+                pendingCall = callWithCircuitBreaker(circuitBreaker, async, executor);
+                assertTrue("Probe must execute HTTP", httpExecuted.await(5, TimeUnit.SECONDS));
+                verify(mockRequest, times(1)).execute();
+                assertTrue(
+                        "HALF_OPEN timeout must reopen breaker",
+                        reopened.await(5, TimeUnit.SECONDS));
+                assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
+                assertFalse("HTTP response must still be pending", pendingHttpResponse.isDone());
+                assertFalse("Request must still be pending", pendingCall.isDone());
+                assertCallRejected(circuitBreaker, async, executor);
+                verify(mockRequest, times(1)).execute();
+
+                assertTrue(pendingHttpResponse.complete(mockResponse));
+                TestResponse response = pendingCall.get(5, TimeUnit.SECONDS);
+                assertEquals("late success", response.getValue());
+                assertEquals(200, response.get__httpStatusCode__());
+                assertEquals(CircuitBreaker.State.OPEN, circuitBreaker.getState());
+                assertCallRejected(circuitBreaker, async, executor);
+                verify(mockRequest, times(1)).execute();
+            } finally {
+                circuitBreaker.getR4jCircuitBreaker().transitionToDisabledState();
+                pendingHttpResponse.cancel(true);
+                if (pendingCall != null) {
+                    pendingCall.cancel(true);
+                }
+                executor.shutdownNow();
+                assertTrue(
+                        "Call executor must terminate",
+                        executor.awaitTermination(5, TimeUnit.SECONDS));
+            }
+        }
+
+        private Future<TestResponse> callWithCircuitBreaker(
+                OciCircuitBreakerImpl circuitBreaker, boolean async, ExecutorService executor) {
+            ClientCall<TestRequest, TestResponse, TestResponse.Builder> call =
+                    ClientCall.builder(mockClient, new TestRequest(), responseBuilder)
+                            .circuitBreaker(circuitBreaker)
+                            .retryConfiguration(RetryConfiguration.NO_RETRY_CONFIGURATION)
+                            .logger(mockLogger, "mockLogger")
+                            .method(Method.GET)
+                            .accept(JSON_MEDIA_TYPE)
+                            .handleBody(String.class, TestResponse.Builder::value);
+            return async ? call.callAsync(null) : executor.submit(call::callSync);
+        }
+
+        private void assertCallRejected(
+                OciCircuitBreakerImpl circuitBreaker, boolean async, ExecutorService executor)
+                throws Exception {
+            Future<TestResponse> rejectedCall =
+                    callWithCircuitBreaker(circuitBreaker, async, executor);
+            try {
+                rejectedCall.get(2, TimeUnit.SECONDS);
+                fail("Expected OPEN circuit breaker to reject the call");
+            } catch (ExecutionException e) {
+                assertThat(e.getCause(), instanceOf(BmcException.class));
+                assertThat(e.getCause().getCause(), instanceOf(CallNotAllowedException.class));
+            } finally {
+                rejectedCall.cancel(true);
             }
         }
     }

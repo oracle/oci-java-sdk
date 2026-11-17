@@ -27,6 +27,8 @@ public final class UpdateEsxiHostDetails
         "displayName",
         "nextCommitment",
         "billingDonorHostId",
+        "vmwareSoftwareVersion",
+        "esxiSoftwareVersion",
         "vcfByolAllocationId",
         "isVsanByolEnabled",
         "freeformTags",
@@ -36,6 +38,8 @@ public final class UpdateEsxiHostDetails
             String displayName,
             Commitment nextCommitment,
             String billingDonorHostId,
+            String vmwareSoftwareVersion,
+            String esxiSoftwareVersion,
             String vcfByolAllocationId,
             Boolean isVsanByolEnabled,
             java.util.Map<String, String> freeformTags,
@@ -44,6 +48,8 @@ public final class UpdateEsxiHostDetails
         this.displayName = displayName;
         this.nextCommitment = nextCommitment;
         this.billingDonorHostId = billingDonorHostId;
+        this.vmwareSoftwareVersion = vmwareSoftwareVersion;
+        this.esxiSoftwareVersion = esxiSoftwareVersion;
         this.vcfByolAllocationId = vcfByolAllocationId;
         this.isVsanByolEnabled = isVsanByolEnabled;
         this.freeformTags = freeformTags;
@@ -125,6 +131,60 @@ public final class UpdateEsxiHostDetails
         public Builder billingDonorHostId(String billingDonorHostId) {
             this.billingDonorHostId = billingDonorHostId;
             this.__explicitlySet__.add("billingDonorHostId");
+            return this;
+        }
+        /**
+         * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi
+         * host. To get a list of the available versions, use {@link
+         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+         * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform VMware software
+         * version upgrade. Make sure the version provided is the actual version installed on the
+         * ESXi host.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
+        private String vmwareSoftwareVersion;
+
+        /**
+         * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi
+         * host. To get a list of the available versions, use {@link
+         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+         * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform VMware software
+         * version upgrade. Make sure the version provided is the actual version installed on the
+         * ESXi host.
+         *
+         * @param vmwareSoftwareVersion the value to set
+         * @return this builder
+         */
+        public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
+            this.vmwareSoftwareVersion = vmwareSoftwareVersion;
+            this.__explicitlySet__.add("vmwareSoftwareVersion");
+            return this;
+        }
+        /**
+         * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi
+         * host. To get a list of the available versions, use {@link
+         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+         * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform ESXi software
+         * version upgrade. Make sure the version provided is the actual version installed on the
+         * ESXi host.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
+        private String esxiSoftwareVersion;
+
+        /**
+         * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi
+         * host. To get a list of the available versions, use {@link
+         * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+         * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform ESXi software
+         * version upgrade. Make sure the version provided is the actual version installed on the
+         * ESXi host.
+         *
+         * @param esxiSoftwareVersion the value to set
+         * @return this builder
+         */
+        public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
+            this.esxiSoftwareVersion = esxiSoftwareVersion;
+            this.__explicitlySet__.add("esxiSoftwareVersion");
             return this;
         }
         /**
@@ -222,6 +282,8 @@ public final class UpdateEsxiHostDetails
                             this.displayName,
                             this.nextCommitment,
                             this.billingDonorHostId,
+                            this.vmwareSoftwareVersion,
+                            this.esxiSoftwareVersion,
                             this.vcfByolAllocationId,
                             this.isVsanByolEnabled,
                             this.freeformTags,
@@ -242,6 +304,12 @@ public final class UpdateEsxiHostDetails
             }
             if (model.wasPropertyExplicitlySet("billingDonorHostId")) {
                 this.billingDonorHostId(model.getBillingDonorHostId());
+            }
+            if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
+                this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("esxiSoftwareVersion")) {
+                this.esxiSoftwareVersion(model.getEsxiSoftwareVersion());
             }
             if (model.wasPropertyExplicitlySet("vcfByolAllocationId")) {
                 this.vcfByolAllocationId(model.getVcfByolAllocationId());
@@ -338,6 +406,56 @@ public final class UpdateEsxiHostDetails
     }
 
     /**
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi host.
+     * To get a list of the available versions, use {@link
+     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+     * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform VMware software
+     * version upgrade. Make sure the version provided is the actual version installed on the ESXi
+     * host.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
+    private final String vmwareSoftwareVersion;
+
+    /**
+     * The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi host.
+     * To get a list of the available versions, use {@link
+     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+     * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform VMware software
+     * version upgrade. Make sure the version provided is the actual version installed on the ESXi
+     * host.
+     *
+     * @return the value
+     */
+    public String getVmwareSoftwareVersion() {
+        return vmwareSoftwareVersion;
+    }
+
+    /**
+     * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi host. To
+     * get a list of the available versions, use {@link
+     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+     * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform ESXi software
+     * version upgrade. Make sure the version provided is the actual version installed on the ESXi
+     * host.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersion")
+    private final String esxiSoftwareVersion;
+
+    /**
+     * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi host. To
+     * get a list of the available versions, use {@link
+     * #listSupportedVmwareSoftwareVersions(ListSupportedVmwareSoftwareVersionsRequest)
+     * listSupportedVmwareSoftwareVersions}. **Note:** This API will not perform ESXi software
+     * version upgrade. Make sure the version provided is the actual version installed on the ESXi
+     * host.
+     *
+     * @return the value
+     */
+    public String getEsxiSoftwareVersion() {
+        return esxiSoftwareVersion;
+    }
+
+    /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Byol
      * Allocation for VCF (VMware Cloud Foundation) deployment.
      */
@@ -431,6 +549,8 @@ public final class UpdateEsxiHostDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", nextCommitment=").append(String.valueOf(this.nextCommitment));
         sb.append(", billingDonorHostId=").append(String.valueOf(this.billingDonorHostId));
+        sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
+        sb.append(", esxiSoftwareVersion=").append(String.valueOf(this.esxiSoftwareVersion));
         sb.append(", vcfByolAllocationId=").append(String.valueOf(this.vcfByolAllocationId));
         sb.append(", isVsanByolEnabled=").append(String.valueOf(this.isVsanByolEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -452,6 +572,8 @@ public final class UpdateEsxiHostDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.nextCommitment, other.nextCommitment)
                 && java.util.Objects.equals(this.billingDonorHostId, other.billingDonorHostId)
+                && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
+                && java.util.Objects.equals(this.esxiSoftwareVersion, other.esxiSoftwareVersion)
                 && java.util.Objects.equals(this.vcfByolAllocationId, other.vcfByolAllocationId)
                 && java.util.Objects.equals(this.isVsanByolEnabled, other.isVsanByolEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -472,6 +594,16 @@ public final class UpdateEsxiHostDetails
                         + (this.billingDonorHostId == null
                                 ? 43
                                 : this.billingDonorHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmwareSoftwareVersion == null
+                                ? 43
+                                : this.vmwareSoftwareVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.esxiSoftwareVersion == null
+                                ? 43
+                                : this.esxiSoftwareVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.vcfByolAllocationId == null

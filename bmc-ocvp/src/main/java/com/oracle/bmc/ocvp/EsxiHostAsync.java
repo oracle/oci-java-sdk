@@ -172,6 +172,25 @@ public interface EsxiHostAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ReplaceHostRequest, ReplaceHostResponse> handler);
 
     /**
+     * Retrieves status of the operation performed on the ESXi host. For each type of operation,
+     * only status of the latest operation is returned.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RetrieveEsxiHostOperationStatusResponse>
+            retrieveEsxiHostOperationStatus(
+                    RetrieveEsxiHostOperationStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RetrieveEsxiHostOperationStatusRequest,
+                                    RetrieveEsxiHostOperationStatusResponse>
+                            handler);
+
+    /**
      * Swap billing between two Active ESXi hosts.
      *
      * @param request The request object containing the details to send

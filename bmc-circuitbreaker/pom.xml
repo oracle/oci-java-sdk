@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.101.0</version>
+    <version>3.102.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-circuitbreaker</artifactId>
@@ -42,6 +42,11 @@
   </build>
 
   <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>io.github.resilience4j</groupId>
       <artifactId>resilience4j-circuitbreaker</artifactId>

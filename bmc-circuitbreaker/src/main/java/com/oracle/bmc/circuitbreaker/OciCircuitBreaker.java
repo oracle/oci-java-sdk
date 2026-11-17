@@ -5,6 +5,9 @@
 package com.oracle.bmc.circuitbreaker;
 
 import java.time.Duration;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -124,7 +127,31 @@ public interface OciCircuitBreaker {
 
     CallNotAllowedException createCallNotAllowedException();
 
+    /**
+     * Acquires permission for an SDK call, or throws a completed SDK rejection exception.
+     * Implementations may capture the opening event during this operation without retaining it on
+     * the calling thread afterward.
+     *
+     * @throws CallNotAllowedException if permission is denied
+     */
+    default void acquirePermissionOrThrow() {
+        if (!tryAcquirePermission()) {
+            throw createCallNotAllowedException();
+        }
+    }
+
     String circuitBreakerCallNotPermittedErrorMessage(String requestUri);
+
+    /** Returns the snapshot for the current opening, if provided by this implementation. */
+    default CircuitBreakerOpenEvent getOpenEvent() {
+        return null;
+    }
+
+    /** Formats a rejection using its captured opening snapshot when available. */
+    default String circuitBreakerCallNotPermittedErrorMessage(
+            String requestUri, CallNotAllowedException rejection) {
+        return circuitBreakerCallNotPermittedErrorMessage(requestUri);
+    }
 
     // history
 
@@ -169,14 +196,23 @@ public interface OciCircuitBreaker {
     }
 
     class ErrorHistoryItem {
+        private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+                new DateTimeFormatterBuilder().appendInstant(3).toFormatter();
+        private final Instant observedAt;
         private final Throwable throwable;
         private final Integer status;
         private final Map<String, String> messages;
 
         public ErrorHistoryItem(Throwable throwable, Integer status, Map<String, String> messages) {
+            this.observedAt = Instant.now();
             this.throwable = throwable;
             this.messages = messages;
             this.status = status;
+        }
+
+        /** Returns when the SDK observed the failure, before formatting the history. */
+        public Instant getObservedAt() {
+            return observedAt;
         }
 
         public Throwable getThrowable() {
@@ -193,6 +229,7 @@ public interface OciCircuitBreaker {
 
         public String toString() {
             StringBuilder sb = new StringBuilder();
+            sb.append("Timestamp: ").append(TIMESTAMP_FORMATTER.format(observedAt)).append("; ");
             for (Map.Entry<String, String> e : messages.entrySet()) {
                 sb.append(e.getKey()).append(": ").append(e.getValue()).append("; ");
             }

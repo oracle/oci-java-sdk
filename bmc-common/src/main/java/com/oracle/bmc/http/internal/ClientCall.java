@@ -1133,13 +1133,13 @@ public final class ClientCall<
                 }
                 return upstream.thenCompose(this::transformResponse);
             } else {
-                if (!circuitBreaker.tryAcquirePermission()) {
-                    CallNotAllowedException callNotAllowed =
-                            circuitBreaker.createCallNotAllowedException();
+                try {
+                    circuitBreaker.acquirePermissionOrThrow();
+                } catch (CallNotAllowedException callNotAllowed) {
                     return failedFuture(
                             BmcException.createClientSide(
                                     circuitBreaker.circuitBreakerCallNotPermittedErrorMessage(
-                                            httpRequest.uri().toString()),
+                                            httpRequest.uri().toString(), callNotAllowed),
                                     callNotAllowed,
                                     null,
                                     buildServiceDetails()));

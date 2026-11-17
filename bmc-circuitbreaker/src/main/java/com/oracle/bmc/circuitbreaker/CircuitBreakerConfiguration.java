@@ -19,10 +19,24 @@ import java.util.Set;
  */
 public class CircuitBreakerConfiguration {
 
+    /**
+     * Set this JVM system property to {@code true} to include the opening diagnostic summary in
+     * circuit-breaker rejection messages. Defaults to false; snapshot collection and recent failure
+     * history are unaffected.
+     */
+    public static final String DIAGNOSTIC_SUMMARY_ENABLED_PROPERTY =
+            "oci.javasdk.circuitbreaker.diagnostic.summary.enabled";
+
+    /** Returns whether opening diagnostic summaries should be included in rejection messages. */
+    public static boolean isDiagnosticSummaryEnabled() {
+        return Boolean.getBoolean(DIAGNOSTIC_SUMMARY_ENABLED_PROPERTY);
+    }
+
     public static final int DEFAULT_FAILURE_RATE_THRESHOLD = 80; // Percentage
     public static final int DEFAULT_SLOW_CALL_RATE_THRESHOLD = 100; // Percentage
     public static final int DEFAULT_WAIT_DURATION_IN_OPEN_STATE = 30; // Seconds
-    public static final int DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE = 1;
+    public static final int DEFAULT_MAX_WAIT_DURATION_IN_HALF_OPEN_STATE = 30; // Seconds
+    public static final int DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE = 10;
     public static final int DEFAULT_MINIMUM_NUMBER_OF_CALLS = 10;
     public static final int DEFAULT_SLIDING_WINDOW_SIZE = 120;
     public static final int DEFAULT_SLOW_CALL_DURATION_THRESHOLD = 60; // Minutes
@@ -35,11 +49,16 @@ public class CircuitBreakerConfiguration {
     public static final int BAD_GATEWAY = 502;
     public static final int GATEWAY_TIMEOUT = 504;
 
+    private static final CircuitBreakerEventListener CIRCUIT_BREAKER_EVENT_LISTENER =
+            new DefaultCircuitBreakerEventListener();
+
     private final int failureRateThreshold;
 
     private final int slowCallRateThreshold;
 
     private final Duration waitDurationInOpenState;
+
+    private final Duration maxWaitDurationInHalfOpenState;
 
     private final int permittedNumberOfCallsInHalfOpenState;
 
@@ -63,6 +82,8 @@ public class CircuitBreakerConfiguration {
     private final List<Class<? extends RuntimeException>> recordExceptions;
 
     private final boolean recordProcessingFailures;
+
+    private final CircuitBreakerEventListener circuitBreakerEventListener;
 
     protected CircuitBreakerConfiguration(
             int failureRateThreshold,
@@ -133,6 +154,99 @@ public class CircuitBreakerConfiguration {
             List<Class<? extends RuntimeException>> recordExceptions,
             boolean recordProcessingFailures,
             int numberOfRecordedHistoryResponses) {
+        this(
+                failureRateThreshold,
+                slowCallRateThreshold,
+                waitDurationInOpenState,
+                permittedNumberOfCallsInHalfOpenState,
+                minimumNumberOfCalls,
+                slidingWindowSize,
+                slowCallDurationThreshold,
+                writableStackTraceEnabled,
+                recordHttpStatuses,
+                recordExceptions,
+                recordProcessingFailures,
+                numberOfRecordedHistoryResponses,
+                Duration.ofSeconds(DEFAULT_MAX_WAIT_DURATION_IN_HALF_OPEN_STATE));
+    }
+
+    @java.beans.ConstructorProperties({
+        "failureRateThreshold",
+        "slowCallRateThreshold",
+        "waitDurationInOpenState",
+        "permittedNumberOfCallsInHalfOpenState",
+        "minimumNumberOfCalls",
+        "slidingWindowSize",
+        "slowCallDurationThreshold",
+        "writableStackTraceEnabled",
+        "recordHttpStatuses",
+        "recordExceptions",
+        "recordProcessingFailures",
+        "numberOfRecordedHistoryResponses",
+        "maxWaitDurationInHalfOpenState"
+    })
+    protected CircuitBreakerConfiguration(
+            int failureRateThreshold,
+            int slowCallRateThreshold,
+            Duration waitDurationInOpenState,
+            int permittedNumberOfCallsInHalfOpenState,
+            int minimumNumberOfCalls,
+            int slidingWindowSize,
+            Duration slowCallDurationThreshold,
+            boolean writableStackTraceEnabled,
+            Set<Integer> recordHttpStatuses,
+            List<Class<? extends RuntimeException>> recordExceptions,
+            boolean recordProcessingFailures,
+            int numberOfRecordedHistoryResponses,
+            Duration maxWaitDurationInHalfOpenState) {
+        this(
+                failureRateThreshold,
+                slowCallRateThreshold,
+                waitDurationInOpenState,
+                permittedNumberOfCallsInHalfOpenState,
+                minimumNumberOfCalls,
+                slidingWindowSize,
+                slowCallDurationThreshold,
+                writableStackTraceEnabled,
+                recordHttpStatuses,
+                recordExceptions,
+                recordProcessingFailures,
+                numberOfRecordedHistoryResponses,
+                maxWaitDurationInHalfOpenState,
+                CIRCUIT_BREAKER_EVENT_LISTENER);
+    }
+
+    @java.beans.ConstructorProperties({
+        "failureRateThreshold",
+        "slowCallRateThreshold",
+        "waitDurationInOpenState",
+        "permittedNumberOfCallsInHalfOpenState",
+        "minimumNumberOfCalls",
+        "slidingWindowSize",
+        "slowCallDurationThreshold",
+        "writableStackTraceEnabled",
+        "recordHttpStatuses",
+        "recordExceptions",
+        "recordProcessingFailures",
+        "numberOfRecordedHistoryResponses",
+        "maxWaitDurationInHalfOpenState",
+        "circuitBreakerEventListener"
+    })
+    protected CircuitBreakerConfiguration(
+            int failureRateThreshold,
+            int slowCallRateThreshold,
+            Duration waitDurationInOpenState,
+            int permittedNumberOfCallsInHalfOpenState,
+            int minimumNumberOfCalls,
+            int slidingWindowSize,
+            Duration slowCallDurationThreshold,
+            boolean writableStackTraceEnabled,
+            Set<Integer> recordHttpStatuses,
+            List<Class<? extends RuntimeException>> recordExceptions,
+            boolean recordProcessingFailures,
+            int numberOfRecordedHistoryResponses,
+            Duration maxWaitDurationInHalfOpenState,
+            CircuitBreakerEventListener circuitBreakerEventListener) {
         this.failureRateThreshold = failureRateThreshold;
         this.slowCallRateThreshold = slowCallRateThreshold;
         this.waitDurationInOpenState = waitDurationInOpenState;
@@ -145,12 +259,16 @@ public class CircuitBreakerConfiguration {
         this.recordExceptions = recordExceptions;
         this.recordProcessingFailures = recordProcessingFailures;
         this.numberOfRecordedHistoryResponses = numberOfRecordedHistoryResponses;
+        this.maxWaitDurationInHalfOpenState = maxWaitDurationInHalfOpenState;
+        this.circuitBreakerEventListener = circuitBreakerEventListener;
     }
 
     public CircuitBreakerConfiguration() {
         this.failureRateThreshold = DEFAULT_FAILURE_RATE_THRESHOLD;
         this.slowCallRateThreshold = DEFAULT_SLOW_CALL_RATE_THRESHOLD;
         this.waitDurationInOpenState = Duration.ofSeconds(DEFAULT_WAIT_DURATION_IN_OPEN_STATE);
+        this.maxWaitDurationInHalfOpenState =
+                Duration.ofSeconds(DEFAULT_MAX_WAIT_DURATION_IN_HALF_OPEN_STATE);
         this.permittedNumberOfCallsInHalfOpenState = DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE;
         this.minimumNumberOfCalls = DEFAULT_MINIMUM_NUMBER_OF_CALLS;
         this.slidingWindowSize = DEFAULT_SLIDING_WINDOW_SIZE;
@@ -160,6 +278,7 @@ public class CircuitBreakerConfiguration {
         this.recordExceptions = defaultRecordExceptions();
         this.recordProcessingFailures = true;
         this.numberOfRecordedHistoryResponses = NUMBER_OF_RECORDED_HISTORY_RESPONSES;
+        this.circuitBreakerEventListener = CIRCUIT_BREAKER_EVENT_LISTENER;
     }
 
     private static Set<Integer> defaultRecordHttpStatuses() {
@@ -191,6 +310,14 @@ public class CircuitBreakerConfiguration {
 
     public Duration getWaitDurationInOpenState() {
         return this.waitDurationInOpenState;
+    }
+
+    /**
+     * Returns the HALF_OPEN timeout (default: 30 seconds). Expiry reopens the breaker without
+     * cancelling in-flight HTTP requests. Validated when the circuit breaker is created.
+     */
+    public Duration getMaxWaitDurationInHalfOpenState() {
+        return this.maxWaitDurationInHalfOpenState;
     }
 
     public int getPermittedNumberOfCallsInHalfOpenState() {
@@ -229,6 +356,10 @@ public class CircuitBreakerConfiguration {
         return recordProcessingFailures;
     }
 
+    public CircuitBreakerEventListener getCircuitBreakerEventListener() {
+        return this.circuitBreakerEventListener;
+    }
+
     public static class CircuitBreakerConfigurationBuilder {
         private int failureRateThreshold$value;
         private boolean failureRateThreshold$set;
@@ -236,6 +367,8 @@ public class CircuitBreakerConfiguration {
         private boolean slowCallRateThreshold$set;
         private Duration waitDurationInOpenState$value;
         private boolean waitDurationInOpenState$set;
+        private Duration maxWaitDurationInHalfOpenState$value;
+        private boolean maxWaitDurationInHalfOpenState$set;
         private int permittedNumberOfCallsInHalfOpenState$value;
         private boolean permittedNumberOfCallsInHalfOpenState$set;
         private int minimumNumberOfCalls$value;
@@ -253,6 +386,9 @@ public class CircuitBreakerConfiguration {
         private boolean recordProcessingFailures = true;
         private int numberOfRecordedHistoryResponses$value;
         private boolean numberOfRecordedHistoryResponses$set;
+
+        private CircuitBreakerEventListener circuitBreakerEventListener$value;
+        private boolean circuitBreakerEventListener$set;
 
         CircuitBreakerConfigurationBuilder() {}
 
@@ -280,6 +416,18 @@ public class CircuitBreakerConfiguration {
             this.permittedNumberOfCallsInHalfOpenState$value =
                     permittedNumberOfCallsInHalfOpenState;
             this.permittedNumberOfCallsInHalfOpenState$set = true;
+            return this;
+        }
+
+        /**
+         * Sets the HALF_OPEN timeout (default: 30 seconds). Must be non-null and at least 1
+         * millisecond; validated when the circuit breaker is created. Expiry reopens the breaker
+         * without cancelling in-flight HTTP requests.
+         */
+        public CircuitBreakerConfigurationBuilder maxWaitDurationInHalfOpenState(
+                Duration maxWaitDurationInHalfOpenState) {
+            this.maxWaitDurationInHalfOpenState$value = maxWaitDurationInHalfOpenState;
+            this.maxWaitDurationInHalfOpenState$set = true;
             return this;
         }
 
@@ -336,6 +484,13 @@ public class CircuitBreakerConfiguration {
             return this;
         }
 
+        public CircuitBreakerConfigurationBuilder circuitBreakerEventListener(
+                CircuitBreakerEventListener circuitBreakerEventListener) {
+            this.circuitBreakerEventListener$value = circuitBreakerEventListener;
+            this.circuitBreakerEventListener$set = true;
+            return this;
+        }
+
         public CircuitBreakerConfiguration build() {
             int failureRateThreshold$value = this.failureRateThreshold$value;
             if (!this.failureRateThreshold$set) {
@@ -356,6 +511,12 @@ public class CircuitBreakerConfiguration {
             if (!this.permittedNumberOfCallsInHalfOpenState$set) {
                 permittedNumberOfCallsInHalfOpenState$value =
                         DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE;
+            }
+            Duration maxWaitDurationInHalfOpenState$value =
+                    this.maxWaitDurationInHalfOpenState$value;
+            if (!this.maxWaitDurationInHalfOpenState$set) {
+                maxWaitDurationInHalfOpenState$value =
+                        Duration.ofSeconds(DEFAULT_MAX_WAIT_DURATION_IN_HALF_OPEN_STATE);
             }
             int minimumNumberOfCalls$value = this.minimumNumberOfCalls$value;
             if (!this.minimumNumberOfCalls$set) {
@@ -383,8 +544,15 @@ public class CircuitBreakerConfiguration {
             if (!this.recordExceptions$set) {
                 recordExceptions$value = defaultRecordExceptions();
             }
+            int numberOfRecordedHistoryResponses$value =
+                    this.numberOfRecordedHistoryResponses$value;
             if (!this.numberOfRecordedHistoryResponses$set) {
                 numberOfRecordedHistoryResponses$value = NUMBER_OF_RECORDED_HISTORY_RESPONSES;
+            }
+            CircuitBreakerEventListener circuitBreakerEventListener$value =
+                    this.circuitBreakerEventListener$value;
+            if (!this.circuitBreakerEventListener$set) {
+                circuitBreakerEventListener$value = CIRCUIT_BREAKER_EVENT_LISTENER;
             }
             return new CircuitBreakerConfiguration(
                     failureRateThreshold$value,
@@ -398,7 +566,9 @@ public class CircuitBreakerConfiguration {
                     recordHttpStatuses$value,
                     recordExceptions$value,
                     recordProcessingFailures,
-                    numberOfRecordedHistoryResponses$value);
+                    numberOfRecordedHistoryResponses$value,
+                    maxWaitDurationInHalfOpenState$value,
+                    circuitBreakerEventListener$value);
         }
 
         public String toString() {
@@ -408,6 +578,8 @@ public class CircuitBreakerConfiguration {
                     + this.slowCallRateThreshold$value
                     + ", waitDurationInOpenState$value="
                     + this.waitDurationInOpenState$value
+                    + ", maxWaitDurationInHalfOpenState$value="
+                    + this.maxWaitDurationInHalfOpenState$value
                     + ", permittedNumberOfCallsInHalfOpenState$value="
                     + this.permittedNumberOfCallsInHalfOpenState$value
                     + ", minimumNumberOfCalls$value="

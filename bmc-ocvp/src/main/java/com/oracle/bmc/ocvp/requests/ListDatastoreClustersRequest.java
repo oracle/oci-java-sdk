@@ -17,13 +17,13 @@ public class ListDatastoreClustersRequest
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * compartment as optional parameter.
      */
     private String compartmentId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * compartment as optional parameter.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -201,13 +201,13 @@ public class ListDatastoreClustersRequest
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * compartment as optional parameter.
          */
         private String compartmentId = null;
 
         /**
          * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * compartment as optional parameter.
          *
          * @param compartmentId the value to set
          * @return this builder instance

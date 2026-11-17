@@ -53,7 +53,8 @@ public final class CreateExadataInfrastructureDetails
         "databaseServerType",
         "storageServerType",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "sslInspectionConfiguration"
     })
     public CreateExadataInfrastructureDetails(
             String compartmentId,
@@ -81,7 +82,8 @@ public final class CreateExadataInfrastructureDetails
             String databaseServerType,
             String storageServerType,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            SslInspectionConfiguration sslInspectionConfiguration) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -109,6 +111,7 @@ public final class CreateExadataInfrastructureDetails
         this.storageServerType = storageServerType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.sslInspectionConfiguration = sslInspectionConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -537,6 +540,16 @@ public final class CreateExadataInfrastructureDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sslInspectionConfiguration")
+        private SslInspectionConfiguration sslInspectionConfiguration;
+
+        public Builder sslInspectionConfiguration(
+                SslInspectionConfiguration sslInspectionConfiguration) {
+            this.sslInspectionConfiguration = sslInspectionConfiguration;
+            this.__explicitlySet__.add("sslInspectionConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -568,7 +581,8 @@ public final class CreateExadataInfrastructureDetails
                             this.databaseServerType,
                             this.storageServerType,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.sslInspectionConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -654,6 +668,9 @@ public final class CreateExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("sslInspectionConfiguration")) {
+                this.sslInspectionConfiguration(model.getSslInspectionConfiguration());
             }
             return this;
         }
@@ -1034,6 +1051,13 @@ public final class CreateExadataInfrastructureDetails
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sslInspectionConfiguration")
+    private final SslInspectionConfiguration sslInspectionConfiguration;
+
+    public SslInspectionConfiguration getSslInspectionConfiguration() {
+        return sslInspectionConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1089,6 +1113,8 @@ public final class CreateExadataInfrastructureDetails
         sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", sslInspectionConfiguration=")
+                .append(String.valueOf(this.sslInspectionConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -1135,6 +1161,8 @@ public final class CreateExadataInfrastructureDetails
                 && java.util.Objects.equals(this.storageServerType, other.storageServerType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.sslInspectionConfiguration, other.sslInspectionConfiguration)
                 && super.equals(other);
     }
 
@@ -1210,6 +1238,11 @@ public final class CreateExadataInfrastructureDetails
                         + (this.storageServerType == null ? 43 : this.storageServerType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslInspectionConfiguration == null
+                                ? 43
+                                : this.sslInspectionConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

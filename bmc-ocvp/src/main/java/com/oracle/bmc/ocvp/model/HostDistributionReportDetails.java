@@ -32,10 +32,16 @@ public final class HostDistributionReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /** Current Fault Domain distribution state. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomainHostDistributionState")
         private FaultDomainHostDistributionState faultDomainHostDistributionState;
 
+        /**
+         * Current Fault Domain distribution state.
+         *
+         * @param faultDomainHostDistributionState the value to set
+         * @return this builder
+         */
         public Builder faultDomainHostDistributionState(
                 FaultDomainHostDistributionState faultDomainHostDistributionState) {
             this.faultDomainHostDistributionState = faultDomainHostDistributionState;
@@ -73,57 +79,15 @@ public final class HostDistributionReportDetails
         return new Builder().copy(this);
     }
 
-    /** */
-    public enum FaultDomainHostDistributionState implements com.oracle.bmc.http.internal.BmcEnum {
-        EvenlyDistributed("EVENLY_DISTRIBUTED"),
-        UnevenlyDistributed("UNEVENLY_DISTRIBUTED"),
-        Unsupported("UNSUPPORTED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(FaultDomainHostDistributionState.class);
-
-        private final String value;
-        private static java.util.Map<String, FaultDomainHostDistributionState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (FaultDomainHostDistributionState v : FaultDomainHostDistributionState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        FaultDomainHostDistributionState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static FaultDomainHostDistributionState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'FaultDomainHostDistributionState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-
+    /** Current Fault Domain distribution state. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomainHostDistributionState")
     private final FaultDomainHostDistributionState faultDomainHostDistributionState;
 
+    /**
+     * Current Fault Domain distribution state.
+     *
+     * @return the value
+     */
     public FaultDomainHostDistributionState getFaultDomainHostDistributionState() {
         return faultDomainHostDistributionState;
     }

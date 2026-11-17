@@ -151,7 +151,8 @@ public interface DatastoreAsync extends AutoCloseable {
 
     /**
      * List the Datastores in the specified compartment. The list can be filtered by compartment,
-     * datastore id, display name and lifecycle state.
+     * datastore id, display name and lifecycle state. Either compartmentId or datastoreId must be
+     * provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
+## Unreleased
+### Added
+- Support for `CircuitBreakerEventListener` to listen to and handle events emitted by a circuit breaker configured through `CircuitBreakerConfiguration`
+
+### Changed
+- Updated the default `permittedNumberOfCallsInHalfOpenState` to `10` in `CircuitBreakerConfiguration`
+
+## 3.102.0 - 2026-11-17
+### Added 
+- Support for customer-reserved capacity during rolling upgrades in the VMware Solution service 
+- Support for minor updates using VMware Lifecycle Manager in the VMware Solution service 
+- Support for retrieving rolling upgrade status in the VMware Solution service 
+- Support for estimated concurrent sessions for Graph and Oracle Machine Learning built-in tools in Autonomous Database Serverless in the Database service 
+- Support for Agent-to-Agent (A2A) and Model Context Protocol (MCP) servers as built-in tools for Autonomous Database Serverless in the Database service 
+- Support for configuring SSL inspection when creating Exadata Cloud@Customer infrastructure in the Database service 
+- Support for scheduled activity enhancements for Oracle Configure, Price, Quote (CPQ) migration in the Fusion Applications service 
+- Support for dynamic weighted load balancing in the Load Balancer service 
+- Support for policy-based object tiering for Lustre file systems in the Lustre File Storage service  
+
+### Breaking Changes 
+- The return type of method `getFaultDomainHostDistributionState()` has changed to `com.oracle.bmc.ocvp.model.FaultDomainHostDistributionState` in the model `HostDistributionReportDetails` in the Oracle Cloud VMware Solution service 
+- The nested enum `HostDistributionReportDetails.FaultDomainHostDistributionState` has been removed from the Oracle Cloud VMware Solution service 
+- Deprecated model constructors have changed in the Database service to include A2A and MCP URLs, estimated concurrent sessions and SSL inspection configuration 
+- Deprecated model constructors have changed in the Load Balancer service to include dynamic backend weight settings and reserved IP addresses 
+- Deprecated model constructors have changed in the Lustre File service to include tiering configuration 
+- Deprecated model constructors have changed in the Oracle Cloud VMware Solution service to include capacity reservation IDs and VMware and ESXi software versions  
+
+### Fixed 
+- Fixed encoding of square brackets, backslash, caret, and pipe in SDK path parameters, including Object Storage pre-authenticated request IDs
+
 ## 3.101.0 - 2026-11-10
 ### Added 
 - Support for Service Managed OKE (SM-OKE) enhancements in the Data Science service 

@@ -274,6 +274,44 @@ public class ClusterClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public RetrieveClusterOperationStatusResponse retrieveClusterOperationStatus(
+            RetrieveClusterOperationStatusRequest request) {
+
+        Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
+
+        Validate.notBlank(request.getOperationName(), "operationName must not be blank");
+
+        return clientCall(request, RetrieveClusterOperationStatusResponse::builder)
+                .logger(LOG, "retrieveClusterOperationStatus")
+                .serviceDetails(
+                        "Cluster",
+                        "RetrieveClusterOperationStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Cluster/RetrieveClusterOperationStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetrieveClusterOperationStatusRequest::builder)
+                .basePath("/20230701")
+                .appendPathParam("clusters")
+                .appendPathParam(request.getClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("retrieveOperationStatus")
+                .appendPathParam(request.getOperationName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.ocvp.model.ResourceOperation.class,
+                        RetrieveClusterOperationStatusResponse.Builder::resourceOperation)
+                .handleResponseHeaderString(
+                        "etag", RetrieveClusterOperationStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RetrieveClusterOperationStatusResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateClusterResponse updateCluster(UpdateClusterRequest request) {
 
         Validate.notBlank(request.getClusterId(), "clusterId must not be blank");

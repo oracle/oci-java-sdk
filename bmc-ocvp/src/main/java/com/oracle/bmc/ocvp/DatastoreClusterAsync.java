@@ -231,7 +231,8 @@ public interface DatastoreClusterAsync extends AutoCloseable {
 
     /**
      * List the Datastore Clusters in the specified compartment. The list can be filtered by
-     * compartment, Datastore Cluster, Display name and Lifecycle state
+     * compartment, Datastore Cluster, Display name and Lifecycle state. Either compartmentId or
+     * datastoreClusterId must be provided.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
