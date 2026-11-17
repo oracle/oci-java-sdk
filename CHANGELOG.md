@@ -4,13 +4,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 
-## Unreleased
-### Added
-- Support for `CircuitBreakerEventListener` to listen to and handle events emitted by a circuit breaker configured through `CircuitBreakerConfiguration`
-
-### Changed
-- Updated the default `permittedNumberOfCallsInHalfOpenState` to `10` in `CircuitBreakerConfiguration`
-
 ## 3.102.0 - 2026-11-17
 ### Added 
 - Support for customer-reserved capacity during rolling upgrades in the VMware Solution service 
@@ -22,6 +15,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for scheduled activity enhancements for Oracle Configure, Price, Quote (CPQ) migration in the Fusion Applications service 
 - Support for dynamic weighted load balancing in the Load Balancer service 
 - Support for policy-based object tiering for Lustre file systems in the Lustre File Storage service  
+
+### Changed
+- Support for `CircuitBreakerEventListener` to listen to and handle events emitted by a circuit breaker configured through `CircuitBreakerConfiguration`
+- Updated the default `permittedNumberOfCallsInHalfOpenState` to `10` in `CircuitBreakerConfiguration`
 
 ### Breaking Changes 
 - The return type of method `getFaultDomainHostDistributionState()` has changed to `com.oracle.bmc.ocvp.model.FaultDomainHostDistributionState` in the model `HostDistributionReportDetails` in the Oracle Cloud VMware Solution service 
