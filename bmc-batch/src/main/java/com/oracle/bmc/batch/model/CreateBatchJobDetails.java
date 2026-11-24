@@ -155,16 +155,12 @@ public final class CreateBatchJobDetails
             this.__explicitlySet__.add("environmentVariables");
             return this;
         }
-        /**
-         * A list of tasks to be executed within this job. Maximum number of tasks a job can have in
-         * total, across all nested levels, is 1000.
-         */
+        /** A list of tasks to be executed within this job. */
         @com.fasterxml.jackson.annotation.JsonProperty("tasks")
         private java.util.List<CreateBatchTaskDetails> tasks;
 
         /**
-         * A list of tasks to be executed within this job. Maximum number of tasks a job can have in
-         * total, across all nested levels, is 1000.
+         * A list of tasks to be executed within this job.
          *
          * @param tasks the value to set
          * @return this builder
@@ -372,16 +368,12 @@ public final class CreateBatchJobDetails
         return environmentVariables;
     }
 
-    /**
-     * A list of tasks to be executed within this job. Maximum number of tasks a job can have in
-     * total, across all nested levels, is 1000.
-     */
+    /** A list of tasks to be executed within this job. */
     @com.fasterxml.jackson.annotation.JsonProperty("tasks")
     private final java.util.List<CreateBatchTaskDetails> tasks;
 
     /**
-     * A list of tasks to be executed within this job. Maximum number of tasks a job can have in
-     * total, across all nested levels, is 1000.
+     * A list of tasks to be executed within this job.
      *
      * @return the value
      */

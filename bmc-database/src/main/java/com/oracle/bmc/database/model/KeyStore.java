@@ -32,6 +32,8 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
         "associatedDatabases",
         "associatedLongTermBackups",
         "associatedLongTermBackupCount",
+        "associatedAutonomousVmClusters",
+        "associatedCloudAutonomousVmClusters",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -47,6 +49,10 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             java.util.List<KeyStoreAssociatedDatabaseDetails> associatedDatabases,
             java.util.List<AssociatedLongTermBackup> associatedLongTermBackups,
             Integer associatedLongTermBackupCount,
+            java.util.List<KeyStoreAssociatedAutonomousVmClusterDetails>
+                    associatedAutonomousVmClusters,
+            java.util.List<KeyStoreAssociatedCloudAutonomousVmClusterDetails>
+                    associatedCloudAutonomousVmClusters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -61,6 +67,8 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
         this.associatedDatabases = associatedDatabases;
         this.associatedLongTermBackups = associatedLongTermBackups;
         this.associatedLongTermBackupCount = associatedLongTermBackupCount;
+        this.associatedAutonomousVmClusters = associatedAutonomousVmClusters;
+        this.associatedCloudAutonomousVmClusters = associatedCloudAutonomousVmClusters;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -230,6 +238,42 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("associatedLongTermBackupCount");
             return this;
         }
+        /** List of Autonomous VM Clusters associated with the key store. */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedAutonomousVmClusters")
+        private java.util.List<KeyStoreAssociatedAutonomousVmClusterDetails>
+                associatedAutonomousVmClusters;
+
+        /**
+         * List of Autonomous VM Clusters associated with the key store.
+         *
+         * @param associatedAutonomousVmClusters the value to set
+         * @return this builder
+         */
+        public Builder associatedAutonomousVmClusters(
+                java.util.List<KeyStoreAssociatedAutonomousVmClusterDetails>
+                        associatedAutonomousVmClusters) {
+            this.associatedAutonomousVmClusters = associatedAutonomousVmClusters;
+            this.__explicitlySet__.add("associatedAutonomousVmClusters");
+            return this;
+        }
+        /** List of Cloud Autonomous VM Clusters associated with the key store. */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedCloudAutonomousVmClusters")
+        private java.util.List<KeyStoreAssociatedCloudAutonomousVmClusterDetails>
+                associatedCloudAutonomousVmClusters;
+
+        /**
+         * List of Cloud Autonomous VM Clusters associated with the key store.
+         *
+         * @param associatedCloudAutonomousVmClusters the value to set
+         * @return this builder
+         */
+        public Builder associatedCloudAutonomousVmClusters(
+                java.util.List<KeyStoreAssociatedCloudAutonomousVmClusterDetails>
+                        associatedCloudAutonomousVmClusters) {
+            this.associatedCloudAutonomousVmClusters = associatedCloudAutonomousVmClusters;
+            this.__explicitlySet__.add("associatedCloudAutonomousVmClusters");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -315,6 +359,8 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
                             this.associatedDatabases,
                             this.associatedLongTermBackups,
                             this.associatedLongTermBackupCount,
+                            this.associatedAutonomousVmClusters,
+                            this.associatedCloudAutonomousVmClusters,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -355,6 +401,13 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("associatedLongTermBackupCount")) {
                 this.associatedLongTermBackupCount(model.getAssociatedLongTermBackupCount());
+            }
+            if (model.wasPropertyExplicitlySet("associatedAutonomousVmClusters")) {
+                this.associatedAutonomousVmClusters(model.getAssociatedAutonomousVmClusters());
+            }
+            if (model.wasPropertyExplicitlySet("associatedCloudAutonomousVmClusters")) {
+                this.associatedCloudAutonomousVmClusters(
+                        model.getAssociatedCloudAutonomousVmClusters());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -565,6 +618,36 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
         return associatedLongTermBackupCount;
     }
 
+    /** List of Autonomous VM Clusters associated with the key store. */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedAutonomousVmClusters")
+    private final java.util.List<KeyStoreAssociatedAutonomousVmClusterDetails>
+            associatedAutonomousVmClusters;
+
+    /**
+     * List of Autonomous VM Clusters associated with the key store.
+     *
+     * @return the value
+     */
+    public java.util.List<KeyStoreAssociatedAutonomousVmClusterDetails>
+            getAssociatedAutonomousVmClusters() {
+        return associatedAutonomousVmClusters;
+    }
+
+    /** List of Cloud Autonomous VM Clusters associated with the key store. */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedCloudAutonomousVmClusters")
+    private final java.util.List<KeyStoreAssociatedCloudAutonomousVmClusterDetails>
+            associatedCloudAutonomousVmClusters;
+
+    /**
+     * List of Cloud Autonomous VM Clusters associated with the key store.
+     *
+     * @return the value
+     */
+    public java.util.List<KeyStoreAssociatedCloudAutonomousVmClusterDetails>
+            getAssociatedCloudAutonomousVmClusters() {
+        return associatedCloudAutonomousVmClusters;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -653,6 +736,10 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.associatedLongTermBackups));
         sb.append(", associatedLongTermBackupCount=")
                 .append(String.valueOf(this.associatedLongTermBackupCount));
+        sb.append(", associatedAutonomousVmClusters=")
+                .append(String.valueOf(this.associatedAutonomousVmClusters));
+        sb.append(", associatedCloudAutonomousVmClusters=")
+                .append(String.valueOf(this.associatedCloudAutonomousVmClusters));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -682,6 +769,11 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
                         this.associatedLongTermBackups, other.associatedLongTermBackups)
                 && java.util.Objects.equals(
                         this.associatedLongTermBackupCount, other.associatedLongTermBackupCount)
+                && java.util.Objects.equals(
+                        this.associatedAutonomousVmClusters, other.associatedAutonomousVmClusters)
+                && java.util.Objects.equals(
+                        this.associatedCloudAutonomousVmClusters,
+                        other.associatedCloudAutonomousVmClusters)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -720,6 +812,16 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.associatedLongTermBackupCount == null
                                 ? 43
                                 : this.associatedLongTermBackupCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedAutonomousVmClusters == null
+                                ? 43
+                                : this.associatedAutonomousVmClusters.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedCloudAutonomousVmClusters == null
+                                ? 43
+                                : this.associatedCloudAutonomousVmClusters.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

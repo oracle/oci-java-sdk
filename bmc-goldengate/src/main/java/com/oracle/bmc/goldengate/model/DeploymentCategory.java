@@ -15,6 +15,7 @@ public enum DeploymentCategory implements com.oracle.bmc.http.internal.BmcEnum {
     StreamAnalytics("STREAM_ANALYTICS"),
     DataTransforms("DATA_TRANSFORMS"),
     DataVerification("DATA_VERIFICATION"),
+    DataCatalog("DATA_CATALOG"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

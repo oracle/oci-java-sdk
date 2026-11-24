@@ -151,6 +151,47 @@ public class ListAutonomousVmClustersRequest
             getLifecycleState() {
         return lifecycleState;
     }
+    /** A filter to return only resources that match the given kms exactly. */
+    private KmsType kmsType;
+
+    /** A filter to return only resources that match the given kms exactly. */
+    public enum KmsType implements com.oracle.bmc.http.internal.BmcEnum {
+        OracleKeyVault("ORACLE_KEY_VAULT"),
+        Thales("THALES"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, KmsType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (KmsType v : KmsType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        KmsType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static KmsType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid KmsType: " + key);
+        }
+    };
+
+    /** A filter to return only resources that match the given kms exactly. */
+    public KmsType getKmsType() {
+        return kmsType;
+    }
     /**
      * A filter to return only resources that match the entire display name given. The match is not
      * case sensitive.
@@ -289,6 +330,20 @@ public class ListAutonomousVmClustersRequest
             return this;
         }
 
+        /** A filter to return only resources that match the given kms exactly. */
+        private KmsType kmsType = null;
+
+        /**
+         * A filter to return only resources that match the given kms exactly.
+         *
+         * @param kmsType the value to set
+         * @return this builder instance
+         */
+        public Builder kmsType(KmsType kmsType) {
+            this.kmsType = kmsType;
+            return this;
+        }
+
         /**
          * A filter to return only resources that match the entire display name given. The match is
          * not case sensitive.
@@ -358,6 +413,7 @@ public class ListAutonomousVmClustersRequest
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            kmsType(o.getKmsType());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -401,11 +457,12 @@ public class ListAutonomousVmClustersRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
+            request.kmsType = kmsType;
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
             return request;
             // new ListAutonomousVmClustersRequest(compartmentId, exadataInfrastructureId, limit,
-            // page, sortBy, sortOrder, lifecycleState, displayName, opcRequestId);
+            // page, sortBy, sortOrder, lifecycleState, kmsType, displayName, opcRequestId);
         }
     }
 
@@ -423,6 +480,7 @@ public class ListAutonomousVmClustersRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
+                .kmsType(kmsType)
                 .displayName(displayName)
                 .opcRequestId(opcRequestId);
     }
@@ -448,6 +506,7 @@ public class ListAutonomousVmClustersRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",kmsType=").append(String.valueOf(this.kmsType));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -473,6 +532,7 @@ public class ListAutonomousVmClustersRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.kmsType, other.kmsType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -496,6 +556,7 @@ public class ListAutonomousVmClustersRequest
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.kmsType == null ? 43 : this.kmsType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

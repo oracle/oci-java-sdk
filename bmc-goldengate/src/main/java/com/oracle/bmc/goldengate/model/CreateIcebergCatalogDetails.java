@@ -23,6 +23,9 @@ package com.oracle.bmc.goldengate.model;
         defaultImpl = CreateIcebergCatalogDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOracleAiDataCatalogIcebergCatalogDetails.class,
+            name = "OADC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreatePolarisIcebergCatalogDetails.class,
             name = "POLARIS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

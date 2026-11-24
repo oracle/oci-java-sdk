@@ -19,6 +19,7 @@ public enum DeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
     DataTransforms("DATA_TRANSFORMS"),
     VeridataServer("VERIDATA_SERVER"),
     VeridataAgent("VERIDATA_AGENT"),
+    AiDataCatalog("AI_DATA_CATALOG"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

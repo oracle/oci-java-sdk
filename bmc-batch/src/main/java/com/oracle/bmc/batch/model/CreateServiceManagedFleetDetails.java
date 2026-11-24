@@ -27,6 +27,15 @@ package com.oracle.bmc.batch.model;
 public final class CreateServiceManagedFleetDetails extends CreateFleetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("reservation")
+        private CreateReservationDetails reservation;
+
+        public Builder reservation(CreateReservationDetails reservation) {
+            this.reservation = reservation;
+            this.__explicitlySet__.add("reservation");
+            return this;
+        }
         /** Name of the service managed fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -73,7 +82,7 @@ public final class CreateServiceManagedFleetDetails extends CreateFleetDetails {
         public CreateServiceManagedFleetDetails build() {
             CreateServiceManagedFleetDetails model =
                     new CreateServiceManagedFleetDetails(
-                            this.name, this.shape, this.maxConcurrentTasks);
+                            this.reservation, this.name, this.shape, this.maxConcurrentTasks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +91,9 @@ public final class CreateServiceManagedFleetDetails extends CreateFleetDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateServiceManagedFleetDetails model) {
+            if (model.wasPropertyExplicitlySet("reservation")) {
+                this.reservation(model.getReservation());
+            }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
             }
@@ -106,11 +118,22 @@ public final class CreateServiceManagedFleetDetails extends CreateFleetDetails {
 
     @Deprecated
     public CreateServiceManagedFleetDetails(
-            String name, FleetShape shape, Integer maxConcurrentTasks) {
+            CreateReservationDetails reservation,
+            String name,
+            FleetShape shape,
+            Integer maxConcurrentTasks) {
         super();
+        this.reservation = reservation;
         this.name = name;
         this.shape = shape;
         this.maxConcurrentTasks = maxConcurrentTasks;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("reservation")
+    private final CreateReservationDetails reservation;
+
+    public CreateReservationDetails getReservation() {
+        return reservation;
     }
 
     /** Name of the service managed fleet. */
@@ -161,6 +184,7 @@ public final class CreateServiceManagedFleetDetails extends CreateFleetDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateServiceManagedFleetDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", reservation=").append(String.valueOf(this.reservation));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", maxConcurrentTasks=").append(String.valueOf(this.maxConcurrentTasks));
@@ -178,7 +202,8 @@ public final class CreateServiceManagedFleetDetails extends CreateFleetDetails {
         }
 
         CreateServiceManagedFleetDetails other = (CreateServiceManagedFleetDetails) o;
-        return java.util.Objects.equals(this.name, other.name)
+        return java.util.Objects.equals(this.reservation, other.reservation)
+                && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.maxConcurrentTasks, other.maxConcurrentTasks)
                 && super.equals(other);
@@ -188,6 +213,7 @@ public final class CreateServiceManagedFleetDetails extends CreateFleetDetails {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.reservation == null ? 43 : this.reservation.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =

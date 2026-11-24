@@ -36,7 +36,10 @@ package com.oracle.bmc.goldengate.model;
             name = "REST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HadoopIcebergCatalogSummary.class,
-            name = "HADOOP")
+            name = "HADOOP"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OracleAiDataCatalogIcebergCatalogSummary.class,
+            name = "OADC")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

@@ -877,6 +877,48 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeAvmKeyManagementSystemResponse>
+            changeAvmKeyManagementSystem(
+                    ChangeAvmKeyManagementSystemRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAvmKeyManagementSystemRequest,
+                                    ChangeAvmKeyManagementSystemResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeAvmKeyManagementSystemDetails(),
+                "changeAvmKeyManagementSystemDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, ChangeAvmKeyManagementSystemResponse::builder)
+                .logger(LOG, "changeAvmKeyManagementSystem")
+                .serviceDetails(
+                        "Database",
+                        "ChangeAvmKeyManagementSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAvmKeyManagementSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAvmKeyManagementSystemRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeKeyManagementSystem")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAvmKeyManagementSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAvmKeyManagementSystemResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeBackupDestinationCompartmentResponse>
             changeBackupDestinationCompartment(
                     ChangeBackupDestinationCompartmentRequest request,
@@ -957,6 +999,49 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeBaseccVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCavmKeyManagementSystemResponse>
+            changeCavmKeyManagementSystem(
+                    ChangeCavmKeyManagementSystemRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCavmKeyManagementSystemRequest,
+                                    ChangeCavmKeyManagementSystemResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeCavmKeyManagementSystemDetails(),
+                "changeCavmKeyManagementSystemDetails is required");
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+
+        return clientCall(request, ChangeCavmKeyManagementSystemResponse::builder)
+                .logger(LOG, "changeCavmKeyManagementSystem")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCavmKeyManagementSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCavmKeyManagementSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCavmKeyManagementSystemRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeKeyManagementSystem")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCavmKeyManagementSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCavmKeyManagementSystemResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -11194,6 +11279,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("kmsType", request.getKmsType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -11517,6 +11603,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("kmsType", request.getKmsType())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
@@ -13315,6 +13402,7 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("keyStoreType", request.getKeyStoreType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

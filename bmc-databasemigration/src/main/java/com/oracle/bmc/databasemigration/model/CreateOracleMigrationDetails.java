@@ -5,8 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Create Migration resource parameters. Deprecated: The parent-level Oracle migration configuration
- * properties on this model are deprecated. Use {@code migrationSettings} instead. <br>
+ * Create Migration resource parameters. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -107,15 +106,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         public Builder assessmentId(String assessmentId) {
             this.assessmentId = assessmentId;
             this.__explicitlySet__.add("assessmentId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("migrationSettings")
-        private CreateOracleMigrationSettings migrationSettings;
-
-        public Builder migrationSettings(CreateOracleMigrationSettings migrationSettings) {
-            this.migrationSettings = migrationSettings;
-            this.__explicitlySet__.add("migrationSettings");
             return this;
         }
 
@@ -286,7 +276,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                             this.freeformTags,
                             this.definedTags,
                             this.assessmentId,
-                            this.migrationSettings,
                             this.dataTransferMediumDetails,
                             this.initialLoadSettings,
                             this.advisorSettings,
@@ -332,9 +321,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             }
             if (model.wasPropertyExplicitlySet("assessmentId")) {
                 this.assessmentId(model.getAssessmentId());
-            }
-            if (model.wasPropertyExplicitlySet("migrationSettings")) {
-                this.migrationSettings(model.getMigrationSettings());
             }
             if (model.wasPropertyExplicitlySet("dataTransferMediumDetails")) {
                 this.dataTransferMediumDetails(model.getDataTransferMediumDetails());
@@ -395,7 +381,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String assessmentId,
-            CreateOracleMigrationSettings migrationSettings,
             CreateOracleDataTransferMediumDetails dataTransferMediumDetails,
             CreateOracleInitialLoadSettings initialLoadSettings,
             CreateOracleAdvisorSettings advisorSettings,
@@ -417,7 +402,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                 freeformTags,
                 definedTags,
                 assessmentId);
-        this.migrationSettings = migrationSettings;
         this.dataTransferMediumDetails = dataTransferMediumDetails;
         this.initialLoadSettings = initialLoadSettings;
         this.advisorSettings = advisorSettings;
@@ -429,13 +413,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         this.excludeObjects = excludeObjects;
         this.includeObjects = includeObjects;
         this.bulkIncludeExcludeData = bulkIncludeExcludeData;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("migrationSettings")
-    private final CreateOracleMigrationSettings migrationSettings;
-
-    public CreateOracleMigrationSettings getMigrationSettings() {
-        return migrationSettings;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetails")
@@ -576,7 +553,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateOracleMigrationDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append(", migrationSettings=").append(String.valueOf(this.migrationSettings));
         sb.append(", dataTransferMediumDetails=")
                 .append(String.valueOf(this.dataTransferMediumDetails));
         sb.append(", initialLoadSettings=").append(String.valueOf(this.initialLoadSettings));
@@ -605,8 +581,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         }
 
         CreateOracleMigrationDetails other = (CreateOracleMigrationDetails) o;
-        return java.util.Objects.equals(this.migrationSettings, other.migrationSettings)
-                && java.util.Objects.equals(
+        return java.util.Objects.equals(
                         this.dataTransferMediumDetails, other.dataTransferMediumDetails)
                 && java.util.Objects.equals(this.initialLoadSettings, other.initialLoadSettings)
                 && java.util.Objects.equals(this.advisorSettings, other.advisorSettings)
@@ -630,9 +605,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.migrationSettings == null ? 43 : this.migrationSettings.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataTransferMediumDetails == null

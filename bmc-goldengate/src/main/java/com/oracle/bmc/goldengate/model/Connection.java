@@ -67,6 +67,9 @@ package com.oracle.bmc.goldengate.model;
             value = AzureSynapseConnection.class,
             name = "AZURE_SYNAPSE_ANALYTICS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OracleAiDataCatalogStorageConnection.class,
+            name = "ORACLE_AI_DATA_CATALOG_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MicrosoftFabricConnection.class,
             name = "MICROSOFT_FABRIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

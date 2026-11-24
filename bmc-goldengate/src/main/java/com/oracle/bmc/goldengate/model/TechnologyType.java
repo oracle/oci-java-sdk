@@ -31,6 +31,7 @@ public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleAutonomousDatabaseAtAws("ORACLE_AUTONOMOUS_DATABASE_AT_AWS"),
     OracleAiDataPlatform("ORACLE_AI_DATA_PLATFORM"),
     OracleAiDataPlatformEngine("ORACLE_AI_DATA_PLATFORM_ENGINE"),
+    OracleAiDataCatalogStorage("ORACLE_AI_DATA_CATALOG_STORAGE"),
     OracleNosql("ORACLE_NOSQL"),
     OracleRestDataServices("ORACLE_REST_DATA_SERVICES"),
     OracleWeblogicJms("ORACLE_WEBLOGIC_JMS"),

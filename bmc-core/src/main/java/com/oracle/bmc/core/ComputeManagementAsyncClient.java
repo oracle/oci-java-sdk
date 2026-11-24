@@ -185,6 +185,53 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<CancelInstancePoolRefreshResponse> cancelInstancePoolRefresh(
+            CancelInstancePoolRefreshRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelInstancePoolRefreshRequest, CancelInstancePoolRefreshResponse>
+                    handler) {
+
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        Validate.notBlank(request.getRefreshId(), "refreshId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelInstancePoolRefreshDetails(),
+                "cancelInstancePoolRefreshDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+        requiredParametersMap.put("refreshId", request.getRefreshId());
+
+        return clientCall(request, CancelInstancePoolRefreshResponse::builder)
+                .logger(LOG, "cancelInstancePoolRefresh")
+                .serviceDetails(
+                        "ComputeManagement",
+                        "CancelInstancePoolRefresh",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolRefresh/CancelInstancePoolRefresh")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelInstancePoolRefreshRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("refreshes")
+                .appendPathParam(request.getRefreshId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelInstancePoolRefreshResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CancelInstancePoolRefreshResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeClusterNetworkCompartmentResponse>
             changeClusterNetworkCompartment(
                     ChangeClusterNetworkCompartmentRequest request,
@@ -730,6 +777,46 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<GetInstancePoolRefreshResponse> getInstancePoolRefresh(
+            GetInstancePoolRefreshRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetInstancePoolRefreshRequest, GetInstancePoolRefreshResponse>
+                    handler) {
+
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        Validate.notBlank(request.getRefreshId(), "refreshId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+        requiredParametersMap.put("refreshId", request.getRefreshId());
+
+        return clientCall(request, GetInstancePoolRefreshResponse::builder)
+                .logger(LOG, "getInstancePoolRefresh")
+                .serviceDetails(
+                        "ComputeManagement",
+                        "GetInstancePoolRefresh",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolRefresh/GetInstancePoolRefresh")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstancePoolRefreshRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("refreshes")
+                .appendPathParam(request.getRefreshId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePoolRefresh.class,
+                        GetInstancePoolRefreshResponse.Builder::instancePoolRefresh)
+                .handleResponseHeaderString("etag", GetInstancePoolRefreshResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInstancePoolRefreshResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<LaunchInstanceConfigurationResponse>
             launchInstanceConfiguration(
                     LaunchInstanceConfigurationRequest request,
@@ -948,6 +1035,51 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<ListInstancePoolRefreshesResponse> listInstancePoolRefreshes(
+            ListInstancePoolRefreshesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInstancePoolRefreshesRequest, ListInstancePoolRefreshesResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("compartmentId", request.getCompartmentId());
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
+        return clientCall(request, ListInstancePoolRefreshesResponse::builder)
+                .logger(LOG, "listInstancePoolRefreshes")
+                .serviceDetails(
+                        "ComputeManagement",
+                        "ListInstancePoolRefreshes",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolRefreshCollection/ListInstancePoolRefreshes")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstancePoolRefreshesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("refreshes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePoolRefreshCollection.class,
+                        ListInstancePoolRefreshesResponse.Builder::instancePoolRefreshCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstancePoolRefreshesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInstancePoolRefreshesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInstancePoolsResponse> listInstancePools(
             ListInstancePoolsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -984,6 +1116,51 @@ public class ComputeManagementAsyncClient extends com.oracle.bmc.http.internal.B
                         "opc-next-page", ListInstancePoolsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListInstancePoolsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshInstancePoolResponse> refreshInstancePool(
+            RefreshInstancePoolRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshInstancePoolRequest, RefreshInstancePoolResponse>
+                    handler) {
+
+        Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
+        Objects.requireNonNull(
+                request.getRefreshInstancePoolDetails(), "refreshInstancePoolDetails is required");
+
+        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
+        requiredParametersMap.put("instancePoolId", request.getInstancePoolId());
+
+        return clientCall(request, RefreshInstancePoolResponse::builder)
+                .logger(LOG, "refreshInstancePool")
+                .serviceDetails(
+                        "ComputeManagement",
+                        "RefreshInstancePool",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolRefresh/RefreshInstancePool")
+                .requiredParametersMap(requiredParametersMap)
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshInstancePoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instancePools")
+                .appendPathParam(request.getInstancePoolId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InstancePoolRefresh.class,
+                        RefreshInstancePoolResponse.Builder::instancePoolRefresh)
+                .handleResponseHeaderString("etag", RefreshInstancePoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshInstancePoolResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshInstancePoolResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

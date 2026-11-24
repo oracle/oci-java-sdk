@@ -23,6 +23,9 @@ package com.oracle.bmc.databasemigration.model;
         defaultImpl = UpdateOracleDataTransferMediumDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleGcsDataTransferMediumDetails.class,
+            name = "GCS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateOracleAwsS3DataTransferMediumDetails.class,
             name = "AWS_S3"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -31,6 +34,9 @@ package com.oracle.bmc.databasemigration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateOracleObjectStorageDataTransferMediumDetails.class,
             name = "OBJECT_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleAzureBlobDataTransferMediumDetails.class,
+            name = "AZURE_BLOB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateOracleDbLinkDataTransferMediumDetails.class,
             name = "DBLINK")
@@ -90,6 +96,8 @@ public class UpdateOracleDataTransferMediumDetails
         Dblink("DBLINK"),
         ObjectStorage("OBJECT_STORAGE"),
         AwsS3("AWS_S3"),
+        AzureBlob("AZURE_BLOB"),
+        Gcs("GCS"),
         Nfs("NFS"),
         ;
 

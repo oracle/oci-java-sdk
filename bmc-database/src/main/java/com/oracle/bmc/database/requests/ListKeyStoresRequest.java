@@ -47,6 +47,56 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A filter to return only resources that match the key store type given. The match is not case
+     * sensitive.
+     */
+    private KeyStoreType keyStoreType;
+
+    /**
+     * A filter to return only resources that match the key store type given. The match is not case
+     * sensitive.
+     */
+    public enum KeyStoreType implements com.oracle.bmc.http.internal.BmcEnum {
+        OracleKeyVault("ORACLE_KEY_VAULT"),
+        Thales("THALES"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, KeyStoreType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (KeyStoreType v : KeyStoreType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        KeyStoreType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static KeyStoreType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid KeyStoreType: " + key);
+        }
+    };
+
+    /**
+     * A filter to return only resources that match the key store type given. The match is not case
+     * sensitive.
+     */
+    public KeyStoreType getKeyStoreType() {
+        return keyStoreType;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -115,6 +165,24 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * A filter to return only resources that match the key store type given. The match is not
+         * case sensitive.
+         */
+        private KeyStoreType keyStoreType = null;
+
+        /**
+         * A filter to return only resources that match the key store type given. The match is not
+         * case sensitive.
+         *
+         * @param keyStoreType the value to set
+         * @return this builder instance
+         */
+        public Builder keyStoreType(KeyStoreType keyStoreType) {
+            this.keyStoreType = keyStoreType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -148,6 +216,7 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            keyStoreType(o.getKeyStoreType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -186,8 +255,9 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.keyStoreType = keyStoreType;
             return request;
-            // new ListKeyStoresRequest(compartmentId, limit, page, opcRequestId);
+            // new ListKeyStoresRequest(compartmentId, limit, page, opcRequestId, keyStoreType);
         }
     }
 
@@ -201,7 +271,8 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .keyStoreType(keyStoreType);
     }
 
     /**
@@ -222,6 +293,7 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",keyStoreType=").append(String.valueOf(this.keyStoreType));
         sb.append(")");
         return sb.toString();
     }
@@ -240,7 +312,8 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.keyStoreType, other.keyStoreType);
     }
 
     @Override
@@ -253,6 +326,7 @@ public class ListKeyStoresRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.keyStoreType == null ? 43 : this.keyStoreType.hashCode());
         return result;
     }
 }

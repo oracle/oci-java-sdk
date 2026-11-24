@@ -8,6 +8,7 @@ package com.oracle.bmc.goldengate.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum SupportedCapabilities implements com.oracle.bmc.http.internal.BmcEnum {
     GroupToRole("GROUP_TO_ROLE"),
+    GroupToRoleRequired("GROUP_TO_ROLE_REQUIRED"),
     BackupRestore("BACKUP_RESTORE"),
     CopyBackup("COPY_BACKUP"),
     ManualBackup("MANUAL_BACKUP"),

@@ -384,6 +384,24 @@ public interface Database extends AutoCloseable {
             ChangeAutonomousVmClusterCompartmentRequest request);
 
     /**
+     * Update the Autonomous VM Cluster's key management system details where TDE keys of this
+     * cluster's ACDs will be stored.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAvmKeyManagementSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeAvmKeyManagementSystem API.
+     */
+    ChangeAvmKeyManagementSystemResponse changeAvmKeyManagementSystem(
+            ChangeAvmKeyManagementSystemRequest request);
+
+    /**
      * Move the backup destination and its dependent resources to the specified compartment. For
      * more information, see [Moving Database Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -419,6 +437,24 @@ public interface Database extends AutoCloseable {
      */
     ChangeBaseccVmClusterCompartmentResponse changeBaseccVmClusterCompartment(
             ChangeBaseccVmClusterCompartmentRequest request);
+
+    /**
+     * Update the Cloud Autonomous VM Cluster's key management system details where TDE keys of this
+     * cluster's ACDs will be stored.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCavmKeyManagementSystemExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeCavmKeyManagementSystem API.
+     */
+    ChangeCavmKeyManagementSystemResponse changeCavmKeyManagementSystem(
+            ChangeCavmKeyManagementSystemRequest request);
 
     /**
      * Moves an Autonomous Exadata VM cluster in the Oracle cloud and its dependent resources to

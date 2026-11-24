@@ -32,6 +32,9 @@ package com.oracle.bmc.goldengate.model;
             value = RestIcebergCatalog.class,
             name = "REST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OracleAiDataCatalogIcebergCatalog.class,
+            name = "OADC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = NessieIcebergCatalog.class,
             name = "NESSIE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

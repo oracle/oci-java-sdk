@@ -27,6 +27,15 @@ package com.oracle.bmc.batch.model;
 public final class ServiceManagedFleet extends Fleet {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("reservation")
+        private Reservation reservation;
+
+        public Builder reservation(Reservation reservation) {
+            this.reservation = reservation;
+            this.__explicitlySet__.add("reservation");
+            return this;
+        }
         /** Name of the service managed fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -107,6 +116,7 @@ public final class ServiceManagedFleet extends Fleet {
         public ServiceManagedFleet build() {
             ServiceManagedFleet model =
                     new ServiceManagedFleet(
+                            this.reservation,
                             this.name,
                             this.shape,
                             this.maxConcurrentTasks,
@@ -120,6 +130,9 @@ public final class ServiceManagedFleet extends Fleet {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ServiceManagedFleet model) {
+            if (model.wasPropertyExplicitlySet("reservation")) {
+                this.reservation(model.getReservation());
+            }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
             }
@@ -150,17 +163,26 @@ public final class ServiceManagedFleet extends Fleet {
 
     @Deprecated
     public ServiceManagedFleet(
+            Reservation reservation,
             String name,
             FleetShape shape,
             Integer maxConcurrentTasks,
             String state,
             String details) {
         super();
+        this.reservation = reservation;
         this.name = name;
         this.shape = shape;
         this.maxConcurrentTasks = maxConcurrentTasks;
         this.state = state;
         this.details = details;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("reservation")
+    private final Reservation reservation;
+
+    public Reservation getReservation() {
+        return reservation;
     }
 
     /** Name of the service managed fleet. */
@@ -241,6 +263,7 @@ public final class ServiceManagedFleet extends Fleet {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ServiceManagedFleet(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", reservation=").append(String.valueOf(this.reservation));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", maxConcurrentTasks=").append(String.valueOf(this.maxConcurrentTasks));
@@ -260,7 +283,8 @@ public final class ServiceManagedFleet extends Fleet {
         }
 
         ServiceManagedFleet other = (ServiceManagedFleet) o;
-        return java.util.Objects.equals(this.name, other.name)
+        return java.util.Objects.equals(this.reservation, other.reservation)
+                && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.maxConcurrentTasks, other.maxConcurrentTasks)
                 && java.util.Objects.equals(this.state, other.state)
@@ -272,6 +296,7 @@ public final class ServiceManagedFleet extends Fleet {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.reservation == null ? 43 : this.reservation.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =

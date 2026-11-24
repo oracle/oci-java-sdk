@@ -16,6 +16,11 @@ import com.oracle.bmc.core.responses.*;
  * permissions are documented in the [Details for the Core
  * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
+ *
+ * <p>The Core Services API provides both IPv4-only and dual-stack (IPv4 and IPv6) endpoints. By
+ * default, OCI-published SDKs and the CLI use IPv4-only endpoints. Use a dual-stack endpoint to
+ * connect over IPv6 while retaining IPv4 compatibility. Dual-stack endpoints use the following
+ * format: https://{service}.{region}.ds.oci.{secondLevelDomain}.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ComputeManagementAsync extends AutoCloseable {
@@ -111,6 +116,23 @@ public interface ComputeManagementAsync extends AutoCloseable {
             AttachLoadBalancerRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             AttachLoadBalancerRequest, AttachLoadBalancerResponse>
+                    handler);
+
+    /**
+     * Cancels the specified instance pool refresh. Cancellation stops new batch planning and new
+     * launch submissions. Submitted launch and terminate operations continue until they settle.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelInstancePoolRefreshResponse> cancelInstancePoolRefresh(
+            CancelInstancePoolRefreshRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelInstancePoolRefreshRequest, CancelInstancePoolRefreshResponse>
                     handler);
 
     /**
@@ -397,6 +419,22 @@ public interface ComputeManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the specified instance pool refresh.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetInstancePoolRefreshResponse> getInstancePoolRefresh(
+            GetInstancePoolRefreshRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetInstancePoolRefreshRequest, GetInstancePoolRefreshResponse>
+                    handler);
+
+    /**
      * Creates an instance from an instance configuration.
      *
      * <p>If the instance configuration does not include all of the parameters that are required to
@@ -489,6 +527,22 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the instance pool refreshes for the specified instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInstancePoolRefreshesResponse> listInstancePoolRefreshes(
+            ListInstancePoolRefreshesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListInstancePoolRefreshesRequest, ListInstancePoolRefreshesResponse>
+                    handler);
+
+    /**
      * Lists the instance pools in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -502,6 +556,22 @@ public interface ComputeManagementAsync extends AutoCloseable {
             ListInstancePoolsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListInstancePoolsRequest, ListInstancePoolsResponse>
+                    handler);
+
+    /**
+     * Starts an instance refresh for the specified instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RefreshInstancePoolResponse> refreshInstancePool(
+            RefreshInstancePoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RefreshInstancePoolRequest, RefreshInstancePoolResponse>
                     handler);
 
     /**
