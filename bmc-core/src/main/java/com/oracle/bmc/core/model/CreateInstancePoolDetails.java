@@ -39,7 +39,8 @@ public final class CreateInstancePoolDetails
         "overridePolicy",
         "instanceDisplayNameFormatter",
         "instanceHostnameFormatter",
-        "lifecycleManagement"
+        "lifecycleManagement",
+        "instanceMaintenancePolicy"
     })
     public CreateInstancePoolDetails(
             String compartmentId,
@@ -53,7 +54,8 @@ public final class CreateInstancePoolDetails
             InstancePoolLaunchOverridePolicy overridePolicy,
             String instanceDisplayNameFormatter,
             String instanceHostnameFormatter,
-            InstancePoolLifecycleManagementDetails lifecycleManagement) {
+            InstancePoolLifecycleManagementDetails lifecycleManagement,
+            InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -67,6 +69,7 @@ public final class CreateInstancePoolDetails
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
         this.lifecycleManagement = lifecycleManagement;
+        this.instanceMaintenancePolicy = instanceMaintenancePolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -307,6 +310,16 @@ public final class CreateInstancePoolDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceMaintenancePolicy")
+        private InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy;
+
+        public Builder instanceMaintenancePolicy(
+                InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy) {
+            this.instanceMaintenancePolicy = instanceMaintenancePolicy;
+            this.__explicitlySet__.add("instanceMaintenancePolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -324,7 +337,8 @@ public final class CreateInstancePoolDetails
                             this.overridePolicy,
                             this.instanceDisplayNameFormatter,
                             this.instanceHostnameFormatter,
-                            this.lifecycleManagement);
+                            this.lifecycleManagement,
+                            this.instanceMaintenancePolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -368,6 +382,9 @@ public final class CreateInstancePoolDetails
             }
             if (model.wasPropertyExplicitlySet("lifecycleManagement")) {
                 this.lifecycleManagement(model.getLifecycleManagement());
+            }
+            if (model.wasPropertyExplicitlySet("instanceMaintenancePolicy")) {
+                this.instanceMaintenancePolicy(model.getInstanceMaintenancePolicy());
             }
             return this;
         }
@@ -588,6 +605,13 @@ public final class CreateInstancePoolDetails
         return lifecycleManagement;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceMaintenancePolicy")
+    private final InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy;
+
+    public InstancePoolMaintenancePolicyDetails getInstanceMaintenancePolicy() {
+        return instanceMaintenancePolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -619,6 +643,8 @@ public final class CreateInstancePoolDetails
         sb.append(", instanceHostnameFormatter=")
                 .append(String.valueOf(this.instanceHostnameFormatter));
         sb.append(", lifecycleManagement=").append(String.valueOf(this.lifecycleManagement));
+        sb.append(", instanceMaintenancePolicy=")
+                .append(String.valueOf(this.instanceMaintenancePolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -649,6 +675,8 @@ public final class CreateInstancePoolDetails
                 && java.util.Objects.equals(
                         this.instanceHostnameFormatter, other.instanceHostnameFormatter)
                 && java.util.Objects.equals(this.lifecycleManagement, other.lifecycleManagement)
+                && java.util.Objects.equals(
+                        this.instanceMaintenancePolicy, other.instanceMaintenancePolicy)
                 && super.equals(other);
     }
 
@@ -694,6 +722,11 @@ public final class CreateInstancePoolDetails
                         + (this.lifecycleManagement == null
                                 ? 43
                                 : this.lifecycleManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceMaintenancePolicy == null
+                                ? 43
+                                : this.instanceMaintenancePolicy.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

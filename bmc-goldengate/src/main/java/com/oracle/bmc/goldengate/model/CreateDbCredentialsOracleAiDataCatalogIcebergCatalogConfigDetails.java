@@ -1,0 +1,395 @@
+/**
+ * Copyright (c) 2016, 2026, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+ */
+package com.oracle.bmc.goldengate.model;
+
+/**
+ * The information about a new Oracle AI Data Catalog configuration based on database credentials.
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
+ * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
+ * fields into account. The constructor, on the other hand, does not take the explicitly set fields
+ * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
+ * null}).
+ */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+        builder = CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "catalogConfigType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+public final class CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails
+        extends CreateOracleAiDataCatalogIcebergCatalogConfigDetails {
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    public static class Builder {
+        /** The database type where Oracle AI Data Catalog is configured. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+        private OracleAiDataCatalogIcebergCatalogDatabaseType databaseType;
+
+        /**
+         * The database type where Oracle AI Data Catalog is configured.
+         *
+         * @param databaseType the value to set
+         * @return this builder
+         */
+        public Builder databaseType(OracleAiDataCatalogIcebergCatalogDatabaseType databaseType) {
+            this.databaseType = databaseType;
+            this.__explicitlySet__.add("databaseType");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database being referenced.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
+        private String databaseId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * database being referenced.
+         *
+         * @param databaseId the value to set
+         * @return this builder
+         */
+        public Builder databaseId(String databaseId) {
+            this.databaseId = databaseId;
+            this.__explicitlySet__.add("databaseId");
+            return this;
+        }
+        /**
+         * The username Oracle GoldenGate uses to connect the associated system of the given
+         * technology. This username must already exist and be available by the system/application
+         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("username")
+        private String username;
+
+        /**
+         * The username Oracle GoldenGate uses to connect the associated system of the given
+         * technology. This username must already exist and be available by the system/application
+         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         *
+         * @param username the value to set
+         * @return this builder
+         */
+        public Builder username(String username) {
+            this.username = username;
+            this.__explicitlySet__.add("username");
+            return this;
+        }
+        /**
+         * The password Oracle GoldenGate uses to connect the associated system of the given
+         * technology. It must conform to the specific security requirements including length, case
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("password")
+        private char[] password;
+
+        /**
+         * The password Oracle GoldenGate uses to connect the associated system of the given
+         * technology. It must conform to the specific security requirements including length, case
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections"
+         * deprecation:
+         * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @param password the value to set
+         * @return this builder
+         */
+        public Builder password(char[] password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password != null ? password.toCharArray() : null;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails build() {
+            CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails model =
+                    new CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails(
+                            this.databaseType,
+                            this.databaseId,
+                            this.username,
+                            this.password,
+                            this.passwordSecretId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(
+                CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            return this;
+        }
+    }
+
+    /** Create a new builder. */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public Builder toBuilder() {
+        return new Builder().copy(this);
+    }
+
+    @Deprecated
+    public CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails(
+            OracleAiDataCatalogIcebergCatalogDatabaseType databaseType,
+            String databaseId,
+            String username,
+            String password,
+            String passwordSecretId) {
+        super();
+        this.databaseType = databaseType;
+        this.databaseId = databaseId;
+        this.username = username;
+        this.password = password != null ? password.toCharArray() : null;
+        this.passwordSecretId = passwordSecretId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    @Deprecated
+    public CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails(
+            @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+                    OracleAiDataCatalogIcebergCatalogDatabaseType databaseType,
+            @com.fasterxml.jackson.annotation.JsonProperty("databaseId") String databaseId,
+            @com.fasterxml.jackson.annotation.JsonProperty("username") String username,
+            @com.fasterxml.jackson.annotation.JsonProperty("password") char[] password,
+            @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+                    String passwordSecretId) {
+        super();
+        this.databaseType = databaseType;
+        this.databaseId = databaseId;
+        this.username = username;
+        this.password = password;
+        this.passwordSecretId = passwordSecretId;
+    }
+
+    /** The database type where Oracle AI Data Catalog is configured. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+    private final OracleAiDataCatalogIcebergCatalogDatabaseType databaseType;
+
+    /**
+     * The database type where Oracle AI Data Catalog is configured.
+     *
+     * @return the value
+     */
+    public OracleAiDataCatalogIcebergCatalogDatabaseType getDatabaseType() {
+        return databaseType;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
+    private final String databaseId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * database being referenced.
+     *
+     * @return the value
+     */
+    public String getDatabaseId() {
+        return databaseId;
+    }
+
+    /**
+     * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+     * This username must already exist and be available by the system/application to be connected
+     * to and must conform to the case sensitivty requirments defined in it.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("username")
+    private final String username;
+
+    /**
+     * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+     * This username must already exist and be available by the system/application to be connected
+     * to and must conform to the case sensitivty requirments defined in it.
+     *
+     * @return the value
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    private final char[] password;
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and
+     * so on. Deprecated: This field is deprecated and replaced by &quot;passwordSecretId&quot;.
+     * This change follows the GoldenGate &quot;Plain Text Fields in Connections&quot; deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     * @deprecated Use getPassword__AsCharArray() instead.
+     */
+    @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public String getPassword() {
+        return password != null ? new String(password) : null;
+    }
+
+    /**
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change
+     * follows the GoldenGate "Plain Text Fields in Connections" deprecation:
+     * https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @return the value
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    public char[] getPassword__AsCharArray() {
+        return password;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    @Override
+    public String toString() {
+        return this.toString(true);
+    }
+
+    /**
+     * Return a string representation of the object.
+     *
+     * @param includeByteArrayContents true to include the full contents of byte arrays
+     * @return string representation
+     */
+    public String toString(boolean includeByteArrayContents) {
+        java.lang.StringBuilder sb = new java.lang.StringBuilder();
+        sb.append("CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails(");
+        sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(")");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails)) {
+            return false;
+        }
+
+        CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails other =
+                (CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails) o;
+        return java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && super.equals(other);
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = super.hashCode();
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        return result;
+    }
+}

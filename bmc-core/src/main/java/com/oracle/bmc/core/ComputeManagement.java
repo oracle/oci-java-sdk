@@ -17,6 +17,11 @@ import com.oracle.bmc.core.responses.*;
  * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
  *
+ * <p>The Core Services API provides both IPv4-only and dual-stack (IPv4 and IPv6) endpoints. By
+ * default, OCI-published SDKs and the CLI use IPv4-only endpoints. Use a dual-stack endpoint to
+ * connect over IPv6 while retaining IPv4 compatibility. Dual-stack endpoints use the following
+ * format: https://{service}.{region}.ds.oci.{secondLevelDomain}.
+ *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */
@@ -116,6 +121,24 @@ public interface ComputeManagement extends AutoCloseable {
      *     API.
      */
     AttachLoadBalancerResponse attachLoadBalancer(AttachLoadBalancerRequest request);
+
+    /**
+     * Cancels the specified instance pool refresh. Cancellation stops new batch planning and new
+     * launch submissions. Submitted launch and terminate operations continue until they settle.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CancelInstancePoolRefreshExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CancelInstancePoolRefresh API.
+     */
+    CancelInstancePoolRefreshResponse cancelInstancePoolRefresh(
+            CancelInstancePoolRefreshRequest request);
 
     /**
      * Moves a [cluster network with instance
@@ -400,6 +423,22 @@ public interface ComputeManagement extends AutoCloseable {
             GetInstancePoolLoadBalancerAttachmentRequest request);
 
     /**
+     * Gets the specified instance pool refresh.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolRefreshExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetInstancePoolRefresh API.
+     */
+    GetInstancePoolRefreshResponse getInstancePoolRefresh(GetInstancePoolRefreshRequest request);
+
+    /**
      * Creates an instance from an instance configuration.
      *
      * <p>If the instance configuration does not include all of the parameters that are required to
@@ -496,6 +535,23 @@ public interface ComputeManagement extends AutoCloseable {
             ListInstancePoolInstancesRequest request);
 
     /**
+     * Lists the instance pool refreshes for the specified instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolRefreshesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListInstancePoolRefreshes API.
+     */
+    ListInstancePoolRefreshesResponse listInstancePoolRefreshes(
+            ListInstancePoolRefreshesRequest request);
+
+    /**
      * Lists the instance pools in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -510,6 +566,22 @@ public interface ComputeManagement extends AutoCloseable {
      *     API.
      */
     ListInstancePoolsResponse listInstancePools(ListInstancePoolsRequest request);
+
+    /**
+     * Starts an instance refresh for the specified instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RefreshInstancePoolExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshInstancePool
+     *     API.
+     */
+    RefreshInstancePoolResponse refreshInstancePool(RefreshInstancePoolRequest request);
 
     /**
      * Performs the reset (immediate power off and power on) action on the specified instance pool,

@@ -38,6 +38,9 @@ package com.oracle.bmc.goldengate.model;
             value = CreateAzureDataLakeStorageConnectionDetails.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOracleAiDataCatalogStorageConnectionDetails.class,
+            name = "ORACLE_AI_DATA_CATALOG_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateOracleAiDataPlatformEngineConnectionDetails.class,
             name = "ORACLE_AI_DATA_PLATFORM_ENGINE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

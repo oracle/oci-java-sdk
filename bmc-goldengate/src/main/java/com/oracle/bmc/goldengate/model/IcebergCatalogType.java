@@ -12,6 +12,7 @@ public enum IcebergCatalogType implements com.oracle.bmc.http.internal.BmcEnum {
     Nessie("NESSIE"),
     Polaris("POLARIS"),
     Rest("REST"),
+    Oadc("OADC"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

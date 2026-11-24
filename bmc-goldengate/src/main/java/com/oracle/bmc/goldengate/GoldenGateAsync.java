@@ -196,7 +196,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Associate a GoldanGate connection with a different subscription.
+     * Associate a GoldenGate connection with a different subscription.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -17,6 +17,11 @@ import com.oracle.bmc.core.responses.*;
  * Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm)
  * article.
  *
+ * <p>The Core Services API provides both IPv4-only and dual-stack (IPv4 and IPv6) endpoints. By
+ * default, OCI-published SDKs and the CLI use IPv4-only endpoints. Use a dual-stack endpoint to
+ * connect over IPv6 while retaining IPv4 compatibility. Dual-stack endpoints use the following
+ * format: https://{service}.{region}.ds.oci.{secondLevelDomain}.
+ *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
  */

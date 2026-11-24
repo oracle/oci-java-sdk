@@ -86,6 +86,9 @@ package com.oracle.bmc.goldengate.model;
             value = SparkConnectionSummary.class,
             name = "SPARK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OracleAiDataCatalogStorageConnectionSummary.class,
+            name = "ORACLE_AI_DATA_CATALOG_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureDataLakeStorageConnectionSummary.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

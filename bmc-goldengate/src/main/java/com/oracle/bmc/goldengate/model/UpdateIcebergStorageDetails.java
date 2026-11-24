@@ -35,8 +35,17 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateGoogleCloudStorageIcebergStorageDetails.class,
             name = "GOOGLE_CLOUD_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOciObjectStorageAccessKeyIcebergStorageDetails.class,
+            name = "OCI_OBJECT_STORAGE_ACCESS_KEY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateAzureDataLakeStorageIcebergStorageDetails.class,
-            name = "AZURE_DATA_LAKE_STORAGE")
+            name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateAzureStorageIcebergStorageDetails.class,
+            name = "AZURE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateZfsIcebergStorageDetails.class,
+            name = "ZFS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

@@ -498,17 +498,17 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * The deployment category defines the broad separation of the deployment type into four
+         * The deployment category defines the broad separation of the deployment type into five
          * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+         * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into four
+         * The deployment category defines the broad separation of the deployment type into five
          * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+         * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
          *
          * @param category the value to set
          * @return this builder
@@ -1346,17 +1346,17 @@ public final class DeploymentSummary
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into four
+     * The deployment category defines the broad separation of the deployment type into five
      * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+     * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into four
+     * The deployment category defines the broad separation of the deployment type into five
      * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+     * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
      *
      * @return the value
      */

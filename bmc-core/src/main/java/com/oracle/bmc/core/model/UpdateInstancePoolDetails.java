@@ -5,9 +5,11 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to update an instance pool. If {@code overridePolicy} is omitted, the stored launch
- * override policy remains unchanged. A non-null {@code overridePolicy} replaces the stored policy
- * as a whole, and {@code null} clears it for future launches. <br>
+ * The data to update an instance pool. If {@code instanceMaintenancePolicy} is omitted, the stored
+ * maintenance policy remains unchanged. A non-null {@code instanceMaintenancePolicy} replaces the
+ * stored policy as a whole, and {@code null} clears it. If {@code overridePolicy} is omitted, the
+ * stored launch override policy remains unchanged. A non-null {@code overridePolicy} replaces the
+ * stored policy as a whole, and {@code null} clears it for future launches. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,7 +37,8 @@ public final class UpdateInstancePoolDetails
         "overridePolicy",
         "instanceDisplayNameFormatter",
         "instanceHostnameFormatter",
-        "lifecycleManagement"
+        "lifecycleManagement",
+        "instanceMaintenancePolicy"
     })
     public UpdateInstancePoolDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -47,7 +50,8 @@ public final class UpdateInstancePoolDetails
             InstancePoolLaunchOverridePolicy overridePolicy,
             String instanceDisplayNameFormatter,
             String instanceHostnameFormatter,
-            InstancePoolLifecycleManagementDetails lifecycleManagement) {
+            InstancePoolLifecycleManagementDetails lifecycleManagement,
+            InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -59,6 +63,7 @@ public final class UpdateInstancePoolDetails
         this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
         this.instanceHostnameFormatter = instanceHostnameFormatter;
         this.lifecycleManagement = lifecycleManagement;
+        this.instanceMaintenancePolicy = instanceMaintenancePolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -273,6 +278,16 @@ public final class UpdateInstancePoolDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceMaintenancePolicy")
+        private InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy;
+
+        public Builder instanceMaintenancePolicy(
+                InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy) {
+            this.instanceMaintenancePolicy = instanceMaintenancePolicy;
+            this.__explicitlySet__.add("instanceMaintenancePolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -288,7 +303,8 @@ public final class UpdateInstancePoolDetails
                             this.overridePolicy,
                             this.instanceDisplayNameFormatter,
                             this.instanceHostnameFormatter,
-                            this.lifecycleManagement);
+                            this.lifecycleManagement,
+                            this.instanceMaintenancePolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -326,6 +342,9 @@ public final class UpdateInstancePoolDetails
             }
             if (model.wasPropertyExplicitlySet("lifecycleManagement")) {
                 this.lifecycleManagement(model.getLifecycleManagement());
+            }
+            if (model.wasPropertyExplicitlySet("instanceMaintenancePolicy")) {
+                this.instanceMaintenancePolicy(model.getInstanceMaintenancePolicy());
             }
             return this;
         }
@@ -524,6 +543,13 @@ public final class UpdateInstancePoolDetails
         return lifecycleManagement;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceMaintenancePolicy")
+    private final InstancePoolMaintenancePolicyDetails instanceMaintenancePolicy;
+
+    public InstancePoolMaintenancePolicyDetails getInstanceMaintenancePolicy() {
+        return instanceMaintenancePolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -553,6 +579,8 @@ public final class UpdateInstancePoolDetails
         sb.append(", instanceHostnameFormatter=")
                 .append(String.valueOf(this.instanceHostnameFormatter));
         sb.append(", lifecycleManagement=").append(String.valueOf(this.lifecycleManagement));
+        sb.append(", instanceMaintenancePolicy=")
+                .append(String.valueOf(this.instanceMaintenancePolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -581,6 +609,8 @@ public final class UpdateInstancePoolDetails
                 && java.util.Objects.equals(
                         this.instanceHostnameFormatter, other.instanceHostnameFormatter)
                 && java.util.Objects.equals(this.lifecycleManagement, other.lifecycleManagement)
+                && java.util.Objects.equals(
+                        this.instanceMaintenancePolicy, other.instanceMaintenancePolicy)
                 && super.equals(other);
     }
 
@@ -620,6 +650,11 @@ public final class UpdateInstancePoolDetails
                         + (this.lifecycleManagement == null
                                 ? 43
                                 : this.lifecycleManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceMaintenancePolicy == null
+                                ? 43
+                                : this.instanceMaintenancePolicy.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

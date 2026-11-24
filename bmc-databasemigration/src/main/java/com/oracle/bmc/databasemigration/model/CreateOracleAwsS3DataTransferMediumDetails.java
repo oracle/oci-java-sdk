@@ -5,8 +5,8 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * AWS S3 bucket details used for source Connection resources with RDS_ORACLE type. Only supported
- * for source Connection resources with RDS_ORACLE type. <br>
+ * AWS S3 bucket details used to transfer Data Pump dump files for Oracle migrations. Supported for
+ * source Connection resources with ORACLE_DATABASE, ORACLE_EXADATA, or AMAZON_RDS_ORACLE type. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

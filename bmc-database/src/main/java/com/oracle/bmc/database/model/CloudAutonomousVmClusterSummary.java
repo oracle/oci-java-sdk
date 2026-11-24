@@ -88,7 +88,8 @@ public final class CloudAutonomousVmClusterSummary
         "multiCloudIdentityConnectorConfigs",
         "tdeKeyStoreType",
         "distributionAlgorithm",
-        "sgaPercentage"
+        "sgaPercentage",
+        "keyManagementSystemDetails"
     })
     public CloudAutonomousVmClusterSummary(
             String id,
@@ -155,7 +156,8 @@ public final class CloudAutonomousVmClusterSummary
             java.util.List<IdentityConnectorDetails> multiCloudIdentityConnectorConfigs,
             TdeKeyStoreType tdeKeyStoreType,
             DistributionAlgorithm distributionAlgorithm,
-            Float sgaPercentage) {
+            Float sgaPercentage,
+            KeyManagementSystemDetails keyManagementSystemDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -223,6 +225,7 @@ public final class CloudAutonomousVmClusterSummary
         this.tdeKeyStoreType = tdeKeyStoreType;
         this.distributionAlgorithm = distributionAlgorithm;
         this.sgaPercentage = sgaPercentage;
+        this.keyManagementSystemDetails = keyManagementSystemDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1393,6 +1396,16 @@ public final class CloudAutonomousVmClusterSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("keyManagementSystemDetails")
+        private KeyManagementSystemDetails keyManagementSystemDetails;
+
+        public Builder keyManagementSystemDetails(
+                KeyManagementSystemDetails keyManagementSystemDetails) {
+            this.keyManagementSystemDetails = keyManagementSystemDetails;
+            this.__explicitlySet__.add("keyManagementSystemDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -1463,7 +1476,8 @@ public final class CloudAutonomousVmClusterSummary
                             this.multiCloudIdentityConnectorConfigs,
                             this.tdeKeyStoreType,
                             this.distributionAlgorithm,
-                            this.sgaPercentage);
+                            this.sgaPercentage,
+                            this.keyManagementSystemDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1673,6 +1687,9 @@ public final class CloudAutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("sgaPercentage")) {
                 this.sgaPercentage(model.getSgaPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("keyManagementSystemDetails")) {
+                this.keyManagementSystemDetails(model.getKeyManagementSystemDetails());
             }
             return this;
         }
@@ -2958,6 +2975,13 @@ public final class CloudAutonomousVmClusterSummary
         return sgaPercentage;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("keyManagementSystemDetails")
+    private final KeyManagementSystemDetails keyManagementSystemDetails;
+
+    public KeyManagementSystemDetails getKeyManagementSystemDetails() {
+        return keyManagementSystemDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -3056,6 +3080,8 @@ public final class CloudAutonomousVmClusterSummary
         sb.append(", tdeKeyStoreType=").append(String.valueOf(this.tdeKeyStoreType));
         sb.append(", distributionAlgorithm=").append(String.valueOf(this.distributionAlgorithm));
         sb.append(", sgaPercentage=").append(String.valueOf(this.sgaPercentage));
+        sb.append(", keyManagementSystemDetails=")
+                .append(String.valueOf(this.keyManagementSystemDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -3164,6 +3190,8 @@ public final class CloudAutonomousVmClusterSummary
                 && java.util.Objects.equals(this.tdeKeyStoreType, other.tdeKeyStoreType)
                 && java.util.Objects.equals(this.distributionAlgorithm, other.distributionAlgorithm)
                 && java.util.Objects.equals(this.sgaPercentage, other.sgaPercentage)
+                && java.util.Objects.equals(
+                        this.keyManagementSystemDetails, other.keyManagementSystemDetails)
                 && super.equals(other);
     }
 
@@ -3386,6 +3414,11 @@ public final class CloudAutonomousVmClusterSummary
         result =
                 (result * PRIME)
                         + (this.sgaPercentage == null ? 43 : this.sgaPercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyManagementSystemDetails == null
+                                ? 43
+                                : this.keyManagementSystemDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -24,7 +24,10 @@ package com.oracle.bmc.database.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = KeyStoreTypeFromOracleKeyVaultDetails.class,
-            name = "ORACLE_KEY_VAULT")
+            name = "ORACLE_KEY_VAULT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = KeyStoreTypeFromThalesDetails.class,
+            name = "THALES")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -78,6 +81,7 @@ public class KeyStoreTypeDetails extends com.oracle.bmc.http.client.internal.Exp
     /** The type of key store. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         OracleKeyVault("ORACLE_KEY_VAULT"),
+        Thales("THALES"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

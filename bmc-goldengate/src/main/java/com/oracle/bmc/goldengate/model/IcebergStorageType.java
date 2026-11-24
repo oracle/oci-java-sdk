@@ -9,7 +9,8 @@ package com.oracle.bmc.goldengate.model;
  * AMAZON_S3. * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or
  * OCI_OBJECT_STORAGE_S3_API. * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
  * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE. * REST: AMAZON_S3,
- * GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+ * GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE. * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY,
+ * AZURE_STORAGE, or ZFS.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public enum IcebergStorageType implements com.oracle.bmc.http.internal.BmcEnum {
@@ -18,6 +19,9 @@ public enum IcebergStorageType implements com.oracle.bmc.http.internal.BmcEnum {
     AzureDataLakeStorage("AZURE_DATA_LAKE_STORAGE"),
     None("NONE"),
     OciObjectStorageS3Api("OCI_OBJECT_STORAGE_S3_API"),
+    OciObjectStorageAccessKey("OCI_OBJECT_STORAGE_ACCESS_KEY"),
+    AzureStorage("AZURE_STORAGE"),
+    Zfs("ZFS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

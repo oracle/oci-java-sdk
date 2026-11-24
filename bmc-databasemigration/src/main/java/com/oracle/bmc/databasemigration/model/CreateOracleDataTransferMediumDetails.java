@@ -26,8 +26,14 @@ package com.oracle.bmc.databasemigration.model;
             value = CreateOracleDbLinkDataTransferMediumDetails.class,
             name = "DBLINK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOracleGcsDataTransferMediumDetails.class,
+            name = "GCS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateOracleNfsDataTransferMediumDetails.class,
             name = "NFS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOracleAzureBlobDataTransferMediumDetails.class,
+            name = "AZURE_BLOB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateOracleObjectStorageDataTransferMediumDetails.class,
             name = "OBJECT_STORAGE"),
@@ -90,6 +96,8 @@ public class CreateOracleDataTransferMediumDetails
         Dblink("DBLINK"),
         ObjectStorage("OBJECT_STORAGE"),
         AwsS3("AWS_S3"),
+        AzureBlob("AZURE_BLOB"),
+        Gcs("GCS"),
         Nfs("NFS"),
         ;
 

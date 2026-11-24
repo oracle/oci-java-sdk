@@ -77,7 +77,8 @@ public final class AutonomousVmCluster
         "timeOrdsCertificateExpires",
         "exadataStorageInTBsLowestScaledValue",
         "cpusLowestScaledValue",
-        "maxAcdsLowestScaledValue"
+        "maxAcdsLowestScaledValue",
+        "keyManagementSystemDetails"
     })
     public AutonomousVmCluster(
             String id,
@@ -133,7 +134,8 @@ public final class AutonomousVmCluster
             java.util.Date timeOrdsCertificateExpires,
             Double exadataStorageInTBsLowestScaledValue,
             Integer cpusLowestScaledValue,
-            Integer maxAcdsLowestScaledValue) {
+            Integer maxAcdsLowestScaledValue,
+            KeyManagementSystemDetails keyManagementSystemDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -190,6 +192,7 @@ public final class AutonomousVmCluster
         this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
         this.cpusLowestScaledValue = cpusLowestScaledValue;
         this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+        this.keyManagementSystemDetails = keyManagementSystemDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1121,6 +1124,16 @@ public final class AutonomousVmCluster
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("keyManagementSystemDetails")
+        private KeyManagementSystemDetails keyManagementSystemDetails;
+
+        public Builder keyManagementSystemDetails(
+                KeyManagementSystemDetails keyManagementSystemDetails) {
+            this.keyManagementSystemDetails = keyManagementSystemDetails;
+            this.__explicitlySet__.add("keyManagementSystemDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -1180,7 +1193,8 @@ public final class AutonomousVmCluster
                             this.timeOrdsCertificateExpires,
                             this.exadataStorageInTBsLowestScaledValue,
                             this.cpusLowestScaledValue,
-                            this.maxAcdsLowestScaledValue);
+                            this.maxAcdsLowestScaledValue,
+                            this.keyManagementSystemDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1356,6 +1370,9 @@ public final class AutonomousVmCluster
             }
             if (model.wasPropertyExplicitlySet("maxAcdsLowestScaledValue")) {
                 this.maxAcdsLowestScaledValue(model.getMaxAcdsLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("keyManagementSystemDetails")) {
+                this.keyManagementSystemDetails(model.getKeyManagementSystemDetails());
             }
             return this;
         }
@@ -2370,6 +2387,13 @@ public final class AutonomousVmCluster
         return maxAcdsLowestScaledValue;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("keyManagementSystemDetails")
+    private final KeyManagementSystemDetails keyManagementSystemDetails;
+
+    public KeyManagementSystemDetails getKeyManagementSystemDetails() {
+        return keyManagementSystemDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2456,6 +2480,8 @@ public final class AutonomousVmCluster
         sb.append(", cpusLowestScaledValue=").append(String.valueOf(this.cpusLowestScaledValue));
         sb.append(", maxAcdsLowestScaledValue=")
                 .append(String.valueOf(this.maxAcdsLowestScaledValue));
+        sb.append(", keyManagementSystemDetails=")
+                .append(String.valueOf(this.keyManagementSystemDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -2549,6 +2575,8 @@ public final class AutonomousVmCluster
                 && java.util.Objects.equals(this.cpusLowestScaledValue, other.cpusLowestScaledValue)
                 && java.util.Objects.equals(
                         this.maxAcdsLowestScaledValue, other.maxAcdsLowestScaledValue)
+                && java.util.Objects.equals(
+                        this.keyManagementSystemDetails, other.keyManagementSystemDetails)
                 && super.equals(other);
     }
 
@@ -2748,6 +2776,11 @@ public final class AutonomousVmCluster
                         + (this.maxAcdsLowestScaledValue == null
                                 ? 43
                                 : this.maxAcdsLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyManagementSystemDetails == null
+                                ? 43
+                                : this.keyManagementSystemDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

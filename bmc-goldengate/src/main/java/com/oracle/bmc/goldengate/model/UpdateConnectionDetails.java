@@ -68,6 +68,9 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateSnowflakeConnectionDetails.class,
             name = "SNOWFLAKE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleAiDataCatalogStorageConnectionDetails.class,
+            name = "ORACLE_AI_DATA_CATALOG_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateHdfsConnectionDetails.class,
             name = "HDFS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

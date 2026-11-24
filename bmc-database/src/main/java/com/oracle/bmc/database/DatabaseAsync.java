@@ -391,6 +391,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Update the Autonomous VM Cluster's key management system details where TDE keys of this
+     * cluster's ACDs will be stored.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAvmKeyManagementSystemResponse> changeAvmKeyManagementSystem(
+            ChangeAvmKeyManagementSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeAvmKeyManagementSystemRequest,
+                            ChangeAvmKeyManagementSystemResponse>
+                    handler);
+
+    /**
      * Move the backup destination and its dependent resources to the specified compartment. For
      * more information, see [Moving Database Resources to a Different
      * Compartment](https://docs.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -427,6 +445,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeBaseccVmClusterCompartmentRequest,
                                     ChangeBaseccVmClusterCompartmentResponse>
+                            handler);
+
+    /**
+     * Update the Cloud Autonomous VM Cluster's key management system details where TDE keys of this
+     * cluster's ACDs will be stored.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCavmKeyManagementSystemResponse>
+            changeCavmKeyManagementSystem(
+                    ChangeCavmKeyManagementSystemRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCavmKeyManagementSystemRequest,
+                                    ChangeCavmKeyManagementSystemResponse>
                             handler);
 
     /**

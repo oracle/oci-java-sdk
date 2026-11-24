@@ -29,14 +29,23 @@ package com.oracle.bmc.goldengate.model;
             value = OciObjectStorageS3ApiIcebergStorageSummary.class,
             name = "OCI_OBJECT_STORAGE_S3_API"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ZfsIcebergStorageSummary.class,
+            name = "ZFS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AzureDataLakeStorageIcebergStorageSummary.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OciObjectStorageAccessKeyIcebergStorageSummary.class,
+            name = "OCI_OBJECT_STORAGE_ACCESS_KEY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = NoIcebergStorageSummary.class,
             name = "NONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmazonS3IcebergStorageSummary.class,
-            name = "AMAZON_S3")
+            name = "AMAZON_S3"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AzureStorageIcebergStorageSummary.class,
+            name = "AZURE_STORAGE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

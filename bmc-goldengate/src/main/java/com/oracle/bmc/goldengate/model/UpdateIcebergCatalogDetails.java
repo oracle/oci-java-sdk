@@ -35,6 +35,9 @@ package com.oracle.bmc.goldengate.model;
             value = UpdateHadoopIcebergCatalogDetails.class,
             name = "HADOOP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateOracleAiDataCatalogIcebergCatalogDetails.class,
+            name = "OADC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateGlueIcebergCatalogDetails.class,
             name = "GLUE")
 })

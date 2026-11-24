@@ -23,14 +23,23 @@ package com.oracle.bmc.goldengate.model;
         defaultImpl = CreateIcebergStorageDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateZfsIcebergStorageDetails.class,
+            name = "ZFS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAzureDataLakeStorageIcebergStorageDetails.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateNoIcebergStorageDetails.class,
             name = "NONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAzureStorageIcebergStorageDetails.class,
+            name = "AZURE_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateGoogleCloudStorageIcebergStorageDetails.class,
             name = "GOOGLE_CLOUD_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateOciObjectStorageAccessKeyIcebergStorageDetails.class,
+            name = "OCI_OBJECT_STORAGE_ACCESS_KEY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAmazonS3IcebergStorageDetails.class,
             name = "AMAZON_S3"),

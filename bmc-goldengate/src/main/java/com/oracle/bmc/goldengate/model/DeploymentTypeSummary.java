@@ -39,6 +39,7 @@ public final class DeploymentTypeSummary
         "supportedTechnologiesUrl",
         "defaultUsername",
         "supportedCapabilities",
+        "supportedCredentialStores",
         "supportedLicenseTypes"
     })
     public DeploymentTypeSummary(
@@ -52,6 +53,7 @@ public final class DeploymentTypeSummary
             String supportedTechnologiesUrl,
             String defaultUsername,
             java.util.List<SupportedCapabilities> supportedCapabilities,
+            java.util.List<CredentialStore> supportedCredentialStores,
             java.util.List<LicenseModel> supportedLicenseTypes) {
         super();
         this.category = category;
@@ -64,23 +66,24 @@ public final class DeploymentTypeSummary
         this.supportedTechnologiesUrl = supportedTechnologiesUrl;
         this.defaultUsername = defaultUsername;
         this.supportedCapabilities = supportedCapabilities;
+        this.supportedCredentialStores = supportedCredentialStores;
         this.supportedLicenseTypes = supportedLicenseTypes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The deployment category defines the broad separation of the deployment type into four
+         * The deployment category defines the broad separation of the deployment type into five
          * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+         * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into four
+         * The deployment category defines the broad separation of the deployment type into five
          * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-         * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+         * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
          *
          * @param category the value to set
          * @return this builder
@@ -248,6 +251,22 @@ public final class DeploymentTypeSummary
             this.__explicitlySet__.add("supportedCapabilities");
             return this;
         }
+        /** The list of credential stores supported by the deployment type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedCredentialStores")
+        private java.util.List<CredentialStore> supportedCredentialStores;
+
+        /**
+         * The list of credential stores supported by the deployment type.
+         *
+         * @param supportedCredentialStores the value to set
+         * @return this builder
+         */
+        public Builder supportedCredentialStores(
+                java.util.List<CredentialStore> supportedCredentialStores) {
+            this.supportedCredentialStores = supportedCredentialStores;
+            this.__explicitlySet__.add("supportedCredentialStores");
+            return this;
+        }
         /** The list of Oracle license models supported by the deployment type. */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedLicenseTypes")
         private java.util.List<LicenseModel> supportedLicenseTypes;
@@ -280,6 +299,7 @@ public final class DeploymentTypeSummary
                             this.supportedTechnologiesUrl,
                             this.defaultUsername,
                             this.supportedCapabilities,
+                            this.supportedCredentialStores,
                             this.supportedLicenseTypes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -319,6 +339,9 @@ public final class DeploymentTypeSummary
             if (model.wasPropertyExplicitlySet("supportedCapabilities")) {
                 this.supportedCapabilities(model.getSupportedCapabilities());
             }
+            if (model.wasPropertyExplicitlySet("supportedCredentialStores")) {
+                this.supportedCredentialStores(model.getSupportedCredentialStores());
+            }
             if (model.wasPropertyExplicitlySet("supportedLicenseTypes")) {
                 this.supportedLicenseTypes(model.getSupportedLicenseTypes());
             }
@@ -336,17 +359,17 @@ public final class DeploymentTypeSummary
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into four
+     * The deployment category defines the broad separation of the deployment type into five
      * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+     * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into four
+     * The deployment category defines the broad separation of the deployment type into five
      * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS',
-     * 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+     * 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
      *
      * @return the value
      */
@@ -489,6 +512,19 @@ public final class DeploymentTypeSummary
         return supportedCapabilities;
     }
 
+    /** The list of credential stores supported by the deployment type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedCredentialStores")
+    private final java.util.List<CredentialStore> supportedCredentialStores;
+
+    /**
+     * The list of credential stores supported by the deployment type.
+     *
+     * @return the value
+     */
+    public java.util.List<CredentialStore> getSupportedCredentialStores() {
+        return supportedCredentialStores;
+    }
+
     /** The list of Oracle license models supported by the deployment type. */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedLicenseTypes")
     private final java.util.List<LicenseModel> supportedLicenseTypes;
@@ -528,6 +564,8 @@ public final class DeploymentTypeSummary
                 .append(String.valueOf(this.supportedTechnologiesUrl));
         sb.append(", defaultUsername=").append(String.valueOf(this.defaultUsername));
         sb.append(", supportedCapabilities=").append(String.valueOf(this.supportedCapabilities));
+        sb.append(", supportedCredentialStores=")
+                .append(String.valueOf(this.supportedCredentialStores));
         sb.append(", supportedLicenseTypes=").append(String.valueOf(this.supportedLicenseTypes));
         sb.append(")");
         return sb.toString();
@@ -554,6 +592,8 @@ public final class DeploymentTypeSummary
                         this.supportedTechnologiesUrl, other.supportedTechnologiesUrl)
                 && java.util.Objects.equals(this.defaultUsername, other.defaultUsername)
                 && java.util.Objects.equals(this.supportedCapabilities, other.supportedCapabilities)
+                && java.util.Objects.equals(
+                        this.supportedCredentialStores, other.supportedCredentialStores)
                 && java.util.Objects.equals(this.supportedLicenseTypes, other.supportedLicenseTypes)
                 && super.equals(other);
     }
@@ -594,6 +634,11 @@ public final class DeploymentTypeSummary
                         + (this.supportedCapabilities == null
                                 ? 43
                                 : this.supportedCapabilities.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedCredentialStores == null
+                                ? 43
+                                : this.supportedCredentialStores.hashCode());
         result =
                 (result * PRIME)
                         + (this.supportedLicenseTypes == null

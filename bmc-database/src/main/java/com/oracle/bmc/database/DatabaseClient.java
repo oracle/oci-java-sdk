@@ -829,6 +829,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeAvmKeyManagementSystemResponse changeAvmKeyManagementSystem(
+            ChangeAvmKeyManagementSystemRequest request) {
+        Objects.requireNonNull(
+                request.getChangeAvmKeyManagementSystemDetails(),
+                "changeAvmKeyManagementSystemDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousVmClusterId(), "autonomousVmClusterId must not be blank");
+
+        return clientCall(request, ChangeAvmKeyManagementSystemResponse::builder)
+                .logger(LOG, "changeAvmKeyManagementSystem")
+                .serviceDetails(
+                        "Database",
+                        "ChangeAvmKeyManagementSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAvmKeyManagementSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAvmKeyManagementSystemRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousVmClusters")
+                .appendPathParam(request.getAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeKeyManagementSystem")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAvmKeyManagementSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAvmKeyManagementSystemResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeBackupDestinationCompartmentResponse changeBackupDestinationCompartment(
             ChangeBackupDestinationCompartmentRequest request) {
         Objects.requireNonNull(
@@ -899,6 +936,44 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeBaseccVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeCavmKeyManagementSystemResponse changeCavmKeyManagementSystem(
+            ChangeCavmKeyManagementSystemRequest request) {
+        Objects.requireNonNull(
+                request.getChangeCavmKeyManagementSystemDetails(),
+                "changeCavmKeyManagementSystemDetails is required");
+
+        Validate.notBlank(
+                request.getCloudAutonomousVmClusterId(),
+                "cloudAutonomousVmClusterId must not be blank");
+
+        return clientCall(request, ChangeCavmKeyManagementSystemResponse::builder)
+                .logger(LOG, "changeCavmKeyManagementSystem")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCavmKeyManagementSystem",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCavmKeyManagementSystem")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCavmKeyManagementSystemRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudAutonomousVmClusters")
+                .appendPathParam(request.getCloudAutonomousVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeKeyManagementSystem")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCavmKeyManagementSystemResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCavmKeyManagementSystemResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -10016,6 +10091,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("kmsType", request.getKmsType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -10305,6 +10381,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("kmsType", request.getKmsType())
                 .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .accept("application/json")
@@ -11914,6 +11991,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("keyStoreType", request.getKeyStoreType())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(
